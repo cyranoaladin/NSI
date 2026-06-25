@@ -1,32 +1,32 @@
 # Inventaire ressources NSI
 
-- Total ressources : 137
+- Total ressources : 143
 - Ressources pédagogiques : 52
-- Ressources techniques : 85
+- Ressources techniques : 91
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - drive: 0
-- generated: 137
+- generated: 143
 
 ## Répartition par niveau
-- interne: 79
+- interne: 85
 - premiere: 29
 - terminale: 29
 
 ## Répartition par type
 - banque: 14
-- document: 39
-- script: 40
+- document: 43
+- script: 42
 - sequence: 44
 
 ## Répartition par statut
-- needs_review: 137
+- needs_review: 143
 
 ## Répartition audience
 - corrige: 9
 - eleve: 18
-- mixte: 107
+- mixte: 113
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -53,6 +53,7 @@
   - INDEX.md
   - README.md
   - bank_strategy.md
+  - calendar_2026_2027_tunisia.md
   - course_internal_coherence_report.md
   - differentiation_quality_report.md
   - drive_inventory.csv
@@ -96,6 +97,9 @@
   - programme_matrix_premiere.md
   - programme_matrix_terminale.md
   - programme_yaml_audit.md
+  - progression_audit.md
+  - project_plan_premiere.md
+  - project_plan_terminale.md
   - qa_report.md
   - scientific_claims_review_report.md
   - scripts/_inventory_utils.py
@@ -126,6 +130,8 @@
   - scripts/check_pedagogical_alignment.py
   - scripts/check_program_capacity_evidence_depth.py
   - scripts/check_program_coverage.py
+  - scripts/check_progression_calendar_alignment.py
+  - scripts/check_project_quarter_requirement.py
   - scripts/check_python_quality.py
   - scripts/check_qcm_schema.py
   - scripts/check_quality_gates.py
@@ -244,6 +250,7 @@
   - INDEX.md
   - README.md
   - bank_strategy.md
+  - calendar_2026_2027_tunisia.md
   - course_internal_coherence_report.md
   - differentiation_quality_report.md
   - drive_inventory.csv
@@ -261,6 +268,9 @@
   - programme_matrix_premiere.md
   - programme_matrix_terminale.md
   - programme_yaml_audit.md
+  - progression_audit.md
+  - project_plan_premiere.md
+  - project_plan_terminale.md
   - qa_report.md
   - scientific_claims_review_report.md
   - scripts/_inventory_utils.py
@@ -291,6 +301,8 @@
   - scripts/check_pedagogical_alignment.py
   - scripts/check_program_capacity_evidence_depth.py
   - scripts/check_program_coverage.py
+  - scripts/check_progression_calendar_alignment.py
+  - scripts/check_project_quarter_requirement.py
   - scripts/check_python_quality.py
   - scripts/check_qcm_schema.py
   - scripts/check_quality_gates.py
@@ -342,6 +354,7 @@
 - INDEX.md
 - README.md
 - bank_strategy.md
+- calendar_2026_2027_tunisia.md
 - course_internal_coherence_report.md
 - differentiation_quality_report.md
 - drive_inventory.csv
@@ -381,6 +394,9 @@
 - programme_matrix_premiere.md
 - programme_matrix_terminale.md
 - programme_yaml_audit.md
+- progression_audit.md
+- project_plan_premiere.md
+- project_plan_terminale.md
 - qa_report.md
 - scientific_claims_review_report.md
 - scripts/_inventory_utils.py
@@ -411,6 +427,8 @@
 - scripts/check_pedagogical_alignment.py
 - scripts/check_program_capacity_evidence_depth.py
 - scripts/check_program_coverage.py
+- scripts/check_progression_calendar_alignment.py
+- scripts/check_project_quarter_requirement.py
 - scripts/check_python_quality.py
 - scripts/check_qcm_schema.py
 - scripts/check_quality_gates.py
@@ -474,6 +492,7 @@
 - INDEX.md
 - README.md
 - bank_strategy.md
+- calendar_2026_2027_tunisia.md
 - course_internal_coherence_report.md
 - differentiation_quality_report.md
 - drive_inventory.csv
@@ -517,6 +536,9 @@
 - programme_matrix_premiere.md
 - programme_matrix_terminale.md
 - programme_yaml_audit.md
+- progression_audit.md
+- project_plan_premiere.md
+- project_plan_terminale.md
 - qa_report.md
 - scientific_claims_review_report.md
 - scripts/_inventory_utils.py
@@ -547,6 +569,8 @@
 - scripts/check_pedagogical_alignment.py
 - scripts/check_program_capacity_evidence_depth.py
 - scripts/check_program_coverage.py
+- scripts/check_progression_calendar_alignment.py
+- scripts/check_project_quarter_requirement.py
 - scripts/check_python_quality.py
 - scripts/check_qcm_schema.py
 - scripts/check_quality_gates.py

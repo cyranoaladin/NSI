@@ -13,6 +13,8 @@ audit:
 	python scripts/check_document_depth.py
 	python scripts/check_qcm_schema.py
 	python scripts/check_document_style.py
+	python scripts/check_progression_calendar_alignment.py
+	python scripts/check_project_quarter_requirement.py
 	python scripts/check_sequence_completeness.py
 	python scripts/check_course_internal_coherence.py
 	python scripts/check_td_corrige_alignment.py
