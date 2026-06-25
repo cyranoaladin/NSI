@@ -14,6 +14,30 @@ Les noms propres suspects sont listés pour revue humaine.
 - 02_modeles_documents/modele_corrige.tex: nom propre suspect -> Modèle Corrigé
 - 02_modeles_documents/modele_evaluation.tex: nom propre suspect -> Modèle Évaluation
 - 02_modeles_documents/modele_guide_prof.md: nom propre suspect -> Modèle Guide
+- 03_progressions/progression_premiere.md: nom propre suspect -> Septembre-Octobre
+- 03_progressions/progression_premiere.md: nom propre suspect -> Octobre-Novembre
+- 03_progressions/progression_premiere.md: nom propre suspect -> Novembre-Décembre
+- 03_progressions/progression_premiere.md: nom propre suspect -> Décembre-Janvier
+- 03_progressions/progression_premiere.md: nom propre suspect -> Janvier-Février
+- 03_progressions/progression_premiere.md: nom propre suspect -> Février-Mars
+- 03_progressions/progression_premiere.md: nom propre suspect -> Mars-Avril
+- 03_progressions/progression_premiere.md: nom propre suspect -> Avril-Mai
+- 03_progressions/progression_premiere.md: nom propre suspect -> Mai-Juin
+- 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
 - AGENTS.md: nom propre suspect -> Agent Inventaire
 - AGENTS.md: nom propre suspect -> Agent Programme
 - AGENTS.md: nom propre suspect -> Agent Auteur
@@ -22,6 +46,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - AGENTS.md: nom propre suspect -> Agent Évaluation
 - AGENTS.md: nom propre suspect -> Agent Différenciation
 - AGENTS.md: nom propre suspect -> Agent Édition
+- calendar_2026_2027_tunisia.md: nom propre suspect -> Grand Oral
 - course_internal_coherence_report.md: nom propre suspect -> Course Internal Coherence Report
 - differentiation_quality_report.md: nom propre suspect -> Differentiation Quality Report
 - drive_inventory.csv: nom propre suspect -> Corrigé Drive
@@ -31,6 +56,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - evaluation_bareme_alignment_report.md: nom propre suspect -> Evaluation Bareme Alignment Report
 - learning_objectives_assessed_report.md: nom propre suspect -> Learning Objectives Assessed Report
 - program_capacity_evidence_depth_report.md: nom propre suspect -> Program Capacity Evidence Depth Report
+- progression_audit.md: nom propre suspect -> Calendrier Tunisie
+- progression_audit.md: nom propre suspect -> Ressources Drive
 - qa_report.md: nom propre suspect -> Ressources Drive
 - qa_report.md: nom propre suspect -> Ressources Drive
 - scientific_claims_review_report.md: nom propre suspect -> Scientific Claims Review Report
@@ -42,6 +69,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_git_clean.py: nom propre suspect -> Check Git
 - scripts/check_learning_objectives_assessed.py: nom propre suspect -> Learning Objectives Assessed Report
 - scripts/check_program_capacity_evidence_depth.py: nom propre suspect -> Program Capacity Evidence Depth Report
+- scripts/check_progression_calendar_alignment.py: nom propre suspect -> Ressources Drive
 - scripts/check_scientific_claims_review.py: nom propre suspect -> Scientific Claims Review Report
 - scripts/check_td_corrige_alignment.py: nom propre suspect -> Corrige Alignment Report
 - scripts/check_tp_test_alignment.py: nom propre suspect -> Test Alignment Report
@@ -51,6 +79,60 @@ Les noms propres suspects sont listés pour revue humaine.
 ## Éléments couverts par allowlist explicite
 
 - 00_programmes_officiels/programme_nsi_2019.yaml: nom propre suspect -> Boyer-Moore
+- 03_progressions/progression_premiere.md: telephone_tn possible -> 2026-2027
+- 03_progressions/progression_premiere.md: nom propre suspect -> Von Neumann
+- 03_progressions/progression_terminale.md: telephone_tn possible -> 2026-2027
+- 03_progressions/progression_terminale.md: telephone_tn possible -> 2026-2027
+- 03_progressions/progression_terminale.md: nom propre suspect -> Reprise Python
+- 03_progressions/progression_terminale.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/progression_terminale.md: nom propre suspect -> Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Reprise Python
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/progression_terminale.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Ressources Drive
+- 03_progressions/progression_terminale.md: nom propre suspect -> Lien Grand Oral
+- 03_progressions/progression_terminale.md: nom propre suspect -> Grand Oral
+- calendar_2026_2027_tunisia.md: telephone_tn possible -> 2026-2027
 - coverage.md: nom propre suspect -> Boyer-Moore
 - drive_mapping.md: nom propre suspect -> Google Drive
 - drive_sources.yml: nom propre suspect -> Google Drive
@@ -59,6 +141,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - drive_sources.yml: nom propre suspect -> Dossiers Terminale
 - drive_sources.yml: nom propre suspect -> Séquences Première
 - drive_sources.yml: nom propre suspect -> Séquences Terminale
+- manifest.csv: telephone_tn possible -> 2026-2027
 - missing_capabilities.md: nom propre suspect -> Boyer-Moore
 - premiere/sequences/s01_representation_donnees/corrige.md: nom propre suspect -> Structures Python
 - premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> Utiliser Python
@@ -73,6 +156,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - premiere/sequences/s01_representation_donnees/qcm.json: nom propre suspect -> Pourquoi Unicode
 - premiere/sequences/s01_representation_donnees/td.md: nom propre suspect -> Avec Python
 - premiere/sequences/s01_representation_donnees/tp.md: nom propre suspect -> Test Unicode
+- privacy_allowlist.yml: telephone_tn possible -> 2026-2027
+- privacy_allowlist.yml: telephone_tn possible -> 2026-2027
 - privacy_allowlist.yml: nom propre suspect -> Google Drive
 - privacy_allowlist.yml: nom propre suspect -> Von Neumann
 - privacy_allowlist.yml: nom propre suspect -> Boyer-Moore
@@ -80,6 +165,17 @@ Les noms propres suspects sont listés pour revue humaine.
 - programme_matrix_terminale.md: nom propre suspect -> Boyer-Moore
 - programme_yaml_audit.md: nom propre suspect -> Exemples Première
 - programme_yaml_audit.md: nom propre suspect -> Exemples Terminale
+- progression_audit.md: telephone_tn possible -> 2026-2027
+- progression_audit.md: telephone_tn possible -> 2026-2027
+- project_plan_premiere.md: telephone_tn possible -> 2026-2027
+- project_plan_terminale.md: telephone_tn possible -> 2026-2027
+- project_plan_terminale.md: nom propre suspect -> Grand Oral
+- project_plan_terminale.md: nom propre suspect -> Grand Oral
+- project_plan_terminale.md: nom propre suspect -> Lien Grand Oral
+- project_plan_terminale.md: nom propre suspect -> Grand Oral
+- project_plan_terminale.md: nom propre suspect -> Grand Oral
+- project_plan_terminale.md: nom propre suspect -> Grand Oral
+- project_plan_terminale.md: nom propre suspect -> Grand Oral
 - qa_report.md: nom propre suspect -> Tests Python
 - quality_checklist.md: nom propre suspect -> Scripts Python
 - scripts/check_no_private_data.py: adresse possible -> adresse personnelle
@@ -91,6 +187,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_no_private_data.py: adresse possible -> gouvernorat
 - scripts/check_no_private_data.py: adresse possible -> ville de résidence
 - scripts/check_no_private_data.py: nom propre suspect -> Privacy Report
+- scripts/check_progression_calendar_alignment.py: telephone_tn possible -> 2026-2027
+- scripts/check_progression_calendar_alignment.py: telephone_tn possible -> 2026-2027
 - scripts/check_python_quality.py: nom propre suspect -> Check Python
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/sources.md: nom propre suspect -> Documentation Python
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/sources.md: nom propre suspect -> Documentation Python
