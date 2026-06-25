@@ -3,64 +3,86 @@ title: "Barème - représentation des données"
 niveau: premiere
 source: "Prototype interne"
 status: needs_review
-version: "0.4.0"
+version: "0.5.0"
 notion: "barème"
-objectifs: "Document professeur substantiel à relire avant usage."
+objectifs: "Document professeur exploitable en prototype, à relire avant usage."
 sequence: s01_representation_donnees
 private_data: false
 ---
 
 # Barème - représentation des données
 
-## Principes
+Total : 20 points. Le barème est question par question et relié aux capacités atomiques.
 
-- Total : 20 points.
-- Une réponse correcte sans justification ne reçoit pas tous les points.
-- Une erreur de syntaxe mineure ne doit pas effacer un raisonnement correct.
-- Une confusion conceptuelle doit déclencher une remédiation explicite.
+## Question 1 - 2.5 points
 
-## Barème détaillé
-
-### Exercice 1 - 4 points
-
-- Compréhension de la consigne : 1 point.
-- Méthode ou structure correcte : 1 point.
-- Résultat ou code attendu : 1 point.
-- Justification, vocabulaire et cas limite : 1 point.
 - Capacité visée : P-DATA-BASE-01.
+- 0,5 pt : consigne comprise et vocabulaire correct.
+- 1 pt : méthode ou structure correcte.
+- 0,5 pt : résultat attendu.
+- 0,5 pt : justification, cas limite ou test.
+- Erreur typique pénalisante : restes lus dans le mauvais ordre.
 
-### Exercice 2 - 4 points
+## Question 2 - 2.5 points
 
-- Compréhension de la consigne : 1 point.
-- Méthode ou structure correcte : 1 point.
-- Résultat ou code attendu : 1 point.
-- Justification, vocabulaire et cas limite : 1 point.
-- Capacité visée : P-DATA-BASE-02BB.
+- Capacité visée : P-DATA-BASE-02A.
+- 0,5 pt : consigne comprise et vocabulaire correct.
+- 1 pt : méthode ou structure correcte.
+- 0,5 pt : résultat attendu.
+- 0,5 pt : justification, cas limite ou test.
+- Erreur typique pénalisante : confondre nombre de valeurs et plus grande valeur.
 
-### Exercice 3 - 4 points
+## Question 3 - 2.5 points
 
-- Compréhension de la consigne : 1 point.
-- Méthode ou structure correcte : 1 point.
-- Résultat ou code attendu : 1 point.
-- Justification, vocabulaire et cas limite : 1 point.
+- Capacité visée : P-DATA-BASE-02B.
+- 0,5 pt : consigne comprise et vocabulaire correct.
+- 1 pt : méthode ou structure correcte.
+- 0,5 pt : résultat attendu.
+- 0,5 pt : justification, cas limite ou test.
+- Erreur typique pénalisante : oublier la taille fixe.
+
+## Question 4 - 2.5 points
+
 - Capacité visée : P-DATA-BASE-04.
+- 0,5 pt : consigne comprise et vocabulaire correct.
+- 1 pt : méthode ou structure correcte.
+- 0,5 pt : résultat attendu.
+- 0,5 pt : justification, cas limite ou test.
+- Erreur typique pénalisante : nier toute l’expression.
 
-### Exercice 4 - 4 points
+## Question 5 - 2.5 points
 
-- Compréhension de la consigne : 1 point.
-- Méthode ou structure correcte : 1 point.
-- Résultat ou code attendu : 1 point.
-- Justification, vocabulaire et cas limite : 1 point.
-- Capacité visée : P-DATA-BASE-05AA.
+- Capacité visée : P-DATA-BASE-05A.
+- 0,5 pt : consigne comprise et vocabulaire correct.
+- 1 pt : méthode ou structure correcte.
+- 0,5 pt : résultat attendu.
+- 0,5 pt : justification, cas limite ou test.
+- Erreur typique pénalisante : confondre caractère et police.
 
-### Exercice 5 - 4 points
+## Question 6 - 2.5 points
 
-- Compréhension de la consigne : 1 point.
-- Méthode ou structure correcte : 1 point.
-- Résultat ou code attendu : 1 point.
-- Justification, vocabulaire et cas limite : 1 point.
+- Capacité visée : P-DATA-CONSTR-01.
+- 0,5 pt : consigne comprise et vocabulaire correct.
+- 1 pt : méthode ou structure correcte.
+- 0,5 pt : résultat attendu.
+- 0,5 pt : justification, cas limite ou test.
+- Erreur typique pénalisante : modifier une variable globale.
+
+## Question 7 - 2.5 points
+
+- Capacité visée : P-DATA-CONSTR-02A.
+- 0,5 pt : consigne comprise et vocabulaire correct.
+- 1 pt : méthode ou structure correcte.
+- 0,5 pt : résultat attendu.
+- 0,5 pt : justification, cas limite ou test.
+- Erreur typique pénalisante : utiliser l’indice 3.
+
+## Question 8 - 2.5 points
+
 - Capacité visée : P-LANG-04.
+- 0,5 pt : consigne comprise et vocabulaire correct.
+- 1 pt : méthode ou structure correcte.
+- 0,5 pt : résultat attendu.
+- 0,5 pt : justification, cas limite ou test.
+- Erreur typique pénalisante : donner une entrée sans sortie attendue.
 
-## Ajustements
-
-La version aménagée conserve les objectifs mais réduit la charge de lecture, découpe les étapes et adapte la durée.

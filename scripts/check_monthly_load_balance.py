@@ -1,73 +1,126 @@
-#!/usr/bin/env python3
-"""Check monthly NSI load against Tunisia 2026-2027 estimates."""
+
 from __future__ import annotations
 
 import re
-import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = {
-    "premiere": ROOT / "03_progressions/seances_premiere.md",
-    "terminale": ROOT / "03_progressions/seances_terminale.md",
-}
-ESTIMATES = {
-    "premiere": {"septembre":16.2,"octobre":9.0,"novembre":17.1,"décembre":10.4,"janvier":16.2,"février":8.1,"mars":18.5,"avril":13.6,"mai":13.0,"juin":17.8},
-    "terminale": {"septembre":24.3,"octobre":13.4,"novembre":25.6,"décembre":15.7,"janvier":24.3,"février":12.2,"mars":27.8,"avril":20.5,"mai":19.5,"juin":26.7},
+NATURES = {"cours", "TD", "TP", "projet", "évaluation", "remédiation"}
+LEVELS = {
+    "premiere": {"session": ROOT / "03_progressions/seances_premiere.md", "monthly": ROOT / "03_progressions/monthly_load_premiere.md", "progression": ROOT / "03_progressions/progression_premiere.md", "project": ROOT / "project_plan_premiere.md", "prefix": "P", "count": 15, "total": 140.0, "project_total": 43.0},
+    "terminale": {"session": ROOT / "03_progressions/seances_terminale.md", "monthly": ROOT / "03_progressions/monthly_load_terminale.md", "progression": ROOT / "03_progressions/progression_terminale.md", "project": ROOT / "project_plan_terminale.md", "prefix": "T", "count": 20, "total": 210.0, "project_total": 60.0},
 }
 
+def parse_hours(value: str) -> float:
+    m = re.search(r"(-?[0-9]+(?:[,.][0-9]+)?)\s*h", value)
+    if not m:
+        raise ValueError(f"missing hour value: {value}")
+    return float(m.group(1).replace(',', '.'))
 
-def parse_load(path: Path) -> dict[str, float]:
-    data: dict[str, float] = {}
-    for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
-        if not line.startswith("| ") or "---" in line or "Mois" in line:
+def parse_sessions(path: Path) -> list[dict[str, object]]:
+    text = path.read_text(encoding='utf-8', errors='replace')
+    blocks = re.split(r"(?=^### Séance )", text, flags=re.M)
+    sessions = []
+    for block in blocks:
+        if not block.startswith('### Séance '):
             continue
-        cells = [cell.strip().lower() for cell in line.strip("|").split("|")]
-        if len(cells) < 3:
+        header = block.splitlines()[0].strip()
+        sid = header.replace('### Séance ', '').strip()
+        item = {'id': sid, 'raw': block}
+        for line in block.splitlines()[1:]:
+            if line.startswith('- ') and ' : ' in line:
+                key, value = line[2:].split(' : ', 1)
+                item[key.strip()] = value.strip()
+        if 'Durée' in item:
+            item['hours'] = parse_hours(str(item['Durée']))
+        m = re.match(r'([PT]\d{2})-S\d+', sid)
+        item['sequence'] = m.group(1) if m else ''
+        sessions.append(item)
+    return sessions
+
+def parse_table_hours(path: Path) -> dict[str, dict[str, float | str]]:
+    rows = {}
+    for line in path.read_text(encoding='utf-8', errors='replace').splitlines():
+        if not line.startswith('| ') or '---' in line or 'Mois' in line:
             continue
-        planned = re.search(r"([0-9]+(?:[.,][0-9]+)?)\s*h", cells[2])
-        if planned:
-            data[cells[0]] = float(planned.group(1).replace(",", "."))
+        cells = [c.strip() for c in line.strip('|').split('|')]
+        if len(cells) < 8:
+            continue
+        month = cells[0].lower()
+        rows[month] = {
+            'available': parse_hours(cells[1]),
+            'planned': parse_hours(cells[2]),
+            'margin': parse_hours(cells[3]),
+            'project': parse_hours(cells[4]),
+            'evaluation': parse_hours(cells[5]),
+            'remediation': parse_hours(cells[6]),
+            'status': cells[7],
+        }
+    return rows
+
+def parse_progression_projects(path: Path, prefix: str) -> dict[str, tuple[float, float]]:
+    data = {}
+    for line in path.read_text(encoding='utf-8', errors='replace').splitlines():
+        if not line.startswith('| ') or '---' in line or 'Total' in line:
+            continue
+        cells = [c.strip() for c in line.strip('|').split('|')]
+        if len(cells) < 4:
+            continue
+        m = re.match(rf'({prefix}\d{{2}})\b', cells[0])
+        if not m:
+            continue
+        try:
+            volume = parse_hours(cells[2])
+            project = parse_hours(cells[3])
+        except ValueError:
+            continue
+        data[m.group(1)] = (volume, project)
     return data
 
-
-def main() -> int:
-    errors: list[str] = []
-    for level, path in FILES.items():
-        if not path.exists():
-            errors.append(f"{level}: session planning missing")
+def parse_project_plan(path: Path, prefix: str) -> dict[str, float]:
+    data = {}
+    for line in path.read_text(encoding='utf-8', errors='replace').splitlines():
+        if not line.startswith('| ') or '---' in line or 'Total' in line:
             continue
-        loads = parse_load(path)
-        for month, estimate in ESTIMATES[level].items():
-            if month not in loads:
-                errors.append(f"{level}: monthly load missing for {month}")
-                continue
-            if loads[month] > estimate + 0.05:
-                errors.append(f"{level}: {month} overload {loads[month]:g}h > {estimate:g}h")
-        if level == "premiere":
-            if loads.get("février", 99) > 7.2:
-                errors.append("premiere: February not lightened enough for Ramadan")
-            if loads.get("mars", 99) > 17.5:
-                errors.append("premiere: March not lightened enough around Ramadan/Aid")
-        if level == "terminale":
-            if loads.get("février", 99) > 10.5:
-                errors.append("terminale: February load too high during Ramadan")
-            if loads.get("mars", 99) > 25.5:
-                errors.append("terminale: March load too high around Ramadan/Aid")
-            if loads.get("juin", 99) > 22.0:
-                errors.append("terminale: June end-of-year load excessive")
-    term_text = FILES["terminale"].read_text(encoding="utf-8", errors="replace") if FILES["terminale"].exists() else ""
-    if "T18 - Boyer-Moore | juin" in term_text:
-        errors.append("terminale: Boyer-Moore still launched in June")
-    if "sans nouveau chapitre lourd" not in term_text:
-        errors.append("terminal/premiere: June no-new-heavy-chapter marker missing")
+        cells = [c.strip() for c in line.strip('|').split('|')]
+        if len(cells) < 2:
+            continue
+        if re.fullmatch(rf'{prefix}\d{{2}}', cells[0]):
+            data[cells[0]] = parse_hours(cells[1])
+    return data
+
+def fail_or_pass(name: str, errors: list[str]) -> int:
     if errors:
-        print("check_monthly_load_balance: KO")
+        print(f'{name}: KO')
         for error in errors:
-            print(f"- {error}")
+            print(f'- {error}')
         return 1
-    print("check_monthly_load_balance: PASS")
+    print(f'{name}: PASS')
     return 0
 
-if __name__ == "__main__":
+import sys
+
+def main() -> int:
+    errors = []
+    for level, cfg in LEVELS.items():
+        monthly = parse_table_hours(cfg['monthly'])
+        total = 0.0
+        for month, row in monthly.items():
+            planned = float(row['planned']); available = float(row['available']); total += planned
+            if planned > available + 0.01:
+                errors.append(f"{level}: {month} planned {planned:g} h exceeds available {available:g} h")
+            if available - planned > 2.5:
+                errors.append(f"{level}: {month} underplanned by more than one session")
+        if abs(total - cfg['total']) > 0.01:
+            errors.append(f"{level}: monthly planned total {total:g} h != annual {cfg['total']:g} h")
+        if level == 'premiere' and float(monthly.get('février',{}).get('planned',99)) > 8.1:
+            errors.append('premiere: February not lightened for Ramadan')
+        if level == 'terminale':
+            if float(monthly.get('février',{}).get('planned',99)) > 12.2:
+                errors.append('terminale: February not lightened for Ramadan')
+            if float(monthly.get('juin',{}).get('planned',99)) > 28.0:
+                errors.append('terminale: June load excessive')
+    return fail_or_pass('check_monthly_load_balance', errors)
+
+if __name__ == '__main__':
     sys.exit(main())

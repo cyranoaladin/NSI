@@ -28,6 +28,9 @@ CHECKS = [
     "scripts/check_progression_project_consistency.py",
     "scripts/check_monthly_load_balance.py",
     "scripts/check_session_level_planning.py",
+    "scripts/check_session_duration_consistency.py",
+    "scripts/check_session_monthly_total.py",
+    "scripts/check_session_project_hours.py",
     "scripts/check_teacher_docs_depth.py",
     "scripts/check_program_yaml_atomicity.py",
     "scripts/check_build_reports_freshness.py",
@@ -50,7 +53,6 @@ CHECKS = [
     "scripts/run_python_tests.py",
 ]
 
-
 def main() -> None:
     failures: list[str] = []
     env = os.environ.copy()
@@ -60,15 +62,12 @@ def main() -> None:
         result = subprocess.run([PYTHON, script], cwd=ROOT, env=env)
         if result.returncode != 0:
             failures.append(script)
-
     if failures:
         print("check_quality_gates: KO")
         for script in failures:
             print(f"- {script}")
         raise SystemExit(1)
-
     print("check_quality_gates: PASS")
-
 
 if __name__ == "__main__":
     main()

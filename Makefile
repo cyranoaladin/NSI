@@ -18,6 +18,9 @@ audit:
 	python scripts/check_progression_project_consistency.py
 	python scripts/check_monthly_load_balance.py
 	python scripts/check_session_level_planning.py
+	python scripts/check_session_duration_consistency.py
+	python scripts/check_session_monthly_total.py
+	python scripts/check_session_project_hours.py
 	python scripts/check_teacher_docs_depth.py
 	python scripts/check_program_yaml_atomicity.py
 	python scripts/check_build_reports_freshness.py
@@ -35,6 +38,10 @@ audit:
 	python scripts/check_coverage_evidence.py
 	python scripts/run_python_tests.py
 	python scripts/check_quality_gates.py
+
+package-audit:
+	python scripts/build_source_archive.py
+	python scripts/check_archive_portability.py
 
 release-audit:
 	python scripts/check_git_clean.py

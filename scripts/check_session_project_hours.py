@@ -104,30 +104,30 @@ def main() -> int:
     errors = []
     for level, cfg in LEVELS.items():
         sessions = parse_sessions(cfg['session'])
-        expected = {f"{cfg['prefix']}{i:02d}" for i in range(cfg['count'])}
-        by_seq = {seq: [] for seq in expected}
+        progression = parse_progression_projects(cfg['progression'], cfg['prefix'])
+        project_plan = parse_project_plan(cfg['project'], cfg['prefix'])
+        by_seq = {}
+        by_month = {}
+        monthly = parse_table_hours(cfg['monthly'])
         for session in sessions:
-            seq = str(session.get('sequence'))
-            if seq in by_seq:
-                by_seq[seq].append(session)
-        for seq, items in sorted(by_seq.items()):
-            if not items:
-                errors.append(f"{level}: missing sessions for {seq}")
-                continue
-            natures = {str(item.get('Nature')) for item in items}
-            if 'cours' not in natures:
-                errors.append(f"{level}: {seq} has no cours/trace session")
-            if not ({'TD','TP','évaluation'} & natures):
-                errors.append(f"{level}: {seq} has no training session")
-            if 'remédiation' not in natures:
-                errors.append(f"{level}: {seq} has no consolidation/remediation session")
-            if not any('Trace écrite' in item for item in items):
-                errors.append(f"{level}: {seq} has no trace field")
-            if not any('consolid' in str(item.get('Objectif','')).lower() or item.get('Nature') == 'remédiation' for item in items):
-                errors.append(f"{level}: {seq} has no consolidation device")
-        if sum(float(s.get('hours', 0.0)) for s in sessions) != cfg['total']:
-            errors.append(f"{level}: annual total mismatch")
-    return fail_or_pass('check_session_level_planning', errors)
+            if session.get('Nature') == 'projet':
+                hours = float(session.get('hours', 0.0))
+                seq = str(session.get('sequence'))
+                month = str(session.get('Mois', '')).lower()
+                by_seq[seq] = by_seq.get(seq, 0.0) + hours
+                by_month[month] = by_month.get(month, 0.0) + hours
+        for seq, (_, project) in progression.items():
+            if abs(by_seq.get(seq, 0.0) - project) > 0.01:
+                errors.append(f"{level}: {seq} project sessions {by_seq.get(seq, 0.0):g} h != progression {project:g} h")
+            if abs(by_seq.get(seq, 0.0) - project_plan.get(seq, -999)) > 0.01:
+                errors.append(f"{level}: {seq} project sessions {by_seq.get(seq, 0.0):g} h != project plan {project_plan.get(seq)} h")
+        for month, row in monthly.items():
+            if abs(by_month.get(month, 0.0) - float(row['project'])) > 0.01:
+                errors.append(f"{level}: {month} project subtotal mismatch")
+        total = sum(by_seq.values())
+        if abs(total - cfg['project_total']) > 0.01:
+            errors.append(f"{level}: annual project total {total:g} h != expected {cfg['project_total']:g} h")
+    return fail_or_pass('check_session_project_hours', errors)
 
 if __name__ == '__main__':
     sys.exit(main())

@@ -104,30 +104,30 @@ def main() -> int:
     errors = []
     for level, cfg in LEVELS.items():
         sessions = parse_sessions(cfg['session'])
-        expected = {f"{cfg['prefix']}{i:02d}" for i in range(cfg['count'])}
-        by_seq = {seq: [] for seq in expected}
+        monthly = parse_table_hours(cfg['monthly'])
+        by_month = {}
+        by_eval = {}
+        by_rem = {}
         for session in sessions:
-            seq = str(session.get('sequence'))
-            if seq in by_seq:
-                by_seq[seq].append(session)
-        for seq, items in sorted(by_seq.items()):
-            if not items:
-                errors.append(f"{level}: missing sessions for {seq}")
-                continue
-            natures = {str(item.get('Nature')) for item in items}
-            if 'cours' not in natures:
-                errors.append(f"{level}: {seq} has no cours/trace session")
-            if not ({'TD','TP','évaluation'} & natures):
-                errors.append(f"{level}: {seq} has no training session")
-            if 'remédiation' not in natures:
-                errors.append(f"{level}: {seq} has no consolidation/remediation session")
-            if not any('Trace écrite' in item for item in items):
-                errors.append(f"{level}: {seq} has no trace field")
-            if not any('consolid' in str(item.get('Objectif','')).lower() or item.get('Nature') == 'remédiation' for item in items):
-                errors.append(f"{level}: {seq} has no consolidation device")
-        if sum(float(s.get('hours', 0.0)) for s in sessions) != cfg['total']:
-            errors.append(f"{level}: annual total mismatch")
-    return fail_or_pass('check_session_level_planning', errors)
+            month = str(session.get('Mois', '')).lower()
+            by_month[month] = by_month.get(month, 0.0) + float(session.get('hours', 0.0))
+            if session.get('Nature') == 'évaluation':
+                by_eval[month] = by_eval.get(month, 0.0) + float(session.get('hours', 0.0))
+            if session.get('Nature') == 'remédiation':
+                by_rem[month] = by_rem.get(month, 0.0) + float(session.get('hours', 0.0))
+        for month, row in monthly.items():
+            planned = float(row['planned'])
+            if abs(by_month.get(month, 0.0) - planned) > 0.01:
+                errors.append(f"{level}: {month} sessions {by_month.get(month, 0.0):g} h != monthly planned {planned:g} h")
+            if planned > float(row['available']) + 0.01:
+                errors.append(f"{level}: {month} planned exceeds available")
+            if abs(by_eval.get(month, 0.0) - float(row['evaluation'])) > 0.01:
+                errors.append(f"{level}: {month} evaluation subtotal mismatch")
+            if abs(by_rem.get(month, 0.0) - float(row['remediation'])) > 0.01:
+                errors.append(f"{level}: {month} remediation subtotal mismatch")
+        if abs(sum(by_month.values()) - cfg['total']) > 0.01:
+            errors.append(f"{level}: monthly total {sum(by_month.values()):g} h != annual {cfg['total']:g} h")
+    return fail_or_pass('check_session_monthly_total', errors)
 
 if __name__ == '__main__':
     sys.exit(main())

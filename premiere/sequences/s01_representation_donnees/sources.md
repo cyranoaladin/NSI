@@ -3,9 +3,9 @@ title: "Sources - représentation des données"
 niveau: premiere
 source: "Prototype interne"
 status: needs_review
-version: "0.4.0"
+version: "0.5.0"
 notion: "sources"
-objectifs: "Document professeur substantiel à relire avant usage."
+objectifs: "Document professeur exploitable en prototype, à relire avant usage."
 sequence: s01_representation_donnees
 private_data: false
 ---
@@ -14,54 +14,31 @@ private_data: false
 
 ## Sources institutionnelles
 
-- Programme officiel NSI, Bulletin officiel correspondant au niveau premiere.
-- Fichier local de référence : `00_programmes_officiels/programme_nsi_2019.yaml`.
-- Statut des ressources : `needs_review`, aucune publication déclarée.
+- Programme officiel NSI du niveau premiere.
+- Fichier local : `00_programmes_officiels/programme_nsi_2019.yaml`.
 
 ## Sources techniques
 
-- Documentation Python : types de base, structures de données, tests et exceptions selon les besoins de la séquence.
-- Supports internes générés dans le dépôt, à relire avant usage.
-
-## Sources pédagogiques internes
-
-- `cours_eleve.md` pour les définitions et exemples.
-- `td.md` et `tp.md` pour les tâches évaluables.
-- `corrige_professeur.md`, `bareme.md`, `grille_competences.md` pour la correction professeur.
-
-## Traçabilité et limites
-
-- Aucune donnée personnelle ne doit apparaître dans les exemples.
-- Les ressources Drive sont candidates mais non intégrées localement à ce stade.
-- Les corrigés et barèmes sont réservés au professeur.
-- Le document reste non publiable sans revue pédagogique et scientifique.
-
-## Correspondance capacités
-
-- P-DATA-BASE-01 : capacité liée à la séquence pilote, preuve à relire.
-- P-DATA-BASE-02BB : capacité liée à la séquence pilote, preuve à relire.
-- P-DATA-BASE-04 : capacité liée à la séquence pilote, preuve à relire.
-- P-DATA-BASE-05AA : capacité liée à la séquence pilote, preuve à relire.
-- P-LANG-04 : capacité liée à la séquence pilote, preuve à relire.
+- Documentation Python officielle pour les types, structures et tests utilisés.
+- Supports internes du dépôt en statut `needs_review`.
 
 ## Ressources Drive
 
-Les ressources Drive sont uniquement candidates à ce stade. Elles ne sont pas intégrées localement dans cette séquence et ne constituent pas une source exploitée pour publication.
+Les ressources Drive sont candidates, placées en référence ou quarantaine, mais non publiées. Toute ressource contenant copies, notes, rendus ou données élèves doit rester exclue.
 
-## Séparation sujet, corrigé et professeur
+## Séparation élève/professeur
 
-- Les documents élèves ne doivent contenir aucun corrigé.
-- Les corrigés, barèmes et grilles restent dans l'espace professeur.
-- Toute exportation élève devra être contrôlée par un script dédié.
-- Les sources institutionnelles doivent rester visibles dans les versions professeur.
+- Les corrigés et barèmes sont professeur uniquement.
+- La version aménagée élève ne contient pas de correction.
+- Les sources ne valident pas la publication.
 
-## Revue nécessaire
+## Capacités atomiques citées
 
-- Revue pédagogique : vérifier progressivité, charge cognitive et différenciation.
-- Revue scientifique : vérifier définitions, exemples, limites et absence de hors programme non signalé.
-- Revue technique : vérifier liens, exécution des scripts et absence d'artefacts.
-- Revue vie privée : vérifier qu'aucune donnée personnelle n'est présente.
-
-## Décision documentaire
-
-Ce fichier trace les références et limites. Il ne transforme pas la séquence en ressource publiable et ne remplace pas une bibliographie définitive.
+- P-DATA-BASE-01 : utilisé dans les questions corrigées.
+- P-DATA-BASE-02A : utilisé dans les questions corrigées.
+- P-DATA-BASE-02B : utilisé dans les questions corrigées.
+- P-DATA-BASE-04 : utilisé dans les questions corrigées.
+- P-DATA-BASE-05A : utilisé dans les questions corrigées.
+- P-DATA-CONSTR-01 : utilisé dans les questions corrigées.
+- P-DATA-CONSTR-02A : utilisé dans les questions corrigées.
+- P-LANG-04 : utilisé dans les questions corrigées.

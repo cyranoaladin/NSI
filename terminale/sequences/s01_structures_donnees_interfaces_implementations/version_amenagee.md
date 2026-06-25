@@ -3,64 +3,86 @@ title: "Version aménagée - structures de données"
 niveau: terminale
 source: "Prototype interne"
 status: needs_review
-version: "0.4.0"
+version: "0.5.0"
 notion: "évaluation aménagée"
-objectifs: "Document professeur substantiel à relire avant usage."
+objectifs: "Document professeur exploitable en prototype, à relire avant usage."
 sequence: s01_structures_donnees_interfaces_implementations
 private_data: false
 ---
 
 # Version aménagée - structures de données
 
-## Cadre
+**Version élève aménagée.** Durée aménagée : 75 minutes. Objectifs conservés, questions réécrites, aides intégrées.
 
-- Durée standard : 55 minutes.
-- Durée aménagée : 75 minutes ou passation fractionnée.
-- Matériel : fiche méthode, table de rappels, environnement Python préparé si programmation.
-- Objectifs conservés : mêmes capacités, charge de lecture réduite et étapes explicites.
+## Question 1 aménagée
 
-## Sujet aménagé élève
+- Consigne réécrite : Décris l’interface minimale d’une file.
+- Aide intégrée 1 : repère la donnée ou l'opération demandée avant de répondre.
+- Aide intégrée 2 : utilise la trace écrite et écris une étape par ligne.
+- Barème adapté : 1 pt démarche, 1 pt résultat, 0,5 pt justification.
+- Durée conseillée : 8 minutes.
+- Objectif conservé : T-STRUCT-01A.
 
-### Question 1 - Interface de structure
+## Question 2 aménagée
 
-- Consigne réécrite : Décris l’interface minimale d’une file..
-- Aide intégrée 1 : commence par identifier la donnée utile.
-- Aide intégrée 2 : applique la méthode vue en trace écrite avant de calculer ou coder.
-- Réponse attendue courte : une phrase, un calcul ou un fragment de code lisible.
-- Barème adapté : 1 point démarche, 1 point résultat, 1 point justification, 1 point vocabulaire ou test.
+- Consigne réécrite : Explique interface vs implémentation.
+- Aide intégrée 1 : repère la donnée ou l'opération demandée avant de répondre.
+- Aide intégrée 2 : utilise la trace écrite et écris une étape par ligne.
+- Barème adapté : 1 pt démarche, 1 pt résultat, 0,5 pt justification.
+- Durée conseillée : 8 minutes.
+- Objectif conservé : T-STRUCT-01B.
 
-### Question 2 - Classe Python
+## Question 3 aménagée
 
-- Consigne réécrite : Écris le début d’une classe Pile avec un attribut interne..
-- Aide intégrée 1 : commence par identifier la donnée utile.
-- Aide intégrée 2 : applique la méthode vue en trace écrite avant de calculer ou coder.
-- Réponse attendue courte : une phrase, un calcul ou un fragment de code lisible.
-- Barème adapté : 1 point démarche, 1 point résultat, 1 point justification, 1 point vocabulaire ou test.
+- Consigne réécrite : Écris le squelette d’une classe Pile.
+- Aide intégrée 1 : repère la donnée ou l'opération demandée avant de répondre.
+- Aide intégrée 2 : utilise la trace écrite et écris une étape par ligne.
+- Barème adapté : 1 pt démarche, 1 pt résultat, 0,5 pt justification.
+- Durée conseillée : 8 minutes.
+- Objectif conservé : T-STRUCT-02A.
 
-### Question 3 - Choix de structure
+## Question 4 aménagée
 
-- Consigne réécrite : Choisis pile, file ou dictionnaire pour retrouver rapidement un élève fictif par identifiant..
-- Aide intégrée 1 : commence par identifier la donnée utile.
-- Aide intégrée 2 : applique la méthode vue en trace écrite avant de calculer ou coder.
-- Réponse attendue courte : une phrase, un calcul ou un fragment de code lisible.
-- Barème adapté : 1 point démarche, 1 point résultat, 1 point justification, 1 point vocabulaire ou test.
+- Consigne réécrite : Choisis une structure pour retrouver par clé.
+- Aide intégrée 1 : repère la donnée ou l'opération demandée avant de répondre.
+- Aide intégrée 2 : utilise la trace écrite et écris une étape par ligne.
+- Barème adapté : 1 pt démarche, 1 pt résultat, 0,5 pt justification.
+- Durée conseillée : 8 minutes.
+- Objectif conservé : T-STRUCT-03B.
 
-### Question 4 - Graphe
+## Question 5 aménagée
 
-- Consigne réécrite : Modélise trois villes et deux routes par un graphe..
-- Aide intégrée 1 : commence par identifier la donnée utile.
-- Aide intégrée 2 : applique la méthode vue en trace écrite avant de calculer ou coder.
-- Réponse attendue courte : une phrase, un calcul ou un fragment de code lisible.
-- Barème adapté : 1 point démarche, 1 point résultat, 1 point justification, 1 point vocabulaire ou test.
+- Consigne réécrite : Compare recherche dans liste et dictionnaire.
+- Aide intégrée 1 : repère la donnée ou l'opération demandée avant de répondre.
+- Aide intégrée 2 : utilise la trace écrite et écris une étape par ligne.
+- Barème adapté : 1 pt démarche, 1 pt résultat, 0,5 pt justification.
+- Durée conseillée : 8 minutes.
+- Objectif conservé : T-STRUCT-03C.
 
-### Question 5 - Parcours application
+## Question 6 aménagée
 
-- Consigne réécrite : Explique le rôle d’une file dans un parcours en largeur..
-- Aide intégrée 1 : commence par identifier la donnée utile.
-- Aide intégrée 2 : applique la méthode vue en trace écrite avant de calculer ou coder.
-- Réponse attendue courte : une phrase, un calcul ou un fragment de code lisible.
-- Barème adapté : 1 point démarche, 1 point résultat, 1 point justification, 1 point vocabulaire ou test.
+- Consigne réécrite : Modélise villes et routes.
+- Aide intégrée 1 : repère la donnée ou l'opération demandée avant de répondre.
+- Aide intégrée 2 : utilise la trace écrite et écris une étape par ligne.
+- Barème adapté : 1 pt démarche, 1 pt résultat, 0,5 pt justification.
+- Durée conseillée : 8 minutes.
+- Objectif conservé : T-STRUCT-05A.
 
-## Critères maintenus
+## Question 7 aménagée
 
-La version aménagée ne retire pas la capacité évaluée. Elle réduit la charge de mémoire immédiate et explicite les étapes.
+- Consigne réécrite : Explique une matrice d’adjacence.
+- Aide intégrée 1 : repère la donnée ou l'opération demandée avant de répondre.
+- Aide intégrée 2 : utilise la trace écrite et écris une étape par ligne.
+- Barème adapté : 1 pt démarche, 1 pt résultat, 0,5 pt justification.
+- Durée conseillée : 8 minutes.
+- Objectif conservé : T-STRUCT-05B.
+
+## Question 8 aménagée
+
+- Consigne réécrite : Pourquoi BFS utilise une file ?
+- Aide intégrée 1 : repère la donnée ou l'opération demandée avant de répondre.
+- Aide intégrée 2 : utilise la trace écrite et écris une étape par ligne.
+- Barème adapté : 1 pt démarche, 1 pt résultat, 0,5 pt justification.
+- Durée conseillée : 8 minutes.
+- Objectif conservé : T-ALGO-02A.
+

@@ -3,69 +3,22 @@ title: "Grille de compétences - structures de données"
 niveau: terminale
 source: "Prototype interne"
 status: needs_review
-version: "0.4.0"
+version: "0.5.0"
 notion: "grille de compétences"
-objectifs: "Document professeur substantiel à relire avant usage."
+objectifs: "Document professeur exploitable en prototype, à relire avant usage."
 sequence: s01_structures_donnees_interfaces_implementations
 private_data: false
 ---
 
 # Grille de compétences - structures de données
 
-## Usage
-
-Cette grille relie les tâches à des critères observables. Elle reste en `needs_review` et sert de support à la correction professeur.
-
-| Compétence | Critères observables | Niveau fragile | Niveau attendu | Niveau avancé | Erreurs typiques | Remédiation | Lien évaluation |
-|---|---|---|---|---|---|---|---|
-| Comprendre la notion | définition exacte, exemple pertinent, contre-exemple repéré | définition récitée mais instable | définition appliquée | limites discutées | confusion vocabulaire/objet | reformuler avec schéma | exercice 1 |
-| Appliquer une méthode | étapes explicites et résultat contrôlé | étapes incomplètes | méthode fiable | cas limite anticipé | saut de justification | fiche méthode guidée | exercice 2 |
-| Programmer ou lire du code | variables, structure et tests compris | code recopié | code adapté | tests de bord ajoutés | erreur d’état ou d’indice | trace d’exécution | exercice 3 |
-| Justifier un choix | argument lié au problème et aux données | choix affirmé | choix justifié | comparaison de variantes | argument hors sujet | tableau de choix | exercice 4 |
-| Communiquer | réponse structurée et vocabulaire précis | réponse fragmentaire | réponse claire | recul critique | phrase ambiguë | modèle de réponse | synthèse |
-
-## Indicateurs de revue
-
-Une copie qui réussit seulement par essais successifs doit être reprise en entretien court. Une copie qui justifie correctement avec une variante acceptable peut recevoir le niveau attendu même si la syntaxe est perfectible.
-
-## Exploitation par exercice
-
-### Exercice 1
-
-- Critère observable : l'élève nomme la notion et l'applique à un exemple court.
-- Indicateur fragile : la réponse donne seulement un mot-clé.
-- Indicateur attendu : la réponse relie la notion à l'exemple.
-- Indicateur avancé : la réponse ajoute une limite ou un contre-exemple.
-- Remédiation : reprendre la définition puis demander un exemple différent.
-
-### Exercice 2
-
-- Critère observable : l'élève applique une méthode en étapes contrôlables.
-- Indicateur fragile : une étape est sautée ou non justifiée.
-- Indicateur attendu : les étapes sont présentes et dans le bon ordre.
-- Indicateur avancé : l'élève vérifie le résultat par une seconde méthode.
-- Remédiation : faire annoter chaque étape par son rôle.
-
-### Exercice 3
-
-- Critère observable : le code ou la trace est lisible et testable.
-- Indicateur fragile : le raisonnement dépend d'un essai non expliqué.
-- Indicateur attendu : le code ou la trace répond au cas demandé.
-- Indicateur avancé : un cas limite est anticipé.
-- Remédiation : imposer le format entrée, traitement, sortie attendue.
-
-### Exercice 4
-
-- Critère observable : le choix est argumenté par le problème.
-- Indicateur fragile : le choix est seulement affirmé.
-- Indicateur attendu : le choix est relié aux opérations nécessaires.
-- Indicateur avancé : une variante est comparée.
-- Remédiation : remplir un tableau besoin, structure, justification.
-
-### Exercice 5
-
-- Critère observable : la réponse distingue méthode, résultat et justification.
-- Indicateur fragile : le résultat est isolé.
-- Indicateur attendu : la justification rend le résultat contrôlable.
-- Indicateur avancé : une erreur fréquente est explicitement évitée.
-- Remédiation : correction orale courte suivie d'une reprise écrite.
+| Capacité | Critères observables | Niveau fragile | Niveau attendu | Niveau avancé | Indicateurs | Erreurs typiques | Remédiation | Lien évaluation |
+|---|---|---|---|---|---|---|---|---|
+| T-STRUCT-01A | méthode explicite, résultat contrôlable, justification | réponse fragmentaire | réponse correcte et justifiée | variante ou limite discutée | question 1, trace, test | décrire la liste interne | cacher l’implémentation et ne garder que les opérations | Question 1 |
+| T-STRUCT-01B | méthode explicite, résultat contrôlable, justification | réponse fragmentaire | réponse correcte et justifiée | variante ou limite discutée | question 2, trace, test | assimiler interface à classe Python | comparer deux codes avec mêmes méthodes | Question 2 |
+| T-STRUCT-02A | méthode explicite, résultat contrôlable, justification | réponse fragmentaire | réponse correcte et justifiée | variante ou limite discutée | question 3, trace, test | utiliser une variable globale | créer deux piles et tracer les états | Question 3 |
+| T-STRUCT-03B | méthode explicite, résultat contrôlable, justification | réponse fragmentaire | réponse correcte et justifiée | variante ou limite discutée | question 4, trace, test | choisir une file par ordre d’arrivée | lister les opérations dominantes | Question 4 |
+| T-STRUCT-03C | méthode explicite, résultat contrôlable, justification | réponse fragmentaire | réponse correcte et justifiée | variante ou limite discutée | question 5, trace, test | chercher une valeur comme une clé | faire écrire clé -> valeur | Question 5 |
+| T-STRUCT-05A | méthode explicite, résultat contrôlable, justification | réponse fragmentaire | réponse correcte et justifiée | variante ou limite discutée | question 6, trace, test | confondre sommet et arête | dessiner puis convertir | Question 6 |
+| T-STRUCT-05B | méthode explicite, résultat contrôlable, justification | réponse fragmentaire | réponse correcte et justifiée | variante ou limite discutée | question 7, trace, test | matrice non carrée | repartir de la liste des sommets | Question 7 |
+| T-ALGO-02A | méthode explicite, résultat contrôlable, justification | réponse fragmentaire | réponse correcte et justifiée | variante ou limite discutée | question 8, trace, test | utiliser une pile et décrire DFS | comparer pile et file sur le même graphe | Question 8 |

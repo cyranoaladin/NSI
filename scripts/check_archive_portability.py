@@ -1,36 +1,73 @@
 #!/usr/bin/env python3
-"""Check source_clean archive portability if the archive has been built."""
+"""Check source_clean.tar.gz portability and absence of forbidden artifacts."""
 from __future__ import annotations
 
+import subprocess
 import sys
+import tarfile
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "dist/source_clean"
-FORBIDDEN_PARTS = {".git", "__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache", ".venv"}
-FORBIDDEN_SUFFIXES = {".pyc", ".pyo", ".aux", ".log", ".toc", ".out", ".fls"}
-FORBIDDEN_NAMES = {".DS_Store"}
+ARCHIVE = ROOT / 'dist/source_clean.tar.gz'
+BUNDLE = ROOT / 'dist/git_bundle.bundle'
+FORBIDDEN_PARTS = {'.git', '__pycache__', '.pytest_cache', '.mypy_cache', '.ruff_cache', '.venv'}
+FORBIDDEN_SUFFIXES = {'.pyc', '.pyo', '.aux', '.log', '.toc', '.out', '.fls'}
+REQUIRED_FILES = ['03_progressions/seances_premiere.md', '03_progressions/seances_terminale.md', '03_progressions/monthly_load_premiere.md', '03_progressions/monthly_load_terminale.md']
+CHECKS = ['scripts/check_session_duration_consistency.py', 'scripts/check_session_monthly_total.py', 'scripts/check_session_project_hours.py']
 
+def forbidden(rel: Path) -> bool:
+    if any(part in FORBIDDEN_PARTS for part in rel.parts):
+        return True
+    if rel.suffix in FORBIDDEN_SUFFIXES or rel.name == '.DS_Store':
+        return True
+    if rel.name.endswith('.synctex.gz') or rel.name.endswith('.fdb_latexmk'):
+        return True
+    return False
 
 def main() -> int:
-    errors: list[str] = []
-    if SOURCE.exists():
-        for path in SOURCE.rglob("*"):
-            rel = path.relative_to(SOURCE)
-            if any(part in FORBIDDEN_PARTS for part in rel.parts):
-                errors.append(f"forbidden path in archive: {rel}")
-            if path.name in FORBIDDEN_NAMES or path.suffix in FORBIDDEN_SUFFIXES or path.name.endswith(".synctex.gz") or path.name.endswith(".fdb_latexmk"):
-                errors.append(f"forbidden artifact in archive: {rel}")
+    errors = []
+    if not ARCHIVE.exists():
+        errors.append('dist/source_clean.tar.gz absent')
+    if not BUNDLE.exists():
+        errors.append('dist/git_bundle.bundle absent')
     if errors:
-        print("check_archive_portability: KO")
+        print('check_archive_portability: KO')
         for error in errors:
-            print(f"- {error}")
+            print(f'- {error}')
         return 1
-    if SOURCE.exists():
-        print("check_archive_portability: PASS")
-    else:
-        print("check_archive_portability: PASS - source_clean not built in prototype audit")
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp_path = Path(tmp)
+        try:
+            with tarfile.open(ARCHIVE, 'r:gz') as tar:
+                tar.extractall(tmp_path)
+        except Exception as exc:
+            errors.append(f'archive extraction failed: {exc}')
+            print('check_archive_portability: KO')
+            for error in errors:
+                print(f'- {error}')
+            return 1
+        repo = tmp_path / 'nsi-enseignement'
+        for path in repo.rglob('*'):
+            rel = path.relative_to(repo)
+            if forbidden(rel):
+                errors.append(f'forbidden artifact in archive: {rel}')
+        for rel in REQUIRED_FILES:
+            path = repo / rel
+            if not path.exists() or not path.read_text(encoding='utf-8', errors='replace').strip():
+                errors.append(f'required progression file unreadable: {rel}')
+        env = {'PYTHONDONTWRITEBYTECODE': '1'}
+        for script in CHECKS:
+            result = subprocess.run([sys.executable, script], cwd=repo, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+            if result.returncode != 0:
+                errors.append(f'{script} failed in extracted archive: {result.stdout.strip()}')
+    if errors:
+        print('check_archive_portability: KO')
+        for error in errors:
+            print(f'- {error}')
+        return 1
+    print('check_archive_portability: PASS')
     return 0
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     sys.exit(main())

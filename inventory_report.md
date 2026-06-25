@@ -1,32 +1,32 @@
 # Inventaire ressources NSI
 
-- Total ressources : 154
+- Total ressources : 160
 - Ressources pédagogiques : 52
-- Ressources techniques : 102
+- Ressources techniques : 108
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - drive: 1
-- generated: 153
+- generated: 159
 
 ## Répartition par niveau
-- interne: 96
+- interne: 102
 - premiere: 29
 - terminale: 29
 
 ## Répartition par type
 - banque: 14
-- document: 44
-- script: 52
+- document: 47
+- script: 55
 - sequence: 44
 
 ## Répartition par statut
-- needs_review: 154
+- needs_review: 160
 
 ## Répartition audience
 - corrige: 9
 - eleve: 18
-- mixte: 124
+- mixte: 130
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -46,6 +46,8 @@
   - 02_modeles_documents/modele_sequence.yaml
   - 02_modeles_documents/modele_td.tex
   - 02_modeles_documents/modele_tp.tex
+  - 03_progressions/monthly_load_premiere.md
+  - 03_progressions/monthly_load_terminale.md
   - 03_progressions/progression_premiere.md
   - 03_progressions/progression_terminale.md
   - 03_progressions/seances_premiere.md
@@ -64,6 +66,7 @@
   - evaluation_bareme_alignment_report.md
   - learning_objectives_assessed_report.md
   - missing_capabilities.md
+  - pedagogical_blockers_report.md
   - premiere/banques/evaluations/index.md
   - premiere/banques/exercices/index.md
   - premiere/banques/index.md
@@ -147,7 +150,10 @@
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_completeness.py
+  - scripts/check_session_duration_consistency.py
   - scripts/check_session_level_planning.py
+  - scripts/check_session_monthly_total.py
+  - scripts/check_session_project_hours.py
   - scripts/check_td_corrige_alignment.py
   - scripts/check_teacher_docs_depth.py
   - scripts/check_tp_test_alignment.py
@@ -253,6 +259,8 @@
   - 02_modeles_documents/modele_sequence.yaml
   - 02_modeles_documents/modele_td.tex
   - 02_modeles_documents/modele_tp.tex
+  - 03_progressions/monthly_load_premiere.md
+  - 03_progressions/monthly_load_terminale.md
   - 03_progressions/progression_premiere.md
   - 03_progressions/progression_terminale.md
   - 03_progressions/seances_premiere.md
@@ -271,6 +279,7 @@
   - evaluation_bareme_alignment_report.md
   - learning_objectives_assessed_report.md
   - missing_capabilities.md
+  - pedagogical_blockers_report.md
   - premiere/sequences/s01_representation_donnees/python/representation_tools.py
   - premiere/sequences/s01_representation_donnees/sequence.yaml
   - premiere/sequences/s01_representation_donnees/tests/test_representation_tools.py
@@ -328,7 +337,10 @@
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_completeness.py
+  - scripts/check_session_duration_consistency.py
   - scripts/check_session_level_planning.py
+  - scripts/check_session_monthly_total.py
+  - scripts/check_session_project_hours.py
   - scripts/check_td_corrige_alignment.py
   - scripts/check_teacher_docs_depth.py
   - scripts/check_tp_test_alignment.py
@@ -368,6 +380,8 @@
 - 02_modeles_documents/modele_sequence.yaml
 - 02_modeles_documents/modele_td.tex
 - 02_modeles_documents/modele_tp.tex
+- 03_progressions/monthly_load_premiere.md
+- 03_progressions/monthly_load_terminale.md
 - 03_progressions/progression_premiere.md
 - 03_progressions/progression_terminale.md
 - 03_progressions/seances_premiere.md
@@ -386,6 +400,7 @@
 - evaluation_bareme_alignment_report.md
 - learning_objectives_assessed_report.md
 - missing_capabilities.md
+- pedagogical_blockers_report.md
 - premiere/banques/evaluations/index.md
 - premiere/banques/exercices/index.md
 - premiere/banques/index.md
@@ -465,7 +480,10 @@
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
 - scripts/check_sequence_completeness.py
+- scripts/check_session_duration_consistency.py
 - scripts/check_session_level_planning.py
+- scripts/check_session_monthly_total.py
+- scripts/check_session_project_hours.py
 - scripts/check_teacher_docs_depth.py
 - scripts/check_tp_test_alignment.py
 - scripts/check_validated_statuses.py
@@ -517,6 +535,8 @@
 - 02_modeles_documents/modele_sequence.yaml
 - 02_modeles_documents/modele_td.tex
 - 02_modeles_documents/modele_tp.tex
+- 03_progressions/monthly_load_premiere.md
+- 03_progressions/monthly_load_terminale.md
 - 03_progressions/progression_premiere.md
 - 03_progressions/progression_terminale.md
 - 03_progressions/seances_premiere.md
@@ -535,6 +555,7 @@
 - evaluation_bareme_alignment_report.md
 - learning_objectives_assessed_report.md
 - missing_capabilities.md
+- pedagogical_blockers_report.md
 - premiere/banques/evaluations/index.md
 - premiere/banques/exercices/index.md
 - premiere/banques/index.md
@@ -618,7 +639,10 @@
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
 - scripts/check_sequence_completeness.py
+- scripts/check_session_duration_consistency.py
 - scripts/check_session_level_planning.py
+- scripts/check_session_monthly_total.py
+- scripts/check_session_project_hours.py
 - scripts/check_td_corrige_alignment.py
 - scripts/check_teacher_docs_depth.py
 - scripts/check_tp_test_alignment.py

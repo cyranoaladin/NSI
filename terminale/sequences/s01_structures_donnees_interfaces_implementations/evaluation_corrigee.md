@@ -3,73 +3,88 @@ title: "Évaluation corrigée - structures de données"
 niveau: terminale
 source: "Prototype interne"
 status: needs_review
-version: "0.4.0"
+version: "0.5.0"
 notion: "évaluation corrigée"
-objectifs: "Document professeur substantiel à relire avant usage."
+objectifs: "Document professeur exploitable en prototype, à relire avant usage."
 sequence: s01_structures_donnees_interfaces_implementations
 private_data: false
 ---
 
 # Évaluation corrigée - structures de données
 
-## Conditions
+**Document professeur uniquement.** Durée standard : 55 minutes. Matériel : fiche rappel sans corrigé.
 
-- Durée : 55 minutes, ou 75 minutes pour la version aménagée.
-- Matériel autorisé : fiche rappel fournie par le professeur, sans corrigé.
-- Compétences évaluées : comprendre, appliquer, programmer ou analyser, justifier, communiquer.
-- Document professeur uniquement : ne pas exporter vers les élèves.
-
-## Correction complète et barème
+## Sujet corrigé
 
 ### Question 1
 
-- Énoncé professeur : Décris l’interface minimale d’une file..
-- Correction : Une file fournit créer, enfiler, défiler, tester si vide, éventuellement consulter le premier..
-- Justification attendue : L’interface décrit les opérations visibles sans imposer la représentation interne..
-- Barème : 1 pt opérations, 1 pt FIFO, 1 pt abstraction, 1 pt vocabulaire..
-- Erreur à surveiller : Décrire une liste Python au lieu de l’interface..
-- Remédiation après correction : Cacher l’implémentation et raisonner seulement sur les opérations..
+- Énoncé : Décris l’interface minimale d’une file.
+- Correction complète : créer, enfiler, défiler, est_vide, éventuellement premier.
+- Justification attendue : L’interface liste les opérations visibles.
+- Barème : 2.5 points.
+- Erreur fréquente à surveiller : décrire la liste interne
+- Remédiation : cacher l’implémentation et ne garder que les opérations
 
 ### Question 2
 
-- Énoncé professeur : Écris le début d’une classe Pile avec un attribut interne..
-- Correction : Une classe initialise par exemple self._donnees = [] et expose empiler/depiler..
-- Justification attendue : La classe regroupe état et méthodes ; l’attribut interne n’est pas l’interface..
-- Barème : 1 pt __init__, 1 pt attribut, 1 pt méthode, 1 pt cas vide..
-- Erreur à surveiller : Utiliser une variable globale..
-- Remédiation après correction : Tracer deux objets distincts et leurs états..
+- Énoncé : Explique interface vs implémentation.
+- Correction complète : L’interface décrit quoi faire ; l’implémentation décrit comment c’est stocké.
+- Justification attendue : Deux implémentations peuvent partager la même interface.
+- Barème : 2.5 points.
+- Erreur fréquente à surveiller : assimiler interface à classe Python
+- Remédiation : comparer deux codes avec mêmes méthodes
 
 ### Question 3
 
-- Énoncé professeur : Choisis pile, file ou dictionnaire pour retrouver rapidement un élève fictif par identifiant..
-- Correction : Un dictionnaire convient si l’identifiant est la clé..
-- Justification attendue : L’accès par clé correspond au besoin ; pile et file imposent un ordre de retrait..
-- Barème : 1 pt choix, 1 pt justification, 1 pt contre-exemple, 1 pt limite..
-- Erreur à surveiller : Choisir une file car les données arrivent dans un ordre..
-- Remédiation après correction : Faire lister les opérations dominantes..
+- Énoncé : Écris le squelette d’une classe Pile.
+- Correction complète : `__init__` initialise un attribut, puis méthodes empiler/depiler.
+- Justification attendue : La classe regroupe état et opérations.
+- Barème : 2.5 points.
+- Erreur fréquente à surveiller : utiliser une variable globale
+- Remédiation : créer deux piles et tracer les états
 
 ### Question 4
 
-- Énoncé professeur : Modélise trois villes et deux routes par un graphe..
-- Correction : Les villes sont sommets, les routes sont arêtes ; la représentation peut être liste ou matrice..
-- Justification attendue : Un graphe modélise des relations entre objets..
-- Barème : 1 pt sommets, 1 pt arêtes, 1 pt orientation ou non, 1 pt représentation..
-- Erreur à surveiller : Confondre arête et sommet..
-- Remédiation après correction : Faire dessiner puis traduire en liste..
+- Énoncé : Choisis une structure pour retrouver par clé.
+- Correction complète : Un dictionnaire convient.
+- Justification attendue : La recherche se fait par clé.
+- Barème : 2.5 points.
+- Erreur fréquente à surveiller : choisir une file par ordre d’arrivée
+- Remédiation : lister les opérations dominantes
 
 ### Question 5
 
-- Énoncé professeur : Explique le rôle d’une file dans un parcours en largeur..
-- Correction : La file conserve les sommets découverts dans l’ordre FIFO, ce qui visite par distance croissante en nombre d’arêtes..
-- Justification attendue : BFS dépend de FIFO pour traiter les couches successives..
-- Barème : 1 pt file, 1 pt FIFO, 1 pt sommets visités, 1 pt limite..
-- Erreur à surveiller : Utiliser une pile et décrire DFS..
-- Remédiation après correction : Comparer deux traces sur le même graphe..
+- Énoncé : Compare recherche dans liste et dictionnaire.
+- Correction complète : Liste : parcours ; dictionnaire : accès par clé.
+- Justification attendue : Les opérations caractéristiques diffèrent.
+- Barème : 2.5 points.
+- Erreur fréquente à surveiller : chercher une valeur comme une clé
+- Remédiation : faire écrire clé -> valeur
 
-## Version aménagée liée
+### Question 6
 
-La version aménagée est décrite dans `version_amenagee.md` et conserve les objectifs.
+- Énoncé : Modélise villes et routes.
+- Correction complète : Villes = sommets, routes = arêtes.
+- Justification attendue : Le graphe représente des relations.
+- Barème : 2.5 points.
+- Erreur fréquente à surveiller : confondre sommet et arête
+- Remédiation : dessiner puis convertir
 
-## Grille liée
+### Question 7
 
-La grille de compétences est décrite dans `grille_competences.md`.
+- Énoncé : Explique une matrice d’adjacence.
+- Correction complète : Case i,j indique présence d’une arête.
+- Justification attendue : La matrice encode toutes les paires de sommets.
+- Barème : 2.5 points.
+- Erreur fréquente à surveiller : matrice non carrée
+- Remédiation : repartir de la liste des sommets
+
+### Question 8
+
+- Énoncé : Pourquoi BFS utilise une file ?
+- Correction complète : La file traite les sommets découverts en FIFO.
+- Justification attendue : Cela visite par couches de distance.
+- Barème : 2.5 points.
+- Erreur fréquente à surveiller : utiliser une pile et décrire DFS
+- Remédiation : comparer pile et file sur le même graphe
+

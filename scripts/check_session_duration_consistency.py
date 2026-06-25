@@ -104,30 +104,30 @@ def main() -> int:
     errors = []
     for level, cfg in LEVELS.items():
         sessions = parse_sessions(cfg['session'])
-        expected = {f"{cfg['prefix']}{i:02d}" for i in range(cfg['count'])}
-        by_seq = {seq: [] for seq in expected}
+        progression = parse_progression_projects(cfg['progression'], cfg['prefix'])
+        totals = {}
         for session in sessions:
-            seq = str(session.get('sequence'))
-            if seq in by_seq:
-                by_seq[seq].append(session)
-        for seq, items in sorted(by_seq.items()):
-            if not items:
-                errors.append(f"{level}: missing sessions for {seq}")
-                continue
-            natures = {str(item.get('Nature')) for item in items}
-            if 'cours' not in natures:
-                errors.append(f"{level}: {seq} has no cours/trace session")
-            if not ({'TD','TP','évaluation'} & natures):
-                errors.append(f"{level}: {seq} has no training session")
-            if 'remédiation' not in natures:
-                errors.append(f"{level}: {seq} has no consolidation/remediation session")
-            if not any('Trace écrite' in item for item in items):
-                errors.append(f"{level}: {seq} has no trace field")
-            if not any('consolid' in str(item.get('Objectif','')).lower() or item.get('Nature') == 'remédiation' for item in items):
-                errors.append(f"{level}: {seq} has no consolidation device")
-        if sum(float(s.get('hours', 0.0)) for s in sessions) != cfg['total']:
-            errors.append(f"{level}: annual total mismatch")
-    return fail_or_pass('check_session_level_planning', errors)
+            sid = session['id']
+            if session.get('hours', 0) > 2.5:
+                errors.append(f"{level}: {sid} exceeds 2 h 30 ({session.get('hours')} h)")
+            if session.get('Nature') not in NATURES:
+                errors.append(f"{level}: {sid} invalid or missing Nature")
+            for field in ['Durée','Date ou semaine','Mois','Nature','Objectif','Capacité officielle','Document utilisé','Déroulé','Différenciation','Livrable','Trace écrite','Devoir ou préparation','Remédiation']:
+                if field not in session:
+                    errors.append(f"{level}: {sid} missing field {field}")
+            seq = session.get('sequence')
+            totals[seq] = totals.get(seq, 0.0) + float(session.get('hours', 0.0))
+            if session.get('Nature') == 'projet':
+                for field in ['Jalon projet','Rôle dans le carnet de bord','Livrable projet','Évaluation projet']:
+                    if field not in session:
+                        errors.append(f"{level}: {sid} project session missing {field}")
+        for seq, (volume, _) in progression.items():
+            if abs(totals.get(seq, 0.0) - volume) > 0.01:
+                errors.append(f"{level}: {seq} session total {totals.get(seq, 0.0):g} h != progression {volume:g} h")
+        total = sum(float(s.get('hours', 0.0)) for s in sessions)
+        if abs(total - cfg['total']) > 0.01:
+            errors.append(f"{level}: annual session total {total:g} h != expected {cfg['total']:g} h")
+    return fail_or_pass('check_session_duration_consistency', errors)
 
 if __name__ == '__main__':
     sys.exit(main())

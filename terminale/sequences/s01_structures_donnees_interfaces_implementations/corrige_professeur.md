@@ -3,78 +3,102 @@ title: "Corrigé professeur - structures de données"
 niveau: terminale
 source: "Prototype interne"
 status: needs_review
-version: "0.4.0"
+version: "0.5.0"
 notion: "corrigé professeur"
-objectifs: "Document professeur substantiel à relire avant usage."
+objectifs: "Document professeur exploitable en prototype, à relire avant usage."
 sequence: s01_structures_donnees_interfaces_implementations
 private_data: false
 ---
 
 # Corrigé professeur - structures de données
 
-## Statut
+**Document professeur uniquement. Statut : `needs_review`.**
 
-Document professeur uniquement. Il reste en `needs_review` et ne doit pas être exporté dans une version élève.
-
-## Méthode de correction
-
-Chaque exercice est corrigé selon huit éléments : réponse attendue, justification, barème, variante acceptable, erreurs fréquentes, remédiation, critère de réussite et capacité officielle associée.
-
-## Exercice 1 - Interface de structure
+## Question 1 - Interface
 
 - Capacité officielle associée : T-STRUCT-01A.
-- Réponse attendue : Une file fournit créer, enfiler, défiler, tester si vide, éventuellement consulter le premier..
-- Justification : L’interface décrit les opérations visibles sans imposer la représentation interne..
-- Barème question par question : 1 pt opérations, 1 pt FIFO, 1 pt abstraction, 1 pt vocabulaire..
-- Variante acceptable : Noms anglais acceptés si les rôles sont expliqués..
-- Erreurs fréquentes : Décrire une liste Python au lieu de l’interface..
-- Remédiation : Cacher l’implémentation et raisonner seulement sur les opérations..
-- Critère de réussite : L’élève distingue usage et représentation..
+- Réponse attendue : créer, enfiler, défiler, est_vide, éventuellement premier..
+- Justification : L’interface liste les opérations visibles..
+- Barème question par question : 2.5 points, dont 0,5 compréhension, 1 méthode, 0,5 résultat, 0,5 justification.
+- Variante acceptable : noms anglais acceptés..
+- Erreurs fréquentes : décrire la liste interne.
+- Remédiation associée : cacher l’implémentation et ne garder que les opérations.
+- Critère de réussite : FIFO est mentionné.
 
-## Exercice 2 - Classe Python
+## Question 2 - Implémentation
+
+- Capacité officielle associée : T-STRUCT-01B.
+- Réponse attendue : L’interface décrit quoi faire ; l’implémentation décrit comment c’est stocké..
+- Justification : Deux implémentations peuvent partager la même interface..
+- Barème question par question : 2.5 points, dont 0,5 compréhension, 1 méthode, 0,5 résultat, 0,5 justification.
+- Variante acceptable : exemple pile accepté..
+- Erreurs fréquentes : assimiler interface à classe Python.
+- Remédiation associée : comparer deux codes avec mêmes méthodes.
+- Critère de réussite : les deux niveaux sont séparés.
+
+## Question 3 - Classe
 
 - Capacité officielle associée : T-STRUCT-02A.
-- Réponse attendue : Une classe initialise par exemple self._donnees = [] et expose empiler/depiler..
-- Justification : La classe regroupe état et méthodes ; l’attribut interne n’est pas l’interface..
-- Barème question par question : 1 pt __init__, 1 pt attribut, 1 pt méthode, 1 pt cas vide..
-- Variante acceptable : collections.deque accepté si justifié..
-- Erreurs fréquentes : Utiliser une variable globale..
-- Remédiation : Tracer deux objets distincts et leurs états..
-- Critère de réussite : Deux piles peuvent évoluer séparément..
+- Réponse attendue : `__init__` initialise un attribut, puis méthodes empiler/depiler..
+- Justification : La classe regroupe état et opérations..
+- Barème question par question : 2.5 points, dont 0,5 compréhension, 1 méthode, 0,5 résultat, 0,5 justification.
+- Variante acceptable : deque accepté..
+- Erreurs fréquentes : utiliser une variable globale.
+- Remédiation associée : créer deux piles et tracer les états.
+- Critère de réussite : deux objets indépendants fonctionnent.
 
-## Exercice 3 - Choix de structure
+## Question 4 - Choix structure
 
 - Capacité officielle associée : T-STRUCT-03B.
-- Réponse attendue : Un dictionnaire convient si l’identifiant est la clé..
-- Justification : L’accès par clé correspond au besoin ; pile et file imposent un ordre de retrait..
-- Barème question par question : 1 pt choix, 1 pt justification, 1 pt contre-exemple, 1 pt limite..
-- Variante acceptable : Table indexée acceptée si un index explicite est construit..
-- Erreurs fréquentes : Choisir une file car les données arrivent dans un ordre..
-- Remédiation : Faire lister les opérations dominantes..
-- Critère de réussite : Le choix répond à la question posée..
+- Réponse attendue : Un dictionnaire convient..
+- Justification : La recherche se fait par clé..
+- Barème question par question : 2.5 points, dont 0,5 compréhension, 1 méthode, 0,5 résultat, 0,5 justification.
+- Variante acceptable : index auxiliaire accepté..
+- Erreurs fréquentes : choisir une file par ordre d’arrivée.
+- Remédiation associée : lister les opérations dominantes.
+- Critère de réussite : le choix répond au besoin.
 
-## Exercice 4 - Graphe
+## Question 5 - Dictionnaire
+
+- Capacité officielle associée : T-STRUCT-03C.
+- Réponse attendue : Liste : parcours ; dictionnaire : accès par clé..
+- Justification : Les opérations caractéristiques diffèrent..
+- Barème question par question : 2.5 points, dont 0,5 compréhension, 1 méthode, 0,5 résultat, 0,5 justification.
+- Variante acceptable : réponse avec complexité intuitive acceptée..
+- Erreurs fréquentes : chercher une valeur comme une clé.
+- Remédiation associée : faire écrire clé -> valeur.
+- Critère de réussite : clé et valeur sont distinguées.
+
+## Question 6 - Graphe
 
 - Capacité officielle associée : T-STRUCT-05A.
-- Réponse attendue : Les villes sont sommets, les routes sont arêtes ; la représentation peut être liste ou matrice..
-- Justification : Un graphe modélise des relations entre objets..
-- Barème question par question : 1 pt sommets, 1 pt arêtes, 1 pt orientation ou non, 1 pt représentation..
-- Variante acceptable : Graphe orienté accepté si le sens des routes est explicitement justifié..
-- Erreurs fréquentes : Confondre arête et sommet..
-- Remédiation : Faire dessiner puis traduire en liste..
-- Critère de réussite : La représentation permet de retrouver les voisins..
+- Réponse attendue : Villes = sommets, routes = arêtes..
+- Justification : Le graphe représente des relations..
+- Barème question par question : 2.5 points, dont 0,5 compréhension, 1 méthode, 0,5 résultat, 0,5 justification.
+- Variante acceptable : orientation acceptée si justifiée..
+- Erreurs fréquentes : confondre sommet et arête.
+- Remédiation associée : dessiner puis convertir.
+- Critère de réussite : les voisins sont retrouvables.
 
-## Exercice 5 - Parcours application
+## Question 7 - Matrice
+
+- Capacité officielle associée : T-STRUCT-05B.
+- Réponse attendue : Case i,j indique présence d’une arête..
+- Justification : La matrice encode toutes les paires de sommets..
+- Barème question par question : 2.5 points, dont 0,5 compréhension, 1 méthode, 0,5 résultat, 0,5 justification.
+- Variante acceptable : 0/1 ou booléens acceptés..
+- Erreurs fréquentes : matrice non carrée.
+- Remédiation associée : repartir de la liste des sommets.
+- Critère de réussite : dimension n x n citée.
+
+## Question 8 - BFS
 
 - Capacité officielle associée : T-ALGO-02A.
-- Réponse attendue : La file conserve les sommets découverts dans l’ordre FIFO, ce qui visite par distance croissante en nombre d’arêtes..
-- Justification : BFS dépend de FIFO pour traiter les couches successives..
-- Barème question par question : 1 pt file, 1 pt FIFO, 1 pt sommets visités, 1 pt limite..
-- Variante acceptable : Explication avec dessin acceptée..
-- Erreurs fréquentes : Utiliser une pile et décrire DFS..
-- Remédiation : Comparer deux traces sur le même graphe..
-- Critère de réussite : L’ordre de visite est justifié..
+- Réponse attendue : La file traite les sommets découverts en FIFO..
+- Justification : Cela visite par couches de distance..
+- Barème question par question : 2.5 points, dont 0,5 compréhension, 1 méthode, 0,5 résultat, 0,5 justification.
+- Variante acceptable : trace dessinée acceptée..
+- Erreurs fréquentes : utiliser une pile et décrire DFS.
+- Remédiation associée : comparer pile et file sur le même graphe.
+- Critère de réussite : ordre de visite justifié.
 
-## Décision
-
-Le corrigé n'est pas publié. Une revue pédagogique et scientifique reste nécessaire avant utilisation large.
