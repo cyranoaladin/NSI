@@ -2,55 +2,115 @@
 
 - premiere | P-HIST-01 - Situer dans le temps les principaux événements de l'histoire de l'informatique et leurs protagonistes. | absent | aucune ressource associée
 - premiere | P-DATA-BASE-01 - Passer de la représentation d'une base dans une autre. | needs_review | ressources présentes mais statuts non validants
-- premiere | P-DATA-BASE-02 - Evaluer le nombre de bits nécessaires à l'écriture en base 2 d'un entier, d'une somme ou d'un produit. / Utiliser le complément à deux. | needs_review | ressources présentes mais statuts non validants
+- premiere | P-DATA-BASE-02A - Evaluer le nombre de bits nécessaires à l'écriture en base 2 d'un entier, d'une somme ou d'un produit. | absent | aucune ressource associée
+- premiere | P-DATA-BASE-02B - Utiliser le complément à deux. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-DATA-BASE-03 - Calculer sur quelques exemples la représentation de nombres réels simples. | absent | aucune ressource associée
 - premiere | P-DATA-BASE-04 - Dresser la table d'une expression booléenne. | needs_review | ressources présentes mais statuts non validants
-- premiere | P-DATA-BASE-05 - Identifier l'intérêt des différents systèmes d'encodage. / Convertir un fichier texte dans différents formats d'encodage. | needs_review | ressources présentes mais statuts non validants
+- premiere | P-DATA-BASE-05A - Identifier l'intérêt des différents systèmes d'encodage. | needs_review | ressources présentes mais statuts non validants
+- premiere | P-DATA-BASE-05B - Convertir un fichier texte dans différents formats d'encodage. | absent | aucune ressource associée
 - premiere | P-DATA-CONSTR-01 - Ecrire une fonction renvoyant un p-uplet de valeurs. | needs_review | ressources présentes mais statuts non validants
-- premiere | P-DATA-CONSTR-02 - Lire et modifier les éléments d'un tableau grâce à leurs index. / Construire un tableau par compréhension. / Utiliser des tableaux de tableaux pour représenter des matrices. / Itérer sur les éléments d'un tableau. | needs_review | ressources présentes mais statuts non validants
-- premiere | P-DATA-CONSTR-03 - Construire une entrée de dictionnaire. / Itérer sur les éléments d'un dictionnaire. / Utiliser les méthodes keys, values et items. | needs_review | ressources présentes mais statuts non validants
+- premiere | P-DATA-CONSTR-02A - Lire et modifier les éléments d'un tableau grâce à leurs index. | needs_review | ressources présentes mais statuts non validants
+- premiere | P-DATA-CONSTR-02B - Construire un tableau par compréhension. | absent | aucune ressource associée
+- premiere | P-DATA-CONSTR-02C - Utiliser des tableaux de tableaux pour représenter des matrices. | absent | aucune ressource associée
+- premiere | P-DATA-CONSTR-02D - Itérer sur les éléments d'un tableau. | absent | aucune ressource associée
+- premiere | P-DATA-CONSTR-03A - Construire une entrée de dictionnaire. | needs_review | ressources présentes mais statuts non validants
+- premiere | P-DATA-CONSTR-03B - Itérer sur les éléments d'un dictionnaire. | absent | aucune ressource associée
+- premiere | P-DATA-CONSTR-03C - Utiliser les méthodes keys, values et items. | absent | aucune ressource associée
 - premiere | P-TABLE-01 - Importer une table depuis un fichier texte tabulé ou un fichier CSV. | absent | aucune ressource associée
 - premiere | P-TABLE-02 - Rechercher les lignes d'une table vérifiant des critères exprimés en logique propositionnelle. | absent | aucune ressource associée
 - premiere | P-TABLE-03 - Trier une table suivant une colonne. | absent | aucune ressource associée
 - premiere | P-TABLE-04 - Construire une nouvelle table en combinant les données de deux tables. | absent | aucune ressource associée
-- premiere | P-IHM-01 - Identifier les composants graphiques permettant d'interagir avec une application Web. / Identifier les événements que les fonctions associées aux composants graphiques peuvent traiter. | absent | aucune ressource associée
+- premiere | P-IHM-01A - Identifier les composants graphiques permettant d'interagir avec une application Web. | absent | aucune ressource associée
+- premiere | P-IHM-01B - Identifier les événements que les fonctions associées aux composants graphiques peuvent traiter. | absent | aucune ressource associée
 - premiere | P-IHM-02 - Analyser et modifier les méthodes exécutées lors d'un clic sur un bouton d'une page Web. | absent | aucune ressource associée
-- premiere | P-IHM-03 - Distinguer ce qui est exécuté sur le client ou sur le serveur et dans quel ordre. / Distinguer ce qui est mémorisé dans le client et retransmis au serveur. / Reconnaître quand et pourquoi la transmission est chiffrée. | absent | aucune ressource associée
-- premiere | P-IHM-04 - Analyser le fonctionnement d'un formulaire simple. / Distinguer les transmissions de paramètres par requêtes POST ou GET. / Discuter les types de requêtes selon les valeurs à transmettre et leur confidentialité. | absent | aucune ressource associée
-- premiere | P-ARCH-01 - Distinguer les rôles et les caractéristiques des constituants d'une machine. / Dérouler l'exécution d'une séquence d'instructions simples de type langage machine. | absent | aucune ressource associée
-- premiere | P-ARCH-02 - Mettre en évidence l'intérêt du découpage en paquets et de l'encapsulation. / Dérouler le fonctionnement d'un protocole simple de récupération de perte de paquets. / Simuler ou mettre en œuvre un réseau. | absent | aucune ressource associée
-- premiere | P-ARCH-03 - Identifier les fonctions d'un système d'exploitation. / Utiliser les commandes de base en ligne de commande. / Gérer les droits et permissions d'accès aux fichiers. | absent | aucune ressource associée
-- premiere | P-ARCH-04 - Identifier le rôle des capteurs et actionneurs. / Réaliser par programmation une IHM répondant à un cahier des charges donné. | absent | aucune ressource associée
+- premiere | P-IHM-03A - Distinguer ce qui est exécuté sur le client ou sur le serveur et dans quel ordre. | absent | aucune ressource associée
+- premiere | P-IHM-03B - Distinguer ce qui est mémorisé dans le client et retransmis au serveur. | absent | aucune ressource associée
+- premiere | P-IHM-03C - Reconnaître quand et pourquoi la transmission est chiffrée. | absent | aucune ressource associée
+- premiere | P-IHM-04A - Analyser le fonctionnement d'un formulaire simple. | absent | aucune ressource associée
+- premiere | P-IHM-04B - Distinguer les transmissions de paramètres par requêtes POST ou GET. | absent | aucune ressource associée
+- premiere | P-IHM-04C - Discuter les types de requêtes selon les valeurs à transmettre et leur confidentialité. | absent | aucune ressource associée
+- premiere | P-ARCH-01A - Distinguer les rôles et les caractéristiques des constituants d'une machine. | absent | aucune ressource associée
+- premiere | P-ARCH-01B - Dérouler l'exécution d'une séquence d'instructions simples de type langage machine. | absent | aucune ressource associée
+- premiere | P-ARCH-02A - Mettre en évidence l'intérêt du découpage en paquets et de l'encapsulation. | absent | aucune ressource associée
+- premiere | P-ARCH-02B - Dérouler le fonctionnement d'un protocole simple de récupération de perte de paquets. | absent | aucune ressource associée
+- premiere | P-ARCH-02C - Simuler ou mettre en œuvre un réseau. | absent | aucune ressource associée
+- premiere | P-ARCH-03A - Identifier les fonctions d'un système d'exploitation. | absent | aucune ressource associée
+- premiere | P-ARCH-03B - Utiliser les commandes de base en ligne de commande. | absent | aucune ressource associée
+- premiere | P-ARCH-03C - Gérer les droits et permissions d'accès aux fichiers. | absent | aucune ressource associée
+- premiere | P-ARCH-04A - Identifier le rôle des capteurs et actionneurs. | absent | aucune ressource associée
+- premiere | P-ARCH-04B - Réaliser par programmation une IHM répondant à un cahier des charges donné. | absent | aucune ressource associée
 - premiere | P-LANG-01 - Mettre en évidence un corpus de constructions élémentaires. | absent | aucune ressource associée
 - premiere | P-LANG-02 - Repérer dans un nouveau langage les traits communs et particuliers à ce langage. | absent | aucune ressource associée
-- premiere | P-LANG-03 - Prototyper une fonction. / Décrire les préconditions sur les arguments. / Décrire des postconditions sur les résultats. | absent | aucune ressource associée
+- premiere | P-LANG-03A - Prototyper une fonction. | absent | aucune ressource associée
+- premiere | P-LANG-03B - Décrire les préconditions sur les arguments. | absent | aucune ressource associée
+- premiere | P-LANG-03C - Décrire des postconditions sur les résultats. | absent | aucune ressource associée
 - premiere | P-LANG-04 - Utiliser des jeux de tests. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-LANG-05 - Utiliser la documentation d'une bibliothèque. | absent | aucune ressource associée
-- premiere | P-ALGO-01 - Ecrire un algorithme de recherche d'une occurrence sur des valeurs de type quelconque. / Ecrire un algorithme de recherche d'un extremum ou de calcul d'une moyenne. | absent | aucune ressource associée
-- premiere | P-ALGO-02 - Ecrire un algorithme de tri. / Décrire un invariant de boucle prouvant la correction des tris par insertion ou sélection. | absent | aucune ressource associée
+- premiere | P-ALGO-01A - Ecrire un algorithme de recherche d'une occurrence sur des valeurs de type quelconque. | absent | aucune ressource associée
+- premiere | P-ALGO-01B - Ecrire un algorithme de recherche d'un extremum ou de calcul d'une moyenne. | absent | aucune ressource associée
+- premiere | P-ALGO-02A - Ecrire un algorithme de tri par insertion. | absent | aucune ressource associée
+- premiere | P-ALGO-02B - Ecrire un algorithme de tri par sélection. | absent | aucune ressource associée
+- premiere | P-ALGO-02C - Décrire un invariant de boucle prouvant la correction du tri par insertion. | absent | aucune ressource associée
+- premiere | P-ALGO-02D - Décrire un invariant de boucle prouvant la correction du tri par sélection. | absent | aucune ressource associée
 - premiere | P-ALGO-03 - Ecrire un algorithme qui prédit la classe d'un élément à partir de la classe majoritaire de ses k plus proches voisins. | absent | aucune ressource associée
 - premiere | P-ALGO-04 - Montrer la terminaison de la recherche dichotomique à l'aide d'un variant de boucle. | absent | aucune ressource associée
 - premiere | P-ALGO-05 - Résoudre un problème grâce à un algorithme glouton. | absent | aucune ressource associée
-- terminale | T-HIST-01 - Situer dans le temps les principaux événements de l'histoire de l'informatique et leurs protagonistes. / Identifier l'évolution des rôles relatifs des logiciels et des matériels. | absent | aucune ressource associée
-- terminale | T-STRUCT-01 - Spécifier une structure de données par son interface. / Distinguer interface et implémentation. / Ecrire plusieurs implémentations d'une même structure de données. | needs_review | ressources présentes mais statuts non validants
-- terminale | T-STRUCT-02 - Ecrire la définition d'une classe. / Accéder aux attributs et méthodes d'une classe. | needs_review | ressources présentes mais statuts non validants
-- terminale | T-STRUCT-03 - Distinguer des structures par le jeu des méthodes qui les caractérisent. / Choisir une structure de données adaptée à la situation à modéliser. / Distinguer la recherche d'une valeur dans une liste et dans un dictionnaire. | partial | preuves manquantes: evaluation
-- terminale | T-STRUCT-04 - Identifier des situations nécessitant une structure de données arborescente. / Evaluer quelques mesures des arbres binaires. | absent | aucune ressource associée
-- terminale | T-STRUCT-05 - Modéliser des situations sous forme de graphes. / Ecrire les implémentations d'un graphe : matrice d'adjacence, listes de successeurs ou prédécesseurs. / Passer d'une représentation à une autre. | needs_review | ressources présentes mais statuts non validants
-- terminale | T-BDD-01 - Identifier les concepts définissant le modèle relationnel. / Distinguer structure et contenu d'une base de données. / Repérer les anomalies dans le schéma d'une base de données. | absent | aucune ressource associée
+- terminale | T-HIST-01A - Situer dans le temps les principaux événements de l'histoire de l'informatique et leurs protagonistes. | absent | aucune ressource associée
+- terminale | T-HIST-01B - Identifier l'évolution des rôles relatifs des logiciels et des matériels. | absent | aucune ressource associée
+- terminale | T-STRUCT-01A - Spécifier une structure de données par son interface. | needs_review | ressources présentes mais statuts non validants
+- terminale | T-STRUCT-01B - Distinguer interface et implémentation. | absent | aucune ressource associée
+- terminale | T-STRUCT-01C - Ecrire plusieurs implémentations d'une même structure de données. | absent | aucune ressource associée
+- terminale | T-STRUCT-02A - Ecrire la définition d'une classe. | needs_review | ressources présentes mais statuts non validants
+- terminale | T-STRUCT-02B - Accéder aux attributs et méthodes d'une classe. | absent | aucune ressource associée
+- terminale | T-STRUCT-03A - Distinguer des structures par le jeu des méthodes qui les caractérisent. | absent | aucune ressource associée
+- terminale | T-STRUCT-03B - Choisir une structure de données adaptée à la situation à modéliser. | partial | preuves manquantes: evaluation
+- terminale | T-STRUCT-03C - Distinguer la recherche d'une valeur dans une liste et dans un dictionnaire. | absent | aucune ressource associée
+- terminale | T-STRUCT-04A - Identifier des situations nécessitant une structure de données arborescente. | absent | aucune ressource associée
+- terminale | T-STRUCT-04B - Evaluer quelques mesures des arbres binaires. | absent | aucune ressource associée
+- terminale | T-STRUCT-05A - Modéliser des situations sous forme de graphes. | needs_review | ressources présentes mais statuts non validants
+- terminale | T-STRUCT-05B - Ecrire l'implémentation d'un graphe par matrice d'adjacence. | absent | aucune ressource associée
+- terminale | T-STRUCT-05C - Ecrire l'implémentation d'un graphe par listes de successeurs ou prédécesseurs. | absent | aucune ressource associée
+- terminale | T-STRUCT-05D - Passer d'une représentation à une autre. | absent | aucune ressource associée
+- terminale | T-BDD-01A - Identifier les concepts définissant le modèle relationnel. | absent | aucune ressource associée
+- terminale | T-BDD-01B - Distinguer structure et contenu d'une base de données. | absent | aucune ressource associée
+- terminale | T-BDD-01C - Repérer les anomalies dans le schéma d'une base de données. | absent | aucune ressource associée
 - terminale | T-BDD-02 - Identifier les services rendus par un SGBD relationnel. | absent | aucune ressource associée
-- terminale | T-BDD-03 - Identifier les composants d'une requête. / Construire des requêtes d'interrogation avec SELECT, FROM, WHERE, JOIN. / Construire des requêtes d'insertion et de mise à jour avec UPDATE, INSERT, DELETE. | absent | aucune ressource associée
+- terminale | T-BDD-03A - Identifier les composants d'une requête. | absent | aucune ressource associée
+- terminale | T-BDD-03B - Construire des requêtes d'interrogation avec SELECT et FROM. | absent | aucune ressource associée
+- terminale | T-BDD-03C - Construire des requêtes d'interrogation avec WHERE. | absent | aucune ressource associée
+- terminale | T-BDD-03D - Construire des requêtes d'interrogation avec JOIN. | absent | aucune ressource associée
+- terminale | T-BDD-03E - Construire des requêtes d'interrogation avec ORDER BY. | absent | aucune ressource associée
+- terminale | T-BDD-03F - Construire des requêtes d'insertion avec INSERT. | absent | aucune ressource associée
+- terminale | T-BDD-03G - Construire des requêtes de mise à jour avec UPDATE. | absent | aucune ressource associée
+- terminale | T-BDD-03H - Construire des requêtes de suppression avec DELETE. | absent | aucune ressource associée
 - terminale | T-ARCH-01 - Identifier les principaux composants sur un schéma de circuit et les avantages de leur intégration. | absent | aucune ressource associée
-- terminale | T-ARCH-02 - Décrire la création d'un processus et l'ordonnancement de plusieurs processus. / Mettre en évidence le risque d'interblocage. | absent | aucune ressource associée
+- terminale | T-ARCH-02A - Décrire la création d'un processus. | absent | aucune ressource associée
+- terminale | T-ARCH-02B - Décrire l'ordonnancement de plusieurs processus. | absent | aucune ressource associée
+- terminale | T-ARCH-02C - Mettre en évidence le risque d'interblocage. | absent | aucune ressource associée
 - terminale | T-ARCH-03 - Identifier, selon le protocole de routage utilisé, la route empruntée par un paquet. | absent | aucune ressource associée
-- terminale | T-ARCH-04 - Décrire les principes du chiffrement symétrique et asymétrique. / Décrire l'échange d'une clé symétrique avec un protocole asymétrique pour sécuriser HTTPS. | absent | aucune ressource associée
-- terminale | T-LANG-01 - Comprendre que tout programme est aussi une donnée. / Comprendre que la calculabilité ne dépend pas du langage. / Montrer sans formalisme théorique que le problème de l'arrêt est indécidable. | absent | aucune ressource associée
-- terminale | T-LANG-02 - Ecrire un programme récursif. / Analyser le fonctionnement d'un programme récursif. | absent | aucune ressource associée
-- terminale | T-LANG-03 - Utiliser des API ou bibliothèques. / Exploiter leur documentation. / Créer des modules simples et les documenter. | partial | preuves manquantes: evaluation
-- terminale | T-LANG-04 - Distinguer sur des exemples les paradigmes impératif, fonctionnel et objet. / Choisir le paradigme selon le champ d'application. | absent | aucune ressource associée
+- terminale | T-ARCH-04A - Décrire les principes du chiffrement symétrique et asymétrique. | absent | aucune ressource associée
+- terminale | T-ARCH-04B - Décrire l'échange d'une clé symétrique avec un protocole asymétrique pour sécuriser HTTPS. | absent | aucune ressource associée
+- terminale | T-LANG-01A - Comprendre que tout programme est aussi une donnée. | absent | aucune ressource associée
+- terminale | T-LANG-01B - Comprendre que la calculabilité ne dépend pas du langage. | absent | aucune ressource associée
+- terminale | T-LANG-01C - Montrer sans formalisme théorique que le problème de l'arrêt est indécidable. | absent | aucune ressource associée
+- terminale | T-LANG-02A - Ecrire un programme récursif. | absent | aucune ressource associée
+- terminale | T-LANG-02B - Analyser le fonctionnement d'un programme récursif. | absent | aucune ressource associée
+- terminale | T-LANG-03A - Utiliser des API ou bibliothèques. | partial | preuves manquantes: evaluation
+- terminale | T-LANG-03B - Exploiter la documentation d'API ou bibliothèques. | absent | aucune ressource associée
+- terminale | T-LANG-03C - Créer des modules simples et les documenter. | absent | aucune ressource associée
+- terminale | T-LANG-04A - Distinguer sur des exemples les paradigmes impératif, fonctionnel et objet. | absent | aucune ressource associée
+- terminale | T-LANG-04B - Choisir le paradigme selon le champ d'application. | absent | aucune ressource associée
 - terminale | T-LANG-05 - Savoir répondre aux causes typiques de bugs. | partial | preuves manquantes: evaluation
-- terminale | T-ALGO-01 - Calculer la taille et la hauteur d'un arbre. / Parcourir un arbre en ordres infixe, préfixe, suffixe ou largeur d'abord. / Rechercher une clé dans un arbre de recherche et insérer une clé. | absent | aucune ressource associée
-- terminale | T-ALGO-02 - Parcourir un graphe en profondeur d'abord et en largeur d'abord. / Repérer la présence d'un cycle dans un graphe. / Chercher un chemin dans un graphe. | partial | parcours de graphes présents seulement comme application, pas comme séquence évaluée complète
+- terminale | T-ALGO-01A - Calculer la taille d'un arbre. | absent | aucune ressource associée
+- terminale | T-ALGO-01B - Calculer la hauteur d'un arbre. | absent | aucune ressource associée
+- terminale | T-ALGO-01C - Parcourir un arbre en ordres infixe, préfixe ou suffixe. | absent | aucune ressource associée
+- terminale | T-ALGO-01D - Parcourir un arbre en largeur d'abord. | absent | aucune ressource associée
+- terminale | T-ALGO-01E - Rechercher une clé dans un arbre de recherche. | absent | aucune ressource associée
+- terminale | T-ALGO-01F - Insérer une clé dans un arbre de recherche. | absent | aucune ressource associée
+- terminale | T-ALGO-02A - Parcourir un graphe en largeur d'abord. | partial | parcours en largeur présent seulement comme application, pas comme séquence évaluée complète
+- terminale | T-ALGO-02B - Parcourir un graphe en profondeur d'abord. | absent | aucune ressource associée
+- terminale | T-ALGO-02C - Repérer la présence d'un cycle dans un graphe. | absent | aucune ressource associée
+- terminale | T-ALGO-02D - Chercher un chemin dans un graphe. | absent | aucune ressource associée
 - terminale | T-ALGO-03 - Ecrire un algorithme utilisant la méthode diviser pour régner. | absent | aucune ressource associée
 - terminale | T-ALGO-04 - Utiliser la programmation dynamique pour écrire un algorithme. | absent | aucune ressource associée
 - terminale | T-ALGO-05 - Etudier l'algorithme de Boyer-Moore pour la recherche d'un motif dans un texte. | absent | aucune ressource associée

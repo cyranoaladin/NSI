@@ -19,22 +19,22 @@ official_program:
     - id: "P-DATA-BASE-01"
       label: "Changer de base."
       evidence: [{section: "Questions progressives", file: "premiere/sequences/s01_representation_donnees/evaluation.md", anchor: "#questions-progressives", type: "evaluation"}]
-    - id: "P-DATA-BASE-02"
+    - id: "P-DATA-BASE-02B"
       label: "Complément à deux."
       evidence: [{section: "Questions progressives", file: "premiere/sequences/s01_representation_donnees/evaluation.md", anchor: "#questions-progressives", type: "evaluation"}]
     - id: "P-DATA-BASE-04"
       label: "Booléens."
       evidence: [{section: "Questions progressives", file: "premiere/sequences/s01_representation_donnees/evaluation.md", anchor: "#questions-progressives", type: "evaluation"}]
-    - id: "P-DATA-BASE-05"
+    - id: "P-DATA-BASE-05A"
       label: "Texte."
       evidence: [{section: "Questions progressives", file: "premiere/sequences/s01_representation_donnees/evaluation.md", anchor: "#questions-progressives", type: "evaluation"}]
     - id: "P-DATA-CONSTR-01"
       label: "Tuples."
       evidence: [{section: "Programmation", file: "premiere/sequences/s01_representation_donnees/evaluation.md", anchor: "#programmation", type: "evaluation"}]
-    - id: "P-DATA-CONSTR-02"
+    - id: "P-DATA-CONSTR-02A"
       label: "Listes."
       evidence: [{section: "Programmation", file: "premiere/sequences/s01_representation_donnees/evaluation.md", anchor: "#programmation", type: "evaluation"}]
-    - id: "P-DATA-CONSTR-03"
+    - id: "P-DATA-CONSTR-03A"
       label: "Dictionnaires."
       evidence: [{section: "Programmation", file: "premiere/sequences/s01_representation_donnees/evaluation.md", anchor: "#programmation", type: "evaluation"}]
     - id: "P-LANG-04"

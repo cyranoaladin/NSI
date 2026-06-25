@@ -19,22 +19,22 @@ official_program:
     - id: "P-DATA-BASE-01"
       label: "Passer de la représentation d'une base dans une autre."
       evidence: [{section: "Notions essentielles", file: "premiere/sequences/s01_representation_donnees/trace_ecrite.md", anchor: "#notions-essentielles", type: "trace"}]
-    - id: "P-DATA-BASE-02"
+    - id: "P-DATA-BASE-02B"
       label: "Utiliser le complément à deux."
       evidence: [{section: "Définitions", file: "premiere/sequences/s01_representation_donnees/trace_ecrite.md", anchor: "#définitions", type: "trace"}]
     - id: "P-DATA-BASE-04"
       label: "Dresser une table de vérité."
       evidence: [{section: "Méthodes", file: "premiere/sequences/s01_representation_donnees/trace_ecrite.md", anchor: "#méthodes", type: "trace"}]
-    - id: "P-DATA-BASE-05"
+    - id: "P-DATA-BASE-05A"
       label: "Identifier l'intérêt des encodages."
       evidence: [{section: "Points de vigilance", file: "premiere/sequences/s01_representation_donnees/trace_ecrite.md", anchor: "#points-de-vigilance", type: "trace"}]
     - id: "P-DATA-CONSTR-01"
       label: "Renvoyer un p-uplet."
       evidence: [{section: "Exemples minimaux", file: "premiere/sequences/s01_representation_donnees/trace_ecrite.md", anchor: "#exemples-minimaux", type: "trace"}]
-    - id: "P-DATA-CONSTR-02"
+    - id: "P-DATA-CONSTR-02A"
       label: "Lire, modifier et parcourir un tableau."
       evidence: [{section: "À savoir refaire", file: "premiere/sequences/s01_representation_donnees/trace_ecrite.md", anchor: "#à-savoir-refaire", type: "trace"}]
-    - id: "P-DATA-CONSTR-03"
+    - id: "P-DATA-CONSTR-03A"
       label: "Construire et parcourir un dictionnaire."
       evidence: [{section: "À savoir refaire", file: "premiere/sequences/s01_representation_donnees/trace_ecrite.md", anchor: "#à-savoir-refaire", type: "trace"}]
     - id: "P-LANG-04"

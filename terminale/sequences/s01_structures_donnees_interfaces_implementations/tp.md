@@ -16,25 +16,25 @@ official_program:
   rubrique: "Structures de données"
   content: "TP"
   capacities:
-    - id: "T-STRUCT-01"
+    - id: "T-STRUCT-01A"
       label: "Interface et implémentation."
       evidence: [{section: "Étapes", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md", anchor: "#étapes", type: "tp"}]
-    - id: "T-STRUCT-02"
+    - id: "T-STRUCT-02A"
       label: "Classes."
       evidence: [{section: "Travail demandé", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md", anchor: "#travail-demandé", type: "tp"}]
-    - id: "T-STRUCT-03"
+    - id: "T-STRUCT-03B"
       label: "Piles, files, dictionnaires."
       evidence: [{section: "Travail demandé", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md", anchor: "#travail-demandé", type: "tp"}]
-    - id: "T-STRUCT-05"
+    - id: "T-STRUCT-05A"
       label: "Graphes."
       evidence: [{section: "Étapes", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md", anchor: "#étapes", type: "tp"}]
-    - id: "T-LANG-03"
+    - id: "T-LANG-03A"
       label: "Modules."
       evidence: [{section: "Fichiers fournis", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md", anchor: "#fichiers-fournis", type: "tp"}]
     - id: "T-LANG-05"
       label: "Tests et bugs."
       evidence: [{section: "Tests", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md", anchor: "#tests", type: "tp"}]
-    - id: "T-ALGO-02"
+    - id: "T-ALGO-02A"
       label: "BFS comme application."
       evidence: [{section: "Extension experte", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md", anchor: "#extension-experte", type: "tp"}]
 prerequisites: ["Cours et TD S01"]

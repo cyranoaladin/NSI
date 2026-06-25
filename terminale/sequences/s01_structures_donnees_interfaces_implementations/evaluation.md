@@ -15,13 +15,13 @@ official_program:
   rubrique: "Structures de données"
   content: "Structures abstraites et implémentations"
   capacities:
-    - id: T-STRUCT-01
+    - id: T-STRUCT-01A
       label: "Distinguer interface et implémentation d'une structure de données"
       evidence: [{section: "Compétences évaluées", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/evaluation.md", anchor: "#compétences-évaluées", type: "evaluation"}]
-    - id: T-STRUCT-02
+    - id: T-STRUCT-02A
       label: "Spécifier et utiliser listes, piles et files"
       evidence: [{section: "Questions progressives", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/evaluation.md", anchor: "#questions-progressives", type: "evaluation"}]
-    - id: T-STRUCT-05
+    - id: T-STRUCT-05A
       label: "Représenter un graphe par liste d'adjacence ou matrice d'adjacence"
       evidence: [{section: "Analyse de code", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/evaluation.md", anchor: "#analyse-de-code", type: "evaluation"}]
 ---

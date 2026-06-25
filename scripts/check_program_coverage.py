@@ -22,10 +22,7 @@ MATRIX_TERMINALE = ROOT / "programme_matrix_terminale.md"
 MISSING = ROOT / "missing_capabilities.md"
 
 FORCED_STATUS = {
-    "T-ALGO-02": (
-        "partial",
-        "parcours de graphes présents seulement comme application, pas comme séquence évaluée complète",
-    ),
+    "T-ALGO-02A": ("partial", "parcours en largeur présent seulement comme application, pas comme séquence évaluée complète"),
 }
 
 

@@ -15,6 +15,13 @@ audit:
 	python scripts/check_document_style.py
 	python scripts/check_progression_calendar_alignment.py
 	python scripts/check_project_quarter_requirement.py
+	python scripts/check_progression_project_consistency.py
+	python scripts/check_monthly_load_balance.py
+	python scripts/check_session_level_planning.py
+	python scripts/check_teacher_docs_depth.py
+	python scripts/check_program_yaml_atomicity.py
+	python scripts/check_build_reports_freshness.py
+	python scripts/check_archive_portability.py
 	python scripts/check_sequence_completeness.py
 	python scripts/check_course_internal_coherence.py
 	python scripts/check_td_corrige_alignment.py

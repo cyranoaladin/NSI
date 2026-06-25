@@ -26,7 +26,7 @@ Les projets occupent plus d'un quart de l'horaire. Ils sont distribués sur l'an
 | T07 | 3 h | graphe modélisé | liste ou matrice | modélisation relationnelle |
 | T08 | 3 h | BFS/DFS appliqué | parcours graphe | chemin et connexité |
 | T09 | 3 h | schéma relationnel fictif | base SQLite | qualité des données |
-| T10 | 4 h | requêtes SQL testées | SQL | usages et limites |
+| T10 | 3 h | requêtes SQL testées avant Ramadan | SQL | usages et limites |
 | T11 | 2 h | simulation ordonnancement | analyse de programme | systèmes invisibles |
 | T12 | 3 h | routage sur graphe | algorithme réseau | Internet et routes |
 | T13 | 3 h | scénario sécurité | protocole | confiance numérique |
@@ -35,13 +35,13 @@ Les projets occupent plus d'un quart de l'horaire. Ils sont distribués sur l'an
 | T16 | 3 h | tri fusion instrumenté | récursivité | efficacité algorithmique |
 | T17 | 3 h | mémoïsation appliquée | dictionnaire/tableau | compromis temps-mémoire |
 | T18 | 2 h | recherche textuelle | chaînes | optimisation de recherche |
-| T19 | 12 h | projet final, sujet pratique blanc, support oral | entraînement direct | soutenance structurée |
+| T19 | 13 h | projet final, sujets pratiques distribués, support oral | entraînement direct | soutenance structurée |
 | **Total** | **60 h** | parcours projet annuel | pratique récurrente | oral progressif |
 
 ## Projet intermédiaire
 
 - Période : fin janvier, avant Ramadan.
-- Durée cumulée : environ 24 h de projet déjà engagées.
+- Durée cumulée : environ 21 h de projet déjà engagées.
 - Sujet recommandé : application de gestion fictive avec structures abstraites, classes, graphes ou arbres, tests et analyse de coût.
 - Livrables : code modulaire, tests, schéma des structures, fiche de cas limites, démonstration courte.
 - Critères : interface claire, implémentation justifiée, tests de cas limites, trace d'exécution, absence de données personnelles.
@@ -49,7 +49,7 @@ Les projets occupent plus d'un quart de l'horaire. Ils sont distribués sur l'an
 
 ## Projet final
 
-- Période : mars à juin, jalons légers pendant Ramadan, finalisation en T19.
+- Période : janvier à juin, jalons légers pendant Ramadan, finalisation en T19.
 - Sujet recommandé : étude d'un système numérique fictif combinant données, base relationnelle, graphe/réseau, sécurité et algorithme.
 - Version minimale : modèle de données, opérations principales, tests, notice.
 - Version standard : interface de fonctions, base SQLite, parcours ou algorithme, module de tests.

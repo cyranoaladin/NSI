@@ -22,7 +22,7 @@ def main() -> None:
     errors: list[str] = []
     for capacity_id, types in sorted(by_capacity.items()):
         lines.append(f"- {capacity_id}: {', '.join(sorted(types))}")
-        if capacity_id == "T-ALGO-02":
+        if capacity_id in {"T-ALGO-02A", "T-ALGO-02B", "T-ALGO-02C", "T-ALGO-02D"}:
             lines.append("  - Décision : partial, parcours de graphes en application seulement.")
         if len(types) < 3:
             errors.append(f"{capacity_id}: moins de trois familles de preuves")

@@ -16,25 +16,25 @@ official_program:
   rubrique: "Structures de données"
   content: "Corrigé"
   capacities:
-    - id: "T-STRUCT-01"
+    - id: "T-STRUCT-01A"
       label: "Interface et implémentation."
       evidence: [{section: "Réponse attendue - TD", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md", anchor: "#réponse-attendue-td", type: "corrige"}]
-    - id: "T-STRUCT-02"
+    - id: "T-STRUCT-02A"
       label: "Classes."
       evidence: [{section: "Réponse attendue - TD", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md", anchor: "#réponse-attendue-td", type: "corrige"}]
-    - id: "T-STRUCT-03"
+    - id: "T-STRUCT-03B"
       label: "Structures linéaires."
       evidence: [{section: "Réponse attendue - TD", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md", anchor: "#réponse-attendue-td", type: "corrige"}]
-    - id: "T-STRUCT-05"
+    - id: "T-STRUCT-05A"
       label: "Graphes."
       evidence: [{section: "Réponse attendue - TD", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md", anchor: "#réponse-attendue-td", type: "corrige"}]
-    - id: "T-LANG-03"
+    - id: "T-LANG-03A"
       label: "Modules."
       evidence: [{section: "Code testé", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md", anchor: "#code-testé", type: "corrige"}]
     - id: "T-LANG-05"
       label: "Bugs."
       evidence: [{section: "Erreurs fréquentes", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md", anchor: "#erreurs-fréquentes", type: "corrige"}]
-    - id: "T-ALGO-02"
+    - id: "T-ALGO-02A"
       label: "Parcours graphes."
       evidence: [{section: "Variante acceptable", file: "terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md", anchor: "#variante-acceptable", type: "corrige"}]
 prerequisites: ["TD, TP"]

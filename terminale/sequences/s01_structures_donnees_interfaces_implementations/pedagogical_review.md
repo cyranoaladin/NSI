@@ -74,9 +74,9 @@ Déplacer complexité détaillée des parcours vers une séquence algorithmique.
 
 Déplacer modularité et bugs vers une séquence de programmation.
 
-## Décision sur T-ALGO-02
+## Décision sur T-ALGO-02A
 
-`T-ALGO-02` doit rester `partial`.
+`T-ALGO-02A` doit rester `partial`.
 
 BFS/DFS apparaissent seulement comme application et extension.
 

@@ -1,33 +1,67 @@
 ---
-title: "Sources - structures de données, interfaces et implémentations"
+title: "Sources - structures de données"
 niveau: terminale
-source: "BO spécial n°8 du 25 juillet 2019 - NSI Terminale"
+source: "Prototype interne"
 status: needs_review
-version: "0.2.0"
+version: "0.4.0"
 notion: "sources"
-objectifs: "Tracer les sources institutionnelles et techniques de la séquence."
+objectifs: "Document professeur substantiel à relire avant usage."
 sequence: s01_structures_donnees_interfaces_implementations
 private_data: false
 ---
 
-# Sources
+# Sources - structures de données
 
-## Programme officiel
+## Sources institutionnelles
 
-- Bulletin officiel spécial n°8 du 25 juillet 2019 : https://www.education.gouv.fr/bo/19/Special8/MENE1921247A.htm
-
-- Annexe PDF du programme de spécialité NSI de Terminale : https://cache.media.education.gouv.fr/file/SPE8_MENJ_25_7_2019/93/3/spe247_annexe_1158933.pdf
+- Programme officiel NSI, Bulletin officiel correspondant au niveau terminale.
+- Fichier local de référence : `00_programmes_officiels/programme_nsi_2019.yaml`.
+- Statut des ressources : `needs_review`, aucune publication déclarée.
 
 ## Sources techniques
 
-- Documentation Python `collections.deque` : https://docs.python.org/3/library/collections.html#collections.deque
+- Documentation Python : types de base, structures de données, tests et exceptions selon les besoins de la séquence.
+- Supports internes générés dans le dépôt, à relire avant usage.
 
-- Documentation Python `dict` : https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+## Sources pédagogiques internes
 
-## Statut pédagogique
+- `cours_eleve.md` pour les définitions et exemples.
+- `td.md` et `tp.md` pour les tâches évaluables.
+- `corrige_professeur.md`, `bareme.md`, `grille_competences.md` pour la correction professeur.
 
-Les ressources sont en statut `needs_review`.
+## Traçabilité et limites
 
-Aucune publication élève n'est déclarée.
+- Aucune donnée personnelle ne doit apparaître dans les exemples.
+- Les ressources Drive sont candidates mais non intégrées localement à ce stade.
+- Les corrigés et barèmes sont réservés au professeur.
+- Le document reste non publiable sans revue pédagogique et scientifique.
 
-Aucune ressource Drive n'est intégrée à cette séquence dans l'environnement local actuel.
+## Correspondance capacités
+
+- T-STRUCT-01A : capacité liée à la séquence pilote, preuve à relire.
+- T-STRUCT-02A : capacité liée à la séquence pilote, preuve à relire.
+- T-STRUCT-03B : capacité liée à la séquence pilote, preuve à relire.
+- T-STRUCT-05A : capacité liée à la séquence pilote, preuve à relire.
+- T-ALGO-02A : capacité liée à la séquence pilote, preuve à relire.
+
+## Ressources Drive
+
+Les ressources Drive sont uniquement candidates à ce stade. Elles ne sont pas intégrées localement dans cette séquence et ne constituent pas une source exploitée pour publication.
+
+## Séparation sujet, corrigé et professeur
+
+- Les documents élèves ne doivent contenir aucun corrigé.
+- Les corrigés, barèmes et grilles restent dans l'espace professeur.
+- Toute exportation élève devra être contrôlée par un script dédié.
+- Les sources institutionnelles doivent rester visibles dans les versions professeur.
+
+## Revue nécessaire
+
+- Revue pédagogique : vérifier progressivité, charge cognitive et différenciation.
+- Revue scientifique : vérifier définitions, exemples, limites et absence de hors programme non signalé.
+- Revue technique : vérifier liens, exécution des scripts et absence d'artefacts.
+- Revue vie privée : vérifier qu'aucune donnée personnelle n'est présente.
+
+## Décision documentaire
+
+Ce fichier trace les références et limites. Il ne transforme pas la séquence en ressource publiable et ne remplace pas une bibliographie définitive.

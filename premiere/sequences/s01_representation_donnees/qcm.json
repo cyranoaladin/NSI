@@ -20,12 +20,12 @@
       "content": "QCM",
       "capacities": [
         {"id": "P-DATA-BASE-01", "label": "Changer de base.", "evidence": [{"section": "questions", "file": "premiere/sequences/s01_representation_donnees/qcm.json", "anchor": "#questions", "type": "qcm"}]},
-        {"id": "P-DATA-BASE-02", "label": "Complément à deux.", "evidence": [{"section": "questions", "file": "premiere/sequences/s01_representation_donnees/qcm.json", "anchor": "#questions", "type": "qcm"}]},
+        {"id": "P-DATA-BASE-02B", "label": "Complément à deux.", "evidence": [{"section": "questions", "file": "premiere/sequences/s01_representation_donnees/qcm.json", "anchor": "#questions", "type": "qcm"}]},
         {"id": "P-DATA-BASE-04", "label": "Booléens.", "evidence": [{"section": "questions", "file": "premiere/sequences/s01_representation_donnees/qcm.json", "anchor": "#questions", "type": "qcm"}]},
-        {"id": "P-DATA-BASE-05", "label": "Encodage.", "evidence": [{"section": "questions", "file": "premiere/sequences/s01_representation_donnees/qcm.json", "anchor": "#questions", "type": "qcm"}]},
+        {"id": "P-DATA-BASE-05A", "label": "Encodage.", "evidence": [{"section": "questions", "file": "premiere/sequences/s01_representation_donnees/qcm.json", "anchor": "#questions", "type": "qcm"}]},
         {"id": "P-DATA-CONSTR-01", "label": "Tuples.", "evidence": [{"section": "questions", "file": "premiere/sequences/s01_representation_donnees/qcm.json", "anchor": "#questions", "type": "qcm"}]},
-        {"id": "P-DATA-CONSTR-02", "label": "Listes.", "evidence": [{"section": "questions", "file": "premiere/sequences/s01_representation_donnees/qcm.json", "anchor": "#questions", "type": "qcm"}]},
-        {"id": "P-DATA-CONSTR-03", "label": "Dictionnaires.", "evidence": [{"section": "questions", "file": "premiere/sequences/s01_representation_donnees/qcm.json", "anchor": "#questions", "type": "qcm"}]},
+        {"id": "P-DATA-CONSTR-02A", "label": "Listes.", "evidence": [{"section": "questions", "file": "premiere/sequences/s01_representation_donnees/qcm.json", "anchor": "#questions", "type": "qcm"}]},
+        {"id": "P-DATA-CONSTR-03A", "label": "Dictionnaires.", "evidence": [{"section": "questions", "file": "premiere/sequences/s01_representation_donnees/qcm.json", "anchor": "#questions", "type": "qcm"}]},
         {"id": "P-LANG-04", "label": "Tests.", "evidence": [{"section": "questions", "file": "premiere/sequences/s01_representation_donnees/qcm.json", "anchor": "#questions", "type": "qcm"}]}
       ]
     },
@@ -49,7 +49,7 @@
       "propositions": ["-128 à 127", "0 à 255", "-127 à 128"],
       "bonne_reponse": "-128 à 127",
       "difficulte": "standard",
-      "capacite_officielle": "P-DATA-BASE-02",
+      "capacite_officielle": "P-DATA-BASE-02B",
       "erreur_ciblee": "Confondre entier signé et non signé.",
       "explication": "Sur n bits, l'intervalle est -2^(n-1) à 2^(n-1)-1.",
       "explications": {"-128 à 127": "Réponse attendue.", "0 à 255": "C'est l'intervalle sans signe.", "-127 à 128": "La borne négative est mal calculée."}
@@ -60,7 +60,7 @@
       "propositions": ["-1", "255", "-128"],
       "bonne_reponse": "-1",
       "difficulte": "standard",
-      "capacite_officielle": "P-DATA-BASE-02",
+      "capacite_officielle": "P-DATA-BASE-02B",
       "erreur_ciblee": "Oublier la convention de signe.",
       "explication": "255 - 256 = -1.",
       "explications": {"-1": "Réponse attendue.", "255": "C'est la lecture sans signe.", "-128": "C'est 10000000 en complément à deux."}
@@ -82,7 +82,7 @@
       "propositions": ["Pour représenter beaucoup plus de caractères qu'ASCII", "Pour rendre tous les textes plus courts", "Pour supprimer les octets"],
       "bonne_reponse": "Pour représenter beaucoup plus de caractères qu'ASCII",
       "difficulte": "socle",
-      "capacite_officielle": "P-DATA-BASE-05",
+      "capacite_officielle": "P-DATA-BASE-05A",
       "erreur_ciblee": "Confondre encodage et compression.",
       "explication": "Unicode fournit un répertoire très large de caractères.",
       "explications": {"Pour représenter beaucoup plus de caractères qu'ASCII": "Réponse attendue.", "Pour rendre tous les textes plus courts": "Ce n'est pas son objectif.", "Pour supprimer les octets": "Un encodage utilise toujours des octets en mémoire ou fichier."}
@@ -104,7 +104,7 @@
       "propositions": ["Parce qu'on associe chaque choix à un effectif", "Parce qu'un dictionnaire garde toujours l'ordre de vote", "Parce qu'il interdit les valeurs numériques"],
       "bonne_reponse": "Parce qu'on associe chaque choix à un effectif",
       "difficulte": "standard",
-      "capacite_officielle": "P-DATA-CONSTR-03",
+      "capacite_officielle": "P-DATA-CONSTR-03A",
       "erreur_ciblee": "Confondre clé et position.",
       "explication": "La clé est le choix, la valeur est l'effectif.",
       "explications": {"Parce qu'on associe chaque choix à un effectif": "Réponse attendue.", "Parce qu'un dictionnaire garde toujours l'ordre de vote": "L'ordre de vote brut n'est pas l'objectif.", "Parce qu'il interdit les valeurs numériques": "Un dictionnaire peut contenir des valeurs numériques."}

@@ -17,17 +17,17 @@
       "content": "Structures abstraites et implémentations",
       "capacities": [
         {
-          "id": "T-STRUCT-01",
+          "id": "T-STRUCT-01A",
           "label": "Distinguer interface et implémentation d'une structure de données",
           "evidence": [{"section": "questions", "file": "terminale/sequences/s01_structures_donnees_interfaces_implementations/qcm.json", "anchor": "#questions", "type": "qcm"}]
         },
         {
-          "id": "T-STRUCT-02",
+          "id": "T-STRUCT-02A",
           "label": "Spécifier et utiliser listes, piles et files",
           "evidence": [{"section": "questions", "file": "terminale/sequences/s01_structures_donnees_interfaces_implementations/qcm.json", "anchor": "#questions", "type": "qcm"}]
         },
         {
-          "id": "T-STRUCT-05",
+          "id": "T-STRUCT-05A",
           "label": "Représenter un graphe par liste d'adjacence ou matrice d'adjacence",
           "evidence": [{"section": "questions", "file": "terminale/sequences/s01_structures_donnees_interfaces_implementations/qcm.json", "anchor": "#questions", "type": "qcm"}]
         }
@@ -41,7 +41,7 @@
       "propositions": ["Les opérations disponibles", "Le nom exact des variables Python", "La quantité de mémoire réelle utilisée", "La couleur du schéma"],
       "bonne_reponse": "Les opérations disponibles",
       "difficulte": "socle",
-      "capacite_officielle": "T-STRUCT-01",
+      "capacite_officielle": "T-STRUCT-01A",
       "erreur_ciblee": "Confusion entre usage abstrait et détails de code",
       "explication": "L'interface décrit ce que l'on peut demander à la structure.",
       "explications": {
@@ -57,7 +57,7 @@
       "propositions": ["Une pile", "Une file", "Un dictionnaire", "Une matrice"],
       "bonne_reponse": "Une pile",
       "difficulte": "socle",
-      "capacite_officielle": "T-STRUCT-02",
+      "capacite_officielle": "T-STRUCT-02A",
       "erreur_ciblee": "Inversion pile/file",
       "explication": "Une pile suit le principe dernier entré, premier sorti.",
       "explications": {
@@ -73,7 +73,7 @@
       "propositions": ["Une file", "Une pile", "Un ensemble sans ordre", "Une variable booléenne"],
       "bonne_reponse": "Une file",
       "difficulte": "socle",
-      "capacite_officielle": "T-STRUCT-02",
+      "capacite_officielle": "T-STRUCT-02A",
       "erreur_ciblee": "Mauvaise lecture de l'ordre de traitement",
       "explication": "La file conserve l'ordre premier entré, premier sorti.",
       "explications": {
@@ -89,7 +89,7 @@
       "propositions": ["Pour associer des clés à des valeurs", "Pour retirer le plus ancien élément", "Pour représenter seulement des nombres", "Pour trier automatiquement un graphe"],
       "bonne_reponse": "Pour associer des clés à des valeurs",
       "difficulte": "standard",
-      "capacite_officielle": "T-STRUCT-03",
+      "capacite_officielle": "T-STRUCT-03B",
       "erreur_ciblee": "Réduction du dictionnaire à une liste améliorée",
       "explication": "Un dictionnaire modélise une association clé-valeur.",
       "explications": {
@@ -105,7 +105,7 @@
       "propositions": ["Une liste d'adjacence", "Une matrice identité", "Une pile", "Un booléen"],
       "bonne_reponse": "Une liste d'adjacence",
       "difficulte": "standard",
-      "capacite_officielle": "T-STRUCT-05",
+      "capacite_officielle": "T-STRUCT-05A",
       "erreur_ciblee": "Confusion entre représentations de graphe",
       "explication": "La liste d'adjacence associe chaque sommet à ses voisins.",
       "explications": {
@@ -121,7 +121,7 @@
       "propositions": ["Tester rapidement l'existence d'une arête", "Retirer le dernier élément ajouté", "Associer une clé à une valeur", "Éviter toute place mémoire"],
       "bonne_reponse": "Tester rapidement l'existence d'une arête",
       "difficulte": "standard",
-      "capacite_officielle": "T-STRUCT-05",
+      "capacite_officielle": "T-STRUCT-05A",
       "erreur_ciblee": "Choix de représentation sans opération cible",
       "explication": "L'accès par deux indices permet de tester directement une liaison.",
       "explications": {
@@ -137,7 +137,7 @@
       "propositions": ["Parce que l'interface reste identique", "Parce que Python ignore les erreurs", "Parce qu'une file est toujours un dictionnaire", "Parce que les tests ne servent plus"],
       "bonne_reponse": "Parce que l'interface reste identique",
       "difficulte": "expert",
-      "capacite_officielle": "T-STRUCT-01",
+      "capacite_officielle": "T-STRUCT-01A",
       "erreur_ciblee": "Dépendance excessive aux détails internes",
       "explication": "Le code utilisateur dépend des opérations publiques, pas du stockage interne.",
       "explications": {
@@ -153,7 +153,7 @@
       "propositions": ["Liste d'adjacence", "Matrice d'adjacence systématique", "Pile uniquement", "Chaîne de caractères unique"],
       "bonne_reponse": "Liste d'adjacence",
       "difficulte": "expert",
-      "capacite_officielle": "T-STRUCT-05",
+      "capacite_officielle": "T-STRUCT-05A",
       "erreur_ciblee": "Mauvais compromis place/accès",
       "explication": "La liste d'adjacence évite de stocker beaucoup d'absences de relation.",
       "explications": {

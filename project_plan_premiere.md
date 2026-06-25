@@ -17,9 +17,9 @@ Les projets occupent plus d'un quart de l'horaire. Ils ne remplacent pas les cou
 | Séquence | Heures projet | Livrable | Trace orale | Point RGPD |
 |---|---:|---|---|---|
 | P00 | 1 h | carnet de bord initial et environnement de travail | expliquer son organisation | aucun compte personnel dans les livrables |
-| P01 | 2 h | convertisseur base 2/10/16 testé | expliquer une conversion | données synthétiques |
+| P01 | 1 h | convertisseur base 2/10/16 testé | expliquer une conversion | données synthétiques |
 | P02 | 2 h | simulateur complément à deux et tables booléennes | justifier les bornes | aucun identifiant réel |
-| P03 | 2 h | outil d'observation d'encodage texte | expliquer Unicode | chaînes fictives |
+| P03 | 1 h | outil d'observation d'encodage texte | expliquer Unicode | chaînes fictives |
 | P04 | 3 h | mini-modèle avec listes, tuples, dictionnaires | justifier le conteneur | noms fictifs |
 | P05 | 3 h | lecture et recherche dans CSV fictif | expliquer une incohérence | pas de fichier d'élèves réels |
 | P06 | 3 h | nettoyage, tri, fusion de tables | présenter stratégie anti-doublons | anonymisation simulée |
@@ -27,16 +27,16 @@ Les projets occupent plus d'un quart de l'horaire. Ils ne remplacent pas les cou
 | P08 | 4 h | formulaire Web local et interaction JS | expliquer GET/POST | formulaire sans collecte réelle |
 | P09 | 2 h | fiche enquête système et droits | expliquer droit d'accès | captures anonymisées |
 | P10 | 3 h | simulation protocole à bit alterné | expliquer perte et acquittement | traces fictives |
-| P11 | 3 h | analyse de données avec extremum/moyenne | justifier résultat | base fictive |
-| P12 | 3 h | comparaison de tris instrumentés | expliquer invariant | valeurs générées |
+| P11 | 2 h | analyse de données avec extremum/moyenne | justifier résultat | base fictive |
+| P12 | 2 h | comparaison de tris instrumentés | expliquer invariant | valeurs générées |
 | P13 | 3 h | classificateur k-NN jouet ou glouton | expliquer limites | jeu de données synthétique |
-| P14 | 6 h | projet final, démonstration, dossier, soutenance | soutenance courte | fiche RGPD obligatoire |
+| P14 | 10 h | projet final, démonstration, dossier, soutenance | soutenance courte | fiche RGPD obligatoire |
 | **Total** | **43 h** | progression projet annuelle | oral régulier | données fictives |
 
 ## Projet intermédiaire
 
 - Période : fin janvier, avant Ramadan.
-- Durée cumulée : environ 18 h de projet déjà engagées.
+- Durée cumulée : environ 17 h de projet déjà engagées.
 - Sujet recommandé : application locale d'exploration de données fictives avec conversions, types construits, CSV et tests.
 - Livrables : code Python, tests, fichier de données fictives, notice utilisateur, carnet de bord, courte démonstration.
 - Critères : fonctionnement observable, fonctions découpées, choix de structures justifié, gestion de cas limites, données non personnelles.

@@ -50,7 +50,7 @@ def read_text(path: Path, errors: list[str]) -> str:
 
 
 def official_ids(programme_text: str, prefix: str) -> set[str]:
-    pattern = rf"\b{prefix}-[A-Z]+(?:-[A-Z]+)*-\d+\b"
+    pattern = rf"\b{prefix}-[A-Z]+(?:-[A-Z]+)*-\d+[A-Z]?\b"
     return set(re.findall(pattern, programme_text))
 
 

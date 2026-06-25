@@ -24,7 +24,7 @@ official_program:
           file: "premiere/sequences/s01_representation_donnees/cours_eleve.md"
           anchor: "#bases-2-10-et-16"
           type: "cours"
-    - id: "P-DATA-BASE-02"
+    - id: "P-DATA-BASE-02B"
       label: "Evaluer un codage binaire d'entier relatif et utiliser le complément à deux."
       evidence:
         - section: "Entiers relatifs et complément à deux"
@@ -38,7 +38,7 @@ official_program:
           file: "premiere/sequences/s01_representation_donnees/cours_eleve.md"
           anchor: "#booléens-et-tables-de-vérité"
           type: "cours"
-    - id: "P-DATA-BASE-05"
+    - id: "P-DATA-BASE-05A"
       label: "Identifier l'intérêt des systèmes d'encodage de texte."
       evidence:
         - section: "Texte, ASCII et Unicode"
@@ -52,14 +52,14 @@ official_program:
           file: "premiere/sequences/s01_representation_donnees/cours_eleve.md"
           anchor: "#tuples-et-p-uplets"
           type: "cours"
-    - id: "P-DATA-CONSTR-02"
+    - id: "P-DATA-CONSTR-02A"
       label: "Lire, modifier, construire et itérer sur des tableaux."
       evidence:
         - section: "Listes et tableaux Python"
           file: "premiere/sequences/s01_representation_donnees/cours_eleve.md"
           anchor: "#listes-et-tableaux-python"
           type: "cours"
-    - id: "P-DATA-CONSTR-03"
+    - id: "P-DATA-CONSTR-03A"
       label: "Construire et parcourir un dictionnaire."
       evidence:
         - section: "Dictionnaires"

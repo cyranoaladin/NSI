@@ -1,42 +1,40 @@
 # Inventaire ressources NSI
 
-- Total ressources : 143
+- Total ressources : 154
 - Ressources pédagogiques : 52
-- Ressources techniques : 91
+- Ressources techniques : 102
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
-- drive: 0
-- generated: 143
+- drive: 1
+- generated: 153
 
 ## Répartition par niveau
-- interne: 85
+- interne: 96
 - premiere: 29
 - terminale: 29
 
 ## Répartition par type
 - banque: 14
-- document: 43
-- script: 42
+- document: 44
+- script: 52
 - sequence: 44
 
 ## Répartition par statut
-- needs_review: 143
+- needs_review: 154
 
 ## Répartition audience
 - corrige: 9
 - eleve: 18
-- mixte: 113
+- mixte: 124
 - professeur: 3
 
 ## Catégories (distinguer exigences)
 - Sources issues du Drive :
+  - scripts/ingest_drive_export.py
 - Sources générées :
   - 00_programmes_officiels/README.md
   - 00_programmes_officiels/programme_nsi_2019.yaml
-  - 01_build_reports/build_index.json
-  - 01_build_reports/build_index.md
-  - 01_build_reports/build_report.md
   - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
   - 01_charte_graphique_et_pedagogique/charte_graphique.md
   - 01_charte_graphique_et_pedagogique/metadata_schema.md
@@ -50,6 +48,8 @@
   - 02_modeles_documents/modele_tp.tex
   - 03_progressions/progression_premiere.md
   - 03_progressions/progression_terminale.md
+  - 03_progressions/seances_premiere.md
+  - 03_progressions/seances_terminale.md
   - INDEX.md
   - README.md
   - bank_strategy.md
@@ -58,6 +58,8 @@
   - differentiation_quality_report.md
   - drive_inventory.csv
   - drive_mapping.md
+  - drive_quarantine/README.md
+  - drive_quarantine_manifest.csv
   - drive_sources.yml
   - evaluation_bareme_alignment_report.md
   - learning_objectives_assessed_report.md
@@ -106,7 +108,10 @@
   - scripts/_pedagogy_reports.py
   - scripts/_qa_common.py
   - scripts/build_all.py
+  - scripts/build_source_archive.py
+  - scripts/check_archive_portability.py
   - scripts/check_bank_strategy.py
+  - scripts/check_build_reports_freshness.py
   - scripts/check_course_internal_coherence.py
   - scripts/check_coverage_evidence.py
   - scripts/check_differentiation_quality.py
@@ -114,11 +119,13 @@
   - scripts/check_document_style.py
   - scripts/check_drive_mapping.py
   - scripts/check_drive_mapping_release.py
+  - scripts/check_drive_quarantine_privacy.py
   - scripts/check_evaluation_bareme_alignment.py
   - scripts/check_git_clean.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_links.py
   - scripts/check_metadata.py
+  - scripts/check_monthly_load_balance.py
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
   - scripts/check_no_needs_review_for_release.py
@@ -130,7 +137,9 @@
   - scripts/check_pedagogical_alignment.py
   - scripts/check_program_capacity_evidence_depth.py
   - scripts/check_program_coverage.py
+  - scripts/check_program_yaml_atomicity.py
   - scripts/check_progression_calendar_alignment.py
+  - scripts/check_progression_project_consistency.py
   - scripts/check_project_quarter_requirement.py
   - scripts/check_python_quality.py
   - scripts/check_qcm_schema.py
@@ -138,7 +147,9 @@
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_completeness.py
+  - scripts/check_session_level_planning.py
   - scripts/check_td_corrige_alignment.py
+  - scripts/check_teacher_docs_depth.py
   - scripts/check_tp_test_alignment.py
   - scripts/check_validated_statuses.py
   - scripts/generate_index.py
@@ -231,9 +242,6 @@
 - Ressources techniques :
   - 00_programmes_officiels/README.md
   - 00_programmes_officiels/programme_nsi_2019.yaml
-  - 01_build_reports/build_index.json
-  - 01_build_reports/build_index.md
-  - 01_build_reports/build_report.md
   - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
   - 01_charte_graphique_et_pedagogique/charte_graphique.md
   - 01_charte_graphique_et_pedagogique/metadata_schema.md
@@ -247,6 +255,8 @@
   - 02_modeles_documents/modele_tp.tex
   - 03_progressions/progression_premiere.md
   - 03_progressions/progression_terminale.md
+  - 03_progressions/seances_premiere.md
+  - 03_progressions/seances_terminale.md
   - INDEX.md
   - README.md
   - bank_strategy.md
@@ -255,6 +265,8 @@
   - differentiation_quality_report.md
   - drive_inventory.csv
   - drive_mapping.md
+  - drive_quarantine/README.md
+  - drive_quarantine_manifest.csv
   - drive_sources.yml
   - evaluation_bareme_alignment_report.md
   - learning_objectives_assessed_report.md
@@ -277,7 +289,10 @@
   - scripts/_pedagogy_reports.py
   - scripts/_qa_common.py
   - scripts/build_all.py
+  - scripts/build_source_archive.py
+  - scripts/check_archive_portability.py
   - scripts/check_bank_strategy.py
+  - scripts/check_build_reports_freshness.py
   - scripts/check_course_internal_coherence.py
   - scripts/check_coverage_evidence.py
   - scripts/check_differentiation_quality.py
@@ -285,11 +300,13 @@
   - scripts/check_document_style.py
   - scripts/check_drive_mapping.py
   - scripts/check_drive_mapping_release.py
+  - scripts/check_drive_quarantine_privacy.py
   - scripts/check_evaluation_bareme_alignment.py
   - scripts/check_git_clean.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_links.py
   - scripts/check_metadata.py
+  - scripts/check_monthly_load_balance.py
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
   - scripts/check_no_needs_review_for_release.py
@@ -301,7 +318,9 @@
   - scripts/check_pedagogical_alignment.py
   - scripts/check_program_capacity_evidence_depth.py
   - scripts/check_program_coverage.py
+  - scripts/check_program_yaml_atomicity.py
   - scripts/check_progression_calendar_alignment.py
+  - scripts/check_progression_project_consistency.py
   - scripts/check_project_quarter_requirement.py
   - scripts/check_python_quality.py
   - scripts/check_qcm_schema.py
@@ -309,10 +328,13 @@
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_completeness.py
+  - scripts/check_session_level_planning.py
   - scripts/check_td_corrige_alignment.py
+  - scripts/check_teacher_docs_depth.py
   - scripts/check_tp_test_alignment.py
   - scripts/check_validated_statuses.py
   - scripts/generate_index.py
+  - scripts/ingest_drive_export.py
   - scripts/rebuild_inventory.py
   - scripts/run_python_tests.py
   - td_corrige_alignment_report.md
@@ -337,9 +359,6 @@
 ## Ressources élève
 - 00_programmes_officiels/README.md
 - 00_programmes_officiels/programme_nsi_2019.yaml
-- 01_build_reports/build_index.json
-- 01_build_reports/build_index.md
-- 01_build_reports/build_report.md
 - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
 - 01_charte_graphique_et_pedagogique/charte_graphique.md
 - 01_charte_graphique_et_pedagogique/metadata_schema.md
@@ -351,6 +370,8 @@
 - 02_modeles_documents/modele_tp.tex
 - 03_progressions/progression_premiere.md
 - 03_progressions/progression_terminale.md
+- 03_progressions/seances_premiere.md
+- 03_progressions/seances_terminale.md
 - INDEX.md
 - README.md
 - bank_strategy.md
@@ -359,6 +380,8 @@
 - differentiation_quality_report.md
 - drive_inventory.csv
 - drive_mapping.md
+- drive_quarantine/README.md
+- drive_quarantine_manifest.csv
 - drive_sources.yml
 - evaluation_bareme_alignment_report.md
 - learning_objectives_assessed_report.md
@@ -403,7 +426,10 @@
 - scripts/_pedagogy_reports.py
 - scripts/_qa_common.py
 - scripts/build_all.py
+- scripts/build_source_archive.py
+- scripts/check_archive_portability.py
 - scripts/check_bank_strategy.py
+- scripts/check_build_reports_freshness.py
 - scripts/check_course_internal_coherence.py
 - scripts/check_coverage_evidence.py
 - scripts/check_differentiation_quality.py
@@ -411,11 +437,13 @@
 - scripts/check_document_style.py
 - scripts/check_drive_mapping.py
 - scripts/check_drive_mapping_release.py
+- scripts/check_drive_quarantine_privacy.py
 - scripts/check_evaluation_bareme_alignment.py
 - scripts/check_git_clean.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_links.py
 - scripts/check_metadata.py
+- scripts/check_monthly_load_balance.py
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
 - scripts/check_no_needs_review_for_release.py
@@ -427,7 +455,9 @@
 - scripts/check_pedagogical_alignment.py
 - scripts/check_program_capacity_evidence_depth.py
 - scripts/check_program_coverage.py
+- scripts/check_program_yaml_atomicity.py
 - scripts/check_progression_calendar_alignment.py
+- scripts/check_progression_project_consistency.py
 - scripts/check_project_quarter_requirement.py
 - scripts/check_python_quality.py
 - scripts/check_qcm_schema.py
@@ -435,9 +465,12 @@
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
 - scripts/check_sequence_completeness.py
+- scripts/check_session_level_planning.py
+- scripts/check_teacher_docs_depth.py
 - scripts/check_tp_test_alignment.py
 - scripts/check_validated_statuses.py
 - scripts/generate_index.py
+- scripts/ingest_drive_export.py
 - scripts/rebuild_inventory.py
 - scripts/run_python_tests.py
 - terminale/banques/evaluations/index.md
@@ -473,9 +506,6 @@
 ## Ressources à corriger / compléter
 - 00_programmes_officiels/README.md
 - 00_programmes_officiels/programme_nsi_2019.yaml
-- 01_build_reports/build_index.json
-- 01_build_reports/build_index.md
-- 01_build_reports/build_report.md
 - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
 - 01_charte_graphique_et_pedagogique/charte_graphique.md
 - 01_charte_graphique_et_pedagogique/metadata_schema.md
@@ -489,6 +519,8 @@
 - 02_modeles_documents/modele_tp.tex
 - 03_progressions/progression_premiere.md
 - 03_progressions/progression_terminale.md
+- 03_progressions/seances_premiere.md
+- 03_progressions/seances_terminale.md
 - INDEX.md
 - README.md
 - bank_strategy.md
@@ -497,6 +529,8 @@
 - differentiation_quality_report.md
 - drive_inventory.csv
 - drive_mapping.md
+- drive_quarantine/README.md
+- drive_quarantine_manifest.csv
 - drive_sources.yml
 - evaluation_bareme_alignment_report.md
 - learning_objectives_assessed_report.md
@@ -545,7 +579,10 @@
 - scripts/_pedagogy_reports.py
 - scripts/_qa_common.py
 - scripts/build_all.py
+- scripts/build_source_archive.py
+- scripts/check_archive_portability.py
 - scripts/check_bank_strategy.py
+- scripts/check_build_reports_freshness.py
 - scripts/check_course_internal_coherence.py
 - scripts/check_coverage_evidence.py
 - scripts/check_differentiation_quality.py
@@ -553,11 +590,13 @@
 - scripts/check_document_style.py
 - scripts/check_drive_mapping.py
 - scripts/check_drive_mapping_release.py
+- scripts/check_drive_quarantine_privacy.py
 - scripts/check_evaluation_bareme_alignment.py
 - scripts/check_git_clean.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_links.py
 - scripts/check_metadata.py
+- scripts/check_monthly_load_balance.py
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
 - scripts/check_no_needs_review_for_release.py
@@ -569,7 +608,9 @@
 - scripts/check_pedagogical_alignment.py
 - scripts/check_program_capacity_evidence_depth.py
 - scripts/check_program_coverage.py
+- scripts/check_program_yaml_atomicity.py
 - scripts/check_progression_calendar_alignment.py
+- scripts/check_progression_project_consistency.py
 - scripts/check_project_quarter_requirement.py
 - scripts/check_python_quality.py
 - scripts/check_qcm_schema.py
@@ -577,10 +618,13 @@
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
 - scripts/check_sequence_completeness.py
+- scripts/check_session_level_planning.py
 - scripts/check_td_corrige_alignment.py
+- scripts/check_teacher_docs_depth.py
 - scripts/check_tp_test_alignment.py
 - scripts/check_validated_statuses.py
 - scripts/generate_index.py
+- scripts/ingest_drive_export.py
 - scripts/rebuild_inventory.py
 - scripts/run_python_tests.py
 - td_corrige_alignment_report.md

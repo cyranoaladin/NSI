@@ -19,22 +19,22 @@ official_program:
     - id: "P-DATA-BASE-01"
       label: "Changer de base."
       evidence: [{section: "Étapes", file: "premiere/sequences/s01_representation_donnees/tp.md", anchor: "#étapes", type: "tp"}]
-    - id: "P-DATA-BASE-02"
+    - id: "P-DATA-BASE-02B"
       label: "Utiliser le complément à deux."
       evidence: [{section: "Étapes", file: "premiere/sequences/s01_representation_donnees/tp.md", anchor: "#étapes", type: "tp"}]
     - id: "P-DATA-BASE-04"
       label: "Dresser une table de vérité."
       evidence: [{section: "Étapes", file: "premiere/sequences/s01_representation_donnees/tp.md", anchor: "#étapes", type: "tp"}]
-    - id: "P-DATA-BASE-05"
+    - id: "P-DATA-BASE-05A"
       label: "Identifier les encodages."
       evidence: [{section: "Étapes", file: "premiere/sequences/s01_representation_donnees/tp.md", anchor: "#étapes", type: "tp"}]
     - id: "P-DATA-CONSTR-01"
       label: "Utiliser les tuples."
       evidence: [{section: "Travail demandé", file: "premiere/sequences/s01_representation_donnees/tp.md", anchor: "#travail-demandé", type: "tp"}]
-    - id: "P-DATA-CONSTR-02"
+    - id: "P-DATA-CONSTR-02A"
       label: "Utiliser les listes."
       evidence: [{section: "Travail demandé", file: "premiere/sequences/s01_representation_donnees/tp.md", anchor: "#travail-demandé", type: "tp"}]
-    - id: "P-DATA-CONSTR-03"
+    - id: "P-DATA-CONSTR-03A"
       label: "Utiliser les dictionnaires."
       evidence: [{section: "Travail demandé", file: "premiere/sequences/s01_representation_donnees/tp.md", anchor: "#travail-demandé", type: "tp"}]
     - id: "P-LANG-04"

@@ -22,17 +22,17 @@ Aucune séquence n'est marquée `published`, `covered` ou `validated_*`.
 | --- | --- | ---: | ---: | --- | --- |
 | P00 | Septembre | 4 h | 1 h | P-HIST-01, P-LANG-01 | Diagnostic |
 | P01 | Septembre-Octobre | 8 h | 1 h | P-DATA-BASE-01 | Quiz + exercices |
-| P02 | Octobre-Novembre | 8 h | 2 h | P-DATA-BASE-02, P-DATA-BASE-04 | TD évalué |
-| P03 | Novembre | 7 h | 1 h | P-DATA-BASE-05, P-DATA-BASE-03 | TP court |
-| P04 | Novembre-Décembre | 10 h | 3 h | P-DATA-CONSTR-01, P-DATA-CONSTR-02, P-DATA-CONSTR-03 | TP + QCM |
+| P02 | Octobre-Novembre | 8 h | 2 h | P-DATA-BASE-02A, P-DATA-BASE-02B, P-DATA-BASE-04 | TD évalué |
+| P03 | Novembre | 7 h | 1 h | P-DATA-BASE-05A, P-DATA-BASE-05B, P-DATA-BASE-03 | TP court |
+| P04 | Novembre-Décembre | 10 h | 3 h | P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C | TP + QCM |
 | P05 | Décembre-Janvier | 10 h | 3 h | P-TABLE-01, P-TABLE-02 | TP évalué |
 | P06 | Janvier | 9 h | 3 h | P-TABLE-03, P-TABLE-04 | Étude de cas |
-| P07 | Janvier-Février | 10 h | 3 h | P-LANG-01, P-LANG-02, P-LANG-03, P-LANG-04, P-LANG-05 | Test pratique |
-| P08 | Février-Mars | 12 h | 4 h | P-IHM-01, P-IHM-02, P-IHM-03, P-IHM-04 | Mini-projet Web |
-| P09 | Mars | 10 h | 2 h | P-ARCH-01, P-ARCH-03 | TP ligne de commande |
-| P10 | Mars-Avril | 9 h | 3 h | P-ARCH-02, P-ARCH-04 | Simulation réseau |
-| P11 | Avril | 8 h | 2 h | P-ALGO-01 | TD algorithmique |
-| P12 | Avril-Mai | 9 h | 2 h | P-ALGO-02 | Évaluation tris |
+| P07 | Janvier-Février | 10 h | 3 h | P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05 | Test pratique |
+| P08 | Février-Mars | 12 h | 4 h | P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C | Mini-projet Web |
+| P09 | Mars | 10 h | 2 h | P-ARCH-01A, P-ARCH-01B, P-ARCH-03A, P-ARCH-03B, P-ARCH-03C | TP ligne de commande |
+| P10 | Mars-Avril | 9 h | 3 h | P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B | Simulation réseau |
+| P11 | Avril | 8 h | 2 h | P-ALGO-01A, P-ALGO-01B | TD algorithmique |
+| P12 | Avril-Mai | 9 h | 2 h | P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D | Évaluation tris |
 | P13 | Mai | 8 h | 3 h | P-ALGO-03, P-ALGO-04, P-ALGO-05 | Problème guidé |
 | P14 | Mai-Juin | 18 h | 10 h | P-HIST-01, synthèse toutes rubriques | Projet final + oral |
 | Total | Année | 140 h | 43 h | Toutes capacités planifiées | Banque d'évaluations à construire |
@@ -74,7 +74,7 @@ Aucune séquence n'est marquée `published`, `covered` ou `validated_*`.
 - Mois : octobre-novembre.
 - Volume horaire : 8 h.
 - Projet : 2 h, simulateur de registres 4 bits et 8 bits.
-- Capacités officielles : P-DATA-BASE-02, P-DATA-BASE-04.
+- Capacités officielles : P-DATA-BASE-02A, P-DATA-BASE-02B, P-DATA-BASE-04.
 - Documents à produire : cours ciblé, TD complément à deux, TP tables de vérité, évaluation courte.
 - TD : plages de valeurs, dépassements, tables booléennes.
 - TP : encodeur/décodeur complément à deux et générateur de tables de vérité.
@@ -90,7 +90,7 @@ Aucune séquence n'est marquée `published`, `covered` ou `validated_*`.
 - Mois : novembre.
 - Volume horaire : 7 h.
 - Projet : 1 h, inspecteur de points de code.
-- Capacités officielles : P-DATA-BASE-05, P-DATA-BASE-03.
+- Capacités officielles : P-DATA-BASE-05A, P-DATA-BASE-05B, P-DATA-BASE-03.
 - Documents à produire : cours texte, fiche encodage, capsule flottants, TD, TP conversion, QCM.
 - TD : ASCII, Unicode, caractères non latins, erreurs d'encodage, représentation approximative de réels simples.
 - TP : lire une chaîne, afficher points de code, comparer chaînes vides et accents, observer une approximation flottante.
@@ -106,7 +106,7 @@ Aucune séquence n'est marquée `published`, `covered` ou `validated_*`.
 - Mois : novembre-décembre.
 - Volume horaire : 10 h.
 - Projet : 3 h, carnet de mesures fictives.
-- Capacités officielles : P-DATA-CONSTR-01, P-DATA-CONSTR-02, P-DATA-CONSTR-03.
+- Capacités officielles : P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C.
 - Documents à produire : cours dédié, TD structures, TP données fictives, corrigé, guide professeur.
 - TD : index, parcours, compréhension, dictionnaires, p-uplets.
 - TP : construire et interroger un jeu de mesures fictives.
@@ -154,7 +154,7 @@ Aucune séquence n'est marquée `published`, `covered` ou `validated_*`.
 - Mois : janvier-février.
 - Volume horaire : 10 h.
 - Projet : 3 h, bibliothèque de fonctions testées.
-- Capacités officielles : P-LANG-01, P-LANG-02, P-LANG-03, P-LANG-04, P-LANG-05.
+- Capacités officielles : P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05.
 - Documents à produire : cours fonctions, fiche spécification, TD tests, TP bibliothèque, corrigé professeur.
 - TD : préconditions, postconditions, assertions, lecture de documentation, comparaison avec un autre langage.
 - TP : écrire fonctions courtes et tests unitaires.
@@ -170,7 +170,7 @@ Aucune séquence n'est marquée `published`, `covered` ou `validated_*`.
 - Mois : février-mars.
 - Volume horaire : 12 h.
 - Projet : 4 h, formulaire Web local sans données personnelles.
-- Capacités officielles : P-IHM-01, P-IHM-02, P-IHM-03, P-IHM-04.
+- Capacités officielles : P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C.
 - Documents à produire : cours IHM, TP HTML/événements, TD client-serveur, évaluation courte.
 - TD : événements, client, serveur, requêtes, confidentialité.
 - TP : page locale avec bouton, formulaire, paramètres fictifs.
@@ -186,7 +186,7 @@ Aucune séquence n'est marquée `published`, `covered` ou `validated_*`.
 - Mois : mars.
 - Volume horaire : 10 h.
 - Projet : 2 h, fiche d'enquête sur une machine fictive.
-- Capacités officielles : P-ARCH-01, P-ARCH-03.
+- Capacités officielles : P-ARCH-01A, P-ARCH-01B, P-ARCH-03A, P-ARCH-03B, P-ARCH-03C.
 - Documents à produire : cours architecture, TP shell, fiche droits, évaluation pratique.
 - TD : composants, mémoire, processeur, rôle OS, droits.
 - TP : ligne de commande, arborescence, permissions sur dossiers fictifs.
@@ -202,7 +202,7 @@ Aucune séquence n'est marquée `published`, `covered` ou `validated_*`.
 - Mois : mars-avril.
 - Volume horaire : 9 h.
 - Projet : 3 h, simulation de protocole simple.
-- Capacités officielles : P-ARCH-02, P-ARCH-04.
+- Capacités officielles : P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B.
 - Documents à produire : cours réseau, TD paquets, TP simulation, QCM.
 - TD : découpage en paquets, pertes, accusés, capteurs/actionneurs.
 - TP : simuler un protocole de récupération de perte.
@@ -218,7 +218,7 @@ Aucune séquence n'est marquée `published`, `covered` ou `validated_*`.
 - Mois : avril.
 - Volume horaire : 8 h.
 - Projet : 2 h, analyseur de séries de données fictives.
-- Capacités officielles : P-ALGO-01.
+- Capacités officielles : P-ALGO-01A, P-ALGO-01B.
 - Documents à produire : cours parcours, TD recherche, TP extremum, évaluation courte.
 - TD : occurrence, extremum, moyenne, invariant simple informel.
 - TP : fonctions sur tableaux de valeurs fictives.
@@ -234,7 +234,7 @@ Aucune séquence n'est marquée `published`, `covered` ou `validated_*`.
 - Mois : avril-mai.
 - Volume horaire : 9 h.
 - Projet : 2 h, visualisation de tri.
-- Capacités officielles : P-ALGO-02.
+- Capacités officielles : P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D.
 - Documents à produire : cours tris, TD invariants, TP tri sélection/insertion, évaluation.
 - TD : tri par insertion, tri par sélection, invariant de boucle.
 - TP : implémenter et tracer un tri sur liste courte.
@@ -279,7 +279,7 @@ Aucune séquence n'est marquée `published`, `covered` ou `validated_*`.
 
 ## Capacités officielles planifiées
 
-P-HIST-01, P-DATA-BASE-01, P-DATA-BASE-02, P-DATA-BASE-03, P-DATA-BASE-04, P-DATA-BASE-05, P-DATA-CONSTR-01, P-DATA-CONSTR-02, P-DATA-CONSTR-03, P-TABLE-01, P-TABLE-02, P-TABLE-03, P-TABLE-04, P-IHM-01, P-IHM-02, P-IHM-03, P-IHM-04, P-ARCH-01, P-ARCH-02, P-ARCH-03, P-ARCH-04, P-LANG-01, P-LANG-02, P-LANG-03, P-LANG-04, P-LANG-05, P-ALGO-01, P-ALGO-02, P-ALGO-03, P-ALGO-04, P-ALGO-05.
+P-HIST-01, P-DATA-BASE-01, P-DATA-BASE-02A, P-DATA-BASE-02B, P-DATA-BASE-03, P-DATA-BASE-04, P-DATA-BASE-05A, P-DATA-BASE-05B, P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C, P-TABLE-01, P-TABLE-02, P-TABLE-03, P-TABLE-04, P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C, P-ARCH-01A, P-ARCH-01B, P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-03A, P-ARCH-03B, P-ARCH-03C, P-ARCH-04A, P-ARCH-04B, P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05, P-ALGO-01A, P-ALGO-01B, P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D, P-ALGO-03, P-ALGO-04, P-ALGO-05.
 
 ## Décisions sur les pilotes
 
@@ -294,3 +294,7 @@ Les tables CSV, la recherche, le tri et la fusion sont planifiés en P05 et P06.
 ## Note de statut couverture
 
 Aucune capacité n'est déclarée `covered` par cette progression. Les capacités sont seulement planifiées pour guider les productions futures et les revues de fond.
+
+## Capacités atomiques planifiées
+
+P-HIST-01, P-DATA-BASE-01, P-DATA-BASE-02A, P-DATA-BASE-02B, P-DATA-BASE-03, P-DATA-BASE-04, P-DATA-BASE-05A, P-DATA-BASE-05B, P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C, P-TABLE-01, P-TABLE-02, P-TABLE-03, P-TABLE-04, P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C, P-ARCH-01A, P-ARCH-01B, P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-03A, P-ARCH-03B, P-ARCH-03C, P-ARCH-04A, P-ARCH-04B, P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05, P-ALGO-01A, P-ALGO-01B, P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D, P-ALGO-03, P-ALGO-04, P-ALGO-05.
