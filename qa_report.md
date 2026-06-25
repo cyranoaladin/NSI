@@ -16,6 +16,58 @@
 
 ## Commandes exécutées
 
+### Audit prototype final
+
+```bash
+make audit
+```
+
+Sortie synthétique :
+
+```text
+check_git_clean: PASS
+check_metadata: PASS
+check_links: PASS
+check_no_private_data: PASS
+check_no_placeholders_docs: PASS
+check_no_placeholders_code: PASS
+check_no_build_artifacts_in_index: PASS
+check_required_sections: PASS
+check_document_depth: PASS
+check_qcm_schema: PASS
+check_document_style: PASS
+check_sequence_completeness: PASS
+check_course_internal_coherence: PASS
+check_td_corrige_alignment: PASS
+check_tp_test_alignment: PASS
+check_evaluation_bareme_alignment: PASS
+check_learning_objectives_assessed: PASS
+check_differentiation_quality: PASS
+check_scientific_claims_review: PASS
+check_program_capacity_evidence_depth: PASS
+check_coverage_evidence: PASS
+run_python_tests: tests exécutés = 15
+run_python_tests: PASS
+check_quality_gates: PASS
+```
+
+### Release audit final
+
+```bash
+make release-audit
+```
+
+Sortie :
+
+```text
+python scripts/check_git_clean.py
+check_git_clean: PASS
+python scripts/check_drive_mapping_release.py
+check_drive_mapping_release: KO
+- ressources Drive référencées mais non intégrées localement: copie_de_progres_nsi_amelioree.pdf, copie_de_progres_nsi_amelioree.tex, guide_enseignant_reprise_nsi_ameliore.tex, Cours.pdf, 2_TP.pdf, eval_nsi_corrige.pdf, eval_nsi.pdf, rendus_eleves, .git, .venv, TP_SOC.tex, Séquence1_Histoire de l'informatique, Séquence4_Types construits, 1_Cours_Types_construits.pdf, 1_RdD_Entier naturel.pdf, pays_monde.csv, NotesEleves.csv, Fichier_Eleves.csv, tri_bulles_eleve.py, Séquence1_TAD_Théorie
+make: *** [Makefile:32: release-audit] Error 1
+```
+
 ### Audit prototype hors Git pendant édition
 
 ```bash
