@@ -21,6 +21,13 @@ MATRIX_PREMIERE = ROOT / "programme_matrix_premiere.md"
 MATRIX_TERMINALE = ROOT / "programme_matrix_terminale.md"
 MISSING = ROOT / "missing_capabilities.md"
 
+FORCED_STATUS = {
+    "T-ALGO-02": (
+        "partial",
+        "parcours de graphes présents seulement comme application, pas comme séquence évaluée complète",
+    ),
+}
+
 
 def evidence_label(items: List[Evidence], accepted: set[str]) -> str:
     selected = [item for item in items if item.evidence_type in accepted]
@@ -29,7 +36,10 @@ def evidence_label(items: List[Evidence], accepted: set[str]) -> str:
     return ", ".join(sorted({f"{item.file}{item.anchor}" for item in selected}))
 
 
-def status_and_blocker(items: List[Evidence]) -> tuple[str, str]:
+def status_and_blocker(capacity_id: str, items: List[Evidence]) -> tuple[str, str]:
+    if capacity_id in FORCED_STATUS:
+        return FORCED_STATUS[capacity_id]
+
     if not items:
         return "absent", "aucune ressource associée"
 
@@ -63,7 +73,7 @@ def build_rows() -> List[Dict[str, str]]:
     rows: List[Dict[str, str]] = []
     for cap_id, entry in program.items():
         items = by_capacity.get(cap_id, [])
-        status, blocker = status_and_blocker(items)
+        status, blocker = status_and_blocker(cap_id, items)
         rows.append(
             {
                 "niveau": str(entry.get("level") or entry.get("niveau")),
@@ -82,8 +92,19 @@ def build_rows() -> List[Dict[str, str]]:
 
 
 def write_table(path: Path, rows: List[Dict[str, str]]) -> None:
+    counts: Dict[str, int] = defaultdict(int)
+    for row in rows:
+        counts[row["statut"]] += 1
     lines = [
         "# Couverture du programme NSI" if path == COVERAGE else f"# {path.stem}",
+        "",
+        "## Résumé",
+        "",
+        f"- Total capacités : {len(rows)}",
+        f"- covered : {counts.get('covered', 0)}",
+        f"- needs_review : {counts.get('needs_review', 0)}",
+        f"- partial : {counts.get('partial', 0)}",
+        f"- absent : {counts.get('absent', 0)}",
         "",
         "| niveau | rubrique officielle | contenu officiel | capacité officielle | preuve cours | preuve TD/TP | preuve évaluation | preuve corrigé | statut | blocker |",
         "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",

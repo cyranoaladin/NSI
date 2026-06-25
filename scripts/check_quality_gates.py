@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PYTHON = sys.executable
 
 CHECKS = [
+    "scripts/check_git_clean.py",
     "scripts/check_metadata.py",
     "scripts/check_links.py",
     "scripts/check_no_private_data.py",
@@ -21,8 +22,17 @@ CHECKS = [
     "scripts/check_required_sections.py",
     "scripts/check_document_depth.py",
     "scripts/check_qcm_schema.py",
+    "scripts/check_document_style.py",
     "scripts/check_python_quality.py",
     "scripts/check_sequence_completeness.py",
+    "scripts/check_course_internal_coherence.py",
+    "scripts/check_td_corrige_alignment.py",
+    "scripts/check_tp_test_alignment.py",
+    "scripts/check_evaluation_bareme_alignment.py",
+    "scripts/check_learning_objectives_assessed.py",
+    "scripts/check_differentiation_quality.py",
+    "scripts/check_scientific_claims_review.py",
+    "scripts/check_program_capacity_evidence_depth.py",
     "scripts/check_pedagogical_alignment.py",
     "scripts/check_bank_strategy.py",
     "scripts/check_drive_mapping.py",

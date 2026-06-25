@@ -76,7 +76,11 @@ def adjacency_matrix(graph: Dict[str, List[str]], nodes: List[str]) -> List[List
     index = {node: position for position, node in enumerate(nodes)}
     matrix = [[0 for _ in nodes] for _ in nodes]
     for source, neighbours in graph.items():
+        if source not in index:
+            raise KeyError(f"sommet absent de nodes: {source}")
         for target in neighbours:
+            if target not in index:
+                raise KeyError(f"voisin absent de nodes: {target}")
             matrix[index[source]][index[target]] = 1
     return matrix
 
@@ -90,6 +94,8 @@ def graph_from_matrix(matrix: List[List[int]], nodes: List[str]) -> Dict[str, Li
         if len(row) != len(nodes):
             raise ValueError("matrice non carrée")
         for col_index, value in enumerate(row):
+            if value not in {0, 1}:
+                raise ValueError("matrice d'adjacence attendue avec valeurs 0 ou 1")
             if value:
                 graph[nodes[row_index]].append(nodes[col_index])
     return graph

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check Drive inventory artifacts and explicit blocker when Drive is unavailable."""
+"""Prototype Drive check: accepts explicit blocker or referenced Drive sources."""
 
 from __future__ import annotations
 
@@ -21,31 +21,30 @@ def main() -> None:
         if not path.exists():
             errors.append(f"{path.name} absent")
 
+    data = {}
     if sources.exists():
         data = yaml.safe_load(sources.read_text(encoding="utf-8")) or {}
         if data.get("status") == "blocked":
             blocker = str(data.get("blocker") or "")
-            action = str(data.get("action_necessaire") or "")
-            if "BLOCKER: accès Drive impossible" not in blocker:
-                errors.append("drive_sources.yml: blocker Drive explicite absent")
-            if "export zip/tar" not in action and "monter le Drive" not in action:
-                errors.append("drive_sources.yml: action nécessaire imprécise")
+            if "BLOCKER:" not in blocker:
+                errors.append("drive_sources.yml: blocker explicite absent")
         elif not data.get("ressources"):
-            errors.append("drive_sources.yml: aucune ressource Drive et aucun blocker")
+            errors.append("drive_sources.yml: aucune source Drive référencée")
 
     if inventory.exists():
         with inventory.open(encoding="utf-8", newline="") as handle:
             rows = list(csv.DictReader(handle))
-        if not rows:
-            errors.append("drive_inventory.csv: inventaire vide sans blocker")
-        elif rows[0].get("drive_url") == "BLOCKER":
-            if "accès Drive impossible" not in rows[0].get("raison", ""):
-                errors.append("drive_inventory.csv: ligne blocker insuffisante")
+        non_blocker_rows = [row for row in rows if row.get("drive_url") != "BLOCKER"]
+        if data.get("status") == "blocked":
+            if not rows or rows[0].get("drive_url") != "BLOCKER":
+                errors.append("drive_inventory.csv: ligne blocker attendue")
+        elif not non_blocker_rows:
+            errors.append("drive_inventory.csv: aucune ressource Drive référencée")
 
     if mapping.exists():
         text = mapping.read_text(encoding="utf-8", errors="replace")
-        if "BLOCKER: accès Drive impossible" not in text:
-            errors.append("drive_mapping.md: blocker explicite absent")
+        if "Drive" not in text:
+            errors.append("drive_mapping.md: cartographie Drive absente")
 
     print_result("check_drive_mapping", errors)
 

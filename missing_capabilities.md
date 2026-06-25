@@ -50,7 +50,7 @@
 - terminale | T-LANG-04 - Distinguer sur des exemples les paradigmes impératif, fonctionnel et objet. / Choisir le paradigme selon le champ d'application. | absent | aucune ressource associée
 - terminale | T-LANG-05 - Savoir répondre aux causes typiques de bugs. | partial | preuves manquantes: evaluation
 - terminale | T-ALGO-01 - Calculer la taille et la hauteur d'un arbre. / Parcourir un arbre en ordres infixe, préfixe, suffixe ou largeur d'abord. / Rechercher une clé dans un arbre de recherche et insérer une clé. | absent | aucune ressource associée
-- terminale | T-ALGO-02 - Parcourir un graphe en profondeur d'abord et en largeur d'abord. / Repérer la présence d'un cycle dans un graphe. / Chercher un chemin dans un graphe. | partial | preuves manquantes: evaluation
+- terminale | T-ALGO-02 - Parcourir un graphe en profondeur d'abord et en largeur d'abord. / Repérer la présence d'un cycle dans un graphe. / Chercher un chemin dans un graphe. | partial | parcours de graphes présents seulement comme application, pas comme séquence évaluée complète
 - terminale | T-ALGO-03 - Ecrire un algorithme utilisant la méthode diviser pour régner. | absent | aucune ressource associée
 - terminale | T-ALGO-04 - Utiliser la programmation dynamique pour écrire un algorithme. | absent | aucune ressource associée
 - terminale | T-ALGO-05 - Etudier l'algorithme de Boyer-Moore pour la recherche d'un motif dans un texte. | absent | aucune ressource associée

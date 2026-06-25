@@ -1,5 +1,13 @@
 # Couverture du programme NSI
 
+## Résumé
+
+- Total capacités : 54
+- covered : 0
+- needs_review : 11
+- partial : 4
+- absent : 39
+
 | niveau | rubrique officielle | contenu officiel | capacité officielle | preuve cours | preuve TD/TP | preuve évaluation | preuve corrigé | statut | blocker |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | premiere | Histoire de l'informatique | Evénements clés de l'histoire de l'informatique | P-HIST-01 - Situer dans le temps les principaux événements de l'histoire de l'informatique et leurs protagonistes. | - | - | - | - | absent | aucune ressource associée |
@@ -52,7 +60,7 @@
 | terminale | Langages et programmation | Paradigmes de programmation | T-LANG-04 - Distinguer sur des exemples les paradigmes impératif, fonctionnel et objet. / Choisir le paradigme selon le champ d'application. | - | - | - | - | absent | aucune ressource associée |
 | terminale | Langages et programmation | Mise au point des programmes ; gestion des bugs | T-LANG-05 - Savoir répondre aux causes typiques de bugs. | terminale/sequences/s01_structures_donnees_interfaces_implementations/cours_eleve.md#tests-bugs-et-cas-limites, terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md#points-de-vigilance | terminale/sequences/s01_structures_donnees_interfaces_implementations/td.md#analyse-de-code, terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md#tests | - | terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md#erreurs-fréquentes | partial | preuves manquantes: evaluation |
 | terminale | Algorithmique | Algorithmes sur les arbres binaires et arbres binaires de recherche | T-ALGO-01 - Calculer la taille et la hauteur d'un arbre. / Parcourir un arbre en ordres infixe, préfixe, suffixe ou largeur d'abord. / Rechercher une clé dans un arbre de recherche et insérer une clé. | - | - | - | - | absent | aucune ressource associée |
-| terminale | Algorithmique | Algorithmes sur les graphes | T-ALGO-02 - Parcourir un graphe en profondeur d'abord et en largeur d'abord. / Repérer la présence d'un cycle dans un graphe. / Chercher un chemin dans un graphe. | terminale/sequences/s01_structures_donnees_interfaces_implementations/cours_eleve.md#bfs-et-dfs-comme-activité-dapplication, terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md#à-savoir-refaire | terminale/sequences/s01_structures_donnees_interfaces_implementations/td.md#exercices, terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md#extension-experte | - | terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md#variante-acceptable | partial | preuves manquantes: evaluation |
+| terminale | Algorithmique | Algorithmes sur les graphes | T-ALGO-02 - Parcourir un graphe en profondeur d'abord et en largeur d'abord. / Repérer la présence d'un cycle dans un graphe. / Chercher un chemin dans un graphe. | terminale/sequences/s01_structures_donnees_interfaces_implementations/cours_eleve.md#bfs-et-dfs-comme-activité-dapplication, terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md#à-savoir-refaire | terminale/sequences/s01_structures_donnees_interfaces_implementations/td.md#exercices, terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md#extension-experte | - | terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md#variante-acceptable | partial | parcours de graphes présents seulement comme application, pas comme séquence évaluée complète |
 | terminale | Algorithmique | Méthode diviser pour régner | T-ALGO-03 - Ecrire un algorithme utilisant la méthode diviser pour régner. | - | - | - | - | absent | aucune ressource associée |
 | terminale | Algorithmique | Programmation dynamique | T-ALGO-04 - Utiliser la programmation dynamique pour écrire un algorithme. | - | - | - | - | absent | aucune ressource associée |
 | terminale | Algorithmique | Recherche textuelle | T-ALGO-05 - Etudier l'algorithme de Boyer-Moore pour la recherche d'un motif dans un texte. | - | - | - | - | absent | aucune ressource associée |

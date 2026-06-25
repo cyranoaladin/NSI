@@ -1,30 +1,44 @@
 # Cartographie Drive
 
-## Etat
+## État
 
-BLOCKER: accès Drive impossible depuis cet environnement.
+Les liens Drive fournis sont accessibles via le connecteur Google Drive.
 
-Action nécessaire : fournir un export zip/tar des dossiers Drive ou monter le Drive localement.
+Cette passe référence des dossiers et ressources de premier niveau ou des échantillons représentatifs.
 
-## Conséquence
+Aucune ressource Drive n'est copiée localement dans le corpus.
 
-- Aucune ressource Drive n'est intégrée à ce stade.
-- Les ressources générées ne sont pas considérées comme équivalentes à des ressources Drive.
-- L'inventaire `drive = 0` reste un bloquant explicite, pas une anomalie masquée.
+Aucune ressource Drive n'est déclarée publiable.
 
-## Format attendu après fourniture des exports
+## Statut de release
 
-Chaque ressource Drive devra renseigner :
+NON PASSANT pour publication.
 
-- `drive_url`
-- `drive_folder`
-- `file_name`
-- `mime_type`
-- `local_copy`
-- `sha256`
-- `niveau`
-- `theme`
-- `sequence_possible`
-- `qualite_initiale`
-- `decision`
-- `raison`
+Raison : les ressources Drive sont référencées mais non intégrées, non anonymisées et non relues.
+
+`check_drive_mapping.py` accepte cet état pour un prototype.
+
+`check_drive_mapping_release.py` échoue tant que `local_copy` reste `NA_REMOTE_NOT_DOWNLOADED`.
+
+## Points sensibles détectés
+
+- Dossiers `rendus_eleves`.
+- Dossiers `.git`.
+- Dossiers `.venv`.
+- Fichiers `NotesEleves.csv`.
+- Fichiers `Fichier_Eleves.csv`.
+- Corrigés mélangés avec sujets.
+- Dossiers `Groupes`.
+
+## Décisions initiales
+
+- `reuse` : aucune ressource à ce stade.
+- `refactor` : ressources pédagogiques potentielles à analyser.
+- `archive` : ressources utiles mais non publiables telles quelles.
+- `reject` : données élèves, artefacts techniques ou dossiers sensibles.
+
+## Limite
+
+Le listing n'est pas récursif.
+
+La prochaine action Drive doit être un export contrôlé, anonymisé et hashé, ou une ingestion récursive dédiée avec séparation des données élèves.

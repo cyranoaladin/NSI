@@ -1,5 +1,13 @@
 # programme_matrix_premiere
 
+## Résumé
+
+- Total capacités : 31
+- covered : 0
+- needs_review : 8
+- partial : 0
+- absent : 23
+
 | niveau | rubrique officielle | contenu officiel | capacité officielle | preuve cours | preuve TD/TP | preuve évaluation | preuve corrigé | statut | blocker |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | premiere | Histoire de l'informatique | Evénements clés de l'histoire de l'informatique | P-HIST-01 - Situer dans le temps les principaux événements de l'histoire de l'informatique et leurs protagonistes. | - | - | - | - | absent | aucune ressource associée |

@@ -1,32 +1,32 @@
 # Inventaire ressources NSI
 
-- Total ressources : 99
-- Ressources pédagogiques : 40
-- Ressources techniques : 59
+- Total ressources : 137
+- Ressources pédagogiques : 52
+- Ressources techniques : 85
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - drive: 0
-- generated: 99
+- generated: 137
 
 ## Répartition par niveau
-- interne: 53
-- premiere: 23
-- terminale: 23
+- interne: 79
+- premiere: 29
+- terminale: 29
 
 ## Répartition par type
 - banque: 14
-- document: 28
-- script: 25
-- sequence: 32
+- document: 39
+- script: 40
+- sequence: 44
 
 ## Répartition par statut
-- needs_review: 99
+- needs_review: 137
 
 ## Répartition audience
-- corrige: 3
+- corrige: 9
 - eleve: 18
-- mixte: 75
+- mixte: 107
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -37,6 +37,7 @@
   - 01_build_reports/build_index.json
   - 01_build_reports/build_index.md
   - 01_build_reports/build_report.md
+  - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
   - 01_charte_graphique_et_pedagogique/charte_graphique.md
   - 01_charte_graphique_et_pedagogique/metadata_schema.md
   - 02_modeles_documents/modele_corrige.tex
@@ -52,9 +53,13 @@
   - INDEX.md
   - README.md
   - bank_strategy.md
+  - course_internal_coherence_report.md
+  - differentiation_quality_report.md
   - drive_inventory.csv
   - drive_mapping.md
   - drive_sources.yml
+  - evaluation_bareme_alignment_report.md
+  - learning_objectives_assessed_report.md
   - missing_capabilities.md
   - premiere/banques/evaluations/index.md
   - premiere/banques/exercices/index.md
@@ -64,11 +69,16 @@
   - premiere/banques/sujets_pratiques/index.md
   - premiere/banques/tp/index.md
   - premiere/sequences/s01_representation_donnees/aides_progressives.md
+  - premiere/sequences/s01_representation_donnees/bareme.md
   - premiere/sequences/s01_representation_donnees/corrige.md
+  - premiere/sequences/s01_representation_donnees/corrige_professeur.md
   - premiere/sequences/s01_representation_donnees/cours_eleve.md
   - premiere/sequences/s01_representation_donnees/evaluation.md
+  - premiere/sequences/s01_representation_donnees/evaluation_corrigee.md
   - premiere/sequences/s01_representation_donnees/fiche_methode.md
+  - premiere/sequences/s01_representation_donnees/grille_competences.md
   - premiere/sequences/s01_representation_donnees/guide_professeur.md
+  - premiere/sequences/s01_representation_donnees/pedagogical_review.md
   - premiere/sequences/s01_representation_donnees/projet_associe.md
   - premiere/sequences/s01_representation_donnees/python/representation_tools.py
   - premiere/sequences/s01_representation_donnees/qcm.json
@@ -79,35 +89,56 @@
   - premiere/sequences/s01_representation_donnees/tests/test_representation_tools.py
   - premiere/sequences/s01_representation_donnees/tp.md
   - premiere/sequences/s01_representation_donnees/trace_ecrite.md
+  - premiere/sequences/s01_representation_donnees/version_amenagee.md
   - privacy_allowlist.yml
+  - privacy_report.md
+  - program_capacity_evidence_depth_report.md
   - programme_matrix_premiere.md
   - programme_matrix_terminale.md
+  - programme_yaml_audit.md
   - qa_report.md
+  - scientific_claims_review_report.md
   - scripts/_inventory_utils.py
+  - scripts/_pedagogy_reports.py
   - scripts/_qa_common.py
   - scripts/build_all.py
   - scripts/check_bank_strategy.py
+  - scripts/check_course_internal_coherence.py
   - scripts/check_coverage_evidence.py
+  - scripts/check_differentiation_quality.py
   - scripts/check_document_depth.py
+  - scripts/check_document_style.py
   - scripts/check_drive_mapping.py
+  - scripts/check_drive_mapping_release.py
+  - scripts/check_evaluation_bareme_alignment.py
   - scripts/check_git_clean.py
+  - scripts/check_learning_objectives_assessed.py
   - scripts/check_links.py
   - scripts/check_metadata.py
+  - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
+  - scripts/check_no_needs_review_for_release.py
   - scripts/check_no_placeholders.py
   - scripts/check_no_placeholders_code.py
   - scripts/check_no_placeholders_docs.py
   - scripts/check_no_private_data.py
+  - scripts/check_no_teacher_content_in_student_export.py
   - scripts/check_pedagogical_alignment.py
+  - scripts/check_program_capacity_evidence_depth.py
   - scripts/check_program_coverage.py
   - scripts/check_python_quality.py
   - scripts/check_qcm_schema.py
   - scripts/check_quality_gates.py
   - scripts/check_required_sections.py
+  - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_completeness.py
+  - scripts/check_td_corrige_alignment.py
+  - scripts/check_tp_test_alignment.py
+  - scripts/check_validated_statuses.py
   - scripts/generate_index.py
   - scripts/rebuild_inventory.py
   - scripts/run_python_tests.py
+  - td_corrige_alignment_report.md
   - terminale/banques/evaluations/index.md
   - terminale/banques/exercices/index.md
   - terminale/banques/index.md
@@ -116,11 +147,16 @@
   - terminale/banques/sujets_pratiques/index.md
   - terminale/banques/tp/index.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/aides_progressives.md
+  - terminale/sequences/s01_structures_donnees_interfaces_implementations/bareme.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md
+  - terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige_professeur.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/cours_eleve.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/evaluation.md
+  - terminale/sequences/s01_structures_donnees_interfaces_implementations/evaluation_corrigee.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/fiche_methode.md
+  - terminale/sequences/s01_structures_donnees_interfaces_implementations/grille_competences.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/guide_professeur.md
+  - terminale/sequences/s01_structures_donnees_interfaces_implementations/pedagogical_review.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/projet_associe.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/python/structures_tools.py
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/qcm.json
@@ -131,6 +167,8 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tests/test_structures_tools.py
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
+  - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
+  - tp_test_alignment_report.md
 - Ressources pédagogiques :
   - premiere/banques/evaluations/index.md
   - premiere/banques/exercices/index.md
@@ -140,11 +178,16 @@
   - premiere/banques/sujets_pratiques/index.md
   - premiere/banques/tp/index.md
   - premiere/sequences/s01_representation_donnees/aides_progressives.md
+  - premiere/sequences/s01_representation_donnees/bareme.md
   - premiere/sequences/s01_representation_donnees/corrige.md
+  - premiere/sequences/s01_representation_donnees/corrige_professeur.md
   - premiere/sequences/s01_representation_donnees/cours_eleve.md
   - premiere/sequences/s01_representation_donnees/evaluation.md
+  - premiere/sequences/s01_representation_donnees/evaluation_corrigee.md
   - premiere/sequences/s01_representation_donnees/fiche_methode.md
+  - premiere/sequences/s01_representation_donnees/grille_competences.md
   - premiere/sequences/s01_representation_donnees/guide_professeur.md
+  - premiere/sequences/s01_representation_donnees/pedagogical_review.md
   - premiere/sequences/s01_representation_donnees/projet_associe.md
   - premiere/sequences/s01_representation_donnees/qcm.json
   - premiere/sequences/s01_representation_donnees/quality_audit_s01.md
@@ -152,6 +195,7 @@
   - premiere/sequences/s01_representation_donnees/td.md
   - premiere/sequences/s01_representation_donnees/tp.md
   - premiere/sequences/s01_representation_donnees/trace_ecrite.md
+  - premiere/sequences/s01_representation_donnees/version_amenagee.md
   - terminale/banques/evaluations/index.md
   - terminale/banques/exercices/index.md
   - terminale/banques/index.md
@@ -160,11 +204,16 @@
   - terminale/banques/sujets_pratiques/index.md
   - terminale/banques/tp/index.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/aides_progressives.md
+  - terminale/sequences/s01_structures_donnees_interfaces_implementations/bareme.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md
+  - terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige_professeur.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/cours_eleve.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/evaluation.md
+  - terminale/sequences/s01_structures_donnees_interfaces_implementations/evaluation_corrigee.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/fiche_methode.md
+  - terminale/sequences/s01_structures_donnees_interfaces_implementations/grille_competences.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/guide_professeur.md
+  - terminale/sequences/s01_structures_donnees_interfaces_implementations/pedagogical_review.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/projet_associe.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/qcm.json
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/quality_audit_s01.md
@@ -172,12 +221,14 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/td.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
+  - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
 - Ressources techniques :
   - 00_programmes_officiels/README.md
   - 00_programmes_officiels/programme_nsi_2019.yaml
   - 01_build_reports/build_index.json
   - 01_build_reports/build_index.md
   - 01_build_reports/build_report.md
+  - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
   - 01_charte_graphique_et_pedagogique/charte_graphique.md
   - 01_charte_graphique_et_pedagogique/metadata_schema.md
   - 02_modeles_documents/modele_corrige.tex
@@ -193,51 +244,76 @@
   - INDEX.md
   - README.md
   - bank_strategy.md
+  - course_internal_coherence_report.md
+  - differentiation_quality_report.md
   - drive_inventory.csv
   - drive_mapping.md
   - drive_sources.yml
+  - evaluation_bareme_alignment_report.md
+  - learning_objectives_assessed_report.md
   - missing_capabilities.md
   - premiere/sequences/s01_representation_donnees/python/representation_tools.py
   - premiere/sequences/s01_representation_donnees/sequence.yaml
   - premiere/sequences/s01_representation_donnees/tests/test_representation_tools.py
   - privacy_allowlist.yml
+  - privacy_report.md
+  - program_capacity_evidence_depth_report.md
   - programme_matrix_premiere.md
   - programme_matrix_terminale.md
+  - programme_yaml_audit.md
   - qa_report.md
+  - scientific_claims_review_report.md
   - scripts/_inventory_utils.py
+  - scripts/_pedagogy_reports.py
   - scripts/_qa_common.py
   - scripts/build_all.py
   - scripts/check_bank_strategy.py
+  - scripts/check_course_internal_coherence.py
   - scripts/check_coverage_evidence.py
+  - scripts/check_differentiation_quality.py
   - scripts/check_document_depth.py
+  - scripts/check_document_style.py
   - scripts/check_drive_mapping.py
+  - scripts/check_drive_mapping_release.py
+  - scripts/check_evaluation_bareme_alignment.py
   - scripts/check_git_clean.py
+  - scripts/check_learning_objectives_assessed.py
   - scripts/check_links.py
   - scripts/check_metadata.py
+  - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
+  - scripts/check_no_needs_review_for_release.py
   - scripts/check_no_placeholders.py
   - scripts/check_no_placeholders_code.py
   - scripts/check_no_placeholders_docs.py
   - scripts/check_no_private_data.py
+  - scripts/check_no_teacher_content_in_student_export.py
   - scripts/check_pedagogical_alignment.py
+  - scripts/check_program_capacity_evidence_depth.py
   - scripts/check_program_coverage.py
   - scripts/check_python_quality.py
   - scripts/check_qcm_schema.py
   - scripts/check_quality_gates.py
   - scripts/check_required_sections.py
+  - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_completeness.py
+  - scripts/check_td_corrige_alignment.py
+  - scripts/check_tp_test_alignment.py
+  - scripts/check_validated_statuses.py
   - scripts/generate_index.py
   - scripts/rebuild_inventory.py
   - scripts/run_python_tests.py
+  - td_corrige_alignment_report.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/python/structures_tools.py
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/sequence.yaml
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tests/test_structures_tools.py
+  - tp_test_alignment_report.md
 - Ressources copiées dans banques :
 
 ## Séquences détectées
 - bank_index: 14
-- s01_representation_donnees: 16
-- s01_structures_donnees_interfaces_implementations: 16
+- s01_representation_donnees: 22
+- s01_structures_donnees_interfaces_implementations: 22
 
 ## Ressources publiables
 
@@ -252,6 +328,7 @@
 - 01_build_reports/build_index.json
 - 01_build_reports/build_index.md
 - 01_build_reports/build_report.md
+- 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
 - 01_charte_graphique_et_pedagogique/charte_graphique.md
 - 01_charte_graphique_et_pedagogique/metadata_schema.md
 - 02_modeles_documents/modele_cours.tex
@@ -265,9 +342,13 @@
 - INDEX.md
 - README.md
 - bank_strategy.md
+- course_internal_coherence_report.md
+- differentiation_quality_report.md
 - drive_inventory.csv
 - drive_mapping.md
 - drive_sources.yml
+- evaluation_bareme_alignment_report.md
+- learning_objectives_assessed_report.md
 - missing_capabilities.md
 - premiere/banques/evaluations/index.md
 - premiere/banques/exercices/index.md
@@ -277,9 +358,12 @@
 - premiere/banques/sujets_pratiques/index.md
 - premiere/banques/tp/index.md
 - premiere/sequences/s01_representation_donnees/aides_progressives.md
+- premiere/sequences/s01_representation_donnees/bareme.md
 - premiere/sequences/s01_representation_donnees/cours_eleve.md
 - premiere/sequences/s01_representation_donnees/evaluation.md
 - premiere/sequences/s01_representation_donnees/fiche_methode.md
+- premiere/sequences/s01_representation_donnees/grille_competences.md
+- premiere/sequences/s01_representation_donnees/pedagogical_review.md
 - premiere/sequences/s01_representation_donnees/projet_associe.md
 - premiere/sequences/s01_representation_donnees/python/representation_tools.py
 - premiere/sequences/s01_representation_donnees/qcm.json
@@ -290,32 +374,51 @@
 - premiere/sequences/s01_representation_donnees/tests/test_representation_tools.py
 - premiere/sequences/s01_representation_donnees/tp.md
 - premiere/sequences/s01_representation_donnees/trace_ecrite.md
+- premiere/sequences/s01_representation_donnees/version_amenagee.md
 - privacy_allowlist.yml
+- privacy_report.md
+- program_capacity_evidence_depth_report.md
 - programme_matrix_premiere.md
 - programme_matrix_terminale.md
+- programme_yaml_audit.md
 - qa_report.md
+- scientific_claims_review_report.md
 - scripts/_inventory_utils.py
+- scripts/_pedagogy_reports.py
 - scripts/_qa_common.py
 - scripts/build_all.py
 - scripts/check_bank_strategy.py
+- scripts/check_course_internal_coherence.py
 - scripts/check_coverage_evidence.py
+- scripts/check_differentiation_quality.py
 - scripts/check_document_depth.py
+- scripts/check_document_style.py
 - scripts/check_drive_mapping.py
+- scripts/check_drive_mapping_release.py
+- scripts/check_evaluation_bareme_alignment.py
 - scripts/check_git_clean.py
+- scripts/check_learning_objectives_assessed.py
 - scripts/check_links.py
 - scripts/check_metadata.py
+- scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
+- scripts/check_no_needs_review_for_release.py
 - scripts/check_no_placeholders.py
 - scripts/check_no_placeholders_code.py
 - scripts/check_no_placeholders_docs.py
 - scripts/check_no_private_data.py
+- scripts/check_no_teacher_content_in_student_export.py
 - scripts/check_pedagogical_alignment.py
+- scripts/check_program_capacity_evidence_depth.py
 - scripts/check_program_coverage.py
 - scripts/check_python_quality.py
 - scripts/check_qcm_schema.py
 - scripts/check_quality_gates.py
 - scripts/check_required_sections.py
+- scripts/check_scientific_claims_review.py
 - scripts/check_sequence_completeness.py
+- scripts/check_tp_test_alignment.py
+- scripts/check_validated_statuses.py
 - scripts/generate_index.py
 - scripts/rebuild_inventory.py
 - scripts/run_python_tests.py
@@ -327,9 +430,12 @@
 - terminale/banques/sujets_pratiques/index.md
 - terminale/banques/tp/index.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/aides_progressives.md
+- terminale/sequences/s01_structures_donnees_interfaces_implementations/bareme.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/cours_eleve.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/evaluation.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/fiche_methode.md
+- terminale/sequences/s01_structures_donnees_interfaces_implementations/grille_competences.md
+- terminale/sequences/s01_structures_donnees_interfaces_implementations/pedagogical_review.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/projet_associe.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/python/structures_tools.py
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/qcm.json
@@ -340,6 +446,8 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/tests/test_structures_tools.py
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
+- terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
+- tp_test_alignment_report.md
 
 ## Ressources haute qualité
 - Aucune ressource avec statut final pour l’instant.
@@ -350,6 +458,7 @@
 - 01_build_reports/build_index.json
 - 01_build_reports/build_index.md
 - 01_build_reports/build_report.md
+- 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
 - 01_charte_graphique_et_pedagogique/charte_graphique.md
 - 01_charte_graphique_et_pedagogique/metadata_schema.md
 - 02_modeles_documents/modele_corrige.tex
@@ -365,9 +474,13 @@
 - INDEX.md
 - README.md
 - bank_strategy.md
+- course_internal_coherence_report.md
+- differentiation_quality_report.md
 - drive_inventory.csv
 - drive_mapping.md
 - drive_sources.yml
+- evaluation_bareme_alignment_report.md
+- learning_objectives_assessed_report.md
 - missing_capabilities.md
 - premiere/banques/evaluations/index.md
 - premiere/banques/exercices/index.md
@@ -377,11 +490,16 @@
 - premiere/banques/sujets_pratiques/index.md
 - premiere/banques/tp/index.md
 - premiere/sequences/s01_representation_donnees/aides_progressives.md
+- premiere/sequences/s01_representation_donnees/bareme.md
 - premiere/sequences/s01_representation_donnees/corrige.md
+- premiere/sequences/s01_representation_donnees/corrige_professeur.md
 - premiere/sequences/s01_representation_donnees/cours_eleve.md
 - premiere/sequences/s01_representation_donnees/evaluation.md
+- premiere/sequences/s01_representation_donnees/evaluation_corrigee.md
 - premiere/sequences/s01_representation_donnees/fiche_methode.md
+- premiere/sequences/s01_representation_donnees/grille_competences.md
 - premiere/sequences/s01_representation_donnees/guide_professeur.md
+- premiere/sequences/s01_representation_donnees/pedagogical_review.md
 - premiere/sequences/s01_representation_donnees/projet_associe.md
 - premiere/sequences/s01_representation_donnees/python/representation_tools.py
 - premiere/sequences/s01_representation_donnees/qcm.json
@@ -392,35 +510,56 @@
 - premiere/sequences/s01_representation_donnees/tests/test_representation_tools.py
 - premiere/sequences/s01_representation_donnees/tp.md
 - premiere/sequences/s01_representation_donnees/trace_ecrite.md
+- premiere/sequences/s01_representation_donnees/version_amenagee.md
 - privacy_allowlist.yml
+- privacy_report.md
+- program_capacity_evidence_depth_report.md
 - programme_matrix_premiere.md
 - programme_matrix_terminale.md
+- programme_yaml_audit.md
 - qa_report.md
+- scientific_claims_review_report.md
 - scripts/_inventory_utils.py
+- scripts/_pedagogy_reports.py
 - scripts/_qa_common.py
 - scripts/build_all.py
 - scripts/check_bank_strategy.py
+- scripts/check_course_internal_coherence.py
 - scripts/check_coverage_evidence.py
+- scripts/check_differentiation_quality.py
 - scripts/check_document_depth.py
+- scripts/check_document_style.py
 - scripts/check_drive_mapping.py
+- scripts/check_drive_mapping_release.py
+- scripts/check_evaluation_bareme_alignment.py
 - scripts/check_git_clean.py
+- scripts/check_learning_objectives_assessed.py
 - scripts/check_links.py
 - scripts/check_metadata.py
+- scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
+- scripts/check_no_needs_review_for_release.py
 - scripts/check_no_placeholders.py
 - scripts/check_no_placeholders_code.py
 - scripts/check_no_placeholders_docs.py
 - scripts/check_no_private_data.py
+- scripts/check_no_teacher_content_in_student_export.py
 - scripts/check_pedagogical_alignment.py
+- scripts/check_program_capacity_evidence_depth.py
 - scripts/check_program_coverage.py
 - scripts/check_python_quality.py
 - scripts/check_qcm_schema.py
 - scripts/check_quality_gates.py
 - scripts/check_required_sections.py
+- scripts/check_scientific_claims_review.py
 - scripts/check_sequence_completeness.py
+- scripts/check_td_corrige_alignment.py
+- scripts/check_tp_test_alignment.py
+- scripts/check_validated_statuses.py
 - scripts/generate_index.py
 - scripts/rebuild_inventory.py
 - scripts/run_python_tests.py
+- td_corrige_alignment_report.md
 - terminale/banques/evaluations/index.md
 - terminale/banques/exercices/index.md
 - terminale/banques/index.md
@@ -429,11 +568,16 @@
 - terminale/banques/sujets_pratiques/index.md
 - terminale/banques/tp/index.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/aides_progressives.md
+- terminale/sequences/s01_structures_donnees_interfaces_implementations/bareme.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md
+- terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige_professeur.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/cours_eleve.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/evaluation.md
+- terminale/sequences/s01_structures_donnees_interfaces_implementations/evaluation_corrigee.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/fiche_methode.md
+- terminale/sequences/s01_structures_donnees_interfaces_implementations/grille_competences.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/guide_professeur.md
+- terminale/sequences/s01_structures_donnees_interfaces_implementations/pedagogical_review.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/projet_associe.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/python/structures_tools.py
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/qcm.json
@@ -444,6 +588,8 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/tests/test_structures_tools.py
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
+- terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
+- tp_test_alignment_report.md
 
 ## Doublons (même hash SHA256)
 - Aucun doublon détecté.
