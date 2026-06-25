@@ -1,57 +1,75 @@
 #!/usr/bin/env python3
-"""Check index and repository tree for build/cache artifacts."""
+"""Reject uncontrolled build artifacts while allowing required delivery archives."""
 
 from __future__ import annotations
 
-from typing import List
+import sys
+from pathlib import Path
 
-from _qa_common import ROOT, print_result
-
-INDEX = ROOT / "INDEX.md"
-FORBIDDEN_DIRS = {"__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache", ".venv", "build", "dist"}
-FORBIDDEN_NAMES = {".DS_Store"}
-FORBIDDEN_SUFFIXES = {
-    ".pyc",
-    ".pyo",
-    ".aux",
-    ".log",
-    ".toc",
-    ".out",
-    ".synctex.gz",
-    ".fdb_latexmk",
-    ".fls",
+ROOT = Path(__file__).resolve().parents[1]
+ALLOWED_DIST = {
+    Path('dist/source_clean.tar.gz'),
+    Path('dist/git_bundle.bundle'),
 }
+FORBIDDEN_DIRS = {
+    '__pycache__',
+    '.pytest_cache',
+    '.mypy_cache',
+    '.ruff_cache',
+    '.venv',
+    'build',
+}
+FORBIDDEN_SUFFIXES = {
+    '.pyc',
+    '.pyo',
+    '.aux',
+    '.log',
+    '.toc',
+    '.out',
+    '.fls',
+}
+FORBIDDEN_NAMES = {'.DS_Store'}
 
 
-def forbidden_path(path_text: str) -> bool:
-    parts = set(path_text.split("/"))
-    if parts.intersection(FORBIDDEN_DIRS):
+def is_forbidden(path: Path) -> bool:
+    rel = path.relative_to(ROOT)
+    if rel in ALLOWED_DIST:
+        return False
+    if rel == Path('dist'):
+        return False
+    if rel.parts and rel.parts[0] == 'dist':
         return True
-    if any(path_text.endswith(suffix) for suffix in FORBIDDEN_SUFFIXES):
+    if any(part in FORBIDDEN_DIRS for part in rel.parts):
         return True
-    return any(name in path_text for name in FORBIDDEN_NAMES)
+    if path.name in FORBIDDEN_NAMES:
+        return True
+    if path.suffix in FORBIDDEN_SUFFIXES:
+        return True
+    if path.name.endswith('.synctex.gz') or path.name.endswith('.fdb_latexmk'):
+        return True
+    return False
 
 
-def main() -> None:
-    errors: List[str] = []
-    if INDEX.exists():
-        for line in INDEX.read_text(encoding="utf-8", errors="replace").splitlines():
-            if "`" in line:
-                candidate = line.strip().strip("- ").strip("`")
-                if forbidden_path(candidate):
-                    errors.append(f"INDEX.md: artefact référencé -> {candidate}")
-
-    for path in sorted(ROOT.rglob("*")):
-        rel = path.relative_to(ROOT).as_posix()
-        if ".git" in path.parts:
+def main() -> int:
+    errors: list[str] = []
+    for path in ROOT.rglob('*'):
+        if path == ROOT / '.git':
             continue
-        if path.is_dir() and path.name in FORBIDDEN_DIRS:
-            errors.append(f"{rel}/: répertoire artefact présent")
-        if path.is_file() and (path.name in FORBIDDEN_NAMES or any(path.name.endswith(s) for s in FORBIDDEN_SUFFIXES)):
-            errors.append(f"{rel}: fichier artefact présent")
+        if '.git' in path.relative_to(ROOT).parts:
+            continue
+        if path.exists() and is_forbidden(path):
+            errors.append(f"{path.relative_to(ROOT)}: artefact interdit")
+    missing = [str(item) for item in ALLOWED_DIST if not (ROOT / item).exists()]
+    if missing:
+        errors.append('archives de livraison absentes: ' + ', '.join(sorted(missing)))
+    if errors:
+        print('check_no_build_artifacts_in_index: KO')
+        for error in errors:
+            print(f'- {error}')
+        return 1
+    print('check_no_build_artifacts_in_index: PASS')
+    return 0
 
-    print_result("check_no_build_artifacts_in_index", errors)
 
-
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    sys.exit(main())
