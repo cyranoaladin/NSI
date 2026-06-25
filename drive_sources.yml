@@ -1,0 +1,4 @@
+status: blocked
+blocker: "BLOCKER: accès Drive impossible depuis cet environnement."
+action_necessaire: "Fournir un export zip/tar des dossiers Drive ou monter le Drive localement dans le workspace."
+ressources: []

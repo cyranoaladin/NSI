@@ -1,0 +1,292 @@
+# AGENTS.md — Corpus NSI Première / Terminale
+
+## 1. Mission générale
+
+Ce dépôt vise à produire un corpus pédagogique complet, rigoureux et exploitable pour l’enseignement de spécialité NSI en Première et Terminale.
+
+La priorité absolue n’est pas la quantité de fichiers produits, mais la qualité pédagogique, scientifique, académique, éditoriale et technique de chaque document.
+
+Aucun document ne doit être une coquille vide, une fiche superficielle, une paraphrase approximative du programme ou un remplissage automatique. Chaque ressource doit avoir une vraie valeur d’enseignement pour les élèves et une vraie valeur d’exploitation pour le professeur.
+
+## 2. Règles non négociables
+
+1. Ne jamais déclarer une capacité officielle “couverte” sans preuve documentaire précise.
+2. Ne jamais marquer un document comme validé si son contenu n’a pas été relu selon les critères du présent dépôt.
+3. Ne jamais générer massivement des séquences avant validation d’une séquence pilote.
+4. Ne jamais produire de document pédagogique sans :
+
+   * objectifs ;
+   * prérequis ;
+   * capacités officielles ;
+   * situation-problème ;
+   * contenu disciplinaire substantiel ;
+   * exercices ;
+   * différenciation ;
+   * corrigé ou indications de correction ;
+   * métadonnées complètes.
+5. Ne jamais intégrer de données personnelles d’élèves dans les ressources publiables.
+6. Ne jamais indexer les fichiers techniques parasites : `__pycache__`, `.pyc`, `.aux`, `.log`, `.toc`, `.venv`, `.git`, fichiers temporaires.
+7. Ne jamais copier une ressource dans plusieurs banques sans stratégie claire de référence, de lien symbolique ou de génération contrôlée.
+8. Ne jamais confondre validation technique et validation pédagogique.
+9. Ne jamais remplacer une preuve de qualité par une simple phrase déclarative.
+10. Ne jamais inventer une ressource, une source ou une couverture de programme.
+
+## 3. Statuts autorisés
+
+Les statuts autorisés sont strictement les suivants :
+
+* `draft` : document en brouillon, non publiable ;
+* `needs_content` : structure présente mais contenu insuffisant ;
+* `needs_review` : contenu substantiel mais non relu ;
+* `validated_pedagogy` : validé pédagogiquement ;
+* `validated_science` : validé scientifiquement ;
+* `validated_technical` : validé techniquement ;
+* `published` : publiable élèves ;
+* `archived` : conservé mais non actif ;
+* `deprecated` : obsolète.
+
+Les statuts vagues comme `create`, `moyenne`, `à refaçonner` ne doivent pas être utilisés comme statuts finaux.
+
+## 4. Agents et responsabilités
+
+### 4.1. Agent Inventaire
+
+Responsabilités :
+
+* parcourir toutes les ressources disponibles ;
+* produire un inventaire exhaustif ;
+* identifier les doublons réels par hash de contenu et non seulement par nom ;
+* distinguer documents élèves, documents professeurs, corrigés, scripts, données, évaluations ;
+* identifier les ressources incomplètes ;
+* identifier les ressources exploitables immédiatement ;
+* identifier les ressources obsolètes ;
+* produire un rapport de tri.
+
+Livrables :
+
+* `manifest.csv`
+* `inventory_report.md`
+* `duplicates_report.md`
+* `obsolete_report.md`
+* `reuse_candidates.md`
+
+Critère de validation :
+
+* aucune ressource pédagogique ne doit être absente de l’inventaire ;
+* aucun fichier technique parasite ne doit être listé comme ressource pédagogique ;
+* les doublons doivent être détectés par contenu et non seulement par nom.
+
+### 4.2. Agent Programme
+
+Responsabilités :
+
+* extraire les capacités officielles du programme de Première et Terminale ;
+* construire une matrice de couverture ;
+* associer chaque capacité à des documents précis ;
+* vérifier que chaque association est justifiée par un contenu réel.
+
+Livrables :
+
+* `programme_matrix_premiere.md`
+* `programme_matrix_terminale.md`
+* `coverage.md`
+* `missing_capabilities.md`
+
+Critère de validation :
+
+Une capacité est “couverte” seulement si elle apparaît dans :
+
+* un cours ;
+* une activité ou un TP ;
+* un exercice ;
+* une évaluation ;
+* un corrigé ou une trace de correction.
+
+Sinon elle reste `absent` ou `partial`.
+
+### 4.3. Agent Auteur pédagogique
+
+Responsabilités :
+
+* produire des documents élèves complets ;
+* rendre les notions accessibles sans les appauvrir ;
+* construire une progression interne cohérente ;
+* intégrer des exemples, contre-exemples, erreurs fréquentes et exercices.
+
+Livrables par séquence :
+
+* `cours_eleve.md`
+* `trace_ecrite.md`
+* `td.md`
+* `tp.md`
+* `fiche_methode.md`
+* `aides_progressives.md`
+
+Critère de validation :
+
+Chaque document doit contenir un contenu substantiel, contextualisé, progressif et exploitable en classe.
+
+### 4.4. Agent Scientifique
+
+Responsabilités :
+
+* vérifier la justesse des définitions ;
+* vérifier les algorithmes ;
+* vérifier les complexités ;
+* vérifier les preuves ;
+* vérifier les corrigés ;
+* vérifier les limites du programme.
+
+Critère de validation :
+
+Aucune approximation scientifique ne doit rester dans un document publié.
+
+### 4.5. Agent Code
+
+Responsabilités :
+
+* vérifier tous les scripts Python ;
+* ajouter des tests unitaires ;
+* ajouter des jeux de données si nécessaire ;
+* vérifier le style, les annotations et la robustesse ;
+* produire des exemples exécutables.
+
+Livrables :
+
+* fichiers `.py` propres ;
+* tests unitaires ;
+* jeux de tests ;
+* documentation d’exécution.
+
+Critère de validation :
+
+Tout code fourni aux élèves doit être exécutable, testé et cohérent avec les objectifs pédagogiques.
+
+### 4.6. Agent Évaluation
+
+Responsabilités :
+
+* concevoir les évaluations ;
+* équilibrer connaissances, compréhension, analyse, programmation et justification ;
+* fournir barèmes et corrigés ;
+* aligner chaque question sur une capacité.
+
+Livrables :
+
+* `evaluation.md`
+* `corrige.md`
+* `bareme.md`
+* `grille_competences.md`
+* `qcm.json`
+
+Critère de validation :
+
+Aucune évaluation ne doit être publiée sans corrigé complet ni barème explicite.
+
+### 4.7. Agent Différenciation
+
+Responsabilités :
+
+* prévoir des aides progressives ;
+* prévoir des exercices de consolidation ;
+* prévoir des extensions expertes ;
+* prévoir des modalités d’accompagnement pour élèves fragiles ;
+* prévoir des défis pour élèves avancés.
+
+Critère de validation :
+
+Chaque séquence doit proposer au moins trois niveaux d’entrée : socle, standard, approfondissement.
+
+### 4.8. Agent Édition / UI-UX pédagogique
+
+Responsabilités :
+
+* harmoniser la mise en page ;
+* garantir la lisibilité ;
+* structurer les encadrés ;
+* vérifier titres, numérotation, cohérence visuelle ;
+* préparer les exports PDF ou HTML.
+
+Critère de validation :
+
+Un document doit être lisible, stable, imprimable et exploitable sur écran.
+
+### 4.9. Agent QA final
+
+Responsabilités :
+
+* exécuter tous les contrôles ;
+* vérifier la complétude ;
+* vérifier les liens ;
+* vérifier l’absence de fichiers parasites ;
+* vérifier les statuts ;
+* refuser toute publication si un critère critique échoue.
+
+Livrables :
+
+* `qa_report.md`
+* `publication_blockers.md`
+* `release_notes.md`
+
+## 5. Définition d’une séquence complète
+
+Une séquence complète contient au minimum :
+
+* `sequence.yaml`
+* `cours_eleve.md`
+* `trace_ecrite.md`
+* `td.md`
+* `tp.md`
+* `fiche_methode.md`
+* `aides_progressives.md`
+* `corrige.md`
+* `guide_professeur.md`
+* `evaluation.md`
+* `bareme.md`
+* `grille_competences.md`
+* `qcm.json`
+* `projet_associe.md`
+* `python/`
+* `tests/`
+* `sources.md`
+
+## 6. Définition de publication
+
+Une séquence est publiable seulement si :
+
+* tous les documents existent ;
+* les métadonnées sont complètes ;
+* le contenu pédagogique est substantiel ;
+* les capacités officielles sont explicitement associées ;
+* les exercices sont progressifs ;
+* les corrigés sont complets ;
+* les tests Python passent ;
+* aucun fichier parasite n’est indexé ;
+* aucune donnée personnelle n’est présente ;
+* le rapport QA ne contient aucun blocage critique.
+
+## 7. Commandes minimales de contrôle
+
+```bash
+python scripts/check_metadata.py
+python scripts/check_links.py
+python scripts/check_program_coverage.py
+python scripts/check_quality_gates.py
+python scripts/check_no_placeholders.py
+python scripts/check_no_private_data.py
+python scripts/run_python_tests.py
+python scripts/generate_index.py
+```
+
+## 8. Règle de blocage
+
+Si une information manque, si une ressource n’est pas disponible, si une couverture ne peut pas être prouvée ou si un document est trop superficiel, il faut écrire explicitement :
+
+```text
+BLOCKER: validation impossible pour cette ressource.
+Raison :
+Action nécessaire :
+```
+
+Il est interdit de masquer une lacune par une formulation vague.
+

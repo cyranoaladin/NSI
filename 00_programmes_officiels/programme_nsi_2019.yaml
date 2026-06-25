@@ -1,0 +1,559 @@
+sources:
+  premiere:
+    titre: "Programme de numérique et sciences informatiques de première générale"
+    reference: "BO spécial n°1 du 22 janvier 2019, arrêté du 17 janvier 2019"
+    url: "https://www.education.gouv.fr/bo/19/Special1/MENE1901633A.htm"
+    annexe_pdf: "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/26/8/spe633_annexe_1063268.pdf"
+  terminale:
+    titre: "Programme de numérique et sciences informatiques de terminale générale"
+    reference: "BO spécial n°8 du 25 juillet 2019, arrêté du 19 juillet 2019"
+    url: "https://www.education.gouv.fr/bo/19/Special8/MENE1921247A.htm"
+    annexe_pdf: "https://cache.media.education.gouv.fr/file/SPE8_MENJ_25_7_2019/93/3/spe247_annexe_1158933.pdf"
+
+preuves_minimales:
+  covered:
+    - cours
+    - trace
+    - td
+    - tp
+    - evaluation
+    - corrige
+    - preuve_dans_le_contenu
+
+programmes:
+  premiere:
+    - id: P-HIST-01
+      rubrique: "Histoire de l'informatique"
+      contenu: "Evénements clés de l'histoire de l'informatique"
+      capacite_attendue:
+        - "Situer dans le temps les principaux événements de l'histoire de l'informatique et leurs protagonistes."
+      commentaire_officiel: "Repères construits progressivement au fil des concepts et techniques."
+      niveau: premiere
+      sequence_cible: "transversal"
+      preuves_attendues: [cours, trace, td, evaluation]
+    - id: P-DATA-BASE-01
+      rubrique: "Représentation des données : types et valeurs de base"
+      contenu: "Ecriture d'un entier positif dans une base b >= 2"
+      capacite_attendue:
+        - "Passer de la représentation d'une base dans une autre."
+      commentaire_officiel: "Bases 2, 10 et 16 privilégiées."
+      niveau: premiere
+      sequence_cible: "s01_representation_donnees"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-DATA-BASE-02
+      rubrique: "Représentation des données : types et valeurs de base"
+      contenu: "Représentation binaire d'un entier relatif"
+      capacite_attendue:
+        - "Evaluer le nombre de bits nécessaires à l'écriture en base 2 d'un entier, d'une somme ou d'un produit."
+        - "Utiliser le complément à deux."
+      commentaire_officiel: "Tailles courantes 8, 16, 32 et 64 bits ; entiers Python arbitraires seulement en remarque."
+      niveau: premiere
+      sequence_cible: "s01_representation_donnees"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-DATA-BASE-03
+      rubrique: "Représentation des données : types et valeurs de base"
+      contenu: "Représentation approximative des nombres réels : flottants"
+      capacite_attendue:
+        - "Calculer sur quelques exemples la représentation de nombres réels simples."
+      commentaire_officiel: "Aucune connaissance précise d'IEEE-754 n'est exigible ; éviter les tests d'égalité directe sur flottants."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-DATA-BASE-04
+      rubrique: "Représentation des données : types et valeurs de base"
+      contenu: "Valeurs booléennes et expressions booléennes"
+      capacite_attendue:
+        - "Dresser la table d'une expression booléenne."
+      commentaire_officiel: "Xor peut être évoqué ; lien possible avec l'addition binaire."
+      niveau: premiere
+      sequence_cible: "s01_representation_donnees"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-DATA-BASE-05
+      rubrique: "Représentation des données : types et valeurs de base"
+      contenu: "Représentation d'un texte en machine : ASCII, ISO-8859-1, Unicode"
+      capacite_attendue:
+        - "Identifier l'intérêt des différents systèmes d'encodage."
+        - "Convertir un fichier texte dans différents formats d'encodage."
+      commentaire_officiel: "Aucune connaissance détaillée des normes d'encodage n'est exigible."
+      niveau: premiere
+      sequence_cible: "s01_representation_donnees"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-DATA-CONSTR-01
+      rubrique: "Représentation des données : types construits"
+      contenu: "p-uplets et p-uplets nommés"
+      capacite_attendue:
+        - "Ecrire une fonction renvoyant un p-uplet de valeurs."
+      commentaire_officiel: "Les appellations Python peuvent différer de celles d'autres langages."
+      niveau: premiere
+      sequence_cible: "s01_representation_donnees"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-DATA-CONSTR-02
+      rubrique: "Représentation des données : types construits"
+      contenu: "Tableau indexé et tableau donné en compréhension"
+      capacite_attendue:
+        - "Lire et modifier les éléments d'un tableau grâce à leurs index."
+        - "Construire un tableau par compréhension."
+        - "Utiliser des tableaux de tableaux pour représenter des matrices."
+        - "Itérer sur les éléments d'un tableau."
+      commentaire_officiel: "Python identifie listes et tableaux ; pas d'exigence sur slices ni NumPy."
+      niveau: premiere
+      sequence_cible: "s01_representation_donnees"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-DATA-CONSTR-03
+      rubrique: "Représentation des données : types construits"
+      contenu: "Dictionnaires par clés et valeurs"
+      capacite_attendue:
+        - "Construire une entrée de dictionnaire."
+        - "Itérer sur les éléments d'un dictionnaire."
+        - "Utiliser les méthodes keys, values et items."
+      commentaire_officiel: "Possibilité d'utiliser des données EXIF comme exemple d'enregistrement."
+      niveau: premiere
+      sequence_cible: "s01_representation_donnees"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-TABLE-01
+      rubrique: "Traitement de données en tables"
+      contenu: "Indexation de tables"
+      capacite_attendue:
+        - "Importer une table depuis un fichier texte tabulé ou un fichier CSV."
+      commentaire_officiel: "Tableau doublement indexé ou tableau de p-uplets partageant les mêmes descripteurs."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-TABLE-02
+      rubrique: "Traitement de données en tables"
+      contenu: "Recherche dans une table"
+      capacite_attendue:
+        - "Rechercher les lignes d'une table vérifiant des critères exprimés en logique propositionnelle."
+      commentaire_officiel: "Recherche de doublons et tests de cohérence à présenter."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-TABLE-03
+      rubrique: "Traitement de données en tables"
+      contenu: "Tri d'une table"
+      capacite_attendue:
+        - "Trier une table suivant une colonne."
+      commentaire_officiel: "Une fonction de tri intégrée peut être utilisée."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-TABLE-04
+      rubrique: "Traitement de données en tables"
+      contenu: "Fusion de tables"
+      capacite_attendue:
+        - "Construire une nouvelle table en combinant les données de deux tables."
+      commentaire_officiel: "La notion de domaine de valeurs est mise en évidence."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-IHM-01
+      rubrique: "Interactions entre l'homme et la machine sur le Web"
+      contenu: "Modalités de l'interaction et événements"
+      capacite_attendue:
+        - "Identifier les composants graphiques permettant d'interagir avec une application Web."
+        - "Identifier les événements que les fonctions associées aux composants graphiques peuvent traiter."
+      commentaire_officiel: "Distinguer description HTML et comportement programmé, par exemple en JavaScript."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-IHM-02
+      rubrique: "Interactions entre l'homme et la machine sur le Web"
+      contenu: "Interaction avec l'utilisateur dans une page Web"
+      capacite_attendue:
+        - "Analyser et modifier les méthodes exécutées lors d'un clic sur un bouton d'une page Web."
+      commentaire_officiel: "Expertise exhaustive des langages Web non attendue."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-IHM-03
+      rubrique: "Interactions entre l'homme et la machine sur le Web"
+      contenu: "Interaction client-serveur, requêtes HTTP, réponses du serveur"
+      capacite_attendue:
+        - "Distinguer ce qui est exécuté sur le client ou sur le serveur et dans quel ordre."
+        - "Distinguer ce qui est mémorisé dans le client et retransmis au serveur."
+        - "Reconnaître quand et pourquoi la transmission est chiffrée."
+      commentaire_officiel: "Lien avec le protocole HTTP et les paramètres transmis à un site."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-IHM-04
+      rubrique: "Interactions entre l'homme et la machine sur le Web"
+      contenu: "Formulaire d'une page Web"
+      capacite_attendue:
+        - "Analyser le fonctionnement d'un formulaire simple."
+        - "Distinguer les transmissions de paramètres par requêtes POST ou GET."
+        - "Discuter les types de requêtes selon les valeurs à transmettre et leur confidentialité."
+      commentaire_officiel: "Lien avec la confidentialité des paramètres."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-ARCH-01
+      rubrique: "Architectures matérielles et systèmes d'exploitation"
+      contenu: "Modèle d'architecture séquentielle de von Neumann"
+      capacite_attendue:
+        - "Distinguer les rôles et les caractéristiques des constituants d'une machine."
+        - "Dérouler l'exécution d'une séquence d'instructions simples de type langage machine."
+      commentaire_officiel: "Présentation limitée aux concepts généraux ; activités débranchées possibles."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-ARCH-02
+      rubrique: "Architectures matérielles et systèmes d'exploitation"
+      contenu: "Transmission de données dans un réseau, protocoles, architecture"
+      capacite_attendue:
+        - "Mettre en évidence l'intérêt du découpage en paquets et de l'encapsulation."
+        - "Dérouler le fonctionnement d'un protocole simple de récupération de perte de paquets."
+        - "Simuler ou mettre en œuvre un réseau."
+      commentaire_officiel: "Lien avec TCP/IP et le rôle des constituants du réseau local."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-ARCH-03
+      rubrique: "Architectures matérielles et systèmes d'exploitation"
+      contenu: "Systèmes d'exploitation"
+      capacite_attendue:
+        - "Identifier les fonctions d'un système d'exploitation."
+        - "Utiliser les commandes de base en ligne de commande."
+        - "Gérer les droits et permissions d'accès aux fichiers."
+      commentaire_officiel: "Usage d'un système libre ; pas d'étude théorique approfondie."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-ARCH-04
+      rubrique: "Architectures matérielles et systèmes d'exploitation"
+      contenu: "Périphériques d'entrée et de sortie, IHM"
+      capacite_attendue:
+        - "Identifier le rôle des capteurs et actionneurs."
+        - "Réaliser par programmation une IHM répondant à un cahier des charges donné."
+      commentaire_officiel: "Activités possibles sur objets connectés, systèmes embarqués ou robots."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-LANG-01
+      rubrique: "Langages et programmation"
+      contenu: "Constructions élémentaires"
+      capacite_attendue:
+        - "Mettre en évidence un corpus de constructions élémentaires."
+      commentaire_officiel: "Séquences, affectation, conditionnelles, boucles bornées ou non, appels de fonction."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-LANG-02
+      rubrique: "Langages et programmation"
+      contenu: "Diversité et unité des langages de programmation"
+      capacite_attendue:
+        - "Repérer dans un nouveau langage les traits communs et particuliers à ce langage."
+      commentaire_officiel: "Comparer l'écriture d'un même programme simple dans différents langages."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-LANG-03
+      rubrique: "Langages et programmation"
+      contenu: "Spécification"
+      capacite_attendue:
+        - "Prototyper une fonction."
+        - "Décrire les préconditions sur les arguments."
+        - "Décrire des postconditions sur les résultats."
+      commentaire_officiel: "Assertions possibles pour garantir préconditions et postconditions."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-LANG-04
+      rubrique: "Langages et programmation"
+      contenu: "Mise au point de programmes"
+      capacite_attendue:
+        - "Utiliser des jeux de tests."
+      commentaire_officiel: "La réussite d'un jeu de tests ne prouve pas la correction générale."
+      niveau: premiere
+      sequence_cible: "s01_representation_donnees"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-LANG-05
+      rubrique: "Langages et programmation"
+      contenu: "Utilisation de bibliothèques"
+      capacite_attendue:
+        - "Utiliser la documentation d'une bibliothèque."
+      commentaire_officiel: "Aucune connaissance exhaustive d'une bibliothèque particulière n'est exigible."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-ALGO-01
+      rubrique: "Algorithmique"
+      contenu: "Parcours séquentiel d'un tableau"
+      capacite_attendue:
+        - "Ecrire un algorithme de recherche d'une occurrence sur des valeurs de type quelconque."
+        - "Ecrire un algorithme de recherche d'un extremum ou de calcul d'une moyenne."
+      commentaire_officiel: "Coût linéaire."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-ALGO-02
+      rubrique: "Algorithmique"
+      contenu: "Tris par insertion et par sélection"
+      capacite_attendue:
+        - "Ecrire un algorithme de tri."
+        - "Décrire un invariant de boucle prouvant la correction des tris par insertion ou sélection."
+      commentaire_officiel: "Terminaison à justifier ; coût quadratique dans le pire cas."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-ALGO-03
+      rubrique: "Algorithmique"
+      contenu: "Algorithme des k plus proches voisins"
+      capacite_attendue:
+        - "Ecrire un algorithme qui prédit la classe d'un élément à partir de la classe majoritaire de ses k plus proches voisins."
+      commentaire_officiel: "Exemple d'algorithme d'apprentissage."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-ALGO-04
+      rubrique: "Algorithmique"
+      contenu: "Recherche dichotomique dans un tableau trié"
+      capacite_attendue:
+        - "Montrer la terminaison de la recherche dichotomique à l'aide d'un variant de boucle."
+      commentaire_officiel: "Assertions possibles ; preuve de correction présentable par le professeur."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: P-ALGO-05
+      rubrique: "Algorithmique"
+      contenu: "Algorithmes gloutons"
+      capacite_attendue:
+        - "Résoudre un problème grâce à un algorithme glouton."
+      commentaire_officiel: "Exemples possibles : sac à dos ou rendu de monnaie."
+      niveau: premiere
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+
+  terminale:
+    - id: T-HIST-01
+      rubrique: "Histoire de l'informatique"
+      contenu: "Evénements clés de l'histoire de l'informatique"
+      capacite_attendue:
+        - "Situer dans le temps les principaux événements de l'histoire de l'informatique et leurs protagonistes."
+        - "Identifier l'évolution des rôles relatifs des logiciels et des matériels."
+      commentaire_officiel: "Repères complétant ceux de première, construits au fil des concepts."
+      niveau: terminale
+      sequence_cible: "transversal"
+      preuves_attendues: [cours, trace, td, evaluation]
+    - id: T-STRUCT-01
+      rubrique: "Structures de données"
+      contenu: "Structures de données, interface et implémentation"
+      capacite_attendue:
+        - "Spécifier une structure de données par son interface."
+        - "Distinguer interface et implémentation."
+        - "Ecrire plusieurs implémentations d'une même structure de données."
+      commentaire_officiel: "Abstraction introduite à partir de structures simples, par exemple la file."
+      niveau: terminale
+      sequence_cible: "s01_structures_donnees_interfaces_implementations"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-STRUCT-02
+      rubrique: "Structures de données"
+      contenu: "Vocabulaire de la programmation objet : classes, attributs, méthodes, objets"
+      capacite_attendue:
+        - "Ecrire la définition d'une classe."
+        - "Accéder aux attributs et méthodes d'une classe."
+      commentaire_officiel: "Polymorphisme et héritage ne sont pas attendus ici."
+      niveau: terminale
+      sequence_cible: "s01_structures_donnees_interfaces_implementations"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-STRUCT-03
+      rubrique: "Structures de données"
+      contenu: "Listes, piles, files ; dictionnaires, index et clé"
+      capacite_attendue:
+        - "Distinguer des structures par le jeu des méthodes qui les caractérisent."
+        - "Choisir une structure de données adaptée à la situation à modéliser."
+        - "Distinguer la recherche d'une valeur dans une liste et dans un dictionnaire."
+      commentaire_officiel: "Distinguer FIFO et LIFO pour files et piles."
+      niveau: terminale
+      sequence_cible: "s01_structures_donnees_interfaces_implementations"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-STRUCT-04
+      rubrique: "Structures de données"
+      contenu: "Arbres et arbres binaires"
+      capacite_attendue:
+        - "Identifier des situations nécessitant une structure de données arborescente."
+        - "Evaluer quelques mesures des arbres binaires."
+      commentaire_officiel: "Lien avec la rubrique algorithmique."
+      niveau: terminale
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-STRUCT-05
+      rubrique: "Structures de données"
+      contenu: "Graphes : structures relationnelles"
+      capacite_attendue:
+        - "Modéliser des situations sous forme de graphes."
+        - "Ecrire les implémentations d'un graphe : matrice d'adjacence, listes de successeurs ou prédécesseurs."
+        - "Passer d'une représentation à une autre."
+      commentaire_officiel: "Le choix de représentation dépend du traitement visé."
+      niveau: terminale
+      sequence_cible: "s01_structures_donnees_interfaces_implementations"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-BDD-01
+      rubrique: "Bases de données"
+      contenu: "Modèle relationnel : relation, attribut, domaine, clés, schéma"
+      capacite_attendue:
+        - "Identifier les concepts définissant le modèle relationnel."
+        - "Distinguer structure et contenu d'une base de données."
+        - "Repérer les anomalies dans le schéma d'une base de données."
+      commentaire_officiel: "Manipulation de données nombreuses et réalistes à privilégier."
+      niveau: terminale
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-BDD-02
+      rubrique: "Bases de données"
+      contenu: "Système de gestion de bases de données relationnelles"
+      capacite_attendue:
+        - "Identifier les services rendus par un SGBD relationnel."
+      commentaire_officiel: "Comprendre rôle et enjeux : persistance, concurrence, efficacité, sécurisation."
+      niveau: terminale
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-BDD-03
+      rubrique: "Bases de données"
+      contenu: "Langage SQL : interrogation et mise à jour"
+      capacite_attendue:
+        - "Identifier les composants d'une requête."
+        - "Construire des requêtes d'interrogation avec SELECT, FROM, WHERE, JOIN."
+        - "Construire des requêtes d'insertion et de mise à jour avec UPDATE, INSERT, DELETE."
+      commentaire_officiel: "DISTINCT, ORDER BY ou agrégations possibles sans GROUP BY ni HAVING."
+      niveau: terminale
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-ARCH-01
+      rubrique: "Architectures matérielles, systèmes d'exploitation et réseaux"
+      contenu: "Composants intégrés d'un système sur puce"
+      capacite_attendue:
+        - "Identifier les principaux composants sur un schéma de circuit et les avantages de leur intégration."
+      commentaire_officiel: "Exemple possible : circuit de téléphone, mémoires, interfaces, accélérateurs."
+      niveau: terminale
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-ARCH-02
+      rubrique: "Architectures matérielles, systèmes d'exploitation et réseaux"
+      contenu: "Gestion des processus et des ressources par un système d'exploitation"
+      capacite_attendue:
+        - "Décrire la création d'un processus et l'ordonnancement de plusieurs processus."
+        - "Mettre en évidence le risque d'interblocage."
+      commentaire_officiel: "Observation avec outils standard ; activité débranchée possible pour l'interblocage."
+      niveau: terminale
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-ARCH-03
+      rubrique: "Architectures matérielles, systèmes d'exploitation et réseaux"
+      contenu: "Protocoles de routage"
+      capacite_attendue:
+        - "Identifier, selon le protocole de routage utilisé, la route empruntée par un paquet."
+      commentaire_officiel: "RIP par nombre de sauts ou OSPF par coût ; lien avec chemins dans un graphe."
+      niveau: terminale
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-ARCH-04
+      rubrique: "Architectures matérielles, systèmes d'exploitation et réseaux"
+      contenu: "Sécurisation des communications"
+      capacite_attendue:
+        - "Décrire les principes du chiffrement symétrique et asymétrique."
+        - "Décrire l'échange d'une clé symétrique avec un protocole asymétrique pour sécuriser HTTPS."
+      commentaire_officiel: "Illustration possible en mode débranché ; négociation SSL non abordée."
+      niveau: terminale
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-LANG-01
+      rubrique: "Langages et programmation"
+      contenu: "Programme comme donnée ; calculabilité ; décidabilité"
+      capacite_attendue:
+        - "Comprendre que tout programme est aussi une donnée."
+        - "Comprendre que la calculabilité ne dépend pas du langage."
+        - "Montrer sans formalisme théorique que le problème de l'arrêt est indécidable."
+      commentaire_officiel: "Interpréteur, compilateur et fonctionnement des systèmes aident à comprendre ce point."
+      niveau: terminale
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-LANG-02
+      rubrique: "Langages et programmation"
+      contenu: "Récursivité"
+      capacite_attendue:
+        - "Ecrire un programme récursif."
+        - "Analyser le fonctionnement d'un programme récursif."
+      commentaire_officiel: "Exemples de domaines variés à privilégier."
+      niveau: terminale
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-LANG-03
+      rubrique: "Langages et programmation"
+      contenu: "Modularité"
+      capacite_attendue:
+        - "Utiliser des API ou bibliothèques."
+        - "Exploiter leur documentation."
+        - "Créer des modules simples et les documenter."
+      commentaire_officiel: "Lien direct avec bibliothèques et interfaces."
+      niveau: terminale
+      sequence_cible: "s01_structures_donnees_interfaces_implementations"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-LANG-04
+      rubrique: "Langages et programmation"
+      contenu: "Paradigmes de programmation"
+      capacite_attendue:
+        - "Distinguer sur des exemples les paradigmes impératif, fonctionnel et objet."
+        - "Choisir le paradigme selon le champ d'application."
+      commentaire_officiel: "Un même langage ou un même programme peut mobiliser plusieurs paradigmes."
+      niveau: terminale
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-LANG-05
+      rubrique: "Langages et programmation"
+      contenu: "Mise au point des programmes ; gestion des bugs"
+      capacite_attendue:
+        - "Savoir répondre aux causes typiques de bugs."
+      commentaire_officiel: "Typage, effets de bord, débordements, conditionnelles, inégalités, flottants et nommage."
+      niveau: terminale
+      sequence_cible: "s01_structures_donnees_interfaces_implementations"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-ALGO-01
+      rubrique: "Algorithmique"
+      contenu: "Algorithmes sur les arbres binaires et arbres binaires de recherche"
+      capacite_attendue:
+        - "Calculer la taille et la hauteur d'un arbre."
+        - "Parcourir un arbre en ordres infixe, préfixe, suffixe ou largeur d'abord."
+        - "Rechercher une clé dans un arbre de recherche et insérer une clé."
+      commentaire_officiel: "Structure récursive adaptée ; recherche équilibrée de coût logarithmique."
+      niveau: terminale
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-ALGO-02
+      rubrique: "Algorithmique"
+      contenu: "Algorithmes sur les graphes"
+      capacite_attendue:
+        - "Parcourir un graphe en profondeur d'abord et en largeur d'abord."
+        - "Repérer la présence d'un cycle dans un graphe."
+        - "Chercher un chemin dans un graphe."
+      commentaire_officiel: "Labyrinthe et routage Internet sont des exemples possibles."
+      niveau: terminale
+      sequence_cible: "s01_structures_donnees_interfaces_implementations"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-ALGO-03
+      rubrique: "Algorithmique"
+      contenu: "Méthode diviser pour régner"
+      capacite_attendue:
+        - "Ecrire un algorithme utilisant la méthode diviser pour régner."
+      commentaire_officiel: "Rotation d'image ou tri fusion comme exemples ; coût en n log n possible."
+      niveau: terminale
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-ALGO-04
+      rubrique: "Algorithmique"
+      contenu: "Programmation dynamique"
+      capacite_attendue:
+        - "Utiliser la programmation dynamique pour écrire un algorithme."
+      commentaire_officiel: "Alignement de séquences ou rendu de monnaie ; discussion sur coût mémoire possible."
+      niveau: terminale
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]
+    - id: T-ALGO-05
+      rubrique: "Algorithmique"
+      contenu: "Recherche textuelle"
+      capacite_attendue:
+        - "Etudier l'algorithme de Boyer-Moore pour la recherche d'un motif dans un texte."
+      commentaire_officiel: "Intérêt du prétraitement du motif ; étude du coût difficile non exigible."
+      niveau: terminale
+      sequence_cible: "a_planifier"
+      preuves_attendues: [cours, trace, td, tp, evaluation, corrige]

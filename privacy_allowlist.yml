@@ -1,0 +1,8 @@
+allowed_emails: []
+allowed_phone_patterns: []
+allowed_name_patterns: []
+institutional_patterns:
+  - "education.gouv.fr"
+  - "eduscol.education.fr"
+student_names_files: []
+notes: "Aucune exception nominative ou coordonnée personnelle n'est autorisée à ce stade."

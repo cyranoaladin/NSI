@@ -1,0 +1,2 @@
+drive_url,drive_folder,file_name,mime_type,local_copy,sha256,niveau,theme,sequence_possible,qualite_initiale,decision,raison
+BLOCKER,NA,NA,NA,NA,NA,NA,NA,NA,NA,archive,"BLOCKER: accès Drive impossible depuis cet environnement. Action nécessaire : fournir un export zip/tar des dossiers Drive ou monter le Drive localement."
