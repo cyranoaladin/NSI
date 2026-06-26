@@ -27,28 +27,32 @@ official_program:
       evidence: [{section: "Exercices intégrés du cours", file: "premiere/sequences/s01_representation_donnees/corrige.md", anchor: "#exercices-intégrés-du-cours", type: "corrige"}]
     - id: "P-DATA-BASE-05A"
       label: "Encodage de texte."
-      evidence: [{section: "Réponse attendue - TD", file: "premiere/sequences/s01_representation_donnees/corrige.md", anchor: "#réponse-attendue---td", type: "corrige"}]
+      evidence: [{section: "Réponse attendue - TD", file: "premiere/sequences/s01_representation_donnees/corrige.md", anchor: "#réponse-attendue--td", type: "corrige"}]
     - id: "P-DATA-CONSTR-01"
       label: "Tuples."
-      evidence: [{section: "Réponse attendue - TD", file: "premiere/sequences/s01_representation_donnees/corrige.md", anchor: "#réponse-attendue---td", type: "corrige"}]
+      evidence: [{section: "Réponse attendue - TD", file: "premiere/sequences/s01_representation_donnees/corrige.md", anchor: "#réponse-attendue--td", type: "corrige"}]
     - id: "P-DATA-CONSTR-02A"
       label: "Listes."
       evidence: [{section: "Exercices intégrés du cours", file: "premiere/sequences/s01_representation_donnees/corrige.md", anchor: "#exercices-intégrés-du-cours", type: "corrige"}]
     - id: "P-DATA-CONSTR-03A"
       label: "Dictionnaires."
-      evidence: [{section: "Réponse attendue - TD", file: "premiere/sequences/s01_representation_donnees/corrige.md", anchor: "#réponse-attendue---td", type: "corrige"}]
+      evidence: [{section: "Réponse attendue - TD", file: "premiere/sequences/s01_representation_donnees/corrige.md", anchor: "#réponse-attendue--td", type: "corrige"}]
     - id: "P-LANG-04"
       label: "Jeux de tests."
       evidence: [{section: "Code testé", file: "premiere/sequences/s01_representation_donnees/corrige.md", anchor: "#code-testé", type: "corrige"}]
 prerequisites: ["TD et TP S01"]
 learning_objectives: ["Expliquer les réponses attendues et les variantes acceptables."]
 assessment: {formative: true, summative: false}
-last_review: {pedagogy: "", science: "", technical: ""}
+last_review: {pedagogy: "26 juin 2026 - revue de substance", science: "", technical: ""}
 ---
 
 # Corrigé — S01 Représentation des données
 
 Ce corrigé couvre les exercices intégrés du cours, les exercices du TD et les questions de l'évaluation. Pour chaque réponse, la justification et les erreurs fréquentes sont indiquées afin de permettre l'auto-correction.
+
+## Barème
+
+Le barème global de l'évaluation est de 20 points : conversions, 4 points ; complément à deux, 4 points ; booléens et texte, 4 points ; structures Python, 5 points ; tests et justification, 3 points. Une réponse correcte sans justification peut obtenir une partie des points, mais les points de méthode exigent une trace vérifiable : développement en puissances, calcul du complément à deux, table de vérité complète, choix de structure relié à l'opération attendue ou test accompagné de sa sortie attendue.
 
 ## Exercices intégrés du cours
 

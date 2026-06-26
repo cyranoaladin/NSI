@@ -2,7 +2,7 @@
 title: "Grille de compétences - représentation des données"
 niveau: premiere
 source: "Prototype interne"
-status: validated_pedagogy
+status: needs_review
 version: "0.5.0"
 notion: "grille de compétences"
 objectifs: "Document professeur exploitable en prototype, à relire avant usage."

@@ -89,7 +89,7 @@ def validate_json_qcm(path: Path, errors: List[str]) -> None:
         if not isinstance(question, dict):
             errors.append(f"{path}: question {i} mal formée")
             continue
-        for key in ['id', 'question', 'propositions', 'bonne_reponse', 'explication']:
+        for key in ['id', 'question', 'propositions', 'bonne_reponse', 'explications']:
             if key not in question:
                 errors.append(f"{path}: question {i} -> {key} manquant")
 

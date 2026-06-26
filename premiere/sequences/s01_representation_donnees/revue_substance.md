@@ -3,14 +3,18 @@ title: "Revue de substance - S01 Représentation des données"
 level: "premiere"
 sequence_id: "s01_representation_donnees"
 document_type: "revue_substance"
-status: "validated_pedagogy"
-version: "1.0.0"
+status: "needs_review"
+version: "0.3.0"
+source: "Relecture interne S01 du 26 juin 2026"
+notion: "revue de substance avec preuves citées"
+learning_objectives:
+  - "Vérifier les preuves cours, entraînement et correction pour chaque capacité visée."
 private_data: false
 ---
 
 # Revue de substance — S01 Représentation des données
 
-Date de revue : 2026-06-26.
+Date de revue : 26 juin 2026.
 
 ---
 

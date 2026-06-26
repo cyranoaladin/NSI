@@ -2,7 +2,7 @@
 title: "Corrigé professeur - représentation des données"
 niveau: premiere
 source: "Prototype interne"
-status: validated_pedagogy
+status: needs_review
 version: "0.5.0"
 notion: "corrigé professeur"
 objectifs: "Document professeur exploitable en prototype, à relire avant usage."
@@ -101,4 +101,3 @@ private_data: false
 - Erreurs fréquentes : donner une entrée sans sortie attendue.
 - Remédiation associée : imposer entrée, sortie, raison.
 - Critère de réussite : les tests sont exécutables.
-

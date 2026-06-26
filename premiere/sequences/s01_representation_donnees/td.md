@@ -43,7 +43,7 @@ official_program:
 prerequisites: ["Cours et trace écrite S01"]
 learning_objectives: ["S'entraîner progressivement et justifier les choix."]
 assessment: {formative: true, summative: false}
-last_review: {pedagogy: "", science: "", technical: ""}
+last_review: {pedagogy: "26 juin 2026 - revue de substance", science: "", technical: ""}
 ---
 
 # TD - S01 Représentation des données

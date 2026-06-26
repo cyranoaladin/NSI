@@ -70,6 +70,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - learning_objectives_assessed_report.md: nom propre suspect -> Learning Objectives Assessed Report
 - pedagogical_blockers_report.md: nom propre suspect -> Pedagogical Blockers Report
 - pedagogical_blockers_report.md: nom propre suspect -> Ressources Drive
+- premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> American Standard Code
+- premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> Information Interchange
 - premiere/sequences/s01_representation_donnees/sources.md: nom propre suspect -> Ressources Drive
 - program_capacity_evidence_depth_report.md: nom propre suspect -> Program Capacity Evidence Depth Report
 - programme_matrix_premiere.md: nom propre suspect -> Formulaire Web
@@ -91,6 +93,11 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_teacher_docs_depth.py: nom propre suspect -> Ressources Drive
 - scripts/check_tp_test_alignment.py: nom propre suspect -> Test Alignment Report
 - scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
+- scripts/render_sequence.py: nom propre suspect -> Fira Code
+- scripts/render_sequence.py: nom propre suspect -> Sans Mono
+- scripts/render_sequence.py: nom propre suspect -> Fira Code
+- scripts/render_sequence.py: nom propre suspect -> Fira Code
+- scripts/render_sequence.py: nom propre suspect -> Sans Mono
 - td_corrige_alignment_report.md: nom propre suspect -> Corrige Alignment Report
 - tp_test_alignment_report.md: nom propre suspect -> Test Alignment Report
 
@@ -197,8 +204,11 @@ Les noms propres suspects sont listés pour revue humaine.
 - drive_sources.yml: nom propre suspect -> Séquences Terminale
 - manifest.csv: telephone_tn possible -> 2026-2027
 - missing_capabilities.md: nom propre suspect -> Boyer-Moore
-- premiere/sequences/s01_representation_donnees/corrige.md: nom propre suspect -> Structures Python
 - premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> Utiliser Python
+- premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> Liste Python
+- premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> Tuple Python
+- premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> Dictionnaire Python
+- premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> En Python
 - premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> En Python
 - premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> En Python
 - premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> En Python
@@ -208,6 +218,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - premiere/sequences/s01_representation_donnees/guide_professeur.md: nom propre suspect -> Structures Python
 - premiere/sequences/s01_representation_donnees/pedagogical_review.md: nom propre suspect -> Présenter Unicode
 - premiere/sequences/s01_representation_donnees/qcm.json: nom propre suspect -> Pourquoi Unicode
+- premiere/sequences/s01_representation_donnees/revue_substance.md: nom propre suspect -> Avec Python
 - premiere/sequences/s01_representation_donnees/sources.md: nom propre suspect -> Documentation Python
 - premiere/sequences/s01_representation_donnees/td.md: nom propre suspect -> Avec Python
 - premiere/sequences/s01_representation_donnees/tp.md: nom propre suspect -> Test Unicode
@@ -242,6 +253,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_progression_calendar_alignment.py: telephone_tn possible -> 2026-2027
 - scripts/check_progression_calendar_alignment.py: telephone_tn possible -> 2026-2027
 - scripts/check_python_quality.py: nom propre suspect -> Check Python
+- scripts/render_sequence.py: telephone_tn possible -> 2026-2027
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/sources.md: nom propre suspect -> Documentation Python
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/sources.md: nom propre suspect -> Ressources Drive
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md: nom propre suspect -> Cours Terminale

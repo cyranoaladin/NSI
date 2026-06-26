@@ -85,7 +85,7 @@ assessment:
   formative: true
   summative: false
 last_review:
-  pedagogy: ""
+  pedagogy: "26 juin 2026 - revue de substance"
   science: ""
   technical: ""
 ---

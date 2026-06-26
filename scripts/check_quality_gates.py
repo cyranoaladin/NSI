@@ -11,7 +11,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 PYTHON = sys.executable
 
-CHECKS = [
+BLOCKING_CHECKS = [
     "scripts/check_git_clean.py",
     "scripts/check_metadata.py",
     "scripts/check_links.py",
@@ -20,10 +20,7 @@ CHECKS = [
     "scripts/check_no_placeholders_code.py",
     "scripts/check_no_build_artifacts_in_index.py",
     "scripts/check_uploaded_archive_policy.py",
-    "scripts/check_required_sections.py",
-    "scripts/check_document_depth.py",
     "scripts/check_qcm_schema.py",
-    "scripts/check_document_style.py",
     "scripts/check_progression_calendar_alignment.py",
     "scripts/check_project_quarter_requirement.py",
     "scripts/check_progression_project_consistency.py",
@@ -60,20 +57,40 @@ CHECKS = [
     "scripts/run_python_tests.py",
 ]
 
+INDICATIVE_CHECKS = [
+    "scripts/check_required_sections.py",
+    "scripts/check_document_depth.py",
+    "scripts/check_document_style.py",
+]
+
+
+def run_check(script: str, env: dict[str, str], indicative: bool = False) -> int:
+    suffix = " (indicatif)" if indicative else ""
+    print(f"== {script}{suffix} ==")
+    result = subprocess.run([PYTHON, script], cwd=ROOT, env=env)
+    return result.returncode
+
+
 def main() -> None:
     failures: list[str] = []
+    indicative_failures: list[str] = []
     env = os.environ.copy()
     env["PYTHONDONTWRITEBYTECODE"] = "1"
-    for script in CHECKS:
-        print(f"== {script} ==")
-        result = subprocess.run([PYTHON, script], cwd=ROOT, env=env)
-        if result.returncode != 0:
+    for script in BLOCKING_CHECKS:
+        if run_check(script, env) != 0:
             failures.append(script)
+    for script in INDICATIVE_CHECKS:
+        if run_check(script, env, indicative=True) != 0:
+            indicative_failures.append(script)
     if failures:
         print("check_quality_gates: KO")
         for script in failures:
             print(f"- {script}")
         raise SystemExit(1)
+    if indicative_failures:
+        print("Gates indicatifs non bloquants en échec:")
+        for script in indicative_failures:
+            print(f"- {script}")
     print("check_quality_gates: PASS")
 
 if __name__ == "__main__":

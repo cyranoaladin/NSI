@@ -2,7 +2,7 @@
 title: "Barème - représentation des données"
 niveau: premiere
 source: "Prototype interne"
-status: validated_pedagogy
+status: needs_review
 version: "0.5.0"
 notion: "barème"
 objectifs: "Document professeur exploitable en prototype, à relire avant usage."
@@ -85,4 +85,3 @@ Total : 20 points. Le barème est question par question et relié aux capacités
 - 0,5 pt : résultat attendu.
 - 0,5 pt : justification, cas limite ou test.
 - Erreur typique pénalisante : donner une entrée sans sortie attendue.
-

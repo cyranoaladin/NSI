@@ -36,7 +36,12 @@ def qcm_explanations(path: Path) -> int:
     payload = json.loads(path.read_text(encoding="utf-8"))
     total = 0
     for item in payload.get("questions", []):
-        if isinstance(item, dict) and (item.get("explication") or item.get("explanation")):
+        explanations = item.get("explications") if isinstance(item, dict) else None
+        if isinstance(item, dict) and (
+            item.get("explication")
+            or item.get("explanation")
+            or (isinstance(explanations, dict) and explanations)
+        ):
             total += 1
     return total
 

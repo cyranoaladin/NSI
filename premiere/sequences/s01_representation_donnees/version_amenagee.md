@@ -2,7 +2,7 @@
 title: "Version aménagée - représentation des données"
 niveau: premiere
 source: "Prototype interne"
-status: validated_pedagogy
+status: needs_review
 version: "0.5.0"
 notion: "évaluation aménagée"
 objectifs: "Document professeur exploitable en prototype, à relire avant usage."
@@ -85,4 +85,3 @@ private_data: false
 - Barème adapté : 1 pt démarche, 1 pt résultat, 0,5 pt justification.
 - Durée conseillée : 8 minutes.
 - Objectif conservé : P-LANG-04.
-

@@ -7,9 +7,9 @@
     "sequence_id": "s01_representation_donnees",
     "sequence": "s01_representation_donnees",
     "document_type": "qcm",
-    "status": "validated_pedagogy",
-    "statut": "validated_pedagogy",
-    "version": "0.2.0",
+    "status": "needs_review",
+    "statut": "needs_review",
+    "version": "0.3.0",
     "source": "BO spécial n°1 du 22 janvier 2019",
     "theme": "Représentation des données",
     "notion": "bits, bases, complément à deux, types construits",
@@ -134,7 +134,6 @@
       "difficulte": "socle",
       "capacite_officielle": "P-DATA-BASE-01",
       "erreur_ciblee": "Lire une écriture binaire comme une écriture décimale.",
-      "explication": "1010₂ = 8 + 2 = 10.",
       "explications": {
         "10": "Réponse attendue.",
         "1010": "C'est la lecture en base 10, pas en base 2.",
@@ -153,7 +152,6 @@
       "difficulte": "standard",
       "capacite_officielle": "P-DATA-BASE-02B",
       "erreur_ciblee": "Confondre entier signé et non signé.",
-      "explication": "Sur n bits, l'intervalle est -2^(n-1) à 2^(n-1)-1.",
       "explications": {
         "-128 à 127": "Réponse attendue.",
         "0 à 255": "C'est l'intervalle sans signe.",
@@ -172,7 +170,6 @@
       "difficulte": "standard",
       "capacite_officielle": "P-DATA-BASE-02B",
       "erreur_ciblee": "Oublier la convention de signe.",
-      "explication": "255 - 256 = -1.",
       "explications": {
         "-1": "Réponse attendue.",
         "255": "C'est la lecture sans signe.",
@@ -191,7 +188,6 @@
       "difficulte": "socle",
       "capacite_officielle": "P-DATA-BASE-04",
       "erreur_ciblee": "Oublier l'effet de not.",
-      "explication": "not b doit être True, donc b doit être False, et a doit être True.",
       "explications": {
         "a=True, b=False": "Réponse attendue.",
         "a=True, b=True": "not b vaut False.",
@@ -210,7 +206,6 @@
       "difficulte": "socle",
       "capacite_officielle": "P-DATA-BASE-05A",
       "erreur_ciblee": "Confondre encodage et compression.",
-      "explication": "Unicode fournit un répertoire très large de caractères.",
       "explications": {
         "Pour représenter beaucoup plus de caractères qu'ASCII": "Réponse attendue.",
         "Pour rendre tous les textes plus courts": "Ce n'est pas son objectif.",
@@ -229,7 +224,6 @@
       "difficulte": "socle",
       "capacite_officielle": "P-DATA-CONSTR-01",
       "erreur_ciblee": "Ne pas reconnaître un p-uplet.",
-      "explication": "Un point regroupe deux valeurs dans un ordre fixé.",
       "explications": {
         "tuple": "Réponse attendue.",
         "dictionnaire": "Possible avec champs nommés, mais moins direct ici.",
@@ -248,7 +242,6 @@
       "difficulte": "standard",
       "capacite_officielle": "P-DATA-CONSTR-03A",
       "erreur_ciblee": "Confondre clé et position.",
-      "explication": "La clé est le choix, la valeur est l'effectif.",
       "explications": {
         "Parce qu'on associe chaque choix à un effectif": "Réponse attendue.",
         "Parce qu'un dictionnaire garde toujours l'ordre de vote": "L'ordre de vote brut n'est pas l'objectif.",
@@ -257,6 +250,24 @@
     },
     {
       "id": "P1Q8",
+      "question": "Après notes = [12, 15, 9], puis notes[1] = 14, que produit [x * 2 for x in notes] ?",
+      "propositions": [
+        "[24, 28, 18]",
+        "[12, 14, 9]",
+        "[24, 30, 18]"
+      ],
+      "bonne_reponse": "[24, 28, 18]",
+      "difficulte": "standard",
+      "capacite_officielle": "P-DATA-CONSTR-02A",
+      "erreur_ciblee": "Oublier qu'une liste est modifiable avant la compréhension.",
+      "explications": {
+        "[24, 28, 18]": "Réponse attendue : la valeur d'indice 1 a été modifiée avant de doubler chaque élément.",
+        "[12, 14, 9]": "C'est la liste modifiée, mais la compréhension n'a pas encore été appliquée.",
+        "[24, 30, 18]": "La valeur 15 a été doublée comme si la modification notes[1] = 14 n'avait pas eu lieu."
+      }
+    },
+    {
+      "id": "P1Q9",
       "question": "Quel test est un cas limite pertinent pour une fonction de conversion vers base 2 ?",
       "propositions": [
         "to_base(0, 2)",
@@ -267,7 +278,6 @@
       "difficulte": "expert",
       "capacite_officielle": "P-LANG-04",
       "erreur_ciblee": "Tester seulement des cas ordinaires.",
-      "explication": "Zéro déclenche souvent un traitement séparé dans les conversions par divisions successives.",
       "explications": {
         "to_base(0, 2)": "Réponse attendue.",
         "to_base(42, 2)": "Cas utile mais ordinaire.",
