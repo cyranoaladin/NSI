@@ -29,10 +29,11 @@ make release-audit
 
 ```text
 python scripts/check_git_clean.py
-check_git_clean: KO
-- worktree non propre:
- M privacy_report.md
-make: *** [Makefile:55: release-audit] Error 1
+check_git_clean: PASS
+python scripts/check_drive_mapping_release.py
+check_drive_mapping_release: KO
+- ressources Drive référencées mais non intégrées localement: copie_de_progres_nsi_amelioree.pdf, copie_de_progres_nsi_amelioree.tex, guide_enseignant_reprise_nsi_ameliore.tex, Cours.pdf, 2_TP.pdf, eval_nsi_corrige.pdf, eval_nsi.pdf, rendus_eleves, .git, .venv, TP_SOC.tex, Séquence1_Histoire de l'informatique, Séquence4_Types construits, 1_Cours_Types_construits.pdf, 1_RdD_Entier naturel.pdf, pays_monde.csv, NotesEleves.csv, Fichier_Eleves.csv, tri_bulles_eleve.py, Séquence1_TAD_Théorie
+make: *** [Makefile:56: release-audit] Error 1
 ```
 
 ## Bloquants restants
