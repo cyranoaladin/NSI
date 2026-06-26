@@ -87,6 +87,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - programme_matrix_premiere.md: nom propre suspect -> Formulaire Web
 - progression_audit.md: nom propre suspect -> Calendrier Tunisie
 - progression_audit.md: nom propre suspect -> Ressources Drive
+- qa_debt_register.md: nom propre suspect -> Portabilité Drive
 - qa_report.md: nom propre suspect -> Dossier Git Drive
 - qa_report.md: nom propre suspect -> Ressources Drive
 - qa_report.md: nom propre suspect -> Ressources Drive
@@ -96,6 +97,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_course_internal_coherence.py: nom propre suspect -> Course Internal Coherence Report
 - scripts/check_differentiation_quality.py: nom propre suspect -> Differentiation Quality Report
 - scripts/check_drive_enrichment_traceability.py: nom propre suspect -> Ressource Drive
+- scripts/check_drive_enrichment_traceability_portable.py: nom propre suspect -> Portable Drive
+- scripts/check_drive_enrichment_traceability_portable.py: nom propre suspect -> Ressource Drive
 - scripts/check_drive_mapping.py: nom propre suspect -> Prototype Drive
 - scripts/check_drive_mapping_release.py: nom propre suspect -> Release Drive
 - scripts/check_evaluation_bareme_alignment.py: nom propre suspect -> Evaluation Bareme Alignment Report
@@ -121,6 +124,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - tests/test_course_sheets.py: nom propre suspect -> Lien Drive
 - tests/test_course_sheets.py: nom propre suspect -> Lien Drive
 - tests/test_drive_enrichment_traceability.py: nom propre suspect -> Ressource Drive
+- tests/test_drive_portable_and_manifest.py: nom propre suspect -> Ressource Drive
 - tests/test_missing_register_actionability.py: nom propre suspect -> Lien Drive
 - tests/test_operational_substance_controls.py: nom propre suspect -> Lien Drive
 - tests/test_session_referenced_files_exist.py: nom propre suspect -> Lien Drive

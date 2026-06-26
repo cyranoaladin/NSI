@@ -14,11 +14,13 @@ from pathlib import Path
 from typing import Dict, List
 import csv
 import sys
+import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = ROOT / 'manifest.csv'
 REPORT_PATH = ROOT / 'inventory_report.md'
 DUPLICATES_PATH = ROOT / 'duplicates_report.md'
+TRACE_PATH = ROOT / 'support_source_trace.yml'
 
 sys.path.append(str(ROOT))
 from scripts._inventory_utils import (
@@ -44,6 +46,38 @@ from scripts._inventory_utils import (
 )
 
 
+DRIVE_TRACE_SOURCE_TYPES = {
+    'adaptation_drive': 'adapted_from_drive',
+    'adapted_from_drive': 'adapted_from_drive',
+    'adaptation': 'adapted_from_drive',
+    'import_partiel': 'import_partiel',
+    'inspiration_drive': 'inspiration_drive',
+    'inspiration_only': 'inspiration_drive',
+}
+
+_SOURCE_TRACE_CACHE: Dict[str, str] | None = None
+
+
+def support_source_types() -> Dict[str, str]:
+    global _SOURCE_TRACE_CACHE
+    if _SOURCE_TRACE_CACHE is not None:
+        return _SOURCE_TRACE_CACHE
+    result: Dict[str, str] = {}
+    if TRACE_PATH.exists():
+        payload = yaml.safe_load(TRACE_PATH.read_text(encoding='utf-8')) or {}
+        rows = payload.get('supports', []) if isinstance(payload, dict) else []
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            support = str(row.get('support') or '').strip()
+            reuse = str(row.get('type_reprise') or '').strip()
+            source = DRIVE_TRACE_SOURCE_TYPES.get(reuse)
+            if support and source:
+                result[support] = source
+    _SOURCE_TRACE_CACHE = result
+    return result
+
+
 def row_from_path(path: Path, idx: int) -> Dict[str, str]:
     relative = path.relative_to(ROOT).as_posix()
     fm = parse_frontmatter(path)
@@ -57,7 +91,7 @@ def row_from_path(path: Path, idx: int) -> Dict[str, str]:
     audience = resource_audience(path, fm)
     publishable = 'oui' if status == 'published' and is_publishable(path) else 'non'
 
-    source = detect_source_type(path, fm)
+    source = support_source_types().get(relative) or detect_source_type(path, fm)
     if source == SOURCE_TYPE_GENERATED:
         source = 'generated'
 
@@ -210,8 +244,7 @@ def write_reports(rows: List[Dict[str, str]]) -> None:
     text.extend([
         '',
         '## Répartition par source',
-        f"- drive: {by_source.get('drive', 0)}",
-        f"- generated: {by_source.get('generated', 0)}",
+        *[f"- {source}: {count}" for source, count in sorted(by_source.items())],
         '',
         '## Répartition par niveau',
     ])
@@ -236,9 +269,9 @@ def write_reports(rows: List[Dict[str, str]]) -> None:
     text.extend([
         '',
         '## Catégories (distinguer exigences)',
-        '- Sources issues du Drive :',
+        '- Sources issues du Drive ou adaptées depuis Drive :',
     ])
-    for entry in sorted(r['chemin'] for r in rows if r['source'] == 'drive'):
+    for entry in sorted(r['chemin'] for r in rows if r['source'] in {'drive', 'adapted_from_drive', 'import_partiel', 'inspiration_drive'}):
         text.append(f'  - {entry}')
     text.append('- Sources générées :')
     for entry in sorted(r['chemin'] for r in rows if r['source'] == 'generated'):

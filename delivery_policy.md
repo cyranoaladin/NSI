@@ -11,6 +11,8 @@
 - L’archive principale de livraison est `dist/source_clean.tar.gz`. Toute archive contenant `.git/` est interdite comme livraison pédagogique.
 - Ce fichier ne contient ni `.git/`, ni caches, ni artefacts LaTeX, ni environnements virtuels, ni rapports obsolètes.
 - `audit-extracted-source` doit passer sur `source_clean.tar.gz` extrait sans dépendance à Git.
+- `audit-extracted-source` utilise les contrôles Drive portables : il vérifie les traces et décisions, mais pas l’existence physique du miroir `Documents_DRIVE`.
+- L’audit local vérifie les fichiers bruts Drive uniquement lorsque le miroir `Documents_DRIVE` est présent.
 
 ## Historique Git
 

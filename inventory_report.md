@@ -1,16 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 508
+- Total ressources : 516
 - Ressources pédagogiques : 53
-- Ressources techniques : 455
+- Ressources techniques : 463
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
-- drive: 0
-- generated: 508
+- adapted_from_drive: 6
+- generated: 509
+- import_partiel: 1
 
 ## Répartition par niveau
-- interne: 204
+- interne: 212
 - premiere: 147
 - terminale: 157
 
@@ -18,21 +19,28 @@
 - banque: 14
 - document: 277
 - python: 36
-- script: 109
+- script: 114
 - sequence: 45
-- test: 27
+- test: 30
 
 ## Répartition par statut
-- needs_review: 508
+- needs_review: 516
 
 ## Répartition audience
 - corrige: 33
 - eleve: 110
-- mixte: 362
+- mixte: 370
 - professeur: 3
 
 ## Catégories (distinguer exigences)
-- Sources issues du Drive :
+- Sources issues du Drive ou adaptées depuis Drive :
+  - 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_tuples.md
+  - 03_progressions/fiches_cours/terminale/T01/T01_fiche_cours_interface_implementation_tad.md
+  - 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md
+  - 03_progressions/supports/premiere/P05/P05_td_tables_csv.md
+  - 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md
+  - 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv
+  - premiere/sequences/s01_representation_donnees/cours_eleve.md
 - Sources générées :
   - 00_programmes_officiels/README.md
   - 00_programmes_officiels/programme_nsi_2019.yaml
@@ -56,7 +64,6 @@
   - 03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_texte_unicode.md
   - 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_dictionnaires.md
   - 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_listes.md
-  - 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_tuples.md
   - 03_progressions/fiches_cours/premiere/P05/P05_fiche_cours_tables_csv_import_coherence.md
   - 03_progressions/fiches_cours/premiere/P06/P06_fiche_cours_tables_recherche_tri_fusion.md
   - 03_progressions/fiches_cours/premiere/P07/P07_fiche_cours_fonctions_tests_specifications.md
@@ -69,7 +76,6 @@
   - 03_progressions/fiches_cours/premiere/P13/P13_fiche_cours_dichotomie_glouton_knn.md
   - 03_progressions/fiches_cours/premiere/P14/P14_fiche_cours_synthese_projet_oral.md
   - 03_progressions/fiches_cours/terminale/T00/T00_fiche_cours_reprise_python_tests_complexite.md
-  - 03_progressions/fiches_cours/terminale/T01/T01_fiche_cours_interface_implementation_tad.md
   - 03_progressions/fiches_cours/terminale/T02/T02_fiche_cours_classes_objets_attributs_methodes.md
   - 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_dictionnaires.md
   - 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_files.md
@@ -89,7 +95,6 @@
   - 03_progressions/fiches_cours/terminale/T15/T15_fiche_cours_calculabilite_arret.md
   - 03_progressions/fiches_cours/terminale/T16/T16_fiche_cours_diviser_pour_regner_tri_fusion.md
   - 03_progressions/fiches_cours/terminale/T17/T17_fiche_cours_programmation_dynamique.md
-  - 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md
   - 03_progressions/fiches_cours/terminale/T19/T19_fiche_cours_bac_pratique_grand_oral_projet.md
   - 03_progressions/monthly_load_premiere.md
   - 03_progressions/monthly_load_terminale.md
@@ -174,14 +179,11 @@
   - 03_progressions/supports/premiere/P05/P05_cours_tables_csv.md
   - 03_progressions/supports/premiere/P05/P05_evaluation_tables_csv.md
   - 03_progressions/supports/premiere/P05/P05_remediation_tables_csv.md
-  - 03_progressions/supports/premiere/P05/P05_td_tables_csv.md
-  - 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md
   - 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md
   - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md
   - 03_progressions/supports/premiere/P05/code/P05_corrige_professeur_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
-  - 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv
   - 03_progressions/supports/premiere/P06/P06_TD_tables_recherche_tri_fusion.md
   - 03_progressions/supports/premiere/P06/P06_evaluation_tables_recherche_tri_fusion.md
   - 03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md
@@ -342,7 +344,6 @@
   - premiere/sequences/s01_representation_donnees/bareme.md
   - premiere/sequences/s01_representation_donnees/corrige.md
   - premiere/sequences/s01_representation_donnees/corrige_professeur.md
-  - premiere/sequences/s01_representation_donnees/cours_eleve.md
   - premiere/sequences/s01_representation_donnees/evaluation.md
   - premiere/sequences/s01_representation_donnees/evaluation_corrigee.md
   - premiere/sequences/s01_representation_donnees/fiche_methode.md
@@ -396,15 +397,18 @@
   - scripts/check_course_sheets_quality.py
   - scripts/check_course_sheets_substance.py
   - scripts/check_coverage_evidence.py
+  - scripts/check_delivered_archive_exactly_source_clean.py
   - scripts/check_differentiation_quality.py
   - scripts/check_document_depth.py
   - scripts/check_document_naming_conventions.py
   - scripts/check_document_style.py
   - scripts/check_drive_enrichment_traceability.py
+  - scripts/check_drive_enrichment_traceability_portable.py
   - scripts/check_drive_integration_plan.py
   - scripts/check_drive_mapping.py
   - scripts/check_drive_mapping_release.py
   - scripts/check_drive_quarantine_privacy.py
+  - scripts/check_drive_trace_no_absolute_local_paths.py
   - scripts/check_evaluation_bareme_alignment.py
   - scripts/check_evaluation_distribution.py
   - scripts/check_first_batch_alignment.py
@@ -419,6 +423,7 @@
   - scripts/check_links.py
   - scripts/check_local_drive_traceability.py
   - scripts/check_manifest_source_integrity.py
+  - scripts/check_manifest_source_trace_consistency.py
   - scripts/check_metadata.py
   - scripts/check_missing_register_actionability.py
   - scripts/check_missing_register_semantic_consistency.py
@@ -433,6 +438,7 @@
   - scripts/check_no_placeholders_code.py
   - scripts/check_no_placeholders_docs.py
   - scripts/check_no_private_data.py
+  - scripts/check_no_sensitive_drive_in_source_clean.py
   - scripts/check_no_teacher_content_in_student_export.py
   - scripts/check_operational_readiness_quality_coupling.py
   - scripts/check_operational_supports_no_indicative_debt.py
@@ -517,9 +523,11 @@
   - tests/test_build_artifacts.py
   - tests/test_consolidation_strict.py
   - tests/test_course_sheets.py
+  - tests/test_delivered_archive_exactly_source_clean.py
   - tests/test_drive_enrichment_traceability.py
   - tests/test_drive_local_pipeline.py
   - tests/test_drive_mapping_release.py
+  - tests/test_drive_portable_and_manifest.py
   - tests/test_first_batch_alignment.py
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
@@ -539,6 +547,7 @@
   - tests/test_session_specificity.py
   - tests/test_support_substance.py
   - tests/test_tp_pedagogical_assets.py
+  - tests/test_tp_pedagogical_assets_no_hang.py
   - tests/test_tp_pedagogical_assets_runtime.py
   - tests/test_uploaded_archive_policy.py
   - tp_test_alignment_report.md
@@ -932,15 +941,18 @@
   - scripts/check_course_sheets_quality.py
   - scripts/check_course_sheets_substance.py
   - scripts/check_coverage_evidence.py
+  - scripts/check_delivered_archive_exactly_source_clean.py
   - scripts/check_differentiation_quality.py
   - scripts/check_document_depth.py
   - scripts/check_document_naming_conventions.py
   - scripts/check_document_style.py
   - scripts/check_drive_enrichment_traceability.py
+  - scripts/check_drive_enrichment_traceability_portable.py
   - scripts/check_drive_integration_plan.py
   - scripts/check_drive_mapping.py
   - scripts/check_drive_mapping_release.py
   - scripts/check_drive_quarantine_privacy.py
+  - scripts/check_drive_trace_no_absolute_local_paths.py
   - scripts/check_evaluation_bareme_alignment.py
   - scripts/check_evaluation_distribution.py
   - scripts/check_first_batch_alignment.py
@@ -955,6 +967,7 @@
   - scripts/check_links.py
   - scripts/check_local_drive_traceability.py
   - scripts/check_manifest_source_integrity.py
+  - scripts/check_manifest_source_trace_consistency.py
   - scripts/check_metadata.py
   - scripts/check_missing_register_actionability.py
   - scripts/check_missing_register_semantic_consistency.py
@@ -969,6 +982,7 @@
   - scripts/check_no_placeholders_code.py
   - scripts/check_no_placeholders_docs.py
   - scripts/check_no_private_data.py
+  - scripts/check_no_sensitive_drive_in_source_clean.py
   - scripts/check_no_teacher_content_in_student_export.py
   - scripts/check_operational_readiness_quality_coupling.py
   - scripts/check_operational_supports_no_indicative_debt.py
@@ -1027,9 +1041,11 @@
   - tests/test_build_artifacts.py
   - tests/test_consolidation_strict.py
   - tests/test_course_sheets.py
+  - tests/test_delivered_archive_exactly_source_clean.py
   - tests/test_drive_enrichment_traceability.py
   - tests/test_drive_local_pipeline.py
   - tests/test_drive_mapping_release.py
+  - tests/test_drive_portable_and_manifest.py
   - tests/test_first_batch_alignment.py
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
@@ -1049,6 +1065,7 @@
   - tests/test_session_specificity.py
   - tests/test_support_substance.py
   - tests/test_tp_pedagogical_assets.py
+  - tests/test_tp_pedagogical_assets_no_hang.py
   - tests/test_tp_pedagogical_assets_runtime.py
   - tests/test_uploaded_archive_policy.py
   - tp_test_alignment_report.md
@@ -1436,15 +1453,18 @@
 - scripts/check_course_sheets_quality.py
 - scripts/check_course_sheets_substance.py
 - scripts/check_coverage_evidence.py
+- scripts/check_delivered_archive_exactly_source_clean.py
 - scripts/check_differentiation_quality.py
 - scripts/check_document_depth.py
 - scripts/check_document_naming_conventions.py
 - scripts/check_document_style.py
 - scripts/check_drive_enrichment_traceability.py
+- scripts/check_drive_enrichment_traceability_portable.py
 - scripts/check_drive_integration_plan.py
 - scripts/check_drive_mapping.py
 - scripts/check_drive_mapping_release.py
 - scripts/check_drive_quarantine_privacy.py
+- scripts/check_drive_trace_no_absolute_local_paths.py
 - scripts/check_evaluation_bareme_alignment.py
 - scripts/check_evaluation_distribution.py
 - scripts/check_first_batch_alignment.py
@@ -1459,6 +1479,7 @@
 - scripts/check_links.py
 - scripts/check_local_drive_traceability.py
 - scripts/check_manifest_source_integrity.py
+- scripts/check_manifest_source_trace_consistency.py
 - scripts/check_metadata.py
 - scripts/check_missing_register_actionability.py
 - scripts/check_missing_register_semantic_consistency.py
@@ -1473,6 +1494,7 @@
 - scripts/check_no_placeholders_code.py
 - scripts/check_no_placeholders_docs.py
 - scripts/check_no_private_data.py
+- scripts/check_no_sensitive_drive_in_source_clean.py
 - scripts/check_no_teacher_content_in_student_export.py
 - scripts/check_operational_readiness_quality_coupling.py
 - scripts/check_operational_supports_no_indicative_debt.py
@@ -1551,9 +1573,11 @@
 - tests/test_build_artifacts.py
 - tests/test_consolidation_strict.py
 - tests/test_course_sheets.py
+- tests/test_delivered_archive_exactly_source_clean.py
 - tests/test_drive_enrichment_traceability.py
 - tests/test_drive_local_pipeline.py
 - tests/test_drive_mapping_release.py
+- tests/test_drive_portable_and_manifest.py
 - tests/test_first_batch_alignment.py
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py
@@ -1573,6 +1597,7 @@
 - tests/test_session_specificity.py
 - tests/test_support_substance.py
 - tests/test_tp_pedagogical_assets.py
+- tests/test_tp_pedagogical_assets_no_hang.py
 - tests/test_tp_pedagogical_assets_runtime.py
 - tests/test_uploaded_archive_policy.py
 - tp_test_alignment_report.md
@@ -1943,15 +1968,18 @@
 - scripts/check_course_sheets_quality.py
 - scripts/check_course_sheets_substance.py
 - scripts/check_coverage_evidence.py
+- scripts/check_delivered_archive_exactly_source_clean.py
 - scripts/check_differentiation_quality.py
 - scripts/check_document_depth.py
 - scripts/check_document_naming_conventions.py
 - scripts/check_document_style.py
 - scripts/check_drive_enrichment_traceability.py
+- scripts/check_drive_enrichment_traceability_portable.py
 - scripts/check_drive_integration_plan.py
 - scripts/check_drive_mapping.py
 - scripts/check_drive_mapping_release.py
 - scripts/check_drive_quarantine_privacy.py
+- scripts/check_drive_trace_no_absolute_local_paths.py
 - scripts/check_evaluation_bareme_alignment.py
 - scripts/check_evaluation_distribution.py
 - scripts/check_first_batch_alignment.py
@@ -1966,6 +1994,7 @@
 - scripts/check_links.py
 - scripts/check_local_drive_traceability.py
 - scripts/check_manifest_source_integrity.py
+- scripts/check_manifest_source_trace_consistency.py
 - scripts/check_metadata.py
 - scripts/check_missing_register_actionability.py
 - scripts/check_missing_register_semantic_consistency.py
@@ -1980,6 +2009,7 @@
 - scripts/check_no_placeholders_code.py
 - scripts/check_no_placeholders_docs.py
 - scripts/check_no_private_data.py
+- scripts/check_no_sensitive_drive_in_source_clean.py
 - scripts/check_no_teacher_content_in_student_export.py
 - scripts/check_operational_readiness_quality_coupling.py
 - scripts/check_operational_supports_no_indicative_debt.py
@@ -2064,9 +2094,11 @@
 - tests/test_build_artifacts.py
 - tests/test_consolidation_strict.py
 - tests/test_course_sheets.py
+- tests/test_delivered_archive_exactly_source_clean.py
 - tests/test_drive_enrichment_traceability.py
 - tests/test_drive_local_pipeline.py
 - tests/test_drive_mapping_release.py
+- tests/test_drive_portable_and_manifest.py
 - tests/test_first_batch_alignment.py
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py
@@ -2086,6 +2118,7 @@
 - tests/test_session_specificity.py
 - tests/test_support_substance.py
 - tests/test_tp_pedagogical_assets.py
+- tests/test_tp_pedagogical_assets_no_hang.py
 - tests/test_tp_pedagogical_assets_runtime.py
 - tests/test_uploaded_archive_policy.py
 - tp_test_alignment_report.md

@@ -3,10 +3,13 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 508
-- Ressources needs_review : 508
+- Ressources inventoriées : 516
+- Ressources needs_review : 516
 - Ressources publiables : 0
-- Source generated : 508
+- Source generated : 509
+- Source adapted_from_drive : 6
+- Source import_partiel : 1
+- Source inspiration_drive : 0
 - Source drive : 0
 - Lignes drive_inventory.csv : 22
 - Couverture covered : 0
@@ -23,6 +26,10 @@
 - RELEASE_AUDIT_STATUS : RELEASE_AUDIT_FAIL
 - FINAL_STATUS = NON_RELEASE_READY
 - Raison : Drive partiellement intégré ; publication bloquée par ressources restantes non auditées / absentes / sensibles.
+- Drive est partiellement intégré.
+- L’audit portable ne vérifie pas les fichiers bruts Drive.
+- L’audit local vérifie les fichiers bruts Drive lorsque le miroir Documents_DRIVE est présent.
+- Le dépôt reste NON_RELEASE_READY.
 - Drive integrated_adapted : 6
 - Drive inspiration_only : 1
 - Drive rejected_sensitive : 5

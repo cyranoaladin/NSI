@@ -54,7 +54,6 @@ audit-local:
 	python scripts/check_first_batch_tp_assets.py
 	python scripts/check_support_substance.py
 	python scripts/check_no_line_padding.py
-	python scripts/check_tp_pedagogical_assets.py
 	python scripts/check_tp_pedagogical_assets_runtime.py
 	python scripts/check_sequence_contracts.py
 	python scripts/check_local_drive_traceability.py
@@ -135,12 +134,10 @@ audit-extracted-source:
 	python scripts/check_first_batch_tp_assets.py
 	python scripts/check_support_substance.py
 	python scripts/check_no_line_padding.py
-	python scripts/check_tp_pedagogical_assets.py
 	python scripts/check_tp_pedagogical_assets_runtime.py
 	python scripts/check_sequence_contracts.py
-	python scripts/check_local_drive_traceability.py
-	python scripts/check_drive_integration_plan.py
-	python scripts/check_drive_enrichment_traceability.py
+	python scripts/check_drive_enrichment_traceability_portable.py
+	python scripts/check_drive_trace_no_absolute_local_paths.py
 	python scripts/check_ready_supports_required_sections.py
 	python scripts/check_ready_supports_depth.py
 	python scripts/check_ready_session_operationality.py
@@ -162,15 +159,17 @@ audit-extracted-source:
 	python scripts/check_no_private_data.py
 	python scripts/check_no_placeholders_docs.py
 	python scripts/check_no_build_artifacts_in_index.py
+	python scripts/check_no_sensitive_drive_in_source_clean.py
 	python scripts/check_no_coverage_from_sheets_only.py
 
 package-audit:
 	python scripts/cleanup_python_artifacts.py
 	python scripts/build_source_archive.py
 	python scripts/check_archive_portability.py
+	python scripts/check_no_sensitive_drive_in_source_clean.py
 
 verify-delivery-archive:
-	DELIVERED_ARCHIVE="$(DELIVERED_ARCHIVE)" python scripts/check_uploaded_archive_policy.py
+	DELIVERED_ARCHIVE="$(DELIVERED_ARCHIVE)" python scripts/check_delivered_archive_exactly_source_clean.py
 
 render-s01:
 	python scripts/render_sequence.py premiere/sequences/s01_representation_donnees

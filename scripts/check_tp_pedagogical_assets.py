@@ -10,6 +10,7 @@ import ast
 import os
 import re
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
@@ -102,16 +103,27 @@ def cleanup_repo_caches(root: Path = ROOT) -> None:
 def run_tests(code_dir: Path, tests: Path, module_name: str, timeout_seconds: float = 5.0) -> subprocess.CompletedProcess[str]:
     env = os.environ.copy()
     env["PYTHONDONTWRITEBYTECODE"] = "1"
+    env["PYTHONUNBUFFERED"] = "1"
     env["TP_MODULE"] = module_name
-    return subprocess.run(
+    process = subprocess.Popen(
         [sys.executable, str(tests.name)],
         cwd=code_dir,
         env=env,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         text=True,
-        timeout=timeout_seconds,
+        start_new_session=True,
     )
+    try:
+        stdout, _ = process.communicate(timeout=timeout_seconds)
+    except subprocess.TimeoutExpired as exc:
+        try:
+            os.killpg(process.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            process.poll()
+        stdout, _ = process.communicate()
+        raise subprocess.TimeoutExpired(process.args, timeout_seconds, output=stdout) from exc
+    return subprocess.CompletedProcess(process.args, process.returncode, stdout, None)
 
 
 def analyze_prefix(root: Path, prefix: str, prefix_timeout_seconds: float = PREFIX_TIMEOUT_SECONDS) -> tuple[list[str], float]:
@@ -171,7 +183,7 @@ def analyze_tp_pedagogy(
     started = time.monotonic()
     try:
         for prefix in prefixes:
-            print(f"check_tp_pedagogical_assets: préfixe {prefix}")
+            print(f"check_tp_pedagogical_assets: préfixe {prefix}", flush=True)
             errors, duration = analyze_prefix(root, prefix, prefix_timeout_seconds)
             result.prefix_durations[prefix] = duration
             result.errors.extend(errors)
