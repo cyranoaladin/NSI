@@ -1,16 +1,16 @@
 # Inventaire ressources NSI
 
-- Total ressources : 494
+- Total ressources : 496
 - Ressources pédagogiques : 53
-- Ressources techniques : 441
+- Ressources techniques : 443
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - drive: 0
-- generated: 494
+- generated: 496
 
 ## Répartition par niveau
-- interne: 191
+- interne: 193
 - premiere: 146
 - terminale: 157
 
@@ -18,17 +18,17 @@
 - banque: 14
 - document: 273
 - python: 36
-- script: 105
+- script: 106
 - sequence: 45
-- test: 21
+- test: 22
 
 ## Répartition par statut
-- needs_review: 494
+- needs_review: 496
 
 ## Répartition audience
 - corrige: 33
 - eleve: 110
-- mixte: 348
+- mixte: 350
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -371,6 +371,7 @@
   - qa_report.md
   - scientific_claims_review_report.md
   - scripts/_course_sheets_common.py
+  - scripts/_drive_paths.py
   - scripts/_inventory_utils.py
   - scripts/_operational_links.py
   - scripts/_pedagogy_reports.py
@@ -507,6 +508,7 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
   - tests/test_build_artifacts.py
+  - tests/test_consolidation_strict.py
   - tests/test_course_sheets.py
   - tests/test_first_batch_alignment.py
   - tests/test_first_batch_document_quality.py
@@ -893,6 +895,7 @@
   - qa_report.md
   - scientific_claims_review_report.md
   - scripts/_course_sheets_common.py
+  - scripts/_drive_paths.py
   - scripts/_inventory_utils.py
   - scripts/_operational_links.py
   - scripts/_pedagogy_reports.py
@@ -1003,6 +1006,7 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/sequence.yaml
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tests/test_structures_tools.py
   - tests/test_build_artifacts.py
+  - tests/test_consolidation_strict.py
   - tests/test_course_sheets.py
   - tests/test_first_batch_alignment.py
   - tests/test_first_batch_document_quality.py
@@ -1383,6 +1387,7 @@
 - qa_report.md
 - scientific_claims_review_report.md
 - scripts/_course_sheets_common.py
+- scripts/_drive_paths.py
 - scripts/_inventory_utils.py
 - scripts/_operational_links.py
 - scripts/_pedagogy_reports.py
@@ -1513,6 +1518,7 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
 - tests/test_build_artifacts.py
+- tests/test_consolidation_strict.py
 - tests/test_course_sheets.py
 - tests/test_first_batch_alignment.py
 - tests/test_first_batch_document_quality.py
@@ -1876,6 +1882,7 @@
 - qa_report.md
 - scientific_claims_review_report.md
 - scripts/_course_sheets_common.py
+- scripts/_drive_paths.py
 - scripts/_inventory_utils.py
 - scripts/_operational_links.py
 - scripts/_pedagogy_reports.py
@@ -2012,6 +2019,7 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
 - tests/test_build_artifacts.py
+- tests/test_consolidation_strict.py
 - tests/test_course_sheets.py
 - tests/test_first_batch_alignment.py
 - tests/test_first_batch_document_quality.py

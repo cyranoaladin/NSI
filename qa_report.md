@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 494
-- Ressources needs_review : 494
+- Ressources inventoriées : 496
+- Ressources needs_review : 496
 - Ressources publiables : 0
-- Source generated : 494
+- Source generated : 496
 - Source drive : 0
 - Lignes drive_inventory.csv : 22
 - Couverture covered : 0
@@ -31,13 +31,13 @@ make --no-print-directory release-audit
 ## Dernier release-audit observé
 
 ```text
-python scripts/cleanup_python_artifacts.py
-cleanup_python_artifacts: removed 0 path(s)
-python scripts/check_git_clean.py
-check_git_clean: PASS
-python scripts/check_drive_mapping_release.py
-check_drive_mapping_release: KO
-- ressources Drive référencées mais non intégrées localement: copie_de_progres_nsi_amelioree.pdf, copie_de_progres_nsi_amelioree.tex, guide_enseignant_reprise_nsi_ameliore.tex, Cours.pdf, 2_TP.pdf, eval_nsi_corrige.pdf, eval_nsi.pdf, rendus_eleves, .git, .venv, TP_SOC.tex, Séquence1_Histoire de l'informatique, Séquence4_Types construits, 1_Cours_Types_construits.pdf, 1_RdD_Entier naturel.pdf, pays_monde.csv, NotesEleves.csv, Fichier_Eleves.csv, tri_bulles_eleve.py, Séquence1_TAD_Théorie
+ M manifest.csv
+ M qa_report.md
+ M scripts/check_drive_integration_plan.py
+ M scripts/check_local_drive_traceability.py
+ M scripts/check_operational_supports_no_indicative_debt.py
+?? scripts/_drive_paths.py
+?? tests/test_consolidation_strict.py
 make: *** [Makefile:release-audit] Error 1
 ```
 

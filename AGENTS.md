@@ -33,12 +33,13 @@ Aucun document ne doit être une coquille vide, une fiche superficielle, une par
 
 ## 2.1. Source locale Drive
 
-Les ressources issues du Drive doivent être recherchées localement dans
-`/home/alaeddine/Documents/NSI/Documents_DRIVE`, et non dans un Drive distant, tant que ce
-dossier est disponible. Toute réutilisation doit citer le chemin local exact dans les
-métadonnées, le registre ou le rapport d’inventaire. Une ressource repérée dans
-`Documents_DRIVE` reste `needs_review` tant qu’elle n’a pas été auditée, nettoyée des
-données privées éventuelles et alignée avec le programme.
+Les ressources issues du Drive doivent être recherchées localement dans le dossier
+`Documents_DRIVE` placé à côté du dépôt, ou dans le dossier indiqué par
+`NSI_DOCUMENTS_DRIVE_ROOT`, et non dans un Drive distant, tant que ce miroir local est
+disponible. Toute réutilisation doit citer le chemin local consulté dans les métadonnées,
+le registre ou le rapport d’inventaire. Une ressource repérée dans `Documents_DRIVE` reste
+`needs_review` tant qu’elle n’a pas été auditée, nettoyée des données privées éventuelles
+et alignée avec le programme.
 
 ## 3. Statuts autorisés
 

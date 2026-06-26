@@ -11,8 +11,8 @@ import re
 import yaml
 
 from _qa_common import ROOT, read_frontmatter
+from _drive_paths import resolve_drive_reference
 
-DRIVE_ROOT = Path("/home/alaeddine/Documents/NSI/Documents_DRIVE")
 INVENTORY = "drive_inventory.csv"
 QUARANTINE = "drive_quarantine_manifest.csv"
 TRACE = "support_source_trace.yml"
@@ -59,13 +59,7 @@ def load_trace(path: Path) -> list[dict[str, str]]:
 
 
 def resolve_drive_path(value: str) -> Path | None:
-    if not value:
-        return None
-    if value.startswith("/"):
-        return Path(value)
-    if value.startswith("Documents_DRIVE/"):
-        return ROOT.parent / value
-    return None
+    return resolve_drive_reference(value, ROOT)
 
 
 def support_files(root: Path) -> list[Path]:
@@ -136,7 +130,7 @@ def analyze_drive_integration_plan(root: Path = ROOT) -> DriveIntegrationPlanRes
         rel = support.relative_to(root).as_posix() if support.is_relative_to(root) else support.as_posix()
         metadata = read_frontmatter(support)
         text = support.read_text(encoding="utf-8", errors="replace")
-        mentions = re.findall(r"(?:/home/alaeddine/Documents/NSI/)?Documents_DRIVE/[^\s)`]+", text)
+        mentions = re.findall(r"(?:[A-Za-z0-9_./-]+/)?Documents_DRIVE/[^\s)`]+", text)
         source_creation = str(metadata.get("source_creation") or "")
         trace = trace_by_support.get(rel) or trace_by_support.get(support.name)
         if mentions or source_creation == "adapted_from_drive":

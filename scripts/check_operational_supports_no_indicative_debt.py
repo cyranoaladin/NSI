@@ -12,7 +12,7 @@ from _operational_links import operational_resource_links, resolve_reference
 MIN_LINES = {
     "td": 80,
     "evaluation": 55,
-    "tp": 30,
+    "tp": 80,
     "cours": 100,
     "trace": 45,
 }

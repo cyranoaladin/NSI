@@ -20,11 +20,12 @@ Corpus pédagogique versionné pour la spécialité NSI (Première/Terminale), s
 
 ## 2.1) Sources locales Drive
 
-Les ressources Drive déjà extraites sont disponibles hors dépôt dans
-`/home/alaeddine/Documents/NSI/Documents_DRIVE`. Les passes d’inventaire et de rédaction
-doivent chercher d’abord dans ce dossier local, puis noter le chemin consulté dans les
-métadonnées ou les registres. Cette source locale ne change pas les statuts : une ressource
-adaptée depuis `Documents_DRIVE` reste `needs_review` tant qu’elle n’a pas été auditée.
+Les ressources Drive déjà extraites doivent être consultées hors dépôt dans le miroir local
+`Documents_DRIVE` placé à côté du dépôt, ou dans le dossier indiqué par
+`NSI_DOCUMENTS_DRIVE_ROOT`. Les passes d’inventaire et de rédaction doivent chercher
+d’abord dans ce dossier local, puis noter le chemin consulté dans les métadonnées ou les
+registres. Cette source locale ne change pas les statuts : une ressource adaptée depuis
+`Documents_DRIVE` reste `needs_review` tant qu’elle n’a pas été auditée.
 
 ## 3) Progressions annuelles
 

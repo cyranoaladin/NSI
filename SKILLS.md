@@ -16,12 +16,12 @@ Chaque compétence décrit :
 
 ## 2.1. Recherche de sources locales
 
-Avant toute recherche dans un Drive distant, utiliser le miroir local
-`/home/alaeddine/Documents/NSI/Documents_DRIVE`. Le chemin local consulté doit être reporté
-dans `source`, `Source possible`, `drive_inventory.csv` ou le registre de documents
-manquants. Cette substitution ne vaut pas validation pédagogique : un fichier importé ou
-adapté depuis `Documents_DRIVE` reste `needs_review` jusqu’à relecture humaine et contrôles
-QA.
+Avant toute recherche dans un Drive distant, utiliser le miroir local `Documents_DRIVE`
+placé à côté du dépôt, ou le dossier indiqué par `NSI_DOCUMENTS_DRIVE_ROOT`. Le chemin local
+consulté doit être reporté dans `source`, `Source possible`, `drive_inventory.csv` ou le
+registre de documents manquants. Cette substitution ne vaut pas validation pédagogique : un
+fichier importé ou adapté depuis `Documents_DRIVE` reste `needs_review` jusqu’à relecture
+humaine et contrôles QA.
 
 Chaque document pédagogique doit commencer par un bloc de métadonnées.
 

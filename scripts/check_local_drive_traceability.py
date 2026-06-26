@@ -12,8 +12,8 @@ import yaml
 
 from _qa_common import ROOT, read_frontmatter
 from check_first_batch_document_quality import FIRST_BATCH_PREFIXES
+from _drive_paths import resolve_drive_reference
 
-DRIVE_ROOT = Path("/home/alaeddine/Documents/NSI/Documents_DRIVE")
 TRACE_FILE = ROOT / "support_source_trace.yml"
 
 
@@ -30,13 +30,7 @@ def support_files(root: Path) -> list[Path]:
 
 
 def resolve_drive_path(value: str) -> Path | None:
-    if not value:
-        return None
-    if value.startswith("/"):
-        return Path(value)
-    if value.startswith("Documents_DRIVE/"):
-        return Path("/home/alaeddine/Documents/NSI") / value
-    return None
+    return resolve_drive_reference(value, ROOT)
 
 
 def sha256(path: Path) -> str:
@@ -72,7 +66,7 @@ def analyze_drive_traceability(root: Path = ROOT, trace_path: Path = TRACE_FILE)
         if "ressource locale candidate" in source.lower() or "ressource locale candidate" in text.lower():
             result.errors.append(f"{rel}: mention interdite 'ressource locale candidate'")
 
-        drive_values = re.findall(r"(?:/home/alaeddine/Documents/NSI/)?Documents_DRIVE/[^\"\\n]+", text)
+        drive_values = re.findall(r"(?:[A-Za-z0-9_./-]+/)?Documents_DRIVE/[^\s\"`)]+", text)
         for value in drive_values:
             drive_path = resolve_drive_path(value.strip())
             if drive_path is None or not drive_path.exists():

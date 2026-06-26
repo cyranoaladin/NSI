@@ -64,3 +64,57 @@ def verifier_graphes_modelisation_listes_matrices(donnee):
 - Le code ne retourne pas une constante unique.
 - Les tests distinguent cas nominal, cas limite et entrée invalide.
 - La justification relie le résultat à une capacité officielle.
+## Déroulé opérationnel détaillé
+1. modéliser un graphe non orienté par dictionnaire de listes.
+2. convertir ce graphe en matrice d’adjacence.
+3. vérifier la symétrie de la matrice.
+4. calculer le degré de chaque sommet.
+5. détecter une arête absente.
+6. comparer coût mémoire liste/matrice sur un petit exemple.
+
+## Tests vérifiables attendus
+- Test 1 : graphe A-B, A-C, B-D donne degré A=2.
+- Test 2 : la matrice contient `1` en A,B et B,A.
+- Test 3 : la diagonale vaut 0 sans boucle.
+- Test 4 : arête C-D absente renvoie `False`.
+- Test 5 : sommet isolé E a degré 0.
+- Test 6 : conversion conserve l’ordre des sommets annoncé.
+
+## Cas limites à documenter
+- Cas limite : sommet isolé.
+- Cas limite : graphe vide.
+- Cas limite : arête dupliquée.
+- Cas limite : boucle A-A.
+- Cas limite : sommet inconnu.
+- Cas limite : graphe orienté non accepté.
+
+## Plan de correction professeur
+- Vérifier que le programme se lance dans un répertoire temporaire propre.
+- Lire les fonctions avant les tests pour repérer un retour constant ou hardcodé.
+- Exécuter les tests nominaux puis les tests limites.
+- Ajouter un test invalide avant toute correction manuelle.
+- Comparer la sortie obtenue avec le résultat attendu écrit dans ce TP.
+- Refuser une solution qui supprime le cas limite au lieu de le traiter.
+- Noter séparément exactitude, robustesse, lisibilité et justification.
+
+## Grille de vérification élève
+- [ ] le fichier demandé existe avec le bon nom.
+- [ ] le starter n’a pas été remplacé par une constante.
+- [ ] chaque fonction possède une docstring ou un commentaire de contrat.
+- [ ] les tests nominaux passent.
+- [ ] les tests limites passent.
+- [ ] les entrées invalides sont refusées explicitement.
+- [ ] le livrable ne dépend pas d’un chemin absolu local.
+- [ ] la réponse cite la capacité travaillée.
+
+## Différenciation opérationnelle
+- Socle : compléter les fonctions dans l’ordre des tests fournis.
+- Standard : ajouter deux tests personnels avant de demander la validation.
+- Approfondissement : proposer une variante de donnée et expliquer pourquoi les tests restent pertinents.
+- Aide autorisée : rappel de syntaxe, sans fournir le corps complet de la fonction.
+- Aide interdite : donner directement le résultat attendu comme unique retour de fonction.
+
+## Livrable final contrôlable
+- Livrable : `T07_solution_graphes.py` et tableau liste/matrice rempli..
+- Le professeur peut vérifier le livrable sans accès au Drive distant.
+- Toute source locale éventuellement utilisée doit être tracée dans `support_source_trace.yml`.

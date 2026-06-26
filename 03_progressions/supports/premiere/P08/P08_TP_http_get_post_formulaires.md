@@ -66,3 +66,57 @@ def verifier_http_get_post_formulaires(donnee):
 - Le code ne retourne pas une constante unique.
 - Les tests distinguent cas nominal, cas limite et entrée invalide.
 - La justification relie le résultat à une capacité officielle.
+## Déroulé opérationnel détaillé
+1. créer un formulaire GET avec champ `q`.
+2. observer l’URL produite après soumission GET.
+3. créer un formulaire POST fictif vers `/contact`.
+4. distinguer paramètres visibles et corps de requête.
+5. encoder correctement espace et accent dans une valeur.
+6. rédiger une trace comparant GET et POST.
+
+## Tests vérifiables attendus
+- Test 1 : GET `/recherche?q=nsi` affiche le paramètre dans l’URL.
+- Test 2 : GET avec `q=site web` encode l’espace en `+` ou `%20`.
+- Test 3 : POST ne met pas le message complet dans l’URL.
+- Test 4 : un champ obligatoire vide bloque la soumission côté navigateur.
+- Test 5 : la méthode est lisible dans le HTML.
+- Test 6 : la trace cite au moins deux en-têtes ou champs utiles.
+
+## Cas limites à documenter
+- Cas limite : champ vide.
+- Cas limite : caractère accentué.
+- Cas limite : mot avec espace.
+- Cas limite : message long.
+- Cas limite : donnée sensible.
+- Cas limite : rafraîchissement de page.
+
+## Plan de correction professeur
+- Vérifier que le programme se lance dans un répertoire temporaire propre.
+- Lire les fonctions avant les tests pour repérer un retour constant ou hardcodé.
+- Exécuter les tests nominaux puis les tests limites.
+- Ajouter un test invalide avant toute correction manuelle.
+- Comparer la sortie obtenue avec le résultat attendu écrit dans ce TP.
+- Refuser une solution qui supprime le cas limite au lieu de le traiter.
+- Noter séparément exactitude, robustesse, lisibilité et justification.
+
+## Grille de vérification élève
+- [ ] le fichier demandé existe avec le bon nom.
+- [ ] le starter n’a pas été remplacé par une constante.
+- [ ] chaque fonction possède une docstring ou un commentaire de contrat.
+- [ ] les tests nominaux passent.
+- [ ] les tests limites passent.
+- [ ] les entrées invalides sont refusées explicitement.
+- [ ] le livrable ne dépend pas d’un chemin absolu local.
+- [ ] la réponse cite la capacité travaillée.
+
+## Différenciation opérationnelle
+- Socle : compléter les fonctions dans l’ordre des tests fournis.
+- Standard : ajouter deux tests personnels avant de demander la validation.
+- Approfondissement : proposer une variante de donnée et expliquer pourquoi les tests restent pertinents.
+- Aide autorisée : rappel de syntaxe, sans fournir le corps complet de la fonction.
+- Aide interdite : donner directement le résultat attendu comme unique retour de fonction.
+
+## Livrable final contrôlable
+- Livrable : `formulaires.html` avec deux formulaires et un tableau comparatif GET/POST..
+- Le professeur peut vérifier le livrable sans accès au Drive distant.
+- Toute source locale éventuellement utilisée doit être tracée dans `support_source_trace.yml`.
