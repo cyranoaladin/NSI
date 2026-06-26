@@ -30,14 +30,14 @@ make --no-print-directory release-audit
 ## Dernier release-audit observé
 
 ```text
- M scripts/check_session_specificity.py
+python scripts/cleanup_python_artifacts.py
+cleanup_python_artifacts: removed 0 path(s)
+python scripts/check_git_clean.py
+check_git_clean: KO
+- worktree non propre:
+ M qa_report.md
  M scripts/generate_qa_report.py
-?? 03_progressions/supports/
-?? missing_documents_register_v2.md
-?? scripts/check_first_batch_document_quality.py
-?? scripts/cleanup_python_artifacts.py
-?? tests/
-make: *** [Makefile:89: release-audit] Error 1
+make: *** [Makefile:release-audit] Error 1
 ```
 
 ## Bloquants restants

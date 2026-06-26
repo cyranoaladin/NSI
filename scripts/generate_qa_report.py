@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import re
 import subprocess
 import sys
 from collections import Counter
@@ -55,6 +56,7 @@ def command_status(command: list[str]) -> tuple[int, list[str]]:
     for line in result.stdout.strip().splitlines():
         if line.startswith("make[") and "]: ***" in line:
             line = "make: ***" + line.split("]: ***", 1)[1]
+        line = re.sub(r"Makefile:\d+: release-audit", "Makefile:release-audit", line)
         if "Entering directory" in line or "Leaving directory" in line:
             continue
         lines.append(line)
