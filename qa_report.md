@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 364
-- Ressources needs_review : 364
+- Ressources inventoriées : 413
+- Ressources needs_review : 413
 - Ressources publiables : 0
-- Source generated : 364
+- Source generated : 413
 - Source drive : 0
 - Lignes drive_inventory.csv : 22
 - Couverture covered : 0
@@ -49,6 +49,15 @@ make: *** [Makefile:release-audit] Error 1
 - Documents professeurs encore en needs_review.
 - Revue pédagogique et scientifique humaine absente.
 - Les séances hors première tranche restent théoriques et non prêtes.
+
+## Fiches de cours
+
+- Fiches attendues : 35 séquences avec au moins une fiche.
+- Fiches créées : 44
+- Séquences sans fiche : 0
+- Capacités sans fiche : 0
+- Statut : needs_review
+- Effet couverture : aucun ; les fiches ne rendent aucune capacité covered.
 
 ## Gates indicatifs encore en échec
 

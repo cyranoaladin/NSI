@@ -17,6 +17,7 @@
 - **`make audit` non portable hors environnement Git** : `make audit-source` fonctionne sans `.git/` sur `source_clean.tar.gz` ; `make audit-local` (alias `make audit`) nécessite Git.
 - **Documents professeurs encore `needs_review`** : ils sont plus structurés mais non relus pédagogiquement et scientifiquement.
 - **Ressources Drive non intégrées localement** : `release-audit` reste bloquant.
+- **Fiches de cours annuelles** : les fiches P00-P14 et T00-T19 existent dans `03_progressions/fiches_cours/`, mais restent `needs_review`. Elles aident la révision et ne prouvent pas une couverture publiable sans cours, TD/TP, corrigé, évaluation, barème et revue humaine.
 
 ## Séquences trop denses
 
@@ -39,4 +40,5 @@ La couverture atomique contient encore des capacités `absent`; aucune capacité
 - Alignement exact entre chaque TD/TP/évaluation et son corrigé professeur.
 - Exports élève sans corrigé et sans contenu professeur.
 - Création ou import contrôlé des supports prioritaires listés dans `missing_documents_register_v2.md`.
+- Relecture humaine des fiches de cours créées et alignement avec les supports complets de chaque séquence.
 - Rendre chaque séance pédagogiquement spécifique avec activité exacte, exercice exact, document exact, trace exacte, erreur fréquente ciblée, modalité de correction, différenciation concrète et livrable vérifiable.

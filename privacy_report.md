@@ -109,6 +109,44 @@ Les noms propres suspects sont listés pour revue humaine.
 
 - 00_programmes_officiels/programme_nsi_2019.yaml: nom propre suspect -> Formulaire Web
 - 00_programmes_officiels/programme_nsi_2019.yaml: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_texte_unicode.md: nom propre suspect -> Présenter Unicode
+- 03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_texte_unicode.md: nom propre suspect -> Pour Unicode
+- 03_progressions/fiches_cours/terminale/T00/T00_fiche_cours_reprise_python_tests_complexite.md: nom propre suspect -> Reprise Python
+- 03_progressions/fiches_cours/terminale/T00/T00_fiche_cours_reprise_python_tests_complexite.md: nom propre suspect -> Reprise Python
+- 03_progressions/fiches_cours/terminale/T00/T00_fiche_cours_reprise_python_tests_complexite.md: nom propre suspect -> Reprise Python
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Définir Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Pour Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T19/T19_fiche_cours_bac_pratique_grand_oral_projet.md: nom propre suspect -> Grand Oral
+- 03_progressions/fiches_cours/terminale/T19/T19_fiche_cours_bac_pratique_grand_oral_projet.md: nom propre suspect -> Grand Oral
 - 03_progressions/progression_premiere.md: nom propre suspect -> Von Neumann
 - 03_progressions/progression_terminale.md: nom propre suspect -> Boyer-Moore
 - 03_progressions/progression_terminale.md: nom propre suspect -> Grand Oral
@@ -269,42 +307,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/code/T00_corrige_professeur_diagnostic_tests.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T00/code/T00_starter_diagnostic_tests.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T00/code/T00_tests_attendus_diagnostic_tests.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T01/code/T01_corrige_professeur_interfaces_structures.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T01/code/T01_starter_interfaces_structures.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T01/code/T01_tests_attendus_interfaces_structures.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T02/code/T02_corrige_professeur_classes_objets.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T02/code/T02_starter_classes_objets.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T02/code/T02_tests_attendus_classes_objets.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T03/code/T03_corrige_professeur_piles_files_dictionnaires.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T03/code/T03_starter_piles_files_dictionnaires.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T03/code/T03_tests_attendus_piles_files_dictionnaires.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T04/code/T04_corrige_professeur_recursivite.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T04/code/T04_starter_recursivite.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T04/code/T04_tests_attendus_recursivite.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T05/code/T05_corrige_professeur_arbres_binaires.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T05/code/T05_starter_arbres_binaires.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/terminale/T05/code/T05_tests_attendus_arbres_binaires.py: nom propre suspect -> Asset Python
-- coverage.md: nom propre suspect -> Boyer-Moore
-- drive_mapping.md: nom propre suspect -> Google Drive
-- drive_sources.yml: nom propre suspect -> Google Drive
-- drive_sources.yml: nom propre suspect -> Dossiers Première
-- drive_sources.yml: nom propre suspect -> Blocs Première
-- drive_sources.yml: nom propre suspect -> Dossiers Terminale
-- drive_sources.yml: nom propre suspect -> Séquences Première
-- drive_sources.yml: nom propre suspect -> Séquences Terminale
-- manifest.csv: nom propre suspect -> Reprise Python
-- manifest.csv: nom propre suspect -> Reprise Python
-- manifest.csv: nom propre suspect -> Reprise Python
-- manifest.csv: nom propre suspect -> Reprise Python
-- manifest.csv: nom propre suspect -> Reprise Python
-- manifest.csv: nom propre suspect -> Reprise Python
-- manifest.csv: nom propre suspect -> Reprise Python
-- manifest.csv: nom propre suspect -> Reprise Python
-- manifest.csv: nom propre suspect -> Reprise Python
-- missing_capabilities.md: nom propre suspect -> Boyer-Moore
-- premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> Utiliser Python
-- premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> Liste Python
-- ... 42 alertes supplémentaires non affichées
+- ... 82 alertes supplémentaires non affichées

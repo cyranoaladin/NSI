@@ -1,34 +1,34 @@
 # Inventaire ressources NSI
 
-- Total ressources : 364
+- Total ressources : 413
 - Ressources pédagogiques : 53
-- Ressources techniques : 311
+- Ressources techniques : 360
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - drive: 0
-- generated: 364
+- generated: 413
 
 ## Répartition par niveau
-- interne: 161
-- premiere: 102
-- terminale: 101
+- interne: 166
+- premiere: 123
+- terminale: 124
 
 ## Répartition par type
 - banque: 14
-- document: 173
+- document: 217
 - python: 36
-- script: 82
+- script: 86
 - sequence: 45
-- test: 14
+- test: 15
 
 ## Répartition par statut
-- needs_review: 364
+- needs_review: 413
 
 ## Répartition audience
 - corrige: 33
 - eleve: 54
-- mixte: 274
+- mixte: 323
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -47,6 +47,50 @@
   - 02_modeles_documents/modele_sequence.yaml
   - 02_modeles_documents/modele_td.tex
   - 02_modeles_documents/modele_tp.tex
+  - 03_progressions/fiches_cours/premiere/P00/P00_fiche_cours_methode_nsi.md
+  - 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_bits_bases_2_10_16.md
+  - 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_conversions.md
+  - 03_progressions/fiches_cours/premiere/P02/P02_fiche_cours_booleens_tables_verite.md
+  - 03_progressions/fiches_cours/premiere/P02/P02_fiche_cours_complement_a_deux.md
+  - 03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_flottants_approximations.md
+  - 03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_texte_unicode.md
+  - 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_dictionnaires.md
+  - 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_listes.md
+  - 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_tuples.md
+  - 03_progressions/fiches_cours/premiere/P05/P05_fiche_cours_tables_csv_import_coherence.md
+  - 03_progressions/fiches_cours/premiere/P06/P06_fiche_cours_tables_recherche_tri_fusion.md
+  - 03_progressions/fiches_cours/premiere/P07/P07_fiche_cours_fonctions_tests_specifications.md
+  - 03_progressions/fiches_cours/premiere/P08/P08_fiche_cours_html_css_dom.md
+  - 03_progressions/fiches_cours/premiere/P08/P08_fiche_cours_http_get_post_formulaires.md
+  - 03_progressions/fiches_cours/premiere/P09/P09_fiche_cours_architecture_os_droits.md
+  - 03_progressions/fiches_cours/premiere/P10/P10_fiche_cours_reseaux_protocoles_paquets.md
+  - 03_progressions/fiches_cours/premiere/P11/P11_fiche_cours_parcours_recherche_extremum_moyenne.md
+  - 03_progressions/fiches_cours/premiere/P12/P12_fiche_cours_tris_invariants_complexite.md
+  - 03_progressions/fiches_cours/premiere/P13/P13_fiche_cours_dichotomie_glouton_knn.md
+  - 03_progressions/fiches_cours/premiere/P14/P14_fiche_cours_synthese_projet_oral.md
+  - 03_progressions/fiches_cours/terminale/T00/T00_fiche_cours_reprise_python_tests_complexite.md
+  - 03_progressions/fiches_cours/terminale/T01/T01_fiche_cours_interface_implementation_tad.md
+  - 03_progressions/fiches_cours/terminale/T02/T02_fiche_cours_classes_objets_attributs_methodes.md
+  - 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_dictionnaires.md
+  - 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_files.md
+  - 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_piles.md
+  - 03_progressions/fiches_cours/terminale/T04/T04_fiche_cours_recursivite_cas_base_terminaison.md
+  - 03_progressions/fiches_cours/terminale/T05/T05_fiche_cours_arbres_binaires_parcours.md
+  - 03_progressions/fiches_cours/terminale/T06/T06_fiche_cours_arbres_binaires_recherche.md
+  - 03_progressions/fiches_cours/terminale/T07/T07_fiche_cours_graphes_modelisation_listes_matrices.md
+  - 03_progressions/fiches_cours/terminale/T08/T08_fiche_cours_bfs_dfs_cycles_chemins.md
+  - 03_progressions/fiches_cours/terminale/T09/T09_fiche_cours_bases_relationnelles_cles_contraintes.md
+  - 03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_insert_update_delete.md
+  - 03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_select_where_join.md
+  - 03_progressions/fiches_cours/terminale/T11/T11_fiche_cours_processus_ordonnancement_interblocage.md
+  - 03_progressions/fiches_cours/terminale/T12/T12_fiche_cours_routage_rip_ospf.md
+  - 03_progressions/fiches_cours/terminale/T13/T13_fiche_cours_chiffrement_https.md
+  - 03_progressions/fiches_cours/terminale/T14/T14_fiche_cours_modularite_api_paradigmes_bugs.md
+  - 03_progressions/fiches_cours/terminale/T15/T15_fiche_cours_calculabilite_arret.md
+  - 03_progressions/fiches_cours/terminale/T16/T16_fiche_cours_diviser_pour_regner_tri_fusion.md
+  - 03_progressions/fiches_cours/terminale/T17/T17_fiche_cours_programmation_dynamique.md
+  - 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md
+  - 03_progressions/fiches_cours/terminale/T19/T19_fiche_cours_bac_pratique_grand_oral_projet.md
   - 03_progressions/monthly_load_premiere.md
   - 03_progressions/monthly_load_terminale.md
   - 03_progressions/progression_premiere.md
@@ -270,6 +314,7 @@
   - project_plan_terminale.md
   - qa_report.md
   - scientific_claims_review_report.md
+  - scripts/_course_sheets_common.py
   - scripts/_inventory_utils.py
   - scripts/_pedagogy_reports.py
   - scripts/_qa_common.py
@@ -280,6 +325,9 @@
   - scripts/check_bank_strategy.py
   - scripts/check_build_reports_freshness.py
   - scripts/check_course_internal_coherence.py
+  - scripts/check_course_sheets_alignment.py
+  - scripts/check_course_sheets_coverage.py
+  - scripts/check_course_sheets_quality.py
   - scripts/check_coverage_evidence.py
   - scripts/check_differentiation_quality.py
   - scripts/check_document_depth.py
@@ -384,6 +432,7 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
   - tests/test_build_artifacts.py
+  - tests/test_course_sheets.py
   - tests/test_first_batch_alignment.py
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
@@ -466,6 +515,50 @@
   - 02_modeles_documents/modele_sequence.yaml
   - 02_modeles_documents/modele_td.tex
   - 02_modeles_documents/modele_tp.tex
+  - 03_progressions/fiches_cours/premiere/P00/P00_fiche_cours_methode_nsi.md
+  - 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_bits_bases_2_10_16.md
+  - 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_conversions.md
+  - 03_progressions/fiches_cours/premiere/P02/P02_fiche_cours_booleens_tables_verite.md
+  - 03_progressions/fiches_cours/premiere/P02/P02_fiche_cours_complement_a_deux.md
+  - 03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_flottants_approximations.md
+  - 03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_texte_unicode.md
+  - 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_dictionnaires.md
+  - 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_listes.md
+  - 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_tuples.md
+  - 03_progressions/fiches_cours/premiere/P05/P05_fiche_cours_tables_csv_import_coherence.md
+  - 03_progressions/fiches_cours/premiere/P06/P06_fiche_cours_tables_recherche_tri_fusion.md
+  - 03_progressions/fiches_cours/premiere/P07/P07_fiche_cours_fonctions_tests_specifications.md
+  - 03_progressions/fiches_cours/premiere/P08/P08_fiche_cours_html_css_dom.md
+  - 03_progressions/fiches_cours/premiere/P08/P08_fiche_cours_http_get_post_formulaires.md
+  - 03_progressions/fiches_cours/premiere/P09/P09_fiche_cours_architecture_os_droits.md
+  - 03_progressions/fiches_cours/premiere/P10/P10_fiche_cours_reseaux_protocoles_paquets.md
+  - 03_progressions/fiches_cours/premiere/P11/P11_fiche_cours_parcours_recherche_extremum_moyenne.md
+  - 03_progressions/fiches_cours/premiere/P12/P12_fiche_cours_tris_invariants_complexite.md
+  - 03_progressions/fiches_cours/premiere/P13/P13_fiche_cours_dichotomie_glouton_knn.md
+  - 03_progressions/fiches_cours/premiere/P14/P14_fiche_cours_synthese_projet_oral.md
+  - 03_progressions/fiches_cours/terminale/T00/T00_fiche_cours_reprise_python_tests_complexite.md
+  - 03_progressions/fiches_cours/terminale/T01/T01_fiche_cours_interface_implementation_tad.md
+  - 03_progressions/fiches_cours/terminale/T02/T02_fiche_cours_classes_objets_attributs_methodes.md
+  - 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_dictionnaires.md
+  - 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_files.md
+  - 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_piles.md
+  - 03_progressions/fiches_cours/terminale/T04/T04_fiche_cours_recursivite_cas_base_terminaison.md
+  - 03_progressions/fiches_cours/terminale/T05/T05_fiche_cours_arbres_binaires_parcours.md
+  - 03_progressions/fiches_cours/terminale/T06/T06_fiche_cours_arbres_binaires_recherche.md
+  - 03_progressions/fiches_cours/terminale/T07/T07_fiche_cours_graphes_modelisation_listes_matrices.md
+  - 03_progressions/fiches_cours/terminale/T08/T08_fiche_cours_bfs_dfs_cycles_chemins.md
+  - 03_progressions/fiches_cours/terminale/T09/T09_fiche_cours_bases_relationnelles_cles_contraintes.md
+  - 03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_insert_update_delete.md
+  - 03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_select_where_join.md
+  - 03_progressions/fiches_cours/terminale/T11/T11_fiche_cours_processus_ordonnancement_interblocage.md
+  - 03_progressions/fiches_cours/terminale/T12/T12_fiche_cours_routage_rip_ospf.md
+  - 03_progressions/fiches_cours/terminale/T13/T13_fiche_cours_chiffrement_https.md
+  - 03_progressions/fiches_cours/terminale/T14/T14_fiche_cours_modularite_api_paradigmes_bugs.md
+  - 03_progressions/fiches_cours/terminale/T15/T15_fiche_cours_calculabilite_arret.md
+  - 03_progressions/fiches_cours/terminale/T16/T16_fiche_cours_diviser_pour_regner_tri_fusion.md
+  - 03_progressions/fiches_cours/terminale/T17/T17_fiche_cours_programmation_dynamique.md
+  - 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md
+  - 03_progressions/fiches_cours/terminale/T19/T19_fiche_cours_bac_pratique_grand_oral_projet.md
   - 03_progressions/monthly_load_premiere.md
   - 03_progressions/monthly_load_terminale.md
   - 03_progressions/progression_premiere.md
@@ -662,6 +755,7 @@
   - project_plan_terminale.md
   - qa_report.md
   - scientific_claims_review_report.md
+  - scripts/_course_sheets_common.py
   - scripts/_inventory_utils.py
   - scripts/_pedagogy_reports.py
   - scripts/_qa_common.py
@@ -672,6 +766,9 @@
   - scripts/check_bank_strategy.py
   - scripts/check_build_reports_freshness.py
   - scripts/check_course_internal_coherence.py
+  - scripts/check_course_sheets_alignment.py
+  - scripts/check_course_sheets_coverage.py
+  - scripts/check_course_sheets_quality.py
   - scripts/check_coverage_evidence.py
   - scripts/check_differentiation_quality.py
   - scripts/check_document_depth.py
@@ -750,6 +847,7 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/sequence.yaml
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tests/test_structures_tools.py
   - tests/test_build_artifacts.py
+  - tests/test_course_sheets.py
   - tests/test_first_batch_alignment.py
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
@@ -767,20 +865,43 @@
 - Ressources copiées dans banques :
 
 ## Séquences détectées
-- P00: 9
-- P01: 9
-- P02: 9
-- P03: 9
-- P04: 9
-- P05: 9
+- P00: 10
+- P01: 11
+- P02: 11
+- P03: 11
+- P04: 12
+- P05: 10
+- P06: 1
+- P07: 1
+- P08: 2
+- P09: 1
+- P10: 1
+- P11: 1
+- P12: 1
+- P13: 1
+- P14: 1
 - S01 representation des donnees: 1
 - S01 structures de donnees interfaces implementations: 1
-- T00: 9
-- T01: 9
-- T02: 9
-- T03: 9
-- T04: 9
-- T05: 9
+- T00: 10
+- T01: 10
+- T02: 10
+- T03: 12
+- T04: 10
+- T05: 10
+- T06: 1
+- T07: 1
+- T08: 1
+- T09: 1
+- T10: 2
+- T11: 1
+- T12: 1
+- T13: 1
+- T14: 1
+- T15: 1
+- T16: 1
+- T17: 1
+- T18: 1
+- T19: 1
 - bank_index: 14
 - s01_representation_donnees: 22
 - s01_structures_donnees_interfaces_implementations: 21
@@ -804,6 +925,50 @@
 - 02_modeles_documents/modele_sequence.yaml
 - 02_modeles_documents/modele_td.tex
 - 02_modeles_documents/modele_tp.tex
+- 03_progressions/fiches_cours/premiere/P00/P00_fiche_cours_methode_nsi.md
+- 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_bits_bases_2_10_16.md
+- 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_conversions.md
+- 03_progressions/fiches_cours/premiere/P02/P02_fiche_cours_booleens_tables_verite.md
+- 03_progressions/fiches_cours/premiere/P02/P02_fiche_cours_complement_a_deux.md
+- 03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_flottants_approximations.md
+- 03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_texte_unicode.md
+- 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_dictionnaires.md
+- 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_listes.md
+- 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_tuples.md
+- 03_progressions/fiches_cours/premiere/P05/P05_fiche_cours_tables_csv_import_coherence.md
+- 03_progressions/fiches_cours/premiere/P06/P06_fiche_cours_tables_recherche_tri_fusion.md
+- 03_progressions/fiches_cours/premiere/P07/P07_fiche_cours_fonctions_tests_specifications.md
+- 03_progressions/fiches_cours/premiere/P08/P08_fiche_cours_html_css_dom.md
+- 03_progressions/fiches_cours/premiere/P08/P08_fiche_cours_http_get_post_formulaires.md
+- 03_progressions/fiches_cours/premiere/P09/P09_fiche_cours_architecture_os_droits.md
+- 03_progressions/fiches_cours/premiere/P10/P10_fiche_cours_reseaux_protocoles_paquets.md
+- 03_progressions/fiches_cours/premiere/P11/P11_fiche_cours_parcours_recherche_extremum_moyenne.md
+- 03_progressions/fiches_cours/premiere/P12/P12_fiche_cours_tris_invariants_complexite.md
+- 03_progressions/fiches_cours/premiere/P13/P13_fiche_cours_dichotomie_glouton_knn.md
+- 03_progressions/fiches_cours/premiere/P14/P14_fiche_cours_synthese_projet_oral.md
+- 03_progressions/fiches_cours/terminale/T00/T00_fiche_cours_reprise_python_tests_complexite.md
+- 03_progressions/fiches_cours/terminale/T01/T01_fiche_cours_interface_implementation_tad.md
+- 03_progressions/fiches_cours/terminale/T02/T02_fiche_cours_classes_objets_attributs_methodes.md
+- 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_dictionnaires.md
+- 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_files.md
+- 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_piles.md
+- 03_progressions/fiches_cours/terminale/T04/T04_fiche_cours_recursivite_cas_base_terminaison.md
+- 03_progressions/fiches_cours/terminale/T05/T05_fiche_cours_arbres_binaires_parcours.md
+- 03_progressions/fiches_cours/terminale/T06/T06_fiche_cours_arbres_binaires_recherche.md
+- 03_progressions/fiches_cours/terminale/T07/T07_fiche_cours_graphes_modelisation_listes_matrices.md
+- 03_progressions/fiches_cours/terminale/T08/T08_fiche_cours_bfs_dfs_cycles_chemins.md
+- 03_progressions/fiches_cours/terminale/T09/T09_fiche_cours_bases_relationnelles_cles_contraintes.md
+- 03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_insert_update_delete.md
+- 03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_select_where_join.md
+- 03_progressions/fiches_cours/terminale/T11/T11_fiche_cours_processus_ordonnancement_interblocage.md
+- 03_progressions/fiches_cours/terminale/T12/T12_fiche_cours_routage_rip_ospf.md
+- 03_progressions/fiches_cours/terminale/T13/T13_fiche_cours_chiffrement_https.md
+- 03_progressions/fiches_cours/terminale/T14/T14_fiche_cours_modularite_api_paradigmes_bugs.md
+- 03_progressions/fiches_cours/terminale/T15/T15_fiche_cours_calculabilite_arret.md
+- 03_progressions/fiches_cours/terminale/T16/T16_fiche_cours_diviser_pour_regner_tri_fusion.md
+- 03_progressions/fiches_cours/terminale/T17/T17_fiche_cours_programmation_dynamique.md
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md
+- 03_progressions/fiches_cours/terminale/T19/T19_fiche_cours_bac_pratique_grand_oral_projet.md
 - 03_progressions/monthly_load_premiere.md
 - 03_progressions/monthly_load_terminale.md
 - 03_progressions/progression_premiere.md
@@ -999,6 +1164,7 @@
 - project_plan_terminale.md
 - qa_report.md
 - scientific_claims_review_report.md
+- scripts/_course_sheets_common.py
 - scripts/_inventory_utils.py
 - scripts/_pedagogy_reports.py
 - scripts/_qa_common.py
@@ -1009,6 +1175,9 @@
 - scripts/check_bank_strategy.py
 - scripts/check_build_reports_freshness.py
 - scripts/check_course_internal_coherence.py
+- scripts/check_course_sheets_alignment.py
+- scripts/check_course_sheets_coverage.py
+- scripts/check_course_sheets_quality.py
 - scripts/check_coverage_evidence.py
 - scripts/check_differentiation_quality.py
 - scripts/check_document_depth.py
@@ -1107,6 +1276,7 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
 - tests/test_build_artifacts.py
+- tests/test_course_sheets.py
 - tests/test_first_batch_alignment.py
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py
@@ -1139,6 +1309,50 @@
 - 02_modeles_documents/modele_sequence.yaml
 - 02_modeles_documents/modele_td.tex
 - 02_modeles_documents/modele_tp.tex
+- 03_progressions/fiches_cours/premiere/P00/P00_fiche_cours_methode_nsi.md
+- 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_bits_bases_2_10_16.md
+- 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_conversions.md
+- 03_progressions/fiches_cours/premiere/P02/P02_fiche_cours_booleens_tables_verite.md
+- 03_progressions/fiches_cours/premiere/P02/P02_fiche_cours_complement_a_deux.md
+- 03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_flottants_approximations.md
+- 03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_texte_unicode.md
+- 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_dictionnaires.md
+- 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_listes.md
+- 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_tuples.md
+- 03_progressions/fiches_cours/premiere/P05/P05_fiche_cours_tables_csv_import_coherence.md
+- 03_progressions/fiches_cours/premiere/P06/P06_fiche_cours_tables_recherche_tri_fusion.md
+- 03_progressions/fiches_cours/premiere/P07/P07_fiche_cours_fonctions_tests_specifications.md
+- 03_progressions/fiches_cours/premiere/P08/P08_fiche_cours_html_css_dom.md
+- 03_progressions/fiches_cours/premiere/P08/P08_fiche_cours_http_get_post_formulaires.md
+- 03_progressions/fiches_cours/premiere/P09/P09_fiche_cours_architecture_os_droits.md
+- 03_progressions/fiches_cours/premiere/P10/P10_fiche_cours_reseaux_protocoles_paquets.md
+- 03_progressions/fiches_cours/premiere/P11/P11_fiche_cours_parcours_recherche_extremum_moyenne.md
+- 03_progressions/fiches_cours/premiere/P12/P12_fiche_cours_tris_invariants_complexite.md
+- 03_progressions/fiches_cours/premiere/P13/P13_fiche_cours_dichotomie_glouton_knn.md
+- 03_progressions/fiches_cours/premiere/P14/P14_fiche_cours_synthese_projet_oral.md
+- 03_progressions/fiches_cours/terminale/T00/T00_fiche_cours_reprise_python_tests_complexite.md
+- 03_progressions/fiches_cours/terminale/T01/T01_fiche_cours_interface_implementation_tad.md
+- 03_progressions/fiches_cours/terminale/T02/T02_fiche_cours_classes_objets_attributs_methodes.md
+- 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_dictionnaires.md
+- 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_files.md
+- 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_piles.md
+- 03_progressions/fiches_cours/terminale/T04/T04_fiche_cours_recursivite_cas_base_terminaison.md
+- 03_progressions/fiches_cours/terminale/T05/T05_fiche_cours_arbres_binaires_parcours.md
+- 03_progressions/fiches_cours/terminale/T06/T06_fiche_cours_arbres_binaires_recherche.md
+- 03_progressions/fiches_cours/terminale/T07/T07_fiche_cours_graphes_modelisation_listes_matrices.md
+- 03_progressions/fiches_cours/terminale/T08/T08_fiche_cours_bfs_dfs_cycles_chemins.md
+- 03_progressions/fiches_cours/terminale/T09/T09_fiche_cours_bases_relationnelles_cles_contraintes.md
+- 03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_insert_update_delete.md
+- 03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_select_where_join.md
+- 03_progressions/fiches_cours/terminale/T11/T11_fiche_cours_processus_ordonnancement_interblocage.md
+- 03_progressions/fiches_cours/terminale/T12/T12_fiche_cours_routage_rip_ospf.md
+- 03_progressions/fiches_cours/terminale/T13/T13_fiche_cours_chiffrement_https.md
+- 03_progressions/fiches_cours/terminale/T14/T14_fiche_cours_modularite_api_paradigmes_bugs.md
+- 03_progressions/fiches_cours/terminale/T15/T15_fiche_cours_calculabilite_arret.md
+- 03_progressions/fiches_cours/terminale/T16/T16_fiche_cours_diviser_pour_regner_tri_fusion.md
+- 03_progressions/fiches_cours/terminale/T17/T17_fiche_cours_programmation_dynamique.md
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md
+- 03_progressions/fiches_cours/terminale/T19/T19_fiche_cours_bac_pratique_grand_oral_projet.md
 - 03_progressions/monthly_load_premiere.md
 - 03_progressions/monthly_load_terminale.md
 - 03_progressions/progression_premiere.md
@@ -1362,6 +1576,7 @@
 - project_plan_terminale.md
 - qa_report.md
 - scientific_claims_review_report.md
+- scripts/_course_sheets_common.py
 - scripts/_inventory_utils.py
 - scripts/_pedagogy_reports.py
 - scripts/_qa_common.py
@@ -1372,6 +1587,9 @@
 - scripts/check_bank_strategy.py
 - scripts/check_build_reports_freshness.py
 - scripts/check_course_internal_coherence.py
+- scripts/check_course_sheets_alignment.py
+- scripts/check_course_sheets_coverage.py
+- scripts/check_course_sheets_quality.py
 - scripts/check_coverage_evidence.py
 - scripts/check_differentiation_quality.py
 - scripts/check_document_depth.py
@@ -1476,6 +1694,7 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
 - tests/test_build_artifacts.py
+- tests/test_course_sheets.py
 - tests/test_first_batch_alignment.py
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py

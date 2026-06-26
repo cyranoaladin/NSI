@@ -34,8 +34,10 @@ def code_similarity(left: str, right: str) -> float:
 
 
 def find_code_dir(root: Path, prefix: str) -> Path:
-    matches = sorted(path for path in root.rglob(prefix) if path.is_dir())
-    return (matches[0] / "code") if matches else root / prefix / "code"
+    base = root / "03_progressions" / "supports"
+    search_root = base if base.exists() else root
+    matches = sorted(path for path in search_root.rglob(prefix) if path.is_dir())
+    return (matches[0] / "code") if matches else search_root / prefix / "code"
 
 
 def first_asset(code_dir: Path, pattern: str) -> Path | None:

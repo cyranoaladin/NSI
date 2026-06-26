@@ -2,6 +2,15 @@
 
 Les supports P00-P05 et T00-T05 existent en version prototype renforcée et restent en `needs_review`. Ce registre suit les prochains supports à créer ou importer depuis `Documents_DRIVE`.
 
+## Fiches de cours systématiques
+
+Les fiches de cours annuelles ont été créées dans `03_progressions/fiches_cours/` pour P00-P14 et T00-T19. Elles restent toutes en `needs_review`; elles ne rendent aucune capacité `covered` et ne remplacent pas les cours, TD, TP, corrigés, évaluations ni barèmes.
+
+| Niveau | Séquences | Fiches créées | Statut | Blocage si absent |
+|---|---:|---:|---|---|
+| premiere | P00-P14 | 21 | needs_review | oui |
+| terminale | T00-T19 | 23 | needs_review | oui |
+
 | Fichier | Niveau | Séquence | Séance(s) | Type | Priorité | Statut | Responsable | Date cible | Source possible | Lien Drive éventuel | Dépendance | Décision | Blocage si absent |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | P06_supports_logique_predicats.md | premiere | P06 | P06-S1 à P06-S6 | cours | haute | absent | equipe NSI | 2027-01-20 | Documents_DRIVE/Algo_Premiere | NA | P03-P05 | créer | oui |

@@ -27,12 +27,22 @@ def compile_file(path: Path) -> str | None:
     return None
 
 
+def supports_root(root: Path) -> Path:
+    candidate = root / "03_progressions" / "supports"
+    return candidate if candidate.exists() else root
+
+
+def prefix_directory(root: Path, prefix: str) -> Path:
+    base = supports_root(root)
+    matches = sorted(path for path in base.rglob(prefix) if path.is_dir())
+    return matches[0] if matches else base / prefix
+
+
 def analyze_tp_assets(root: Path = ROOT, prefixes: list[str] | None = None) -> TpAssetsResult:
     prefixes = prefixes or FIRST_BATCH_PREFIXES
     result = TpAssetsResult()
     for prefix in prefixes:
-        matches = sorted(root.rglob(prefix))
-        directory = matches[0] if matches else root / prefix
+        directory = prefix_directory(root, prefix)
         code_dir = directory / "code"
         if not code_dir.exists():
             result.errors.append(f"{prefix}: dossier code absent")

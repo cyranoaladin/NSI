@@ -75,7 +75,12 @@ def analyze_block(root: Path, session_id: str, block: str) -> list[str]:
     if remediation and not remediation_is_linked(remediation):
         errors.append(f"{session_id}: remédiation non reliée à une erreur fréquente")
     if any(ref.startswith(session_id.split("-", 1)[0] + "_tp_") for ref in refs):
-        code_dir = next((path for path in root.rglob(session_id.split("-", 1)[0]) if path.is_dir()), root) / "code"
+        support_root = root / "03_progressions" / "supports"
+        search_root = support_root if support_root.exists() else root
+        code_dir = next(
+            (path for path in search_root.rglob(session_id.split("-", 1)[0]) if path.is_dir()),
+            search_root,
+        ) / "code"
         if not code_dir.exists():
             errors.append(f"{session_id}: TP cité sans dossier code")
     return errors

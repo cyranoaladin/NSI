@@ -755,3 +755,311 @@ supports:
   hash_source: ''
   statut_rgpd: non concerné - aucune donnée personnelle intégrée
   statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P00/P00_fiche_cours_methode_nsi.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_bits_bases_2_10_16.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_conversions.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P02/P02_fiche_cours_booleens_tables_verite.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P02/P02_fiche_cours_complement_a_deux.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_flottants_approximations.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_texte_unicode.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_dictionnaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_listes.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_tuples.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P05/P05_fiche_cours_tables_csv_import_coherence.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P06/P06_fiche_cours_tables_recherche_tri_fusion.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P07/P07_fiche_cours_fonctions_tests_specifications.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P08/P08_fiche_cours_html_css_dom.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P08/P08_fiche_cours_http_get_post_formulaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P09/P09_fiche_cours_architecture_os_droits.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P10/P10_fiche_cours_reseaux_protocoles_paquets.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P11/P11_fiche_cours_parcours_recherche_extremum_moyenne.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P12/P12_fiche_cours_tris_invariants_complexite.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P13/P13_fiche_cours_dichotomie_glouton_knn.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P14/P14_fiche_cours_synthese_projet_oral.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T00/T00_fiche_cours_reprise_python_tests_complexite.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T01/T01_fiche_cours_interface_implementation_tad.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T02/T02_fiche_cours_classes_objets_attributs_methodes.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_dictionnaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_files.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_piles.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T04/T04_fiche_cours_recursivite_cas_base_terminaison.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T05/T05_fiche_cours_arbres_binaires_parcours.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T06/T06_fiche_cours_arbres_binaires_recherche.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T07/T07_fiche_cours_graphes_modelisation_listes_matrices.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T08/T08_fiche_cours_bfs_dfs_cycles_chemins.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T09/T09_fiche_cours_bases_relationnelles_cles_contraintes.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_insert_update_delete.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_select_where_join.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T11/T11_fiche_cours_processus_ordonnancement_interblocage.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T12/T12_fiche_cours_routage_rip_ospf.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T13/T13_fiche_cours_chiffrement_https.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T14/T14_fiche_cours_modularite_api_paradigmes_bugs.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T15/T15_fiche_cours_calculabilite_arret.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T16/T16_fiche_cours_diviser_pour_regner_tri_fusion.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T17/T17_fiche_cours_programmation_dynamique.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T19/T19_fiche_cours_bac_pratique_grand_oral_projet.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review

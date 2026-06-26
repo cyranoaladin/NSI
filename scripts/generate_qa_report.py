@@ -9,6 +9,8 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+from _course_sheets_common import frontmatter_capacities, planned_sequences, read_frontmatter, sheets_by_sequence
+
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "manifest.csv"
 COVERAGE = ROOT / "coverage.md"
@@ -79,11 +81,33 @@ def indicative_gate_rows() -> list[tuple[str, str, str, str]]:
     return rows
 
 
+def course_sheet_stats() -> dict[str, object]:
+    plans = planned_sequences(ROOT)
+    by_sequence = sheets_by_sequence(ROOT)
+    sheet_count = sum(len(paths) for paths in by_sequence.values())
+    missing_sequences = [sequence for sequence in plans if not by_sequence.get(sequence)]
+    missing_capacities: list[str] = []
+    for sequence, plan in plans.items():
+        declared: set[str] = set()
+        for sheet in by_sequence.get(sequence, []):
+            declared.update(frontmatter_capacities(read_frontmatter(sheet)))
+        for capacity in sorted(plan.capacities):
+            if capacity not in declared:
+                missing_capacities.append(f"{sequence}:{capacity}")
+    return {
+        "expected": len(plans),
+        "created": sheet_count,
+        "missing_sequences": missing_sequences,
+        "missing_capacities": missing_capacities,
+    }
+
+
 def main() -> int:
     total, statuses, sources, publishable = count_manifest()
     cov = coverage_counts()
     release_code, release_tail = command_status(["make", "--no-print-directory", "release-audit"])
     indicative_rows = indicative_gate_rows()
+    sheet_stats = course_sheet_stats()
     lines = [
         "# QA Report",
         "",
@@ -129,6 +153,17 @@ def main() -> int:
         "- Documents professeurs encore en needs_review.",
         "- Revue pédagogique et scientifique humaine absente.",
         "- Les séances hors première tranche restent théoriques et non prêtes.",
+        "",
+        "## Fiches de cours",
+        "",
+        f"- Fiches attendues : {sheet_stats['expected']} séquences avec au moins une fiche.",
+        f"- Fiches créées : {sheet_stats['created']}",
+        "- Séquences sans fiche : "
+        + (", ".join(sheet_stats["missing_sequences"]) if sheet_stats["missing_sequences"] else "0"),
+        "- Capacités sans fiche : "
+        + (", ".join(sheet_stats["missing_capacities"]) if sheet_stats["missing_capacities"] else "0"),
+        "- Statut : needs_review",
+        "- Effet couverture : aucun ; les fiches ne rendent aucune capacité covered.",
         "",
         "## Gates indicatifs encore en échec",
         "",
