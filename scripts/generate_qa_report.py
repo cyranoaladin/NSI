@@ -81,6 +81,8 @@ def main() -> int:
         f"- Couverture needs_review : {cov.get('needs_review', 0)}",
         f"- Couverture partial : {cov.get('partial', 0)}",
         f"- Couverture absent : {cov.get('absent', 0)}",
+        "- Archive pédagogique à transmettre : dist/source_clean.tar.gz",
+        "- Archive globale contenant .git : interdite comme livraison principale",
         "- make audit : PASS prototype uniquement si exécuté après génération de ce rapport",
         f"- make --no-print-directory release-audit : {'KO attendu' if release_code != 0 else 'PASS inattendu'}",
         "- Décision : ne pas générer de nouvelles séquences",
@@ -106,6 +108,7 @@ def main() -> int:
         "- Aucune capacité n'est covered.",
         "- Documents professeurs encore en needs_review.",
         "- Revue pédagogique et scientifique humaine absente.",
+        "- Les séances hors première tranche restent théoriques et non prêtes.",
         "",
         "## Décisions",
         "",
@@ -113,6 +116,8 @@ def main() -> int:
         "- Statut covered : 0.",
         "- Statut published : 0.",
         "- Statut validated_* : 0.",
+        "- Archive pédagogique : dist/source_clean.tar.gz.",
+        "- Archive globale contenant .git : interdite comme livraison principale.",
     ]
     REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("generate_qa_report: wrote qa_report.md")

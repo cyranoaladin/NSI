@@ -30,13 +30,13 @@
 - Nature : cours
 - Objectif : introduire diagnostic Python Terminale, tests et complexité simple à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-HIST-01A, T-HIST-01B, T-LANG-03A, T-LANG-05
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : T00_cours_diagnostic_tests.md, T00_trace_diagnostic_tests.md
 - Déroulé : 1. question flash T00-Q1; 2. activité T00_intro sur diagnostic Python Terminale, tests et complexité simple; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T00; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T00_trace_diagnostic_tests.md et vérifiée par T00_corrige_diagnostic_tests.md
+- Trace écrite : renseigner T00_trace_diagnostic_tests.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T00_td_diagnostic_tests.md ou relire T00_cours_diagnostic_tests.md.
+- Remédiation : utiliser T00_remediation_diagnostic_tests.md en début de séance suivante si l'erreur persiste.
 
 ### Séance T00-S2
 - Durée : 1,5 h
@@ -47,13 +47,13 @@
 - Nature : TD
 - Objectif : résoudre les exercices T00-E2 à T00-E4 sur diagnostic Python Terminale, tests et complexité simple avec justification écrite.
 - Capacité officielle : T-HIST-01A, T-HIST-01B, T-LANG-03A, T-LANG-05
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : T00_td_diagnostic_tests.md, T00_corrige_diagnostic_tests.md, T00_trace_diagnostic_tests.md
 - Déroulé : 1. rappel méthode; 2. exercices T00-E2, T00-E3, T00-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T00-E2 et T00-E3 guidés; avancé : exercice T00-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T00-E2 à T00-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T00_trace_diagnostic_tests.md et vérifiée par T00_corrige_diagnostic_tests.md
+- Trace écrite : renseigner T00_trace_diagnostic_tests.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T00_td_diagnostic_tests.md ou relire T00_cours_diagnostic_tests.md.
+- Remédiation : utiliser T00_remediation_diagnostic_tests.md en début de séance suivante si l'erreur persiste.
 
 ### Séance T00-S3
 - Durée : 1 h
@@ -64,13 +64,13 @@
 - Nature : TP
 - Objectif : réaliser le TP structures_tools.py sur diagnostic Python Terminale, tests et complexité simple et exécuter deux tests de cas limites.
 - Capacité officielle : T-HIST-01A, T-HIST-01B, T-LANG-03A, T-LANG-05
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : T00_tp_diagnostic_tests.md, T00_trace_diagnostic_tests.md
 - Déroulé : 1. lecture du cahier des charges TP T00; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T00_trace_diagnostic_tests.md et vérifiée par T00_corrige_diagnostic_tests.md
+- Trace écrite : renseigner T00_trace_diagnostic_tests.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T00_td_diagnostic_tests.md ou relire T00_cours_diagnostic_tests.md.
+- Remédiation : utiliser T00_remediation_diagnostic_tests.md en début de séance suivante si l'erreur persiste.
 
 ### Séance T00-S4
 - Durée : 1 h
@@ -81,13 +81,13 @@
 - Nature : évaluation
 - Objectif : passer diagnostic Terminale avec questions ciblées sur diagnostic Python Terminale, tests et complexité simple, puis identifier les erreurs à corriger.
 - Capacité officielle : T-HIST-01A, T-HIST-01B, T-LANG-03A, T-LANG-05
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : T00_evaluation_diagnostic_tests.md, T00_version_amenagee_diagnostic_tests.md, T00_bareme_diagnostic_tests.md
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse T00; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : copie T00_evaluation_4 et auto-bilan des questions à reprendre.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T00_trace_diagnostic_tests.md et vérifiée par T00_corrige_diagnostic_tests.md
+- Trace écrite : renseigner T00_trace_diagnostic_tests.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T00_td_diagnostic_tests.md ou relire T00_cours_diagnostic_tests.md.
+- Remédiation : utiliser T00_remediation_diagnostic_tests.md en début de séance suivante si l'erreur persiste.
 
 ### Séance T00-S5
 - Durée : 1 h
@@ -98,13 +98,13 @@
 - Nature : remédiation
 - Objectif : corriger l’exercice bilan T00-R5 et consolider la trace écrite sur diagnostic Python Terminale, tests et complexité simple.
 - Capacité officielle : T-HIST-01A, T-HIST-01B, T-LANG-03A, T-LANG-05
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : T00_remediation_diagnostic_tests.md, T00_corrige_diagnostic_tests.md, T00_trace_diagnostic_tests.md
 - Déroulé : 1. retour sur erreurs de T00; 2. correction guidée de T00-R5; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T00-R5; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T00-R5 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T00_trace_diagnostic_tests.md et vérifiée par T00_corrige_diagnostic_tests.md
+- Trace écrite : renseigner T00_trace_diagnostic_tests.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T00_td_diagnostic_tests.md ou relire T00_cours_diagnostic_tests.md.
+- Remédiation : utiliser T00_remediation_diagnostic_tests.md en début de séance suivante si l'erreur persiste.
 
 ### Séance T00-S6
 - Durée : 2 h
@@ -115,16 +115,16 @@
 - Nature : projet
 - Objectif : avancer le jalon projet T00-J6 en produisant un livrable vérifiable lié à diagnostic Python Terminale, tests et complexité simple.
 - Capacité officielle : T-HIST-01A, T-HIST-01B, T-LANG-03A, T-LANG-05
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : T00_tp_diagnostic_tests.md, carnet_de_bord.md, T00_trace_diagnostic_tests.md
 - Déroulé : 1. choix de l’objectif du jalon T00; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T00 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T00-J6 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T00_trace_diagnostic_tests.md et vérifiée par T00_corrige_diagnostic_tests.md
+- Trace écrite : renseigner T00_trace_diagnostic_tests.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T00_td_diagnostic_tests.md ou relire T00_cours_diagnostic_tests.md.
+- Remédiation : utiliser T00_remediation_diagnostic_tests.md en début de séance suivante si l'erreur persiste.
 - Jalon projet : T00-J6 sur diagnostic Python Terminale, tests et complexité simple.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T00-J6.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : note de carnet reliée à T00_tp_diagnostic_tests.md et trace de test ou justification.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T01-S1
@@ -136,13 +136,13 @@
 - Nature : cours
 - Objectif : introduire interface de file et deux implémentations à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-STRUCT-01A, T-STRUCT-01B, T-STRUCT-01C
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : T01_cours_interfaces_structures.md, T01_trace_interfaces_structures.md
 - Déroulé : 1. question flash T01-Q1; 2. activité T01_intro sur interface de file et deux implémentations; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T01; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T01_trace_interfaces_structures.md et vérifiée par T01_corrige_interfaces_structures.md
+- Trace écrite : renseigner T01_trace_interfaces_structures.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T01_td_interfaces_structures.md ou relire T01_cours_interfaces_structures.md.
+- Remédiation : utiliser T01_remediation_interfaces_structures.md en début de séance suivante si l'erreur persiste.
 
 ### Séance T01-S2
 - Durée : 2 h
@@ -153,13 +153,13 @@
 - Nature : TD
 - Objectif : résoudre les exercices T01-E2 à T01-E4 sur interface de file et deux implémentations avec justification écrite.
 - Capacité officielle : T-STRUCT-01A, T-STRUCT-01B, T-STRUCT-01C
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : T01_td_interfaces_structures.md, T01_corrige_interfaces_structures.md, T01_trace_interfaces_structures.md
 - Déroulé : 1. rappel méthode; 2. exercices T01-E2, T01-E3, T01-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T01-E2 et T01-E3 guidés; avancé : exercice T01-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T01-E2 à T01-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T01_trace_interfaces_structures.md et vérifiée par T01_corrige_interfaces_structures.md
+- Trace écrite : renseigner T01_trace_interfaces_structures.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T01_td_interfaces_structures.md ou relire T01_cours_interfaces_structures.md.
+- Remédiation : utiliser T01_remediation_interfaces_structures.md en début de séance suivante si l'erreur persiste.
 
 ### Séance T01-S3
 - Durée : 2 h
@@ -170,13 +170,13 @@
 - Nature : TP
 - Objectif : réaliser le TP structures_tools.py sur interface de file et deux implémentations et exécuter deux tests de cas limites.
 - Capacité officielle : T-STRUCT-01A, T-STRUCT-01B, T-STRUCT-01C
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : T01_tp_interfaces_structures.md, T01_trace_interfaces_structures.md
 - Déroulé : 1. lecture du cahier des charges TP T01; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T01_trace_interfaces_structures.md et vérifiée par T01_corrige_interfaces_structures.md
+- Trace écrite : renseigner T01_trace_interfaces_structures.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T01_td_interfaces_structures.md ou relire T01_cours_interfaces_structures.md.
+- Remédiation : utiliser T01_remediation_interfaces_structures.md en début de séance suivante si l'erreur persiste.
 
 ### Séance T01-S4
 - Durée : 2 h
@@ -187,13 +187,13 @@
 - Nature : remédiation
 - Objectif : corriger l’exercice bilan T01-R4 et consolider la trace écrite sur interface de file et deux implémentations.
 - Capacité officielle : T-STRUCT-01A, T-STRUCT-01B, T-STRUCT-01C
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : T01_evaluation_interfaces_structures.md, T01_version_amenagee_interfaces_structures.md, T01_bareme_interfaces_structures.md
 - Déroulé : 1. retour sur erreurs de T01; 2. correction guidée de T01-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T01-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T01-R4 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T01_trace_interfaces_structures.md et vérifiée par T01_corrige_interfaces_structures.md
+- Trace écrite : renseigner T01_trace_interfaces_structures.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T01_td_interfaces_structures.md ou relire T01_cours_interfaces_structures.md.
+- Remédiation : utiliser T01_remediation_interfaces_structures.md en début de séance suivante si l'erreur persiste.
 
 ### Séance T01-S5
 - Durée : 2 h
@@ -204,16 +204,16 @@
 - Nature : projet
 - Objectif : avancer le jalon projet T01-J5 en produisant un livrable vérifiable lié à interface de file et deux implémentations.
 - Capacité officielle : T-STRUCT-01A, T-STRUCT-01B, T-STRUCT-01C
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : T01_remediation_interfaces_structures.md, T01_corrige_interfaces_structures.md, T01_trace_interfaces_structures.md
 - Déroulé : 1. choix de l’objectif du jalon T01; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T01 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T01-J5 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T01_trace_interfaces_structures.md et vérifiée par T01_corrige_interfaces_structures.md
+- Trace écrite : renseigner T01_trace_interfaces_structures.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T01_td_interfaces_structures.md ou relire T01_cours_interfaces_structures.md.
+- Remédiation : utiliser T01_remediation_interfaces_structures.md en début de séance suivante si l'erreur persiste.
 - Jalon projet : T01-J5 sur interface de file et deux implémentations.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T01-J5.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : note de carnet reliée à T01_tp_interfaces_structures.md et trace de test ou justification.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T02-S1
@@ -225,13 +225,13 @@
 - Nature : cours
 - Objectif : introduire classe Python et état d’objet à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-STRUCT-02A, T-STRUCT-02B, T-LANG-04A
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : T02_cours_classes_objets.md, T02_trace_classes_objets.md
 - Déroulé : 1. question flash T02-Q1; 2. activité T02_intro sur classe Python et état d’objet; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T02; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T02_trace_classes_objets.md et vérifiée par T02_corrige_classes_objets.md
+- Trace écrite : renseigner T02_trace_classes_objets.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T02_td_classes_objets.md ou relire T02_cours_classes_objets.md.
+- Remédiation : utiliser T02_remediation_classes_objets.md en début de séance suivante si l'erreur persiste.
 
 ### Séance T02-S2
 - Durée : 2 h
@@ -242,13 +242,13 @@
 - Nature : TD
 - Objectif : résoudre les exercices T02-E2 à T02-E4 sur classe Python et état d’objet avec justification écrite.
 - Capacité officielle : T-STRUCT-02A, T-STRUCT-02B, T-LANG-04A
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : T02_td_classes_objets.md, T02_corrige_classes_objets.md, T02_trace_classes_objets.md
 - Déroulé : 1. rappel méthode; 2. exercices T02-E2, T02-E3, T02-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T02-E2 et T02-E3 guidés; avancé : exercice T02-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T02-E2 à T02-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T02_trace_classes_objets.md et vérifiée par T02_corrige_classes_objets.md
+- Trace écrite : renseigner T02_trace_classes_objets.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T02_td_classes_objets.md ou relire T02_cours_classes_objets.md.
+- Remédiation : utiliser T02_remediation_classes_objets.md en début de séance suivante si l'erreur persiste.
 
 ### Séance T02-S3
 - Durée : 2 h
@@ -259,13 +259,13 @@
 - Nature : TP
 - Objectif : réaliser le TP structures_tools.py sur classe Python et état d’objet et exécuter deux tests de cas limites.
 - Capacité officielle : T-STRUCT-02A, T-STRUCT-02B, T-LANG-04A
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : T02_tp_classes_objets.md, T02_trace_classes_objets.md
 - Déroulé : 1. lecture du cahier des charges TP T02; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T02_trace_classes_objets.md et vérifiée par T02_corrige_classes_objets.md
+- Trace écrite : renseigner T02_trace_classes_objets.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T02_td_classes_objets.md ou relire T02_cours_classes_objets.md.
+- Remédiation : utiliser T02_remediation_classes_objets.md en début de séance suivante si l'erreur persiste.
 
 ### Séance T02-S4
 - Durée : 2 h
@@ -276,13 +276,13 @@
 - Nature : remédiation
 - Objectif : corriger l’exercice bilan T02-R4 et consolider la trace écrite sur classe Python et état d’objet.
 - Capacité officielle : T-STRUCT-02A, T-STRUCT-02B, T-LANG-04A
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : T02_evaluation_classes_objets.md, T02_version_amenagee_classes_objets.md, T02_bareme_classes_objets.md
 - Déroulé : 1. retour sur erreurs de T02; 2. correction guidée de T02-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T02-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T02-R4 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T02_trace_classes_objets.md et vérifiée par T02_corrige_classes_objets.md
+- Trace écrite : renseigner T02_trace_classes_objets.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T02_td_classes_objets.md ou relire T02_cours_classes_objets.md.
+- Remédiation : utiliser T02_remediation_classes_objets.md en début de séance suivante si l'erreur persiste.
 
 ### Séance T02-S5
 - Durée : 2 h
@@ -293,16 +293,16 @@
 - Nature : projet
 - Objectif : avancer le jalon projet T02-J5 en produisant un livrable vérifiable lié à classe Python et état d’objet.
 - Capacité officielle : T-STRUCT-02A, T-STRUCT-02B, T-LANG-04A
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : T02_remediation_classes_objets.md, T02_corrige_classes_objets.md, T02_trace_classes_objets.md
 - Déroulé : 1. choix de l’objectif du jalon T02; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T02 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T02-J5 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : production de séance appuyée sur T02_trace_classes_objets.md et vérifiée par T02_corrige_classes_objets.md
+- Trace écrite : renseigner T02_trace_classes_objets.md avec méthode, exemple, erreur fréquente et remédiation.
+- Devoir ou préparation : reprendre l'exercice ciblé dans T02_td_classes_objets.md ou relire T02_cours_classes_objets.md.
+- Remédiation : utiliser T02_remediation_classes_objets.md en début de séance suivante si l'erreur persiste.
 - Jalon projet : T02-J5 sur classe Python et état d’objet.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T02-J5.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : note de carnet reliée à T02_tp_classes_objets.md et trace de test ou justification.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T03-S1
@@ -312,15 +312,16 @@
 - Période : période courte avec férié tunisien du 15 octobre signalé
 - Mois : octobre
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire pile, file, dictionnaire et choix par opérations à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-STRUCT-03A, T-STRUCT-03B, T-STRUCT-03C
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T03-Q1; 2. activité T03_intro sur pile, file, dictionnaire et choix par opérations; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T03; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T03-S2
 - Durée : 2 h
@@ -329,15 +330,16 @@
 - Période : période courte avec férié tunisien du 15 octobre signalé
 - Mois : octobre
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T03-E2 à T03-E4 sur pile, file, dictionnaire et choix par opérations avec justification écrite.
 - Capacité officielle : T-STRUCT-03A, T-STRUCT-03B, T-STRUCT-03C
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T03-E2, T03-E3, T03-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T03-E2 et T03-E3 guidés; avancé : exercice T03-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T03-E2 à T03-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T03-S3
 - Durée : 1 h
@@ -346,15 +348,16 @@
 - Période : période courte avec férié tunisien du 15 octobre signalé
 - Mois : octobre
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T03-E3 à T03-E5 sur pile, file, dictionnaire et choix par opérations avec justification écrite.
 - Capacité officielle : T-STRUCT-03A, T-STRUCT-03B, T-STRUCT-03C
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T03-E3, T03-E4, T03-E5; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T03-E3 et T03-E4 guidés; avancé : exercice T03-E6 avec justification complète.
-- Livrable : correction justifiée des exercices T03-E3 à T03-E5.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T03-S4
 - Durée : 2 h
@@ -363,15 +366,16 @@
 - Période : période courte avec férié tunisien du 15 octobre signalé
 - Mois : octobre
 - Nature : TP
+- Statut support : théorique non prêt
 - Objectif : réaliser le TP structures_tools.py sur pile, file, dictionnaire et choix par opérations et exécuter deux tests de cas limites.
 - Capacité officielle : T-STRUCT-03A, T-STRUCT-03B, T-STRUCT-03C
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP T03; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T03-S5
 - Durée : 1 h
@@ -380,15 +384,16 @@
 - Période : période courte avec férié tunisien du 15 octobre signalé
 - Mois : octobre
 - Nature : évaluation
+- Statut support : théorique non prêt
 - Objectif : passer TP noté choix de structure avec questions ciblées sur pile, file, dictionnaire et choix par opérations, puis identifier les erreurs à corriger.
 - Capacité officielle : T-STRUCT-03A, T-STRUCT-03B, T-STRUCT-03C
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse T03; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : copie T03_evaluation_5 et auto-bilan des questions à reprendre.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T03-S6
 - Durée : 1 h
@@ -397,15 +402,16 @@
 - Période : période courte avec férié tunisien du 15 octobre signalé
 - Mois : octobre
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T03-R6 et consolider la trace écrite sur pile, file, dictionnaire et choix par opérations.
 - Capacité officielle : T-STRUCT-03A, T-STRUCT-03B, T-STRUCT-03C
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T03; 2. correction guidée de T03-R6; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T03-R6; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T03-R6 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T03-S7
 - Durée : 1 h
@@ -414,18 +420,19 @@
 - Période : période courte avec férié tunisien du 15 octobre signalé
 - Mois : octobre
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T03-J7 en produisant un livrable vérifiable lié à pile, file, dictionnaire et choix par opérations.
 - Capacité officielle : T-STRUCT-03A, T-STRUCT-03B, T-STRUCT-03C
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T03; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T03 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T03-J7 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T03-J7 sur pile, file, dictionnaire et choix par opérations.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T03-J7.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T03-S8
@@ -435,18 +442,19 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T03-J8 en produisant un livrable vérifiable lié à pile, file, dictionnaire et choix par opérations.
 - Capacité officielle : T-STRUCT-03A, T-STRUCT-03B, T-STRUCT-03C
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T03; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T03 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T03-J8 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T03-J8 sur pile, file, dictionnaire et choix par opérations.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T03-J8.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T03-S9
@@ -456,18 +464,19 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T03-J9 en produisant un livrable vérifiable lié à pile, file, dictionnaire et choix par opérations.
 - Capacité officielle : T-STRUCT-03A, T-STRUCT-03B, T-STRUCT-03C
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T03; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T03 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T03-J9 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T03-J9 sur pile, file, dictionnaire et choix par opérations.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T03-J9.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T04-S1
@@ -477,15 +486,16 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire cas de base, appel récursif et variant de terminaison à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-LANG-02A, T-LANG-02B
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T04-Q1; 2. activité T04_intro sur cas de base, appel récursif et variant de terminaison; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T04; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T04-S2
 - Durée : 2 h
@@ -494,15 +504,16 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T04-E2 à T04-E4 sur cas de base, appel récursif et variant de terminaison avec justification écrite.
 - Capacité officielle : T-LANG-02A, T-LANG-02B
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T04-E2, T04-E3, T04-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T04-E2 et T04-E3 guidés; avancé : exercice T04-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T04-E2 à T04-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T04-S3
 - Durée : 2 h
@@ -511,15 +522,16 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : TP
+- Statut support : théorique non prêt
 - Objectif : réaliser le TP structures_tools.py sur cas de base, appel récursif et variant de terminaison et exécuter deux tests de cas limites.
 - Capacité officielle : T-LANG-02A, T-LANG-02B
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP T04; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T04-S4
 - Durée : 2 h
@@ -528,15 +540,16 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T04-R4 et consolider la trace écrite sur cas de base, appel récursif et variant de terminaison.
 - Capacité officielle : T-LANG-02A, T-LANG-02B
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T04; 2. correction guidée de T04-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T04-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T04-R4 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T04-S5
 - Durée : 2 h
@@ -545,18 +558,19 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T04-J5 en produisant un livrable vérifiable lié à cas de base, appel récursif et variant de terminaison.
 - Capacité officielle : T-LANG-02A, T-LANG-02B
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T04; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T04 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T04-J5 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T04-J5 sur cas de base, appel récursif et variant de terminaison.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T04-J5.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T05-S1
@@ -566,15 +580,16 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire arbre binaire, taille, hauteur et parcours à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-STRUCT-04A, T-STRUCT-04B, T-ALGO-01A, T-ALGO-01B, T-ALGO-01C, T-ALGO-01D
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T05-Q1; 2. activité T05_intro sur arbre binaire, taille, hauteur et parcours; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T05; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T05-S2
 - Durée : 2 h
@@ -583,15 +598,16 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T05-E2 à T05-E4 sur arbre binaire, taille, hauteur et parcours avec justification écrite.
 - Capacité officielle : T-STRUCT-04A, T-STRUCT-04B, T-ALGO-01A, T-ALGO-01B, T-ALGO-01C, T-ALGO-01D
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T05-E2, T05-E3, T05-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T05-E2 et T05-E3 guidés; avancé : exercice T05-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T05-E2 à T05-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T05-S3
 - Durée : 2 h
@@ -600,15 +616,16 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : TP
+- Statut support : théorique non prêt
 - Objectif : réaliser le TP structures_tools.py sur arbre binaire, taille, hauteur et parcours et exécuter deux tests de cas limites.
 - Capacité officielle : T-STRUCT-04A, T-STRUCT-04B, T-ALGO-01A, T-ALGO-01B, T-ALGO-01C, T-ALGO-01D
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP T05; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T05-S4
 - Durée : 2 h
@@ -617,15 +634,16 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T05-R4 et consolider la trace écrite sur arbre binaire, taille, hauteur et parcours.
 - Capacité officielle : T-STRUCT-04A, T-STRUCT-04B, T-ALGO-01A, T-ALGO-01B, T-ALGO-01C, T-ALGO-01D
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T05; 2. correction guidée de T05-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T05-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T05-R4 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T05-S5
 - Durée : 2 h
@@ -634,18 +652,19 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T05-J5 en produisant un livrable vérifiable lié à arbre binaire, taille, hauteur et parcours.
 - Capacité officielle : T-STRUCT-04A, T-STRUCT-04B, T-ALGO-01A, T-ALGO-01B, T-ALGO-01C, T-ALGO-01D
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T05; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T05 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T05-J5 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T05-J5 sur arbre binaire, taille, hauteur et parcours.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T05-J5.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T06-S1
@@ -655,15 +674,16 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire recherche et insertion dans ABR non équilibré à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-ALGO-01E, T-ALGO-01F
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T06-Q1; 2. activité T06_intro sur recherche et insertion dans ABR non équilibré; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T06; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T06-S2
 - Durée : 2 h
@@ -672,15 +692,16 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T06-E2 à T06-E4 sur recherche et insertion dans ABR non équilibré avec justification écrite.
 - Capacité officielle : T-ALGO-01E, T-ALGO-01F
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T06-E2, T06-E3, T06-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T06-E2 et T06-E3 guidés; avancé : exercice T06-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T06-E2 à T06-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T06-S3
 - Durée : 2 h
@@ -689,15 +710,16 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : TP
+- Statut support : théorique non prêt
 - Objectif : réaliser le TP structures_tools.py sur recherche et insertion dans ABR non équilibré et exécuter deux tests de cas limites.
 - Capacité officielle : T-ALGO-01E, T-ALGO-01F
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP T06; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T06-S4
 - Durée : 1 h
@@ -706,15 +728,16 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : évaluation
+- Statut support : théorique non prêt
 - Objectif : passer évaluation ABR avec questions ciblées sur recherche et insertion dans ABR non équilibré, puis identifier les erreurs à corriger.
 - Capacité officielle : T-ALGO-01E, T-ALGO-01F
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse T06; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : copie T06_evaluation_4 et auto-bilan des questions à reprendre.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T06-S5
 - Durée : 1 h
@@ -723,15 +746,16 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T06-R5 et consolider la trace écrite sur recherche et insertion dans ABR non équilibré.
 - Capacité officielle : T-ALGO-01E, T-ALGO-01F
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T06; 2. correction guidée de T06-R5; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T06-R5; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T06-R5 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T06-S6
 - Durée : 2 h
@@ -740,18 +764,19 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T06-J6 en produisant un livrable vérifiable lié à recherche et insertion dans ABR non équilibré.
 - Capacité officielle : T-ALGO-01E, T-ALGO-01F
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T06; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T06 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T06-J6 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T06-J6 sur recherche et insertion dans ABR non équilibré.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T06-J6.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T07-S1
@@ -761,15 +786,16 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire graphe relationnel, matrice et liste d’adjacence à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-STRUCT-05A, T-STRUCT-05B, T-STRUCT-05C, T-STRUCT-05D
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T07-Q1; 2. activité T07_intro sur graphe relationnel, matrice et liste d’adjacence; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T07; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T07-S2
 - Durée : 2 h
@@ -778,15 +804,16 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T07-E2 à T07-E4 sur graphe relationnel, matrice et liste d’adjacence avec justification écrite.
 - Capacité officielle : T-STRUCT-05A, T-STRUCT-05B, T-STRUCT-05C, T-STRUCT-05D
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T07-E2, T07-E3, T07-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T07-E2 et T07-E3 guidés; avancé : exercice T07-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T07-E2 à T07-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T07-S3
 - Durée : 2 h
@@ -795,15 +822,16 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : TP
+- Statut support : théorique non prêt
 - Objectif : réaliser le TP structures_tools.py sur graphe relationnel, matrice et liste d’adjacence et exécuter deux tests de cas limites.
 - Capacité officielle : T-STRUCT-05A, T-STRUCT-05B, T-STRUCT-05C, T-STRUCT-05D
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP T07; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T07-S4
 - Durée : 1 h
@@ -812,15 +840,16 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T07-R4 et consolider la trace écrite sur graphe relationnel, matrice et liste d’adjacence.
 - Capacité officielle : T-STRUCT-05A, T-STRUCT-05B, T-STRUCT-05C, T-STRUCT-05D
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T07; 2. correction guidée de T07-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T07-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T07-R4 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T07-S5
 - Durée : 2 h
@@ -829,18 +858,19 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T07-J5 en produisant un livrable vérifiable lié à graphe relationnel, matrice et liste d’adjacence.
 - Capacité officielle : T-STRUCT-05A, T-STRUCT-05B, T-STRUCT-05C, T-STRUCT-05D
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T07; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T07 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T07-J5 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T07-J5 sur graphe relationnel, matrice et liste d’adjacence.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T07-J5.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T07-S6
@@ -850,18 +880,19 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T07-J6 en produisant un livrable vérifiable lié à graphe relationnel, matrice et liste d’adjacence.
 - Capacité officielle : T-STRUCT-05A, T-STRUCT-05B, T-STRUCT-05C, T-STRUCT-05D
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T07; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T07 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T07-J6 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T07-J6 sur graphe relationnel, matrice et liste d’adjacence.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T07-J6.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T08-S1
@@ -871,15 +902,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire parcours BFS DFS, cycle et chemin sur graphe à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T08-Q1; 2. activité T08_intro sur parcours BFS DFS, cycle et chemin sur graphe; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T08; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T08-S2
 - Durée : 2 h
@@ -888,15 +920,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T08-E2 à T08-E4 sur parcours BFS DFS, cycle et chemin sur graphe avec justification écrite.
 - Capacité officielle : T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T08-E2, T08-E3, T08-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T08-E2 et T08-E3 guidés; avancé : exercice T08-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T08-E2 à T08-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T08-S3
 - Durée : 1 h
@@ -905,15 +938,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T08-E3 à T08-E5 sur parcours BFS DFS, cycle et chemin sur graphe avec justification écrite.
 - Capacité officielle : T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T08-E3, T08-E4, T08-E5; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T08-E3 et T08-E4 guidés; avancé : exercice T08-E6 avec justification complète.
-- Livrable : correction justifiée des exercices T08-E3 à T08-E5.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T08-S4
 - Durée : 2 h
@@ -922,15 +956,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : TP
+- Statut support : théorique non prêt
 - Objectif : réaliser le TP structures_tools.py sur parcours BFS DFS, cycle et chemin sur graphe et exécuter deux tests de cas limites.
 - Capacité officielle : T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP T08; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T08-S5
 - Durée : 1 h
@@ -939,15 +974,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : évaluation
+- Statut support : théorique non prêt
 - Objectif : passer sujet pratique graphes avec questions ciblées sur parcours BFS DFS, cycle et chemin sur graphe, puis identifier les erreurs à corriger.
 - Capacité officielle : T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse T08; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : copie T08_evaluation_5 et auto-bilan des questions à reprendre.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T08-S6
 - Durée : 1 h
@@ -956,15 +992,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T08-R6 et consolider la trace écrite sur parcours BFS DFS, cycle et chemin sur graphe.
 - Capacité officielle : T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T08; 2. correction guidée de T08-R6; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T08-R6; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T08-R6 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T08-S7
 - Durée : 2 h
@@ -973,18 +1010,19 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T08-J7 en produisant un livrable vérifiable lié à parcours BFS DFS, cycle et chemin sur graphe.
 - Capacité officielle : T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T08; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T08 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T08-J7 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T08-J7 sur parcours BFS DFS, cycle et chemin sur graphe.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T08-J7.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T08-S8
@@ -994,18 +1032,19 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T08-J8 en produisant un livrable vérifiable lié à parcours BFS DFS, cycle et chemin sur graphe.
 - Capacité officielle : T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T08; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T08 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T08-J8 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T08-J8 sur parcours BFS DFS, cycle et chemin sur graphe.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T08-J8.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T09-S1
@@ -1015,15 +1054,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire schéma relationnel, clés et anomalies à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T09-Q1; 2. activité T09_intro sur schéma relationnel, clés et anomalies; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T09; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T09-S2
 - Durée : 2 h
@@ -1032,15 +1072,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T09-E2 à T09-E4 sur schéma relationnel, clés et anomalies avec justification écrite.
 - Capacité officielle : T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T09-E2, T09-E3, T09-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T09-E2 et T09-E3 guidés; avancé : exercice T09-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T09-E2 à T09-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T09-S3
 - Durée : 2 h
@@ -1049,15 +1090,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : TP
+- Statut support : théorique non prêt
 - Objectif : réaliser le TP structures_tools.py sur schéma relationnel, clés et anomalies et exécuter deux tests de cas limites.
 - Capacité officielle : T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP T09; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T09-S4
 - Durée : 2 h
@@ -1066,15 +1108,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T09-R4 et consolider la trace écrite sur schéma relationnel, clés et anomalies.
 - Capacité officielle : T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T09; 2. correction guidée de T09-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T09-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T09-R4 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T09-S5
 - Durée : 1 h
@@ -1083,15 +1126,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T09-R5 et consolider la trace écrite sur schéma relationnel, clés et anomalies.
 - Capacité officielle : T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T09; 2. correction guidée de T09-R5; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T09-R5; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T09-R5 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T09-S6
 - Durée : 2 h
@@ -1100,18 +1144,19 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T09-J6 en produisant un livrable vérifiable lié à schéma relationnel, clés et anomalies.
 - Capacité officielle : T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T09; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T09 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T09-J6 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T09-J6 sur schéma relationnel, clés et anomalies.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T09-J6.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T09-S7
@@ -1121,18 +1166,19 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T09-J7 en produisant un livrable vérifiable lié à schéma relationnel, clés et anomalies.
 - Capacité officielle : T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T09; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T09 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T09-J7 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T09-J7 sur schéma relationnel, clés et anomalies.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T09-J7.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T10-S1
@@ -1142,15 +1188,16 @@
 - Période : Ramadan du 8 février au 7 mars : activités guidées et évaluations courtes
 - Mois : février
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire requêtes SQL atomiques sur base fictive à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-BDD-03A, T-BDD-03B, T-BDD-03C, T-BDD-03D, T-BDD-03E, T-BDD-03F, T-BDD-03G, T-BDD-03H
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T10-Q1; 2. activité T10_intro sur requêtes SQL atomiques sur base fictive; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T10; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T10-S2
 - Durée : 1,5 h
@@ -1159,15 +1206,16 @@
 - Période : Ramadan du 8 février au 7 mars : activités guidées et évaluations courtes
 - Mois : février
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T10-E2 à T10-E4 sur requêtes SQL atomiques sur base fictive avec justification écrite.
 - Capacité officielle : T-BDD-03A, T-BDD-03B, T-BDD-03C, T-BDD-03D, T-BDD-03E, T-BDD-03F, T-BDD-03G, T-BDD-03H
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T10-E2, T10-E3, T10-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T10-E2 et T10-E3 guidés; avancé : exercice T10-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T10-E2 à T10-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T10-S3
 - Durée : 1 h
@@ -1176,15 +1224,16 @@
 - Période : Ramadan du 8 février au 7 mars : activités guidées et évaluations courtes
 - Mois : février
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T10-E3 à T10-E5 sur requêtes SQL atomiques sur base fictive avec justification écrite.
 - Capacité officielle : T-BDD-03A, T-BDD-03B, T-BDD-03C, T-BDD-03D, T-BDD-03E, T-BDD-03F, T-BDD-03G, T-BDD-03H
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T10-E3, T10-E4, T10-E5; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T10-E3 et T10-E4 guidés; avancé : exercice T10-E6 avec justification complète.
-- Livrable : correction justifiée des exercices T10-E3 à T10-E5.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T10-S4
 - Durée : 1 h
@@ -1193,15 +1242,16 @@
 - Période : Ramadan du 8 février au 7 mars : activités guidées et évaluations courtes
 - Mois : février
 - Nature : TP
+- Statut support : théorique non prêt
 - Objectif : réaliser le TP structures_tools.py sur requêtes SQL atomiques sur base fictive et exécuter deux tests de cas limites.
 - Capacité officielle : T-BDD-03A, T-BDD-03B, T-BDD-03C, T-BDD-03D, T-BDD-03E, T-BDD-03F, T-BDD-03G, T-BDD-03H
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP T10; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T10-S5
 - Durée : 1 h
@@ -1210,15 +1260,16 @@
 - Période : Ramadan du 8 février au 7 mars : activités guidées et évaluations courtes
 - Mois : février
 - Nature : évaluation
+- Statut support : théorique non prêt
 - Objectif : passer pratique SQL guidée avec questions ciblées sur requêtes SQL atomiques sur base fictive, puis identifier les erreurs à corriger.
 - Capacité officielle : T-BDD-03A, T-BDD-03B, T-BDD-03C, T-BDD-03D, T-BDD-03E, T-BDD-03F, T-BDD-03G, T-BDD-03H
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse T10; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : copie T10_evaluation_5 et auto-bilan des questions à reprendre.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T10-S6
 - Durée : 1 h
@@ -1227,15 +1278,16 @@
 - Période : Ramadan du 8 février au 7 mars : activités guidées et évaluations courtes
 - Mois : février
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T10-R6 et consolider la trace écrite sur requêtes SQL atomiques sur base fictive.
 - Capacité officielle : T-BDD-03A, T-BDD-03B, T-BDD-03C, T-BDD-03D, T-BDD-03E, T-BDD-03F, T-BDD-03G, T-BDD-03H
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T10; 2. correction guidée de T10-R6; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T10-R6; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T10-R6 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T10-S7
 - Durée : 2 h
@@ -1244,18 +1296,19 @@
 - Période : Ramadan du 8 février au 7 mars : activités guidées et évaluations courtes
 - Mois : février
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T10-J7 en produisant un livrable vérifiable lié à requêtes SQL atomiques sur base fictive.
 - Capacité officielle : T-BDD-03A, T-BDD-03B, T-BDD-03C, T-BDD-03D, T-BDD-03E, T-BDD-03F, T-BDD-03G, T-BDD-03H
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T10; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T10 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T10-J7 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T10-J7 sur requêtes SQL atomiques sur base fictive.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T10-J7.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T10-S8
@@ -1265,18 +1318,19 @@
 - Période : Ramadan du 8 février au 7 mars : activités guidées et évaluations courtes
 - Mois : février
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T10-J8 en produisant un livrable vérifiable lié à requêtes SQL atomiques sur base fictive.
 - Capacité officielle : T-BDD-03A, T-BDD-03B, T-BDD-03C, T-BDD-03D, T-BDD-03E, T-BDD-03F, T-BDD-03G, T-BDD-03H
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T10; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T10 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T10-J8 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T10-J8 sur requêtes SQL atomiques sur base fictive.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T10-J8.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T11-S1
@@ -1286,15 +1340,16 @@
 - Période : Ramadan du 8 février au 7 mars : activités guidées et évaluations courtes
 - Mois : février
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire SoC, processus, ordonnancement et interblocage à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-ARCH-01, T-ARCH-02A, T-ARCH-02B, T-ARCH-02C
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T11-Q1; 2. activité T11_intro sur SoC, processus, ordonnancement et interblocage; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T11; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T11-S2
 - Durée : 2 h
@@ -1303,15 +1358,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T11-E2 à T11-E4 sur SoC, processus, ordonnancement et interblocage avec justification écrite.
 - Capacité officielle : T-ARCH-01, T-ARCH-02A, T-ARCH-02B, T-ARCH-02C
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T11-E2, T11-E3, T11-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T11-E2 et T11-E3 guidés; avancé : exercice T11-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T11-E2 à T11-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T11-S3
 - Durée : 2 h
@@ -1320,15 +1376,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : TP
+- Statut support : théorique non prêt
 - Objectif : réaliser le TP structures_tools.py sur SoC, processus, ordonnancement et interblocage et exécuter deux tests de cas limites.
 - Capacité officielle : T-ARCH-01, T-ARCH-02A, T-ARCH-02B, T-ARCH-02C
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP T11; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T11-S4
 - Durée : 2 h
@@ -1337,15 +1394,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T11-R4 et consolider la trace écrite sur SoC, processus, ordonnancement et interblocage.
 - Capacité officielle : T-ARCH-01, T-ARCH-02A, T-ARCH-02B, T-ARCH-02C
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T11; 2. correction guidée de T11-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T11-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T11-R4 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T11-S5
 - Durée : 2 h
@@ -1354,18 +1412,19 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T11-J5 en produisant un livrable vérifiable lié à SoC, processus, ordonnancement et interblocage.
 - Capacité officielle : T-ARCH-01, T-ARCH-02A, T-ARCH-02B, T-ARCH-02C
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T11; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T11 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T11-J5 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T11-J5 sur SoC, processus, ordonnancement et interblocage.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T11-J5.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T12-S1
@@ -1375,15 +1434,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire table de routage RIP OSPF et coût sur graphe à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-ARCH-03
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T12-Q1; 2. activité T12_intro sur table de routage RIP OSPF et coût sur graphe; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T12; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T12-S2
 - Durée : 2 h
@@ -1392,15 +1452,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T12-E2 à T12-E4 sur table de routage RIP OSPF et coût sur graphe avec justification écrite.
 - Capacité officielle : T-ARCH-03
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T12-E2, T12-E3, T12-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T12-E2 et T12-E3 guidés; avancé : exercice T12-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T12-E2 à T12-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T12-S3
 - Durée : 2 h
@@ -1409,15 +1470,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : TP
+- Statut support : théorique non prêt
 - Objectif : réaliser le TP structures_tools.py sur table de routage RIP OSPF et coût sur graphe et exécuter deux tests de cas limites.
 - Capacité officielle : T-ARCH-03
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP T12; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T12-S4
 - Durée : 1 h
@@ -1426,15 +1488,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T12-R4 et consolider la trace écrite sur table de routage RIP OSPF et coût sur graphe.
 - Capacité officielle : T-ARCH-03
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T12; 2. correction guidée de T12-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T12-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T12-R4 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T12-S5
 - Durée : 2 h
@@ -1443,18 +1506,19 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T12-J5 en produisant un livrable vérifiable lié à table de routage RIP OSPF et coût sur graphe.
 - Capacité officielle : T-ARCH-03
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T12; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T12 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T12-J5 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T12-J5 sur table de routage RIP OSPF et coût sur graphe.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T12-J5.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T12-S6
@@ -1464,18 +1528,19 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T12-J6 en produisant un livrable vérifiable lié à table de routage RIP OSPF et coût sur graphe.
 - Capacité officielle : T-ARCH-03
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T12; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T12 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T12-J6 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T12-J6 sur table de routage RIP OSPF et coût sur graphe.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T12-J6.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T13-S1
@@ -1485,15 +1550,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire chiffrement, échange de clé et HTTPS simplifié à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-ARCH-04A, T-ARCH-04B
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T13-Q1; 2. activité T13_intro sur chiffrement, échange de clé et HTTPS simplifié; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T13; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T13-S2
 - Durée : 1,5 h
@@ -1502,15 +1568,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T13-E2 à T13-E4 sur chiffrement, échange de clé et HTTPS simplifié avec justification écrite.
 - Capacité officielle : T-ARCH-04A, T-ARCH-04B
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T13-E2, T13-E3, T13-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T13-E2 et T13-E3 guidés; avancé : exercice T13-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T13-E2 à T13-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T13-S3
 - Durée : 1 h
@@ -1519,15 +1586,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T13-E3 à T13-E5 sur chiffrement, échange de clé et HTTPS simplifié avec justification écrite.
 - Capacité officielle : T-ARCH-04A, T-ARCH-04B
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T13-E3, T13-E4, T13-E5; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T13-E3 et T13-E4 guidés; avancé : exercice T13-E6 avec justification complète.
-- Livrable : correction justifiée des exercices T13-E3 à T13-E5.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T13-S4
 - Durée : 1 h
@@ -1536,15 +1604,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : TP
+- Statut support : théorique non prêt
 - Objectif : réaliser le TP structures_tools.py sur chiffrement, échange de clé et HTTPS simplifié et exécuter deux tests de cas limites.
 - Capacité officielle : T-ARCH-04A, T-ARCH-04B
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP T13; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T13-S5
 - Durée : 1 h
@@ -1553,15 +1622,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : évaluation
+- Statut support : théorique non prêt
 - Objectif : passer étude de protocole sécurité avec questions ciblées sur chiffrement, échange de clé et HTTPS simplifié, puis identifier les erreurs à corriger.
 - Capacité officielle : T-ARCH-04A, T-ARCH-04B
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse T13; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : copie T13_evaluation_5 et auto-bilan des questions à reprendre.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T13-S6
 - Durée : 1 h
@@ -1570,15 +1640,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T13-R6 et consolider la trace écrite sur chiffrement, échange de clé et HTTPS simplifié.
 - Capacité officielle : T-ARCH-04A, T-ARCH-04B
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T13; 2. correction guidée de T13-R6; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T13-R6; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T13-R6 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T13-S7
 - Durée : 2 h
@@ -1587,18 +1658,19 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T13-J7 en produisant un livrable vérifiable lié à chiffrement, échange de clé et HTTPS simplifié.
 - Capacité officielle : T-ARCH-04A, T-ARCH-04B
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T13; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T13 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T13-J7 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T13-J7 sur chiffrement, échange de clé et HTTPS simplifié.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T13-J7.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T13-S8
@@ -1608,18 +1680,19 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T13-J8 en produisant un livrable vérifiable lié à chiffrement, échange de clé et HTTPS simplifié.
 - Capacité officielle : T-ARCH-04A, T-ARCH-04B
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T13; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T13 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T13-J8 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T13-J8 sur chiffrement, échange de clé et HTTPS simplifié.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T13-J8.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T14-S1
@@ -1629,15 +1702,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire module Python, API, paradigmes et correction de bugs à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-LANG-03A, T-LANG-03B, T-LANG-03C, T-LANG-04A, T-LANG-04B, T-LANG-05
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T14-Q1; 2. activité T14_intro sur module Python, API, paradigmes et correction de bugs; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T14; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T14-S2
 - Durée : 2 h
@@ -1646,15 +1720,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T14-E2 à T14-E4 sur module Python, API, paradigmes et correction de bugs avec justification écrite.
 - Capacité officielle : T-LANG-03A, T-LANG-03B, T-LANG-03C, T-LANG-04A, T-LANG-04B, T-LANG-05
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T14-E2, T14-E3, T14-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T14-E2 et T14-E3 guidés; avancé : exercice T14-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T14-E2 à T14-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T14-S3
 - Durée : 2 h
@@ -1663,15 +1738,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : TP
+- Statut support : théorique non prêt
 - Objectif : réaliser le TP structures_tools.py sur module Python, API, paradigmes et correction de bugs et exécuter deux tests de cas limites.
 - Capacité officielle : T-LANG-03A, T-LANG-03B, T-LANG-03C, T-LANG-04A, T-LANG-04B, T-LANG-05
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP T14; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T14-S4
 - Durée : 1 h
@@ -1680,15 +1756,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T14-R4 et consolider la trace écrite sur module Python, API, paradigmes et correction de bugs.
 - Capacité officielle : T-LANG-03A, T-LANG-03B, T-LANG-03C, T-LANG-04A, T-LANG-04B, T-LANG-05
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T14; 2. correction guidée de T14-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T14-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T14-R4 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T14-S5
 - Durée : 2 h
@@ -1697,18 +1774,19 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T14-J5 en produisant un livrable vérifiable lié à module Python, API, paradigmes et correction de bugs.
 - Capacité officielle : T-LANG-03A, T-LANG-03B, T-LANG-03C, T-LANG-04A, T-LANG-04B, T-LANG-05
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T14; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T14 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T14-J5 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T14-J5 sur module Python, API, paradigmes et correction de bugs.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T14-J5.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T14-S6
@@ -1718,18 +1796,19 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T14-J6 en produisant un livrable vérifiable lié à module Python, API, paradigmes et correction de bugs.
 - Capacité officielle : T-LANG-03A, T-LANG-03B, T-LANG-03C, T-LANG-04A, T-LANG-04B, T-LANG-05
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T14; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T14 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T14-J6 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T14-J6 sur module Python, API, paradigmes et correction de bugs.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T14-J6.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T15-S1
@@ -1739,15 +1818,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire programme comme donnée et problème de l’arrêt à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-LANG-01A, T-LANG-01B, T-LANG-01C
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T15-Q1; 2. activité T15_intro sur programme comme donnée et problème de l’arrêt; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T15; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T15-S2
 - Durée : 2 h
@@ -1756,15 +1836,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T15-E2 à T15-E4 sur programme comme donnée et problème de l’arrêt avec justification écrite.
 - Capacité officielle : T-LANG-01A, T-LANG-01B, T-LANG-01C
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T15-E2, T15-E3, T15-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T15-E2 et T15-E3 guidés; avancé : exercice T15-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T15-E2 à T15-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T15-S3
 - Durée : 1 h
@@ -1773,15 +1854,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T15-R3 et consolider la trace écrite sur programme comme donnée et problème de l’arrêt.
 - Capacité officielle : T-LANG-01A, T-LANG-01B, T-LANG-01C
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T15; 2. correction guidée de T15-R3; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T15-R3; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T15-R3 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T15-S4
 - Durée : 1 h
@@ -1790,18 +1872,19 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T15-J4 en produisant un livrable vérifiable lié à programme comme donnée et problème de l’arrêt.
 - Capacité officielle : T-LANG-01A, T-LANG-01B, T-LANG-01C
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T15; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T15 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T15-J4 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T15-J4 sur programme comme donnée et problème de l’arrêt.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T15-J4.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T16-S1
@@ -1811,15 +1894,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire tri fusion et découpage récursif à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-ALGO-03
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T16-Q1; 2. activité T16_intro sur tri fusion et découpage récursif; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T16; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T16-S2
 - Durée : 1,5 h
@@ -1828,15 +1912,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T16-E2 à T16-E4 sur tri fusion et découpage récursif avec justification écrite.
 - Capacité officielle : T-ALGO-03
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T16-E2, T16-E3, T16-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T16-E2 et T16-E3 guidés; avancé : exercice T16-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T16-E2 à T16-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T16-S3
 - Durée : 1 h
@@ -1845,15 +1930,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T16-E3 à T16-E5 sur tri fusion et découpage récursif avec justification écrite.
 - Capacité officielle : T-ALGO-03
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T16-E3, T16-E4, T16-E5; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T16-E3 et T16-E4 guidés; avancé : exercice T16-E6 avec justification complète.
-- Livrable : correction justifiée des exercices T16-E3 à T16-E5.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T16-S4
 - Durée : 1 h
@@ -1862,15 +1948,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : TP
+- Statut support : théorique non prêt
 - Objectif : réaliser le TP structures_tools.py sur tri fusion et découpage récursif et exécuter deux tests de cas limites.
 - Capacité officielle : T-ALGO-03
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP T16; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T16-S5
 - Durée : 1 h
@@ -1879,15 +1966,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : évaluation
+- Statut support : théorique non prêt
 - Objectif : passer devoir diviser pour régner avec questions ciblées sur tri fusion et découpage récursif, puis identifier les erreurs à corriger.
 - Capacité officielle : T-ALGO-03
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse T16; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : copie T16_evaluation_5 et auto-bilan des questions à reprendre.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T16-S6
 - Durée : 1 h
@@ -1896,15 +1984,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T16-R6 et consolider la trace écrite sur tri fusion et découpage récursif.
 - Capacité officielle : T-ALGO-03
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T16; 2. correction guidée de T16-R6; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T16-R6; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T16-R6 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T16-S7
 - Durée : 2 h
@@ -1913,18 +2002,19 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T16-J7 en produisant un livrable vérifiable lié à tri fusion et découpage récursif.
 - Capacité officielle : T-ALGO-03
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T16; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T16 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T16-J7 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T16-J7 sur tri fusion et découpage récursif.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T16-J7.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T16-S8
@@ -1934,18 +2024,19 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T16-J8 en produisant un livrable vérifiable lié à tri fusion et découpage récursif.
 - Capacité officielle : T-ALGO-03
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T16; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T16 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T16-J8 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T16-J8 sur tri fusion et découpage récursif.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T16-J8.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T17-S1
@@ -1955,15 +2046,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire mémoïsation et table de calcul à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-ALGO-04
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T17-Q1; 2. activité T17_intro sur mémoïsation et table de calcul; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T17; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T17-S2
 - Durée : 2 h
@@ -1972,15 +2064,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T17-E2 à T17-E4 sur mémoïsation et table de calcul avec justification écrite.
 - Capacité officielle : T-ALGO-04
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T17-E2, T17-E3, T17-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T17-E2 et T17-E3 guidés; avancé : exercice T17-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T17-E2 à T17-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T17-S3
 - Durée : 2 h
@@ -1989,15 +2082,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : TP
+- Statut support : théorique non prêt
 - Objectif : réaliser le TP structures_tools.py sur mémoïsation et table de calcul et exécuter deux tests de cas limites.
 - Capacité officielle : T-ALGO-04
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP T17; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T17-S4
 - Durée : 1 h
@@ -2006,15 +2100,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T17-R4 et consolider la trace écrite sur mémoïsation et table de calcul.
 - Capacité officielle : T-ALGO-04
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T17; 2. correction guidée de T17-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T17-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T17-R4 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T17-S5
 - Durée : 2 h
@@ -2023,18 +2118,19 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T17-J5 en produisant un livrable vérifiable lié à mémoïsation et table de calcul.
 - Capacité officielle : T-ALGO-04
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T17; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T17 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T17-J5 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T17-J5 sur mémoïsation et table de calcul.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T17-J5.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T17-S6
@@ -2044,18 +2140,19 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T17-J6 en produisant un livrable vérifiable lié à mémoïsation et table de calcul.
 - Capacité officielle : T-ALGO-04
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T17; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T17 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T17-J6 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T17-J6 sur mémoïsation et table de calcul.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T17-J6.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T18-S1
@@ -2065,15 +2162,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire recherche textuelle et table de décalage à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-ALGO-05
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T18-Q1; 2. activité T18_intro sur recherche textuelle et table de décalage; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T18; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T18-S2
 - Durée : 1 h
@@ -2082,15 +2180,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T18-E2 à T18-E4 sur recherche textuelle et table de décalage avec justification écrite.
 - Capacité officielle : T-ALGO-05
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T18-E2, T18-E3, T18-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T18-E2 et T18-E3 guidés; avancé : exercice T18-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T18-E2 à T18-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T18-S3
 - Durée : 1 h
@@ -2099,15 +2198,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T18-E3 à T18-E5 sur recherche textuelle et table de décalage avec justification écrite.
 - Capacité officielle : T-ALGO-05
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T18-E3, T18-E4, T18-E5; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T18-E3 et T18-E4 guidés; avancé : exercice T18-E6 avec justification complète.
-- Livrable : correction justifiée des exercices T18-E3 à T18-E5.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T18-S4
 - Durée : 2 h
@@ -2116,15 +2216,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T18-R4 et consolider la trace écrite sur recherche textuelle et table de décalage.
 - Capacité officielle : T-ALGO-05
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T18; 2. correction guidée de T18-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T18-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T18-R4 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T18-S5
 - Durée : 2 h
@@ -2133,18 +2234,19 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T18-J5 en produisant un livrable vérifiable lié à recherche textuelle et table de décalage.
 - Capacité officielle : T-ALGO-05
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T18; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T18 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T18-J5 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T18-J5 sur recherche textuelle et table de décalage.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T18-J5.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T19-S1
@@ -2154,15 +2256,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : cours
+- Statut support : théorique non prêt
 - Objectif : introduire sujets pratiques, plan de Grand Oral et projet final à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : synthèse capacités atomiques Terminale
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash T19-Q1; 2. activité T19_intro sur sujets pratiques, plan de Grand Oral et projet final; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T19; avancé : contre-exemple à formuler pour la définition.
-- Livrable : trace complétée cours_eleve.md avec définition et exemple.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T19-S2
 - Durée : 2 h
@@ -2171,15 +2274,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T19-E2 à T19-E4 sur sujets pratiques, plan de Grand Oral et projet final avec justification écrite.
 - Capacité officielle : synthèse capacités atomiques Terminale
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T19-E2, T19-E3, T19-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T19-E2 et T19-E3 guidés; avancé : exercice T19-E5 avec justification complète.
-- Livrable : correction justifiée des exercices T19-E2 à T19-E4.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T19-S3
 - Durée : 1 h
@@ -2188,15 +2292,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : TD
+- Statut support : théorique non prêt
 - Objectif : résoudre les exercices T19-E3 à T19-E5 sur sujets pratiques, plan de Grand Oral et projet final avec justification écrite.
 - Capacité officielle : synthèse capacités atomiques Terminale
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices T19-E3, T19-E4, T19-E5; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices T19-E3 et T19-E4 guidés; avancé : exercice T19-E6 avec justification complète.
-- Livrable : correction justifiée des exercices T19-E3 à T19-E5.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T19-S4
 - Durée : 2 h
@@ -2205,15 +2310,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : TP
+- Statut support : théorique non prêt
 - Objectif : réaliser le TP structures_tools.py sur sujets pratiques, plan de Grand Oral et projet final et exécuter deux tests de cas limites.
 - Capacité officielle : synthèse capacités atomiques Terminale
-- Document utilisé : cours_eleve.md, cours_eleve.md, fichier structures_tools.py
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP T19; 2. modification du fichier structures_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier structures_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : fichier structures_tools.py et résultats de tests copiés dans le carnet.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T19-S5
 - Durée : 1 h
@@ -2222,15 +2328,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : évaluation
+- Statut support : théorique non prêt
 - Objectif : passer évaluation projet final et Grand Oral avec questions ciblées sur sujets pratiques, plan de Grand Oral et projet final, puis identifier les erreurs à corriger.
 - Capacité officielle : synthèse capacités atomiques Terminale
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse T19; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : copie T19_evaluation_5 et auto-bilan des questions à reprendre.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T19-S6
 - Durée : 1 h
@@ -2239,15 +2346,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : remédiation
+- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan T19-R6 et consolider la trace écrite sur sujets pratiques, plan de Grand Oral et projet final.
 - Capacité officielle : synthèse capacités atomiques Terminale
-- Document utilisé : cours_eleve.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de T19; 2. correction guidée de T19-R6; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de T19-R6; avancé : produire une variante de l’exercice corrigé.
-- Livrable : exercice corrigé T19-R6 et liste de deux erreurs évitées.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 
 ### Séance T19-S7
 - Durée : 2 h
@@ -2256,18 +2364,19 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T19-J7 en produisant un livrable vérifiable lié à sujets pratiques, plan de Grand Oral et projet final.
 - Capacité officielle : synthèse capacités atomiques Terminale
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T19; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T19 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T19-J7 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T19-J7 sur sujets pratiques, plan de Grand Oral et projet final.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T19-J7.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T19-S8
@@ -2277,18 +2386,19 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T19-J8 en produisant un livrable vérifiable lié à sujets pratiques, plan de Grand Oral et projet final.
 - Capacité officielle : synthèse capacités atomiques Terminale
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T19; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T19 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T19-J8 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T19-J8 sur sujets pratiques, plan de Grand Oral et projet final.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T19-J8.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T19-S9
@@ -2298,18 +2408,19 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T19-J9 en produisant un livrable vérifiable lié à sujets pratiques, plan de Grand Oral et projet final.
 - Capacité officielle : synthèse capacités atomiques Terminale
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T19; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T19 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T19-J9 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T19-J9 sur sujets pratiques, plan de Grand Oral et projet final.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T19-J9.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T19-S10
@@ -2319,18 +2430,19 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T19-J10 en produisant un livrable vérifiable lié à sujets pratiques, plan de Grand Oral et projet final.
 - Capacité officielle : synthèse capacités atomiques Terminale
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T19; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T19 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T19-J10 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T19-J10 sur sujets pratiques, plan de Grand Oral et projet final.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T19-J10.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T19-S11
@@ -2340,18 +2452,19 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T19-J11 en produisant un livrable vérifiable lié à sujets pratiques, plan de Grand Oral et projet final.
 - Capacité officielle : synthèse capacités atomiques Terminale
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T19; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T19 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T19-J11 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T19-J11 sur sujets pratiques, plan de Grand Oral et projet final.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T19-J11.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T19-S12
@@ -2361,18 +2474,19 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T19-J12 en produisant un livrable vérifiable lié à sujets pratiques, plan de Grand Oral et projet final.
 - Capacité officielle : synthèse capacités atomiques Terminale
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T19; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T19 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T19-J12 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T19-J12 sur sujets pratiques, plan de Grand Oral et projet final.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T19-J12.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance T19-S13
@@ -2382,16 +2496,17 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : projet
+- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet T19-J13 en produisant un livrable vérifiable lié à sujets pratiques, plan de Grand Oral et projet final.
 - Capacité officielle : synthèse capacités atomiques Terminale
-- Document utilisé : cours_eleve.md, carnet_de_bord.md, cours_eleve.md
+- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon T19; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon T19 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : livrable projet T19-J13 : code, données fictives ou note de conception.
-- Trace écrite : compléter cours_eleve.md avec méthode, exemple et point de vigilance.
-- Devoir ou préparation : préparer cours_eleve.md ou terminer l’exercice ciblé.
-- Remédiation : reprendre cours_eleve.md en début de séance suivante si besoin.
+- Livrable : intention de production à préciser après création du support spécifique.
+- Trace écrite : non exploitable tant que le support spécifique de séance manque.
+- Devoir ou préparation : non fixé tant que le support spécifique manque.
+- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
 - Jalon projet : T19-J13 sur sujets pratiques, plan de Grand Oral et projet final.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour T19-J13.
-- Livrable projet : cours_eleve.md avec fichier ou démonstration associée.
+- Livrable projet : jalon à cadrer après production du support projet.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.

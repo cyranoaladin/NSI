@@ -10,6 +10,31 @@ def has_concrete_reference(text: str) -> bool:
     return any(token in text for token in CONCRETE_TOKENS)
 
 
+def is_theoretical_session(session: dict[str, object]) -> bool:
+    return str(session.get("Statut support", "")).strip().lower() == "théorique non prêt"
+
+
+def session_specificity_errors(level: str, session: dict[str, object]) -> list[str]:
+    if is_theoretical_session(session):
+        return []
+    errors: list[str] = []
+    sid = str(session.get("id"))
+    raw = str(session.get("raw", ""))
+    for phrase in GENERIC_PHRASES:
+        if phrase in raw:
+            errors.append(f"{level}: {sid} contains generic phrase: {phrase}")
+    if not has_concrete_reference(str(session.get("Document utilisé", ""))):
+        errors.append(f"{level}: {sid} document used is not concrete")
+    if not has_concrete_reference(str(session.get("Livrable", ""))):
+        errors.append(f"{level}: {sid} deliverable is not concrete")
+    objective = str(session.get("Objectif", ""))
+    if len(objective.split()) < 8 or not has_concrete_reference(objective + " " + str(session.get("Déroulé", ""))):
+        errors.append(f"{level}: {sid} objective lacks precise task")
+    if not has_concrete_reference(raw):
+        errors.append(f"{level}: {sid} names no exercise, TP, file or concrete activity")
+    return errors
+
+
 def main() -> int:
     errors: list[str] = []
     for level, config in LEVELS.items():
@@ -23,20 +48,7 @@ def main() -> int:
                 if count > threshold:
                     errors.append(f"{level}: {count} sessions share same {field}: {value[:80]}")
         for session in sessions:
-            sid = str(session.get("id"))
-            raw = str(session.get("raw", ""))
-            for phrase in GENERIC_PHRASES:
-                if phrase in raw:
-                    errors.append(f"{level}: {sid} contains generic phrase: {phrase}")
-            if not has_concrete_reference(str(session.get("Document utilisé", ""))):
-                errors.append(f"{level}: {sid} document used is not concrete")
-            if not has_concrete_reference(str(session.get("Livrable", ""))):
-                errors.append(f"{level}: {sid} deliverable is not concrete")
-            objective = str(session.get("Objectif", ""))
-            if len(objective.split()) < 8 or not has_concrete_reference(objective + " " + str(session.get("Déroulé", ""))):
-                errors.append(f"{level}: {sid} objective lacks precise task")
-            if not has_concrete_reference(raw):
-                errors.append(f"{level}: {sid} names no exercise, TP, file or concrete activity")
+            errors.extend(session_specificity_errors(level, session))
     return fail_or_pass("check_session_specificity", errors)
 
 

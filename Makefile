@@ -10,6 +10,7 @@ audit-local:
 	python scripts/check_no_private_data.py
 	python scripts/check_no_placeholders_docs.py
 	python scripts/check_no_placeholders_code.py
+	python scripts/cleanup_python_artifacts.py
 	python scripts/check_no_build_artifacts_in_index.py
 	python scripts/check_uploaded_archive_policy.py
 	-python scripts/check_required_sections.py
@@ -28,6 +29,7 @@ audit-local:
 	python scripts/check_session_specificity.py
 	python scripts/check_session_referenced_files_exist.py
 	python scripts/check_document_naming_conventions.py
+	python scripts/check_first_batch_document_quality.py
 	python scripts/check_evaluation_distribution.py
 	python scripts/check_teacher_docs_depth.py
 	python scripts/check_validated_documents_quality_gates.py
@@ -53,6 +55,7 @@ audit-local:
 	python scripts/check_quality_gates.py
 
 audit-source:
+	python scripts/cleanup_python_artifacts.py
 	python scripts/check_archive_portability.py
 	python scripts/check_session_duration_consistency.py
 	python scripts/check_session_monthly_total.py
@@ -67,12 +70,14 @@ audit-source:
 	python scripts/check_no_private_data.py
 	python scripts/check_no_placeholders_docs.py
 	python scripts/check_no_placeholders_code.py
+	python scripts/check_no_build_artifacts_in_index.py
 	-python scripts/check_required_sections.py
 	-python scripts/check_document_depth.py
 	python scripts/check_qcm_schema.py
 	-python scripts/check_document_style.py
 
 package-audit:
+	python scripts/cleanup_python_artifacts.py
 	python scripts/build_source_archive.py
 	python scripts/check_archive_portability.py
 
@@ -80,6 +85,7 @@ render-s01:
 	python scripts/render_sequence.py premiere/sequences/s01_representation_donnees
 
 release-audit:
+	python scripts/cleanup_python_artifacts.py
 	python scripts/check_git_clean.py
 	python scripts/check_drive_mapping_release.py
 	python scripts/check_no_needs_review_for_release.py

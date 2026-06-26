@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import sys
-import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,17 +31,8 @@ FORBIDDEN_SUFFIXES = {
 FORBIDDEN_NAMES = {'.DS_Store'}
 
 
-def cleanup_python_bytecode() -> None:
-    for path in ROOT.rglob('__pycache__'):
-        if path.is_dir():
-            shutil.rmtree(path)
-    for path in ROOT.rglob('*.py[co]'):
-        if '.git' not in path.relative_to(ROOT).parts and path.is_file():
-            path.unlink()
-
-
-def is_forbidden(path: Path) -> bool:
-    rel = path.relative_to(ROOT)
+def is_forbidden(path: Path, root: Path = ROOT) -> bool:
+    rel = path.relative_to(root)
     if rel in ALLOWED_DIST:
         return False
     if rel == Path('dist'):
@@ -60,15 +50,25 @@ def is_forbidden(path: Path) -> bool:
     return False
 
 
+def find_artifacts(root: Path = ROOT, require_archives: bool = True) -> list[Path]:
+    artifacts: list[Path] = []
+    for path in root.rglob('*'):
+        if path == root / '.git':
+            continue
+        if '.git' in path.relative_to(root).parts:
+            continue
+        if path.exists() and is_forbidden(path, root):
+            artifacts.append(path)
+    if require_archives:
+        artifacts.extend(root / item for item in ALLOWED_DIST if not (root / item).exists())
+    return artifacts
+
+
 def main() -> int:
-    cleanup_python_bytecode()
     errors: list[str] = []
-    for path in ROOT.rglob('*'):
-        if path == ROOT / '.git':
-            continue
-        if '.git' in path.relative_to(ROOT).parts:
-            continue
-        if path.exists() and is_forbidden(path):
+    artifacts = find_artifacts(ROOT, require_archives=True)
+    for path in artifacts:
+        if path.exists():
             errors.append(f"{path.relative_to(ROOT)}: artefact interdit")
     missing = [str(item) for item in ALLOWED_DIST if not (ROOT / item).exists()]
     if missing:

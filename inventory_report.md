@@ -1,32 +1,33 @@
 # Inventaire ressources NSI
 
-- Total ressources : 180
+- Total ressources : 241
 - Ressources pédagogiques : 53
-- Ressources techniques : 127
+- Ressources techniques : 188
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - drive: 0
-- generated: 180
+- generated: 241
 
 ## Répartition par niveau
-- interne: 121
-- premiere: 30
-- terminale: 29
+- interne: 128
+- premiere: 57
+- terminale: 56
 
 ## Répartition par type
 - banque: 14
-- document: 51
-- script: 70
+- document: 106
+- script: 72
 - sequence: 45
+- test: 4
 
 ## Répartition par statut
-- needs_review: 180
+- needs_review: 241
 
 ## Répartition audience
-- corrige: 9
-- eleve: 18
-- mixte: 150
+- corrige: 15
+- eleve: 36
+- mixte: 187
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -51,6 +52,60 @@
   - 03_progressions/progression_terminale.md
   - 03_progressions/seances_premiere.md
   - 03_progressions/seances_terminale.md
+  - 03_progressions/supports/premiere/P00/P00_bareme_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_corrige_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_cours_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_evaluation_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_remediation_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_td_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_tp_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_trace_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_version_amenagee_diagnostic_python.md
+  - 03_progressions/supports/premiere/P01/P01_bareme_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_corrige_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_cours_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_evaluation_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_remediation_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_td_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_tp_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_trace_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_version_amenagee_conversions_bases.md
+  - 03_progressions/supports/premiere/P02/P02_bareme_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_corrige_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_evaluation_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_remediation_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_td_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_tp_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_trace_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_version_amenagee_complement_booleens.md
+  - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_evaluation_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T01/T01_bareme_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_corrige_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_cours_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_evaluation_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_remediation_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_td_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_tp_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_trace_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_version_amenagee_interfaces_structures.md
+  - 03_progressions/supports/terminale/T02/T02_bareme_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_corrige_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_cours_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_evaluation_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_remediation_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_td_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_tp_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_trace_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_version_amenagee_classes_objets.md
   - INDEX.md
   - METHODE_PRODUCTION_REELLE.md
   - README.md
@@ -69,6 +124,7 @@
   - learning_objectives_assessed_report.md
   - missing_capabilities.md
   - missing_documents_register.md
+  - missing_documents_register_v2.md
   - pedagogical_blockers_report.md
   - premiere/banques/evaluations/index.md
   - premiere/banques/exercices/index.md
@@ -131,6 +187,7 @@
   - scripts/check_drive_quarantine_privacy.py
   - scripts/check_evaluation_bareme_alignment.py
   - scripts/check_evaluation_distribution.py
+  - scripts/check_first_batch_document_quality.py
   - scripts/check_git_clean.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_links.py
@@ -175,6 +232,7 @@
   - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_documents_quality_gates.py
   - scripts/check_validated_statuses.py
+  - scripts/cleanup_python_artifacts.py
   - scripts/generate_index.py
   - scripts/generate_qa_report.py
   - scripts/ingest_drive_export.py
@@ -211,6 +269,10 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
+  - tests/test_build_artifacts.py
+  - tests/test_first_batch_document_quality.py
+  - tests/test_session_referenced_files_exist.py
+  - tests/test_session_specificity.py
   - tp_test_alignment_report.md
 - Ressources pédagogiques :
   - premiere/banques/evaluations/index.md
@@ -286,6 +348,60 @@
   - 03_progressions/progression_terminale.md
   - 03_progressions/seances_premiere.md
   - 03_progressions/seances_terminale.md
+  - 03_progressions/supports/premiere/P00/P00_bareme_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_corrige_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_cours_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_evaluation_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_remediation_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_td_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_tp_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_trace_diagnostic_python.md
+  - 03_progressions/supports/premiere/P00/P00_version_amenagee_diagnostic_python.md
+  - 03_progressions/supports/premiere/P01/P01_bareme_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_corrige_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_cours_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_evaluation_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_remediation_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_td_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_tp_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_trace_conversions_bases.md
+  - 03_progressions/supports/premiere/P01/P01_version_amenagee_conversions_bases.md
+  - 03_progressions/supports/premiere/P02/P02_bareme_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_corrige_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_evaluation_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_remediation_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_td_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_tp_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_trace_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_version_amenagee_complement_booleens.md
+  - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_evaluation_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md
+  - 03_progressions/supports/terminale/T01/T01_bareme_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_corrige_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_cours_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_evaluation_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_remediation_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_td_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_tp_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_trace_interfaces_structures.md
+  - 03_progressions/supports/terminale/T01/T01_version_amenagee_interfaces_structures.md
+  - 03_progressions/supports/terminale/T02/T02_bareme_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_corrige_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_cours_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_evaluation_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_remediation_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_td_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_tp_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_trace_classes_objets.md
+  - 03_progressions/supports/terminale/T02/T02_version_amenagee_classes_objets.md
   - INDEX.md
   - METHODE_PRODUCTION_REELLE.md
   - README.md
@@ -304,6 +420,7 @@
   - learning_objectives_assessed_report.md
   - missing_capabilities.md
   - missing_documents_register.md
+  - missing_documents_register_v2.md
   - pedagogical_blockers_report.md
   - premiere/sequences/s01_representation_donnees/python/representation_tools.py
   - premiere/sequences/s01_representation_donnees/sequence.yaml
@@ -339,6 +456,7 @@
   - scripts/check_drive_quarantine_privacy.py
   - scripts/check_evaluation_bareme_alignment.py
   - scripts/check_evaluation_distribution.py
+  - scripts/check_first_batch_document_quality.py
   - scripts/check_git_clean.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_links.py
@@ -383,6 +501,7 @@
   - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_documents_quality_gates.py
   - scripts/check_validated_statuses.py
+  - scripts/cleanup_python_artifacts.py
   - scripts/generate_index.py
   - scripts/generate_qa_report.py
   - scripts/ingest_drive_export.py
@@ -393,12 +512,22 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/python/structures_tools.py
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/sequence.yaml
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tests/test_structures_tools.py
+  - tests/test_build_artifacts.py
+  - tests/test_first_batch_document_quality.py
+  - tests/test_session_referenced_files_exist.py
+  - tests/test_session_specificity.py
   - tp_test_alignment_report.md
 - Ressources copiées dans banques :
 
 ## Séquences détectées
+- P00: 9
+- P01: 9
+- P02: 9
 - S01 representation des donnees: 1
 - S01 structures de donnees interfaces implementations: 1
+- T00: 9
+- T01: 9
+- T02: 9
 - bank_index: 14
 - s01_representation_donnees: 22
 - s01_structures_donnees_interfaces_implementations: 21
@@ -428,6 +557,54 @@
 - 03_progressions/progression_terminale.md
 - 03_progressions/seances_premiere.md
 - 03_progressions/seances_terminale.md
+- 03_progressions/supports/premiere/P00/P00_bareme_diagnostic_python.md
+- 03_progressions/supports/premiere/P00/P00_cours_diagnostic_python.md
+- 03_progressions/supports/premiere/P00/P00_evaluation_diagnostic_python.md
+- 03_progressions/supports/premiere/P00/P00_remediation_diagnostic_python.md
+- 03_progressions/supports/premiere/P00/P00_td_diagnostic_python.md
+- 03_progressions/supports/premiere/P00/P00_tp_diagnostic_python.md
+- 03_progressions/supports/premiere/P00/P00_trace_diagnostic_python.md
+- 03_progressions/supports/premiere/P00/P00_version_amenagee_diagnostic_python.md
+- 03_progressions/supports/premiere/P01/P01_bareme_conversions_bases.md
+- 03_progressions/supports/premiere/P01/P01_cours_conversions_bases.md
+- 03_progressions/supports/premiere/P01/P01_evaluation_conversions_bases.md
+- 03_progressions/supports/premiere/P01/P01_remediation_conversions_bases.md
+- 03_progressions/supports/premiere/P01/P01_td_conversions_bases.md
+- 03_progressions/supports/premiere/P01/P01_tp_conversions_bases.md
+- 03_progressions/supports/premiere/P01/P01_trace_conversions_bases.md
+- 03_progressions/supports/premiere/P01/P01_version_amenagee_conversions_bases.md
+- 03_progressions/supports/premiere/P02/P02_bareme_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_evaluation_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_remediation_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_td_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_tp_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_trace_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_version_amenagee_complement_booleens.md
+- 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md
+- 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md
+- 03_progressions/supports/terminale/T00/T00_evaluation_diagnostic_tests.md
+- 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md
+- 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md
+- 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md
+- 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md
+- 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md
+- 03_progressions/supports/terminale/T01/T01_bareme_interfaces_structures.md
+- 03_progressions/supports/terminale/T01/T01_cours_interfaces_structures.md
+- 03_progressions/supports/terminale/T01/T01_evaluation_interfaces_structures.md
+- 03_progressions/supports/terminale/T01/T01_remediation_interfaces_structures.md
+- 03_progressions/supports/terminale/T01/T01_td_interfaces_structures.md
+- 03_progressions/supports/terminale/T01/T01_tp_interfaces_structures.md
+- 03_progressions/supports/terminale/T01/T01_trace_interfaces_structures.md
+- 03_progressions/supports/terminale/T01/T01_version_amenagee_interfaces_structures.md
+- 03_progressions/supports/terminale/T02/T02_bareme_classes_objets.md
+- 03_progressions/supports/terminale/T02/T02_cours_classes_objets.md
+- 03_progressions/supports/terminale/T02/T02_evaluation_classes_objets.md
+- 03_progressions/supports/terminale/T02/T02_remediation_classes_objets.md
+- 03_progressions/supports/terminale/T02/T02_td_classes_objets.md
+- 03_progressions/supports/terminale/T02/T02_tp_classes_objets.md
+- 03_progressions/supports/terminale/T02/T02_trace_classes_objets.md
+- 03_progressions/supports/terminale/T02/T02_version_amenagee_classes_objets.md
 - INDEX.md
 - METHODE_PRODUCTION_REELLE.md
 - README.md
@@ -446,6 +623,7 @@
 - learning_objectives_assessed_report.md
 - missing_capabilities.md
 - missing_documents_register.md
+- missing_documents_register_v2.md
 - pedagogical_blockers_report.md
 - premiere/banques/evaluations/index.md
 - premiere/banques/exercices/index.md
@@ -504,6 +682,7 @@
 - scripts/check_drive_quarantine_privacy.py
 - scripts/check_evaluation_bareme_alignment.py
 - scripts/check_evaluation_distribution.py
+- scripts/check_first_batch_document_quality.py
 - scripts/check_git_clean.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_links.py
@@ -547,6 +726,7 @@
 - scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_documents_quality_gates.py
 - scripts/check_validated_statuses.py
+- scripts/cleanup_python_artifacts.py
 - scripts/generate_index.py
 - scripts/generate_qa_report.py
 - scripts/ingest_drive_export.py
@@ -578,6 +758,10 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
+- tests/test_build_artifacts.py
+- tests/test_first_batch_document_quality.py
+- tests/test_session_referenced_files_exist.py
+- tests/test_session_specificity.py
 - tp_test_alignment_report.md
 
 ## Ressources haute qualité
@@ -603,6 +787,60 @@
 - 03_progressions/progression_terminale.md
 - 03_progressions/seances_premiere.md
 - 03_progressions/seances_terminale.md
+- 03_progressions/supports/premiere/P00/P00_bareme_diagnostic_python.md
+- 03_progressions/supports/premiere/P00/P00_corrige_diagnostic_python.md
+- 03_progressions/supports/premiere/P00/P00_cours_diagnostic_python.md
+- 03_progressions/supports/premiere/P00/P00_evaluation_diagnostic_python.md
+- 03_progressions/supports/premiere/P00/P00_remediation_diagnostic_python.md
+- 03_progressions/supports/premiere/P00/P00_td_diagnostic_python.md
+- 03_progressions/supports/premiere/P00/P00_tp_diagnostic_python.md
+- 03_progressions/supports/premiere/P00/P00_trace_diagnostic_python.md
+- 03_progressions/supports/premiere/P00/P00_version_amenagee_diagnostic_python.md
+- 03_progressions/supports/premiere/P01/P01_bareme_conversions_bases.md
+- 03_progressions/supports/premiere/P01/P01_corrige_conversions_bases.md
+- 03_progressions/supports/premiere/P01/P01_cours_conversions_bases.md
+- 03_progressions/supports/premiere/P01/P01_evaluation_conversions_bases.md
+- 03_progressions/supports/premiere/P01/P01_remediation_conversions_bases.md
+- 03_progressions/supports/premiere/P01/P01_td_conversions_bases.md
+- 03_progressions/supports/premiere/P01/P01_tp_conversions_bases.md
+- 03_progressions/supports/premiere/P01/P01_trace_conversions_bases.md
+- 03_progressions/supports/premiere/P01/P01_version_amenagee_conversions_bases.md
+- 03_progressions/supports/premiere/P02/P02_bareme_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_corrige_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_evaluation_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_remediation_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_td_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_tp_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_trace_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_version_amenagee_complement_booleens.md
+- 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md
+- 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md
+- 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md
+- 03_progressions/supports/terminale/T00/T00_evaluation_diagnostic_tests.md
+- 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md
+- 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md
+- 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md
+- 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md
+- 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md
+- 03_progressions/supports/terminale/T01/T01_bareme_interfaces_structures.md
+- 03_progressions/supports/terminale/T01/T01_corrige_interfaces_structures.md
+- 03_progressions/supports/terminale/T01/T01_cours_interfaces_structures.md
+- 03_progressions/supports/terminale/T01/T01_evaluation_interfaces_structures.md
+- 03_progressions/supports/terminale/T01/T01_remediation_interfaces_structures.md
+- 03_progressions/supports/terminale/T01/T01_td_interfaces_structures.md
+- 03_progressions/supports/terminale/T01/T01_tp_interfaces_structures.md
+- 03_progressions/supports/terminale/T01/T01_trace_interfaces_structures.md
+- 03_progressions/supports/terminale/T01/T01_version_amenagee_interfaces_structures.md
+- 03_progressions/supports/terminale/T02/T02_bareme_classes_objets.md
+- 03_progressions/supports/terminale/T02/T02_corrige_classes_objets.md
+- 03_progressions/supports/terminale/T02/T02_cours_classes_objets.md
+- 03_progressions/supports/terminale/T02/T02_evaluation_classes_objets.md
+- 03_progressions/supports/terminale/T02/T02_remediation_classes_objets.md
+- 03_progressions/supports/terminale/T02/T02_td_classes_objets.md
+- 03_progressions/supports/terminale/T02/T02_tp_classes_objets.md
+- 03_progressions/supports/terminale/T02/T02_trace_classes_objets.md
+- 03_progressions/supports/terminale/T02/T02_version_amenagee_classes_objets.md
 - INDEX.md
 - METHODE_PRODUCTION_REELLE.md
 - README.md
@@ -621,6 +859,7 @@
 - learning_objectives_assessed_report.md
 - missing_capabilities.md
 - missing_documents_register.md
+- missing_documents_register_v2.md
 - pedagogical_blockers_report.md
 - premiere/banques/evaluations/index.md
 - premiere/banques/exercices/index.md
@@ -683,6 +922,7 @@
 - scripts/check_drive_quarantine_privacy.py
 - scripts/check_evaluation_bareme_alignment.py
 - scripts/check_evaluation_distribution.py
+- scripts/check_first_batch_document_quality.py
 - scripts/check_git_clean.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_links.py
@@ -727,6 +967,7 @@
 - scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_documents_quality_gates.py
 - scripts/check_validated_statuses.py
+- scripts/cleanup_python_artifacts.py
 - scripts/generate_index.py
 - scripts/generate_qa_report.py
 - scripts/ingest_drive_export.py
@@ -763,6 +1004,10 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
+- tests/test_build_artifacts.py
+- tests/test_first_batch_document_quality.py
+- tests/test_session_referenced_files_exist.py
+- tests/test_session_specificity.py
 - tp_test_alignment_report.md
 
 ## Doublons (même hash SHA256)

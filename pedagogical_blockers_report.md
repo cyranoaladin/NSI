@@ -5,7 +5,8 @@
 
 ## Bloquants explicitement suivis
 
-- **Documents de séance inexistants** : la majorité des fichiers cités dans les séances n'existent pas. `check_session_referenced_files_exist.py` interdit toute séance citant un fichier absent non inscrit dans `missing_documents_register.md`.
+- **Séances théoriques** : seules les premières tranches P00-P02 et T00-T02 disposent de supports réels. `check_session_referenced_files_exist.py` mesure désormais les séances prêtes, les séances théoriques et refuse les références génériques ou abandonnées.
+- **Registre v2** : `missing_documents_register_v2.md` remplace le registre volumineux comme source de suivi opérationnel. Un document cité doit exister ou apparaître explicitement comme blocage, sans blanchir une séance non prête.
 - **Noms de fichiers doublés** : des noms comme `P00_P00_cours.md` ou `T01_T01_cours.md` sont des erreurs de génération. `check_document_naming_conventions.py` interdit les préfixes doublés, les casses incohérentes et les extensions non autorisées.
 - **Séances encore génériques** : le retour a identifié une répétition massive de gabarits ; `check_session_specificity.py` interdit les formulations génériques et les déroulés trop répétés.
 - **Semaines incohérentes** : le retour a identifié des semaines impossibles ; `check_session_week_calendar_consistency.py` impose semaines scolaires 1 à 38, semaines civiles et cohérence avec les mois.
@@ -37,5 +38,5 @@ La couverture atomique contient encore des capacités `absent`; aucune capacité
 - Relecture scientifique des définitions et exemples.
 - Alignement exact entre chaque TD/TP/évaluation et son corrigé professeur.
 - Exports élève sans corrigé et sans contenu professeur.
-- Création ou abandon explicite de tous les documents listés dans `missing_documents_register.md`.
+- Création ou import contrôlé des supports prioritaires listés dans `missing_documents_register_v2.md`.
 - Rendre chaque séance pédagogiquement spécifique avec activité exacte, exercice exact, document exact, trace exacte, erreur fréquente ciblée, modalité de correction, différenciation concrète et livrable vérifiable.
