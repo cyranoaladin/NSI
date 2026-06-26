@@ -31,8 +31,7 @@ make release-audit
 python scripts/check_git_clean.py
 check_git_clean: KO
 - worktree non propre:
- M premiere/sequences/s01_representation_donnees/evaluation_corrigee.md
- M terminale/sequences/s01_structures_donnees_interfaces_implementations/evaluation_corrigee.md
+ M privacy_report.md
 make: *** [Makefile:55: release-audit] Error 1
 ```
 

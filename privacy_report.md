@@ -49,6 +49,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - calendar_2026_2027_tunisia.md: nom propre suspect -> Grand Oral
 - course_internal_coherence_report.md: nom propre suspect -> Course Internal Coherence Report
 - coverage.md: nom propre suspect -> Formulaire Web
+- delivery_policy.md: nom propre suspect -> Delivery Policy
+- delivery_policy.md: nom propre suspect -> Historique Git
 - differentiation_quality_report.md: nom propre suspect -> Differentiation Quality Report
 - drive_inventory.csv: nom propre suspect -> Corrigé Drive
 - drive_inventory.csv: nom propre suspect -> Dossier Git Drive
@@ -67,12 +69,12 @@ Les noms propres suspects sont listés pour revue humaine.
 - evaluation_bareme_alignment_report.md: nom propre suspect -> Evaluation Bareme Alignment Report
 - learning_objectives_assessed_report.md: nom propre suspect -> Learning Objectives Assessed Report
 - pedagogical_blockers_report.md: nom propre suspect -> Pedagogical Blockers Report
+- pedagogical_blockers_report.md: nom propre suspect -> Ressources Drive
 - premiere/sequences/s01_representation_donnees/sources.md: nom propre suspect -> Ressources Drive
 - program_capacity_evidence_depth_report.md: nom propre suspect -> Program Capacity Evidence Depth Report
 - programme_matrix_premiere.md: nom propre suspect -> Formulaire Web
 - progression_audit.md: nom propre suspect -> Calendrier Tunisie
 - progression_audit.md: nom propre suspect -> Ressources Drive
-- qa_report.md: nom propre suspect -> Ressources Drive
 - qa_report.md: nom propre suspect -> Ressources Drive
 - scientific_claims_review_report.md: nom propre suspect -> Scientific Claims Review Report
 - scripts/check_course_internal_coherence.py: nom propre suspect -> Course Internal Coherence Report
@@ -88,6 +90,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_td_corrige_alignment.py: nom propre suspect -> Corrige Alignment Report
 - scripts/check_teacher_docs_depth.py: nom propre suspect -> Ressources Drive
 - scripts/check_tp_test_alignment.py: nom propre suspect -> Test Alignment Report
+- scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
 - td_corrige_alignment_report.md: nom propre suspect -> Corrige Alignment Report
 - tp_test_alignment_report.md: nom propre suspect -> Test Alignment Report
 
@@ -153,15 +156,24 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/progression_terminale.md: nom propre suspect -> Grand Oral
 - 03_progressions/seances_premiere.md: telephone_tn possible -> 2026-2027
 - 03_progressions/seances_terminale.md: telephone_tn possible -> 2026-2027
-- 03_progressions/seances_terminale.md: nom propre suspect -> Reprise Python
-- 03_progressions/seances_terminale.md: nom propre suspect -> Reprise Python
-- 03_progressions/seances_terminale.md: nom propre suspect -> Reprise Python
-- 03_progressions/seances_terminale.md: nom propre suspect -> Reprise Python
-- 03_progressions/seances_terminale.md: nom propre suspect -> Boyer-Moore
-- 03_progressions/seances_terminale.md: nom propre suspect -> Boyer-Moore
-- 03_progressions/seances_terminale.md: nom propre suspect -> Boyer-Moore
-- 03_progressions/seances_terminale.md: nom propre suspect -> Boyer-Moore
-- 03_progressions/seances_terminale.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/seances_terminale.md: nom propre suspect -> Python Terminale
+- 03_progressions/seances_terminale.md: nom propre suspect -> Python Terminale
+- 03_progressions/seances_terminale.md: nom propre suspect -> Python Terminale
+- 03_progressions/seances_terminale.md: nom propre suspect -> Python Terminale
+- 03_progressions/seances_terminale.md: nom propre suspect -> Python Terminale
+- 03_progressions/seances_terminale.md: nom propre suspect -> Python Terminale
+- 03_progressions/seances_terminale.md: nom propre suspect -> Python Terminale
+- 03_progressions/seances_terminale.md: nom propre suspect -> Python Terminale
+- 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
+- 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
+- 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
+- 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
+- 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
+- 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
+- 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
+- 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
+- 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
+- 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
 - 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
 - 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
 - 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
@@ -217,7 +229,6 @@ Les noms propres suspects sont listés pour revue humaine.
 - project_plan_terminale.md: nom propre suspect -> Grand Oral
 - project_plan_terminale.md: nom propre suspect -> Grand Oral
 - project_plan_terminale.md: nom propre suspect -> Grand Oral
-- qa_report.md: nom propre suspect -> Tests Python
 - quality_checklist.md: nom propre suspect -> Scripts Python
 - scripts/check_no_private_data.py: adresse possible -> adresse personnelle
 - scripts/check_no_private_data.py: adresse possible -> domicile
