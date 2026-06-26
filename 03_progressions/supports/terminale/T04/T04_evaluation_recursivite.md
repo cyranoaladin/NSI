@@ -126,3 +126,17 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 - Résultat attendu : preuve de terminaison.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
 - Critère de validation : méthode visible, résultat correct et contrôle « appel avec même argument ».
+
+## Modalités de passation
+- Durée : 25 minutes.
+- Matériel autorisé : fiche récursivité, sans corrigé distribué ni navigation externe.
+- Capacités évaluées :
+- T-LANG-02A
+- T-LANG-02A
+
+## Fiche liée et aménagement
+- Fiche liée : fiche de cours opérationnelle de la séquence T04, statut `needs_review`.
+- Séance liée : `T04-S1`, avec question centrée sur cas de base et terminaison.
+- Version aménagée : données cas de base et terminaison surlignées et tableau réponse en trois zones.
+- Remédiation : écrire la trace de trois appels récursifs, puis verbaliser la méthode en binôme.
+

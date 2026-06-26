@@ -24,13 +24,14 @@ official_program:
     - "T-LANG-04B"
     - "T-LANG-05"
 ---
+
 # T14 - TD - modularité API paradigmes bugs
 
 ## Objectifs
-- O1 : appliquer les méthodes de la fiche à une donnée différente.
-- O2 : distinguer lecture d'information, production et justification.
-- O3 : traiter au moins un cas limite sans le masquer.
-- O4 : préparer une correction exploitable en séance.
+- Lire une donnée disciplinaire précise avant de répondre.
+- Produire une méthode vérifiable et un résultat contrôlable.
+- Traiter un cas limite sans le transformer en généralité.
+- Relier chaque correction à une erreur fréquente observable.
 
 ## Capacités officielles
 - T-LANG-03A
@@ -43,137 +44,139 @@ official_program:
 ## Fiche liée et séance liée
 - Fiche liée : `03_progressions/fiches_cours/terminale/T14/T14_fiche_cours_modularite_api_paradigmes_bugs.md`.
 - Séance liée : `T14-S1` dans la progression annuelle.
-- Statut : support créé en `needs_review`, non validé pédagogiquement et non publiable.
+- Statut : support `needs_review`, non validé et non publiable.
 
 ## Situation de travail
-un petit module météo expose charger_mesures, moyenne, alerte et une API documentée pour être réutilisée dans un projet.
-
-## Données de référence
-Module meteo.py : mesures horaires, seuil alerte 35, documentation de fonction, appel externe qui peut échouer.
+On transforme un script monolithique de notes en module testable.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée et vocabulaire.
-- Standard : exercices 3 à 6, production écrite avec contrôle.
-- Approfondissement : exercices 7 et 8, comparaison de démarches et généralisation.
+- Socle : exercices 1 et 2, lecture guidée de la donnée.
+- Standard : exercices 3 à 6, production écrite et justification.
+- Approfondissement : exercices 7 et 8, transfert ou comparaison.
 
 ## Exercices
-### Exercice 1 - Lire une signature d’api et ses préconditions
+### Exercice 1 - Identifier une API
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-LANG-03A.
-- Données : Module meteo.py : mesures horaires, seuil alerte 35, documentation de fonction, appel externe qui peut échouer.
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de lire une signature d’API et ses préconditions.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 2 - Analyser une documentation pour repérer entrée, sortie, exception
+- Données : Module notes.py expose moyenne(notes) et mediane(notes).
+- Consigne : Dire ce qui appartient à l’API.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 2 - Lire une trace d’erreur
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-LANG-03B.
-- Données : Module meteo.py : mesures horaires, seuil alerte 35, documentation de fonction, appel externe qui peut échouer.
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de analyser une documentation pour repérer entrée, sortie, exception.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 3 - Écrire un module simple séparant lecture et calcul
+- Données : TypeError: unsupported operand type(s) for +: int and str dans somme += note.
+- Consigne : Identifier la cause.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 3 - Écrire une fonction pure
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-LANG-03C.
-- Données : Module meteo.py : mesures horaires, seuil alerte 35, documentation de fonction, appel externe qui peut échouer.
-- Consigne : Produis une réponse opérationnelle pour écrire un module simple séparant lecture et calcul, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 4 - Écrire un test qui isole un bug de seuil
+- Données : notes=[10,14,16].
+- Consigne : Coder moyenne sans effet de bord.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 4 - Ajouter un test unitaire
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-LANG-04A.
-- Données : Module meteo.py : mesures horaires, seuil alerte 35, documentation de fonction, appel externe qui peut échouer.
-- Consigne : Produis une réponse opérationnelle pour écrire un test qui isole un bug de seuil, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 5 - Traiter le cas limite service api indisponible
+- Données : moyenne([10,20]) doit valoir 15.
+- Consigne : Écrire un assert.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 5 - Contrat liste vide
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-LANG-04B.
-- Données : Module meteo.py : mesures horaires, seuil alerte 35, documentation de fonction, appel externe qui peut échouer.
-- Consigne : Traite le cas limite demandé pour traiter le cas limite service API indisponible et précise la convention retenue.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 6 - Justifier le choix impératif, fonctionnel ou objet selon la tâche
+- Données : moyenne([]).
+- Consigne : Choisir une gestion.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 6 - Justifier la modularité
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-LANG-05.
-- Données : Module meteo.py : mesures horaires, seuil alerte 35, documentation de fonction, appel externe qui peut échouer.
-- Consigne : Justifie pourquoi la méthode utilisée pour justifier le choix impératif, fonctionnel ou objet selon la tâche est correcte dans ce contexte.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 7 - Repérer une dépendance globale qui rend le test fragile
+- Données : Script avec lecture fichier, calcul et affichage mélangés.
+- Consigne : Expliquer le découpage.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 7 - Comparer paradigmes
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-LANG-03A.
-- Données : Module meteo.py : mesures horaires, seuil alerte 35, documentation de fonction, appel externe qui peut échouer.
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de repérer une dépendance globale qui rend le test fragile.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 8 - Proposer une correction minimale documentée
+- Données : Calculer les carrés de [1,2,3].
+- Consigne : Donner version impérative et fonctionnelle.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 8 - Déboguer mutation non voulue
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-LANG-03B.
-- Données : Module meteo.py : mesures horaires, seuil alerte 35, documentation de fonction, appel externe qui peut échouer.
-- Consigne : Produis une réponse opérationnelle pour proposer une correction minimale documentée, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
+- Données : fonction ajoute_zero(l) fait l.append(0).
+- Consigne : Proposer correction.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-LANG-03A.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « lire une signature d’API et ses préconditions » en utilisant le vocabulaire modularité API paradigmes bugs.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Module notes.py expose moyenne(notes) et mediane(notes).
+- Résultat attendu : Les signatures moyenne(notes) et mediane(notes), leur contrat d’entrée/sortie et exceptions appartiennent à l’API ; les variables internes non.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-LANG-03B.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « analyser une documentation pour repérer entrée, sortie, exception » en utilisant le vocabulaire modularité API paradigmes bugs.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : TypeError: unsupported operand type(s) for +: int and str dans somme += note.
+- Résultat attendu : Une note est une chaîne comme "12" au lieu d’un entier/float. Il faut convertir ou valider l’entrée.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-LANG-03C.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « écrire un module simple séparant lecture et calcul » en utilisant le vocabulaire modularité API paradigmes bugs.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : notes=[10,14,16].
+- Résultat attendu : def moyenne(notes): return sum(notes)/len(notes). Pour [10,14,16], résultat 40/3 environ 13.33 ; la liste n’est pas modifiée.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-LANG-04A.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « écrire un test qui isole un bug de seuil » en utilisant le vocabulaire modularité API paradigmes bugs.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : moyenne([10,20]) doit valoir 15.
+- Résultat attendu : assert moyenne([10,20]) == 15. On ajoute aussi le cas vide selon contrat, par exemple pytest.raises(ValueError).
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-LANG-04B.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « traiter le cas limite service API indisponible » en utilisant le vocabulaire modularité API paradigmes bugs.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : moyenne([]).
+- Résultat attendu : Contrat retenu: lever ValueError("liste vide"). Cela évite division par zéro silencieuse.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-LANG-05.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « justifier le choix impératif, fonctionnel ou objet selon la tâche » en utilisant le vocabulaire modularité API paradigmes bugs.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Script avec lecture fichier, calcul et affichage mélangés.
+- Résultat attendu : Séparer lire_csv, moyenne, afficher_resultat permet de tester moyenne sans fichier et de changer l’affichage sans toucher le calcul.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-LANG-03A.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « repérer une dépendance globale qui rend le test fragile » en utilisant le vocabulaire modularité API paradigmes bugs.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Calculer les carrés de [1,2,3].
+- Résultat attendu : Impératif: boucle append. Fonctionnel: list(map(lambda x: x*x, valeurs)) ou compréhension [x*x for x in valeurs]. Résultat [1,4,9].
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-LANG-03B.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « proposer une correction minimale documentée » en utilisant le vocabulaire modularité API paradigmes bugs.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : fonction ajoute_zero(l) fait l.append(0).
+- Résultat attendu : Retourner une nouvelle liste: return l + [0]. Ainsi l’entrée originale [1,2] reste [1,2], sortie [1,2,0].
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
-- EF1 : recopier une définition sans l'appliquer à la donnée ; remédiation : entourer les valeurs utilisées avant d'écrire.
-- EF2 : produire un résultat sans contrôle ; remédiation : ajouter une ligne « vérification » à chaque réponse.
-- EF3 : confondre cas nominal et cas limite ; remédiation : refaire l'exercice 5 avec une donnée minimale.
-- EF4 : citer la capacité officielle sans méthode ; remédiation : associer chaque capacité à une action observable.
+- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
+- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
+- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
+- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
+
+## Remédiation ciblée
+- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
+- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
+- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
 
 ## Différenciation
-- Socle : fournir la donnée annotée et demander une phrase de conclusion.
-- Standard : demander la méthode complète et le contrôle écrit.
-- Approfondissement : demander une variante de donnée et une comparaison de deux démarches.
+- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
+- Standard : demander méthode complète, résultat et contrôle écrit.
+- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
 
 ## Lien avec la progression
 | Élément | Référence | Statut |
@@ -183,6 +186,6 @@ Module meteo.py : mesures horaires, seuil alerte 35, documentation de fonction, 
 | Évaluation | T14_evaluation_modularite_api_paradigmes_bugs.md | needs_review |
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans ce support.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans ce support.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

@@ -126,3 +126,17 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Résultat attendu : modification locale contrôlée.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
 - Critère de validation : méthode visible, résultat correct et contrôle « liste imbriquée ».
+
+## Modalités de passation
+- Durée : 25 minutes.
+- Matériel autorisé : fiche types construits, sans corrigé distribué ni navigation externe.
+- Capacités évaluées :
+- P-DATA-CONSTR-02A
+- P-DATA-CONSTR-02A
+
+## Fiche liée et aménagement
+- Fiche liée : fiche de cours opérationnelle de la séquence P04, statut `needs_review`.
+- Séance liée : `P04-S1`, avec question centrée sur tuples, listes et dictionnaires.
+- Version aménagée : données tuples, listes et dictionnaires surlignées et tableau réponse en trois zones.
+- Remédiation : corriger une mutation de liste sur un exemple à trois éléments, puis verbaliser la méthode en binôme.
+

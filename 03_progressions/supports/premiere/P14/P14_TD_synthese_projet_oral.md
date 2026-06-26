@@ -19,13 +19,14 @@ official_program:
   capacities:
     - "P-HIST-01"
 ---
-# P14 - TD - synthese projet oral
+
+# P14 - TD - synthèse projet oral
 
 ## Objectifs
-- O1 : appliquer les méthodes de la fiche à une donnée différente.
-- O2 : distinguer lecture d'information, production et justification.
-- O3 : traiter au moins un cas limite sans le masquer.
-- O4 : préparer une correction exploitable en séance.
+- Lire une donnée disciplinaire précise avant de répondre.
+- Produire une méthode vérifiable et un résultat contrôlable.
+- Traiter un cas limite sans le transformer en généralité.
+- Relier chaque correction à une erreur fréquente observable.
 
 ## Capacités officielles
 - P-HIST-01
@@ -33,137 +34,139 @@ official_program:
 ## Fiche liée et séance liée
 - Fiche liée : `03_progressions/fiches_cours/premiere/P14/P14_fiche_cours_synthese_projet_oral.md`.
 - Séance liée : `P14-S1` dans la progression annuelle.
-- Statut : support créé en `needs_review`, non validé pédagogiquement et non publiable.
+- Statut : support `needs_review`, non validé et non publiable.
 
 ## Situation de travail
-un groupe prépare une démonstration finale : présenter une question NSI, montrer un programme testé et expliquer une limite historique ou technique.
-
-## Données de référence
-Dossier projet : problème choisi, cahier de tests, démonstration de 3 minutes, trace des choix, diapositive sur un repère historique informatique.
+Un groupe prépare une démonstration de mini-projet NSI avec code, tests et justification orale.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée et vocabulaire.
-- Standard : exercices 3 à 6, production écrite avec contrôle.
-- Approfondissement : exercices 7 et 8, comparaison de démarches et généralisation.
+- Socle : exercices 1 et 2, lecture guidée de la donnée.
+- Standard : exercices 3 à 6, production écrite et justification.
+- Approfondissement : exercices 7 et 8, transfert ou comparaison.
 
 ## Exercices
-### Exercice 1 - Analyser un plan de dossier et repérer les preuves manquantes
+### Exercice 1 - Lire un cahier des charges
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : P-HIST-01.
-- Données : Dossier projet : problème choisi, cahier de tests, démonstration de 3 minutes, trace des choix, diapositive sur un repère historique informatique.
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de analyser un plan de dossier et repérer les preuves manquantes.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 2 - Relier une notion nsi du projet à un repère historique informatique
+- Données : Projet: carnet de scores, données stockées en CSV, recherche par joueur, tri par score.
+- Consigne : Identifier deux fonctionnalités et deux contraintes.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 2 - Analyser un extrait de test
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : P-HIST-01.
-- Données : Dossier projet : problème choisi, cahier de tests, démonstration de 3 minutes, trace des choix, diapositive sur un repère historique informatique.
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de relier une notion NSI du projet à un repère historique informatique.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 3 - Rédiger une fiche de démonstration avec entrée, sortie et test
+- Données : assert meilleur_score([12,9,15]) == 15 ; assert meilleur_score([]) is None.
+- Consigne : Dire les cas couverts.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 3 - Rédiger une spécification de fonction
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : P-HIST-01.
-- Données : Dossier projet : problème choisi, cahier de tests, démonstration de 3 minutes, trace des choix, diapositive sur un repère historique informatique.
-- Consigne : Produis une réponse opérationnelle pour rédiger une fiche de démonstration avec entrée, sortie et test, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 4 - Écrire une question orale suivie d’une réponse argumentée
+- Données : fonction moyenne_scores(scores).
+- Consigne : Écrire entrée, sortie, cas limite.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 4 - Construire un plan d’oral
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : P-HIST-01.
-- Données : Dossier projet : problème choisi, cahier de tests, démonstration de 3 minutes, trace des choix, diapositive sur un repère historique informatique.
-- Consigne : Produis une réponse opérationnelle pour écrire une question orale suivie d’une réponse argumentée, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 5 - Traiter le cas limite d’une démonstration qui échoue le jour j
+- Données : Sujet: expliquer un tri utilisé dans le projet.
+- Consigne : Donner un plan en trois parties.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 5 - Identifier un risque de démonstration
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : P-HIST-01.
-- Données : Dossier projet : problème choisi, cahier de tests, démonstration de 3 minutes, trace des choix, diapositive sur un repère historique informatique.
-- Consigne : Traite le cas limite demandé pour traiter le cas limite d’une démonstration qui échoue le jour J et précise la convention retenue.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 6 - Justifier le choix d’un exemple plutôt qu’une affirmation générale
+- Données : Le projet lit scores.csv, mais le fichier peut être absent.
+- Consigne : Prévoir le comportement.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 6 - Justifier une décision technique
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : P-HIST-01.
-- Données : Dossier projet : problème choisi, cahier de tests, démonstration de 3 minutes, trace des choix, diapositive sur un repère historique informatique.
-- Consigne : Justifie pourquoi la méthode utilisée pour justifier le choix d’un exemple plutôt qu’une affirmation générale est correcte dans ce contexte.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 7 - Construire une grille de relecture du dossier final
+- Données : Choix: dictionnaire joueur -> liste de scores.
+- Consigne : Justifier.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 7 - Évaluer une grille de projet
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : P-HIST-01.
-- Données : Dossier projet : problème choisi, cahier de tests, démonstration de 3 minutes, trace des choix, diapositive sur un repère historique informatique.
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de construire une grille de relecture du dossier final.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 8 - Préparer une synthèse de 90 secondes sans lire un texte complet
+- Données : Critères: exactitude, tests, lisibilité, oral. Scores 3/4, 2/4, 3/4, 1/4.
+- Consigne : Identifier priorité de remédiation.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 8 - Écrire une conclusion d’oral
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : P-HIST-01.
-- Données : Dossier projet : problème choisi, cahier de tests, démonstration de 3 minutes, trace des choix, diapositive sur un repère historique informatique.
-- Consigne : Produis une réponse opérationnelle pour préparer une synthèse de 90 secondes sans lire un texte complet, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
+- Données : Projet carnet de scores.
+- Consigne : Rédiger une conclusion qui cite résultat et limite.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : P-HIST-01.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre P14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « analyser un plan de dossier et repérer les preuves manquantes » en utilisant le vocabulaire synthese projet oral.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Projet: carnet de scores, données stockées en CSV, recherche par joueur, tri par score.
+- Résultat attendu : Fonctionnalités: ajouter un score, rechercher un joueur, trier par score. Contraintes: format CSV cohérent et tests sur recherche/tri.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : P-HIST-01.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre P14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « relier une notion NSI du projet à un repère historique informatique » en utilisant le vocabulaire synthese projet oral.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : assert meilleur_score([12,9,15]) == 15 ; assert meilleur_score([]) is None.
+- Résultat attendu : Premier test couvre cas nominal avec maximum 15 ; second test couvre cas limite liste vide, contrat None.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : P-HIST-01.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre P14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « rédiger une fiche de démonstration avec entrée, sortie et test » en utilisant le vocabulaire synthese projet oral.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : fonction moyenne_scores(scores).
+- Résultat attendu : Entrée: liste de nombres. Sortie: moyenne flottante. Cas limite: liste vide -> None ou ValueError ; choix à fixer dans la spécification.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : P-HIST-01.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre P14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « écrire une question orale suivie d’une réponse argumentée » en utilisant le vocabulaire synthese projet oral.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Sujet: expliquer un tri utilisé dans le projet.
+- Résultat attendu : Plan: 1 contexte du besoin ; 2 principe du tri avec exemple [3,1,2] -> [1,2,3] ; 3 limites et complexité O(n^2) ou O(n log n) selon algorithme.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : P-HIST-01.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre P14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « traiter le cas limite d’une démonstration qui échoue le jour J » en utilisant le vocabulaire synthese projet oral.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Le projet lit scores.csv, mais le fichier peut être absent.
+- Résultat attendu : La démonstration doit tester l’existence du fichier, afficher un message clair ou créer un fichier vide. Elle ne doit pas échouer avec une trace non expliquée.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : P-HIST-01.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre P14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « justifier le choix d’un exemple plutôt qu’une affirmation générale » en utilisant le vocabulaire synthese projet oral.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Choix: dictionnaire joueur -> liste de scores.
+- Résultat attendu : Le dictionnaire donne accès direct par nom de joueur ; la liste conserve plusieurs scores. Exemple: scores["A"]=[12,15], meilleur=15.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : P-HIST-01.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre P14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « construire une grille de relecture du dossier final » en utilisant le vocabulaire synthese projet oral.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Critères: exactitude, tests, lisibilité, oral. Scores 3/4, 2/4, 3/4, 1/4.
+- Résultat attendu : Oral est prioritaire avec 1/4, puis tests 2/4. L’action suivante: préparer une démonstration guidée et ajouter deux tests limites.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : P-HIST-01.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre P14 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « préparer une synthèse de 90 secondes sans lire un texte complet » en utilisant le vocabulaire synthese projet oral.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Projet carnet de scores.
+- Résultat attendu : Conclusion attendue: le programme ajoute, recherche et trie les scores ; les tests couvrent liste vide et doublons ; limite restante: pas d’interface graphique ni gestion multi-utilisateur.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
-- EF1 : recopier une définition sans l'appliquer à la donnée ; remédiation : entourer les valeurs utilisées avant d'écrire.
-- EF2 : produire un résultat sans contrôle ; remédiation : ajouter une ligne « vérification » à chaque réponse.
-- EF3 : confondre cas nominal et cas limite ; remédiation : refaire l'exercice 5 avec une donnée minimale.
-- EF4 : citer la capacité officielle sans méthode ; remédiation : associer chaque capacité à une action observable.
+- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
+- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
+- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
+- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
+
+## Remédiation ciblée
+- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
+- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
+- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
 
 ## Différenciation
-- Socle : fournir la donnée annotée et demander une phrase de conclusion.
-- Standard : demander la méthode complète et le contrôle écrit.
-- Approfondissement : demander une variante de donnée et une comparaison de deux démarches.
+- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
+- Standard : demander méthode complète, résultat et contrôle écrit.
+- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
 
 ## Lien avec la progression
 | Élément | Référence | Statut |
@@ -173,6 +176,6 @@ Dossier projet : problème choisi, cahier de tests, démonstration de 3 minutes,
 | Évaluation | P14_evaluation_synthese_projet_oral.md | needs_review |
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans ce support.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans ce support.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

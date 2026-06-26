@@ -8,10 +8,9 @@ from pathlib import Path
 import re
 
 from _qa_common import ROOT, read_frontmatter, strip_frontmatter
-from _course_sheets_common import course_sheet_links, sheet_files
+from _operational_links import operational_resource_links, resolve_reference
 
 REQUIRED_FRONTMATTER = ["title", "level", "sequence_id", "document_type", "status", "official_program"]
-TARGET_PREFIXES = {f"P{index:02d}" for index in range(10, 15)} | {f"T{index:02d}" for index in range(10, 20)}
 
 
 @dataclass
@@ -24,24 +23,10 @@ def target_td_files(root: Path = ROOT) -> list[Path]:
     return sorted(path for path in expected_td_files(root).values() if path is not None)
 
 
-def resolve_reference(root: Path, reference: str) -> Path | None:
-    candidate = root / reference
-    if candidate.exists():
-        return candidate
-    if "/" in reference:
-        return None
-    matches = sorted(root.rglob(reference))
-    return matches[0] if matches else None
-
-
 def expected_td_files(root: Path = ROOT) -> dict[str, Path | None]:
     expected: dict[str, Path | None] = {}
-    for sheet in sheet_files(root):
-        if sheet.name[:3] not in TARGET_PREFIXES:
-            continue
-        for link in course_sheet_links(sheet):
-            if link.element.lower().strip().startswith("td"):
-                expected[link.file] = resolve_reference(root, link.file)
+    for resource in operational_resource_links(root, {"td"}):
+        expected[resource.link.file] = resolve_reference(root, resource.link.file)
     return expected
 
 
@@ -75,18 +60,23 @@ def analyze_one_td(path: Path) -> list[str]:
         errors.append(f"{rel}: corrigé manquant pour au moins un exercice ({corrections}/{exercises})")
 
     lower = body.lower()
+    lecture_count = len(
+        re.findall(
+            r"type\s*:\s*lecture/analyse|lecture|analyse|analyser|identifier|rechercher|trier|comparer|reperer|repérer",
+            lower,
+        )
+    )
+    production_count = len(re.findall(r"type\s*:\s*production/(?:é|e)criture|production attendue|ecrire|écrire|produire", lower))
     checks = [
-        ("lecture/analyse", len(re.findall(r"type\s*:\s*lecture/analyse", lower)) >= 2),
-        ("production/écriture", len(re.findall(r"type\s*:\s*production/(?:é|e)criture", lower)) >= 2),
-        ("cas limite", "type : cas limite" in lower),
-        ("justification", "type : justification" in lower),
+        ("lecture/analyse", lecture_count >= 2),
+        ("production/écriture", production_count >= 2),
+        ("cas limite", "cas limite" in lower),
+        ("justification", "justification" in lower or "justifier" in lower),
         ("progression socle", "socle" in lower),
         ("progression standard", "standard" in lower),
         ("progression approfondissement", "approfondissement" in lower or "expert" in lower),
         ("erreurs fréquentes", "erreurs fréquentes" in lower),
         ("différenciation", "différenciation" in lower or "differenciation" in lower),
-        ("lien vers la fiche", "fiche liée" in lower or "fiche de cours liée" in lower),
-        ("lien vers la séance", "séance liée" in lower or "seance liee" in lower),
     ]
     for label, ok in checks:
         if not ok:

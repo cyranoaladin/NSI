@@ -126,3 +126,17 @@ Une application de gestion de comptes doit garantir qu’aucune opération ne cr
 - Résultat attendu : résumé lisible.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
 - Critère de validation : méthode visible, résultat correct et contrôle « nom vide ».
+
+## Modalités de passation
+- Durée : 25 minutes.
+- Matériel autorisé : fiche classes et objets, sans corrigé distribué ni navigation externe.
+- Capacités évaluées :
+- T-STRUCT-02A
+- T-STRUCT-02A
+
+## Fiche liée et aménagement
+- Fiche liée : fiche de cours opérationnelle de la séquence T02, statut `needs_review`.
+- Séance liée : `T02-S1`, avec question centrée sur attributs, méthodes et invariants.
+- Version aménagée : données attributs, méthodes et invariants surlignées et tableau réponse en trois zones.
+- Remédiation : instancier un objet minimal puis lire un attribut, puis verbaliser la méthode en binôme.
+

@@ -20,12 +20,13 @@ official_program:
     - "P-ALGO-01A"
     - "P-ALGO-01B"
 ---
+
 # P11 - Évaluation - parcours recherche extremum moyenne
 
 ## Durée et matériel autorisé
 - Durée : 25 minutes.
-- Matériel autorisé : fiche de cours personnelle, sans accès réseau ni correction.
-- Statut : évaluation créée en `needs_review`, non publiée et non validée.
+- Matériel autorisé : fiche personnelle, sans accès réseau ni corrigé.
+- Statut : évaluation `needs_review`, non validée et non publiable.
 
 ## Capacités évaluées
 - P-ALGO-01A
@@ -37,69 +38,73 @@ official_program:
 - TD lié : `P11_TD_parcours_recherche_extremum_moyenne.md`.
 
 ## Consignes
-Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée, la méthode et un contrôle rapide.
+Répondre directement sur copie. Chaque réponse doit montrer la donnée utilisée, la méthode et un contrôle rapide.
 
 ## Questions
-### Question 1 - Compter les occurrences de 21 par parcours complet
+### Question 1 - Tracer une recherche séquentielle
 - Capacité : P-ALGO-01A.
-- Données : Tableau T = [18, 21, 19, 21, 17, 22, 20], seuil = 20, tableau U = [-3, -7, -2, -5], tableau V = [].
-- Consigne : répondre à la tâche « compter les occurrences de 21 par parcours complet » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 2 - Rechercher le premier indice où une valeur dépasse le seuil 20
+- Données : liste = [12, 7, 19, 7, 3], valeur cherchée = 7.
+- Consigne : Donner les indices lus jusqu’à la première occurrence.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 2 - Calculer un maximum avec trace
 - Capacité : P-ALGO-01B.
-- Données : Tableau T = [18, 21, 19, 21, 17, 22, 20], seuil = 20, tableau U = [-3, -7, -2, -5], tableau V = [].
-- Consigne : répondre à la tâche « rechercher le premier indice où une valeur dépasse le seuil 20 » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 3 - Écrire une fonction maximum qui accepte des valeurs négatives
+- Données : mesures = [4, 11, 6, 11, 2].
+- Consigne : Donner la valeur de max après chaque élément.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 3 - Écrire un parcours de moyenne
 - Capacité : P-ALGO-01A.
-- Données : Tableau T = [18, 21, 19, 21, 17, 22, 20], seuil = 20, tableau U = [-3, -7, -2, -5], tableau V = [].
-- Consigne : répondre à la tâche « écrire une fonction maximum qui accepte des valeurs négatives » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 4 - Écrire une fonction moyenne qui refuse le tableau vide
+- Données : notes = [8, 12, 15, 5].
+- Consigne : Écrire un pseudo-code qui renvoie la moyenne.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 4 - Écrire une recherche avec booléen
 - Capacité : P-ALGO-01B.
-- Données : Tableau T = [18, 21, 19, 21, 17, 22, 20], seuil = 20, tableau U = [-3, -7, -2, -5], tableau V = [].
-- Consigne : répondre à la tâche « écrire une fonction moyenne qui refuse le tableau vide » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
+- Données : mots = ["NSI", "maths", "SI"], cible="physique".
+- Consigne : Produire un algorithme qui renvoie True ou False.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
 
 ## Barème
-- Question 1: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 2: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 3: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 4: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Total : 16 points convertibles sur 20 après relecture pédagogique.
+- Question 1: 1 point identification de la donnée, 1 point méthode, 1 point résultat exact, 1 point contrôle.
+- Question 2: 1 point vocabulaire précis, 1 point méthode, 1 point résultat, 1 point justification.
+- Question 3: 1 point modélisation, 1 point production correcte, 1 point test du résultat, 1 point lisibilité.
+- Question 4: 1 point cas traité, 1 point résultat, 1 point justification, 1 point erreur fréquente évitée.
+- Total : 16 points, conversion sur 20 après relecture pédagogique.
 
 ## Corrigé professeur
 ### Corrigé question 1
 - Capacité évaluée : P-ALGO-01A.
-- Réponse attendue : la solution explicite « compter les occurrences de 21 par parcours complet » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : liste = [12, 7, 19, 7, 3], valeur cherchée = 7.
+- Réponse attendue : On lit indice 0 -> 12, puis indice 1 -> 7. La première occurrence est à l’indice 1 ; on peut arrêter la recherche.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 2
 - Capacité évaluée : P-ALGO-01B.
-- Réponse attendue : la solution explicite « rechercher le premier indice où une valeur dépasse le seuil 20 » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : mesures = [4, 11, 6, 11, 2].
+- Réponse attendue : Trace max: départ 4 ; après 11 -> 11 ; après 6 -> 11 ; après 11 -> 11 ; après 2 -> 11. Maximum final 11.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 3
 - Capacité évaluée : P-ALGO-01A.
-- Réponse attendue : la solution explicite « écrire une fonction maximum qui accepte des valeurs négatives » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : notes = [8, 12, 15, 5].
+- Réponse attendue : Pseudo-code: somme=0 ; pour x dans notes: somme=somme+x ; moyenne=somme/len(notes). Ici somme=40, len=4, moyenne=10.0.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 4
 - Capacité évaluée : P-ALGO-01B.
-- Réponse attendue : la solution explicite « écrire une fonction moyenne qui refuse le tableau vide » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : mots = ["NSI", "maths", "SI"], cible="physique".
+- Réponse attendue : trouve=False ; pour mot dans mots: si mot==cible alors trouve=True. Aucune égalité trouvée ; résultat False.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 
 ## Critères de réussite
 - Les capacités officielles sont reliées à une action observable.
-- La réponse ne se limite pas à un mot-clé de la fiche.
+- Le résultat attendu peut être comparé à une valeur, une table, une trace ou un pseudo-code.
 - Le cas limite ou le contrôle demandé apparaît explicitement.
 - Le vocabulaire disciplinaire est utilisé dans le contexte de la donnée.
 
 ## Version aménagée et indications d’aménagement
-- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un espace « méthode / résultat / contrôle ».
-- Aménagement temps : ajouter 10 minutes si l'élève doit recopier la donnée.
-- Aide autorisée : liste des verbes d'action, sans résultat numérique ni requête complète.
+- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un tableau méthode / résultat / contrôle.
+- Aménagement temps : ajouter 10 minutes si l’élève doit recopier les données.
+- Aide autorisée : liste des verbes d’action, sans résultat numérique ni requête complète.
 
 ## Erreurs fréquentes et remédiation
 - EF1 : réponse sans donnée citée ; remédiation : refaire la question 1 avec les valeurs encadrées.
@@ -108,6 +113,6 @@ Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée
 - EF4 : oubli du cas limite ; remédiation : reprendre le TD associé, exercice 5.
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans cette évaluation.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans cette évaluation.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

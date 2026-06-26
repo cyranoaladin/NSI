@@ -126,3 +126,17 @@ Une expression arithmétique est représentée par un arbre dont les feuilles so
 - Résultat attendu : `20`.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
 - Critère de validation : méthode visible, résultat correct et contrôle « division par zéro si opérateur `/` ».
+
+## Modalités de passation
+- Durée : 25 minutes.
+- Matériel autorisé : fiche arbres binaires, sans corrigé distribué ni navigation externe.
+- Capacités évaluées :
+- T-STRUCT-04A
+- T-STRUCT-04A
+
+## Fiche liée et aménagement
+- Fiche liée : fiche de cours opérationnelle de la séquence T05, statut `needs_review`.
+- Séance liée : `T05-S1`, avec question centrée sur noeuds, feuilles et parcours.
+- Version aménagée : données noeuds, feuilles et parcours surlignées et tableau réponse en trois zones.
+- Remédiation : reprendre un parcours infixe sur un arbre à trois noeuds, puis verbaliser la méthode en binôme.
+

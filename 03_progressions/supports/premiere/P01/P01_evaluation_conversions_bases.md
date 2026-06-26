@@ -126,3 +126,17 @@ Un protocole réseau fournit des octets en hexadécimal tandis qu’un relevé d
 - Résultat attendu : `FF₁₆`.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
 - Critère de validation : méthode visible, résultat correct et contrôle « chiffre hexadécimal maximal F ».
+
+## Modalités de passation
+- Durée : 25 minutes.
+- Matériel autorisé : fiche conversions personnelle, sans corrigé distribué ni navigation externe.
+- Capacités évaluées :
+- P-DATA-BASE-01
+- P-DATA-BASE-01
+
+## Fiche liée et aménagement
+- Fiche liée : fiche de cours opérationnelle de la séquence P01, statut `needs_review`.
+- Séance liée : `P01-S1`, avec question centrée sur bases 2, 10 et 16.
+- Version aménagée : données bases 2, 10 et 16 surlignées et tableau réponse en trois zones.
+- Remédiation : refaire une conversion courte en écrivant chaque division, puis verbaliser la méthode en binôme.
+

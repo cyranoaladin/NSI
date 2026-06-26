@@ -30,6 +30,7 @@ audit-local:
 	python scripts/check_session_referenced_files_exist.py
 	python scripts/check_missing_register_actionability.py
 	python scripts/check_missing_register_semantic_consistency.py
+	python scripts/check_register_no_hidden_operational_debt.py
 	python scripts/check_document_naming_conventions.py
 	python scripts/check_first_batch_document_quality.py
 	python scripts/check_first_batch_alignment.py
@@ -40,6 +41,7 @@ audit-local:
 	python scripts/check_tp_pedagogical_assets_runtime.py
 	python scripts/check_sequence_contracts.py
 	python scripts/check_local_drive_traceability.py
+	python scripts/check_drive_integration_plan.py
 	python scripts/check_ready_supports_required_sections.py
 	python scripts/check_ready_supports_depth.py
 	python scripts/check_ready_session_operationality.py
@@ -52,8 +54,12 @@ audit-local:
 	python scripts/check_course_sheet_readiness.py
 	python scripts/check_course_sheet_readiness_strict.py
 	python scripts/check_linked_td_quality.py
+	python scripts/check_linked_td_substance.py
 	python scripts/check_linked_evaluation_quality.py
+	python scripts/check_linked_evaluation_substance.py
+	python scripts/check_no_operational_scope_hardcoding.py
 	python scripts/check_operational_supports_no_indicative_debt.py
+	python scripts/check_operational_readiness_quality_coupling.py
 	python scripts/check_evaluation_distribution.py
 	python scripts/check_teacher_docs_depth.py
 	python scripts/check_validated_documents_quality_gates.py
@@ -88,6 +94,7 @@ audit-source:
 	python scripts/check_session_referenced_files_exist.py
 	python scripts/check_missing_register_actionability.py
 	python scripts/check_missing_register_semantic_consistency.py
+	python scripts/check_register_no_hidden_operational_debt.py
 	python scripts/check_document_naming_conventions.py
 	python scripts/check_session_specificity.py
 	python scripts/check_session_week_calendar_consistency.py
@@ -117,6 +124,7 @@ audit-extracted-source:
 	python scripts/check_tp_pedagogical_assets_runtime.py
 	python scripts/check_sequence_contracts.py
 	python scripts/check_local_drive_traceability.py
+	python scripts/check_drive_integration_plan.py
 	python scripts/check_ready_supports_required_sections.py
 	python scripts/check_ready_supports_depth.py
 	python scripts/check_ready_session_operationality.py
@@ -129,8 +137,12 @@ audit-extracted-source:
 	python scripts/check_course_sheet_readiness.py
 	python scripts/check_course_sheet_readiness_strict.py
 	python scripts/check_linked_td_quality.py
+	python scripts/check_linked_td_substance.py
 	python scripts/check_linked_evaluation_quality.py
+	python scripts/check_linked_evaluation_substance.py
+	python scripts/check_no_operational_scope_hardcoding.py
 	python scripts/check_operational_supports_no_indicative_debt.py
+	python scripts/check_operational_readiness_quality_coupling.py
 	python scripts/check_no_private_data.py
 	python scripts/check_no_placeholders_docs.py
 	python scripts/check_no_build_artifacts_in_index.py

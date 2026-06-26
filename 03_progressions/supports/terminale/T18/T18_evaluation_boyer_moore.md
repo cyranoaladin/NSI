@@ -19,12 +19,13 @@ official_program:
   capacities:
     - "T-ALGO-05"
 ---
+
 # T18 - Évaluation - Boyer-Moore
 
 ## Durée et matériel autorisé
 - Durée : 25 minutes.
-- Matériel autorisé : fiche de cours personnelle, sans accès réseau ni correction.
-- Statut : évaluation créée en `needs_review`, non publiée et non validée.
+- Matériel autorisé : fiche personnelle, sans accès réseau ni corrigé.
+- Statut : évaluation `needs_review`, non validée et non publiable.
 
 ## Capacités évaluées
 - T-ALGO-05
@@ -35,69 +36,73 @@ official_program:
 - TD lié : `T18_TD_boyer_moore.md`.
 
 ## Consignes
-Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée, la méthode et un contrôle rapide.
+Répondre directement sur copie. Chaque réponse doit montrer la donnée utilisée, la méthode et un contrôle rapide.
 
 ## Questions
-### Question 1 - Lire l’alignement texte-motif au premier essai
+### Question 1 - Construire table mauvais caractère
 - Capacité : T-ALGO-05.
-- Données : Texte = NSI-INFORMATIQUE, motif = INFO, table décalage : I->3, N->2, F->1, O->4, autre->4.
-- Consigne : répondre à la tâche « lire l’alignement texte-motif au premier essai » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 2 - Analyser une comparaison de droite à gauche
+- Données : motif ABA.
+- Consigne : Donner derniers indices.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 2 - Comparer depuis la droite
 - Capacité : T-ALGO-05.
-- Données : Texte = NSI-INFORMATIQUE, motif = INFO, table décalage : I->3, N->2, F->1, O->4, autre->4.
-- Consigne : répondre à la tâche « analyser une comparaison de droite à gauche » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 3 - Produire la table de décalage du motif info
+- Données : texte CABAABABA, motif ABA aligné au début.
+- Consigne : Donner première comparaison.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 3 - Tracer la première occurrence
 - Capacité : T-ALGO-05.
-- Données : Texte = NSI-INFORMATIQUE, motif = INFO, table décalage : I->3, N->2, F->1, O->4, autre->4.
-- Consigne : répondre à la tâche « produire la table de décalage du motif INFO » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 4 - Écrire les décalages successifs jusqu’à occurrence
+- Données : texte CABAABABA, motif ABA.
+- Consigne : Donner indice trouvé.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 4 - Écrire pseudo-code simplifié
 - Capacité : T-ALGO-05.
-- Données : Texte = NSI-INFORMATIQUE, motif = INFO, table décalage : I->3, N->2, F->1, O->4, autre->4.
-- Consigne : répondre à la tâche « écrire les décalages successifs jusqu’à occurrence » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
+- Données : motif m, texte t.
+- Consigne : Produire boucle.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
 
 ## Barème
-- Question 1: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 2: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 3: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 4: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Total : 16 points convertibles sur 20 après relecture pédagogique.
+- Question 1: 1 point identification de la donnée, 1 point méthode, 1 point résultat exact, 1 point contrôle.
+- Question 2: 1 point vocabulaire précis, 1 point méthode, 1 point résultat, 1 point justification.
+- Question 3: 1 point modélisation, 1 point production correcte, 1 point test du résultat, 1 point lisibilité.
+- Question 4: 1 point cas traité, 1 point résultat, 1 point justification, 1 point erreur fréquente évitée.
+- Total : 16 points, conversion sur 20 après relecture pédagogique.
 
 ## Corrigé professeur
 ### Corrigé question 1
 - Capacité évaluée : T-ALGO-05.
-- Réponse attendue : la solution explicite « lire l’alignement texte-motif au premier essai » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : motif ABA.
+- Réponse attendue : A apparaît aux indices 0 et 2, donc dernier indice A=2 ; B=1 ; autre caractère -> -1.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 2
 - Capacité évaluée : T-ALGO-05.
-- Réponse attendue : la solution explicite « analyser une comparaison de droite à gauche » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : texte CABAABABA, motif ABA aligné au début.
+- Réponse attendue : On compare motif[2]=A avec texte[2]=B : mismatch B. Dernier B dans motif à 1, décalage max(1,2-1)=1.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 3
 - Capacité évaluée : T-ALGO-05.
-- Réponse attendue : la solution explicite « produire la table de décalage du motif INFO » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : texte CABAABABA, motif ABA.
+- Réponse attendue : Après décalage 1, alignement texte[1:4]=ABA. Comparaisons droite à gauche A=A, B=B, A=A. Occurrence trouvée à l’indice 1.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 4
 - Capacité évaluée : T-ALGO-05.
-- Réponse attendue : la solution explicite « écrire les décalages successifs jusqu’à occurrence » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : motif m, texte t.
+- Réponse attendue : i=0 ; tant que i<=n-p: comparer j=p-1 vers 0 ; si j<0 retourner i ; sinon i += max(1, j-last[t[i+j]]).
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 
 ## Critères de réussite
 - Les capacités officielles sont reliées à une action observable.
-- La réponse ne se limite pas à un mot-clé de la fiche.
+- Le résultat attendu peut être comparé à une valeur, une table, une trace ou un pseudo-code.
 - Le cas limite ou le contrôle demandé apparaît explicitement.
 - Le vocabulaire disciplinaire est utilisé dans le contexte de la donnée.
 
 ## Version aménagée et indications d’aménagement
-- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un espace « méthode / résultat / contrôle ».
-- Aménagement temps : ajouter 10 minutes si l'élève doit recopier la donnée.
-- Aide autorisée : liste des verbes d'action, sans résultat numérique ni requête complète.
+- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un tableau méthode / résultat / contrôle.
+- Aménagement temps : ajouter 10 minutes si l’élève doit recopier les données.
+- Aide autorisée : liste des verbes d’action, sans résultat numérique ni requête complète.
 
 ## Erreurs fréquentes et remédiation
 - EF1 : réponse sans donnée citée ; remédiation : refaire la question 1 avec les valeurs encadrées.
@@ -106,6 +111,6 @@ Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée
 - EF4 : oubli du cas limite ; remédiation : reprendre le TD associé, exercice 5.
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans cette évaluation.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans cette évaluation.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

@@ -19,13 +19,14 @@ official_program:
   capacities:
     - "T-ALGO-04"
 ---
+
 # T17 - TD - programmation dynamique
 
 ## Objectifs
-- O1 : appliquer les méthodes de la fiche à une donnée différente.
-- O2 : distinguer lecture d'information, production et justification.
-- O3 : traiter au moins un cas limite sans le masquer.
-- O4 : préparer une correction exploitable en séance.
+- Lire une donnée disciplinaire précise avant de répondre.
+- Produire une méthode vérifiable et un résultat contrôlable.
+- Traiter un cas limite sans le transformer en généralité.
+- Relier chaque correction à une erreur fréquente observable.
 
 ## Capacités officielles
 - T-ALGO-04
@@ -33,137 +34,139 @@ official_program:
 ## Fiche liée et séance liée
 - Fiche liée : `03_progressions/fiches_cours/terminale/T17/T17_fiche_cours_programmation_dynamique.md`.
 - Séance liée : `T17-S1` dans la progression annuelle.
-- Statut : support créé en `needs_review`, non validé pédagogiquement et non publiable.
+- Statut : support `needs_review`, non validé et non publiable.
 
 ## Situation de travail
-un robot avance sur une ligne et cherche le coût minimal pour atteindre la case 6 en mémorisant les sous-problèmes.
-
-## Données de référence
-Coûts cases = [0, 2, 5, 1, 4, 3, 6], transitions possibles +1 ou +2, valeur fib(6) à comparer avec une version récursive naïve.
+On résout un problème de nombre de chemins dans une grille 3 x 3 puis un rendu de monnaie minimal.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée et vocabulaire.
-- Standard : exercices 3 à 6, production écrite avec contrôle.
-- Approfondissement : exercices 7 et 8, comparaison de démarches et généralisation.
+- Socle : exercices 1 et 2, lecture guidée de la donnée.
+- Standard : exercices 3 à 6, production écrite et justification.
+- Approfondissement : exercices 7 et 8, transfert ou comparaison.
 
 ## Exercices
-### Exercice 1 - Lire une table de mémoïsation partiellement remplie
+### Exercice 1 - Définir un état
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-ALGO-04.
-- Données : Coûts cases = [0, 2, 5, 1, 4, 3, 6], transitions possibles +1 ou +2, valeur fib(6) à comparer avec une version récursive naïve.
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de lire une table de mémoïsation partiellement remplie.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 2 - Analyser le recouvrement de sous-problèmes sur fibonacci
+- Données : Grille 3x3, déplacements droite ou bas.
+- Consigne : Définir dp[i][j].
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 2 - Remplir les bords
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-ALGO-04.
-- Données : Coûts cases = [0, 2, 5, 1, 4, 3, 6], transitions possibles +1 ou +2, valeur fib(6) à comparer avec une version récursive naïve.
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de analyser le recouvrement de sous-problèmes sur Fibonacci.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 3 - Écrire une récurrence de coût minimal
+- Données : dp sur grille 3x3.
+- Consigne : Donner première ligne et première colonne.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 3 - Écrire la récurrence
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-04.
-- Données : Coûts cases = [0, 2, 5, 1, 4, 3, 6], transitions possibles +1 ou +2, valeur fib(6) à comparer avec une version récursive naïve.
-- Consigne : Produis une réponse opérationnelle pour écrire une récurrence de coût minimal, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 4 - Remplir une table de programmation dynamique de gauche à droite
+- Données : Case intérieure (i,j).
+- Consigne : Donner relation.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 4 - Remplir le tableau 3x3
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-04.
-- Données : Coûts cases = [0, 2, 5, 1, 4, 3, 6], transitions possibles +1 ou +2, valeur fib(6) à comparer avec une version récursive naïve.
-- Consigne : Produis une réponse opérationnelle pour remplir une table de programmation dynamique de gauche à droite, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 5 - Traiter le cas limite objectif 0 ou coût absent
+- Données : Grille 3x3.
+- Consigne : Donner la table.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 5 - Grille 1x1
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-04.
-- Données : Coûts cases = [0, 2, 5, 1, 4, 3, 6], transitions possibles +1 ou +2, valeur fib(6) à comparer avec une version récursive naïve.
-- Consigne : Traite le cas limite demandé pour traiter le cas limite objectif 0 ou coût absent et précise la convention retenue.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 6 - Justifier ordre de calcul et dépendances
+- Données : Départ égale arrivée.
+- Consigne : Donner dp.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 6 - Comparer récursion et tabulation
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-04.
-- Données : Coûts cases = [0, 2, 5, 1, 4, 3, 6], transitions possibles +1 ou +2, valeur fib(6) à comparer avec une version récursive naïve.
-- Consigne : Justifie pourquoi la méthode utilisée pour justifier ordre de calcul et dépendances est correcte dans ce contexte.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 7 - Repérer une recomputation inutile
+- Données : Calcul chemins(4,4).
+- Consigne : Expliquer les doublons.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 7 - Rendu de monnaie dynamique
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-ALGO-04.
-- Données : Coûts cases = [0, 2, 5, 1, 4, 3, 6], transitions possibles +1 ou +2, valeur fib(6) à comparer avec une version récursive naïve.
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de repérer une recomputation inutile.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 8 - Comparer mémoïsation top-down et tabulation bottom-up
+- Données : pièces [1,3,4], montant 6.
+- Consigne : Donner dp[0..6].
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 8 - Écrire pseudo-code tabulation
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-ALGO-04.
-- Données : Coûts cases = [0, 2, 5, 1, 4, 3, 6], transitions possibles +1 ou +2, valeur fib(6) à comparer avec une version récursive naïve.
-- Consigne : Produis une réponse opérationnelle pour comparer mémoïsation top-down et tabulation bottom-up, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
+- Données : pièces [1,3,4], montant M.
+- Consigne : Produire pseudo-code.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-ALGO-04.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T17 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « lire une table de mémoïsation partiellement remplie » en utilisant le vocabulaire programmation dynamique.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Grille 3x3, déplacements droite ou bas.
+- Résultat attendu : dp[i][j] = nombre de chemins depuis (0,0) vers la case (i,j).
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-ALGO-04.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T17 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « analyser le recouvrement de sous-problèmes sur Fibonacci » en utilisant le vocabulaire programmation dynamique.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : dp sur grille 3x3.
+- Résultat attendu : dp[0][j]=1 et dp[i][0]=1 car un seul chemin en ligne droite. Bords: 1,1,1.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-ALGO-04.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T17 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « écrire une récurrence de coût minimal » en utilisant le vocabulaire programmation dynamique.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Case intérieure (i,j).
+- Résultat attendu : dp[i][j] = dp[i-1][j] + dp[i][j-1]. Pour (1,1): 1+1=2.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-ALGO-04.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T17 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « remplir une table de programmation dynamique de gauche à droite » en utilisant le vocabulaire programmation dynamique.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Grille 3x3.
+- Résultat attendu : Table dp: ligne0 [1,1,1], ligne1 [1,2,3], ligne2 [1,3,6]. Il y a 6 chemins vers (2,2).
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-ALGO-04.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T17 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « traiter le cas limite objectif 0 ou coût absent » en utilisant le vocabulaire programmation dynamique.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Départ égale arrivée.
+- Résultat attendu : dp[0][0]=1 : il existe un chemin vide. Ne pas renvoyer 0.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-ALGO-04.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T17 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « justifier ordre de calcul et dépendances » en utilisant le vocabulaire programmation dynamique.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Calcul chemins(4,4).
+- Résultat attendu : La récursion naïve recalcule chemins(2,2) plusieurs fois ; la tabulation calcule chaque état une seule fois, donc O(n*m).
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-ALGO-04.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T17 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « repérer une recomputation inutile » en utilisant le vocabulaire programmation dynamique.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : pièces [1,3,4], montant 6.
+- Résultat attendu : dp: [0,1,2,1,1,2,2]. Pour 6, optimal 3+3 donc 2 pièces.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-ALGO-04.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T17 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « comparer mémoïsation top-down et tabulation bottom-up » en utilisant le vocabulaire programmation dynamique.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : pièces [1,3,4], montant M.
+- Résultat attendu : dp[0]=0 ; dp[a]=inf ; pour a de 1 à M, pour p dans pièces si a>=p: dp[a]=min(dp[a],1+dp[a-p]).
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
-- EF1 : recopier une définition sans l'appliquer à la donnée ; remédiation : entourer les valeurs utilisées avant d'écrire.
-- EF2 : produire un résultat sans contrôle ; remédiation : ajouter une ligne « vérification » à chaque réponse.
-- EF3 : confondre cas nominal et cas limite ; remédiation : refaire l'exercice 5 avec une donnée minimale.
-- EF4 : citer la capacité officielle sans méthode ; remédiation : associer chaque capacité à une action observable.
+- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
+- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
+- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
+- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
+
+## Remédiation ciblée
+- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
+- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
+- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
 
 ## Différenciation
-- Socle : fournir la donnée annotée et demander une phrase de conclusion.
-- Standard : demander la méthode complète et le contrôle écrit.
-- Approfondissement : demander une variante de donnée et une comparaison de deux démarches.
+- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
+- Standard : demander méthode complète, résultat et contrôle écrit.
+- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
 
 ## Lien avec la progression
 | Élément | Référence | Statut |
@@ -173,6 +176,6 @@ Coûts cases = [0, 2, 5, 1, 4, 3, 6], transitions possibles +1 ou +2, valeur fib
 | Évaluation | T17_evaluation_programmation_dynamique.md | needs_review |
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans ce support.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans ce support.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

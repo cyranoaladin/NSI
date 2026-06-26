@@ -126,3 +126,17 @@ Un capteur transmet un octet qui peut représenter une température signée ou u
 - Résultat attendu : `a`.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
 - Critère de validation : méthode visible, résultat correct et contrôle « un exemple ne prouve pas une identité ».
+
+## Modalités de passation
+- Durée : 25 minutes.
+- Matériel autorisé : fiche complément à deux et booléens, sans corrigé distribué ni navigation externe.
+- Capacités évaluées :
+- P-DATA-BASE-02A
+- P-DATA-BASE-02A
+
+## Fiche liée et aménagement
+- Fiche liée : fiche de cours opérationnelle de la séquence P02, statut `needs_review`.
+- Séance liée : `P02-S1`, avec question centrée sur encodage signé et table de vérité.
+- Version aménagée : données encodage signé et table de vérité surlignées et tableau réponse en trois zones.
+- Remédiation : recalculer un codage sur 4 bits puis vérifier les bornes, puis verbaliser la méthode en binôme.
+

@@ -21,13 +21,14 @@ official_program:
     - "T-LANG-01B"
     - "T-LANG-01C"
 ---
+
 # T15 - TD - calculabilité arrêt
 
 ## Objectifs
-- O1 : appliquer les méthodes de la fiche à une donnée différente.
-- O2 : distinguer lecture d'information, production et justification.
-- O3 : traiter au moins un cas limite sans le masquer.
-- O4 : préparer une correction exploitable en séance.
+- Lire une donnée disciplinaire précise avant de répondre.
+- Produire une méthode vérifiable et un résultat contrôlable.
+- Traiter un cas limite sans le transformer en généralité.
+- Relier chaque correction à une erreur fréquente observable.
 
 ## Capacités officielles
 - T-LANG-01A
@@ -37,137 +38,139 @@ official_program:
 ## Fiche liée et séance liée
 - Fiche liée : `03_progressions/fiches_cours/terminale/T15/T15_fiche_cours_calculabilite_arret.md`.
 - Séance liée : `T15-S1` dans la progression annuelle.
-- Statut : support créé en `needs_review`, non validé pédagogiquement et non publiable.
+- Statut : support `needs_review`, non validé et non publiable.
 
 ## Situation de travail
-un analyseur imaginaire prétend décider pour tout programme Python si l’exécution termine.
-
-## Données de référence
-Programmes : boucle_finie décrémente n, boucle_infinie while True, programme diagonal qui inverse la réponse d’un prédicteur halt(p,x).
+On classe des programmes selon terminaison observable et limites théoriques.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée et vocabulaire.
-- Standard : exercices 3 à 6, production écrite avec contrôle.
-- Approfondissement : exercices 7 et 8, comparaison de démarches et généralisation.
+- Socle : exercices 1 et 2, lecture guidée de la donnée.
+- Standard : exercices 3 à 6, production écrite et justification.
+- Approfondissement : exercices 7 et 8, transfert ou comparaison.
 
 ## Exercices
-### Exercice 1 - Lire un programme simple et décider s’il termine pour une entrée donnée
+### Exercice 1 - Tracer une boucle terminante
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-LANG-01A.
-- Données : Programmes : boucle_finie décrémente n, boucle_infinie while True, programme diagonal qui inverse la réponse d’un prédicteur halt(p,x).
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de lire un programme simple et décider s’il termine pour une entrée donnée.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 2 - Analyser une boucle infinie évidente
+- Données : n=3 ; while n>0: n=n-1.
+- Consigne : Donner la trace.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 2 - Repérer une boucle infinie
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-LANG-01B.
-- Données : Programmes : boucle_finie décrémente n, boucle_infinie while True, programme diagonal qui inverse la réponse d’un prédicteur halt(p,x).
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de analyser une boucle infinie évidente.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 3 - Écrire un prédicteur limité à une famille finie de programmes
+- Données : while True: pass.
+- Consigne : Dire ce qui manque pour terminer.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 3 - Écrire un variant
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-LANG-01C.
-- Données : Programmes : boucle_finie décrémente n, boucle_infinie while True, programme diagonal qui inverse la réponse d’un prédicteur halt(p,x).
-- Consigne : Produis une réponse opérationnelle pour écrire un prédicteur limité à une famille finie de programmes, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 4 - Produire le programme diagonal de contradiction
+- Données : while n>0: n=n//2 pour n=10.
+- Consigne : Donner variant et trace.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 4 - Construire un semi-décideur
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-LANG-01A.
-- Données : Programmes : boucle_finie décrémente n, boucle_infinie while True, programme diagonal qui inverse la réponse d’un prédicteur halt(p,x).
-- Consigne : Produis une réponse opérationnelle pour produire le programme diagonal de contradiction, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 5 - Traiter le cas limite entrée qui change la terminaison
+- Données : Chercher si une valeur apparaît dans un flux infini.
+- Consigne : Expliquer.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 5 - Entrée déjà au cas d’arrêt
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-LANG-01B.
-- Données : Programmes : boucle_finie décrémente n, boucle_infinie while True, programme diagonal qui inverse la réponse d’un prédicteur halt(p,x).
-- Consigne : Traite le cas limite demandé pour traiter le cas limite entrée qui change la terminaison et précise la convention retenue.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 6 - Justifier que le problème général de l’arrêt n’a pas d’algorithme total
+- Données : n=0 pour while n>0.
+- Consigne : Donner comportement.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 6 - Expliquer l’indécidabilité de l’arrêt
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-LANG-01C.
-- Données : Programmes : boucle_finie décrémente n, boucle_infinie while True, programme diagonal qui inverse la réponse d’un prédicteur halt(p,x).
-- Consigne : Justifie pourquoi la méthode utilisée pour justifier que le problème général de l’arrêt n’a pas d’algorithme total est correcte dans ce contexte.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 7 - Distinguer preuve pour un programme et décision pour tous les programmes
+- Données : Supposer un programme HALT(P,x).
+- Consigne : Donner l’idée de contradiction.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 7 - Distinguer bug et limite théorique
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-LANG-01A.
-- Données : Programmes : boucle_finie décrémente n, boucle_infinie while True, programme diagonal qui inverse la réponse d’un prédicteur halt(p,x).
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de distinguer preuve pour un programme et décision pour tous les programmes.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 8 - Expliquer pourquoi tester longtemps ne prouve pas la non-terminaison
+- Données : Un test timeout après 2 secondes.
+- Consigne : Peut-on conclure non-terminaison ?
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 8 - Classer trois programmes
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-LANG-01B.
-- Données : Programmes : boucle_finie décrémente n, boucle_infinie while True, programme diagonal qui inverse la réponse d’un prédicteur halt(p,x).
-- Consigne : Produis une réponse opérationnelle pour expliquer pourquoi tester longtemps ne prouve pas la non-terminaison, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
+- Données : A termine toujours, B boucle toujours, C dépend d’une conjecture.
+- Consigne : Donner statut.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-LANG-01A.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T15 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « lire un programme simple et décider s’il termine pour une entrée donnée » en utilisant le vocabulaire calculabilité arrêt.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : n=3 ; while n>0: n=n-1.
+- Résultat attendu : Trace n: 3 -> 2 -> 1 -> 0, puis condition n>0 fausse. Le programme termine.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-LANG-01B.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T15 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « analyser une boucle infinie évidente » en utilisant le vocabulaire calculabilité arrêt.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : while True: pass.
+- Résultat attendu : Aucune variable ne rapproche d’un cas d’arrêt et la condition reste True. La boucle ne termine pas.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-LANG-01C.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T15 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « écrire un prédicteur limité à une famille finie de programmes » en utilisant le vocabulaire calculabilité arrêt.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : while n>0: n=n//2 pour n=10.
+- Résultat attendu : Variant n entier naturel diminue: 10 -> 5 -> 2 -> 1 -> 0. Il assure la terminaison.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-LANG-01A.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T15 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « produire le programme diagonal de contradiction » en utilisant le vocabulaire calculabilité arrêt.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Chercher si une valeur apparaît dans un flux infini.
+- Résultat attendu : On lit les valeurs une à une ; si cible trouvée, on répond oui. Si elle n’apparaît jamais, l’algorithme peut tourner sans répondre.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-LANG-01B.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T15 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « traiter le cas limite entrée qui change la terminaison » en utilisant le vocabulaire calculabilité arrêt.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : n=0 pour while n>0.
+- Résultat attendu : La condition est fausse au départ ; zéro itération ; terminaison immédiate.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-LANG-01C.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T15 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « justifier que le problème général de l’arrêt n’a pas d’algorithme total » en utilisant le vocabulaire calculabilité arrêt.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Supposer un programme HALT(P,x).
+- Résultat attendu : Construire D(P): si HALT(P,P) répond oui alors boucler, sinon terminer. Exécuter D(D) contredit la réponse de HALT.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-LANG-01A.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T15 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « distinguer preuve pour un programme et décision pour tous les programmes » en utilisant le vocabulaire calculabilité arrêt.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Un test timeout après 2 secondes.
+- Résultat attendu : Non. Le programme peut terminer après 3 secondes. Le timeout est une observation pratique, pas une preuve générale.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-LANG-01B.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T15 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « expliquer pourquoi tester longtemps ne prouve pas la non-terminaison » en utilisant le vocabulaire calculabilité arrêt.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : A termine toujours, B boucle toujours, C dépend d’une conjecture.
+- Résultat attendu : A décidable par preuve directe ; B non-terminaison prouvée par invariant True ; C peut être hors de portée sans preuve mathématique supplémentaire.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
-- EF1 : recopier une définition sans l'appliquer à la donnée ; remédiation : entourer les valeurs utilisées avant d'écrire.
-- EF2 : produire un résultat sans contrôle ; remédiation : ajouter une ligne « vérification » à chaque réponse.
-- EF3 : confondre cas nominal et cas limite ; remédiation : refaire l'exercice 5 avec une donnée minimale.
-- EF4 : citer la capacité officielle sans méthode ; remédiation : associer chaque capacité à une action observable.
+- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
+- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
+- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
+- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
+
+## Remédiation ciblée
+- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
+- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
+- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
 
 ## Différenciation
-- Socle : fournir la donnée annotée et demander une phrase de conclusion.
-- Standard : demander la méthode complète et le contrôle écrit.
-- Approfondissement : demander une variante de donnée et une comparaison de deux démarches.
+- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
+- Standard : demander méthode complète, résultat et contrôle écrit.
+- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
 
 ## Lien avec la progression
 | Élément | Référence | Statut |
@@ -177,6 +180,6 @@ Programmes : boucle_finie décrémente n, boucle_infinie while True, programme d
 | Évaluation | T15_evaluation_calculabilite_arret.md | needs_review |
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans ce support.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans ce support.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

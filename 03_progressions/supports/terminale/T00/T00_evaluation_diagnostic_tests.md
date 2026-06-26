@@ -126,3 +126,17 @@ Une équipe reprend une bibliothèque Python de Première et doit écrire des te
 - Résultat attendu : erreur contrôlée.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
 - Critère de validation : méthode visible, résultat correct et contrôle « comparaison impossible ».
+
+## Modalités de passation
+- Durée : 25 minutes.
+- Matériel autorisé : fiche reprise Python et tests, sans corrigé distribué ni navigation externe.
+- Capacités évaluées :
+- T-LANG-03A
+- T-LANG-03A
+
+## Fiche liée et aménagement
+- Fiche liée : fiche de cours opérationnelle de la séquence T00, statut `needs_review`.
+- Séance liée : `T00-S1`, avec question centrée sur tests et complexité simple.
+- Version aménagée : données tests et complexité simple surlignées et tableau réponse en trois zones.
+- Remédiation : reprendre un test nominal puis un test limite, puis verbaliser la méthode en binôme.
+

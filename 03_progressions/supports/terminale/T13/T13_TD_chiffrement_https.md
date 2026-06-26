@@ -20,13 +20,14 @@ official_program:
     - "T-ARCH-04A"
     - "T-ARCH-04B"
 ---
+
 # T13 - TD - chiffrement HTTPS
 
 ## Objectifs
-- O1 : appliquer les méthodes de la fiche à une donnée différente.
-- O2 : distinguer lecture d'information, production et justification.
-- O3 : traiter au moins un cas limite sans le masquer.
-- O4 : préparer une correction exploitable en séance.
+- Lire une donnée disciplinaire précise avant de répondre.
+- Produire une méthode vérifiable et un résultat contrôlable.
+- Traiter un cas limite sans le transformer en généralité.
+- Relier chaque correction à une erreur fréquente observable.
 
 ## Capacités officielles
 - T-ARCH-04A
@@ -35,137 +36,139 @@ official_program:
 ## Fiche liée et séance liée
 - Fiche liée : `03_progressions/fiches_cours/terminale/T13/T13_fiche_cours_chiffrement_https.md`.
 - Séance liée : `T13-S1` dans la progression annuelle.
-- Statut : support créé en `needs_review`, non validé pédagogiquement et non publiable.
+- Statut : support `needs_review`, non validé et non publiable.
 
 ## Situation de travail
-un navigateur établit une connexion HTTPS avec un serveur et doit obtenir une clé de session sans la transmettre en clair.
-
-## Données de référence
-Client C, serveur S, certificat de S, clé publique KpubS, clé privée KprivS, clé de session Ks, message m = "GET /note".
+Un navigateur établit une connexion HTTPS avec serveur.example.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée et vocabulaire.
-- Standard : exercices 3 à 6, production écrite avec contrôle.
-- Approfondissement : exercices 7 et 8, comparaison de démarches et généralisation.
+- Socle : exercices 1 et 2, lecture guidée de la donnée.
+- Standard : exercices 3 à 6, production écrite et justification.
+- Approfondissement : exercices 7 et 8, transfert ou comparaison.
 
 ## Exercices
-### Exercice 1 - Lire le rôle des clés publique, privée et de session
+### Exercice 1 - Distinguer chiffrement symétrique/asymétrique
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-ARCH-04A.
-- Données : Client C, serveur S, certificat de S, clé publique KpubS, clé privée KprivS, clé de session Ks, message m = "GET /note".
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de lire le rôle des clés publique, privée et de session.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 2 - Analyser une étape de vérification de certificat
+- Données : Clé publique serveur Kpub, clé privée Kpriv, clé de session Ks.
+- Consigne : Associer les rôles.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 2 - Lire un certificat
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-ARCH-04B.
-- Données : Client C, serveur S, certificat de S, clé publique KpubS, clé privée KprivS, clé de session Ks, message m = "GET /note".
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de analyser une étape de vérification de certificat.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 3 - Produire un schéma d’échange de clé de session
+- Données : Certificat: sujet serveur.example, émetteur CA-NSI, validité 2026-01-01 à 2027-01-01.
+- Consigne : Dire ce qui est vérifié.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 3 - Dérouler un handshake simplifié
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-04A.
-- Données : Client C, serveur S, certificat de S, clé publique KpubS, clé privée KprivS, clé de session Ks, message m = "GET /note".
-- Consigne : Produis une réponse opérationnelle pour produire un schéma d’échange de clé de session, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 4 - Écrire ce qui est chiffré en symétrique après négociation
+- Données : Client propose suites ; serveur envoie certificat ; secret de session établi.
+- Consigne : Écrire les étapes.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 4 - Calculer un haché jouet
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-04B.
-- Données : Client C, serveur S, certificat de S, clé publique KpubS, clé privée KprivS, clé de session Ks, message m = "GET /note".
-- Consigne : Produis une réponse opérationnelle pour écrire ce qui est chiffré en symétrique après négociation, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 5 - Traiter le cas limite certificat expiré ou nom de domaine différent
+- Données : h(m)=somme codes ASCII mod 10, message "AB".
+- Consigne : Calculer h.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 5 - Certificat expiré
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-04A.
-- Données : Client C, serveur S, certificat de S, clé publique KpubS, clé privée KprivS, clé de session Ks, message m = "GET /note".
-- Consigne : Traite le cas limite demandé pour traiter le cas limite certificat expiré ou nom de domaine différent et précise la convention retenue.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 6 - Justifier pourquoi le chiffrement asymétrique seul n’est pas utilisé pour tout le flux
+- Données : Date du jour 2028-03-01, certificat valable jusqu’à 2027-01-01.
+- Consigne : Dire la décision.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 6 - Justifier HTTPS contre écoute
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-04B.
-- Données : Client C, serveur S, certificat de S, clé publique KpubS, clé privée KprivS, clé de session Ks, message m = "GET /note".
-- Consigne : Justifie pourquoi la méthode utilisée pour justifier pourquoi le chiffrement asymétrique seul n’est pas utilisé pour tout le flux est correcte dans ce contexte.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 7 - Repérer une attaque homme du milieu sans vérification de certificat
+- Données : Un attaquant lit le trafic Wi-Fi.
+- Consigne : Expliquer ce qui reste visible.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 7 - Identifier attaque homme du milieu
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-ARCH-04A.
-- Données : Client C, serveur S, certificat de S, clé publique KpubS, clé privée KprivS, clé de session Ks, message m = "GET /note".
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de repérer une attaque homme du milieu sans vérification de certificat.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 8 - Comparer confidentialité, authentification et intégrité
+- Données : Certificat présenté: sujet serveur.example, émetteur inconnu LocalProxy.
+- Consigne : Conclure.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 8 - Écrire une politique de mot de passe
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-ARCH-04B.
-- Données : Client C, serveur S, certificat de S, clé publique KpubS, clé privée KprivS, clé de session Ks, message m = "GET /note".
-- Consigne : Produis une réponse opérationnelle pour comparer confidentialité, authentification et intégrité, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
+- Données : Service interne NSI.
+- Consigne : Donner trois règles justifiées.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-ARCH-04A.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T13 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « lire le rôle des clés publique, privée et de session » en utilisant le vocabulaire chiffrement HTTPS.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Clé publique serveur Kpub, clé privée Kpriv, clé de session Ks.
+- Résultat attendu : Kpub/Kpriv servent à authentifier/établir le secret ; Ks sert ensuite au chiffrement symétrique rapide des données.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-ARCH-04B.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T13 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « analyser une étape de vérification de certificat » en utilisant le vocabulaire chiffrement HTTPS.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Certificat: sujet serveur.example, émetteur CA-NSI, validité 2026-01-01 à 2027-01-01.
+- Résultat attendu : Le navigateur vérifie le nom serveur.example, la période de validité et la signature par une autorité de confiance CA-NSI.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-ARCH-04A.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T13 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « produire un schéma d’échange de clé de session » en utilisant le vocabulaire chiffrement HTTPS.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Client propose suites ; serveur envoie certificat ; secret de session établi.
+- Résultat attendu : 1 ClientHello ; 2 ServerHello+certificat ; 3 vérification certificat ; 4 établissement Ks ; 5 données chiffrées avec Ks.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-ARCH-04B.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T13 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « écrire ce qui est chiffré en symétrique après négociation » en utilisant le vocabulaire chiffrement HTTPS.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : h(m)=somme codes ASCII mod 10, message "AB".
+- Résultat attendu : ASCII A=65, B=66, somme=131, 131 mod 10 = 1. Ce haché jouet n’est pas cryptographiquement sûr.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-ARCH-04A.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T13 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « traiter le cas limite certificat expiré ou nom de domaine différent » en utilisant le vocabulaire chiffrement HTTPS.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Date du jour 2028-03-01, certificat valable jusqu’à 2027-01-01.
+- Résultat attendu : Le navigateur doit refuser ou afficher une alerte forte : la validité temporelle est dépassée.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-ARCH-04B.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T13 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « justifier pourquoi le chiffrement asymétrique seul n’est pas utilisé pour tout le flux » en utilisant le vocabulaire chiffrement HTTPS.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Un attaquant lit le trafic Wi-Fi.
+- Résultat attendu : L’attaquant peut voir l’adresse IP et le domaine selon contexte, mais pas le contenu HTTP chiffré par la clé de session.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-ARCH-04A.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T13 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « repérer une attaque homme du milieu sans vérification de certificat » en utilisant le vocabulaire chiffrement HTTPS.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Certificat présenté: sujet serveur.example, émetteur inconnu LocalProxy.
+- Résultat attendu : Si LocalProxy n’est pas une autorité approuvée, la chaîne de confiance échoue : risque de MITM.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-ARCH-04B.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T13 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « comparer confidentialité, authentification et intégrité » en utilisant le vocabulaire chiffrement HTTPS.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Service interne NSI.
+- Résultat attendu : Longueur minimale 12, interdiction mots de passe connus, hachage salé côté serveur. Ces règles limitent brute force et fuite de base.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
-- EF1 : recopier une définition sans l'appliquer à la donnée ; remédiation : entourer les valeurs utilisées avant d'écrire.
-- EF2 : produire un résultat sans contrôle ; remédiation : ajouter une ligne « vérification » à chaque réponse.
-- EF3 : confondre cas nominal et cas limite ; remédiation : refaire l'exercice 5 avec une donnée minimale.
-- EF4 : citer la capacité officielle sans méthode ; remédiation : associer chaque capacité à une action observable.
+- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
+- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
+- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
+- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
+
+## Remédiation ciblée
+- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
+- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
+- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
 
 ## Différenciation
-- Socle : fournir la donnée annotée et demander une phrase de conclusion.
-- Standard : demander la méthode complète et le contrôle écrit.
-- Approfondissement : demander une variante de donnée et une comparaison de deux démarches.
+- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
+- Standard : demander méthode complète, résultat et contrôle écrit.
+- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
 
 ## Lien avec la progression
 | Élément | Référence | Statut |
@@ -175,6 +178,6 @@ Client C, serveur S, certificat de S, clé publique KpubS, clé privée KprivS, 
 | Évaluation | T13_evaluation_chiffrement_https.md | needs_review |
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans ce support.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans ce support.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

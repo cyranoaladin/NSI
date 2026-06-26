@@ -19,13 +19,14 @@ official_program:
   capacities:
     - "T-ARCH-03"
 ---
+
 # T12 - TD - routage RIP OSPF
 
 ## Objectifs
-- O1 : appliquer les méthodes de la fiche à une donnée différente.
-- O2 : distinguer lecture d'information, production et justification.
-- O3 : traiter au moins un cas limite sans le masquer.
-- O4 : préparer une correction exploitable en séance.
+- Lire une donnée disciplinaire précise avant de répondre.
+- Produire une méthode vérifiable et un résultat contrôlable.
+- Traiter un cas limite sans le transformer en généralité.
+- Relier chaque correction à une erreur fréquente observable.
 
 ## Capacités officielles
 - T-ARCH-03
@@ -33,137 +34,139 @@ official_program:
 ## Fiche liée et séance liée
 - Fiche liée : `03_progressions/fiches_cours/terminale/T12/T12_fiche_cours_routage_rip_ospf.md`.
 - Séance liée : `T12-S1` dans la progression annuelle.
-- Statut : support créé en `needs_review`, non validé pédagogiquement et non publiable.
+- Statut : support `needs_review`, non validé et non publiable.
 
 ## Situation de travail
-quatre routeurs R1, R2, R3, R4 doivent choisir une route entre un protocole à vecteur de distance et un protocole à état de liens.
-
-## Données de référence
-Liens : R1-R2 coût 1, R2-R4 coût 5, R1-R3 coût 2, R3-R4 coût 2, R2-R3 coût 1 ; destination réseau D derrière R4.
+Topologie: R1-R2 coût1, R2-R3 coût1, R1-R3 coût4, R3-R4 coût2.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée et vocabulaire.
-- Standard : exercices 3 à 6, production écrite avec contrôle.
-- Approfondissement : exercices 7 et 8, comparaison de démarches et généralisation.
+- Socle : exercices 1 et 2, lecture guidée de la donnée.
+- Standard : exercices 3 à 6, production écrite et justification.
+- Approfondissement : exercices 7 et 8, transfert ou comparaison.
 
 ## Exercices
-### Exercice 1 - Lire une table de routage locale et repérer le prochain saut
+### Exercice 1 - Lire une table de routage
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-ARCH-03.
-- Données : Liens : R1-R2 coût 1, R2-R4 coût 5, R1-R3 coût 2, R3-R4 coût 2, R2-R3 coût 1 ; destination réseau D derrière R4.
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de lire une table de routage locale et repérer le prochain saut.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 2 - Analyser une annonce rip en nombre de sauts
+- Données : R1 connaît R2 coût1, R3 coût4 direct, R4 via R3 coût6.
+- Consigne : Identifier la meilleure route vers R3.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 2 - Calculer métrique RIP
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-ARCH-03.
-- Données : Liens : R1-R2 coût 1, R2-R4 coût 5, R1-R3 coût 2, R3-R4 coût 2, R2-R3 coût 1 ; destination réseau D derrière R4.
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de analyser une annonce RIP en nombre de sauts.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 3 - Produire le meilleur chemin par coût total
+- Données : R1 vers R4 via R2 puis R3, 3 sauts.
+- Consigne : Donner métrique.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 3 - Appliquer Dijkstra OSPF
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-03.
-- Données : Liens : R1-R2 coût 1, R2-R4 coût 5, R1-R3 coût 2, R3-R4 coût 2, R2-R3 coût 1 ; destination réseau D derrière R4.
-- Consigne : Produis une réponse opérationnelle pour produire le meilleur chemin par coût total, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 4 - Écrire une mise à jour de table après panne r2-r4
+- Données : Coûts: R1-R2=1, R2-R3=1, R1-R3=4, R3-R4=2.
+- Consigne : Donner distances depuis R1.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 4 - Écrire une entrée de table
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-03.
-- Données : Liens : R1-R2 coût 1, R2-R4 coût 5, R1-R3 coût 2, R3-R4 coût 2, R2-R3 coût 1 ; destination réseau D derrière R4.
-- Consigne : Produis une réponse opérationnelle pour écrire une mise à jour de table après panne R2-R4, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 5 - Traiter le cas limite d’une boucle de routage temporaire
+- Données : Destination réseau 10.4.0.0/24 derrière R4.
+- Consigne : Donner next-hop depuis R1.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 5 - Lien R2-R3 coupé
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-03.
-- Données : Liens : R1-R2 coût 1, R2-R4 coût 5, R1-R3 coût 2, R3-R4 coût 2, R2-R3 coût 1 ; destination réseau D derrière R4.
-- Consigne : Traite le cas limite demandé pour traiter le cas limite d’une boucle de routage temporaire et précise la convention retenue.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 6 - Justifier la différence rip nombre de sauts et ospf coût
+- Données : Après coupure, R1-R3 direct coût4 existe.
+- Consigne : Recalculer R1 vers R4.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 6 - Comparer RIP et OSPF
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-03.
-- Données : Liens : R1-R2 coût 1, R2-R4 coût 5, R1-R3 coût 2, R3-R4 coût 2, R2-R3 coût 1 ; destination réseau D derrière R4.
-- Consigne : Justifie pourquoi la méthode utilisée pour justifier la différence RIP nombre de sauts et OSPF coût est correcte dans ce contexte.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 7 - Appliquer dijkstra sur le graphe r1 à r4
+- Données : Chemin A 2 sauts coût 100, chemin B 3 sauts coût 3.
+- Consigne : Dire protocole choisi.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 7 - Détecter boucle temporaire
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-ARCH-03.
-- Données : Liens : R1-R2 coût 1, R2-R4 coût 5, R1-R3 coût 2, R3-R4 coût 2, R2-R3 coût 1 ; destination réseau D derrière R4.
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de appliquer Dijkstra sur le graphe R1 à R4.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 8 - Comparer convergence lente et état de liens diffusé
+- Données : R1 croit R4 via R2, R2 croit R4 via R1.
+- Consigne : Expliquer le risque.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 8 - Pseudo-code de next-hop
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-ARCH-03.
-- Données : Liens : R1-R2 coût 1, R2-R4 coût 5, R1-R3 coût 2, R3-R4 coût 2, R2-R3 coût 1 ; destination réseau D derrière R4.
-- Consigne : Produis une réponse opérationnelle pour comparer convergence lente et état de liens diffusé, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
+- Données : Distances candidates vers R4: via R2 coût4, via R3 coût6.
+- Consigne : Écrire la sélection.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-ARCH-03.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T12 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « lire une table de routage locale et repérer le prochain saut » en utilisant le vocabulaire routage RIP OSPF.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : R1 connaît R2 coût1, R3 coût4 direct, R4 via R3 coût6.
+- Résultat attendu : Meilleure route R1->R2->R3 coût 2 si R2 annonce R3 à 1 ; elle bat le lien direct coût 4.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-ARCH-03.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T12 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « analyser une annonce RIP en nombre de sauts » en utilisant le vocabulaire routage RIP OSPF.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : R1 vers R4 via R2 puis R3, 3 sauts.
+- Résultat attendu : En RIP, la métrique est le nombre de sauts: R1->R2, R2->R3, R3->R4 donc 3.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-ARCH-03.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T12 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « produire le meilleur chemin par coût total » en utilisant le vocabulaire routage RIP OSPF.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Coûts: R1-R2=1, R2-R3=1, R1-R3=4, R3-R4=2.
+- Résultat attendu : D(R1)=0, D(R2)=1, D(R3)=2 via R2, D(R4)=4 via R2 puis R3.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-ARCH-03.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T12 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « écrire une mise à jour de table après panne R2-R4 » en utilisant le vocabulaire routage RIP OSPF.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Destination réseau 10.4.0.0/24 derrière R4.
+- Résultat attendu : Entrée: destination 10.4.0.0/24, next-hop R2, coût OSPF 4. Le chemin calculé est R1-R2-R3-R4.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-ARCH-03.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T12 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « traiter le cas limite d’une boucle de routage temporaire » en utilisant le vocabulaire routage RIP OSPF.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Après coupure, R1-R3 direct coût4 existe.
+- Résultat attendu : Chemin devient R1-R3-R4 coût 4+2=6. La route via R2 n’est plus valide.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-ARCH-03.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T12 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « justifier la différence RIP nombre de sauts et OSPF coût » en utilisant le vocabulaire routage RIP OSPF.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Chemin A 2 sauts coût 100, chemin B 3 sauts coût 3.
+- Résultat attendu : RIP préfère A car 2 sauts < 3. OSPF préfère B car coût total 3 < 100.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-ARCH-03.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T12 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « appliquer Dijkstra sur le graphe R1 à R4 » en utilisant le vocabulaire routage RIP OSPF.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : R1 croit R4 via R2, R2 croit R4 via R1.
+- Résultat attendu : Les paquets peuvent alterner R1/R2 jusqu’à TTL=0. Les protocoles utilisent temporisateurs et annonces pour corriger.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-ARCH-03.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T12 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « comparer convergence lente et état de liens diffusé » en utilisant le vocabulaire routage RIP OSPF.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Distances candidates vers R4: via R2 coût4, via R3 coût6.
+- Résultat attendu : min_cost=inf; pour voisin, coût=c_lien + annonce[voisin][R4]; garder voisin minimal. Résultat next-hop R2 coût4.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
-- EF1 : recopier une définition sans l'appliquer à la donnée ; remédiation : entourer les valeurs utilisées avant d'écrire.
-- EF2 : produire un résultat sans contrôle ; remédiation : ajouter une ligne « vérification » à chaque réponse.
-- EF3 : confondre cas nominal et cas limite ; remédiation : refaire l'exercice 5 avec une donnée minimale.
-- EF4 : citer la capacité officielle sans méthode ; remédiation : associer chaque capacité à une action observable.
+- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
+- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
+- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
+- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
+
+## Remédiation ciblée
+- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
+- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
+- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
 
 ## Différenciation
-- Socle : fournir la donnée annotée et demander une phrase de conclusion.
-- Standard : demander la méthode complète et le contrôle écrit.
-- Approfondissement : demander une variante de donnée et une comparaison de deux démarches.
+- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
+- Standard : demander méthode complète, résultat et contrôle écrit.
+- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
 
 ## Lien avec la progression
 | Élément | Référence | Statut |
@@ -173,6 +176,6 @@ Liens : R1-R2 coût 1, R2-R4 coût 5, R1-R3 coût 2, R3-R4 coût 2, R2-R3 coût 
 | Évaluation | T12_evaluation_routage_rip_ospf.md | needs_review |
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans ce support.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans ce support.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

@@ -126,3 +126,17 @@ Un module doit exposer une pile sans révéler si elle est stockée par liste Py
 - Résultat attendu : tests écrits sur méthodes publiques.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
 - Critère de validation : méthode visible, résultat correct et contrôle « changement de représentation ».
+
+## Modalités de passation
+- Durée : 25 minutes.
+- Matériel autorisé : fiche interface et TAD, sans corrigé distribué ni navigation externe.
+- Capacités évaluées :
+- T-STRUCT-01A
+- T-STRUCT-01A
+
+## Fiche liée et aménagement
+- Fiche liée : fiche de cours opérationnelle de la séquence T01, statut `needs_review`.
+- Séance liée : `T01-S1`, avec question centrée sur contrat abstrait et implémentation.
+- Version aménagée : données contrat abstrait et implémentation surlignées et tableau réponse en trois zones.
+- Remédiation : associer une opération de pile à sa précondition, puis verbaliser la méthode en binôme.
+

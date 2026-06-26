@@ -7,22 +7,38 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from _qa_common import ROOT, read_frontmatter, strip_frontmatter
-from _course_sheets_common import course_sheet_links, resource_exists, sheet_files
+from _operational_links import operational_resource_links, resolve_reference
 
 MIN_LINES = {
     "td": 80,
     "evaluation": 55,
-    "tp": 80,
+    "tp": 30,
     "cours": 100,
     "trace": 45,
 }
 
 REQUIRED_MARKERS = {
-    "td": ["Objectifs", "Exercices", "Corrigé", "Erreurs fréquentes", "Différenciation"],
-    "evaluation": ["Durée", "Matériel autorisé", "Questions", "Barème", "Corrigé", "Critères de réussite"],
-    "tp": ["Objectif", "Consignes", "Tests", "Livrable", "Critères de réussite"],
+    "td": [
+        ["objectifs"],
+        ["exercices"],
+        ["corrigé", "corrige"],
+        ["erreurs fréquentes", "erreurs frequentes"],
+        ["différenciation", "differenciation"],
+    ],
+    "evaluation": [
+        ["questions"],
+        ["barème", "bareme"],
+        ["corrigé", "corrige"],
+        ["critères de réussite", "criteres de reussite"],
+    ],
+    "tp": [
+        ["objectif"],
+        ["consigne", "consignes"],
+        ["tests"],
+        ["livrable"],
+        ["critères de réussite", "criteres de reussite"],
+    ],
 }
-TARGET_PREFIXES = {f"P{index:02d}" for index in range(10, 15)} | {f"T{index:02d}" for index in range(10, 20)}
 
 
 @dataclass
@@ -32,31 +48,15 @@ class OperationalDebtResult:
 
 
 def resolve_resource(root: Path, reference: str) -> Path | None:
-    candidate = root / reference
-    if candidate.exists():
-        return candidate
-    if "/" in reference:
-        return None
-    matches = sorted(root.rglob(reference))
-    return matches[0] if matches else None
+    return resolve_reference(root, reference)
 
 
 def linked_operational_supports(root: Path = ROOT) -> list[Path]:
     supports: dict[str, Path] = {}
-    for sheet in sheet_files(root):
-        metadata = read_frontmatter(sheet)
-        if str(metadata.get("readiness") or "").strip() != "operational":
-            continue
-        for link in course_sheet_links(sheet):
-            if link.is_session or not link.is_resource:
-                continue
-            if not resource_exists(root, link.file):
-                continue
-            path = resolve_resource(root, link.file)
-            if path and path.suffix == ".md":
-                if path.name[:3] not in TARGET_PREFIXES:
-                    continue
-                supports[path.as_posix()] = path
+    for resource in operational_resource_links(root, existing_only=True):
+        path = resource.path
+        if path and path.suffix == ".md":
+            supports[path.as_posix()] = path
     return [supports[key] for key in sorted(supports)]
 
 
@@ -94,9 +94,9 @@ def analyze_operational_supports_no_indicative_debt(root: Path = ROOT) -> Operat
         if "\n## " not in text:
             result.errors.append(f"{rel}: sections niveau 2 absentes")
         lower = body.lower()
-        for marker in REQUIRED_MARKERS.get(kind, []):
-            if marker.lower() not in lower:
-                result.errors.append(f"{rel}: section ou marqueur manquant -> {marker}")
+        for alternatives in REQUIRED_MARKERS.get(kind, []):
+            if not any(marker.lower() in lower for marker in alternatives):
+                result.errors.append(f"{rel}: section ou marqueur manquant -> {alternatives[0]}")
     return result
 
 

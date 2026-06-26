@@ -1,16 +1,16 @@
 # Inventaire ressources NSI
 
-- Total ressources : 486
+- Total ressources : 494
 - Ressources pédagogiques : 53
-- Ressources techniques : 433
+- Ressources techniques : 441
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - drive: 0
-- generated: 486
+- generated: 494
 
 ## Répartition par niveau
-- interne: 183
+- interne: 191
 - premiere: 146
 - terminale: 157
 
@@ -18,17 +18,17 @@
 - banque: 14
 - document: 273
 - python: 36
-- script: 98
+- script: 105
 - sequence: 45
-- test: 20
+- test: 21
 
 ## Répartition par statut
-- needs_review: 486
+- needs_review: 494
 
 ## Répartition audience
 - corrige: 33
 - eleve: 110
-- mixte: 340
+- mixte: 348
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -372,6 +372,7 @@
   - scientific_claims_review_report.md
   - scripts/_course_sheets_common.py
   - scripts/_inventory_utils.py
+  - scripts/_operational_links.py
   - scripts/_pedagogy_reports.py
   - scripts/_qa_common.py
   - scripts/_session_checks.py
@@ -394,6 +395,7 @@
   - scripts/check_document_depth.py
   - scripts/check_document_naming_conventions.py
   - scripts/check_document_style.py
+  - scripts/check_drive_integration_plan.py
   - scripts/check_drive_mapping.py
   - scripts/check_drive_mapping_release.py
   - scripts/check_drive_quarantine_privacy.py
@@ -405,7 +407,9 @@
   - scripts/check_git_clean.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_linked_evaluation_quality.py
+  - scripts/check_linked_evaluation_substance.py
   - scripts/check_linked_td_quality.py
+  - scripts/check_linked_td_substance.py
   - scripts/check_links.py
   - scripts/check_local_drive_traceability.py
   - scripts/check_manifest_source_integrity.py
@@ -418,11 +422,13 @@
   - scripts/check_no_coverage_from_sheets_only.py
   - scripts/check_no_line_padding.py
   - scripts/check_no_needs_review_for_release.py
+  - scripts/check_no_operational_scope_hardcoding.py
   - scripts/check_no_placeholders.py
   - scripts/check_no_placeholders_code.py
   - scripts/check_no_placeholders_docs.py
   - scripts/check_no_private_data.py
   - scripts/check_no_teacher_content_in_student_export.py
+  - scripts/check_operational_readiness_quality_coupling.py
   - scripts/check_operational_supports_no_indicative_debt.py
   - scripts/check_pedagogical_alignment.py
   - scripts/check_program_capacity_evidence_depth.py
@@ -440,6 +446,7 @@
   - scripts/check_ready_session_operationality.py
   - scripts/check_ready_supports_depth.py
   - scripts/check_ready_supports_required_sections.py
+  - scripts/check_register_no_hidden_operational_debt.py
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_completeness.py
@@ -509,6 +516,7 @@
   - tests/test_local_drive_traceability.py
   - tests/test_missing_register_actionability.py
   - tests/test_no_coverage_from_sheets_only.py
+  - tests/test_operational_substance_controls.py
   - tests/test_private_data_detection.py
   - tests/test_ready_session_operationality.py
   - tests/test_ready_supports_gates.py
@@ -886,6 +894,7 @@
   - scientific_claims_review_report.md
   - scripts/_course_sheets_common.py
   - scripts/_inventory_utils.py
+  - scripts/_operational_links.py
   - scripts/_pedagogy_reports.py
   - scripts/_qa_common.py
   - scripts/_session_checks.py
@@ -908,6 +917,7 @@
   - scripts/check_document_depth.py
   - scripts/check_document_naming_conventions.py
   - scripts/check_document_style.py
+  - scripts/check_drive_integration_plan.py
   - scripts/check_drive_mapping.py
   - scripts/check_drive_mapping_release.py
   - scripts/check_drive_quarantine_privacy.py
@@ -919,7 +929,9 @@
   - scripts/check_git_clean.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_linked_evaluation_quality.py
+  - scripts/check_linked_evaluation_substance.py
   - scripts/check_linked_td_quality.py
+  - scripts/check_linked_td_substance.py
   - scripts/check_links.py
   - scripts/check_local_drive_traceability.py
   - scripts/check_manifest_source_integrity.py
@@ -932,11 +944,13 @@
   - scripts/check_no_coverage_from_sheets_only.py
   - scripts/check_no_line_padding.py
   - scripts/check_no_needs_review_for_release.py
+  - scripts/check_no_operational_scope_hardcoding.py
   - scripts/check_no_placeholders.py
   - scripts/check_no_placeholders_code.py
   - scripts/check_no_placeholders_docs.py
   - scripts/check_no_private_data.py
   - scripts/check_no_teacher_content_in_student_export.py
+  - scripts/check_operational_readiness_quality_coupling.py
   - scripts/check_operational_supports_no_indicative_debt.py
   - scripts/check_pedagogical_alignment.py
   - scripts/check_program_capacity_evidence_depth.py
@@ -954,6 +968,7 @@
   - scripts/check_ready_session_operationality.py
   - scripts/check_ready_supports_depth.py
   - scripts/check_ready_supports_required_sections.py
+  - scripts/check_register_no_hidden_operational_debt.py
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_completeness.py
@@ -997,6 +1012,7 @@
   - tests/test_local_drive_traceability.py
   - tests/test_missing_register_actionability.py
   - tests/test_no_coverage_from_sheets_only.py
+  - tests/test_operational_substance_controls.py
   - tests/test_private_data_detection.py
   - tests/test_ready_session_operationality.py
   - tests/test_ready_supports_gates.py
@@ -1368,6 +1384,7 @@
 - scientific_claims_review_report.md
 - scripts/_course_sheets_common.py
 - scripts/_inventory_utils.py
+- scripts/_operational_links.py
 - scripts/_pedagogy_reports.py
 - scripts/_qa_common.py
 - scripts/_session_checks.py
@@ -1390,6 +1407,7 @@
 - scripts/check_document_depth.py
 - scripts/check_document_naming_conventions.py
 - scripts/check_document_style.py
+- scripts/check_drive_integration_plan.py
 - scripts/check_drive_mapping.py
 - scripts/check_drive_mapping_release.py
 - scripts/check_drive_quarantine_privacy.py
@@ -1401,7 +1419,9 @@
 - scripts/check_git_clean.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_linked_evaluation_quality.py
+- scripts/check_linked_evaluation_substance.py
 - scripts/check_linked_td_quality.py
+- scripts/check_linked_td_substance.py
 - scripts/check_links.py
 - scripts/check_local_drive_traceability.py
 - scripts/check_manifest_source_integrity.py
@@ -1414,11 +1434,13 @@
 - scripts/check_no_coverage_from_sheets_only.py
 - scripts/check_no_line_padding.py
 - scripts/check_no_needs_review_for_release.py
+- scripts/check_no_operational_scope_hardcoding.py
 - scripts/check_no_placeholders.py
 - scripts/check_no_placeholders_code.py
 - scripts/check_no_placeholders_docs.py
 - scripts/check_no_private_data.py
 - scripts/check_no_teacher_content_in_student_export.py
+- scripts/check_operational_readiness_quality_coupling.py
 - scripts/check_operational_supports_no_indicative_debt.py
 - scripts/check_pedagogical_alignment.py
 - scripts/check_program_capacity_evidence_depth.py
@@ -1436,6 +1458,7 @@
 - scripts/check_ready_session_operationality.py
 - scripts/check_ready_supports_depth.py
 - scripts/check_ready_supports_required_sections.py
+- scripts/check_register_no_hidden_operational_debt.py
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
 - scripts/check_sequence_completeness.py
@@ -1499,6 +1522,7 @@
 - tests/test_local_drive_traceability.py
 - tests/test_missing_register_actionability.py
 - tests/test_no_coverage_from_sheets_only.py
+- tests/test_operational_substance_controls.py
 - tests/test_private_data_detection.py
 - tests/test_ready_session_operationality.py
 - tests/test_ready_supports_gates.py
@@ -1853,6 +1877,7 @@
 - scientific_claims_review_report.md
 - scripts/_course_sheets_common.py
 - scripts/_inventory_utils.py
+- scripts/_operational_links.py
 - scripts/_pedagogy_reports.py
 - scripts/_qa_common.py
 - scripts/_session_checks.py
@@ -1875,6 +1900,7 @@
 - scripts/check_document_depth.py
 - scripts/check_document_naming_conventions.py
 - scripts/check_document_style.py
+- scripts/check_drive_integration_plan.py
 - scripts/check_drive_mapping.py
 - scripts/check_drive_mapping_release.py
 - scripts/check_drive_quarantine_privacy.py
@@ -1886,7 +1912,9 @@
 - scripts/check_git_clean.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_linked_evaluation_quality.py
+- scripts/check_linked_evaluation_substance.py
 - scripts/check_linked_td_quality.py
+- scripts/check_linked_td_substance.py
 - scripts/check_links.py
 - scripts/check_local_drive_traceability.py
 - scripts/check_manifest_source_integrity.py
@@ -1899,11 +1927,13 @@
 - scripts/check_no_coverage_from_sheets_only.py
 - scripts/check_no_line_padding.py
 - scripts/check_no_needs_review_for_release.py
+- scripts/check_no_operational_scope_hardcoding.py
 - scripts/check_no_placeholders.py
 - scripts/check_no_placeholders_code.py
 - scripts/check_no_placeholders_docs.py
 - scripts/check_no_private_data.py
 - scripts/check_no_teacher_content_in_student_export.py
+- scripts/check_operational_readiness_quality_coupling.py
 - scripts/check_operational_supports_no_indicative_debt.py
 - scripts/check_pedagogical_alignment.py
 - scripts/check_program_capacity_evidence_depth.py
@@ -1921,6 +1951,7 @@
 - scripts/check_ready_session_operationality.py
 - scripts/check_ready_supports_depth.py
 - scripts/check_ready_supports_required_sections.py
+- scripts/check_register_no_hidden_operational_debt.py
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
 - scripts/check_sequence_completeness.py
@@ -1990,6 +2021,7 @@
 - tests/test_local_drive_traceability.py
 - tests/test_missing_register_actionability.py
 - tests/test_no_coverage_from_sheets_only.py
+- tests/test_operational_substance_controls.py
 - tests/test_private_data_detection.py
 - tests/test_ready_session_operationality.py
 - tests/test_ready_supports_gates.py

@@ -23,13 +23,14 @@ official_program:
     - "T-BDD-03D"
     - "T-BDD-03E"
 ---
+
 # T10 - TD - SQL SELECT WHERE JOIN
 
 ## Objectifs
-- O1 : appliquer les méthodes de la fiche à une donnée différente.
-- O2 : distinguer lecture d'information, production et justification.
-- O3 : traiter au moins un cas limite sans le masquer.
-- O4 : préparer une correction exploitable en séance.
+- Lire une donnée disciplinaire précise avant de répondre.
+- Produire une méthode vérifiable et un résultat contrôlable.
+- Traiter un cas limite sans le transformer en généralité.
+- Relier chaque correction à une erreur fréquente observable.
 
 ## Capacités officielles
 - T-BDD-03A
@@ -41,137 +42,139 @@ official_program:
 ## Fiche liée et séance liée
 - Fiche liée : `03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_select_where_join.md`.
 - Séance liée : `T10-S1` dans la progression annuelle.
-- Statut : support créé en `needs_review`, non validé pédagogiquement et non publiable.
+- Statut : support `needs_review`, non validé et non publiable.
 
 ## Situation de travail
-un relevé de notes utilise Eleve(id_eleve, nom, classe) et Note(id_note, id_eleve, matiere, note).
-
-## Données de référence
-Eleve : (1,"E1","T1"), (2,"E2","T2"), (3,"E3","T1"). Note : (10,1,"NSI",15), (11,1,"Maths",13), (12,2,"NSI",9), (13,3,"NSI",18).
+Base minimale: Eleve(id_eleve, nom, classe) et Note(id_note, id_eleve, matiere, note).
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée et vocabulaire.
-- Standard : exercices 3 à 6, production écrite avec contrôle.
-- Approfondissement : exercices 7 et 8, comparaison de démarches et généralisation.
+- Socle : exercices 1 et 2, lecture guidée de la donnée.
+- Standard : exercices 3 à 6, production écrite et justification.
+- Approfondissement : exercices 7 et 8, transfert ou comparaison.
 
 ## Exercices
-### Exercice 1 - Lire les colonnes utiles dans un select simple
+### Exercice 1 - Lire un schéma relationnel
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-BDD-03A.
-- Données : Eleve : (1,"E1","T1"), (2,"E2","T2"), (3,"E3","T1"). Note : (10,1,"NSI",15), (11,1,"Maths",13), (12,2,"NSI",9), (13,3,"NSI",18).
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de lire les colonnes utiles dans un SELECT simple.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 2 - Écrire un where qui filtre les élèves de t1
+- Données : Eleve(1,"Ada","T1"), Eleve(2,"Linus","T2") ; Note(10,1,"NSI",16), Note(11,2,"NSI",12).
+- Consigne : Identifier clé primaire et clé étrangère.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 2 - Prévoir le résultat d’un SELECT
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-BDD-03B.
-- Données : Eleve : (1,"E1","T1"), (2,"E2","T2"), (3,"E3","T1"). Note : (10,1,"NSI",15), (11,1,"Maths",13), (12,2,"NSI",9), (13,3,"NSI",18).
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de écrire un WHERE qui filtre les élèves de T1.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 3 - Produire une jointure eleve-note avec condition on
+- Données : Table Eleve avec lignes (1,Ada,T1), (2,Linus,T2), (3,Grace,T1). Requête SELECT nom FROM Eleve WHERE classe="T1" ORDER BY nom;
+- Consigne : Donner la sortie.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 3 - Écrire une requête WHERE
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-BDD-03C.
-- Données : Eleve : (1,"E1","T1"), (2,"E2","T2"), (3,"E3","T1"). Note : (10,1,"NSI",15), (11,1,"Maths",13), (12,2,"NSI",9), (13,3,"NSI",18).
-- Consigne : Produis une réponse opérationnelle pour produire une jointure Eleve-Note avec condition ON, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 4 - Écrire une requête triée par note décroissante
+- Données : Table Note, chercher notes de NSI supérieures ou égales à 15.
+- Consigne : Écrire la requête SQL.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 4 - Écrire une jointure
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-BDD-03D.
-- Données : Eleve : (1,"E1","T1"), (2,"E2","T2"), (3,"E3","T1"). Note : (10,1,"NSI",15), (11,1,"Maths",13), (12,2,"NSI",9), (13,3,"NSI",18).
-- Consigne : Produis une réponse opérationnelle pour écrire une requête triée par note décroissante, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 5 - Traiter le cas limite d’une jointure sans condition
+- Données : Afficher nom et note en NSI.
+- Consigne : Écrire la requête avec condition de jointure.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 5 - Repérer une jointure sans condition
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-BDD-03E.
-- Données : Eleve : (1,"E1","T1"), (2,"E2","T2"), (3,"E3","T1"). Note : (10,1,"NSI",15), (11,1,"Maths",13), (12,2,"NSI",9), (13,3,"NSI",18).
-- Consigne : Traite le cas limite demandé pour traiter le cas limite d’une jointure sans condition et précise la convention retenue.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 6 - Justifier la différence entre filtre sur classe et filtre sur matière
+- Données : SELECT nom, note FROM Eleve, Note; avec 3 élèves et 2 notes.
+- Consigne : Dire le nombre de lignes et l’erreur.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 6 - Justifier ORDER BY
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-BDD-03A.
-- Données : Eleve : (1,"E1","T1"), (2,"E2","T2"), (3,"E3","T1"). Note : (10,1,"NSI",15), (11,1,"Maths",13), (12,2,"NSI",9), (13,3,"NSI",18).
-- Consigne : Justifie pourquoi la méthode utilisée pour justifier la différence entre filtre sur classe et filtre sur matière est correcte dans ce contexte.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 7 - Analyser une requête qui duplique les lignes
+- Données : Notes NSI: Ada 16, Linus 12, Grace 18.
+- Consigne : Écrire et justifier le tri décroissant.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 7 - Filtrer avant/après jointure
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-BDD-03B.
-- Données : Eleve : (1,"E1","T1"), (2,"E2","T2"), (3,"E3","T1"). Note : (10,1,"NSI",15), (11,1,"Maths",13), (12,2,"NSI",9), (13,3,"NSI",18).
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de analyser une requête qui duplique les lignes.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 8 - Écrire une requête complète nom, matière, note pour les notes au moins 14
+- Données : Comparer WHERE matiere="NSI" avant ou après join logique.
+- Consigne : Expliquer l’effet.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 8 - Combiner agrégat simple
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-BDD-03C.
-- Données : Eleve : (1,"E1","T1"), (2,"E2","T2"), (3,"E3","T1"). Note : (10,1,"NSI",15), (11,1,"Maths",13), (12,2,"NSI",9), (13,3,"NSI",18).
-- Consigne : Produis une réponse opérationnelle pour écrire une requête complète nom, matière, note pour les notes au moins 14, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
+- Données : Notes NSI 16,12,18.
+- Consigne : Écrire la moyenne NSI.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-BDD-03A.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T10 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « lire les colonnes utiles dans un SELECT simple » en utilisant le vocabulaire SQL SELECT WHERE JOIN.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Eleve(1,"Ada","T1"), Eleve(2,"Linus","T2") ; Note(10,1,"NSI",16), Note(11,2,"NSI",12).
+- Résultat attendu : Eleve.id_eleve est clé primaire ; Note.id_note est clé primaire ; Note.id_eleve référence Eleve.id_eleve.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-BDD-03B.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T10 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « écrire un WHERE qui filtre les élèves de T1 » en utilisant le vocabulaire SQL SELECT WHERE JOIN.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Table Eleve avec lignes (1,Ada,T1), (2,Linus,T2), (3,Grace,T1). Requête SELECT nom FROM Eleve WHERE classe="T1" ORDER BY nom;
+- Résultat attendu : Résultat: Ada puis Grace, une colonne nom, car seuls les élèves de T1 sont gardés et triés alphabétiquement.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-BDD-03C.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T10 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « produire une jointure Eleve-Note avec condition ON » en utilisant le vocabulaire SQL SELECT WHERE JOIN.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Table Note, chercher notes de NSI supérieures ou égales à 15.
+- Résultat attendu : SELECT id_eleve, note FROM Note WHERE matiere = "NSI" AND note >= 15; Résultat sur les données: (1,16).
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-BDD-03D.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T10 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « écrire une requête triée par note décroissante » en utilisant le vocabulaire SQL SELECT WHERE JOIN.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Afficher nom et note en NSI.
+- Résultat attendu : SELECT Eleve.nom, Note.note FROM Eleve JOIN Note ON Eleve.id_eleve = Note.id_eleve WHERE Note.matiere = "NSI"; Résultat: (Ada,16), (Linus,12).
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-BDD-03E.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T10 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « traiter le cas limite d’une jointure sans condition » en utilisant le vocabulaire SQL SELECT WHERE JOIN.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : SELECT nom, note FROM Eleve, Note; avec 3 élèves et 2 notes.
+- Résultat attendu : Sans condition, produit cartésien: 3*2=6 lignes. Erreur: notes associées à tous les élèves au lieu de leur id_eleve.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-BDD-03A.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T10 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « justifier la différence entre filtre sur classe et filtre sur matière » en utilisant le vocabulaire SQL SELECT WHERE JOIN.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Notes NSI: Ada 16, Linus 12, Grace 18.
+- Résultat attendu : SELECT nom, note FROM ... ORDER BY note DESC; produit Grace 18, Ada 16, Linus 12. DESC place les plus grandes notes en premier.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-BDD-03B.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T10 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « analyser une requête qui duplique les lignes » en utilisant le vocabulaire SQL SELECT WHERE JOIN.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Comparer WHERE matiere="NSI" avant ou après join logique.
+- Résultat attendu : Le résultat relationnel final est identique si la condition porte seulement sur Note. Filtrer Note avant peut réduire les lignes intermédiaires.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-BDD-03C.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T10 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « écrire une requête complète nom, matière, note pour les notes au moins 14 » en utilisant le vocabulaire SQL SELECT WHERE JOIN.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Notes NSI 16,12,18.
+- Résultat attendu : SELECT AVG(note) FROM Note WHERE matiere="NSI"; résultat (15.333...). On peut arrondir dans l’affichage, pas dans le calcul.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
-- EF1 : recopier une définition sans l'appliquer à la donnée ; remédiation : entourer les valeurs utilisées avant d'écrire.
-- EF2 : produire un résultat sans contrôle ; remédiation : ajouter une ligne « vérification » à chaque réponse.
-- EF3 : confondre cas nominal et cas limite ; remédiation : refaire l'exercice 5 avec une donnée minimale.
-- EF4 : citer la capacité officielle sans méthode ; remédiation : associer chaque capacité à une action observable.
+- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
+- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
+- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
+- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
+
+## Remédiation ciblée
+- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
+- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
+- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
 
 ## Différenciation
-- Socle : fournir la donnée annotée et demander une phrase de conclusion.
-- Standard : demander la méthode complète et le contrôle écrit.
-- Approfondissement : demander une variante de donnée et une comparaison de deux démarches.
+- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
+- Standard : demander méthode complète, résultat et contrôle écrit.
+- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
 
 ## Lien avec la progression
 | Élément | Référence | Statut |
@@ -181,6 +184,6 @@ Eleve : (1,"E1","T1"), (2,"E2","T2"), (3,"E3","T1"). Note : (10,1,"NSI",15), (11
 | Évaluation | T10_evaluation_sql_select_where_join.md | needs_review |
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans ce support.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans ce support.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

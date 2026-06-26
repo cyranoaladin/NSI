@@ -126,3 +126,17 @@ Un formulaire international mélange accents, symboles monétaires et mesures d�
 - Résultat attendu : valeur proche de `0.3`.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
 - Critère de validation : méthode visible, résultat correct et contrôle « arrondi binaire ».
+
+## Modalités de passation
+- Durée : 25 minutes.
+- Matériel autorisé : fiche texte Unicode et flottants, sans corrigé distribué ni navigation externe.
+- Capacités évaluées :
+- P-DATA-BASE-05A
+- P-DATA-BASE-05A
+
+## Fiche liée et aménagement
+- Fiche liée : fiche de cours opérationnelle de la séquence P03, statut `needs_review`.
+- Séance liée : `P03-S1`, avec question centrée sur code points, octets et approximations.
+- Version aménagée : données code points, octets et approximations surlignées et tableau réponse en trois zones.
+- Remédiation : reprendre un caractère accentué puis un flottant simple, puis verbaliser la méthode en binôme.
+

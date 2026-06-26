@@ -38,6 +38,11 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
 - 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
 - 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md: nom propre suspect -> Trame Ethernet
+- 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md: nom propre suspect -> Trame Ethernet
+- 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md: nom propre suspect -> Time Exceeded
+- 03_progressions/supports/premiere/P10/P10_evaluation_reseaux_protocoles_paquets.md: nom propre suspect -> Trame Ethernet
+- 03_progressions/supports/premiere/P10/P10_evaluation_reseaux_protocoles_paquets.md: nom propre suspect -> Trame Ethernet
 - AGENTS.md: nom propre suspect -> Agent Inventaire
 - AGENTS.md: nom propre suspect -> Agent Programme
 - AGENTS.md: nom propre suspect -> Agent Auteur
@@ -108,6 +113,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - tests/test_course_sheets.py: nom propre suspect -> Lien Drive
 - tests/test_course_sheets.py: nom propre suspect -> Lien Drive
 - tests/test_missing_register_actionability.py: nom propre suspect -> Lien Drive
+- tests/test_operational_substance_controls.py: nom propre suspect -> Lien Drive
 - tests/test_session_referenced_files_exist.py: nom propre suspect -> Lien Drive
 - tp_test_alignment_report.md: nom propre suspect -> Test Alignment Report
 
@@ -313,4 +319,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 113 alertes supplémentaires non affichées
+- ... 115 alertes supplémentaires non affichées

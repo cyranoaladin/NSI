@@ -90,3 +90,29 @@ official_program:
 - Chaque question contient donnée, méthode, résultat et contrôle.
 - Le vocabulaire disciplinaire est utilisé sans remplacer la justification.
 - Le barème reste indicatif tant que la ressource est en needs_review.
+
+## Modalités de passation
+- Durée : 25 minutes.
+- Matériel autorisé : fiche personnelle, sans corrigé ni accès réseau.
+- Capacités évaluées :
+- P-ARCH-01A
+- P-ARCH-01B
+- P-ARCH-03A
+- P-ARCH-03B
+- P-ARCH-03C
+- P-ARCH-01A
+- P-ARCH-01B
+- P-ARCH-03A
+- P-ARCH-03B
+- P-ARCH-03C
+
+## Fiche liée et aménagement
+- Fiche liée : fiche de cours opérationnelle de la séquence P09, statut `needs_review`.
+- Séance liée : `P09-S1` dans la progression annuelle.
+- Version aménagée : même sujet avec données surlignées et tableau méthode / résultat / contrôle.
+- Remédiation : reprendre la question la moins réussie avec une donnée plus courte puis faire verbaliser la méthode.
+## Erreurs fréquentes
+- EF1 : répondre sans citer la donnée utilisée ; correction : encadrer la donnée avant de rédiger.
+- EF2 : donner un résultat sans méthode ; correction : séparer méthode, résultat et contrôle.
+- EF3 : oublier le cas limite ; correction : refaire une question avec une donnée minimale.
+

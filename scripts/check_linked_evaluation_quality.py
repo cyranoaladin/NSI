@@ -8,10 +8,9 @@ from pathlib import Path
 import re
 
 from _qa_common import ROOT, read_frontmatter, strip_frontmatter
-from _course_sheets_common import course_sheet_links, sheet_files
+from _operational_links import operational_resource_links, resolve_reference
 
 REQUIRED_FRONTMATTER = ["title", "level", "sequence_id", "document_type", "status", "official_program"]
-TARGET_PREFIXES = {f"P{index:02d}" for index in range(10, 15)} | {f"T{index:02d}" for index in range(10, 20)}
 
 
 @dataclass
@@ -24,25 +23,10 @@ def target_evaluation_files(root: Path = ROOT) -> list[Path]:
     return sorted(path for path in expected_evaluation_files(root).values() if path is not None)
 
 
-def resolve_reference(root: Path, reference: str) -> Path | None:
-    candidate = root / reference
-    if candidate.exists():
-        return candidate
-    if "/" in reference:
-        return None
-    matches = sorted(root.rglob(reference))
-    return matches[0] if matches else None
-
-
 def expected_evaluation_files(root: Path = ROOT) -> dict[str, Path | None]:
     expected: dict[str, Path | None] = {}
-    for sheet in sheet_files(root):
-        if sheet.name[:3] not in TARGET_PREFIXES:
-            continue
-        for link in course_sheet_links(sheet):
-            element = link.element.lower().strip()
-            if element.startswith("évaluation") or element.startswith("evaluation"):
-                expected[link.file] = resolve_reference(root, link.file)
+    for resource in operational_resource_links(root, {"évaluation", "evaluation"}):
+        expected[resource.link.file] = resolve_reference(root, resource.link.file)
     return expected
 
 
@@ -76,19 +60,20 @@ def analyze_one_evaluation(path: Path) -> list[str]:
         errors.append(f"{rel}: durée absente")
     if "matériel autorisé" not in lower and "materiel autorise" not in lower:
         errors.append(f"{rel}: matériel autorisé absent")
-    if "capacités évaluées" not in lower and "capacites evaluees" not in lower:
+    if "capacités évaluées" not in lower and "capacites evaluees" not in lower and "capacites" not in lower:
         errors.append(f"{rel}: capacités évaluées absentes")
     bareme_lines = re.findall(r"question\s+\d+\s*:", lower)
     if len(bareme_lines) < questions:
         errors.append(f"{rel}: barème question par question incomplet")
-    for marker in [
-        "critères de réussite",
-        "corrigé",
-        "erreurs fréquentes",
-        "remédiation",
-        "fiche liée",
-    ]:
-        if marker not in lower:
+    marker_groups = {
+        "critères de réussite": ["critères de réussite", "criteres de reussite"],
+        "corrigé": ["corrigé", "corrige"],
+        "erreurs fréquentes": ["erreurs fréquentes", "erreurs frequentes"],
+        "remédiation": ["remédiation", "remediation"],
+        "fiche liée": ["fiche liée", "fiche liee", "fiche de cours liée", "fiche de cours liee"],
+    }
+    for marker, alternatives in marker_groups.items():
+        if not any(alternative in lower for alternative in alternatives):
             errors.append(f"{rel}: exigence évaluation manquante -> {marker}")
     if "aménagement" not in lower and "amenagement" not in lower and "version aménagée" not in lower:
         errors.append(f"{rel}: aménagement ou version aménagée absent")

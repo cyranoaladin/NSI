@@ -23,12 +23,13 @@ official_program:
     - "P-ARCH-04A"
     - "P-ARCH-04B"
 ---
+
 # P10 - Évaluation - protocoles et paquets
 
 ## Durée et matériel autorisé
 - Durée : 25 minutes.
-- Matériel autorisé : fiche de cours personnelle, sans accès réseau ni correction.
-- Statut : évaluation créée en `needs_review`, non publiée et non validée.
+- Matériel autorisé : fiche personnelle, sans accès réseau ni corrigé.
+- Statut : évaluation `needs_review`, non validée et non publiable.
 
 ## Capacités évaluées
 - P-ARCH-02A
@@ -43,69 +44,73 @@ official_program:
 - TD lié : `P10_TD_reseaux_protocoles_paquets.md`.
 
 ## Consignes
-Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée, la méthode et un contrôle rapide.
+Répondre directement sur copie. Chaque réponse doit montrer la donnée utilisée, la méthode et un contrôle rapide.
 
 ## Questions
-### Question 1 - Identifier source, destination, protocole et ttl dans un paquet ip
+### Question 1 - Identifier les champs d’un paquet IPv4
 - Capacité : P-ARCH-02A.
-- Données : Trace réseau : A(src=192.168.1.20,dst=172.16.0.8,proto=TCP,seq=42,ack=17,ttl=4), B(src=172.16.0.8,dst=192.168.1.20,proto=TCP,seq=17,ack=43,ttl=3), trame perdue seq=43 puis retransmission avec bit alterné 1.
-- Consigne : répondre à la tâche « identifier source, destination, protocole et TTL dans un paquet IP » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 2 - Expliquer encapsulation ethernet/ip/tcp sans mélanger adresse mac et adresse ip
+- Données : Paquet A: src=192.168.1.20, dst=172.16.0.8, protocole=TCP, port source=50214, port destination=443, TTL=4.
+- Consigne : Relever source, destination, protocole, port serveur et TTL.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 2 - Distinguer adresses MAC et adresses IP
 - Capacité : P-ARCH-02B.
-- Données : Trace réseau : A(src=192.168.1.20,dst=172.16.0.8,proto=TCP,seq=42,ack=17,ttl=4), B(src=172.16.0.8,dst=192.168.1.20,proto=TCP,seq=17,ack=43,ttl=3), trame perdue seq=43 puis retransmission avec bit alterné 1.
-- Consigne : répondre à la tâche « expliquer encapsulation Ethernet/IP/TCP sans mélanger adresse MAC et adresse IP » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 3 - Écrire la simulation d’un protocole à bit alterné après perte de trame
+- Données : Trame Ethernet: MAC src=08:00:27:AA:10:01, MAC dst=08:00:27:BB:20:01 ; paquet IP: src=192.168.1.20, dst=172.16.0.8.
+- Consigne : Dire quels champs changent à chaque saut et quels champs restent de bout en bout.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 3 - Dérouler un protocole à bit alterné
 - Capacité : P-ARCH-02C.
-- Données : Trace réseau : A(src=192.168.1.20,dst=172.16.0.8,proto=TCP,seq=42,ack=17,ttl=4), B(src=172.16.0.8,dst=192.168.1.20,proto=TCP,seq=17,ack=43,ttl=3), trame perdue seq=43 puis retransmission avec bit alterné 1.
-- Consigne : répondre à la tâche « écrire la simulation d’un protocole à bit alterné après perte de trame » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 4 - Définir les messages capteur, accusé de réception et commande actionneur
+- Données : M0(bit=0) reçu et ACK0 renvoyé ; M1(bit=1) est perdu ; l’émetteur retransmet M1 après timeout.
+- Consigne : Écrire la séquence émission, perte, retransmission, ACK.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 4 - Produire un pseudo-code de passerelle
 - Capacité : P-ARCH-04A.
-- Données : Trace réseau : A(src=192.168.1.20,dst=172.16.0.8,proto=TCP,seq=42,ack=17,ttl=4), B(src=172.16.0.8,dst=192.168.1.20,proto=TCP,seq=17,ack=43,ttl=3), trame perdue seq=43 puis retransmission avec bit alterné 1.
-- Consigne : répondre à la tâche « définir les messages capteur, accusé de réception et commande actionneur » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
+- Données : Réseau local 192.168.1.0/24 ; passerelle 192.168.1.1 ; destination 192.168.1.34 puis destination 172.16.0.8.
+- Consigne : Écrire la décision locale/passerelle.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
 
 ## Barème
-- Question 1: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 2: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 3: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 4: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Total : 16 points convertibles sur 20 après relecture pédagogique.
+- Question 1: 1 point identification de la donnée, 1 point méthode, 1 point résultat exact, 1 point contrôle.
+- Question 2: 1 point vocabulaire précis, 1 point méthode, 1 point résultat, 1 point justification.
+- Question 3: 1 point modélisation, 1 point production correcte, 1 point test du résultat, 1 point lisibilité.
+- Question 4: 1 point cas traité, 1 point résultat, 1 point justification, 1 point erreur fréquente évitée.
+- Total : 16 points, conversion sur 20 après relecture pédagogique.
 
 ## Corrigé professeur
 ### Corrigé question 1
 - Capacité évaluée : P-ARCH-02A.
-- Réponse attendue : la solution explicite « identifier source, destination, protocole et TTL dans un paquet IP » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : Paquet A: src=192.168.1.20, dst=172.16.0.8, protocole=TCP, port source=50214, port destination=443, TTL=4.
+- Réponse attendue : Source IP 192.168.1.20 ; destination IP 172.16.0.8 ; protocole TCP ; port serveur 443 ; TTL initial 4. Le paquet part du capteur vers le serveur HTTPS.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 2
 - Capacité évaluée : P-ARCH-02B.
-- Réponse attendue : la solution explicite « expliquer encapsulation Ethernet/IP/TCP sans mélanger adresse MAC et adresse IP » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : Trame Ethernet: MAC src=08:00:27:AA:10:01, MAC dst=08:00:27:BB:20:01 ; paquet IP: src=192.168.1.20, dst=172.16.0.8.
+- Réponse attendue : Les adresses MAC changent à chaque liaison locale ; les IP source/destination restent 192.168.1.20 et 172.16.0.8 de bout en bout, sauf mécanisme particulier non étudié ici.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 3
 - Capacité évaluée : P-ARCH-02C.
-- Réponse attendue : la solution explicite « écrire la simulation d’un protocole à bit alterné après perte de trame » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : M0(bit=0) reçu et ACK0 renvoyé ; M1(bit=1) est perdu ; l’émetteur retransmet M1 après timeout.
+- Réponse attendue : Séquence: envoyer M0(bit 0) -> recevoir ACK0 -> envoyer M1(bit 1) -> perte de M1 -> timeout -> retransmettre M1(bit 1) -> réception M1 -> renvoyer ACK1 -> l’émetteur passe au bit 0.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 4
 - Capacité évaluée : P-ARCH-04A.
-- Réponse attendue : la solution explicite « définir les messages capteur, accusé de réception et commande actionneur » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : Réseau local 192.168.1.0/24 ; passerelle 192.168.1.1 ; destination 192.168.1.34 puis destination 172.16.0.8.
+- Réponse attendue : Pseudo-code: si dst commence par 192.168.1. alors envoyer directement sur le LAN ; sinon envoyer à 192.168.1.1. Donc 192.168.1.34 est local, 172.16.0.8 passe par la passerelle.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 
 ## Critères de réussite
 - Les capacités officielles sont reliées à une action observable.
-- La réponse ne se limite pas à un mot-clé de la fiche.
+- Le résultat attendu peut être comparé à une valeur, une table, une trace ou un pseudo-code.
 - Le cas limite ou le contrôle demandé apparaît explicitement.
 - Le vocabulaire disciplinaire est utilisé dans le contexte de la donnée.
 
 ## Version aménagée et indications d’aménagement
-- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un espace « méthode / résultat / contrôle ».
-- Aménagement temps : ajouter 10 minutes si l'élève doit recopier la donnée.
-- Aide autorisée : liste des verbes d'action, sans résultat numérique ni requête complète.
+- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un tableau méthode / résultat / contrôle.
+- Aménagement temps : ajouter 10 minutes si l’élève doit recopier les données.
+- Aide autorisée : liste des verbes d’action, sans résultat numérique ni requête complète.
 
 ## Erreurs fréquentes et remédiation
 - EF1 : réponse sans donnée citée ; remédiation : refaire la question 1 avec les valeurs encadrées.
@@ -114,6 +119,6 @@ Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée
 - EF4 : oubli du cas limite ; remédiation : reprendre le TD associé, exercice 5.
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans cette évaluation.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans cette évaluation.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

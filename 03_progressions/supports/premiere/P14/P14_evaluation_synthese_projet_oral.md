@@ -19,12 +19,13 @@ official_program:
   capacities:
     - "P-HIST-01"
 ---
-# P14 - Évaluation - synthese projet oral
+
+# P14 - Évaluation - synthèse projet oral
 
 ## Durée et matériel autorisé
 - Durée : 25 minutes.
-- Matériel autorisé : fiche de cours personnelle, sans accès réseau ni correction.
-- Statut : évaluation créée en `needs_review`, non publiée et non validée.
+- Matériel autorisé : fiche personnelle, sans accès réseau ni corrigé.
+- Statut : évaluation `needs_review`, non validée et non publiable.
 
 ## Capacités évaluées
 - P-HIST-01
@@ -35,69 +36,73 @@ official_program:
 - TD lié : `P14_TD_synthese_projet_oral.md`.
 
 ## Consignes
-Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée, la méthode et un contrôle rapide.
+Répondre directement sur copie. Chaque réponse doit montrer la donnée utilisée, la méthode et un contrôle rapide.
 
 ## Questions
-### Question 1 - Analyser un plan de dossier et repérer les preuves manquantes
+### Question 1 - Lire un cahier des charges
 - Capacité : P-HIST-01.
-- Données : Dossier projet : problème choisi, cahier de tests, démonstration de 3 minutes, trace des choix, diapositive sur un repère historique informatique.
-- Consigne : répondre à la tâche « analyser un plan de dossier et repérer les preuves manquantes » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 2 - Relier une notion nsi du projet à un repère historique informatique
+- Données : Projet: carnet de scores, données stockées en CSV, recherche par joueur, tri par score.
+- Consigne : Identifier deux fonctionnalités et deux contraintes.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 2 - Analyser un extrait de test
 - Capacité : P-HIST-01.
-- Données : Dossier projet : problème choisi, cahier de tests, démonstration de 3 minutes, trace des choix, diapositive sur un repère historique informatique.
-- Consigne : répondre à la tâche « relier une notion NSI du projet à un repère historique informatique » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 3 - Rédiger une fiche de démonstration avec entrée, sortie et test
+- Données : assert meilleur_score([12,9,15]) == 15 ; assert meilleur_score([]) is None.
+- Consigne : Dire les cas couverts.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 3 - Rédiger une spécification de fonction
 - Capacité : P-HIST-01.
-- Données : Dossier projet : problème choisi, cahier de tests, démonstration de 3 minutes, trace des choix, diapositive sur un repère historique informatique.
-- Consigne : répondre à la tâche « rédiger une fiche de démonstration avec entrée, sortie et test » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 4 - Écrire une question orale suivie d’une réponse argumentée
+- Données : fonction moyenne_scores(scores).
+- Consigne : Écrire entrée, sortie, cas limite.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 4 - Construire un plan d’oral
 - Capacité : P-HIST-01.
-- Données : Dossier projet : problème choisi, cahier de tests, démonstration de 3 minutes, trace des choix, diapositive sur un repère historique informatique.
-- Consigne : répondre à la tâche « écrire une question orale suivie d’une réponse argumentée » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
+- Données : Sujet: expliquer un tri utilisé dans le projet.
+- Consigne : Donner un plan en trois parties.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
 
 ## Barème
-- Question 1: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 2: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 3: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 4: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Total : 16 points convertibles sur 20 après relecture pédagogique.
+- Question 1: 1 point identification de la donnée, 1 point méthode, 1 point résultat exact, 1 point contrôle.
+- Question 2: 1 point vocabulaire précis, 1 point méthode, 1 point résultat, 1 point justification.
+- Question 3: 1 point modélisation, 1 point production correcte, 1 point test du résultat, 1 point lisibilité.
+- Question 4: 1 point cas traité, 1 point résultat, 1 point justification, 1 point erreur fréquente évitée.
+- Total : 16 points, conversion sur 20 après relecture pédagogique.
 
 ## Corrigé professeur
 ### Corrigé question 1
 - Capacité évaluée : P-HIST-01.
-- Réponse attendue : la solution explicite « analyser un plan de dossier et repérer les preuves manquantes » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : Projet: carnet de scores, données stockées en CSV, recherche par joueur, tri par score.
+- Réponse attendue : Fonctionnalités: ajouter un score, rechercher un joueur, trier par score. Contraintes: format CSV cohérent et tests sur recherche/tri.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 2
 - Capacité évaluée : P-HIST-01.
-- Réponse attendue : la solution explicite « relier une notion NSI du projet à un repère historique informatique » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : assert meilleur_score([12,9,15]) == 15 ; assert meilleur_score([]) is None.
+- Réponse attendue : Premier test couvre cas nominal avec maximum 15 ; second test couvre cas limite liste vide, contrat None.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 3
 - Capacité évaluée : P-HIST-01.
-- Réponse attendue : la solution explicite « rédiger une fiche de démonstration avec entrée, sortie et test » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : fonction moyenne_scores(scores).
+- Réponse attendue : Entrée: liste de nombres. Sortie: moyenne flottante. Cas limite: liste vide -> None ou ValueError ; choix à fixer dans la spécification.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 4
 - Capacité évaluée : P-HIST-01.
-- Réponse attendue : la solution explicite « écrire une question orale suivie d’une réponse argumentée » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : Sujet: expliquer un tri utilisé dans le projet.
+- Réponse attendue : Plan: 1 contexte du besoin ; 2 principe du tri avec exemple [3,1,2] -> [1,2,3] ; 3 limites et complexité O(n^2) ou O(n log n) selon algorithme.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 
 ## Critères de réussite
 - Les capacités officielles sont reliées à une action observable.
-- La réponse ne se limite pas à un mot-clé de la fiche.
+- Le résultat attendu peut être comparé à une valeur, une table, une trace ou un pseudo-code.
 - Le cas limite ou le contrôle demandé apparaît explicitement.
 - Le vocabulaire disciplinaire est utilisé dans le contexte de la donnée.
 
 ## Version aménagée et indications d’aménagement
-- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un espace « méthode / résultat / contrôle ».
-- Aménagement temps : ajouter 10 minutes si l'élève doit recopier la donnée.
-- Aide autorisée : liste des verbes d'action, sans résultat numérique ni requête complète.
+- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un tableau méthode / résultat / contrôle.
+- Aménagement temps : ajouter 10 minutes si l’élève doit recopier les données.
+- Aide autorisée : liste des verbes d’action, sans résultat numérique ni requête complète.
 
 ## Erreurs fréquentes et remédiation
 - EF1 : réponse sans donnée citée ; remédiation : refaire la question 1 avec les valeurs encadrées.
@@ -106,6 +111,6 @@ Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée
 - EF4 : oubli du cas limite ; remédiation : reprendre le TD associé, exercice 5.
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans cette évaluation.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans cette évaluation.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

@@ -24,12 +24,13 @@ official_program:
     - "T-LANG-04B"
     - "T-LANG-05"
 ---
+
 # T14 - Évaluation - modularité API paradigmes bugs
 
 ## Durée et matériel autorisé
 - Durée : 25 minutes.
-- Matériel autorisé : fiche de cours personnelle, sans accès réseau ni correction.
-- Statut : évaluation créée en `needs_review`, non publiée et non validée.
+- Matériel autorisé : fiche personnelle, sans accès réseau ni corrigé.
+- Statut : évaluation `needs_review`, non validée et non publiable.
 
 ## Capacités évaluées
 - T-LANG-03A
@@ -45,69 +46,73 @@ official_program:
 - TD lié : `T14_TD_modularite_api_paradigmes_bugs.md`.
 
 ## Consignes
-Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée, la méthode et un contrôle rapide.
+Répondre directement sur copie. Chaque réponse doit montrer la donnée utilisée, la méthode et un contrôle rapide.
 
 ## Questions
-### Question 1 - Lire une signature d’api et ses préconditions
+### Question 1 - Identifier une API
 - Capacité : T-LANG-03A.
-- Données : Module meteo.py : mesures horaires, seuil alerte 35, documentation de fonction, appel externe qui peut échouer.
-- Consigne : répondre à la tâche « lire une signature d’API et ses préconditions » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 2 - Analyser une documentation pour repérer entrée, sortie, exception
+- Données : Module notes.py expose moyenne(notes) et mediane(notes).
+- Consigne : Dire ce qui appartient à l’API.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 2 - Lire une trace d’erreur
 - Capacité : T-LANG-03B.
-- Données : Module meteo.py : mesures horaires, seuil alerte 35, documentation de fonction, appel externe qui peut échouer.
-- Consigne : répondre à la tâche « analyser une documentation pour repérer entrée, sortie, exception » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 3 - Écrire un module simple séparant lecture et calcul
+- Données : TypeError: unsupported operand type(s) for +: int and str dans somme += note.
+- Consigne : Identifier la cause.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 3 - Écrire une fonction pure
 - Capacité : T-LANG-03C.
-- Données : Module meteo.py : mesures horaires, seuil alerte 35, documentation de fonction, appel externe qui peut échouer.
-- Consigne : répondre à la tâche « écrire un module simple séparant lecture et calcul » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 4 - Écrire un test qui isole un bug de seuil
+- Données : notes=[10,14,16].
+- Consigne : Coder moyenne sans effet de bord.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 4 - Ajouter un test unitaire
 - Capacité : T-LANG-04A.
-- Données : Module meteo.py : mesures horaires, seuil alerte 35, documentation de fonction, appel externe qui peut échouer.
-- Consigne : répondre à la tâche « écrire un test qui isole un bug de seuil » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
+- Données : moyenne([10,20]) doit valoir 15.
+- Consigne : Écrire un assert.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
 
 ## Barème
-- Question 1: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 2: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 3: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 4: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Total : 16 points convertibles sur 20 après relecture pédagogique.
+- Question 1: 1 point identification de la donnée, 1 point méthode, 1 point résultat exact, 1 point contrôle.
+- Question 2: 1 point vocabulaire précis, 1 point méthode, 1 point résultat, 1 point justification.
+- Question 3: 1 point modélisation, 1 point production correcte, 1 point test du résultat, 1 point lisibilité.
+- Question 4: 1 point cas traité, 1 point résultat, 1 point justification, 1 point erreur fréquente évitée.
+- Total : 16 points, conversion sur 20 après relecture pédagogique.
 
 ## Corrigé professeur
 ### Corrigé question 1
 - Capacité évaluée : T-LANG-03A.
-- Réponse attendue : la solution explicite « lire une signature d’API et ses préconditions » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : Module notes.py expose moyenne(notes) et mediane(notes).
+- Réponse attendue : Les signatures moyenne(notes) et mediane(notes), leur contrat d’entrée/sortie et exceptions appartiennent à l’API ; les variables internes non.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 2
 - Capacité évaluée : T-LANG-03B.
-- Réponse attendue : la solution explicite « analyser une documentation pour repérer entrée, sortie, exception » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : TypeError: unsupported operand type(s) for +: int and str dans somme += note.
+- Réponse attendue : Une note est une chaîne comme "12" au lieu d’un entier/float. Il faut convertir ou valider l’entrée.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 3
 - Capacité évaluée : T-LANG-03C.
-- Réponse attendue : la solution explicite « écrire un module simple séparant lecture et calcul » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : notes=[10,14,16].
+- Réponse attendue : def moyenne(notes): return sum(notes)/len(notes). Pour [10,14,16], résultat 40/3 environ 13.33 ; la liste n’est pas modifiée.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 4
 - Capacité évaluée : T-LANG-04A.
-- Réponse attendue : la solution explicite « écrire un test qui isole un bug de seuil » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : moyenne([10,20]) doit valoir 15.
+- Réponse attendue : assert moyenne([10,20]) == 15. On ajoute aussi le cas vide selon contrat, par exemple pytest.raises(ValueError).
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 
 ## Critères de réussite
 - Les capacités officielles sont reliées à une action observable.
-- La réponse ne se limite pas à un mot-clé de la fiche.
+- Le résultat attendu peut être comparé à une valeur, une table, une trace ou un pseudo-code.
 - Le cas limite ou le contrôle demandé apparaît explicitement.
 - Le vocabulaire disciplinaire est utilisé dans le contexte de la donnée.
 
 ## Version aménagée et indications d’aménagement
-- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un espace « méthode / résultat / contrôle ».
-- Aménagement temps : ajouter 10 minutes si l'élève doit recopier la donnée.
-- Aide autorisée : liste des verbes d'action, sans résultat numérique ni requête complète.
+- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un tableau méthode / résultat / contrôle.
+- Aménagement temps : ajouter 10 minutes si l’élève doit recopier les données.
+- Aide autorisée : liste des verbes d’action, sans résultat numérique ni requête complète.
 
 ## Erreurs fréquentes et remédiation
 - EF1 : réponse sans donnée citée ; remédiation : refaire la question 1 avec les valeurs encadrées.
@@ -116,6 +121,6 @@ Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée
 - EF4 : oubli du cas limite ; remédiation : reprendre le TD associé, exercice 5.
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans cette évaluation.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans cette évaluation.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

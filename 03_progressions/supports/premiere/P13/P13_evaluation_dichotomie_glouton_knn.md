@@ -21,12 +21,13 @@ official_program:
     - "P-ALGO-04"
     - "P-ALGO-05"
 ---
-# P13 - Évaluation - dichotomie glouton k-NN
+
+# P13 - Évaluation - dichotomie glouton knn
 
 ## Durée et matériel autorisé
 - Durée : 25 minutes.
-- Matériel autorisé : fiche de cours personnelle, sans accès réseau ni correction.
-- Statut : évaluation créée en `needs_review`, non publiée et non validée.
+- Matériel autorisé : fiche personnelle, sans accès réseau ni corrigé.
+- Statut : évaluation `needs_review`, non validée et non publiable.
 
 ## Capacités évaluées
 - P-ALGO-03
@@ -39,69 +40,73 @@ official_program:
 - TD lié : `P13_TD_dichotomie_glouton_knn.md`.
 
 ## Consignes
-Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée, la méthode et un contrôle rapide.
+Répondre directement sur copie. Chaque réponse doit montrer la donnée utilisée, la méthode et un contrôle rapide.
 
 ## Questions
-### Question 1 - Tracer la dichotomie pour chercher 23 dans m
+### Question 1 - Tracer une recherche dichotomique
 - Capacité : P-ALGO-03.
-- Données : Liste triée M = [4, 9, 15, 18, 23, 31, 42], somme 30 avec pièces [1, 4, 6, 10], points A(1,1), B(2,3), C(5,4), D(6,1), requête Q(3,2).
-- Consigne : répondre à la tâche « tracer la dichotomie pour chercher 23 dans M » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 2 - Détecter l’échec de la dichotomie pour 20
+- Données : tableau trié [3,8,12,19,27,31], cible=19.
+- Consigne : Donner les bornes et milieux successifs.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 2 - Repérer la condition de tri
 - Capacité : P-ALGO-04.
-- Données : Liste triée M = [4, 9, 15, 18, 23, 31, 42], somme 30 avec pièces [1, 4, 6, 10], points A(1,1), B(2,3), C(5,4), D(6,1), requête Q(3,2).
-- Consigne : répondre à la tâche « détecter l’échec de la dichotomie pour 20 » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 3 - Écrire l’algorithme glouton pour rendre 30 avec les pièces proposées
+- Données : tableau [4,9,2,11], cible=2.
+- Consigne : Dire si la dichotomie est applicable.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 3 - Écrire un glouton de monnaie
 - Capacité : P-ALGO-05.
-- Données : Liste triée M = [4, 9, 15, 18, 23, 31, 42], somme 30 avec pièces [1, 4, 6, 10], points A(1,1), B(2,3), C(5,4), D(6,1), requête Q(3,2).
-- Consigne : répondre à la tâche « écrire l’algorithme glouton pour rendre 30 avec les pièces proposées » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 4 - Construire un contre-exemple où un glouton n’est pas optimal
+- Données : pièces [50,20,10,5,2,1], montant=87.
+- Consigne : Donner les pièces choisies.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 4 - Calculer un k-NN
 - Capacité : P-ALGO-03.
-- Données : Liste triée M = [4, 9, 15, 18, 23, 31, 42], somme 30 avec pièces [1, 4, 6, 10], points A(1,1), B(2,3), C(5,4), D(6,1), requête Q(3,2).
-- Consigne : répondre à la tâche « construire un contre-exemple où un glouton n’est pas optimal » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
+- Données : Points A(0,0) rouge, B(2,0) rouge, C(0,3) bleu ; point X(1,1), k=3.
+- Consigne : Calculer les distances carrées et la classe.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
 
 ## Barème
-- Question 1: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 2: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 3: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 4: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Total : 16 points convertibles sur 20 après relecture pédagogique.
+- Question 1: 1 point identification de la donnée, 1 point méthode, 1 point résultat exact, 1 point contrôle.
+- Question 2: 1 point vocabulaire précis, 1 point méthode, 1 point résultat, 1 point justification.
+- Question 3: 1 point modélisation, 1 point production correcte, 1 point test du résultat, 1 point lisibilité.
+- Question 4: 1 point cas traité, 1 point résultat, 1 point justification, 1 point erreur fréquente évitée.
+- Total : 16 points, conversion sur 20 après relecture pédagogique.
 
 ## Corrigé professeur
 ### Corrigé question 1
 - Capacité évaluée : P-ALGO-03.
-- Réponse attendue : la solution explicite « tracer la dichotomie pour chercher 23 dans M » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : tableau trié [3,8,12,19,27,31], cible=19.
+- Réponse attendue : g=0,d=5,m=2,val=12 -> cible à droite ; g=3,d=5,m=4,val=27 -> cible à gauche ; g=3,d=3,m=3,val=19 -> trouvé indice 3.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 2
 - Capacité évaluée : P-ALGO-04.
-- Réponse attendue : la solution explicite « détecter l’échec de la dichotomie pour 20 » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : tableau [4,9,2,11], cible=2.
+- Réponse attendue : Non, le tableau n’est pas trié. Une dichotomie pourrait éliminer la mauvaise moitié. Il faut trier ou utiliser une recherche séquentielle.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 3
 - Capacité évaluée : P-ALGO-05.
-- Réponse attendue : la solution explicite « écrire l’algorithme glouton pour rendre 30 avec les pièces proposées » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : pièces [50,20,10,5,2,1], montant=87.
+- Réponse attendue : Choix glouton: 50 reste 37 ; 20 reste 17 ; 10 reste 7 ; 5 reste 2 ; 2 reste 0. Réponse [50,20,10,5,2].
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 4
 - Capacité évaluée : P-ALGO-03.
-- Réponse attendue : la solution explicite « construire un contre-exemple où un glouton n’est pas optimal » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : Points A(0,0) rouge, B(2,0) rouge, C(0,3) bleu ; point X(1,1), k=3.
+- Réponse attendue : d2(A)=2, d2(B)=2, d2(C)=5. Les 3 voisins contiennent 2 rouges et 1 bleu ; X est classé rouge.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 
 ## Critères de réussite
 - Les capacités officielles sont reliées à une action observable.
-- La réponse ne se limite pas à un mot-clé de la fiche.
+- Le résultat attendu peut être comparé à une valeur, une table, une trace ou un pseudo-code.
 - Le cas limite ou le contrôle demandé apparaît explicitement.
 - Le vocabulaire disciplinaire est utilisé dans le contexte de la donnée.
 
 ## Version aménagée et indications d’aménagement
-- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un espace « méthode / résultat / contrôle ».
-- Aménagement temps : ajouter 10 minutes si l'élève doit recopier la donnée.
-- Aide autorisée : liste des verbes d'action, sans résultat numérique ni requête complète.
+- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un tableau méthode / résultat / contrôle.
+- Aménagement temps : ajouter 10 minutes si l’élève doit recopier les données.
+- Aide autorisée : liste des verbes d’action, sans résultat numérique ni requête complète.
 
 ## Erreurs fréquentes et remédiation
 - EF1 : réponse sans donnée citée ; remédiation : refaire la question 1 avec les valeurs encadrées.
@@ -110,6 +115,6 @@ Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée
 - EF4 : oubli du cas limite ; remédiation : reprendre le TD associé, exercice 5.
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans cette évaluation.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans cette évaluation.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

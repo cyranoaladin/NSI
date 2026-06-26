@@ -19,12 +19,13 @@ official_program:
   capacities:
     - "T-ALGO-03"
 ---
+
 # T16 - Évaluation - diviser pour régner tri fusion
 
 ## Durée et matériel autorisé
 - Durée : 25 minutes.
-- Matériel autorisé : fiche de cours personnelle, sans accès réseau ni correction.
-- Statut : évaluation créée en `needs_review`, non publiée et non validée.
+- Matériel autorisé : fiche personnelle, sans accès réseau ni corrigé.
+- Statut : évaluation `needs_review`, non validée et non publiable.
 
 ## Capacités évaluées
 - T-ALGO-03
@@ -35,69 +36,73 @@ official_program:
 - TD lié : `T16_TD_diviser_pour_regner_tri_fusion.md`.
 
 ## Consignes
-Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée, la méthode et un contrôle rapide.
+Répondre directement sur copie. Chaque réponse doit montrer la donnée utilisée, la méthode et un contrôle rapide.
 
 ## Questions
-### Question 1 - Lire l’arbre d’appels récursifs du tri fusion
+### Question 1 - Découper une liste
 - Capacité : T-ALGO-03.
-- Données : Liste L = [8, 3, 7, 2, 9, 1], sous-listes [3,8] et [1,2,7,9], cas vide [].
-- Consigne : répondre à la tâche « lire l’arbre d’appels récursifs du tri fusion » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 2 - Analyser une fusion de deux listes déjà triées
+- Données : [8,3,5,1,9,2].
+- Consigne : Donner les deux moitiés.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 2 - Fusionner deux listes triées
 - Capacité : T-ALGO-03.
-- Données : Liste L = [8, 3, 7, 2, 9, 1], sous-listes [3,8] et [1,2,7,9], cas vide [].
-- Consigne : répondre à la tâche « analyser une fusion de deux listes déjà triées » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 3 - Écrire la fonction fusion avec deux indices
+- Données : [2,5,8] et [1,3,9].
+- Consigne : Donner la fusion.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 3 - Écrire pseudo-code fusion
 - Capacité : T-ALGO-03.
-- Données : Liste L = [8, 3, 7, 2, 9, 1], sous-listes [3,8] et [1,2,7,9], cas vide [].
-- Consigne : répondre à la tâche « écrire la fonction fusion avec deux indices » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 4 - Écrire le schéma diviser, résoudre, combiner
+- Données : g=[2,8], d=[1,5].
+- Consigne : Produire pseudo-code.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 4 - Tracer tri fusion complet
 - Capacité : T-ALGO-03.
-- Données : Liste L = [8, 3, 7, 2, 9, 1], sous-listes [3,8] et [1,2,7,9], cas vide [].
-- Consigne : répondre à la tâche « écrire le schéma diviser, résoudre, combiner » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
+- Données : [4,1,3,2].
+- Consigne : Donner étapes.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
 
 ## Barème
-- Question 1: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 2: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 3: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 4: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Total : 16 points convertibles sur 20 après relecture pédagogique.
+- Question 1: 1 point identification de la donnée, 1 point méthode, 1 point résultat exact, 1 point contrôle.
+- Question 2: 1 point vocabulaire précis, 1 point méthode, 1 point résultat, 1 point justification.
+- Question 3: 1 point modélisation, 1 point production correcte, 1 point test du résultat, 1 point lisibilité.
+- Question 4: 1 point cas traité, 1 point résultat, 1 point justification, 1 point erreur fréquente évitée.
+- Total : 16 points, conversion sur 20 après relecture pédagogique.
 
 ## Corrigé professeur
 ### Corrigé question 1
 - Capacité évaluée : T-ALGO-03.
-- Réponse attendue : la solution explicite « lire l’arbre d’appels récursifs du tri fusion » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : [8,3,5,1,9,2].
+- Réponse attendue : Moitié gauche [8,3,5], moitié droite [1,9,2]. On continue jusqu’aux listes de taille 1.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 2
 - Capacité évaluée : T-ALGO-03.
-- Réponse attendue : la solution explicite « analyser une fusion de deux listes déjà triées » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : [2,5,8] et [1,3,9].
+- Réponse attendue : Comparer têtes: 1, puis 2, puis 3, puis 5, puis 8, puis 9. Résultat [1,2,3,5,8,9].
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 3
 - Capacité évaluée : T-ALGO-03.
-- Réponse attendue : la solution explicite « écrire la fonction fusion avec deux indices » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : g=[2,8], d=[1,5].
+- Réponse attendue : i=j=0 ; tant que i<len(g) et j<len(d), prendre le plus petit ; ajouter le reste. Résultat [1,2,5,8].
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 4
 - Capacité évaluée : T-ALGO-03.
-- Réponse attendue : la solution explicite « écrire le schéma diviser, résoudre, combiner » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : [4,1,3,2].
+- Réponse attendue : Découpe [4,1]|[3,2], puis [4],[1],[3],[2]. Fusions [1,4], [2,3], puis [1,2,3,4].
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 
 ## Critères de réussite
 - Les capacités officielles sont reliées à une action observable.
-- La réponse ne se limite pas à un mot-clé de la fiche.
+- Le résultat attendu peut être comparé à une valeur, une table, une trace ou un pseudo-code.
 - Le cas limite ou le contrôle demandé apparaît explicitement.
 - Le vocabulaire disciplinaire est utilisé dans le contexte de la donnée.
 
 ## Version aménagée et indications d’aménagement
-- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un espace « méthode / résultat / contrôle ».
-- Aménagement temps : ajouter 10 minutes si l'élève doit recopier la donnée.
-- Aide autorisée : liste des verbes d'action, sans résultat numérique ni requête complète.
+- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un tableau méthode / résultat / contrôle.
+- Aménagement temps : ajouter 10 minutes si l’élève doit recopier les données.
+- Aide autorisée : liste des verbes d’action, sans résultat numérique ni requête complète.
 
 ## Erreurs fréquentes et remédiation
 - EF1 : réponse sans donnée citée ; remédiation : refaire la question 1 avec les valeurs encadrées.
@@ -106,6 +111,6 @@ Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée
 - EF4 : oubli du cas limite ; remédiation : reprendre le TD associé, exercice 5.
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans cette évaluation.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans cette évaluation.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

@@ -19,13 +19,14 @@ official_program:
   capacities:
     - "T-LANG-05"
 ---
+
 # T19 - TD - bac pratique grand oral projet
 
 ## Objectifs
-- O1 : appliquer les méthodes de la fiche à une donnée différente.
-- O2 : distinguer lecture d'information, production et justification.
-- O3 : traiter au moins un cas limite sans le masquer.
-- O4 : préparer une correction exploitable en séance.
+- Lire une donnée disciplinaire précise avant de répondre.
+- Produire une méthode vérifiable et un résultat contrôlable.
+- Traiter un cas limite sans le transformer en généralité.
+- Relier chaque correction à une erreur fréquente observable.
 
 ## Capacités officielles
 - T-LANG-05
@@ -33,137 +34,139 @@ official_program:
 ## Fiche liée et séance liée
 - Fiche liée : `03_progressions/fiches_cours/terminale/T19/T19_fiche_cours_bac_pratique_grand_oral_projet.md`.
 - Séance liée : `T19-S1` dans la progression annuelle.
-- Statut : support créé en `needs_review`, non validé pédagogiquement et non publiable.
+- Statut : support `needs_review`, non validé et non publiable.
 
 ## Situation de travail
-un entraînement final combine un sujet pratique Python, une correction argumentée et un plan de Grand Oral relié au projet.
-
-## Données de référence
-Sujet pratique : écrire occurrences(tab, x) puis tester [], [2,2,3], x=2 ; oral : problématique, exemple, limite, ouverture.
+Préparation finale: exercice pratique Python, analyse de complexité et oral de projet.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée et vocabulaire.
-- Standard : exercices 3 à 6, production écrite avec contrôle.
-- Approfondissement : exercices 7 et 8, comparaison de démarches et généralisation.
+- Socle : exercices 1 et 2, lecture guidée de la donnée.
+- Standard : exercices 3 à 6, production écrite et justification.
+- Approfondissement : exercices 7 et 8, transfert ou comparaison.
 
 ## Exercices
-### Exercice 1 - Lire un énoncé de sujet pratique et isoler entrée, sortie, cas limite
+### Exercice 1 - Lire un sujet pratique
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-LANG-05.
-- Données : Sujet pratique : écrire occurrences(tab, x) puis tester [], [2,2,3], x=2 ; oral : problématique, exemple, limite, ouverture.
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de lire un énoncé de sujet pratique et isoler entrée, sortie, cas limite.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 2 - Analyser une correction qui oublie le tableau vide
+- Données : Écrire occurrence(valeurs, x) qui compte x dans valeurs.
+- Consigne : Identifier entrée/sortie.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 2 - Analyser un test
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-LANG-05.
-- Données : Sujet pratique : écrire occurrences(tab, x) puis tester [], [2,2,3], x=2 ; oral : problématique, exemple, limite, ouverture.
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de analyser une correction qui oublie le tableau vide.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 3 - Écrire une fonction python testable pour le sujet donné
+- Données : assert occurrence([1,2,1],1)==2 ; assert occurrence([],3)==0.
+- Consigne : Dire les cas couverts.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 3 - Écrire la fonction
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-LANG-05.
-- Données : Sujet pratique : écrire occurrences(tab, x) puis tester [], [2,2,3], x=2 ; oral : problématique, exemple, limite, ouverture.
-- Consigne : Produis une réponse opérationnelle pour écrire une fonction Python testable pour le sujet donné, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 4 - Écrire un plan oral en trois parties avec exemple technique
+- Données : valeurs=[4,4,2], x=4.
+- Consigne : Donner code.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 4 - Préparer explication orale
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-LANG-05.
-- Données : Sujet pratique : écrire occurrences(tab, x) puis tester [], [2,2,3], x=2 ; oral : problématique, exemple, limite, ouverture.
-- Consigne : Produis une réponse opérationnelle pour écrire un plan oral en trois parties avec exemple technique, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 5 - Traiter le cas limite stress oral ou bug de dernière minute
+- Données : Fonction occurrence.
+- Consigne : Plan en 45 secondes.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 5 - Entrée vide
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-LANG-05.
-- Données : Sujet pratique : écrire occurrences(tab, x) puis tester [], [2,2,3], x=2 ; oral : problématique, exemple, limite, ouverture.
-- Consigne : Traite le cas limite demandé pour traiter le cas limite stress oral ou bug de dernière minute et précise la convention retenue.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 6 - Justifier un choix de test dans le carnet de bord
+- Données : occurrence([],5).
+- Consigne : Donner résultat.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 6 - Justifier complexité
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-LANG-05.
-- Données : Sujet pratique : écrire occurrences(tab, x) puis tester [], [2,2,3], x=2 ; oral : problématique, exemple, limite, ouverture.
-- Consigne : Justifie pourquoi la méthode utilisée pour justifier un choix de test dans le carnet de bord est correcte dans ce contexte.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 7 - Repérer un bug dans une boucle de parcours
+- Données : liste longueur n.
+- Consigne : Donner ordre.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 7 - Évaluer une réponse orale
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-LANG-05.
-- Données : Sujet pratique : écrire occurrences(tab, x) puis tester [], [2,2,3], x=2 ; oral : problématique, exemple, limite, ouverture.
-- Consigne : Lis la donnée, surligne l'information utile puis rédige l'analyse qui permet de repérer un bug dans une boucle de parcours.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
-### Exercice 8 - Préparer une synthèse entre projet, programme et évaluation pratique
+- Données : Un élève donne code mais aucun test ni complexité.
+- Consigne : Identifier manque.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+### Exercice 8 - Relier projet et programme
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-LANG-05.
-- Données : Sujet pratique : écrire occurrences(tab, x) puis tester [], [2,2,3], x=2 ; oral : problématique, exemple, limite, ouverture.
-- Consigne : Produis une réponse opérationnelle pour préparer une synthèse entre projet, programme et évaluation pratique, avec pseudo-code, requête ou schéma si le thème l'exige.
-- Production attendue : une réponse structurée en donnée, méthode, résultat, contrôle.
-- Critère de réussite : le résultat peut être vérifié sans demander l'intention de l'élève.
+- Données : Projet: moteur de recherche de mots.
+- Consigne : Faire le lien.
+- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
+- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-LANG-05.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T19 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « lire un énoncé de sujet pratique et isoler entrée, sortie, cas limite » en utilisant le vocabulaire bac pratique grand oral projet.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Écrire occurrence(valeurs, x) qui compte x dans valeurs.
+- Résultat attendu : Entrée: liste valeurs et cible x. Sortie: entier nombre d’occurrences. Exemple [1,2,1],1 -> 2.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-LANG-05.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T19 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « analyser une correction qui oublie le tableau vide » en utilisant le vocabulaire bac pratique grand oral projet.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : assert occurrence([1,2,1],1)==2 ; assert occurrence([],3)==0.
+- Résultat attendu : Cas nominal avec doublon et cas limite liste vide.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-LANG-05.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T19 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « écrire une fonction Python testable pour le sujet donné » en utilisant le vocabulaire bac pratique grand oral projet.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : valeurs=[4,4,2], x=4.
+- Résultat attendu : def occurrence(valeurs,x): c=0 ; for v in valeurs: if v==x: c+=1 ; return c. Résultat 2.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-LANG-05.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T19 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « écrire un plan oral en trois parties avec exemple technique » en utilisant le vocabulaire bac pratique grand oral projet.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Fonction occurrence.
+- Résultat attendu : Dire contrat, boucle et invariant c compte les occurrences déjà lues, puis complexité O(n).
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-LANG-05.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T19 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « traiter le cas limite stress oral ou bug de dernière minute » en utilisant le vocabulaire bac pratique grand oral projet.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : occurrence([],5).
+- Résultat attendu : La boucle ne s’exécute pas ; c reste 0 ; résultat 0.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-LANG-05.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T19 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « justifier un choix de test dans le carnet de bord » en utilisant le vocabulaire bac pratique grand oral projet.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : liste longueur n.
+- Résultat attendu : Chaque élément est comparé une fois à x ; temps O(n), mémoire O(1).
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-LANG-05.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T19 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « repérer un bug dans une boucle de parcours » en utilisant le vocabulaire bac pratique grand oral projet.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Un élève donne code mais aucun test ni complexité.
+- Résultat attendu : Il manque au moins un test nominal, un test limite et l’analyse O(n). La réponse n’est pas complète pour le bac.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-LANG-05.
-- Démarche : partir de la donnée fournie, isoler les grandeurs utiles, appliquer la méthode du chapitre T19 puis contrôler le résultat.
-- Résultat indicatif : l'élève doit obtenir une conclusion explicite sur « préparer une synthèse entre projet, programme et évaluation pratique » en utilisant le vocabulaire bac pratique grand oral projet.
-- Contrôle : une réponse sans donnée citée, sans étape intermédiaire ou sans cas limite n'est pas complète.
+- Donnée utilisée : Projet: moteur de recherche de mots.
+- Résultat attendu : Capacités mobilisées: parcours de chaîne/liste, dictionnaire d’index, tests unitaires, complexité de recherche. Donner une donnée exemple: texte "nsi nsi bac" -> index {"nsi":[0,1],"bac":[2]}.
+- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
-- EF1 : recopier une définition sans l'appliquer à la donnée ; remédiation : entourer les valeurs utilisées avant d'écrire.
-- EF2 : produire un résultat sans contrôle ; remédiation : ajouter une ligne « vérification » à chaque réponse.
-- EF3 : confondre cas nominal et cas limite ; remédiation : refaire l'exercice 5 avec une donnée minimale.
-- EF4 : citer la capacité officielle sans méthode ; remédiation : associer chaque capacité à une action observable.
+- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
+- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
+- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
+- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
+
+## Remédiation ciblée
+- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
+- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
+- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
 
 ## Différenciation
-- Socle : fournir la donnée annotée et demander une phrase de conclusion.
-- Standard : demander la méthode complète et le contrôle écrit.
-- Approfondissement : demander une variante de donnée et une comparaison de deux démarches.
+- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
+- Standard : demander méthode complète, résultat et contrôle écrit.
+- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
 
 ## Lien avec la progression
 | Élément | Référence | Statut |
@@ -173,6 +176,6 @@ Sujet pratique : écrire occurrences(tab, x) puis tester [], [2,2,3], x=2 ; oral
 | Évaluation | T19_evaluation_bac_pratique_grand_oral_projet.md | needs_review |
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans ce support.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans ce support.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

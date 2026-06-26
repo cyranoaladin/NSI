@@ -126,3 +126,17 @@ Un groupe reçoit quatre fragments Python issus de copies anonymisées et doit p
 - Résultat attendu : `11` retourné.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
 - Critère de validation : méthode visible, résultat correct et contrôle « aucun affichage sans `print` ».
+
+## Modalités de passation
+- Durée : 25 minutes.
+- Matériel autorisé : fiche diagnostic Python annotée, sans corrigé distribué ni navigation externe.
+- Capacités évaluées :
+- P-LANG-01
+- P-LANG-01
+
+## Fiche liée et aménagement
+- Fiche liée : fiche de cours opérationnelle de la séquence P00, statut `needs_review`.
+- Séance liée : `P00-S1`, avec question centrée sur variables, types et trace.
+- Version aménagée : données variables, types et trace surlignées et tableau réponse en trois zones.
+- Remédiation : reprendre la trace mémoire avec deux instructions seulement, puis verbaliser la méthode en binôme.
+

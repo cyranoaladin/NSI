@@ -21,12 +21,13 @@ official_program:
     - "T-BDD-03G"
     - "T-BDD-03H"
 ---
+
 # T10 - Évaluation - SQL INSERT UPDATE DELETE
 
 ## Durée et matériel autorisé
 - Durée : 25 minutes.
-- Matériel autorisé : fiche de cours personnelle, sans accès réseau ni correction.
-- Statut : évaluation créée en `needs_review`, non publiée et non validée.
+- Matériel autorisé : fiche personnelle, sans accès réseau ni corrigé.
+- Statut : évaluation `needs_review`, non validée et non publiable.
 
 ## Capacités évaluées
 - T-BDD-03F
@@ -39,69 +40,73 @@ official_program:
 - TD lié : `T10_TD_sql_insert_update_delete.md`.
 
 ## Consignes
-Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée, la méthode et un contrôle rapide.
+Répondre directement sur copie. Chaque réponse doit montrer la donnée utilisée, la méthode et un contrôle rapide.
 
 ## Questions
-### Question 1 - Lire l’état initial d’une table avant modification
+### Question 1 - Lire une table avant modification
 - Capacité : T-BDD-03F.
-- Données : Avant : Projet(1,"Site","en cours"), Projet(2,"Robot","test"), Projet(3,"Jeu","archive").
-- Consigne : répondre à la tâche « lire l’état initial d’une table avant modification » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 2 - Identifier la ligne visée par une clé primaire
+- Données : Livre: (1,"Algo",2), (2,"Reseaux",0).
+- Consigne : Dire quel livre est indisponible.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 2 - Prévoir un INSERT
 - Capacité : T-BDD-03G.
-- Données : Avant : Projet(1,"Site","en cours"), Projet(2,"Robot","test"), Projet(3,"Jeu","archive").
-- Consigne : répondre à la tâche « identifier la ligne visée par une clé primaire » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 3 - Écrire un insert pour ajouter projet(4,"data","idée")
+- Données : INSERT INTO Livre(id,titre,stock) VALUES (3,"SQL",5);
+- Consigne : Donner la table après.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 3 - Écrire un UPDATE ciblé
 - Capacité : T-BDD-03H.
-- Données : Avant : Projet(1,"Site","en cours"), Projet(2,"Robot","test"), Projet(3,"Jeu","archive").
-- Consigne : répondre à la tâche « écrire un INSERT pour ajouter Projet(4,"Data","idée") » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
-### Question 4 - Écrire un update ciblé qui passe le projet 2 à validé
+- Données : On emprunte Algo id=1, stock passe de 2 à 1.
+- Consigne : Écrire la requête.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 4 - Écrire un DELETE ciblé
 - Capacité : T-BDD-03F.
-- Données : Avant : Projet(1,"Site","en cours"), Projet(2,"Robot","test"), Projet(3,"Jeu","archive").
-- Consigne : répondre à la tâche « écrire un UPDATE ciblé qui passe le projet 2 à validé » avec méthode, résultat et contrôle.
-- Format attendu : réponse courte mais justifiée, avec notation ou pseudo-code si nécessaire.
+- Données : Supprimer le livre id=2 uniquement.
+- Consigne : Écrire la requête et vérification.
+- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
 
 ## Barème
-- Question 1: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 2: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 3: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Question 4: 2 points méthode, 1 point résultat, 1 point contrôle ou justification.
-- Total : 16 points convertibles sur 20 après relecture pédagogique.
+- Question 1: 1 point identification de la donnée, 1 point méthode, 1 point résultat exact, 1 point contrôle.
+- Question 2: 1 point vocabulaire précis, 1 point méthode, 1 point résultat, 1 point justification.
+- Question 3: 1 point modélisation, 1 point production correcte, 1 point test du résultat, 1 point lisibilité.
+- Question 4: 1 point cas traité, 1 point résultat, 1 point justification, 1 point erreur fréquente évitée.
+- Total : 16 points, conversion sur 20 après relecture pédagogique.
 
 ## Corrigé professeur
 ### Corrigé question 1
 - Capacité évaluée : T-BDD-03F.
-- Réponse attendue : la solution explicite « lire l’état initial d’une table avant modification » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : Livre: (1,"Algo",2), (2,"Reseaux",0).
+- Réponse attendue : Le livre id=2, titre Reseaux, a stock=0 : il est indisponible.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 2
 - Capacité évaluée : T-BDD-03G.
-- Réponse attendue : la solution explicite « identifier la ligne visée par une clé primaire » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : INSERT INTO Livre(id,titre,stock) VALUES (3,"SQL",5);
+- Réponse attendue : Nouvelle ligne ajoutée: (3,"SQL",5). La table contient maintenant ids 1,2,3.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 3
 - Capacité évaluée : T-BDD-03H.
-- Réponse attendue : la solution explicite « écrire un INSERT pour ajouter Projet(4,"Data","idée") » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : On emprunte Algo id=1, stock passe de 2 à 1.
+- Réponse attendue : UPDATE Livre SET stock = stock - 1 WHERE id = 1; Après exécution, Algo a stock=1.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 ### Corrigé question 4
 - Capacité évaluée : T-BDD-03F.
-- Réponse attendue : la solution explicite « écrire un UPDATE ciblé qui passe le projet 2 à validé » à partir des données fournies.
-- Justification : les étapes doivent permettre de retrouver le résultat sans deviner.
-- Point de vigilance : une conclusion isolée sans contrôle perd les points de méthode.
+- Donnée utilisée : Supprimer le livre id=2 uniquement.
+- Réponse attendue : DELETE FROM Livre WHERE id = 2; Vérification: SELECT * FROM Livre WHERE id=2; renvoie 0 ligne.
+- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
+- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
 
 ## Critères de réussite
 - Les capacités officielles sont reliées à une action observable.
-- La réponse ne se limite pas à un mot-clé de la fiche.
+- Le résultat attendu peut être comparé à une valeur, une table, une trace ou un pseudo-code.
 - Le cas limite ou le contrôle demandé apparaît explicitement.
 - Le vocabulaire disciplinaire est utilisé dans le contexte de la donnée.
 
 ## Version aménagée et indications d’aménagement
-- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un espace « méthode / résultat / contrôle ».
-- Aménagement temps : ajouter 10 minutes si l'élève doit recopier la donnée.
-- Aide autorisée : liste des verbes d'action, sans résultat numérique ni requête complète.
+- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un tableau méthode / résultat / contrôle.
+- Aménagement temps : ajouter 10 minutes si l’élève doit recopier les données.
+- Aide autorisée : liste des verbes d’action, sans résultat numérique ni requête complète.
 
 ## Erreurs fréquentes et remédiation
 - EF1 : réponse sans donnée citée ; remédiation : refaire la question 1 avec les valeurs encadrées.
@@ -110,6 +115,6 @@ Répondre directement sur copie. Chaque réponse doit citer la donnée utilisée
 - EF4 : oubli du cas limite ; remédiation : reprendre le TD associé, exercice 5.
 
 ## Source et traçabilité
-- Recherche locale effectuée dans `/home/alaeddine/Documents/NSI/Documents_DRIVE` avant création.
-- Aucun fichier Drive n'a été repris directement dans cette évaluation.
+- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
+- Aucun fichier Drive n’a été repris directement dans cette évaluation.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.

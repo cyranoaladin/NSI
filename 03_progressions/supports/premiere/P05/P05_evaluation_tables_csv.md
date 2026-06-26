@@ -128,3 +128,17 @@ Tunis,24` avec une fiche méthode fournie.
 - Résultat attendu : ville enrichie par région.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
 - Critère de validation : méthode visible, résultat correct et contrôle « clé inconnue ».
+
+## Modalités de passation
+- Durée : 25 minutes.
+- Matériel autorisé : fiche tables CSV, sans corrigé distribué ni navigation externe.
+- Capacités évaluées :
+- P-TABLE-01
+- P-TABLE-01
+
+## Fiche liée et aménagement
+- Fiche liée : fiche de cours opérationnelle de la séquence P05, statut `needs_review`.
+- Séance liée : `P05-S1`, avec question centrée sur import, cohérence et recherche.
+- Version aménagée : données import, cohérence et recherche surlignées et tableau réponse en trois zones.
+- Remédiation : contrôler une ligne CSV avec clé manquante, puis verbaliser la méthode en binôme.
+

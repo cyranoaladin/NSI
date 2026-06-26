@@ -126,3 +126,17 @@ Un serveur journalise des tâches en attente et doit choisir entre pile, file et
 - Résultat attendu : accès attendu constant.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
 - Critère de validation : méthode visible, résultat correct et contrôle « collision abstraite hors programme ».
+
+## Modalités de passation
+- Durée : 25 minutes.
+- Matériel autorisé : fiche piles, files, dictionnaires, sans corrigé distribué ni navigation externe.
+- Capacités évaluées :
+- T-STRUCT-03A
+- T-STRUCT-03A
+
+## Fiche liée et aménagement
+- Fiche liée : fiche de cours opérationnelle de la séquence T03, statut `needs_review`.
+- Séance liée : `T03-S1`, avec question centrée sur structures linéaires.
+- Version aménagée : données structures linéaires surlignées et tableau réponse en trois zones.
+- Remédiation : simuler trois opérations push/pop ou enfiler/defiler, puis verbaliser la méthode en binôme.
+

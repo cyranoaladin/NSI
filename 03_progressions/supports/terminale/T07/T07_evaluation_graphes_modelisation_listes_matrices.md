@@ -88,3 +88,27 @@ official_program:
 - Chaque question contient donnée, méthode, résultat et contrôle.
 - Le vocabulaire disciplinaire est utilisé sans remplacer la justification.
 - Le barème reste indicatif tant que la ressource est en needs_review.
+
+## Modalités de passation
+- Durée : 25 minutes.
+- Matériel autorisé : fiche personnelle, sans corrigé ni accès réseau.
+- Capacités évaluées :
+- T-STRUCT-05A
+- T-STRUCT-05B
+- T-STRUCT-05C
+- T-STRUCT-05D
+- T-STRUCT-05A
+- T-STRUCT-05B
+- T-STRUCT-05C
+- T-STRUCT-05D
+
+## Fiche liée et aménagement
+- Fiche liée : fiche de cours opérationnelle de la séquence T07, statut `needs_review`.
+- Séance liée : `T07-S1` dans la progression annuelle.
+- Version aménagée : même sujet avec données surlignées et tableau méthode / résultat / contrôle.
+- Remédiation : reprendre la question la moins réussie avec une donnée plus courte puis faire verbaliser la méthode.
+## Erreurs fréquentes
+- EF1 : répondre sans citer la donnée utilisée ; correction : encadrer la donnée avant de rédiger.
+- EF2 : donner un résultat sans méthode ; correction : séparer méthode, résultat et contrôle.
+- EF3 : oublier le cas limite ; correction : refaire une question avec une donnée minimale.
+
