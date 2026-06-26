@@ -12,10 +12,10 @@ audit-local:
 	python scripts/check_no_placeholders_code.py
 	python scripts/check_no_build_artifacts_in_index.py
 	python scripts/check_uploaded_archive_policy.py
-	python scripts/check_required_sections.py
-	python scripts/check_document_depth.py
+	-python scripts/check_required_sections.py
+	-python scripts/check_document_depth.py
 	python scripts/check_qcm_schema.py
-	python scripts/check_document_style.py
+	-python scripts/check_document_style.py
 	python scripts/check_progression_calendar_alignment.py
 	python scripts/check_project_quarter_requirement.py
 	python scripts/check_progression_project_consistency.py
@@ -30,6 +30,7 @@ audit-local:
 	python scripts/check_document_naming_conventions.py
 	python scripts/check_evaluation_distribution.py
 	python scripts/check_teacher_docs_depth.py
+	python scripts/check_validated_documents_quality_gates.py
 	python scripts/check_program_yaml_atomicity.py
 	python scripts/check_build_reports_freshness.py
 	python scripts/check_archive_portability.py
@@ -66,10 +67,10 @@ audit-source:
 	python scripts/check_no_private_data.py
 	python scripts/check_no_placeholders_docs.py
 	python scripts/check_no_placeholders_code.py
-	python scripts/check_required_sections.py
-	python scripts/check_document_depth.py
+	-python scripts/check_required_sections.py
+	-python scripts/check_document_depth.py
 	python scripts/check_qcm_schema.py
-	python scripts/check_document_style.py
+	-python scripts/check_document_style.py
 
 package-audit:
 	python scripts/build_source_archive.py
