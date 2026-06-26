@@ -54,6 +54,16 @@ def drive_rows() -> int:
         return sum(1 for _ in csv.DictReader(handle))
 
 
+def drive_decision_counts() -> Counter[str]:
+    counts: Counter[str] = Counter()
+    if not DRIVE_INVENTORY.exists():
+        return counts
+    with DRIVE_INVENTORY.open(encoding="utf-8", newline="") as handle:
+        for row in csv.DictReader(handle):
+            counts[row.get("decision", "")] += 1
+    return counts
+
+
 def command_status(command: list[str]) -> tuple[int, list[str]]:
     result = subprocess.run(command, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     lines: list[str] = []
@@ -171,6 +181,7 @@ def main() -> int:
     release_code, release_tail = release_blocker_status()
     release_status = "RELEASE_AUDIT_FAIL" if release_code != 0 else "RELEASE_AUDIT_PASS"
     final_status = "NON_RELEASE_READY" if release_code != 0 else "RELEASE_READY"
+    drive_counts = drive_decision_counts()
     indicative_rows = indicative_gate_rows()
     sheet_stats = course_sheet_stats()
     linked_rows = linked_course_sheet_rows()
@@ -199,6 +210,13 @@ def main() -> int:
         "- EXTRACTED_SOURCE_AUDIT_PASS : audit source extrait attendu sans dépendance Git.",
         f"- RELEASE_AUDIT_STATUS : {release_status}",
         f"- FINAL_STATUS = {final_status}",
+        "- Raison : Drive partiellement intégré ; publication bloquée par ressources restantes non auditées / absentes / sensibles.",
+        f"- Drive integrated_adapted : {drive_counts.get('integrated_adapted', 0)}",
+        f"- Drive inspiration_only : {drive_counts.get('inspiration_only', 0)}",
+        f"- Drive rejected_sensitive : {drive_counts.get('rejected_sensitive', 0)}",
+        f"- Drive missing_local_copy : {drive_counts.get('missing_local_copy', 0)}",
+        f"- Drive deferred : {drive_counts.get('deferred', 0)}",
+        f"- Drive quarantined : {drive_counts.get('quarantined', 0)}",
         "- Décision : ne pas générer de nouvelles séquences",
         "",
         "## Commandes de référence",
@@ -217,7 +235,10 @@ def main() -> int:
         "",
         "## Bloquants restants",
         "",
-        "- Ressources Drive référencées mais non intégrées localement.",
+        "- Drive partiellement intégré : voir `reports/drive_enrichment_report.md` et `drive_inventory.csv` pour les décisions par ressource.",
+        f"- Ressources Drive absentes localement : {drive_counts.get('missing_local_copy', 0)}.",
+        f"- Ressources Drive différées : {drive_counts.get('deferred', 0)}.",
+        f"- Ressources Drive rejetées sensibles : {drive_counts.get('rejected_sensitive', 0)}.",
         "- Toutes les ressources restent en revue ou non publiables.",
         "- Aucune capacité n'est covered.",
         "- Documents professeurs encore en needs_review.",

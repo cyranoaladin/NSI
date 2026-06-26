@@ -6,7 +6,7 @@ document_type: "fiche_cours"
 status: "needs_review"
 version: "0.1.0"
 source: "BO 2019"
-source_creation: "generated_from_program"
+source_creation: "adapted_from_drive"
 theme: "Types construits"
 notion: "tuples"
 official_program:
@@ -22,6 +22,7 @@ private_data: false
 - La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour tuples.
 - Les capacités P-DATA-CONSTR-01 sont rappelées ici sans être déclarées couvertes.
 - L’élève doit pouvoir refaire un exemple de types construits avec une valeur, une table ou un code différent.
+- Ressource locale adaptée : `Documents_DRIVE/2_NSI/Cours/Première NSI Pierrot caillabet/2_2020-2021/Bloc 3_Types construits-Traitement données en tables/types_construits_python-v2.pdf`.
 
 ## Méthodes
 1. Capacités explicitement travaillées dans les méthodes et exercices : P-DATA-CONSTR-01.
@@ -32,9 +33,9 @@ private_data: false
 
 ## Exemples corrigés
 ### Exemple corrigé 1 - Exemple principal
-`notes[1] = 14` modifie la deuxième valeur de `[8,12,10]`.
+Le tuple `point = (3, 5)` regroupe deux coordonnées liées. La fonction `milieu((1, 2), (5, 8))` renvoie `((1+5)/2, (2+8)/2)`, donc `(3.0, 5.0)`. On ne modifie pas directement `point[0]` : si une nouvelle coordonnée est nécessaire, on construit un nouveau tuple.
 ### Exemple corrigé 2 - Contrôle ou contre-exemple
-`eleve["score"]` lit une valeur par clé dans un dictionnaire.
+La liste `temperatures = [18, 20, 19]` accepte `temperatures[1] = 21`, car elle est mutable. Le tuple `coord = (18, 20)` refuserait `coord[1] = 21`. Le choix de structure dépend donc de l’opération attendue : modifier une série ou figer un couple de valeurs.
 
 ## Erreurs fréquentes
 - Confondre le vocabulaire de tuples avec une simple récitation : corriger par un exemple calculé ou exécuté.

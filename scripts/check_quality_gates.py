@@ -48,6 +48,7 @@ BLOCKING_CHECKS = [
     "scripts/check_sequence_contracts.py",
     "scripts/check_local_drive_traceability.py",
     "scripts/check_drive_integration_plan.py",
+    "scripts/check_drive_enrichment_traceability.py",
     "scripts/check_ready_supports_required_sections.py",
     "scripts/check_ready_supports_depth.py",
     "scripts/check_ready_session_operationality.py",

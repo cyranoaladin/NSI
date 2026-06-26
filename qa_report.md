@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 500
-- Ressources needs_review : 500
+- Ressources inventoriées : 508
+- Ressources needs_review : 508
 - Ressources publiables : 0
-- Source generated : 500
+- Source generated : 508
 - Source drive : 0
 - Lignes drive_inventory.csv : 22
 - Couverture covered : 0
@@ -22,6 +22,13 @@
 - EXTRACTED_SOURCE_AUDIT_PASS : audit source extrait attendu sans dépendance Git.
 - RELEASE_AUDIT_STATUS : RELEASE_AUDIT_FAIL
 - FINAL_STATUS = NON_RELEASE_READY
+- Raison : Drive partiellement intégré ; publication bloquée par ressources restantes non auditées / absentes / sensibles.
+- Drive integrated_adapted : 6
+- Drive inspiration_only : 1
+- Drive rejected_sensitive : 5
+- Drive missing_local_copy : 7
+- Drive deferred : 3
+- Drive quarantined : 0
 - Décision : ne pas générer de nouvelles séquences
 
 ## Commandes de référence
@@ -35,16 +42,24 @@ make --no-print-directory release-audit
 ## Dernier blocage release observé
 
 ```text
-Snapshot des bloqueurs release hors check_git_clean.
 Le vrai make release-audit est exécuté séparément.
 python scripts/check_drive_mapping_release.py
-check_drive_mapping_release: KO
-- ressources Drive référencées mais non intégrées localement: copie_de_progres_nsi_amelioree.pdf, copie_de_progres_nsi_amelioree.tex, guide_enseignant_reprise_nsi_ameliore.tex, Cours.pdf, 2_TP.pdf, eval_nsi_corrige.pdf, eval_nsi.pdf, rendus_eleves, .git, .venv, TP_SOC.tex, Séquence1_Histoire de l'informatique, Séquence4_Types construits, 1_Cours_Types_construits.pdf, 1_RdD_Entier naturel.pdf, pays_monde.csv, NotesEleves.csv, Fichier_Eleves.csv, tri_bulles_eleve.py, Séquence1_TAD_Théorie
+- rendus_eleves: rejected_sensitive - Dossier de rendus élèves interdit en livraison pédagogique.
+- .git: rejected_sensitive - Dossier Git Drive interdit en ressource pédagogique.
+- .venv: rejected_sensitive - Environnement virtuel interdit en ressource pédagogique.
+- TP_SOC.tex: missing_local_copy - Fichier TP_SOC.tex absent ; dossier SoC alternatif repéré mais non repris dans ce lot.
+- Séquence1_Histoire de l'informatique: missing_local_copy - Dossier exact absent du miroir local ; pas de contenu inventé.
+- NotesEleves.csv: rejected_sensitive - Nom et contenu suggèrent des notes élèves ; ressource exclue.
+- Fichier_Eleves.csv: rejected_sensitive - Nom suggère fichier élèves ; ressource exclue.
+- Séquence6_Arbres binaires: deferred - Dossier local trouvé ; audit différé pour éviter intégration partielle non relue.
 ```
 
 ## Bloquants restants
 
-- Ressources Drive référencées mais non intégrées localement.
+- Drive partiellement intégré : voir `reports/drive_enrichment_report.md` et `drive_inventory.csv` pour les décisions par ressource.
+- Ressources Drive absentes localement : 7.
+- Ressources Drive différées : 3.
+- Ressources Drive rejetées sensibles : 5.
 - Toutes les ressources restent en revue ou non publiables.
 - Aucune capacité n'est covered.
 - Documents professeurs encore en needs_review.
@@ -77,8 +92,7 @@ check_drive_mapping_release: KO
 
 | Fichier concerné | Erreur | Décision | Date cible de correction |
 |---|---|---|---|
-| `scripts/check_required_sections.py` | check_required_sections: KO; premiere/sequences/s01_representation_donnees/corrige.md: section manquante -> variante acceptable; premiere/sequences/s01_representation_donnees/cours_eleve.md: section manquante -> activité d'introduction; premiere/sequences/s01_representation_donnees/cours_eleve.md: section manquante -> exemples corrigés; premiere/sequences/s01_representation_donnees/cours_eleve.md: section manquante -> exercices intégrés; premiere/sequences/s01_representation_donnees/cours_eleve.md: section manquante -> extension; premiere/sequences/s01_representation_donnees/cours_eleve.md: section manquante -> aides progressives | Dette pédagogique connue ; reste non bloquant uniquement pour le prototype global. | 2026-07-15 |
-| `scripts/check_document_depth.py` | check_document_depth: KO; premiere/sequences/s01_representation_donnees/cours_eleve.md: profondeur insuffisante (234 lignes utiles, minimum 250); premiere/sequences/s01_representation_donnees/cours_eleve.md: moins de 3 définitions formelles | Dette pédagogique connue ; reste non bloquant uniquement pour le prototype global. | 2026-07-15 |
+| Aucun échec indicatif observé pendant cette génération. | - | - | - |
 
 Les dettes indicatives ouvertes sont aussi suivies dans `qa_debt_register.md` avec cause, risque, impact, responsable et critère de fermeture.
 

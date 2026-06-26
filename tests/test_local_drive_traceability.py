@@ -49,6 +49,38 @@ class LocalDriveTraceabilityTest(unittest.TestCase):
 
             self.assertEqual(result.errors, [])
 
+    def test_backticked_drive_path_with_spaces_is_resolved(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            workspace = Path(raw)
+            root = workspace / "repo"
+            root.mkdir()
+            drive = workspace / "Documents_DRIVE"
+            source = drive / "dossier avec espaces" / "source.pdf"
+            source.parent.mkdir(parents=True)
+            source.write_text("source", encoding="utf-8")
+            support = root / "P01_cours_test.md"
+            support.write_text(
+                "---\nsource_creation: adapted_from_drive\nstatus: needs_review\n---\n"
+                "Source : `Documents_DRIVE/dossier avec espaces/source.pdf`\n",
+                encoding="utf-8",
+            )
+            digest = drive_trace.sha256(source)
+            (root / "support_source_trace.yml").write_text(
+                "supports:\n"
+                "  - support: P01_cours_test.md\n"
+                "    source_officielle: BO 2019\n"
+                "    source_locale_drive: Documents_DRIVE/dossier avec espaces/source.pdf\n"
+                "    type_reprise: adaptation_drive\n"
+                f"    hash_source: {digest}\n"
+                "    statut_rgpd: conforme\n"
+                "    statut_relecture: needs_review\n",
+                encoding="utf-8",
+            )
+
+            result = drive_trace.analyze_drive_traceability(root, trace_path=root / "support_source_trace.yml")
+
+            self.assertEqual(result.errors, [])
+
 
 if __name__ == "__main__":
     unittest.main()

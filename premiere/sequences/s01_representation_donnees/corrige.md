@@ -196,12 +196,14 @@ annuaire = {identifiant: nom for identifiant, nom in utilisateurs}
 
 Test : `assert annuaire["u2"] == "Bob"` vérifie que la transformation conserve l'association.
 
-## Variantes acceptables
+## Variante acceptable et variantes acceptables
 
 - Pour le milieu, une solution décomposant `x1, y1 = p1` puis reconstruisant le tuple est acceptée.
 - Pour le comptage de votes, une boucle avec `if choix not in effectifs` est acceptée, de même que `effectifs.get(choix, 0) + 1`.
 - Pour le choix de représentation, plusieurs réponses sont acceptées si la justification cite l'opération principale.
 - Pour les tests, les noms de fonctions peuvent différer tant que les entrées et sorties sont vérifiables.
+
+Une variante acceptable doit conserver les mêmes valeurs d'entrée et produire un résultat vérifiable. Elle ne peut pas remplacer la méthode par une affirmation non contrôlée.
 
 ## Erreurs fréquentes
 

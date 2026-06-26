@@ -29,8 +29,15 @@ def support_files(root: Path) -> list[Path]:
     return files
 
 
-def resolve_drive_path(value: str) -> Path | None:
-    return resolve_drive_reference(value, ROOT)
+def resolve_drive_path(value: str, root: Path = ROOT) -> Path | None:
+    return resolve_drive_reference(value, root)
+
+
+def drive_mentions(text: str) -> list[str]:
+    backticked = re.findall(r"`(Documents_DRIVE/[^`]+)`", text)
+    scrubbed = re.sub(r"`Documents_DRIVE/[^`]+`", "", text)
+    bare = re.findall(r"(?:[A-Za-z0-9_./-]+/)?Documents_DRIVE/[^\s\"`)]+", scrubbed)
+    return backticked + bare
 
 
 def sha256(path: Path) -> str:
@@ -66,9 +73,9 @@ def analyze_drive_traceability(root: Path = ROOT, trace_path: Path = TRACE_FILE)
         if "ressource locale candidate" in source.lower() or "ressource locale candidate" in text.lower():
             result.errors.append(f"{rel}: mention interdite 'ressource locale candidate'")
 
-        drive_values = re.findall(r"(?:[A-Za-z0-9_./-]+/)?Documents_DRIVE/[^\s\"`)]+", text)
+        drive_values = drive_mentions(text)
         for value in drive_values:
-            drive_path = resolve_drive_path(value.strip())
+            drive_path = resolve_drive_path(value.strip(), root)
             if drive_path is None or not drive_path.exists():
                 result.errors.append(f"{rel}: chemin Documents_DRIVE inexistant -> {value}")
 
@@ -85,7 +92,7 @@ def analyze_drive_traceability(root: Path = ROOT, trace_path: Path = TRACE_FILE)
 
         drive_source = row.get("source_locale_drive", "")
         if drive_source:
-            drive_path = resolve_drive_path(drive_source)
+            drive_path = resolve_drive_path(drive_source, root)
             if drive_path is None or not drive_path.exists():
                 result.errors.append(f"{rel}: source locale Drive absente -> {drive_source}")
             if row.get("type_reprise") != "création originale" and drive_path and drive_path.is_file():

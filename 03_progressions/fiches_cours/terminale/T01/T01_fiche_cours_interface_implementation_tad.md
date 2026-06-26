@@ -6,7 +6,7 @@ document_type: "fiche_cours"
 status: "needs_review"
 version: "0.1.0"
 source: "BO 2019"
-source_creation: "generated_from_program"
+source_creation: "adapted_from_drive"
 theme: "Structures abstraites"
 notion: "TAD"
 official_program:
@@ -24,6 +24,7 @@ private_data: false
 - La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour TAD.
 - Les capacités T-STRUCT-01A, T-STRUCT-01B, T-STRUCT-01C sont rappelées ici sans être déclarées couvertes.
 - L’élève doit pouvoir refaire un exemple de interface et TAD avec une valeur, une table ou un code différent.
+- Ressource locale adaptée : `Documents_DRIVE/NSI_Tle/Séquence1_TAD_Théorie`.
 
 ## Méthodes
 1. Capacités explicitement travaillées dans les méthodes et exercices : T-STRUCT-01A, T-STRUCT-01B, T-STRUCT-01C.
@@ -34,9 +35,9 @@ private_data: false
 
 ## Exemples corrigés
 ### Exemple corrigé 1 - Exemple principal
-Une pile expose `empiler`, `depiler`, `est_vide` sans révéler sa liste interne.
+Une pile expose `empiler(x)`, `depiler()` et `est_vide()` sans révéler sa représentation interne. Avec l’état abstrait vide, après `empiler("A")`, puis `empiler("B")`, l’appel `depiler()` doit renvoyer `"B"` : c’est la règle LIFO qui définit l’interface, pas le fait d’utiliser une liste Python.
 ### Exemple corrigé 2 - Contrôle ou contre-exemple
-Deux implémentations peuvent respecter la même interface avec des coûts différents.
+Deux implémentations peuvent respecter la même interface : une pile stockée dans une liste avec ajout en fin, ou dans une liste chaînée. Elles doivent produire la même suite abstraite de résultats, mais leurs coûts et invariants internes peuvent différer.
 
 ## Erreurs fréquentes
 - Confondre le vocabulaire de TAD avec une simple récitation : corriger par un exemple calculé ou exécuté.

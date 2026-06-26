@@ -59,6 +59,7 @@ audit-local:
 	python scripts/check_sequence_contracts.py
 	python scripts/check_local_drive_traceability.py
 	python scripts/check_drive_integration_plan.py
+	python scripts/check_drive_enrichment_traceability.py
 	python scripts/check_ready_supports_required_sections.py
 	python scripts/check_ready_supports_depth.py
 	python scripts/check_ready_session_operationality.py
@@ -139,6 +140,7 @@ audit-extracted-source:
 	python scripts/check_sequence_contracts.py
 	python scripts/check_local_drive_traceability.py
 	python scripts/check_drive_integration_plan.py
+	python scripts/check_drive_enrichment_traceability.py
 	python scripts/check_ready_supports_required_sections.py
 	python scripts/check_ready_supports_depth.py
 	python scripts/check_ready_session_operationality.py

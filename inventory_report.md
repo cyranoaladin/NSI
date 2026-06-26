@@ -1,34 +1,34 @@
 # Inventaire ressources NSI
 
-- Total ressources : 500
+- Total ressources : 508
 - Ressources pédagogiques : 53
-- Ressources techniques : 447
+- Ressources techniques : 455
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - drive: 0
-- generated: 500
+- generated: 508
 
 ## Répartition par niveau
-- interne: 197
-- premiere: 146
+- interne: 204
+- premiere: 147
 - terminale: 157
 
 ## Répartition par type
 - banque: 14
-- document: 275
+- document: 277
 - python: 36
-- script: 106
+- script: 109
 - sequence: 45
-- test: 24
+- test: 27
 
 ## Répartition par statut
-- needs_review: 500
+- needs_review: 508
 
 ## Répartition audience
 - corrige: 33
 - eleve: 110
-- mixte: 354
+- mixte: 362
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -181,6 +181,7 @@
   - 03_progressions/supports/premiere/P05/code/P05_corrige_professeur_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
+  - 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv
   - 03_progressions/supports/premiere/P06/P06_TD_tables_recherche_tri_fusion.md
   - 03_progressions/supports/premiere/P06/P06_evaluation_tables_recherche_tri_fusion.md
   - 03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md
@@ -371,6 +372,7 @@
   - project_plan_terminale.md
   - qa_debt_register.md
   - qa_report.md
+  - reports/drive_enrichment_report.md
   - scientific_claims_review_report.md
   - scripts/_course_sheets_common.py
   - scripts/_drive_paths.py
@@ -398,6 +400,7 @@
   - scripts/check_document_depth.py
   - scripts/check_document_naming_conventions.py
   - scripts/check_document_style.py
+  - scripts/check_drive_enrichment_traceability.py
   - scripts/check_drive_integration_plan.py
   - scripts/check_drive_mapping.py
   - scripts/check_drive_mapping_release.py
@@ -472,6 +475,8 @@
   - scripts/check_validated_documents_quality_gates.py
   - scripts/check_validated_statuses.py
   - scripts/cleanup_python_artifacts.py
+  - scripts/drive_local_inventory.py
+  - scripts/drive_resource_triage.py
   - scripts/generate_index.py
   - scripts/generate_qa_report.py
   - scripts/ingest_drive_export.py
@@ -512,6 +517,9 @@
   - tests/test_build_artifacts.py
   - tests/test_consolidation_strict.py
   - tests/test_course_sheets.py
+  - tests/test_drive_enrichment_traceability.py
+  - tests/test_drive_local_pipeline.py
+  - tests/test_drive_mapping_release.py
   - tests/test_first_batch_alignment.py
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
@@ -736,6 +744,7 @@
   - 03_progressions/supports/premiere/P05/code/P05_corrige_professeur_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
+  - 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv
   - 03_progressions/supports/premiere/P06/P06_TD_tables_recherche_tri_fusion.md
   - 03_progressions/supports/premiere/P06/P06_evaluation_tables_recherche_tri_fusion.md
   - 03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md
@@ -899,6 +908,7 @@
   - project_plan_terminale.md
   - qa_debt_register.md
   - qa_report.md
+  - reports/drive_enrichment_report.md
   - scientific_claims_review_report.md
   - scripts/_course_sheets_common.py
   - scripts/_drive_paths.py
@@ -926,6 +936,7 @@
   - scripts/check_document_depth.py
   - scripts/check_document_naming_conventions.py
   - scripts/check_document_style.py
+  - scripts/check_drive_enrichment_traceability.py
   - scripts/check_drive_integration_plan.py
   - scripts/check_drive_mapping.py
   - scripts/check_drive_mapping_release.py
@@ -1000,6 +1011,8 @@
   - scripts/check_validated_documents_quality_gates.py
   - scripts/check_validated_statuses.py
   - scripts/cleanup_python_artifacts.py
+  - scripts/drive_local_inventory.py
+  - scripts/drive_resource_triage.py
   - scripts/generate_index.py
   - scripts/generate_qa_report.py
   - scripts/ingest_drive_export.py
@@ -1014,6 +1027,9 @@
   - tests/test_build_artifacts.py
   - tests/test_consolidation_strict.py
   - tests/test_course_sheets.py
+  - tests/test_drive_enrichment_traceability.py
+  - tests/test_drive_local_pipeline.py
+  - tests/test_drive_mapping_release.py
   - tests/test_first_batch_alignment.py
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
@@ -1221,6 +1237,7 @@
 - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md
 - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
 - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
+- 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv
 - 03_progressions/supports/premiere/P06/P06_TD_tables_recherche_tri_fusion.md
 - 03_progressions/supports/premiere/P06/P06_evaluation_tables_recherche_tri_fusion.md
 - 03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md
@@ -1395,6 +1412,7 @@
 - project_plan_terminale.md
 - qa_debt_register.md
 - qa_report.md
+- reports/drive_enrichment_report.md
 - scientific_claims_review_report.md
 - scripts/_course_sheets_common.py
 - scripts/_drive_paths.py
@@ -1422,6 +1440,7 @@
 - scripts/check_document_depth.py
 - scripts/check_document_naming_conventions.py
 - scripts/check_document_style.py
+- scripts/check_drive_enrichment_traceability.py
 - scripts/check_drive_integration_plan.py
 - scripts/check_drive_mapping.py
 - scripts/check_drive_mapping_release.py
@@ -1495,6 +1514,8 @@
 - scripts/check_validated_documents_quality_gates.py
 - scripts/check_validated_statuses.py
 - scripts/cleanup_python_artifacts.py
+- scripts/drive_local_inventory.py
+- scripts/drive_resource_triage.py
 - scripts/generate_index.py
 - scripts/generate_qa_report.py
 - scripts/ingest_drive_export.py
@@ -1530,6 +1551,9 @@
 - tests/test_build_artifacts.py
 - tests/test_consolidation_strict.py
 - tests/test_course_sheets.py
+- tests/test_drive_enrichment_traceability.py
+- tests/test_drive_local_pipeline.py
+- tests/test_drive_mapping_release.py
 - tests/test_first_batch_alignment.py
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py
@@ -1704,6 +1728,7 @@
 - 03_progressions/supports/premiere/P05/code/P05_corrige_professeur_tables_csv.py
 - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
 - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
+- 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv
 - 03_progressions/supports/premiere/P06/P06_TD_tables_recherche_tri_fusion.md
 - 03_progressions/supports/premiere/P06/P06_evaluation_tables_recherche_tri_fusion.md
 - 03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md
@@ -1894,6 +1919,7 @@
 - project_plan_terminale.md
 - qa_debt_register.md
 - qa_report.md
+- reports/drive_enrichment_report.md
 - scientific_claims_review_report.md
 - scripts/_course_sheets_common.py
 - scripts/_drive_paths.py
@@ -1921,6 +1947,7 @@
 - scripts/check_document_depth.py
 - scripts/check_document_naming_conventions.py
 - scripts/check_document_style.py
+- scripts/check_drive_enrichment_traceability.py
 - scripts/check_drive_integration_plan.py
 - scripts/check_drive_mapping.py
 - scripts/check_drive_mapping_release.py
@@ -1995,6 +2022,8 @@
 - scripts/check_validated_documents_quality_gates.py
 - scripts/check_validated_statuses.py
 - scripts/cleanup_python_artifacts.py
+- scripts/drive_local_inventory.py
+- scripts/drive_resource_triage.py
 - scripts/generate_index.py
 - scripts/generate_qa_report.py
 - scripts/ingest_drive_export.py
@@ -2035,6 +2064,9 @@
 - tests/test_build_artifacts.py
 - tests/test_consolidation_strict.py
 - tests/test_course_sheets.py
+- tests/test_drive_enrichment_traceability.py
+- tests/test_drive_local_pipeline.py
+- tests/test_drive_mapping_release.py
 - tests/test_first_batch_alignment.py
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py
@@ -2057,6 +2089,9 @@
 - tests/test_tp_pedagogical_assets_runtime.py
 - tests/test_uploaded_archive_policy.py
 - tp_test_alignment_report.md
+
+## Métadonnées incomplètes
+- 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv (niveau=premiere, statut=needs_review)
 
 ## Doublons (même hash SHA256)
 - Aucun doublon détecté.

@@ -6,7 +6,7 @@ document_type: "fiche_cours"
 status: "needs_review"
 version: "0.1.0"
 source: "BO 2019"
-source_creation: "generated_from_program"
+source_creation: "adapted_from_drive"
 theme: "Recherche textuelle"
 notion: "Boyer-Moore"
 official_program:
@@ -22,6 +22,7 @@ private_data: false
 - La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour Boyer-Moore.
 - Les capacités T-ALGO-05 sont rappelées ici sans être déclarées couvertes.
 - L’élève doit pouvoir refaire un exemple de Boyer-Moore avec une valeur, une table ou un code différent.
+- Ressource locale adaptée : `Documents_DRIVE/NSI_Tle/Séquence17_Boyer-Moore`.
 
 ## Méthodes
 1. Capacités explicitement travaillées dans les méthodes et exercices : T-ALGO-05.
@@ -32,9 +33,9 @@ private_data: false
 
 ## Exemples corrigés
 ### Exemple corrigé 1 - Exemple principal
-Dans `BANANA`, la dernière occurrence de A est à l’indice 5.
+Dans le motif `ANA`, la table du mauvais caractère donne `A -> 2` et `N -> 1` si l’on retient la dernière position dans le motif. Sur le texte `BANANA`, on aligne d’abord `ANA` sous les positions 0 à 2 : la comparaison depuis la droite trouve `A` contre `N`, donc un mauvais caractère `N` présent dans le motif à l’indice 1 ; on décale le motif pour aligner ce `N`.
 ### Exemple corrigé 2 - Contrôle ou contre-exemple
-Si le mauvais caractère est absent du motif, le motif peut être décalé au-delà de ce caractère.
+Si le mauvais caractère est absent du motif, par exemple comparer `ANA` à une fenêtre contenant `B` en position de désaccord, on peut décaler le motif au-delà de ce caractère. Le contrôle consiste à vérifier que le décalage ne saute pas une occurrence possible du motif.
 
 ## Erreurs fréquentes
 - Confondre le vocabulaire de Boyer-Moore avec une simple récitation : corriger par un exemple calculé ou exécuté.

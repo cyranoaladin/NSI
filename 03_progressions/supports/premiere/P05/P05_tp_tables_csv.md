@@ -6,7 +6,7 @@ document_type: "tp"
 status: "needs_review"
 version: "0.4.1"
 source: "BO 2019"
-source_creation: "generated_from_program"
+source_creation: "adapted_from_drive"
 theme: "Traitement de tables"
 notion: "table, CSV, filtrage, agrégation"
 objectifs:
@@ -42,13 +42,20 @@ official_program:
 - P05-S1 à P05-S7 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-Un fichier CSV de mesures contient des lignes incomplètes, des séparateurs et des valeurs numériques à agréger.
+Un extrait CSV de pays contient `PAYS`, `CAPITALE`, `CONTINENT`, `POPULATION`. Il est adapté depuis `Documents_DRIVE/2_NSI/Cours/Première NSI Pierrot caillabet/1_2019-2020/1_Cours/11_traitement de tables/pays_monde.csv`, sans donnée personnelle.
 
 ## Activité d’entrée
-1. Lire une ligne d’en-tête.
-2. Filtrer les lignes où `ville == "Tunis"`.
-3. Calculer une moyenne de températures valides.
-4. Signaler une ligne avec champ manquant.
+1. Charger `data/pays_monde_extrait.csv`.
+2. Filtrer les pays européens de l’extrait.
+3. Calculer la population totale de ces pays.
+4. Rejeter explicitement une ligne dont `POPULATION` n’est pas un entier.
+
+## Donnée fournie
+
+- Fichier élève : `data/pays_monde_extrait.csv`.
+- Origine : ressource Drive `pays_monde.csv`, reprise partiellement et normalisée.
+- Champs attendus : `PAYS`, `CAPITALE`, `CONTINENT`, `POPULATION`.
+- Résultat de contrôle sur l’extrait : les pays européens Allemagne, Albanie et Andorre totalisent `85942132` habitants.
 
 ## Consigne technique détaillée
 - Problème à programmer : Lire une table représentée par listes de dictionnaires, filtrer, agréger et produire un rapport d’erreurs.
@@ -59,20 +66,18 @@ Un fichier CSV de mesures contient des lignes incomplètes, des séparateurs et 
 - Exemple d’exécution : lancer les tests avec `TP_MODULE` pointant vers le module à contrôler.
 - Cas limite principal : fichier vide.
 ## Étapes de réalisation
-- Étape 1 : coder ou tester lecture CSV à partir de `ville,temp
-Tunis,24`, puis contrôler fichier vide.
-- Étape 2 : coder ou tester filtrage à partir de trois villes dont deux Tunis, puis contrôler aucune ligne retenue.
-- Étape 3 : coder ou tester agrégation à partir de `24`, `26`, champ vide, puis contrôler division par zéro.
+- Étape 1 : coder ou tester la lecture de `Allemagne,Berlin,Europe,82801531`, puis contrôler fichier vide.
+- Étape 2 : coder ou tester le filtrage du continent Europe, puis contrôler aucune ligne retenue.
+- Étape 3 : coder ou tester l’agrégation `82801531 + 3063320 + 77281`, puis contrôler division par zéro ou sélection vide.
 - Étape 4 : coder ou tester jointure simple à partir de table villes et table régions, puis contrôler clé inconnue.
 ## Tests attendus
 - Test nominal : donnée ordinaire issue du premier exemple.
 - Test limite : entrée minimale, vide ou borne de représentation.
 - Test invalide : type ou valeur explicitement refusé par la spécification.
 ## Exercices numérotés
-- Exercice 1 : résoudre lecture CSV avec `ville,temp
-Tunis,24` ; attendu : une ligne exploitable.
-- Exercice 2 : expliquer filtrage à partir de trois villes dont deux Tunis ; attendu : deux lignes sélectionnées.
-- Exercice 3 : comparer agrégation avec `24`, `26`, champ vide ; attendu : `25`.
+- Exercice 1 : résoudre la lecture CSV de `Allemagne,Berlin,Europe,82801531` ; attendu : dictionnaire typé.
+- Exercice 2 : expliquer le filtrage Europe sur Allemagne, Albanie, Brésil ; attendu : deux lignes sélectionnées.
+- Exercice 3 : comparer l’agrégation des populations Allemagne, Albanie, Andorre ; attendu : `85942132`.
 - Exercice 4 : corriger jointure simple pour table villes et table régions ; attendu : ville enrichie par région.
 - Exercice 5 : tester un cas limite lié à fichier vide ; attendu : le comportement de lecture CSV est contrôlé.
 - Exercice 6 : classer deux méthodes possibles pour filtrage ; attendu : la méthode robuste est choisie et justifiée.

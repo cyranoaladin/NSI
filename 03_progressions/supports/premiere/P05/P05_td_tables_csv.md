@@ -6,7 +6,7 @@ document_type: "td"
 status: "needs_review"
 version: "0.4.1"
 source: "BO 2019"
-source_creation: "generated_from_program"
+source_creation: "adapted_from_drive"
 theme: "Traitement de tables"
 notion: "table, CSV, filtrage, agrégation"
 objectifs:
@@ -41,30 +41,33 @@ official_program:
 - P05-S1 à P05-S7 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-Un fichier CSV de mesures contient des lignes incomplètes, des séparateurs et des valeurs numériques à agréger.
+Un fichier CSV de pays contient des champs `PAYS`, `CAPITALE`, `CONTINENT`, `POPULATION`. L'extrait utilisé en classe est adapté depuis `Documents_DRIVE/2_NSI/Cours/Première NSI Pierrot caillabet/1_2019-2020/1_Cours/11_traitement de tables/pays_monde.csv`, sans donnée personnelle.
 
 ## Activité d’entrée
-1. Lire une ligne d’en-tête.
-2. Filtrer les lignes où `ville == "Tunis"`.
-3. Calculer une moyenne de températures valides.
-4. Signaler une ligne avec champ manquant.
+1. Lire l’en-tête `PAYS,CAPITALE,CONTINENT,POPULATION`.
+2. Filtrer les lignes où `CONTINENT == "Europe"`.
+3. Calculer la population totale d’un petit extrait européen.
+4. Signaler une ligne dont la population n’est pas convertible en entier.
+
+## Source de données utilisée
+
+Le fichier élève normalisé est `03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv`. Il contient uniquement des pays, capitales, continents et populations : aucune donnée élève, aucune note, aucun identifiant personnel.
 
 ## Exemples corrigés précis
 ### Exemple corrigé 1 - lecture CSV
-- Donnée étudiée : `ville,temp
-Tunis,24`.
-- Méthode : séparer en-tête et données puis convertir la température.
-- Résultat obtenu : une ligne exploitable.
+- Donnée étudiée : `PAYS,CAPITALE,CONTINENT,POPULATION` puis `Allemagne,Berlin,Europe,82801531`.
+- Méthode : lire l’en-tête, associer chaque champ à sa valeur, convertir `POPULATION` en entier.
+- Résultat obtenu : `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}`.
 - Contrôle : le cas limite « fichier vide » est vérifié séparément.
 ### Exemple corrigé 2 - filtrage
-- Donnée étudiée : trois villes dont deux Tunis.
-- Méthode : conserver les lignes respectant un prédicat.
-- Résultat obtenu : deux lignes sélectionnées.
+- Donnée étudiée : Allemagne, Albanie, Brésil.
+- Méthode : conserver les lignes dont `CONTINENT` vaut exactement `Europe`.
+- Résultat obtenu : Allemagne et Albanie sont retenues ; Brésil est exclu.
 - Contrôle : le cas limite « aucune ligne retenue » est vérifié séparément.
 ### Exemple corrigé 3 - agrégation
-- Donnée étudiée : `24`, `26`, champ vide.
-- Méthode : ignorer ou signaler le champ vide avant moyenne.
-- Résultat obtenu : `25`.
+- Donnée étudiée : populations Allemagne `82801531`, Albanie `3063320`, Andorre `77281`.
+- Méthode : convertir les trois populations en entiers puis additionner.
+- Résultat obtenu : `85942132`.
 - Contrôle : le cas limite « division par zéro » est vérifié séparément.
 ### Exemple corrigé 4 - jointure simple
 - Donnée étudiée : table villes et table régions.
@@ -75,23 +78,22 @@ Tunis,24`.
 ### Exercice 1
 - Objectif travaillé : O1.
 - Capacité officielle : P-TABLE-01.
-- Énoncé disciplinaire : résoudre lecture CSV avec `ville,temp
-Tunis,24`.
-- Production attendue : une ligne exploitable.
+- Énoncé disciplinaire : résoudre la lecture de `Allemagne,Berlin,Europe,82801531`.
+- Production attendue : dictionnaire typé avec population entière.
 - Contrainte de contrôle : faire apparaître le contrôle « fichier vide ».
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 2
 - Objectif travaillé : O2.
 - Capacité officielle : P-TABLE-01.
-- Énoncé disciplinaire : expliquer filtrage à partir de trois villes dont deux Tunis.
-- Production attendue : deux lignes sélectionnées.
+- Énoncé disciplinaire : expliquer le filtrage Europe sur Allemagne, Albanie et Brésil.
+- Production attendue : deux lignes européennes sélectionnées.
 - Contrainte de contrôle : rédiger la méthode avant le résultat.
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 3
 - Objectif travaillé : O3.
 - Capacité officielle : P-TABLE-01.
-- Énoncé disciplinaire : comparer agrégation avec `24`, `26`, champ vide.
-- Production attendue : `25`.
+- Énoncé disciplinaire : agréger les populations Allemagne, Albanie, Andorre.
+- Production attendue : `85942132`.
 - Contrainte de contrôle : comparer avec le cas « division par zéro ».
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 4
@@ -131,19 +133,18 @@ Tunis,24`.
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- Méthode : identifier `ville,temp
-Tunis,24`, appliquer la méthode « séparer en-tête et données puis convertir la température », puis écrire une ligne exploitable.
-- Résultat : une ligne exploitable.
+- Méthode : identifier l’en-tête, associer Allemagne à Berlin, Europe et `82801531`, puis convertir la population.
+- Résultat : `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}`.
 - Contrôle : faire apparaître le contrôle « fichier vide ».
 - Erreur traitée : EF1 - Traiter l’en-tête comme une donnée.
 ### Corrigé exercice 2
-- Méthode : expliciter chaque étape de conserver les lignes respectant un prédicat avant de conclure par deux lignes sélectionnées.
-- Résultat : deux lignes sélectionnées.
+- Méthode : tester `CONTINENT == "Europe"` pour Allemagne, Albanie et Brésil.
+- Résultat : Allemagne et Albanie sont sélectionnées ; Brésil ne l’est pas.
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Comparer une valeur numérique restée chaîne.
 ### Corrigé exercice 3
-- Méthode : comparer la donnée avec le cas limite « division par zéro » et valider `25`.
-- Résultat : `25`.
+- Méthode : calculer `82801531 + 3063320 + 77281`.
+- Résultat : `85942132`.
 - Contrôle : comparer avec le cas « division par zéro ».
 - Erreur traitée : EF3 - Diviser par zéro après filtrage vide.
 ### Corrigé exercice 4

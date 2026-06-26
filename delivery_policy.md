@@ -5,6 +5,9 @@
 ## Archive pédagogique
 
 - Seul livrable pédagogique portable : `dist/source_clean.tar.gz`.
+- Le seul livrable pédagogique transmissible est `dist/source_clean.tar.gz`.
+- Ne jamais transmettre une archive globale du dépôt.
+- Le bundle Git `dist/git_bundle.bundle` est technique et séparé.
 - L’archive principale de livraison est `dist/source_clean.tar.gz`. Toute archive contenant `.git/` est interdite comme livraison pédagogique.
 - Ce fichier ne contient ni `.git/`, ni caches, ni artefacts LaTeX, ni environnements virtuels, ni rapports obsolètes.
 - `audit-extracted-source` doit passer sur `source_clean.tar.gz` extrait sans dépendance à Git.

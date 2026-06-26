@@ -107,6 +107,17 @@ Pour que la machine puisse stocker, traiter et restituer chacune de ces informat
 
 **Conclusion attendue :** une suite de bits n'a de sens que si l'on connaît la convention de représentation utilisée.
 
+## Activité d'introduction
+
+Cette activité reprend l'idée d'une ressource locale sur le codage d'un entier naturel : passer d'une représentation externe lisible par un humain à une représentation interne binaire, en explicitant la règle de passage. Elle est adaptée ici sans copier la fiche source, avec des valeurs et contrôles alignés sur la séquence S01.
+
+1. Écrire le nombre `35` sous la forme d'une somme de puissances de 2.
+2. En déduire son écriture binaire et vérifier que `100011₂ = 35₁₀`.
+3. Refaire la même démarche avec `0`, puis avec `1`, pour ne pas oublier les cas minimaux.
+4. Expliquer en une phrase pourquoi les bits seuls ne suffisent pas : il faut aussi connaître la base, la taille disponible et la convention de codage.
+
+**Trace attendue :** divisions successives ou développement positionnel, puis phrase de conclusion. Une réponse qui donne seulement `100011` sans méthode n'est pas suffisante.
+
 ## Objectifs
 
 À l'issue de cette séquence, vous saurez :
@@ -150,6 +161,20 @@ Un bon choix de représentation simplifie les traitements et réduit les risques
 - **Liste Python** : collection ordonnée et modifiable, où les éléments sont repérés par leur index.
 - **Tuple Python** : collection ordonnée, généralement utilisée comme p-uplet de valeurs liées, non modifié après création.
 - **Dictionnaire Python** : structure qui associe des clés uniques à des valeurs, permettant un accès direct par clé.
+
+Définition formelle 1 — Sur `n` bits non signés, l'ensemble des valeurs représentables est `{0, 1, ..., 2ⁿ - 1}`.
+
+Définition formelle 2 — En base `b`, une écriture `aₖ...a₁a₀` représente la valeur `aₖ×bᵏ + ... + a₁×b + a₀`, avec `0 ≤ aᵢ < b`.
+
+Définition formelle 3 — Une structure de données associe une organisation des valeurs à des opérations autorisées : lecture par indice pour une liste, accès par clé pour un dictionnaire, décomposition positionnelle pour un tuple.
+
+## Exemples corrigés — repères
+
+Les exemples corrigés qui suivent doivent être lus comme des modèles de méthode : conversion par divisions successives, développement en puissances, calcul de complément à deux, table de vérité, encodage de texte et choix de conteneur Python. Pour chaque exemple, on vérifie le résultat par une opération inverse ou par un cas limite.
+
+## Exercices intégrés — progression
+
+Les exercices intégrés sont répartis dans le cours pour alterner méthode et entraînement immédiat. Ils couvrent les conversions, les bornes de représentation, le complément à deux, les booléens, l'encodage de texte, les listes, tuples, dictionnaires et les tests. Une correction exploitable figure dans `corrige.md`.
 
 ## Bases 2, 10 et 16
 
@@ -440,6 +465,24 @@ Le fichier Python associé à ce cours est `python/representation_tools.py`, et 
 - Une liste est ordonnée et modifiable ; un tuple regroupe un petit nombre de valeurs liées ; un dictionnaire associe des clés à des valeurs.
 - Le choix d'une représentation dépend toujours des traitements que l'on prévoit d'effectuer.
 - Les tests doivent couvrir des cas ordinaires **et** des cas limites pour être utiles.
+
+## Extension
+
+Pour aller plus loin sans sortir du programme, comparer deux manières de coder une même information :
+
+1. un entier naturel `35` stocké sur 6 bits (`100011`) puis sur 8 bits (`00100011`) ;
+2. la valeur `11111111` lue comme entier naturel (`255`) puis comme entier relatif en complément à deux (`−1`) ;
+3. une table de pixels représentée par une liste de listes, puis par un dictionnaire associant chaque coordonnée à une couleur.
+
+L'objectif n'est pas d'ajouter des notions nouvelles, mais de montrer qu'une représentation peut être correcte dans un contexte et dangereuse dans un autre.
+
+## Aides progressives
+
+- **Aide 1 — Conversion décimal vers binaire :** écrire les divisions successives par 2 et conserver les restes.
+- **Aide 2 — Conversion binaire vers décimal :** écrire les puissances de 2 sous chaque bit avant d'additionner.
+- **Aide 3 — Complément à deux :** si le bit de gauche vaut `1`, décoder d'abord comme entier positif puis soustraire `2ⁿ`.
+- **Aide 4 — Choix de structure :** si l'accès se fait par position, penser liste ou tuple ; si l'accès se fait par nom, penser dictionnaire.
+- **Aide 5 — Test :** vérifier au moins un cas minimal (`0`, liste vide, clé absente) avant de considérer la réponse robuste.
 
 ## Auto-évaluation
 

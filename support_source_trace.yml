@@ -6,6 +6,56 @@ supports:
   hash_source: ''
   statut_rgpd: non concerné - aucune donnée personnelle intégrée
   statut_relecture: needs_review
+- support: premiere/sequences/s01_representation_donnees/cours_eleve.md
+  source_officielle: BO 2019
+  source_locale_drive: Documents_DRIVE/2_NSI/Cours/Première NSI Pierrot caillabet/3_2021-2022/Bloc2/1_RdD_Entier naturel.pdf
+  type_reprise: adaptation_drive
+  hash_source: e53f185ce4b25d11b25460df6512d103574965666c1fa294865828f9c061d7bc
+  statut_rgpd: conforme - ressource disciplinaire sans donnée personnelle reprise
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P05/P05_td_tables_csv.md
+  source_officielle: BO 2019
+  source_locale_drive: Documents_DRIVE/2_NSI/Cours/Première NSI Pierrot caillabet/1_2019-2020/1_Cours/11_traitement de tables/pays_monde.csv
+  type_reprise: adaptation_drive
+  hash_source: 57359dcc669fa30c547923cea12fd3d0cbe1268b5ecf200411e0e61dd855e958
+  statut_rgpd: conforme - données géographiques non personnelles
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md
+  source_officielle: BO 2019
+  source_locale_drive: Documents_DRIVE/2_NSI/Cours/Première NSI Pierrot caillabet/1_2019-2020/1_Cours/11_traitement de tables/pays_monde.csv
+  type_reprise: adaptation_drive
+  hash_source: 57359dcc669fa30c547923cea12fd3d0cbe1268b5ecf200411e0e61dd855e958
+  statut_rgpd: conforme - données géographiques non personnelles
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv
+  source_officielle: BO 2019
+  source_locale_drive: Documents_DRIVE/2_NSI/Cours/Première NSI Pierrot caillabet/1_2019-2020/1_Cours/11_traitement de tables/pays_monde.csv
+  type_reprise: import_partiel
+  hash_source: 57359dcc669fa30c547923cea12fd3d0cbe1268b5ecf200411e0e61dd855e958
+  statut_rgpd: conforme - extrait sans donnée personnelle
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_tuples.md
+  source_officielle: BO 2019
+  source_locale_drive: Documents_DRIVE/2_NSI/Cours/Première NSI Pierrot caillabet/2_2020-2021/Bloc 3_Types construits-Traitement
+    données en tables/types_construits_python-v2.pdf
+  type_reprise: adaptation_drive
+  hash_source: 8244cee79d7a50184ca90e3fa83f5539d194a968c639b36df553a728f788b69e
+  statut_rgpd: conforme - ressource disciplinaire sans donnée personnelle reprise
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T01/T01_fiche_cours_interface_implementation_tad.md
+  source_officielle: BO 2019
+  source_locale_drive: Documents_DRIVE/NSI_Tle/Séquence1_TAD_Théorie
+  type_reprise: adaptation_drive
+  hash_source: 8ffe9aafd46786fc86868d9c742b1aa3c5dfbe37ddce79f406a6127c991513bf
+  statut_rgpd: conforme - dossier disciplinaire audité sans donnée personnelle reprise
+  statut_relecture: needs_review
+- support: 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md
+  source_officielle: BO 2019
+  source_locale_drive: Documents_DRIVE/NSI_Tle/Séquence17_Boyer-Moore
+  type_reprise: adaptation_drive
+  hash_source: e325a488684eb9f2267791d20b686551e6aeebc660952ce48496d00a396b7084
+  statut_rgpd: conforme - classeurs disciplinaires sans donnée personnelle reprise
+  statut_relecture: needs_review
 - support: 03_progressions/supports/premiere/P00/P00_corrige_diagnostic_python.md
   source_officielle: BO 2019
   source_locale_drive: ''
@@ -343,20 +393,6 @@ supports:
   statut_rgpd: non concerné - aucune donnée personnelle intégrée
   statut_relecture: needs_review
 - support: 03_progressions/supports/premiere/P05/P05_remediation_tables_csv.md
-  source_officielle: BO 2019
-  source_locale_drive: ''
-  type_reprise: création originale
-  hash_source: ''
-  statut_rgpd: non concerné - aucune donnée personnelle intégrée
-  statut_relecture: needs_review
-- support: 03_progressions/supports/premiere/P05/P05_td_tables_csv.md
-  source_officielle: BO 2019
-  source_locale_drive: ''
-  type_reprise: création originale
-  hash_source: ''
-  statut_rgpd: non concerné - aucune donnée personnelle intégrée
-  statut_relecture: needs_review
-- support: 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md
   source_officielle: BO 2019
   source_locale_drive: ''
   type_reprise: création originale
@@ -827,14 +863,6 @@ supports:
   statut_rgpd: non concerné - aucune donnée personnelle intégrée
   statut_relecture: needs_review
   readiness: operational
-- support: 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_tuples.md
-  source_officielle: BO 2019
-  source_locale_drive: ''
-  type_reprise: création originale
-  hash_source: ''
-  statut_rgpd: non concerné - aucune donnée personnelle intégrée
-  statut_relecture: needs_review
-  readiness: operational
 - support: 03_progressions/fiches_cours/premiere/P05/P05_fiche_cours_tables_csv_import_coherence.md
   source_officielle: BO 2019
   source_locale_drive: ''
@@ -924,14 +952,6 @@ supports:
   statut_relecture: needs_review
   readiness: linked
 - support: 03_progressions/fiches_cours/terminale/T00/T00_fiche_cours_reprise_python_tests_complexite.md
-  source_officielle: BO 2019
-  source_locale_drive: ''
-  type_reprise: création originale
-  hash_source: ''
-  statut_rgpd: non concerné - aucune donnée personnelle intégrée
-  statut_relecture: needs_review
-  readiness: operational
-- support: 03_progressions/fiches_cours/terminale/T01/T01_fiche_cours_interface_implementation_tad.md
   source_officielle: BO 2019
   source_locale_drive: ''
   type_reprise: création originale
@@ -1084,14 +1104,6 @@ supports:
   statut_relecture: needs_review
   readiness: linked
 - support: 03_progressions/fiches_cours/terminale/T17/T17_fiche_cours_programmation_dynamique.md
-  source_officielle: BO 2019
-  source_locale_drive: ''
-  type_reprise: création originale
-  hash_source: ''
-  statut_rgpd: non concerné - aucune donnée personnelle intégrée
-  statut_relecture: needs_review
-  readiness: linked
-- support: 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md
   source_officielle: BO 2019
   source_locale_drive: ''
   type_reprise: création originale
