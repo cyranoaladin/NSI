@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import sys
+import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,6 +32,15 @@ FORBIDDEN_SUFFIXES = {
 FORBIDDEN_NAMES = {'.DS_Store'}
 
 
+def cleanup_python_bytecode() -> None:
+    for path in ROOT.rglob('__pycache__'):
+        if path.is_dir():
+            shutil.rmtree(path)
+    for path in ROOT.rglob('*.py[co]'):
+        if '.git' not in path.relative_to(ROOT).parts and path.is_file():
+            path.unlink()
+
+
 def is_forbidden(path: Path) -> bool:
     rel = path.relative_to(ROOT)
     if rel in ALLOWED_DIST:
@@ -51,6 +61,7 @@ def is_forbidden(path: Path) -> bool:
 
 
 def main() -> int:
+    cleanup_python_bytecode()
     errors: list[str] = []
     for path in ROOT.rglob('*'):
         if path == ROOT / '.git':
