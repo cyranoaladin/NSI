@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 413
-- Ressources needs_review : 413
+- Ressources inventoriées : 417
+- Ressources needs_review : 417
 - Ressources publiables : 0
-- Source generated : 413
+- Source generated : 417
 - Source drive : 0
 - Lignes drive_inventory.csv : 22
 - Couverture covered : 0
@@ -56,6 +56,11 @@ make: *** [Makefile:release-audit] Error 1
 - Fiches créées : 44
 - Séquences sans fiche : 0
 - Capacités sans fiche : 0
+- Fiches théoriques : 0
+- Fiches liées : 25
+- Fiches opérationnelles : 19
+- Liens vers supports existants : 57
+- Liens vers supports inscrits au registre : 50
 - Statut : needs_review
 - Effet couverture : aucun ; les fiches ne rendent aucune capacité covered.
 

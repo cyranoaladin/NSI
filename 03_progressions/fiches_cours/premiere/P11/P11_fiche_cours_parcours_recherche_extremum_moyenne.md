@@ -13,72 +13,73 @@ official_program:
   capacities:
     - "P-ALGO-01A"
     - "P-ALGO-01B"
+readiness: linked
 private_data: false
 ---
 # P11 - Fiche cours - Parcours, recherche, extremum, moyenne
 
 ## À savoir
-- Capacités travaillées dans la fiche : P-ALGO-01A, P-ALGO-01B.
-- La notion “parcours de collection” sert à calculer somme, recherche ou extremum.
-- Le vocabulaire de parcours de tableau doit être employé avec des données concrètes propres au chapitre P11.
-- La capacité associée à parcours de tableau se travaille par lecture, manipulation et justification dans P11.
-- Une réponse sur parcours de tableau distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- parcours et recherche se travaille dans le contexte “algorithmique de collection” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour parcours de tableau.
+- Les capacités P-ALGO-01A, P-ALGO-01B sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de parcours et recherche avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. maintenir un accumulateur ou un meilleur candidat.
-2. Écrire un exemple minimal de parcours de tableau avant de traiter le cas général du chapitre P11.
-3. Identifier le cas limite de parcours de tableau qui peut faire échouer la méthode.
-4. Relier la conclusion de parcours de tableau à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : P-ALGO-01A, P-ALGO-01B.
+2. P-ALGO-01A : maintenir un accumulateur ou un candidat pendant un parcours.
+3. Identifier les données d’entrée de parcours de tableau puis écrire le résultat attendu avant de conclure.
+4. Contrôler parcours de tableau par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance P11 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-max de [4,9,2] devient 9.
-### Exemple corrigé 2
-On reprend le premier exemple avec une donnée différente et on contrôle explicitement la conclusion pour parcours de tableau.
+### Exemple corrigé 1 - Exemple principal
+Dans `[4,9,2]`, le maximum devient 4 puis 9 et reste 9.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Chercher 7 dans `[3,7,8]` peut s’arrêter à l’indice 1.
 
 ## Erreurs fréquentes
-- un maximum initialisé à 0 échoue avec des négatifs : corriger avec un contre-exemple court.
-- Donner seulement le résultat en parcours de tableau : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de parcours de tableau : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de parcours de tableau avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de algorithmique de collection : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur parcours et recherche : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour parcours de collection.
-- Donnée invalide ou absente dans une situation de parcours de tableau.
-- Situation de parcours de tableau où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour parcours de tableau, à traiter selon la convention du chapitre P11.
+- Donnée invalide dans algorithmique de collection, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de parcours et recherche où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir parcours de collection en une phrase précise.
+P-ALGO-01A : appliquer la méthode de parcours de tableau à un exemple court choisi dans le chapitre P11.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de parcours de collection.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de algorithmique de collection.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur parcours de tableau.
+Proposer un cas limite pertinent pour parcours et recherche et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour parcours de tableau.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour parcours de tableau.
 
 ## Réponses rapides
-1. parcours de collection doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur parcours de tableau doit montrer les étapes utiles.
-3. L’erreur de parcours de tableau se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour parcours de tableau.
+1. La méthode attendue pour parcours de tableau commence par les données puis applique l’opération du chapitre P11.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans algorithmique de collection.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon parcours et recherche.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de parcours de tableau.
 
 ## À retenir
-- Pour parcours de tableau, commencer par reconnaître la situation exacte.
-- Une méthode de P11 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités P-ALGO-01A, P-ALGO-01B restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de parcours de tableau sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur parcours_de_tableau.
+- P11 : parcours de tableau se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités P-ALGO-01A, P-ALGO-01B restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de parcours et recherche doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour P11, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche P11 sur parcours de tableau reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : P11-S1 et P11-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : P11_TD_parcours_de_tableau.md, à produire ou relire dans le registre de supports.
-- TP lié : P11_TP_parcours_de_tableau.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre P11 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/premiere/P11/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | P11-S1 | réelle | séance présente dans la progression |
+| TD | P11_TD_parcours_recherche_extremum_moyenne.md | à créer | inscrit au registre v2 |
+| Évaluation | P11_evaluation_parcours_recherche_extremum_moyenne.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer parcours de tableau sans lire la fiche.
-- Je sais refaire les exemples de P11 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour parcours de tableau.
-- Je sais choisir un cas limite de parcours de tableau avant de répondre.
-- Je sais relier la fiche P11 sur parcours de tableau à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer parcours de tableau avec un exemple différent de ceux de la fiche P11.
+- Je peux citer au moins une capacité parmi P-ALGO-01A, P-ALGO-01B et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à P11 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de parcours et recherche sans transformer la fiche en corrigé complet.

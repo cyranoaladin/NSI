@@ -45,7 +45,13 @@ REQUIRED_FRONTMATTER = [
     "notion",
     "official_program",
     "private_data",
+    "readiness",
 ]
+
+VALID_READINESS = {"theoretical", "linked", "operational"}
+THEORETICAL_LINK_STATUSES = {"théorique", "theorique", "theoretical", "non prévu", "non prevu"}
+REGISTERED_LINK_STATUSES = {"à créer", "a creer", "absent", "inscrit au registre", "registre"}
+EXISTING_LINK_STATUSES = {"existant", "prêt", "prete", "prête", "operational", "opérationnel"}
 
 DENSE_MIN_SHEETS = {
     "P01": 2,
@@ -65,11 +71,38 @@ class SequencePlan:
     capacities: set[str]
 
 
+@dataclass(frozen=True)
+class CourseSheetLink:
+    element: str
+    file: str
+    status: str
+    remark: str
+
+    @property
+    def normalized_status(self) -> str:
+        return normalize_status_text(self.status)
+
+    @property
+    def is_session(self) -> bool:
+        return self.element.lower().startswith("séance") or self.element.lower().startswith("seance")
+
+    @property
+    def is_resource(self) -> bool:
+        return not self.is_session and self.file not in {"", "NA", "na", "-"}
+
+
 def normalize(text: str) -> str:
     text = re.sub(r"`[^`]+`", "`code`", text.lower())
     text = re.sub(r"\b\d+\b", "n", text)
     text = re.sub(r"\s+", " ", text)
     return text.strip()
+
+
+def normalize_status_text(text: str) -> str:
+    text = text.lower().strip()
+    text = text.replace("é", "e").replace("è", "e").replace("ê", "e").replace("à", "a")
+    text = re.sub(r"\s+", " ", text)
+    return text
 
 
 def useful_lines(text: str) -> list[str]:
@@ -157,6 +190,94 @@ def section_text(text: str, section: str) -> str:
     )
     match = pattern.search(text)
     return match.group(1).strip() if match else ""
+
+
+def parse_markdown_table(block: str) -> list[dict[str, str]]:
+    lines = [line.strip() for line in block.splitlines() if line.strip().startswith("|")]
+    if len(lines) < 2:
+        return []
+    headers = [cell.strip() for cell in lines[0].strip("|").split("|")]
+    rows: list[dict[str, str]] = []
+    for line in lines[2:]:
+        cells = [cell.strip() for cell in line.strip("|").split("|")]
+        if len(cells) != len(headers):
+            continue
+        rows.append(dict(zip(headers, cells)))
+    return rows
+
+
+def course_sheet_links(path: Path) -> list[CourseSheetLink]:
+    text = path.read_text(encoding="utf-8", errors="replace")
+    rows = parse_markdown_table(section_text(text, "Lien avec la progression"))
+    links: list[CourseSheetLink] = []
+    for row in rows:
+        links.append(
+            CourseSheetLink(
+                element=row.get("Élément") or row.get("Element") or "",
+                file=row.get("Fichier") or "",
+                status=row.get("Statut") or "",
+                remark=row.get("Remarque") or "",
+            )
+        )
+    return links
+
+
+def registered_missing_files(root: Path = ROOT) -> set[str]:
+    path = root / "missing_documents_register_v2.md"
+    if not path.exists():
+        return set()
+    registered: set[str] = set()
+    text = path.read_text(encoding="utf-8", errors="replace")
+    for block in text.split("\n\n"):
+        rows = parse_markdown_table(block)
+        for row in rows:
+            filename = row.get("Fichier") or ""
+            if filename and filename not in {"NA", "na", "-"}:
+                registered.add(filename)
+                registered.add(Path(filename).name)
+    return registered
+
+
+def session_ids(root: Path = ROOT) -> set[str]:
+    ids: set[str] = set()
+    for relative in ["03_progressions/seances_premiere.md", "03_progressions/seances_terminale.md"]:
+        path = root / relative
+        if not path.exists():
+            continue
+        ids.update(re.findall(r"\b[PT]\d{2}-S\d+\b", path.read_text(encoding="utf-8", errors="replace")))
+    return ids
+
+
+def resource_exists(root: Path, reference: str) -> bool:
+    if not reference or reference in {"NA", "na", "-"}:
+        return False
+    candidate = root / reference
+    if candidate.exists():
+        return True
+    if "/" in reference:
+        return False
+    return any(path.name == reference for path in root.rglob(reference))
+
+
+def link_is_registered(root: Path, reference: str) -> bool:
+    registered = registered_missing_files(root)
+    return reference in registered or Path(reference).name in registered
+
+
+def compute_sheet_readiness(root: Path, links: list[CourseSheetLink]) -> str:
+    sessions = session_ids(root)
+    has_session = any(link.is_session and link.file in sessions for link in links)
+    resource_links = [link for link in links if link.is_resource]
+    existing = [link for link in resource_links if resource_exists(root, link.file)]
+    registered = [link for link in resource_links if link_is_registered(root, link.file)]
+    unresolved = [link for link in resource_links if not resource_exists(root, link.file) and not link_is_registered(root, link.file)]
+    if not has_session or not resource_links or unresolved:
+        return "theoretical"
+    if len(existing) == len(resource_links):
+        return "operational"
+    if existing or registered:
+        return "linked"
+    return "theoretical"
 
 
 def program_ids() -> set[str]:

@@ -12,72 +12,74 @@ notion: "flottants"
 official_program:
   capacities:
     - "P-DATA-BASE-03"
+readiness: operational
 private_data: false
 ---
 # P03 - Fiche cours - Flottants et approximations
 
 ## À savoir
-- Capacités travaillées dans la fiche : P-DATA-BASE-03.
-- Un flottant représente une approximation d’un nombre réel.
-- Certaines fractions décimales n’ont pas d’écriture binaire finie.
-- Le programme ne demande pas le détail complet de la norme IEEE-754.
-- Une égalité stricte entre résultats flottants peut être fragile.
+- texte, Unicode et flottants se travaille dans le contexte “octets et approximations” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour flottants.
+- Les capacités P-DATA-BASE-03 sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de texte, Unicode et flottants avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. Afficher un résultat avec davantage de décimales pour observer l’approximation.
-2. Comparer deux valeurs avec une tolérance.
-3. Éviter d’arrondir à chaque étape intermédiaire.
-4. Raisonner sur l’ordre de grandeur de l’erreur.
+1. Capacités explicitement travaillées dans les méthodes et exercices : P-DATA-BASE-03.
+2. P-DATA-BASE-03 : distinguer caractère, encodage et approximation numérique.
+3. Identifier les données d’entrée de flottants puis écrire le résultat attendu avant de conclure.
+4. Contrôler flottants par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance P03 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-`0.1 + 0.2` peut donner `0.30000000000000004`.
-### Exemple corrigé 2
-`abs(x - 0.3) < 1e-9` teste une proximité raisonnable.
+### Exemple corrigé 1 - Exemple principal
+`é` a pour point de code 233 et s’encode en UTF-8 par les octets C3 A9.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+`0.1 + 0.2` peut produire `0.30000000000000004`, d’où un test avec tolérance.
 
 ## Erreurs fréquentes
-- Dire que la machine calcule faux : parler de représentation approchée.
-- Tester `x == 0.3` après un calcul : utiliser une tolérance.
-- Arrondir trop tôt : conserver les valeurs jusqu’à la fin.
+- Confondre le vocabulaire de flottants avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de octets et approximations : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur texte, Unicode et flottants : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- 0,5 est représentable exactement en binaire.
-- 0,1 ne l’est pas exactement.
-- Ajouter un très petit flottant à un très grand peut ne rien changer visiblement.
+- Cas de départ vide ou nul pour flottants, à traiter selon la convention du chapitre P03.
+- Donnée invalide dans octets et approximations, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de texte, Unicode et flottants où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Prévoir le risque de `0.1 + 0.2 == 0.3`.
+P-DATA-BASE-03 : appliquer la méthode de flottants à un exemple court choisi dans le chapitre P03.
 ### Mini-exercice 2
-Écrire un test tolérant.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de octets et approximations.
 ### Mini-exercice 3
-Dire pourquoi 0,5 est particulier.
+Proposer un cas limite pertinent pour texte, Unicode et flottants et expliquer le résultat attendu.
 ### Mini-exercice 4
-Formuler une conclusion sur une approximation.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour flottants.
 
 ## Réponses rapides
-1. Le test peut être faux.
-2. `abs(x - 0.3) < 1e-9`.
-3. 0,5 vaut 1/2.
-4. Le résultat est approché mais contrôlable.
+1. La méthode attendue pour flottants commence par les données puis applique l’opération du chapitre P03.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans octets et approximations.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon texte, Unicode et flottants.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de flottants.
 
 ## À retenir
-- Pour flottants, commencer par reconnaître la situation exacte.
-- Une méthode de P03 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités P-DATA-BASE-03 restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de flottants sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur flottants.
+- P03 : flottants se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités P-DATA-BASE-03 restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de texte, Unicode et flottants doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour P03, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche P03 sur flottants reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : P03-S1 et P03-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : P03_TD_flottants.md, à produire ou relire dans le registre de supports.
-- TP lié : P03_TP_flottants.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre P03 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/premiere/P03/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | P03-S1 | prête | séance présente dans la progression |
+| TD | 03_progressions/supports/premiere/P03/P03_td_texte_reels.md | existant | support associé existant dans 03_progressions/supports |
+| TP | 03_progressions/supports/premiere/P03/P03_tp_texte_reels.md | existant | support associé existant dans 03_progressions/supports |
+| Évaluation | 03_progressions/supports/premiere/P03/P03_evaluation_texte_reels.md | existant | support associé existant dans 03_progressions/supports |
 
 ## Auto-évaluation
-- Je sais expliquer flottants sans lire la fiche.
-- Je sais refaire les exemples de P03 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour flottants.
-- Je sais choisir un cas limite de flottants avant de répondre.
-- Je sais relier la fiche P03 sur flottants à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer flottants avec un exemple différent de ceux de la fiche P03.
+- Je peux citer au moins une capacité parmi P-DATA-BASE-03 et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à P03 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de texte, Unicode et flottants sans transformer la fiche en corrigé complet.

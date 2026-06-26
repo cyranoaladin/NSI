@@ -16,72 +16,81 @@ official_program:
     - "T-BDD-03C"
     - "T-BDD-03D"
     - "T-BDD-03E"
+readiness: linked
 private_data: false
 ---
 # T10 - Fiche cours - SQL : SELECT, WHERE, JOIN
 
 ## À savoir
-- Capacités travaillées dans la fiche : T-BDD-03A, T-BDD-03B, T-BDD-03C, T-BDD-03D, T-BDD-03E.
-- La notion “requête SELECT” sert à filtrer et relier des tables.
-- Le vocabulaire de requêtes de lecture doit être employé avec des données concrètes propres au chapitre T10.
-- La capacité associée à requêtes de lecture se travaille par lecture, manipulation et justification dans T10.
-- Une réponse sur requêtes de lecture distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- Schéma minimal utilisé : `Eleve(id_eleve, nom, classe)` et `Note(id_note, id_eleve, matiere, note)`.
+- `SELECT` choisit les colonnes affichées ; `WHERE` filtre les lignes.
+- `JOIN` relie deux tables avec une condition, ici `Eleve.id_eleve = Note.id_eleve`.
+- `ORDER BY` ordonne le résultat sans modifier les tables.
 
 ## Méthodes
-1. écrire FROM, WHERE puis colonnes utiles.
-2. Écrire un exemple minimal de requêtes de lecture avant de traiter le cas général du chapitre T10.
-3. Identifier le cas limite de requêtes de lecture qui peut faire échouer la méthode.
-4. Relier la conclusion de requêtes de lecture à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : T-BDD-03A, T-BDD-03B, T-BDD-03C, T-BDD-03D, T-BDD-03E.
+2. T-BDD-03A : écrire `SELECT` et `FROM` pour choisir les colonnes.
+3. T-BDD-03B : ajouter `WHERE` pour filtrer avant de lire le résultat.
+4. T-BDD-03C et T-BDD-03D : écrire une jointure avec condition explicite.
+5. T-BDD-03E : ajouter `ORDER BY note DESC` pour classer les lignes obtenues.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-SELECT nom FROM Eleve filtre une classe.
-### Exemple corrigé 2
-On reprend le premier exemple avec une donnée différente et on contrôle explicitement la conclusion pour requêtes de lecture.
+### Exemple corrigé 1 - SELECT simple
+`SELECT nom, classe FROM Eleve;` affiche deux colonnes de la table `Eleve`.
+### Exemple corrigé 2 - WHERE
+`SELECT nom FROM Eleve WHERE classe = "T1";` ne garde que les élèves de T1.
+### Exemple corrigé 3 - JOIN
+`SELECT Eleve.nom, Note.note FROM Eleve JOIN Note ON Eleve.id_eleve = Note.id_eleve;` associe chaque note à un nom.
+### Exemple corrigé 4 - ORDER BY
+`SELECT matiere, note FROM Note WHERE id_eleve = 2 ORDER BY note DESC;` classe les notes de l’élève 2.
+### Exemple corrigé 5 - Erreur de jointure
+`Eleve JOIN Note` sans `ON` produit des associations non maîtrisées entre toutes les lignes.
+### Exemple corrigé 6 - Filtrer avant ou après
+Filtrer `classe = "T1"` dans `WHERE` limite les élèves concernés avant la lecture des notes jointes.
 
 ## Erreurs fréquentes
-- une jointure sans condition multiplie les lignes : corriger avec un contre-exemple court.
-- Donner seulement le résultat en requêtes de lecture : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de requêtes de lecture : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de requêtes de lecture avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de requêtes de lecture et modification : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur SQL : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour requête SELECT.
-- Donnée invalide ou absente dans une situation de requêtes de lecture.
-- Situation de requêtes de lecture où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour requêtes de lecture, à traiter selon la convention du chapitre T10.
+- Donnée invalide dans requêtes de lecture et modification, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de SQL où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir requête SELECT en une phrase précise.
+T-BDD-03A : écrire la requête qui affiche tous les noms.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de requête SELECT.
+T-BDD-03B : filtrer les notes de mathématiques.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur requêtes de lecture.
+T-BDD-03C : joindre `Eleve` et `Note` par `id_eleve`.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour requêtes de lecture.
+T-BDD-03E : trier les notes par ordre décroissant.
 
 ## Réponses rapides
-1. requête SELECT doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur requêtes de lecture doit montrer les étapes utiles.
-3. L’erreur de requêtes de lecture se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour requêtes de lecture.
+1. `SELECT nom FROM Eleve;`.
+2. `SELECT note FROM Note WHERE matiere = "maths";`.
+3. `... JOIN Note ON Eleve.id_eleve = Note.id_eleve`.
+4. `ORDER BY note DESC` place les notes les plus hautes en premier.
 
 ## À retenir
-- Pour requêtes de lecture, commencer par reconnaître la situation exacte.
-- Une méthode de T10 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités T-BDD-03A, T-BDD-03B, T-BDD-03C, T-BDD-03D, T-BDD-03E restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de requêtes de lecture sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur requêtes_de_lecture.
+- T10 : requêtes de lecture se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités T-BDD-03A, T-BDD-03B, T-BDD-03C, T-BDD-03D, T-BDD-03E restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de SQL doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour T10, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche T10 sur requêtes de lecture reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : T10-S1 et T10-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : T10_TD_requêtes_de_lecture.md, à produire ou relire dans le registre de supports.
-- TP lié : T10_TP_requêtes_de_lecture.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre T10 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/terminale/T10/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | T10-S1 | réelle | séance présente dans la progression |
+| TD | T10_TD_sql_select_where_join.md | à créer | inscrit au registre v2 |
+| Évaluation | T10_evaluation_sql_select_where_join.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer requêtes de lecture sans lire la fiche.
-- Je sais refaire les exemples de T10 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour requêtes de lecture.
-- Je sais choisir un cas limite de requêtes de lecture avant de répondre.
-- Je sais relier la fiche T10 sur requêtes de lecture à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer requêtes de lecture avec un exemple différent de ceux de la fiche T10.
+- Je peux citer au moins une capacité parmi T-BDD-03A, T-BDD-03B, T-BDD-03C, T-BDD-03D, T-BDD-03E et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à T10 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de SQL sans transformer la fiche en corrigé complet.

@@ -15,72 +15,73 @@ official_program:
     - "P-IHM-01B"
     - "P-IHM-02"
     - "P-IHM-03A"
+readiness: linked
 private_data: false
 ---
 # P08 - Fiche cours - HTML, CSS et DOM
 
 ## À savoir
-- Capacités travaillées dans la fiche : P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A.
-- La notion “DOM” sert à relier structure HTML et interaction.
-- Le vocabulaire de HTML CSS DOM doit être employé avec des données concrètes propres au chapitre P08.
-- La capacité associée à HTML CSS DOM se travaille par lecture, manipulation et justification dans P08.
-- Une réponse sur HTML CSS DOM distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- Web client et requêtes HTTP se travaille dans le contexte “HTML, DOM et formulaires” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour HTML CSS DOM.
+- Les capacités P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de Web client et requêtes HTTP avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. cibler un élément par id ou classe.
-2. Écrire un exemple minimal de HTML CSS DOM avant de traiter le cas général du chapitre P08.
-3. Identifier le cas limite de HTML CSS DOM qui peut faire échouer la méthode.
-4. Relier la conclusion de HTML CSS DOM à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A.
+2. P-IHM-01A : séparer structure, événement et échange client-serveur.
+3. Identifier les données d’entrée de HTML CSS DOM puis écrire le résultat attendu avant de conclure.
+4. Contrôler HTML CSS DOM par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance P08 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-un clic sur bouton déclenche une fonction.
-### Exemple corrigé 2
-On reprend le premier exemple avec une donnée différente et on contrôle explicitement la conclusion pour HTML CSS DOM.
+### Exemple corrigé 1 - Exemple principal
+Un bouton `id="valider"` déclenche une fonction associée à l’événement `click`.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+`/search?q=nsi` envoie le paramètre `q` par une requête GET visible dans l’URL.
 
 ## Erreurs fréquentes
-- deux ids identiques rendent le ciblage ambigu : corriger avec un contre-exemple court.
-- Donner seulement le résultat en HTML CSS DOM : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de HTML CSS DOM : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de HTML CSS DOM avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de HTML, DOM et formulaires : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur Web client et requêtes HTTP : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour DOM.
-- Donnée invalide ou absente dans une situation de HTML CSS DOM.
-- Situation de HTML CSS DOM où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour HTML CSS DOM, à traiter selon la convention du chapitre P08.
+- Donnée invalide dans HTML, DOM et formulaires, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de Web client et requêtes HTTP où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir DOM en une phrase précise.
+P-IHM-01A : appliquer la méthode de HTML CSS DOM à un exemple court choisi dans le chapitre P08.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de DOM.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de HTML, DOM et formulaires.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur HTML CSS DOM.
+Proposer un cas limite pertinent pour Web client et requêtes HTTP et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour HTML CSS DOM.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour HTML CSS DOM.
 
 ## Réponses rapides
-1. DOM doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur HTML CSS DOM doit montrer les étapes utiles.
-3. L’erreur de HTML CSS DOM se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour HTML CSS DOM.
+1. La méthode attendue pour HTML CSS DOM commence par les données puis applique l’opération du chapitre P08.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans HTML, DOM et formulaires.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon Web client et requêtes HTTP.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de HTML CSS DOM.
 
 ## À retenir
-- Pour HTML CSS DOM, commencer par reconnaître la situation exacte.
-- Une méthode de P08 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de HTML CSS DOM sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur HTML_CSS_DOM.
+- P08 : HTML CSS DOM se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de Web client et requêtes HTTP doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour P08, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche P08 sur HTML CSS DOM reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : P08-S1 et P08-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : P08_TD_HTML_CSS_DOM.md, à produire ou relire dans le registre de supports.
-- TP lié : P08_TP_HTML_CSS_DOM.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre P08 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/premiere/P08/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | P08-S1 | réelle | séance présente dans la progression |
+| TD | P08_TD_html_css_dom.md | à créer | inscrit au registre v2 |
+| Évaluation | P08_evaluation_html_css_dom.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer HTML CSS DOM sans lire la fiche.
-- Je sais refaire les exemples de P08 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour HTML CSS DOM.
-- Je sais choisir un cas limite de HTML CSS DOM avant de répondre.
-- Je sais relier la fiche P08 sur HTML CSS DOM à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer HTML CSS DOM avec un exemple différent de ceux de la fiche P08.
+- Je peux citer au moins une capacité parmi P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à P08 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de Web client et requêtes HTTP sans transformer la fiche en corrigé complet.

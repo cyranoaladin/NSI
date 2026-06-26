@@ -12,72 +12,73 @@ notion: "projet oral"
 official_program:
   capacities:
     - "P-HIST-01"
+readiness: linked
 private_data: false
 ---
 # P14 - Fiche cours - Synthèse, projet final et oral
 
 ## À savoir
-- Capacités travaillées dans la fiche : P-HIST-01.
-- La notion “projet oral” sert à relier besoin, solution, tests et limites.
-- Le vocabulaire de projet oral doit être employé avec des données concrètes propres au chapitre P14.
-- La capacité associée à projet oral se travaille par lecture, manipulation et justification dans P14.
-- Une réponse sur projet oral distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- synthèse projet oral se travaille dans le contexte “révision et projet” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour projet oral.
+- Les capacités P-HIST-01 sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de synthèse projet oral avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. préparer une démonstration sur données fictives.
-2. Écrire un exemple minimal de projet oral avant de traiter le cas général du chapitre P14.
-3. Identifier le cas limite de projet oral qui peut faire échouer la méthode.
-4. Relier la conclusion de projet oral à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : P-HIST-01.
+2. P-HIST-01 : relier besoin, code, tests, limites et présentation.
+3. Identifier les données d’entrée de projet oral puis écrire le résultat attendu avant de conclure.
+4. Contrôler projet oral par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance P14 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-un convertisseur se teste avec 0 et une base invalide.
-### Exemple corrigé 2
-On change les données de l’exemple précédent et on vérifie que le raisonnement sur projet oral donne encore une conclusion contrôlable.
+### Exemple corrigé 1 - Exemple principal
+Un convertisseur de bases se teste avec 0, 45 et une base invalide.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Une démonstration de projet doit utiliser des données fictives et annoncer une limite technique.
 
 ## Erreurs fréquentes
-- un projet sans limites expliquées reste fragile : corriger avec un contre-exemple court.
-- Donner seulement le résultat en projet oral : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de projet oral : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de projet oral avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de révision et projet : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur synthèse projet oral : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour projet oral.
-- Donnée invalide ou absente dans une situation de projet oral.
-- Situation de projet oral où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour projet oral, à traiter selon la convention du chapitre P14.
+- Donnée invalide dans révision et projet, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de synthèse projet oral où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir projet oral en une phrase précise.
+P-HIST-01 : appliquer la méthode de projet oral à un exemple court choisi dans le chapitre P14.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de projet oral.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de révision et projet.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur projet oral.
+Proposer un cas limite pertinent pour synthèse projet oral et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour projet oral.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour projet oral.
 
 ## Réponses rapides
-1. projet oral doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur projet oral doit montrer les étapes utiles.
-3. L’erreur de projet oral se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour projet oral.
+1. La méthode attendue pour projet oral commence par les données puis applique l’opération du chapitre P14.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans révision et projet.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon synthèse projet oral.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de projet oral.
 
 ## À retenir
-- Pour projet oral, commencer par reconnaître la situation exacte.
-- Une méthode de P14 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités P-HIST-01 restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de projet oral sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur projet_oral.
+- P14 : projet oral se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités P-HIST-01 restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de synthèse projet oral doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour P14, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche P14 sur projet oral reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : P14-S1 et P14-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : P14_TD_projet_oral.md, à produire ou relire dans le registre de supports.
-- TP lié : P14_TP_projet_oral.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre P14 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/premiere/P14/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | P14-S1 | réelle | séance présente dans la progression |
+| TD | P14_TD_synthese_projet_oral.md | à créer | inscrit au registre v2 |
+| Évaluation | P14_evaluation_synthese_projet_oral.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer projet oral sans lire la fiche.
-- Je sais refaire les exemples de P14 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour projet oral.
-- Je sais choisir un cas limite de projet oral avant de répondre.
-- Je sais relier la fiche P14 sur projet oral à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer projet oral avec un exemple différent de ceux de la fiche P14.
+- Je peux citer au moins une capacité parmi P-HIST-01 et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à P14 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de synthèse projet oral sans transformer la fiche en corrigé complet.

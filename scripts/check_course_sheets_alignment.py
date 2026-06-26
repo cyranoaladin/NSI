@@ -9,10 +9,14 @@ import re
 
 from _qa_common import ROOT, read_frontmatter
 from _course_sheets_common import (
+    course_sheet_links,
     frontmatter_capacities,
+    link_is_registered,
     planned_sequences,
     program_ids as load_program_ids,
+    resource_exists,
     section_text,
+    session_ids,
     sheet_files,
 )
 
@@ -28,6 +32,9 @@ FORBIDDEN_COVERAGE_CLAIMS = [
     "remplace le td",
     "remplace le corrigé",
     "remplace le corrige",
+    "remplace une évaluation",
+    "remplace une evaluation",
+    "remplace un tp",
 ]
 
 
@@ -37,20 +44,38 @@ class CourseSheetAlignmentResult:
     checked_files: int = 0
 
 
-def link_block_errors(path: Path, text: str, sequence_id: str) -> list[str]:
+def link_block_errors(path: Path, text: str, sequence_id: str, root: Path) -> list[str]:
     errors: list[str] = []
     block = section_text(text, "Lien avec la progression")
-    lowered = block.lower()
     if not block:
         return [f"{path}: lien avec la progression absent"]
-    if not re.search(rf"\b{sequence_id}-S\d+\b", block):
-        errors.append(f"{path}: aucune séance liée")
-    if not any(marker in lowered for marker in ["td", "tp", "évaluation", "evaluation", "projet"]):
+    links = course_sheet_links(path)
+    if not links:
+        errors.append(f"{path}: table de liens structurée absente")
+        return errors
+    real_sessions = session_ids(root)
+    if not any(link.is_session and re.fullmatch(rf"{sequence_id}-S\d+", link.file) and link.file in real_sessions for link in links):
+        errors.append(f"{path}: aucune séance réelle liée")
+    resource_links = [link for link in links if link.is_resource]
+    if not any(link.element.lower() in {"td", "tp", "évaluation", "evaluation", "projet"} for link in resource_links):
         errors.append(f"{path}: aucun TD, TP, évaluation ou projet lié")
+    for link in resource_links:
+        if not resource_exists(root, link.file) and not link_is_registered(root, link.file):
+            errors.append(f"{path}: ressource liée absente du dépôt et du registre -> {link.file}")
     return errors
 
 
-def analyze_sheet_alignment(path: Path, program_ids: set[str], planned_ids: set[str]) -> list[str]:
+def capacity_context(text: str) -> str:
+    return "\n".join(
+        [
+            section_text(text, "Méthodes"),
+            section_text(text, "Exemples corrigés"),
+            section_text(text, "Mini-exercices"),
+        ]
+    )
+
+
+def analyze_sheet_alignment(path: Path, program_ids: set[str], planned_ids: set[str], root: Path = ROOT) -> list[str]:
     errors: list[str] = []
     text = path.read_text(encoding="utf-8", errors="replace")
     lowered = text.lower()
@@ -58,15 +83,15 @@ def analyze_sheet_alignment(path: Path, program_ids: set[str], planned_ids: set[
     sequence_id = str(metadata.get("sequence_id") or path.name[:3])
     if sequence_id not in planned_ids:
         errors.append(f"{path}: sequence_id absent de la progression -> {sequence_id}")
-    errors.extend(link_block_errors(path, text, sequence_id))
+    errors.extend(link_block_errors(path, text, sequence_id, root))
 
     capacities = frontmatter_capacities(metadata)
-    body = text.split("---", 2)[-1] if text.startswith("---") else text
+    context = capacity_context(text)
     for capacity in sorted(capacities):
         if capacity not in program_ids:
             errors.append(f"{path}: capacité absente du YAML officiel -> {capacity}")
-        if body.count(capacity) == 0:
-            errors.append(f"{path}: capacité déclarée non réellement traitée -> {capacity}")
+        if context.count(capacity) == 0:
+            errors.append(f"{path}: capacité seulement présente en frontmatter ou hors activité -> {capacity}")
 
     for phrase in FORBIDDEN_COVERAGE_CLAIMS:
         if phrase in lowered:
@@ -84,7 +109,7 @@ def analyze_course_sheets_alignment(root: Path = ROOT, program_ids: set[str] | N
         return result
     for path in files:
         result.checked_files += 1
-        result.errors.extend(analyze_sheet_alignment(path, ids, planned_ids))
+        result.errors.extend(analyze_sheet_alignment(path, ids, planned_ids, root))
     return result
 
 

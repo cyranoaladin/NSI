@@ -15,72 +15,73 @@ official_program:
     - "T-ARCH-02A"
     - "T-ARCH-02B"
     - "T-ARCH-02C"
+readiness: linked
 private_data: false
 ---
 # T11 - Fiche cours - Processus, ordonnancement et interblocage
 
 ## À savoir
-- Capacités travaillées dans la fiche : T-ARCH-01, T-ARCH-02A, T-ARCH-02B, T-ARCH-02C.
-- La notion “processus” sert à partager le processeur et les ressources.
-- Le vocabulaire de processus doit être employé avec des données concrètes propres au chapitre T11.
-- La capacité associée à processus se travaille par lecture, manipulation et justification dans T11.
-- Une réponse sur processus distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- processus et ordonnancement se travaille dans le contexte “systèmes” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour processus.
+- Les capacités T-ARCH-01, T-ARCH-02A, T-ARCH-02B, T-ARCH-02C sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de processus et ordonnancement avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. tracer prêt, élu et bloqué.
-2. Écrire un exemple minimal de processus avant de traiter le cas général du chapitre T11.
-3. Identifier le cas limite de processus qui peut faire échouer la méthode.
-4. Relier la conclusion de processus à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : T-ARCH-01, T-ARCH-02A, T-ARCH-02B, T-ARCH-02C.
+2. T-ARCH-01 : suivre états prêt, élu et bloqué.
+3. Identifier les données d’entrée de processus puis écrire le résultat attendu avant de conclure.
+4. Contrôler processus par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance T11 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-P1 attend B pendant que P2 attend A.
-### Exemple corrigé 2
-On change les données de l’exemple précédent et on vérifie que le raisonnement sur processus donne encore une conclusion contrôlable.
+### Exemple corrigé 1 - Exemple principal
+Un processus qui attend une lecture disque passe de élu à bloqué.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+P1 détient A et attend B pendant que P2 détient B et attend A : interblocage.
 
 ## Erreurs fréquentes
-- un programme stocké n’est pas un processus actif : corriger avec un contre-exemple court.
-- Donner seulement le résultat en processus : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de processus : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de processus avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de systèmes : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur processus et ordonnancement : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour processus.
-- Donnée invalide ou absente dans une situation de processus.
-- Situation de processus où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour processus, à traiter selon la convention du chapitre T11.
+- Donnée invalide dans systèmes, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de processus et ordonnancement où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir processus en une phrase précise.
+T-ARCH-01 : appliquer la méthode de processus à un exemple court choisi dans le chapitre T11.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de processus.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de systèmes.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur processus.
+Proposer un cas limite pertinent pour processus et ordonnancement et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour processus.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour processus.
 
 ## Réponses rapides
-1. processus doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur processus doit montrer les étapes utiles.
-3. L’erreur de processus se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour processus.
+1. La méthode attendue pour processus commence par les données puis applique l’opération du chapitre T11.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans systèmes.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon processus et ordonnancement.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de processus.
 
 ## À retenir
-- Pour processus, commencer par reconnaître la situation exacte.
-- Une méthode de T11 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités T-ARCH-01, T-ARCH-02A, T-ARCH-02B, T-ARCH-02C restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de processus sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur processus.
+- T11 : processus se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités T-ARCH-01, T-ARCH-02A, T-ARCH-02B, T-ARCH-02C restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de processus et ordonnancement doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour T11, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche T11 sur processus reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : T11-S1 et T11-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : T11_TD_processus.md, à produire ou relire dans le registre de supports.
-- TP lié : T11_TP_processus.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre T11 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/terminale/T11/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | T11-S1 | réelle | séance présente dans la progression |
+| TD | T11_TD_processus_ordonnancement_interblocage.md | à créer | inscrit au registre v2 |
+| Évaluation | T11_evaluation_processus_ordonnancement_interblocage.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer processus sans lire la fiche.
-- Je sais refaire les exemples de T11 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour processus.
-- Je sais choisir un cas limite de processus avant de répondre.
-- Je sais relier la fiche T11 sur processus à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer processus avec un exemple différent de ceux de la fiche T11.
+- Je peux citer au moins une capacité parmi T-ARCH-01, T-ARCH-02A, T-ARCH-02B, T-ARCH-02C et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à T11 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de processus et ordonnancement sans transformer la fiche en corrigé complet.

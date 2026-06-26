@@ -12,72 +12,74 @@ notion: "dictionnaires"
 official_program:
   capacities:
     - "T-STRUCT-03C"
+readiness: operational
 private_data: false
 ---
 # T03 - Fiche cours - Dictionnaires
 
 ## À savoir
-- Capacités travaillées dans la fiche : T-STRUCT-03C.
-- La notion “dictionnaire de comptage” sert à accéder directement par clé.
-- Le vocabulaire de dictionnaires doit être employé avec des données concrètes propres au chapitre T03.
-- La capacité associée à dictionnaires se travaille par lecture, manipulation et justification dans T03.
-- Une réponse sur dictionnaires distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- piles, files et dictionnaires se travaille dans le contexte “structures linéaires” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour dictionnaires.
+- Les capacités T-STRUCT-03C sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de piles, files et dictionnaires avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. utiliser get pour initialiser un compteur.
-2. Écrire un exemple minimal de dictionnaires avant de traiter le cas général du chapitre T03.
-3. Identifier le cas limite de dictionnaires qui peut faire échouer la méthode.
-4. Relier la conclusion de dictionnaires à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : T-STRUCT-03C.
+2. T-STRUCT-03C : choisir LIFO, FIFO ou accès par clé.
+3. Identifier les données d’entrée de dictionnaires puis écrire le résultat attendu avant de conclure.
+4. Contrôler dictionnaires par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance T03 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-aba donne {a:2,b:1}.
-### Exemple corrigé 2
-On reprend le premier exemple avec une donnée différente et on contrôle explicitement la conclusion pour dictionnaires.
+### Exemple corrigé 1 - Exemple principal
+Empiler A puis B donne B au sommet : le prochain retrait renvoie B.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Enfiler A puis B puis défiler renvoie A, contrairement à une pile.
 
 ## Erreurs fréquentes
-- une liste est mauvaise pour un accès par identifiant : corriger avec un contre-exemple court.
-- Donner seulement le résultat en dictionnaires : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de dictionnaires : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de dictionnaires avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de structures linéaires : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur piles, files et dictionnaires : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour dictionnaire de comptage.
-- Donnée invalide ou absente dans une situation de dictionnaires.
-- Situation de dictionnaires où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour dictionnaires, à traiter selon la convention du chapitre T03.
+- Donnée invalide dans structures linéaires, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de piles, files et dictionnaires où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir dictionnaire de comptage en une phrase précise.
+T-STRUCT-03C : appliquer la méthode de dictionnaires à un exemple court choisi dans le chapitre T03.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de dictionnaire de comptage.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de structures linéaires.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur dictionnaires.
+Proposer un cas limite pertinent pour piles, files et dictionnaires et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour dictionnaires.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour dictionnaires.
 
 ## Réponses rapides
-1. dictionnaire de comptage doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur dictionnaires doit montrer les étapes utiles.
-3. L’erreur de dictionnaires se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour dictionnaires.
+1. La méthode attendue pour dictionnaires commence par les données puis applique l’opération du chapitre T03.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans structures linéaires.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon piles, files et dictionnaires.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de dictionnaires.
 
 ## À retenir
-- Pour dictionnaires, commencer par reconnaître la situation exacte.
-- Une méthode de T03 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités T-STRUCT-03C restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de dictionnaires sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur dictionnaires.
+- T03 : dictionnaires se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités T-STRUCT-03C restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de piles, files et dictionnaires doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour T03, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche T03 sur dictionnaires reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : T03-S1 et T03-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : T03_TD_dictionnaires.md, à produire ou relire dans le registre de supports.
-- TP lié : T03_TP_dictionnaires.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre T03 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/terminale/T03/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | T03-S1 | prête | séance présente dans la progression |
+| TD | 03_progressions/supports/terminale/T03/T03_td_piles_files_dictionnaires.md | existant | support associé existant dans 03_progressions/supports |
+| TP | 03_progressions/supports/terminale/T03/T03_tp_piles_files_dictionnaires.md | existant | support associé existant dans 03_progressions/supports |
+| Évaluation | 03_progressions/supports/terminale/T03/T03_evaluation_piles_files_dictionnaires.md | existant | support associé existant dans 03_progressions/supports |
 
 ## Auto-évaluation
-- Je sais expliquer dictionnaires sans lire la fiche.
-- Je sais refaire les exemples de T03 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour dictionnaires.
-- Je sais choisir un cas limite de dictionnaires avant de répondre.
-- Je sais relier la fiche T03 sur dictionnaires à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer dictionnaires avec un exemple différent de ceux de la fiche T03.
+- Je peux citer au moins une capacité parmi T-STRUCT-03C et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à T03 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de piles, files et dictionnaires sans transformer la fiche en corrigé complet.

@@ -13,72 +13,73 @@ official_program:
   capacities:
     - "P-TABLE-03"
     - "P-TABLE-04"
+readiness: linked
 private_data: false
 ---
 # P06 - Fiche cours - Tables : recherche, tri et fusion
 
 ## À savoir
-- Capacités travaillées dans la fiche : P-TABLE-03, P-TABLE-04.
-- La notion “tri et fusion de tables” sert à ordonner ou combiner des lignes.
-- Le vocabulaire de tri et fusion de tables doit être employé avec des données concrètes propres au chapitre P06.
-- La capacité associée à tri et fusion de tables se travaille par lecture, manipulation et justification dans P06.
-- Une réponse sur tri et fusion de tables distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- recherche, tri et fusion de tables se travaille dans le contexte “tables avancées” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour tri et fusion de tables.
+- Les capacités P-TABLE-03, P-TABLE-04 sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de recherche, tri et fusion de tables avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. choisir une clé de rapprochement fiable.
-2. Écrire un exemple minimal de tri et fusion de tables avant de traiter le cas général du chapitre P06.
-3. Identifier le cas limite de tri et fusion de tables qui peut faire échouer la méthode.
-4. Relier la conclusion de tri et fusion de tables à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : P-TABLE-03, P-TABLE-04.
+2. P-TABLE-03 : ordonner ou combiner des lignes par clé.
+3. Identifier les données d’entrée de tri et fusion de tables puis écrire le résultat attendu avant de conclure.
+4. Contrôler tri et fusion de tables par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance P06 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-fusionner eleves.id avec notes.id_eleve.
-### Exemple corrigé 2
-On change les données de l’exemple précédent et on vérifie que le raisonnement sur tri et fusion de tables donne encore une conclusion contrôlable.
+### Exemple corrigé 1 - Exemple principal
+Trier les scores 7, 15, 12 en décroissant place 15 en premier.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Fusionner `Eleve(id, nom)` et `Note(id, note)` utilise la clé `id`.
 
 ## Erreurs fréquentes
-- un nom n’est pas une clé stable : corriger avec un contre-exemple court.
-- Donner seulement le résultat en tri et fusion de tables : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de tri et fusion de tables : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de tri et fusion de tables avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de tables avancées : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur recherche, tri et fusion de tables : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour tri et fusion de tables.
-- Donnée invalide ou absente dans une situation de tri et fusion de tables.
-- Situation de tri et fusion de tables où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour tri et fusion de tables, à traiter selon la convention du chapitre P06.
+- Donnée invalide dans tables avancées, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de recherche, tri et fusion de tables où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir tri et fusion de tables en une phrase précise.
+P-TABLE-03 : appliquer la méthode de tri et fusion de tables à un exemple court choisi dans le chapitre P06.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de tri et fusion de tables.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de tables avancées.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur tri et fusion de tables.
+Proposer un cas limite pertinent pour recherche, tri et fusion de tables et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour tri et fusion de tables.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour tri et fusion de tables.
 
 ## Réponses rapides
-1. tri et fusion de tables doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur tri et fusion de tables doit montrer les étapes utiles.
-3. L’erreur de tri et fusion de tables se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour tri et fusion de tables.
+1. La méthode attendue pour tri et fusion de tables commence par les données puis applique l’opération du chapitre P06.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans tables avancées.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon recherche, tri et fusion de tables.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de tri et fusion de tables.
 
 ## À retenir
-- Pour tri et fusion de tables, commencer par reconnaître la situation exacte.
-- Une méthode de P06 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités P-TABLE-03, P-TABLE-04 restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de tri et fusion de tables sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur tri_et_fusion_de_tables.
+- P06 : tri et fusion de tables se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités P-TABLE-03, P-TABLE-04 restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de recherche, tri et fusion de tables doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour P06, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche P06 sur tri et fusion de tables reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : P06-S1 et P06-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : P06_TD_tri_et_fusion_de_tables.md, à produire ou relire dans le registre de supports.
-- TP lié : P06_TP_tri_et_fusion_de_tables.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre P06 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/premiere/P06/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | P06-S1 | réelle | séance présente dans la progression |
+| TD | P06_TD_tables_recherche_tri_fusion.md | à créer | inscrit au registre v2 |
+| Évaluation | P06_evaluation_tables_recherche_tri_fusion.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer tri et fusion de tables sans lire la fiche.
-- Je sais refaire les exemples de P06 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour tri et fusion de tables.
-- Je sais choisir un cas limite de tri et fusion de tables avant de répondre.
-- Je sais relier la fiche P06 sur tri et fusion de tables à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer tri et fusion de tables avec un exemple différent de ceux de la fiche P06.
+- Je peux citer au moins une capacité parmi P-TABLE-03, P-TABLE-04 et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à P06 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de recherche, tri et fusion de tables sans transformer la fiche en corrigé complet.

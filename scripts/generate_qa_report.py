@@ -9,7 +9,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-from _course_sheets_common import frontmatter_capacities, planned_sequences, read_frontmatter, sheets_by_sequence
+from _course_sheets_common import compute_sheet_readiness, course_sheet_links, frontmatter_capacities, planned_sequences, read_frontmatter, resource_exists, sheets_by_sequence
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "manifest.csv"
@@ -87,10 +87,20 @@ def course_sheet_stats() -> dict[str, object]:
     sheet_count = sum(len(paths) for paths in by_sequence.values())
     missing_sequences = [sequence for sequence in plans if not by_sequence.get(sequence)]
     missing_capacities: list[str] = []
+    readiness = Counter()
+    existing_links = 0
+    registered_links = 0
     for sequence, plan in plans.items():
         declared: set[str] = set()
         for sheet in by_sequence.get(sequence, []):
             declared.update(frontmatter_capacities(read_frontmatter(sheet)))
+            links = course_sheet_links(sheet)
+            readiness[compute_sheet_readiness(ROOT, links)] += 1
+            for link in links:
+                if link.is_resource and resource_exists(ROOT, link.file):
+                    existing_links += 1
+                elif link.is_resource:
+                    registered_links += 1
         for capacity in sorted(plan.capacities):
             if capacity not in declared:
                 missing_capacities.append(f"{sequence}:{capacity}")
@@ -99,6 +109,9 @@ def course_sheet_stats() -> dict[str, object]:
         "created": sheet_count,
         "missing_sequences": missing_sequences,
         "missing_capacities": missing_capacities,
+        "readiness": readiness,
+        "existing_links": existing_links,
+        "registered_links": registered_links,
     }
 
 
@@ -162,6 +175,11 @@ def main() -> int:
         + (", ".join(sheet_stats["missing_sequences"]) if sheet_stats["missing_sequences"] else "0"),
         "- Capacités sans fiche : "
         + (", ".join(sheet_stats["missing_capacities"]) if sheet_stats["missing_capacities"] else "0"),
+        f"- Fiches théoriques : {sheet_stats['readiness'].get('theoretical', 0)}",
+        f"- Fiches liées : {sheet_stats['readiness'].get('linked', 0)}",
+        f"- Fiches opérationnelles : {sheet_stats['readiness'].get('operational', 0)}",
+        f"- Liens vers supports existants : {sheet_stats['existing_links']}",
+        f"- Liens vers supports inscrits au registre : {sheet_stats['registered_links']}",
         "- Statut : needs_review",
         "- Effet couverture : aucun ; les fiches ne rendent aucune capacité covered.",
         "",

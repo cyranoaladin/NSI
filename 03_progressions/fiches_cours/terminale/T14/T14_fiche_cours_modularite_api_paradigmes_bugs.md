@@ -17,72 +17,73 @@ official_program:
     - "T-LANG-04A"
     - "T-LANG-04B"
     - "T-LANG-05"
+readiness: linked
 private_data: false
 ---
 # T14 - Fiche cours - Modularité, API, paradigmes et bugs
 
 ## À savoir
-- Capacités travaillées dans la fiche : T-LANG-03A, T-LANG-03B, T-LANG-03C, T-LANG-04A, T-LANG-04B, T-LANG-05.
-- La notion “modularité” sert à découper un programme en API testables.
-- Le vocabulaire de modularité API doit être employé avec des données concrètes propres au chapitre T14.
-- La capacité associée à modularité API se travaille par lecture, manipulation et justification dans T14.
-- Une réponse sur modularité API distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- modularité, API et bugs se travaille dans le contexte “langages” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour modularité API.
+- Les capacités T-LANG-03A, T-LANG-03B, T-LANG-03C, T-LANG-04A, T-LANG-04B, T-LANG-05 sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de modularité, API et bugs avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. réduire un bug à un exemple minimal.
-2. Écrire un exemple minimal de modularité API avant de traiter le cas général du chapitre T14.
-3. Identifier le cas limite de modularité API qui peut faire échouer la méthode.
-4. Relier la conclusion de modularité API à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : T-LANG-03A, T-LANG-03B, T-LANG-03C, T-LANG-04A, T-LANG-04B, T-LANG-05.
+2. T-LANG-03A : découper le code et isoler les défauts.
+3. Identifier les données d’entrée de modularité API puis écrire le résultat attendu avant de conclure.
+4. Contrôler modularité API par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance T14 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-un module stats expose moyenne.
-### Exemple corrigé 2
-On reprend le premier exemple avec une donnée différente et on contrôle explicitement la conclusion pour modularité API.
+### Exemple corrigé 1 - Exemple principal
+Un module `stats.py` expose `moyenne` et garde `verifier_liste` en auxiliaire.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Un bug sur liste vide se réduit à un test minimal avec `[]`.
 
 ## Erreurs fréquentes
-- corriger sans test favorise les retours de bug : corriger avec un contre-exemple court.
-- Donner seulement le résultat en modularité API : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de modularité API : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de modularité API avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de langages : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur modularité, API et bugs : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour modularité.
-- Donnée invalide ou absente dans une situation de modularité API.
-- Situation de modularité API où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour modularité API, à traiter selon la convention du chapitre T14.
+- Donnée invalide dans langages, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de modularité, API et bugs où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir modularité en une phrase précise.
+T-LANG-03A : appliquer la méthode de modularité API à un exemple court choisi dans le chapitre T14.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de modularité.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de langages.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur modularité API.
+Proposer un cas limite pertinent pour modularité, API et bugs et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour modularité API.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour modularité API.
 
 ## Réponses rapides
-1. modularité doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur modularité API doit montrer les étapes utiles.
-3. L’erreur de modularité API se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour modularité API.
+1. La méthode attendue pour modularité API commence par les données puis applique l’opération du chapitre T14.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans langages.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon modularité, API et bugs.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de modularité API.
 
 ## À retenir
-- Pour modularité API, commencer par reconnaître la situation exacte.
-- Une méthode de T14 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités T-LANG-03A, T-LANG-03B, T-LANG-03C, T-LANG-04A, T-LANG-04B, T-LANG-05 restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de modularité API sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur modularite_API.
+- T14 : modularité API se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités T-LANG-03A, T-LANG-03B, T-LANG-03C, T-LANG-04A, T-LANG-04B, T-LANG-05 restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de modularité, API et bugs doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour T14, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche T14 sur modularité API reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : T14-S1 et T14-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : T14_TD_modularite_API.md, à produire ou relire dans le registre de supports.
-- TP lié : T14_TP_modularite_API.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre T14 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/terminale/T14/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | T14-S1 | réelle | séance présente dans la progression |
+| TD | T14_TD_modularite_api_paradigmes_bugs.md | à créer | inscrit au registre v2 |
+| Évaluation | T14_evaluation_modularite_api_paradigmes_bugs.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer modularité API sans lire la fiche.
-- Je sais refaire les exemples de T14 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour modularité API.
-- Je sais choisir un cas limite de modularité API avant de répondre.
-- Je sais relier la fiche T14 sur modularité API à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer modularité API avec un exemple différent de ceux de la fiche T14.
+- Je peux citer au moins une capacité parmi T-LANG-03A, T-LANG-03B, T-LANG-03C, T-LANG-04A, T-LANG-04B, T-LANG-05 et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à T14 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de modularité, API et bugs sans transformer la fiche en corrigé complet.

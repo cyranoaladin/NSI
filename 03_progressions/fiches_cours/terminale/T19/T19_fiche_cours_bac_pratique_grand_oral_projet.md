@@ -12,72 +12,73 @@ notion: "révision projet oral"
 official_program:
   capacities:
     - "T-LANG-05"
+readiness: linked
 private_data: false
 ---
 # T19 - Fiche cours - Bac pratique, Grand Oral et projet
 
 ## À savoir
-- Capacités travaillées dans la fiche : T-LANG-05.
-- La notion “préparation finale” sert à relier code, tests, projet et oral.
-- Le vocabulaire de révision projet oral doit être employé avec des données concrètes propres au chapitre T19.
-- La capacité associée à révision projet oral se travaille par lecture, manipulation et justification dans T19.
-- Une réponse sur révision projet oral distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- bac pratique et Grand Oral se travaille dans le contexte “synthèse Terminale” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour révision projet oral.
+- Les capacités T-LANG-05 sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de bac pratique et Grand Oral avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. préparer cas nominal, limite et absent.
-2. Écrire un exemple minimal de révision projet oral avant de traiter le cas général du chapitre T19.
-3. Identifier le cas limite de révision projet oral qui peut faire échouer la méthode.
-4. Relier la conclusion de révision projet oral à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : T-LANG-05.
+2. T-LANG-05 : relier code, tests, projet et argumentation orale.
+3. Identifier les données d’entrée de révision projet oral puis écrire le résultat attendu avant de conclure.
+4. Contrôler révision projet oral par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance T19 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-compte_occurrences se teste avec élément absent.
-### Exemple corrigé 2
-On reprend le premier exemple avec une donnée différente et on contrôle explicitement la conclusion pour révision projet oral.
+### Exemple corrigé 1 - Exemple principal
+`compte_occurrences` se teste avec élément absent et élément présent plusieurs fois.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Une question orale peut demander comment un graphe aide à choisir un trajet.
 
 ## Erreurs fréquentes
-- un oral récité sans exemple technique est fragile : corriger avec un contre-exemple court.
-- Donner seulement le résultat en révision projet oral : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de révision projet oral : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de révision projet oral avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de synthèse Terminale : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur bac pratique et Grand Oral : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour préparation finale.
-- Donnée invalide ou absente dans une situation de révision projet oral.
-- Situation de révision projet oral où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour révision projet oral, à traiter selon la convention du chapitre T19.
+- Donnée invalide dans synthèse Terminale, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de bac pratique et Grand Oral où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir préparation finale en une phrase précise.
+T-LANG-05 : appliquer la méthode de révision projet oral à un exemple court choisi dans le chapitre T19.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de préparation finale.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de synthèse Terminale.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur révision projet oral.
+Proposer un cas limite pertinent pour bac pratique et Grand Oral et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour révision projet oral.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour révision projet oral.
 
 ## Réponses rapides
-1. préparation finale doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur révision projet oral doit montrer les étapes utiles.
-3. L’erreur de révision projet oral se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour révision projet oral.
+1. La méthode attendue pour révision projet oral commence par les données puis applique l’opération du chapitre T19.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans synthèse Terminale.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon bac pratique et Grand Oral.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de révision projet oral.
 
 ## À retenir
-- Pour révision projet oral, commencer par reconnaître la situation exacte.
-- Une méthode de T19 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités T-LANG-05 restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de révision projet oral sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur revision_projet_oral.
+- T19 : révision projet oral se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités T-LANG-05 restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de bac pratique et Grand Oral doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour T19, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche T19 sur révision projet oral reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : T19-S1 et T19-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : T19_TD_revision_projet_oral.md, à produire ou relire dans le registre de supports.
-- TP lié : T19_TP_revision_projet_oral.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre T19 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/terminale/T19/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | T19-S1 | réelle | séance présente dans la progression |
+| TD | T19_TD_bac_pratique_grand_oral_projet.md | à créer | inscrit au registre v2 |
+| Évaluation | T19_evaluation_bac_pratique_grand_oral_projet.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer révision projet oral sans lire la fiche.
-- Je sais refaire les exemples de T19 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour révision projet oral.
-- Je sais choisir un cas limite de révision projet oral avant de répondre.
-- Je sais relier la fiche T19 sur révision projet oral à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer révision projet oral avec un exemple différent de ceux de la fiche T19.
+- Je peux citer au moins une capacité parmi T-LANG-05 et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à T19 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de bac pratique et Grand Oral sans transformer la fiche en corrigé complet.

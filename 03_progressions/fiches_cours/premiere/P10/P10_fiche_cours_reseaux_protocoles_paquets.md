@@ -16,72 +16,73 @@ official_program:
     - "P-ARCH-02C"
     - "P-ARCH-04A"
     - "P-ARCH-04B"
+readiness: linked
 private_data: false
 ---
 # P10 - Fiche cours - Réseaux, protocoles et paquets
 
 ## À savoir
-- Capacités travaillées dans la fiche : P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B.
-- La notion “paquet réseau” sert à échanger selon un protocole.
-- Le vocabulaire de protocoles et paquets doit être employé avec des données concrètes propres au chapitre P10.
-- La capacité associée à protocoles et paquets se travaille par lecture, manipulation et justification dans P10.
-- Une réponse sur protocoles et paquets distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- réseaux et protocoles se travaille dans le contexte “paquets IP” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour protocoles et paquets.
+- Les capacités P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de réseaux et protocoles avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. suivre source, destination et routeur.
-2. Écrire un exemple minimal de protocoles et paquets avant de traiter le cas général du chapitre P10.
-3. Identifier le cas limite de protocoles et paquets qui peut faire échouer la méthode.
-4. Relier la conclusion de protocoles et paquets à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B.
+2. P-ARCH-02A : décrire source, destination, protocole et routeur.
+3. Identifier les données d’entrée de protocoles et paquets puis écrire le résultat attendu avant de conclure.
+4. Contrôler protocoles et paquets par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance P10 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-un paquet IP porte une adresse destination.
-### Exemple corrigé 2
-On reprend le premier exemple avec une donnée différente et on contrôle explicitement la conclusion pour protocoles et paquets.
+### Exemple corrigé 1 - Exemple principal
+Un paquet destiné à un autre réseau passe par une passerelle.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Un protocole précise le format des messages et l’ordre des réponses attendues.
 
 ## Erreurs fréquentes
-- Internet et Web ne désignent pas la même chose : corriger avec un contre-exemple court.
-- Donner seulement le résultat en protocoles et paquets : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de protocoles et paquets : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de protocoles et paquets avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de paquets IP : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur réseaux et protocoles : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour paquet réseau.
-- Donnée invalide ou absente dans une situation de protocoles et paquets.
-- Situation de protocoles et paquets où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour protocoles et paquets, à traiter selon la convention du chapitre P10.
+- Donnée invalide dans paquets IP, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de réseaux et protocoles où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir paquet réseau en une phrase précise.
+P-ARCH-02A : appliquer la méthode de protocoles et paquets à un exemple court choisi dans le chapitre P10.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de paquet réseau.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de paquets IP.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur protocoles et paquets.
+Proposer un cas limite pertinent pour réseaux et protocoles et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour protocoles et paquets.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour protocoles et paquets.
 
 ## Réponses rapides
-1. paquet réseau doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur protocoles et paquets doit montrer les étapes utiles.
-3. L’erreur de protocoles et paquets se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour protocoles et paquets.
+1. La méthode attendue pour protocoles et paquets commence par les données puis applique l’opération du chapitre P10.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans paquets IP.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon réseaux et protocoles.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de protocoles et paquets.
 
 ## À retenir
-- Pour protocoles et paquets, commencer par reconnaître la situation exacte.
-- Une méthode de P10 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de protocoles et paquets sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur protocoles_et_paquets.
+- P10 : protocoles et paquets se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de réseaux et protocoles doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour P10, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche P10 sur protocoles et paquets reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : P10-S1 et P10-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : P10_TD_protocoles_et_paquets.md, à produire ou relire dans le registre de supports.
-- TP lié : P10_TP_protocoles_et_paquets.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre P10 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/premiere/P10/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | P10-S1 | réelle | séance présente dans la progression |
+| TD | P10_TD_reseaux_protocoles_paquets.md | à créer | inscrit au registre v2 |
+| Évaluation | P10_evaluation_reseaux_protocoles_paquets.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer protocoles et paquets sans lire la fiche.
-- Je sais refaire les exemples de P10 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour protocoles et paquets.
-- Je sais choisir un cas limite de protocoles et paquets avant de répondre.
-- Je sais relier la fiche P10 sur protocoles et paquets à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer protocoles et paquets avec un exemple différent de ceux de la fiche P10.
+- Je peux citer au moins une capacité parmi P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à P10 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de réseaux et protocoles sans transformer la fiche en corrigé complet.

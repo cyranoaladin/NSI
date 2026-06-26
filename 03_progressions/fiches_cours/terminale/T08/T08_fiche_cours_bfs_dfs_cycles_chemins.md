@@ -15,72 +15,73 @@ official_program:
     - "T-ALGO-02B"
     - "T-ALGO-02C"
     - "T-ALGO-02D"
+readiness: linked
 private_data: false
 ---
 # T08 - Fiche cours - BFS, DFS, cycles et chemins
 
 ## À savoir
-- Capacités travaillées dans la fiche : T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D.
-- La notion “parcours de graphe” sert à explorer avec file ou pile.
-- Le vocabulaire de parcours de graphes doit être employé avec des données concrètes propres au chapitre T08.
-- La capacité associée à parcours de graphes se travaille par lecture, manipulation et justification dans T08.
-- Une réponse sur parcours de graphes distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- BFS, DFS et chemins se travaille dans le contexte “parcours de graphes” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour parcours de graphes.
+- Les capacités T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de BFS, DFS et chemins avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. marquer les sommets découverts.
-2. Écrire un exemple minimal de parcours de graphes avant de traiter le cas général du chapitre T08.
-3. Identifier le cas limite de parcours de graphes qui peut faire échouer la méthode.
-4. Relier la conclusion de parcours de graphes à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D.
+2. T-ALGO-02A : explorer avec file ou pile et marquer les sommets.
+3. Identifier les données d’entrée de parcours de graphes puis écrire le résultat attendu avant de conclure.
+4. Contrôler parcours de graphes par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance T08 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-BFS traite les voisins avant les descendants.
-### Exemple corrigé 2
-On reprend le premier exemple avec une donnée différente et on contrôle explicitement la conclusion pour parcours de graphes.
+### Exemple corrigé 1 - Exemple principal
+BFS depuis A traite B et C avant les descendants de B.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+DFS peut suivre A-B-D avant de revenir explorer C.
 
 ## Erreurs fréquentes
-- oublier visited crée des boucles : corriger avec un contre-exemple court.
-- Donner seulement le résultat en parcours de graphes : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de parcours de graphes : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de parcours de graphes avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de parcours de graphes : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur BFS, DFS et chemins : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour parcours de graphe.
-- Donnée invalide ou absente dans une situation de parcours de graphes.
-- Situation de parcours de graphes où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour parcours de graphes, à traiter selon la convention du chapitre T08.
+- Donnée invalide dans parcours de graphes, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de BFS, DFS et chemins où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir parcours de graphe en une phrase précise.
+T-ALGO-02A : appliquer la méthode de parcours de graphes à un exemple court choisi dans le chapitre T08.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de parcours de graphe.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de parcours de graphes.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur parcours de graphes.
+Proposer un cas limite pertinent pour BFS, DFS et chemins et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour parcours de graphes.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour parcours de graphes.
 
 ## Réponses rapides
-1. parcours de graphe doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur parcours de graphes doit montrer les étapes utiles.
-3. L’erreur de parcours de graphes se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour parcours de graphes.
+1. La méthode attendue pour parcours de graphes commence par les données puis applique l’opération du chapitre T08.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans parcours de graphes.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon BFS, DFS et chemins.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de parcours de graphes.
 
 ## À retenir
-- Pour parcours de graphes, commencer par reconnaître la situation exacte.
-- Une méthode de T08 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de parcours de graphes sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur parcours_de_graphes.
+- T08 : parcours de graphes se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de BFS, DFS et chemins doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour T08, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche T08 sur parcours de graphes reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : T08-S1 et T08-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : T08_TD_parcours_de_graphes.md, à produire ou relire dans le registre de supports.
-- TP lié : T08_TP_parcours_de_graphes.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre T08 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/terminale/T08/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | T08-S1 | réelle | séance présente dans la progression |
+| TD | T08_TD_bfs_dfs_cycles_chemins.md | à créer | inscrit au registre v2 |
+| Évaluation | T08_evaluation_bfs_dfs_cycles_chemins.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer parcours de graphes sans lire la fiche.
-- Je sais refaire les exemples de T08 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour parcours de graphes.
-- Je sais choisir un cas limite de parcours de graphes avant de répondre.
-- Je sais relier la fiche T08 sur parcours de graphes à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer parcours de graphes avec un exemple différent de ceux de la fiche T08.
+- Je peux citer au moins une capacité parmi T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à T08 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de BFS, DFS et chemins sans transformer la fiche en corrigé complet.

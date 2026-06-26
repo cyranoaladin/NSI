@@ -12,72 +12,73 @@ notion: "programmation dynamique"
 official_program:
   capacities:
     - "T-ALGO-04"
+readiness: linked
 private_data: false
 ---
 # T17 - Fiche cours - Programmation dynamique
 
 ## À savoir
-- Capacités travaillées dans la fiche : T-ALGO-04.
-- La notion “programmation dynamique” sert à mémoriser des sous-résultats réutilisés.
-- Le vocabulaire de programmation dynamique doit être employé avec des données concrètes propres au chapitre T17.
-- La capacité associée à programmation dynamique se travaille par lecture, manipulation et justification dans T17.
-- Une réponse sur programmation dynamique distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- programmation dynamique se travaille dans le contexte “mémoïsation” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour programmation dynamique.
+- Les capacités T-ALGO-04 sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de programmation dynamique avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. écrire la récurrence et les bases.
-2. Écrire un exemple minimal de programmation dynamique avant de traiter le cas général du chapitre T17.
-3. Identifier le cas limite de programmation dynamique qui peut faire échouer la méthode.
-4. Relier la conclusion de programmation dynamique à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : T-ALGO-04.
+2. T-ALGO-04 : mémoriser des sous-résultats réutilisés.
+3. Identifier les données d’entrée de programmation dynamique puis écrire le résultat attendu avant de conclure.
+4. Contrôler programmation dynamique par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance T17 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-fib(5) réutilise fib(3).
-### Exemple corrigé 2
-On change les données de l’exemple précédent et on vérifie que le raisonnement sur programmation dynamique donne encore une conclusion contrôlable.
+### Exemple corrigé 1 - Exemple principal
+Dans Fibonacci, `fib(3)` est demandé plusieurs fois sans mémoïsation.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Une table de sommes cible stocke le meilleur résultat pour chaque montant intermédiaire.
 
 ## Erreurs fréquentes
-- sans recouvrement, la méthode est inutilement lourde : corriger avec un contre-exemple court.
-- Donner seulement le résultat en programmation dynamique : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de programmation dynamique : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de programmation dynamique avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de mémoïsation : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur programmation dynamique : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour programmation dynamique.
-- Donnée invalide ou absente dans une situation de programmation dynamique.
-- Situation de programmation dynamique où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour programmation dynamique, à traiter selon la convention du chapitre T17.
+- Donnée invalide dans mémoïsation, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de programmation dynamique où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir programmation dynamique en une phrase précise.
+T-ALGO-04 : appliquer la méthode de programmation dynamique à un exemple court choisi dans le chapitre T17.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de programmation dynamique.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de mémoïsation.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur programmation dynamique.
+Proposer un cas limite pertinent pour programmation dynamique et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour programmation dynamique.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour programmation dynamique.
 
 ## Réponses rapides
-1. programmation dynamique doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur programmation dynamique doit montrer les étapes utiles.
-3. L’erreur de programmation dynamique se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour programmation dynamique.
+1. La méthode attendue pour programmation dynamique commence par les données puis applique l’opération du chapitre T17.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans mémoïsation.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon programmation dynamique.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de programmation dynamique.
 
 ## À retenir
-- Pour programmation dynamique, commencer par reconnaître la situation exacte.
-- Une méthode de T17 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités T-ALGO-04 restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de programmation dynamique sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur programmation_dynamique.
+- T17 : programmation dynamique se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités T-ALGO-04 restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de programmation dynamique doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour T17, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche T17 sur programmation dynamique reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : T17-S1 et T17-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : T17_TD_programmation_dynamique.md, à produire ou relire dans le registre de supports.
-- TP lié : T17_TP_programmation_dynamique.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre T17 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/terminale/T17/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | T17-S1 | réelle | séance présente dans la progression |
+| TD | T17_TD_programmation_dynamique.md | à créer | inscrit au registre v2 |
+| Évaluation | T17_evaluation_programmation_dynamique.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer programmation dynamique sans lire la fiche.
-- Je sais refaire les exemples de T17 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour programmation dynamique.
-- Je sais choisir un cas limite de programmation dynamique avant de répondre.
-- Je sais relier la fiche T17 sur programmation dynamique à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer programmation dynamique avec un exemple différent de ceux de la fiche T17.
+- Je peux citer au moins une capacité parmi T-ALGO-04 et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à T17 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de programmation dynamique sans transformer la fiche en corrigé complet.

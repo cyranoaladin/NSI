@@ -13,72 +13,74 @@ official_program:
   capacities:
     - "P-DATA-BASE-05A"
     - "P-DATA-BASE-05B"
+readiness: operational
 private_data: false
 ---
 # P03 - Fiche cours - Texte, ASCII et Unicode
 
 ## À savoir
-- Capacités travaillées dans la fiche : P-DATA-BASE-05A, P-DATA-BASE-05B.
-- Un caractère est une unité de texte, distincte des octets stockés.
-- Unicode attribue un point de code abstrait aux caractères.
-- UTF-8 encode un point de code avec un à plusieurs octets.
-- ASCII ne couvre que 128 caractères et ne suffit pas aux textes accentués ou multilingues.
+- texte, Unicode et flottants se travaille dans le contexte “octets et approximations” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour Unicode.
+- Les capacités P-DATA-BASE-05A, P-DATA-BASE-05B sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de texte, Unicode et flottants avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. Séparer caractère, point de code et octets.
-2. Utiliser `ord` pour observer un point de code.
-3. Utiliser `.encode("utf-8")` pour observer les octets.
-4. Préciser l’encodage lors de la lecture et de l’écriture de fichiers.
+1. Capacités explicitement travaillées dans les méthodes et exercices : P-DATA-BASE-05A, P-DATA-BASE-05B.
+2. P-DATA-BASE-05A : distinguer caractère, encodage et approximation numérique.
+3. Identifier les données d’entrée de Unicode puis écrire le résultat attendu avant de conclure.
+4. Contrôler Unicode par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance P03 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-`ord("A")` vaut 65 alors que `ord("é")` vaut 233.
-### Exemple corrigé 2
-`"é".encode("utf-8")` produit C3 A9, donc deux octets.
+### Exemple corrigé 1 - Exemple principal
+`é` a pour point de code 233 et s’encode en UTF-8 par les octets C3 A9.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+`0.1 + 0.2` peut produire `0.30000000000000004`, d’où un test avec tolérance.
 
 ## Erreurs fréquentes
-- Confondre longueur de chaîne et nombre d’octets : comparer `len(s)` et `len(s.encode())`.
-- Ouvrir un fichier avec l’encodage implicite : écrire `encoding="utf-8"`.
-- Présenter Unicode comme un fichier : distinguer répertoire et encodage.
+- Confondre le vocabulaire de Unicode avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de octets et approximations : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur texte, Unicode et flottants : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- La chaîne vide contient zéro caractère.
-- Un accent peut occuper deux octets en UTF-8.
-- Un octet invalide peut provoquer une erreur de décodage.
+- Cas de départ vide ou nul pour Unicode, à traiter selon la convention du chapitre P03.
+- Donnée invalide dans octets et approximations, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de texte, Unicode et flottants où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Donner le point de code de `A`.
+P-DATA-BASE-05A : appliquer la méthode de Unicode à un exemple court choisi dans le chapitre P03.
 ### Mini-exercice 2
-Dire combien d’octets UTF-8 contient `Aé`.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de octets et approximations.
 ### Mini-exercice 3
-Expliquer l’affichage `Ã©`.
+Proposer un cas limite pertinent pour texte, Unicode et flottants et expliquer le résultat attendu.
 ### Mini-exercice 4
-Écrire l’ouverture UTF-8 d’un fichier.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour Unicode.
 
 ## Réponses rapides
-1. `A` a le point de code 65.
-2. `Aé` contient trois octets.
-3. Les octets UTF-8 ont été lus avec un mauvais encodage.
-4. `open(nom, encoding="utf-8")`.
+1. La méthode attendue pour Unicode commence par les données puis applique l’opération du chapitre P03.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans octets et approximations.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon texte, Unicode et flottants.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de Unicode.
 
 ## À retenir
-- Pour Unicode, commencer par reconnaître la situation exacte.
-- Une méthode de P03 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités P-DATA-BASE-05A, P-DATA-BASE-05B restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de Unicode sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur Unicode.
+- P03 : Unicode se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités P-DATA-BASE-05A, P-DATA-BASE-05B restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de texte, Unicode et flottants doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour P03, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche P03 sur Unicode reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : P03-S1 et P03-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : P03_TD_Unicode.md, à produire ou relire dans le registre de supports.
-- TP lié : P03_TP_Unicode.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre P03 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/premiere/P03/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | P03-S1 | prête | séance présente dans la progression |
+| TD | 03_progressions/supports/premiere/P03/P03_td_texte_reels.md | existant | support associé existant dans 03_progressions/supports |
+| TP | 03_progressions/supports/premiere/P03/P03_tp_texte_reels.md | existant | support associé existant dans 03_progressions/supports |
+| Évaluation | 03_progressions/supports/premiere/P03/P03_evaluation_texte_reels.md | existant | support associé existant dans 03_progressions/supports |
 
 ## Auto-évaluation
-- Je sais expliquer Unicode sans lire la fiche.
-- Je sais refaire les exemples de P03 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour Unicode.
-- Je sais choisir un cas limite de Unicode avant de répondre.
-- Je sais relier la fiche P03 sur Unicode à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer Unicode avec un exemple différent de ceux de la fiche P03.
+- Je peux citer au moins une capacité parmi P-DATA-BASE-05A, P-DATA-BASE-05B et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à P03 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de texte, Unicode et flottants sans transformer la fiche en corrigé complet.

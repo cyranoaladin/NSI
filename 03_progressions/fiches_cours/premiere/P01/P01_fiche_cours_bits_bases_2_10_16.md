@@ -12,72 +12,74 @@ notion: "bits et bases"
 official_program:
   capacities:
     - "P-DATA-BASE-01"
+readiness: operational
 private_data: false
 ---
 # P01 - Fiche cours - Bits et bases 2, 10, 16
 
 ## À savoir
-- Capacités travaillées dans la fiche : P-DATA-BASE-01.
-- Un bit vaut 0 ou 1 et prend sa valeur grâce à sa position.
-- En base 2 les poids sont 1, 2, 4, 8 ; en base 16 ils sont 1, 16, 256.
-- Quatre bits correspondent exactement à un chiffre hexadécimal.
-- 45 en base dix, 101101 en base deux et 2D en base seize désignent la même quantité.
+- conversions entre bases se travaille dans le contexte “entiers positifs” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour bits et bases.
+- Les capacités P-DATA-BASE-01 sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de conversions entre bases avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. Écrire les poids sous les chiffres avant de calculer.
-2. Vérifier que chaque symbole appartient à la base.
-3. Grouper le binaire par paquets de quatre pour passer en hexadécimal.
-4. Contrôler l’ordre de grandeur avec la puissance de deux la plus proche.
+1. Capacités explicitement travaillées dans les méthodes et exercices : P-DATA-BASE-01.
+2. P-DATA-BASE-01 : convertir sans changer la valeur mathématique.
+3. Identifier les données d’entrée de bits et bases puis écrire le résultat attendu avant de conclure.
+4. Contrôler bits et bases par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance P01 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-101101₂ vaut 32 + 8 + 4 + 1 = 45₁₀.
-### Exemple corrigé 2
-11101010₂ se groupe en 1110 1010, donc EA₁₆.
+### Exemple corrigé 1 - Exemple principal
+45₁₀ se convertit en 101101₂ par divisions successives et lecture inversée des restes.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+101101₂ vaut 32+8+4+1, donc 45₁₀ par écriture positionnelle.
 
 ## Erreurs fréquentes
-- Lire un mot binaire comme un nombre décimal : revenir aux poids.
-- Écrire le chiffre 2 dans une base deux : contrôler l’alphabet.
-- Ajouter les zéros de regroupement à droite : les ajouter à gauche seulement.
+- Confondre le vocabulaire de bits et bases avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de entiers positifs : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur conversions entre bases : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- 0 garde l’écriture 0.
-- 1 garde l’écriture 1 dans les bases usuelles.
-- 255 correspond à 11111111₂ et FF₁₆.
+- Cas de départ vide ou nul pour bits et bases, à traiter selon la convention du chapitre P01.
+- Donnée invalide dans entiers positifs, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de conversions entre bases où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Calculer 11001₂ en base dix.
+P-DATA-BASE-01 : appliquer la méthode de bits et bases à un exemple court choisi dans le chapitre P01.
 ### Mini-exercice 2
-Dire si 1201₂ est valide.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de entiers positifs.
 ### Mini-exercice 3
-Convertir 10101111₂ en hexadécimal.
+Proposer un cas limite pertinent pour conversions entre bases et expliquer le résultat attendu.
 ### Mini-exercice 4
-Encadrer 73 entre deux puissances de deux.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour bits et bases.
 
 ## Réponses rapides
-1. 11001₂ = 25.
-2. Non, le symbole 2 est interdit.
-3. 10101111₂ = AF₁₆.
-4. 64 <= 73 < 128.
+1. La méthode attendue pour bits et bases commence par les données puis applique l’opération du chapitre P01.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans entiers positifs.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon conversions entre bases.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de bits et bases.
 
 ## À retenir
-- Pour bits et bases, commencer par reconnaître la situation exacte.
-- Une méthode de P01 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités P-DATA-BASE-01 restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de bits et bases sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur bits_et_bases.
+- P01 : bits et bases se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités P-DATA-BASE-01 restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de conversions entre bases doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour P01, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche P01 sur bits et bases reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : P01-S1 et P01-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : P01_TD_bits_et_bases.md, à produire ou relire dans le registre de supports.
-- TP lié : P01_TP_bits_et_bases.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre P01 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/premiere/P01/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | P01-S1 | prête | séance présente dans la progression |
+| TD | 03_progressions/supports/premiere/P01/P01_td_conversions_bases.md | existant | support associé existant dans 03_progressions/supports |
+| TP | 03_progressions/supports/premiere/P01/P01_tp_conversions_bases.md | existant | support associé existant dans 03_progressions/supports |
+| Évaluation | 03_progressions/supports/premiere/P01/P01_evaluation_conversions_bases.md | existant | support associé existant dans 03_progressions/supports |
 
 ## Auto-évaluation
-- Je sais expliquer bits et bases sans lire la fiche.
-- Je sais refaire les exemples de P01 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour bits et bases.
-- Je sais choisir un cas limite de bits et bases avant de répondre.
-- Je sais relier la fiche P01 sur bits et bases à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer bits et bases avec un exemple différent de ceux de la fiche P01.
+- Je peux citer au moins une capacité parmi P-DATA-BASE-01 et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à P01 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de conversions entre bases sans transformer la fiche en corrigé complet.

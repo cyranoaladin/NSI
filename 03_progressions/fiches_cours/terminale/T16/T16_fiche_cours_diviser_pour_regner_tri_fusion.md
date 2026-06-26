@@ -12,72 +12,73 @@ notion: "diviser pour régner"
 official_program:
   capacities:
     - "T-ALGO-03"
+readiness: linked
 private_data: false
 ---
 # T16 - Fiche cours - Diviser pour régner et tri fusion
 
 ## À savoir
-- Capacités travaillées dans la fiche : T-ALGO-03.
-- La notion “tri fusion” sert à diviser, résoudre puis fusionner.
-- Le vocabulaire de diviser pour régner doit être employé avec des données concrètes propres au chapitre T16.
-- La capacité associée à diviser pour régner se travaille par lecture, manipulation et justification dans T16.
-- Une réponse sur diviser pour régner distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- diviser pour régner se travaille dans le contexte “tri fusion” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour diviser pour régner.
+- Les capacités T-ALGO-03 sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de diviser pour régner avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. écrire cas de base puis combinaison.
-2. Écrire un exemple minimal de diviser pour régner avant de traiter le cas général du chapitre T16.
-3. Identifier le cas limite de diviser pour régner qui peut faire échouer la méthode.
-4. Relier la conclusion de diviser pour régner à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : T-ALGO-03.
+2. T-ALGO-03 : découper, résoudre puis combiner.
+3. Identifier les données d’entrée de diviser pour régner puis écrire le résultat attendu avant de conclure.
+4. Contrôler diviser pour régner par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance T16 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-fusionner [1,4] et [2,3] donne [1,2,3,4].
-### Exemple corrigé 2
-On reprend le premier exemple avec une donnée différente et on contrôle explicitement la conclusion pour diviser pour régner.
+### Exemple corrigé 1 - Exemple principal
+`[4,1,3,2]` se découpe en `[4,1]` et `[3,2]` avant fusion.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Fusionner `[1,4]` et `[2,3]` donne `[1,2,3,4]`.
 
 ## Erreurs fréquentes
-- diviser sans réduire la taille bloque la récursion : corriger avec un contre-exemple court.
-- Donner seulement le résultat en diviser pour régner : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de diviser pour régner : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de diviser pour régner avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de tri fusion : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur diviser pour régner : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour tri fusion.
-- Donnée invalide ou absente dans une situation de diviser pour régner.
-- Situation de diviser pour régner où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour diviser pour régner, à traiter selon la convention du chapitre T16.
+- Donnée invalide dans tri fusion, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de diviser pour régner où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir tri fusion en une phrase précise.
+T-ALGO-03 : appliquer la méthode de diviser pour régner à un exemple court choisi dans le chapitre T16.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de tri fusion.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de tri fusion.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur diviser pour régner.
+Proposer un cas limite pertinent pour diviser pour régner et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour diviser pour régner.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour diviser pour régner.
 
 ## Réponses rapides
-1. tri fusion doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur diviser pour régner doit montrer les étapes utiles.
-3. L’erreur de diviser pour régner se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour diviser pour régner.
+1. La méthode attendue pour diviser pour régner commence par les données puis applique l’opération du chapitre T16.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans tri fusion.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon diviser pour régner.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de diviser pour régner.
 
 ## À retenir
-- Pour diviser pour régner, commencer par reconnaître la situation exacte.
-- Une méthode de T16 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités T-ALGO-03 restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de diviser pour régner sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur diviser_pour_regner.
+- T16 : diviser pour régner se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités T-ALGO-03 restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de diviser pour régner doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour T16, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche T16 sur diviser pour régner reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : T16-S1 et T16-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : T16_TD_diviser_pour_regner.md, à produire ou relire dans le registre de supports.
-- TP lié : T16_TP_diviser_pour_regner.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre T16 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/terminale/T16/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | T16-S1 | réelle | séance présente dans la progression |
+| TD | T16_TD_diviser_pour_regner_tri_fusion.md | à créer | inscrit au registre v2 |
+| Évaluation | T16_evaluation_diviser_pour_regner_tri_fusion.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer diviser pour régner sans lire la fiche.
-- Je sais refaire les exemples de T16 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour diviser pour régner.
-- Je sais choisir un cas limite de diviser pour régner avant de répondre.
-- Je sais relier la fiche T16 sur diviser pour régner à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer diviser pour régner avec un exemple différent de ceux de la fiche T16.
+- Je peux citer au moins une capacité parmi T-ALGO-03 et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à T16 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de diviser pour régner sans transformer la fiche en corrigé complet.

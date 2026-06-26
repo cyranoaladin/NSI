@@ -13,72 +13,74 @@ official_program:
   capacities:
     - "P-TABLE-01"
     - "P-TABLE-02"
+readiness: operational
 private_data: false
 ---
 # P05 - Fiche cours - Tables CSV, import et cohérence
 
 ## À savoir
-- Capacités travaillées dans la fiche : P-TABLE-01, P-TABLE-02.
-- La notion “table CSV” sert à importer des lignes structurées.
-- Le vocabulaire de tables CSV doit être employé avec des données concrètes propres au chapitre P05.
-- La capacité associée à tables CSV se travaille par lecture, manipulation et justification dans P05.
-- Une réponse sur tables CSV distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- tables CSV se travaille dans le contexte “import et cohérence” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour tables CSV.
+- Les capacités P-TABLE-01, P-TABLE-02 sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de tables CSV avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. contrôler séparateur, encodage et types.
-2. Écrire un exemple minimal de tables CSV avant de traiter le cas général du chapitre P05.
-3. Identifier le cas limite de tables CSV qui peut faire échouer la méthode.
-4. Relier la conclusion de tables CSV à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : P-TABLE-01, P-TABLE-02.
+2. P-TABLE-01 : importer une table et filtrer des lignes contrôlées.
+3. Identifier les données d’entrée de tables CSV puis écrire le résultat attendu avant de conclure.
+4. Contrôler tables CSV par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance P05 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-nom;age;ville donne trois descripteurs.
-### Exemple corrigé 2
-On reprend le premier exemple avec une donnée différente et on contrôle explicitement la conclusion pour tables CSV.
+### Exemple corrigé 1 - Exemple principal
+`nom;age;ville` fournit trois descripteurs à lire avant les données.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Deux lignes avec le même identifiant `A17` déclenchent un contrôle de doublon.
 
 ## Erreurs fréquentes
-- un doublon d’identifiant casse l’unicité : corriger avec un contre-exemple court.
-- Donner seulement le résultat en tables CSV : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de tables CSV : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de tables CSV avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de import et cohérence : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur tables CSV : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour table CSV.
-- Donnée invalide ou absente dans une situation de tables CSV.
-- Situation de tables CSV où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour tables CSV, à traiter selon la convention du chapitre P05.
+- Donnée invalide dans import et cohérence, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de tables CSV où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir table CSV en une phrase précise.
+P-TABLE-01 : appliquer la méthode de tables CSV à un exemple court choisi dans le chapitre P05.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de table CSV.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de import et cohérence.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur tables CSV.
+Proposer un cas limite pertinent pour tables CSV et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour tables CSV.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour tables CSV.
 
 ## Réponses rapides
-1. table CSV doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur tables CSV doit montrer les étapes utiles.
-3. L’erreur de tables CSV se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour tables CSV.
+1. La méthode attendue pour tables CSV commence par les données puis applique l’opération du chapitre P05.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans import et cohérence.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon tables CSV.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de tables CSV.
 
 ## À retenir
-- Pour tables CSV, commencer par reconnaître la situation exacte.
-- Une méthode de P05 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités P-TABLE-01, P-TABLE-02 restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de tables CSV sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur tables_CSV.
+- P05 : tables CSV se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités P-TABLE-01, P-TABLE-02 restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de tables CSV doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour P05, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche P05 sur tables CSV reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : P05-S1 et P05-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : P05_TD_tables_CSV.md, à produire ou relire dans le registre de supports.
-- TP lié : P05_TP_tables_CSV.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre P05 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/premiere/P05/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | P05-S1 | prête | séance présente dans la progression |
+| TD | 03_progressions/supports/premiere/P05/P05_td_tables_csv.md | existant | support associé existant dans 03_progressions/supports |
+| TP | 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md | existant | support associé existant dans 03_progressions/supports |
+| Évaluation | 03_progressions/supports/premiere/P05/P05_evaluation_tables_csv.md | existant | support associé existant dans 03_progressions/supports |
 
 ## Auto-évaluation
-- Je sais expliquer tables CSV sans lire la fiche.
-- Je sais refaire les exemples de P05 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour tables CSV.
-- Je sais choisir un cas limite de tables CSV avant de répondre.
-- Je sais relier la fiche P05 sur tables CSV à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer tables CSV avec un exemple différent de ceux de la fiche P05.
+- Je peux citer au moins une capacité parmi P-TABLE-01, P-TABLE-02 et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à P05 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de tables CSV sans transformer la fiche en corrigé complet.

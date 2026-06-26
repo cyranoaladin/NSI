@@ -12,72 +12,73 @@ notion: "Boyer-Moore"
 official_program:
   capacities:
     - "T-ALGO-05"
+readiness: linked
 private_data: false
 ---
 # T18 - Fiche cours - Boyer-Moore
 
 ## À savoir
-- Capacités travaillées dans la fiche : T-ALGO-05.
-- La notion “Boyer-Moore” sert à chercher un motif depuis sa droite.
-- Le vocabulaire de Boyer-Moore doit être employé avec des données concrètes propres au chapitre T18.
-- La capacité associée à Boyer-Moore se travaille par lecture, manipulation et justification dans T18.
-- Une réponse sur Boyer-Moore distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- Boyer-Moore se travaille dans le contexte “recherche textuelle” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour Boyer-Moore.
+- Les capacités T-ALGO-05 sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de Boyer-Moore avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. utiliser la dernière occurrence du mauvais caractère.
-2. Écrire un exemple minimal de Boyer-Moore avant de traiter le cas général du chapitre T18.
-3. Identifier le cas limite de Boyer-Moore qui peut faire échouer la méthode.
-4. Relier la conclusion de Boyer-Moore à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : T-ALGO-05.
+2. T-ALGO-05 : comparer un motif depuis sa droite et décaler.
+3. Identifier les données d’entrée de Boyer-Moore puis écrire le résultat attendu avant de conclure.
+4. Contrôler Boyer-Moore par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance T18 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-dans BANANA, A finit à l’indice 5.
-### Exemple corrigé 2
-On change les données de l’exemple précédent et on vérifie que le raisonnement sur Boyer-Moore donne encore une conclusion contrôlable.
+### Exemple corrigé 1 - Exemple principal
+Dans `BANANA`, la dernière occurrence de A est à l’indice 5.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Si le mauvais caractère est absent du motif, le motif peut être décalé au-delà de ce caractère.
 
 ## Erreurs fréquentes
-- comparer depuis la gauche redevient naïf : corriger avec un contre-exemple court.
-- Donner seulement le résultat en Boyer-Moore : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de Boyer-Moore : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de Boyer-Moore avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de recherche textuelle : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur Boyer-Moore : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour Boyer-Moore.
-- Donnée invalide ou absente dans une situation de Boyer-Moore.
-- Situation de Boyer-Moore où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour Boyer-Moore, à traiter selon la convention du chapitre T18.
+- Donnée invalide dans recherche textuelle, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de Boyer-Moore où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir Boyer-Moore en une phrase précise.
+T-ALGO-05 : appliquer la méthode de Boyer-Moore à un exemple court choisi dans le chapitre T18.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de Boyer-Moore.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de recherche textuelle.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur Boyer-Moore.
+Proposer un cas limite pertinent pour Boyer-Moore et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour Boyer-Moore.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour Boyer-Moore.
 
 ## Réponses rapides
-1. Boyer-Moore doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur Boyer-Moore doit montrer les étapes utiles.
-3. L’erreur de Boyer-Moore se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour Boyer-Moore.
+1. La méthode attendue pour Boyer-Moore commence par les données puis applique l’opération du chapitre T18.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans recherche textuelle.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon Boyer-Moore.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de Boyer-Moore.
 
 ## À retenir
-- Pour Boyer-Moore, commencer par reconnaître la situation exacte.
-- Une méthode de T18 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités T-ALGO-05 restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de Boyer-Moore sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur Boyer-Moore.
+- T18 : Boyer-Moore se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités T-ALGO-05 restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de Boyer-Moore doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour T18, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche T18 sur Boyer-Moore reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : T18-S1 et T18-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : T18_TD_Boyer-Moore.md, à produire ou relire dans le registre de supports.
-- TP lié : T18_TP_Boyer-Moore.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre T18 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/terminale/T18/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | T18-S1 | réelle | séance présente dans la progression |
+| TD | T18_TD_boyer_moore.md | à créer | inscrit au registre v2 |
+| Évaluation | T18_evaluation_boyer_moore.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer Boyer-Moore sans lire la fiche.
-- Je sais refaire les exemples de T18 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour Boyer-Moore.
-- Je sais choisir un cas limite de Boyer-Moore avant de répondre.
-- Je sais relier la fiche T18 sur Boyer-Moore à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer Boyer-Moore avec un exemple différent de ceux de la fiche T18.
+- Je peux citer au moins une capacité parmi T-ALGO-05 et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à T18 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de Boyer-Moore sans transformer la fiche en corrigé complet.

@@ -43,6 +43,10 @@ audit-local:
 	python scripts/check_course_sheets_coverage.py
 	python scripts/check_course_sheets_quality.py
 	python scripts/check_course_sheets_alignment.py
+	python scripts/check_course_sheets_substance.py
+	python scripts/check_course_sheet_linked_resources_exist.py
+	python scripts/check_course_sheets_no_template_abuse.py
+	python scripts/check_course_sheet_readiness.py
 	python scripts/check_evaluation_distribution.py
 	python scripts/check_teacher_docs_depth.py
 	python scripts/check_validated_documents_quality_gates.py
@@ -108,6 +112,10 @@ audit-extracted-source:
 	python scripts/check_course_sheets_coverage.py
 	python scripts/check_course_sheets_quality.py
 	python scripts/check_course_sheets_alignment.py
+	python scripts/check_course_sheets_substance.py
+	python scripts/check_course_sheet_linked_resources_exist.py
+	python scripts/check_course_sheets_no_template_abuse.py
+	python scripts/check_course_sheet_readiness.py
 	python scripts/check_no_private_data.py
 	python scripts/check_no_placeholders_docs.py
 	python scripts/check_no_build_artifacts_in_index.py

@@ -11,6 +11,10 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import check_course_sheets_alignment as alignment
 import check_course_sheets_coverage as coverage
 import check_course_sheets_quality as quality
+import check_course_sheet_linked_resources_exist as linked_resources
+import check_course_sheet_readiness as readiness
+import check_course_sheets_no_template_abuse as no_template
+import check_course_sheets_substance as substance
 
 
 VALID_SHEET = """---
@@ -28,6 +32,7 @@ official_program:
   capacities:
     - "P-DATA-BASE-01"
 private_data: false
+readiness: linked
 ---
 
 # P01 - Fiche cours conversions
@@ -36,12 +41,12 @@ private_data: false
 Une base donne la valeur d'un chiffre par sa position.
 
 ## Méthodes
-1. Diviser par la base.
+1. Diviser par la base pour travailler P-DATA-BASE-01.
 2. Lire les restes dans le bon ordre.
 
 ## Exemples corrigés
 ### Exemple corrigé 1
-13 vaut 1101 en base deux.
+Pour P-DATA-BASE-01, 13 vaut 1101 en base deux.
 ### Exemple corrigé 2
 101101₂ vaut 45 en base dix.
 
@@ -55,7 +60,7 @@ Une base donne la valeur d'un chiffre par sa position.
 
 ## Mini-exercices
 ### Exercice 1
-Convertir 7 en binaire.
+Convertir 7 en binaire pour exercer P-DATA-BASE-01.
 ### Exercice 2
 Convertir 1010₂ en décimal.
 ### Exercice 3
@@ -74,8 +79,10 @@ Dire pourquoi 102₂ est invalide.
 - Une réponse doit citer la méthode.
 
 ## Lien avec la progression
-- Séances : P01-S1.
-- TD lié : P01_TD_conversions_exercices_1_3.md.
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | P01-S1 | prête | séance réelle |
+| TD | P01_TD_conversions_exercices_1_3.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
 - Je sais convertir un entier positif.
@@ -136,6 +143,67 @@ class CourseSheetsTest(unittest.TestCase):
             errors = quality.cross_sheet_repetition_errors(files)
 
             self.assertTrue(any("répétition transversale excessive" in error for error in errors))
+
+    def test_substance_rejects_generic_examples_and_answers(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            sheet = root / "03_progressions" / "fiches_cours" / "premiere" / "P01" / "P01_fiche_cours_bases.md"
+            sheet.parent.mkdir(parents=True)
+            sheet.write_text(
+                VALID_SHEET
+                .replace("101101₂ vaut 45 en base dix.", "On reprend le premier exemple avec une donnée différente.")
+                .replace("2. 10.", "2. La réponse doit montrer les étapes utiles."),
+                encoding="utf-8",
+            )
+
+            result = substance.analyze_course_sheets_substance(root)
+
+            self.assertTrue(any("exemple générique" in error for error in result.errors))
+            self.assertTrue(any("réponse rapide vague" in error for error in result.errors))
+
+    def test_template_abuse_rejects_repeated_auto_evaluation(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            repeated_auto = "- Je sais relier cette fiche à une séance, un TD ou un TP du chapitre."
+            for index in range(6):
+                sheet = root / "03_progressions" / "fiches_cours" / "premiere" / f"P{index:02d}" / f"P{index:02d}_fiche_cours_test.md"
+                sheet.parent.mkdir(parents=True)
+                sheet.write_text(VALID_SHEET.replace("P01", f"P{index:02d}") + repeated_auto + "\n", encoding="utf-8")
+
+            result = no_template.analyze_course_sheets_no_template_abuse(root)
+
+            self.assertTrue(any("auto-évaluation trop similaire" in error for error in result.errors))
+
+    def test_missing_linked_resource_must_be_registered(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            sheet = root / "03_progressions" / "fiches_cours" / "premiere" / "P01" / "P01_fiche_cours_bases.md"
+            sheet.parent.mkdir(parents=True)
+            sheet.write_text(VALID_SHEET.replace("P01_TD_conversions_exercices_1_3.md", "P01_TD_absent.md"), encoding="utf-8")
+
+            result = linked_resources.analyze_course_sheet_links(root)
+
+            self.assertTrue(any("absent non inscrit au registre" in error for error in result.errors))
+
+    def test_readiness_mismatch_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            (root / "03_progressions").mkdir()
+            (root / "03_progressions" / "seances_premiere.md").write_text("### Séance P01-S1\n", encoding="utf-8")
+            register = root / "missing_documents_register_v2.md"
+            register.write_text(
+                "| Fichier | Niveau | Séquence | Type | Priorité | Statut | Responsable | Date cible | Source possible | Décision | Blocage si absent |\n"
+                "|---|---|---|---|---|---|---|---|---|---|---|\n"
+                "| P01_TD_conversions_exercices_1_3.md | premiere | P01 | td | haute | absent | equipe | 2026-10-01 | BO | créer | oui |\n",
+                encoding="utf-8",
+            )
+            sheet = root / "03_progressions" / "fiches_cours" / "premiere" / "P01" / "P01_fiche_cours_bases.md"
+            sheet.parent.mkdir(parents=True)
+            sheet.write_text(VALID_SHEET.replace("readiness: linked", "readiness: operational"), encoding="utf-8")
+
+            result = readiness.analyze_course_sheet_readiness(root)
+
+            self.assertTrue(any("readiness déclarée operational mais calculée linked" in error for error in result.errors))
 
 
 if __name__ == "__main__":

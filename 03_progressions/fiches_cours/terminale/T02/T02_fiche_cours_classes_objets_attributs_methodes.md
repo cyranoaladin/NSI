@@ -14,72 +14,74 @@ official_program:
     - "T-STRUCT-02A"
     - "T-STRUCT-02B"
     - "T-LANG-04A"
+readiness: operational
 private_data: false
 ---
 # T02 - Fiche cours - Classes, objets, attributs et méthodes
 
 ## À savoir
-- Capacités travaillées dans la fiche : T-STRUCT-02A, T-STRUCT-02B, T-LANG-04A.
-- La notion “objet Python” sert à regrouper état et méthodes.
-- Le vocabulaire de classes objets doit être employé avec des données concrètes propres au chapitre T02.
-- La capacité associée à classes objets se travaille par lecture, manipulation et justification dans T02.
-- Une réponse sur classes objets distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- classes et objets se travaille dans le contexte “programmation objet” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour classes objets.
+- Les capacités T-STRUCT-02A, T-STRUCT-02B, T-LANG-04A sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de classes et objets avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. initialiser les attributs dans __init__.
-2. Écrire un exemple minimal de classes objets avant de traiter le cas général du chapitre T02.
-3. Identifier le cas limite de classes objets qui peut faire échouer la méthode.
-4. Relier la conclusion de classes objets à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : T-STRUCT-02A, T-STRUCT-02B, T-LANG-04A.
+2. T-STRUCT-02A : organiser état et méthodes autour de `self`.
+3. Identifier les données d’entrée de classes objets puis écrire le résultat attendu avant de conclure.
+4. Contrôler classes objets par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance T02 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-Compte.deposer modifie un solde.
-### Exemple corrigé 2
-On reprend le premier exemple avec une donnée différente et on contrôle explicitement la conclusion pour classes objets.
+### Exemple corrigé 1 - Exemple principal
+Un objet `Compte` possède un attribut `solde` et une méthode `deposer`.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Deux instances de `Carte()` doivent garder des états distincts après modification.
 
 ## Erreurs fréquentes
-- self désigne l’objet courant : corriger avec un contre-exemple court.
-- Donner seulement le résultat en classes objets : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de classes objets : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de classes objets avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de programmation objet : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur classes et objets : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour objet Python.
-- Donnée invalide ou absente dans une situation de classes objets.
-- Situation de classes objets où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour classes objets, à traiter selon la convention du chapitre T02.
+- Donnée invalide dans programmation objet, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de classes et objets où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir objet Python en une phrase précise.
+T-STRUCT-02A : appliquer la méthode de classes objets à un exemple court choisi dans le chapitre T02.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de objet Python.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de programmation objet.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur classes objets.
+Proposer un cas limite pertinent pour classes et objets et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour classes objets.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour classes objets.
 
 ## Réponses rapides
-1. objet Python doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur classes objets doit montrer les étapes utiles.
-3. L’erreur de classes objets se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour classes objets.
+1. La méthode attendue pour classes objets commence par les données puis applique l’opération du chapitre T02.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans programmation objet.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon classes et objets.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de classes objets.
 
 ## À retenir
-- Pour classes objets, commencer par reconnaître la situation exacte.
-- Une méthode de T02 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités T-STRUCT-02A, T-STRUCT-02B, T-LANG-04A restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de classes objets sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur classes_objets.
+- T02 : classes objets se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités T-STRUCT-02A, T-STRUCT-02B, T-LANG-04A restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de classes et objets doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour T02, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche T02 sur classes objets reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : T02-S1 et T02-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : T02_TD_classes_objets.md, à produire ou relire dans le registre de supports.
-- TP lié : T02_TP_classes_objets.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre T02 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/terminale/T02/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | T02-S1 | prête | séance présente dans la progression |
+| TD | 03_progressions/supports/terminale/T02/T02_td_classes_objets.md | existant | support associé existant dans 03_progressions/supports |
+| TP | 03_progressions/supports/terminale/T02/T02_tp_classes_objets.md | existant | support associé existant dans 03_progressions/supports |
+| Évaluation | 03_progressions/supports/terminale/T02/T02_evaluation_classes_objets.md | existant | support associé existant dans 03_progressions/supports |
 
 ## Auto-évaluation
-- Je sais expliquer classes objets sans lire la fiche.
-- Je sais refaire les exemples de T02 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour classes objets.
-- Je sais choisir un cas limite de classes objets avant de répondre.
-- Je sais relier la fiche T02 sur classes objets à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer classes objets avec un exemple différent de ceux de la fiche T02.
+- Je peux citer au moins une capacité parmi T-STRUCT-02A, T-STRUCT-02B, T-LANG-04A et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à T02 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de classes et objets sans transformer la fiche en corrigé complet.

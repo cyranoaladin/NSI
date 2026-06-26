@@ -17,72 +17,74 @@ official_program:
     - "T-ALGO-01B"
     - "T-ALGO-01C"
     - "T-ALGO-01D"
+readiness: operational
 private_data: false
 ---
 # T05 - Fiche cours - Arbres binaires et parcours
 
 ## À savoir
-- Capacités travaillées dans la fiche : T-STRUCT-04A, T-STRUCT-04B, T-ALGO-01A, T-ALGO-01B, T-ALGO-01C, T-ALGO-01D.
-- La notion “arbre binaire” sert à définir racine et sous-arbres.
-- Le vocabulaire de arbres binaires doit être employé avec des données concrètes propres au chapitre T05.
-- La capacité associée à arbres binaires se travaille par lecture, manipulation et justification dans T05.
-- Une réponse sur arbres binaires distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- arbres binaires se travaille dans le contexte “taille, hauteur et parcours” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour arbres binaires.
+- Les capacités T-STRUCT-04A, T-STRUCT-04B, T-ALGO-01A, T-ALGO-01B, T-ALGO-01C, T-ALGO-01D sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de arbres binaires avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. choisir préfixe, infixe ou suffixe.
-2. Écrire un exemple minimal de arbres binaires avant de traiter le cas général du chapitre T05.
-3. Identifier le cas limite de arbres binaires qui peut faire échouer la méthode.
-4. Relier la conclusion de arbres binaires à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : T-STRUCT-04A, T-STRUCT-04B, T-ALGO-01A, T-ALGO-01B, T-ALGO-01C, T-ALGO-01D.
+2. T-STRUCT-04A : raisonner par racine et sous-arbres.
+3. Identifier les données d’entrée de arbres binaires puis écrire le résultat attendu avant de conclure.
+4. Contrôler arbres binaires par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance T05 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-infixe de A-B-C peut donner A,B,C.
-### Exemple corrigé 2
-On reprend le premier exemple avec une donnée différente et on contrôle explicitement la conclusion pour arbres binaires.
+### Exemple corrigé 1 - Exemple principal
+Un arbre racine A avec feuilles B et C a une taille de 3.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Le parcours infixe d’un arbre racine B, gauche A, droite C donne A, B, C.
 
 ## Erreurs fréquentes
-- taille et hauteur mesurent deux choses : corriger avec un contre-exemple court.
-- Donner seulement le résultat en arbres binaires : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de arbres binaires : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de arbres binaires avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de taille, hauteur et parcours : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur arbres binaires : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour arbre binaire.
-- Donnée invalide ou absente dans une situation de arbres binaires.
-- Situation de arbres binaires où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour arbres binaires, à traiter selon la convention du chapitre T05.
+- Donnée invalide dans taille, hauteur et parcours, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de arbres binaires où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir arbre binaire en une phrase précise.
+T-STRUCT-04A : appliquer la méthode de arbres binaires à un exemple court choisi dans le chapitre T05.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de arbre binaire.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de taille, hauteur et parcours.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur arbres binaires.
+Proposer un cas limite pertinent pour arbres binaires et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour arbres binaires.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour arbres binaires.
 
 ## Réponses rapides
-1. arbre binaire doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur arbres binaires doit montrer les étapes utiles.
-3. L’erreur de arbres binaires se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour arbres binaires.
+1. La méthode attendue pour arbres binaires commence par les données puis applique l’opération du chapitre T05.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans taille, hauteur et parcours.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon arbres binaires.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de arbres binaires.
 
 ## À retenir
-- Pour arbres binaires, commencer par reconnaître la situation exacte.
-- Une méthode de T05 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités T-STRUCT-04A, T-STRUCT-04B, T-ALGO-01A, T-ALGO-01B, T-ALGO-01C, T-ALGO-01D restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de arbres binaires sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur arbres_binaires.
+- T05 : arbres binaires se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités T-STRUCT-04A, T-STRUCT-04B, T-ALGO-01A, T-ALGO-01B, T-ALGO-01C, T-ALGO-01D restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de arbres binaires doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour T05, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche T05 sur arbres binaires reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : T05-S1 et T05-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : T05_TD_arbres_binaires.md, à produire ou relire dans le registre de supports.
-- TP lié : T05_TP_arbres_binaires.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre T05 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/terminale/T05/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | T05-S1 | prête | séance présente dans la progression |
+| TD | 03_progressions/supports/terminale/T05/T05_td_arbres_binaires.md | existant | support associé existant dans 03_progressions/supports |
+| TP | 03_progressions/supports/terminale/T05/T05_tp_arbres_binaires.md | existant | support associé existant dans 03_progressions/supports |
+| Évaluation | 03_progressions/supports/terminale/T05/T05_evaluation_arbres_binaires.md | existant | support associé existant dans 03_progressions/supports |
 
 ## Auto-évaluation
-- Je sais expliquer arbres binaires sans lire la fiche.
-- Je sais refaire les exemples de T05 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour arbres binaires.
-- Je sais choisir un cas limite de arbres binaires avant de répondre.
-- Je sais relier la fiche T05 sur arbres binaires à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer arbres binaires avec un exemple différent de ceux de la fiche T05.
+- Je peux citer au moins une capacité parmi T-STRUCT-04A, T-STRUCT-04B, T-ALGO-01A, T-ALGO-01B, T-ALGO-01C, T-ALGO-01D et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à T05 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de arbres binaires sans transformer la fiche en corrigé complet.

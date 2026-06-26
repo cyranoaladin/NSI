@@ -12,72 +12,73 @@ notion: "routage"
 official_program:
   capacities:
     - "T-ARCH-03"
+readiness: linked
 private_data: false
 ---
 # T12 - Fiche cours - Routage RIP et OSPF
 
 ## À savoir
-- Capacités travaillées dans la fiche : T-ARCH-03.
-- La notion “routage” sert à choisir un chemin entre réseaux.
-- Le vocabulaire de routage doit être employé avec des données concrètes propres au chapitre T12.
-- La capacité associée à routage se travaille par lecture, manipulation et justification dans T12.
-- Une réponse sur routage distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- routage RIP et OSPF se travaille dans le contexte “réseaux Terminale” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour routage.
+- Les capacités T-ARCH-03 sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de routage RIP et OSPF avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. comparer sauts RIP et coûts OSPF.
-2. Écrire un exemple minimal de routage avant de traiter le cas général du chapitre T12.
-3. Identifier le cas limite de routage qui peut faire échouer la méthode.
-4. Relier la conclusion de routage à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : T-ARCH-03.
+2. T-ARCH-03 : comparer nombre de sauts et coût de liens.
+3. Identifier les données d’entrée de routage puis écrire le résultat attendu avant de conclure.
+4. Contrôler routage par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance T12 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-RIP préfère deux sauts à quatre.
-### Exemple corrigé 2
-On change les données de l’exemple précédent et on vérifie que le raisonnement sur routage donne encore une conclusion contrôlable.
+### Exemple corrigé 1 - Exemple principal
+RIP préfère un chemin de 2 sauts à un chemin de 4 sauts.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+OSPF peut préférer 2+2+2 à 1+10 car le coût total est plus faible.
 
 ## Erreurs fréquentes
-- moins de sauts ne signifie pas toujours coût minimal : corriger avec un contre-exemple court.
-- Donner seulement le résultat en routage : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de routage : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de routage avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de réseaux Terminale : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur routage RIP et OSPF : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour routage.
-- Donnée invalide ou absente dans une situation de routage.
-- Situation de routage où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour routage, à traiter selon la convention du chapitre T12.
+- Donnée invalide dans réseaux Terminale, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de routage RIP et OSPF où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir routage en une phrase précise.
+T-ARCH-03 : appliquer la méthode de routage à un exemple court choisi dans le chapitre T12.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de routage.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de réseaux Terminale.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur routage.
+Proposer un cas limite pertinent pour routage RIP et OSPF et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour routage.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour routage.
 
 ## Réponses rapides
-1. routage doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur routage doit montrer les étapes utiles.
-3. L’erreur de routage se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour routage.
+1. La méthode attendue pour routage commence par les données puis applique l’opération du chapitre T12.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans réseaux Terminale.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon routage RIP et OSPF.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de routage.
 
 ## À retenir
-- Pour routage, commencer par reconnaître la situation exacte.
-- Une méthode de T12 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités T-ARCH-03 restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de routage sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur routage.
+- T12 : routage se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités T-ARCH-03 restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de routage RIP et OSPF doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour T12, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche T12 sur routage reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : T12-S1 et T12-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : T12_TD_routage.md, à produire ou relire dans le registre de supports.
-- TP lié : T12_TP_routage.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre T12 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/terminale/T12/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | T12-S1 | réelle | séance présente dans la progression |
+| TD | T12_TD_routage_rip_ospf.md | à créer | inscrit au registre v2 |
+| Évaluation | T12_evaluation_routage_rip_ospf.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer routage sans lire la fiche.
-- Je sais refaire les exemples de T12 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour routage.
-- Je sais choisir un cas limite de routage avant de répondre.
-- Je sais relier la fiche T12 sur routage à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer routage avec un exemple différent de ceux de la fiche T12.
+- Je peux citer au moins une capacité parmi T-ARCH-03 et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à T12 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de routage RIP et OSPF sans transformer la fiche en corrigé complet.

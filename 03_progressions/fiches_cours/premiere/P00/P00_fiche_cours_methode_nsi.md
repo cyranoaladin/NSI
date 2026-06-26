@@ -13,72 +13,74 @@ official_program:
   capacities:
     - "P-HIST-01"
     - "P-LANG-01"
+readiness: operational
 private_data: false
 ---
 # P00 - Fiche cours - Méthode NSI, diagnostic et carnet de bord
 
 ## À savoir
-- Capacités travaillées dans la fiche : P-HIST-01, P-LANG-01.
-- La NSI demande de relier une idée, un programme et une preuve par l’exemple.
-- Un test décrit une entrée, un résultat attendu et le comportement réellement observé.
-- Une trace de variables permet de comprendre une boucle avant de modifier le code.
-- Un repère historique explique pourquoi une technique informatique a été inventée.
+- méthode NSI se travaille dans le contexte “diagnostic Python” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour méthode NSI.
+- Les capacités P-HIST-01, P-LANG-01 sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de méthode NSI avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. Écrire les entrées et sorties avant le programme.
-2. Tracer au moins un exemple court à la main.
-3. Tester un cas normal, un cas limite et un cas refusé.
-4. Conserver dans le carnet de bord la cause d’une erreur corrigée.
+1. Capacités explicitement travaillées dans les méthodes et exercices : P-HIST-01, P-LANG-01.
+2. P-HIST-01 : tracer une boucle, écrire un test et documenter une erreur dans un carnet de bord fictif.
+3. Identifier les données d’entrée de méthode NSI puis écrire le résultat attendu avant de conclure.
+4. Contrôler méthode NSI par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance P00 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-Pour `s = 0` puis `for x in [2, 5, 1]: s = s + x`, la trace donne 2, 7, 8.
-### Exemple corrigé 2
-Pour `est_pair`, les tests 0, 7 et -4 couvrent zéro, impair et entier négatif autorisé.
+### Exemple corrigé 1 - Exemple principal
+Pour `s=0` puis `for x in [2,5,1]: s=s+x`, la trace donne successivement 2, 7, 8.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Pour `est_pair`, les tests 0, 7 et -4 vérifient zéro, impair et entier négatif.
 
 ## Erreurs fréquentes
-- Coder sans exemple préalable : imposer un exemple papier avant le clavier.
-- Confondre syntaxe et logique : lire le message Python puis comparer avec l’attendu.
-- Corriger trois lignes à la fois : relancer un test après chaque modification ciblée.
+- Confondre le vocabulaire de méthode NSI avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de diagnostic Python : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur méthode NSI : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Liste vide pour une fonction de parcours.
-- Variable non initialisée avant une boucle.
-- Donnée personnelle à remplacer par une donnée fictive.
+- Cas de départ vide ou nul pour méthode NSI, à traiter selon la convention du chapitre P00.
+- Donnée invalide dans diagnostic Python, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de méthode NSI où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Tracer la valeur de `s` dans une boucle de somme.
+P-HIST-01 : appliquer la méthode de méthode NSI à un exemple court choisi dans le chapitre P00.
 ### Mini-exercice 2
-Proposer trois tests pour `est_pair(n)`.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de diagnostic Python.
 ### Mini-exercice 3
-Associer machine programmable, réseau et langage à un besoin.
+Proposer un cas limite pertinent pour méthode NSI et expliquer le résultat attendu.
 ### Mini-exercice 4
-Expliquer pourquoi une donnée réelle d’élève est interdite dans un support.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour méthode NSI.
 
 ## Réponses rapides
-1. La somme évolue selon les valeurs rencontrées.
-2. 0 vrai, 7 faux, -4 vrai si les négatifs sont acceptés.
-3. Calculer automatiquement, échanger, décrire une procédure.
-4. Elle peut identifier une personne et bloque la publication.
+1. La méthode attendue pour méthode NSI commence par les données puis applique l’opération du chapitre P00.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans diagnostic Python.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon méthode NSI.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de méthode NSI.
 
 ## À retenir
-- Pour méthode NSI, commencer par reconnaître la situation exacte.
-- Une méthode de P00 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités P-HIST-01, P-LANG-01 restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de méthode NSI sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur methode_NSI.
+- P00 : méthode NSI se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités P-HIST-01, P-LANG-01 restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de méthode NSI doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour P00, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche P00 sur méthode NSI reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : P00-S1 et P00-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : P00_TD_methode_NSI.md, à produire ou relire dans le registre de supports.
-- TP lié : P00_TP_methode_NSI.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre P00 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/premiere/P00/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | P00-S1 | prête | séance présente dans la progression |
+| TD | 03_progressions/supports/premiere/P00/P00_td_diagnostic_python.md | existant | support associé existant dans 03_progressions/supports |
+| TP | 03_progressions/supports/premiere/P00/P00_tp_diagnostic_python.md | existant | support associé existant dans 03_progressions/supports |
+| Évaluation | 03_progressions/supports/premiere/P00/P00_evaluation_diagnostic_python.md | existant | support associé existant dans 03_progressions/supports |
 
 ## Auto-évaluation
-- Je sais expliquer méthode NSI sans lire la fiche.
-- Je sais refaire les exemples de P00 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour méthode NSI.
-- Je sais choisir un cas limite de méthode NSI avant de répondre.
-- Je sais relier la fiche P00 sur méthode NSI à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer méthode NSI avec un exemple différent de ceux de la fiche P00.
+- Je peux citer au moins une capacité parmi P-HIST-01, P-LANG-01 et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à P00 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de méthode NSI sans transformer la fiche en corrigé complet.

@@ -1,16 +1,16 @@
 # Inventaire ressources NSI
 
-- Total ressources : 413
+- Total ressources : 417
 - Ressources pédagogiques : 53
-- Ressources techniques : 360
+- Ressources techniques : 364
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - drive: 0
-- generated: 413
+- generated: 417
 
 ## Répartition par niveau
-- interne: 166
+- interne: 170
 - premiere: 123
 - terminale: 124
 
@@ -18,17 +18,17 @@
 - banque: 14
 - document: 217
 - python: 36
-- script: 86
+- script: 90
 - sequence: 45
 - test: 15
 
 ## Répartition par statut
-- needs_review: 413
+- needs_review: 417
 
 ## Répartition audience
 - corrige: 33
 - eleve: 54
-- mixte: 323
+- mixte: 327
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -325,9 +325,13 @@
   - scripts/check_bank_strategy.py
   - scripts/check_build_reports_freshness.py
   - scripts/check_course_internal_coherence.py
+  - scripts/check_course_sheet_linked_resources_exist.py
+  - scripts/check_course_sheet_readiness.py
   - scripts/check_course_sheets_alignment.py
   - scripts/check_course_sheets_coverage.py
+  - scripts/check_course_sheets_no_template_abuse.py
   - scripts/check_course_sheets_quality.py
+  - scripts/check_course_sheets_substance.py
   - scripts/check_coverage_evidence.py
   - scripts/check_differentiation_quality.py
   - scripts/check_document_depth.py
@@ -766,9 +770,13 @@
   - scripts/check_bank_strategy.py
   - scripts/check_build_reports_freshness.py
   - scripts/check_course_internal_coherence.py
+  - scripts/check_course_sheet_linked_resources_exist.py
+  - scripts/check_course_sheet_readiness.py
   - scripts/check_course_sheets_alignment.py
   - scripts/check_course_sheets_coverage.py
+  - scripts/check_course_sheets_no_template_abuse.py
   - scripts/check_course_sheets_quality.py
+  - scripts/check_course_sheets_substance.py
   - scripts/check_coverage_evidence.py
   - scripts/check_differentiation_quality.py
   - scripts/check_document_depth.py
@@ -1175,9 +1183,13 @@
 - scripts/check_bank_strategy.py
 - scripts/check_build_reports_freshness.py
 - scripts/check_course_internal_coherence.py
+- scripts/check_course_sheet_linked_resources_exist.py
+- scripts/check_course_sheet_readiness.py
 - scripts/check_course_sheets_alignment.py
 - scripts/check_course_sheets_coverage.py
+- scripts/check_course_sheets_no_template_abuse.py
 - scripts/check_course_sheets_quality.py
+- scripts/check_course_sheets_substance.py
 - scripts/check_coverage_evidence.py
 - scripts/check_differentiation_quality.py
 - scripts/check_document_depth.py
@@ -1587,9 +1599,13 @@
 - scripts/check_bank_strategy.py
 - scripts/check_build_reports_freshness.py
 - scripts/check_course_internal_coherence.py
+- scripts/check_course_sheet_linked_resources_exist.py
+- scripts/check_course_sheet_readiness.py
 - scripts/check_course_sheets_alignment.py
 - scripts/check_course_sheets_coverage.py
+- scripts/check_course_sheets_no_template_abuse.py
 - scripts/check_course_sheets_quality.py
+- scripts/check_course_sheets_substance.py
 - scripts/check_coverage_evidence.py
 - scripts/check_differentiation_quality.py
 - scripts/check_document_depth.py

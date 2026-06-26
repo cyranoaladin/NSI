@@ -15,72 +15,73 @@ official_program:
     - "P-ALGO-02B"
     - "P-ALGO-02C"
     - "P-ALGO-02D"
+readiness: linked
 private_data: false
 ---
 # P12 - Fiche cours - Tris, invariants et complexité
 
 ## À savoir
-- Capacités travaillées dans la fiche : P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D.
-- La notion “tri simple” sert à réordonner selon une relation.
-- Le vocabulaire de tris doit être employé avec des données concrètes propres au chapitre P12.
-- La capacité associée à tris se travaille par lecture, manipulation et justification dans P12.
-- Une réponse sur tris distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- tris et invariants se travaille dans le contexte “algorithmique de tri” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour tris.
+- Les capacités P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de tris et invariants avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. formuler l’invariant de la partie déjà triée.
-2. Écrire un exemple minimal de tris avant de traiter le cas général du chapitre P12.
-3. Identifier le cas limite de tris qui peut faire échouer la méthode.
-4. Relier la conclusion de tris à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D.
+2. P-ALGO-02A : décrire la partie déjà triée et la partie restante.
+3. Identifier les données d’entrée de tris puis écrire le résultat attendu avant de conclure.
+4. Contrôler tris par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance P12 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-insertion de 3 dans [1,4] donne [1,3,4].
-### Exemple corrigé 2
-On reprend le premier exemple avec une donnée différente et on contrôle explicitement la conclusion pour tris.
+### Exemple corrigé 1 - Exemple principal
+Une passe de sélection sur `[5,2,4]` place 2 en tête.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Insérer 3 dans `[1,2,5]` donne `[1,2,3,5]`.
 
 ## Erreurs fréquentes
-- un tri n’est pas seulement une recherche de minimum : corriger avec un contre-exemple court.
-- Donner seulement le résultat en tris : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de tris : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de tris avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de algorithmique de tri : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur tris et invariants : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour tri simple.
-- Donnée invalide ou absente dans une situation de tris.
-- Situation de tris où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour tris, à traiter selon la convention du chapitre P12.
+- Donnée invalide dans algorithmique de tri, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de tris et invariants où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir tri simple en une phrase précise.
+P-ALGO-02A : appliquer la méthode de tris à un exemple court choisi dans le chapitre P12.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de tri simple.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de algorithmique de tri.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur tris.
+Proposer un cas limite pertinent pour tris et invariants et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour tris.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour tris.
 
 ## Réponses rapides
-1. tri simple doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur tris doit montrer les étapes utiles.
-3. L’erreur de tris se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour tris.
+1. La méthode attendue pour tris commence par les données puis applique l’opération du chapitre P12.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans algorithmique de tri.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon tris et invariants.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de tris.
 
 ## À retenir
-- Pour tris, commencer par reconnaître la situation exacte.
-- Une méthode de P12 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de tris sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur tris.
+- P12 : tris se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de tris et invariants doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour P12, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche P12 sur tris reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : P12-S1 et P12-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : P12_TD_tris.md, à produire ou relire dans le registre de supports.
-- TP lié : P12_TP_tris.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre P12 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/premiere/P12/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | P12-S1 | réelle | séance présente dans la progression |
+| TD | P12_TD_tris_invariants_complexite.md | à créer | inscrit au registre v2 |
+| Évaluation | P12_evaluation_tris_invariants_complexite.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer tris sans lire la fiche.
-- Je sais refaire les exemples de P12 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour tris.
-- Je sais choisir un cas limite de tris avant de répondre.
-- Je sais relier la fiche P12 sur tris à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer tris avec un exemple différent de ceux de la fiche P12.
+- Je peux citer au moins une capacité parmi P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à P12 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de tris et invariants sans transformer la fiche en corrigé complet.

@@ -14,72 +14,79 @@ official_program:
     - "T-BDD-03F"
     - "T-BDD-03G"
     - "T-BDD-03H"
+readiness: linked
 private_data: false
 ---
 # T10 - Fiche cours - SQL : INSERT, UPDATE, DELETE
 
 ## À savoir
-- Capacités travaillées dans la fiche : T-BDD-03F, T-BDD-03G, T-BDD-03H.
-- La notion “modification SQL” sert à ajouter, modifier ou supprimer des lignes.
-- Le vocabulaire de requêtes de modification doit être employé avec des données concrètes propres au chapitre T10.
-- La capacité associée à requêtes de modification se travaille par lecture, manipulation et justification dans T10.
-- Une réponse sur requêtes de modification distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- Schéma minimal utilisé : `Eleve(id_eleve, nom, classe)` et `Note(id_note, id_eleve, matiere, note)`.
+- `INSERT` ajoute une ligne complète ou partielle selon les colonnes indiquées.
+- `UPDATE` modifie les lignes ciblées par `WHERE`.
+- `DELETE` supprime les lignes ciblées ; une vérification par `SELECT` précède la modification.
 
 ## Méthodes
-1. vérifier le WHERE par SELECT avant modification.
-2. Écrire un exemple minimal de requêtes de modification avant de traiter le cas général du chapitre T10.
-3. Identifier le cas limite de requêtes de modification qui peut faire échouer la méthode.
-4. Relier la conclusion de requêtes de modification à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : T-BDD-03F, T-BDD-03G, T-BDD-03H.
+2. T-BDD-03F : écrire les colonnes puis les valeurs d’un `INSERT`.
+3. T-BDD-03G : vérifier par `SELECT` les lignes que `UPDATE` va modifier.
+4. T-BDD-03H : vérifier par `SELECT` les lignes que `DELETE` va supprimer.
+5. Après modification, refaire un `SELECT` ciblé pour contrôler la table après.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-UPDATE Livre SET annee=2025 WHERE id=1.
-### Exemple corrigé 2
-On reprend le premier exemple avec une donnée différente et on contrôle explicitement la conclusion pour requêtes de modification.
+### Exemple corrigé 1 - INSERT avec table avant/après
+Avant : `Eleve` contient id 1 et 2. Requête : `INSERT INTO Eleve(id_eleve, nom, classe) VALUES (3, "Nadia", "T1");`. Après : une ligne id 3 existe.
+### Exemple corrigé 2 - UPDATE ciblé
+Avant : `Note(4, 2, "maths", 12)`. Requête : `UPDATE Note SET note = 15 WHERE id_note = 4;`. Après : la note 4 vaut 15.
+### Exemple corrigé 3 - DELETE ciblé
+Vérification : `SELECT * FROM Note WHERE id_note = 8;`. Suppression : `DELETE FROM Note WHERE id_note = 8;`. Après : la requête de vérification ne renvoie plus de ligne.
+### Exemple corrigé 4 - Risque UPDATE sans WHERE
+`UPDATE Note SET note = 20;` modifie toutes les notes : c’est une erreur de portée.
+### Exemple corrigé 5 - Risque DELETE trop large
+`DELETE FROM Note WHERE matiere = "maths";` supprime toutes les notes de mathématiques, pas une seule copie.
 
 ## Erreurs fréquentes
-- UPDATE sans WHERE touche trop de lignes : corriger avec un contre-exemple court.
-- Donner seulement le résultat en requêtes de modification : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de requêtes de modification : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de requêtes de modification avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de requêtes de lecture et modification : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur SQL : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour modification SQL.
-- Donnée invalide ou absente dans une situation de requêtes de modification.
-- Situation de requêtes de modification où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour requêtes de modification, à traiter selon la convention du chapitre T10.
+- Donnée invalide dans requêtes de lecture et modification, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de SQL où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir modification SQL en une phrase précise.
+T-BDD-03F : ajouter l’élève id 4 nommé Sami en T2.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de modification SQL.
+T-BDD-03G : modifier seulement la note id 6 à 14.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur requêtes de modification.
+T-BDD-03H : supprimer seulement la note id 9.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour requêtes de modification.
+Écrire le `SELECT` de contrôle avant un `UPDATE` sur id_note 6.
 
 ## Réponses rapides
-1. modification SQL doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur requêtes de modification doit montrer les étapes utiles.
-3. L’erreur de requêtes de modification se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour requêtes de modification.
+1. `INSERT INTO Eleve(id_eleve, nom, classe) VALUES (4, "Sami", "T2");`.
+2. `UPDATE Note SET note = 14 WHERE id_note = 6;`.
+3. `DELETE FROM Note WHERE id_note = 9;`.
+4. `SELECT * FROM Note WHERE id_note = 6;` vérifie la cible avant modification.
 
 ## À retenir
-- Pour requêtes de modification, commencer par reconnaître la situation exacte.
-- Une méthode de T10 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités T-BDD-03F, T-BDD-03G, T-BDD-03H restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de requêtes de modification sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur requêtes_de_modification.
+- T10 : requêtes de modification se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités T-BDD-03F, T-BDD-03G, T-BDD-03H restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de SQL doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour T10, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche T10 sur requêtes de modification reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : T10-S1 et T10-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : T10_TD_requêtes_de_modification.md, à produire ou relire dans le registre de supports.
-- TP lié : T10_TP_requêtes_de_modification.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre T10 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/terminale/T10/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | T10-S1 | réelle | séance présente dans la progression |
+| TD | T10_TD_sql_insert_update_delete.md | à créer | inscrit au registre v2 |
+| Évaluation | T10_evaluation_sql_insert_update_delete.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer requêtes de modification sans lire la fiche.
-- Je sais refaire les exemples de T10 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour requêtes de modification.
-- Je sais choisir un cas limite de requêtes de modification avant de répondre.
-- Je sais relier la fiche T10 sur requêtes de modification à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer requêtes de modification avec un exemple différent de ceux de la fiche T10.
+- Je peux citer au moins une capacité parmi T-BDD-03F, T-BDD-03G, T-BDD-03H et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à T10 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de SQL sans transformer la fiche en corrigé complet.

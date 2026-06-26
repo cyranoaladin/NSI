@@ -15,72 +15,73 @@ official_program:
     - "T-BDD-01B"
     - "T-BDD-01C"
     - "T-BDD-02"
+readiness: linked
 private_data: false
 ---
 # T09 - Fiche cours - Bases relationnelles, clés et contraintes
 
 ## À savoir
-- Capacités travaillées dans la fiche : T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02.
-- La notion “modèle relationnel” sert à organiser tables, clés et contraintes.
-- Le vocabulaire de modèle relationnel doit être employé avec des données concrètes propres au chapitre T09.
-- La capacité associée à modèle relationnel se travaille par lecture, manipulation et justification dans T09.
-- Une réponse sur modèle relationnel distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- bases relationnelles se travaille dans le contexte “clés et contraintes” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour modèle relationnel.
+- Les capacités T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02 sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de bases relationnelles avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. choisir une clé primaire stable.
-2. Écrire un exemple minimal de modèle relationnel avant de traiter le cas général du chapitre T09.
-3. Identifier le cas limite de modèle relationnel qui peut faire échouer la méthode.
-4. Relier la conclusion de modèle relationnel à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02.
+2. T-BDD-01A : identifier tables, clés primaires et références.
+3. Identifier les données d’entrée de modèle relationnel puis écrire le résultat attendu avant de conclure.
+4. Contrôler modèle relationnel par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance T09 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-Note.id_eleve référence Eleve.id.
-### Exemple corrigé 2
-On change les données de l’exemple précédent et on vérifie que le raisonnement sur modèle relationnel donne encore une conclusion contrôlable.
+### Exemple corrigé 1 - Exemple principal
+`Note.id_eleve` référence `Eleve.id_eleve` dans un schéma scolaire fictif.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Une clé primaire dupliquée empêche d’identifier une ligne unique.
 
 ## Erreurs fréquentes
-- un nom n’est pas une clé primaire fiable : corriger avec un contre-exemple court.
-- Donner seulement le résultat en modèle relationnel : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de modèle relationnel : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de modèle relationnel avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de clés et contraintes : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur bases relationnelles : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour modèle relationnel.
-- Donnée invalide ou absente dans une situation de modèle relationnel.
-- Situation de modèle relationnel où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour modèle relationnel, à traiter selon la convention du chapitre T09.
+- Donnée invalide dans clés et contraintes, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de bases relationnelles où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir modèle relationnel en une phrase précise.
+T-BDD-01A : appliquer la méthode de modèle relationnel à un exemple court choisi dans le chapitre T09.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de modèle relationnel.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de clés et contraintes.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur modèle relationnel.
+Proposer un cas limite pertinent pour bases relationnelles et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour modèle relationnel.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour modèle relationnel.
 
 ## Réponses rapides
-1. modèle relationnel doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur modèle relationnel doit montrer les étapes utiles.
-3. L’erreur de modèle relationnel se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour modèle relationnel.
+1. La méthode attendue pour modèle relationnel commence par les données puis applique l’opération du chapitre T09.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans clés et contraintes.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon bases relationnelles.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de modèle relationnel.
 
 ## À retenir
-- Pour modèle relationnel, commencer par reconnaître la situation exacte.
-- Une méthode de T09 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02 restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de modèle relationnel sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur modele_relationnel.
+- T09 : modèle relationnel se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02 restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de bases relationnelles doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour T09, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche T09 sur modèle relationnel reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : T09-S1 et T09-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : T09_TD_modele_relationnel.md, à produire ou relire dans le registre de supports.
-- TP lié : T09_TP_modele_relationnel.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre T09 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/terminale/T09/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | T09-S1 | réelle | séance présente dans la progression |
+| TD | T09_TD_bases_relationnelles_cles_contraintes.md | à créer | inscrit au registre v2 |
+| Évaluation | T09_evaluation_bases_relationnelles_cles_contraintes.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer modèle relationnel sans lire la fiche.
-- Je sais refaire les exemples de T09 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour modèle relationnel.
-- Je sais choisir un cas limite de modèle relationnel avant de répondre.
-- Je sais relier la fiche T09 sur modèle relationnel à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer modèle relationnel avec un exemple différent de ceux de la fiche T09.
+- Je peux citer au moins une capacité parmi T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02 et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à T09 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de bases relationnelles sans transformer la fiche en corrigé complet.

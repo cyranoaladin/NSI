@@ -14,72 +14,73 @@ official_program:
     - "P-ALGO-03"
     - "P-ALGO-04"
     - "P-ALGO-05"
+readiness: linked
 private_data: false
 ---
 # P13 - Fiche cours - Dichotomie, glouton et k-NN
 
 ## À savoir
-- Capacités travaillées dans la fiche : P-ALGO-03, P-ALGO-04, P-ALGO-05.
-- La notion “dichotomie glouton k-NN” sert à exploiter hypothèse triée, choix local ou distance.
-- Le vocabulaire de dichotomie glouton k-NN doit être employé avec des données concrètes propres au chapitre P13.
-- La capacité associée à dichotomie glouton k-NN se travaille par lecture, manipulation et justification dans P13.
-- Une réponse sur dichotomie glouton k-NN distingue la situation étudiée, la méthode choisie, le résultat et le contrôle.
+- dichotomie, glouton et k-NN se travaille dans le contexte “méthodes algorithmiques” avec des données vérifiables.
+- La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour dichotomie glouton k-NN.
+- Les capacités P-ALGO-03, P-ALGO-04, P-ALGO-05 sont rappelées ici sans être déclarées couvertes.
+- L’élève doit pouvoir refaire un exemple de dichotomie, glouton et k-NN avec une valeur, une table ou un code différent.
 
 ## Méthodes
-1. nommer l’hypothèse avant l’algorithme.
-2. Écrire un exemple minimal de dichotomie glouton k-NN avant de traiter le cas général du chapitre P13.
-3. Identifier le cas limite de dichotomie glouton k-NN qui peut faire échouer la méthode.
-4. Relier la conclusion de dichotomie glouton k-NN à une opération ou une propriété observable.
+1. Capacités explicitement travaillées dans les méthodes et exercices : P-ALGO-03, P-ALGO-04, P-ALGO-05.
+2. P-ALGO-03 : exploiter une hypothèse de tri, un choix local ou une distance.
+3. Identifier les données d’entrée de dichotomie glouton k-NN puis écrire le résultat attendu avant de conclure.
+4. Contrôler dichotomie glouton k-NN par un cas limite explicite et une vérification courte.
+5. Relier la réponse à un support de séance P13 sans confondre fiche de révision et preuve de couverture.
 
 ## Exemples corrigés
-### Exemple corrigé 1
-k=3 avec A,B,A prédit A.
-### Exemple corrigé 2
-On change les données de l’exemple précédent et on vérifie que le raisonnement sur dichotomie glouton k-NN donne encore une conclusion contrôlable.
+### Exemple corrigé 1 - Exemple principal
+Chercher 9 dans `[1,4,9,12,20]` teste d’abord la valeur médiane 9.
+### Exemple corrigé 2 - Contrôle ou contre-exemple
+Avec k=3 et les classes A, B, A, k-NN prédit A.
 
 ## Erreurs fréquentes
-- la dichotomie exige une collection triée : corriger avec un contre-exemple court.
-- Donner seulement le résultat en dichotomie glouton k-NN : ajouter une ligne qui nomme la méthode utilisée.
-- Oublier le cas limite de dichotomie glouton k-NN : le tester avant d’écrire la conclusion.
+- Confondre le vocabulaire de dichotomie glouton k-NN avec une simple récitation : corriger par un exemple calculé ou exécuté.
+- Oublier une hypothèse de méthodes algorithmiques : corriger en l’écrivant avant la méthode.
+- Conclure sans contrôle sur dichotomie, glouton et k-NN : corriger par un cas limite ou une vérification inverse.
 
 ## Cas limites
-- Cas vide ou minimal pour dichotomie glouton k-NN.
-- Donnée invalide ou absente dans une situation de dichotomie glouton k-NN.
-- Situation de dichotomie glouton k-NN où deux réponses semblent possibles et exigent une convention explicite.
+- Cas de départ vide ou nul pour dichotomie glouton k-NN, à traiter selon la convention du chapitre P13.
+- Donnée invalide dans méthodes algorithmiques, par exemple symbole interdit, clé absente ou requête trop large selon la fiche.
+- Cas frontière de dichotomie, glouton et k-NN où une seule valeur change la méthode ou le résultat attendu.
 
 ## Mini-exercices
 ### Mini-exercice 1
-Définir dichotomie glouton k-NN en une phrase précise.
+P-ALGO-03 : appliquer la méthode de dichotomie glouton k-NN à un exemple court choisi dans le chapitre P13.
 ### Mini-exercice 2
-Appliquer la méthode à un petit exemple de dichotomie glouton k-NN.
+Repérer l’erreur dans une réponse qui oublie une hypothèse de méthodes algorithmiques.
 ### Mini-exercice 3
-Repérer une erreur fréquente dans une réponse proposée sur dichotomie glouton k-NN.
+Proposer un cas limite pertinent pour dichotomie, glouton et k-NN et expliquer le résultat attendu.
 ### Mini-exercice 4
-Citer le cas limite à vérifier en priorité pour dichotomie glouton k-NN.
+Écrire une phrase de contrôle qui vérifie la conclusion obtenue pour dichotomie glouton k-NN.
 
 ## Réponses rapides
-1. dichotomie glouton k-NN doit être défini avec son rôle, pas seulement son nom.
-2. La réponse sur dichotomie glouton k-NN doit montrer les étapes utiles.
-3. L’erreur de dichotomie glouton k-NN se repère en testant l’hypothèse oubliée.
-4. Le cas vide ou minimal est souvent le premier contrôle pour dichotomie glouton k-NN.
+1. La méthode attendue pour dichotomie glouton k-NN commence par les données puis applique l’opération du chapitre P13.
+2. L’erreur vient de l’hypothèse manquante ; elle se corrige en testant le cas mentionné dans méthodes algorithmiques.
+3. Le cas limite doit donner un résultat explicite, par exemple 0, vide, absent ou hors plage selon dichotomie, glouton et k-NN.
+4. Le contrôle compare le résultat avec la définition ou avec une opération inverse de dichotomie glouton k-NN.
 
 ## À retenir
-- Pour dichotomie glouton k-NN, commencer par reconnaître la situation exacte.
-- Une méthode de P13 doit être accompagnée d’un exemple numérique ou textuel.
-- Les capacités P-ALGO-03, P-ALGO-04, P-ALGO-05 restent au statut de travail tant que la revue humaine manque.
-- La fiche prépare la révision de dichotomie glouton k-NN sans produire à elle seule une preuve de couverture annuelle.
-- Un cas limite explicite est obligatoire avant toute conclusion sur dichotomie_glouton_k-NN.
+- P13 : dichotomie glouton k-NN se révise avec une définition, une méthode et un exemple corrigé.
+- Les capacités P-ALGO-03, P-ALGO-04, P-ALGO-05 restent en travail tant que TD, TP, évaluation, barème et revues humaines manquent.
+- Un exemple de dichotomie, glouton et k-NN doit changer autre chose qu’une simple valeur pour tester la compréhension.
+- Pour P13, le tableau de liens distingue les supports existants et les supports inscrits au registre.
+- La fiche P13 sur dichotomie glouton k-NN reste needs_review et ne déclenche ni publication ni couverture.
 
 ## Lien avec la progression
-- Séances : P13-S1 et P13-S2 lorsque le chapitre est découpé en plusieurs temps.
-- TD lié : P13_TD_dichotomie_glouton_k-NN.md, à produire ou relire dans le registre de supports.
-- TP lié : P13_TP_dichotomie_glouton_k-NN.py si la progression prévoit une manipulation programmée.
-- Évaluation ou projet lié : contrôle court du chapitre P13 ou livrable associé.
-- Dossier de progression : 03_progressions/fiches_cours/premiere/P13/.
+
+| Élément | Fichier | Statut | Remarque |
+|---|---|---|---|
+| Séance | P13-S1 | réelle | séance présente dans la progression |
+| TD | P13_TD_dichotomie_glouton_knn.md | à créer | inscrit au registre v2 |
+| Évaluation | P13_evaluation_dichotomie_glouton_knn.md | à créer | inscrit au registre v2 |
 
 ## Auto-évaluation
-- Je sais expliquer dichotomie glouton k-NN sans lire la fiche.
-- Je sais refaire les exemples de P13 avec des données différentes.
-- Je sais identifier l’erreur fréquente la plus probable pour dichotomie glouton k-NN.
-- Je sais choisir un cas limite de dichotomie glouton k-NN avant de répondre.
-- Je sais relier la fiche P13 sur dichotomie glouton k-NN à une séance, un TD ou un TP du chapitre.
+- Je peux expliquer dichotomie glouton k-NN avec un exemple différent de ceux de la fiche P13.
+- Je peux citer au moins une capacité parmi P-ALGO-03, P-ALGO-04, P-ALGO-05 et dire où elle est travaillée dans la fiche.
+- Je peux dire quel support lié à P13 existe déjà ou reste inscrit au registre.
+- Je peux identifier un cas limite de dichotomie, glouton et k-NN sans transformer la fiche en corrigé complet.

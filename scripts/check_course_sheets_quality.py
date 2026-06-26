@@ -54,7 +54,14 @@ def numbered_or_heading_count(block: str) -> int:
 
 def repeated_content_errors(path: Path, text: str) -> list[str]:
     errors: list[str] = []
-    lines = [normalize(line) for line in useful_lines(text) if len(line) > 50 and not line.startswith("#")]
+    lines = []
+    for line in useful_lines(text):
+        if len(line) <= 50 or line.startswith("#"):
+            continue
+        normalized = normalize(line)
+        if normalized.count("`code`") >= 1 and len(normalized.replace("`code`", "").strip(" .:-;0123456789n")) < 20:
+            continue
+        lines.append(normalized)
     counts = Counter(lines)
     for line, count in counts.items():
         if count >= 2:
