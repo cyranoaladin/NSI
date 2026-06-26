@@ -1,15 +1,19 @@
-"""Corrigé professeur TP T01 - Interfaces de structures abstraites."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-
 def scenario_structure(operations):
-    """Implémentation de référence pour interface, opération, coût."""
     if operations is None:
-        raise ValueError("entrée absente")
-    return {
-        "entree": operations,
-        "methode": "nommer les opérations, les préconditions et les effets sans dépendre du stockage",
-        "controle": "interface séparée de la représentation interne",
-        "cas_limite": "confondre interface et liste Python concrète",
-    }
+        raise ValueError("operations absentes")
+    pile = []
+    sorties = []
+    for op, value in operations:
+        if op == "ajouter":
+            pile.append(value)
+        elif op == "retirer":
+            if not pile:
+                raise ValueError("structure vide")
+            sorties.append(pile.pop())
+        else:
+            raise ValueError("operation inconnue")
+    return sorties

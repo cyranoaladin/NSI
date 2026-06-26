@@ -1,206 +1,196 @@
 ---
-title: "T04 - Cours - Récursivité contrôlée"
+title: "T04 - Cours - Récursivité"
 level: "terminale"
 sequence_id: "T04"
 document_type: "cours"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_NSI/Formation TOULOUSE/BLOC5/PolyBloc5.pdf"
-theme: "Langage et preuve"
-notion: "cas de base, appel récursif, terminaison"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
+theme: "Langage et preuve de terminaison"
+notion: "appel récursif, cas de base, terminaison, pile d’appels"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
     - "T-LANG-02A"
-    - "T-LANG-02B"
 ---
 
-
-# T04 - Cours - Récursivité contrôlée
+# T04 - Cours - Récursivité
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
 - T-LANG-02A
-- T-LANG-02B
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à appel récursif.
+- Distinguer donnée, méthode et conclusion dans le thème Langage et preuve de terminaison.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- T04-S1 à T04-S5 : ce support est rattaché aux séances indiquées dans la progression.
+- T04-S1 à T04-S5 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-un calcul naturel se définit par réduction du problème mais risque de ne jamais s’arrêter. La tâche consiste à traiter cas de base, appel récursif, terminaison sans réponse intuitive non vérifiée.
+Un algorithme de parcours doit traiter une structure définie en se ramenant à un sous-problème plus petit.
 
 ## Activité d’entrée
-1. Lire la situation : un calcul naturel se définit par réduction du problème mais risque de ne jamais s’arrêter.
-2. Isoler la donnée de départ : entier naturel réduit à chaque appel.
-3. Prédire individuellement le résultat de l’exemple `factorielle(5)`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : identifier cas de base, relation de récurrence et variant décroissant.
-6. Contrôler avec le résultat de référence : 120 avec cas de base factorielle(0)=1.
-7. Tester le cas limite suivant : appel récursif sans diminution ou profondeur excessive.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+1. Identifier le cas de base d’une factorielle.
+2. Suivre les appels de `somme([4, 1, 3])`.
+3. Comparer récursif et itératif.
+4. Prévoir ce qui se passe sans décroissance.
 
 ## Définitions et formalisation
-- Définition D1 : la notion centrale est cas de base, appel récursif, terminaison.
-- Définition D2 : une donnée est une information manipulée avant transformation.
-- Définition D3 : une représentation est une convention permettant d’agir sur cette donnée.
-- Définition D4 : une preuve courte explique pourquoi la méthode aboutit au résultat.
-- Définition D5 : un cas limite est un exemple volontairement petit, extrême ou ambigu.
-- Exemple de référence : `factorielle(5)`.
-- Résultat de référence : 120 avec cas de base factorielle(0)=1.
-- Méthode de référence : identifier cas de base, relation de récurrence et variant décroissant.
-- Cas limite à surveiller : appel récursif sans diminution ou profondeur excessive.
+- Définition D1 : appel récursif est utilisé dans Langage et preuve de terminaison avec une donnée, une règle et un contrôle.
+- Définition D2 : cas de base est utilisé dans Langage et preuve de terminaison avec une donnée, une règle et un contrôle.
+- Définition D3 : terminaison est utilisé dans Langage et preuve de terminaison avec une donnée, une règle et un contrôle.
+- Définition D4 : pile d’appels est utilisé dans Langage et preuve de terminaison avec une donnée, une règle et un contrôle.
+- Cas limite principal : entier négatif refusé.
 
-## Objectif O1 - Appropriation guidée
-- Capacité officielle travaillée : T-LANG-02A.
-- Question directrice : comment traiter cas de base, appel récursif, terminaison dans une situation vérifiable ?
-- Donnée étudiée : entier naturel réduit à chaque appel.
-- Étape 1 : reformuler la consigne avec les mots de la capacité T-LANG-02A.
-- Étape 2 : appliquer la méthode `identifier cas de base, relation de récurrence et variant décroissant` sans sauter d’étape.
-- Étape 3 : obtenir le résultat contrôlé `120 avec cas de base factorielle(0)=1` ou expliquer l’écart.
-- Étape 4 : tester le cas limite `appel récursif sans diminution ou profondeur excessive`.
-- Étape 5 : écrire une justification de deux phrases.
-- Exemple corrigé 1 : sur `factorielle(5)`, on obtient `120 avec cas de base factorielle(0)=1` car identifier cas de base, relation de récurrence et variant décroissant.
-- Contre-exemple : une valeur finale isolée ne prouve pas la compétence.
-- Question flash : quel mot de vocabulaire permet de justifier le choix de méthode ?
-- Vérification : modifier une donnée seulement et prévoir l’effet avant de tester.
-- Trace attendue : une ligne de calcul ou un état intermédiaire, puis une phrase de conclusion.
-- Point de vigilance : ne pas changer de représentation au milieu du raisonnement.
-- Socle : recopier la méthode sur le même exemple avec une donnée voisine.
-- Standard : résoudre un exemple nouveau en autonomie.
-- Expert : concevoir un cas limite et prédire l’échec ou la réussite.
-- Critère de réussite : donnée, méthode, résultat et contrôle sont visibles.
-
-## Objectif O2 - Appropriation guidée
-- Capacité officielle travaillée : T-LANG-02B.
-- Question directrice : comment traiter cas de base, appel récursif, terminaison dans une situation vérifiable ?
-- Donnée étudiée : entier naturel réduit à chaque appel.
-- Étape 1 : reformuler la consigne avec les mots de la capacité T-LANG-02B.
-- Étape 2 : appliquer la méthode `identifier cas de base, relation de récurrence et variant décroissant` sans sauter d’étape.
-- Étape 3 : obtenir le résultat contrôlé `120 avec cas de base factorielle(0)=1` ou expliquer l’écart.
-- Étape 4 : tester le cas limite `appel récursif sans diminution ou profondeur excessive`.
-- Étape 5 : écrire une justification de deux phrases.
-- Exemple corrigé 2 : sur `factorielle(5)`, on obtient `120 avec cas de base factorielle(0)=1` car identifier cas de base, relation de récurrence et variant décroissant.
-- Contre-exemple : une valeur finale isolée ne prouve pas la compétence.
-- Question flash : quel mot de vocabulaire permet de justifier le choix de méthode ?
-- Vérification : modifier une donnée seulement et prévoir l’effet avant de tester.
-- Trace attendue : une ligne de calcul ou un état intermédiaire, puis une phrase de conclusion.
-- Point de vigilance : ne pas changer de représentation au milieu du raisonnement.
-- Socle : recopier la méthode sur le même exemple avec une donnée voisine.
-- Standard : résoudre un exemple nouveau en autonomie.
-- Expert : concevoir un cas limite et prédire l’échec ou la réussite.
-- Critère de réussite : donnée, méthode, résultat et contrôle sont visibles.
-
-## Objectif O3 - Appropriation guidée
-- Capacité officielle travaillée : T-LANG-02A.
-- Question directrice : comment traiter cas de base, appel récursif, terminaison dans une situation vérifiable ?
-- Donnée étudiée : entier naturel réduit à chaque appel.
-- Étape 1 : reformuler la consigne avec les mots de la capacité T-LANG-02A.
-- Étape 2 : appliquer la méthode `identifier cas de base, relation de récurrence et variant décroissant` sans sauter d’étape.
-- Étape 3 : obtenir le résultat contrôlé `120 avec cas de base factorielle(0)=1` ou expliquer l’écart.
-- Étape 4 : tester le cas limite `appel récursif sans diminution ou profondeur excessive`.
-- Étape 5 : écrire une justification de deux phrases.
-- Exemple corrigé 3 : sur `factorielle(5)`, on obtient `120 avec cas de base factorielle(0)=1` car identifier cas de base, relation de récurrence et variant décroissant.
-- Contre-exemple : une valeur finale isolée ne prouve pas la compétence.
-- Question flash : quel mot de vocabulaire permet de justifier le choix de méthode ?
-- Vérification : modifier une donnée seulement et prévoir l’effet avant de tester.
-- Trace attendue : une ligne de calcul ou un état intermédiaire, puis une phrase de conclusion.
-- Point de vigilance : ne pas changer de représentation au milieu du raisonnement.
-- Socle : recopier la méthode sur le même exemple avec une donnée voisine.
-- Standard : résoudre un exemple nouveau en autonomie.
-- Expert : concevoir un cas limite et prédire l’échec ou la réussite.
-- Critère de réussite : donnée, méthode, résultat et contrôle sont visibles.
-
-## Objectif O4 - Appropriation guidée
-- Capacité officielle travaillée : T-LANG-02B.
-- Question directrice : comment traiter cas de base, appel récursif, terminaison dans une situation vérifiable ?
-- Donnée étudiée : entier naturel réduit à chaque appel.
-- Étape 1 : reformuler la consigne avec les mots de la capacité T-LANG-02B.
-- Étape 2 : appliquer la méthode `identifier cas de base, relation de récurrence et variant décroissant` sans sauter d’étape.
-- Étape 3 : obtenir le résultat contrôlé `120 avec cas de base factorielle(0)=1` ou expliquer l’écart.
-- Étape 4 : tester le cas limite `appel récursif sans diminution ou profondeur excessive`.
-- Étape 5 : écrire une justification de deux phrases.
-- Exemple corrigé 4 : sur `factorielle(5)`, on obtient `120 avec cas de base factorielle(0)=1` car identifier cas de base, relation de récurrence et variant décroissant.
-- Contre-exemple : une valeur finale isolée ne prouve pas la compétence.
-- Question flash : quel mot de vocabulaire permet de justifier le choix de méthode ?
-- Vérification : modifier une donnée seulement et prévoir l’effet avant de tester.
-- Trace attendue : une ligne de calcul ou un état intermédiaire, puis une phrase de conclusion.
-- Point de vigilance : ne pas changer de représentation au milieu du raisonnement.
-- Socle : recopier la méthode sur le même exemple avec une donnée voisine.
-- Standard : résoudre un exemple nouveau en autonomie.
-- Expert : concevoir un cas limite et prédire l’échec ou la réussite.
-- Critère de réussite : donnée, méthode, résultat et contrôle sont visibles.
-
+## Exemples corrigés précis
+### Exemple corrigé 1 - factorielle
+- Donnée étudiée : `4!`.
+- Méthode : appliquer `n * fact(n-1)` jusqu’au cas `0!`.
+- Résultat obtenu : `24`.
+- Contrôle : le cas limite « entier négatif refusé » est vérifié séparément.
+### Exemple corrigé 2 - somme de liste
+- Donnée étudiée : `[4, 1, 3]`.
+- Méthode : séparer tête et reste.
+- Résultat obtenu : `8`.
+- Contrôle : le cas limite « liste vide » est vérifié séparément.
+### Exemple corrigé 3 - longueur
+- Donnée étudiée : `["a", "b"]`.
+- Méthode : ajouter 1 à la longueur du reste.
+- Résultat obtenu : `2`.
+- Contrôle : le cas limite « reste vide » est vérifié séparément.
+### Exemple corrigé 4 - terminaison
+- Donnée étudiée : `n` décroît vers 0.
+- Méthode : montrer une mesure entière strictement décroissante.
+- Résultat obtenu : preuve de terminaison.
+- Contrôle : le cas limite « appel avec même argument » est vérifié séparément.
+## Objectif O1 - Identifier précisément la représentation ou la structure en jeu
+- Capacité mobilisée : T-LANG-02A.
+- Point de départ : `4!`.
+- Angle disciplinaire : repérage initial autour de factorielle.
+- Démarche attendue : appliquer `n * fact(n-1)` jusqu’au cas `0!`.
+- Exemple associé : `24`.
+- Point de vigilance : Oublier le cas de base.
+- Activité de reprise associée : Encadrer le cas de base avant d’écrire l’appel récursif.
+- Mini-production : produire un court diagnostic de la donnée et du vocabulaire.
+## Objectif O2 - Appliquer une méthode disciplinaire complète
+- Capacité mobilisée : T-LANG-02A.
+- Point de départ : `[4, 1, 3]`.
+- Angle disciplinaire : méthode guidée autour de somme de liste.
+- Démarche attendue : séparer tête et reste.
+- Exemple associé : `8`.
+- Point de vigilance : Faire un appel récursif qui ne rapproche pas du cas de base.
+- Activité de reprise associée : Tracer la valeur de l’argument à chaque appel.
+- Mini-production : produire une procédure numérotée avec contrôle intermédiaire.
+## Objectif O3 - Justifier le résultat sur un cas différent
+- Capacité mobilisée : T-LANG-02A.
+- Point de départ : `["a", "b"]`.
+- Angle disciplinaire : transfert argumenté autour de longueur.
+- Démarche attendue : ajouter 1 à la longueur du reste.
+- Exemple associé : `2`.
+- Point de vigilance : Confondre valeur retournée et affichage des appels.
+- Activité de reprise associée : Dessiner la pile d’appels avec valeurs de retour.
+- Mini-production : produire une justification qui compare deux cas distincts.
+## Objectif O4 - Contrôler un cas limite et corriger une erreur observée
+- Capacité mobilisée : T-LANG-02A.
+- Point de départ : `n` décroît vers 0.
+- Angle disciplinaire : vérification critique autour de terminaison.
+- Démarche attendue : montrer une mesure entière strictement décroissante.
+- Exemple associé : preuve de terminaison.
+- Point de vigilance : Ne pas traiter l’entrée vide.
+- Activité de reprise associée : Tester d’abord la liste vide ou `n = 0`.
+- Mini-production : produire une correction d’erreur avec un nouveau test.
 ## Exercices numérotés
-- Exercice 1 : traiter cas de base, appel récursif, terminaison pour l’objectif O1 et la capacité T-LANG-02A, puis écrire un contrôle explicite.
-- Exercice 2 : traiter cas de base, appel récursif, terminaison pour l’objectif O2 et la capacité T-LANG-02B, puis écrire un contrôle explicite.
-- Exercice 3 : traiter cas de base, appel récursif, terminaison pour l’objectif O3 et la capacité T-LANG-02A, puis écrire un contrôle explicite.
-- Exercice 4 : traiter cas de base, appel récursif, terminaison pour l’objectif O4 et la capacité T-LANG-02B, puis écrire un contrôle explicite.
-- Exercice 5 : traiter cas de base, appel récursif, terminaison pour l’objectif O1 et la capacité T-LANG-02A, puis écrire un contrôle explicite.
-- Exercice 6 : traiter cas de base, appel récursif, terminaison pour l’objectif O2 et la capacité T-LANG-02B, puis écrire un contrôle explicite.
-- Exercice 7 : traiter cas de base, appel récursif, terminaison pour l’objectif O3 et la capacité T-LANG-02A, puis écrire un contrôle explicite.
-- Exercice 8 : traiter cas de base, appel récursif, terminaison pour l’objectif O4 et la capacité T-LANG-02B, puis écrire un contrôle explicite.
-
+- Exercice 1 : résoudre factorielle avec `4!` ; attendu : `24`.
+- Exercice 2 : expliquer somme de liste à partir de `[4, 1, 3]` ; attendu : `8`.
+- Exercice 3 : comparer longueur avec `["a", "b"]` ; attendu : `2`.
+- Exercice 4 : corriger terminaison pour `n` décroît vers 0 ; attendu : preuve de terminaison.
+- Exercice 5 : tester un cas limite lié à entier négatif refusé ; attendu : le comportement de factorielle est contrôlé.
+- Exercice 6 : classer deux méthodes possibles pour somme de liste ; attendu : la méthode robuste est choisie et justifiée.
+- Exercice 7 : justifier un transfert qui utilise longueur avec une donnée nouvelle ; attendu : la justification reste valable sur le nouveau cas.
+- Exercice 8 : étendre un énoncé volontairement erroné sur terminaison ; attendu : l’erreur est localisée puis réparée.
 ## Corrigés complets des exercices du cours
-- Corrigé exercice 1 : identifier entier naturel réduit à chaque appel, appliquer identifier cas de base, relation de récurrence et variant décroissant, annoncer 120 avec cas de base factorielle(0)=1, puis vérifier EF1.
-- Corrigé exercice 2 : identifier entier naturel réduit à chaque appel, appliquer identifier cas de base, relation de récurrence et variant décroissant, annoncer 120 avec cas de base factorielle(0)=1, puis vérifier EF2.
-- Corrigé exercice 3 : identifier entier naturel réduit à chaque appel, appliquer identifier cas de base, relation de récurrence et variant décroissant, annoncer 120 avec cas de base factorielle(0)=1, puis vérifier EF3.
-- Corrigé exercice 4 : identifier entier naturel réduit à chaque appel, appliquer identifier cas de base, relation de récurrence et variant décroissant, annoncer 120 avec cas de base factorielle(0)=1, puis vérifier EF4.
-- Corrigé exercice 5 : identifier entier naturel réduit à chaque appel, appliquer identifier cas de base, relation de récurrence et variant décroissant, annoncer 120 avec cas de base factorielle(0)=1, puis vérifier EF1.
-- Corrigé exercice 6 : identifier entier naturel réduit à chaque appel, appliquer identifier cas de base, relation de récurrence et variant décroissant, annoncer 120 avec cas de base factorielle(0)=1, puis vérifier EF2.
-- Corrigé exercice 7 : identifier entier naturel réduit à chaque appel, appliquer identifier cas de base, relation de récurrence et variant décroissant, annoncer 120 avec cas de base factorielle(0)=1, puis vérifier EF3.
-- Corrigé exercice 8 : identifier entier naturel réduit à chaque appel, appliquer identifier cas de base, relation de récurrence et variant décroissant, annoncer 120 avec cas de base factorielle(0)=1, puis vérifier EF4.
-
+- Corrigé exercice 1 : méthode : identifier `4!`, appliquer la méthode « appliquer `n * fact(n-1)` jusqu’au cas `0!` », puis écrire `24` ; résultat : `24` ; contrôle : faire apparaître le contrôle « entier négatif refusé ».
+- Corrigé exercice 2 : méthode : expliciter chaque étape de séparer tête et reste avant de conclure par `8` ; résultat : `8` ; contrôle : rédiger la méthode avant le résultat.
+- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « reste vide » et valider `2` ; résultat : `2` ; contrôle : comparer avec le cas « reste vide ».
+- Corrigé exercice 4 : méthode : isoler l’erreur fréquente « Ne pas traiter l’entrée vide. » puis reprendre la procédure correcte ; résultat : preuve de terminaison ; contrôle : corriger l’erreur « Ne pas traiter l’entrée vide. ».
+- Corrigé exercice 5 : méthode : identifier `4!`, appliquer la méthode « appliquer `n * fact(n-1)` jusqu’au cas `0!` », puis écrire `24` ; résultat : le comportement de factorielle est contrôlé ; contrôle : nommer la donnée minimale et la conclusion.
+- Corrigé exercice 6 : méthode : expliciter chaque étape de séparer tête et reste avant de conclure par `8` ; résultat : la méthode robuste est choisie et justifiée ; contrôle : identifier pourquoi « Faire un appel récursif qui ne rapproche pas du cas de base. » est une erreur.
+- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « reste vide » et valider `2` ; résultat : la justification reste valable sur le nouveau cas ; contrôle : inclure une étape calculable par un pair.
+- Corrigé exercice 8 : méthode : isoler l’erreur fréquente « Ne pas traiter l’entrée vide. » puis reprendre la procédure correcte ; résultat : l’erreur est localisée puis réparée ; contrôle : proposer une activité corrective inspirée de « Tester d’abord la liste vide ou `n = 0`. ».
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `120 avec cas de base factorielle(0)=1` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer identifier cas de base, relation de récurrence et variant décroissant dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : appel récursif sans diminution ou profondeur excessive.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Oublier le cas de base.
+- Erreur fréquente EF2 - Faire un appel récursif qui ne rapproche pas du cas de base.
+- Erreur fréquente EF3 - Confondre valeur retournée et affichage des appels.
+- Erreur fréquente EF4 - Ne pas traiter l’entrée vide.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `appel récursif sans diminution ou profondeur excessive` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Encadrer le cas de base avant d’écrire l’appel récursif.
+- Activité corrective EF2 : Tracer la valeur de l’argument à chaque appel.
+- Activité corrective EF3 : Dessiner la pile d’appels avec valeurs de retour.
+- Activité corrective EF4 : Tester d’abord la liste vide ou `n = 0`.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter `4!` avec une fiche méthode fournie.
+- Standard : traiter `[4, 1, 3]` en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « reste vide » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.
+## Banque de situations complémentaires
+- Situation complémentaire 1 : reprendre factorielle avec une donnée construite par un binôme.
+- Question orale 1 : expliquer pourquoi le cas limite « entier négatif refusé » change ou ne change pas la méthode.
+- Trace attendue 1 : une phrase de méthode, une ligne de calcul et une vérification indépendante.
+- Situation complémentaire 2 : reprendre somme de liste avec une donnée construite par un binôme.
+- Question orale 2 : expliquer pourquoi le cas limite « liste vide » change ou ne change pas la méthode.
+- Trace attendue 2 : une phrase de méthode, une ligne de calcul et une vérification indépendante.
+- Situation complémentaire 3 : reprendre longueur avec une donnée construite par un binôme.
+- Question orale 3 : expliquer pourquoi le cas limite « reste vide » change ou ne change pas la méthode.
+- Trace attendue 3 : une phrase de méthode, une ligne de calcul et une vérification indépendante.
+- Situation complémentaire 4 : reprendre terminaison avec une donnée construite par un binôme.
+- Question orale 4 : expliquer pourquoi le cas limite « appel avec même argument » change ou ne change pas la méthode.
+- Trace attendue 4 : une phrase de méthode, une ligne de calcul et une vérification indépendante.
+## Atelier de synthèse
+- Synthèse 1 : relier factorielle à une erreur fréquente et à une remédiation ciblée.
+- Synthèse 2 : relier somme de liste à une erreur fréquente et à une remédiation ciblée.
+- Synthèse 3 : relier longueur à une erreur fréquente et à une remédiation ciblée.
+- Synthèse 4 : relier terminaison à une erreur fréquente et à une remédiation ciblée.
+## Lexique actif
+- appel récursif : terme à employer dans une justification écrite de la séquence.
+- cas de base : terme à employer dans une justification écrite de la séquence.
+- terminaison : terme à employer dans une justification écrite de la séquence.
+- pile d’appels : terme à employer dans une justification écrite de la séquence.
 
-## Synthèse à retenir
-- Un document NSI utile relie toujours notion, capacité, méthode, résultat et contrôle.
-- La trace doit pouvoir être relue une semaine plus tard sans ajouter d’information orale.
-- La correction sert à comprendre l’erreur, pas seulement à vérifier une valeur finale.
-
-## Consolidation de fin de cours
-- Question de consolidation 1 : réécrire l’objectif O1 avec les mots de la situation-problème.
-- Question de consolidation 2 : associer chaque donnée de l’exemple à une étape de méthode.
-- Question de consolidation 3 : produire une vérification indépendante du résultat annoncé.
-- Question de consolidation 4 : nommer l’erreur fréquente la plus probable et sa remédiation.
-- Question de consolidation 5 : indiquer la capacité officielle mobilisée par la dernière étape.
-- Question de consolidation 6 : expliquer pourquoi le cas limite ne peut pas être ignoré.
-- Question de consolidation 7 : rédiger une phrase de synthèse utilisable dans la trace écrite.
-- Question de consolidation 8 : préparer une question pour le TD en conservant le même objectif.
-- Critère final : le cours peut être relu sans support oral supplémentaire.
+## Analyse de variantes disciplinaires
+- Variante T04-A : modifier la donnée du premier exemple de T04 - Cours - Récursivité et conserver exactement la même méthode.
+- Variante T04-B : changer le cas limite et expliquer quelle étape de contrôle devient obligatoire.
+- Variante T04-C : demander à un pair de retrouver l’erreur fréquente avant de lire la correction.
+- Variante T04-D : produire une trace écrite qui sépare définition, calcul et justification.
+- Variante T04-E : comparer deux solutions d’élèves et isoler celle qui cite la capacité officielle.
+- Variante T04-F : construire une donnée minimale qui force une décision de méthode.
+- Variante T04-G : transformer un exemple corrigé en question d’évaluation courte.
+- Variante T04-H : écrire un contre-exemple qui invalide une réponse seulement déclarative.
+- Variante T04-I : relier une erreur fréquente à une activité corrective précise.
+- Variante T04-J : rédiger un critère de réussite observable pour une copie réelle.
+- Variante T04-K : vérifier que le vocabulaire utilisé correspond au thème de la séquence.
+- Variante T04-L : préparer une question orale de trente secondes avec réponse vérifiable.
+- Variante T04-M : isoler la donnée, l’algorithme mental et le résultat final dans trois lignes.
+- Variante T04-N : expliquer ce que le TP apporte que le TD ne permet pas de tester.
+- Variante T04-O : compléter la trace écrite par une mise en garde liée au cas limite.
+- Variante T04-P : vérifier la cohérence entre exercice, corrigé, barème et remédiation.

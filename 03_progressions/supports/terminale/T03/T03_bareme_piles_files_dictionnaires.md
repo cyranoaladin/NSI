@@ -4,130 +4,115 @@ level: "terminale"
 sequence_id: "T03"
 document_type: "bareme"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_NSI/Formation TOULOUSE/BLOC4/TD EIL - TAD - 2019-2020.pdf"
-theme: "Structures linéaires"
-notion: "LIFO, FIFO, dictionnaire d’index"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
+theme: "Structures linéaires et tables associatives"
+notion: "pile, file, dictionnaire, complexité"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
     - "T-STRUCT-03A"
-    - "T-STRUCT-03B"
-    - "T-STRUCT-03C"
 ---
 
 
-# T03 - Bareme - Piles, files et dictionnaires
+# T03 - Barème - Piles, files et dictionnaires
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
 - T-STRUCT-03A
-- T-STRUCT-03B
-- T-STRUCT-03C
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à pile.
+- Distinguer donnée, méthode et conclusion dans le thème Structures linéaires et tables associatives.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- T03-S1 à T03-S6 : ce support est rattaché aux séances indiquées dans la progression.
+- T03-S1 à T03-S7 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-une application doit gérer un historique d’annulation et une file d’attente de requêtes. La tâche consiste à traiter LIFO, FIFO, dictionnaire d’index sans réponse intuitive non vérifiée.
+Un serveur journalise des tâches en attente et doit choisir entre pile, file et dictionnaire selon l’usage.
 
 ## Activité d’entrée
-1. Lire la situation : une application doit gérer un historique d’annulation et une file d’attente de requêtes.
-2. Isoler la donnée de départ : suite d’opérations sur collection linéaire.
-3. Prédire individuellement le résultat de l’exemple `empiler A, empiler B, dépiler`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : choisir LIFO ou FIFO selon l’ordre de sortie attendu.
-6. Contrôler avec le résultat de référence : B sort avant A pour une pile ; A sort avant B pour une file.
-7. Tester le cas limite suivant : dépiler ou défiler une structure vide.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
-
-## Exemple corrigé précis
-- Exemple support : `empiler A, empiler B, dépiler`.
-- Résultat support : `B sort avant A pour une pile ; A sort avant B pour une file`.
-- Le barème attribue des points à la méthode, au résultat, à la justification et au contrôle.
-
-## Exercices numérotés
-- Les quatre questions de l’évaluation sont découpées question par question.
+1. Simuler une pile sur trois opérations.
+2. Simuler une file sur trois clients.
+3. Utiliser un dictionnaire pour retrouver une tâche par identifiant.
+4. Comparer coût de recherche et d’accès direct.
 
 ### Barème question 1
-- Objectif : O1.
-- Capacité : T-STRUCT-03A.
-- Méthode correcte : 2 points.
-- Résultat correct : 1 point.
-- Justification rédigée : 1 point.
-- Contrôle du cas limite ou de EF1 : 1 point.
-- Retrait maximal : 1 point si le vocabulaire officiel est absent.
-
+- 1 point : identifier correctement pile et la donnée empiler A puis B, dépiler.
+- 1 point : appliquer la méthode « appliquer LIFO ».
+- 1 point : obtenir B sort en premier.
+- 1 point : contrôler le cas limite « pile vide » ou expliquer pourquoi il ne s’applique pas.
+- Retrait possible : confusion avec l’erreur fréquente EF1 - Inverser LIFO et FIFO.
 ### Barème question 2
-- Objectif : O2.
-- Capacité : T-STRUCT-03B.
-- Méthode correcte : 2 points.
-- Résultat correct : 1 point.
-- Justification rédigée : 1 point.
-- Contrôle du cas limite ou de EF2 : 1 point.
-- Retrait maximal : 1 point si le vocabulaire officiel est absent.
-
+- 1 point : identifier correctement file et la donnée enfiler A puis B, défiler.
+- 1 point : appliquer la méthode « appliquer FIFO ».
+- 1 point : obtenir A sort en premier.
+- 1 point : contrôler le cas limite « file vide » ou expliquer pourquoi il ne s’applique pas.
+- Retrait possible : confusion avec l’erreur fréquente EF2 - Retirer dans une structure vide sans test.
 ### Barème question 3
-- Objectif : O3.
-- Capacité : T-STRUCT-03C.
-- Méthode correcte : 2 points.
-- Résultat correct : 1 point.
-- Justification rédigée : 1 point.
-- Contrôle du cas limite ou de EF3 : 1 point.
-- Retrait maximal : 1 point si le vocabulaire officiel est absent.
-
+- 1 point : identifier correctement dictionnaire et la donnée `{"id7": "ok"}`.
+- 1 point : appliquer la méthode « tester la clé puis accéder ».
+- 1 point : obtenir `ok`.
+- 1 point : contrôler le cas limite « clé absente » ou expliquer pourquoi il ne s’applique pas.
+- Retrait possible : confusion avec l’erreur fréquente EF3 - Parcourir tout un dictionnaire pour une clé connue.
 ### Barème question 4
-- Objectif : O4.
-- Capacité : T-STRUCT-03A.
-- Méthode correcte : 2 points.
-- Résultat correct : 1 point.
-- Justification rédigée : 1 point.
-- Contrôle du cas limite ou de EF4 : 1 point.
-- Retrait maximal : 1 point si le vocabulaire officiel est absent.
+- 1 point : identifier correctement complexité et la donnée accès par identifiant.
+- 1 point : appliquer la méthode « choisir dictionnaire plutôt que parcours linéaire ».
+- 1 point : obtenir accès attendu constant.
+- 1 point : contrôler le cas limite « collision abstraite hors programme » ou expliquer pourquoi il ne s’applique pas.
+- Retrait possible : confusion avec l’erreur fréquente EF4 - Confondre clé et valeur.
+## Exercices numérotés
+- Exercice 1 : résoudre pile avec empiler A puis B, dépiler ; attendu : B sort en premier.
+- Exercice 2 : expliquer file à partir de enfiler A puis B, défiler ; attendu : A sort en premier.
+- Exercice 3 : comparer dictionnaire avec `{"id7": "ok"}` ; attendu : `ok`.
+- Exercice 4 : corriger complexité pour accès par identifiant ; attendu : accès attendu constant.
+- Exercice 5 : tester un cas limite lié à pile vide ; attendu : le comportement de pile est contrôlé.
+- Exercice 6 : classer deux méthodes possibles pour file ; attendu : la méthode robuste est choisie et justifiée.
+- Exercice 7 : justifier un transfert qui utilise dictionnaire avec une donnée nouvelle ; attendu : la justification reste valable sur le nouveau cas.
+- Exercice 8 : étendre un énoncé volontairement erroné sur complexité ; attendu : l’erreur est localisée puis réparée.
 
-## Corrigé
-- La correction détaillée se trouve dans le corrigé professeur, mais le barème rappelle les critères observables.
-- Corrigé question 1 : méthode choisir LIFO ou FIFO selon l’ordre de sortie attendu, résultat `B sort avant A pour une pile ; A sort avant B pour une file`, contrôle EF1.
-- Corrigé question 2 : méthode choisir LIFO ou FIFO selon l’ordre de sortie attendu, résultat `B sort avant A pour une pile ; A sort avant B pour une file`, contrôle EF2.
-- Corrigé question 3 : méthode choisir LIFO ou FIFO selon l’ordre de sortie attendu, résultat `B sort avant A pour une pile ; A sort avant B pour une file`, contrôle EF3.
-- Corrigé question 4 : méthode choisir LIFO ou FIFO selon l’ordre de sortie attendu, résultat `B sort avant A pour une pile ; A sort avant B pour une file`, contrôle EF4.
+## Corrigés complets des exercices du cours
+- Corrigé exercice 1 : méthode : identifier empiler A puis B, dépiler, appliquer la méthode « appliquer LIFO », puis écrire B sort en premier ; résultat : B sort en premier ; contrôle : faire apparaître le contrôle « pile vide ».
+- Corrigé exercice 2 : méthode : expliciter chaque étape de appliquer FIFO avant de conclure par A sort en premier ; résultat : A sort en premier ; contrôle : rédiger la méthode avant le résultat.
+- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « clé absente » et valider `ok` ; résultat : `ok` ; contrôle : comparer avec le cas « clé absente ».
+- Corrigé exercice 4 : méthode : isoler l’erreur fréquente « Confondre clé et valeur. » puis reprendre la procédure correcte ; résultat : accès attendu constant ; contrôle : corriger l’erreur « Confondre clé et valeur. ».
+- Corrigé exercice 5 : méthode : identifier empiler A puis B, dépiler, appliquer la méthode « appliquer LIFO », puis écrire B sort en premier ; résultat : le comportement de pile est contrôlé ; contrôle : nommer la donnée minimale et la conclusion.
+- Corrigé exercice 6 : méthode : expliciter chaque étape de appliquer FIFO avant de conclure par A sort en premier ; résultat : la méthode robuste est choisie et justifiée ; contrôle : identifier pourquoi « Retirer dans une structure vide sans test. » est une erreur.
+- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « clé absente » et valider `ok` ; résultat : la justification reste valable sur le nouveau cas ; contrôle : inclure une étape calculable par un pair.
+- Corrigé exercice 8 : méthode : isoler l’erreur fréquente « Confondre clé et valeur. » puis reprendre la procédure correcte ; résultat : l’erreur est localisée puis réparée ; contrôle : proposer une activité corrective inspirée de « Surligner clés et valeurs de couleurs différentes. ».
 
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `B sort avant A pour une pile ; A sort avant B pour une file` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer choisir LIFO ou FIFO selon l’ordre de sortie attendu dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : dépiler ou défiler une structure vide.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Inverser LIFO et FIFO.
+- Erreur fréquente EF2 - Retirer dans une structure vide sans test.
+- Erreur fréquente EF3 - Parcourir tout un dictionnaire pour une clé connue.
+- Erreur fréquente EF4 - Confondre clé et valeur.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `dépiler ou défiler une structure vide` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Jouer les opérations avec des cartes empilées puis alignées.
+- Activité corrective EF2 : Écrire le test `est_vide` avant chaque retrait.
+- Activité corrective EF3 : Remplacer une boucle de recherche par un accès par clé.
+- Activité corrective EF4 : Surligner clés et valeurs de couleurs différentes.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter empiler A puis B, dépiler avec une fiche méthode fournie.
+- Standard : traiter enfiler A puis B, défiler en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « clé absente » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
-
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.

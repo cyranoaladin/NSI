@@ -1,150 +1,114 @@
 ---
-title: "P00 - Version Amenagee - Diagnostic Python et carnet de bord"
+title: "P00 - Version amenagee - Diagnostic Python"
 level: "premiere"
 sequence_id: "P00"
 document_type: "version_amenagee"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/1_1ères NSI/1_Rentrée/2_Introduction_NSI.pdf"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
 theme: "Rentrée et méthode"
-notion: "affectation, expression, trace, test"
+notion: "affectation, type, condition, trace d’exécution"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
-    - "P-HIST-01"
     - "P-LANG-01"
 ---
 
 
-# P00 - Version Amenagee - Diagnostic Python et carnet de bord
+# P00 - Version aménagée - Diagnostic Python
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
-- P-HIST-01
 - P-LANG-01
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à affectation.
+- Distinguer donnée, méthode et conclusion dans le thème Rentrée et méthode.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- P00-S1 à P00-S4 : ce support est rattaché aux séances indiquées dans la progression.
+- P00-S1 à P00-S4 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-une classe de Première démarre avec des habitudes Python inégales et doit produire une trace vérifiable. La tâche consiste à traiter affectation, expression, trace, test sans réponse intuitive non vérifiée.
+Un groupe reçoit quatre fragments Python issus de copies anonymisées et doit prédire les valeurs affichées avant d’exécuter le programme.
 
 ## Activité d’entrée
-1. Lire la situation : une classe de Première démarre avec des habitudes Python inégales et doit produire une trace vérifiable.
-2. Isoler la donnée de départ : variable x initialisée à 3 puis réaffectée.
-3. Prédire individuellement le résultat de l’exemple `x = 3 ; x = x + 2 ; print(x)`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : suivre l’état de la variable après chaque affectation.
-6. Contrôler avec le résultat de référence : 5.
-7. Tester le cas limite suivant : réaffectation avec zéro ou valeur négative.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+1. Repérer les variables modifiées dans `x = 4 ; x = x + 3 ; print(x)`.
+2. Séparer valeur stockée, expression évaluée et affichage produit.
+3. Comparer une prédiction papier avec une exécution Python.
+4. Identifier la première instruction qui explique une divergence.
 
 ## Version aménagée - Énoncé élève
-- Situation : une classe de Première démarre avec des habitudes Python inégales et doit produire une trace vérifiable.
-- Donnée fournie : variable x initialisée à 3 puis réaffectée.
-- Exemple de départ : `x = 3 ; x = x + 2 ; print(x)`.
-- Les étapes sont séparées pour réduire la charge de lecture.
-
-## Aide intégrée
-- Aide 1 : commence par recopier la donnée utile, ici variable x initialisée à 3 puis réaffectée.
-- Aide 2 : applique seulement cette méthode : suivre l’état de la variable après chaque affectation.
-- Aide 3 : compare avec le résultat de référence `5`.
-- Aide 4 : vérifie le cas limite `réaffectation avec zéro ou valeur négative`.
-
-## Exemple corrigé précis
-- Exemple guidé : `x = 3 ; x = x + 2 ; print(x)`.
-- Correction guidée : suivre l’état de la variable après chaque affectation, donc `5`.
-
+### Question aménagée 1
+- Énoncé élève : traiter trace d’affectation avec la donnée `x = 4 ; x = x + 3 ; print(x)`.
+- Aide intégrée : commencer par dresser une table instruction, expression calculée, nouvelle valeur.
+- Espace de réponse : méthode : ______ ; résultat : ______ ; contrôle : ______.
+- Point de vigilance : Lire le signe égal comme une égalité mathématique permanente.
+### Question aménagée 2
+- Énoncé élève : traiter concaténation de chaînes avec la donnée `mot = "NS" ; mot = mot + "I"`.
+- Aide intégrée : commencer par identifier le type chaîne puis appliquer `+` comme concaténation.
+- Espace de réponse : méthode : ______ ; résultat : ______ ; contrôle : ______.
+- Point de vigilance : Confondre affichage et valeur retournée par une fonction.
+### Question aménagée 3
+- Énoncé élève : traiter test conditionnel avec la donnée `n = 6 ; n % 2 == 0`.
+- Aide intégrée : commencer par calculer le reste puis évaluer le booléen.
+- Espace de réponse : méthode : ______ ; résultat : ______ ; contrôle : ______.
+- Point de vigilance : Oublier de tester la valeur zéro dans une fonction numérique.
+### Question aménagée 4
+- Énoncé élève : traiter fonction courte avec la donnée `def f(a): return 2*a + 1` avec `a = 5`.
+- Aide intégrée : commencer par substituer l’argument et distinguer retour et affichage.
+- Espace de réponse : méthode : ______ ; résultat : ______ ; contrôle : ______.
+- Point de vigilance : Donner une sortie sans trace intermédiaire.
 ## Exercices numérotés
-- Exercice 1 : compléter la phrase guidée pour l’objectif O1.
-- Exercice 2 : compléter la phrase guidée pour l’objectif O2.
-- Exercice 3 : compléter la phrase guidée pour l’objectif O3.
-- Exercice 4 : compléter la phrase guidée pour l’objectif O4.
-- Exercice 5 : compléter la phrase guidée pour l’objectif O1.
-- Exercice 6 : compléter la phrase guidée pour l’objectif O2.
-- Exercice 7 : compléter la phrase guidée pour l’objectif O3.
-- Exercice 8 : compléter la phrase guidée pour l’objectif O4.
-
-## Espace de réponse
-- Réponse exercice 1 - Donnée : ____________________.
-- Réponse exercice 1 - Méthode : ____________________.
-- Réponse exercice 1 - Résultat : ____________________.
-- Réponse exercice 1 - Contrôle : ____________________.
-- Réponse exercice 2 - Donnée : ____________________.
-- Réponse exercice 2 - Méthode : ____________________.
-- Réponse exercice 2 - Résultat : ____________________.
-- Réponse exercice 2 - Contrôle : ____________________.
-- Réponse exercice 3 - Donnée : ____________________.
-- Réponse exercice 3 - Méthode : ____________________.
-- Réponse exercice 3 - Résultat : ____________________.
-- Réponse exercice 3 - Contrôle : ____________________.
-- Réponse exercice 4 - Donnée : ____________________.
-- Réponse exercice 4 - Méthode : ____________________.
-- Réponse exercice 4 - Résultat : ____________________.
-- Réponse exercice 4 - Contrôle : ____________________.
-- Réponse exercice 5 - Donnée : ____________________.
-- Réponse exercice 5 - Méthode : ____________________.
-- Réponse exercice 5 - Résultat : ____________________.
-- Réponse exercice 5 - Contrôle : ____________________.
-- Réponse exercice 6 - Donnée : ____________________.
-- Réponse exercice 6 - Méthode : ____________________.
-- Réponse exercice 6 - Résultat : ____________________.
-- Réponse exercice 6 - Contrôle : ____________________.
-- Réponse exercice 7 - Donnée : ____________________.
-- Réponse exercice 7 - Méthode : ____________________.
-- Réponse exercice 7 - Résultat : ____________________.
-- Réponse exercice 7 - Contrôle : ____________________.
-- Réponse exercice 8 - Donnée : ____________________.
-- Réponse exercice 8 - Méthode : ____________________.
-- Réponse exercice 8 - Résultat : ____________________.
-- Réponse exercice 8 - Contrôle : ____________________.
-
-## Corrigé
-- Corrigé exercice 1 : donnée `variable x initialisée à 3 puis réaffectée`, méthode `suivre l’état de la variable après chaque affectation`, résultat `5`, contrôle EF1.
-- Corrigé exercice 2 : donnée `variable x initialisée à 3 puis réaffectée`, méthode `suivre l’état de la variable après chaque affectation`, résultat `5`, contrôle EF2.
-- Corrigé exercice 3 : donnée `variable x initialisée à 3 puis réaffectée`, méthode `suivre l’état de la variable après chaque affectation`, résultat `5`, contrôle EF3.
-- Corrigé exercice 4 : donnée `variable x initialisée à 3 puis réaffectée`, méthode `suivre l’état de la variable après chaque affectation`, résultat `5`, contrôle EF4.
-- Corrigé exercice 5 : donnée `variable x initialisée à 3 puis réaffectée`, méthode `suivre l’état de la variable après chaque affectation`, résultat `5`, contrôle EF1.
-- Corrigé exercice 6 : donnée `variable x initialisée à 3 puis réaffectée`, méthode `suivre l’état de la variable après chaque affectation`, résultat `5`, contrôle EF2.
-- Corrigé exercice 7 : donnée `variable x initialisée à 3 puis réaffectée`, méthode `suivre l’état de la variable après chaque affectation`, résultat `5`, contrôle EF3.
-- Corrigé exercice 8 : donnée `variable x initialisée à 3 puis réaffectée`, méthode `suivre l’état de la variable après chaque affectation`, résultat `5`, contrôle EF4.
+- Exercice 1 : résoudre trace d’affectation avec `x = 4 ; x = x + 3 ; print(x)` avec aide possible sur la méthode.
+- Exercice 2 : expliquer concaténation de chaînes à partir de `mot = "NS" ; mot = mot + "I"` avec aide possible sur la méthode.
+- Exercice 3 : comparer test conditionnel avec `n = 6 ; n % 2 == 0` avec aide possible sur la méthode.
+- Exercice 4 : corriger fonction courte pour `def f(a): return 2*a + 1` avec `a = 5` avec aide possible sur la méthode.
+- Exercice 5 : tester un cas limite lié à variable réaffectée deux fois avec aide possible sur la méthode.
+- Exercice 6 : classer deux méthodes possibles pour concaténation de chaînes avec aide possible sur la méthode.
+- Exercice 7 : justifier un transfert qui utilise test conditionnel avec une donnée nouvelle avec aide possible sur la méthode.
+- Exercice 8 : étendre un énoncé volontairement erroné sur fonction courte avec aide possible sur la méthode.
+## Corrigés complets des exercices du cours
+- Corrigé exercice 1 : méthode : identifier `x = 4 ; x = x + 3 ; print(x)`, appliquer la méthode « dresser une table instruction, expression calculée, nouvelle valeur », puis écrire `7` affiché ; résultat : `7` affiché ; contrôle : faire apparaître le contrôle « variable réaffectée deux fois ».
+- Corrigé exercice 2 : méthode : expliciter chaque étape de identifier le type chaîne puis appliquer `+` comme concaténation avant de conclure par `"NSI"` ; résultat : `"NSI"` ; contrôle : rédiger la méthode avant le résultat.
+- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « reste nul » et valider `True` ; résultat : `True` ; contrôle : comparer avec le cas « reste nul ».
+- Corrigé exercice 4 : méthode : isoler l’erreur fréquente « Donner une sortie sans trace intermédiaire. » puis reprendre la procédure correcte ; résultat : `11` retourné ; contrôle : corriger l’erreur « Donner une sortie sans trace intermédiaire. ».
+- Corrigé exercice 5 : méthode : identifier `x = 4 ; x = x + 3 ; print(x)`, appliquer la méthode « dresser une table instruction, expression calculée, nouvelle valeur », puis écrire `7` affiché ; résultat : le comportement de trace d’affectation est contrôlé ; contrôle : nommer la donnée minimale et la conclusion.
+- Corrigé exercice 6 : méthode : expliciter chaque étape de identifier le type chaîne puis appliquer `+` comme concaténation avant de conclure par `"NSI"` ; résultat : la méthode robuste est choisie et justifiée ; contrôle : identifier pourquoi « Confondre affichage et valeur retournée par une fonction. » est une erreur.
+- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « reste nul » et valider `True` ; résultat : la justification reste valable sur le nouveau cas ; contrôle : inclure une étape calculable par un pair.
+- Corrigé exercice 8 : méthode : isoler l’erreur fréquente « Donner une sortie sans trace intermédiaire. » puis reprendre la procédure correcte ; résultat : l’erreur est localisée puis réparée ; contrôle : proposer une activité corrective inspirée de « Écrire une justification en deux phrases : état avant, état après. ».
 
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `5` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer suivre l’état de la variable après chaque affectation dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : réaffectation avec zéro ou valeur négative.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Lire le signe égal comme une égalité mathématique permanente.
+- Erreur fréquente EF2 - Confondre affichage et valeur retournée par une fonction.
+- Erreur fréquente EF3 - Oublier de tester la valeur zéro dans une fonction numérique.
+- Erreur fréquente EF4 - Donner une sortie sans trace intermédiaire.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `réaffectation avec zéro ou valeur négative` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Construire un tableau mémoire avec une ligne par instruction.
+- Activité corrective EF2 : Colorer `print`, `return` et expression évaluée dans trois colonnes.
+- Activité corrective EF3 : Ajouter les tests `0`, `1` et `-1` avant les cas ordinaires.
+- Activité corrective EF4 : Écrire une justification en deux phrases : état avant, état après.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter `x = 4 ; x = x + 3 ; print(x)` avec une fiche méthode fournie.
+- Standard : traiter `mot = "NS" ; mot = mot + "I"` en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « reste nul » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
-
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.

@@ -1,131 +1,128 @@
 ---
-title: "T00 - Evaluation - Diagnostic Terminale et tests"
+title: "T00 - Evaluation - Diagnostic tests"
 level: "terminale"
 sequence_id: "T00"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_Tles NSI/0_Ressources/liens_ressources.odt"
-theme: "Reprise Python et qualité"
-notion: "tests, modularité, invariants simples"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
+theme: "Reprise Python et tests"
+notion: "fonction, assertion, cas limite, spécification"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
-    - "T-HIST-01A"
-    - "T-HIST-01B"
     - "T-LANG-03A"
-    - "T-LANG-05"
 ---
 
 
-# T00 - Evaluation - Diagnostic Terminale et tests
+# T00 - Évaluation courte - Diagnostic tests
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
-- T-HIST-01A
-- T-HIST-01B
 - T-LANG-03A
-- T-LANG-05
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à fonction.
+- Distinguer donnée, méthode et conclusion dans le thème Reprise Python et tests.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- T00-S1 à T00-S4 : ce support est rattaché aux séances indiquées dans la progression.
+- T00-S1 à T00-S4 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-un code repris de Première donne parfois le bon résultat mais ne possède aucun test explicite. La tâche consiste à traiter tests, modularité, invariants simples sans réponse intuitive non vérifiée.
+Une équipe reprend une bibliothèque Python de Première et doit écrire des tests avant de modifier le code.
 
 ## Activité d’entrée
-1. Lire la situation : un code repris de Première donne parfois le bon résultat mais ne possède aucun test explicite.
-2. Isoler la donnée de départ : liste de valeurs et contrat de fonction.
-3. Prédire individuellement le résultat de l’exemple `fonction maximum([3, 8, 2])`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-6. Contrôler avec le résultat de référence : 8 avec test nominal, test limite et test d’erreur.
-7. Tester le cas limite suivant : liste vide ou mutation inattendue.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+1. Écrire le résultat attendu pour une fonction `maximum`.
+2. Choisir un cas nominal, un cas limite et un cas invalide.
+3. Distinguer spécification et implémentation.
+4. Lire un message d’assertion échouée.
 
-## Exemple corrigé précis
-- Exemple d’entraînement : `fonction maximum([3, 8, 2])` donne `8 avec test nominal, test limite et test d’erreur` avec la méthode isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-
-## Exercices numérotés
-- Les questions d’évaluation ci-dessous remplacent les exercices longs par des tâches courtes et notées.
-
+## Questions
 ### Question 1
 - Objectif évalué : O1.
-- Capacité officielle : T-HIST-01A.
-- Énoncé : traiter `fonction maximum([3, 8, 2])` ou une variante fournie en appliquant isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-- Réponse attendue : résultat contrôlé `8 avec test nominal, test limite et test d’erreur` et justification courte.
-- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF1.
-
+- Capacité officielle : T-LANG-03A.
+- Énoncé : résoudre maximum nominal avec `[3, 7, 2]`.
+- Réponse attendue : `7`.
+- Critère de réussite : méthode visible, résultat correct et contrôle « liste d’un élément ».
 ### Question 2
 - Objectif évalué : O2.
-- Capacité officielle : T-HIST-01B.
-- Énoncé : traiter `fonction maximum([3, 8, 2])` ou une variante fournie en appliquant isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-- Réponse attendue : résultat contrôlé `8 avec test nominal, test limite et test d’erreur` et justification courte.
-- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF2.
-
+- Capacité officielle : T-LANG-03A.
+- Énoncé : expliquer liste vide à partir de `[]`.
+- Réponse attendue : exception documentée.
+- Critère de réussite : méthode visible, résultat correct et contrôle « aucune valeur initiale ».
 ### Question 3
 - Objectif évalué : O3.
 - Capacité officielle : T-LANG-03A.
-- Énoncé : traiter `fonction maximum([3, 8, 2])` ou une variante fournie en appliquant isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-- Réponse attendue : résultat contrôlé `8 avec test nominal, test limite et test d’erreur` et justification courte.
-- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF3.
-
+- Énoncé : comparer assertion avec `assert maximum([1]) == 1`.
+- Réponse attendue : test passant.
+- Critère de réussite : méthode visible, résultat correct et contrôle « message utile en cas d’échec ».
 ### Question 4
 - Objectif évalué : O4.
-- Capacité officielle : T-LANG-05.
-- Énoncé : traiter `fonction maximum([3, 8, 2])` ou une variante fournie en appliquant isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-- Réponse attendue : résultat contrôlé `8 avec test nominal, test limite et test d’erreur` et justification courte.
-- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF4.
-
+- Capacité officielle : T-LANG-03A.
+- Énoncé : corriger entrée invalide pour `[1, "x"]`.
+- Réponse attendue : erreur contrôlée.
+- Critère de réussite : méthode visible, résultat correct et contrôle « comparaison impossible ».
 ## Barème
-- Total : 20 points.
-- Question 1 : 5 points.
-- Question 2 : 5 points.
-- Question 3 : 5 points.
-- Question 4 : 5 points.
-
-## Corrigé
-- Corrigé question 1 : appliquer isoler la fonction, écrire le contrat, tester cas nominal et cas limite, obtenir `8 avec test nominal, test limite et test d’erreur` sur le cas de référence, puis citer EF1.
-- Corrigé question 2 : appliquer isoler la fonction, écrire le contrat, tester cas nominal et cas limite, obtenir `8 avec test nominal, test limite et test d’erreur` sur le cas de référence, puis citer EF2.
-- Corrigé question 3 : appliquer isoler la fonction, écrire le contrat, tester cas nominal et cas limite, obtenir `8 avec test nominal, test limite et test d’erreur` sur le cas de référence, puis citer EF3.
-- Corrigé question 4 : appliquer isoler la fonction, écrire le contrat, tester cas nominal et cas limite, obtenir `8 avec test nominal, test limite et test d’erreur` sur le cas de référence, puis citer EF4.
-
+- Question 1 : 2 points méthode, 1 point résultat, 1 point justification liée à liste d’un élément.
+- Question 2 : 2 points méthode, 1 point résultat, 1 point justification liée à aucune valeur initiale.
+- Question 3 : 2 points méthode, 1 point résultat, 1 point justification liée à message utile en cas d’échec.
+- Question 4 : 2 points méthode, 1 point résultat, 1 point justification liée à comparaison impossible.
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `8 avec test nominal, test limite et test d’erreur` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer isoler la fonction, écrire le contrat, tester cas nominal et cas limite dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : liste vide ou mutation inattendue.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Tester seulement le cas donné en exemple.
+- Erreur fréquente EF2 - Écrire un test qui reproduit le code au lieu de la spécification.
+- Erreur fréquente EF3 - Oublier le cas vide.
+- Erreur fréquente EF4 - Ne pas lire le message d’échec.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `liste vide ou mutation inattendue` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Construire un tableau cas nominal, limite, invalide.
+- Activité corrective EF2 : Formuler le résultat attendu en français avant le code du test.
+- Activité corrective EF3 : Ajouter systématiquement une entrée minimale.
+- Activité corrective EF4 : Réécrire le message d’échec comme diagnostic.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter `[3, 7, 2]` avec une fiche méthode fournie.
+- Standard : traiter `[]` en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « message utile en cas d’échec » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.
 
+## Exercices numérotés
+- Exercice 1 : reprendre question 1 en explicitant donnée, méthode, résultat et contrôle pour T00.
+- Exercice 2 : reprendre question 2 en explicitant donnée, méthode, résultat et contrôle pour T00.
+- Exercice 3 : reprendre question 3 en explicitant donnée, méthode, résultat et contrôle pour T00.
+- Exercice 4 : reprendre question 4 en explicitant donnée, méthode, résultat et contrôle pour T00.
+
+## Corrigé
+### Corrigé question 1
+- Résultat attendu : `7`.
+- Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 1.
+- Critère de validation : méthode visible, résultat correct et contrôle « liste d’un élément ».
+### Corrigé question 2
+- Résultat attendu : exception documentée.
+- Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 2.
+- Critère de validation : méthode visible, résultat correct et contrôle « aucune valeur initiale ».
+### Corrigé question 3
+- Résultat attendu : test passant.
+- Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 3.
+- Critère de validation : méthode visible, résultat correct et contrôle « message utile en cas d’échec ».
+### Corrigé question 4
+- Résultat attendu : erreur contrôlée.
+- Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
+- Critère de validation : méthode visible, résultat correct et contrôle « comparaison impossible ».

@@ -1,14 +1,11 @@
-"""Starter TP T01 - Interfaces de structures abstraites."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-
 def scenario_structure(operations):
-    """Retourne une synthèse contrôlable pour le TP T01."""
     if operations is None:
-        raise ValueError("entrée absente")
-    return {"entree": operations, "controle": "interface séparée de la représentation interne", "cas_limite": "confondre interface et liste Python concrète"}
-
+        raise ValueError("operations absentes")
+    return []
 
 if __name__ == "__main__":
-    print(scenario_structure([("ajouter", 4), ("retirer", None)]))
+    print(scenario_structure([("ajouter", 4), ("ajouter", 7), ("retirer", None)]))

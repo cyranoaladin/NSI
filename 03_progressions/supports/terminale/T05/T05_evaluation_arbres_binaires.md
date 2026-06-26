@@ -1,135 +1,128 @@
 ---
-title: "T05 - Evaluation - Arbres binaires et parcours"
+title: "T05 - Evaluation - Arbres binaires"
 level: "terminale"
 sequence_id: "T05"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_NSI/Formation TOULOUSE/BLOC4/Polycopié_v2.pdf"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
 theme: "Arbres et algorithmes"
-notion: "nœud, parcours, recherche, complexité"
+notion: "arbre binaire, racine, feuille, parcours"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
     - "T-STRUCT-04A"
-    - "T-STRUCT-04B"
-    - "T-ALGO-01A"
-    - "T-ALGO-01B"
-    - "T-ALGO-01C"
-    - "T-ALGO-01D"
 ---
 
 
-# T05 - Evaluation - Arbres binaires et parcours
+# T05 - Évaluation courte - Arbres binaires
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
 - T-STRUCT-04A
-- T-STRUCT-04B
-- T-ALGO-01A
-- T-ALGO-01B
-- T-ALGO-01C
-- T-ALGO-01D
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à arbre binaire.
+- Distinguer donnée, méthode et conclusion dans le thème Arbres et algorithmes.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- T05-S1 à T05-S7 : ce support est rattaché aux séances indiquées dans la progression.
+- T05-S1 à T05-S7 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-une collection hiérarchique doit être parcourue et interrogée sans la transformer en liste plate. La tâche consiste à traiter nœud, parcours, recherche, complexité sans réponse intuitive non vérifiée.
+Une expression arithmétique est représentée par un arbre dont les feuilles sont des valeurs et les nœuds internes des opérateurs.
 
 ## Activité d’entrée
-1. Lire la situation : une collection hiérarchique doit être parcourue et interrogée sans la transformer en liste plate.
-2. Isoler la donnée de départ : nœud racine et sous-arbres gauche/droit.
-3. Prédire individuellement le résultat de l’exemple `arbre 4 avec fils 2 et 7`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : raisonner récursivement sur arbre vide puis racine puis sous-arbres.
-6. Contrôler avec le résultat de référence : parcours infixe 2, 4, 7.
-7. Tester le cas limite suivant : arbre vide ou arbre très déséquilibré.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+1. Repérer racine, fils gauche et fils droit.
+2. Calculer la hauteur d’un arbre réduit à une feuille.
+3. Lister un parcours préfixe.
+4. Évaluer une expression simple.
 
-## Exemple corrigé précis
-- Exemple d’entraînement : `arbre 4 avec fils 2 et 7` donne `parcours infixe 2, 4, 7` avec la méthode raisonner récursivement sur arbre vide puis racine puis sous-arbres.
-
-## Exercices numérotés
-- Les questions d’évaluation ci-dessous remplacent les exercices longs par des tâches courtes et notées.
-
+## Questions
 ### Question 1
 - Objectif évalué : O1.
 - Capacité officielle : T-STRUCT-04A.
-- Énoncé : traiter `arbre 4 avec fils 2 et 7` ou une variante fournie en appliquant raisonner récursivement sur arbre vide puis racine puis sous-arbres.
-- Réponse attendue : résultat contrôlé `parcours infixe 2, 4, 7` et justification courte.
-- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF1.
-
+- Énoncé : résoudre arbre feuille avec `7`.
+- Réponse attendue : hauteur 0.
+- Critère de réussite : méthode visible, résultat correct et contrôle « arbre vide ».
 ### Question 2
 - Objectif évalué : O2.
-- Capacité officielle : T-STRUCT-04B.
-- Énoncé : traiter `arbre 4 avec fils 2 et 7` ou une variante fournie en appliquant raisonner récursivement sur arbre vide puis racine puis sous-arbres.
-- Réponse attendue : résultat contrôlé `parcours infixe 2, 4, 7` et justification courte.
-- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF2.
-
+- Capacité officielle : T-STRUCT-04A.
+- Énoncé : expliquer hauteur à partir de racine avec deux feuilles.
+- Réponse attendue : hauteur 1.
+- Critère de réussite : méthode visible, résultat correct et contrôle « un seul fils ».
 ### Question 3
 - Objectif évalué : O3.
-- Capacité officielle : T-ALGO-01A.
-- Énoncé : traiter `arbre 4 avec fils 2 et 7` ou une variante fournie en appliquant raisonner récursivement sur arbre vide puis racine puis sous-arbres.
-- Réponse attendue : résultat contrôlé `parcours infixe 2, 4, 7` et justification courte.
-- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF3.
-
+- Capacité officielle : T-STRUCT-04A.
+- Énoncé : comparer parcours préfixe avec `+ 2 3`.
+- Réponse attendue : `+, 2, 3`.
+- Critère de réussite : méthode visible, résultat correct et contrôle « nœud feuille ».
 ### Question 4
 - Objectif évalué : O4.
-- Capacité officielle : T-ALGO-01B.
-- Énoncé : traiter `arbre 4 avec fils 2 et 7` ou une variante fournie en appliquant raisonner récursivement sur arbre vide puis racine puis sous-arbres.
-- Réponse attendue : résultat contrôlé `parcours infixe 2, 4, 7` et justification courte.
-- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF4.
-
+- Capacité officielle : T-STRUCT-04A.
+- Énoncé : corriger évaluation pour `(2 + 3) * 4`.
+- Réponse attendue : `20`.
+- Critère de réussite : méthode visible, résultat correct et contrôle « division par zéro si opérateur `/` ».
 ## Barème
-- Total : 20 points.
-- Question 1 : 5 points.
-- Question 2 : 5 points.
-- Question 3 : 5 points.
-- Question 4 : 5 points.
-
-## Corrigé
-- Corrigé question 1 : appliquer raisonner récursivement sur arbre vide puis racine puis sous-arbres, obtenir `parcours infixe 2, 4, 7` sur le cas de référence, puis citer EF1.
-- Corrigé question 2 : appliquer raisonner récursivement sur arbre vide puis racine puis sous-arbres, obtenir `parcours infixe 2, 4, 7` sur le cas de référence, puis citer EF2.
-- Corrigé question 3 : appliquer raisonner récursivement sur arbre vide puis racine puis sous-arbres, obtenir `parcours infixe 2, 4, 7` sur le cas de référence, puis citer EF3.
-- Corrigé question 4 : appliquer raisonner récursivement sur arbre vide puis racine puis sous-arbres, obtenir `parcours infixe 2, 4, 7` sur le cas de référence, puis citer EF4.
-
+- Question 1 : 2 points méthode, 1 point résultat, 1 point justification liée à arbre vide.
+- Question 2 : 2 points méthode, 1 point résultat, 1 point justification liée à un seul fils.
+- Question 3 : 2 points méthode, 1 point résultat, 1 point justification liée à nœud feuille.
+- Question 4 : 2 points méthode, 1 point résultat, 1 point justification liée à division par zéro si opérateur `/`.
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `parcours infixe 2, 4, 7` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer raisonner récursivement sur arbre vide puis racine puis sous-arbres dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : arbre vide ou arbre très déséquilibré.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Confondre hauteur et nombre de nœuds.
+- Erreur fréquente EF2 - Oublier le cas arbre vide.
+- Erreur fréquente EF3 - Mélanger parcours préfixe et infixe.
+- Erreur fréquente EF4 - Évaluer un opérateur avant ses opérandes.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `arbre vide ou arbre très déséquilibré` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Calculer séparément hauteur gauche et droite.
+- Activité corrective EF2 : Décider une convention pour l’arbre vide puis l’appliquer partout.
+- Activité corrective EF3 : Écrire l’ordre de visite au-dessus de chaque nœud.
+- Activité corrective EF4 : Remonter les valeurs depuis les feuilles vers la racine.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter `7` avec une fiche méthode fournie.
+- Standard : traiter racine avec deux feuilles en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « nœud feuille » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.
 
+## Exercices numérotés
+- Exercice 1 : reprendre question 1 en explicitant donnée, méthode, résultat et contrôle pour T05.
+- Exercice 2 : reprendre question 2 en explicitant donnée, méthode, résultat et contrôle pour T05.
+- Exercice 3 : reprendre question 3 en explicitant donnée, méthode, résultat et contrôle pour T05.
+- Exercice 4 : reprendre question 4 en explicitant donnée, méthode, résultat et contrôle pour T05.
+
+## Corrigé
+### Corrigé question 1
+- Résultat attendu : hauteur 0.
+- Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 1.
+- Critère de validation : méthode visible, résultat correct et contrôle « arbre vide ».
+### Corrigé question 2
+- Résultat attendu : hauteur 1.
+- Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 2.
+- Critère de validation : méthode visible, résultat correct et contrôle « un seul fils ».
+### Corrigé question 3
+- Résultat attendu : `+, 2, 3`.
+- Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 3.
+- Critère de validation : méthode visible, résultat correct et contrôle « nœud feuille ».
+### Corrigé question 4
+- Résultat attendu : `20`.
+- Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
+- Critère de validation : méthode visible, résultat correct et contrôle « division par zéro si opérateur `/` ».

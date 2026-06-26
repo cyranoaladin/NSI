@@ -1,25 +1,30 @@
-"""Tests attendus TP P03."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-from P03_starter_texte_reels import inspect_text
+import importlib
+import os
 
+MODULE = importlib.import_module(os.environ.get("TP_MODULE", "P03_starter_texte_reels"))
+inspect_text = MODULE.inspect_text
 
 def test_nominal() -> None:
-    sortie = inspect_text("Aé")
-    assert sortie["controle"] == "2 caractères, 3 octets, somme flottante non exactement égale à 0.3"
-    assert sortie["cas_limite"] == "caractère hors ASCII ou comparaison directe de flottants"
+    result = inspect_text("Aé")
+    assert result["chars"] == 2 and result["bytes"] == 3
 
+def test_limite() -> None:
+    result = inspect_text("")
+    assert result["chars"] == 0 and result["bytes"] == 0
 
-def test_entree_absente() -> None:
+def test_invalide() -> None:
     try:
         inspect_text(None)
-    except ValueError:
+    except (ValueError, TypeError, IndexError):
         return
-    raise AssertionError("ValueError attendue pour entrée absente")
-
+    raise AssertionError("exception attendue")
 
 if __name__ == "__main__":
     test_nominal()
-    test_entree_absente()
+    test_limite()
+    test_invalide()
     print("tests attendus OK")

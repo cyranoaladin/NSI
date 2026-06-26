@@ -1,15 +1,9 @@
-"""Corrigé professeur TP P03 - Texte Unicode et nombres réels."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-
 def inspect_text(text):
-    """Implémentation de référence pour Unicode, UTF-8, flottants."""
     if text is None:
-        raise ValueError("entrée absente")
-    return {
-        "entree": text,
-        "methode": "distinguer point de code, encodage, octets et approximation machine",
-        "controle": "2 caractères, 3 octets, somme flottante non exactement égale à 0.3",
-        "cas_limite": "caractère hors ASCII ou comparaison directe de flottants",
-    }
+        raise ValueError("texte absent")
+    data = text.encode("utf-8")
+    return {"chars": len(text), "bytes": len(data), "hex": data.hex(" ")}

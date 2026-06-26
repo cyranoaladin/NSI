@@ -1,25 +1,30 @@
-"""Tests attendus TP T03."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-from T03_starter_piles_files_dictionnaires import jouer_operations
+import importlib
+import os
 
+MODULE = importlib.import_module(os.environ.get("TP_MODULE", "T03_starter_piles_files_dictionnaires"))
+jouer_operations = MODULE.jouer_operations
 
 def test_nominal() -> None:
-    sortie = jouer_operations([("push", "A"), ("push", "B"), ("pop", None)])
-    assert sortie["controle"] == "B sort avant A pour une pile ; A sort avant B pour une file"
-    assert sortie["cas_limite"] == "dépiler ou défiler une structure vide"
+    result = jouer_operations([("push", "A"), ("push", "B"), ("pop", None)])
+    assert result == ["B"]
 
+def test_limite() -> None:
+    result = jouer_operations([("push", "A"), ("pop", None)])
+    assert result == ["A"]
 
-def test_entree_absente() -> None:
+def test_invalide() -> None:
     try:
-        jouer_operations(None)
-    except ValueError:
+        jouer_operations([("pop", None)])
+    except (ValueError, TypeError, IndexError):
         return
-    raise AssertionError("ValueError attendue pour entrée absente")
-
+    raise AssertionError("exception attendue")
 
 if __name__ == "__main__":
     test_nominal()
-    test_entree_absente()
+    test_limite()
+    test_invalide()
     print("tests attendus OK")

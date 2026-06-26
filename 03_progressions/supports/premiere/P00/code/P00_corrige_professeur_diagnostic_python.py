@@ -1,15 +1,11 @@
-"""Corrigé professeur TP P00 - Diagnostic Python et carnet de bord."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-
 def predict_trace(steps):
-    """Implémentation de référence pour affectation, expression, trace, test."""
     if steps is None:
-        raise ValueError("entrée absente")
-    return {
-        "entree": steps,
-        "methode": "suivre l’état de la variable après chaque affectation",
-        "controle": "5",
-        "cas_limite": "réaffectation avec zéro ou valeur négative",
-    }
+        raise ValueError("steps absent")
+    state = {}
+    for name, value in steps:
+        state[name] = value
+    return {"etat_final": state, "operations_lues": len(steps)}

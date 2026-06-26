@@ -1,34 +1,34 @@
 # Inventaire ressources NSI
 
-- Total ressources : 336
+- Total ressources : 364
 - Ressources pédagogiques : 53
-- Ressources techniques : 283
+- Ressources techniques : 311
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - drive: 0
-- generated: 336
+- generated: 364
 
 ## Répartition par niveau
-- interne: 133
+- interne: 161
 - premiere: 102
 - terminale: 101
 
 ## Répartition par type
 - banque: 14
-- document: 160
+- document: 173
 - python: 36
-- script: 74
+- script: 82
 - sequence: 45
-- test: 7
+- test: 14
 
 ## Répartition par statut
-- needs_review: 336
+- needs_review: 364
 
 ## Répartition audience
 - corrige: 33
 - eleve: 54
-- mixte: 246
+- mixte: 274
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -53,6 +53,18 @@
   - 03_progressions/progression_terminale.md
   - 03_progressions/seances_premiere.md
   - 03_progressions/seances_terminale.md
+  - 03_progressions/supports/contracts/P00_contract.yml
+  - 03_progressions/supports/contracts/P01_contract.yml
+  - 03_progressions/supports/contracts/P02_contract.yml
+  - 03_progressions/supports/contracts/P03_contract.yml
+  - 03_progressions/supports/contracts/P04_contract.yml
+  - 03_progressions/supports/contracts/P05_contract.yml
+  - 03_progressions/supports/contracts/T00_contract.yml
+  - 03_progressions/supports/contracts/T01_contract.yml
+  - 03_progressions/supports/contracts/T02_contract.yml
+  - 03_progressions/supports/contracts/T03_contract.yml
+  - 03_progressions/supports/contracts/T04_contract.yml
+  - 03_progressions/supports/contracts/T05_contract.yml
   - 03_progressions/supports/premiere/P00/P00_bareme_diagnostic_python.md
   - 03_progressions/supports/premiere/P00/P00_corrige_diagnostic_python.md
   - 03_progressions/supports/premiere/P00/P00_cours_diagnostic_python.md
@@ -284,11 +296,13 @@
   - scripts/check_git_clean.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_links.py
+  - scripts/check_local_drive_traceability.py
   - scripts/check_manifest_source_integrity.py
   - scripts/check_metadata.py
   - scripts/check_monthly_load_balance.py
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
+  - scripts/check_no_line_padding.py
   - scripts/check_no_needs_review_for_release.py
   - scripts/check_no_placeholders.py
   - scripts/check_no_placeholders_code.py
@@ -308,9 +322,13 @@
   - scripts/check_qcm_contract_consistency.py
   - scripts/check_qcm_schema.py
   - scripts/check_quality_gates.py
+  - scripts/check_ready_session_operationality.py
+  - scripts/check_ready_supports_depth.py
+  - scripts/check_ready_supports_required_sections.py
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_completeness.py
+  - scripts/check_sequence_contracts.py
   - scripts/check_session_duration_consistency.py
   - scripts/check_session_level_planning.py
   - scripts/check_session_monthly_total.py
@@ -318,9 +336,11 @@
   - scripts/check_session_referenced_files_exist.py
   - scripts/check_session_specificity.py
   - scripts/check_session_week_calendar_consistency.py
+  - scripts/check_support_substance.py
   - scripts/check_td_corrige_alignment.py
   - scripts/check_teacher_corrections_alignment.py
   - scripts/check_teacher_docs_depth.py
+  - scripts/check_tp_pedagogical_assets.py
   - scripts/check_tp_test_alignment.py
   - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_documents_quality_gates.py
@@ -332,6 +352,7 @@
   - scripts/rebuild_inventory.py
   - scripts/render_sequence.py
   - scripts/run_python_tests.py
+  - support_source_trace.yml
   - td_corrige_alignment_report.md
   - terminale/banques/evaluations/index.md
   - terminale/banques/exercices/index.md
@@ -366,9 +387,16 @@
   - tests/test_first_batch_alignment.py
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
+  - tests/test_line_padding.py
+  - tests/test_local_drive_traceability.py
   - tests/test_private_data_detection.py
+  - tests/test_ready_session_operationality.py
+  - tests/test_ready_supports_gates.py
+  - tests/test_sequence_contracts.py
   - tests/test_session_referenced_files_exist.py
   - tests/test_session_specificity.py
+  - tests/test_support_substance.py
+  - tests/test_tp_pedagogical_assets.py
   - tp_test_alignment_report.md
 - Ressources pédagogiques :
   - premiere/banques/evaluations/index.md
@@ -444,6 +472,18 @@
   - 03_progressions/progression_terminale.md
   - 03_progressions/seances_premiere.md
   - 03_progressions/seances_terminale.md
+  - 03_progressions/supports/contracts/P00_contract.yml
+  - 03_progressions/supports/contracts/P01_contract.yml
+  - 03_progressions/supports/contracts/P02_contract.yml
+  - 03_progressions/supports/contracts/P03_contract.yml
+  - 03_progressions/supports/contracts/P04_contract.yml
+  - 03_progressions/supports/contracts/P05_contract.yml
+  - 03_progressions/supports/contracts/T00_contract.yml
+  - 03_progressions/supports/contracts/T01_contract.yml
+  - 03_progressions/supports/contracts/T02_contract.yml
+  - 03_progressions/supports/contracts/T03_contract.yml
+  - 03_progressions/supports/contracts/T04_contract.yml
+  - 03_progressions/supports/contracts/T05_contract.yml
   - 03_progressions/supports/premiere/P00/P00_bareme_diagnostic_python.md
   - 03_progressions/supports/premiere/P00/P00_corrige_diagnostic_python.md
   - 03_progressions/supports/premiere/P00/P00_cours_diagnostic_python.md
@@ -648,11 +688,13 @@
   - scripts/check_git_clean.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_links.py
+  - scripts/check_local_drive_traceability.py
   - scripts/check_manifest_source_integrity.py
   - scripts/check_metadata.py
   - scripts/check_monthly_load_balance.py
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
+  - scripts/check_no_line_padding.py
   - scripts/check_no_needs_review_for_release.py
   - scripts/check_no_placeholders.py
   - scripts/check_no_placeholders_code.py
@@ -672,9 +714,13 @@
   - scripts/check_qcm_contract_consistency.py
   - scripts/check_qcm_schema.py
   - scripts/check_quality_gates.py
+  - scripts/check_ready_session_operationality.py
+  - scripts/check_ready_supports_depth.py
+  - scripts/check_ready_supports_required_sections.py
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_completeness.py
+  - scripts/check_sequence_contracts.py
   - scripts/check_session_duration_consistency.py
   - scripts/check_session_level_planning.py
   - scripts/check_session_monthly_total.py
@@ -682,9 +728,11 @@
   - scripts/check_session_referenced_files_exist.py
   - scripts/check_session_specificity.py
   - scripts/check_session_week_calendar_consistency.py
+  - scripts/check_support_substance.py
   - scripts/check_td_corrige_alignment.py
   - scripts/check_teacher_corrections_alignment.py
   - scripts/check_teacher_docs_depth.py
+  - scripts/check_tp_pedagogical_assets.py
   - scripts/check_tp_test_alignment.py
   - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_documents_quality_gates.py
@@ -696,6 +744,7 @@
   - scripts/rebuild_inventory.py
   - scripts/render_sequence.py
   - scripts/run_python_tests.py
+  - support_source_trace.yml
   - td_corrige_alignment_report.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/python/structures_tools.py
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/sequence.yaml
@@ -704,9 +753,16 @@
   - tests/test_first_batch_alignment.py
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
+  - tests/test_line_padding.py
+  - tests/test_local_drive_traceability.py
   - tests/test_private_data_detection.py
+  - tests/test_ready_session_operationality.py
+  - tests/test_ready_supports_gates.py
+  - tests/test_sequence_contracts.py
   - tests/test_session_referenced_files_exist.py
   - tests/test_session_specificity.py
+  - tests/test_support_substance.py
+  - tests/test_tp_pedagogical_assets.py
   - tp_test_alignment_report.md
 - Ressources copiées dans banques :
 
@@ -754,6 +810,18 @@
 - 03_progressions/progression_terminale.md
 - 03_progressions/seances_premiere.md
 - 03_progressions/seances_terminale.md
+- 03_progressions/supports/contracts/P00_contract.yml
+- 03_progressions/supports/contracts/P01_contract.yml
+- 03_progressions/supports/contracts/P02_contract.yml
+- 03_progressions/supports/contracts/P03_contract.yml
+- 03_progressions/supports/contracts/P04_contract.yml
+- 03_progressions/supports/contracts/P05_contract.yml
+- 03_progressions/supports/contracts/T00_contract.yml
+- 03_progressions/supports/contracts/T01_contract.yml
+- 03_progressions/supports/contracts/T02_contract.yml
+- 03_progressions/supports/contracts/T03_contract.yml
+- 03_progressions/supports/contracts/T04_contract.yml
+- 03_progressions/supports/contracts/T05_contract.yml
 - 03_progressions/supports/premiere/P00/P00_bareme_diagnostic_python.md
 - 03_progressions/supports/premiere/P00/P00_cours_diagnostic_python.md
 - 03_progressions/supports/premiere/P00/P00_evaluation_diagnostic_python.md
@@ -957,11 +1025,13 @@
 - scripts/check_git_clean.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_links.py
+- scripts/check_local_drive_traceability.py
 - scripts/check_manifest_source_integrity.py
 - scripts/check_metadata.py
 - scripts/check_monthly_load_balance.py
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
+- scripts/check_no_line_padding.py
 - scripts/check_no_needs_review_for_release.py
 - scripts/check_no_placeholders.py
 - scripts/check_no_placeholders_code.py
@@ -981,9 +1051,13 @@
 - scripts/check_qcm_contract_consistency.py
 - scripts/check_qcm_schema.py
 - scripts/check_quality_gates.py
+- scripts/check_ready_session_operationality.py
+- scripts/check_ready_supports_depth.py
+- scripts/check_ready_supports_required_sections.py
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
 - scripts/check_sequence_completeness.py
+- scripts/check_sequence_contracts.py
 - scripts/check_session_duration_consistency.py
 - scripts/check_session_level_planning.py
 - scripts/check_session_monthly_total.py
@@ -991,8 +1065,10 @@
 - scripts/check_session_referenced_files_exist.py
 - scripts/check_session_specificity.py
 - scripts/check_session_week_calendar_consistency.py
+- scripts/check_support_substance.py
 - scripts/check_teacher_corrections_alignment.py
 - scripts/check_teacher_docs_depth.py
+- scripts/check_tp_pedagogical_assets.py
 - scripts/check_tp_test_alignment.py
 - scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_documents_quality_gates.py
@@ -1004,6 +1080,7 @@
 - scripts/rebuild_inventory.py
 - scripts/render_sequence.py
 - scripts/run_python_tests.py
+- support_source_trace.yml
 - terminale/banques/evaluations/index.md
 - terminale/banques/exercices/index.md
 - terminale/banques/index.md
@@ -1033,9 +1110,16 @@
 - tests/test_first_batch_alignment.py
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py
+- tests/test_line_padding.py
+- tests/test_local_drive_traceability.py
 - tests/test_private_data_detection.py
+- tests/test_ready_session_operationality.py
+- tests/test_ready_supports_gates.py
+- tests/test_sequence_contracts.py
 - tests/test_session_referenced_files_exist.py
 - tests/test_session_specificity.py
+- tests/test_support_substance.py
+- tests/test_tp_pedagogical_assets.py
 - tp_test_alignment_report.md
 
 ## Ressources haute qualité
@@ -1061,6 +1145,18 @@
 - 03_progressions/progression_terminale.md
 - 03_progressions/seances_premiere.md
 - 03_progressions/seances_terminale.md
+- 03_progressions/supports/contracts/P00_contract.yml
+- 03_progressions/supports/contracts/P01_contract.yml
+- 03_progressions/supports/contracts/P02_contract.yml
+- 03_progressions/supports/contracts/P03_contract.yml
+- 03_progressions/supports/contracts/P04_contract.yml
+- 03_progressions/supports/contracts/P05_contract.yml
+- 03_progressions/supports/contracts/T00_contract.yml
+- 03_progressions/supports/contracts/T01_contract.yml
+- 03_progressions/supports/contracts/T02_contract.yml
+- 03_progressions/supports/contracts/T03_contract.yml
+- 03_progressions/supports/contracts/T04_contract.yml
+- 03_progressions/supports/contracts/T05_contract.yml
 - 03_progressions/supports/premiere/P00/P00_bareme_diagnostic_python.md
 - 03_progressions/supports/premiere/P00/P00_corrige_diagnostic_python.md
 - 03_progressions/supports/premiere/P00/P00_cours_diagnostic_python.md
@@ -1292,11 +1388,13 @@
 - scripts/check_git_clean.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_links.py
+- scripts/check_local_drive_traceability.py
 - scripts/check_manifest_source_integrity.py
 - scripts/check_metadata.py
 - scripts/check_monthly_load_balance.py
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
+- scripts/check_no_line_padding.py
 - scripts/check_no_needs_review_for_release.py
 - scripts/check_no_placeholders.py
 - scripts/check_no_placeholders_code.py
@@ -1316,9 +1414,13 @@
 - scripts/check_qcm_contract_consistency.py
 - scripts/check_qcm_schema.py
 - scripts/check_quality_gates.py
+- scripts/check_ready_session_operationality.py
+- scripts/check_ready_supports_depth.py
+- scripts/check_ready_supports_required_sections.py
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
 - scripts/check_sequence_completeness.py
+- scripts/check_sequence_contracts.py
 - scripts/check_session_duration_consistency.py
 - scripts/check_session_level_planning.py
 - scripts/check_session_monthly_total.py
@@ -1326,9 +1428,11 @@
 - scripts/check_session_referenced_files_exist.py
 - scripts/check_session_specificity.py
 - scripts/check_session_week_calendar_consistency.py
+- scripts/check_support_substance.py
 - scripts/check_td_corrige_alignment.py
 - scripts/check_teacher_corrections_alignment.py
 - scripts/check_teacher_docs_depth.py
+- scripts/check_tp_pedagogical_assets.py
 - scripts/check_tp_test_alignment.py
 - scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_documents_quality_gates.py
@@ -1340,6 +1444,7 @@
 - scripts/rebuild_inventory.py
 - scripts/render_sequence.py
 - scripts/run_python_tests.py
+- support_source_trace.yml
 - td_corrige_alignment_report.md
 - terminale/banques/evaluations/index.md
 - terminale/banques/exercices/index.md
@@ -1374,9 +1479,16 @@
 - tests/test_first_batch_alignment.py
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py
+- tests/test_line_padding.py
+- tests/test_local_drive_traceability.py
 - tests/test_private_data_detection.py
+- tests/test_ready_session_operationality.py
+- tests/test_ready_supports_gates.py
+- tests/test_sequence_contracts.py
 - tests/test_session_referenced_files_exist.py
 - tests/test_session_specificity.py
+- tests/test_support_substance.py
+- tests/test_tp_pedagogical_assets.py
 - tp_test_alignment_report.md
 
 ## Doublons (même hash SHA256)

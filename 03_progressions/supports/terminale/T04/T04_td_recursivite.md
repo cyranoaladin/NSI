@@ -1,208 +1,192 @@
 ---
-title: "T04 - Td - Récursivité contrôlée"
+title: "T04 - Td - Récursivité"
 level: "terminale"
 sequence_id: "T04"
 document_type: "td"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_NSI/Formation TOULOUSE/BLOC5/PolyBloc5.pdf"
-theme: "Langage et preuve"
-notion: "cas de base, appel récursif, terminaison"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
+theme: "Langage et preuve de terminaison"
+notion: "appel récursif, cas de base, terminaison, pile d’appels"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
     - "T-LANG-02A"
-    - "T-LANG-02B"
 ---
 
-
-# T04 - Td - Récursivité contrôlée
+# T04 - TD - Récursivité
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
 - T-LANG-02A
-- T-LANG-02B
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à appel récursif.
+- Distinguer donnée, méthode et conclusion dans le thème Langage et preuve de terminaison.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- T04-S1 à T04-S5 : ce support est rattaché aux séances indiquées dans la progression.
+- T04-S1 à T04-S5 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-un calcul naturel se définit par réduction du problème mais risque de ne jamais s’arrêter. La tâche consiste à traiter cas de base, appel récursif, terminaison sans réponse intuitive non vérifiée.
+Un algorithme de parcours doit traiter une structure définie en se ramenant à un sous-problème plus petit.
 
 ## Activité d’entrée
-1. Lire la situation : un calcul naturel se définit par réduction du problème mais risque de ne jamais s’arrêter.
-2. Isoler la donnée de départ : entier naturel réduit à chaque appel.
-3. Prédire individuellement le résultat de l’exemple `factorielle(5)`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : identifier cas de base, relation de récurrence et variant décroissant.
-6. Contrôler avec le résultat de référence : 120 avec cas de base factorielle(0)=1.
-7. Tester le cas limite suivant : appel récursif sans diminution ou profondeur excessive.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+1. Identifier le cas de base d’une factorielle.
+2. Suivre les appels de `somme([4, 1, 3])`.
+3. Comparer récursif et itératif.
+4. Prévoir ce qui se passe sans décroissance.
 
-## Exemple corrigé précis
-- Exemple : `factorielle(5)`.
-- Méthode : identifier cas de base, relation de récurrence et variant décroissant.
-- Résultat : 120 avec cas de base factorielle(0)=1.
-- Justification : chaque étape transforme une donnée identifiable.
-
+## Exemples corrigés précis
+### Exemple corrigé 1 - factorielle
+- Donnée étudiée : `4!`.
+- Méthode : appliquer `n * fact(n-1)` jusqu’au cas `0!`.
+- Résultat obtenu : `24`.
+- Contrôle : le cas limite « entier négatif refusé » est vérifié séparément.
+### Exemple corrigé 2 - somme de liste
+- Donnée étudiée : `[4, 1, 3]`.
+- Méthode : séparer tête et reste.
+- Résultat obtenu : `8`.
+- Contrôle : le cas limite « liste vide » est vérifié séparément.
+### Exemple corrigé 3 - longueur
+- Donnée étudiée : `["a", "b"]`.
+- Méthode : ajouter 1 à la longueur du reste.
+- Résultat obtenu : `2`.
+- Contrôle : le cas limite « reste vide » est vérifié séparément.
+### Exemple corrigé 4 - terminaison
+- Donnée étudiée : `n` décroît vers 0.
+- Méthode : montrer une mesure entière strictement décroissante.
+- Résultat obtenu : preuve de terminaison.
+- Contrôle : le cas limite « appel avec même argument » est vérifié séparément.
 ## Exercices numérotés
 ### Exercice 1
 - Objectif travaillé : O1.
 - Capacité officielle : T-LANG-02A.
-- Énoncé : résoudre une variante de `factorielle(5)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer identifier cas de base, relation de récurrence et variant décroissant, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `appel récursif sans diminution ou profondeur excessive` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : résoudre factorielle avec `4!`.
+- Production attendue : `24`.
+- Contrainte de contrôle : faire apparaître le contrôle « entier négatif refusé ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 2
 - Objectif travaillé : O2.
-- Capacité officielle : T-LANG-02B.
-- Énoncé : résoudre une variante de `factorielle(5)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer identifier cas de base, relation de récurrence et variant décroissant, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `appel récursif sans diminution ou profondeur excessive` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : T-LANG-02A.
+- Énoncé disciplinaire : expliquer somme de liste à partir de `[4, 1, 3]`.
+- Production attendue : `8`.
+- Contrainte de contrôle : rédiger la méthode avant le résultat.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 3
 - Objectif travaillé : O3.
 - Capacité officielle : T-LANG-02A.
-- Énoncé : résoudre une variante de `factorielle(5)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer identifier cas de base, relation de récurrence et variant décroissant, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `appel récursif sans diminution ou profondeur excessive` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : comparer longueur avec `["a", "b"]`.
+- Production attendue : `2`.
+- Contrainte de contrôle : comparer avec le cas « reste vide ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 4
 - Objectif travaillé : O4.
-- Capacité officielle : T-LANG-02B.
-- Énoncé : résoudre une variante de `factorielle(5)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer identifier cas de base, relation de récurrence et variant décroissant, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `appel récursif sans diminution ou profondeur excessive` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : T-LANG-02A.
+- Énoncé disciplinaire : corriger terminaison pour `n` décroît vers 0.
+- Production attendue : preuve de terminaison.
+- Contrainte de contrôle : corriger l’erreur « Ne pas traiter l’entrée vide. ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 5
 - Objectif travaillé : O1.
 - Capacité officielle : T-LANG-02A.
-- Énoncé : résoudre une variante de `factorielle(5)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer identifier cas de base, relation de récurrence et variant décroissant, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `appel récursif sans diminution ou profondeur excessive` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : tester un cas limite lié à entier négatif refusé.
+- Production attendue : le comportement de factorielle est contrôlé.
+- Contrainte de contrôle : nommer la donnée minimale et la conclusion.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 6
 - Objectif travaillé : O2.
-- Capacité officielle : T-LANG-02B.
-- Énoncé : résoudre une variante de `factorielle(5)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer identifier cas de base, relation de récurrence et variant décroissant, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `appel récursif sans diminution ou profondeur excessive` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : T-LANG-02A.
+- Énoncé disciplinaire : classer deux méthodes possibles pour somme de liste.
+- Production attendue : la méthode robuste est choisie et justifiée.
+- Contrainte de contrôle : identifier pourquoi « Faire un appel récursif qui ne rapproche pas du cas de base. » est une erreur.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 7
 - Objectif travaillé : O3.
 - Capacité officielle : T-LANG-02A.
-- Énoncé : résoudre une variante de `factorielle(5)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer identifier cas de base, relation de récurrence et variant décroissant, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `appel récursif sans diminution ou profondeur excessive` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : justifier un transfert qui utilise longueur avec une donnée nouvelle.
+- Production attendue : la justification reste valable sur le nouveau cas.
+- Contrainte de contrôle : inclure une étape calculable par un pair.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 8
 - Objectif travaillé : O4.
-- Capacité officielle : T-LANG-02B.
-- Énoncé : résoudre une variante de `factorielle(5)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer identifier cas de base, relation de récurrence et variant décroissant, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `appel récursif sans diminution ou profondeur excessive` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : T-LANG-02A.
+- Énoncé disciplinaire : étendre un énoncé volontairement erroné sur terminaison.
+- Production attendue : l’erreur est localisée puis réparée.
+- Contrainte de contrôle : proposer une activité corrective inspirée de « Tester d’abord la liste vide ou `n = 0`. ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- On repère d’abord entier naturel réduit à chaque appel.
-- On applique ensuite identifier cas de base, relation de récurrence et variant décroissant.
-- Le résultat attendu est `120 avec cas de base factorielle(0)=1` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF1 est évitée car la vérification est écrite.
-
+- Méthode : identifier `4!`, appliquer la méthode « appliquer `n * fact(n-1)` jusqu’au cas `0!` », puis écrire `24`.
+- Résultat : `24`.
+- Contrôle : faire apparaître le contrôle « entier négatif refusé ».
+- Erreur traitée : EF1 - Oublier le cas de base.
 ### Corrigé exercice 2
-- On repère d’abord entier naturel réduit à chaque appel.
-- On applique ensuite identifier cas de base, relation de récurrence et variant décroissant.
-- Le résultat attendu est `120 avec cas de base factorielle(0)=1` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF2 est évitée car la vérification est écrite.
-
+- Méthode : expliciter chaque étape de séparer tête et reste avant de conclure par `8`.
+- Résultat : `8`.
+- Contrôle : rédiger la méthode avant le résultat.
+- Erreur traitée : EF2 - Faire un appel récursif qui ne rapproche pas du cas de base.
 ### Corrigé exercice 3
-- On repère d’abord entier naturel réduit à chaque appel.
-- On applique ensuite identifier cas de base, relation de récurrence et variant décroissant.
-- Le résultat attendu est `120 avec cas de base factorielle(0)=1` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF3 est évitée car la vérification est écrite.
-
+- Méthode : comparer la donnée avec le cas limite « reste vide » et valider `2`.
+- Résultat : `2`.
+- Contrôle : comparer avec le cas « reste vide ».
+- Erreur traitée : EF3 - Confondre valeur retournée et affichage des appels.
 ### Corrigé exercice 4
-- On repère d’abord entier naturel réduit à chaque appel.
-- On applique ensuite identifier cas de base, relation de récurrence et variant décroissant.
-- Le résultat attendu est `120 avec cas de base factorielle(0)=1` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF4 est évitée car la vérification est écrite.
-
+- Méthode : isoler l’erreur fréquente « Ne pas traiter l’entrée vide. » puis reprendre la procédure correcte.
+- Résultat : preuve de terminaison.
+- Contrôle : corriger l’erreur « Ne pas traiter l’entrée vide. ».
+- Erreur traitée : EF4 - Ne pas traiter l’entrée vide.
 ### Corrigé exercice 5
-- On repère d’abord entier naturel réduit à chaque appel.
-- On applique ensuite identifier cas de base, relation de récurrence et variant décroissant.
-- Le résultat attendu est `120 avec cas de base factorielle(0)=1` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF1 est évitée car la vérification est écrite.
-
+- Méthode : identifier `4!`, appliquer la méthode « appliquer `n * fact(n-1)` jusqu’au cas `0!` », puis écrire `24`.
+- Résultat : le comportement de factorielle est contrôlé.
+- Contrôle : nommer la donnée minimale et la conclusion.
+- Erreur traitée : EF1 - Oublier le cas de base.
 ### Corrigé exercice 6
-- On repère d’abord entier naturel réduit à chaque appel.
-- On applique ensuite identifier cas de base, relation de récurrence et variant décroissant.
-- Le résultat attendu est `120 avec cas de base factorielle(0)=1` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF2 est évitée car la vérification est écrite.
-
+- Méthode : expliciter chaque étape de séparer tête et reste avant de conclure par `8`.
+- Résultat : la méthode robuste est choisie et justifiée.
+- Contrôle : identifier pourquoi « Faire un appel récursif qui ne rapproche pas du cas de base. » est une erreur.
+- Erreur traitée : EF2 - Faire un appel récursif qui ne rapproche pas du cas de base.
 ### Corrigé exercice 7
-- On repère d’abord entier naturel réduit à chaque appel.
-- On applique ensuite identifier cas de base, relation de récurrence et variant décroissant.
-- Le résultat attendu est `120 avec cas de base factorielle(0)=1` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF3 est évitée car la vérification est écrite.
-
+- Méthode : comparer la donnée avec le cas limite « reste vide » et valider `2`.
+- Résultat : la justification reste valable sur le nouveau cas.
+- Contrôle : inclure une étape calculable par un pair.
+- Erreur traitée : EF3 - Confondre valeur retournée et affichage des appels.
 ### Corrigé exercice 8
-- On repère d’abord entier naturel réduit à chaque appel.
-- On applique ensuite identifier cas de base, relation de récurrence et variant décroissant.
-- Le résultat attendu est `120 avec cas de base factorielle(0)=1` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF4 est évitée car la vérification est écrite.
-
+- Méthode : isoler l’erreur fréquente « Ne pas traiter l’entrée vide. » puis reprendre la procédure correcte.
+- Résultat : l’erreur est localisée puis réparée.
+- Contrôle : proposer une activité corrective inspirée de « Tester d’abord la liste vide ou `n = 0`. ».
+- Erreur traitée : EF4 - Ne pas traiter l’entrée vide.
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `120 avec cas de base factorielle(0)=1` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer identifier cas de base, relation de récurrence et variant décroissant dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : appel récursif sans diminution ou profondeur excessive.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Oublier le cas de base.
+- Erreur fréquente EF2 - Faire un appel récursif qui ne rapproche pas du cas de base.
+- Erreur fréquente EF3 - Confondre valeur retournée et affichage des appels.
+- Erreur fréquente EF4 - Ne pas traiter l’entrée vide.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `appel récursif sans diminution ou profondeur excessive` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Encadrer le cas de base avant d’écrire l’appel récursif.
+- Activité corrective EF2 : Tracer la valeur de l’argument à chaque appel.
+- Activité corrective EF3 : Dessiner la pile d’appels avec valeurs de retour.
+- Activité corrective EF4 : Tester d’abord la liste vide ou `n = 0`.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter `4!` avec une fiche méthode fournie.
+- Standard : traiter `[4, 1, 3]` en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « reste vide » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
-
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.

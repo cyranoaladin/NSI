@@ -1,15 +1,22 @@
-"""Corrigé professeur TP T02 - Classes, objets et invariants."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
+class Compte:
+    def __init__(self, solde):
+        if solde < 0:
+            raise ValueError("solde initial invalide")
+        self.solde = solde
+    def deposer(self, montant):
+        if montant <= 0:
+            raise ValueError("montant invalide")
+        self.solde += montant
+    def retirer(self, montant):
+        if montant <= 0 or montant > self.solde:
+            raise ValueError("retrait invalide")
+        self.solde -= montant
 
 def creer_compte(solde):
-    """Implémentation de référence pour classe, attribut, méthode, invariant."""
     if solde is None:
-        raise ValueError("entrée absente")
-    return {
-        "entree": solde,
-        "methode": "définir constructeur, attributs, méthodes et invariant vérifié après mutation",
-        "controle": "solde 13 si l’invariant reste vérifié",
-        "cas_limite": "montant négatif ou accès direct à l’attribut",
-    }
+        raise ValueError("solde initial invalide")
+    return Compte(solde)

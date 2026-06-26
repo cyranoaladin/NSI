@@ -1,25 +1,30 @@
-"""Tests attendus TP P01."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-from P01_starter_conversions_bases import convert_base
+import importlib
+import os
 
+MODULE = importlib.import_module(os.environ.get("TP_MODULE", "P01_starter_conversions_bases"))
+convert_base = MODULE.convert_base
 
 def test_nominal() -> None:
-    sortie = convert_base(45)
-    assert sortie["controle"] == "101101 en base deux et 2D en base seize"
-    assert sortie["cas_limite"] == "0, 1 et changement de base avec un chiffre interdit"
+    result = convert_base(45)
+    assert result["binary"] == "101101" and result["hex"] == "2D"
 
+def test_limite_zero() -> None:
+    result = convert_base(0)
+    assert result["binary"] == "0" and result["hex"] == "0"
 
-def test_entree_absente() -> None:
+def test_invalide() -> None:
     try:
-        convert_base(None)
-    except ValueError:
+        convert_base(-1)
+    except (ValueError, TypeError, IndexError):
         return
-    raise AssertionError("ValueError attendue pour entrée absente")
-
+    raise AssertionError("exception attendue")
 
 if __name__ == "__main__":
     test_nominal()
-    test_entree_absente()
+    test_limite_zero()
+    test_invalide()
     print("tests attendus OK")

@@ -1,152 +1,114 @@
 ---
-title: "T01 - Version Amenagee - Interfaces de structures abstraites"
+title: "T01 - Version amenagee - Interfaces et structures"
 level: "terminale"
 sequence_id: "T01"
 document_type: "version_amenagee"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_NSI/Formation TOULOUSE/BLOC4/Cours EIL - TAD - 2019-2020.pdf"
-theme: "Structures de données"
-notion: "interface, opération, coût"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
+theme: "Structures de données abstraites"
+notion: "interface, invariant, pile, file"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
     - "T-STRUCT-01A"
-    - "T-STRUCT-01B"
-    - "T-STRUCT-01C"
 ---
 
 
-# T01 - Version Amenagee - Interfaces de structures abstraites
+# T01 - Version aménagée - Interfaces et structures
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
 - T-STRUCT-01A
-- T-STRUCT-01B
-- T-STRUCT-01C
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à interface.
+- Distinguer donnée, méthode et conclusion dans le thème Structures de données abstraites.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- T01-S1 à T01-S5 : ce support est rattaché aux séances indiquées dans la progression.
+- T01-S1 à T01-S5 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-un même service peut être décrit par ses opérations avant de choisir l’implémentation Python. La tâche consiste à traiter interface, opération, coût sans réponse intuitive non vérifiée.
+Un module doit exposer une pile sans révéler si elle est stockée par liste Python ou par maillons.
 
 ## Activité d’entrée
-1. Lire la situation : un même service peut être décrit par ses opérations avant de choisir l’implémentation Python.
-2. Isoler la donnée de départ : ensemble d’opérations observables.
-3. Prédire individuellement le résultat de l’exemple `sac avec ajouter, retirer, est_vide`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : nommer les opérations, les préconditions et les effets sans dépendre du stockage.
-6. Contrôler avec le résultat de référence : interface séparée de la représentation interne.
-7. Tester le cas limite suivant : confondre interface et liste Python concrète.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+1. Lister les opérations d’une pile.
+2. Écrire un invariant après empilement.
+3. Comparer interface et représentation.
+4. Prévoir le comportement sur structure vide.
 
 ## Version aménagée - Énoncé élève
-- Situation : un même service peut être décrit par ses opérations avant de choisir l’implémentation Python.
-- Donnée fournie : ensemble d’opérations observables.
-- Exemple de départ : `sac avec ajouter, retirer, est_vide`.
-- Les étapes sont séparées pour réduire la charge de lecture.
-
-## Aide intégrée
-- Aide 1 : commence par recopier la donnée utile, ici ensemble d’opérations observables.
-- Aide 2 : applique seulement cette méthode : nommer les opérations, les préconditions et les effets sans dépendre du stockage.
-- Aide 3 : compare avec le résultat de référence `interface séparée de la représentation interne`.
-- Aide 4 : vérifie le cas limite `confondre interface et liste Python concrète`.
-
-## Exemple corrigé précis
-- Exemple guidé : `sac avec ajouter, retirer, est_vide`.
-- Correction guidée : nommer les opérations, les préconditions et les effets sans dépendre du stockage, donc `interface séparée de la représentation interne`.
-
+### Question aménagée 1
+- Énoncé élève : traiter interface pile avec la donnée `push`, `pop`, `is_empty`.
+- Aide intégrée : commencer par décrire contrat d’entrée et résultat de chaque opération.
+- Espace de réponse : méthode : ______ ; résultat : ______ ; contrôle : ______.
+- Point de vigilance : Confondre interface et implémentation.
+### Question aménagée 2
+- Énoncé élève : traiter invariant avec la donnée taille après deux empilements.
+- Aide intégrée : commencer par relier nombre d’éléments et opérations réalisées.
+- Espace de réponse : méthode : ______ ; résultat : ______ ; contrôle : ______.
+- Point de vigilance : Tester un attribut interne au lieu de l’opération publique.
+### Question aménagée 3
+- Énoncé élève : traiter file avec la donnée arrivées A puis B.
+- Aide intégrée : commencer par sortir dans l’ordre FIFO.
+- Espace de réponse : méthode : ______ ; résultat : ______ ; contrôle : ______.
+- Point de vigilance : Oublier l’état vide.
+### Question aménagée 4
+- Énoncé élève : traiter encapsulation avec la donnée liste interne `_items`.
+- Aide intégrée : commencer par ne jamais dépendre du détail privé.
+- Espace de réponse : méthode : ______ ; résultat : ______ ; contrôle : ______.
+- Point de vigilance : Mélanger ordre LIFO et ordre FIFO.
 ## Exercices numérotés
-- Exercice 1 : compléter la phrase guidée pour l’objectif O1.
-- Exercice 2 : compléter la phrase guidée pour l’objectif O2.
-- Exercice 3 : compléter la phrase guidée pour l’objectif O3.
-- Exercice 4 : compléter la phrase guidée pour l’objectif O4.
-- Exercice 5 : compléter la phrase guidée pour l’objectif O1.
-- Exercice 6 : compléter la phrase guidée pour l’objectif O2.
-- Exercice 7 : compléter la phrase guidée pour l’objectif O3.
-- Exercice 8 : compléter la phrase guidée pour l’objectif O4.
-
-## Espace de réponse
-- Réponse exercice 1 - Donnée : ____________________.
-- Réponse exercice 1 - Méthode : ____________________.
-- Réponse exercice 1 - Résultat : ____________________.
-- Réponse exercice 1 - Contrôle : ____________________.
-- Réponse exercice 2 - Donnée : ____________________.
-- Réponse exercice 2 - Méthode : ____________________.
-- Réponse exercice 2 - Résultat : ____________________.
-- Réponse exercice 2 - Contrôle : ____________________.
-- Réponse exercice 3 - Donnée : ____________________.
-- Réponse exercice 3 - Méthode : ____________________.
-- Réponse exercice 3 - Résultat : ____________________.
-- Réponse exercice 3 - Contrôle : ____________________.
-- Réponse exercice 4 - Donnée : ____________________.
-- Réponse exercice 4 - Méthode : ____________________.
-- Réponse exercice 4 - Résultat : ____________________.
-- Réponse exercice 4 - Contrôle : ____________________.
-- Réponse exercice 5 - Donnée : ____________________.
-- Réponse exercice 5 - Méthode : ____________________.
-- Réponse exercice 5 - Résultat : ____________________.
-- Réponse exercice 5 - Contrôle : ____________________.
-- Réponse exercice 6 - Donnée : ____________________.
-- Réponse exercice 6 - Méthode : ____________________.
-- Réponse exercice 6 - Résultat : ____________________.
-- Réponse exercice 6 - Contrôle : ____________________.
-- Réponse exercice 7 - Donnée : ____________________.
-- Réponse exercice 7 - Méthode : ____________________.
-- Réponse exercice 7 - Résultat : ____________________.
-- Réponse exercice 7 - Contrôle : ____________________.
-- Réponse exercice 8 - Donnée : ____________________.
-- Réponse exercice 8 - Méthode : ____________________.
-- Réponse exercice 8 - Résultat : ____________________.
-- Réponse exercice 8 - Contrôle : ____________________.
-
-## Corrigé
-- Corrigé exercice 1 : donnée `ensemble d’opérations observables`, méthode `nommer les opérations, les préconditions et les effets sans dépendre du stockage`, résultat `interface séparée de la représentation interne`, contrôle EF1.
-- Corrigé exercice 2 : donnée `ensemble d’opérations observables`, méthode `nommer les opérations, les préconditions et les effets sans dépendre du stockage`, résultat `interface séparée de la représentation interne`, contrôle EF2.
-- Corrigé exercice 3 : donnée `ensemble d’opérations observables`, méthode `nommer les opérations, les préconditions et les effets sans dépendre du stockage`, résultat `interface séparée de la représentation interne`, contrôle EF3.
-- Corrigé exercice 4 : donnée `ensemble d’opérations observables`, méthode `nommer les opérations, les préconditions et les effets sans dépendre du stockage`, résultat `interface séparée de la représentation interne`, contrôle EF4.
-- Corrigé exercice 5 : donnée `ensemble d’opérations observables`, méthode `nommer les opérations, les préconditions et les effets sans dépendre du stockage`, résultat `interface séparée de la représentation interne`, contrôle EF1.
-- Corrigé exercice 6 : donnée `ensemble d’opérations observables`, méthode `nommer les opérations, les préconditions et les effets sans dépendre du stockage`, résultat `interface séparée de la représentation interne`, contrôle EF2.
-- Corrigé exercice 7 : donnée `ensemble d’opérations observables`, méthode `nommer les opérations, les préconditions et les effets sans dépendre du stockage`, résultat `interface séparée de la représentation interne`, contrôle EF3.
-- Corrigé exercice 8 : donnée `ensemble d’opérations observables`, méthode `nommer les opérations, les préconditions et les effets sans dépendre du stockage`, résultat `interface séparée de la représentation interne`, contrôle EF4.
+- Exercice 1 : résoudre interface pile avec `push`, `pop`, `is_empty` avec aide possible sur la méthode.
+- Exercice 2 : expliquer invariant à partir de taille après deux empilements avec aide possible sur la méthode.
+- Exercice 3 : comparer file avec arrivées A puis B avec aide possible sur la méthode.
+- Exercice 4 : corriger encapsulation pour liste interne `_items` avec aide possible sur la méthode.
+- Exercice 5 : tester un cas limite lié à dépilement vide avec aide possible sur la méthode.
+- Exercice 6 : classer deux méthodes possibles pour invariant avec aide possible sur la méthode.
+- Exercice 7 : justifier un transfert qui utilise file avec une donnée nouvelle avec aide possible sur la méthode.
+- Exercice 8 : étendre un énoncé volontairement erroné sur encapsulation avec aide possible sur la méthode.
+## Corrigés complets des exercices du cours
+- Corrigé exercice 1 : méthode : identifier `push`, `pop`, `is_empty`, appliquer la méthode « décrire contrat d’entrée et résultat de chaque opération », puis écrire interface indépendante du stockage ; résultat : interface indépendante du stockage ; contrôle : faire apparaître le contrôle « dépilement vide ».
+- Corrigé exercice 2 : méthode : expliciter chaque étape de relier nombre d’éléments et opérations réalisées avant de conclure par taille augmentée de 2 ; résultat : taille augmentée de 2 ; contrôle : rédiger la méthode avant le résultat.
+- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « file vide » et valider A sort avant B ; résultat : A sort avant B ; contrôle : comparer avec le cas « file vide ».
+- Corrigé exercice 4 : méthode : isoler l’erreur fréquente « Mélanger ordre LIFO et ordre FIFO. » puis reprendre la procédure correcte ; résultat : tests écrits sur méthodes publiques ; contrôle : corriger l’erreur « Mélanger ordre LIFO et ordre FIFO. ».
+- Corrigé exercice 5 : méthode : identifier `push`, `pop`, `is_empty`, appliquer la méthode « décrire contrat d’entrée et résultat de chaque opération », puis écrire interface indépendante du stockage ; résultat : le comportement de interface pile est contrôlé ; contrôle : nommer la donnée minimale et la conclusion.
+- Corrigé exercice 6 : méthode : expliciter chaque étape de relier nombre d’éléments et opérations réalisées avant de conclure par taille augmentée de 2 ; résultat : la méthode robuste est choisie et justifiée ; contrôle : identifier pourquoi « Tester un attribut interne au lieu de l’opération publique. » est une erreur.
+- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « file vide » et valider A sort avant B ; résultat : la justification reste valable sur le nouveau cas ; contrôle : inclure une étape calculable par un pair.
+- Corrigé exercice 8 : méthode : isoler l’erreur fréquente « Mélanger ordre LIFO et ordre FIFO. » puis reprendre la procédure correcte ; résultat : l’erreur est localisée puis réparée ; contrôle : proposer une activité corrective inspirée de « Comparer une pile et une file avec la même suite d’entrées. ».
 
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `interface séparée de la représentation interne` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer nommer les opérations, les préconditions et les effets sans dépendre du stockage dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : confondre interface et liste Python concrète.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Confondre interface et implémentation.
+- Erreur fréquente EF2 - Tester un attribut interne au lieu de l’opération publique.
+- Erreur fréquente EF3 - Oublier l’état vide.
+- Erreur fréquente EF4 - Mélanger ordre LIFO et ordre FIFO.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `confondre interface et liste Python concrète` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Écrire le contrat avant le choix de représentation.
+- Activité corrective EF2 : Réécrire les tests en utilisant seulement les méthodes publiques.
+- Activité corrective EF3 : Faire une trace d’opérations depuis la structure vide.
+- Activité corrective EF4 : Comparer une pile et une file avec la même suite d’entrées.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter `push`, `pop`, `is_empty` avec une fiche méthode fournie.
+- Standard : traiter taille après deux empilements en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « file vide » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
-
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.

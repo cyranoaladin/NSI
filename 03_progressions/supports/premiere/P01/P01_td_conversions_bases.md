@@ -4,203 +4,189 @@ level: "premiere"
 sequence_id: "P01"
 document_type: "td"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_NSI/Programmes et textes officiels/0_Programmes.pdf"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
 theme: "Représentation des entiers"
-notion: "base dix, base deux, base seize"
+notion: "base dix, base deux, base seize, écriture positionnelle"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
     - "P-DATA-BASE-01"
 ---
 
-
-# P01 - Td - Conversions entre bases
+# P01 - TD - Conversions entre bases
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
 - P-DATA-BASE-01
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à base dix.
+- Distinguer donnée, méthode et conclusion dans le thème Représentation des entiers.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- P01-S1 à P01-S5 : ce support est rattaché aux séances indiquées dans la progression.
+- P01-S1 à P01-S5 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-un protocole réseau affiche des valeurs en hexadécimal alors que le cahier de mesures est en décimal. La tâche consiste à traiter base dix, base deux, base seize sans réponse intuitive non vérifiée.
+Un protocole réseau fournit des octets en hexadécimal tandis qu’un relevé de laboratoire donne les mêmes valeurs en décimal.
 
 ## Activité d’entrée
-1. Lire la situation : un protocole réseau affiche des valeurs en hexadécimal alors que le cahier de mesures est en décimal.
-2. Isoler la donnée de départ : entier naturel 45.
-3. Prédire individuellement le résultat de l’exemple `45 en base dix`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : divisions euclidiennes successives puis regroupement par paquets de quatre bits.
-6. Contrôler avec le résultat de référence : 101101 en base deux et 2D en base seize.
-7. Tester le cas limite suivant : 0, 1 et changement de base avec un chiffre interdit.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+1. Convertir 13 par divisions successives.
+2. Reconstruire 45 à partir de `101101₂`.
+3. Regrouper `11110000₂` par paquets de quatre bits.
+4. Refuser une écriture binaire contenant le symbole 2.
 
-## Exemple corrigé précis
-- Exemple : `45 en base dix`.
-- Méthode : divisions euclidiennes successives puis regroupement par paquets de quatre bits.
-- Résultat : 101101 en base deux et 2D en base seize.
-- Justification : chaque étape transforme une donnée identifiable.
-
+## Exemples corrigés précis
+### Exemple corrigé 1 - décimal vers binaire
+- Donnée étudiée : `13` en base dix.
+- Méthode : enchaîner divisions par 2 puis lire les restes de bas en haut.
+- Résultat obtenu : `1101₂`.
+- Contrôle : le cas limite « 0 se code 0 » est vérifié séparément.
+### Exemple corrigé 2 - binaire vers décimal
+- Donnée étudiée : `101101₂`.
+- Méthode : additionner les poids `32 + 8 + 4 + 1`.
+- Résultat obtenu : `45`.
+- Contrôle : le cas limite « un seul bit à 1 » est vérifié séparément.
+### Exemple corrigé 3 - binaire vers hexadécimal
+- Donnée étudiée : `11110000₂`.
+- Méthode : séparer `1111` et `0000`, puis traduire chaque paquet.
+- Résultat obtenu : `F0₁₆`.
+- Contrôle : le cas limite « complément à gauche si le nombre de bits n’est pas multiple de 4 » est vérifié séparément.
+### Exemple corrigé 4 - décimal vers hexadécimal
+- Donnée étudiée : `255`.
+- Méthode : diviser par 16 et lire les restes avec les symboles A à F.
+- Résultat obtenu : `FF₁₆`.
+- Contrôle : le cas limite « chiffre hexadécimal maximal F » est vérifié séparément.
 ## Exercices numérotés
 ### Exercice 1
 - Objectif travaillé : O1.
 - Capacité officielle : P-DATA-BASE-01.
-- Énoncé : résoudre une variante de `45 en base dix` en changeant une donnée contrôlée.
-- Travail demandé : appliquer divisions euclidiennes successives puis regroupement par paquets de quatre bits, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `0, 1 et changement de base avec un chiffre interdit` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : résoudre décimal vers binaire avec `13` en base dix.
+- Production attendue : `1101₂`.
+- Contrainte de contrôle : faire apparaître le contrôle « 0 se code 0 ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 2
 - Objectif travaillé : O2.
 - Capacité officielle : P-DATA-BASE-01.
-- Énoncé : résoudre une variante de `45 en base dix` en changeant une donnée contrôlée.
-- Travail demandé : appliquer divisions euclidiennes successives puis regroupement par paquets de quatre bits, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `0, 1 et changement de base avec un chiffre interdit` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : expliquer binaire vers décimal à partir de `101101₂`.
+- Production attendue : `45`.
+- Contrainte de contrôle : rédiger la méthode avant le résultat.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 3
 - Objectif travaillé : O3.
 - Capacité officielle : P-DATA-BASE-01.
-- Énoncé : résoudre une variante de `45 en base dix` en changeant une donnée contrôlée.
-- Travail demandé : appliquer divisions euclidiennes successives puis regroupement par paquets de quatre bits, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `0, 1 et changement de base avec un chiffre interdit` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : comparer binaire vers hexadécimal avec `11110000₂`.
+- Production attendue : `F0₁₆`.
+- Contrainte de contrôle : comparer avec le cas « complément à gauche si le nombre de bits n’est pas multiple de 4 ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 4
 - Objectif travaillé : O4.
 - Capacité officielle : P-DATA-BASE-01.
-- Énoncé : résoudre une variante de `45 en base dix` en changeant une donnée contrôlée.
-- Travail demandé : appliquer divisions euclidiennes successives puis regroupement par paquets de quatre bits, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `0, 1 et changement de base avec un chiffre interdit` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : corriger décimal vers hexadécimal pour `255`.
+- Production attendue : `FF₁₆`.
+- Contrainte de contrôle : corriger l’erreur « Accepter un chiffre interdit dans la base utilisée. ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 5
 - Objectif travaillé : O1.
 - Capacité officielle : P-DATA-BASE-01.
-- Énoncé : résoudre une variante de `45 en base dix` en changeant une donnée contrôlée.
-- Travail demandé : appliquer divisions euclidiennes successives puis regroupement par paquets de quatre bits, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `0, 1 et changement de base avec un chiffre interdit` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : tester un cas limite lié à 0 se code 0.
+- Production attendue : le comportement de décimal vers binaire est contrôlé.
+- Contrainte de contrôle : nommer la donnée minimale et la conclusion.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 6
 - Objectif travaillé : O2.
 - Capacité officielle : P-DATA-BASE-01.
-- Énoncé : résoudre une variante de `45 en base dix` en changeant une donnée contrôlée.
-- Travail demandé : appliquer divisions euclidiennes successives puis regroupement par paquets de quatre bits, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `0, 1 et changement de base avec un chiffre interdit` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : classer deux méthodes possibles pour binaire vers décimal.
+- Production attendue : la méthode robuste est choisie et justifiée.
+- Contrainte de contrôle : identifier pourquoi « Additionner les chiffres binaires sans poids de position. » est une erreur.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 7
 - Objectif travaillé : O3.
 - Capacité officielle : P-DATA-BASE-01.
-- Énoncé : résoudre une variante de `45 en base dix` en changeant une donnée contrôlée.
-- Travail demandé : appliquer divisions euclidiennes successives puis regroupement par paquets de quatre bits, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `0, 1 et changement de base avec un chiffre interdit` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : justifier un transfert qui utilise binaire vers hexadécimal avec une donnée nouvelle.
+- Production attendue : la justification reste valable sur le nouveau cas.
+- Contrainte de contrôle : inclure une étape calculable par un pair.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 8
 - Objectif travaillé : O4.
 - Capacité officielle : P-DATA-BASE-01.
-- Énoncé : résoudre une variante de `45 en base dix` en changeant une donnée contrôlée.
-- Travail demandé : appliquer divisions euclidiennes successives puis regroupement par paquets de quatre bits, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `0, 1 et changement de base avec un chiffre interdit` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : étendre un énoncé volontairement erroné sur décimal vers hexadécimal.
+- Production attendue : l’erreur est localisée puis réparée.
+- Contrainte de contrôle : proposer une activité corrective inspirée de « Entourer chaque symbole et vérifier qu’il appartient à l’alphabet de la base. ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- On repère d’abord entier naturel 45.
-- On applique ensuite divisions euclidiennes successives puis regroupement par paquets de quatre bits.
-- Le résultat attendu est `101101 en base deux et 2D en base seize` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF1 est évitée car la vérification est écrite.
-
+- Méthode : identifier `13` en base dix, appliquer la méthode « enchaîner divisions par 2 puis lire les restes de bas en haut », puis écrire `1101₂`.
+- Résultat : `1101₂`.
+- Contrôle : faire apparaître le contrôle « 0 se code 0 ».
+- Erreur traitée : EF1 - Écrire les restes dans l’ordre de calcul au lieu de les lire de bas en haut.
 ### Corrigé exercice 2
-- On repère d’abord entier naturel 45.
-- On applique ensuite divisions euclidiennes successives puis regroupement par paquets de quatre bits.
-- Le résultat attendu est `101101 en base deux et 2D en base seize` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF2 est évitée car la vérification est écrite.
-
+- Méthode : expliciter chaque étape de additionner les poids `32 + 8 + 4 + 1` avant de conclure par `45`.
+- Résultat : `45`.
+- Contrôle : rédiger la méthode avant le résultat.
+- Erreur traitée : EF2 - Additionner les chiffres binaires sans poids de position.
 ### Corrigé exercice 3
-- On repère d’abord entier naturel 45.
-- On applique ensuite divisions euclidiennes successives puis regroupement par paquets de quatre bits.
-- Le résultat attendu est `101101 en base deux et 2D en base seize` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF3 est évitée car la vérification est écrite.
-
+- Méthode : comparer la donnée avec le cas limite « complément à gauche si le nombre de bits n’est pas multiple de 4 » et valider `F0₁₆`.
+- Résultat : `F0₁₆`.
+- Contrôle : comparer avec le cas « complément à gauche si le nombre de bits n’est pas multiple de 4 ».
+- Erreur traitée : EF3 - Former des paquets hexadécimaux sans compléter à gauche.
 ### Corrigé exercice 4
-- On repère d’abord entier naturel 45.
-- On applique ensuite divisions euclidiennes successives puis regroupement par paquets de quatre bits.
-- Le résultat attendu est `101101 en base deux et 2D en base seize` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF4 est évitée car la vérification est écrite.
-
+- Méthode : isoler l’erreur fréquente « Accepter un chiffre interdit dans la base utilisée. » puis reprendre la procédure correcte.
+- Résultat : `FF₁₆`.
+- Contrôle : corriger l’erreur « Accepter un chiffre interdit dans la base utilisée. ».
+- Erreur traitée : EF4 - Accepter un chiffre interdit dans la base utilisée.
 ### Corrigé exercice 5
-- On repère d’abord entier naturel 45.
-- On applique ensuite divisions euclidiennes successives puis regroupement par paquets de quatre bits.
-- Le résultat attendu est `101101 en base deux et 2D en base seize` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF1 est évitée car la vérification est écrite.
-
+- Méthode : identifier `13` en base dix, appliquer la méthode « enchaîner divisions par 2 puis lire les restes de bas en haut », puis écrire `1101₂`.
+- Résultat : le comportement de décimal vers binaire est contrôlé.
+- Contrôle : nommer la donnée minimale et la conclusion.
+- Erreur traitée : EF1 - Écrire les restes dans l’ordre de calcul au lieu de les lire de bas en haut.
 ### Corrigé exercice 6
-- On repère d’abord entier naturel 45.
-- On applique ensuite divisions euclidiennes successives puis regroupement par paquets de quatre bits.
-- Le résultat attendu est `101101 en base deux et 2D en base seize` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF2 est évitée car la vérification est écrite.
-
+- Méthode : expliciter chaque étape de additionner les poids `32 + 8 + 4 + 1` avant de conclure par `45`.
+- Résultat : la méthode robuste est choisie et justifiée.
+- Contrôle : identifier pourquoi « Additionner les chiffres binaires sans poids de position. » est une erreur.
+- Erreur traitée : EF2 - Additionner les chiffres binaires sans poids de position.
 ### Corrigé exercice 7
-- On repère d’abord entier naturel 45.
-- On applique ensuite divisions euclidiennes successives puis regroupement par paquets de quatre bits.
-- Le résultat attendu est `101101 en base deux et 2D en base seize` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF3 est évitée car la vérification est écrite.
-
+- Méthode : comparer la donnée avec le cas limite « complément à gauche si le nombre de bits n’est pas multiple de 4 » et valider `F0₁₆`.
+- Résultat : la justification reste valable sur le nouveau cas.
+- Contrôle : inclure une étape calculable par un pair.
+- Erreur traitée : EF3 - Former des paquets hexadécimaux sans compléter à gauche.
 ### Corrigé exercice 8
-- On repère d’abord entier naturel 45.
-- On applique ensuite divisions euclidiennes successives puis regroupement par paquets de quatre bits.
-- Le résultat attendu est `101101 en base deux et 2D en base seize` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF4 est évitée car la vérification est écrite.
-
+- Méthode : isoler l’erreur fréquente « Accepter un chiffre interdit dans la base utilisée. » puis reprendre la procédure correcte.
+- Résultat : l’erreur est localisée puis réparée.
+- Contrôle : proposer une activité corrective inspirée de « Entourer chaque symbole et vérifier qu’il appartient à l’alphabet de la base. ».
+- Erreur traitée : EF4 - Accepter un chiffre interdit dans la base utilisée.
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `101101 en base deux et 2D en base seize` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer divisions euclidiennes successives puis regroupement par paquets de quatre bits dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : 0, 1 et changement de base avec un chiffre interdit.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Écrire les restes dans l’ordre de calcul au lieu de les lire de bas en haut.
+- Erreur fréquente EF2 - Additionner les chiffres binaires sans poids de position.
+- Erreur fréquente EF3 - Former des paquets hexadécimaux sans compléter à gauche.
+- Erreur fréquente EF4 - Accepter un chiffre interdit dans la base utilisée.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `0, 1 et changement de base avec un chiffre interdit` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Rejouer la division de 45 en deux colonnes : quotient et reste.
+- Activité corrective EF2 : Annoter chaque bit par son poids avant toute addition.
+- Activité corrective EF3 : Compléter `101101₂` en `0010 1101₂` puis lire les deux paquets.
+- Activité corrective EF4 : Entourer chaque symbole et vérifier qu’il appartient à l’alphabet de la base.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter `13` en base dix avec une fiche méthode fournie.
+- Standard : traiter `101101₂` en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « complément à gauche si le nombre de bits n’est pas multiple de 4 » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
-
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.

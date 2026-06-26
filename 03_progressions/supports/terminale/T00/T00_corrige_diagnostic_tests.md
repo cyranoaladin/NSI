@@ -1,179 +1,140 @@
 ---
-title: "T00 - Corrige - Diagnostic Terminale et tests"
+title: "T00 - Corrige - Diagnostic tests"
 level: "terminale"
 sequence_id: "T00"
 document_type: "corrige"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_Tles NSI/0_Ressources/liens_ressources.odt"
-theme: "Reprise Python et qualité"
-notion: "tests, modularité, invariants simples"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
+theme: "Reprise Python et tests"
+notion: "fonction, assertion, cas limite, spécification"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
-    - "T-HIST-01A"
-    - "T-HIST-01B"
     - "T-LANG-03A"
-    - "T-LANG-05"
 ---
 
 
-# T00 - Corrige - Diagnostic Terminale et tests
+# T00 - Corrigé professeur - Diagnostic tests
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
-- T-HIST-01A
-- T-HIST-01B
 - T-LANG-03A
-- T-LANG-05
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à fonction.
+- Distinguer donnée, méthode et conclusion dans le thème Reprise Python et tests.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- T00-S1 à T00-S4 : ce support est rattaché aux séances indiquées dans la progression.
+- T00-S1 à T00-S4 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-un code repris de Première donne parfois le bon résultat mais ne possède aucun test explicite. La tâche consiste à traiter tests, modularité, invariants simples sans réponse intuitive non vérifiée.
+Une équipe reprend une bibliothèque Python de Première et doit écrire des tests avant de modifier le code.
 
 ## Activité d’entrée
-1. Lire la situation : un code repris de Première donne parfois le bon résultat mais ne possède aucun test explicite.
-2. Isoler la donnée de départ : liste de valeurs et contrat de fonction.
-3. Prédire individuellement le résultat de l’exemple `fonction maximum([3, 8, 2])`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-6. Contrôler avec le résultat de référence : 8 avec test nominal, test limite et test d’erreur.
-7. Tester le cas limite suivant : liste vide ou mutation inattendue.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+1. Écrire le résultat attendu pour une fonction `maximum`.
+2. Choisir un cas nominal, un cas limite et un cas invalide.
+3. Distinguer spécification et implémentation.
+4. Lire un message d’assertion échouée.
 
-## Exemple corrigé précis
-- Exemple : `fonction maximum([3, 8, 2])`.
-- Correction : isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-- Résultat : 8 avec test nominal, test limite et test d’erreur.
-- Justification : le raisonnement est lisible et relié à une capacité officielle.
-
+## Méthode générale de correction
+- Point 1 : pour maximum nominal, exiger la donnée `[3, 7, 2]`, la méthode « parcourir la liste en conservant le meilleur élément » et le contrôle « liste d’un élément ».
+- Point 2 : pour liste vide, exiger la donnée `[]`, la méthode « refuser l’entrée avant le parcours » et le contrôle « aucune valeur initiale ».
+- Point 3 : pour assertion, exiger la donnée `assert maximum([1]) == 1`, la méthode « traduire une exigence en test exécutable » et le contrôle « message utile en cas d’échec ».
+- Point 4 : pour entrée invalide, exiger la donnée `[1, "x"]`, la méthode « définir si le mélange de types est autorisé » et le contrôle « comparaison impossible ».
 ## Exercices numérotés
-- Les exercices 1 à 8 du TD sont repris ci-dessous pour rendre la correspondance vérifiable.
+- Exercice 1 : résoudre maximum nominal avec `[3, 7, 2]` ; attendu : `7`.
+- Exercice 2 : expliquer liste vide à partir de `[]` ; attendu : exception documentée.
+- Exercice 3 : comparer assertion avec `assert maximum([1]) == 1` ; attendu : test passant.
+- Exercice 4 : corriger entrée invalide pour `[1, "x"]` ; attendu : erreur contrôlée.
+- Exercice 5 : tester un cas limite lié à liste d’un élément ; attendu : le comportement de maximum nominal est contrôlé.
+- Exercice 6 : classer deux méthodes possibles pour liste vide ; attendu : la méthode robuste est choisie et justifiée.
+- Exercice 7 : justifier un transfert qui utilise assertion avec une donnée nouvelle ; attendu : la justification reste valable sur le nouveau cas.
+- Exercice 8 : étendre un énoncé volontairement erroné sur entrée invalide ; attendu : l’erreur est localisée puis réparée.
 
+## Corrigé
 ### Corrigé exercice 1
-- Objectif : O1.
-- Capacité : T-HIST-01A.
-- Donnée traitée : liste de valeurs et contrat de fonction.
-- Méthode correcte : isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-- Résultat de référence : `8 avec test nominal, test limite et test d’erreur`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF1.
-- Remédiation : Activité corrective EF1 si la méthode n’est pas justifiée.
-
+- Méthode : identifier `[3, 7, 2]`, appliquer la méthode « parcourir la liste en conservant le meilleur élément », puis écrire `7`.
+- Résultat : `7`.
+- Contrôle : faire apparaître le contrôle « liste d’un élément ».
+- Erreur traitée : EF1 - Tester seulement le cas donné en exemple.
 ### Corrigé exercice 2
-- Objectif : O2.
-- Capacité : T-HIST-01B.
-- Donnée traitée : liste de valeurs et contrat de fonction.
-- Méthode correcte : isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-- Résultat de référence : `8 avec test nominal, test limite et test d’erreur`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF2.
-- Remédiation : Activité corrective EF2 si la méthode n’est pas justifiée.
-
+- Méthode : expliciter chaque étape de refuser l’entrée avant le parcours avant de conclure par exception documentée.
+- Résultat : exception documentée.
+- Contrôle : rédiger la méthode avant le résultat.
+- Erreur traitée : EF2 - Écrire un test qui reproduit le code au lieu de la spécification.
 ### Corrigé exercice 3
-- Objectif : O3.
-- Capacité : T-LANG-03A.
-- Donnée traitée : liste de valeurs et contrat de fonction.
-- Méthode correcte : isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-- Résultat de référence : `8 avec test nominal, test limite et test d’erreur`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF3.
-- Remédiation : Activité corrective EF3 si la méthode n’est pas justifiée.
-
+- Méthode : comparer la donnée avec le cas limite « message utile en cas d’échec » et valider test passant.
+- Résultat : test passant.
+- Contrôle : comparer avec le cas « message utile en cas d’échec ».
+- Erreur traitée : EF3 - Oublier le cas vide.
 ### Corrigé exercice 4
-- Objectif : O4.
-- Capacité : T-LANG-05.
-- Donnée traitée : liste de valeurs et contrat de fonction.
-- Méthode correcte : isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-- Résultat de référence : `8 avec test nominal, test limite et test d’erreur`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF4.
-- Remédiation : Activité corrective EF4 si la méthode n’est pas justifiée.
-
+- Méthode : isoler l’erreur fréquente « Ne pas lire le message d’échec. » puis reprendre la procédure correcte.
+- Résultat : erreur contrôlée.
+- Contrôle : corriger l’erreur « Ne pas lire le message d’échec. ».
+- Erreur traitée : EF4 - Ne pas lire le message d’échec.
 ### Corrigé exercice 5
-- Objectif : O1.
-- Capacité : T-HIST-01A.
-- Donnée traitée : liste de valeurs et contrat de fonction.
-- Méthode correcte : isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-- Résultat de référence : `8 avec test nominal, test limite et test d’erreur`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF1.
-- Remédiation : Activité corrective EF1 si la méthode n’est pas justifiée.
-
+- Méthode : identifier `[3, 7, 2]`, appliquer la méthode « parcourir la liste en conservant le meilleur élément », puis écrire `7`.
+- Résultat : le comportement de maximum nominal est contrôlé.
+- Contrôle : nommer la donnée minimale et la conclusion.
+- Erreur traitée : EF1 - Tester seulement le cas donné en exemple.
 ### Corrigé exercice 6
-- Objectif : O2.
-- Capacité : T-HIST-01B.
-- Donnée traitée : liste de valeurs et contrat de fonction.
-- Méthode correcte : isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-- Résultat de référence : `8 avec test nominal, test limite et test d’erreur`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF2.
-- Remédiation : Activité corrective EF2 si la méthode n’est pas justifiée.
-
+- Méthode : expliciter chaque étape de refuser l’entrée avant le parcours avant de conclure par exception documentée.
+- Résultat : la méthode robuste est choisie et justifiée.
+- Contrôle : identifier pourquoi « Écrire un test qui reproduit le code au lieu de la spécification. » est une erreur.
+- Erreur traitée : EF2 - Écrire un test qui reproduit le code au lieu de la spécification.
 ### Corrigé exercice 7
-- Objectif : O3.
-- Capacité : T-LANG-03A.
-- Donnée traitée : liste de valeurs et contrat de fonction.
-- Méthode correcte : isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-- Résultat de référence : `8 avec test nominal, test limite et test d’erreur`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF3.
-- Remédiation : Activité corrective EF3 si la méthode n’est pas justifiée.
-
+- Méthode : comparer la donnée avec le cas limite « message utile en cas d’échec » et valider test passant.
+- Résultat : la justification reste valable sur le nouveau cas.
+- Contrôle : inclure une étape calculable par un pair.
+- Erreur traitée : EF3 - Oublier le cas vide.
 ### Corrigé exercice 8
-- Objectif : O4.
-- Capacité : T-LANG-05.
-- Donnée traitée : liste de valeurs et contrat de fonction.
-- Méthode correcte : isoler la fonction, écrire le contrat, tester cas nominal et cas limite.
-- Résultat de référence : `8 avec test nominal, test limite et test d’erreur`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF4.
-- Remédiation : Activité corrective EF4 si la méthode n’est pas justifiée.
+- Méthode : isoler l’erreur fréquente « Ne pas lire le message d’échec. » puis reprendre la procédure correcte.
+- Résultat : l’erreur est localisée puis réparée.
+- Contrôle : proposer une activité corrective inspirée de « Réécrire le message d’échec comme diagnostic. ».
+- Erreur traitée : EF4 - Ne pas lire le message d’échec.
 
-## Barème de correction
-- Méthode explicite : 4 points.
-- Résultat correct : 3 points.
-- Justification reliée à la capacité : 2 points.
-- Contrôle ou cas limite : 1 point.
-
+## Barème de correction rapide
+- Exercice 1 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « faire apparaître le contrôle « liste d’un élément » ».
+- Exercice 2 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « rédiger la méthode avant le résultat ».
+- Exercice 3 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « comparer avec le cas « message utile en cas d’échec » ».
+- Exercice 4 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « corriger l’erreur « Ne pas lire le message d’échec. » ».
+- Exercice 5 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « nommer la donnée minimale et la conclusion ».
+- Exercice 6 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « identifier pourquoi « Écrire un test qui reproduit le code au lieu de la spécification. » est une erreur ».
+- Exercice 7 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « inclure une étape calculable par un pair ».
+- Exercice 8 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « proposer une activité corrective inspirée de « Réécrire le message d’échec comme diagnostic. » ».
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `8 avec test nominal, test limite et test d’erreur` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer isoler la fonction, écrire le contrat, tester cas nominal et cas limite dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : liste vide ou mutation inattendue.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Tester seulement le cas donné en exemple.
+- Erreur fréquente EF2 - Écrire un test qui reproduit le code au lieu de la spécification.
+- Erreur fréquente EF3 - Oublier le cas vide.
+- Erreur fréquente EF4 - Ne pas lire le message d’échec.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `liste vide ou mutation inattendue` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Construire un tableau cas nominal, limite, invalide.
+- Activité corrective EF2 : Formuler le résultat attendu en français avant le code du test.
+- Activité corrective EF3 : Ajouter systématiquement une entrée minimale.
+- Activité corrective EF4 : Réécrire le message d’échec comme diagnostic.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter `[3, 7, 2]` avec une fiche méthode fournie.
+- Standard : traiter `[]` en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « message utile en cas d’échec » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
-
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.

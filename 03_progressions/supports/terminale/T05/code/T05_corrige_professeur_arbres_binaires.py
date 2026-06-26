@@ -1,15 +1,9 @@
-"""Corrigé professeur TP T05 - Arbres binaires et parcours."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-
 def parcours_infixe(arbre):
-    """Implémentation de référence pour nœud, parcours, recherche, complexité."""
     if arbre is None:
-        raise ValueError("entrée absente")
-    return {
-        "entree": arbre,
-        "methode": "raisonner récursivement sur arbre vide puis racine puis sous-arbres",
-        "controle": "parcours infixe 2, 4, 7",
-        "cas_limite": "arbre vide ou arbre très déséquilibré",
-    }
+        return []
+    valeur, gauche, droite = arbre
+    return parcours_infixe(gauche) + [valeur] + parcours_infixe(droite)

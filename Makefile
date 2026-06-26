@@ -32,6 +32,14 @@ audit-local:
 	python scripts/check_first_batch_document_quality.py
 	python scripts/check_first_batch_alignment.py
 	python scripts/check_first_batch_tp_assets.py
+	python scripts/check_support_substance.py
+	python scripts/check_no_line_padding.py
+	python scripts/check_tp_pedagogical_assets.py
+	python scripts/check_sequence_contracts.py
+	python scripts/check_local_drive_traceability.py
+	python scripts/check_ready_supports_required_sections.py
+	python scripts/check_ready_supports_depth.py
+	python scripts/check_ready_session_operationality.py
 	python scripts/check_evaluation_distribution.py
 	python scripts/check_teacher_docs_depth.py
 	python scripts/check_validated_documents_quality_gates.py
@@ -86,6 +94,14 @@ audit-extracted-source:
 	python scripts/check_first_batch_document_quality.py
 	python scripts/check_first_batch_alignment.py
 	python scripts/check_first_batch_tp_assets.py
+	python scripts/check_support_substance.py
+	python scripts/check_no_line_padding.py
+	python scripts/check_tp_pedagogical_assets.py
+	python scripts/check_sequence_contracts.py
+	python scripts/check_local_drive_traceability.py
+	python scripts/check_ready_supports_required_sections.py
+	python scripts/check_ready_supports_depth.py
+	python scripts/check_ready_session_operationality.py
 	python scripts/check_no_private_data.py
 	python scripts/check_no_placeholders_docs.py
 	python scripts/check_no_build_artifacts_in_index.py

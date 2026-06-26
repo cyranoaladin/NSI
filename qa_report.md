@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 336
-- Ressources needs_review : 336
+- Ressources inventoriées : 364
+- Ressources needs_review : 364
 - Ressources publiables : 0
-- Source generated : 336
+- Source generated : 364
 - Source drive : 0
 - Lignes drive_inventory.csv : 22
 - Couverture covered : 0

@@ -1,25 +1,30 @@
-"""Tests attendus TP P00."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-from P00_starter_diagnostic_python import predict_trace
+import importlib
+import os
 
+MODULE = importlib.import_module(os.environ.get("TP_MODULE", "P00_starter_diagnostic_python"))
+predict_trace = MODULE.predict_trace
 
 def test_nominal() -> None:
-    sortie = predict_trace([("x", 3), ("x", 5)])
-    assert sortie["controle"] == "5"
-    assert sortie["cas_limite"] == "réaffectation avec zéro ou valeur négative"
+    result = predict_trace([("x", 3), ("x", 5)])
+    assert result["etat_final"]["x"] == 5
 
+def test_limite() -> None:
+    result = predict_trace([])
+    assert result["etat_final"] == {}
 
-def test_entree_absente() -> None:
+def test_invalide() -> None:
     try:
         predict_trace(None)
-    except ValueError:
+    except (ValueError, TypeError, IndexError):
         return
-    raise AssertionError("ValueError attendue pour entrée absente")
-
+    raise AssertionError("exception attendue")
 
 if __name__ == "__main__":
     test_nominal()
-    test_entree_absente()
+    test_limite()
+    test_invalide()
     print("tests attendus OK")

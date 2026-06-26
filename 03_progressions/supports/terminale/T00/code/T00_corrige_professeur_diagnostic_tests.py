@@ -1,15 +1,12 @@
-"""Corrigé professeur TP T00 - Diagnostic Terminale et tests."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-
 def maximum_controle(valeurs):
-    """Implémentation de référence pour tests, modularité, invariants simples."""
-    if valeurs is None:
-        raise ValueError("entrée absente")
-    return {
-        "entree": valeurs,
-        "methode": "isoler la fonction, écrire le contrat, tester cas nominal et cas limite",
-        "controle": "8 avec test nominal, test limite et test d’erreur",
-        "cas_limite": "liste vide ou mutation inattendue",
-    }
+    if valeurs is None or len(valeurs) == 0:
+        raise ValueError("liste non vide attendue")
+    maximum = valeurs[0]
+    for valeur in valeurs[1:]:
+        if valeur > maximum:
+            maximum = valeur
+    return maximum

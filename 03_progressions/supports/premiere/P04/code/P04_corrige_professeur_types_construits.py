@@ -1,15 +1,10 @@
-"""Corrigé professeur TP P04 - Types construits Python."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-
 def resume_mesures(mesures):
-    """Implémentation de référence pour tuple, liste, dictionnaire, parcours."""
     if mesures is None:
-        raise ValueError("entrée absente")
-    return {
-        "entree": mesures,
-        "methode": "choisir le conteneur selon mutabilité, ordre et accès attendu",
-        "controle": "tuple non modifié, liste mise à jour, dictionnaire consulté par clé",
-        "cas_limite": "copie de liste et clé absente",
-    }
+        raise ValueError("mesures absentes")
+    if not mesures:
+        return {"nombre": 0, "minimum": None, "maximum": None, "moyenne": None}
+    return {"nombre": len(mesures), "minimum": min(mesures), "maximum": max(mesures), "moyenne": sum(mesures) / len(mesures)}

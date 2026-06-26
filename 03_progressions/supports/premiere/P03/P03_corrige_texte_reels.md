@@ -4,174 +4,137 @@ level: "premiere"
 sequence_id: "P03"
 document_type: "corrige"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_NSI/Programmes et textes officiels/0_Programmes.pdf"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
 theme: "Données textuelles et approximation"
-notion: "Unicode, UTF-8, flottants"
+notion: "Unicode, UTF-8, octet, flottant"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
     - "P-DATA-BASE-05A"
-    - "P-DATA-BASE-05B"
-    - "P-DATA-BASE-03"
 ---
 
 
-# P03 - Corrige - Texte Unicode et nombres réels
+# P03 - Corrigé professeur - Texte Unicode et nombres réels
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
 - P-DATA-BASE-05A
-- P-DATA-BASE-05B
-- P-DATA-BASE-03
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à Unicode.
+- Distinguer donnée, méthode et conclusion dans le thème Données textuelles et approximation.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- P03-S1 à P03-S5 : ce support est rattaché aux séances indiquées dans la progression.
+- P03-S1 à P03-S5 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-un formulaire accepte des accents mais un export binaire doit compter caractères, octets et valeurs approchées. La tâche consiste à traiter Unicode, UTF-8, flottants sans réponse intuitive non vérifiée.
+Un formulaire international mélange accents, symboles monétaires et mesures décimales calculées par programme.
 
 ## Activité d’entrée
-1. Lire la situation : un formulaire accepte des accents mais un export binaire doit compter caractères, octets et valeurs approchées.
-2. Isoler la donnée de départ : chaîne Unicode et calcul décimal représenté en binaire.
-3. Prédire individuellement le résultat de l’exemple `Aé et 0.1 + 0.2`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : distinguer point de code, encodage, octets et approximation machine.
-6. Contrôler avec le résultat de référence : 2 caractères, 3 octets, somme flottante non exactement égale à 0.3.
-7. Tester le cas limite suivant : caractère hors ASCII ou comparaison directe de flottants.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+1. Comparer `A`, `é` et `€` selon caractères et octets.
+2. Encoder `Aé` en UTF-8.
+3. Observer `0.1 + 0.2` dans Python.
+4. Décider quand utiliser une tolérance.
 
-## Exemple corrigé précis
-- Exemple : `Aé et 0.1 + 0.2`.
-- Correction : distinguer point de code, encodage, octets et approximation machine.
-- Résultat : 2 caractères, 3 octets, somme flottante non exactement égale à 0.3.
-- Justification : le raisonnement est lisible et relié à une capacité officielle.
-
+## Méthode générale de correction
+- Point 1 : pour ASCII simple, exiger la donnée `A`, la méthode « lire le point de code U+0041 puis son octet UTF-8 » et le contrôle « caractère dans l’ASCII ».
+- Point 2 : pour accent UTF-8, exiger la donnée `é`, la méthode « distinguer un caractère et deux octets » et le contrôle « longueur en octets différente de la longueur en caractères ».
+- Point 3 : pour chaîne mixte, exiger la donnée `Aé`, la méthode « additionner les tailles UTF-8 de chaque caractère » et le contrôle « chaîne vide ».
+- Point 4 : pour flottant, exiger la donnée `0.1 + 0.2`, la méthode « comparer avec une tolérance au lieu de `==` » et le contrôle « arrondi binaire ».
 ## Exercices numérotés
-- Les exercices 1 à 8 du TD sont repris ci-dessous pour rendre la correspondance vérifiable.
+- Exercice 1 : résoudre ASCII simple avec `A` ; attendu : `41` en hexadécimal.
+- Exercice 2 : expliquer accent UTF-8 à partir de `é` ; attendu : `c3 a9`.
+- Exercice 3 : comparer chaîne mixte avec `Aé` ; attendu : 2 caractères et 3 octets.
+- Exercice 4 : corriger flottant pour `0.1 + 0.2` ; attendu : valeur proche de `0.3`.
+- Exercice 5 : tester un cas limite lié à caractère dans l’ASCII ; attendu : le comportement de ASCII simple est contrôlé.
+- Exercice 6 : classer deux méthodes possibles pour accent UTF-8 ; attendu : la méthode robuste est choisie et justifiée.
+- Exercice 7 : justifier un transfert qui utilise chaîne mixte avec une donnée nouvelle ; attendu : la justification reste valable sur le nouveau cas.
+- Exercice 8 : étendre un énoncé volontairement erroné sur flottant ; attendu : l’erreur est localisée puis réparée.
 
+## Corrigé
 ### Corrigé exercice 1
-- Objectif : O1.
-- Capacité : P-DATA-BASE-05A.
-- Donnée traitée : chaîne Unicode et calcul décimal représenté en binaire.
-- Méthode correcte : distinguer point de code, encodage, octets et approximation machine.
-- Résultat de référence : `2 caractères, 3 octets, somme flottante non exactement égale à 0.3`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF1.
-- Remédiation : Activité corrective EF1 si la méthode n’est pas justifiée.
-
+- Méthode : identifier `A`, appliquer la méthode « lire le point de code U+0041 puis son octet UTF-8 », puis écrire `41` en hexadécimal.
+- Résultat : `41` en hexadécimal.
+- Contrôle : faire apparaître le contrôle « caractère dans l’ASCII ».
+- Erreur traitée : EF1 - Compter les caractères au lieu des octets en UTF-8.
 ### Corrigé exercice 2
-- Objectif : O2.
-- Capacité : P-DATA-BASE-05B.
-- Donnée traitée : chaîne Unicode et calcul décimal représenté en binaire.
-- Méthode correcte : distinguer point de code, encodage, octets et approximation machine.
-- Résultat de référence : `2 caractères, 3 octets, somme flottante non exactement égale à 0.3`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF2.
-- Remédiation : Activité corrective EF2 si la méthode n’est pas justifiée.
-
+- Méthode : expliciter chaque étape de distinguer un caractère et deux octets avant de conclure par `c3 a9`.
+- Résultat : `c3 a9`.
+- Contrôle : rédiger la méthode avant le résultat.
+- Erreur traitée : EF2 - Croire que tout caractère occupe un octet.
 ### Corrigé exercice 3
-- Objectif : O3.
-- Capacité : P-DATA-BASE-03.
-- Donnée traitée : chaîne Unicode et calcul décimal représenté en binaire.
-- Méthode correcte : distinguer point de code, encodage, octets et approximation machine.
-- Résultat de référence : `2 caractères, 3 octets, somme flottante non exactement égale à 0.3`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF3.
-- Remédiation : Activité corrective EF3 si la méthode n’est pas justifiée.
-
+- Méthode : comparer la donnée avec le cas limite « chaîne vide » et valider 2 caractères et 3 octets.
+- Résultat : 2 caractères et 3 octets.
+- Contrôle : comparer avec le cas « chaîne vide ».
+- Erreur traitée : EF3 - Comparer deux flottants avec égalité stricte après calcul.
 ### Corrigé exercice 4
-- Objectif : O4.
-- Capacité : P-DATA-BASE-05A.
-- Donnée traitée : chaîne Unicode et calcul décimal représenté en binaire.
-- Méthode correcte : distinguer point de code, encodage, octets et approximation machine.
-- Résultat de référence : `2 caractères, 3 octets, somme flottante non exactement égale à 0.3`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF4.
-- Remédiation : Activité corrective EF4 si la méthode n’est pas justifiée.
-
+- Méthode : isoler l’erreur fréquente « Confondre point de code et représentation binaire. » puis reprendre la procédure correcte.
+- Résultat : valeur proche de `0.3`.
+- Contrôle : corriger l’erreur « Confondre point de code et représentation binaire. ».
+- Erreur traitée : EF4 - Confondre point de code et représentation binaire.
 ### Corrigé exercice 5
-- Objectif : O1.
-- Capacité : P-DATA-BASE-05B.
-- Donnée traitée : chaîne Unicode et calcul décimal représenté en binaire.
-- Méthode correcte : distinguer point de code, encodage, octets et approximation machine.
-- Résultat de référence : `2 caractères, 3 octets, somme flottante non exactement égale à 0.3`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF1.
-- Remédiation : Activité corrective EF1 si la méthode n’est pas justifiée.
-
+- Méthode : identifier `A`, appliquer la méthode « lire le point de code U+0041 puis son octet UTF-8 », puis écrire `41` en hexadécimal.
+- Résultat : le comportement de ASCII simple est contrôlé.
+- Contrôle : nommer la donnée minimale et la conclusion.
+- Erreur traitée : EF1 - Compter les caractères au lieu des octets en UTF-8.
 ### Corrigé exercice 6
-- Objectif : O2.
-- Capacité : P-DATA-BASE-03.
-- Donnée traitée : chaîne Unicode et calcul décimal représenté en binaire.
-- Méthode correcte : distinguer point de code, encodage, octets et approximation machine.
-- Résultat de référence : `2 caractères, 3 octets, somme flottante non exactement égale à 0.3`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF2.
-- Remédiation : Activité corrective EF2 si la méthode n’est pas justifiée.
-
+- Méthode : expliciter chaque étape de distinguer un caractère et deux octets avant de conclure par `c3 a9`.
+- Résultat : la méthode robuste est choisie et justifiée.
+- Contrôle : identifier pourquoi « Croire que tout caractère occupe un octet. » est une erreur.
+- Erreur traitée : EF2 - Croire que tout caractère occupe un octet.
 ### Corrigé exercice 7
-- Objectif : O3.
-- Capacité : P-DATA-BASE-05A.
-- Donnée traitée : chaîne Unicode et calcul décimal représenté en binaire.
-- Méthode correcte : distinguer point de code, encodage, octets et approximation machine.
-- Résultat de référence : `2 caractères, 3 octets, somme flottante non exactement égale à 0.3`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF3.
-- Remédiation : Activité corrective EF3 si la méthode n’est pas justifiée.
-
+- Méthode : comparer la donnée avec le cas limite « chaîne vide » et valider 2 caractères et 3 octets.
+- Résultat : la justification reste valable sur le nouveau cas.
+- Contrôle : inclure une étape calculable par un pair.
+- Erreur traitée : EF3 - Comparer deux flottants avec égalité stricte après calcul.
 ### Corrigé exercice 8
-- Objectif : O4.
-- Capacité : P-DATA-BASE-05B.
-- Donnée traitée : chaîne Unicode et calcul décimal représenté en binaire.
-- Méthode correcte : distinguer point de code, encodage, octets et approximation machine.
-- Résultat de référence : `2 caractères, 3 octets, somme flottante non exactement égale à 0.3`.
-- Contrôle : comparer la sortie à la représentation attendue et expliquer l’écart éventuel.
-- Erreur fréquente évitée : EF4.
-- Remédiation : Activité corrective EF4 si la méthode n’est pas justifiée.
+- Méthode : isoler l’erreur fréquente « Confondre point de code et représentation binaire. » puis reprendre la procédure correcte.
+- Résultat : l’erreur est localisée puis réparée.
+- Contrôle : proposer une activité corrective inspirée de « Séparer nom du caractère et encodage effectif. ».
+- Erreur traitée : EF4 - Confondre point de code et représentation binaire.
 
-## Barème de correction
-- Méthode explicite : 4 points.
-- Résultat correct : 3 points.
-- Justification reliée à la capacité : 2 points.
-- Contrôle ou cas limite : 1 point.
-
+## Barème de correction rapide
+- Exercice 1 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « faire apparaître le contrôle « caractère dans l’ASCII » ».
+- Exercice 2 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « rédiger la méthode avant le résultat ».
+- Exercice 3 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « comparer avec le cas « chaîne vide » ».
+- Exercice 4 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « corriger l’erreur « Confondre point de code et représentation binaire. » ».
+- Exercice 5 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « nommer la donnée minimale et la conclusion ».
+- Exercice 6 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « identifier pourquoi « Croire que tout caractère occupe un octet. » est une erreur ».
+- Exercice 7 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « inclure une étape calculable par un pair ».
+- Exercice 8 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « proposer une activité corrective inspirée de « Séparer nom du caractère et encodage effectif. » ».
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `2 caractères, 3 octets, somme flottante non exactement égale à 0.3` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer distinguer point de code, encodage, octets et approximation machine dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : caractère hors ASCII ou comparaison directe de flottants.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Compter les caractères au lieu des octets en UTF-8.
+- Erreur fréquente EF2 - Croire que tout caractère occupe un octet.
+- Erreur fréquente EF3 - Comparer deux flottants avec égalité stricte après calcul.
+- Erreur fréquente EF4 - Confondre point de code et représentation binaire.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `caractère hors ASCII ou comparaison directe de flottants` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Afficher la liste des octets avec `encode("utf-8")`.
+- Activité corrective EF2 : Construire un tableau caractère, point de code, octets.
+- Activité corrective EF3 : Utiliser une tolérance absolue et justifier son ordre de grandeur.
+- Activité corrective EF4 : Séparer nom du caractère et encodage effectif.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter `A` avec une fiche méthode fournie.
+- Standard : traiter `é` en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « chaîne vide » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
-
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.

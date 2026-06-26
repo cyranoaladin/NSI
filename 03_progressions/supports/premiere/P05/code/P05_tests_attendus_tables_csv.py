@@ -1,25 +1,30 @@
-"""Tests attendus TP P05."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-from P05_starter_tables_csv import filtrer_table
+import importlib
+import os
 
+MODULE = importlib.import_module(os.environ.get("TP_MODULE", "P05_starter_tables_csv"))
+filtrer_table = MODULE.filtrer_table
 
 def test_nominal() -> None:
-    sortie = filtrer_table([{"nom":"Ada", "age":"17"}])
-    assert sortie["controle"] == "liste de dictionnaires filtrée puis moyenne calculée"
-    assert sortie["cas_limite"] == "champ vide, séparateur inattendu ou nombre invalide"
+    result = filtrer_table([{"nom":"Ada","age":"17"},{"nom":"Tim","age":"14"}])
+    assert len(result["valides"]) == 1 and result["valides"][0]["nom"] == "Ada"
 
+def test_limite() -> None:
+    result = filtrer_table([{"nom":"Lin","age":"x"}])
+    assert len(result["erreurs"]) == 1
 
-def test_entree_absente() -> None:
+def test_invalide() -> None:
     try:
         filtrer_table(None)
-    except ValueError:
+    except (ValueError, TypeError, IndexError):
         return
-    raise AssertionError("ValueError attendue pour entrée absente")
-
+    raise AssertionError("exception attendue")
 
 if __name__ == "__main__":
     test_nominal()
-    test_entree_absente()
+    test_limite()
+    test_invalide()
     print("tests attendus OK")

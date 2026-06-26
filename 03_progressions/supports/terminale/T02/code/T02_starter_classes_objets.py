@@ -1,14 +1,11 @@
-"""Starter TP T02 - Classes, objets et invariants."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-
 def creer_compte(solde):
-    """Retourne une synthèse contrôlable pour le TP T02."""
-    if solde is None:
-        raise ValueError("entrée absente")
-    return {"entree": solde, "controle": "solde 13 si l’invariant reste vérifié", "cas_limite": "montant négatif ou accès direct à l’attribut"}
-
+    if solde is None or solde < 0:
+        raise ValueError("solde initial invalide")
+    return {"solde": solde}
 
 if __name__ == "__main__":
     print(creer_compte(20))

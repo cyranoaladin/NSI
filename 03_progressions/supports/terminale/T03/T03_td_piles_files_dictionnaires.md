@@ -4,207 +4,189 @@ level: "terminale"
 sequence_id: "T03"
 document_type: "td"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_NSI/Formation TOULOUSE/BLOC4/TD EIL - TAD - 2019-2020.pdf"
-theme: "Structures linéaires"
-notion: "LIFO, FIFO, dictionnaire d’index"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
+theme: "Structures linéaires et tables associatives"
+notion: "pile, file, dictionnaire, complexité"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
     - "T-STRUCT-03A"
-    - "T-STRUCT-03B"
-    - "T-STRUCT-03C"
 ---
 
-
-# T03 - Td - Piles, files et dictionnaires
+# T03 - TD - Piles, files et dictionnaires
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
 - T-STRUCT-03A
-- T-STRUCT-03B
-- T-STRUCT-03C
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à pile.
+- Distinguer donnée, méthode et conclusion dans le thème Structures linéaires et tables associatives.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- T03-S1 à T03-S6 : ce support est rattaché aux séances indiquées dans la progression.
+- T03-S1 à T03-S7 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-une application doit gérer un historique d’annulation et une file d’attente de requêtes. La tâche consiste à traiter LIFO, FIFO, dictionnaire d’index sans réponse intuitive non vérifiée.
+Un serveur journalise des tâches en attente et doit choisir entre pile, file et dictionnaire selon l’usage.
 
 ## Activité d’entrée
-1. Lire la situation : une application doit gérer un historique d’annulation et une file d’attente de requêtes.
-2. Isoler la donnée de départ : suite d’opérations sur collection linéaire.
-3. Prédire individuellement le résultat de l’exemple `empiler A, empiler B, dépiler`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : choisir LIFO ou FIFO selon l’ordre de sortie attendu.
-6. Contrôler avec le résultat de référence : B sort avant A pour une pile ; A sort avant B pour une file.
-7. Tester le cas limite suivant : dépiler ou défiler une structure vide.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+1. Simuler une pile sur trois opérations.
+2. Simuler une file sur trois clients.
+3. Utiliser un dictionnaire pour retrouver une tâche par identifiant.
+4. Comparer coût de recherche et d’accès direct.
 
-## Exemple corrigé précis
-- Exemple : `empiler A, empiler B, dépiler`.
-- Méthode : choisir LIFO ou FIFO selon l’ordre de sortie attendu.
-- Résultat : B sort avant A pour une pile ; A sort avant B pour une file.
-- Justification : chaque étape transforme une donnée identifiable.
-
+## Exemples corrigés précis
+### Exemple corrigé 1 - pile
+- Donnée étudiée : empiler A puis B, dépiler.
+- Méthode : appliquer LIFO.
+- Résultat obtenu : B sort en premier.
+- Contrôle : le cas limite « pile vide » est vérifié séparément.
+### Exemple corrigé 2 - file
+- Donnée étudiée : enfiler A puis B, défiler.
+- Méthode : appliquer FIFO.
+- Résultat obtenu : A sort en premier.
+- Contrôle : le cas limite « file vide » est vérifié séparément.
+### Exemple corrigé 3 - dictionnaire
+- Donnée étudiée : `{"id7": "ok"}`.
+- Méthode : tester la clé puis accéder.
+- Résultat obtenu : `ok`.
+- Contrôle : le cas limite « clé absente » est vérifié séparément.
+### Exemple corrigé 4 - complexité
+- Donnée étudiée : accès par identifiant.
+- Méthode : choisir dictionnaire plutôt que parcours linéaire.
+- Résultat obtenu : accès attendu constant.
+- Contrôle : le cas limite « collision abstraite hors programme » est vérifié séparément.
 ## Exercices numérotés
 ### Exercice 1
 - Objectif travaillé : O1.
 - Capacité officielle : T-STRUCT-03A.
-- Énoncé : résoudre une variante de `empiler A, empiler B, dépiler` en changeant une donnée contrôlée.
-- Travail demandé : appliquer choisir LIFO ou FIFO selon l’ordre de sortie attendu, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `dépiler ou défiler une structure vide` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : résoudre pile avec empiler A puis B, dépiler.
+- Production attendue : B sort en premier.
+- Contrainte de contrôle : faire apparaître le contrôle « pile vide ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 2
 - Objectif travaillé : O2.
-- Capacité officielle : T-STRUCT-03B.
-- Énoncé : résoudre une variante de `empiler A, empiler B, dépiler` en changeant une donnée contrôlée.
-- Travail demandé : appliquer choisir LIFO ou FIFO selon l’ordre de sortie attendu, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `dépiler ou défiler une structure vide` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : T-STRUCT-03A.
+- Énoncé disciplinaire : expliquer file à partir de enfiler A puis B, défiler.
+- Production attendue : A sort en premier.
+- Contrainte de contrôle : rédiger la méthode avant le résultat.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 3
 - Objectif travaillé : O3.
-- Capacité officielle : T-STRUCT-03C.
-- Énoncé : résoudre une variante de `empiler A, empiler B, dépiler` en changeant une donnée contrôlée.
-- Travail demandé : appliquer choisir LIFO ou FIFO selon l’ordre de sortie attendu, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `dépiler ou défiler une structure vide` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : T-STRUCT-03A.
+- Énoncé disciplinaire : comparer dictionnaire avec `{"id7": "ok"}`.
+- Production attendue : `ok`.
+- Contrainte de contrôle : comparer avec le cas « clé absente ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 4
 - Objectif travaillé : O4.
 - Capacité officielle : T-STRUCT-03A.
-- Énoncé : résoudre une variante de `empiler A, empiler B, dépiler` en changeant une donnée contrôlée.
-- Travail demandé : appliquer choisir LIFO ou FIFO selon l’ordre de sortie attendu, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `dépiler ou défiler une structure vide` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : corriger complexité pour accès par identifiant.
+- Production attendue : accès attendu constant.
+- Contrainte de contrôle : corriger l’erreur « Confondre clé et valeur. ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 5
 - Objectif travaillé : O1.
-- Capacité officielle : T-STRUCT-03B.
-- Énoncé : résoudre une variante de `empiler A, empiler B, dépiler` en changeant une donnée contrôlée.
-- Travail demandé : appliquer choisir LIFO ou FIFO selon l’ordre de sortie attendu, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `dépiler ou défiler une structure vide` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : T-STRUCT-03A.
+- Énoncé disciplinaire : tester un cas limite lié à pile vide.
+- Production attendue : le comportement de pile est contrôlé.
+- Contrainte de contrôle : nommer la donnée minimale et la conclusion.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 6
 - Objectif travaillé : O2.
-- Capacité officielle : T-STRUCT-03C.
-- Énoncé : résoudre une variante de `empiler A, empiler B, dépiler` en changeant une donnée contrôlée.
-- Travail demandé : appliquer choisir LIFO ou FIFO selon l’ordre de sortie attendu, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `dépiler ou défiler une structure vide` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : T-STRUCT-03A.
+- Énoncé disciplinaire : classer deux méthodes possibles pour file.
+- Production attendue : la méthode robuste est choisie et justifiée.
+- Contrainte de contrôle : identifier pourquoi « Retirer dans une structure vide sans test. » est une erreur.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 7
 - Objectif travaillé : O3.
 - Capacité officielle : T-STRUCT-03A.
-- Énoncé : résoudre une variante de `empiler A, empiler B, dépiler` en changeant une donnée contrôlée.
-- Travail demandé : appliquer choisir LIFO ou FIFO selon l’ordre de sortie attendu, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `dépiler ou défiler une structure vide` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : justifier un transfert qui utilise dictionnaire avec une donnée nouvelle.
+- Production attendue : la justification reste valable sur le nouveau cas.
+- Contrainte de contrôle : inclure une étape calculable par un pair.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 8
 - Objectif travaillé : O4.
-- Capacité officielle : T-STRUCT-03B.
-- Énoncé : résoudre une variante de `empiler A, empiler B, dépiler` en changeant une donnée contrôlée.
-- Travail demandé : appliquer choisir LIFO ou FIFO selon l’ordre de sortie attendu, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `dépiler ou défiler une structure vide` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : T-STRUCT-03A.
+- Énoncé disciplinaire : étendre un énoncé volontairement erroné sur complexité.
+- Production attendue : l’erreur est localisée puis réparée.
+- Contrainte de contrôle : proposer une activité corrective inspirée de « Surligner clés et valeurs de couleurs différentes. ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- On repère d’abord suite d’opérations sur collection linéaire.
-- On applique ensuite choisir LIFO ou FIFO selon l’ordre de sortie attendu.
-- Le résultat attendu est `B sort avant A pour une pile ; A sort avant B pour une file` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF1 est évitée car la vérification est écrite.
-
+- Méthode : identifier empiler A puis B, dépiler, appliquer la méthode « appliquer LIFO », puis écrire B sort en premier.
+- Résultat : B sort en premier.
+- Contrôle : faire apparaître le contrôle « pile vide ».
+- Erreur traitée : EF1 - Inverser LIFO et FIFO.
 ### Corrigé exercice 2
-- On repère d’abord suite d’opérations sur collection linéaire.
-- On applique ensuite choisir LIFO ou FIFO selon l’ordre de sortie attendu.
-- Le résultat attendu est `B sort avant A pour une pile ; A sort avant B pour une file` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF2 est évitée car la vérification est écrite.
-
+- Méthode : expliciter chaque étape de appliquer FIFO avant de conclure par A sort en premier.
+- Résultat : A sort en premier.
+- Contrôle : rédiger la méthode avant le résultat.
+- Erreur traitée : EF2 - Retirer dans une structure vide sans test.
 ### Corrigé exercice 3
-- On repère d’abord suite d’opérations sur collection linéaire.
-- On applique ensuite choisir LIFO ou FIFO selon l’ordre de sortie attendu.
-- Le résultat attendu est `B sort avant A pour une pile ; A sort avant B pour une file` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF3 est évitée car la vérification est écrite.
-
+- Méthode : comparer la donnée avec le cas limite « clé absente » et valider `ok`.
+- Résultat : `ok`.
+- Contrôle : comparer avec le cas « clé absente ».
+- Erreur traitée : EF3 - Parcourir tout un dictionnaire pour une clé connue.
 ### Corrigé exercice 4
-- On repère d’abord suite d’opérations sur collection linéaire.
-- On applique ensuite choisir LIFO ou FIFO selon l’ordre de sortie attendu.
-- Le résultat attendu est `B sort avant A pour une pile ; A sort avant B pour une file` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF4 est évitée car la vérification est écrite.
-
+- Méthode : isoler l’erreur fréquente « Confondre clé et valeur. » puis reprendre la procédure correcte.
+- Résultat : accès attendu constant.
+- Contrôle : corriger l’erreur « Confondre clé et valeur. ».
+- Erreur traitée : EF4 - Confondre clé et valeur.
 ### Corrigé exercice 5
-- On repère d’abord suite d’opérations sur collection linéaire.
-- On applique ensuite choisir LIFO ou FIFO selon l’ordre de sortie attendu.
-- Le résultat attendu est `B sort avant A pour une pile ; A sort avant B pour une file` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF1 est évitée car la vérification est écrite.
-
+- Méthode : identifier empiler A puis B, dépiler, appliquer la méthode « appliquer LIFO », puis écrire B sort en premier.
+- Résultat : le comportement de pile est contrôlé.
+- Contrôle : nommer la donnée minimale et la conclusion.
+- Erreur traitée : EF1 - Inverser LIFO et FIFO.
 ### Corrigé exercice 6
-- On repère d’abord suite d’opérations sur collection linéaire.
-- On applique ensuite choisir LIFO ou FIFO selon l’ordre de sortie attendu.
-- Le résultat attendu est `B sort avant A pour une pile ; A sort avant B pour une file` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF2 est évitée car la vérification est écrite.
-
+- Méthode : expliciter chaque étape de appliquer FIFO avant de conclure par A sort en premier.
+- Résultat : la méthode robuste est choisie et justifiée.
+- Contrôle : identifier pourquoi « Retirer dans une structure vide sans test. » est une erreur.
+- Erreur traitée : EF2 - Retirer dans une structure vide sans test.
 ### Corrigé exercice 7
-- On repère d’abord suite d’opérations sur collection linéaire.
-- On applique ensuite choisir LIFO ou FIFO selon l’ordre de sortie attendu.
-- Le résultat attendu est `B sort avant A pour une pile ; A sort avant B pour une file` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF3 est évitée car la vérification est écrite.
-
+- Méthode : comparer la donnée avec le cas limite « clé absente » et valider `ok`.
+- Résultat : la justification reste valable sur le nouveau cas.
+- Contrôle : inclure une étape calculable par un pair.
+- Erreur traitée : EF3 - Parcourir tout un dictionnaire pour une clé connue.
 ### Corrigé exercice 8
-- On repère d’abord suite d’opérations sur collection linéaire.
-- On applique ensuite choisir LIFO ou FIFO selon l’ordre de sortie attendu.
-- Le résultat attendu est `B sort avant A pour une pile ; A sort avant B pour une file` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF4 est évitée car la vérification est écrite.
-
+- Méthode : isoler l’erreur fréquente « Confondre clé et valeur. » puis reprendre la procédure correcte.
+- Résultat : l’erreur est localisée puis réparée.
+- Contrôle : proposer une activité corrective inspirée de « Surligner clés et valeurs de couleurs différentes. ».
+- Erreur traitée : EF4 - Confondre clé et valeur.
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `B sort avant A pour une pile ; A sort avant B pour une file` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer choisir LIFO ou FIFO selon l’ordre de sortie attendu dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : dépiler ou défiler une structure vide.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Inverser LIFO et FIFO.
+- Erreur fréquente EF2 - Retirer dans une structure vide sans test.
+- Erreur fréquente EF3 - Parcourir tout un dictionnaire pour une clé connue.
+- Erreur fréquente EF4 - Confondre clé et valeur.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `dépiler ou défiler une structure vide` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Jouer les opérations avec des cartes empilées puis alignées.
+- Activité corrective EF2 : Écrire le test `est_vide` avant chaque retrait.
+- Activité corrective EF3 : Remplacer une boucle de recherche par un accès par clé.
+- Activité corrective EF4 : Surligner clés et valeurs de couleurs différentes.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter empiler A puis B, dépiler avec une fiche méthode fournie.
+- Standard : traiter enfiler A puis B, défiler en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « clé absente » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
-
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.

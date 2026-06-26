@@ -1,25 +1,30 @@
-"""Tests attendus TP T04."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-from T04_starter_recursivite import factorielle
+import importlib
+import os
 
+MODULE = importlib.import_module(os.environ.get("TP_MODULE", "T04_starter_recursivite"))
+factorielle = MODULE.factorielle
 
 def test_nominal() -> None:
-    sortie = factorielle(5)
-    assert sortie["controle"] == "120 avec cas de base factorielle(0)=1"
-    assert sortie["cas_limite"] == "appel récursif sans diminution ou profondeur excessive"
+    result = factorielle(5)
+    assert result == 120
 
+def test_limite() -> None:
+    result = factorielle(0)
+    assert result == 1
 
-def test_entree_absente() -> None:
+def test_invalide() -> None:
     try:
-        factorielle(None)
-    except ValueError:
+        factorielle(-1)
+    except (ValueError, TypeError, IndexError):
         return
-    raise AssertionError("ValueError attendue pour entrée absente")
-
+    raise AssertionError("exception attendue")
 
 if __name__ == "__main__":
     test_nominal()
-    test_entree_absente()
+    test_limite()
+    test_invalide()
     print("tests attendus OK")

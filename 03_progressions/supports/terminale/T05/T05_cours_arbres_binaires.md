@@ -1,214 +1,196 @@
 ---
-title: "T05 - Cours - Arbres binaires et parcours"
+title: "T05 - Cours - Arbres binaires"
 level: "terminale"
 sequence_id: "T05"
 document_type: "cours"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_NSI/Formation TOULOUSE/BLOC4/Polycopié_v2.pdf"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
 theme: "Arbres et algorithmes"
-notion: "nœud, parcours, recherche, complexité"
+notion: "arbre binaire, racine, feuille, parcours"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
     - "T-STRUCT-04A"
-    - "T-STRUCT-04B"
-    - "T-ALGO-01A"
-    - "T-ALGO-01B"
-    - "T-ALGO-01C"
-    - "T-ALGO-01D"
 ---
 
-
-# T05 - Cours - Arbres binaires et parcours
+# T05 - Cours - Arbres binaires
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
 - T-STRUCT-04A
-- T-STRUCT-04B
-- T-ALGO-01A
-- T-ALGO-01B
-- T-ALGO-01C
-- T-ALGO-01D
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à arbre binaire.
+- Distinguer donnée, méthode et conclusion dans le thème Arbres et algorithmes.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- T05-S1 à T05-S7 : ce support est rattaché aux séances indiquées dans la progression.
+- T05-S1 à T05-S7 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-une collection hiérarchique doit être parcourue et interrogée sans la transformer en liste plate. La tâche consiste à traiter nœud, parcours, recherche, complexité sans réponse intuitive non vérifiée.
+Une expression arithmétique est représentée par un arbre dont les feuilles sont des valeurs et les nœuds internes des opérateurs.
 
 ## Activité d’entrée
-1. Lire la situation : une collection hiérarchique doit être parcourue et interrogée sans la transformer en liste plate.
-2. Isoler la donnée de départ : nœud racine et sous-arbres gauche/droit.
-3. Prédire individuellement le résultat de l’exemple `arbre 4 avec fils 2 et 7`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : raisonner récursivement sur arbre vide puis racine puis sous-arbres.
-6. Contrôler avec le résultat de référence : parcours infixe 2, 4, 7.
-7. Tester le cas limite suivant : arbre vide ou arbre très déséquilibré.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+1. Repérer racine, fils gauche et fils droit.
+2. Calculer la hauteur d’un arbre réduit à une feuille.
+3. Lister un parcours préfixe.
+4. Évaluer une expression simple.
 
 ## Définitions et formalisation
-- Définition D1 : la notion centrale est nœud, parcours, recherche, complexité.
-- Définition D2 : une donnée est une information manipulée avant transformation.
-- Définition D3 : une représentation est une convention permettant d’agir sur cette donnée.
-- Définition D4 : une preuve courte explique pourquoi la méthode aboutit au résultat.
-- Définition D5 : un cas limite est un exemple volontairement petit, extrême ou ambigu.
-- Exemple de référence : `arbre 4 avec fils 2 et 7`.
-- Résultat de référence : parcours infixe 2, 4, 7.
-- Méthode de référence : raisonner récursivement sur arbre vide puis racine puis sous-arbres.
-- Cas limite à surveiller : arbre vide ou arbre très déséquilibré.
+- Définition D1 : arbre binaire est utilisé dans Arbres et algorithmes avec une donnée, une règle et un contrôle.
+- Définition D2 : racine est utilisé dans Arbres et algorithmes avec une donnée, une règle et un contrôle.
+- Définition D3 : feuille est utilisé dans Arbres et algorithmes avec une donnée, une règle et un contrôle.
+- Définition D4 : parcours est utilisé dans Arbres et algorithmes avec une donnée, une règle et un contrôle.
+- Cas limite principal : arbre vide.
 
-## Objectif O1 - Appropriation guidée
-- Capacité officielle travaillée : T-STRUCT-04A.
-- Question directrice : comment traiter nœud, parcours, recherche, complexité dans une situation vérifiable ?
-- Donnée étudiée : nœud racine et sous-arbres gauche/droit.
-- Étape 1 : reformuler la consigne avec les mots de la capacité T-STRUCT-04A.
-- Étape 2 : appliquer la méthode `raisonner récursivement sur arbre vide puis racine puis sous-arbres` sans sauter d’étape.
-- Étape 3 : obtenir le résultat contrôlé `parcours infixe 2, 4, 7` ou expliquer l’écart.
-- Étape 4 : tester le cas limite `arbre vide ou arbre très déséquilibré`.
-- Étape 5 : écrire une justification de deux phrases.
-- Exemple corrigé 1 : sur `arbre 4 avec fils 2 et 7`, on obtient `parcours infixe 2, 4, 7` car raisonner récursivement sur arbre vide puis racine puis sous-arbres.
-- Contre-exemple : une valeur finale isolée ne prouve pas la compétence.
-- Question flash : quel mot de vocabulaire permet de justifier le choix de méthode ?
-- Vérification : modifier une donnée seulement et prévoir l’effet avant de tester.
-- Trace attendue : une ligne de calcul ou un état intermédiaire, puis une phrase de conclusion.
-- Point de vigilance : ne pas changer de représentation au milieu du raisonnement.
-- Socle : recopier la méthode sur le même exemple avec une donnée voisine.
-- Standard : résoudre un exemple nouveau en autonomie.
-- Expert : concevoir un cas limite et prédire l’échec ou la réussite.
-- Critère de réussite : donnée, méthode, résultat et contrôle sont visibles.
-
-## Objectif O2 - Appropriation guidée
-- Capacité officielle travaillée : T-STRUCT-04B.
-- Question directrice : comment traiter nœud, parcours, recherche, complexité dans une situation vérifiable ?
-- Donnée étudiée : nœud racine et sous-arbres gauche/droit.
-- Étape 1 : reformuler la consigne avec les mots de la capacité T-STRUCT-04B.
-- Étape 2 : appliquer la méthode `raisonner récursivement sur arbre vide puis racine puis sous-arbres` sans sauter d’étape.
-- Étape 3 : obtenir le résultat contrôlé `parcours infixe 2, 4, 7` ou expliquer l’écart.
-- Étape 4 : tester le cas limite `arbre vide ou arbre très déséquilibré`.
-- Étape 5 : écrire une justification de deux phrases.
-- Exemple corrigé 2 : sur `arbre 4 avec fils 2 et 7`, on obtient `parcours infixe 2, 4, 7` car raisonner récursivement sur arbre vide puis racine puis sous-arbres.
-- Contre-exemple : une valeur finale isolée ne prouve pas la compétence.
-- Question flash : quel mot de vocabulaire permet de justifier le choix de méthode ?
-- Vérification : modifier une donnée seulement et prévoir l’effet avant de tester.
-- Trace attendue : une ligne de calcul ou un état intermédiaire, puis une phrase de conclusion.
-- Point de vigilance : ne pas changer de représentation au milieu du raisonnement.
-- Socle : recopier la méthode sur le même exemple avec une donnée voisine.
-- Standard : résoudre un exemple nouveau en autonomie.
-- Expert : concevoir un cas limite et prédire l’échec ou la réussite.
-- Critère de réussite : donnée, méthode, résultat et contrôle sont visibles.
-
-## Objectif O3 - Appropriation guidée
-- Capacité officielle travaillée : T-ALGO-01A.
-- Question directrice : comment traiter nœud, parcours, recherche, complexité dans une situation vérifiable ?
-- Donnée étudiée : nœud racine et sous-arbres gauche/droit.
-- Étape 1 : reformuler la consigne avec les mots de la capacité T-ALGO-01A.
-- Étape 2 : appliquer la méthode `raisonner récursivement sur arbre vide puis racine puis sous-arbres` sans sauter d’étape.
-- Étape 3 : obtenir le résultat contrôlé `parcours infixe 2, 4, 7` ou expliquer l’écart.
-- Étape 4 : tester le cas limite `arbre vide ou arbre très déséquilibré`.
-- Étape 5 : écrire une justification de deux phrases.
-- Exemple corrigé 3 : sur `arbre 4 avec fils 2 et 7`, on obtient `parcours infixe 2, 4, 7` car raisonner récursivement sur arbre vide puis racine puis sous-arbres.
-- Contre-exemple : une valeur finale isolée ne prouve pas la compétence.
-- Question flash : quel mot de vocabulaire permet de justifier le choix de méthode ?
-- Vérification : modifier une donnée seulement et prévoir l’effet avant de tester.
-- Trace attendue : une ligne de calcul ou un état intermédiaire, puis une phrase de conclusion.
-- Point de vigilance : ne pas changer de représentation au milieu du raisonnement.
-- Socle : recopier la méthode sur le même exemple avec une donnée voisine.
-- Standard : résoudre un exemple nouveau en autonomie.
-- Expert : concevoir un cas limite et prédire l’échec ou la réussite.
-- Critère de réussite : donnée, méthode, résultat et contrôle sont visibles.
-
-## Objectif O4 - Appropriation guidée
-- Capacité officielle travaillée : T-ALGO-01B.
-- Question directrice : comment traiter nœud, parcours, recherche, complexité dans une situation vérifiable ?
-- Donnée étudiée : nœud racine et sous-arbres gauche/droit.
-- Étape 1 : reformuler la consigne avec les mots de la capacité T-ALGO-01B.
-- Étape 2 : appliquer la méthode `raisonner récursivement sur arbre vide puis racine puis sous-arbres` sans sauter d’étape.
-- Étape 3 : obtenir le résultat contrôlé `parcours infixe 2, 4, 7` ou expliquer l’écart.
-- Étape 4 : tester le cas limite `arbre vide ou arbre très déséquilibré`.
-- Étape 5 : écrire une justification de deux phrases.
-- Exemple corrigé 4 : sur `arbre 4 avec fils 2 et 7`, on obtient `parcours infixe 2, 4, 7` car raisonner récursivement sur arbre vide puis racine puis sous-arbres.
-- Contre-exemple : une valeur finale isolée ne prouve pas la compétence.
-- Question flash : quel mot de vocabulaire permet de justifier le choix de méthode ?
-- Vérification : modifier une donnée seulement et prévoir l’effet avant de tester.
-- Trace attendue : une ligne de calcul ou un état intermédiaire, puis une phrase de conclusion.
-- Point de vigilance : ne pas changer de représentation au milieu du raisonnement.
-- Socle : recopier la méthode sur le même exemple avec une donnée voisine.
-- Standard : résoudre un exemple nouveau en autonomie.
-- Expert : concevoir un cas limite et prédire l’échec ou la réussite.
-- Critère de réussite : donnée, méthode, résultat et contrôle sont visibles.
-
+## Exemples corrigés précis
+### Exemple corrigé 1 - arbre feuille
+- Donnée étudiée : `7`.
+- Méthode : reconnaître l’absence de fils.
+- Résultat obtenu : hauteur 0.
+- Contrôle : le cas limite « arbre vide » est vérifié séparément.
+### Exemple corrigé 2 - hauteur
+- Donnée étudiée : racine avec deux feuilles.
+- Méthode : prendre 1 plus le maximum des hauteurs des sous-arbres.
+- Résultat obtenu : hauteur 1.
+- Contrôle : le cas limite « un seul fils » est vérifié séparément.
+### Exemple corrigé 3 - parcours préfixe
+- Donnée étudiée : `+ 2 3`.
+- Méthode : visiter racine puis gauche puis droite.
+- Résultat obtenu : `+, 2, 3`.
+- Contrôle : le cas limite « nœud feuille » est vérifié séparément.
+### Exemple corrigé 4 - évaluation
+- Donnée étudiée : `(2 + 3) * 4`.
+- Méthode : évaluer les sous-arbres avant l’opérateur parent.
+- Résultat obtenu : `20`.
+- Contrôle : le cas limite « division par zéro si opérateur `/` » est vérifié séparément.
+## Objectif O1 - Identifier précisément la représentation ou la structure en jeu
+- Capacité mobilisée : T-STRUCT-04A.
+- Point de départ : `7`.
+- Angle disciplinaire : repérage initial autour de arbre feuille.
+- Démarche attendue : reconnaître l’absence de fils.
+- Exemple associé : hauteur 0.
+- Point de vigilance : Confondre hauteur et nombre de nœuds.
+- Activité de reprise associée : Calculer séparément hauteur gauche et droite.
+- Mini-production : produire un court diagnostic de la donnée et du vocabulaire.
+## Objectif O2 - Appliquer une méthode disciplinaire complète
+- Capacité mobilisée : T-STRUCT-04A.
+- Point de départ : racine avec deux feuilles.
+- Angle disciplinaire : méthode guidée autour de hauteur.
+- Démarche attendue : prendre 1 plus le maximum des hauteurs des sous-arbres.
+- Exemple associé : hauteur 1.
+- Point de vigilance : Oublier le cas arbre vide.
+- Activité de reprise associée : Décider une convention pour l’arbre vide puis l’appliquer partout.
+- Mini-production : produire une procédure numérotée avec contrôle intermédiaire.
+## Objectif O3 - Justifier le résultat sur un cas différent
+- Capacité mobilisée : T-STRUCT-04A.
+- Point de départ : `+ 2 3`.
+- Angle disciplinaire : transfert argumenté autour de parcours préfixe.
+- Démarche attendue : visiter racine puis gauche puis droite.
+- Exemple associé : `+, 2, 3`.
+- Point de vigilance : Mélanger parcours préfixe et infixe.
+- Activité de reprise associée : Écrire l’ordre de visite au-dessus de chaque nœud.
+- Mini-production : produire une justification qui compare deux cas distincts.
+## Objectif O4 - Contrôler un cas limite et corriger une erreur observée
+- Capacité mobilisée : T-STRUCT-04A.
+- Point de départ : `(2 + 3) * 4`.
+- Angle disciplinaire : vérification critique autour de évaluation.
+- Démarche attendue : évaluer les sous-arbres avant l’opérateur parent.
+- Exemple associé : `20`.
+- Point de vigilance : Évaluer un opérateur avant ses opérandes.
+- Activité de reprise associée : Remonter les valeurs depuis les feuilles vers la racine.
+- Mini-production : produire une correction d’erreur avec un nouveau test.
 ## Exercices numérotés
-- Exercice 1 : traiter nœud, parcours, recherche, complexité pour l’objectif O1 et la capacité T-STRUCT-04A, puis écrire un contrôle explicite.
-- Exercice 2 : traiter nœud, parcours, recherche, complexité pour l’objectif O2 et la capacité T-STRUCT-04B, puis écrire un contrôle explicite.
-- Exercice 3 : traiter nœud, parcours, recherche, complexité pour l’objectif O3 et la capacité T-ALGO-01A, puis écrire un contrôle explicite.
-- Exercice 4 : traiter nœud, parcours, recherche, complexité pour l’objectif O4 et la capacité T-ALGO-01B, puis écrire un contrôle explicite.
-- Exercice 5 : traiter nœud, parcours, recherche, complexité pour l’objectif O1 et la capacité T-ALGO-01C, puis écrire un contrôle explicite.
-- Exercice 6 : traiter nœud, parcours, recherche, complexité pour l’objectif O2 et la capacité T-ALGO-01D, puis écrire un contrôle explicite.
-- Exercice 7 : traiter nœud, parcours, recherche, complexité pour l’objectif O3 et la capacité T-STRUCT-04A, puis écrire un contrôle explicite.
-- Exercice 8 : traiter nœud, parcours, recherche, complexité pour l’objectif O4 et la capacité T-STRUCT-04B, puis écrire un contrôle explicite.
-
+- Exercice 1 : résoudre arbre feuille avec `7` ; attendu : hauteur 0.
+- Exercice 2 : expliquer hauteur à partir de racine avec deux feuilles ; attendu : hauteur 1.
+- Exercice 3 : comparer parcours préfixe avec `+ 2 3` ; attendu : `+, 2, 3`.
+- Exercice 4 : corriger évaluation pour `(2 + 3) * 4` ; attendu : `20`.
+- Exercice 5 : tester un cas limite lié à arbre vide ; attendu : le comportement de arbre feuille est contrôlé.
+- Exercice 6 : classer deux méthodes possibles pour hauteur ; attendu : la méthode robuste est choisie et justifiée.
+- Exercice 7 : justifier un transfert qui utilise parcours préfixe avec une donnée nouvelle ; attendu : la justification reste valable sur le nouveau cas.
+- Exercice 8 : étendre un énoncé volontairement erroné sur évaluation ; attendu : l’erreur est localisée puis réparée.
 ## Corrigés complets des exercices du cours
-- Corrigé exercice 1 : identifier nœud racine et sous-arbres gauche/droit, appliquer raisonner récursivement sur arbre vide puis racine puis sous-arbres, annoncer parcours infixe 2, 4, 7, puis vérifier EF1.
-- Corrigé exercice 2 : identifier nœud racine et sous-arbres gauche/droit, appliquer raisonner récursivement sur arbre vide puis racine puis sous-arbres, annoncer parcours infixe 2, 4, 7, puis vérifier EF2.
-- Corrigé exercice 3 : identifier nœud racine et sous-arbres gauche/droit, appliquer raisonner récursivement sur arbre vide puis racine puis sous-arbres, annoncer parcours infixe 2, 4, 7, puis vérifier EF3.
-- Corrigé exercice 4 : identifier nœud racine et sous-arbres gauche/droit, appliquer raisonner récursivement sur arbre vide puis racine puis sous-arbres, annoncer parcours infixe 2, 4, 7, puis vérifier EF4.
-- Corrigé exercice 5 : identifier nœud racine et sous-arbres gauche/droit, appliquer raisonner récursivement sur arbre vide puis racine puis sous-arbres, annoncer parcours infixe 2, 4, 7, puis vérifier EF1.
-- Corrigé exercice 6 : identifier nœud racine et sous-arbres gauche/droit, appliquer raisonner récursivement sur arbre vide puis racine puis sous-arbres, annoncer parcours infixe 2, 4, 7, puis vérifier EF2.
-- Corrigé exercice 7 : identifier nœud racine et sous-arbres gauche/droit, appliquer raisonner récursivement sur arbre vide puis racine puis sous-arbres, annoncer parcours infixe 2, 4, 7, puis vérifier EF3.
-- Corrigé exercice 8 : identifier nœud racine et sous-arbres gauche/droit, appliquer raisonner récursivement sur arbre vide puis racine puis sous-arbres, annoncer parcours infixe 2, 4, 7, puis vérifier EF4.
-
+- Corrigé exercice 1 : méthode : identifier `7`, appliquer la méthode « reconnaître l’absence de fils », puis écrire hauteur 0 ; résultat : hauteur 0 ; contrôle : faire apparaître le contrôle « arbre vide ».
+- Corrigé exercice 2 : méthode : expliciter chaque étape de prendre 1 plus le maximum des hauteurs des sous-arbres avant de conclure par hauteur 1 ; résultat : hauteur 1 ; contrôle : rédiger la méthode avant le résultat.
+- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « nœud feuille » et valider `+, 2, 3` ; résultat : `+, 2, 3` ; contrôle : comparer avec le cas « nœud feuille ».
+- Corrigé exercice 4 : méthode : isoler l’erreur fréquente « Évaluer un opérateur avant ses opérandes. » puis reprendre la procédure correcte ; résultat : `20` ; contrôle : corriger l’erreur « Évaluer un opérateur avant ses opérandes. ».
+- Corrigé exercice 5 : méthode : identifier `7`, appliquer la méthode « reconnaître l’absence de fils », puis écrire hauteur 0 ; résultat : le comportement de arbre feuille est contrôlé ; contrôle : nommer la donnée minimale et la conclusion.
+- Corrigé exercice 6 : méthode : expliciter chaque étape de prendre 1 plus le maximum des hauteurs des sous-arbres avant de conclure par hauteur 1 ; résultat : la méthode robuste est choisie et justifiée ; contrôle : identifier pourquoi « Oublier le cas arbre vide. » est une erreur.
+- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « nœud feuille » et valider `+, 2, 3` ; résultat : la justification reste valable sur le nouveau cas ; contrôle : inclure une étape calculable par un pair.
+- Corrigé exercice 8 : méthode : isoler l’erreur fréquente « Évaluer un opérateur avant ses opérandes. » puis reprendre la procédure correcte ; résultat : l’erreur est localisée puis réparée ; contrôle : proposer une activité corrective inspirée de « Remonter les valeurs depuis les feuilles vers la racine. ».
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `parcours infixe 2, 4, 7` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer raisonner récursivement sur arbre vide puis racine puis sous-arbres dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : arbre vide ou arbre très déséquilibré.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Confondre hauteur et nombre de nœuds.
+- Erreur fréquente EF2 - Oublier le cas arbre vide.
+- Erreur fréquente EF3 - Mélanger parcours préfixe et infixe.
+- Erreur fréquente EF4 - Évaluer un opérateur avant ses opérandes.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `arbre vide ou arbre très déséquilibré` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Calculer séparément hauteur gauche et droite.
+- Activité corrective EF2 : Décider une convention pour l’arbre vide puis l’appliquer partout.
+- Activité corrective EF3 : Écrire l’ordre de visite au-dessus de chaque nœud.
+- Activité corrective EF4 : Remonter les valeurs depuis les feuilles vers la racine.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter `7` avec une fiche méthode fournie.
+- Standard : traiter racine avec deux feuilles en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « nœud feuille » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.
+## Banque de situations complémentaires
+- Situation complémentaire 1 : reprendre arbre feuille avec une donnée construite par un binôme.
+- Question orale 1 : expliquer pourquoi le cas limite « arbre vide » change ou ne change pas la méthode.
+- Trace attendue 1 : une phrase de méthode, une ligne de calcul et une vérification indépendante.
+- Situation complémentaire 2 : reprendre hauteur avec une donnée construite par un binôme.
+- Question orale 2 : expliquer pourquoi le cas limite « un seul fils » change ou ne change pas la méthode.
+- Trace attendue 2 : une phrase de méthode, une ligne de calcul et une vérification indépendante.
+- Situation complémentaire 3 : reprendre parcours préfixe avec une donnée construite par un binôme.
+- Question orale 3 : expliquer pourquoi le cas limite « nœud feuille » change ou ne change pas la méthode.
+- Trace attendue 3 : une phrase de méthode, une ligne de calcul et une vérification indépendante.
+- Situation complémentaire 4 : reprendre évaluation avec une donnée construite par un binôme.
+- Question orale 4 : expliquer pourquoi le cas limite « division par zéro si opérateur `/` » change ou ne change pas la méthode.
+- Trace attendue 4 : une phrase de méthode, une ligne de calcul et une vérification indépendante.
+## Atelier de synthèse
+- Synthèse 1 : relier arbre feuille à une erreur fréquente et à une remédiation ciblée.
+- Synthèse 2 : relier hauteur à une erreur fréquente et à une remédiation ciblée.
+- Synthèse 3 : relier parcours préfixe à une erreur fréquente et à une remédiation ciblée.
+- Synthèse 4 : relier évaluation à une erreur fréquente et à une remédiation ciblée.
+## Lexique actif
+- arbre binaire : terme à employer dans une justification écrite de la séquence.
+- racine : terme à employer dans une justification écrite de la séquence.
+- feuille : terme à employer dans une justification écrite de la séquence.
+- parcours : terme à employer dans une justification écrite de la séquence.
 
-## Synthèse à retenir
-- Un document NSI utile relie toujours notion, capacité, méthode, résultat et contrôle.
-- La trace doit pouvoir être relue une semaine plus tard sans ajouter d’information orale.
-- La correction sert à comprendre l’erreur, pas seulement à vérifier une valeur finale.
-
-## Consolidation de fin de cours
-- Question de consolidation 1 : réécrire l’objectif O1 avec les mots de la situation-problème.
-- Question de consolidation 2 : associer chaque donnée de l’exemple à une étape de méthode.
-- Question de consolidation 3 : produire une vérification indépendante du résultat annoncé.
-- Question de consolidation 4 : nommer l’erreur fréquente la plus probable et sa remédiation.
-- Question de consolidation 5 : indiquer la capacité officielle mobilisée par la dernière étape.
-- Question de consolidation 6 : expliquer pourquoi le cas limite ne peut pas être ignoré.
-- Question de consolidation 7 : rédiger une phrase de synthèse utilisable dans la trace écrite.
-- Question de consolidation 8 : préparer une question pour le TD en conservant le même objectif.
-- Critère final : le cours peut être relu sans support oral supplémentaire.
+## Analyse de variantes disciplinaires
+- Variante T05-A : modifier la donnée du premier exemple de T05 - Cours - Arbres binaires et conserver exactement la même méthode.
+- Variante T05-B : changer le cas limite et expliquer quelle étape de contrôle devient obligatoire.
+- Variante T05-C : demander à un pair de retrouver l’erreur fréquente avant de lire la correction.
+- Variante T05-D : produire une trace écrite qui sépare définition, calcul et justification.
+- Variante T05-E : comparer deux solutions d’élèves et isoler celle qui cite la capacité officielle.
+- Variante T05-F : construire une donnée minimale qui force une décision de méthode.
+- Variante T05-G : transformer un exemple corrigé en question d’évaluation courte.
+- Variante T05-H : écrire un contre-exemple qui invalide une réponse seulement déclarative.
+- Variante T05-I : relier une erreur fréquente à une activité corrective précise.
+- Variante T05-J : rédiger un critère de réussite observable pour une copie réelle.
+- Variante T05-K : vérifier que le vocabulaire utilisé correspond au thème de la séquence.
+- Variante T05-L : préparer une question orale de trente secondes avec réponse vérifiable.
+- Variante T05-M : isoler la donnée, l’algorithme mental et le résultat final dans trois lignes.
+- Variante T05-N : expliquer ce que le TP apporte que le TD ne permet pas de tester.
+- Variante T05-O : compléter la trace écrite par une mise en garde liée au cas limite.
+- Variante T05-P : vérifier la cohérence entre exercice, corrigé, barème et remédiation.

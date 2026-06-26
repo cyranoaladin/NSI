@@ -1,0 +1,62 @@
+sequence: P05
+theme: Traitement de tables
+notions_exigibles:
+- table
+- CSV
+- filtrage
+- agrégation
+capacites_officielles:
+- P-TABLE-01
+exemples_obligatoires:
+- 'lecture CSV : `ville,temp
+
+  Tunis,24` -> une ligne exploitable'
+- 'filtrage : trois villes dont deux Tunis -> deux lignes sélectionnées'
+- 'agrégation : `24`, `26`, champ vide -> `25`'
+- 'jointure simple : table villes et table régions -> ville enrichie par région'
+cas_limites:
+- fichier vide
+- aucune ligne retenue
+- division par zéro
+- clé inconnue
+erreurs_frequentes:
+- EF1 - Traiter l’en-tête comme une donnée.
+- EF2 - Comparer une valeur numérique restée chaîne.
+- EF3 - Diviser par zéro après filtrage vide.
+- EF4 - Ignorer silencieusement une ligne mal formée.
+types_exercices_attendus:
+- 'lecture CSV avec `ville,temp
+
+  Tunis,24`'
+- filtrage à partir de trois villes dont deux Tunis
+- agrégation avec `24`, `26`, champ vide
+- jointure simple pour table villes et table régions
+- un cas limite lié à fichier vide
+- deux méthodes possibles pour filtrage
+- un transfert qui utilise agrégation avec une donnée nouvelle
+- un énoncé volontairement erroné sur jointure simple
+tp_attendu: Lire une table représentée par listes de dictionnaires, filtrer, agréger
+  et produire un rapport d’erreurs.
+interdits_pedagogiques:
+- réponse cohérente sans calcul
+- production vérifiable sans livrable concret
+- starter qui retourne directement la réponse
+criteres_validation_humaine:
+- relecture pédagogique indépendante
+- vérification scientifique des exemples
+- exécution du TP corrigé
+- alignement avec le BO 2019
+must_include:
+- table
+- 'ville,temp
+
+  Tunis,24'
+- trois villes dont deux Tunis
+- fichier vide
+- EF1
+- Lire une table représentée par listes de dictionnaires, filtrer, agréger et produire
+  un rapport d’erreurs.
+must_not:
+- réponse cohérente sans calcul
+- production vérifiable sans livrable concret
+- starter qui retourne directement la réponse

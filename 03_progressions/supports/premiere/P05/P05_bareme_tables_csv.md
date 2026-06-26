@@ -1,131 +1,123 @@
 ---
-title: "P05 - Bareme - Tables CSV et requêtes simples"
+title: "P05 - Bareme - Tables CSV"
 level: "premiere"
 sequence_id: "P05"
 document_type: "bareme"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/1_1ères NSI/3_Bloc3_TdDeT/Evaluation/T.P_TdDeT.docx"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
 theme: "Traitement de tables"
-notion: "CSV, dictionnaire ligne, sélection, projection"
+notion: "table, CSV, filtrage, agrégation"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
     - "P-TABLE-01"
-    - "P-TABLE-02"
 ---
 
 
-# P05 - Bareme - Tables CSV et requêtes simples
+# P05 - Barème - Tables CSV
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
 - P-TABLE-01
-- P-TABLE-02
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à table.
+- Distinguer donnée, méthode et conclusion dans le thème Traitement de tables.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- P05-S1 à P05-S6 : ce support est rattaché aux séances indiquées dans la progression.
+- P05-S1 à P05-S7 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-une association reçoit un fichier CSV de réservations et veut filtrer les lignes incohérentes. La tâche consiste à traiter CSV, dictionnaire ligne, sélection, projection sans réponse intuitive non vérifiée.
+Un fichier CSV de mesures contient des lignes incomplètes, des séparateurs et des valeurs numériques à agréger.
 
 ## Activité d’entrée
-1. Lire la situation : une association reçoit un fichier CSV de réservations et veut filtrer les lignes incohérentes.
-2. Isoler la donnée de départ : table structurée en lignes et colonnes.
-3. Prédire individuellement le résultat de l’exemple `nom;age;ville avec trois enregistrements`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : lire l’en-tête, convertir les champs utiles, filtrer puis agréger.
-6. Contrôler avec le résultat de référence : liste de dictionnaires filtrée puis moyenne calculée.
-7. Tester le cas limite suivant : champ vide, séparateur inattendu ou nombre invalide.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
-
-## Exemple corrigé précis
-- Exemple support : `nom;age;ville avec trois enregistrements`.
-- Résultat support : `liste de dictionnaires filtrée puis moyenne calculée`.
-- Le barème attribue des points à la méthode, au résultat, à la justification et au contrôle.
-
-## Exercices numérotés
-- Les quatre questions de l’évaluation sont découpées question par question.
+1. Lire une ligne d’en-tête.
+2. Filtrer les lignes où `ville == "Tunis"`.
+3. Calculer une moyenne de températures valides.
+4. Signaler une ligne avec champ manquant.
 
 ### Barème question 1
-- Objectif : O1.
-- Capacité : P-TABLE-01.
-- Méthode correcte : 2 points.
-- Résultat correct : 1 point.
-- Justification rédigée : 1 point.
-- Contrôle du cas limite ou de EF1 : 1 point.
-- Retrait maximal : 1 point si le vocabulaire officiel est absent.
-
+- 1 point : identifier correctement lecture CSV et la donnée `ville,temp
+Tunis,24`.
+- 1 point : appliquer la méthode « séparer en-tête et données puis convertir la température ».
+- 1 point : obtenir une ligne exploitable.
+- 1 point : contrôler le cas limite « fichier vide » ou expliquer pourquoi il ne s’applique pas.
+- Retrait possible : confusion avec l’erreur fréquente EF1 - Traiter l’en-tête comme une donnée.
 ### Barème question 2
-- Objectif : O2.
-- Capacité : P-TABLE-02.
-- Méthode correcte : 2 points.
-- Résultat correct : 1 point.
-- Justification rédigée : 1 point.
-- Contrôle du cas limite ou de EF2 : 1 point.
-- Retrait maximal : 1 point si le vocabulaire officiel est absent.
-
+- 1 point : identifier correctement filtrage et la donnée trois villes dont deux Tunis.
+- 1 point : appliquer la méthode « conserver les lignes respectant un prédicat ».
+- 1 point : obtenir deux lignes sélectionnées.
+- 1 point : contrôler le cas limite « aucune ligne retenue » ou expliquer pourquoi il ne s’applique pas.
+- Retrait possible : confusion avec l’erreur fréquente EF2 - Comparer une valeur numérique restée chaîne.
 ### Barème question 3
-- Objectif : O3.
-- Capacité : P-TABLE-01.
-- Méthode correcte : 2 points.
-- Résultat correct : 1 point.
-- Justification rédigée : 1 point.
-- Contrôle du cas limite ou de EF3 : 1 point.
-- Retrait maximal : 1 point si le vocabulaire officiel est absent.
-
+- 1 point : identifier correctement agrégation et la donnée `24`, `26`, champ vide.
+- 1 point : appliquer la méthode « ignorer ou signaler le champ vide avant moyenne ».
+- 1 point : obtenir `25`.
+- 1 point : contrôler le cas limite « division par zéro » ou expliquer pourquoi il ne s’applique pas.
+- Retrait possible : confusion avec l’erreur fréquente EF3 - Diviser par zéro après filtrage vide.
 ### Barème question 4
-- Objectif : O4.
-- Capacité : P-TABLE-02.
-- Méthode correcte : 2 points.
-- Résultat correct : 1 point.
-- Justification rédigée : 1 point.
-- Contrôle du cas limite ou de EF4 : 1 point.
-- Retrait maximal : 1 point si le vocabulaire officiel est absent.
+- 1 point : identifier correctement jointure simple et la donnée table villes et table régions.
+- 1 point : appliquer la méthode « associer par une clé commune ».
+- 1 point : obtenir ville enrichie par région.
+- 1 point : contrôler le cas limite « clé inconnue » ou expliquer pourquoi il ne s’applique pas.
+- Retrait possible : confusion avec l’erreur fréquente EF4 - Ignorer silencieusement une ligne mal formée.
+## Exercices numérotés
+- Exercice 1 : résoudre lecture CSV avec `ville,temp
+Tunis,24` ; attendu : une ligne exploitable.
+- Exercice 2 : expliquer filtrage à partir de trois villes dont deux Tunis ; attendu : deux lignes sélectionnées.
+- Exercice 3 : comparer agrégation avec `24`, `26`, champ vide ; attendu : `25`.
+- Exercice 4 : corriger jointure simple pour table villes et table régions ; attendu : ville enrichie par région.
+- Exercice 5 : tester un cas limite lié à fichier vide ; attendu : le comportement de lecture CSV est contrôlé.
+- Exercice 6 : classer deux méthodes possibles pour filtrage ; attendu : la méthode robuste est choisie et justifiée.
+- Exercice 7 : justifier un transfert qui utilise agrégation avec une donnée nouvelle ; attendu : la justification reste valable sur le nouveau cas.
+- Exercice 8 : étendre un énoncé volontairement erroné sur jointure simple ; attendu : l’erreur est localisée puis réparée.
 
-## Corrigé
-- La correction détaillée se trouve dans le corrigé professeur, mais le barème rappelle les critères observables.
-- Corrigé question 1 : méthode lire l’en-tête, convertir les champs utiles, filtrer puis agréger, résultat `liste de dictionnaires filtrée puis moyenne calculée`, contrôle EF1.
-- Corrigé question 2 : méthode lire l’en-tête, convertir les champs utiles, filtrer puis agréger, résultat `liste de dictionnaires filtrée puis moyenne calculée`, contrôle EF2.
-- Corrigé question 3 : méthode lire l’en-tête, convertir les champs utiles, filtrer puis agréger, résultat `liste de dictionnaires filtrée puis moyenne calculée`, contrôle EF3.
-- Corrigé question 4 : méthode lire l’en-tête, convertir les champs utiles, filtrer puis agréger, résultat `liste de dictionnaires filtrée puis moyenne calculée`, contrôle EF4.
+## Corrigés complets des exercices du cours
+- Corrigé exercice 1 : méthode : identifier `ville,temp
+Tunis,24`, appliquer la méthode « séparer en-tête et données puis convertir la température », puis écrire une ligne exploitable ; résultat : une ligne exploitable ; contrôle : faire apparaître le contrôle « fichier vide ».
+- Corrigé exercice 2 : méthode : expliciter chaque étape de conserver les lignes respectant un prédicat avant de conclure par deux lignes sélectionnées ; résultat : deux lignes sélectionnées ; contrôle : rédiger la méthode avant le résultat.
+- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « division par zéro » et valider `25` ; résultat : `25` ; contrôle : comparer avec le cas « division par zéro ».
+- Corrigé exercice 4 : méthode : isoler l’erreur fréquente « Ignorer silencieusement une ligne mal formée. » puis reprendre la procédure correcte ; résultat : ville enrichie par région ; contrôle : corriger l’erreur « Ignorer silencieusement une ligne mal formée. ».
+- Corrigé exercice 5 : méthode : identifier `ville,temp
+Tunis,24`, appliquer la méthode « séparer en-tête et données puis convertir la température », puis écrire une ligne exploitable ; résultat : le comportement de lecture CSV est contrôlé ; contrôle : nommer la donnée minimale et la conclusion.
+- Corrigé exercice 6 : méthode : expliciter chaque étape de conserver les lignes respectant un prédicat avant de conclure par deux lignes sélectionnées ; résultat : la méthode robuste est choisie et justifiée ; contrôle : identifier pourquoi « Comparer une valeur numérique restée chaîne. » est une erreur.
+- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « division par zéro » et valider `25` ; résultat : la justification reste valable sur le nouveau cas ; contrôle : inclure une étape calculable par un pair.
+- Corrigé exercice 8 : méthode : isoler l’erreur fréquente « Ignorer silencieusement une ligne mal formée. » puis reprendre la procédure correcte ; résultat : l’erreur est localisée puis réparée ; contrôle : proposer une activité corrective inspirée de « Isoler les lignes invalides dans une liste de rejets. ».
 
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `liste de dictionnaires filtrée puis moyenne calculée` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer lire l’en-tête, convertir les champs utiles, filtrer puis agréger dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : champ vide, séparateur inattendu ou nombre invalide.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Traiter l’en-tête comme une donnée.
+- Erreur fréquente EF2 - Comparer une valeur numérique restée chaîne.
+- Erreur fréquente EF3 - Diviser par zéro après filtrage vide.
+- Erreur fréquente EF4 - Ignorer silencieusement une ligne mal formée.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `champ vide, séparateur inattendu ou nombre invalide` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Marquer l’en-tête et commencer les données à la ligne suivante.
+- Activité corrective EF2 : Convertir explicitement avant les comparaisons numériques.
+- Activité corrective EF3 : Tester la taille de la sélection avant la moyenne.
+- Activité corrective EF4 : Isoler les lignes invalides dans une liste de rejets.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter `ville,temp
+Tunis,24` avec une fiche méthode fournie.
+- Standard : traiter trois villes dont deux Tunis en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « division par zéro » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
-
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.

@@ -4,207 +4,189 @@ level: "premiere"
 sequence_id: "P02"
 document_type: "td"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_NSI/Programmes et textes officiels/0_Programmes.pdf"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
 theme: "Représentation machine"
-notion: "entiers signés, débordement, expressions booléennes"
+notion: "entier signé, complément à deux, débordement, expression booléenne"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
     - "P-DATA-BASE-02A"
-    - "P-DATA-BASE-02B"
-    - "P-DATA-BASE-04"
 ---
 
-
-# P02 - Td - Complément à deux et booléens
+# P02 - TD - Complément à deux et booléens
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
 - P-DATA-BASE-02A
-- P-DATA-BASE-02B
-- P-DATA-BASE-04
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à entier signé.
+- Distinguer donnée, méthode et conclusion dans le thème Représentation machine.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- P02-S1 à P02-S5 : ce support est rattaché aux séances indiquées dans la progression.
+- P02-S1 à P02-S5 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-un capteur renvoie un octet qui peut représenter une température négative ou un indicateur booléen. La tâche consiste à traiter entiers signés, débordement, expressions booléennes sans réponse intuitive non vérifiée.
+Un capteur transmet un octet qui peut représenter une température signée ou un ensemble d’indicateurs logiques.
 
 ## Activité d’entrée
-1. Lire la situation : un capteur renvoie un octet qui peut représenter une température négative ou un indicateur booléen.
-2. Isoler la donnée de départ : mot binaire de 8 bits et deux variables booléennes.
-3. Prédire individuellement le résultat de l’exemple `-23 sur 8 bits et (a and b) or (a and not b)`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé.
-6. Contrôler avec le résultat de référence : 11101001 et simplification en a.
-7. Tester le cas limite suivant : 140 impossible sur 8 bits signés.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+1. Décoder `11110110` sur 8 bits signés.
+2. Comparer l’intervalle représentable sur 4 bits et sur 8 bits.
+3. Simplifier `(a and b) or (a and not b)` avec une table.
+4. Repérer un débordement lors de l’encodage de 140 sur 8 bits signés.
 
-## Exemple corrigé précis
-- Exemple : `-23 sur 8 bits et (a and b) or (a and not b)`.
-- Méthode : inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé.
-- Résultat : 11101001 et simplification en a.
-- Justification : chaque étape transforme une donnée identifiable.
-
+## Exemples corrigés précis
+### Exemple corrigé 1 - décodage signé
+- Donnée étudiée : `11110110` sur 8 bits.
+- Méthode : lire le bit de signe puis soustraire `2^8` à la valeur naturelle.
+- Résultat obtenu : `-10`.
+- Contrôle : le cas limite « bit de poids fort à 1 » est vérifié séparément.
+### Exemple corrigé 2 - bornes sur n bits
+- Donnée étudiée : `n = 4` bits signés.
+- Méthode : calculer `-2^(n-1)` et `2^(n-1)-1`.
+- Résultat obtenu : `[-8 ; 7]`.
+- Contrôle : le cas limite « asymétrie entre minimum et maximum » est vérifié séparément.
+### Exemple corrigé 3 - encodage négatif
+- Donnée étudiée : `-6` sur 8 bits.
+- Méthode : partir de 6, inverser les bits puis ajouter 1.
+- Résultat obtenu : `11111010`.
+- Contrôle : le cas limite « retenue finale ignorée sur la largeur fixée » est vérifié séparément.
+### Exemple corrigé 4 - simplification booléenne
+- Donnée étudiée : `(a and b) or (a and not b)`.
+- Méthode : dresser les quatre lignes de vérité.
+- Résultat obtenu : `a`.
+- Contrôle : le cas limite « un exemple ne prouve pas une identité » est vérifié séparément.
 ## Exercices numérotés
 ### Exercice 1
 - Objectif travaillé : O1.
 - Capacité officielle : P-DATA-BASE-02A.
-- Énoncé : résoudre une variante de `-23 sur 8 bits et (a and b) or (a and not b)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `140 impossible sur 8 bits signés` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : résoudre décodage signé avec `11110110` sur 8 bits.
+- Production attendue : `-10`.
+- Contrainte de contrôle : faire apparaître le contrôle « bit de poids fort à 1 ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 2
 - Objectif travaillé : O2.
-- Capacité officielle : P-DATA-BASE-02B.
-- Énoncé : résoudre une variante de `-23 sur 8 bits et (a and b) or (a and not b)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `140 impossible sur 8 bits signés` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : P-DATA-BASE-02A.
+- Énoncé disciplinaire : expliquer bornes sur n bits à partir de `n = 4` bits signés.
+- Production attendue : `[-8 ; 7]`.
+- Contrainte de contrôle : rédiger la méthode avant le résultat.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 3
 - Objectif travaillé : O3.
-- Capacité officielle : P-DATA-BASE-04.
-- Énoncé : résoudre une variante de `-23 sur 8 bits et (a and b) or (a and not b)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `140 impossible sur 8 bits signés` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : P-DATA-BASE-02A.
+- Énoncé disciplinaire : comparer encodage négatif avec `-6` sur 8 bits.
+- Production attendue : `11111010`.
+- Contrainte de contrôle : comparer avec le cas « retenue finale ignorée sur la largeur fixée ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 4
 - Objectif travaillé : O4.
 - Capacité officielle : P-DATA-BASE-02A.
-- Énoncé : résoudre une variante de `-23 sur 8 bits et (a and b) or (a and not b)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `140 impossible sur 8 bits signés` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : corriger simplification booléenne pour `(a and b) or (a and not b)`.
+- Production attendue : `a`.
+- Contrainte de contrôle : corriger l’erreur « Simplifier une expression booléenne avec un seul exemple. ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 5
 - Objectif travaillé : O1.
-- Capacité officielle : P-DATA-BASE-02B.
-- Énoncé : résoudre une variante de `-23 sur 8 bits et (a and b) or (a and not b)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `140 impossible sur 8 bits signés` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : P-DATA-BASE-02A.
+- Énoncé disciplinaire : tester un cas limite lié à bit de poids fort à 1.
+- Production attendue : le comportement de décodage signé est contrôlé.
+- Contrainte de contrôle : nommer la donnée minimale et la conclusion.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 6
 - Objectif travaillé : O2.
-- Capacité officielle : P-DATA-BASE-04.
-- Énoncé : résoudre une variante de `-23 sur 8 bits et (a and b) or (a and not b)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `140 impossible sur 8 bits signés` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : P-DATA-BASE-02A.
+- Énoncé disciplinaire : classer deux méthodes possibles pour bornes sur n bits.
+- Production attendue : la méthode robuste est choisie et justifiée.
+- Contrainte de contrôle : identifier pourquoi « Oublier de tester les bornes avant l’encodage. » est une erreur.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 7
 - Objectif travaillé : O3.
 - Capacité officielle : P-DATA-BASE-02A.
-- Énoncé : résoudre une variante de `-23 sur 8 bits et (a and b) or (a and not b)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `140 impossible sur 8 bits signés` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : justifier un transfert qui utilise encodage négatif avec une donnée nouvelle.
+- Production attendue : la justification reste valable sur le nouveau cas.
+- Contrainte de contrôle : inclure une étape calculable par un pair.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 8
 - Objectif travaillé : O4.
-- Capacité officielle : P-DATA-BASE-02B.
-- Énoncé : résoudre une variante de `-23 sur 8 bits et (a and b) or (a and not b)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `140 impossible sur 8 bits signés` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : P-DATA-BASE-02A.
+- Énoncé disciplinaire : étendre un énoncé volontairement erroné sur simplification booléenne.
+- Production attendue : l’erreur est localisée puis réparée.
+- Contrainte de contrôle : proposer une activité corrective inspirée de « Remplir les quatre lignes de la table avant de conclure. ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- On repère d’abord mot binaire de 8 bits et deux variables booléennes.
-- On applique ensuite inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé.
-- Le résultat attendu est `11101001 et simplification en a` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF1 est évitée car la vérification est écrite.
-
+- Méthode : identifier `11110110` sur 8 bits, appliquer la méthode « lire le bit de signe puis soustraire `2^8` à la valeur naturelle », puis écrire `-10`.
+- Résultat : `-10`.
+- Contrôle : faire apparaître le contrôle « bit de poids fort à 1 ».
+- Erreur traitée : EF1 - Lire un mot binaire signé comme un entier naturel.
 ### Corrigé exercice 2
-- On repère d’abord mot binaire de 8 bits et deux variables booléennes.
-- On applique ensuite inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé.
-- Le résultat attendu est `11101001 et simplification en a` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF2 est évitée car la vérification est écrite.
-
+- Méthode : expliciter chaque étape de calculer `-2^(n-1)` et `2^(n-1)-1` avant de conclure par `[-8 ; 7]`.
+- Résultat : `[-8 ; 7]`.
+- Contrôle : rédiger la méthode avant le résultat.
+- Erreur traitée : EF2 - Oublier de tester les bornes avant l’encodage.
 ### Corrigé exercice 3
-- On repère d’abord mot binaire de 8 bits et deux variables booléennes.
-- On applique ensuite inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé.
-- Le résultat attendu est `11101001 et simplification en a` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF3 est évitée car la vérification est écrite.
-
+- Méthode : comparer la donnée avec le cas limite « retenue finale ignorée sur la largeur fixée » et valider `11111010`.
+- Résultat : `11111010`.
+- Contrôle : comparer avec le cas « retenue finale ignorée sur la largeur fixée ».
+- Erreur traitée : EF3 - Inverser les bits sans ajouter 1.
 ### Corrigé exercice 4
-- On repère d’abord mot binaire de 8 bits et deux variables booléennes.
-- On applique ensuite inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé.
-- Le résultat attendu est `11101001 et simplification en a` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF4 est évitée car la vérification est écrite.
-
+- Méthode : isoler l’erreur fréquente « Simplifier une expression booléenne avec un seul exemple. » puis reprendre la procédure correcte.
+- Résultat : `a`.
+- Contrôle : corriger l’erreur « Simplifier une expression booléenne avec un seul exemple. ».
+- Erreur traitée : EF4 - Simplifier une expression booléenne avec un seul exemple.
 ### Corrigé exercice 5
-- On repère d’abord mot binaire de 8 bits et deux variables booléennes.
-- On applique ensuite inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé.
-- Le résultat attendu est `11101001 et simplification en a` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF1 est évitée car la vérification est écrite.
-
+- Méthode : identifier `11110110` sur 8 bits, appliquer la méthode « lire le bit de signe puis soustraire `2^8` à la valeur naturelle », puis écrire `-10`.
+- Résultat : le comportement de décodage signé est contrôlé.
+- Contrôle : nommer la donnée minimale et la conclusion.
+- Erreur traitée : EF1 - Lire un mot binaire signé comme un entier naturel.
 ### Corrigé exercice 6
-- On repère d’abord mot binaire de 8 bits et deux variables booléennes.
-- On applique ensuite inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé.
-- Le résultat attendu est `11101001 et simplification en a` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF2 est évitée car la vérification est écrite.
-
+- Méthode : expliciter chaque étape de calculer `-2^(n-1)` et `2^(n-1)-1` avant de conclure par `[-8 ; 7]`.
+- Résultat : la méthode robuste est choisie et justifiée.
+- Contrôle : identifier pourquoi « Oublier de tester les bornes avant l’encodage. » est une erreur.
+- Erreur traitée : EF2 - Oublier de tester les bornes avant l’encodage.
 ### Corrigé exercice 7
-- On repère d’abord mot binaire de 8 bits et deux variables booléennes.
-- On applique ensuite inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé.
-- Le résultat attendu est `11101001 et simplification en a` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF3 est évitée car la vérification est écrite.
-
+- Méthode : comparer la donnée avec le cas limite « retenue finale ignorée sur la largeur fixée » et valider `11111010`.
+- Résultat : la justification reste valable sur le nouveau cas.
+- Contrôle : inclure une étape calculable par un pair.
+- Erreur traitée : EF3 - Inverser les bits sans ajouter 1.
 ### Corrigé exercice 8
-- On repère d’abord mot binaire de 8 bits et deux variables booléennes.
-- On applique ensuite inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé.
-- Le résultat attendu est `11101001 et simplification en a` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF4 est évitée car la vérification est écrite.
-
+- Méthode : isoler l’erreur fréquente « Simplifier une expression booléenne avec un seul exemple. » puis reprendre la procédure correcte.
+- Résultat : l’erreur est localisée puis réparée.
+- Contrôle : proposer une activité corrective inspirée de « Remplir les quatre lignes de la table avant de conclure. ».
+- Erreur traitée : EF4 - Simplifier une expression booléenne avec un seul exemple.
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `11101001 et simplification en a` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : 140 impossible sur 8 bits signés.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Lire un mot binaire signé comme un entier naturel.
+- Erreur fréquente EF2 - Oublier de tester les bornes avant l’encodage.
+- Erreur fréquente EF3 - Inverser les bits sans ajouter 1.
+- Erreur fréquente EF4 - Simplifier une expression booléenne avec un seul exemple.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `140 impossible sur 8 bits signés` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Regarder d’abord le bit de poids fort puis choisir naturel ou signé.
+- Activité corrective EF2 : Écrire explicitement l’intervalle avant chaque conversion.
+- Activité corrective EF3 : Séparer inversion et ajout de 1 dans deux lignes distinctes.
+- Activité corrective EF4 : Remplir les quatre lignes de la table avant de conclure.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter `11110110` sur 8 bits avec une fiche méthode fournie.
+- Standard : traiter `n = 4` bits signés en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « retenue finale ignorée sur la largeur fixée » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
-
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.

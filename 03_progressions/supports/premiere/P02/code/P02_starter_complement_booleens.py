@@ -1,14 +1,11 @@
-"""Starter TP P02 - Complément à deux et booléens."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-
 def twos_complement_value(bits):
-    """Retourne une synthèse contrôlable pour le TP P02."""
-    if bits is None:
-        raise ValueError("entrée absente")
-    return {"entree": bits, "controle": "11101001 et simplification en a", "cas_limite": "140 impossible sur 8 bits signés"}
-
+    if not bits or any(bit not in "01" for bit in bits):
+        raise ValueError("mot binaire attendu")
+    return int(bits, 2)
 
 if __name__ == "__main__":
     print(twos_complement_value("11101001"))

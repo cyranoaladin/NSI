@@ -1,0 +1,757 @@
+supports:
+- support: 03_progressions/supports/premiere/P00/P00_bareme_diagnostic_python.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P00/P00_corrige_diagnostic_python.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P00/P00_cours_diagnostic_python.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P00/P00_evaluation_diagnostic_python.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P00/P00_remediation_diagnostic_python.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P00/P00_td_diagnostic_python.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P00/P00_tp_diagnostic_python.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P00/P00_trace_diagnostic_python.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P00/P00_version_amenagee_diagnostic_python.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P01/P01_bareme_conversions_bases.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P01/P01_corrige_conversions_bases.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P01/P01_cours_conversions_bases.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P01/P01_evaluation_conversions_bases.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P01/P01_remediation_conversions_bases.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P01/P01_td_conversions_bases.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P01/P01_tp_conversions_bases.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P01/P01_trace_conversions_bases.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P01/P01_version_amenagee_conversions_bases.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P02/P02_bareme_complement_booleens.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P02/P02_corrige_complement_booleens.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P02/P02_evaluation_complement_booleens.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P02/P02_remediation_complement_booleens.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P02/P02_td_complement_booleens.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P02/P02_tp_complement_booleens.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P02/P02_trace_complement_booleens.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P02/P02_version_amenagee_complement_booleens.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P03/P03_bareme_texte_reels.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P03/P03_corrige_texte_reels.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P03/P03_cours_texte_reels.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P03/P03_evaluation_texte_reels.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P03/P03_remediation_texte_reels.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P03/P03_td_texte_reels.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P03/P03_tp_texte_reels.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P03/P03_trace_texte_reels.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P03/P03_version_amenagee_texte_reels.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P04/P04_bareme_types_construits.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P04/P04_corrige_types_construits.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P04/P04_cours_types_construits.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P04/P04_evaluation_types_construits.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P04/P04_remediation_types_construits.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P04/P04_td_types_construits.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P04/P04_tp_types_construits.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P04/P04_trace_types_construits.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P04/P04_version_amenagee_types_construits.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P05/P05_bareme_tables_csv.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P05/P05_corrige_tables_csv.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P05/P05_cours_tables_csv.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P05/P05_evaluation_tables_csv.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P05/P05_remediation_tables_csv.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P05/P05_td_tables_csv.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T00/T00_evaluation_diagnostic_tests.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T01/T01_bareme_interfaces_structures.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T01/T01_corrige_interfaces_structures.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T01/T01_cours_interfaces_structures.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T01/T01_evaluation_interfaces_structures.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T01/T01_remediation_interfaces_structures.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T01/T01_td_interfaces_structures.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T01/T01_tp_interfaces_structures.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T01/T01_trace_interfaces_structures.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T01/T01_version_amenagee_interfaces_structures.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T02/T02_bareme_classes_objets.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T02/T02_corrige_classes_objets.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T02/T02_cours_classes_objets.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T02/T02_evaluation_classes_objets.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T02/T02_remediation_classes_objets.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T02/T02_td_classes_objets.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T02/T02_tp_classes_objets.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T02/T02_trace_classes_objets.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T02/T02_version_amenagee_classes_objets.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T03/T03_bareme_piles_files_dictionnaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T03/T03_corrige_piles_files_dictionnaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T03/T03_cours_piles_files_dictionnaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T03/T03_evaluation_piles_files_dictionnaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T03/T03_remediation_piles_files_dictionnaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T03/T03_td_piles_files_dictionnaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T03/T03_tp_piles_files_dictionnaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T03/T03_trace_piles_files_dictionnaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T03/T03_version_amenagee_piles_files_dictionnaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T04/T04_bareme_recursivite.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T04/T04_corrige_recursivite.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T04/T04_cours_recursivite.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T04/T04_evaluation_recursivite.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T04/T04_remediation_recursivite.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T04/T04_td_recursivite.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T04/T04_tp_recursivite.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T04/T04_trace_recursivite.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T04/T04_version_amenagee_recursivite.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T05/T05_bareme_arbres_binaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T05/T05_corrige_arbres_binaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T05/T05_cours_arbres_binaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T05/T05_evaluation_arbres_binaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T05/T05_remediation_arbres_binaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T05/T05_td_arbres_binaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T05/T05_tp_arbres_binaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T05/T05_trace_arbres_binaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+- support: 03_progressions/supports/terminale/T05/T05_version_amenagee_arbres_binaires.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review

@@ -1,210 +1,192 @@
 ---
-title: "T02 - Td - Classes, objets et invariants"
+title: "T02 - Td - Classes et objets"
 level: "terminale"
 sequence_id: "T02"
 document_type: "td"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_NSI/Cours/Terminale NSI Pierrot caillabet/2_Langage et programmation/Programmation fonctionnelle/4_TD_Programmation fonctionnelle.odt"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
 theme: "Programmation orientée objet"
 notion: "classe, attribut, méthode, invariant"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
     - "T-STRUCT-02A"
-    - "T-STRUCT-02B"
-    - "T-LANG-04A"
 ---
 
-
-# T02 - Td - Classes, objets et invariants
+# T02 - TD - Classes et objets
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
 - T-STRUCT-02A
-- T-STRUCT-02B
-- T-LANG-04A
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à classe.
+- Distinguer donnée, méthode et conclusion dans le thème Programmation orientée objet.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- T02-S1 à T02-S5 : ce support est rattaché aux séances indiquées dans la progression.
+- T02-S1 à T02-S5 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-un compte doit empêcher un solde négatif et exposer des méthodes contrôlées. La tâche consiste à traiter classe, attribut, méthode, invariant sans réponse intuitive non vérifiée.
+Une application de gestion de comptes doit garantir qu’aucune opération ne crée un solde incohérent.
 
 ## Activité d’entrée
-1. Lire la situation : un compte doit empêcher un solde négatif et exposer des méthodes contrôlées.
-2. Isoler la donnée de départ : objet possédant état interne et opérations publiques.
-3. Prédire individuellement le résultat de l’exemple `Compte("Ada", 20).retirer(7)`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : définir constructeur, attributs, méthodes et invariant vérifié après mutation.
-6. Contrôler avec le résultat de référence : solde 13 si l’invariant reste vérifié.
-7. Tester le cas limite suivant : montant négatif ou accès direct à l’attribut.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+1. Identifier attributs et méthodes d’un compte.
+2. Écrire l’invariant `solde >= 0`.
+3. Prévoir un dépôt puis un retrait.
+4. Décider quoi faire si le retrait dépasse le solde.
 
-## Exemple corrigé précis
-- Exemple : `Compte("Ada", 20).retirer(7)`.
-- Méthode : définir constructeur, attributs, méthodes et invariant vérifié après mutation.
-- Résultat : solde 13 si l’invariant reste vérifié.
-- Justification : chaque étape transforme une donnée identifiable.
-
+## Exemples corrigés précis
+### Exemple corrigé 1 - constructeur
+- Donnée étudiée : `Compte("Ada", 20)`.
+- Méthode : initialiser les attributs après validation.
+- Résultat obtenu : propriétaire Ada, solde 20.
+- Contrôle : le cas limite « solde initial négatif » est vérifié séparément.
+### Exemple corrigé 2 - méthode dépôt
+- Donnée étudiée : dépôt de 15.
+- Méthode : vérifier le montant puis modifier le solde.
+- Résultat obtenu : solde augmenté de 15.
+- Contrôle : le cas limite « montant nul ou négatif » est vérifié séparément.
+### Exemple corrigé 3 - méthode retrait
+- Donnée étudiée : retrait de 7 sur solde 20.
+- Méthode : contrôler disponibilité puis soustraire.
+- Résultat obtenu : solde 13.
+- Contrôle : le cas limite « retrait supérieur au solde » est vérifié séparément.
+### Exemple corrigé 4 - représentation
+- Donnée étudiée : `repr(compte)`.
+- Méthode : exposer une chaîne utile sans révéler de données inutiles.
+- Résultat obtenu : résumé lisible.
+- Contrôle : le cas limite « nom vide » est vérifié séparément.
 ## Exercices numérotés
 ### Exercice 1
 - Objectif travaillé : O1.
 - Capacité officielle : T-STRUCT-02A.
-- Énoncé : résoudre une variante de `Compte("Ada", 20).retirer(7)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer définir constructeur, attributs, méthodes et invariant vérifié après mutation, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `montant négatif ou accès direct à l’attribut` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : résoudre constructeur avec `Compte("Ada", 20)`.
+- Production attendue : propriétaire Ada, solde 20.
+- Contrainte de contrôle : faire apparaître le contrôle « solde initial négatif ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 2
 - Objectif travaillé : O2.
-- Capacité officielle : T-STRUCT-02B.
-- Énoncé : résoudre une variante de `Compte("Ada", 20).retirer(7)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer définir constructeur, attributs, méthodes et invariant vérifié après mutation, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `montant négatif ou accès direct à l’attribut` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : T-STRUCT-02A.
+- Énoncé disciplinaire : expliquer méthode dépôt à partir de dépôt de 15.
+- Production attendue : solde augmenté de 15.
+- Contrainte de contrôle : rédiger la méthode avant le résultat.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 3
 - Objectif travaillé : O3.
-- Capacité officielle : T-LANG-04A.
-- Énoncé : résoudre une variante de `Compte("Ada", 20).retirer(7)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer définir constructeur, attributs, méthodes et invariant vérifié après mutation, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `montant négatif ou accès direct à l’attribut` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : T-STRUCT-02A.
+- Énoncé disciplinaire : comparer méthode retrait avec retrait de 7 sur solde 20.
+- Production attendue : solde 13.
+- Contrainte de contrôle : comparer avec le cas « retrait supérieur au solde ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 4
 - Objectif travaillé : O4.
 - Capacité officielle : T-STRUCT-02A.
-- Énoncé : résoudre une variante de `Compte("Ada", 20).retirer(7)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer définir constructeur, attributs, méthodes et invariant vérifié après mutation, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `montant négatif ou accès direct à l’attribut` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : corriger représentation pour `repr(compte)`.
+- Production attendue : résumé lisible.
+- Contrainte de contrôle : corriger l’erreur « Confondre classe et instance. ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 5
 - Objectif travaillé : O1.
-- Capacité officielle : T-STRUCT-02B.
-- Énoncé : résoudre une variante de `Compte("Ada", 20).retirer(7)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer définir constructeur, attributs, méthodes et invariant vérifié après mutation, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `montant négatif ou accès direct à l’attribut` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : T-STRUCT-02A.
+- Énoncé disciplinaire : tester un cas limite lié à solde initial négatif.
+- Production attendue : le comportement de constructeur est contrôlé.
+- Contrainte de contrôle : nommer la donnée minimale et la conclusion.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 6
 - Objectif travaillé : O2.
-- Capacité officielle : T-LANG-04A.
-- Énoncé : résoudre une variante de `Compte("Ada", 20).retirer(7)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer définir constructeur, attributs, méthodes et invariant vérifié après mutation, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `montant négatif ou accès direct à l’attribut` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : T-STRUCT-02A.
+- Énoncé disciplinaire : classer deux méthodes possibles pour méthode dépôt.
+- Production attendue : la méthode robuste est choisie et justifiée.
+- Contrainte de contrôle : identifier pourquoi « Oublier de maintenir l’invariant. » est une erreur.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 7
 - Objectif travaillé : O3.
 - Capacité officielle : T-STRUCT-02A.
-- Énoncé : résoudre une variante de `Compte("Ada", 20).retirer(7)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer définir constructeur, attributs, méthodes et invariant vérifié après mutation, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `montant négatif ou accès direct à l’attribut` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Énoncé disciplinaire : justifier un transfert qui utilise méthode retrait avec une donnée nouvelle.
+- Production attendue : la justification reste valable sur le nouveau cas.
+- Contrainte de contrôle : inclure une étape calculable par un pair.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 8
 - Objectif travaillé : O4.
-- Capacité officielle : T-STRUCT-02B.
-- Énoncé : résoudre une variante de `Compte("Ada", 20).retirer(7)` en changeant une donnée contrôlée.
-- Travail demandé : appliquer définir constructeur, attributs, méthodes et invariant vérifié après mutation, puis rédiger le contrôle.
-- Contrainte : citer le cas limite `montant négatif ou accès direct à l’attribut` si la méthode peut échouer.
-- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
-- Critère de réussite : aucun résultat n’est donné sans justification.
-
+- Capacité officielle : T-STRUCT-02A.
+- Énoncé disciplinaire : étendre un énoncé volontairement erroné sur représentation.
+- Production attendue : l’erreur est localisée puis réparée.
+- Contrainte de contrôle : proposer une activité corrective inspirée de « Colorer définition de classe, constructeur et instance. ».
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- On repère d’abord objet possédant état interne et opérations publiques.
-- On applique ensuite définir constructeur, attributs, méthodes et invariant vérifié après mutation.
-- Le résultat attendu est `solde 13 si l’invariant reste vérifié` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF1 est évitée car la vérification est écrite.
-
+- Méthode : identifier `Compte("Ada", 20)`, appliquer la méthode « initialiser les attributs après validation », puis écrire propriétaire Ada, solde 20.
+- Résultat : propriétaire Ada, solde 20.
+- Contrôle : faire apparaître le contrôle « solde initial négatif ».
+- Erreur traitée : EF1 - Modifier directement un attribut sans passer par la méthode.
 ### Corrigé exercice 2
-- On repère d’abord objet possédant état interne et opérations publiques.
-- On applique ensuite définir constructeur, attributs, méthodes et invariant vérifié après mutation.
-- Le résultat attendu est `solde 13 si l’invariant reste vérifié` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF2 est évitée car la vérification est écrite.
-
+- Méthode : expliciter chaque étape de vérifier le montant puis modifier le solde avant de conclure par solde augmenté de 15.
+- Résultat : solde augmenté de 15.
+- Contrôle : rédiger la méthode avant le résultat.
+- Erreur traitée : EF2 - Oublier de maintenir l’invariant.
 ### Corrigé exercice 3
-- On repère d’abord objet possédant état interne et opérations publiques.
-- On applique ensuite définir constructeur, attributs, méthodes et invariant vérifié après mutation.
-- Le résultat attendu est `solde 13 si l’invariant reste vérifié` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF3 est évitée car la vérification est écrite.
-
+- Méthode : comparer la donnée avec le cas limite « retrait supérieur au solde » et valider solde 13.
+- Résultat : solde 13.
+- Contrôle : comparer avec le cas « retrait supérieur au solde ».
+- Erreur traitée : EF3 - Utiliser une variable globale pour l’état de l’objet.
 ### Corrigé exercice 4
-- On repère d’abord objet possédant état interne et opérations publiques.
-- On applique ensuite définir constructeur, attributs, méthodes et invariant vérifié après mutation.
-- Le résultat attendu est `solde 13 si l’invariant reste vérifié` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF4 est évitée car la vérification est écrite.
-
+- Méthode : isoler l’erreur fréquente « Confondre classe et instance. » puis reprendre la procédure correcte.
+- Résultat : résumé lisible.
+- Contrôle : corriger l’erreur « Confondre classe et instance. ».
+- Erreur traitée : EF4 - Confondre classe et instance.
 ### Corrigé exercice 5
-- On repère d’abord objet possédant état interne et opérations publiques.
-- On applique ensuite définir constructeur, attributs, méthodes et invariant vérifié après mutation.
-- Le résultat attendu est `solde 13 si l’invariant reste vérifié` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF1 est évitée car la vérification est écrite.
-
+- Méthode : identifier `Compte("Ada", 20)`, appliquer la méthode « initialiser les attributs après validation », puis écrire propriétaire Ada, solde 20.
+- Résultat : le comportement de constructeur est contrôlé.
+- Contrôle : nommer la donnée minimale et la conclusion.
+- Erreur traitée : EF1 - Modifier directement un attribut sans passer par la méthode.
 ### Corrigé exercice 6
-- On repère d’abord objet possédant état interne et opérations publiques.
-- On applique ensuite définir constructeur, attributs, méthodes et invariant vérifié après mutation.
-- Le résultat attendu est `solde 13 si l’invariant reste vérifié` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF2 est évitée car la vérification est écrite.
-
+- Méthode : expliciter chaque étape de vérifier le montant puis modifier le solde avant de conclure par solde augmenté de 15.
+- Résultat : la méthode robuste est choisie et justifiée.
+- Contrôle : identifier pourquoi « Oublier de maintenir l’invariant. » est une erreur.
+- Erreur traitée : EF2 - Oublier de maintenir l’invariant.
 ### Corrigé exercice 7
-- On repère d’abord objet possédant état interne et opérations publiques.
-- On applique ensuite définir constructeur, attributs, méthodes et invariant vérifié après mutation.
-- Le résultat attendu est `solde 13 si l’invariant reste vérifié` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF3 est évitée car la vérification est écrite.
-
+- Méthode : comparer la donnée avec le cas limite « retrait supérieur au solde » et valider solde 13.
+- Résultat : la justification reste valable sur le nouveau cas.
+- Contrôle : inclure une étape calculable par un pair.
+- Erreur traitée : EF3 - Utiliser une variable globale pour l’état de l’objet.
 ### Corrigé exercice 8
-- On repère d’abord objet possédant état interne et opérations publiques.
-- On applique ensuite définir constructeur, attributs, méthodes et invariant vérifié après mutation.
-- Le résultat attendu est `solde 13 si l’invariant reste vérifié` pour l’exemple de référence ou une valeur cohérente pour la variante.
-- L’erreur EF4 est évitée car la vérification est écrite.
-
+- Méthode : isoler l’erreur fréquente « Confondre classe et instance. » puis reprendre la procédure correcte.
+- Résultat : l’erreur est localisée puis réparée.
+- Contrôle : proposer une activité corrective inspirée de « Colorer définition de classe, constructeur et instance. ».
+- Erreur traitée : EF4 - Confondre classe et instance.
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `solde 13 si l’invariant reste vérifié` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer définir constructeur, attributs, méthodes et invariant vérifié après mutation dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : montant négatif ou accès direct à l’attribut.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Modifier directement un attribut sans passer par la méthode.
+- Erreur fréquente EF2 - Oublier de maintenir l’invariant.
+- Erreur fréquente EF3 - Utiliser une variable globale pour l’état de l’objet.
+- Erreur fréquente EF4 - Confondre classe et instance.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `montant négatif ou accès direct à l’attribut` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Tracer l’état avant et après chaque méthode.
+- Activité corrective EF2 : Écrire l’invariant en marge de chaque opération.
+- Activité corrective EF3 : Créer deux comptes pour vérifier l’indépendance des états.
+- Activité corrective EF4 : Colorer définition de classe, constructeur et instance.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter `Compte("Ada", 20)` avec une fiche méthode fournie.
+- Standard : traiter dépôt de 15 en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « retrait supérieur au solde » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
-
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.

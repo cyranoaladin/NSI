@@ -1,25 +1,30 @@
-"""Tests attendus TP T02."""
+"""Asset Python TP. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
-from T02_starter_classes_objets import creer_compte
+import importlib
+import os
 
+MODULE = importlib.import_module(os.environ.get("TP_MODULE", "T02_starter_classes_objets"))
+creer_compte = MODULE.creer_compte
 
 def test_nominal() -> None:
-    sortie = creer_compte(20)
-    assert sortie["controle"] == "solde 13 si l’invariant reste vérifié"
-    assert sortie["cas_limite"] == "montant négatif ou accès direct à l’attribut"
+    result = creer_compte(20)
+    assert result.retirer(7) is None and result.solde == 13
 
+def test_limite() -> None:
+    result = creer_compte(0)
+    assert result.solde == 0
 
-def test_entree_absente() -> None:
+def test_invalide() -> None:
     try:
-        creer_compte(None)
-    except ValueError:
+        creer_compte(-1)
+    except (ValueError, TypeError, IndexError):
         return
-    raise AssertionError("ValueError attendue pour entrée absente")
-
+    raise AssertionError("exception attendue")
 
 if __name__ == "__main__":
     test_nominal()
-    test_entree_absente()
+    test_limite()
+    test_invalide()
     print("tests attendus OK")

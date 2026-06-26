@@ -1,129 +1,128 @@
 ---
-title: "T01 - Evaluation - Interfaces de structures abstraites"
+title: "T01 - Evaluation - Interfaces et structures"
 level: "terminale"
 sequence_id: "T01"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.3.0"
-source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_NSI/Formation TOULOUSE/BLOC4/Cours EIL - TAD - 2019-2020.pdf"
-theme: "Structures de données"
-notion: "interface, opération, coût"
+version: "0.4.1"
+source: "BO 2019"
+source_creation: "generated_from_program"
+theme: "Structures de données abstraites"
+notion: "interface, invariant, pile, file"
 objectifs:
-  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
-  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
-  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
-  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
+  - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
+  - "Objectif O2 - Appliquer une méthode disciplinaire complète"
+  - "Objectif O3 - Justifier le résultat sur un cas différent"
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur observée"
 private_data: false
 official_program:
   capacities:
     - "T-STRUCT-01A"
-    - "T-STRUCT-01B"
-    - "T-STRUCT-01C"
 ---
 
 
-# T01 - Evaluation - Interfaces de structures abstraites
+# T01 - Évaluation courte - Interfaces et structures
 
 ## Objectifs spécifiques
-- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
-- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
-- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
-- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+- Objectif O1 - Identifier précisément la représentation ou la structure en jeu.
+- Objectif O2 - Appliquer une méthode disciplinaire complète.
+- Objectif O3 - Justifier le résultat sur un cas différent.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur observée.
 
 ## Capacités officielles atomiques
 - T-STRUCT-01A
-- T-STRUCT-01B
-- T-STRUCT-01C
 
 ## Prérequis
-- Lire une consigne technique sans confondre donnée, méthode et résultat.
-- Écrire une réponse sous forme de phrases courtes et vérifiables.
-- Utiliser Python en distinguant expression, valeur, variable et affichage.
-- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
+- Reconnaître une consigne liée à interface.
+- Distinguer donnée, méthode et conclusion dans le thème Structures de données abstraites.
+- Rédiger une justification courte en utilisant le vocabulaire du programme.
+- Contrôler une réponse par un cas limite ou un contre-exemple explicite.
 
 ## Séance(s) correspondante(s)
-- T01-S1 à T01-S5 : ce support est rattaché aux séances indiquées dans la progression.
+- T01-S1 à T01-S5 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-un même service peut être décrit par ses opérations avant de choisir l’implémentation Python. La tâche consiste à traiter interface, opération, coût sans réponse intuitive non vérifiée.
+Un module doit exposer une pile sans révéler si elle est stockée par liste Python ou par maillons.
 
 ## Activité d’entrée
-1. Lire la situation : un même service peut être décrit par ses opérations avant de choisir l’implémentation Python.
-2. Isoler la donnée de départ : ensemble d’opérations observables.
-3. Prédire individuellement le résultat de l’exemple `sac avec ajouter, retirer, est_vide`.
-4. Comparer deux stratégies et noter la divergence précise.
-5. Appliquer la méthode retenue : nommer les opérations, les préconditions et les effets sans dépendre du stockage.
-6. Contrôler avec le résultat de référence : interface séparée de la représentation interne.
-7. Tester le cas limite suivant : confondre interface et liste Python concrète.
-8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+1. Lister les opérations d’une pile.
+2. Écrire un invariant après empilement.
+3. Comparer interface et représentation.
+4. Prévoir le comportement sur structure vide.
 
-## Exemple corrigé précis
-- Exemple d’entraînement : `sac avec ajouter, retirer, est_vide` donne `interface séparée de la représentation interne` avec la méthode nommer les opérations, les préconditions et les effets sans dépendre du stockage.
-
-## Exercices numérotés
-- Les questions d’évaluation ci-dessous remplacent les exercices longs par des tâches courtes et notées.
-
+## Questions
 ### Question 1
 - Objectif évalué : O1.
 - Capacité officielle : T-STRUCT-01A.
-- Énoncé : traiter `sac avec ajouter, retirer, est_vide` ou une variante fournie en appliquant nommer les opérations, les préconditions et les effets sans dépendre du stockage.
-- Réponse attendue : résultat contrôlé `interface séparée de la représentation interne` et justification courte.
-- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF1.
-
+- Énoncé : résoudre interface pile avec `push`, `pop`, `is_empty`.
+- Réponse attendue : interface indépendante du stockage.
+- Critère de réussite : méthode visible, résultat correct et contrôle « dépilement vide ».
 ### Question 2
 - Objectif évalué : O2.
-- Capacité officielle : T-STRUCT-01B.
-- Énoncé : traiter `sac avec ajouter, retirer, est_vide` ou une variante fournie en appliquant nommer les opérations, les préconditions et les effets sans dépendre du stockage.
-- Réponse attendue : résultat contrôlé `interface séparée de la représentation interne` et justification courte.
-- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF2.
-
+- Capacité officielle : T-STRUCT-01A.
+- Énoncé : expliquer invariant à partir de taille après deux empilements.
+- Réponse attendue : taille augmentée de 2.
+- Critère de réussite : méthode visible, résultat correct et contrôle « opération refusée ».
 ### Question 3
 - Objectif évalué : O3.
-- Capacité officielle : T-STRUCT-01C.
-- Énoncé : traiter `sac avec ajouter, retirer, est_vide` ou une variante fournie en appliquant nommer les opérations, les préconditions et les effets sans dépendre du stockage.
-- Réponse attendue : résultat contrôlé `interface séparée de la représentation interne` et justification courte.
-- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF3.
-
+- Capacité officielle : T-STRUCT-01A.
+- Énoncé : comparer file avec arrivées A puis B.
+- Réponse attendue : A sort avant B.
+- Critère de réussite : méthode visible, résultat correct et contrôle « file vide ».
 ### Question 4
 - Objectif évalué : O4.
 - Capacité officielle : T-STRUCT-01A.
-- Énoncé : traiter `sac avec ajouter, retirer, est_vide` ou une variante fournie en appliquant nommer les opérations, les préconditions et les effets sans dépendre du stockage.
-- Réponse attendue : résultat contrôlé `interface séparée de la représentation interne` et justification courte.
-- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF4.
-
+- Énoncé : corriger encapsulation pour liste interne `_items`.
+- Réponse attendue : tests écrits sur méthodes publiques.
+- Critère de réussite : méthode visible, résultat correct et contrôle « changement de représentation ».
 ## Barème
-- Total : 20 points.
-- Question 1 : 5 points.
-- Question 2 : 5 points.
-- Question 3 : 5 points.
-- Question 4 : 5 points.
-
-## Corrigé
-- Corrigé question 1 : appliquer nommer les opérations, les préconditions et les effets sans dépendre du stockage, obtenir `interface séparée de la représentation interne` sur le cas de référence, puis citer EF1.
-- Corrigé question 2 : appliquer nommer les opérations, les préconditions et les effets sans dépendre du stockage, obtenir `interface séparée de la représentation interne` sur le cas de référence, puis citer EF2.
-- Corrigé question 3 : appliquer nommer les opérations, les préconditions et les effets sans dépendre du stockage, obtenir `interface séparée de la représentation interne` sur le cas de référence, puis citer EF3.
-- Corrigé question 4 : appliquer nommer les opérations, les préconditions et les effets sans dépendre du stockage, obtenir `interface séparée de la représentation interne` sur le cas de référence, puis citer EF4.
-
+- Question 1 : 2 points méthode, 1 point résultat, 1 point justification liée à dépilement vide.
+- Question 2 : 2 points méthode, 1 point résultat, 1 point justification liée à opération refusée.
+- Question 3 : 2 points méthode, 1 point résultat, 1 point justification liée à file vide.
+- Question 4 : 2 points méthode, 1 point résultat, 1 point justification liée à changement de représentation.
 ## Erreurs fréquentes
-- Erreur fréquente EF1 - répondre seulement par `interface séparée de la représentation interne` sans écrire la méthode.
-- Erreur fréquente EF2 - appliquer nommer les opérations, les préconditions et les effets sans dépendre du stockage dans le mauvais ordre.
-- Erreur fréquente EF3 - oublier le cas limite : confondre interface et liste Python concrète.
-- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
+- Erreur fréquente EF1 - Confondre interface et implémentation.
+- Erreur fréquente EF2 - Tester un attribut interne au lieu de l’opération publique.
+- Erreur fréquente EF3 - Oublier l’état vide.
+- Erreur fréquente EF4 - Mélanger ordre LIFO et ordre FIFO.
 
 ## Remédiation ciblée
-- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
-- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
-- Activité corrective EF3 : construire deux variantes du cas limite `confondre interface et liste Python concrète` et comparer les sorties.
-- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
+- Activité corrective EF1 : Écrire le contrat avant le choix de représentation.
+- Activité corrective EF2 : Réécrire les tests en utilisant seulement les méthodes publiques.
+- Activité corrective EF3 : Faire une trace d’opérations depuis la structure vide.
+- Activité corrective EF4 : Comparer une pile et une file avec la même suite d’entrées.
 
 ## Différenciation
-- Socle : la méthode est fournie sous forme de tableau à compléter.
-- Standard : l’élève choisit la méthode et rédige la justification complète.
-- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
+- Socle : traiter `push`, `pop`, `is_empty` avec une fiche méthode fournie.
+- Standard : traiter taille après deux empilements en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « file vide » et expliquer le comportement attendu.
 
 ## Critères de réussite
-- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
-- Au moins une capacité officielle est reliée à une question traitée.
-- Le résultat est accompagné d’une méthode et d’un contrôle.
-- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
+- La capacité officielle est citée dans la copie.
+- La méthode contient au moins une étape vérifiable par un pair.
+- Le cas limite est discuté avec une donnée concrète.
+- La correction explique quelle erreur fréquente est évitée.
 
+## Exercices numérotés
+- Exercice 1 : reprendre question 1 en explicitant donnée, méthode, résultat et contrôle pour T01.
+- Exercice 2 : reprendre question 2 en explicitant donnée, méthode, résultat et contrôle pour T01.
+- Exercice 3 : reprendre question 3 en explicitant donnée, méthode, résultat et contrôle pour T01.
+- Exercice 4 : reprendre question 4 en explicitant donnée, méthode, résultat et contrôle pour T01.
+
+## Corrigé
+### Corrigé question 1
+- Résultat attendu : interface indépendante du stockage.
+- Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 1.
+- Critère de validation : méthode visible, résultat correct et contrôle « dépilement vide ».
+### Corrigé question 2
+- Résultat attendu : taille augmentée de 2.
+- Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 2.
+- Critère de validation : méthode visible, résultat correct et contrôle « opération refusée ».
+### Corrigé question 3
+- Résultat attendu : A sort avant B.
+- Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 3.
+- Critère de validation : méthode visible, résultat correct et contrôle « file vide ».
+### Corrigé question 4
+- Résultat attendu : tests écrits sur méthodes publiques.
+- Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
+- Critère de validation : méthode visible, résultat correct et contrôle « changement de représentation ».
