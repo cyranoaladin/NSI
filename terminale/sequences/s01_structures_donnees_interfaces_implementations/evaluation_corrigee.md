@@ -3,6 +3,7 @@ titre: Evaluation corrigee professeur - S01 structures de donnees, interfaces et
 niveau: terminale
 type: evaluation_corrigee
 statut: needs_review
+status: needs_review
 sequence: S01 structures de donnees interfaces implementations
 notion: interface, implementation, piles, files, dictionnaires, graphes
 objectifs:
@@ -32,6 +33,14 @@ official_program:
 # Evaluation corrigee professeur - S01 structures de donnees, interfaces et implementations
 
 Statut : document professeur non publiable, a relire pedagogiquement et scientifiquement.
+
+## Conditions d'utilisation professeur
+
+- Status : needs_review.
+- Durée standard : 1 h.
+- Matériel : ordinateur avec Python local ou sujet papier selon modalite.
+- Correction complète : toutes les questions de l'evaluation sont corrigees ci-dessous avec justification, bareme, variante acceptable, erreur frequente et remediation.
+- Erreur fréquente : les erreurs signalees servent a preparer la remediation, pas a valider la publication.
 
 ## Barème global
 

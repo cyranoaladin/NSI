@@ -3,6 +3,7 @@ titre: Evaluation corrigee professeur - S01 representation des donnees
 niveau: premiere
 type: evaluation_corrigee
 statut: needs_review
+status: needs_review
 sequence: S01 representation des donnees
 notion: bases, entiers relatifs, booleens, texte, types construits
 objectifs:
@@ -30,6 +31,14 @@ official_program:
 # Evaluation corrigee professeur - S01 representation des donnees
 
 Statut : document professeur non publiable, a relire pedagogiquement et scientifiquement.
+
+## Conditions d'utilisation professeur
+
+- Status : needs_review.
+- Durée standard : 55 minutes.
+- Matériel : ordinateur avec Python local ou feuille de brouillon selon version.
+- Correction complète : toutes les questions de l'evaluation sont corrigees ci-dessous avec justification, bareme, variante acceptable, erreur frequente et remediation.
+- Erreur fréquente : les erreurs signalees servent a preparer la remediation, pas a valider la publication.
 
 ## Barème global
 
