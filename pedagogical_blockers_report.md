@@ -3,9 +3,16 @@
 - Statut global : NON PUBLIABLE.
 - Décision : ne pas générer de nouvelles séquences.
 
-## Documents trop génériques
+## Bloquants explicitement suivis
 
-Les documents professeurs ont été renforcés, mais ils restent en `needs_review`. Une revue humaine doit vérifier que chaque correction correspond exactement aux TD, TP, QCM et évaluations de la séquence.
+- Séances encore génériques : le retour a identifié une répétition massive de gabarits ; `check_session_specificity.py` interdit les formulations génériques et les déroulés trop répétés.
+- Semaines incohérentes : le retour a identifié des semaines impossibles ; `check_session_week_calendar_consistency.py` impose semaines scolaires 1 à 38, semaines civiles et cohérence avec les mois.
+- Absence d’évaluation en Première : corrigée dans les séances et contrôlée par `check_evaluation_distribution.py`, mais la qualité des évaluations reste à relire.
+- `qa_report.md` obsolète : `generate_qa_report.py` et `check_qa_report_freshness.py` pilotent désormais les chiffres à partir du manifest et de la couverture.
+- Bug `source=drive` : `scripts/ingest_drive_export.py` ne doit plus être classé comme Drive ; `check_manifest_source_integrity.py` contrôle cette règle.
+- Archive globale contenant `.git/` : politique documentée dans `delivery_policy.md`; seule `dist/source_clean.tar.gz` est livrable comme archive pédagogique.
+- Documents professeurs encore `needs_review` : ils sont plus structurés mais non relus pédagogiquement et scientifiquement.
+- Ressources Drive non intégrées localement : `release-audit` reste bloquant.
 
 ## Séquences trop denses
 
@@ -14,12 +21,7 @@ Les documents professeurs ont été renforcés, mais ils restent en `needs_revie
 
 ## Capacités absentes
 
-La couverture atomique contient encore de nombreuses capacités `absent`. Aucune capacité n'est `covered`.
-
-## Erreurs de progression corrigées
-
-- Les séances de 4 h à 12 h ont été remplacées par des séances de 1 h à 2 h 30.
-- Les totaux par séquence, mois et projet sont contrôlés par scripts.
+La couverture atomique contient encore des capacités `absent`; aucune capacité n'est `covered`.
 
 ## Risques de surcharge cognitive
 

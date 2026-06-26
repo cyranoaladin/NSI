@@ -9,6 +9,7 @@ audit:
 	python scripts/check_no_placeholders_docs.py
 	python scripts/check_no_placeholders_code.py
 	python scripts/check_no_build_artifacts_in_index.py
+	python scripts/check_uploaded_archive_policy.py
 	python scripts/check_required_sections.py
 	python scripts/check_document_depth.py
 	python scripts/check_qcm_schema.py
@@ -21,6 +22,9 @@ audit:
 	python scripts/check_session_duration_consistency.py
 	python scripts/check_session_monthly_total.py
 	python scripts/check_session_project_hours.py
+	python scripts/check_session_week_calendar_consistency.py
+	python scripts/check_session_specificity.py
+	python scripts/check_evaluation_distribution.py
 	python scripts/check_teacher_docs_depth.py
 	python scripts/check_program_yaml_atomicity.py
 	python scripts/check_build_reports_freshness.py
@@ -35,6 +39,10 @@ audit:
 	python scripts/check_scientific_claims_review.py
 	python scripts/check_program_capacity_evidence_depth.py
 	python scripts/check_program_coverage.py
+	python scripts/generate_qa_report.py
+	python scripts/check_qa_report_freshness.py
+	python scripts/check_manifest_source_integrity.py
+	python scripts/check_teacher_corrections_alignment.py
 	python scripts/check_coverage_evidence.py
 	python scripts/run_python_tests.py
 	python scripts/check_quality_gates.py

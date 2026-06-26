@@ -19,6 +19,7 @@ CHECKS = [
     "scripts/check_no_placeholders_docs.py",
     "scripts/check_no_placeholders_code.py",
     "scripts/check_no_build_artifacts_in_index.py",
+    "scripts/check_uploaded_archive_policy.py",
     "scripts/check_required_sections.py",
     "scripts/check_document_depth.py",
     "scripts/check_qcm_schema.py",
@@ -31,6 +32,9 @@ CHECKS = [
     "scripts/check_session_duration_consistency.py",
     "scripts/check_session_monthly_total.py",
     "scripts/check_session_project_hours.py",
+    "scripts/check_session_week_calendar_consistency.py",
+    "scripts/check_session_specificity.py",
+    "scripts/check_evaluation_distribution.py",
     "scripts/check_teacher_docs_depth.py",
     "scripts/check_program_yaml_atomicity.py",
     "scripts/check_build_reports_freshness.py",
@@ -50,6 +54,9 @@ CHECKS = [
     "scripts/check_drive_mapping.py",
     "scripts/check_drive_quarantine_privacy.py",
     "scripts/check_coverage_evidence.py",
+    "scripts/check_qa_report_freshness.py",
+    "scripts/check_manifest_source_integrity.py",
+    "scripts/check_teacher_corrections_alignment.py",
     "scripts/run_python_tests.py",
 ]
 

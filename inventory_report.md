@@ -1,37 +1,36 @@
 # Inventaire ressources NSI
 
-- Total ressources : 160
+- Total ressources : 170
 - Ressources pédagogiques : 52
-- Ressources techniques : 108
+- Ressources techniques : 118
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
-- drive: 1
-- generated: 159
+- drive: 0
+- generated: 170
 
 ## Répartition par niveau
-- interne: 102
+- interne: 112
 - premiere: 29
 - terminale: 29
 
 ## Répartition par type
 - banque: 14
-- document: 47
-- script: 55
+- document: 48
+- script: 64
 - sequence: 44
 
 ## Répartition par statut
-- needs_review: 160
+- needs_review: 170
 
 ## Répartition audience
 - corrige: 9
 - eleve: 18
-- mixte: 130
+- mixte: 140
 - professeur: 3
 
 ## Catégories (distinguer exigences)
 - Sources issues du Drive :
-  - scripts/ingest_drive_export.py
 - Sources générées :
   - 00_programmes_officiels/README.md
   - 00_programmes_officiels/programme_nsi_2019.yaml
@@ -57,6 +56,7 @@
   - bank_strategy.md
   - calendar_2026_2027_tunisia.md
   - course_internal_coherence_report.md
+  - delivery_policy.md
   - differentiation_quality_report.md
   - drive_inventory.csv
   - drive_mapping.md
@@ -110,6 +110,7 @@
   - scripts/_inventory_utils.py
   - scripts/_pedagogy_reports.py
   - scripts/_qa_common.py
+  - scripts/_session_checks.py
   - scripts/build_all.py
   - scripts/build_source_archive.py
   - scripts/check_archive_portability.py
@@ -124,9 +125,11 @@
   - scripts/check_drive_mapping_release.py
   - scripts/check_drive_quarantine_privacy.py
   - scripts/check_evaluation_bareme_alignment.py
+  - scripts/check_evaluation_distribution.py
   - scripts/check_git_clean.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_links.py
+  - scripts/check_manifest_source_integrity.py
   - scripts/check_metadata.py
   - scripts/check_monthly_load_balance.py
   - scripts/check_no_absent_coverage_for_release.py
@@ -145,6 +148,7 @@
   - scripts/check_progression_project_consistency.py
   - scripts/check_project_quarter_requirement.py
   - scripts/check_python_quality.py
+  - scripts/check_qa_report_freshness.py
   - scripts/check_qcm_schema.py
   - scripts/check_quality_gates.py
   - scripts/check_required_sections.py
@@ -154,11 +158,17 @@
   - scripts/check_session_level_planning.py
   - scripts/check_session_monthly_total.py
   - scripts/check_session_project_hours.py
+  - scripts/check_session_specificity.py
+  - scripts/check_session_week_calendar_consistency.py
   - scripts/check_td_corrige_alignment.py
+  - scripts/check_teacher_corrections_alignment.py
   - scripts/check_teacher_docs_depth.py
   - scripts/check_tp_test_alignment.py
+  - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_statuses.py
   - scripts/generate_index.py
+  - scripts/generate_qa_report.py
+  - scripts/ingest_drive_export.py
   - scripts/rebuild_inventory.py
   - scripts/run_python_tests.py
   - td_corrige_alignment_report.md
@@ -270,6 +280,7 @@
   - bank_strategy.md
   - calendar_2026_2027_tunisia.md
   - course_internal_coherence_report.md
+  - delivery_policy.md
   - differentiation_quality_report.md
   - drive_inventory.csv
   - drive_mapping.md
@@ -297,6 +308,7 @@
   - scripts/_inventory_utils.py
   - scripts/_pedagogy_reports.py
   - scripts/_qa_common.py
+  - scripts/_session_checks.py
   - scripts/build_all.py
   - scripts/build_source_archive.py
   - scripts/check_archive_portability.py
@@ -311,9 +323,11 @@
   - scripts/check_drive_mapping_release.py
   - scripts/check_drive_quarantine_privacy.py
   - scripts/check_evaluation_bareme_alignment.py
+  - scripts/check_evaluation_distribution.py
   - scripts/check_git_clean.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_links.py
+  - scripts/check_manifest_source_integrity.py
   - scripts/check_metadata.py
   - scripts/check_monthly_load_balance.py
   - scripts/check_no_absent_coverage_for_release.py
@@ -332,6 +346,7 @@
   - scripts/check_progression_project_consistency.py
   - scripts/check_project_quarter_requirement.py
   - scripts/check_python_quality.py
+  - scripts/check_qa_report_freshness.py
   - scripts/check_qcm_schema.py
   - scripts/check_quality_gates.py
   - scripts/check_required_sections.py
@@ -341,11 +356,16 @@
   - scripts/check_session_level_planning.py
   - scripts/check_session_monthly_total.py
   - scripts/check_session_project_hours.py
+  - scripts/check_session_specificity.py
+  - scripts/check_session_week_calendar_consistency.py
   - scripts/check_td_corrige_alignment.py
+  - scripts/check_teacher_corrections_alignment.py
   - scripts/check_teacher_docs_depth.py
   - scripts/check_tp_test_alignment.py
+  - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_statuses.py
   - scripts/generate_index.py
+  - scripts/generate_qa_report.py
   - scripts/ingest_drive_export.py
   - scripts/rebuild_inventory.py
   - scripts/run_python_tests.py
@@ -391,6 +411,7 @@
 - bank_strategy.md
 - calendar_2026_2027_tunisia.md
 - course_internal_coherence_report.md
+- delivery_policy.md
 - differentiation_quality_report.md
 - drive_inventory.csv
 - drive_mapping.md
@@ -440,6 +461,7 @@
 - scripts/_inventory_utils.py
 - scripts/_pedagogy_reports.py
 - scripts/_qa_common.py
+- scripts/_session_checks.py
 - scripts/build_all.py
 - scripts/build_source_archive.py
 - scripts/check_archive_portability.py
@@ -454,9 +476,11 @@
 - scripts/check_drive_mapping_release.py
 - scripts/check_drive_quarantine_privacy.py
 - scripts/check_evaluation_bareme_alignment.py
+- scripts/check_evaluation_distribution.py
 - scripts/check_git_clean.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_links.py
+- scripts/check_manifest_source_integrity.py
 - scripts/check_metadata.py
 - scripts/check_monthly_load_balance.py
 - scripts/check_no_absent_coverage_for_release.py
@@ -475,6 +499,7 @@
 - scripts/check_progression_project_consistency.py
 - scripts/check_project_quarter_requirement.py
 - scripts/check_python_quality.py
+- scripts/check_qa_report_freshness.py
 - scripts/check_qcm_schema.py
 - scripts/check_quality_gates.py
 - scripts/check_required_sections.py
@@ -484,10 +509,15 @@
 - scripts/check_session_level_planning.py
 - scripts/check_session_monthly_total.py
 - scripts/check_session_project_hours.py
+- scripts/check_session_specificity.py
+- scripts/check_session_week_calendar_consistency.py
+- scripts/check_teacher_corrections_alignment.py
 - scripts/check_teacher_docs_depth.py
 - scripts/check_tp_test_alignment.py
+- scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_statuses.py
 - scripts/generate_index.py
+- scripts/generate_qa_report.py
 - scripts/ingest_drive_export.py
 - scripts/rebuild_inventory.py
 - scripts/run_python_tests.py
@@ -546,6 +576,7 @@
 - bank_strategy.md
 - calendar_2026_2027_tunisia.md
 - course_internal_coherence_report.md
+- delivery_policy.md
 - differentiation_quality_report.md
 - drive_inventory.csv
 - drive_mapping.md
@@ -599,6 +630,7 @@
 - scripts/_inventory_utils.py
 - scripts/_pedagogy_reports.py
 - scripts/_qa_common.py
+- scripts/_session_checks.py
 - scripts/build_all.py
 - scripts/build_source_archive.py
 - scripts/check_archive_portability.py
@@ -613,9 +645,11 @@
 - scripts/check_drive_mapping_release.py
 - scripts/check_drive_quarantine_privacy.py
 - scripts/check_evaluation_bareme_alignment.py
+- scripts/check_evaluation_distribution.py
 - scripts/check_git_clean.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_links.py
+- scripts/check_manifest_source_integrity.py
 - scripts/check_metadata.py
 - scripts/check_monthly_load_balance.py
 - scripts/check_no_absent_coverage_for_release.py
@@ -634,6 +668,7 @@
 - scripts/check_progression_project_consistency.py
 - scripts/check_project_quarter_requirement.py
 - scripts/check_python_quality.py
+- scripts/check_qa_report_freshness.py
 - scripts/check_qcm_schema.py
 - scripts/check_quality_gates.py
 - scripts/check_required_sections.py
@@ -643,11 +678,16 @@
 - scripts/check_session_level_planning.py
 - scripts/check_session_monthly_total.py
 - scripts/check_session_project_hours.py
+- scripts/check_session_specificity.py
+- scripts/check_session_week_calendar_consistency.py
 - scripts/check_td_corrige_alignment.py
+- scripts/check_teacher_corrections_alignment.py
 - scripts/check_teacher_docs_depth.py
 - scripts/check_tp_test_alignment.py
+- scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_statuses.py
 - scripts/generate_index.py
+- scripts/generate_qa_report.py
 - scripts/ingest_drive_export.py
 - scripts/rebuild_inventory.py
 - scripts/run_python_tests.py

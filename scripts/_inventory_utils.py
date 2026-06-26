@@ -6,6 +6,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional
+import csv
 import hashlib
 import re
 import unicodedata
@@ -305,23 +306,36 @@ def is_publishable(path: Path) -> bool:
     return True
 
 
-DRIVE_SOURCE_KEYWORDS = ('drive.google', 'docs.google', 'google.com', 'googledrive', 'drive-export', 'drive_export')
+DRIVE_SOURCE_KEYWORDS = ('drive.google', 'docs.google')
+
+
+def _drive_quarantine_paths() -> set[str]:
+    manifest = ROOT / 'drive_quarantine_manifest.csv'
+    if not manifest.exists():
+        return set()
+    paths: set[str] = set()
+    try:
+        with manifest.open(encoding='utf-8', newline='') as handle:
+            reader = csv.DictReader(handle)
+            for row in reader:
+                local = str(row.get('local_copy') or '').strip()
+                digest = str(row.get('sha256') or '').strip()
+                if local and len(digest) == 64:
+                    paths.add(local)
+    except Exception:
+        return set()
+    return paths
 
 
 def detect_source_type(path: Path, frontmatter: Dict[str, object] | None = None) -> str:
-    # Détection explicite des ressources référencées à partir du Drive.
-    source = frontmatter.get('source') if isinstance(frontmatter, dict) else None
-    if isinstance(source, str):
-        lowered = source.lower()
-        if any(keyword in lowered for keyword in DRIVE_SOURCE_KEYWORDS):
+    relative = path.relative_to(ROOT).as_posix() if path.is_absolute() and ROOT in path.parents else path.as_posix()
+    if isinstance(frontmatter, dict):
+        origin = str(frontmatter.get('origin') or '').lower().strip()
+        drive_url = str(frontmatter.get('drive_url') or '').lower().strip()
+        if origin == 'drive' and any(keyword in drive_url for keyword in DRIVE_SOURCE_KEYWORDS):
             return SOURCE_TYPE_DRIVE
-
-    if any(part.lower() in {'drive', 'google_drive', 'ressources_drive'} for part in path.parts):
+    if relative in _drive_quarantine_paths():
         return SOURCE_TYPE_DRIVE
-
-    if any(keyword in path.as_posix().lower() for keyword in ('google_drive', 'gdrive', 'drive-export', 'drive_export')):
-        return SOURCE_TYPE_DRIVE
-
     return SOURCE_TYPE_GENERATED
 
 

@@ -112,9 +112,19 @@ def main() -> int:
                 errors.append(f"{level}: {sid} exceeds 2 h 30 ({session.get('hours')} h)")
             if session.get('Nature') not in NATURES:
                 errors.append(f"{level}: {sid} invalid or missing Nature")
-            for field in ['Durée','Date ou semaine','Mois','Nature','Objectif','Capacité officielle','Document utilisé','Déroulé','Différenciation','Livrable','Trace écrite','Devoir ou préparation','Remédiation']:
+            for field in ['Durée','Semaine scolaire','Semaine civile','Période','Mois','Nature','Objectif','Capacité officielle','Document utilisé','Déroulé','Différenciation','Livrable','Trace écrite','Devoir ou préparation','Remédiation']:
                 if field not in session:
                     errors.append(f"{level}: {sid} missing field {field}")
+            if 'Date ou semaine' in session:
+                errors.append(f"{level}: {sid} still uses obsolete Date ou semaine field")
+            if 'Date ou semaine' in session:
+                errors.append(f"{level}: {sid} still uses obsolete Date ou semaine field")
+            if 'Date ou semaine' in session:
+                errors.append(f"{level}: {sid} still uses obsolete Date ou semaine field")
+            if 'Date ou semaine' in session:
+                errors.append(f"{level}: {sid} still uses obsolete Date ou semaine field")
+            if 'Date ou semaine' in session:
+                errors.append(f"{level}: {sid} still uses obsolete Date ou semaine field")
             seq = session.get('sequence')
             totals[seq] = totals.get(seq, 0.0) + float(session.get('hours', 0.0))
             if session.get('Nature') == 'projet':
