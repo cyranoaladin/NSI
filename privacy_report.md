@@ -62,6 +62,12 @@ Les noms propres suspects sont listés pour revue humaine.
 - differentiation_quality_report.md: nom propre suspect -> Differentiation Quality Report
 - drive_inventory.csv: nom propre suspect -> Dossier Git Drive
 - drive_mapping.md: nom propre suspect -> Cartographie Drive
+- drive_mapping.md: nom propre suspect -> Source Drive
+- drive_mapping.md: nom propre suspect -> Lot Drive
+- drive_mapping.md: nom propre suspect -> Lot Drive
+- drive_mapping.md: nom propre suspect -> Lot Drive
+- drive_mapping.md: nom propre suspect -> Lot Drive
+- drive_mapping.md: nom propre suspect -> Lot Drive
 - drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
 - drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
 - drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
@@ -88,14 +94,22 @@ Les noms propres suspects sont listés pour revue humaine.
 - progression_audit.md: nom propre suspect -> Calendrier Tunisie
 - progression_audit.md: nom propre suspect -> Ressources Drive
 - qa_debt_register.md: nom propre suspect -> Portabilité Drive
+- qa_report.md: nom propre suspect -> Lots Drive
 - qa_report.md: nom propre suspect -> Dossier Git Drive
 - qa_report.md: nom propre suspect -> Ressources Drive
 - qa_report.md: nom propre suspect -> Ressources Drive
 - qa_report.md: nom propre suspect -> Ressources Drive
 - reports/drive_enrichment_report.md: nom propre suspect -> Ressource Drive
+- reports/drive_enrichment_report.md: nom propre suspect -> Source Drive
+- reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
+- reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
+- reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
+- reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
+- reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
 - scientific_claims_review_report.md: nom propre suspect -> Scientific Claims Review Report
 - scripts/check_course_internal_coherence.py: nom propre suspect -> Course Internal Coherence Report
 - scripts/check_differentiation_quality.py: nom propre suspect -> Differentiation Quality Report
+- scripts/check_drive_enrichment_traceability.py: nom propre suspect -> Ressource Drive
 - scripts/check_drive_enrichment_traceability.py: nom propre suspect -> Ressource Drive
 - scripts/check_drive_enrichment_traceability_portable.py: nom propre suspect -> Portable Drive
 - scripts/check_drive_enrichment_traceability_portable.py: nom propre suspect -> Ressource Drive
@@ -112,6 +126,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_td_corrige_alignment.py: nom propre suspect -> Corrige Alignment Report
 - scripts/check_teacher_docs_depth.py: nom propre suspect -> Ressources Drive
 - scripts/check_tp_test_alignment.py: nom propre suspect -> Test Alignment Report
+- scripts/generate_qa_report.py: nom propre suspect -> Lots Drive
 - scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
 - scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
 - scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
@@ -147,6 +162,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
 - 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
 - 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Contrôler Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
+- 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
 - 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
 - 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
 - 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md: nom propre suspect -> Boyer-Moore
@@ -307,9 +324,6 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P04/code/P04_corrige_professeur_types_construits.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P04/code/P04_starter_types_construits.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P04/code/P04_tests_attendus_types_construits.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/premiere/P05/code/P05_corrige_professeur_tables_csv.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
 - 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
 - 03_progressions/supports/premiere/P07/P07_evaluation_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
@@ -332,4 +346,5 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 116 alertes supplémentaires non affichées
+- 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md: nom propre suspect -> Reprise Python
+- ... 122 alertes supplémentaires non affichées

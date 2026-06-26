@@ -89,8 +89,8 @@ Une page locale affiche une liste de tâches ; un bouton doit ajouter la classe 
 ### Exercice 8
 - Objectif travaillé : O4.
 - Capacité officielle : P-IHM-03A.
-- Énoncé : Créer une nouvelle donnée de test et vérifier que la méthode reste valable.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
+- Énoncé : À partir du fragment `<p id="alerte" class="info">OK</p>`, prévoir l’effet de `document.querySelector("#alerte").classList.replace("info", "danger")`.
+- Production attendue : résultat `class="danger"` sur le seul paragraphe d’identifiant `alerte`, avec contrôle qu’aucun autre noeud n’est modifié.
 - Critère de réussite : la conclusion est vérifiable par un pair.
 
 ## Corrigé indicatif

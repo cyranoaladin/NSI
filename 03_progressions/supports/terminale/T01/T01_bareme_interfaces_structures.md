@@ -116,3 +116,9 @@ Un module doit exposer une pile sans révéler si elle est stockée par liste Py
 - La méthode contient au moins une étape vérifiable par un pair.
 - Le cas limite est discuté avec une donnée concrète.
 - La correction explique quelle erreur fréquente est évitée.
+
+### Barème question 5
+- 1 point : valeur `"B"` obtenue pour la pile.
+- 1 point : règle LIFO nommée.
+- 1 point : valeur `"A"` obtenue pour la file.
+- 1 point : règle FIFO nommée et cas vide traité par erreur documentée.

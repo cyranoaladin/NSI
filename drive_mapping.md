@@ -38,3 +38,12 @@ Cette passe ne publie aucune ressource. Elle classe chaque ligne de `drive_inven
 `check_drive_mapping_release.py` reste bloquant tant que des ressources sont `missing_local_copy`, `deferred`, `quarantined` ou `rejected_sensitive`, et tant que les revues humaines et décisions de publication manquent.
 
 FINAL_STATUS = NON_RELEASE_READY.
+## Plan de lots Drive
+
+| Lot | Source Drive | Extraction utile | Support(s) à modifier | Nature de reprise | Hash | RGPD | Statut |
+|---|---|---|---|---|---|---|---|
+| Lot Drive P05 : traitement_tables complet | `pays_monde.csv` | champs `PAYS`, `CAPITALE`, `CONTINENT`, `POPULATION`, ligne invalide | supports P05 tables CSV + extrait local | `adaptation_drive` + `import_partiel` | `57359dcc669fa30c547923cea12fd3d0cbe1268b5ecf200411e0e61dd855e958` | conforme, données géographiques non personnelles | needs_review |
+| Lot Drive T01 : TAD complet | `Séquence1_TAD_Théorie` | interface pile/file, implémentation, invariant, tests de conformité | fiche T01 + supports T01 déjà reliés | `adaptation_drive` sur fiche, enrichissement local des supports | `8ffe9aafd46786fc86868d9c742b1aa3c5dfbe37ddce79f406a6127c991513bf` | conforme, dossier disciplinaire audité | needs_review |
+| Lot Drive T18 : Boyer-Moore complet | `Séquence17_Boyer-Moore` | table du mauvais caractère, trace droite-gauche, pseudo-code | fiche T18 + TD/évaluation T18 | `adaptation_drive` sur fiche, enrichissement local des supports | `e325a488684eb9f2267791d20b686551e6aeebc660952ce48496d00a396b7084` | conforme, ressource disciplinaire | needs_review |
+| Lot Drive P12 : tri / complexité | `Cours.pdf` | tris, invariants, coûts, jeux d’essai | supports P12 à auditer dans un lot dédié | `deferred` | `b215d415d71f1c48bab41ed7bef030f5e92da0b04cbacc54e63cf314360b9027` | à auditer avant reprise | needs_review |
+| Lot Drive P13 : glouton | `2_TP.pdf` | problème glouton, critères de choix, contre-exemples | supports P13 à auditer dans un lot dédié | `deferred` | `75ddc3fc3503cd0141116205ac46e50f4c26328305953a5f280db71753a63885` | à auditer avant reprise | needs_review |

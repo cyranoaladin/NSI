@@ -86,3 +86,26 @@ Proposer un cas limite pertinent pour interface et TAD et expliquer le résultat
 - Je peux citer au moins une capacité parmi T-STRUCT-01A, T-STRUCT-01B, T-STRUCT-01C et dire où elle est travaillée dans la fiche.
 - Je peux dire quel support lié à T01 existe déjà ou reste inscrit au registre.
 - Je peux identifier un cas limite de interface et TAD sans transformer la fiche en corrigé complet.
+
+## Bloc TAD opérationnel
+### Interface pile
+- Opérations pile : création, test de vacuité, empilement, dépilement et lecture du sommet.
+- Contrat : `depiler` et `sommet` sont interdits sur une pile vide, sauf convention explicite d’exception.
+- Règle abstraite : LIFO, le dernier élément empilé est le premier dépilé.
+
+### Interface file
+- Opérations file : création, test de vacuité, ajout en queue, retrait en tête et consultation du premier élément.
+- Contrat : `defiler` et `premier` sont interdits sur une file vide.
+- Règle abstraite : FIFO, le premier élément entré est le premier sorti.
+
+### Deux implémentations
+- Pile par liste : `empiler` utilise `append`, `depiler` utilise `pop`; complexité amortie `O(1)`.
+- File naïve par liste : `enfiler` utilise `append`, `defiler` utilise `pop(0)`; coût `O(n)` car les éléments sont décalés.
+- File avec deux listes : une liste d’entrée et une liste de sortie ; les transferts donnent un coût amorti `O(1)`.
+
+### Invariants et tests
+- Invariant pile : la représentation interne garde l’ordre d’empilement ; le sommet correspond à la dernière case utile.
+- Invariant file : l’ordre FIFO est conservé même si la représentation change.
+- Test de conformité pile : après `empiler("A")`, `empiler("B")`, `depiler()` renvoie `"B"`, puis `depiler()` renvoie `"A"`.
+- Test de conformité file : après `enfiler("A")`, `enfiler("B")`, `defiler()` renvoie `"A"`, puis `"B"`.
+- Cas limite : dépiler ou défiler une structure vide doit lever une erreur documentée.

@@ -80,6 +80,7 @@ Un module doit exposer une pile sans révéler si elle est stockée par liste Py
 - Question 2 : 2 points méthode, 1 point résultat, 1 point justification liée à opération refusée.
 - Question 3 : 2 points méthode, 1 point résultat, 1 point justification liée à file vide.
 - Question 4 : 2 points méthode, 1 point résultat, 1 point justification liée à changement de représentation.
+- Question 5 : 1 point résultat pile `"B"`, 1 point résultat file `"A"`, 1 point vocabulaire LIFO/FIFO, 1 point test de cas vide.
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Confondre interface et implémentation.
 - Erreur fréquente EF2 - Tester un attribut interne au lieu de l’opération publique.
@@ -102,6 +103,16 @@ Un module doit exposer une pile sans révéler si elle est stockée par liste Py
 - La méthode contient au moins une étape vérifiable par un pair.
 - Le cas limite est discuté avec une donnée concrète.
 - La correction explique quelle erreur fréquente est évitée.
+
+## Question complémentaire - TAD pile/file
+### Question 5
+- Données : `empiler("A")`, `empiler("B")`, `depiler()` pour une pile ; `enfiler("A")`, `enfiler("B")`, `defiler()` pour une file.
+- Travail : donner les deux valeurs renvoyées, nommer les règles abstraites, puis citer un test de cas vide.
+
+### Corrigé question 5
+- Pile : `depiler()` renvoie `"B"` car la pile est LIFO.
+- File : `defiler()` renvoie `"A"` car la file est FIFO.
+- Cas vide : un nouvel appel sur structure vide doit lever une exception documentée, par exemple `IndexError` ou `ValueError`.
 
 ## Exercices numérotés
 - Exercice 1 : reprendre question 1 en explicitant donnée, méthode, résultat et contrôle pour T01.
@@ -139,4 +150,3 @@ Un module doit exposer une pile sans révéler si elle est stockée par liste Py
 - Séance liée : `T01-S1`, avec question centrée sur contrat abstrait et implémentation.
 - Version aménagée : données contrat abstrait et implémentation surlignées et tableau réponse en trois zones.
 - Remédiation : associer une opération de pile à sa précondition, puis verbaliser la méthode en binôme.
-

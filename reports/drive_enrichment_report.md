@@ -26,3 +26,12 @@ Ce rapport distingue les ressources réellement adaptées, les ressources utilis
 | Séquence1_TAD_Théorie | oui | `8ffe9aafd46786fc86868d9c742b1aa3c5dfbe37ddce79f406a6127c991513bf` | integrated_adapted | 03_progressions/fiches_cours/terminale/T01/T01_fiche_cours_interface_implementation_tad.md | adaptation_drive | conforme - aucune donnée personnelle intégrée | needs_review | Ressource adaptée sans copie brute ; statut needs_review maintenu. |
 | Séquence6_Arbres binaires | oui | `fd09d59cc345f561a0a173ec075367de9cb54c4bdf2f6d99228cb5a2eae6c0b3` | deferred | - | audit différé | à auditer avant reprise | needs_review | Copie locale trouvée mais non reprise dans ce lot. |
 | Séquence17_Boyer-Moore | oui | `e325a488684eb9f2267791d20b686551e6aeebc660952ce48496d00a396b7084` | integrated_adapted | 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md | adaptation_drive | conforme - aucune donnée personnelle intégrée | needs_review | Ressource adaptée sans copie brute ; statut needs_review maintenu. |
+## Plan de lots Drive
+
+| Lot | Source Drive | Extraction utile | Support modifié ou prévu | Nature de reprise | Hash | RGPD | Statut |
+|---|---|---|---|---|---|---|---|
+| Lot Drive P05 : traitement_tables complet | `pays_monde.csv` | `PAYS`, `CAPITALE`, `CONTINENT`, `POPULATION`, tri numérique, ligne invalide | paquet P05 tables CSV | adaptation_drive / import_partiel | `57359dcc669fa30c547923cea12fd3d0cbe1268b5ecf200411e0e61dd855e958` | conforme | needs_review |
+| Lot Drive T01 : TAD complet | `Séquence1_TAD_Théorie` | interface pile/file, invariants, implémentations, tests | fiche T01 et supports liés enrichis | adaptation_drive sur fiche, enrichissement local | `8ffe9aafd46786fc86868d9c742b1aa3c5dfbe37ddce79f406a6127c991513bf` | conforme | needs_review |
+| Lot Drive T18 : Boyer-Moore complet | `Séquence17_Boyer-Moore` | table mauvais caractère, trace, pseudo-code | fiche T18 et supports liés enrichis | adaptation_drive sur fiche, enrichissement local | `e325a488684eb9f2267791d20b686551e6aeebc660952ce48496d00a396b7084` | conforme | needs_review |
+| Lot Drive P12 : tri / complexité | `Cours.pdf` | invariants, complexité, tris | supports P12 | deferred | `b215d415d71f1c48bab41ed7bef030f5e92da0b04cbacc54e63cf314360b9027` | à auditer | needs_review |
+| Lot Drive P13 : glouton | `2_TP.pdf` | stratégie gloutonne, contre-exemple, TP | supports P13 | deferred | `75ddc3fc3503cd0141116205ac46e50f4c26328305953a5f280db71753a63885` | à auditer | needs_review |

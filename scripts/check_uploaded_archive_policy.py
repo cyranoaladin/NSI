@@ -10,7 +10,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 POLICY = ROOT / "delivery_policy.md"
-ALLOWED = {ROOT / "dist/source_clean.tar.gz", ROOT / "dist/git_bundle.bundle"}
+ALLOWED = {
+    ROOT / "dist/source_clean.tar.gz",
+    ROOT / "dist/git_bundle.bundle",
+    ROOT / "dist/nsi-enseignement_source_clean.zip",
+}
 DELIVERY_ARCHIVE = ROOT / "dist/source_clean.tar.gz"
 FORBIDDEN_NAMES = {
     "nsi-enseignement.tar",
@@ -103,7 +107,11 @@ def analyze_uploaded_archive_policy(
     errors: list[str] = []
     policy = root / "delivery_policy.md"
     delivery_archive = root / "dist/source_clean.tar.gz"
-    allowed = {delivery_archive.resolve(), (root / "dist/git_bundle.bundle").resolve()}
+    allowed = {
+        delivery_archive.resolve(),
+        (root / "dist/git_bundle.bundle").resolve(),
+        (root / "dist/nsi-enseignement_source_clean.zip").resolve(),
+    }
 
     if require_delivery_files:
         if not policy.exists():

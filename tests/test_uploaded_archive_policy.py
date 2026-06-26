@@ -91,6 +91,28 @@ class UploadedArchivePolicyTest(unittest.TestCase):
 
             self.assertEqual(errors, [])
 
+    def test_source_clean_zip_is_allowed_only_as_side_archive(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw) / "repo"
+            dist = root / "dist"
+            dist.mkdir(parents=True)
+            source_tar = dist / "source_clean.tar.gz"
+            write_tar(source_tar, {"nsi-enseignement/README.md": "ok"})
+            zip_path = dist / "nsi-enseignement_source_clean.zip"
+            with zipfile.ZipFile(zip_path, "w") as archive:
+                archive.writestr("nsi-enseignement/README.md", "ok")
+
+            errors = archive_policy.analyze_uploaded_archive_policy(root, scan_parent=False)
+
+            self.assertEqual(errors, [])
+
+            delivered_errors = archive_policy.analyze_uploaded_archive_policy(
+                root,
+                delivered_archive=zip_path,
+                scan_parent=False,
+            )
+            self.assertTrue(any("DELIVERED_ARCHIVE doit être dist/source_clean.tar.gz" in error for error in delivered_errors))
+
     def test_delivered_global_archive_from_tmp_with_git_is_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             workspace = Path(raw)

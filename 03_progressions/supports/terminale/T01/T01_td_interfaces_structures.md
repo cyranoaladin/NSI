@@ -190,3 +190,34 @@ Un module doit exposer une pile sans révéler si elle est stockée par liste Py
 - La méthode contient au moins une étape vérifiable par un pair.
 - Le cas limite est discuté avec une donnée concrète.
 - La correction explique quelle erreur fréquente est évitée.
+
+## Complément TAD - conformité pile et file
+### Exercice 9 - Interface pile
+- Données : opérations `empiler("A")`, `empiler("B")`, `sommet()`, `depiler()`, `depiler()`.
+- Consigne : donner les résultats visibles sans supposer l’implémentation.
+
+### Exercice 10 - Interface file
+- Données : opérations `enfiler("A")`, `enfiler("B")`, `premier()`, `defiler()`, `defiler()`.
+- Consigne : donner les résultats visibles et le cas limite suivant.
+
+### Exercice 11 - Implémentation et complexité
+- Données : file par liste Python avec `pop(0)` et file à deux listes.
+- Consigne : comparer les coûts.
+
+### Corrigé exercice 9
+- Donnée utilisée : `empiler("A")`, `empiler("B")`, `sommet()`, `depiler()`, `depiler()`.
+- Méthode : appliquer le contrat abstrait LIFO sans regarder la liste interne.
+- Résultat attendu : `sommet()` vaut `"B"` ; le premier `depiler()` renvoie `"B"` ; le second renvoie `"A"`.
+- Contrôle : les valeurs sortent dans l’ordre inverse des entrées, donc l’interface pile est respectée.
+
+### Corrigé exercice 10
+- Donnée utilisée : `enfiler("A")`, `enfiler("B")`, `premier()`, `defiler()`, `defiler()`.
+- Méthode : appliquer le contrat abstrait FIFO.
+- Résultat attendu : `premier()` vaut `"A"` ; les deux sorties sont `"A"` puis `"B"`.
+- Contrôle : un troisième `defiler()` doit lever une erreur de file vide documentée.
+
+### Corrigé exercice 11
+- Donnée utilisée : file par liste Python avec `pop(0)` et file à deux listes.
+- Méthode : comparer le nombre de déplacements d’éléments.
+- Résultat attendu : `pop(0)` coûte `O(n)` par décalage ; la file à deux listes donne un coût amorti `O(1)` pour enfiler et défiler.
+- Contrôle : la comparaison porte sur l’implémentation, pas sur l’interface abstraite commune.

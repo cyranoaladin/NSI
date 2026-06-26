@@ -86,3 +86,30 @@ Proposer un cas limite pertinent pour types construits et expliquer le résultat
 - Je peux citer au moins une capacité parmi P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D et dire où elle est travaillée dans la fiche.
 - Je peux dire quel support lié à P04 existe déjà ou reste inscrit au registre.
 - Je peux identifier un cas limite de types construits sans transformer la fiche en corrigé complet.
+
+## Complément types construits P04
+- Tuple immuable : `point = (3.0, 5.0)` représente une coordonnée fixe ; `point[0] = 4.0` doit être refusé car un tuple ne se modifie pas.
+- Liste mutable : `notes = [8, 12, 10]`, puis `notes[1] = 14` donne `[8, 14, 10]`.
+- Dictionnaire par clé : `station = {"nom": "Carthage", "temp": 21}` ; `station["temp"]` vaut `21`.
+- Liste de dictionnaires : `stations = [{"nom": "A", "temp": 21}, {"nom": "B", "temp": 18}]` permet de filtrer les stations dont `temp >= 20`.
+- Tuple de coordonnées : pour `A = (2, 3)` et `B = (8, 7)`, le milieu vaut `((2+8)/2, (3+7)/2) = (5.0, 5.0)`.
+- Distance : avec les mêmes points, `dx = 6`, `dy = 4`, donc `distance = sqrt(6**2 + 4**2) = sqrt(52)`.
+- Cas limite tuple : `(2,)` n’a pas deux coordonnées ; une fonction `milieu(A, B)` doit lever `ValueError` si `len(A) != 2`.
+- Cas limite dictionnaire : `station["pression"]` lève `KeyError`; on utilise `"pression" in station` ou `station.get("pression")`.
+- Cas limite liste : la moyenne d’une liste vide n’est pas définie ; le code doit tester `if not notes`.
+
+## Mini-exercices corrigés complémentaires
+### Mini-exercice 5
+Calculer le milieu de `A=(0, 4)` et `B=(6, 10)`.
+
+Réponse : `((0+6)/2, (4+10)/2) = (3.0, 7.0)`.
+
+### Mini-exercice 6
+Après `mesures = [{"jour": "lundi", "temp": 20}, {"jour": "mardi", "temp": 17}]`, donner les jours de température au moins 18.
+
+Réponse : seul `"lundi"` est gardé, car `20 >= 18` et `17 < 18`.
+
+### Mini-exercice 7
+Dire pourquoi `point[1] = 9` est incorrect si `point = (2, 3)`.
+
+Réponse : `point` est un tuple immuable ; il faut créer un nouveau tuple, par exemple `(2, 9)`.

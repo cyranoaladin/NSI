@@ -83,3 +83,28 @@ Proposer un cas limite pertinent pour Boyer-Moore et expliquer le résultat atte
 - Je peux citer au moins une capacité parmi T-ALGO-05 et dire où elle est travaillée dans la fiche.
 - Je peux dire quel support lié à T18 existe déjà ou reste inscrit au registre.
 - Je peux identifier un cas limite de Boyer-Moore sans transformer la fiche en corrigé complet.
+
+## Trace complète Boyer-Moore
+- Motif : `ABA`.
+- Texte : `CABAABABA`.
+- Table du mauvais caractère : `A -> 2`, `B -> 1`, tout autre caractère -> `-1`.
+- Comparaison de droite à gauche, alignement `i=0` : on compare motif[2] = `A` avec texte[2] = `B`, désaccord sur `B`.
+- Décalage : `j=2`, dernier `B` dans le motif à `1`, donc `max(1, 2-1) = 1`.
+- Alignement `i=1` : fenêtre `ABA`; comparaisons `A=A`, `B=B`, `A=A`; motif trouvé à l’indice `1`.
+- Cas absent : dans `texte="CCCC"` et `motif="ABA"`, le caractère de désaccord `C` absent du motif donne un décalage de `3`, puis aucun alignement complet ne réussit.
+- Comparaison naïve : la recherche naïve teste le motif depuis chaque position ; Boyer-Moore exploite un désaccord à droite pour sauter des alignements.
+
+## Pseudo-code
+```text
+last = table_mauvais_caractere(motif)
+i = 0
+tant que i <= len(texte) - len(motif):
+    j = len(motif) - 1
+    tant que j >= 0 et motif[j] == texte[i+j]:
+        j = j - 1
+    si j < 0:
+        renvoyer i
+    mauvais = texte[i+j]
+    i = i + max(1, j - last.get(mauvais, -1))
+renvoyer -1
+```

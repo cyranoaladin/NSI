@@ -89,8 +89,8 @@ On modélise un réseau de salles A, B, C, D avec couloirs A-B, A-C, B-D. Il fau
 ### Exercice 8
 - Objectif travaillé : O4.
 - Capacité officielle : T-STRUCT-05D.
-- Énoncé : Créer une nouvelle donnée de test et vérifier que la méthode reste valable.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
+- Énoncé : Pour le graphe non orienté d’arêtes `(A,B)`, `(A,C)`, `(B,D)`, écrire la liste d’adjacence puis dire si `C` et `D` sont adjacents.
+- Production attendue : `A:[B,C]`, `B:[A,D]`, `C:[A]`, `D:[B]`; résultat `C` et `D` non adjacents, contrôle par absence de `D` dans la liste de `C`.
 - Critère de réussite : la conclusion est vérifiable par un pair.
 
 ## Corrigé indicatif

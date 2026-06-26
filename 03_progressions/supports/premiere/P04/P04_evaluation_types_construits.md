@@ -80,6 +80,7 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Question 2 : 2 points méthode, 1 point résultat, 1 point justification liée à liste vide.
 - Question 3 : 2 points méthode, 1 point résultat, 1 point justification liée à clé absente.
 - Question 4 : 2 points méthode, 1 point résultat, 1 point justification liée à liste imbriquée.
+- Question 5 : 1 point rôle du tuple, 1 point rôle du dictionnaire, 1 point rôle de la liste, 1 point calcul du milieu `(3.0, 7.0)`.
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Modifier un tuple comme une liste.
 - Erreur fréquente EF2 - Parcourir les indices quand les valeurs suffisent.
@@ -102,6 +103,18 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - La méthode contient au moins une étape vérifiable par un pair.
 - Le cas limite est discuté avec une donnée concrète.
 - La correction explique quelle erreur fréquente est évitée.
+
+## Question complémentaire - structures combinées
+### Question 5
+- Données : `stations = [{"nom": "A", "coord": (0, 4), "temp": 21}, {"nom": "B", "coord": (6, 10), "temp": 18}]`.
+- Travail : expliquer le rôle du tuple, de la liste et du dictionnaire dans cette donnée, puis calculer le milieu des deux coordonnées.
+
+### Corrigé question 5
+- Tuple : chaque `coord` est un couple immuable.
+- Dictionnaire : chaque station associe les clés `nom`, `coord`, `temp` à des valeurs.
+- Liste : `stations` rassemble plusieurs dictionnaires et se parcourt.
+- Résultat attendu : le milieu est `((0+6)/2, (4+10)/2) = (3.0, 7.0)`.
+- Contrôle : le résultat est un tuple numérique de deux coordonnées.
 
 ## Exercices numérotés
 - Exercice 1 : reprendre question 1 en explicitant donnée, méthode, résultat et contrôle pour P04.
@@ -139,4 +152,3 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Séance liée : `P04-S1`, avec question centrée sur tuples, listes et dictionnaires.
 - Version aménagée : données tuples, listes et dictionnaires surlignées et tableau réponse en trois zones.
 - Remédiation : corriger une mutation de liste sur un exemple à trois éléments, puis verbaliser la méthode en binôme.
-

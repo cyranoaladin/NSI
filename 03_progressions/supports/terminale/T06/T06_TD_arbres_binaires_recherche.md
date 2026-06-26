@@ -85,8 +85,8 @@ Un ABR contient les clés 8, 3, 10, 1, 6. On recherche 6 puis on insère 7 en co
 ### Exercice 8
 - Objectif travaillé : O4.
 - Capacité officielle : T-ALGO-01F.
-- Énoncé : Créer une nouvelle donnée de test et vérifier que la méthode reste valable.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
+- Énoncé : Dans l’ABR obtenu par insertion de `8, 3, 10, 1, 6, 14, 4`, rechercher `7` et indiquer le dernier noeud visité.
+- Production attendue : trace `8 -> 3 -> 6`, arrêt sur fils droit absent de `6`, résultat `False`, invariant gauche < racine < droite vérifié.
 - Critère de réussite : la conclusion est vérifiable par un pair.
 
 ## Corrigé indicatif

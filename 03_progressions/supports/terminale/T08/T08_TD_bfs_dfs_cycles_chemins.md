@@ -89,8 +89,8 @@ Dans un graphe de salles, on cherche le plus petit nombre de couloirs depuis A v
 ### Exercice 8
 - Objectif travaillé : O4.
 - Capacité officielle : T-ALGO-02D.
-- Énoncé : Créer une nouvelle donnée de test et vérifier que la méthode reste valable.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
+- Énoncé : Sur le graphe `A:{B,C}`, `B:{A,D}`, `C:{A,D}`, `D:{B,C}`, exécuter BFS depuis `A` et donner les prédécesseurs.
+- Production attendue : ordre possible `A, B, C, D`, prédécesseurs `B<-A`, `C<-A`, `D<-B`, chemin court `A-B-D` de longueur 2.
 - Critère de réussite : la conclusion est vérifiable par un pair.
 
 ## Corrigé indicatif

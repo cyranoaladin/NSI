@@ -102,6 +102,8 @@ def domain_for(path: Path) -> str:
     name = path.name.lower()
     if "sql" in name:
         return "sql"
+    if any(token in name for token in ["bases_relationnelles", "relationnelles", "bdd", "cles_contraintes", "clés_contraintes"]):
+        return "database"
     if any(token in name for token in ["reseaux", "protocoles", "routage", "chiffrement", "https"]):
         return "network"
     if any(token in name for token in ["tris", "dichotomie", "glouton", "knn", "parcours", "programmation_dynamique", "boyer", "diviser", "calculabilite"]):
@@ -165,6 +167,28 @@ def correction_has_substance(path: Path, exercise: str, correction: str) -> bool
             for token in ["détruit", "detruit", "retransmet", "renvoie", "envoie", "route", "refuse", "accepte", "reçoit", "recoit", "passe par"]
         )
         return markers >= 2 and (decisions >= 1 or structured_markers >= 3)
+    if domain == "database":
+        markers = sum(
+            token in lower
+            for token in [
+                "clé primaire",
+                "cle primaire",
+                "clé étrangère",
+                "cle etrangere",
+                "contrainte",
+                "référence",
+                "reference",
+                "id_eleve",
+                "id_note",
+                "table",
+                "ligne",
+            ]
+        )
+        decisions = sum(
+            token in lower
+            for token in ["cohérente", "coherente", "invalide", "refusée", "refusee", "existe", "absent", "orpheline", "domaine"]
+        )
+        return markers >= 2 and decisions >= 1 and concrete_count >= 1
     if domain == "algorithm":
         markers = sum(
             token in lower

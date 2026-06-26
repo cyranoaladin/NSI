@@ -93,8 +93,8 @@ Un formulaire de recherche envoie un mot-clé public en GET, tandis qu’un form
 ### Exercice 8
 - Objectif travaillé : O4.
 - Capacité officielle : P-IHM-03B.
-- Énoncé : Créer une nouvelle donnée de test et vérifier que la méthode reste valable.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
+- Énoncé : Comparer `GET /login?user=ada&password=secret` et un formulaire `POST /login` dont le corps contient `user=ada&password=secret`.
+- Production attendue : méthode `POST` retenue pour le mot de passe, car la chaîne sensible n’apparaît pas dans l’URL ; contrôle par lecture de l’adresse affichée.
 - Critère de réussite : la conclusion est vérifiable par un pair.
 
 ## Corrigé indicatif

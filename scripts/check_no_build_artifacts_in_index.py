@@ -10,6 +10,11 @@ ROOT = Path(__file__).resolve().parents[1]
 ALLOWED_DIST = {
     Path('dist/source_clean.tar.gz'),
     Path('dist/git_bundle.bundle'),
+    Path('dist/nsi-enseignement_source_clean.zip'),
+}
+REQUIRED_DIST = {
+    Path('dist/source_clean.tar.gz'),
+    Path('dist/git_bundle.bundle'),
 }
 FORBIDDEN_DIRS = {
     '__pycache__',
@@ -60,7 +65,7 @@ def find_artifacts(root: Path = ROOT, require_archives: bool = True) -> list[Pat
         if path.exists() and is_forbidden(path, root):
             artifacts.append(path)
     if require_archives:
-        artifacts.extend(root / item for item in ALLOWED_DIST if not (root / item).exists())
+        artifacts.extend(root / item for item in REQUIRED_DIST if not (root / item).exists())
     return artifacts
 
 
@@ -72,7 +77,7 @@ def main() -> int:
         if path.exists():
             errors.append(f"{path.relative_to(ROOT)}: artefact interdit")
     if require_archives:
-        missing = [str(item) for item in ALLOWED_DIST if not (ROOT / item).exists()]
+        missing = [str(item) for item in REQUIRED_DIST if not (ROOT / item).exists()]
         if missing:
             errors.append('archives de livraison absentes: ' + ', '.join(sorted(missing)))
     if errors:

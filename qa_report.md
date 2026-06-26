@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 518
-- Ressources needs_review : 518
+- Ressources inventoriées : 525
+- Ressources needs_review : 525
 - Ressources publiables : 0
-- Source generated : 511
+- Source generated : 518
 - Source adapted_from_drive : 6
 - Source import_partiel : 1
 - Source inspiration_drive : 0
@@ -37,6 +37,8 @@
 - Drive deferred : 3
 - Drive quarantined : 0
 - Décision : ne pas générer de nouvelles séquences
+- Lots Drive planifiés : P05 traitement_tables complet ; T01 TAD complet ; T18 Boyer-Moore complet ; P12 tri/complexité ; P13 glouton.
+- ZIP exploitable sans `.git` : dist/nsi-enseignement_source_clean.zip, archive séparée du livrable pédagogique de référence.
 
 ## Commandes de référence
 

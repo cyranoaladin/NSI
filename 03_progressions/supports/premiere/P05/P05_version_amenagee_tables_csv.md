@@ -8,7 +8,7 @@ version: "0.4.1"
 source: "BO 2019"
 source_creation: "generated_from_program"
 theme: "Traitement de tables"
-notion: "table, CSV, filtrage, agrégation"
+notion: "table, CSV, filtrage, traitement numérique des populations"
 objectifs:
   - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
   - "Objectif O2 - Appliquer une méthode disciplinaire complète"
@@ -42,56 +42,56 @@ official_program:
 - P05-S1 à P05-S7 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-Un fichier CSV de mesures contient des lignes incomplètes, des séparateurs et des valeurs numériques à agréger.
+Le fichier `pays_monde.csv` contient des pays, capitales, continents et populations à lire, filtrer, convertir et trier.
 
 ## Activité d’entrée
 1. Lire une ligne d’en-tête.
-2. Filtrer les lignes où `ville == "Tunis"`.
-3. Calculer une moyenne de températures valides.
+2. Filtrer les lignes où `CONTINENT == "Europe"`.
+3. Convertir puis trier numériquement les populations valides.
 4. Signaler une ligne avec champ manquant.
 
 ## Version aménagée - Énoncé élève
 ### Question aménagée 1
-- Énoncé élève : traiter lecture CSV avec la donnée `ville,temp
-Tunis,24`.
-- Aide intégrée : commencer par séparer en-tête et données puis convertir la température.
+- Énoncé élève : traiter lecture CSV avec la donnée `PAYS,CAPITALE,CONTINENT,POPULATION
+Allemagne,Berlin,Europe,82801531`.
+- Aide intégrée : commencer par lire avec csv.reader puis convertir POPULATION en int.
 - Espace de réponse : méthode : ______ ; résultat : ______ ; contrôle : ______.
 - Point de vigilance : Traiter l’en-tête comme une donnée.
 ### Question aménagée 2
-- Énoncé élève : traiter filtrage avec la donnée trois villes dont deux Tunis.
-- Aide intégrée : commencer par conserver les lignes respectant un prédicat.
+- Énoncé élève : traiter filtrage avec la donnée un extrait contenant Allemagne, Albanie et Brésil.
+- Aide intégrée : commencer par conserver les lignes dont CONTINENT vaut Europe.
 - Espace de réponse : méthode : ______ ; résultat : ______ ; contrôle : ______.
 - Point de vigilance : Comparer une valeur numérique restée chaîne.
 ### Question aménagée 3
-- Énoncé élève : traiter agrégation avec la donnée `24`, `26`, champ vide.
-- Aide intégrée : commencer par ignorer ou signaler le champ vide avant moyenne.
+- Énoncé élève : traiter traitement numérique des populations avec la donnée `82801531`, `3063320`, valeur `invalide`.
+- Aide intégrée : commencer par isoler une ligne invalide avant conversion de POPULATION en int.
 - Espace de réponse : méthode : ______ ; résultat : ______ ; contrôle : ______.
 - Point de vigilance : Diviser par zéro après filtrage vide.
 ### Question aménagée 4
-- Énoncé élève : traiter jointure simple avec la donnée table villes et table régions.
+- Énoncé élève : traiter tri par continent puis population avec la donnée lignes regroupées par CONTINENT.
 - Aide intégrée : commencer par associer par une clé commune.
 - Espace de réponse : méthode : ______ ; résultat : ______ ; contrôle : ______.
 - Point de vigilance : Ignorer silencieusement une ligne mal formée.
 ## Exercices numérotés
-- Exercice 1 : résoudre lecture CSV avec `ville,temp
-Tunis,24` avec aide possible sur la méthode.
-- Exercice 2 : expliquer filtrage à partir de trois villes dont deux Tunis avec aide possible sur la méthode.
-- Exercice 3 : comparer agrégation avec `24`, `26`, champ vide avec aide possible sur la méthode.
-- Exercice 4 : corriger jointure simple pour table villes et table régions avec aide possible sur la méthode.
-- Exercice 5 : tester un cas limite lié à fichier vide avec aide possible sur la méthode.
+- Exercice 1 : résoudre lecture CSV avec `PAYS,CAPITALE,CONTINENT,POPULATION
+Allemagne,Berlin,Europe,82801531` avec aide possible sur la méthode.
+- Exercice 2 : expliquer filtrage à partir de un extrait contenant Allemagne, Albanie et Brésil avec aide possible sur la méthode.
+- Exercice 3 : comparer traitement numérique des populations avec `82801531`, `3063320`, valeur `invalide` avec aide possible sur la méthode.
+- Exercice 4 : corriger tri par continent puis population pour lignes regroupées par CONTINENT avec aide possible sur la méthode.
+- Exercice 5 : tester un cas limite lié à fichier pays_monde.csv vide avec aide possible sur la méthode.
 - Exercice 6 : classer deux méthodes possibles pour filtrage avec aide possible sur la méthode.
-- Exercice 7 : justifier un transfert qui utilise agrégation avec une donnée nouvelle avec aide possible sur la méthode.
-- Exercice 8 : étendre un énoncé volontairement erroné sur jointure simple avec aide possible sur la méthode.
+- Exercice 7 : justifier un transfert qui utilise traitement numérique des populations avec une donnée nouvelle avec aide possible sur la méthode.
+- Exercice 8 : étendre un énoncé volontairement erroné sur tri par continent puis population avec aide possible sur la méthode.
 ## Corrigés complets des exercices du cours
-- Corrigé exercice 1 : méthode : identifier `ville,temp
-Tunis,24`, appliquer la méthode « séparer en-tête et données puis convertir la température », puis écrire une ligne exploitable ; résultat : une ligne exploitable ; contrôle : faire apparaître le contrôle « fichier vide ».
-- Corrigé exercice 2 : méthode : expliciter chaque étape de conserver les lignes respectant un prédicat avant de conclure par deux lignes sélectionnées ; résultat : deux lignes sélectionnées ; contrôle : rédiger la méthode avant le résultat.
-- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « division par zéro » et valider `25` ; résultat : `25` ; contrôle : comparer avec le cas « division par zéro ».
-- Corrigé exercice 4 : méthode : isoler l’erreur fréquente « Ignorer silencieusement une ligne mal formée. » puis reprendre la procédure correcte ; résultat : ville enrichie par région ; contrôle : corriger l’erreur « Ignorer silencieusement une ligne mal formée. ».
-- Corrigé exercice 5 : méthode : identifier `ville,temp
-Tunis,24`, appliquer la méthode « séparer en-tête et données puis convertir la température », puis écrire une ligne exploitable ; résultat : le comportement de lecture CSV est contrôlé ; contrôle : nommer la donnée minimale et la conclusion.
-- Corrigé exercice 6 : méthode : expliciter chaque étape de conserver les lignes respectant un prédicat avant de conclure par deux lignes sélectionnées ; résultat : la méthode robuste est choisie et justifiée ; contrôle : identifier pourquoi « Comparer une valeur numérique restée chaîne. » est une erreur.
-- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « division par zéro » et valider `25` ; résultat : la justification reste valable sur le nouveau cas ; contrôle : inclure une étape calculable par un pair.
+- Corrigé exercice 1 : méthode : identifier `PAYS,CAPITALE,CONTINENT,POPULATION
+Allemagne,Berlin,Europe,82801531`, appliquer la méthode « lire avec csv.reader puis convertir POPULATION en int », puis écrire une ligne exploitable ; résultat : une ligne exploitable ; contrôle : faire apparaître le contrôle « fichier pays_monde.csv vide ».
+- Corrigé exercice 2 : méthode : expliciter chaque étape de conserver les lignes dont CONTINENT vaut Europe avant de conclure par deux lignes européennes sélectionnées ; résultat : deux lignes européennes sélectionnées ; contrôle : rédiger la méthode avant le résultat.
+- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider le rejet de la ligne invalide avant conversion ; résultat : ligne invalide isolée avant conversion ; contrôle : comparer avec le cas « sélection vide avant tri numérique ».
+- Corrigé exercice 4 : méthode : isoler l’erreur fréquente « Ignorer silencieusement une ligne mal formée. » puis reprendre la procédure correcte ; résultat : pays triés par CONTINENT puis POPULATION ; contrôle : corriger l’erreur « Ignorer silencieusement une ligne mal formée. ».
+- Corrigé exercice 5 : méthode : identifier `PAYS,CAPITALE,CONTINENT,POPULATION
+Allemagne,Berlin,Europe,82801531`, appliquer la méthode « lire avec csv.reader puis convertir POPULATION en int », puis écrire une ligne exploitable ; résultat : le comportement de lecture CSV est contrôlé ; contrôle : nommer la donnée minimale et la conclusion.
+- Corrigé exercice 6 : méthode : expliciter chaque étape de conserver les lignes dont CONTINENT vaut Europe avant de conclure par deux lignes européennes sélectionnées ; résultat : la méthode robuste est choisie et justifiée ; contrôle : identifier pourquoi « Comparer une valeur numérique restée chaîne. » est une erreur.
+- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider le rejet de la ligne invalide avant conversion ; résultat : la justification reste valable sur le nouveau cas ; contrôle : inclure une étape calculable par un pair.
 - Corrigé exercice 8 : méthode : isoler l’erreur fréquente « Ignorer silencieusement une ligne mal formée. » puis reprendre la procédure correcte ; résultat : l’erreur est localisée puis réparée ; contrôle : proposer une activité corrective inspirée de « Isoler les lignes invalides dans une liste de rejets. ».
 
 ## Erreurs fréquentes
@@ -103,14 +103,14 @@ Tunis,24`, appliquer la méthode « séparer en-tête et données puis convertir
 ## Remédiation ciblée
 - Activité corrective EF1 : Marquer l’en-tête et commencer les données à la ligne suivante.
 - Activité corrective EF2 : Convertir explicitement avant les comparaisons numériques.
-- Activité corrective EF3 : Tester la taille de la sélection avant la moyenne.
+- Activité corrective EF3 : Tester la sélection avant le tri numérique.
 - Activité corrective EF4 : Isoler les lignes invalides dans une liste de rejets.
 
 ## Différenciation
-- Socle : traiter `ville,temp
-Tunis,24` avec une fiche méthode fournie.
-- Standard : traiter trois villes dont deux Tunis en rédigeant la justification complète.
-- Expert : inventer un cas limite lié à « division par zéro » et expliquer le comportement attendu.
+- Socle : traiter `PAYS,CAPITALE,CONTINENT,POPULATION
+Allemagne,Berlin,Europe,82801531` avec une fiche méthode fournie.
+- Standard : traiter un extrait contenant Allemagne, Albanie et Brésil en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « sélection vide avant tri numérique » et expliquer le comportement attendu.
 
 ## Critères de réussite
 - La capacité officielle est citée dans la copie.

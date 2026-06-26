@@ -141,7 +141,19 @@ def report_errors(root: Path) -> list[str]:
         "Statut final",
     ]
     errors = [f"{REPORT}: colonne absente -> {header}" for header in required_headers if header not in text]
-    data_lines = [line for line in text.splitlines() if line.startswith("|") and not re.match(r"^\|[-: ]+\|", line)]
+    lines = text.splitlines()
+    table_start = next((index for index, line in enumerate(lines) if line.startswith("| Ressource Drive |")), -1)
+    table_end = len(lines)
+    if table_start >= 0:
+        for index in range(table_start + 1, len(lines)):
+            if lines[index].startswith("## "):
+                table_end = index
+                break
+    data_lines = [
+        line
+        for line in lines[table_start:table_end]
+        if line.startswith("|") and not re.match(r"^\|[-: ]+\|", line)
+    ] if table_start >= 0 else []
     if len(data_lines) <= 1:
         errors.append(f"{REPORT}: aucun classement Drive détaillé")
     for line in data_lines[1:]:

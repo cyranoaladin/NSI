@@ -190,3 +190,44 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - La méthode contient au moins une étape vérifiable par un pair.
 - Le cas limite est discuté avec une donnée concrète.
 - La correction explique quelle erreur fréquente est évitée.
+
+## Complément d’exercices corrigés - types construits
+### Exercice 9 - Milieu de deux coordonnées
+- Données : `A = (0, 4)`, `B = (6, 10)`.
+- Consigne : écrire la formule du milieu et préciser pourquoi un tuple convient.
+
+### Exercice 10 - Liste mutable
+- Données : `notes = [8, 12, 10]`.
+- Consigne : remplacer la deuxième note par `14`, puis donner la liste.
+
+### Exercice 11 - Liste de dictionnaires
+- Données : `stations = [{"nom": "A", "temp": 21}, {"nom": "B", "temp": 18}, {"nom": "C", "temp": 23}]`.
+- Consigne : extraire les noms des stations dont la température est au moins `20`.
+
+### Exercice 12 - Cas limites
+- Données : `point = (2,)`, `station = {"temp": 21}`, `notes = []`.
+- Consigne : associer chaque donnée à l’erreur possible.
+
+### Corrigé exercice 9
+- Donnée utilisée : `A = (0, 4)` et `B = (6, 10)`.
+- Méthode : appliquer la formule `((x_A+x_B)/2, (y_A+y_B)/2)`.
+- Résultat attendu : le milieu vaut `((0+6)/2, (4+10)/2) = (3.0, 7.0)`.
+- Contrôle : le résultat est un tuple de taille 2, adapté à une coordonnée fixe.
+
+### Corrigé exercice 10
+- Donnée utilisée : `notes = [8, 12, 10]`.
+- Méthode : l’indice `1` désigne la deuxième case d’une liste mutable.
+- Résultat attendu : après `notes[1] = 14`, la liste vaut `[8, 14, 10]`.
+- Contrôle : la longueur reste `3`, seule la valeur de rang 2 change.
+
+### Corrigé exercice 11
+- Donnée utilisée : `stations = [{"nom": "A", "temp": 21}, {"nom": "B", "temp": 18}, {"nom": "C", "temp": 23}]`.
+- Méthode : parcourir la liste, lire la clé `temp`, conserver les dictionnaires dont `temp >= 20`, puis lire la clé `nom`.
+- Résultat attendu : les noms extraits sont `["A", "C"]`.
+- Contrôle : la station `"B"` est exclue car `18 < 20`.
+
+### Corrigé exercice 12
+- Donnée utilisée : `point = (2,)`, `station = {"temp": 21}`, `notes = []`.
+- Méthode : associer chaque donnée à son cas limite structurel.
+- Résultat attendu : `point` a une mauvaise taille pour une coordonnée 2D ; `station["pression"]` provoquerait une clé absente ; `notes` ne permet pas de moyenne sans convention.
+- Contrôle : chaque erreur est liée à un type différent : tuple, dictionnaire, liste.

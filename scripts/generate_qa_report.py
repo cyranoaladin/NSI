@@ -225,6 +225,8 @@ def main() -> int:
         f"- Drive deferred : {drive_counts.get('deferred', 0)}",
         f"- Drive quarantined : {drive_counts.get('quarantined', 0)}",
         "- Décision : ne pas générer de nouvelles séquences",
+        "- Lots Drive planifiés : P05 traitement_tables complet ; T01 TAD complet ; T18 Boyer-Moore complet ; P12 tri/complexité ; P13 glouton.",
+        "- ZIP exploitable sans `.git` : dist/nsi-enseignement_source_clean.zip, archive séparée du livrable pédagogique de référence.",
         "",
         "## Commandes de référence",
         "",

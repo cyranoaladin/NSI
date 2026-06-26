@@ -179,3 +179,34 @@ On recherche le motif ABA dans le texte CABAABABA.
 - Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
 - Aucun fichier Drive n’a été repris directement dans ce support.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.
+
+## TP papier - pseudo-code Boyer-Moore
+### Exercice 9 - Exécuter le pseudo-code
+- Données : texte `CABAABABA`, motif `ABA`, table mauvais caractère `A -> 2`, `B -> 1`, autre -> `-1`.
+- Consigne : compléter les valeurs de `i`, `j`, mauvais caractère et décalage jusqu’au premier succès.
+
+### Exercice 10 - Motif absent
+- Données : texte `CCCC`, motif `ABA`.
+- Consigne : donner les alignements testés et le résultat.
+
+### Exercice 11 - Comparaison naïve
+- Données : texte `BANANA`, motif `ANA`.
+- Consigne : comparer le nombre d’alignements naïfs et l’usage du mauvais caractère.
+
+### Corrigé exercice 9
+- Donnée utilisée : texte `CABAABABA`, motif `ABA`, table mauvais caractère `A -> 2`, `B -> 1`, autre -> `-1`.
+- Méthode : comparer depuis la droite, puis appliquer `max(1, j - last[caractère_lu])`.
+- Résultat attendu : `i=0`, `j=2`, mauvais caractère `B`, décalage `1`; puis `i=1`, comparaisons `A=A`, `B=B`, `A=A`, résultat `1`.
+- Contrôle : la trace contient le premier échec et l’alignement réussi.
+
+### Corrigé exercice 10
+- Donnée utilisée : texte `CCCC`, motif `ABA`.
+- Méthode : utiliser la table du mauvais caractère pour `C`, absent du motif.
+- Résultat attendu : à `i=0`, désaccord avec `C`, décalage `3`; plus aucun alignement complet possible, résultat `-1`.
+- Contrôle : le cas « motif absent » renvoie une valeur de non-trouvaille explicite.
+
+### Corrigé exercice 11
+- Donnée utilisée : texte `BANANA`, motif `ANA`.
+- Méthode : comparer les alignements naïfs aux comparaisons depuis la droite.
+- Résultat attendu : la méthode naïve teste les positions `0`, `1`, `2`, `3`; Boyer-Moore compare depuis la droite et trouve l’occurrence à l’indice `1` après un décalage justifié.
+- Contrôle : les deux méthodes donnent le même indice trouvé, mais pas la même stratégie.

@@ -138,3 +138,19 @@ Un module doit exposer une pile sans révéler si elle est stockée par liste Py
 - La méthode contient au moins une étape vérifiable par un pair.
 - Le cas limite est discuté avec une donnée concrète.
 - La correction explique quelle erreur fréquente est évitée.
+
+## Corrigés complémentaires TAD
+### Corrigé exercice 9
+- Résultat visible : `"B"`, puis `"B"`, puis `"A"`.
+- Justification : une pile respecte LIFO ; l’implémentation par liste ou par maillons ne change pas l’interface.
+- Contrôle : dépiler une troisième fois doit être refusé.
+
+### Corrigé exercice 10
+- Résultat visible : `"A"`, puis `"A"`, puis `"B"`.
+- Justification : une file respecte FIFO.
+- Contrôle : `defiler()` sur file vide lève une erreur documentée.
+
+### Corrigé exercice 11
+- Résultat attendu : liste naïve `pop(0)` en `O(n)`, file à deux listes en coût amorti `O(1)`.
+- Justification : la deuxième implémentation reporte le coût du renversement sur plusieurs opérations.
+- Contrôle : les deux implémentations doivent passer la même suite de tests d’interface.

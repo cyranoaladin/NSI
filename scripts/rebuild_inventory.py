@@ -177,7 +177,7 @@ def write_manifest(rows: List[Dict[str, str]]) -> None:
         'symlink',
     ]
     with MANIFEST_PATH.open('w', encoding='utf-8', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator='\n')
         writer.writeheader()
         for row in rows:
             writer.writerow({k: row.get(k, '') for k in fieldnames})

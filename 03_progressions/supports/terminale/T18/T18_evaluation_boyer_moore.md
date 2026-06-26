@@ -65,6 +65,7 @@ Répondre directement sur copie. Chaque réponse doit montrer la donnée utilis�
 - Question 2: 1 point vocabulaire précis, 1 point méthode, 1 point résultat, 1 point justification.
 - Question 3: 1 point modélisation, 1 point production correcte, 1 point test du résultat, 1 point lisibilité.
 - Question 4: 1 point cas traité, 1 point résultat, 1 point justification, 1 point erreur fréquente évitée.
+- Question 5: 1 point table mauvais caractère, 1 point décalage `1`, 1 point trace droite à gauche, 1 point indice trouvé `1`.
 - Total : 16 points, conversion sur 20 après relecture pédagogique.
 
 ## Corrigé professeur
@@ -114,3 +115,21 @@ Répondre directement sur copie. Chaque réponse doit montrer la donnée utilis�
 - Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
 - Aucun fichier Drive n’a été repris directement dans cette évaluation.
 - Source de création : programme officiel et progression locale, avec statut `needs_review`.
+
+## Question complémentaire - trace Boyer-Moore
+### Question 5
+- Données : texte `CABAABABA`, motif `ABA`, table mauvais caractère `A -> 2`, `B -> 1`.
+- Travail : donner le premier décalage, puis l’indice trouvé.
+
+### Corrigé question 5
+- Alignement `i=0` : comparaison depuis la droite, désaccord `A` attendu contre `B` lu dans le texte.
+- Décalage : `j=2`, dernier `B` dans le motif à `1`, donc `max(1, 2-1) = 1`.
+- Alignement `i=1` : fenêtre `ABA`, toutes les comparaisons réussissent.
+- Résultat attendu : motif trouvé à l’indice `1`.
+- Contrôle : la trace contient un alignement échoué puis un alignement réussi.
+
+## Barème complémentaire - question 5
+- 1 point : table du mauvais caractère utilisée correctement.
+- 1 point : décalage `1` justifié par `2-1`.
+- 1 point : comparaison droite à gauche explicitée.
+- 1 point : indice final `1` donné.

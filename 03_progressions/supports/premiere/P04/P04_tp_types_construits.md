@@ -110,6 +110,30 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Le cas limite est discuté avec une donnée concrète.
 - La correction explique quelle erreur fréquente est évitée.
 
+## Complément TP - fonctions sur types construits
+### Consigne technique détaillée
+Implémenter trois fonctions dans le starter :
+
+```python
+def milieu(a: tuple[float, float], b: tuple[float, float]) -> tuple[float, float]:
+    ...
+
+def stations_chaudes(stations: list[dict], seuil: int) -> list[str]:
+    ...
+
+def moyenne_notes(notes: list[int]) -> float:
+    ...
+```
+
+### Tests attendus
+- `milieu((0, 4), (6, 10))` renvoie `(3.0, 7.0)`.
+- `stations_chaudes([{"nom": "A", "temp": 21}, {"nom": "B", "temp": 18}], 20)` renvoie `["A"]`.
+- `moyenne_notes([])` lève `ValueError`.
+- `milieu((2,), (4, 5))` lève `ValueError` car le tuple n’a pas deux coordonnées.
+
+### Livrable vérifiable
+Le fichier rendu contient les fonctions, quatre assertions exécutables et une phrase qui justifie tuple immuable, liste mutable et dictionnaire par clé.
+
 ## Validation opérationnelle du TP
 - Vérification P04-1 : exécuter le starter et constater au moins un échec de test nominal.
 - Vérification P04-2 : exécuter le corrigé professeur et obtenir les trois catégories de tests au vert.

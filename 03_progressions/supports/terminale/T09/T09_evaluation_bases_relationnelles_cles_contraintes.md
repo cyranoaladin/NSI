@@ -67,21 +67,21 @@ official_program:
 
 ## Corrigé
 ### Corrigé question 1
-- Démarche : identifier la clé primaire de chaque table.
-- Résultat attendu : une conclusion compatible avec `Eleve(1, "E2", "1G1"), Note(10, 1, "NSI", 15), Note(11, 9, "NSI", 12)`.
-- Justification : le contrôle explicite empêche l’erreur « utiliser le nom comme clé primaire ».
+- Démarche : dans `Eleve(id_eleve, nom, classe)`, la valeur qui identifie une ligne est `id_eleve`; dans `Note(id_note, id_eleve, matiere, note)`, la valeur qui identifie une ligne de note est `id_note`.
+- Résultat attendu : clés primaires `Eleve.id_eleve` et `Note.id_note`. Pour les lignes données, les identifiants primaires sont `1`, `10` et `11`.
+- Justification : le nom `"E2"` n’est pas une clé primaire fiable, car deux élèves pourraient porter le même nom; l’identifiant numérique reste unique.
 ### Corrigé question 2
-- Démarche : repérer la clé étrangère Note.id_eleve.
-- Résultat attendu : une conclusion compatible avec `Eleve(1, "E2", "1G1"), Note(10, 1, "NSI", 15), Note(11, 9, "NSI", 12)`.
-- Justification : le contrôle explicite empêche l’erreur « accepter une note hors 0..20 ».
+- Démarche : comparer `Note.id_eleve` aux valeurs existantes de `Eleve.id_eleve`.
+- Résultat attendu : `Note.id_eleve` est une clé étrangère vers `Eleve.id_eleve`. La ligne `Note(10, 1, "NSI", 15)` est cohérente car `1` existe dans `Eleve`; la ligne `Note(11, 9, "NSI", 12)` pose problème car aucun `Eleve.id_eleve = 9` n’est fourni.
+- Justification : la contrainte de référence porte sur l’existence de l’élève, pas sur la valeur de la note.
 ### Corrigé question 3
-- Démarche : signaler une référence vers un élève absent.
-- Résultat attendu : une conclusion compatible avec `Eleve(1, "E2", "1G1"), Note(10, 1, "NSI", 15), Note(11, 9, "NSI", 12)`.
-- Justification : le contrôle explicite empêche l’erreur « insérer une note pour un élève absent ».
+- Démarche : isoler chaque note et tester si son `id_eleve` est présent dans la table `Eleve`.
+- Résultat attendu : la référence invalide est `Note(11, 9, "NSI", 12)`, car `9` ne correspond à aucun élève connu. Cette ligne doit être refusée ou mise en attente tant que l’élève `9` n’existe pas.
+- Justification : accepter cette ligne créerait une note orpheline, impossible à rattacher à un élève.
 ### Corrigé question 4
-- Démarche : distinguer contrainte de domaine et contrainte de référence.
-- Résultat attendu : une conclusion compatible avec `Eleve(1, "E2", "1G1"), Note(10, 1, "NSI", 15), Note(11, 9, "NSI", 12)`.
-- Justification : le contrôle explicite empêche l’erreur « confondre clé primaire et clé étrangère ».
+- Démarche : classer les contraintes selon ce qu’elles vérifient.
+- Résultat attendu : `0 <= note <= 20` est une contrainte de domaine sur l’attribut `Note.note`; `Note.id_eleve` doit appartenir aux valeurs de `Eleve.id_eleve` est une contrainte de référence. Dans les données, `15` et `12` respectent le domaine, mais `id_eleve=9` viole la référence.
+- Justification : une même ligne peut respecter le domaine de la note tout en violant la clé étrangère.
 
 ## Critères de réussite
 - Les capacités officielles sont citées dans les réponses.
@@ -111,4 +111,3 @@ official_program:
 - EF1 : répondre sans citer la donnée utilisée ; correction : encadrer la donnée avant de rédiger.
 - EF2 : donner un résultat sans méthode ; correction : séparer méthode, résultat et contrôle.
 - EF3 : oublier le cas limite ; correction : refaire une question avec une donnée minimale.
-

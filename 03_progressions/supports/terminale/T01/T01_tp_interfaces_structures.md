@@ -110,6 +110,31 @@ Un module doit exposer une pile sans révéler si elle est stockée par liste Py
 - Le cas limite est discuté avec une donnée concrète.
 - La correction explique quelle erreur fréquente est évitée.
 
+## Complément TP - conformité d’un TAD
+### Consigne technique détaillée
+Écrire deux classes ou modules respectant les interfaces suivantes :
+
+```python
+class Pile:
+    def empiler(self, x): ...
+    def depiler(self): ...
+    def est_vide(self): ...
+
+class File:
+    def enfiler(self, x): ...
+    def defiler(self): ...
+    def est_vide(self): ...
+```
+
+### Tests attendus
+- Pile : après `empiler("A")`, `empiler("B")`, deux appels à `depiler()` renvoient `"B"`, puis `"A"`.
+- File : après `enfiler("A")`, `enfiler("B")`, deux appels à `defiler()` renvoient `"A"`, puis `"B"`.
+- Cas vide : `depiler()` ou `defiler()` sur structure vide lève une exception documentée.
+- Complexité attendue : expliquer pourquoi une file avec `pop(0)` peut coûter `O(n)`.
+
+### Livrable vérifiable
+Le rendu contient le code, les tests de conformité, l’invariant choisi et une comparaison de deux implémentations de file.
+
 ## Validation opérationnelle du TP
 - Vérification T01-1 : exécuter le starter et constater au moins un échec de test nominal.
 - Vérification T01-2 : exécuter le corrigé professeur et obtenir les trois catégories de tests au vert.

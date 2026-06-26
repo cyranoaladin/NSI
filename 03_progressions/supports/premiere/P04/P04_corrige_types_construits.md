@@ -138,3 +138,24 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - La méthode contient au moins une étape vérifiable par un pair.
 - Le cas limite est discuté avec une donnée concrète.
 - La correction explique quelle erreur fréquente est évitée.
+
+## Corrigés complémentaires - types construits
+### Corrigé exercice 9
+- Valeur attendue : `A=(0,4)`, `B=(6,10)`, milieu `(3.0, 7.0)`.
+- Justification : la formule moyenne les abscisses et les ordonnées séparément.
+- Contrôle : le résultat est encore un tuple de taille 2.
+
+### Corrigé exercice 10
+- Valeur attendue : `[8, 14, 10]`.
+- Justification : une liste est mutable ; l’affectation `notes[1] = 14` modifie la liste en place.
+- Contrôle : l’indice `1` désigne la deuxième valeur, pas la première.
+
+### Corrigé exercice 11
+- Valeur attendue : `["A", "C"]`.
+- Justification : les dictionnaires des stations A et C ont `temp >= 20`.
+- Contrôle : le filtre lit la clé `temp` et ne compare pas le dictionnaire complet.
+
+### Corrigé exercice 12
+- Valeurs attendues : mauvaise taille pour `(2,)`, clé absente pour `"pression"`, liste vide pour `[]`.
+- Justification : chaque structure impose une vérification différente avant traitement.
+- Contrôle : le corrigé cite l’erreur et la garde à ajouter.

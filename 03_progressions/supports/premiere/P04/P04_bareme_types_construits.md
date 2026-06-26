@@ -116,3 +116,9 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - La méthode contient au moins une étape vérifiable par un pair.
 - Le cas limite est discuté avec une donnée concrète.
 - La correction explique quelle erreur fréquente est évitée.
+
+### Barème question 5
+- 1 point : identifier le tuple comme coordonnée immuable.
+- 1 point : identifier le dictionnaire comme accès par clé.
+- 1 point : identifier la liste comme collection parcourable.
+- 1 point : calculer le milieu `(3.0, 7.0)` avec formule correcte.

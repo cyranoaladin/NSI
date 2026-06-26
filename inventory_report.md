@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 518
+- Total ressources : 525
 - Ressources pédagogiques : 53
-- Ressources techniques : 465
+- Ressources techniques : 472
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 6
-- generated: 511
+- generated: 518
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 214
+- interne: 221
 - premiere: 147
 - terminale: 157
 
@@ -19,17 +19,17 @@
 - banque: 14
 - document: 277
 - python: 36
-- script: 115
+- script: 119
 - sequence: 45
-- test: 31
+- test: 34
 
 ## Répartition par statut
-- needs_review: 518
+- needs_review: 525
 
 ## Répartition audience
 - corrige: 33
 - eleve: 110
-- mixte: 372
+- mixte: 379
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -384,9 +384,11 @@
   - scripts/_session_checks.py
   - scripts/build_all.py
   - scripts/build_source_archive.py
+  - scripts/build_source_zip.py
   - scripts/check_archive_portability.py
   - scripts/check_bank_strategy.py
   - scripts/check_build_reports_freshness.py
+  - scripts/check_corrected_answers_are_concrete.py
   - scripts/check_course_internal_coherence.py
   - scripts/check_course_sheet_linked_resources_exist.py
   - scripts/check_course_sheet_readiness.py
@@ -431,6 +433,7 @@
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
   - scripts/check_no_coverage_from_sheets_only.py
+  - scripts/check_no_generic_scaffold_overuse.py
   - scripts/check_no_global_archive_in_delivery_context.py
   - scripts/check_no_line_padding.py
   - scripts/check_no_needs_review_for_release.py
@@ -464,6 +467,7 @@
   - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_completeness.py
   - scripts/check_sequence_contracts.py
+  - scripts/check_sequence_pack_consistency.py
   - scripts/check_session_duration_consistency.py
   - scripts/check_session_level_planning.py
   - scripts/check_session_monthly_total.py
@@ -521,6 +525,7 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
+  - tests/test_audit_extracted_source_no_hang.py
   - tests/test_build_artifacts.py
   - tests/test_consolidation_strict.py
   - tests/test_course_sheets.py
@@ -545,8 +550,10 @@
   - tests/test_register_semantic_consistency.py
   - tests/test_run_python_tests.py
   - tests/test_sequence_contracts.py
+  - tests/test_sequence_pack_and_scaffold_controls.py
   - tests/test_session_referenced_files_exist.py
   - tests/test_session_specificity.py
+  - tests/test_source_zip_delivery.py
   - tests/test_support_substance.py
   - tests/test_tp_pedagogical_assets.py
   - tests/test_tp_pedagogical_assets_no_hang.py
@@ -930,9 +937,11 @@
   - scripts/_session_checks.py
   - scripts/build_all.py
   - scripts/build_source_archive.py
+  - scripts/build_source_zip.py
   - scripts/check_archive_portability.py
   - scripts/check_bank_strategy.py
   - scripts/check_build_reports_freshness.py
+  - scripts/check_corrected_answers_are_concrete.py
   - scripts/check_course_internal_coherence.py
   - scripts/check_course_sheet_linked_resources_exist.py
   - scripts/check_course_sheet_readiness.py
@@ -977,6 +986,7 @@
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
   - scripts/check_no_coverage_from_sheets_only.py
+  - scripts/check_no_generic_scaffold_overuse.py
   - scripts/check_no_global_archive_in_delivery_context.py
   - scripts/check_no_line_padding.py
   - scripts/check_no_needs_review_for_release.py
@@ -1010,6 +1020,7 @@
   - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_completeness.py
   - scripts/check_sequence_contracts.py
+  - scripts/check_sequence_pack_consistency.py
   - scripts/check_session_duration_consistency.py
   - scripts/check_session_level_planning.py
   - scripts/check_session_monthly_total.py
@@ -1041,6 +1052,7 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/python/structures_tools.py
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/sequence.yaml
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tests/test_structures_tools.py
+  - tests/test_audit_extracted_source_no_hang.py
   - tests/test_build_artifacts.py
   - tests/test_consolidation_strict.py
   - tests/test_course_sheets.py
@@ -1065,8 +1077,10 @@
   - tests/test_register_semantic_consistency.py
   - tests/test_run_python_tests.py
   - tests/test_sequence_contracts.py
+  - tests/test_sequence_pack_and_scaffold_controls.py
   - tests/test_session_referenced_files_exist.py
   - tests/test_session_specificity.py
+  - tests/test_source_zip_delivery.py
   - tests/test_support_substance.py
   - tests/test_tp_pedagogical_assets.py
   - tests/test_tp_pedagogical_assets_no_hang.py
@@ -1444,9 +1458,11 @@
 - scripts/_session_checks.py
 - scripts/build_all.py
 - scripts/build_source_archive.py
+- scripts/build_source_zip.py
 - scripts/check_archive_portability.py
 - scripts/check_bank_strategy.py
 - scripts/check_build_reports_freshness.py
+- scripts/check_corrected_answers_are_concrete.py
 - scripts/check_course_internal_coherence.py
 - scripts/check_course_sheet_linked_resources_exist.py
 - scripts/check_course_sheet_readiness.py
@@ -1491,6 +1507,7 @@
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
 - scripts/check_no_coverage_from_sheets_only.py
+- scripts/check_no_generic_scaffold_overuse.py
 - scripts/check_no_global_archive_in_delivery_context.py
 - scripts/check_no_line_padding.py
 - scripts/check_no_needs_review_for_release.py
@@ -1524,6 +1541,7 @@
 - scripts/check_scientific_claims_review.py
 - scripts/check_sequence_completeness.py
 - scripts/check_sequence_contracts.py
+- scripts/check_sequence_pack_consistency.py
 - scripts/check_session_duration_consistency.py
 - scripts/check_session_level_planning.py
 - scripts/check_session_monthly_total.py
@@ -1575,6 +1593,7 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
+- tests/test_audit_extracted_source_no_hang.py
 - tests/test_build_artifacts.py
 - tests/test_consolidation_strict.py
 - tests/test_course_sheets.py
@@ -1599,8 +1618,10 @@
 - tests/test_register_semantic_consistency.py
 - tests/test_run_python_tests.py
 - tests/test_sequence_contracts.py
+- tests/test_sequence_pack_and_scaffold_controls.py
 - tests/test_session_referenced_files_exist.py
 - tests/test_session_specificity.py
+- tests/test_source_zip_delivery.py
 - tests/test_support_substance.py
 - tests/test_tp_pedagogical_assets.py
 - tests/test_tp_pedagogical_assets_no_hang.py
@@ -1961,9 +1982,11 @@
 - scripts/_session_checks.py
 - scripts/build_all.py
 - scripts/build_source_archive.py
+- scripts/build_source_zip.py
 - scripts/check_archive_portability.py
 - scripts/check_bank_strategy.py
 - scripts/check_build_reports_freshness.py
+- scripts/check_corrected_answers_are_concrete.py
 - scripts/check_course_internal_coherence.py
 - scripts/check_course_sheet_linked_resources_exist.py
 - scripts/check_course_sheet_readiness.py
@@ -2008,6 +2031,7 @@
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
 - scripts/check_no_coverage_from_sheets_only.py
+- scripts/check_no_generic_scaffold_overuse.py
 - scripts/check_no_global_archive_in_delivery_context.py
 - scripts/check_no_line_padding.py
 - scripts/check_no_needs_review_for_release.py
@@ -2041,6 +2065,7 @@
 - scripts/check_scientific_claims_review.py
 - scripts/check_sequence_completeness.py
 - scripts/check_sequence_contracts.py
+- scripts/check_sequence_pack_consistency.py
 - scripts/check_session_duration_consistency.py
 - scripts/check_session_level_planning.py
 - scripts/check_session_monthly_total.py
@@ -2098,6 +2123,7 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
+- tests/test_audit_extracted_source_no_hang.py
 - tests/test_build_artifacts.py
 - tests/test_consolidation_strict.py
 - tests/test_course_sheets.py
@@ -2122,8 +2148,10 @@
 - tests/test_register_semantic_consistency.py
 - tests/test_run_python_tests.py
 - tests/test_sequence_contracts.py
+- tests/test_sequence_pack_and_scaffold_controls.py
 - tests/test_session_referenced_files_exist.py
 - tests/test_session_specificity.py
+- tests/test_source_zip_delivery.py
 - tests/test_support_substance.py
 - tests/test_tp_pedagogical_assets.py
 - tests/test_tp_pedagogical_assets_no_hang.py

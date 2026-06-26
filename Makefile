@@ -55,7 +55,10 @@ audit-local:
 	python scripts/check_first_batch_tp_assets.py
 	python scripts/check_support_substance.py
 	python scripts/check_no_line_padding.py
-	python scripts/check_tp_pedagogical_assets_runtime.py
+	python scripts/check_sequence_pack_consistency.py
+	python scripts/check_no_generic_scaffold_overuse.py
+	python scripts/check_corrected_answers_are_concrete.py
+	timeout 90 python -u scripts/check_tp_pedagogical_assets_runtime.py
 	python scripts/check_sequence_contracts.py
 	python scripts/check_local_drive_traceability.py
 	python scripts/check_drive_integration_plan.py
@@ -135,7 +138,10 @@ audit-extracted-source:
 	python scripts/check_first_batch_tp_assets.py
 	python scripts/check_support_substance.py
 	python scripts/check_no_line_padding.py
-	python scripts/check_tp_pedagogical_assets_runtime.py
+	python scripts/check_sequence_pack_consistency.py
+	python scripts/check_no_generic_scaffold_overuse.py
+	python scripts/check_corrected_answers_are_concrete.py
+	timeout 90 python -u scripts/check_tp_pedagogical_assets_runtime.py
 	python scripts/check_sequence_contracts.py
 	python scripts/check_drive_enrichment_traceability_portable.py
 	python scripts/check_drive_trace_no_absolute_local_paths.py
@@ -178,6 +184,10 @@ deliver-pedagogical-archive:
 	DELIVERED_ARCHIVE=dist/source_clean.tar.gz python scripts/check_delivered_archive_exactly_source_clean.py
 	python scripts/check_no_global_archive_in_delivery_context.py
 	@echo "LIVRABLE_PEDAGOGIQUE=dist/source_clean.tar.gz"
+
+deliver-source-zip:
+	python scripts/build_source_zip.py
+	@echo "ZIP_EXPLOITABLE=dist/nsi-enseignement_source_clean.zip"
 
 render-s01:
 	python scripts/render_sequence.py premiere/sequences/s01_representation_donnees

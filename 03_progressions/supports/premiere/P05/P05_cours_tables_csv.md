@@ -8,7 +8,7 @@ version: "0.4.1"
 source: "BO 2019"
 source_creation: "generated_from_program"
 theme: "Traitement de tables"
-notion: "table, CSV, filtrage, agrégation"
+notion: "table, CSV, filtrage, traitement numérique des populations"
 objectifs:
   - "Objectif O1 - Identifier précisément la représentation ou la structure en jeu"
   - "Objectif O2 - Appliquer une méthode disciplinaire complète"
@@ -41,100 +41,100 @@ official_program:
 - P05-S1 à P05-S7 : support rattaché aux séances prêtes de la progression.
 
 ## Situation-problème concrète
-Un fichier CSV de mesures contient des lignes incomplètes, des séparateurs et des valeurs numériques à agréger.
+Le fichier `pays_monde.csv` contient des pays, capitales, continents et populations à lire, filtrer, convertir et trier.
 
 ## Activité d’entrée
 1. Lire une ligne d’en-tête.
-2. Filtrer les lignes où `ville == "Tunis"`.
-3. Calculer une moyenne de températures valides.
+2. Filtrer les lignes où `CONTINENT == "Europe"`.
+3. Convertir puis trier numériquement les populations valides.
 4. Signaler une ligne avec champ manquant.
 
 ## Définitions et formalisation
 - Définition D1 : table est utilisé dans Traitement de tables avec une donnée, une règle et un contrôle.
 - Définition D2 : CSV est utilisé dans Traitement de tables avec une donnée, une règle et un contrôle.
 - Définition D3 : filtrage est utilisé dans Traitement de tables avec une donnée, une règle et un contrôle.
-- Définition D4 : agrégation est utilisé dans Traitement de tables avec une donnée, une règle et un contrôle.
-- Cas limite principal : fichier vide.
+- Définition D4 : traitement numérique des populations est utilisé dans Traitement de tables avec une donnée, une règle et un contrôle.
+- Cas limite principal : fichier pays_monde.csv vide.
 
 ## Exemples corrigés précis
 ### Exemple corrigé 1 - lecture CSV
-- Donnée étudiée : `ville,temp
-Tunis,24`.
-- Méthode : séparer en-tête et données puis convertir la température.
+- Donnée étudiée : `PAYS,CAPITALE,CONTINENT,POPULATION
+Allemagne,Berlin,Europe,82801531`.
+- Méthode : lire avec csv.reader puis convertir POPULATION en int.
 - Résultat obtenu : une ligne exploitable.
-- Contrôle : le cas limite « fichier vide » est vérifié séparément.
+- Contrôle : le cas limite « fichier pays_monde.csv vide » est vérifié séparément.
 ### Exemple corrigé 2 - filtrage
-- Donnée étudiée : trois villes dont deux Tunis.
-- Méthode : conserver les lignes respectant un prédicat.
-- Résultat obtenu : deux lignes sélectionnées.
-- Contrôle : le cas limite « aucune ligne retenue » est vérifié séparément.
-### Exemple corrigé 3 - agrégation
-- Donnée étudiée : `24`, `26`, champ vide.
-- Méthode : ignorer ou signaler le champ vide avant moyenne.
-- Résultat obtenu : `25`.
-- Contrôle : le cas limite « division par zéro » est vérifié séparément.
-### Exemple corrigé 4 - jointure simple
-- Donnée étudiée : table villes et table régions.
+- Donnée étudiée : un extrait contenant Allemagne, Albanie et Brésil.
+- Méthode : conserver les lignes dont CONTINENT vaut Europe.
+- Résultat obtenu : deux lignes européennes sélectionnées.
+- Contrôle : le cas limite « aucun pays du continent demandé » est vérifié séparément.
+### Exemple corrigé 3 - traitement numérique des populations
+- Donnée étudiée : `82801531`, `3063320`, valeur `invalide`.
+- Méthode : isoler une ligne invalide avant conversion de POPULATION en int.
+- Résultat obtenu : ligne invalide isolée avant conversion.
+- Contrôle : le cas limite « sélection vide avant tri numérique » est vérifié séparément.
+### Exemple corrigé 4 - tri par continent puis population
+- Donnée étudiée : lignes regroupées par CONTINENT.
 - Méthode : associer par une clé commune.
-- Résultat obtenu : ville enrichie par région.
-- Contrôle : le cas limite « clé inconnue » est vérifié séparément.
+- Résultat obtenu : pays triés par CONTINENT puis POPULATION.
+- Contrôle : le cas limite « continent absent » est vérifié séparément.
 ## Objectif O1 - Identifier précisément la représentation ou la structure en jeu
 - Capacité mobilisée : P-TABLE-01.
-- Point de départ : `ville,temp
-Tunis,24`.
+- Point de départ : `PAYS,CAPITALE,CONTINENT,POPULATION
+Allemagne,Berlin,Europe,82801531`.
 - Angle disciplinaire : repérage initial autour de lecture CSV.
-- Démarche attendue : séparer en-tête et données puis convertir la température.
+- Démarche attendue : lire avec csv.reader puis convertir POPULATION en int.
 - Exemple associé : une ligne exploitable.
 - Point de vigilance : Traiter l’en-tête comme une donnée.
 - Activité de reprise associée : Marquer l’en-tête et commencer les données à la ligne suivante.
 - Mini-production : produire un court diagnostic de la donnée et du vocabulaire.
 ## Objectif O2 - Appliquer une méthode disciplinaire complète
 - Capacité mobilisée : P-TABLE-01.
-- Point de départ : trois villes dont deux Tunis.
+- Point de départ : un extrait contenant Allemagne, Albanie et Brésil.
 - Angle disciplinaire : méthode guidée autour de filtrage.
-- Démarche attendue : conserver les lignes respectant un prédicat.
-- Exemple associé : deux lignes sélectionnées.
+- Démarche attendue : conserver les lignes dont CONTINENT vaut Europe.
+- Exemple associé : deux lignes européennes sélectionnées.
 - Point de vigilance : Comparer une valeur numérique restée chaîne.
 - Activité de reprise associée : Convertir explicitement avant les comparaisons numériques.
 - Mini-production : produire une procédure numérotée avec contrôle intermédiaire.
 ## Objectif O3 - Justifier le résultat sur un cas différent
 - Capacité mobilisée : P-TABLE-01.
-- Point de départ : `24`, `26`, champ vide.
-- Angle disciplinaire : transfert argumenté autour de agrégation.
-- Démarche attendue : ignorer ou signaler le champ vide avant moyenne.
-- Exemple associé : `25`.
+- Point de départ : `82801531`, `3063320`, valeur `invalide`.
+- Angle disciplinaire : transfert argumenté autour de traitement numérique des populations.
+- Démarche attendue : isoler une ligne invalide avant conversion de POPULATION en int.
+- Exemple associé : ligne invalide isolée avant conversion.
 - Point de vigilance : Diviser par zéro après filtrage vide.
-- Activité de reprise associée : Tester la taille de la sélection avant la moyenne.
+- Activité de reprise associée : Tester la sélection avant le tri numérique.
 - Mini-production : produire une justification qui compare deux cas distincts.
 ## Objectif O4 - Contrôler un cas limite et corriger une erreur observée
 - Capacité mobilisée : P-TABLE-01.
-- Point de départ : table villes et table régions.
-- Angle disciplinaire : vérification critique autour de jointure simple.
+- Point de départ : lignes regroupées par CONTINENT.
+- Angle disciplinaire : vérification critique autour de tri par continent puis population.
 - Démarche attendue : associer par une clé commune.
-- Exemple associé : ville enrichie par région.
+- Exemple associé : pays triés par CONTINENT puis POPULATION.
 - Point de vigilance : Ignorer silencieusement une ligne mal formée.
 - Activité de reprise associée : Isoler les lignes invalides dans une liste de rejets.
 - Mini-production : produire une correction d’erreur avec un nouveau test.
 ## Exercices numérotés
-- Exercice 1 : résoudre lecture CSV avec `ville,temp
-Tunis,24` ; attendu : une ligne exploitable.
-- Exercice 2 : expliquer filtrage à partir de trois villes dont deux Tunis ; attendu : deux lignes sélectionnées.
-- Exercice 3 : comparer agrégation avec `24`, `26`, champ vide ; attendu : `25`.
-- Exercice 4 : corriger jointure simple pour table villes et table régions ; attendu : ville enrichie par région.
-- Exercice 5 : tester un cas limite lié à fichier vide ; attendu : le comportement de lecture CSV est contrôlé.
+- Exercice 1 : résoudre lecture CSV avec `PAYS,CAPITALE,CONTINENT,POPULATION
+Allemagne,Berlin,Europe,82801531` ; attendu : une ligne exploitable.
+- Exercice 2 : expliquer filtrage à partir de un extrait contenant Allemagne, Albanie et Brésil ; attendu : deux lignes européennes sélectionnées.
+- Exercice 3 : comparer traitement numérique des populations avec `82801531`, `3063320`, valeur `invalide` ; attendu : ligne invalide isolée avant conversion.
+- Exercice 4 : corriger tri par continent puis population pour lignes regroupées par CONTINENT ; attendu : pays triés par CONTINENT puis POPULATION.
+- Exercice 5 : tester un cas limite lié à fichier pays_monde.csv vide ; attendu : le comportement de lecture CSV est contrôlé.
 - Exercice 6 : classer deux méthodes possibles pour filtrage ; attendu : la méthode robuste est choisie et justifiée.
-- Exercice 7 : justifier un transfert qui utilise agrégation avec une donnée nouvelle ; attendu : la justification reste valable sur le nouveau cas.
-- Exercice 8 : étendre un énoncé volontairement erroné sur jointure simple ; attendu : l’erreur est localisée puis réparée.
+- Exercice 7 : justifier un transfert qui utilise traitement numérique des populations avec une donnée nouvelle ; attendu : la justification reste valable sur le nouveau cas.
+- Exercice 8 : étendre un énoncé volontairement erroné sur tri par continent puis population ; attendu : l’erreur est localisée puis réparée.
 ## Corrigés complets des exercices du cours
-- Corrigé exercice 1 : méthode : identifier `ville,temp
-Tunis,24`, appliquer la méthode « séparer en-tête et données puis convertir la température », puis écrire une ligne exploitable ; résultat : une ligne exploitable ; contrôle : faire apparaître le contrôle « fichier vide ».
-- Corrigé exercice 2 : méthode : expliciter chaque étape de conserver les lignes respectant un prédicat avant de conclure par deux lignes sélectionnées ; résultat : deux lignes sélectionnées ; contrôle : rédiger la méthode avant le résultat.
-- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « division par zéro » et valider `25` ; résultat : `25` ; contrôle : comparer avec le cas « division par zéro ».
-- Corrigé exercice 4 : méthode : isoler l’erreur fréquente « Ignorer silencieusement une ligne mal formée. » puis reprendre la procédure correcte ; résultat : ville enrichie par région ; contrôle : corriger l’erreur « Ignorer silencieusement une ligne mal formée. ».
-- Corrigé exercice 5 : méthode : identifier `ville,temp
-Tunis,24`, appliquer la méthode « séparer en-tête et données puis convertir la température », puis écrire une ligne exploitable ; résultat : le comportement de lecture CSV est contrôlé ; contrôle : nommer la donnée minimale et la conclusion.
-- Corrigé exercice 6 : méthode : expliciter chaque étape de conserver les lignes respectant un prédicat avant de conclure par deux lignes sélectionnées ; résultat : la méthode robuste est choisie et justifiée ; contrôle : identifier pourquoi « Comparer une valeur numérique restée chaîne. » est une erreur.
-- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « division par zéro » et valider `25` ; résultat : la justification reste valable sur le nouveau cas ; contrôle : inclure une étape calculable par un pair.
+- Corrigé exercice 1 : méthode : identifier `PAYS,CAPITALE,CONTINENT,POPULATION
+Allemagne,Berlin,Europe,82801531`, appliquer la méthode « lire avec csv.reader puis convertir POPULATION en int », puis écrire une ligne exploitable ; résultat : une ligne exploitable ; contrôle : faire apparaître le contrôle « fichier pays_monde.csv vide ».
+- Corrigé exercice 2 : méthode : expliciter chaque étape de conserver les lignes dont CONTINENT vaut Europe avant de conclure par deux lignes européennes sélectionnées ; résultat : deux lignes européennes sélectionnées ; contrôle : rédiger la méthode avant le résultat.
+- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider le rejet de la ligne invalide avant conversion ; résultat : ligne invalide isolée avant conversion ; contrôle : comparer avec le cas « sélection vide avant tri numérique ».
+- Corrigé exercice 4 : méthode : isoler l’erreur fréquente « Ignorer silencieusement une ligne mal formée. » puis reprendre la procédure correcte ; résultat : pays triés par CONTINENT puis POPULATION ; contrôle : corriger l’erreur « Ignorer silencieusement une ligne mal formée. ».
+- Corrigé exercice 5 : méthode : identifier `PAYS,CAPITALE,CONTINENT,POPULATION
+Allemagne,Berlin,Europe,82801531`, appliquer la méthode « lire avec csv.reader puis convertir POPULATION en int », puis écrire une ligne exploitable ; résultat : le comportement de lecture CSV est contrôlé ; contrôle : nommer la donnée minimale et la conclusion.
+- Corrigé exercice 6 : méthode : expliciter chaque étape de conserver les lignes dont CONTINENT vaut Europe avant de conclure par deux lignes européennes sélectionnées ; résultat : la méthode robuste est choisie et justifiée ; contrôle : identifier pourquoi « Comparer une valeur numérique restée chaîne. » est une erreur.
+- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider le rejet de la ligne invalide avant conversion ; résultat : la justification reste valable sur le nouveau cas ; contrôle : inclure une étape calculable par un pair.
 - Corrigé exercice 8 : méthode : isoler l’erreur fréquente « Ignorer silencieusement une ligne mal formée. » puis reprendre la procédure correcte ; résultat : l’erreur est localisée puis réparée ; contrôle : proposer une activité corrective inspirée de « Isoler les lignes invalides dans une liste de rejets. ».
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Traiter l’en-tête comme une donnée.
@@ -145,14 +145,14 @@ Tunis,24`, appliquer la méthode « séparer en-tête et données puis convertir
 ## Remédiation ciblée
 - Activité corrective EF1 : Marquer l’en-tête et commencer les données à la ligne suivante.
 - Activité corrective EF2 : Convertir explicitement avant les comparaisons numériques.
-- Activité corrective EF3 : Tester la taille de la sélection avant la moyenne.
+- Activité corrective EF3 : Tester la sélection avant le tri numérique.
 - Activité corrective EF4 : Isoler les lignes invalides dans une liste de rejets.
 
 ## Différenciation
-- Socle : traiter `ville,temp
-Tunis,24` avec une fiche méthode fournie.
-- Standard : traiter trois villes dont deux Tunis en rédigeant la justification complète.
-- Expert : inventer un cas limite lié à « division par zéro » et expliquer le comportement attendu.
+- Socle : traiter `PAYS,CAPITALE,CONTINENT,POPULATION
+Allemagne,Berlin,Europe,82801531` avec une fiche méthode fournie.
+- Standard : traiter un extrait contenant Allemagne, Albanie et Brésil en rédigeant la justification complète.
+- Expert : inventer un cas limite lié à « sélection vide avant tri numérique » et expliquer le comportement attendu.
 
 ## Critères de réussite
 - La capacité officielle est citée dans la copie.
@@ -161,27 +161,27 @@ Tunis,24` avec une fiche méthode fournie.
 - La correction explique quelle erreur fréquente est évitée.
 ## Banque de situations complémentaires
 - Situation complémentaire 1 : reprendre lecture CSV avec une donnée construite par un binôme.
-- Question orale 1 : expliquer pourquoi le cas limite « fichier vide » change ou ne change pas la méthode.
+- Question orale 1 : expliquer pourquoi le cas limite « fichier pays_monde.csv vide » change ou ne change pas la méthode.
 - Trace attendue 1 : une phrase de méthode, une ligne de calcul et une vérification indépendante.
 - Situation complémentaire 2 : reprendre filtrage avec une donnée construite par un binôme.
-- Question orale 2 : expliquer pourquoi le cas limite « aucune ligne retenue » change ou ne change pas la méthode.
+- Question orale 2 : expliquer pourquoi le cas limite « aucun pays du continent demandé » change ou ne change pas la méthode.
 - Trace attendue 2 : une phrase de méthode, une ligne de calcul et une vérification indépendante.
-- Situation complémentaire 3 : reprendre agrégation avec une donnée construite par un binôme.
-- Question orale 3 : expliquer pourquoi le cas limite « division par zéro » change ou ne change pas la méthode.
+- Situation complémentaire 3 : reprendre traitement numérique des populations avec une donnée construite par un binôme.
+- Question orale 3 : expliquer pourquoi le cas limite « sélection vide avant tri numérique » change ou ne change pas la méthode.
 - Trace attendue 3 : une phrase de méthode, une ligne de calcul et une vérification indépendante.
-- Situation complémentaire 4 : reprendre jointure simple avec une donnée construite par un binôme.
-- Question orale 4 : expliquer pourquoi le cas limite « clé inconnue » change ou ne change pas la méthode.
+- Situation complémentaire 4 : reprendre tri par continent puis population avec une donnée construite par un binôme.
+- Question orale 4 : expliquer pourquoi le cas limite « continent absent » change ou ne change pas la méthode.
 - Trace attendue 4 : une phrase de méthode, une ligne de calcul et une vérification indépendante.
 ## Atelier de synthèse
 - Synthèse 1 : relier lecture CSV à une erreur fréquente et à une remédiation ciblée.
 - Synthèse 2 : relier filtrage à une erreur fréquente et à une remédiation ciblée.
-- Synthèse 3 : relier agrégation à une erreur fréquente et à une remédiation ciblée.
-- Synthèse 4 : relier jointure simple à une erreur fréquente et à une remédiation ciblée.
+- Synthèse 3 : relier traitement numérique des populations à une erreur fréquente et à une remédiation ciblée.
+- Synthèse 4 : relier tri par continent puis population à une erreur fréquente et à une remédiation ciblée.
 ## Lexique actif
 - table : terme à employer dans une justification écrite de la séquence.
 - CSV : terme à employer dans une justification écrite de la séquence.
 - filtrage : terme à employer dans une justification écrite de la séquence.
-- agrégation : terme à employer dans une justification écrite de la séquence.
+- traitement numérique des populations : terme à employer dans une justification écrite de la séquence.
 
 ## Analyse de variantes disciplinaires
 - Variante P05-A : modifier la donnée du premier exemple de P05 - Cours - Tables CSV et conserver exactement la même méthode.

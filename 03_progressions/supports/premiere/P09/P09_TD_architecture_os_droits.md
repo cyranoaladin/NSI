@@ -91,8 +91,8 @@ Un projet Python contient app.py, data/notes.csv et scripts/run.sh. Il faut choi
 ### Exercice 8
 - Objectif travaillé : O4.
 - Capacité officielle : P-ARCH-03A.
-- Énoncé : Créer une nouvelle donnée de test et vérifier que la méthode reste valable.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
+- Énoncé : Pour `script.sh` avec droits `rw-r--r--`, expliquer pourquoi `./script.sh` renvoie `Permission denied`, puis proposer la commande de correction.
+- Production attendue : résultat `chmod u+x script.sh`, droits `rwxr--r--`, et contrôle par distinction lecture/exécution.
 - Critère de réussite : la conclusion est vérifiable par un pair.
 
 ## Corrigé indicatif
