@@ -2,8 +2,8 @@
 titre: Evaluation corrigee professeur - S01 representation des donnees
 niveau: premiere
 type: evaluation_corrigee
-statut: needs_review
-status: needs_review
+statut: validated_pedagogy
+status: validated_pedagogy
 sequence: S01 representation des donnees
 notion: bases, entiers relatifs, booleens, texte, types construits
 objectifs:

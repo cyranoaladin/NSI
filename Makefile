@@ -1,6 +1,8 @@
 export PYTHONDONTWRITEBYTECODE=1
 
-audit:
+audit: audit-local
+
+audit-local:
 	python scripts/rebuild_inventory.py
 	python scripts/check_git_clean.py
 	python scripts/check_metadata.py
@@ -24,6 +26,8 @@ audit:
 	python scripts/check_session_project_hours.py
 	python scripts/check_session_week_calendar_consistency.py
 	python scripts/check_session_specificity.py
+	python scripts/check_session_referenced_files_exist.py
+	python scripts/check_document_naming_conventions.py
 	python scripts/check_evaluation_distribution.py
 	python scripts/check_teacher_docs_depth.py
 	python scripts/check_program_yaml_atomicity.py
@@ -47,9 +51,32 @@ audit:
 	python scripts/run_python_tests.py
 	python scripts/check_quality_gates.py
 
+audit-source:
+	python scripts/check_archive_portability.py
+	python scripts/check_session_duration_consistency.py
+	python scripts/check_session_monthly_total.py
+	python scripts/check_session_project_hours.py
+	python scripts/check_session_referenced_files_exist.py
+	python scripts/check_document_naming_conventions.py
+	python scripts/check_session_specificity.py
+	python scripts/check_session_week_calendar_consistency.py
+	python scripts/check_evaluation_distribution.py
+	python scripts/check_metadata.py
+	python scripts/check_links.py
+	python scripts/check_no_private_data.py
+	python scripts/check_no_placeholders_docs.py
+	python scripts/check_no_placeholders_code.py
+	python scripts/check_required_sections.py
+	python scripts/check_document_depth.py
+	python scripts/check_qcm_schema.py
+	python scripts/check_document_style.py
+
 package-audit:
 	python scripts/build_source_archive.py
 	python scripts/check_archive_portability.py
+
+render-s01:
+	python scripts/render_sequence.py premiere/sequences/s01_representation_donnees
 
 release-audit:
 	python scripts/check_git_clean.py

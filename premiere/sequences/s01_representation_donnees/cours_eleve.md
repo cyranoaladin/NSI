@@ -3,8 +3,8 @@ title: "S01 - Représenter des données : bits, textes et types construits"
 level: "premiere"
 sequence_id: "s01_representation_donnees"
 document_type: "cours"
-status: "needs_review"
-version: "0.2.0"
+status: "validated_pedagogy"
+version: "0.3.0"
 authors: ["NSI"]
 source: "BO spécial n°1 du 22 janvier 2019"
 theme: "Représentation des données"
@@ -90,473 +90,365 @@ last_review:
   technical: ""
 ---
 
-# S01 - Représenter des données : bits, textes et types construits
+# S01 — Représenter des données : bits, textes et types construits
 
 ## Situation-problème
 
-Un même badge de cantine peut contenir un identifiant, un solde, un droit d'accès et un nom court.
-La machine ne conserve pas ces informations comme un humain les lit.
-Elle manipule des suites de bits.
-Elle doit donc choisir un codage pour chaque donnée.
-Un identifiant peut être un entier positif.
-Un solde peut être positif ou négatif.
-Un droit d'accès peut être vrai ou faux.
-Un nom court peut être un texte Unicode.
-Un historique d'achats peut être une liste.
-Une fiche compacte peut être un tuple.
-Un accès par identifiant peut être un dictionnaire.
-La question de la séquence est donc la suivante.
-Comment choisir une représentation qui permet de stocker, traiter et tester correctement une donnée ?
+Imaginons un badge de cantine identifié `B-17`. Ce badge contient un identifiant numérique (17), une variation de solde qui peut être négative (−3), un droit d'accès qui est soit autorisé soit refusé (vrai ou faux), et une initiale affichée sur l'écran (le caractère `É`). La machine qui lit ce badge ne manipule pourtant aucune de ces informations sous la forme que nous, humains, utilisons au quotidien : elle ne travaille qu'avec des suites de `0` et de `1`, appelées **bits**.
+
+Pour que la machine puisse stocker, traiter et restituer chacune de ces informations, il faut une **convention de représentation** — un accord sur la manière dont les bits correspondent à une valeur. Sans cette convention, la suite `11111101` pourrait aussi bien désigner le nombre 253 qu'un entier relatif valant −3 : les bits sont les mêmes, mais leur interprétation change tout. C'est cette question centrale — comment choisir une représentation adaptée à la donnée et au traitement attendu — que nous allons explorer dans cette séquence.
+
+**Questions de départ :**
+
+1. Parmi les quatre informations du badge (identifiant 17, variation −3, accès autorisé, initiale É), lesquelles peut-on coder directement par un entier positif ?
+2. Lesquelles nécessitent une convention supplémentaire (signe, valeur logique, encodage de caractère) ?
+3. Si l'on lit la suite `11111101` comme un entier positif, on obtient 253. Mais si on la lit en complément à deux sur 8 bits, on obtient −3. Qu'est-ce qui détermine la bonne lecture ?
+4. Pourquoi le caractère `É` peut-il poser problème dans certains anciens systèmes d'encodage ?
+
+**Conclusion attendue :** une suite de bits n'a de sens que si l'on connaît la convention de représentation utilisée.
 
 ## Objectifs
 
-- Savoir définir un bit et expliquer son rôle.
-- Convertir un entier positif entre bases 2, 10 et 16.
-- Repérer l'intervalle représentable sur un nombre de bits donné.
-- Encoder et décoder de petits entiers relatifs en complément à deux.
-- Construire une table de vérité pour une expression booléenne.
-- Expliquer la différence entre caractère, point de code et encodage.
-- Choisir entre liste, tuple et dictionnaire.
-- Justifier un choix de représentation par les opérations attendues.
-- Vérifier une fonction avec des tests simples.
+À l'issue de cette séquence, vous saurez :
+
+- définir ce qu'est un bit et expliquer son rôle comme unité élémentaire d'information ;
+- convertir un entier positif entre les bases 2, 10 et 16, et repérer l'intervalle représentable sur un nombre de bits donné ;
+- encoder et décoder de petits entiers relatifs en complément à deux ;
+- construire la table de vérité d'une expression booléenne ;
+- expliquer la différence entre un caractère, un point de code et un encodage ;
+- choisir entre liste, tuple et dictionnaire en justifiant par les opérations attendues ;
+- vérifier une fonction à l'aide de tests simples couvrant des cas ordinaires et des cas limites.
 
 ## Prérequis
 
-- Savoir additionner et diviser des entiers.
-- Savoir lire une écriture décimale positionnelle.
-- Savoir exécuter une fonction Python simple.
-- Savoir distinguer une valeur, une variable et une expression.
-- Savoir lire une condition `if`.
-- Savoir utiliser une liste Python en lecture.
+Cette séquence suppose que vous savez additionner et diviser des entiers, lire une écriture décimale positionnelle, exécuter une fonction Python simple, distinguer une valeur d'une variable et d'une expression, lire une condition `if`, et utiliser une liste Python en lecture.
 
 ## Limites de la séquence
 
-Cette séquence pilote regroupe deux blocs liés du programme de Première.
-Elle traite les types et valeurs de base.
-Elle introduit aussi les types construits utilisés en Python.
-Elle ne traite pas encore sérieusement l'import CSV, le tri de table ou la fusion de tables.
-Ces points restent à placer dans une autre séquence.
-Les nombres flottants sont seulement signalés comme angle mort de cette séquence.
-L'objectif ici est de consolider les représentations indispensables avant les traitements de table.
-
-## Activité d'introduction
-
-On veut coder quatre informations du badge `B-17`.
-Information 1 : identifiant numérique `17`.
-Information 2 : variation du solde `-3`.
-Information 3 : accès autorisé `oui`.
-Information 4 : initiale affichée `É`.
-Question 1 : lesquelles peuvent se coder directement par un entier positif ?
-Question 2 : lesquelles nécessitent une convention supplémentaire ?
-Question 3 : que se passe-t-il si on lit `11111101` comme un entier positif ?
-Question 4 : que se passe-t-il si on lit `11111101` comme un entier relatif sur 8 bits ?
-Question 5 : pourquoi le caractère `É` peut poser un problème dans certains anciens encodages ?
-Conclusion attendue : une suite de bits ne suffit pas, il faut aussi connaître la convention de représentation.
+Cette séquence pilote regroupe deux blocs liés du programme de Première : les types et valeurs de base d'une part, les types construits d'autre part. Elle ne traite ni l'import de fichiers CSV, ni le tri ou la fusion de tables, qui relèvent d'une autre séquence. Les nombres flottants sont seulement signalés comme un sujet à part, car leur représentation (norme IEEE 754) mérite un traitement séparé. L'objectif ici est de consolider les représentations indispensables avant d'aborder les traitements de données tabulaires.
 
 ## Formalisation
 
-Une donnée informatique n'est pas seulement une valeur visible.
-Une donnée informatique est une valeur associée à une représentation.
-La même suite de bits peut représenter plusieurs choses selon la convention.
-La convention indique comment lire, écrire et transformer la donnée.
-Choisir une représentation revient à répondre à trois questions.
-Question A : quelles valeurs doit-on pouvoir représenter ?
-Question B : quelles opérations doit-on effectuer souvent ?
-Question C : quelles erreurs faut-il éviter ?
-Un bon choix de représentation simplifie les traitements.
-Un mauvais choix impose des conversions inutiles ou crée des erreurs silencieuses.
+Une donnée informatique n'est pas seulement une valeur visible à l'écran : c'est une valeur **associée à une représentation**. La même suite de bits peut représenter des choses très différentes selon la convention adoptée. Par exemple, les huit bits `11111111` représentent 255 si l'on choisit la convention « entier positif sur 8 bits », mais −1 si l'on choisit la convention « complément à deux sur 8 bits ».
+
+Choisir une représentation revient à répondre à trois questions fondamentales :
+
+- **Quelles valeurs** doit-on pouvoir représenter ? (un entier positif ? un entier relatif ? un caractère ? une collection ?)
+- **Quelles opérations** effectue-t-on le plus souvent ? (comparer ? additionner ? chercher par clé ? parcourir dans l'ordre ?)
+- **Quelles erreurs** faut-il éviter ? (débordement de capacité ? confusion entre caractère et octet ? accès hors bornes ?)
+
+Un bon choix de représentation simplifie les traitements et réduit les risques d'erreur. Un mauvais choix impose des conversions inutiles ou introduit des erreurs silencieuses.
 
 ## Définitions
 
-Définition 1 : un bit est une unité d'information qui prend l'une des deux valeurs `0` ou `1`.
-Définition 2 : une base de numération est un système positionnel qui utilise un nombre fixé de chiffres.
-Définition 3 : le complément à deux est une convention de codage des entiers relatifs sur un nombre fixe de bits.
-Définition 4 : un booléen est une valeur logique qui vaut `True` ou `False`.
-Définition 5 : une table de vérité énumère toutes les valeurs possibles des variables booléennes d'une expression.
-Définition 6 : un encodage de texte associe des caractères à des suites d'octets.
-Définition 7 : une liste Python est une collection ordonnée et modifiable.
-Définition 8 : un tuple Python est une collection ordonnée généralement utilisée comme p-uplet non modifié.
-Définition 9 : un dictionnaire Python associe des clés à des valeurs.
+- **Bit** : unité élémentaire d'information, qui prend la valeur `0` ou `1`.
+- **Base de numération** : système positionnel utilisant un nombre fixé de chiffres (2 en binaire, 10 en décimal, 16 en hexadécimal).
+- **Complément à deux** : convention de codage des entiers relatifs sur un nombre fixe de bits, où le bit de poids fort indique le signe.
+- **Booléen** : valeur logique qui vaut `True` (vrai) ou `False` (faux).
+- **Table de vérité** : tableau qui énumère toutes les combinaisons possibles des variables booléennes d'une expression et le résultat associé.
+- **Encodage de texte** : règle qui associe des caractères à des suites d'octets (ASCII, UTF-8, etc.).
+- **Liste Python** : collection ordonnée et modifiable, où les éléments sont repérés par leur index.
+- **Tuple Python** : collection ordonnée, généralement utilisée comme p-uplet de valeurs liées, non modifié après création.
+- **Dictionnaire Python** : structure qui associe des clés uniques à des valeurs, permettant un accès direct par clé.
 
 ## Bases 2, 10 et 16
 
-En base 10, les chiffres disponibles sont `0` à `9`.
-En base 2, les chiffres disponibles sont `0` et `1`.
-En base 16, les chiffres disponibles sont `0` à `9`, puis `A` à `F`.
-Dans une écriture positionnelle, la position donne le poids.
-`1011₂` signifie `1*2^3 + 0*2^2 + 1*2^1 + 1*2^0`.
-Donc `1011₂ = 8 + 0 + 2 + 1 = 11₁₀`.
-`2A₁₆` signifie `2*16^1 + 10*16^0`.
-Donc `2A₁₆ = 32 + 10 = 42₁₀`.
-La base 16 est utile car un chiffre hexadécimal correspond à 4 bits.
-`1111₂ = F₁₆`.
-`1010₂ = A₁₆`.
-Un octet contient 8 bits.
-Un octet se lit donc souvent avec 2 chiffres hexadécimaux.
-`11111111₂ = FF₁₆ = 255₁₀`.
+En base 10, nous utilisons dix chiffres (de `0` à `9`) et chaque position correspond à une puissance de 10. En base 2 (binaire), seuls deux chiffres sont disponibles (`0` et `1`) et chaque position correspond à une puissance de 2. En base 16 (hexadécimal), on dispose de seize symboles : les chiffres `0` à `9` complétés par les lettres `A` à `F` qui représentent respectivement les valeurs 10 à 15.
 
-### Exemple corrigé 1
+Dans toute écriture positionnelle, le **poids** d'un chiffre dépend de sa position. Ainsi, l'écriture `1011₂` se décompose en `1×2³ + 0×2² + 1×2¹ + 1×2⁰`, soit `8 + 0 + 2 + 1 = 11₁₀`. De même, `2A₁₆` se lit `2×16¹ + 10×16⁰ = 32 + 10 = 42₁₀`.
 
-Convertir `45₁₀` en base 2.
-On divise successivement par 2.
-`45 = 2*22 + 1`.
-`22 = 2*11 + 0`.
-`11 = 2*5 + 1`.
-`5 = 2*2 + 1`.
-`2 = 2*1 + 0`.
-`1 = 2*0 + 1`.
-On lit les restes de bas en haut.
-Résultat : `45₁₀ = 101101₂`.
-Vérification : `32 + 8 + 4 + 1 = 45`.
+La base 16 est particulièrement commode en informatique car chaque chiffre hexadécimal correspond exactement à 4 bits. Par exemple, `F₁₆ = 1111₂` et `A₁₆ = 1010₂`. Un **octet** (8 bits) se représente donc toujours avec exactement deux chiffres hexadécimaux : `11111111₂ = FF₁₆ = 255₁₀`.
 
-### Contre-exemple 1
+### Exemple corrigé 1 — Convertir 45₁₀ en base 2
 
-Dire que `101` vaut toujours cent-un est faux.
-En base 10, `101` vaut cent-un.
-En base 2, `101₂` vaut cinq.
-En base 16, `101₁₆` vaut deux-cent-cinquante-sept.
-Il faut toujours préciser la base quand il y a ambiguïté.
+Pour convertir un entier positif de la base 10 vers la base 2, on effectue des divisions successives par 2 en notant chaque reste, puis on lit les restes du dernier au premier :
+
+| Division   | Quotient | Reste |
+|-----------|----------|-------|
+| 45 ÷ 2   | 22       | 1     |
+| 22 ÷ 2   | 11       | 0     |
+| 11 ÷ 2   | 5        | 1     |
+| 5 ÷ 2    | 2        | 1     |
+| 2 ÷ 2    | 1        | 0     |
+| 1 ÷ 2    | 0        | 1     |
+
+En lisant les restes de bas en haut, on obtient : `45₁₀ = 101101₂`. On vérifie : `32 + 8 + 4 + 1 = 45`. ✓
+
+### Contre-exemple 1 — « 101 vaut toujours cent-un »
+
+C'est faux. L'écriture `101` dépend entièrement de la base dans laquelle on la lit : en base 10, elle vaut cent-un ; en base 2, `101₂` vaut cinq (`4 + 0 + 1`) ; en base 16, `101₁₆` vaut deux-cent-cinquante-sept (`256 + 0 + 1`). C'est pourquoi il faut **toujours préciser la base** quand il y a ambiguïté.
+
+### Erreur fréquente 1 — Confondre nombre de chiffres décimaux et nombre de bits
+
+Le nombre 100 s'écrit avec trois chiffres en base 10, mais sa représentation binaire `1100100₂` utilise sept bits. Le nombre de symboles nécessaires dépend de la base : plus la base est petite, plus il faut de symboles pour représenter la même valeur.
 
 ### Exercice intégré 1
 
-Convertir `31₁₀` en base 2.
-Convertir `11110₂` en base 10.
-Convertir `2F₁₆` en base 10.
-Comparer `1111₂` et `F₁₆`.
+1. Convertir `31₁₀` en base 2 par divisions successives.
+2. Convertir `11110₂` en base 10 en développant les puissances de 2.
+3. Convertir `2F₁₆` en base 10.
+4. Vérifier que `1111₂` et `F₁₆` représentent bien la même valeur.
 
-## Entiers positifs
+## Entiers positifs et intervalle représentable
 
-Un entier positif sur `n` bits peut représenter les valeurs de `0` à `2^n - 1`.
-Sur 4 bits, l'intervalle est `0` à `15`.
-Sur 8 bits, l'intervalle est `0` à `255`.
-Sur 16 bits, l'intervalle est `0` à `65535`.
-Le nombre de bits impose une limite.
-Si un compteur sur 8 bits dépasse 255, la représentation n'est plus suffisante.
-Python masque en partie cette limite pour ses entiers, car il utilise une taille variable.
-Mais les fichiers, réseaux, images et machines utilisent souvent des tailles fixées.
+Lorsqu'on dispose de `n` bits pour représenter un entier positif, les valeurs possibles vont de `0` à `2ⁿ − 1`. Par exemple, sur 4 bits, l'intervalle est `[0 ; 15]` ; sur 8 bits, il est `[0 ; 255]` ; sur 16 bits, il atteint `[0 ; 65 535]`. Le nombre de bits impose donc une **limite supérieure** : si un compteur codé sur 8 bits dépasse 255, la représentation déborde et le résultat devient incohérent.
 
-### Exemple corrigé 2
+Python masque en partie cette limite pour ses entiers natifs, car il utilise en interne une taille variable qui s'ajuste automatiquement. Cependant, dans les fichiers, les protocoles réseau, les formats d'image et les systèmes embarqués, les tailles sont fixées et la question du débordement est concrète.
 
-Combien de bits faut-il pour écrire `100₁₀` en binaire ?
-On cherche la puissance de 2 qui dépasse 100.
-`2^6 = 64`.
-`2^7 = 128`.
-Il faut donc 7 bits pour représenter 100 sans signe.
-En effet `100₁₀ = 1100100₂`.
+### Exemple corrigé 2 — Combien de bits pour écrire 100₁₀ ?
 
-### Erreur fréquente 1
-
-Confondre nombre de chiffres décimaux et nombre de bits.
-`100` a trois chiffres décimaux.
-Mais sa représentation binaire utilise sept bits.
-Le nombre de symboles dépend de la base.
+On cherche le plus petit entier `n` tel que `2ⁿ > 100`. Comme `2⁶ = 64` ne suffit pas et `2⁷ = 128` dépasse 100, il faut au minimum **7 bits**. En effet, `100₁₀ = 1100100₂`, qui comporte bien 7 chiffres binaires.
 
 ## Entiers relatifs et complément à deux
 
-Pour représenter des entiers négatifs, il faut une convention.
-La convention étudiée ici est le complément à deux.
-Sur `n` bits, elle permet de représenter de `-2^(n-1)` à `2^(n-1)-1`.
-Sur 8 bits, l'intervalle est `-128` à `127`.
-Le bit de gauche est appelé bit de poids fort.
-Dans cette convention, si le bit de poids fort vaut `0`, le nombre est positif ou nul.
-Si le bit de poids fort vaut `1`, le nombre est négatif.
-Pour coder `-x` sur `n` bits, on peut calculer `2^n - x`.
-Pour décoder une valeur binaire dont le bit de gauche vaut `1`, on soustrait `2^n`.
+Pour représenter des entiers négatifs, il ne suffit pas d'ajouter un bit de signe devant un entier positif (cette convention, dite « signe-magnitude », crée deux représentations pour zéro et complique l'addition). La convention la plus utilisée est le **complément à deux**, qui présente l'avantage de permettre les additions et soustractions avec le même circuit matériel.
 
-### Exemple corrigé 3
+Sur `n` bits en complément à deux, l'intervalle représentable va de **−2ⁿ⁻¹** à **2ⁿ⁻¹ − 1**. Concrètement :
 
-Coder `-5` en complément à deux sur 8 bits.
-On calcule `2^8 - 5 = 256 - 5 = 251`.
-On écrit `251` en binaire sur 8 bits.
-`251₁₀ = 11111011₂`.
-Donc `-5` se code `11111011` sur 8 bits.
-Décodage inverse : `11111011₂ = 251`.
-Comme le bit de gauche vaut `1`, on lit `251 - 256 = -5`.
+- Sur 4 bits : de −8 à 7.
+- Sur 8 bits : de −128 à 127.
 
-### Contre-exemple 2
+Le **bit de poids fort** (le bit le plus à gauche) joue le rôle d'indicateur de signe : s'il vaut `0`, le nombre est positif ou nul ; s'il vaut `1`, le nombre est négatif.
 
-Lire `11111011` comme entier positif donne `251`.
-Lire `11111011` comme complément à deux sur 8 bits donne `-5`.
-La suite de bits n'a donc pas un sens unique.
-La convention est indispensable.
+**Pour encoder** un entier négatif `−x` sur `n` bits, on calcule `2ⁿ − x`. Par exemple, pour coder `−5` sur 8 bits : `256 − 5 = 251`, et `251₁₀ = 11111011₂`.
+
+**Pour décoder** une valeur binaire dont le bit de poids fort vaut `1`, on interprète d'abord la suite comme un entier positif, puis on soustrait `2ⁿ`. Par exemple, `11111011₂ = 251₁₀`, et comme le bit de gauche vaut `1`, on calcule `251 − 256 = −5`.
+
+### Exemple corrigé 3 — Coder −5 en complément à deux sur 8 bits
+
+1. On calcule `2⁸ − 5 = 256 − 5 = 251`.
+2. On convertit 251 en binaire : `251₁₀ = 11111011₂`.
+3. Le résultat est `11111011` (8 bits, bit de gauche à `1` : bien négatif).
+4. Vérification par décodage : `11111011₂ = 251₁₀`, puis `251 − 256 = −5`. ✓
+
+### Contre-exemple 2 — La même suite de bits, deux valeurs différentes
+
+La suite `11111011` représente **251** si on la lit comme un entier positif, mais **−5** si on la lit en complément à deux sur 8 bits. Ce n'est pas une erreur de calcul : c'est simplement que la convention d'interprétation n'est pas la même. Sans préciser cette convention, la suite de bits est ambiguë.
 
 ### Exercice intégré 2
 
-Sur 8 bits, coder `7`, `-1`, `-8`.
-Sur 8 bits, décoder `00001111`, `11111111`, `11111000`.
-Donner l'intervalle représentable sur 4 bits.
-Expliquer pourquoi `140` ne se code pas comme entier relatif sur 8 bits.
+1. Sur 8 bits, encoder `7`, `−1` et `−8` en complément à deux.
+2. Sur 8 bits, décoder les suites `00001111`, `11111111` et `11111000`.
+3. Donner l'intervalle représentable sur 4 bits en complément à deux.
+4. Expliquer pourquoi la valeur `140` ne peut pas être codée comme entier relatif sur 8 bits (alors qu'elle entre sur 8 bits comme entier positif).
 
 ## Booléens et tables de vérité
 
-Un booléen vaut seulement `True` ou `False`.
-En Python, les opérateurs principaux sont `and`, `or`, `not`.
-Une expression booléenne combine des booléens.
-Une table de vérité liste tous les cas possibles.
-Avec une variable booléenne, il y a 2 lignes.
-Avec deux variables booléennes, il y a 4 lignes.
-Avec trois variables booléennes, il y a 8 lignes.
-L'opérateur `and` vaut vrai seulement si les deux entrées sont vraies.
-L'opérateur `or` vaut vrai si au moins une entrée est vraie.
-L'opérateur `not` inverse la valeur.
-L'opérateur xor vaut vrai si une seule des deux entrées est vraie.
+Un **booléen** ne peut prendre que deux valeurs : `True` (vrai) ou `False` (faux). En Python, les trois opérateurs fondamentaux sont `and` (et logique), `or` (ou logique) et `not` (négation). On peut combiner ces opérateurs pour former des **expressions booléennes** arbitrairement complexes.
 
-### Exemple corrigé 4
+Une **table de vérité** est un outil systématique qui liste toutes les combinaisons possibles des variables d'entrée et le résultat de l'expression pour chacune. Avec une variable, il y a 2 lignes ; avec deux variables, 4 lignes ; avec trois variables, 8 lignes (en général, `2ⁿ` lignes pour `n` variables).
 
-Expression : `a and not b`.
-Cas 1 : `a=False`, `b=False`, alors `not b=True`, résultat `False`.
-Cas 2 : `a=False`, `b=True`, alors `not b=False`, résultat `False`.
-Cas 3 : `a=True`, `b=False`, alors `not b=True`, résultat `True`.
-Cas 4 : `a=True`, `b=True`, alors `not b=False`, résultat `False`.
-La table de vérité permet de ne pas raisonner au hasard.
+Voici les règles de base à retenir :
 
-### Erreur fréquente 2
+- `and` vaut `True` uniquement si **les deux** entrées sont vraies ;
+- `or` vaut `True` si **au moins une** entrée est vraie (c'est un « ou inclusif ») ;
+- `not` inverse la valeur : `not True` donne `False`, et réciproquement.
 
-Croire que `or` signifie toujours "l'un ou l'autre mais pas les deux".
-En Python, `or` est inclusif.
-`True or True` vaut `True`.
-Le "ou exclusif" doit être formulé autrement.
+Le **ou exclusif** (souvent noté XOR) est une opération différente de `or` : il vaut `True` si **exactement une** des deux entrées est vraie, mais `False` si les deux sont vraies. En Python, il n'existe pas de mot-clé `xor` pour les booléens, mais on peut l'exprimer par `(a and not b) or (not a and b)`.
+
+### Exemple corrigé 4 — Table de vérité de `a and not b`
+
+| `a`     | `b`     | `not b` | `a and not b` |
+|---------|---------|---------|----------------|
+| `False` | `False` | `True`  | `False`        |
+| `False` | `True`  | `False` | `False`        |
+| `True`  | `False` | `True`  | **`True`**     |
+| `True`  | `True`  | `False` | `False`        |
+
+Seule la combinaison `a = True, b = False` donne `True`. La table de vérité permet de raisonner de manière exhaustive au lieu de deviner le résultat.
+
+### Erreur fréquente 2 — Confondre `or` et « ou exclusif »
+
+Beaucoup d'élèves croient que `or` signifie « l'un ou l'autre, mais pas les deux ». C'est faux en Python : `True or True` vaut `True`, car `or` est **inclusif**. Si l'on veut un ou exclusif, il faut le formuler explicitement, par exemple avec `(a and not b) or (not a and b)`.
 
 ### Exercice intégré 3
 
-Dresser la table de vérité de `not a or b`.
-Dresser la table de vérité de `(a and b) or (a and not b)`.
-Simplifier l'expression précédente si possible.
+1. Dresser la table de vérité complète de `not a or b` (4 lignes).
+2. Dresser la table de vérité de `(a and b) or (a and not b)`.
+3. Observer le résultat de la deuxième table : peut-on simplifier cette expression ?
 
 ## Texte, ASCII et Unicode
 
-Un texte informatique est une suite de caractères.
-Un caractère n'est pas directement un octet.
-Il faut un système d'encodage.
-ASCII est un ancien encodage limité à 128 codes principaux.
-ASCII code correctement les lettres anglaises non accentuées.
-ASCII ne suffit pas pour représenter tous les caractères utilisés dans le monde.
-Unicode attribue un point de code à un très grand nombre de caractères.
-UTF-8 est un encodage courant d'Unicode en octets.
-La lettre `A` a le point de code 65.
-La lettre `é` a le point de code 233.
-Certains caractères prennent plusieurs octets en UTF-8.
-Un fichier texte mal interprété peut afficher des caractères incorrects.
-Le problème ne vient pas du texte visible mais de l'encodage utilisé pour lire les octets.
+Un texte informatique est une suite de **caractères**, mais un caractère n'est pas directement un octet. Pour passer de l'un à l'autre, il faut un **système d'encodage** qui définit comment chaque caractère est représenté en mémoire.
 
-### Exemple corrigé 5
+**ASCII** (American Standard Code for Information Interchange) est un ancien encodage qui attribue un code numérique à 128 caractères : les lettres anglaises non accentuées, les chiffres, quelques signes de ponctuation et des caractères de contrôle. Par exemple, la lettre `A` a le code 65 et la lettre `a` le code 97. Cet encodage suffit pour l'anglais de base, mais il est incapable de représenter les lettres accentuées du français, les caractères arabes, chinois, ou les émojis.
 
-En Python, `ord("A")` retourne `65`.
-En Python, `chr(65)` retourne `"A"`.
-`"A".encode("utf-8")` donne un octet.
-`"é".encode("utf-8")` donne deux octets.
-Donc le nombre de caractères n'est pas toujours le nombre d'octets.
-Cette différence compte dans les fichiers et les réseaux.
+**Unicode** résout ce problème en attribuant un **point de code** unique à un très grand nombre de caractères (plus de 150 000 aujourd'hui). Le point de code est un numéro abstrait : par exemple, `A` a le point de code U+0041 (soit 65 en décimal) et `é` a le point de code U+00E9 (soit 233). Mais le point de code ne dit pas encore comment le caractère est stocké en octets.
 
-### Contre-exemple 3
+**UTF-8** est l'encodage le plus courant d'Unicode en octets. Il utilise un nombre variable d'octets par caractère : un seul octet pour les caractères ASCII (compatibilité totale), deux octets pour les lettres accentuées européennes, et jusqu'à quatre octets pour les caractères rares ou les émojis. C'est pourquoi le nombre de caractères d'une chaîne n'est pas toujours égal au nombre d'octets qu'elle occupe.
 
-Dire qu'un caractère vaut toujours un octet est faux.
-Cette affirmation peut être vraie dans des cas ASCII simples.
-Elle échoue pour de nombreux caractères Unicode.
-Elle échoue aussi quand l'encodage du fichier est mal choisi.
+### Exemple corrigé 5 — Points de code et encodage UTF-8
+
+En Python, la fonction `ord` renvoie le point de code d'un caractère, et `chr` fait l'inverse :
+
+```python
+>>> ord("A")
+65
+>>> chr(65)
+'A'
+>>> ord("é")
+233
+```
+
+Pour voir la représentation en octets, on peut utiliser la méthode `encode` :
+
+```python
+>>> "A".encode("utf-8")
+b'\x41'          # 1 octet
+>>> "é".encode("utf-8")
+b'\xc3\xa9'      # 2 octets
+```
+
+La lettre `A` occupe un seul octet (car son point de code est inférieur à 128), tandis que `é` en occupe deux. Cela signifie que pour une chaîne comme `"Aé"`, la longueur en caractères est 2, mais la taille en octets UTF-8 est 3.
+
+### Contre-exemple 3 — « Un caractère vaut toujours un octet »
+
+Cette affirmation est fausse en général. Elle est vraie uniquement pour les 128 caractères ASCII de base. Dès qu'on utilise un caractère accentué, un idéogramme ou un émoji, l'encodage UTF-8 nécessite plusieurs octets. Confondre le nombre de caractères et le nombre d'octets peut provoquer des erreurs dans le traitement de fichiers texte ou dans les communications réseau.
 
 ## Listes et tableaux Python
 
-Une liste Python représente une collection ordonnée.
-Les éléments sont repérés par des index.
-Le premier index est `0`.
-Une liste peut être modifiée.
-`notes[0]` lit le premier élément.
-`notes[1] = 14` modifie le deuxième élément.
-Une liste est utile quand l'ordre compte.
-Une liste est utile quand on parcourt tous les éléments.
-Une liste est utile quand on ajoute ou modifie des valeurs.
-Une compréhension de liste construit une liste à partir d'une règle.
-Exemple : `[x*x for x in range(5)]` construit `[0, 1, 4, 9, 16]`.
-Une matrice peut être représentée par une liste de listes.
-Exemple : `m[1][2]` lit ligne 1, colonne 2.
+En Python, une **liste** est une collection ordonnée et modifiable d'éléments, repérés par des **index** entiers commençant à 0. On peut lire un élément (`notes[0]`), le modifier (`notes[1] = 14`), ajouter un élément en fin de liste (`notes.append(18)`), ou parcourir tous les éléments avec une boucle `for`.
 
-### Exemple corrigé 6
+La liste est le type construit le plus polyvalent en Python. Elle convient bien lorsque l'**ordre** des éléments compte, lorsqu'on a besoin de **parcourir** tous les éléments, ou lorsqu'on veut **modifier** la collection au fil du programme.
 
-On dispose de `valeurs = [4, 7, 9]`.
-Le nombre `4` est à l'index `0`.
-Le nombre `7` est à l'index `1`.
-Le nombre `9` est à l'index `2`.
-La somme se calcule par parcours.
-Code possible : `total = sum(valeurs)`.
-Compréhension possible : `[v + 1 for v in valeurs]`.
-Résultat : `[5, 8, 10]`.
+Une **compréhension de liste** permet de construire une liste à partir d'une règle concise. Par exemple, `[x*x for x in range(5)]` produit la liste `[0, 1, 4, 9, 16]` en élevant au carré chaque entier de 0 à 4.
 
-### Erreur fréquente 3
+On peut aussi représenter une **matrice** (tableau à deux dimensions) par une liste de listes. Par exemple, si `m = [[1, 2, 3], [4, 5, 6]]`, alors `m[1][2]` désigne l'élément à la ligne 1, colonne 2, soit la valeur 6.
 
-Commencer les index à `1` en Python.
-Dans une liste de longueur 3, les index valides sont `0`, `1`, `2`.
-L'index `3` provoque une erreur.
-Cette erreur est un cas limite classique à tester.
+### Exemple corrigé 6 — Lecture, modification et compréhension
+
+```python
+valeurs = [4, 7, 9]
+```
+
+- `valeurs[0]` vaut `4` (premier élément, index 0).
+- `valeurs[1]` vaut `7` (deuxième élément, index 1).
+- `valeurs[2]` vaut `9` (troisième élément, index 2).
+- La somme se calcule par `total = sum(valeurs)`, soit 20.
+- La compréhension `[v + 1 for v in valeurs]` produit `[5, 8, 10]` : chaque élément est augmenté de 1.
+
+### Erreur fréquente 3 — Index commençant à 1
+
+En Python, les index commencent à **0**, pas à 1. Dans une liste de longueur 3, les index valides sont `0`, `1` et `2`. Tenter d'accéder à `valeurs[3]` provoque une erreur `IndexError`. C'est un cas limite classique qu'il faut systématiquement tester.
+
+### Exercice intégré 4
+
+1. Écrire une compréhension de liste qui double chaque élément de `[3, 5, 8]`.
+2. Soit `m = [[1, 0], [0, 1]]`. Que vaut `m[0][1]` ? Et `m[1][0]` ?
+3. Écrire une boucle qui additionne tous les éléments d'une liste `nombres`.
 
 ## Tuples et p-uplets
 
-Un tuple Python est une collection ordonnée.
-On l'utilise souvent pour regrouper un petit nombre de valeurs liées.
-Un point du plan peut être représenté par `(x, y)`.
-Une couleur RGB peut être représentée par `(rouge, vert, bleu)`.
-Un tuple sert bien quand le nombre de champs est fixe.
-Un tuple sert bien quand l'ordre des champs est connu.
-Un tuple est moins lisible si les champs sont nombreux ou ambigus.
+Un **tuple** Python est une collection ordonnée qui sert à regrouper un petit nombre de valeurs liées entre elles. Contrairement à une liste, un tuple n'est généralement pas modifié après sa création (on dit qu'il est **immutable** dans l'usage courant, bien que Python n'interdise pas de remplacer la variable qui le contient).
 
-### Exemple corrigé 7
+Le tuple est adapté aux situations où le **nombre de champs est fixe** et où l'**ordre des champs est connu** par convention. Par exemple, un point du plan se représente naturellement par `(x, y)`, et une couleur RGB par `(rouge, vert, bleu)`. En revanche, un tuple devient fragile et peu lisible dès que le nombre de champs augmente, car le lecteur doit mémoriser la position de chaque valeur.
 
-Fonction attendue : renvoyer les coordonnées du milieu de deux points.
-Un point est représenté par un tuple `(x, y)`.
-La fonction peut renvoyer un tuple.
-Code : `return ((x1 + x2) / 2, (y1 + y2) / 2)`.
-Le résultat contient deux valeurs liées.
-Le tuple évite de créer deux variables séparées à retourner.
+L'intérêt principal du tuple dans le cadre du programme est qu'une **fonction peut renvoyer un p-uplet** — c'est-à-dire plusieurs valeurs regroupées en un seul objet retourné.
 
-### Contre-exemple 4
+### Exemple corrigé 7 — Fonction renvoyant un tuple (milieu de deux points)
 
-Représenter une fiche élève longue par un tuple comme `(id, nom, groupe, option, date, mail)` est fragile.
-Le lecteur doit mémoriser la position de chaque champ.
-Un dictionnaire est plus lisible si l'accès par nom de champ est important.
+On veut écrire une fonction qui calcule le milieu de deux points du plan, chaque point étant représenté par un tuple `(x, y)` :
+
+```python
+def milieu(p1, p2):
+    return ((p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2)
+```
+
+L'appel `milieu((1, 3), (5, 7))` renvoie le tuple `(3.0, 5.0)`. Le tuple permet de renvoyer les deux coordonnées du milieu en un seul objet, sans avoir à créer deux variables séparées ou à utiliser une structure plus lourde.
+
+### Contre-exemple 4 — Un tuple trop long perd en lisibilité
+
+Représenter une fiche élève par un tuple comme `(id, nom, groupe, option, date, mail)` est techniquement possible, mais fragile : le lecteur du code doit se souvenir que l'index 3 correspond à l'option et l'index 5 au mail. Un **dictionnaire** avec des clés nommées (`{"id": 42, "nom": "Ada", ...}`) serait ici bien plus lisible et moins sujet aux erreurs d'index.
 
 ## Dictionnaires
 
-Un dictionnaire associe des clés à des valeurs.
-Chaque clé permet d'accéder directement à une valeur.
-Exemple : `stock["stylo"] = 18`.
-La clé `"stylo"` est associée à la valeur `18`.
-Un dictionnaire est utile quand l'accès par nom ou identifiant est fréquent.
-Un dictionnaire est utile pour compter des occurrences.
-Un dictionnaire est utile pour représenter un enregistrement avec champs nommés.
-Les méthodes `keys`, `values` et `items` aident à parcourir.
-`keys()` donne les clés.
-`values()` donne les valeurs.
-`items()` donne les couples clé-valeur.
+Un **dictionnaire** Python associe des **clés** à des **valeurs**. Chaque clé est unique et permet d'accéder directement à la valeur correspondante, sans avoir à parcourir toute la structure. Par exemple, `stock = {"stylo": 18, "cahier": 5}` associe la clé `"stylo"` à la valeur 18 et la clé `"cahier"` à la valeur 5. On accède ensuite au stock de stylos par `stock["stylo"]`.
 
-### Exemple corrigé 8
+Le dictionnaire est le type construit adapté lorsque l'opération la plus fréquente est un **accès par nom ou identifiant**, lorsqu'on veut **compter des occurrences** (chaque clé étant un élément à compter, et la valeur associée étant l'effectif), ou lorsqu'on veut représenter un **enregistrement** avec des champs nommés.
 
-On veut compter des votes : `["A", "B", "A", "C", "A"]`.
-On crée un dictionnaire vide.
-Pour chaque vote, on augmente le compteur de la clé correspondante.
-Après parcours, on obtient `{"A": 3, "B": 1, "C": 1}`.
-La clé est le choix.
-La valeur est l'effectif.
-La représentation est adaptée car on accède souvent par choix.
+Les méthodes `keys()`, `values()` et `items()` permettent de parcourir un dictionnaire :
 
-### Contre-exemple 5
+- `stock.keys()` donne les clés : `"stylo"`, `"cahier"`.
+- `stock.values()` donne les valeurs : `18`, `5`.
+- `stock.items()` donne les couples clé-valeur : `("stylo", 18)`, `("cahier", 5)`.
 
-Utiliser une liste de couples pour chercher souvent par identifiant peut être inefficace.
-Avec `[("A", 3), ("B", 1), ("C", 1)]`, trouver `"C"` impose un parcours.
-Avec `{"A": 3, "B": 1, "C": 1}`, l'accès par clé est direct dans l'usage courant.
-Le choix dépend donc des opérations attendues.
+### Exemple corrigé 8 — Compter des votes avec un dictionnaire
+
+On dispose d'une liste de votes : `votes = ["A", "B", "A", "C", "A"]`. On veut compter le nombre de votes pour chaque choix.
+
+```python
+effectifs = {}
+for choix in votes:
+    if choix in effectifs:
+        effectifs[choix] += 1
+    else:
+        effectifs[choix] = 1
+```
+
+Après exécution, `effectifs` vaut `{"A": 3, "B": 1, "C": 1}`. La clé est le choix de vote, la valeur est l'effectif. Le dictionnaire est ici la structure adaptée car on a besoin d'associer chaque choix à son compte, et d'y accéder directement par le nom du choix.
+
+### Contre-exemple 5 — Liste de couples vs dictionnaire
+
+On pourrait stocker les mêmes données avec une liste de couples : `[("A", 3), ("B", 1), ("C", 1)]`. Mais si l'on cherche souvent le nombre de votes pour un choix donné (par exemple `"C"`), il faudrait parcourir toute la liste à chaque fois, car les éléments ne sont accessibles que par leur position. Avec un dictionnaire, l'accès par clé `effectifs["C"]` est direct. Le choix entre les deux structures dépend donc des opérations que l'on prévoit d'effectuer le plus souvent.
 
 ## Choisir une représentation
 
-Si l'ordre est important et les éléments sont modifiables, une liste convient souvent.
-Si les valeurs forment un petit groupe fixe, un tuple convient souvent.
-Si l'accès se fait par clé, un dictionnaire convient souvent.
-Si la valeur doit être stockée en peu de mémoire, le nombre de bits compte.
-Si la valeur peut être négative, la convention de signe compte.
-Si la valeur est un texte, l'encodage compte.
-Si la valeur est logique, une table de vérité clarifie les cas.
-Le choix doit toujours être justifié par un traitement.
+Le choix entre liste, tuple et dictionnaire ne se fait pas au hasard : il doit être guidé par les **opérations prévues** sur les données.
+
+| Situation | Structure adaptée | Justification |
+|-----------|-------------------|---------------|
+| Suite de mesures à parcourir et modifier | Liste | L'ordre compte, les valeurs changent |
+| Coordonnées `(x, y)` d'un point fixe | Tuple | Nombre de champs fixe, pas de modification |
+| Stock de produits accessibles par référence | Dictionnaire | L'accès se fait par nom de produit |
+| Table de pixels ligne par ligne | Liste de listes | Structure à deux dimensions, modifiable |
+| Fiche courte avec champs nommés | Dictionnaire | L'accès par nom de champ est prioritaire |
+
+Pour les types de base, le choix de la taille en bits détermine l'intervalle représentable (entiers positifs ou relatifs), et le choix de l'encodage détermine comment les caractères sont stockés. Dans tous les cas, le choix doit être **justifié par un traitement** — c'est-à-dire par une opération concrète que l'on effectuera sur les données.
 
 ## Tests et cas limites
 
-Un test vérifie un comportement attendu sur un exemple choisi.
-Un cas limite est une valeur qui risque de révéler une erreur.
-Pour les bases, tester `0` est indispensable.
-Pour les bases, tester la plus grande base autorisée évite un oubli.
-Pour le complément à deux, tester `-1` est indispensable.
-Pour le complément à deux, tester les bornes de l'intervalle est indispensable.
-Pour le texte, tester un caractère accentué est utile.
-Pour les listes, tester une liste vide est utile.
-Pour les dictionnaires, tester une clé absente est utile.
-Un jeu de tests ne prouve pas tout.
-Mais un bon jeu de tests réduit les erreurs évidentes.
-Le fichier Python associé à ce cours est `python/representation_tools.py`.
-Les tests associés sont dans `tests/test_representation_tools.py`.
+Un **test** vérifie qu'une fonction produit le résultat attendu pour une entrée choisie. Un **cas limite** est une valeur particulière qui risque de révéler une erreur de programmation : une valeur à la frontière du domaine de validité, un cas dégénéré, ou une entrée qui déclenche un traitement spécial.
 
-## Aides progressives
+Voici des exemples de cas limites pertinents pour cette séquence :
 
-Aide niveau 1 : écrire d'abord la valeur en base 10 avant toute conversion.
-Aide niveau 2 : poser les puissances de la base sous chaque chiffre.
-Aide niveau 3 : vérifier le résultat en effectuant la conversion inverse.
-Aide niveau 1 : pour le complément à deux, noter le nombre de bits.
-Aide niveau 2 : calculer l'intervalle représentable.
-Aide niveau 3 : si le bit de gauche vaut `1`, soustraire `2^n`.
-Aide niveau 1 : pour choisir une structure Python, identifier l'opération principale.
-Aide niveau 2 : si l'opération principale est "accéder par clé", essayer un dictionnaire.
-Aide niveau 3 : si l'opération principale est "parcourir dans l'ordre", essayer une liste ou un tuple.
+- **Conversions de base** : tester avec `0` (traitement spécial dans beaucoup d'algorithmes), avec `1` (plus petit entier non nul), et avec la plus grande valeur autorisée par le nombre de bits.
+- **Complément à deux** : tester `−1` (tous les bits à `1`), les bornes de l'intervalle (`−128` et `127` sur 8 bits), et une valeur juste hors de l'intervalle.
+- **Texte et encodage** : tester avec un caractère accentué (`"é"`) et un caractère multi-octets.
+- **Listes** : tester avec une liste vide (`[]`).
+- **Dictionnaires** : tester l'accès à une clé absente (provoque un `KeyError`).
 
-## Différenciation
+Un jeu de tests ne prouve jamais que la fonction est correcte dans tous les cas possibles, mais un bon jeu de tests — couvrant des cas ordinaires **et** des cas limites — réduit considérablement le risque d'erreurs non détectées.
 
-Parcours socle : convertir bases 2, 10, 16 sur de petits entiers.
-Parcours socle : lire une table de vérité déjà préparée.
-Parcours socle : distinguer liste, tuple et dictionnaire sur des exemples.
-Parcours standard : construire les conversions et justifier les choix.
-Parcours standard : coder et décoder de petits relatifs sur 8 bits.
-Parcours standard : écrire une fonction Python testée.
-Parcours expert : discuter le coût d'une recherche dans une liste ou un dictionnaire.
-Parcours expert : comparer nombre de caractères et nombre d'octets en UTF-8.
-Parcours expert : produire des tests de bornes pour le complément à deux.
+Le fichier Python associé à ce cours est `python/representation_tools.py`, et les tests correspondants sont dans `tests/test_representation_tools.py`. Vous pouvez les exécuter pour vérifier le bon fonctionnement de chaque fonction.
 
-## Erreurs fréquentes
+## Erreurs fréquentes — Récapitulatif
 
-Erreur fréquente 1 : oublier de préciser la base d'une écriture.
-Erreur fréquente 2 : lire un complément à deux comme un entier positif.
-Erreur fréquente 3 : confondre caractère et octet.
-Erreur fréquente 4 : utiliser une liste quand une clé de dictionnaire est nécessaire.
-Erreur fréquente 5 : oublier que les index Python commencent à zéro.
-Erreur fréquente 6 : croire qu'un test réussi prouve toutes les situations.
+1. **Oublier de préciser la base** d'une écriture : `101` n'a pas de sens unique sans indication de base.
+2. **Lire un complément à deux comme un entier positif** : `11111111` ne vaut pas 255 si la convention est le complément à deux sur 8 bits.
+3. **Confondre caractère et octet** : `"é"` est un seul caractère mais occupe deux octets en UTF-8.
+4. **Utiliser une liste quand un dictionnaire s'impose** : si l'accès par clé est fréquent, une liste force un parcours inutile.
+5. **Oublier que les index Python commencent à zéro** : dans une liste de 3 éléments, le dernier index est 2, pas 3.
+6. **Croire qu'un test réussi prouve tout** : un test ne couvre qu'un cas ; il faut varier les entrées et inclure des cas limites.
 
 ## À retenir
 
-Une suite de bits n'a de sens que par une convention.
-Les bases 2, 10 et 16 sont des écritures différentes d'une même valeur.
-Le complément à deux code des entiers relatifs sur un nombre fixé de bits.
-Une table de vérité rend explicite une expression booléenne.
-Unicode sert à représenter des textes variés.
-Une liste est ordonnée et modifiable.
-Un tuple regroupe des valeurs liées.
-Un dictionnaire associe une clé à une valeur.
-Le choix d'une représentation dépend des traitements attendus.
-Les tests doivent couvrir des cas ordinaires et des cas limites.
+- Une suite de bits n'a de sens que par la convention de représentation qui lui est associée.
+- Les bases 2, 10 et 16 sont trois écritures positionnelles d'une même valeur entière.
+- Le complément à deux permet de coder les entiers relatifs sur un nombre fixé de bits, avec un intervalle asymétrique (une valeur négative de plus que de valeurs positives).
+- Une table de vérité rend explicite le comportement d'une expression booléenne pour toutes les entrées possibles.
+- Unicode attribue un point de code à chaque caractère ; UTF-8 est l'encodage le plus courant pour stocker ces points de code en octets.
+- Une liste est ordonnée et modifiable ; un tuple regroupe un petit nombre de valeurs liées ; un dictionnaire associe des clés à des valeurs.
+- Le choix d'une représentation dépend toujours des traitements que l'on prévoit d'effectuer.
+- Les tests doivent couvrir des cas ordinaires **et** des cas limites pour être utiles.
 
 ## Auto-évaluation
 
-- Je sais convertir `37₁₀` en base 2.
-- Je sais convertir `2A₁₆` en base 10.
-- Je sais donner l'intervalle des entiers relatifs sur 8 bits.
-- Je sais décoder `11111110` en complément à deux sur 8 bits.
-- Je sais dresser une table de vérité à deux variables.
-- Je sais expliquer pourquoi `é` n'est pas un caractère ASCII simple.
-- Je sais choisir entre liste, tuple et dictionnaire.
-- Je sais proposer au moins deux cas limites pour tester une fonction.
+Avant de passer au TD, vérifiez que vous savez :
 
-## Extension
-
-Approfondissement 1 : mesurer avec Python la taille en octets de plusieurs chaînes Unicode.
-Approfondissement 2 : écrire une fonction qui vérifie si une chaîne est une écriture binaire.
-Approfondissement 3 : écrire une fonction qui calcule l'intervalle représentable en complément à deux.
-Approfondissement 4 : comparer deux représentations d'un carnet de contacts, liste de tuples ou dictionnaire.
-Approfondissement 5 : expliquer pourquoi les nombres flottants devront être étudiés séparément.
-
-## Exemples corrigés
-
-Cette section récapitule les exemples corrigés de la séquence.
-
-Exemple corrigé récapitulatif 1 : convertir `1101_2` donne `13_10` car `8 + 4 + 1 = 13`.
-
-Exemple corrigé récapitulatif 2 : `0x2A` donne `42_10` car `2 x 16 + 10 = 42`.
-
-Exemple corrigé récapitulatif 3 : sur 8 bits, `11111111` vaut `-1` en complément à deux.
-
-Exemple corrigé récapitulatif 4 : `A` a pour code Unicode `U+0041`.
-
-Exemple corrigé récapitulatif 5 : un dictionnaire convient pour retrouver une valeur par clé stable.
-
-## Exercices intégrés
-
-Cette section rassemble les exercices intégrés à refaire après le cours.
-
-Exercice intégré récapitulatif 1 : convertir `101101_2` en base 10 puis en base 16.
-
-Exercice intégré récapitulatif 2 : coder `-12` en complément à deux sur 8 bits.
-
-Exercice intégré récapitulatif 3 : choisir entre liste, tuple et dictionnaire pour stocker des mesures horodatées.
+- convertir `37₁₀` en base 2 et `2A₁₆` en base 10 ;
+- donner l'intervalle des entiers relatifs représentables sur 8 bits ;
+- décoder `11111110` en complément à deux sur 8 bits ;
+- dresser la table de vérité d'une expression à deux variables ;
+- expliquer pourquoi `é` n'est pas un caractère ASCII simple ;
+- choisir entre liste, tuple et dictionnaire pour un problème donné ;
+- proposer au moins deux cas limites pour tester une fonction de conversion.
