@@ -16,7 +16,7 @@ official_program:
     - "P-ARCH-03A"
     - "P-ARCH-03B"
     - "P-ARCH-03C"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # P09 - Fiche cours - Architecture, OS et droits
@@ -78,11 +78,11 @@ Proposer un cas limite pertinent pour architecture et système et expliquer le r
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | P09-S1 | réelle | séance présente dans la progression |
-| TD | P09_TD_architecture_os_droits.md | à créer | inscrit au registre v2 |
-| Évaluation | P09_evaluation_architecture_os_droits.md | à créer | inscrit au registre v2 |
+| TD | P09_TD_architecture_os_droits.md | existant | support produit en needs_review, non validé |
+| Évaluation | P09_evaluation_architecture_os_droits.md | existant | support produit en needs_review, non validé |
 
 ## Auto-évaluation
 - Je peux expliquer architecture et OS avec un exemple différent de ceux de la fiche P09.
 - Je peux citer au moins une capacité parmi P-ARCH-01A, P-ARCH-01B, P-ARCH-03A, P-ARCH-03B, P-ARCH-03C et dire où elle est travaillée dans la fiche.
-- Je peux dire quel support lié à P09 existe déjà ou reste inscrit au registre.
+- Je peux dire quel support lié à P09 existe déjà ou existe ou reste explicitement qualifié.
 - Je peux identifier un cas limite de architecture et système sans transformer la fiche en corrigé complet.

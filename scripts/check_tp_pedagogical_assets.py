@@ -13,6 +13,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 
 from _qa_common import ROOT
 from check_first_batch_document_quality import FIRST_BATCH_PREFIXES
@@ -21,6 +22,11 @@ from check_first_batch_document_quality import FIRST_BATCH_PREFIXES
 @dataclass
 class TpPedagogyResult:
     errors: list[str] = field(default_factory=list)
+    prefix_durations: dict[str, float] = field(default_factory=dict)
+
+
+PREFIX_TIMEOUT_SECONDS = 20.0
+TOTAL_TIMEOUT_SECONDS = 60.0
 
 
 def normalize(text: str) -> str:
@@ -87,7 +93,13 @@ def tests_are_substantive(text: str) -> list[str]:
     return errors
 
 
-def run_tests(code_dir: Path, tests: Path, module_name: str) -> subprocess.CompletedProcess[str]:
+def cleanup_repo_caches(root: Path = ROOT) -> None:
+    for cache in root.rglob("__pycache__"):
+        if cache.is_dir():
+            shutil.rmtree(cache)
+
+
+def run_tests(code_dir: Path, tests: Path, module_name: str, timeout_seconds: float = 5.0) -> subprocess.CompletedProcess[str]:
     env = os.environ.copy()
     env["PYTHONDONTWRITEBYTECODE"] = "1"
     env["TP_MODULE"] = module_name
@@ -98,18 +110,19 @@ def run_tests(code_dir: Path, tests: Path, module_name: str) -> subprocess.Compl
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         text=True,
-        timeout=10,
+        timeout=timeout_seconds,
     )
 
 
-def analyze_prefix(root: Path, prefix: str) -> list[str]:
+def analyze_prefix(root: Path, prefix: str, prefix_timeout_seconds: float = PREFIX_TIMEOUT_SECONDS) -> tuple[list[str], float]:
+    started = time.monotonic()
     errors: list[str] = []
     code_dir = find_code_dir(root, prefix)
     starter = first_asset(code_dir, f"{prefix}_starter*.py")
     tests = first_asset(code_dir, f"{prefix}_tests_attendus*.py")
     corrige = first_asset(code_dir, f"{prefix}_corrige_professeur*.py")
     if not starter or not tests or not corrige:
-        return [f"{prefix}: assets TP incomplets"]
+        return [f"{prefix}: assets TP incomplets"], time.monotonic() - started
 
     starter_text = starter.read_text(encoding="utf-8", errors="replace")
     corrige_text = corrige.read_text(encoding="utf-8", errors="replace")
@@ -127,23 +140,51 @@ def analyze_prefix(root: Path, prefix: str) -> list[str]:
             shutil.copy2(path, temp_code / path.name)
         corrige_module = corrige.stem
         starter_module = starter.stem
-        corrige_run = run_tests(temp_code, temp_code / tests.name, corrige_module)
-        if corrige_run.returncode != 0:
-            errors.append(f"{prefix}: les tests attendus échouent sur le corrigé professeur")
-        starter_run = run_tests(temp_code, temp_code / tests.name, starter_module)
-        if starter_run.returncode == 0:
-            errors.append(f"{prefix}: le starter valide les tests complets")
+        try:
+            corrige_run = run_tests(temp_code, temp_code / tests.name, corrige_module)
+            if corrige_run.returncode != 0:
+                errors.append(f"{prefix}: les tests attendus échouent sur le corrigé professeur")
+        except subprocess.TimeoutExpired:
+            errors.append(f"{prefix}: timeout des tests sur le corrigé professeur")
+        try:
+            starter_run = run_tests(temp_code, temp_code / tests.name, starter_module)
+            if starter_run.returncode == 0:
+                errors.append(f"{prefix}: le starter valide les tests complets")
+        except subprocess.TimeoutExpired:
+            errors.append(f"{prefix}: timeout des tests sur le starter")
         for cache in temp_code.rglob("__pycache__"):
             shutil.rmtree(cache)
-    return errors
+    duration = time.monotonic() - started
+    if duration > prefix_timeout_seconds:
+        errors.append(f"{prefix}: durée préfixe trop longue ({duration:.2f}s > {prefix_timeout_seconds:.2f}s)")
+    return errors, duration
 
 
-def analyze_tp_pedagogy(root: Path = ROOT, prefixes: list[str] | None = None) -> TpPedagogyResult:
+def analyze_tp_pedagogy(
+    root: Path = ROOT,
+    prefixes: list[str] | None = None,
+    prefix_timeout_seconds: float = PREFIX_TIMEOUT_SECONDS,
+    total_timeout_seconds: float = TOTAL_TIMEOUT_SECONDS,
+) -> TpPedagogyResult:
     prefixes = prefixes or FIRST_BATCH_PREFIXES
     result = TpPedagogyResult()
-    for prefix in prefixes:
-        result.errors.extend(analyze_prefix(root, prefix))
-    return result
+    started = time.monotonic()
+    try:
+        for prefix in prefixes:
+            print(f"check_tp_pedagogical_assets: préfixe {prefix}")
+            errors, duration = analyze_prefix(root, prefix, prefix_timeout_seconds)
+            result.prefix_durations[prefix] = duration
+            result.errors.extend(errors)
+            elapsed = time.monotonic() - started
+            if elapsed > total_timeout_seconds:
+                result.errors.append(f"durée totale trop longue ({elapsed:.2f}s > {total_timeout_seconds:.2f}s)")
+                break
+        total = time.monotonic() - started
+        if total > total_timeout_seconds and not any("durée totale" in error for error in result.errors):
+            result.errors.append(f"durée totale trop longue ({total:.2f}s > {total_timeout_seconds:.2f}s)")
+        return result
+    finally:
+        cleanup_repo_caches(root)
 
 
 def main() -> int:
@@ -153,6 +194,11 @@ def main() -> int:
         for error in result.errors[:160]:
             print(f"- {error}")
         return 1
+    slow = {prefix: duration for prefix, duration in result.prefix_durations.items() if duration > 5.0}
+    if slow:
+        print("Préfixes TP lents:")
+        for prefix, duration in sorted(slow.items()):
+            print(f"- {prefix}: {duration:.2f}s")
     print("check_tp_pedagogical_assets: PASS")
     return 0
 

@@ -15,7 +15,7 @@ official_program:
     - "T-BDD-01B"
     - "T-BDD-01C"
     - "T-BDD-02"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # T09 - Fiche cours - Bases relationnelles, clés et contraintes
@@ -77,11 +77,11 @@ Proposer un cas limite pertinent pour bases relationnelles et expliquer le résu
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | T09-S1 | réelle | séance présente dans la progression |
-| TD | T09_TD_bases_relationnelles_cles_contraintes.md | à créer | inscrit au registre v2 |
-| Évaluation | T09_evaluation_bases_relationnelles_cles_contraintes.md | à créer | inscrit au registre v2 |
+| TD | T09_TD_bases_relationnelles_cles_contraintes.md | existant | support produit en needs_review, non validé |
+| Évaluation | T09_evaluation_bases_relationnelles_cles_contraintes.md | existant | support produit en needs_review, non validé |
 
 ## Auto-évaluation
 - Je peux expliquer modèle relationnel avec un exemple différent de ceux de la fiche T09.
 - Je peux citer au moins une capacité parmi T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02 et dire où elle est travaillée dans la fiche.
-- Je peux dire quel support lié à T09 existe déjà ou reste inscrit au registre.
+- Je peux dire quel support lié à T09 existe déjà ou existe ou reste explicitement qualifié.
 - Je peux identifier un cas limite de bases relationnelles sans transformer la fiche en corrigé complet.

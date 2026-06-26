@@ -28,6 +28,7 @@ audit-local:
 	python scripts/check_session_week_calendar_consistency.py
 	python scripts/check_session_specificity.py
 	python scripts/check_session_referenced_files_exist.py
+	python scripts/check_missing_register_actionability.py
 	python scripts/check_document_naming_conventions.py
 	python scripts/check_first_batch_document_quality.py
 	python scripts/check_first_batch_alignment.py
@@ -35,6 +36,7 @@ audit-local:
 	python scripts/check_support_substance.py
 	python scripts/check_no_line_padding.py
 	python scripts/check_tp_pedagogical_assets.py
+	python scripts/check_tp_pedagogical_assets_runtime.py
 	python scripts/check_sequence_contracts.py
 	python scripts/check_local_drive_traceability.py
 	python scripts/check_ready_supports_required_sections.py
@@ -47,6 +49,7 @@ audit-local:
 	python scripts/check_course_sheet_linked_resources_exist.py
 	python scripts/check_course_sheets_no_template_abuse.py
 	python scripts/check_course_sheet_readiness.py
+	python scripts/check_course_sheet_readiness_strict.py
 	python scripts/check_evaluation_distribution.py
 	python scripts/check_teacher_docs_depth.py
 	python scripts/check_validated_documents_quality_gates.py
@@ -68,6 +71,7 @@ audit-local:
 	python scripts/check_manifest_source_integrity.py
 	python scripts/check_teacher_corrections_alignment.py
 	python scripts/check_coverage_evidence.py
+	python scripts/check_no_coverage_from_sheets_only.py
 	python scripts/run_python_tests.py
 	python scripts/check_quality_gates.py
 
@@ -78,6 +82,7 @@ audit-source:
 	python scripts/check_session_monthly_total.py
 	python scripts/check_session_project_hours.py
 	python scripts/check_session_referenced_files_exist.py
+	python scripts/check_missing_register_actionability.py
 	python scripts/check_document_naming_conventions.py
 	python scripts/check_session_specificity.py
 	python scripts/check_session_week_calendar_consistency.py
@@ -104,6 +109,7 @@ audit-extracted-source:
 	python scripts/check_support_substance.py
 	python scripts/check_no_line_padding.py
 	python scripts/check_tp_pedagogical_assets.py
+	python scripts/check_tp_pedagogical_assets_runtime.py
 	python scripts/check_sequence_contracts.py
 	python scripts/check_local_drive_traceability.py
 	python scripts/check_ready_supports_required_sections.py
@@ -116,9 +122,11 @@ audit-extracted-source:
 	python scripts/check_course_sheet_linked_resources_exist.py
 	python scripts/check_course_sheets_no_template_abuse.py
 	python scripts/check_course_sheet_readiness.py
+	python scripts/check_course_sheet_readiness_strict.py
 	python scripts/check_no_private_data.py
 	python scripts/check_no_placeholders_docs.py
 	python scripts/check_no_build_artifacts_in_index.py
+	python scripts/check_no_coverage_from_sheets_only.py
 
 package-audit:
 	python scripts/cleanup_python_artifacts.py

@@ -13,7 +13,7 @@ official_program:
   capacities:
     - "T-ALGO-01E"
     - "T-ALGO-01F"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # T06 - Fiche cours - Arbres binaires de recherche
@@ -75,11 +75,12 @@ Proposer un cas limite pertinent pour arbres binaires de recherche et expliquer 
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | T06-S1 | réelle | séance présente dans la progression |
-| TD | T06_TD_arbres_binaires_recherche.md | à créer | inscrit au registre v2 |
-| Évaluation | T06_evaluation_arbres_binaires_recherche.md | à créer | inscrit au registre v2 |
+| TD | T06_TD_arbres_binaires_recherche.md | existant | support produit en needs_review, non validé |
+| TP | T06_TP_arbres_binaires_recherche.md | existant | support produit en needs_review, non validé |
+| Évaluation | T06_evaluation_arbres_binaires_recherche.md | existant | support produit en needs_review, non validé |
 
 ## Auto-évaluation
 - Je peux expliquer ABR avec un exemple différent de ceux de la fiche T06.
 - Je peux citer au moins une capacité parmi T-ALGO-01E, T-ALGO-01F et dire où elle est travaillée dans la fiche.
-- Je peux dire quel support lié à T06 existe déjà ou reste inscrit au registre.
+- Je peux dire quel support lié à T06 existe déjà ou existe ou reste explicitement qualifié.
 - Je peux identifier un cas limite de arbres binaires de recherche sans transformer la fiche en corrigé complet.

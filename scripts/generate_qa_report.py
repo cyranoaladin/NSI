@@ -10,6 +10,8 @@ from collections import Counter
 from pathlib import Path
 
 from _course_sheets_common import compute_sheet_readiness, course_sheet_links, frontmatter_capacities, planned_sequences, read_frontmatter, resource_exists, sheets_by_sequence
+from check_course_sheet_readiness_strict import analyze_course_sheet_readiness_strict
+from check_missing_register_actionability import load_register_rows
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "manifest.csv"
@@ -115,12 +117,33 @@ def course_sheet_stats() -> dict[str, object]:
     }
 
 
+def linked_course_sheet_rows() -> list[tuple[str, str, str, str, str]]:
+    strict = analyze_course_sheet_readiness_strict(ROOT)
+    register_rows, _ = load_register_rows(ROOT)
+    register = {row.get("Fichier", ""): row for row in register_rows}
+    rows: list[tuple[str, str, str, str, str]] = []
+    for sheet, missing in sorted(strict.linked_missing.items()):
+        for filename in missing:
+            row = register.get(filename, {})
+            rows.append(
+                (
+                    Path(sheet).name,
+                    filename,
+                    row.get("Date cible", "non renseignée"),
+                    row.get("Impact pédagogique", "support absent ; fiche non opérationnelle"),
+                    row.get("Décision", "créer"),
+                )
+            )
+    return rows
+
+
 def main() -> int:
     total, statuses, sources, publishable = count_manifest()
     cov = coverage_counts()
     release_code, release_tail = command_status(["make", "--no-print-directory", "release-audit"])
     indicative_rows = indicative_gate_rows()
     sheet_stats = course_sheet_stats()
+    linked_rows = linked_course_sheet_rows()
     lines = [
         "# QA Report",
         "",
@@ -169,6 +192,8 @@ def main() -> int:
         "",
         "## Fiches de cours",
         "",
+        "- Les fiches de cours sont des ressources d’aide et de révision. Elles ne prouvent aucune couverture publiable.",
+        "- Une capacité ne peut être covered que si existent et sont relus : cours ou fiche, séance, TD ou TP, corrigé, évaluation, barème, remédiation, revue pédagogique humaine et revue scientifique humaine.",
         f"- Fiches attendues : {sheet_stats['expected']} séquences avec au moins une fiche.",
         f"- Fiches créées : {sheet_stats['created']}",
         "- Séquences sans fiche : "
@@ -182,6 +207,18 @@ def main() -> int:
         f"- Liens vers supports inscrits au registre : {sheet_stats['registered_links']}",
         "- Statut : needs_review",
         "- Effet couverture : aucun ; les fiches ne rendent aucune capacité covered.",
+        "",
+        "## Fiches liées non opérationnelles",
+        "",
+        "| Fiche | Support absent | Registre associé | Date cible | Impact pédagogique | Action suivante |",
+        "|---|---|---|---|---|---|",
+        *(
+            [
+                f"| `{sheet}` | `{support}` | `missing_documents_register_v2.md` | {target} | {impact.replace('|', '/')} | {decision} |"
+                for sheet, support, target, impact, decision in linked_rows
+            ]
+            or ["| Aucune fiche liée non opérationnelle. | - | - | - | - | - |"]
+        ),
         "",
         "## Gates indicatifs encore en échec",
         "",

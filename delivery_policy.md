@@ -18,6 +18,7 @@
 ## Archives interdites
 
 - `NSI.tar` contenant `.git/` est interdit comme livraison principale.
+- `nsi-enseignement.tar` contenant `.git/` est interdit comme livraison pédagogique.
 - `NSI.tar.gz` ou tout export contenant `.git/` est interdit.
 - Le dossier `.git/` local sert au versionnement de travail, pas à la livraison pédagogique.
 
@@ -27,5 +28,6 @@
 - Pour audit pédagogique : envoyer uniquement `dist/source_clean.tar.gz`.
 - Pour historique technique : envoyer `dist/git_bundle.bundle` séparément.
 - Ne jamais envoyer une archive contenant `.git/` comme livraison principale.
+- Ne pas transmettre `nsi-enseignement.tar` comme livrable pédagogique si ce fichier contient `.git/`.
 - Si une archive transmise doit être auditée explicitement, lancer `DELIVERED_ARCHIVE=<chemin> python scripts/check_uploaded_archive_policy.py`.
 - Toute archive principale nommée `NSI.tar`, `NSI.tar.gz`, `archive.tar`, `archive.tar.gz` ou équivalent est refusée si elle contient ou peut contenir `.git/`.

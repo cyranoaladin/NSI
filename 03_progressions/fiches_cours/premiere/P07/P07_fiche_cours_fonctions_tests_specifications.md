@@ -18,7 +18,7 @@ official_program:
     - "P-LANG-03C"
     - "P-LANG-04"
     - "P-LANG-05"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # P07 - Fiche cours - Fonctions, tests et spécifications
@@ -80,11 +80,12 @@ Proposer un cas limite pertinent pour fonctions, tests et spécifications et exp
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | P07-S1 | réelle | séance présente dans la progression |
-| TD | P07_TD_fonctions_tests_specifications.md | à créer | inscrit au registre v2 |
-| Évaluation | P07_evaluation_fonctions_tests_specifications.md | à créer | inscrit au registre v2 |
+| TD | P07_TD_fonctions_tests_specifications.md | existant | support produit en needs_review, non validé |
+| TP | P07_TP_fonctions_tests_specifications.md | existant | support produit en needs_review, non validé |
+| Évaluation | P07_evaluation_fonctions_tests_specifications.md | existant | support produit en needs_review, non validé |
 
 ## Auto-évaluation
 - Je peux expliquer fonctions et tests avec un exemple différent de ceux de la fiche P07.
 - Je peux citer au moins une capacité parmi P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05 et dire où elle est travaillée dans la fiche.
-- Je peux dire quel support lié à P07 existe déjà ou reste inscrit au registre.
+- Je peux dire quel support lié à P07 existe déjà ou existe ou reste explicitement qualifié.
 - Je peux identifier un cas limite de fonctions, tests et spécifications sans transformer la fiche en corrigé complet.

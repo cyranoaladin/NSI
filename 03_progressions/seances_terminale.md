@@ -655,16 +655,16 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : cours
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance partiellement opérationnelle, non validée.
 - Objectif : introduire recherche et insertion dans ABR non équilibré à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-ALGO-01E, T-ALGO-01F
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : T06_TD_arbres_binaires_recherche.md, T06_TP_arbres_binaires_recherche.md, T06_evaluation_arbres_binaires_recherche.md.
 - Déroulé : 1. question flash T06-Q1; 2. activité T06_intro sur recherche et insertion dans ABR non équilibré; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T06; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : réponses annotées et contrôlées dans T06_TD_arbres_binaires_recherche.md.
+- Trace écrite : synthèse courte extraite de T06_TD_arbres_binaires_recherche.md, à relire avant publication.
+- Devoir ou préparation : terminer deux questions ciblées de T06_TD_arbres_binaires_recherche.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de T06_TD_arbres_binaires_recherche.md.
 
 ### Séance T06-S2
 - Durée : 2 h
@@ -767,16 +767,16 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : cours
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance partiellement opérationnelle, non validée.
 - Objectif : introduire graphe relationnel, matrice et liste d’adjacence à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-STRUCT-05A, T-STRUCT-05B, T-STRUCT-05C, T-STRUCT-05D
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : T07_TD_graphes_modelisation_listes_matrices.md, T07_TP_graphes_modelisation_listes_matrices.md, T07_evaluation_graphes_modelisation_listes_matrices.md.
 - Déroulé : 1. question flash T07-Q1; 2. activité T07_intro sur graphe relationnel, matrice et liste d’adjacence; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T07; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : réponses annotées et contrôlées dans T07_TD_graphes_modelisation_listes_matrices.md.
+- Trace écrite : synthèse courte extraite de T07_TD_graphes_modelisation_listes_matrices.md, à relire avant publication.
+- Devoir ou préparation : terminer deux questions ciblées de T07_TD_graphes_modelisation_listes_matrices.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de T07_TD_graphes_modelisation_listes_matrices.md.
 
 ### Séance T07-S2
 - Durée : 2 h
@@ -883,16 +883,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : cours
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance partiellement opérationnelle, non validée.
 - Objectif : introduire parcours BFS DFS, cycle et chemin sur graphe à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : T08_TD_bfs_dfs_cycles_chemins.md, T08_TP_bfs_dfs_cycles_chemins.md, T08_evaluation_bfs_dfs_cycles_chemins.md.
 - Déroulé : 1. question flash T08-Q1; 2. activité T08_intro sur parcours BFS DFS, cycle et chemin sur graphe; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T08; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : réponses annotées et contrôlées dans T08_TD_bfs_dfs_cycles_chemins.md.
+- Trace écrite : synthèse courte extraite de T08_TD_bfs_dfs_cycles_chemins.md, à relire avant publication.
+- Devoir ou préparation : terminer deux questions ciblées de T08_TD_bfs_dfs_cycles_chemins.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de T08_TD_bfs_dfs_cycles_chemins.md.
 
 ### Séance T08-S2
 - Durée : 2 h
@@ -1035,16 +1035,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : cours
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance partiellement opérationnelle, non validée.
 - Objectif : introduire schéma relationnel, clés et anomalies à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : T09_TD_bases_relationnelles_cles_contraintes.md, T09_evaluation_bases_relationnelles_cles_contraintes.md.
 - Déroulé : 1. question flash T09-Q1; 2. activité T09_intro sur schéma relationnel, clés et anomalies; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire T09; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : réponses annotées et contrôlées dans T09_TD_bases_relationnelles_cles_contraintes.md.
+- Trace écrite : synthèse courte extraite de T09_TD_bases_relationnelles_cles_contraintes.md, à relire avant publication.
+- Devoir ou préparation : terminer deux questions ciblées de T09_TD_bases_relationnelles_cles_contraintes.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de T09_TD_bases_relationnelles_cles_contraintes.md.
 
 ### Séance T09-S2
 - Durée : 2 h

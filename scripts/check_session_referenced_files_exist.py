@@ -71,6 +71,10 @@ REGISTER_COLUMNS = [
     "Décision",
     "Blocage si absent",
 ]
+REGISTER_EXTRA_COLUMNS = [
+    "Fiche(s) concernée(s)",
+    "Impact pédagogique",
+]
 DECISIONS = {"créer", "importer", "abandonner"}
 
 
@@ -113,18 +117,18 @@ def parse_register(path: Path) -> tuple[dict[str, dict[str, str]], list[str]]:
         cells = [cell.strip() for cell in line.strip("|").split("|")]
         if cells and cells[0] == "Fichier":
             header = cells
-            if header != REGISTER_COLUMNS:
+            if header not in (REGISTER_COLUMNS, REGISTER_COLUMNS + REGISTER_EXTRA_COLUMNS):
                 errors.append(f"{path.name}: colonnes invalides")
             continue
         if not cells or header is None:
             continue
-        if len(cells) != len(REGISTER_COLUMNS):
+        if len(cells) != len(header):
             errors.append(f"{path.name}: ligne mal formée -> {line[:120]}")
             continue
-        row = dict(zip(REGISTER_COLUMNS, cells))
+        row = dict(zip(header, cells))
         filename = row["Fichier"].strip("`")
         rows[filename] = row
-        for key in REGISTER_COLUMNS:
+        for key in header:
             if not row[key]:
                 errors.append(f"{filename}: champ registre vide -> {key}")
         if row["Décision"].lower() not in DECISIONS:

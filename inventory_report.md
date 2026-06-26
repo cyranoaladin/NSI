@@ -1,34 +1,34 @@
 # Inventaire ressources NSI
 
-- Total ressources : 417
+- Total ressources : 448
 - Ressources pédagogiques : 53
-- Ressources techniques : 364
+- Ressources techniques : 395
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - drive: 0
-- generated: 417
+- generated: 448
 
 ## Répartition par niveau
-- interne: 170
-- premiere: 123
-- terminale: 124
+- interne: 177
+- premiere: 136
+- terminale: 135
 
 ## Répartition par type
 - banque: 14
-- document: 217
+- document: 241
 - python: 36
-- script: 90
+- script: 94
 - sequence: 45
-- test: 15
+- test: 18
 
 ## Répartition par statut
-- needs_review: 417
+- needs_review: 448
 
 ## Répartition audience
 - corrige: 33
-- eleve: 54
-- mixte: 327
+- eleve: 78
+- mixte: 334
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -181,6 +181,19 @@
   - 03_progressions/supports/premiere/P05/code/P05_corrige_professeur_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
+  - 03_progressions/supports/premiere/P06/P06_TD_tables_recherche_tri_fusion.md
+  - 03_progressions/supports/premiere/P06/P06_evaluation_tables_recherche_tri_fusion.md
+  - 03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md
+  - 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md
+  - 03_progressions/supports/premiere/P07/P07_evaluation_fonctions_tests_specifications.md
+  - 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md
+  - 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
+  - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
+  - 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md
+  - 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md
+  - 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md
+  - 03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md
+  - 03_progressions/supports/premiere/P09/P09_evaluation_architecture_os_droits.md
   - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md
   - 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md
   - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md
@@ -253,6 +266,17 @@
   - 03_progressions/supports/terminale/T05/code/T05_corrige_professeur_arbres_binaires.py
   - 03_progressions/supports/terminale/T05/code/T05_starter_arbres_binaires.py
   - 03_progressions/supports/terminale/T05/code/T05_tests_attendus_arbres_binaires.py
+  - 03_progressions/supports/terminale/T06/T06_TD_arbres_binaires_recherche.md
+  - 03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md
+  - 03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md
+  - 03_progressions/supports/terminale/T07/T07_TD_graphes_modelisation_listes_matrices.md
+  - 03_progressions/supports/terminale/T07/T07_TP_graphes_modelisation_listes_matrices.md
+  - 03_progressions/supports/terminale/T07/T07_evaluation_graphes_modelisation_listes_matrices.md
+  - 03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md
+  - 03_progressions/supports/terminale/T08/T08_TP_bfs_dfs_cycles_chemins.md
+  - 03_progressions/supports/terminale/T08/T08_evaluation_bfs_dfs_cycles_chemins.md
+  - 03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md
+  - 03_progressions/supports/terminale/T09/T09_evaluation_bases_relationnelles_cles_contraintes.md
   - INDEX.md
   - METHODE_PRODUCTION_REELLE.md
   - README.md
@@ -327,6 +351,7 @@
   - scripts/check_course_internal_coherence.py
   - scripts/check_course_sheet_linked_resources_exist.py
   - scripts/check_course_sheet_readiness.py
+  - scripts/check_course_sheet_readiness_strict.py
   - scripts/check_course_sheets_alignment.py
   - scripts/check_course_sheets_coverage.py
   - scripts/check_course_sheets_no_template_abuse.py
@@ -351,9 +376,11 @@
   - scripts/check_local_drive_traceability.py
   - scripts/check_manifest_source_integrity.py
   - scripts/check_metadata.py
+  - scripts/check_missing_register_actionability.py
   - scripts/check_monthly_load_balance.py
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
+  - scripts/check_no_coverage_from_sheets_only.py
   - scripts/check_no_line_padding.py
   - scripts/check_no_needs_review_for_release.py
   - scripts/check_no_placeholders.py
@@ -393,6 +420,7 @@
   - scripts/check_teacher_corrections_alignment.py
   - scripts/check_teacher_docs_depth.py
   - scripts/check_tp_pedagogical_assets.py
+  - scripts/check_tp_pedagogical_assets_runtime.py
   - scripts/check_tp_test_alignment.py
   - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_documents_quality_gates.py
@@ -442,6 +470,8 @@
   - tests/test_first_batch_tp_assets.py
   - tests/test_line_padding.py
   - tests/test_local_drive_traceability.py
+  - tests/test_missing_register_actionability.py
+  - tests/test_no_coverage_from_sheets_only.py
   - tests/test_private_data_detection.py
   - tests/test_ready_session_operationality.py
   - tests/test_ready_supports_gates.py
@@ -450,6 +480,7 @@
   - tests/test_session_specificity.py
   - tests/test_support_substance.py
   - tests/test_tp_pedagogical_assets.py
+  - tests/test_tp_pedagogical_assets_runtime.py
   - tp_test_alignment_report.md
 - Ressources pédagogiques :
   - premiere/banques/evaluations/index.md
@@ -653,6 +684,19 @@
   - 03_progressions/supports/premiere/P05/code/P05_corrige_professeur_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
+  - 03_progressions/supports/premiere/P06/P06_TD_tables_recherche_tri_fusion.md
+  - 03_progressions/supports/premiere/P06/P06_evaluation_tables_recherche_tri_fusion.md
+  - 03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md
+  - 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md
+  - 03_progressions/supports/premiere/P07/P07_evaluation_fonctions_tests_specifications.md
+  - 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md
+  - 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
+  - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
+  - 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md
+  - 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md
+  - 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md
+  - 03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md
+  - 03_progressions/supports/premiere/P09/P09_evaluation_architecture_os_droits.md
   - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md
   - 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md
   - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md
@@ -725,6 +769,17 @@
   - 03_progressions/supports/terminale/T05/code/T05_corrige_professeur_arbres_binaires.py
   - 03_progressions/supports/terminale/T05/code/T05_starter_arbres_binaires.py
   - 03_progressions/supports/terminale/T05/code/T05_tests_attendus_arbres_binaires.py
+  - 03_progressions/supports/terminale/T06/T06_TD_arbres_binaires_recherche.md
+  - 03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md
+  - 03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md
+  - 03_progressions/supports/terminale/T07/T07_TD_graphes_modelisation_listes_matrices.md
+  - 03_progressions/supports/terminale/T07/T07_TP_graphes_modelisation_listes_matrices.md
+  - 03_progressions/supports/terminale/T07/T07_evaluation_graphes_modelisation_listes_matrices.md
+  - 03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md
+  - 03_progressions/supports/terminale/T08/T08_TP_bfs_dfs_cycles_chemins.md
+  - 03_progressions/supports/terminale/T08/T08_evaluation_bfs_dfs_cycles_chemins.md
+  - 03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md
+  - 03_progressions/supports/terminale/T09/T09_evaluation_bases_relationnelles_cles_contraintes.md
   - INDEX.md
   - METHODE_PRODUCTION_REELLE.md
   - README.md
@@ -772,6 +827,7 @@
   - scripts/check_course_internal_coherence.py
   - scripts/check_course_sheet_linked_resources_exist.py
   - scripts/check_course_sheet_readiness.py
+  - scripts/check_course_sheet_readiness_strict.py
   - scripts/check_course_sheets_alignment.py
   - scripts/check_course_sheets_coverage.py
   - scripts/check_course_sheets_no_template_abuse.py
@@ -796,9 +852,11 @@
   - scripts/check_local_drive_traceability.py
   - scripts/check_manifest_source_integrity.py
   - scripts/check_metadata.py
+  - scripts/check_missing_register_actionability.py
   - scripts/check_monthly_load_balance.py
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
+  - scripts/check_no_coverage_from_sheets_only.py
   - scripts/check_no_line_padding.py
   - scripts/check_no_needs_review_for_release.py
   - scripts/check_no_placeholders.py
@@ -838,6 +896,7 @@
   - scripts/check_teacher_corrections_alignment.py
   - scripts/check_teacher_docs_depth.py
   - scripts/check_tp_pedagogical_assets.py
+  - scripts/check_tp_pedagogical_assets_runtime.py
   - scripts/check_tp_test_alignment.py
   - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_documents_quality_gates.py
@@ -861,6 +920,8 @@
   - tests/test_first_batch_tp_assets.py
   - tests/test_line_padding.py
   - tests/test_local_drive_traceability.py
+  - tests/test_missing_register_actionability.py
+  - tests/test_no_coverage_from_sheets_only.py
   - tests/test_private_data_detection.py
   - tests/test_ready_session_operationality.py
   - tests/test_ready_supports_gates.py
@@ -869,6 +930,7 @@
   - tests/test_session_specificity.py
   - tests/test_support_substance.py
   - tests/test_tp_pedagogical_assets.py
+  - tests/test_tp_pedagogical_assets_runtime.py
   - tp_test_alignment_report.md
 - Ressources copiées dans banques :
 
@@ -879,10 +941,10 @@
 - P03: 11
 - P04: 12
 - P05: 10
-- P06: 1
-- P07: 1
-- P08: 2
-- P09: 1
+- P06: 3
+- P07: 4
+- P08: 8
+- P09: 3
 - P10: 1
 - P11: 1
 - P12: 1
@@ -896,10 +958,10 @@
 - T03: 12
 - T04: 10
 - T05: 10
-- T06: 1
-- T07: 1
-- T08: 1
-- T09: 1
+- T06: 4
+- T07: 4
+- T08: 4
+- T09: 3
 - T10: 2
 - T11: 1
 - T12: 1
@@ -1055,6 +1117,19 @@
 - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md
 - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
 - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
+- 03_progressions/supports/premiere/P06/P06_TD_tables_recherche_tri_fusion.md
+- 03_progressions/supports/premiere/P06/P06_evaluation_tables_recherche_tri_fusion.md
+- 03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md
+- 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md
+- 03_progressions/supports/premiere/P07/P07_evaluation_fonctions_tests_specifications.md
+- 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md
+- 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
+- 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
+- 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md
+- 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md
+- 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md
+- 03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md
+- 03_progressions/supports/premiere/P09/P09_evaluation_architecture_os_droits.md
 - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md
 - 03_progressions/supports/terminale/T00/T00_evaluation_diagnostic_tests.md
@@ -1115,6 +1190,17 @@
 - 03_progressions/supports/terminale/T05/T05_version_amenagee_arbres_binaires.md
 - 03_progressions/supports/terminale/T05/code/T05_starter_arbres_binaires.py
 - 03_progressions/supports/terminale/T05/code/T05_tests_attendus_arbres_binaires.py
+- 03_progressions/supports/terminale/T06/T06_TD_arbres_binaires_recherche.md
+- 03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md
+- 03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md
+- 03_progressions/supports/terminale/T07/T07_TD_graphes_modelisation_listes_matrices.md
+- 03_progressions/supports/terminale/T07/T07_TP_graphes_modelisation_listes_matrices.md
+- 03_progressions/supports/terminale/T07/T07_evaluation_graphes_modelisation_listes_matrices.md
+- 03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md
+- 03_progressions/supports/terminale/T08/T08_TP_bfs_dfs_cycles_chemins.md
+- 03_progressions/supports/terminale/T08/T08_evaluation_bfs_dfs_cycles_chemins.md
+- 03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md
+- 03_progressions/supports/terminale/T09/T09_evaluation_bases_relationnelles_cles_contraintes.md
 - INDEX.md
 - METHODE_PRODUCTION_REELLE.md
 - README.md
@@ -1185,6 +1271,7 @@
 - scripts/check_course_internal_coherence.py
 - scripts/check_course_sheet_linked_resources_exist.py
 - scripts/check_course_sheet_readiness.py
+- scripts/check_course_sheet_readiness_strict.py
 - scripts/check_course_sheets_alignment.py
 - scripts/check_course_sheets_coverage.py
 - scripts/check_course_sheets_no_template_abuse.py
@@ -1209,9 +1296,11 @@
 - scripts/check_local_drive_traceability.py
 - scripts/check_manifest_source_integrity.py
 - scripts/check_metadata.py
+- scripts/check_missing_register_actionability.py
 - scripts/check_monthly_load_balance.py
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
+- scripts/check_no_coverage_from_sheets_only.py
 - scripts/check_no_line_padding.py
 - scripts/check_no_needs_review_for_release.py
 - scripts/check_no_placeholders.py
@@ -1250,6 +1339,7 @@
 - scripts/check_teacher_corrections_alignment.py
 - scripts/check_teacher_docs_depth.py
 - scripts/check_tp_pedagogical_assets.py
+- scripts/check_tp_pedagogical_assets_runtime.py
 - scripts/check_tp_test_alignment.py
 - scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_documents_quality_gates.py
@@ -1294,6 +1384,8 @@
 - tests/test_first_batch_tp_assets.py
 - tests/test_line_padding.py
 - tests/test_local_drive_traceability.py
+- tests/test_missing_register_actionability.py
+- tests/test_no_coverage_from_sheets_only.py
 - tests/test_private_data_detection.py
 - tests/test_ready_session_operationality.py
 - tests/test_ready_supports_gates.py
@@ -1302,6 +1394,7 @@
 - tests/test_session_specificity.py
 - tests/test_support_substance.py
 - tests/test_tp_pedagogical_assets.py
+- tests/test_tp_pedagogical_assets_runtime.py
 - tp_test_alignment_report.md
 
 ## Ressources haute qualité
@@ -1455,6 +1548,19 @@
 - 03_progressions/supports/premiere/P05/code/P05_corrige_professeur_tables_csv.py
 - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
 - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
+- 03_progressions/supports/premiere/P06/P06_TD_tables_recherche_tri_fusion.md
+- 03_progressions/supports/premiere/P06/P06_evaluation_tables_recherche_tri_fusion.md
+- 03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md
+- 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md
+- 03_progressions/supports/premiere/P07/P07_evaluation_fonctions_tests_specifications.md
+- 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md
+- 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
+- 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
+- 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md
+- 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md
+- 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md
+- 03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md
+- 03_progressions/supports/premiere/P09/P09_evaluation_architecture_os_droits.md
 - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md
 - 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md
@@ -1527,6 +1633,17 @@
 - 03_progressions/supports/terminale/T05/code/T05_corrige_professeur_arbres_binaires.py
 - 03_progressions/supports/terminale/T05/code/T05_starter_arbres_binaires.py
 - 03_progressions/supports/terminale/T05/code/T05_tests_attendus_arbres_binaires.py
+- 03_progressions/supports/terminale/T06/T06_TD_arbres_binaires_recherche.md
+- 03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md
+- 03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md
+- 03_progressions/supports/terminale/T07/T07_TD_graphes_modelisation_listes_matrices.md
+- 03_progressions/supports/terminale/T07/T07_TP_graphes_modelisation_listes_matrices.md
+- 03_progressions/supports/terminale/T07/T07_evaluation_graphes_modelisation_listes_matrices.md
+- 03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md
+- 03_progressions/supports/terminale/T08/T08_TP_bfs_dfs_cycles_chemins.md
+- 03_progressions/supports/terminale/T08/T08_evaluation_bfs_dfs_cycles_chemins.md
+- 03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md
+- 03_progressions/supports/terminale/T09/T09_evaluation_bases_relationnelles_cles_contraintes.md
 - INDEX.md
 - METHODE_PRODUCTION_REELLE.md
 - README.md
@@ -1601,6 +1718,7 @@
 - scripts/check_course_internal_coherence.py
 - scripts/check_course_sheet_linked_resources_exist.py
 - scripts/check_course_sheet_readiness.py
+- scripts/check_course_sheet_readiness_strict.py
 - scripts/check_course_sheets_alignment.py
 - scripts/check_course_sheets_coverage.py
 - scripts/check_course_sheets_no_template_abuse.py
@@ -1625,9 +1743,11 @@
 - scripts/check_local_drive_traceability.py
 - scripts/check_manifest_source_integrity.py
 - scripts/check_metadata.py
+- scripts/check_missing_register_actionability.py
 - scripts/check_monthly_load_balance.py
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
+- scripts/check_no_coverage_from_sheets_only.py
 - scripts/check_no_line_padding.py
 - scripts/check_no_needs_review_for_release.py
 - scripts/check_no_placeholders.py
@@ -1667,6 +1787,7 @@
 - scripts/check_teacher_corrections_alignment.py
 - scripts/check_teacher_docs_depth.py
 - scripts/check_tp_pedagogical_assets.py
+- scripts/check_tp_pedagogical_assets_runtime.py
 - scripts/check_tp_test_alignment.py
 - scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_documents_quality_gates.py
@@ -1716,6 +1837,8 @@
 - tests/test_first_batch_tp_assets.py
 - tests/test_line_padding.py
 - tests/test_local_drive_traceability.py
+- tests/test_missing_register_actionability.py
+- tests/test_no_coverage_from_sheets_only.py
 - tests/test_private_data_detection.py
 - tests/test_ready_session_operationality.py
 - tests/test_ready_supports_gates.py
@@ -1724,6 +1847,7 @@
 - tests/test_session_specificity.py
 - tests/test_support_substance.py
 - tests/test_tp_pedagogical_assets.py
+- tests/test_tp_pedagogical_assets_runtime.py
 - tp_test_alignment_report.md
 
 ## Doublons (même hash SHA256)

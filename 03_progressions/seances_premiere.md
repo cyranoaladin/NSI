@@ -638,16 +638,16 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : cours
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance partiellement opérationnelle, non validée.
 - Objectif : introduire tri de table, fusion par clé et doublons à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : P-TABLE-03, P-TABLE-04
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P06_TD_tables_recherche_tri_fusion.md, P06_evaluation_tables_recherche_tri_fusion.md.
 - Déroulé : 1. question flash P06-Q1; 2. activité P06_intro sur tri de table, fusion par clé et doublons; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P06; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : réponses annotées et contrôlées dans P06_TD_tables_recherche_tri_fusion.md.
+- Trace écrite : synthèse courte extraite de P06_TD_tables_recherche_tri_fusion.md, à relire avant publication.
+- Devoir ou préparation : terminer deux questions ciblées de P06_TD_tables_recherche_tri_fusion.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P06_TD_tables_recherche_tri_fusion.md.
 
 ### Séance P06-S2
 - Durée : 2 h
@@ -754,16 +754,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : cours
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance partiellement opérationnelle, non validée.
 - Objectif : introduire spécification de fonctions et jeux de tests à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P07_TD_fonctions_tests_specifications.md, P07_TP_fonctions_tests_specifications.md, P07_evaluation_fonctions_tests_specifications.md.
 - Déroulé : 1. question flash P07-Q1; 2. activité P07_intro sur spécification de fonctions et jeux de tests; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P07; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : réponses annotées et contrôlées dans P07_TD_fonctions_tests_specifications.md.
+- Trace écrite : synthèse courte extraite de P07_TD_fonctions_tests_specifications.md, à relire avant publication.
+- Devoir ou préparation : terminer deux questions ciblées de P07_TD_fonctions_tests_specifications.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P07_TD_fonctions_tests_specifications.md.
 
 ### Séance P07-S2
 - Durée : 2 h
@@ -870,16 +870,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : cours
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance partiellement opérationnelle, non validée.
 - Objectif : introduire formulaire Web local, événement clic et GET POST à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P08_TD_html_css_dom.md, P08_TP_html_css_dom.md, P08_TD_http_get_post_formulaires.md, P08_TP_http_get_post_formulaires.md.
 - Déroulé : 1. question flash P08-Q1; 2. activité P08_intro sur formulaire Web local, événement clic et GET POST; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P08; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : réponses annotées et contrôlées dans P08_TD_html_css_dom.md.
+- Trace écrite : synthèse courte extraite de P08_TD_html_css_dom.md, à relire avant publication.
+- Devoir ou préparation : terminer deux questions ciblées de P08_TD_html_css_dom.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P08_TD_html_css_dom.md.
 
 ### Séance P08-S2
 - Durée : 2 h
@@ -1004,16 +1004,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : cours
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance partiellement opérationnelle, non validée.
 - Objectif : introduire commandes shell et droits sur arborescence fictive à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : P-ARCH-01A, P-ARCH-01B, P-ARCH-03A, P-ARCH-03B, P-ARCH-03C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P09_TD_architecture_os_droits.md, P09_evaluation_architecture_os_droits.md.
 - Déroulé : 1. question flash P09-Q1; 2. activité P09_intro sur commandes shell et droits sur arborescence fictive; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P09; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : réponses annotées et contrôlées dans P09_TD_architecture_os_droits.md.
+- Trace écrite : synthèse courte extraite de P09_TD_architecture_os_droits.md, à relire avant publication.
+- Devoir ou préparation : terminer deux questions ciblées de P09_TD_architecture_os_droits.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P09_TD_architecture_os_droits.md.
 
 ### Séance P09-S2
 - Durée : 2 h

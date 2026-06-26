@@ -15,7 +15,7 @@ official_program:
     - "T-ALGO-02B"
     - "T-ALGO-02C"
     - "T-ALGO-02D"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # T08 - Fiche cours - BFS, DFS, cycles et chemins
@@ -77,11 +77,12 @@ Proposer un cas limite pertinent pour BFS, DFS et chemins et expliquer le résul
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | T08-S1 | réelle | séance présente dans la progression |
-| TD | T08_TD_bfs_dfs_cycles_chemins.md | à créer | inscrit au registre v2 |
-| Évaluation | T08_evaluation_bfs_dfs_cycles_chemins.md | à créer | inscrit au registre v2 |
+| TD | T08_TD_bfs_dfs_cycles_chemins.md | existant | support produit en needs_review, non validé |
+| TP | T08_TP_bfs_dfs_cycles_chemins.md | existant | support produit en needs_review, non validé |
+| Évaluation | T08_evaluation_bfs_dfs_cycles_chemins.md | existant | support produit en needs_review, non validé |
 
 ## Auto-évaluation
 - Je peux expliquer parcours de graphes avec un exemple différent de ceux de la fiche T08.
 - Je peux citer au moins une capacité parmi T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D et dire où elle est travaillée dans la fiche.
-- Je peux dire quel support lié à T08 existe déjà ou reste inscrit au registre.
+- Je peux dire quel support lié à T08 existe déjà ou existe ou reste explicitement qualifié.
 - Je peux identifier un cas limite de BFS, DFS et chemins sans transformer la fiche en corrigé complet.

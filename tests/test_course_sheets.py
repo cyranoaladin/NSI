@@ -13,6 +13,7 @@ import check_course_sheets_coverage as coverage
 import check_course_sheets_quality as quality
 import check_course_sheet_linked_resources_exist as linked_resources
 import check_course_sheet_readiness as readiness
+import check_course_sheet_readiness_strict as readiness_strict
 import check_course_sheets_no_template_abuse as no_template
 import check_course_sheets_substance as substance
 
@@ -204,6 +205,46 @@ class CourseSheetsTest(unittest.TestCase):
             result = readiness.analyze_course_sheet_readiness(root)
 
             self.assertTrue(any("readiness déclarée operational mais calculée linked" in error for error in result.errors))
+
+    def test_strict_readiness_lists_linked_missing_supports(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            (root / "03_progressions").mkdir()
+            (root / "03_progressions" / "seances_premiere.md").write_text("### Séance P01-S1\n", encoding="utf-8")
+            (root / "missing_documents_register_v2.md").write_text(
+                "| Fichier | Niveau | Séquence | Séance(s) | Type | Priorité | Statut | Responsable | Date cible | Source possible | Lien Drive éventuel | Dépendance | Décision | Blocage si absent | Fiche(s) concernée(s) | Impact pédagogique |\n"
+                "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n"
+                "| P01_TD_conversions_exercices_1_3.md | premiere | P01 | P01-S1 | td | haute | absent | equipe | 2026-10-01 | BO | NA | aucune | créer | oui | P01_fiche_cours_bases.md | TD absent donc fiche non opérationnelle |\n",
+                encoding="utf-8",
+            )
+            sheet = root / "03_progressions" / "fiches_cours" / "premiere" / "P01" / "P01_fiche_cours_bases.md"
+            sheet.parent.mkdir(parents=True)
+            sheet.write_text(VALID_SHEET, encoding="utf-8")
+
+            result = readiness_strict.analyze_course_sheet_readiness_strict(root)
+
+            self.assertEqual(result.counts["linked"], 1)
+            missing = "\n".join(item for values in result.linked_missing.values() for item in values)
+            self.assertIn("P01_TD_conversions_exercices_1_3.md", missing)
+
+    def test_strict_readiness_rejects_operational_with_absent_td(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            (root / "03_progressions").mkdir()
+            (root / "03_progressions" / "seances_premiere.md").write_text("### Séance P01-S1\n", encoding="utf-8")
+            (root / "missing_documents_register_v2.md").write_text(
+                "| Fichier | Niveau | Séquence | Séance(s) | Type | Priorité | Statut | Responsable | Date cible | Source possible | Lien Drive éventuel | Dépendance | Décision | Blocage si absent | Fiche(s) concernée(s) | Impact pédagogique |\n"
+                "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n"
+                "| P01_TD_conversions_exercices_1_3.md | premiere | P01 | P01-S1 | td | haute | absent | equipe | 2026-10-01 | BO | NA | aucune | créer | oui | P01_fiche_cours_bases.md | TD absent donc fiche non opérationnelle |\n",
+                encoding="utf-8",
+            )
+            sheet = root / "03_progressions" / "fiches_cours" / "premiere" / "P01" / "P01_fiche_cours_bases.md"
+            sheet.parent.mkdir(parents=True)
+            sheet.write_text(VALID_SHEET.replace("readiness: linked", "readiness: operational"), encoding="utf-8")
+
+            result = readiness_strict.analyze_course_sheet_readiness_strict(root)
+
+            self.assertTrue(any("operational" in error and "support absent" in error for error in result.errors))
 
 
 if __name__ == "__main__":

@@ -17,7 +17,7 @@ official_program:
     - "P-IHM-04A"
     - "P-IHM-04B"
     - "P-IHM-04C"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # P08 - Fiche cours - HTTP, GET, POST et formulaires
@@ -79,11 +79,12 @@ Proposer un cas limite pertinent pour Web client et requêtes HTTP et expliquer 
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | P08-S1 | réelle | séance présente dans la progression |
-| TD | P08_TD_http_get_post_formulaires.md | à créer | inscrit au registre v2 |
-| Évaluation | P08_evaluation_http_get_post_formulaires.md | à créer | inscrit au registre v2 |
+| TD | P08_TD_http_get_post_formulaires.md | existant | support produit en needs_review, non validé |
+| TP | P08_TP_http_get_post_formulaires.md | existant | support produit en needs_review, non validé |
+| Évaluation | P08_evaluation_http_get_post_formulaires.md | existant | support produit en needs_review, non validé |
 
 ## Auto-évaluation
 - Je peux expliquer requêtes HTTP avec un exemple différent de ceux de la fiche P08.
 - Je peux citer au moins une capacité parmi P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C et dire où elle est travaillée dans la fiche.
-- Je peux dire quel support lié à P08 existe déjà ou reste inscrit au registre.
+- Je peux dire quel support lié à P08 existe déjà ou existe ou reste explicitement qualifié.
 - Je peux identifier un cas limite de Web client et requêtes HTTP sans transformer la fiche en corrigé complet.

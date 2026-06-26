@@ -89,6 +89,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_evaluation_bareme_alignment.py: nom propre suspect -> Evaluation Bareme Alignment Report
 - scripts/check_git_clean.py: nom propre suspect -> Check Git
 - scripts/check_learning_objectives_assessed.py: nom propre suspect -> Learning Objectives Assessed Report
+- scripts/check_missing_register_actionability.py: nom propre suspect -> Lien Drive
 - scripts/check_program_capacity_evidence_depth.py: nom propre suspect -> Program Capacity Evidence Depth Report
 - scripts/check_progression_calendar_alignment.py: nom propre suspect -> Ressources Drive
 - scripts/check_scientific_claims_review.py: nom propre suspect -> Scientific Claims Review Report
@@ -103,6 +104,9 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/render_sequence.py: nom propre suspect -> Fira Code
 - scripts/render_sequence.py: nom propre suspect -> Sans Mono
 - td_corrige_alignment_report.md: nom propre suspect -> Corrige Alignment Report
+- tests/test_course_sheets.py: nom propre suspect -> Lien Drive
+- tests/test_course_sheets.py: nom propre suspect -> Lien Drive
+- tests/test_missing_register_actionability.py: nom propre suspect -> Lien Drive
 - tests/test_session_referenced_files_exist.py: nom propre suspect -> Lien Drive
 - tp_test_alignment_report.md: nom propre suspect -> Test Alignment Report
 
@@ -286,6 +290,9 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P05/code/P05_corrige_professeur_tables_csv.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py: nom propre suspect -> Asset Python
+- 03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
+- 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
+- 03_progressions/supports/premiere/P07/P07_evaluation_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
 - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md: nom propre suspect -> Reprise Python
@@ -305,7 +312,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 82 alertes supplémentaires non affichées
+- ... 88 alertes supplémentaires non affichées

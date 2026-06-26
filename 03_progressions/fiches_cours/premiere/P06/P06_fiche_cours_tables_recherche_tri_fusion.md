@@ -13,7 +13,7 @@ official_program:
   capacities:
     - "P-TABLE-03"
     - "P-TABLE-04"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # P06 - Fiche cours - Tables : recherche, tri et fusion
@@ -75,11 +75,11 @@ Proposer un cas limite pertinent pour recherche, tri et fusion de tables et expl
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | P06-S1 | réelle | séance présente dans la progression |
-| TD | P06_TD_tables_recherche_tri_fusion.md | à créer | inscrit au registre v2 |
-| Évaluation | P06_evaluation_tables_recherche_tri_fusion.md | à créer | inscrit au registre v2 |
+| TD | P06_TD_tables_recherche_tri_fusion.md | existant | support produit en needs_review, non validé |
+| Évaluation | P06_evaluation_tables_recherche_tri_fusion.md | existant | support produit en needs_review, non validé |
 
 ## Auto-évaluation
 - Je peux expliquer tri et fusion de tables avec un exemple différent de ceux de la fiche P06.
 - Je peux citer au moins une capacité parmi P-TABLE-03, P-TABLE-04 et dire où elle est travaillée dans la fiche.
-- Je peux dire quel support lié à P06 existe déjà ou reste inscrit au registre.
+- Je peux dire quel support lié à P06 existe déjà ou existe ou reste explicitement qualifié.
 - Je peux identifier un cas limite de recherche, tri et fusion de tables sans transformer la fiche en corrigé complet.

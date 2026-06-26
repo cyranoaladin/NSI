@@ -15,7 +15,7 @@ official_program:
     - "T-STRUCT-05B"
     - "T-STRUCT-05C"
     - "T-STRUCT-05D"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # T07 - Fiche cours - Graphes : modélisation, listes et matrices
@@ -77,11 +77,12 @@ Proposer un cas limite pertinent pour graphes et expliquer le résultat attendu.
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | T07-S1 | réelle | séance présente dans la progression |
-| TD | T07_TD_graphes_modelisation_listes_matrices.md | à créer | inscrit au registre v2 |
-| Évaluation | T07_evaluation_graphes_modelisation_listes_matrices.md | à créer | inscrit au registre v2 |
+| TD | T07_TD_graphes_modelisation_listes_matrices.md | existant | support produit en needs_review, non validé |
+| TP | T07_TP_graphes_modelisation_listes_matrices.md | existant | support produit en needs_review, non validé |
+| Évaluation | T07_evaluation_graphes_modelisation_listes_matrices.md | existant | support produit en needs_review, non validé |
 
 ## Auto-évaluation
 - Je peux expliquer modélisation de graphes avec un exemple différent de ceux de la fiche T07.
 - Je peux citer au moins une capacité parmi T-STRUCT-05A, T-STRUCT-05B, T-STRUCT-05C, T-STRUCT-05D et dire où elle est travaillée dans la fiche.
-- Je peux dire quel support lié à T07 existe déjà ou reste inscrit au registre.
+- Je peux dire quel support lié à T07 existe déjà ou existe ou reste explicitement qualifié.
 - Je peux identifier un cas limite de graphes sans transformer la fiche en corrigé complet.
