@@ -18,7 +18,20 @@ REGISTER = ROOT / "missing_documents_register_v2.md"
 FILE_REF_RE = re.compile(r"\b([A-Za-z][A-Za-z0-9_]*\.[a-z]{2,4})\b")
 SESSION_RE = re.compile(r"^### Séance ([PT]\d{2}-S\d+)", re.M)
 SPECIFIC_RE = re.compile(r"^[PT]\d{2}_[A-Za-z0-9_]+\.[a-z]{2,4}$")
-FIRST_BATCH_PREFIXES = {"P00", "P01", "P02", "T00", "T01", "T02"}
+FIRST_BATCH_PREFIXES = {
+    "P00",
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "T00",
+    "T01",
+    "T02",
+    "T03",
+    "T04",
+    "T05",
+}
 
 REF_FIELDS = {
     "Document utilisé",

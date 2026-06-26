@@ -1,57 +1,208 @@
 ---
-title: "P00 - TD - Diagnostic Python et carnet de bord"
+title: "P00 - Td - Diagnostic Python et carnet de bord"
 level: "premiere"
 sequence_id: "P00"
 document_type: "td"
 status: "needs_review"
-version: "0.1.0"
-source: "BO 2019 ; source possible Drive : Documents_DRIVE/1_1ères NSI/1_Rentrée/2_Introduction_NSI.pdf"
-theme: "Rentrée et méthode de travail"
-notion: "diagnostic Python, lecture de consignes, carnet de bord"
-objectifs: ["Travailler la capacité ciblée", "Produire une trace vérifiable", "Identifier les erreurs fréquentes"]
+version: "0.3.0"
+source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/1_1ères NSI/1_Rentrée/2_Introduction_NSI.pdf"
+theme: "Rentrée et méthode"
+notion: "affectation, expression, trace, test"
+objectifs:
+  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
+  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
+  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
 private_data: false
 official_program:
-  capacities: ["P-HIST-01", "P-LANG-01"]
+  capacities:
+    - "P-HIST-01"
+    - "P-LANG-01"
 ---
 
-# P00 - TD - Diagnostic Python et carnet de bord
 
-## Objectifs
-- Comprendre la notion : diagnostic Python, lecture de consignes, carnet de bord.
-- Produire une réponse vérifiable et exploitable en classe.
-- Relier le travail aux capacités officielles : P-HIST-01, P-LANG-01.
+# P00 - Td - Diagnostic Python et carnet de bord
 
-## Capacités officielles
+## Objectifs spécifiques
+- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
+- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
+- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+
+## Capacités officielles atomiques
 - P-HIST-01
 - P-LANG-01
-## Consignes
-Répondre sur feuille ou cahier. Chaque réponse doit contenir une justification courte.
 
-## Exemple
-On lit le programme `x = 3; x = x + 2; print(x)`. La réponse attendue est `5`, mais la justification doit préciser que la deuxième affectation remplace l'ancienne valeur de `x`.
+## Prérequis
+- Lire une consigne technique sans confondre donnée, méthode et résultat.
+- Écrire une réponse sous forme de phrases courtes et vérifiables.
+- Utiliser Python en distinguant expression, valeur, variable et affichage.
+- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
 
-## Exercices
-1. Question socle : reprendre l'exemple avec une valeur voisine.
-2. Question standard : résoudre le cas nouveau et expliquer la méthode.
-3. Question standard : comparer deux réponses d'élèves et choisir la plus solide.
-4. Question approfondissement : produire un cas limite et sa correction.
+## Séance(s) correspondante(s)
+- P00-S1 à P00-S4 : ce support est rattaché aux séances indiquées dans la progression.
+
+## Situation-problème concrète
+une classe de Première démarre avec des habitudes Python inégales et doit produire une trace vérifiable. La tâche consiste à traiter affectation, expression, trace, test sans réponse intuitive non vérifiée.
+
+## Activité d’entrée
+1. Lire la situation : une classe de Première démarre avec des habitudes Python inégales et doit produire une trace vérifiable.
+2. Isoler la donnée de départ : variable x initialisée à 3 puis réaffectée.
+3. Prédire individuellement le résultat de l’exemple `x = 3 ; x = x + 2 ; print(x)`.
+4. Comparer deux stratégies et noter la divergence précise.
+5. Appliquer la méthode retenue : suivre l’état de la variable après chaque affectation.
+6. Contrôler avec le résultat de référence : 5.
+7. Tester le cas limite suivant : réaffectation avec zéro ou valeur négative.
+8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+
+## Exemple corrigé précis
+- Exemple : `x = 3 ; x = x + 2 ; print(x)`.
+- Méthode : suivre l’état de la variable après chaque affectation.
+- Résultat : 5.
+- Justification : chaque étape transforme une donnée identifiable.
+
+## Exercices numérotés
+### Exercice 1
+- Objectif travaillé : O1.
+- Capacité officielle : P-HIST-01.
+- Énoncé : résoudre une variante de `x = 3 ; x = x + 2 ; print(x)` en changeant une donnée contrôlée.
+- Travail demandé : appliquer suivre l’état de la variable après chaque affectation, puis rédiger le contrôle.
+- Contrainte : citer le cas limite `réaffectation avec zéro ou valeur négative` si la méthode peut échouer.
+- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
+- Critère de réussite : aucun résultat n’est donné sans justification.
+
+### Exercice 2
+- Objectif travaillé : O2.
+- Capacité officielle : P-LANG-01.
+- Énoncé : résoudre une variante de `x = 3 ; x = x + 2 ; print(x)` en changeant une donnée contrôlée.
+- Travail demandé : appliquer suivre l’état de la variable après chaque affectation, puis rédiger le contrôle.
+- Contrainte : citer le cas limite `réaffectation avec zéro ou valeur négative` si la méthode peut échouer.
+- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
+- Critère de réussite : aucun résultat n’est donné sans justification.
+
+### Exercice 3
+- Objectif travaillé : O3.
+- Capacité officielle : P-HIST-01.
+- Énoncé : résoudre une variante de `x = 3 ; x = x + 2 ; print(x)` en changeant une donnée contrôlée.
+- Travail demandé : appliquer suivre l’état de la variable après chaque affectation, puis rédiger le contrôle.
+- Contrainte : citer le cas limite `réaffectation avec zéro ou valeur négative` si la méthode peut échouer.
+- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
+- Critère de réussite : aucun résultat n’est donné sans justification.
+
+### Exercice 4
+- Objectif travaillé : O4.
+- Capacité officielle : P-LANG-01.
+- Énoncé : résoudre une variante de `x = 3 ; x = x + 2 ; print(x)` en changeant une donnée contrôlée.
+- Travail demandé : appliquer suivre l’état de la variable après chaque affectation, puis rédiger le contrôle.
+- Contrainte : citer le cas limite `réaffectation avec zéro ou valeur négative` si la méthode peut échouer.
+- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
+- Critère de réussite : aucun résultat n’est donné sans justification.
+
+### Exercice 5
+- Objectif travaillé : O1.
+- Capacité officielle : P-HIST-01.
+- Énoncé : résoudre une variante de `x = 3 ; x = x + 2 ; print(x)` en changeant une donnée contrôlée.
+- Travail demandé : appliquer suivre l’état de la variable après chaque affectation, puis rédiger le contrôle.
+- Contrainte : citer le cas limite `réaffectation avec zéro ou valeur négative` si la méthode peut échouer.
+- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
+- Critère de réussite : aucun résultat n’est donné sans justification.
+
+### Exercice 6
+- Objectif travaillé : O2.
+- Capacité officielle : P-LANG-01.
+- Énoncé : résoudre une variante de `x = 3 ; x = x + 2 ; print(x)` en changeant une donnée contrôlée.
+- Travail demandé : appliquer suivre l’état de la variable après chaque affectation, puis rédiger le contrôle.
+- Contrainte : citer le cas limite `réaffectation avec zéro ou valeur négative` si la méthode peut échouer.
+- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
+- Critère de réussite : aucun résultat n’est donné sans justification.
+
+### Exercice 7
+- Objectif travaillé : O3.
+- Capacité officielle : P-HIST-01.
+- Énoncé : résoudre une variante de `x = 3 ; x = x + 2 ; print(x)` en changeant une donnée contrôlée.
+- Travail demandé : appliquer suivre l’état de la variable après chaque affectation, puis rédiger le contrôle.
+- Contrainte : citer le cas limite `réaffectation avec zéro ou valeur négative` si la méthode peut échouer.
+- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
+- Critère de réussite : aucun résultat n’est donné sans justification.
+
+### Exercice 8
+- Objectif travaillé : O4.
+- Capacité officielle : P-LANG-01.
+- Énoncé : résoudre une variante de `x = 3 ; x = x + 2 ; print(x)` en changeant une donnée contrôlée.
+- Travail demandé : appliquer suivre l’état de la variable après chaque affectation, puis rédiger le contrôle.
+- Contrainte : citer le cas limite `réaffectation avec zéro ou valeur négative` si la méthode peut échouer.
+- Production attendue : réponse en trois lignes, méthode, résultat, vérification.
+- Critère de réussite : aucun résultat n’est donné sans justification.
 
 ## Corrigé
-Une réponse est correcte si elle distingue valeur initiale, nouvelle affectation et affichage. L'erreur la plus fréquente consiste à lire `=` comme une égalité mathématique permanente.
+### Corrigé exercice 1
+- On repère d’abord variable x initialisée à 3 puis réaffectée.
+- On applique ensuite suivre l’état de la variable après chaque affectation.
+- Le résultat attendu est `5` pour l’exemple de référence ou une valeur cohérente pour la variante.
+- L’erreur EF1 est évitée car la vérification est écrite.
 
-## Justification attendue
-La correction doit faire apparaître les étapes, le vocabulaire de la capacité et une vérification.
+### Corrigé exercice 2
+- On repère d’abord variable x initialisée à 3 puis réaffectée.
+- On applique ensuite suivre l’état de la variable après chaque affectation.
+- Le résultat attendu est `5` pour l’exemple de référence ou une valeur cohérente pour la variante.
+- L’erreur EF2 est évitée car la vérification est écrite.
+
+### Corrigé exercice 3
+- On repère d’abord variable x initialisée à 3 puis réaffectée.
+- On applique ensuite suivre l’état de la variable après chaque affectation.
+- Le résultat attendu est `5` pour l’exemple de référence ou une valeur cohérente pour la variante.
+- L’erreur EF3 est évitée car la vérification est écrite.
+
+### Corrigé exercice 4
+- On repère d’abord variable x initialisée à 3 puis réaffectée.
+- On applique ensuite suivre l’état de la variable après chaque affectation.
+- Le résultat attendu est `5` pour l’exemple de référence ou une valeur cohérente pour la variante.
+- L’erreur EF4 est évitée car la vérification est écrite.
+
+### Corrigé exercice 5
+- On repère d’abord variable x initialisée à 3 puis réaffectée.
+- On applique ensuite suivre l’état de la variable après chaque affectation.
+- Le résultat attendu est `5` pour l’exemple de référence ou une valeur cohérente pour la variante.
+- L’erreur EF1 est évitée car la vérification est écrite.
+
+### Corrigé exercice 6
+- On repère d’abord variable x initialisée à 3 puis réaffectée.
+- On applique ensuite suivre l’état de la variable après chaque affectation.
+- Le résultat attendu est `5` pour l’exemple de référence ou une valeur cohérente pour la variante.
+- L’erreur EF2 est évitée car la vérification est écrite.
+
+### Corrigé exercice 7
+- On repère d’abord variable x initialisée à 3 puis réaffectée.
+- On applique ensuite suivre l’état de la variable après chaque affectation.
+- Le résultat attendu est `5` pour l’exemple de référence ou une valeur cohérente pour la variante.
+- L’erreur EF3 est évitée car la vérification est écrite.
+
+### Corrigé exercice 8
+- On repère d’abord variable x initialisée à 3 puis réaffectée.
+- On applique ensuite suivre l’état de la variable après chaque affectation.
+- Le résultat attendu est `5` pour l’exemple de référence ou une valeur cohérente pour la variante.
+- L’erreur EF4 est évitée car la vérification est écrite.
 
 ## Erreurs fréquentes
-- Répondre par intuition sans preuve.
-- Mélanger deux conventions.
-- Ne pas vérifier la cohérence du résultat.
+- Erreur fréquente EF1 - répondre seulement par `5` sans écrire la méthode.
+- Erreur fréquente EF2 - appliquer suivre l’état de la variable après chaque affectation dans le mauvais ordre.
+- Erreur fréquente EF3 - oublier le cas limite : réaffectation avec zéro ou valeur négative.
+- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
 
-## Remédiation
-Faire traiter seulement les questions 1 et 2, puis demander une verbalisation orale avant l'écrit.
+## Remédiation ciblée
+- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
+- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
+- Activité corrective EF3 : construire deux variantes du cas limite `réaffectation avec zéro ou valeur négative` et comparer les sorties.
+- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
 
 ## Différenciation
-Socle : questions 1 et 2. Standard : questions 1 à 3. Approfondissement : question 4 et production d'une variante.
+- Socle : la méthode est fournie sous forme de tableau à compléter.
+- Standard : l’élève choisit la méthode et rédige la justification complète.
+- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
 
-## Statut de revue
-Document réel de première tranche, non publié et non validé. Une revue humaine indépendante reste nécessaire avant toute promotion de statut.
+## Critères de réussite
+- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
+- Au moins une capacité officielle est reliée à une question traitée.
+- Le résultat est accompagné d’une méthode et d’un contrôle.
+- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
+

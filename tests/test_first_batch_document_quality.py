@@ -65,7 +65,7 @@ class FirstBatchQualityTest(unittest.TestCase):
             result = first_batch.analyze_first_batch(root)
             self.assertTrue(any("absent" in error for error in result.errors))
 
-    def test_complete_minimal_batch_passes(self) -> None:
+    def test_short_minimal_batch_is_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             for prefix in first_batch.FIRST_BATCH_PREFIXES:
@@ -74,7 +74,18 @@ class FirstBatchQualityTest(unittest.TestCase):
                 for kind in first_batch.REQUIRED_KINDS:
                     write_doc(directory / f"{prefix}_{kind}_test.md", f"{prefix} {kind}", "Capacité officielle : test.")
             result = first_batch.analyze_first_batch(root)
-            self.assertEqual(result.errors, [])
+            self.assertTrue(any("profondeur insuffisante" in error for error in result.errors))
+
+    def test_unknown_program_capacity_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            directory = root / "P00"
+            directory.mkdir(parents=True)
+            path = directory / "P00_cours_test.md"
+            long_body = "\n".join(f"Ligne utile {i}" for i in range(200))
+            write_doc(path, "P00 cours", f"\nCapacité officielle : P-UNKNOWN-99\n{long_body}")
+            errors = first_batch.analyze_file(path, "P00", "cours", {"P-LANG-01"})
+            self.assertTrue(any("capacité inconnue" in error for error in errors))
 
 
 if __name__ == "__main__":

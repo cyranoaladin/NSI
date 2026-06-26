@@ -18,6 +18,14 @@ Corpus pédagogique versionné pour la spécialité NSI (Première/Terminale), s
 - `premiere/`, `terminale/` : corpus par niveau (séquences + banques réutilisables).
 - `scripts/` : scripts de build, contrôle qualité, tests.
 
+## 2.1) Sources locales Drive
+
+Les ressources Drive déjà extraites sont disponibles hors dépôt dans
+`/home/alaeddine/Documents/NSI/Documents_DRIVE`. Les passes d’inventaire et de rédaction
+doivent chercher d’abord dans ce dossier local, puis noter le chemin consulté dans les
+métadonnées ou les registres. Cette source locale ne change pas les statuts : une ressource
+adaptée depuis `Documents_DRIVE` reste `needs_review` tant qu’elle n’a pas été auditée.
+
 ## 3) Progressions annuelles
 
 - Première : `03_progressions/progression_premiere.md`
@@ -98,4 +106,3 @@ python scripts/generate_index.py
 ```
 
 Le dépôt est orienté vers une revue continue : chaque ajout doit être répercuté dans `manifest.csv`, `coverage.md` et `inventory_report.md`.
-

@@ -1,58 +1,129 @@
 ---
-title: "T01 - évaluation courte - Interfaces de structures abstraites"
+title: "T01 - Evaluation - Interfaces de structures abstraites"
 level: "terminale"
 sequence_id: "T01"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.1.0"
-source: "BO 2019 ; source possible Drive : Documents_DRIVE/2_Tles NSI/2_Projet1_TAD et POO/1_TD1_Structure de données abstraite.odt"
+version: "0.3.0"
+source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_NSI/Formation TOULOUSE/BLOC4/Cours EIL - TAD - 2019-2020.pdf"
 theme: "Structures de données"
-notion: "interface, implémentation, pile et file"
-objectifs: ["Travailler la capacité ciblée", "Produire une trace vérifiable", "Identifier les erreurs fréquentes"]
+notion: "interface, opération, coût"
+objectifs:
+  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
+  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
+  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
 private_data: false
 official_program:
-  capacities: ["T-STRUCT-01A", "T-STRUCT-01B", "T-STRUCT-01C"]
+  capacities:
+    - "T-STRUCT-01A"
+    - "T-STRUCT-01B"
+    - "T-STRUCT-01C"
 ---
 
-# T01 - évaluation courte - Interfaces de structures abstraites
 
-## Objectifs
-- Comprendre la notion : interface, implémentation, pile et file.
-- Produire une réponse vérifiable et exploitable en classe.
-- Relier le travail aux capacités officielles : T-STRUCT-01A, T-STRUCT-01B, T-STRUCT-01C.
+# T01 - Evaluation - Interfaces de structures abstraites
 
-## Capacités officielles
+## Objectifs spécifiques
+- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
+- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
+- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+
+## Capacités officielles atomiques
 - T-STRUCT-01A
 - T-STRUCT-01B
 - T-STRUCT-01C
-## Durée et consignes
-Durée conseillée : 20 minutes. Répondre sans document, sauf consigne contraire du professeur.
 
-## Exemple
-Une pile expose `push`, `pop`, `is_empty`. Qu'elle utilise une liste Python ou une liste chaînée ne doit pas modifier le code utilisateur.
+## Prérequis
+- Lire une consigne technique sans confondre donnée, méthode et résultat.
+- Écrire une réponse sous forme de phrases courtes et vérifiables.
+- Utiliser Python en distinguant expression, valeur, variable et affichage.
+- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
 
-## Exercices
-1. Restituer la définition ou la convention utilisée.
-2. Résoudre un cas d'application directe.
-3. Justifier une réponse d'élève.
-4. Proposer un test, une vérification ou un cas limite.
+## Séance(s) correspondante(s)
+- T01-S1 à T01-S5 : ce support est rattaché aux séances indiquées dans la progression.
+
+## Situation-problème concrète
+un même service peut être décrit par ses opérations avant de choisir l’implémentation Python. La tâche consiste à traiter interface, opération, coût sans réponse intuitive non vérifiée.
+
+## Activité d’entrée
+1. Lire la situation : un même service peut être décrit par ses opérations avant de choisir l’implémentation Python.
+2. Isoler la donnée de départ : ensemble d’opérations observables.
+3. Prédire individuellement le résultat de l’exemple `sac avec ajouter, retirer, est_vide`.
+4. Comparer deux stratégies et noter la divergence précise.
+5. Appliquer la méthode retenue : nommer les opérations, les préconditions et les effets sans dépendre du stockage.
+6. Contrôler avec le résultat de référence : interface séparée de la représentation interne.
+7. Tester le cas limite suivant : confondre interface et liste Python concrète.
+8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+
+## Exemple corrigé précis
+- Exemple d’entraînement : `sac avec ajouter, retirer, est_vide` donne `interface séparée de la représentation interne` avec la méthode nommer les opérations, les préconditions et les effets sans dépendre du stockage.
+
+## Exercices numérotés
+- Les questions d’évaluation ci-dessous remplacent les exercices longs par des tâches courtes et notées.
+
+### Question 1
+- Objectif évalué : O1.
+- Capacité officielle : T-STRUCT-01A.
+- Énoncé : traiter `sac avec ajouter, retirer, est_vide` ou une variante fournie en appliquant nommer les opérations, les préconditions et les effets sans dépendre du stockage.
+- Réponse attendue : résultat contrôlé `interface séparée de la représentation interne` et justification courte.
+- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF1.
+
+### Question 2
+- Objectif évalué : O2.
+- Capacité officielle : T-STRUCT-01B.
+- Énoncé : traiter `sac avec ajouter, retirer, est_vide` ou une variante fournie en appliquant nommer les opérations, les préconditions et les effets sans dépendre du stockage.
+- Réponse attendue : résultat contrôlé `interface séparée de la représentation interne` et justification courte.
+- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF2.
+
+### Question 3
+- Objectif évalué : O3.
+- Capacité officielle : T-STRUCT-01C.
+- Énoncé : traiter `sac avec ajouter, retirer, est_vide` ou une variante fournie en appliquant nommer les opérations, les préconditions et les effets sans dépendre du stockage.
+- Réponse attendue : résultat contrôlé `interface séparée de la représentation interne` et justification courte.
+- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF3.
+
+### Question 4
+- Objectif évalué : O4.
+- Capacité officielle : T-STRUCT-01A.
+- Énoncé : traiter `sac avec ajouter, retirer, est_vide` ou une variante fournie en appliquant nommer les opérations, les préconditions et les effets sans dépendre du stockage.
+- Réponse attendue : résultat contrôlé `interface séparée de la représentation interne` et justification courte.
+- Barème : 2 points pour la méthode, 2 points pour le résultat, 1 point pour le contrôle EF4.
+
+## Barème
+- Total : 20 points.
+- Question 1 : 5 points.
+- Question 2 : 5 points.
+- Question 3 : 5 points.
+- Question 4 : 5 points.
 
 ## Corrigé
-Les opérations publiques appartiennent à l'interface. `_items` et `len(_items)` révèlent le choix interne et ne doivent pas apparaître dans le code client.
-
-## Critères de réussite
-La réponse doit être courte, lisible et vérifiable. Le résultat seul ne suffit pas pour obtenir tous les points.
+- Corrigé question 1 : appliquer nommer les opérations, les préconditions et les effets sans dépendre du stockage, obtenir `interface séparée de la représentation interne` sur le cas de référence, puis citer EF1.
+- Corrigé question 2 : appliquer nommer les opérations, les préconditions et les effets sans dépendre du stockage, obtenir `interface séparée de la représentation interne` sur le cas de référence, puis citer EF2.
+- Corrigé question 3 : appliquer nommer les opérations, les préconditions et les effets sans dépendre du stockage, obtenir `interface séparée de la représentation interne` sur le cas de référence, puis citer EF3.
+- Corrigé question 4 : appliquer nommer les opérations, les préconditions et les effets sans dépendre du stockage, obtenir `interface séparée de la représentation interne` sur le cas de référence, puis citer EF4.
 
 ## Erreurs fréquentes
-- Omettre la justification.
-- Répondre avec une convention différente de celle demandée.
-- Ne pas traiter le cas limite.
+- Erreur fréquente EF1 - répondre seulement par `interface séparée de la représentation interne` sans écrire la méthode.
+- Erreur fréquente EF2 - appliquer nommer les opérations, les préconditions et les effets sans dépendre du stockage dans le mauvais ordre.
+- Erreur fréquente EF3 - oublier le cas limite : confondre interface et liste Python concrète.
+- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
 
-## Remédiation
-Après correction, refaire la question 2 avec une donnée voisine et écrire la phrase de justification.
+## Remédiation ciblée
+- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
+- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
+- Activité corrective EF3 : construire deux variantes du cas limite `confondre interface et liste Python concrète` et comparer les sorties.
+- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
 
 ## Différenciation
-Version standard : quatre questions. Version aménagée : mêmes capacités avec étapes intermédiaires et espace de réponse structuré.
+- Socle : la méthode est fournie sous forme de tableau à compléter.
+- Standard : l’élève choisit la méthode et rédige la justification complète.
+- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
 
-## Statut de revue
-Document réel de première tranche, non publié et non validé. Une revue humaine indépendante reste nécessaire avant toute promotion de statut.
+## Critères de réussite
+- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
+- Au moins une capacité officielle est reliée à une question traitée.
+- Le résultat est accompagné d’une méthode et d’un contrôle.
+- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
+

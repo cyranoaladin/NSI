@@ -1,54 +1,118 @@
 ---
-title: "P02 - fiche remédiation - Complément à deux et tables de vérité"
+title: "P02 - Remediation - Complément à deux et booléens"
 level: "premiere"
 sequence_id: "P02"
 document_type: "remediation"
 status: "needs_review"
-version: "0.1.0"
-source: "BO 2019 ; source possible Drive : Documents_DRIVE/Algo_Premiere/Complément.pdf"
-theme: "Représentation des données"
-notion: "entiers relatifs, débordement, booléens"
-objectifs: ["Travailler la capacité ciblée", "Produire une trace vérifiable", "Identifier les erreurs fréquentes"]
+version: "0.3.0"
+source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_NSI/Programmes et textes officiels/0_Programmes.pdf"
+theme: "Représentation machine"
+notion: "entiers signés, débordement, expressions booléennes"
+objectifs:
+  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
+  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
+  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
 private_data: false
 official_program:
-  capacities: ["P-DATA-BASE-02A", "P-DATA-BASE-02B", "P-DATA-BASE-04"]
+  capacities:
+    - "P-DATA-BASE-02A"
+    - "P-DATA-BASE-02B"
+    - "P-DATA-BASE-04"
 ---
 
-# P02 - fiche remédiation - Complément à deux et tables de vérité
 
-## Objectifs
-- Comprendre la notion : entiers relatifs, débordement, booléens.
-- Produire une réponse vérifiable et exploitable en classe.
-- Relier le travail aux capacités officielles : P-DATA-BASE-02A, P-DATA-BASE-02B, P-DATA-BASE-04.
+# P02 - Remediation - Complément à deux et booléens
 
-## Capacités officielles
+## Objectifs spécifiques
+- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
+- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
+- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+
+## Capacités officielles atomiques
 - P-DATA-BASE-02A
 - P-DATA-BASE-02B
 - P-DATA-BASE-04
-## Diagnostic rapide
-La remédiation commence par une question courte qui cible l'erreur la plus fréquente.
 
-## Exemple
-Sur 8 bits, `-7` se code par `256-7=249`, donc `11111001`. Pour décoder `11111001`, le bit de poids fort vaut 1, donc on calcule `249-256=-7`.
+## Prérequis
+- Lire une consigne technique sans confondre donnée, méthode et résultat.
+- Écrire une réponse sous forme de phrases courtes et vérifiables.
+- Utiliser Python en distinguant expression, valeur, variable et affichage.
+- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
 
-## Exercices
-1. Refaire le cas guidé avec une valeur plus petite.
-2. Compléter une justification à trous.
-3. Résoudre un cas voisin sans aide.
+## Séance(s) correspondante(s)
+- P02-S1 à P02-S5 : ce support est rattaché aux séances indiquées dans la progression.
+
+## Situation-problème concrète
+un capteur renvoie un octet qui peut représenter une température négative ou un indicateur booléen. La tâche consiste à traiter entiers signés, débordement, expressions booléennes sans réponse intuitive non vérifiée.
+
+## Activité d’entrée
+1. Lire la situation : un capteur renvoie un octet qui peut représenter une température négative ou un indicateur booléen.
+2. Isoler la donnée de départ : mot binaire de 8 bits et deux variables booléennes.
+3. Prédire individuellement le résultat de l’exemple `-23 sur 8 bits et (a and b) or (a and not b)`.
+4. Comparer deux stratégies et noter la divergence précise.
+5. Appliquer la méthode retenue : inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé.
+6. Contrôler avec le résultat de référence : 11101001 et simplification en a.
+7. Tester le cas limite suivant : 140 impossible sur 8 bits signés.
+8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+
+## Diagnostic des erreurs
+- EF1 apparaît quand l’élève donne `11101001 et simplification en a` sans expliquer inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé.
+- EF2 apparaît quand l’élève inverse les étapes de inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé.
+- EF3 apparaît quand le cas limite `140 impossible sur 8 bits signés` n’est pas testé.
+- EF4 apparaît quand la capacité officielle est citée sans production observable.
+
+## Exemple corrigé précis
+- Reprise guidée : `-23 sur 8 bits et (a and b) or (a and not b)`.
+- Correction : inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé.
+- Résultat : `11101001 et simplification en a`.
+
+## Exercices numérotés
+- Exercice 1 : reprendre EF1 avec une donnée voisine et écrire une vérification.
+- Exercice 2 : reprendre EF2 avec une donnée voisine et écrire une vérification.
+- Exercice 3 : reprendre EF3 avec une donnée voisine et écrire une vérification.
+- Exercice 4 : reprendre EF4 avec une donnée voisine et écrire une vérification.
+- Exercice 5 : reprendre EF1 avec une donnée voisine et écrire une vérification.
+- Exercice 6 : reprendre EF2 avec une donnée voisine et écrire une vérification.
+- Exercice 7 : reprendre EF3 avec une donnée voisine et écrire une vérification.
+- Exercice 8 : reprendre EF4 avec une donnée voisine et écrire une vérification.
 
 ## Corrigé
-La correction vérifie la taille du registre, le bit de signe, le calcul de débordement et les quatre lignes de la table de vérité.
+- Corrigé exercice 1 : la réponse reconstruit la méthode, puis contrôle EF1.
+- Corrigé exercice 2 : la réponse reconstruit la méthode, puis contrôle EF2.
+- Corrigé exercice 3 : la réponse reconstruit la méthode, puis contrôle EF3.
+- Corrigé exercice 4 : la réponse reconstruit la méthode, puis contrôle EF4.
+- Corrigé exercice 5 : la réponse reconstruit la méthode, puis contrôle EF1.
+- Corrigé exercice 6 : la réponse reconstruit la méthode, puis contrôle EF2.
+- Corrigé exercice 7 : la réponse reconstruit la méthode, puis contrôle EF3.
+- Corrigé exercice 8 : la réponse reconstruit la méthode, puis contrôle EF4.
 
 ## Erreurs fréquentes
-- Ne pas nommer la convention.
-- Sauter une étape de méthode.
-- Croire qu'un seul exemple suffit à prouver une règle.
+- Erreur fréquente EF1 - répondre seulement par `11101001 et simplification en a` sans écrire la méthode.
+- Erreur fréquente EF2 - appliquer inverser les bits, ajouter 1, puis vérifier les bornes de l’intervalle signé dans le mauvais ordre.
+- Erreur fréquente EF3 - oublier le cas limite : 140 impossible sur 8 bits signés.
+- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
 
-## Remédiation
-L'élève doit verbaliser l'erreur initiale, corriger sa démarche, puis noter une règle personnelle de vigilance.
+## Remédiation ciblée
+- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
+- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
+- Activité corrective EF3 : construire deux variantes du cas limite `140 impossible sur 8 bits signés` et comparer les sorties.
+- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
 
 ## Différenciation
-Socle : justification à trous. Standard : cas voisin. Approfondissement : création d'un piège et de sa correction.
+- Socle : la méthode est fournie sous forme de tableau à compléter.
+- Standard : l’élève choisit la méthode et rédige la justification complète.
+- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
 
-## Statut de revue
-Document réel de première tranche, non publié et non validé. Une revue humaine indépendante reste nécessaire avant toute promotion de statut.
+## Critères de réussite
+- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
+- Au moins une capacité officielle est reliée à une question traitée.
+- Le résultat est accompagné d’une méthode et d’un contrôle.
+- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
+
+## Activités correctives détaillées
+- Activité corrective EF1 : surligner donnée, opération, résultat, contrôle dans quatre couleurs.
+- Activité corrective EF2 : remettre dans l’ordre cinq cartes décrivant les étapes de la méthode.
+- Activité corrective EF3 : construire un tableau avec cas nominal, cas limite et cas impossible.
+- Activité corrective EF4 : associer chaque ligne de solution à une capacité officielle.

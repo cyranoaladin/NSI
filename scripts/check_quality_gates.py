@@ -36,6 +36,8 @@ BLOCKING_CHECKS = [
     "scripts/check_session_referenced_files_exist.py",
     "scripts/check_document_naming_conventions.py",
     "scripts/check_first_batch_document_quality.py",
+    "scripts/check_first_batch_alignment.py",
+    "scripts/check_first_batch_tp_assets.py",
     "scripts/check_evaluation_distribution.py",
     "scripts/check_teacher_docs_depth.py",
     "scripts/check_validated_documents_quality_gates.py",

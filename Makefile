@@ -30,6 +30,8 @@ audit-local:
 	python scripts/check_session_referenced_files_exist.py
 	python scripts/check_document_naming_conventions.py
 	python scripts/check_first_batch_document_quality.py
+	python scripts/check_first_batch_alignment.py
+	python scripts/check_first_batch_tp_assets.py
 	python scripts/check_evaluation_distribution.py
 	python scripts/check_teacher_docs_depth.py
 	python scripts/check_validated_documents_quality_gates.py
@@ -75,6 +77,18 @@ audit-source:
 	-python scripts/check_document_depth.py
 	python scripts/check_qcm_schema.py
 	-python scripts/check_document_style.py
+
+audit-extracted-source:
+	python scripts/cleanup_python_artifacts.py
+	python scripts/check_metadata.py
+	python scripts/check_qcm_schema.py
+	python scripts/check_session_referenced_files_exist.py
+	python scripts/check_first_batch_document_quality.py
+	python scripts/check_first_batch_alignment.py
+	python scripts/check_first_batch_tp_assets.py
+	python scripts/check_no_private_data.py
+	python scripts/check_no_placeholders_docs.py
+	python scripts/check_no_build_artifacts_in_index.py
 
 package-audit:
 	python scripts/cleanup_python_artifacts.py

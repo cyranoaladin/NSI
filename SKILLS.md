@@ -14,6 +14,15 @@ Chaque compétence décrit :
 
 ## 2. Métadonnées communes obligatoires
 
+## 2.1. Recherche de sources locales
+
+Avant toute recherche dans un Drive distant, utiliser le miroir local
+`/home/alaeddine/Documents/NSI/Documents_DRIVE`. Le chemin local consulté doit être reporté
+dans `source`, `Source possible`, `drive_inventory.csv` ou le registre de documents
+manquants. Cette substitution ne vaut pas validation pédagogique : un fichier importé ou
+adapté depuis `Documents_DRIVE` reste `needs_review` jusqu’à relecture humaine et contrôles
+QA.
+
 Chaque document pédagogique doit commencer par un bloc de métadonnées.
 
 ```yaml
@@ -441,4 +450,3 @@ Un document doit pouvoir répondre à cette question :
 > Un élève sérieux peut-il apprendre, s’entraîner, se corriger et progresser avec cette ressource ?
 
 Si la réponse est non, le document n’est pas publiable.
-

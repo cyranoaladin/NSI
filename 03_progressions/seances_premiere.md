@@ -33,10 +33,10 @@
 - Document utilisé : P00_cours_diagnostic_python.md, P00_trace_diagnostic_python.md
 - Déroulé : 1. question flash P00-Q1; 2. activité P00_intro sur diagnostic Python et méthode de carnet de bord; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P00; avancé : contre-exemple à formuler pour la définition.
-- Livrable : production de séance appuyée sur P00_trace_diagnostic_python.md et vérifiée par P00_corrige_diagnostic_python.md
-- Trace écrite : renseigner P00_trace_diagnostic_python.md avec méthode, exemple, erreur fréquente et remédiation.
-- Devoir ou préparation : reprendre l'exercice ciblé dans P00_td_diagnostic_python.md ou relire P00_cours_diagnostic_python.md.
-- Remédiation : utiliser P00_remediation_diagnostic_python.md en début de séance suivante si l'erreur persiste.
+- Livrable : production élève vérifiable dans P00_trace_diagnostic_python.md ou fichier de TP associé.
+- Trace écrite : compléter P00_trace_diagnostic_python.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P00_td_diagnostic_python.md ou relire P00_cours_diagnostic_python.md.
+- Remédiation : utiliser P00_remediation_diagnostic_python.md pour traiter l’erreur EF observée.
 
 ### Séance P00-S2
 - Durée : 1 h
@@ -47,13 +47,13 @@
 - Nature : évaluation
 - Objectif : passer diagnostic avec questions ciblées sur diagnostic Python et méthode de carnet de bord, puis identifier les erreurs à corriger.
 - Capacité officielle : P-HIST-01, P-LANG-01
-- Document utilisé : P00_td_diagnostic_python.md, P00_corrige_diagnostic_python.md, P00_trace_diagnostic_python.md
+- Document utilisé : P00_td_diagnostic_python.md, P00_trace_diagnostic_python.md
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse P00; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : production de séance appuyée sur P00_trace_diagnostic_python.md et vérifiée par P00_corrige_diagnostic_python.md
-- Trace écrite : renseigner P00_trace_diagnostic_python.md avec méthode, exemple, erreur fréquente et remédiation.
-- Devoir ou préparation : reprendre l'exercice ciblé dans P00_td_diagnostic_python.md ou relire P00_cours_diagnostic_python.md.
-- Remédiation : utiliser P00_remediation_diagnostic_python.md en début de séance suivante si l'erreur persiste.
+- Livrable : production élève vérifiable dans P00_trace_diagnostic_python.md ou fichier de TP associé.
+- Trace écrite : compléter P00_trace_diagnostic_python.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P00_td_diagnostic_python.md ou relire P00_cours_diagnostic_python.md.
+- Remédiation : utiliser P00_remediation_diagnostic_python.md pour traiter l’erreur EF observée.
 
 ### Séance P00-S3
 - Durée : 1 h
@@ -67,10 +67,10 @@
 - Document utilisé : P00_tp_diagnostic_python.md, P00_trace_diagnostic_python.md
 - Déroulé : 1. retour sur erreurs de P00; 2. correction guidée de P00-R3; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P00-R3; avancé : produire une variante de l’exercice corrigé.
-- Livrable : production de séance appuyée sur P00_trace_diagnostic_python.md et vérifiée par P00_corrige_diagnostic_python.md
-- Trace écrite : renseigner P00_trace_diagnostic_python.md avec méthode, exemple, erreur fréquente et remédiation.
-- Devoir ou préparation : reprendre l'exercice ciblé dans P00_td_diagnostic_python.md ou relire P00_cours_diagnostic_python.md.
-- Remédiation : utiliser P00_remediation_diagnostic_python.md en début de séance suivante si l'erreur persiste.
+- Livrable : production élève vérifiable dans P00_trace_diagnostic_python.md ou fichier de TP associé.
+- Trace écrite : compléter P00_trace_diagnostic_python.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P00_td_diagnostic_python.md ou relire P00_cours_diagnostic_python.md.
+- Remédiation : utiliser P00_remediation_diagnostic_python.md pour traiter l’erreur EF observée.
 
 ### Séance P00-S4
 - Durée : 1 h
@@ -81,16 +81,16 @@
 - Nature : projet
 - Objectif : avancer le jalon projet P00-J4 en produisant un livrable vérifiable lié à diagnostic Python et méthode de carnet de bord.
 - Capacité officielle : P-HIST-01, P-LANG-01
-- Document utilisé : P00_evaluation_diagnostic_python.md, P00_version_amenagee_diagnostic_python.md, P00_bareme_diagnostic_python.md
+- Document utilisé : P00_evaluation_diagnostic_python.md, P00_version_amenagee_diagnostic_python.md
 - Déroulé : 1. choix de l’objectif du jalon P00; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P00 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : production de séance appuyée sur P00_trace_diagnostic_python.md et vérifiée par P00_corrige_diagnostic_python.md
-- Trace écrite : renseigner P00_trace_diagnostic_python.md avec méthode, exemple, erreur fréquente et remédiation.
-- Devoir ou préparation : reprendre l'exercice ciblé dans P00_td_diagnostic_python.md ou relire P00_cours_diagnostic_python.md.
-- Remédiation : utiliser P00_remediation_diagnostic_python.md en début de séance suivante si l'erreur persiste.
+- Livrable : production élève vérifiable dans P00_trace_diagnostic_python.md ou fichier de TP associé.
+- Trace écrite : compléter P00_trace_diagnostic_python.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P00_td_diagnostic_python.md ou relire P00_cours_diagnostic_python.md.
+- Remédiation : utiliser P00_remediation_diagnostic_python.md pour traiter l’erreur EF observée.
 - Jalon projet : P00-J4 sur diagnostic Python et méthode de carnet de bord.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P00-J4.
-- Livrable projet : note de carnet reliée à P00_tp_diagnostic_python.md et trace de test ou justification.
+- Livrable projet : note de carnet reliée à P00_tp_diagnostic_python.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P01-S1
@@ -105,10 +105,10 @@
 - Document utilisé : P01_cours_conversions_bases.md, P01_trace_conversions_bases.md
 - Déroulé : 1. question flash P01-Q1; 2. activité P01_intro sur conversions par divisions successives et écriture positionnelle; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P01; avancé : contre-exemple à formuler pour la définition.
-- Livrable : production de séance appuyée sur P01_trace_conversions_bases.md et vérifiée par P01_corrige_conversions_bases.md
-- Trace écrite : renseigner P01_trace_conversions_bases.md avec méthode, exemple, erreur fréquente et remédiation.
-- Devoir ou préparation : reprendre l'exercice ciblé dans P01_td_conversions_bases.md ou relire P01_cours_conversions_bases.md.
-- Remédiation : utiliser P01_remediation_conversions_bases.md en début de séance suivante si l'erreur persiste.
+- Livrable : production élève vérifiable dans P01_trace_conversions_bases.md ou fichier de TP associé.
+- Trace écrite : compléter P01_trace_conversions_bases.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P01_td_conversions_bases.md ou relire P01_cours_conversions_bases.md.
+- Remédiation : utiliser P01_remediation_conversions_bases.md pour traiter l’erreur EF observée.
 
 ### Séance P01-S2
 - Durée : 2 h
@@ -119,13 +119,13 @@
 - Nature : TD
 - Objectif : résoudre les exercices P01-E2 à P01-E4 sur conversions par divisions successives et écriture positionnelle avec justification écrite.
 - Capacité officielle : P-DATA-BASE-01
-- Document utilisé : P01_td_conversions_bases.md, P01_corrige_conversions_bases.md, P01_trace_conversions_bases.md
+- Document utilisé : P01_td_conversions_bases.md, P01_trace_conversions_bases.md
 - Déroulé : 1. rappel méthode; 2. exercices P01-E2, P01-E3, P01-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P01-E2 et P01-E3 guidés; avancé : exercice P01-E5 avec justification complète.
-- Livrable : production de séance appuyée sur P01_trace_conversions_bases.md et vérifiée par P01_corrige_conversions_bases.md
-- Trace écrite : renseigner P01_trace_conversions_bases.md avec méthode, exemple, erreur fréquente et remédiation.
-- Devoir ou préparation : reprendre l'exercice ciblé dans P01_td_conversions_bases.md ou relire P01_cours_conversions_bases.md.
-- Remédiation : utiliser P01_remediation_conversions_bases.md en début de séance suivante si l'erreur persiste.
+- Livrable : production élève vérifiable dans P01_trace_conversions_bases.md ou fichier de TP associé.
+- Trace écrite : compléter P01_trace_conversions_bases.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P01_td_conversions_bases.md ou relire P01_cours_conversions_bases.md.
+- Remédiation : utiliser P01_remediation_conversions_bases.md pour traiter l’erreur EF observée.
 
 ### Séance P01-S3
 - Durée : 2 h
@@ -139,10 +139,10 @@
 - Document utilisé : P01_tp_conversions_bases.md, P01_trace_conversions_bases.md
 - Déroulé : 1. lecture du cahier des charges TP P01; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : production de séance appuyée sur P01_trace_conversions_bases.md et vérifiée par P01_corrige_conversions_bases.md
-- Trace écrite : renseigner P01_trace_conversions_bases.md avec méthode, exemple, erreur fréquente et remédiation.
-- Devoir ou préparation : reprendre l'exercice ciblé dans P01_td_conversions_bases.md ou relire P01_cours_conversions_bases.md.
-- Remédiation : utiliser P01_remediation_conversions_bases.md en début de séance suivante si l'erreur persiste.
+- Livrable : production élève vérifiable dans P01_trace_conversions_bases.md ou fichier de TP associé.
+- Trace écrite : compléter P01_trace_conversions_bases.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P01_td_conversions_bases.md ou relire P01_cours_conversions_bases.md.
+- Remédiation : utiliser P01_remediation_conversions_bases.md pour traiter l’erreur EF observée.
 
 ### Séance P01-S4
 - Durée : 1 h
@@ -153,13 +153,13 @@
 - Nature : remédiation
 - Objectif : corriger l’exercice bilan P01-R4 et consolider la trace écrite sur conversions par divisions successives et écriture positionnelle.
 - Capacité officielle : P-DATA-BASE-01
-- Document utilisé : P01_evaluation_conversions_bases.md, P01_version_amenagee_conversions_bases.md, P01_bareme_conversions_bases.md
+- Document utilisé : P01_evaluation_conversions_bases.md, P01_version_amenagee_conversions_bases.md
 - Déroulé : 1. retour sur erreurs de P01; 2. correction guidée de P01-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P01-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : production de séance appuyée sur P01_trace_conversions_bases.md et vérifiée par P01_corrige_conversions_bases.md
-- Trace écrite : renseigner P01_trace_conversions_bases.md avec méthode, exemple, erreur fréquente et remédiation.
-- Devoir ou préparation : reprendre l'exercice ciblé dans P01_td_conversions_bases.md ou relire P01_cours_conversions_bases.md.
-- Remédiation : utiliser P01_remediation_conversions_bases.md en début de séance suivante si l'erreur persiste.
+- Livrable : production élève vérifiable dans P01_trace_conversions_bases.md ou fichier de TP associé.
+- Trace écrite : compléter P01_trace_conversions_bases.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P01_td_conversions_bases.md ou relire P01_cours_conversions_bases.md.
+- Remédiation : utiliser P01_remediation_conversions_bases.md pour traiter l’erreur EF observée.
 
 ### Séance P01-S5
 - Durée : 1 h
@@ -170,16 +170,16 @@
 - Nature : projet
 - Objectif : avancer le jalon projet P01-J5 en produisant un livrable vérifiable lié à conversions par divisions successives et écriture positionnelle.
 - Capacité officielle : P-DATA-BASE-01
-- Document utilisé : P01_remediation_conversions_bases.md, P01_corrige_conversions_bases.md, P01_trace_conversions_bases.md
+- Document utilisé : P01_remediation_conversions_bases.md, P01_trace_conversions_bases.md
 - Déroulé : 1. choix de l’objectif du jalon P01; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P01 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : production de séance appuyée sur P01_trace_conversions_bases.md et vérifiée par P01_corrige_conversions_bases.md
-- Trace écrite : renseigner P01_trace_conversions_bases.md avec méthode, exemple, erreur fréquente et remédiation.
-- Devoir ou préparation : reprendre l'exercice ciblé dans P01_td_conversions_bases.md ou relire P01_cours_conversions_bases.md.
-- Remédiation : utiliser P01_remediation_conversions_bases.md en début de séance suivante si l'erreur persiste.
+- Livrable : production élève vérifiable dans P01_trace_conversions_bases.md ou fichier de TP associé.
+- Trace écrite : compléter P01_trace_conversions_bases.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P01_td_conversions_bases.md ou relire P01_cours_conversions_bases.md.
+- Remédiation : utiliser P01_remediation_conversions_bases.md pour traiter l’erreur EF observée.
 - Jalon projet : P01-J5 sur conversions par divisions successives et écriture positionnelle.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P01-J5.
-- Livrable projet : note de carnet reliée à P01_tp_conversions_bases.md et trace de test ou justification.
+- Livrable projet : note de carnet reliée à P01_tp_conversions_bases.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P02-S1
@@ -194,10 +194,10 @@
 - Document utilisé : P02_cours_complement_booleens.md, P02_trace_complement_booleens.md
 - Déroulé : 1. question flash P02-Q1; 2. activité P02_intro sur registre 4 bits, complément à deux et table de vérité; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P02; avancé : contre-exemple à formuler pour la définition.
-- Livrable : production de séance appuyée sur P02_trace_complement_booleens.md et vérifiée par P02_corrige_complement_booleens.md
-- Trace écrite : renseigner P02_trace_complement_booleens.md avec méthode, exemple, erreur fréquente et remédiation.
-- Devoir ou préparation : reprendre l'exercice ciblé dans P02_td_complement_booleens.md ou relire P02_cours_complement_booleens.md.
-- Remédiation : utiliser P02_remediation_complement_booleens.md en début de séance suivante si l'erreur persiste.
+- Livrable : production élève vérifiable dans P02_trace_complement_booleens.md ou fichier de TP associé.
+- Trace écrite : compléter P02_trace_complement_booleens.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P02_td_complement_booleens.md ou relire P02_cours_complement_booleens.md.
+- Remédiation : utiliser P02_remediation_complement_booleens.md pour traiter l’erreur EF observée.
 
 ### Séance P02-S2
 - Durée : 1,5 h
@@ -208,13 +208,13 @@
 - Nature : TD
 - Objectif : résoudre les exercices P02-E2 à P02-E4 sur registre 4 bits, complément à deux et table de vérité avec justification écrite.
 - Capacité officielle : P-DATA-BASE-02A, P-DATA-BASE-02B, P-DATA-BASE-04
-- Document utilisé : P02_td_complement_booleens.md, P02_corrige_complement_booleens.md, P02_trace_complement_booleens.md
+- Document utilisé : P02_td_complement_booleens.md, P02_trace_complement_booleens.md
 - Déroulé : 1. rappel méthode; 2. exercices P02-E2, P02-E3, P02-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P02-E2 et P02-E3 guidés; avancé : exercice P02-E5 avec justification complète.
-- Livrable : production de séance appuyée sur P02_trace_complement_booleens.md et vérifiée par P02_corrige_complement_booleens.md
-- Trace écrite : renseigner P02_trace_complement_booleens.md avec méthode, exemple, erreur fréquente et remédiation.
-- Devoir ou préparation : reprendre l'exercice ciblé dans P02_td_complement_booleens.md ou relire P02_cours_complement_booleens.md.
-- Remédiation : utiliser P02_remediation_complement_booleens.md en début de séance suivante si l'erreur persiste.
+- Livrable : production élève vérifiable dans P02_trace_complement_booleens.md ou fichier de TP associé.
+- Trace écrite : compléter P02_trace_complement_booleens.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P02_td_complement_booleens.md ou relire P02_cours_complement_booleens.md.
+- Remédiation : utiliser P02_remediation_complement_booleens.md pour traiter l’erreur EF observée.
 
 ### Séance P02-S3
 - Durée : 1 h
@@ -228,10 +228,10 @@
 - Document utilisé : P02_tp_complement_booleens.md, P02_trace_complement_booleens.md
 - Déroulé : 1. lecture du cahier des charges TP P02; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : production de séance appuyée sur P02_trace_complement_booleens.md et vérifiée par P02_corrige_complement_booleens.md
-- Trace écrite : renseigner P02_trace_complement_booleens.md avec méthode, exemple, erreur fréquente et remédiation.
-- Devoir ou préparation : reprendre l'exercice ciblé dans P02_td_complement_booleens.md ou relire P02_cours_complement_booleens.md.
-- Remédiation : utiliser P02_remediation_complement_booleens.md en début de séance suivante si l'erreur persiste.
+- Livrable : production élève vérifiable dans P02_trace_complement_booleens.md ou fichier de TP associé.
+- Trace écrite : compléter P02_trace_complement_booleens.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P02_td_complement_booleens.md ou relire P02_cours_complement_booleens.md.
+- Remédiation : utiliser P02_remediation_complement_booleens.md pour traiter l’erreur EF observée.
 
 ### Séance P02-S4
 - Durée : 1 h
@@ -242,13 +242,13 @@
 - Nature : évaluation
 - Objectif : passer TD évalué complément à deux avec questions ciblées sur registre 4 bits, complément à deux et table de vérité, puis identifier les erreurs à corriger.
 - Capacité officielle : P-DATA-BASE-02A, P-DATA-BASE-02B, P-DATA-BASE-04
-- Document utilisé : P02_evaluation_complement_booleens.md, P02_version_amenagee_complement_booleens.md, P02_bareme_complement_booleens.md
+- Document utilisé : P02_evaluation_complement_booleens.md, P02_version_amenagee_complement_booleens.md
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse P02; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : production de séance appuyée sur P02_trace_complement_booleens.md et vérifiée par P02_corrige_complement_booleens.md
-- Trace écrite : renseigner P02_trace_complement_booleens.md avec méthode, exemple, erreur fréquente et remédiation.
-- Devoir ou préparation : reprendre l'exercice ciblé dans P02_td_complement_booleens.md ou relire P02_cours_complement_booleens.md.
-- Remédiation : utiliser P02_remediation_complement_booleens.md en début de séance suivante si l'erreur persiste.
+- Livrable : production élève vérifiable dans P02_trace_complement_booleens.md ou fichier de TP associé.
+- Trace écrite : compléter P02_trace_complement_booleens.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P02_td_complement_booleens.md ou relire P02_cours_complement_booleens.md.
+- Remédiation : utiliser P02_remediation_complement_booleens.md pour traiter l’erreur EF observée.
 
 ### Séance P02-S5
 - Durée : 1 h
@@ -259,13 +259,13 @@
 - Nature : remédiation
 - Objectif : corriger l’exercice bilan P02-R5 et consolider la trace écrite sur registre 4 bits, complément à deux et table de vérité.
 - Capacité officielle : P-DATA-BASE-02A, P-DATA-BASE-02B, P-DATA-BASE-04
-- Document utilisé : P02_remediation_complement_booleens.md, P02_corrige_complement_booleens.md, P02_trace_complement_booleens.md
+- Document utilisé : P02_remediation_complement_booleens.md, P02_trace_complement_booleens.md
 - Déroulé : 1. retour sur erreurs de P02; 2. correction guidée de P02-R5; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P02-R5; avancé : produire une variante de l’exercice corrigé.
-- Livrable : production de séance appuyée sur P02_trace_complement_booleens.md et vérifiée par P02_corrige_complement_booleens.md
-- Trace écrite : renseigner P02_trace_complement_booleens.md avec méthode, exemple, erreur fréquente et remédiation.
-- Devoir ou préparation : reprendre l'exercice ciblé dans P02_td_complement_booleens.md ou relire P02_cours_complement_booleens.md.
-- Remédiation : utiliser P02_remediation_complement_booleens.md en début de séance suivante si l'erreur persiste.
+- Livrable : production élève vérifiable dans P02_trace_complement_booleens.md ou fichier de TP associé.
+- Trace écrite : compléter P02_trace_complement_booleens.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P02_td_complement_booleens.md ou relire P02_cours_complement_booleens.md.
+- Remédiation : utiliser P02_remediation_complement_booleens.md pour traiter l’erreur EF observée.
 
 ### Séance P02-S6
 - Durée : 2 h
@@ -279,13 +279,13 @@
 - Document utilisé : P02_tp_complement_booleens.md, carnet_de_bord.md, P02_trace_complement_booleens.md
 - Déroulé : 1. choix de l’objectif du jalon P02; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P02 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : production de séance appuyée sur P02_trace_complement_booleens.md et vérifiée par P02_corrige_complement_booleens.md
-- Trace écrite : renseigner P02_trace_complement_booleens.md avec méthode, exemple, erreur fréquente et remédiation.
-- Devoir ou préparation : reprendre l'exercice ciblé dans P02_td_complement_booleens.md ou relire P02_cours_complement_booleens.md.
-- Remédiation : utiliser P02_remediation_complement_booleens.md en début de séance suivante si l'erreur persiste.
+- Livrable : production élève vérifiable dans P02_trace_complement_booleens.md ou fichier de TP associé.
+- Trace écrite : compléter P02_trace_complement_booleens.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P02_td_complement_booleens.md ou relire P02_cours_complement_booleens.md.
+- Remédiation : utiliser P02_remediation_complement_booleens.md pour traiter l’erreur EF observée.
 - Jalon projet : P02-J6 sur registre 4 bits, complément à deux et table de vérité.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P02-J6.
-- Livrable projet : note de carnet reliée à P02_tp_complement_booleens.md et trace de test ou justification.
+- Livrable projet : note de carnet reliée à P02_tp_complement_booleens.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P03-S1
@@ -295,16 +295,15 @@
 - Période : période courte avec férié tunisien du 15 octobre signalé
 - Mois : octobre
 - Nature : cours
-- Statut support : théorique non prêt
 - Objectif : introduire points de code Unicode et observation de flottants simples à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : P-DATA-BASE-05A, P-DATA-BASE-05B, P-DATA-BASE-03
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P03_cours_texte_reels.md, P03_trace_texte_reels.md
 - Déroulé : 1. question flash P03-Q1; 2. activité P03_intro sur points de code Unicode et observation de flottants simples; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P03; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P03_trace_texte_reels.md ou fichier de TP associé.
+- Trace écrite : compléter P03_trace_texte_reels.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P03_td_texte_reels.md ou relire P03_cours_texte_reels.md.
+- Remédiation : utiliser P03_remediation_texte_reels.md pour traiter l’erreur EF observée.
 
 ### Séance P03-S2
 - Durée : 2 h
@@ -313,16 +312,15 @@
 - Période : période courte avec férié tunisien du 15 octobre signalé
 - Mois : octobre
 - Nature : TD
-- Statut support : théorique non prêt
 - Objectif : résoudre les exercices P03-E2 à P03-E4 sur points de code Unicode et observation de flottants simples avec justification écrite.
 - Capacité officielle : P-DATA-BASE-05A, P-DATA-BASE-05B, P-DATA-BASE-03
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P03_td_texte_reels.md, P03_trace_texte_reels.md
 - Déroulé : 1. rappel méthode; 2. exercices P03-E2, P03-E3, P03-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P03-E2 et P03-E3 guidés; avancé : exercice P03-E5 avec justification complète.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P03_trace_texte_reels.md ou fichier de TP associé.
+- Trace écrite : compléter P03_trace_texte_reels.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P03_td_texte_reels.md ou relire P03_cours_texte_reels.md.
+- Remédiation : utiliser P03_remediation_texte_reels.md pour traiter l’erreur EF observée.
 
 ### Séance P03-S3
 - Durée : 1 h
@@ -331,16 +329,15 @@
 - Période : période courte avec férié tunisien du 15 octobre signalé
 - Mois : octobre
 - Nature : remédiation
-- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan P03-R3 et consolider la trace écrite sur points de code Unicode et observation de flottants simples.
 - Capacité officielle : P-DATA-BASE-05A, P-DATA-BASE-05B, P-DATA-BASE-03
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P03_tp_texte_reels.md, P03_trace_texte_reels.md
 - Déroulé : 1. retour sur erreurs de P03; 2. correction guidée de P03-R3; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P03-R3; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P03_trace_texte_reels.md ou fichier de TP associé.
+- Trace écrite : compléter P03_trace_texte_reels.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P03_td_texte_reels.md ou relire P03_cours_texte_reels.md.
+- Remédiation : utiliser P03_remediation_texte_reels.md pour traiter l’erreur EF observée.
 
 ### Séance P03-S4
 - Durée : 1 h
@@ -349,16 +346,15 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : remédiation
-- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan P03-R4 et consolider la trace écrite sur points de code Unicode et observation de flottants simples.
 - Capacité officielle : P-DATA-BASE-05A, P-DATA-BASE-05B, P-DATA-BASE-03
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P03_evaluation_texte_reels.md, P03_version_amenagee_texte_reels.md
 - Déroulé : 1. retour sur erreurs de P03; 2. correction guidée de P03-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P03-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P03_trace_texte_reels.md ou fichier de TP associé.
+- Trace écrite : compléter P03_trace_texte_reels.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P03_td_texte_reels.md ou relire P03_cours_texte_reels.md.
+- Remédiation : utiliser P03_remediation_texte_reels.md pour traiter l’erreur EF observée.
 
 ### Séance P03-S5
 - Durée : 1 h
@@ -367,19 +363,18 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : projet
-- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet P03-J5 en produisant un livrable vérifiable lié à points de code Unicode et observation de flottants simples.
 - Capacité officielle : P-DATA-BASE-05A, P-DATA-BASE-05B, P-DATA-BASE-03
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P03_remediation_texte_reels.md, P03_trace_texte_reels.md
 - Déroulé : 1. choix de l’objectif du jalon P03; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P03 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P03_trace_texte_reels.md ou fichier de TP associé.
+- Trace écrite : compléter P03_trace_texte_reels.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P03_td_texte_reels.md ou relire P03_cours_texte_reels.md.
+- Remédiation : utiliser P03_remediation_texte_reels.md pour traiter l’erreur EF observée.
 - Jalon projet : P03-J5 sur points de code Unicode et observation de flottants simples.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P03-J5.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P03_tp_texte_reels.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P04-S1
@@ -389,16 +384,15 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : cours
-- Statut support : théorique non prêt
 - Objectif : introduire choix liste tuple dictionnaire sur mesures fictives à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P04_cours_types_construits.md, P04_trace_types_construits.md
 - Déroulé : 1. question flash P04-Q1; 2. activité P04_intro sur choix liste tuple dictionnaire sur mesures fictives; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P04; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P04_trace_types_construits.md ou fichier de TP associé.
+- Trace écrite : compléter P04_trace_types_construits.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P04_td_types_construits.md ou relire P04_cours_types_construits.md.
+- Remédiation : utiliser P04_remediation_types_construits.md pour traiter l’erreur EF observée.
 
 ### Séance P04-S2
 - Durée : 2 h
@@ -407,16 +401,15 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : TD
-- Statut support : théorique non prêt
 - Objectif : résoudre les exercices P04-E2 à P04-E4 sur choix liste tuple dictionnaire sur mesures fictives avec justification écrite.
 - Capacité officielle : P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P04_td_types_construits.md, P04_trace_types_construits.md
 - Déroulé : 1. rappel méthode; 2. exercices P04-E2, P04-E3, P04-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P04-E2 et P04-E3 guidés; avancé : exercice P04-E5 avec justification complète.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P04_trace_types_construits.md ou fichier de TP associé.
+- Trace écrite : compléter P04_trace_types_construits.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P04_td_types_construits.md ou relire P04_cours_types_construits.md.
+- Remédiation : utiliser P04_remediation_types_construits.md pour traiter l’erreur EF observée.
 
 ### Séance P04-S3
 - Durée : 2 h
@@ -425,16 +418,15 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : TP
-- Statut support : théorique non prêt
 - Objectif : réaliser le TP representation_tools.py sur choix liste tuple dictionnaire sur mesures fictives et exécuter deux tests de cas limites.
 - Capacité officielle : P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P04_tp_types_construits.md, P04_trace_types_construits.md
 - Déroulé : 1. lecture du cahier des charges TP P04; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P04_trace_types_construits.md ou fichier de TP associé.
+- Trace écrite : compléter P04_trace_types_construits.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P04_td_types_construits.md ou relire P04_cours_types_construits.md.
+- Remédiation : utiliser P04_remediation_types_construits.md pour traiter l’erreur EF observée.
 
 ### Séance P04-S4
 - Durée : 1 h
@@ -443,16 +435,15 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : remédiation
-- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan P04-R4 et consolider la trace écrite sur choix liste tuple dictionnaire sur mesures fictives.
 - Capacité officielle : P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P04_evaluation_types_construits.md, P04_version_amenagee_types_construits.md
 - Déroulé : 1. retour sur erreurs de P04; 2. correction guidée de P04-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P04-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P04_trace_types_construits.md ou fichier de TP associé.
+- Trace écrite : compléter P04_trace_types_construits.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P04_td_types_construits.md ou relire P04_cours_types_construits.md.
+- Remédiation : utiliser P04_remediation_types_construits.md pour traiter l’erreur EF observée.
 
 ### Séance P04-S5
 - Durée : 2 h
@@ -461,19 +452,18 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : projet
-- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet P04-J5 en produisant un livrable vérifiable lié à choix liste tuple dictionnaire sur mesures fictives.
 - Capacité officielle : P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P04_remediation_types_construits.md, P04_trace_types_construits.md
 - Déroulé : 1. choix de l’objectif du jalon P04; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P04 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P04_trace_types_construits.md ou fichier de TP associé.
+- Trace écrite : compléter P04_trace_types_construits.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P04_td_types_construits.md ou relire P04_cours_types_construits.md.
+- Remédiation : utiliser P04_remediation_types_construits.md pour traiter l’erreur EF observée.
 - Jalon projet : P04-J5 sur choix liste tuple dictionnaire sur mesures fictives.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P04-J5.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P04_tp_types_construits.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P04-S6
@@ -483,19 +473,18 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : projet
-- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet P04-J6 en produisant un livrable vérifiable lié à choix liste tuple dictionnaire sur mesures fictives.
 - Capacité officielle : P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P04_tp_types_construits.md, carnet_de_bord.md, P04_trace_types_construits.md
 - Déroulé : 1. choix de l’objectif du jalon P04; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P04 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P04_trace_types_construits.md ou fichier de TP associé.
+- Trace écrite : compléter P04_trace_types_construits.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P04_td_types_construits.md ou relire P04_cours_types_construits.md.
+- Remédiation : utiliser P04_remediation_types_construits.md pour traiter l’erreur EF observée.
 - Jalon projet : P04-J6 sur choix liste tuple dictionnaire sur mesures fictives.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P04-J6.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P04_tp_types_construits.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P05-S1
@@ -505,16 +494,15 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : cours
-- Statut support : théorique non prêt
 - Objectif : introduire import CSV fictif, recherche et cohérence de table à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P05_cours_tables_csv.md, P05_trace_tables_csv.md
 - Déroulé : 1. question flash P05-Q1; 2. activité P05_intro sur import CSV fictif, recherche et cohérence de table; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P05; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
+- Trace écrite : compléter P05_trace_tables_csv.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P05_td_tables_csv.md ou relire P05_cours_tables_csv.md.
+- Remédiation : utiliser P05_remediation_tables_csv.md pour traiter l’erreur EF observée.
 
 ### Séance P05-S2
 - Durée : 1,5 h
@@ -523,16 +511,15 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : TD
-- Statut support : théorique non prêt
 - Objectif : résoudre les exercices P05-E2 à P05-E4 sur import CSV fictif, recherche et cohérence de table avec justification écrite.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P05_td_tables_csv.md, P05_trace_tables_csv.md
 - Déroulé : 1. rappel méthode; 2. exercices P05-E2, P05-E3, P05-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P05-E2 et P05-E3 guidés; avancé : exercice P05-E5 avec justification complète.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
+- Trace écrite : compléter P05_trace_tables_csv.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P05_td_tables_csv.md ou relire P05_cours_tables_csv.md.
+- Remédiation : utiliser P05_remediation_tables_csv.md pour traiter l’erreur EF observée.
 
 ### Séance P05-S3
 - Durée : 1 h
@@ -541,16 +528,15 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : TD
-- Statut support : théorique non prêt
 - Objectif : résoudre les exercices P05-E3 à P05-E5 sur import CSV fictif, recherche et cohérence de table avec justification écrite.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P05_tp_tables_csv.md, P05_trace_tables_csv.md
 - Déroulé : 1. rappel méthode; 2. exercices P05-E3, P05-E4, P05-E5; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P05-E3 et P05-E4 guidés; avancé : exercice P05-E6 avec justification complète.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
+- Trace écrite : compléter P05_trace_tables_csv.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P05_td_tables_csv.md ou relire P05_cours_tables_csv.md.
+- Remédiation : utiliser P05_remediation_tables_csv.md pour traiter l’erreur EF observée.
 
 ### Séance P05-S4
 - Durée : 1 h
@@ -559,16 +545,15 @@
 - Période : période normale favorable aux apprentissages structurants
 - Mois : novembre
 - Nature : TP
-- Statut support : théorique non prêt
 - Objectif : réaliser le TP representation_tools.py sur import CSV fictif, recherche et cohérence de table et exécuter deux tests de cas limites.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P05_evaluation_tables_csv.md, P05_version_amenagee_tables_csv.md
 - Déroulé : 1. lecture du cahier des charges TP P05; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
+- Trace écrite : compléter P05_trace_tables_csv.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P05_td_tables_csv.md ou relire P05_cours_tables_csv.md.
+- Remédiation : utiliser P05_remediation_tables_csv.md pour traiter l’erreur EF observée.
 
 ### Séance P05-S5
 - Durée : 1 h
@@ -577,16 +562,15 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : évaluation
-- Statut support : théorique non prêt
 - Objectif : passer TP pratique CSV évalué avec questions ciblées sur import CSV fictif, recherche et cohérence de table, puis identifier les erreurs à corriger.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P05_remediation_tables_csv.md, P05_trace_tables_csv.md
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse P05; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
+- Trace écrite : compléter P05_trace_tables_csv.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P05_td_tables_csv.md ou relire P05_cours_tables_csv.md.
+- Remédiation : utiliser P05_remediation_tables_csv.md pour traiter l’erreur EF observée.
 
 ### Séance P05-S6
 - Durée : 1 h
@@ -595,16 +579,15 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : remédiation
-- Statut support : théorique non prêt
 - Objectif : corriger l’exercice bilan P05-R6 et consolider la trace écrite sur import CSV fictif, recherche et cohérence de table.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P05_tp_tables_csv.md, carnet_de_bord.md, P05_trace_tables_csv.md
 - Déroulé : 1. retour sur erreurs de P05; 2. correction guidée de P05-R6; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P05-R6; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
+- Trace écrite : compléter P05_trace_tables_csv.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P05_td_tables_csv.md ou relire P05_cours_tables_csv.md.
+- Remédiation : utiliser P05_remediation_tables_csv.md pour traiter l’erreur EF observée.
 
 ### Séance P05-S7
 - Durée : 2 h
@@ -613,19 +596,18 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : projet
-- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet P05-J7 en produisant un livrable vérifiable lié à import CSV fictif, recherche et cohérence de table.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P05_tp_tables_csv.md, carnet_de_bord.md, P05_trace_tables_csv.md
 - Déroulé : 1. choix de l’objectif du jalon P05; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P05 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
+- Trace écrite : compléter P05_trace_tables_csv.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P05_td_tables_csv.md ou relire P05_cours_tables_csv.md.
+- Remédiation : utiliser P05_remediation_tables_csv.md pour traiter l’erreur EF observée.
 - Jalon projet : P05-J7 sur import CSV fictif, recherche et cohérence de table.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P05-J7.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P05_tp_tables_csv.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P05-S8
@@ -635,19 +617,18 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : projet
-- Statut support : théorique non prêt
 - Objectif : avancer le jalon projet P05-J8 en produisant un livrable vérifiable lié à import CSV fictif, recherche et cohérence de table.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P05_tp_tables_csv.md, carnet_de_bord.md, P05_trace_tables_csv.md
 - Déroulé : 1. choix de l’objectif du jalon P05; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P05 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
+- Trace écrite : compléter P05_trace_tables_csv.md avec objectif O, exemple corrigé, erreur EF et critère de réussite.
+- Devoir ou préparation : terminer deux exercices numérotés dans P05_td_tables_csv.md ou relire P05_cours_tables_csv.md.
+- Remédiation : utiliser P05_remediation_tables_csv.md pour traiter l’erreur EF observée.
 - Jalon projet : P05-J8 sur import CSV fictif, recherche et cohérence de table.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P05-J8.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P05_tp_tables_csv.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P06-S1
@@ -663,7 +644,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash P06-Q1; 2. activité P06_intro sur tri de table, fusion par clé et doublons; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P06; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -681,7 +662,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices P06-E2, P06-E3, P06-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P06-E2 et P06-E3 guidés; avancé : exercice P06-E5 avec justification complète.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -699,7 +680,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de P06; 2. correction guidée de P06-R3; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P06-R3; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -717,7 +698,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de P06; 2. correction guidée de P06-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P06-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -735,7 +716,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P06; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P06 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -757,7 +738,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P06; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P06 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -779,7 +760,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash P07-Q1; 2. activité P07_intro sur spécification de fonctions et jeux de tests; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P07; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -797,7 +778,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices P07-E2, P07-E3, P07-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P07-E2 et P07-E3 guidés; avancé : exercice P07-E5 avec justification complète.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -815,7 +796,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP P07; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -833,7 +814,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de P07; 2. correction guidée de P07-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P07-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -851,7 +832,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P07; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P07 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -873,7 +854,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P07; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P07 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -895,7 +876,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash P08-Q1; 2. activité P08_intro sur formulaire Web local, événement clic et GET POST; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P08; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -913,7 +894,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices P08-E2, P08-E3, P08-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P08-E2 et P08-E3 guidés; avancé : exercice P08-E5 avec justification complète.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -931,7 +912,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP P08; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -949,7 +930,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse P08; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -967,7 +948,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de P08; 2. correction guidée de P08-R5; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P08-R5; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -985,7 +966,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P08; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P08 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1007,7 +988,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P08; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P08 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1029,7 +1010,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash P09-Q1; 2. activité P09_intro sur commandes shell et droits sur arborescence fictive; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P09; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1047,7 +1028,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices P09-E2, P09-E3, P09-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P09-E2 et P09-E3 guidés; avancé : exercice P09-E5 avec justification complète.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1065,7 +1046,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP P09; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1083,7 +1064,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de P09; 2. correction guidée de P09-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P09-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1101,7 +1082,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P09; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P09 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1123,7 +1104,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash P10-Q1; 2. activité P10_intro sur simulation de paquets et protocole à bit alterné; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P10; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1141,7 +1122,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices P10-E2, P10-E3, P10-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P10-E2 et P10-E3 guidés; avancé : exercice P10-E5 avec justification complète.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1159,7 +1140,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de P10; 2. correction guidée de P10-R3; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P10-R3; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1177,7 +1158,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P10; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P10 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1199,7 +1180,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P10; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P10 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1221,7 +1202,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash P11-Q1; 2. activité P11_intro sur parcours de tableau, occurrence, extremum, moyenne; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P11; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1239,7 +1220,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices P11-E2, P11-E3, P11-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P11-E2 et P11-E3 guidés; avancé : exercice P11-E5 avec justification complète.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1257,7 +1238,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP P11; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1275,7 +1256,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse P11; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1293,7 +1274,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de P11; 2. correction guidée de P11-R5; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P11-R5; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1311,7 +1292,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P11; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P11 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1333,7 +1314,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash P12-Q1; 2. activité P12_intro sur tri insertion, tri sélection, invariant et coût quadratique; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P12; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1351,7 +1332,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices P12-E2, P12-E3, P12-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P12-E2 et P12-E3 guidés; avancé : exercice P12-E5 avec justification complète.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1369,7 +1350,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices P12-E3, P12-E4, P12-E5; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P12-E3 et P12-E4 guidés; avancé : exercice P12-E6 avec justification complète.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1387,7 +1368,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP P12; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1405,7 +1386,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse P12; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1423,7 +1404,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de P12; 2. correction guidée de P12-R6; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P12-R6; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1441,7 +1422,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P12; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P12 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1463,7 +1444,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash P13-Q1; 2. activité P13_intro sur recherche dichotomique, choix glouton et k plus proches voisins; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P13; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1481,7 +1462,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices P13-E2, P13-E3, P13-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P13-E2 et P13-E3 guidés; avancé : exercice P13-E5 avec justification complète.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1499,7 +1480,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de P13; 2. correction guidée de P13-R3; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P13-R3; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1517,7 +1498,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P13; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P13 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1539,7 +1520,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P13; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P13 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1561,7 +1542,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. question flash P14-Q1; 2. activité P14_intro sur dossier final, démonstration, soutenance et synthèse; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P14; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1579,7 +1560,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. rappel méthode; 2. exercices P14-E2, P14-E3, P14-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P14-E2 et P14-E3 guidés; avancé : exercice P14-E5 avec justification complète.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1597,7 +1578,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. lecture du cahier des charges TP P14; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1615,7 +1596,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse P14; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1633,7 +1614,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. retour sur erreurs de P14; 2. correction guidée de P14-R5; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P14-R5; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1651,7 +1632,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P14; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P14 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1673,7 +1654,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P14; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P14 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1695,7 +1676,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P14; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P14 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1717,7 +1698,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P14; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P14 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.
@@ -1739,7 +1720,7 @@
 - Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
 - Déroulé : 1. choix de l’objectif du jalon P14; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P14 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à préciser après création du support spécifique.
+- Livrable : intention de production à cadrer après création du support spécifique.
 - Trace écrite : non exploitable tant que le support spécifique de séance manque.
 - Devoir ou préparation : non fixé tant que le support spécifique manque.
 - Remédiation : à définir après production du corrigé et de la fiche de remédiation.

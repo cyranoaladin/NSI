@@ -1,61 +1,129 @@
 ---
-title: "T02 - TP - Classes Python et état d’objet"
+title: "T02 - Tp - Classes, objets et invariants"
 level: "terminale"
 sequence_id: "T02"
 document_type: "tp"
 status: "needs_review"
-version: "0.1.0"
-source: "BO 2019 ; source possible Drive : Documents_DRIVE/2_Tles NSI/2_Projet1_TAD et POO/5_Cours_POO.odt"
-theme: "Structures de données"
+version: "0.3.0"
+source: "BO 2019 ; ressource locale candidate : Documents_DRIVE/2_NSI/Cours/Terminale NSI Pierrot caillabet/2_Langage et programmation/Programmation fonctionnelle/4_TD_Programmation fonctionnelle.odt"
+theme: "Programmation orientée objet"
 notion: "classe, attribut, méthode, invariant"
-objectifs: ["Travailler la capacité ciblée", "Produire une trace vérifiable", "Identifier les erreurs fréquentes"]
+objectifs:
+  - "Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation."
+  - "Objectif O2 - Appliquer une méthode explicite sur un exemple guidé."
+  - "Objectif O3 - Justifier le résultat obtenu sur un cas nouveau."
+  - "Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente."
 private_data: false
 official_program:
-  capacities: ["T-STRUCT-02A", "T-STRUCT-02B", "T-LANG-04A"]
+  capacities:
+    - "T-STRUCT-02A"
+    - "T-STRUCT-02B"
+    - "T-LANG-04A"
 ---
 
-# T02 - TP - Classes Python et état d’objet
 
-## Objectifs
-- Comprendre la notion : classe, attribut, méthode, invariant.
-- Produire une réponse vérifiable et exploitable en classe.
-- Relier le travail aux capacités officielles : T-STRUCT-02A, T-STRUCT-02B, T-LANG-04A.
+# T02 - Tp - Classes, objets et invariants
 
-## Capacités officielles
+## Objectifs spécifiques
+- Objectif O1 - Identifier les données et le vocabulaire opératoire de la situation.
+- Objectif O2 - Appliquer une méthode explicite sur un exemple guidé.
+- Objectif O3 - Justifier le résultat obtenu sur un cas nouveau.
+- Objectif O4 - Contrôler un cas limite et corriger une erreur fréquente.
+
+## Capacités officielles atomiques
 - T-STRUCT-02A
 - T-STRUCT-02B
 - T-LANG-04A
-## Fichiers et environnement
-Le travail peut être réalisé dans un fichier Python local ou dans le carnet de bord selon la salle disponible.
 
-## Exemple
-Dans une classe `Compteur`, l'attribut `_valeur` stocke l'état. La méthode `incrementer` modifie cet état, tandis que `valeur` permet de le lire sans l'exposer directement.
+## Prérequis
+- Lire une consigne technique sans confondre donnée, méthode et résultat.
+- Écrire une réponse sous forme de phrases courtes et vérifiables.
+- Utiliser Python en distinguant expression, valeur, variable et affichage.
+- Conserver une trace de calcul ou de raisonnement exploitable pour la révision.
 
-## Travail demandé
-- Lire l'énoncé et repérer l'entrée, la sortie et les cas limites.
-- Écrire ou compléter une fonction courte.
-- Prévoir deux tests ordinaires et un test de bord.
-- Copier la sortie des tests dans le carnet.
+## Séance(s) correspondante(s)
+- T02-S1 à T02-S5 : ce support est rattaché aux séances indiquées dans la progression.
 
-## Exercices
-Écrire une classe `CompteurBorne` avec une valeur initiale, une méthode `incrementer`, une méthode `reset` et un test qui vérifie que la valeur ne dépasse pas une borne.
+## Situation-problème concrète
+un compte doit empêcher un solde négatif et exposer des méthodes contrôlées. La tâche consiste à traiter classe, attribut, méthode, invariant sans réponse intuitive non vérifiée.
+
+## Activité d’entrée
+1. Lire la situation : un compte doit empêcher un solde négatif et exposer des méthodes contrôlées.
+2. Isoler la donnée de départ : objet possédant état interne et opérations publiques.
+3. Prédire individuellement le résultat de l’exemple `Compte("Ada", 20).retirer(7)`.
+4. Comparer deux stratégies et noter la divergence précise.
+5. Appliquer la méthode retenue : définir constructeur, attributs, méthodes et invariant vérifié après mutation.
+6. Contrôler avec le résultat de référence : solde 13 si l’invariant reste vérifié.
+7. Tester le cas limite suivant : montant négatif ou accès direct à l’attribut.
+8. Rédiger une phrase qui relie donnée, méthode, résultat et contrôle.
+
+## Consigne technique détaillée
+- Mission : écrire une classe courte avec invariant et tests unitaires.
+- Starter code : `03_progressions/supports/terminale/T02/code/T02_starter_classes_objets.py`.
+- Tests attendus : `03_progressions/supports/terminale/T02/code/T02_tests_attendus_classes_objets.py`.
+- Corrigé professeur séparé : `03_progressions/supports/terminale/T02/code/T02_corrige_professeur_classes_objets.py`.
+- Fonction principale à compléter ou contrôler : `creer_compte(solde)`.
+- Exemple d’entrée : `20`.
+- Exemple d’exécution : l’exemple de référence `Compte("Ada", 20).retirer(7)` conduit à `solde 13 si l’invariant reste vérifié`.
+- Cas limite : montant négatif ou accès direct à l’attribut.
+- Livrable vérifiable : fichier Python exécutable et capture textuelle des tests attendus.
+
+## Tests attendus
+- Test 1 : cas nominal issu de l’exemple du cours.
+- Test 2 : cas limite annoncé dans la trace.
+- Test 3 : entrée invalide ou ambiguë, avec comportement documenté.
+- Test 4 : non-régression sur une variante numérique ou structurelle.
+
+## Exemple corrigé précis
+- On appelle `creer_compte(20)`.
+- La fonction doit appliquer définir constructeur, attributs, méthodes et invariant vérifié après mutation.
+- Le résultat contrôlé est `solde 13 si l’invariant reste vérifié` ou une structure portant cette information.
+- Le test attendu compare la sortie à une valeur connue plutôt qu’à une impression visuelle.
+
+## Exercices numérotés
+- Exercice 1 : ajouter un test ou une variante pour l’objectif O1 et expliquer le résultat.
+- Exercice 2 : ajouter un test ou une variante pour l’objectif O2 et expliquer le résultat.
+- Exercice 3 : ajouter un test ou une variante pour l’objectif O3 et expliquer le résultat.
+- Exercice 4 : ajouter un test ou une variante pour l’objectif O4 et expliquer le résultat.
+- Exercice 5 : ajouter un test ou une variante pour l’objectif O1 et expliquer le résultat.
+- Exercice 6 : ajouter un test ou une variante pour l’objectif O2 et expliquer le résultat.
+- Exercice 7 : ajouter un test ou une variante pour l’objectif O3 et expliquer le résultat.
+- Exercice 8 : ajouter un test ou une variante pour l’objectif O4 et expliquer le résultat.
 
 ## Corrigé
-La correction accepte plusieurs noms d'attributs si l'interface est claire et si le test vérifie la borne après plusieurs appels.
-
-## Tests minimaux
-Un test ordinaire, un test limite et un test d'erreur contrôlée doivent être écrits ou expliqués.
+- Corrigé exercice 1 : le test vérifie définir constructeur, attributs, méthodes et invariant vérifié après mutation et couvre EF1.
+- Corrigé exercice 2 : le test vérifie définir constructeur, attributs, méthodes et invariant vérifié après mutation et couvre EF2.
+- Corrigé exercice 3 : le test vérifie définir constructeur, attributs, méthodes et invariant vérifié après mutation et couvre EF3.
+- Corrigé exercice 4 : le test vérifie définir constructeur, attributs, méthodes et invariant vérifié après mutation et couvre EF4.
+- Corrigé exercice 5 : le test vérifie définir constructeur, attributs, méthodes et invariant vérifié après mutation et couvre EF1.
+- Corrigé exercice 6 : le test vérifie définir constructeur, attributs, méthodes et invariant vérifié après mutation et couvre EF2.
+- Corrigé exercice 7 : le test vérifie définir constructeur, attributs, méthodes et invariant vérifié après mutation et couvre EF3.
+- Corrigé exercice 8 : le test vérifie définir constructeur, attributs, méthodes et invariant vérifié après mutation et couvre EF4.
 
 ## Erreurs fréquentes
-- Tester seulement le cas donné dans l'énoncé.
-- Modifier l'interface demandée au lieu de corriger l'implémentation.
-- Ne pas noter la sortie obtenue.
+- Erreur fréquente EF1 - répondre seulement par `solde 13 si l’invariant reste vérifié` sans écrire la méthode.
+- Erreur fréquente EF2 - appliquer définir constructeur, attributs, méthodes et invariant vérifié après mutation dans le mauvais ordre.
+- Erreur fréquente EF3 - oublier le cas limite : montant négatif ou accès direct à l’attribut.
+- Erreur fréquente EF4 - citer une capacité officielle sans la relier à une production observable.
 
-## Remédiation
-Fournir une fonction presque complète et demander d'ajouter seulement les tests manquants.
+## Remédiation ciblée
+- Activité corrective EF1 : reprendre l’exemple en imposant quatre colonnes, donnée, opération, résultat, contrôle.
+- Activité corrective EF2 : refaire la méthode avec des étapes numérotées et une vérification à chaque étape.
+- Activité corrective EF3 : construire deux variantes du cas limite `montant négatif ou accès direct à l’attribut` et comparer les sorties.
+- Activité corrective EF4 : associer chaque phrase de réponse à une capacité officielle citée en début de copie.
 
 ## Différenciation
-Socle : squelette guidé. Standard : fonction et tests. Approfondissement : ajout d'un test qui échoue avant correction.
+- Socle : la méthode est fournie sous forme de tableau à compléter.
+- Standard : l’élève choisit la méthode et rédige la justification complète.
+- Expert : l’élève crée un contre-exemple ou un cas limite et explique l’échec attendu.
 
-## Statut de revue
-Document réel de première tranche, non publié et non validé. Une revue humaine indépendante reste nécessaire avant toute promotion de statut.
+## Critères de réussite
+- Les objectifs O1 à O4 apparaissent dans la production ou dans la correction.
+- Au moins une capacité officielle est reliée à une question traitée.
+- Le résultat est accompagné d’une méthode et d’un contrôle.
+- Les erreurs fréquentes sont nommées et corrigées par une activité de remédiation.
+
+## Livrable vérifiable
+- Le fichier starter s’exécute avec Python 3 sans dépendance externe.
+- Les tests attendus peuvent être lancés directement par `python fichier_tests.py`.
+- Le corrigé professeur reste séparé du document élève et n’est pas cité comme support élève.

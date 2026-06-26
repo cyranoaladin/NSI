@@ -66,13 +66,15 @@ def find_artifacts(root: Path = ROOT, require_archives: bool = True) -> list[Pat
 
 def main() -> int:
     errors: list[str] = []
-    artifacts = find_artifacts(ROOT, require_archives=True)
+    require_archives = (ROOT / ".git").exists()
+    artifacts = find_artifacts(ROOT, require_archives=require_archives)
     for path in artifacts:
         if path.exists():
             errors.append(f"{path.relative_to(ROOT)}: artefact interdit")
-    missing = [str(item) for item in ALLOWED_DIST if not (ROOT / item).exists()]
-    if missing:
-        errors.append('archives de livraison absentes: ' + ', '.join(sorted(missing)))
+    if require_archives:
+        missing = [str(item) for item in ALLOWED_DIST if not (ROOT / item).exists()]
+        if missing:
+            errors.append('archives de livraison absentes: ' + ', '.join(sorted(missing)))
     if errors:
         print('check_no_build_artifacts_in_index: KO')
         for error in errors:

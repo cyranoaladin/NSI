@@ -31,6 +31,15 @@ Aucun document ne doit être une coquille vide, une fiche superficielle, une par
 9. Ne jamais remplacer une preuve de qualité par une simple phrase déclarative.
 10. Ne jamais inventer une ressource, une source ou une couverture de programme.
 
+## 2.1. Source locale Drive
+
+Les ressources issues du Drive doivent être recherchées localement dans
+`/home/alaeddine/Documents/NSI/Documents_DRIVE`, et non dans un Drive distant, tant que ce
+dossier est disponible. Toute réutilisation doit citer le chemin local exact dans les
+métadonnées, le registre ou le rapport d’inventaire. Une ressource repérée dans
+`Documents_DRIVE` reste `needs_review` tant qu’elle n’a pas été auditée, nettoyée des
+données privées éventuelles et alignée avec le programme.
+
 ## 3. Statuts autorisés
 
 Les statuts autorisés sont strictement les suivants :
@@ -289,4 +298,3 @@ Action nécessaire :
 ```
 
 Il est interdit de masquer une lacune par une formulation vague.
-

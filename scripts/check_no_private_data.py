@@ -22,7 +22,7 @@ EXCLUDED_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", ".mypy_cache"
 
 EMAIL_RE = re.compile(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}")
 FR_PHONE_RE = re.compile(r"(?:(?:\+|00)33|0)\s*[1-9](?:[\s().-]?\d){8}\b")
-TN_PHONE_RE = re.compile(r"(?:(?:\+|00)216\s*)?(?:[24579]\d)(?:[\s().-]?\d){6}\b")
+TN_PHONE_RE = re.compile(r"(?<![A-Za-z0-9])(?:(?:\+|00)216\s*)?(?:[24579]\d)(?:[\s().-]?\d){6}(?![A-Za-z0-9])")
 ADDRESS_RE = re.compile(
     r"\b(?:adresse personnelle|domicile|rue|avenue|boulevard|code postal|gouvernorat|ville de résidence)\b",
     re.IGNORECASE,
@@ -31,6 +31,7 @@ PROPER_NAME_RE = re.compile(
     r"\b[A-ZÉÈÀÂÊÎÔÛÇ][a-zéèàâêîôûç]+(?:[- ][A-ZÉÈÀÂÊÎÔÛÇ][a-zéèàâêîôûç]+)+\b"
 )
 ISO_DATE_RE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b")
+YEAR_RANGE_RE = re.compile(r"\b\d{4}-\d{4}\b")
 
 
 def load_allowlist() -> Dict[str, List[str]]:
@@ -110,7 +111,7 @@ def main() -> None:
         }.items():
             for match in regex.finditer(text):
                 value = match.group(0)
-                if label.startswith("telephone") and ISO_DATE_RE.fullmatch(value):
+                if label.startswith("telephone") and (ISO_DATE_RE.fullmatch(value) or YEAR_RANGE_RE.fullmatch(value)):
                     continue
                 item = f"{rel}: {label} possible -> {value}"
                 if allowed(value, allowlist) or allowed(str(rel), allowlist):

@@ -63,10 +63,27 @@ def command_status(command: list[str]) -> tuple[int, list[str]]:
     return result.returncode, lines[-8:]
 
 
+def indicative_gate_rows() -> list[tuple[str, str, str, str]]:
+    rows: list[tuple[str, str, str, str]] = []
+    for script in ["scripts/check_required_sections.py", "scripts/check_document_depth.py"]:
+        code, tail = command_status([sys.executable, script])
+        if code == 0:
+            continue
+        detail = "; ".join(line.removeprefix("- ").strip() for line in tail if line.strip())
+        rows.append((
+            script,
+            detail or "échec indicatif observé",
+            "Dette pédagogique connue ; reste non bloquant uniquement pour le prototype global.",
+            "2026-07-15",
+        ))
+    return rows
+
+
 def main() -> int:
     total, statuses, sources, publishable = count_manifest()
     cov = coverage_counts()
     release_code, release_tail = command_status(["make", "--no-print-directory", "release-audit"])
+    indicative_rows = indicative_gate_rows()
     lines = [
         "# QA Report",
         "",
@@ -85,6 +102,7 @@ def main() -> int:
         f"- Couverture absent : {cov.get('absent', 0)}",
         "- Archive pédagogique à transmettre : dist/source_clean.tar.gz",
         "- Archive globale contenant .git : interdite comme livraison principale",
+        "- L’archive principale de livraison est dist/source_clean.tar.gz. Toute archive contenant .git/ est interdite comme livraison pédagogique.",
         "- make audit : PASS prototype uniquement si exécuté après génération de ce rapport",
         f"- make --no-print-directory release-audit : {'KO attendu' if release_code != 0 else 'PASS inattendu'}",
         "- Décision : ne pas générer de nouvelles séquences",
@@ -111,6 +129,18 @@ def main() -> int:
         "- Documents professeurs encore en needs_review.",
         "- Revue pédagogique et scientifique humaine absente.",
         "- Les séances hors première tranche restent théoriques et non prêtes.",
+        "",
+        "## Gates indicatifs encore en échec",
+        "",
+        "| Fichier concerné | Erreur | Décision | Date cible de correction |",
+        "|---|---|---|---|",
+        *(
+            [
+                f"| `{script}` | {detail.replace('|', '/')} | {decision} | {date} |"
+                for script, detail, decision, date in indicative_rows
+            ]
+            or ["| Aucun échec indicatif observé pendant cette génération. | - | - | - |"]
+        ),
         "",
         "## Décisions",
         "",

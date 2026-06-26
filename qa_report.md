@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 241
-- Ressources needs_review : 241
+- Ressources inventoriées : 336
+- Ressources needs_review : 336
 - Ressources publiables : 0
-- Source generated : 241
+- Source generated : 336
 - Source drive : 0
 - Lignes drive_inventory.csv : 22
 - Couverture covered : 0
@@ -15,6 +15,7 @@
 - Couverture absent : 99
 - Archive pédagogique à transmettre : dist/source_clean.tar.gz
 - Archive globale contenant .git : interdite comme livraison principale
+- L’archive principale de livraison est dist/source_clean.tar.gz. Toute archive contenant .git/ est interdite comme livraison pédagogique.
 - make audit : PASS prototype uniquement si exécuté après génération de ce rapport
 - make --no-print-directory release-audit : KO attendu
 - Décision : ne pas générer de nouvelles séquences
@@ -48,6 +49,13 @@ make: *** [Makefile:release-audit] Error 1
 - Documents professeurs encore en needs_review.
 - Revue pédagogique et scientifique humaine absente.
 - Les séances hors première tranche restent théoriques et non prêtes.
+
+## Gates indicatifs encore en échec
+
+| Fichier concerné | Erreur | Décision | Date cible de correction |
+|---|---|---|---|
+| `scripts/check_required_sections.py` | check_required_sections: KO; premiere/sequences/s01_representation_donnees/corrige.md: section manquante -> variante acceptable; premiere/sequences/s01_representation_donnees/cours_eleve.md: section manquante -> activité d'introduction; premiere/sequences/s01_representation_donnees/cours_eleve.md: section manquante -> exemples corrigés; premiere/sequences/s01_representation_donnees/cours_eleve.md: section manquante -> exercices intégrés; premiere/sequences/s01_representation_donnees/cours_eleve.md: section manquante -> extension; premiere/sequences/s01_representation_donnees/cours_eleve.md: section manquante -> aides progressives | Dette pédagogique connue ; reste non bloquant uniquement pour le prototype global. | 2026-07-15 |
+| `scripts/check_document_depth.py` | check_document_depth: KO; premiere/sequences/s01_representation_donnees/cours_eleve.md: profondeur insuffisante (234 lignes utiles, minimum 250); premiere/sequences/s01_representation_donnees/cours_eleve.md: moins de 3 définitions formelles | Dette pédagogique connue ; reste non bloquant uniquement pour le prototype global. | 2026-07-15 |
 
 ## Décisions
 
