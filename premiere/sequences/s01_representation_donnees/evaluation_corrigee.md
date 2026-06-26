@@ -3,6 +3,11 @@ titre: Evaluation corrigee professeur - S01 representation des donnees
 niveau: premiere
 type: evaluation_corrigee
 statut: needs_review
+sequence: S01 representation des donnees
+notion: bases, entiers relatifs, booleens, texte, types construits
+objectifs:
+  - Corriger les conversions en bases 2, 10 et 16.
+  - Corriger le complement a deux, les booleens, le texte et le choix de structure.
 version: 0.3.0
 public: professeur
 source: generated

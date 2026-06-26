@@ -377,9 +377,11 @@
 - Ressources copiées dans banques :
 
 ## Séquences détectées
+- S01 representation des donnees: 1
+- S01 structures de donnees interfaces implementations: 1
 - bank_index: 14
-- s01_representation_donnees: 22
-- s01_structures_donnees_interfaces_implementations: 22
+- s01_representation_donnees: 21
+- s01_structures_donnees_interfaces_implementations: 21
 
 ## Ressources publiables
 

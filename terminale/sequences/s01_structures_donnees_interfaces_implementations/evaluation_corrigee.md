@@ -3,6 +3,11 @@ titre: Evaluation corrigee professeur - S01 structures de donnees, interfaces et
 niveau: terminale
 type: evaluation_corrigee
 statut: needs_review
+sequence: S01 structures de donnees interfaces implementations
+notion: interface, implementation, piles, files, dictionnaires, graphes
+objectifs:
+  - Corriger les distinctions interface implementation.
+  - Corriger les piles, files, dictionnaires et representations de graphes.
 version: 0.3.0
 public: professeur
 source: generated

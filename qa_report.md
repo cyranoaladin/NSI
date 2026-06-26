@@ -28,13 +28,11 @@ make release-audit
 ## Dernier release-audit observé
 
 ```text
-?? scripts/check_manifest_source_integrity.py
-?? scripts/check_qa_report_freshness.py
-?? scripts/check_session_specificity.py
-?? scripts/check_session_week_calendar_consistency.py
-?? scripts/check_teacher_corrections_alignment.py
-?? scripts/check_uploaded_archive_policy.py
-?? scripts/generate_qa_report.py
+python scripts/check_git_clean.py
+check_git_clean: KO
+- worktree non propre:
+ M premiere/sequences/s01_representation_donnees/evaluation_corrigee.md
+ M terminale/sequences/s01_structures_donnees_interfaces_implementations/evaluation_corrigee.md
 make: *** [Makefile:55: release-audit] Error 1
 ```
 
