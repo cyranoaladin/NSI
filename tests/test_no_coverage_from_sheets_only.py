@@ -42,6 +42,22 @@ class NoCoverageFromSheetsOnlyTest(unittest.TestCase):
 
             self.assertEqual(result.errors, [])
 
+    def test_covered_capacity_requires_human_reviews_and_publication_decision(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            (root / "coverage.md").write_text(
+                "# Couverture\n\n"
+                "| niveau | rubrique officielle | contenu officiel | capacité officielle | preuve cours | preuve TD/TP | preuve évaluation | preuve corrigé | statut | blocker |\n"
+                "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n"
+                "| premiere | Réseaux | Paquets | P-ARCH-02A - décrire un paquet | 03_progressions/fiches_cours/premiere/P10/P10_fiche_cours_reseaux_protocoles_paquets.md | 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md | 03_progressions/supports/premiere/P10/P10_evaluation_reseaux_protocoles_paquets.md | 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md#corrigé | covered | ressources présentes |\n",
+                encoding="utf-8",
+            )
+
+            result = coverage_guard.analyze_no_coverage_from_sheets_only(root)
+
+            self.assertTrue(any("revue pédagogique humaine" in error for error in result.errors))
+            self.assertTrue(any("décision explicite de publication" in error for error in result.errors))
+
 
 if __name__ == "__main__":
     unittest.main()

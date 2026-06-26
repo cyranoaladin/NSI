@@ -29,6 +29,7 @@ audit-local:
 	python scripts/check_session_specificity.py
 	python scripts/check_session_referenced_files_exist.py
 	python scripts/check_missing_register_actionability.py
+	python scripts/check_missing_register_semantic_consistency.py
 	python scripts/check_document_naming_conventions.py
 	python scripts/check_first_batch_document_quality.py
 	python scripts/check_first_batch_alignment.py
@@ -50,6 +51,9 @@ audit-local:
 	python scripts/check_course_sheets_no_template_abuse.py
 	python scripts/check_course_sheet_readiness.py
 	python scripts/check_course_sheet_readiness_strict.py
+	python scripts/check_linked_td_quality.py
+	python scripts/check_linked_evaluation_quality.py
+	python scripts/check_operational_supports_no_indicative_debt.py
 	python scripts/check_evaluation_distribution.py
 	python scripts/check_teacher_docs_depth.py
 	python scripts/check_validated_documents_quality_gates.py
@@ -83,6 +87,7 @@ audit-source:
 	python scripts/check_session_project_hours.py
 	python scripts/check_session_referenced_files_exist.py
 	python scripts/check_missing_register_actionability.py
+	python scripts/check_missing_register_semantic_consistency.py
 	python scripts/check_document_naming_conventions.py
 	python scripts/check_session_specificity.py
 	python scripts/check_session_week_calendar_consistency.py
@@ -123,6 +128,9 @@ audit-extracted-source:
 	python scripts/check_course_sheets_no_template_abuse.py
 	python scripts/check_course_sheet_readiness.py
 	python scripts/check_course_sheet_readiness_strict.py
+	python scripts/check_linked_td_quality.py
+	python scripts/check_linked_evaluation_quality.py
+	python scripts/check_operational_supports_no_indicative_debt.py
 	python scripts/check_no_private_data.py
 	python scripts/check_no_placeholders_docs.py
 	python scripts/check_no_build_artifacts_in_index.py

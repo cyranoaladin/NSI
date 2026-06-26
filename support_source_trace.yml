@@ -1107,3 +1107,259 @@ supports:
   statut_rgpd: non concerné - aucune donnée personnelle intégrée
   statut_relecture: needs_review
   readiness: linked
+- support: 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/premiere/P10/P10_evaluation_reseaux_protocoles_paquets.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/premiere/P11/P11_TD_parcours_recherche_extremum_moyenne.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/premiere/P11/P11_evaluation_parcours_recherche_extremum_moyenne.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/premiere/P12/P12_TD_tris_invariants_complexite.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/premiere/P12/P12_evaluation_tris_invariants_complexite.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/premiere/P13/P13_evaluation_dichotomie_glouton_knn.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/premiere/P14/P14_TD_synthese_projet_oral.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/premiere/P14/P14_evaluation_synthese_projet_oral.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T11/T11_TD_processus_ordonnancement_interblocage.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T11/T11_evaluation_processus_ordonnancement_interblocage.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T12/T12_TD_routage_rip_ospf.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T12/T12_evaluation_routage_rip_ospf.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T13/T13_TD_chiffrement_https.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T13/T13_evaluation_chiffrement_https.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T14/T14_TD_modularite_api_paradigmes_bugs.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T14/T14_evaluation_modularite_api_paradigmes_bugs.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T15/T15_TD_calculabilite_arret.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T15/T15_evaluation_calculabilite_arret.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T16/T16_TD_diviser_pour_regner_tri_fusion.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T16/T16_evaluation_diviser_pour_regner_tri_fusion.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T17/T17_TD_programmation_dynamique.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T17/T17_evaluation_programmation_dynamique.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T18/T18_TD_boyer_moore.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T18/T18_evaluation_boyer_moore.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement
+- support: 03_progressions/supports/terminale/T19/T19_evaluation_bac_pratique_grand_oral_projet.md
+  source_officielle: BO 2019
+  source_locale_drive: ''
+  type_reprise: création originale
+  hash_source: ''
+  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  statut_relecture: needs_review
+  decision: recherche locale Documents_DRIVE effectuée ; aucune ressource reprise directement

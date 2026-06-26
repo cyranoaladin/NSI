@@ -14,7 +14,7 @@ official_program:
     - "T-LANG-01A"
     - "T-LANG-01B"
     - "T-LANG-01C"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # T15 - Fiche cours - Calculabilité et problème de l’arrêt
@@ -76,8 +76,8 @@ Proposer un cas limite pertinent pour calculabilité et arrêt et expliquer le r
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | T15-S1 | réelle | séance présente dans la progression |
-| TD | T15_TD_calculabilite_arret.md | à créer | inscrit au registre v2 |
-| Évaluation | T15_evaluation_calculabilite_arret.md | à créer | inscrit au registre v2 |
+| TD | T15_TD_calculabilite_arret.md | existant | support TD créé en needs_review |
+| Évaluation | T15_evaluation_calculabilite_arret.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer arrêt avec un exemple différent de ceux de la fiche T15.

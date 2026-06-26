@@ -12,7 +12,7 @@ notion: "Boyer-Moore"
 official_program:
   capacities:
     - "T-ALGO-05"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # T18 - Fiche cours - Boyer-Moore
@@ -74,8 +74,8 @@ Proposer un cas limite pertinent pour Boyer-Moore et expliquer le résultat atte
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | T18-S1 | réelle | séance présente dans la progression |
-| TD | T18_TD_boyer_moore.md | à créer | inscrit au registre v2 |
-| Évaluation | T18_evaluation_boyer_moore.md | à créer | inscrit au registre v2 |
+| TD | T18_TD_boyer_moore.md | existant | support TD créé en needs_review |
+| Évaluation | T18_evaluation_boyer_moore.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer Boyer-Moore avec un exemple différent de ceux de la fiche T18.

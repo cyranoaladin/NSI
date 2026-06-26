@@ -15,6 +15,11 @@ PROOF_COLUMNS = {
     "preuve évaluation": 6,
     "preuve corrigé": 7,
 }
+REQUIRED_HUMAN_RELEASE_MARKERS = [
+    "revue pédagogique humaine",
+    "revue scientifique humaine",
+    "décision explicite de publication",
+]
 
 
 @dataclass
@@ -65,6 +70,10 @@ def analyze_no_coverage_from_sheets_only(root: Path = ROOT) -> NoCoverageFromShe
             missing_required.append("corrigé")
         if missing_required:
             result.errors.append(f"{cells[3]}: covered sans {', '.join(missing_required)}")
+        blocker = cells[9].lower()
+        for marker in REQUIRED_HUMAN_RELEASE_MARKERS:
+            if marker not in blocker:
+                result.errors.append(f"{cells[3]}: covered sans {marker}")
     return result
 
 

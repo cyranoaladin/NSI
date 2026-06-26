@@ -12,7 +12,7 @@ notion: "révision projet oral"
 official_program:
   capacities:
     - "T-LANG-05"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # T19 - Fiche cours - Bac pratique, Grand Oral et projet
@@ -74,8 +74,8 @@ Proposer un cas limite pertinent pour bac pratique et Grand Oral et expliquer le
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | T19-S1 | réelle | séance présente dans la progression |
-| TD | T19_TD_bac_pratique_grand_oral_projet.md | à créer | inscrit au registre v2 |
-| Évaluation | T19_evaluation_bac_pratique_grand_oral_projet.md | à créer | inscrit au registre v2 |
+| TD | T19_TD_bac_pratique_grand_oral_projet.md | existant | support TD créé en needs_review |
+| Évaluation | T19_evaluation_bac_pratique_grand_oral_projet.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer révision projet oral avec un exemple différent de ceux de la fiche T19.

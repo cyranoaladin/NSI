@@ -12,7 +12,7 @@ notion: "projet oral"
 official_program:
   capacities:
     - "P-HIST-01"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # P14 - Fiche cours - Synthèse, projet final et oral
@@ -74,8 +74,8 @@ Proposer un cas limite pertinent pour synthèse projet oral et expliquer le rés
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | P14-S1 | réelle | séance présente dans la progression |
-| TD | P14_TD_synthese_projet_oral.md | à créer | inscrit au registre v2 |
-| Évaluation | P14_evaluation_synthese_projet_oral.md | à créer | inscrit au registre v2 |
+| TD | P14_TD_synthese_projet_oral.md | existant | support TD créé en needs_review |
+| Évaluation | P14_evaluation_synthese_projet_oral.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer projet oral avec un exemple différent de ceux de la fiche P14.

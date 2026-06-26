@@ -12,7 +12,7 @@ notion: "diviser pour régner"
 official_program:
   capacities:
     - "T-ALGO-03"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # T16 - Fiche cours - Diviser pour régner et tri fusion
@@ -74,8 +74,8 @@ Proposer un cas limite pertinent pour diviser pour régner et expliquer le résu
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | T16-S1 | réelle | séance présente dans la progression |
-| TD | T16_TD_diviser_pour_regner_tri_fusion.md | à créer | inscrit au registre v2 |
-| Évaluation | T16_evaluation_diviser_pour_regner_tri_fusion.md | à créer | inscrit au registre v2 |
+| TD | T16_TD_diviser_pour_regner_tri_fusion.md | existant | support TD créé en needs_review |
+| Évaluation | T16_evaluation_diviser_pour_regner_tri_fusion.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer diviser pour régner avec un exemple différent de ceux de la fiche T16.

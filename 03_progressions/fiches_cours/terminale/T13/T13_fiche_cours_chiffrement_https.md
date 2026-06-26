@@ -13,7 +13,7 @@ official_program:
   capacities:
     - "T-ARCH-04A"
     - "T-ARCH-04B"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # T13 - Fiche cours - Chiffrement et HTTPS
@@ -75,8 +75,8 @@ Proposer un cas limite pertinent pour chiffrement et HTTPS et expliquer le résu
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | T13-S1 | réelle | séance présente dans la progression |
-| TD | T13_TD_chiffrement_https.md | à créer | inscrit au registre v2 |
-| Évaluation | T13_evaluation_chiffrement_https.md | à créer | inscrit au registre v2 |
+| TD | T13_TD_chiffrement_https.md | existant | support TD créé en needs_review |
+| Évaluation | T13_evaluation_chiffrement_https.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer chiffrement HTTPS avec un exemple différent de ceux de la fiche T13.

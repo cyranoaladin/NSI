@@ -15,7 +15,7 @@ official_program:
     - "T-ARCH-02A"
     - "T-ARCH-02B"
     - "T-ARCH-02C"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # T11 - Fiche cours - Processus, ordonnancement et interblocage
@@ -77,8 +77,8 @@ Proposer un cas limite pertinent pour processus et ordonnancement et expliquer l
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | T11-S1 | réelle | séance présente dans la progression |
-| TD | T11_TD_processus_ordonnancement_interblocage.md | à créer | inscrit au registre v2 |
-| Évaluation | T11_evaluation_processus_ordonnancement_interblocage.md | à créer | inscrit au registre v2 |
+| TD | T11_TD_processus_ordonnancement_interblocage.md | existant | support TD créé en needs_review |
+| Évaluation | T11_evaluation_processus_ordonnancement_interblocage.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer processus avec un exemple différent de ceux de la fiche T11.

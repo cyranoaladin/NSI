@@ -15,7 +15,7 @@ official_program:
     - "P-ALGO-02B"
     - "P-ALGO-02C"
     - "P-ALGO-02D"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # P12 - Fiche cours - Tris, invariants et complexité
@@ -77,8 +77,8 @@ Proposer un cas limite pertinent pour tris et invariants et expliquer le résult
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | P12-S1 | réelle | séance présente dans la progression |
-| TD | P12_TD_tris_invariants_complexite.md | à créer | inscrit au registre v2 |
-| Évaluation | P12_evaluation_tris_invariants_complexite.md | à créer | inscrit au registre v2 |
+| TD | P12_TD_tris_invariants_complexite.md | existant | support TD créé en needs_review |
+| Évaluation | P12_evaluation_tris_invariants_complexite.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer tris avec un exemple différent de ceux de la fiche P12.

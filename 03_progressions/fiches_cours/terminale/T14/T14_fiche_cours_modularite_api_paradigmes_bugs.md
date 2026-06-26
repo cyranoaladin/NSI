@@ -17,7 +17,7 @@ official_program:
     - "T-LANG-04A"
     - "T-LANG-04B"
     - "T-LANG-05"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # T14 - Fiche cours - Modularité, API, paradigmes et bugs
@@ -79,8 +79,8 @@ Proposer un cas limite pertinent pour modularité, API et bugs et expliquer le r
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | T14-S1 | réelle | séance présente dans la progression |
-| TD | T14_TD_modularite_api_paradigmes_bugs.md | à créer | inscrit au registre v2 |
-| Évaluation | T14_evaluation_modularite_api_paradigmes_bugs.md | à créer | inscrit au registre v2 |
+| TD | T14_TD_modularite_api_paradigmes_bugs.md | existant | support TD créé en needs_review |
+| Évaluation | T14_evaluation_modularite_api_paradigmes_bugs.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer modularité API avec un exemple différent de ceux de la fiche T14.

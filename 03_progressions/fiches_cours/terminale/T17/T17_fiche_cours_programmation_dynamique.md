@@ -12,7 +12,7 @@ notion: "programmation dynamique"
 official_program:
   capacities:
     - "T-ALGO-04"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # T17 - Fiche cours - Programmation dynamique
@@ -74,8 +74,8 @@ Proposer un cas limite pertinent pour programmation dynamique et expliquer le r�
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | T17-S1 | réelle | séance présente dans la progression |
-| TD | T17_TD_programmation_dynamique.md | à créer | inscrit au registre v2 |
-| Évaluation | T17_evaluation_programmation_dynamique.md | à créer | inscrit au registre v2 |
+| TD | T17_TD_programmation_dynamique.md | existant | support TD créé en needs_review |
+| Évaluation | T17_evaluation_programmation_dynamique.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer programmation dynamique avec un exemple différent de ceux de la fiche T17.

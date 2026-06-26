@@ -16,7 +16,7 @@ official_program:
     - "P-ARCH-02C"
     - "P-ARCH-04A"
     - "P-ARCH-04B"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # P10 - Fiche cours - Réseaux, protocoles et paquets
@@ -78,8 +78,8 @@ Proposer un cas limite pertinent pour réseaux et protocoles et expliquer le ré
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | P10-S1 | réelle | séance présente dans la progression |
-| TD | P10_TD_reseaux_protocoles_paquets.md | à créer | inscrit au registre v2 |
-| Évaluation | P10_evaluation_reseaux_protocoles_paquets.md | à créer | inscrit au registre v2 |
+| TD | P10_TD_reseaux_protocoles_paquets.md | existant | support TD créé en needs_review |
+| Évaluation | P10_evaluation_reseaux_protocoles_paquets.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer protocoles et paquets avec un exemple différent de ceux de la fiche P10.

@@ -16,7 +16,7 @@ official_program:
     - "T-BDD-03C"
     - "T-BDD-03D"
     - "T-BDD-03E"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # T10 - Fiche cours - SQL : SELECT, WHERE, JOIN
@@ -86,8 +86,8 @@ T-BDD-03E : trier les notes par ordre décroissant.
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | T10-S1 | réelle | séance présente dans la progression |
-| TD | T10_TD_sql_select_where_join.md | à créer | inscrit au registre v2 |
-| Évaluation | T10_evaluation_sql_select_where_join.md | à créer | inscrit au registre v2 |
+| TD | T10_TD_sql_select_where_join.md | existant | support TD créé en needs_review |
+| Évaluation | T10_evaluation_sql_select_where_join.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer requêtes de lecture avec un exemple différent de ceux de la fiche T10.

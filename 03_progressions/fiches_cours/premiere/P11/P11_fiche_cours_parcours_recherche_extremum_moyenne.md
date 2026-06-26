@@ -13,7 +13,7 @@ official_program:
   capacities:
     - "P-ALGO-01A"
     - "P-ALGO-01B"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # P11 - Fiche cours - Parcours, recherche, extremum, moyenne
@@ -75,8 +75,8 @@ Proposer un cas limite pertinent pour parcours et recherche et expliquer le rés
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | P11-S1 | réelle | séance présente dans la progression |
-| TD | P11_TD_parcours_recherche_extremum_moyenne.md | à créer | inscrit au registre v2 |
-| Évaluation | P11_evaluation_parcours_recherche_extremum_moyenne.md | à créer | inscrit au registre v2 |
+| TD | P11_TD_parcours_recherche_extremum_moyenne.md | existant | support TD créé en needs_review |
+| Évaluation | P11_evaluation_parcours_recherche_extremum_moyenne.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer parcours de tableau avec un exemple différent de ceux de la fiche P11.

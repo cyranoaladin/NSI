@@ -71,6 +71,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - learning_objectives_assessed_report.md: nom propre suspect -> Learning Objectives Assessed Report
 - missing_documents_register_v2.md: nom propre suspect -> Lien Drive
 - missing_documents_register_v2.md: nom propre suspect -> Lien Drive
+- missing_documents_register_v2.md: nom propre suspect -> Lien Drive
 - pedagogical_blockers_report.md: nom propre suspect -> Pedagogical Blockers Report
 - pedagogical_blockers_report.md: nom propre suspect -> Ressources Drive
 - premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> American Standard Code
@@ -312,4 +313,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 88 alertes supplémentaires non affichées
+- ... 113 alertes supplémentaires non affichées

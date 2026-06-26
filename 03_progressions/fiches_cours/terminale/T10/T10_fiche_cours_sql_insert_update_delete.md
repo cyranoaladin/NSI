@@ -14,7 +14,7 @@ official_program:
     - "T-BDD-03F"
     - "T-BDD-03G"
     - "T-BDD-03H"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # T10 - Fiche cours - SQL : INSERT, UPDATE, DELETE
@@ -82,8 +82,8 @@ T-BDD-03H : supprimer seulement la note id 9.
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | T10-S1 | réelle | séance présente dans la progression |
-| TD | T10_TD_sql_insert_update_delete.md | à créer | inscrit au registre v2 |
-| Évaluation | T10_evaluation_sql_insert_update_delete.md | à créer | inscrit au registre v2 |
+| TD | T10_TD_sql_insert_update_delete.md | existant | support TD créé en needs_review |
+| Évaluation | T10_evaluation_sql_insert_update_delete.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer requêtes de modification avec un exemple différent de ceux de la fiche T10.

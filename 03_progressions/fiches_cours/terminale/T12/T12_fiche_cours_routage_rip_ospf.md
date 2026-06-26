@@ -12,7 +12,7 @@ notion: "routage"
 official_program:
   capacities:
     - "T-ARCH-03"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # T12 - Fiche cours - Routage RIP et OSPF
@@ -74,8 +74,8 @@ Proposer un cas limite pertinent pour routage RIP et OSPF et expliquer le résul
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | T12-S1 | réelle | séance présente dans la progression |
-| TD | T12_TD_routage_rip_ospf.md | à créer | inscrit au registre v2 |
-| Évaluation | T12_evaluation_routage_rip_ospf.md | à créer | inscrit au registre v2 |
+| TD | T12_TD_routage_rip_ospf.md | existant | support TD créé en needs_review |
+| Évaluation | T12_evaluation_routage_rip_ospf.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer routage avec un exemple différent de ceux de la fiche T12.

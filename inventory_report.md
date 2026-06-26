@@ -1,34 +1,34 @@
 # Inventaire ressources NSI
 
-- Total ressources : 448
+- Total ressources : 486
 - Ressources pédagogiques : 53
-- Ressources techniques : 395
+- Ressources techniques : 433
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - drive: 0
-- generated: 448
+- generated: 486
 
 ## Répartition par niveau
-- interne: 177
-- premiere: 136
-- terminale: 135
+- interne: 183
+- premiere: 146
+- terminale: 157
 
 ## Répartition par type
 - banque: 14
-- document: 241
+- document: 273
 - python: 36
-- script: 94
+- script: 98
 - sequence: 45
-- test: 18
+- test: 20
 
 ## Répartition par statut
-- needs_review: 448
+- needs_review: 486
 
 ## Répartition audience
 - corrige: 33
-- eleve: 78
-- mixte: 334
+- eleve: 110
+- mixte: 340
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -194,6 +194,16 @@
   - 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md
   - 03_progressions/supports/premiere/P09/P09_evaluation_architecture_os_droits.md
+  - 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md
+  - 03_progressions/supports/premiere/P10/P10_evaluation_reseaux_protocoles_paquets.md
+  - 03_progressions/supports/premiere/P11/P11_TD_parcours_recherche_extremum_moyenne.md
+  - 03_progressions/supports/premiere/P11/P11_evaluation_parcours_recherche_extremum_moyenne.md
+  - 03_progressions/supports/premiere/P12/P12_TD_tris_invariants_complexite.md
+  - 03_progressions/supports/premiere/P12/P12_evaluation_tris_invariants_complexite.md
+  - 03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md
+  - 03_progressions/supports/premiere/P13/P13_evaluation_dichotomie_glouton_knn.md
+  - 03_progressions/supports/premiere/P14/P14_TD_synthese_projet_oral.md
+  - 03_progressions/supports/premiere/P14/P14_evaluation_synthese_projet_oral.md
   - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md
   - 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md
   - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md
@@ -277,6 +287,28 @@
   - 03_progressions/supports/terminale/T08/T08_evaluation_bfs_dfs_cycles_chemins.md
   - 03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md
   - 03_progressions/supports/terminale/T09/T09_evaluation_bases_relationnelles_cles_contraintes.md
+  - 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md
+  - 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md
+  - 03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md
+  - 03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md
+  - 03_progressions/supports/terminale/T11/T11_TD_processus_ordonnancement_interblocage.md
+  - 03_progressions/supports/terminale/T11/T11_evaluation_processus_ordonnancement_interblocage.md
+  - 03_progressions/supports/terminale/T12/T12_TD_routage_rip_ospf.md
+  - 03_progressions/supports/terminale/T12/T12_evaluation_routage_rip_ospf.md
+  - 03_progressions/supports/terminale/T13/T13_TD_chiffrement_https.md
+  - 03_progressions/supports/terminale/T13/T13_evaluation_chiffrement_https.md
+  - 03_progressions/supports/terminale/T14/T14_TD_modularite_api_paradigmes_bugs.md
+  - 03_progressions/supports/terminale/T14/T14_evaluation_modularite_api_paradigmes_bugs.md
+  - 03_progressions/supports/terminale/T15/T15_TD_calculabilite_arret.md
+  - 03_progressions/supports/terminale/T15/T15_evaluation_calculabilite_arret.md
+  - 03_progressions/supports/terminale/T16/T16_TD_diviser_pour_regner_tri_fusion.md
+  - 03_progressions/supports/terminale/T16/T16_evaluation_diviser_pour_regner_tri_fusion.md
+  - 03_progressions/supports/terminale/T17/T17_TD_programmation_dynamique.md
+  - 03_progressions/supports/terminale/T17/T17_evaluation_programmation_dynamique.md
+  - 03_progressions/supports/terminale/T18/T18_TD_boyer_moore.md
+  - 03_progressions/supports/terminale/T18/T18_evaluation_boyer_moore.md
+  - 03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md
+  - 03_progressions/supports/terminale/T19/T19_evaluation_bac_pratique_grand_oral_projet.md
   - INDEX.md
   - METHODE_PRODUCTION_REELLE.md
   - README.md
@@ -372,11 +404,14 @@
   - scripts/check_first_batch_tp_assets.py
   - scripts/check_git_clean.py
   - scripts/check_learning_objectives_assessed.py
+  - scripts/check_linked_evaluation_quality.py
+  - scripts/check_linked_td_quality.py
   - scripts/check_links.py
   - scripts/check_local_drive_traceability.py
   - scripts/check_manifest_source_integrity.py
   - scripts/check_metadata.py
   - scripts/check_missing_register_actionability.py
+  - scripts/check_missing_register_semantic_consistency.py
   - scripts/check_monthly_load_balance.py
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
@@ -388,6 +423,7 @@
   - scripts/check_no_placeholders_docs.py
   - scripts/check_no_private_data.py
   - scripts/check_no_teacher_content_in_student_export.py
+  - scripts/check_operational_supports_no_indicative_debt.py
   - scripts/check_pedagogical_alignment.py
   - scripts/check_program_capacity_evidence_depth.py
   - scripts/check_program_coverage.py
@@ -469,12 +505,14 @@
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
   - tests/test_line_padding.py
+  - tests/test_linked_support_quality.py
   - tests/test_local_drive_traceability.py
   - tests/test_missing_register_actionability.py
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_private_data_detection.py
   - tests/test_ready_session_operationality.py
   - tests/test_ready_supports_gates.py
+  - tests/test_register_semantic_consistency.py
   - tests/test_sequence_contracts.py
   - tests/test_session_referenced_files_exist.py
   - tests/test_session_specificity.py
@@ -697,6 +735,16 @@
   - 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md
   - 03_progressions/supports/premiere/P09/P09_evaluation_architecture_os_droits.md
+  - 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md
+  - 03_progressions/supports/premiere/P10/P10_evaluation_reseaux_protocoles_paquets.md
+  - 03_progressions/supports/premiere/P11/P11_TD_parcours_recherche_extremum_moyenne.md
+  - 03_progressions/supports/premiere/P11/P11_evaluation_parcours_recherche_extremum_moyenne.md
+  - 03_progressions/supports/premiere/P12/P12_TD_tris_invariants_complexite.md
+  - 03_progressions/supports/premiere/P12/P12_evaluation_tris_invariants_complexite.md
+  - 03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md
+  - 03_progressions/supports/premiere/P13/P13_evaluation_dichotomie_glouton_knn.md
+  - 03_progressions/supports/premiere/P14/P14_TD_synthese_projet_oral.md
+  - 03_progressions/supports/premiere/P14/P14_evaluation_synthese_projet_oral.md
   - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md
   - 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md
   - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md
@@ -780,6 +828,28 @@
   - 03_progressions/supports/terminale/T08/T08_evaluation_bfs_dfs_cycles_chemins.md
   - 03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md
   - 03_progressions/supports/terminale/T09/T09_evaluation_bases_relationnelles_cles_contraintes.md
+  - 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md
+  - 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md
+  - 03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md
+  - 03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md
+  - 03_progressions/supports/terminale/T11/T11_TD_processus_ordonnancement_interblocage.md
+  - 03_progressions/supports/terminale/T11/T11_evaluation_processus_ordonnancement_interblocage.md
+  - 03_progressions/supports/terminale/T12/T12_TD_routage_rip_ospf.md
+  - 03_progressions/supports/terminale/T12/T12_evaluation_routage_rip_ospf.md
+  - 03_progressions/supports/terminale/T13/T13_TD_chiffrement_https.md
+  - 03_progressions/supports/terminale/T13/T13_evaluation_chiffrement_https.md
+  - 03_progressions/supports/terminale/T14/T14_TD_modularite_api_paradigmes_bugs.md
+  - 03_progressions/supports/terminale/T14/T14_evaluation_modularite_api_paradigmes_bugs.md
+  - 03_progressions/supports/terminale/T15/T15_TD_calculabilite_arret.md
+  - 03_progressions/supports/terminale/T15/T15_evaluation_calculabilite_arret.md
+  - 03_progressions/supports/terminale/T16/T16_TD_diviser_pour_regner_tri_fusion.md
+  - 03_progressions/supports/terminale/T16/T16_evaluation_diviser_pour_regner_tri_fusion.md
+  - 03_progressions/supports/terminale/T17/T17_TD_programmation_dynamique.md
+  - 03_progressions/supports/terminale/T17/T17_evaluation_programmation_dynamique.md
+  - 03_progressions/supports/terminale/T18/T18_TD_boyer_moore.md
+  - 03_progressions/supports/terminale/T18/T18_evaluation_boyer_moore.md
+  - 03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md
+  - 03_progressions/supports/terminale/T19/T19_evaluation_bac_pratique_grand_oral_projet.md
   - INDEX.md
   - METHODE_PRODUCTION_REELLE.md
   - README.md
@@ -848,11 +918,14 @@
   - scripts/check_first_batch_tp_assets.py
   - scripts/check_git_clean.py
   - scripts/check_learning_objectives_assessed.py
+  - scripts/check_linked_evaluation_quality.py
+  - scripts/check_linked_td_quality.py
   - scripts/check_links.py
   - scripts/check_local_drive_traceability.py
   - scripts/check_manifest_source_integrity.py
   - scripts/check_metadata.py
   - scripts/check_missing_register_actionability.py
+  - scripts/check_missing_register_semantic_consistency.py
   - scripts/check_monthly_load_balance.py
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
@@ -864,6 +937,7 @@
   - scripts/check_no_placeholders_docs.py
   - scripts/check_no_private_data.py
   - scripts/check_no_teacher_content_in_student_export.py
+  - scripts/check_operational_supports_no_indicative_debt.py
   - scripts/check_pedagogical_alignment.py
   - scripts/check_program_capacity_evidence_depth.py
   - scripts/check_program_coverage.py
@@ -919,12 +993,14 @@
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
   - tests/test_line_padding.py
+  - tests/test_linked_support_quality.py
   - tests/test_local_drive_traceability.py
   - tests/test_missing_register_actionability.py
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_private_data_detection.py
   - tests/test_ready_session_operationality.py
   - tests/test_ready_supports_gates.py
+  - tests/test_register_semantic_consistency.py
   - tests/test_sequence_contracts.py
   - tests/test_session_referenced_files_exist.py
   - tests/test_session_specificity.py
@@ -945,11 +1021,11 @@
 - P07: 4
 - P08: 8
 - P09: 3
-- P10: 1
-- P11: 1
-- P12: 1
-- P13: 1
-- P14: 1
+- P10: 3
+- P11: 3
+- P12: 3
+- P13: 3
+- P14: 3
 - S01 representation des donnees: 1
 - S01 structures de donnees interfaces implementations: 1
 - T00: 10
@@ -962,16 +1038,16 @@
 - T07: 4
 - T08: 4
 - T09: 3
-- T10: 2
-- T11: 1
-- T12: 1
-- T13: 1
-- T14: 1
-- T15: 1
-- T16: 1
-- T17: 1
-- T18: 1
-- T19: 1
+- T10: 6
+- T11: 3
+- T12: 3
+- T13: 3
+- T14: 3
+- T15: 3
+- T16: 3
+- T17: 3
+- T18: 3
+- T19: 3
 - bank_index: 14
 - s01_representation_donnees: 22
 - s01_structures_donnees_interfaces_implementations: 21
@@ -1130,6 +1206,16 @@
 - 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md
 - 03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md
 - 03_progressions/supports/premiere/P09/P09_evaluation_architecture_os_droits.md
+- 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md
+- 03_progressions/supports/premiere/P10/P10_evaluation_reseaux_protocoles_paquets.md
+- 03_progressions/supports/premiere/P11/P11_TD_parcours_recherche_extremum_moyenne.md
+- 03_progressions/supports/premiere/P11/P11_evaluation_parcours_recherche_extremum_moyenne.md
+- 03_progressions/supports/premiere/P12/P12_TD_tris_invariants_complexite.md
+- 03_progressions/supports/premiere/P12/P12_evaluation_tris_invariants_complexite.md
+- 03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md
+- 03_progressions/supports/premiere/P13/P13_evaluation_dichotomie_glouton_knn.md
+- 03_progressions/supports/premiere/P14/P14_TD_synthese_projet_oral.md
+- 03_progressions/supports/premiere/P14/P14_evaluation_synthese_projet_oral.md
 - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md
 - 03_progressions/supports/terminale/T00/T00_evaluation_diagnostic_tests.md
@@ -1201,6 +1287,28 @@
 - 03_progressions/supports/terminale/T08/T08_evaluation_bfs_dfs_cycles_chemins.md
 - 03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md
 - 03_progressions/supports/terminale/T09/T09_evaluation_bases_relationnelles_cles_contraintes.md
+- 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md
+- 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md
+- 03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md
+- 03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md
+- 03_progressions/supports/terminale/T11/T11_TD_processus_ordonnancement_interblocage.md
+- 03_progressions/supports/terminale/T11/T11_evaluation_processus_ordonnancement_interblocage.md
+- 03_progressions/supports/terminale/T12/T12_TD_routage_rip_ospf.md
+- 03_progressions/supports/terminale/T12/T12_evaluation_routage_rip_ospf.md
+- 03_progressions/supports/terminale/T13/T13_TD_chiffrement_https.md
+- 03_progressions/supports/terminale/T13/T13_evaluation_chiffrement_https.md
+- 03_progressions/supports/terminale/T14/T14_TD_modularite_api_paradigmes_bugs.md
+- 03_progressions/supports/terminale/T14/T14_evaluation_modularite_api_paradigmes_bugs.md
+- 03_progressions/supports/terminale/T15/T15_TD_calculabilite_arret.md
+- 03_progressions/supports/terminale/T15/T15_evaluation_calculabilite_arret.md
+- 03_progressions/supports/terminale/T16/T16_TD_diviser_pour_regner_tri_fusion.md
+- 03_progressions/supports/terminale/T16/T16_evaluation_diviser_pour_regner_tri_fusion.md
+- 03_progressions/supports/terminale/T17/T17_TD_programmation_dynamique.md
+- 03_progressions/supports/terminale/T17/T17_evaluation_programmation_dynamique.md
+- 03_progressions/supports/terminale/T18/T18_TD_boyer_moore.md
+- 03_progressions/supports/terminale/T18/T18_evaluation_boyer_moore.md
+- 03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md
+- 03_progressions/supports/terminale/T19/T19_evaluation_bac_pratique_grand_oral_projet.md
 - INDEX.md
 - METHODE_PRODUCTION_REELLE.md
 - README.md
@@ -1292,11 +1400,14 @@
 - scripts/check_first_batch_tp_assets.py
 - scripts/check_git_clean.py
 - scripts/check_learning_objectives_assessed.py
+- scripts/check_linked_evaluation_quality.py
+- scripts/check_linked_td_quality.py
 - scripts/check_links.py
 - scripts/check_local_drive_traceability.py
 - scripts/check_manifest_source_integrity.py
 - scripts/check_metadata.py
 - scripts/check_missing_register_actionability.py
+- scripts/check_missing_register_semantic_consistency.py
 - scripts/check_monthly_load_balance.py
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
@@ -1308,6 +1419,7 @@
 - scripts/check_no_placeholders_docs.py
 - scripts/check_no_private_data.py
 - scripts/check_no_teacher_content_in_student_export.py
+- scripts/check_operational_supports_no_indicative_debt.py
 - scripts/check_pedagogical_alignment.py
 - scripts/check_program_capacity_evidence_depth.py
 - scripts/check_program_coverage.py
@@ -1383,12 +1495,14 @@
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py
 - tests/test_line_padding.py
+- tests/test_linked_support_quality.py
 - tests/test_local_drive_traceability.py
 - tests/test_missing_register_actionability.py
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_private_data_detection.py
 - tests/test_ready_session_operationality.py
 - tests/test_ready_supports_gates.py
+- tests/test_register_semantic_consistency.py
 - tests/test_sequence_contracts.py
 - tests/test_session_referenced_files_exist.py
 - tests/test_session_specificity.py
@@ -1561,6 +1675,16 @@
 - 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md
 - 03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md
 - 03_progressions/supports/premiere/P09/P09_evaluation_architecture_os_droits.md
+- 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md
+- 03_progressions/supports/premiere/P10/P10_evaluation_reseaux_protocoles_paquets.md
+- 03_progressions/supports/premiere/P11/P11_TD_parcours_recherche_extremum_moyenne.md
+- 03_progressions/supports/premiere/P11/P11_evaluation_parcours_recherche_extremum_moyenne.md
+- 03_progressions/supports/premiere/P12/P12_TD_tris_invariants_complexite.md
+- 03_progressions/supports/premiere/P12/P12_evaluation_tris_invariants_complexite.md
+- 03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md
+- 03_progressions/supports/premiere/P13/P13_evaluation_dichotomie_glouton_knn.md
+- 03_progressions/supports/premiere/P14/P14_TD_synthese_projet_oral.md
+- 03_progressions/supports/premiere/P14/P14_evaluation_synthese_projet_oral.md
 - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md
 - 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md
@@ -1644,6 +1768,28 @@
 - 03_progressions/supports/terminale/T08/T08_evaluation_bfs_dfs_cycles_chemins.md
 - 03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md
 - 03_progressions/supports/terminale/T09/T09_evaluation_bases_relationnelles_cles_contraintes.md
+- 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md
+- 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md
+- 03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md
+- 03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md
+- 03_progressions/supports/terminale/T11/T11_TD_processus_ordonnancement_interblocage.md
+- 03_progressions/supports/terminale/T11/T11_evaluation_processus_ordonnancement_interblocage.md
+- 03_progressions/supports/terminale/T12/T12_TD_routage_rip_ospf.md
+- 03_progressions/supports/terminale/T12/T12_evaluation_routage_rip_ospf.md
+- 03_progressions/supports/terminale/T13/T13_TD_chiffrement_https.md
+- 03_progressions/supports/terminale/T13/T13_evaluation_chiffrement_https.md
+- 03_progressions/supports/terminale/T14/T14_TD_modularite_api_paradigmes_bugs.md
+- 03_progressions/supports/terminale/T14/T14_evaluation_modularite_api_paradigmes_bugs.md
+- 03_progressions/supports/terminale/T15/T15_TD_calculabilite_arret.md
+- 03_progressions/supports/terminale/T15/T15_evaluation_calculabilite_arret.md
+- 03_progressions/supports/terminale/T16/T16_TD_diviser_pour_regner_tri_fusion.md
+- 03_progressions/supports/terminale/T16/T16_evaluation_diviser_pour_regner_tri_fusion.md
+- 03_progressions/supports/terminale/T17/T17_TD_programmation_dynamique.md
+- 03_progressions/supports/terminale/T17/T17_evaluation_programmation_dynamique.md
+- 03_progressions/supports/terminale/T18/T18_TD_boyer_moore.md
+- 03_progressions/supports/terminale/T18/T18_evaluation_boyer_moore.md
+- 03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md
+- 03_progressions/supports/terminale/T19/T19_evaluation_bac_pratique_grand_oral_projet.md
 - INDEX.md
 - METHODE_PRODUCTION_REELLE.md
 - README.md
@@ -1739,11 +1885,14 @@
 - scripts/check_first_batch_tp_assets.py
 - scripts/check_git_clean.py
 - scripts/check_learning_objectives_assessed.py
+- scripts/check_linked_evaluation_quality.py
+- scripts/check_linked_td_quality.py
 - scripts/check_links.py
 - scripts/check_local_drive_traceability.py
 - scripts/check_manifest_source_integrity.py
 - scripts/check_metadata.py
 - scripts/check_missing_register_actionability.py
+- scripts/check_missing_register_semantic_consistency.py
 - scripts/check_monthly_load_balance.py
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
@@ -1755,6 +1904,7 @@
 - scripts/check_no_placeholders_docs.py
 - scripts/check_no_private_data.py
 - scripts/check_no_teacher_content_in_student_export.py
+- scripts/check_operational_supports_no_indicative_debt.py
 - scripts/check_pedagogical_alignment.py
 - scripts/check_program_capacity_evidence_depth.py
 - scripts/check_program_coverage.py
@@ -1836,12 +1986,14 @@
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py
 - tests/test_line_padding.py
+- tests/test_linked_support_quality.py
 - tests/test_local_drive_traceability.py
 - tests/test_missing_register_actionability.py
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_private_data_detection.py
 - tests/test_ready_session_operationality.py
 - tests/test_ready_supports_gates.py
+- tests/test_register_semantic_consistency.py
 - tests/test_sequence_contracts.py
 - tests/test_session_referenced_files_exist.py
 - tests/test_session_specificity.py

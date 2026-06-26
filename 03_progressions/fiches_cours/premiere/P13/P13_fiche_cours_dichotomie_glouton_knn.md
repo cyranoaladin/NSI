@@ -14,7 +14,7 @@ official_program:
     - "P-ALGO-03"
     - "P-ALGO-04"
     - "P-ALGO-05"
-readiness: linked
+readiness: operational
 private_data: false
 ---
 # P13 - Fiche cours - Dichotomie, glouton et k-NN
@@ -76,8 +76,8 @@ Proposer un cas limite pertinent pour dichotomie, glouton et k-NN et expliquer l
 | Élément | Fichier | Statut | Remarque |
 |---|---|---|---|
 | Séance | P13-S1 | réelle | séance présente dans la progression |
-| TD | P13_TD_dichotomie_glouton_knn.md | à créer | inscrit au registre v2 |
-| Évaluation | P13_evaluation_dichotomie_glouton_knn.md | à créer | inscrit au registre v2 |
+| TD | P13_TD_dichotomie_glouton_knn.md | existant | support TD créé en needs_review |
+| Évaluation | P13_evaluation_dichotomie_glouton_knn.md | existant | support d’évaluation créé en needs_review |
 
 ## Auto-évaluation
 - Je peux expliquer dichotomie glouton k-NN avec un exemple différent de ceux de la fiche P13.
