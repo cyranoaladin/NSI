@@ -83,6 +83,34 @@ def indicative_gate_rows() -> list[tuple[str, str, str, str]]:
     return rows
 
 
+def release_blocker_status() -> tuple[int, list[str]]:
+    """Snapshot release blockers without depending on the transient report file.
+
+    The real `make release-audit` still runs in the release workflow. During
+    qa_report generation, running that target would make the snapshot depend on
+    whether qa_report.md is already dirty, which can hide the actual Drive
+    blocker behind check_git_clean.
+    """
+    checks = [
+        "scripts/check_drive_mapping_release.py",
+        "scripts/check_no_needs_review_for_release.py",
+        "scripts/check_no_absent_coverage_for_release.py",
+        "scripts/check_no_teacher_content_in_student_export.py",
+        "scripts/check_validated_statuses.py",
+    ]
+    lines = [
+        "Snapshot des bloqueurs release hors check_git_clean.",
+        "Le vrai make release-audit est exécuté séparément.",
+    ]
+    for script in checks:
+        code, tail = command_status([sys.executable, script])
+        lines.append(f"python {script}")
+        lines.extend(tail)
+        if code != 0:
+            return code, lines[-10:]
+    return 0, lines[-10:]
+
+
 def course_sheet_stats() -> dict[str, object]:
     plans = planned_sequences(ROOT)
     by_sequence = sheets_by_sequence(ROOT)
@@ -140,7 +168,7 @@ def linked_course_sheet_rows() -> list[tuple[str, str, str, str, str]]:
 def main() -> int:
     total, statuses, sources, publishable = count_manifest()
     cov = coverage_counts()
-    release_code, release_tail = command_status(["make", "--no-print-directory", "release-audit"])
+    release_code, release_tail = release_blocker_status()
     indicative_rows = indicative_gate_rows()
     sheet_stats = course_sheet_stats()
     linked_rows = linked_course_sheet_rows()
@@ -175,7 +203,7 @@ def main() -> int:
         "make --no-print-directory release-audit",
         "```",
         "",
-        "## Dernier release-audit observé",
+        "## Dernier blocage release observé",
         "",
         "```text",
         *release_tail,

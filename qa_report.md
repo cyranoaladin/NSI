@@ -28,17 +28,14 @@ make package-audit
 make --no-print-directory release-audit
 ```
 
-## Dernier release-audit observé
+## Dernier blocage release observé
 
 ```text
- M manifest.csv
- M qa_report.md
- M scripts/check_drive_integration_plan.py
- M scripts/check_local_drive_traceability.py
- M scripts/check_operational_supports_no_indicative_debt.py
-?? scripts/_drive_paths.py
-?? tests/test_consolidation_strict.py
-make: *** [Makefile:release-audit] Error 1
+Snapshot des bloqueurs release hors check_git_clean.
+Le vrai make release-audit est exécuté séparément.
+python scripts/check_drive_mapping_release.py
+check_drive_mapping_release: KO
+- ressources Drive référencées mais non intégrées localement: copie_de_progres_nsi_amelioree.pdf, copie_de_progres_nsi_amelioree.tex, guide_enseignant_reprise_nsi_ameliore.tex, Cours.pdf, 2_TP.pdf, eval_nsi_corrige.pdf, eval_nsi.pdf, rendus_eleves, .git, .venv, TP_SOC.tex, Séquence1_Histoire de l'informatique, Séquence4_Types construits, 1_Cours_Types_construits.pdf, 1_RdD_Entier naturel.pdf, pays_monde.csv, NotesEleves.csv, Fichier_Eleves.csv, tri_bulles_eleve.py, Séquence1_TAD_Théorie
 ```
 
 ## Bloquants restants

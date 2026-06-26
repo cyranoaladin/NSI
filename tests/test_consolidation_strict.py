@@ -39,6 +39,11 @@ class ConsolidationStrictTest(unittest.TestCase):
             text = (ROOT / relative).read_text(encoding="utf-8")
             self.assertNotIn("/home/alaeddine", text)
 
+    def test_qa_report_generation_does_not_call_release_audit_target(self) -> None:
+        text = (ROOT / "scripts/generate_qa_report.py").read_text(encoding="utf-8")
+        self.assertNotIn('command_status(["make", "--no-print-directory", "release-audit"])', text)
+        self.assertIn("scripts/check_drive_mapping_release.py", text)
+
 
 if __name__ == "__main__":
     unittest.main()
