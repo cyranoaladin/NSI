@@ -57,7 +57,7 @@ def command_status(command: list[str]) -> tuple[int, str]:
 def main() -> int:
     total, statuses, sources, publishable = count_manifest()
     cov = coverage_counts()
-    release_code, release_tail = command_status(["make", "release-audit"])
+    release_code, release_tail = command_status(["make", "--no-print-directory", "release-audit"])
     lines = [
         "# QA Report",
         "",
@@ -75,7 +75,7 @@ def main() -> int:
         f"- Couverture partial : {cov.get('partial', 0)}",
         f"- Couverture absent : {cov.get('absent', 0)}",
         "- make audit : PASS prototype uniquement si exécuté après génération de ce rapport",
-        f"- make release-audit : {'KO attendu' if release_code != 0 else 'PASS inattendu'}",
+        f"- make --no-print-directory release-audit : {'KO attendu' if release_code != 0 else 'PASS inattendu'}",
         "- Décision : ne pas générer de nouvelles séquences",
         "",
         "## Commandes de référence",
@@ -83,7 +83,7 @@ def main() -> int:
         "```bash",
         "make audit",
         "make package-audit",
-        "make release-audit",
+        "make --no-print-directory release-audit",
         "```",
         "",
         "## Dernier release-audit observé",
