@@ -49,9 +49,16 @@ def drive_rows() -> int:
         return sum(1 for _ in csv.DictReader(handle))
 
 
-def command_status(command: list[str]) -> tuple[int, str]:
+def command_status(command: list[str]) -> tuple[int, list[str]]:
     result = subprocess.run(command, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-    return result.returncode, result.stdout.strip().splitlines()[-8:]
+    lines: list[str] = []
+    for line in result.stdout.strip().splitlines():
+        if line.startswith("make[") and "]: ***" in line:
+            line = "make: ***" + line.split("]: ***", 1)[1]
+        if "Entering directory" in line or "Leaving directory" in line:
+            continue
+        lines.append(line)
+    return result.returncode, lines[-8:]
 
 
 def main() -> int:

@@ -31,6 +31,7 @@ make --no-print-directory release-audit
 python scripts/check_git_clean.py
 check_git_clean: KO
 - worktree non propre:
+ M manifest.csv
  M qa_report.md
  M scripts/generate_qa_report.py
 make: *** [Makefile:55: release-audit] Error 1
