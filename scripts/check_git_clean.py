@@ -5,6 +5,9 @@ from __future__ import annotations
 
 from typing import List
 import subprocess
+import sys
+
+sys.dont_write_bytecode = True
 
 from _qa_common import ROOT, print_result
 
