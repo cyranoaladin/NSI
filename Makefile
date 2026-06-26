@@ -30,6 +30,7 @@ audit-local:
 	python scripts/cleanup_python_artifacts.py
 	python scripts/check_no_build_artifacts_in_index.py
 	python scripts/check_uploaded_archive_policy.py
+	python scripts/check_no_global_archive_in_delivery_context.py
 	-python scripts/check_required_sections.py
 	-python scripts/check_document_depth.py
 	python scripts/check_qcm_schema.py
@@ -167,9 +168,16 @@ package-audit:
 	python scripts/build_source_archive.py
 	python scripts/check_archive_portability.py
 	python scripts/check_no_sensitive_drive_in_source_clean.py
+	python scripts/check_no_global_archive_in_delivery_context.py
 
 verify-delivery-archive:
 	DELIVERED_ARCHIVE="$(DELIVERED_ARCHIVE)" python scripts/check_delivered_archive_exactly_source_clean.py
+
+deliver-pedagogical-archive:
+	python scripts/build_source_archive.py
+	DELIVERED_ARCHIVE=dist/source_clean.tar.gz python scripts/check_delivered_archive_exactly_source_clean.py
+	python scripts/check_no_global_archive_in_delivery_context.py
+	@echo "LIVRABLE_PEDAGOGIQUE=dist/source_clean.tar.gz"
 
 render-s01:
 	python scripts/render_sequence.py premiere/sequences/s01_representation_donnees

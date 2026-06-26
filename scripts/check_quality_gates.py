@@ -21,6 +21,7 @@ BLOCKING_CHECKS = [
     "scripts/check_no_placeholders_code.py",
     "scripts/check_no_build_artifacts_in_index.py",
     "scripts/check_uploaded_archive_policy.py",
+    "scripts/check_no_global_archive_in_delivery_context.py",
     "scripts/check_qcm_schema.py",
     "scripts/check_qcm_contract_consistency.py",
     "scripts/check_progression_calendar_alignment.py",

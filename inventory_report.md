@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 516
+- Total ressources : 518
 - Ressources pédagogiques : 53
-- Ressources techniques : 463
+- Ressources techniques : 465
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 6
-- generated: 509
+- generated: 511
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 212
+- interne: 214
 - premiere: 147
 - terminale: 157
 
@@ -19,17 +19,17 @@
 - banque: 14
 - document: 277
 - python: 36
-- script: 114
+- script: 115
 - sequence: 45
-- test: 30
+- test: 31
 
 ## Répartition par statut
-- needs_review: 516
+- needs_review: 518
 
 ## Répartition audience
 - corrige: 33
 - eleve: 110
-- mixte: 370
+- mixte: 372
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -431,6 +431,7 @@
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
   - scripts/check_no_coverage_from_sheets_only.py
+  - scripts/check_no_global_archive_in_delivery_context.py
   - scripts/check_no_line_padding.py
   - scripts/check_no_needs_review_for_release.py
   - scripts/check_no_operational_scope_hardcoding.py
@@ -536,6 +537,7 @@
   - tests/test_local_drive_traceability.py
   - tests/test_missing_register_actionability.py
   - tests/test_no_coverage_from_sheets_only.py
+  - tests/test_no_global_archive_in_delivery_context.py
   - tests/test_operational_substance_controls.py
   - tests/test_private_data_detection.py
   - tests/test_ready_session_operationality.py
@@ -975,6 +977,7 @@
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
   - scripts/check_no_coverage_from_sheets_only.py
+  - scripts/check_no_global_archive_in_delivery_context.py
   - scripts/check_no_line_padding.py
   - scripts/check_no_needs_review_for_release.py
   - scripts/check_no_operational_scope_hardcoding.py
@@ -1054,6 +1057,7 @@
   - tests/test_local_drive_traceability.py
   - tests/test_missing_register_actionability.py
   - tests/test_no_coverage_from_sheets_only.py
+  - tests/test_no_global_archive_in_delivery_context.py
   - tests/test_operational_substance_controls.py
   - tests/test_private_data_detection.py
   - tests/test_ready_session_operationality.py
@@ -1487,6 +1491,7 @@
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
 - scripts/check_no_coverage_from_sheets_only.py
+- scripts/check_no_global_archive_in_delivery_context.py
 - scripts/check_no_line_padding.py
 - scripts/check_no_needs_review_for_release.py
 - scripts/check_no_operational_scope_hardcoding.py
@@ -1586,6 +1591,7 @@
 - tests/test_local_drive_traceability.py
 - tests/test_missing_register_actionability.py
 - tests/test_no_coverage_from_sheets_only.py
+- tests/test_no_global_archive_in_delivery_context.py
 - tests/test_operational_substance_controls.py
 - tests/test_private_data_detection.py
 - tests/test_ready_session_operationality.py
@@ -2002,6 +2008,7 @@
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
 - scripts/check_no_coverage_from_sheets_only.py
+- scripts/check_no_global_archive_in_delivery_context.py
 - scripts/check_no_line_padding.py
 - scripts/check_no_needs_review_for_release.py
 - scripts/check_no_operational_scope_hardcoding.py
@@ -2107,6 +2114,7 @@
 - tests/test_local_drive_traceability.py
 - tests/test_missing_register_actionability.py
 - tests/test_no_coverage_from_sheets_only.py
+- tests/test_no_global_archive_in_delivery_context.py
 - tests/test_operational_substance_controls.py
 - tests/test_private_data_detection.py
 - tests/test_ready_session_operationality.py
