@@ -44,6 +44,12 @@ class ConsolidationStrictTest(unittest.TestCase):
         self.assertNotIn('command_status(["make", "--no-print-directory", "release-audit"])', text)
         self.assertIn("scripts/check_drive_mapping_release.py", text)
 
+    def test_qa_report_generation_uses_non_release_ready_vocabulary(self) -> None:
+        text = (ROOT / "scripts/generate_qa_report.py").read_text(encoding="utf-8")
+        self.assertNotIn("KO " + "attendu", text)
+        self.assertIn("NON_RELEASE_READY", text)
+        self.assertIn("RELEASE_AUDIT_FAIL", text)
+
 
 if __name__ == "__main__":
     unittest.main()

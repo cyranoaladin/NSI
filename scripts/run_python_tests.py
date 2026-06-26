@@ -9,6 +9,7 @@ import unittest
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+MIN_TESTS = 60
 
 
 def load_tests_from_file(path: Path):
@@ -21,9 +22,9 @@ def load_tests_from_file(path: Path):
     return unittest.defaultTestLoader.loadTestsFromModule(module)
 
 
-def main() -> None:
+def main(root: Path = ROOT, min_tests: int = MIN_TESTS) -> None:
     suite = unittest.TestSuite()
-    for path in sorted(ROOT.rglob('test*.py')):
+    for path in sorted(root.rglob('test*.py')):
         if 'tests' not in path.parts:
             continue
         if path.suffix != '.py':
@@ -32,7 +33,10 @@ def main() -> None:
 
     if suite.countTestCases() == 0:
         print('NO TESTS')
-        return
+        raise SystemExit(1)
+    if suite.countTestCases() < min_tests:
+        print(f"run_python_tests: KO - tests insuffisants ({suite.countTestCases()}/{min_tests})")
+        raise SystemExit(1)
 
     result = unittest.TestResult()
     suite.run(result)

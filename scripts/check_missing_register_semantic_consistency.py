@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 import unicodedata
 
-from _qa_common import ROOT, read_frontmatter
+from _qa_common import ROOT, read_frontmatter, sequence_id_from_path
 from _course_sheets_common import parse_markdown_table, sheet_files
 
 REGISTER = "missing_documents_register_v2.md"
@@ -169,7 +169,7 @@ def analyze_missing_register_semantic_consistency(root: Path = ROOT) -> Semantic
                     result.errors.append(f"{filename}: fiche concernée introuvable -> {fiche}")
                 continue
             sheet_path, metadata, fiche_tokens = sheets[fiche]
-            sheet_sequence = str(metadata.get("sequence_id") or sheet_path.name[:3])
+            sheet_sequence = str(metadata.get("sequence_id") or sequence_id_from_path(sheet_path))
             readiness = str(metadata.get("readiness") or "").strip()
             if sequence and sheet_sequence != sequence:
                 result.errors.append(f"{filename}: séquence registre {sequence} différente de la fiche {sheet_sequence}")

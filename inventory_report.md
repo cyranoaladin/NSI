@@ -1,34 +1,34 @@
 # Inventaire ressources NSI
 
-- Total ressources : 496
+- Total ressources : 500
 - Ressources pédagogiques : 53
-- Ressources techniques : 443
+- Ressources techniques : 447
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - drive: 0
-- generated: 496
+- generated: 500
 
 ## Répartition par niveau
-- interne: 193
+- interne: 197
 - premiere: 146
 - terminale: 157
 
 ## Répartition par type
 - banque: 14
-- document: 273
+- document: 275
 - python: 36
 - script: 106
 - sequence: 45
-- test: 22
+- test: 24
 
 ## Répartition par statut
-- needs_review: 496
+- needs_review: 500
 
 ## Répartition audience
 - corrige: 33
 - eleve: 110
-- mixte: 350
+- mixte: 354
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -329,6 +329,7 @@
   - missing_documents_register.md
   - missing_documents_register_v2.md
   - pedagogical_blockers_report.md
+  - pilot_scope.yml
   - premiere/banques/evaluations/index.md
   - premiere/banques/exercices/index.md
   - premiere/banques/index.md
@@ -368,6 +369,7 @@
   - progression_audit.md
   - project_plan_premiere.md
   - project_plan_terminale.md
+  - qa_debt_register.md
   - qa_report.md
   - scientific_claims_review_report.md
   - scripts/_course_sheets_common.py
@@ -523,12 +525,14 @@
   - tests/test_ready_session_operationality.py
   - tests/test_ready_supports_gates.py
   - tests/test_register_semantic_consistency.py
+  - tests/test_run_python_tests.py
   - tests/test_sequence_contracts.py
   - tests/test_session_referenced_files_exist.py
   - tests/test_session_specificity.py
   - tests/test_support_substance.py
   - tests/test_tp_pedagogical_assets.py
   - tests/test_tp_pedagogical_assets_runtime.py
+  - tests/test_uploaded_archive_policy.py
   - tp_test_alignment_report.md
 - Ressources pédagogiques :
   - premiere/banques/evaluations/index.md
@@ -880,6 +884,7 @@
   - missing_documents_register.md
   - missing_documents_register_v2.md
   - pedagogical_blockers_report.md
+  - pilot_scope.yml
   - premiere/sequences/s01_representation_donnees/python/representation_tools.py
   - premiere/sequences/s01_representation_donnees/sequence.yaml
   - premiere/sequences/s01_representation_donnees/tests/test_representation_tools.py
@@ -892,6 +897,7 @@
   - progression_audit.md
   - project_plan_premiere.md
   - project_plan_terminale.md
+  - qa_debt_register.md
   - qa_report.md
   - scientific_claims_review_report.md
   - scripts/_course_sheets_common.py
@@ -1021,12 +1027,14 @@
   - tests/test_ready_session_operationality.py
   - tests/test_ready_supports_gates.py
   - tests/test_register_semantic_consistency.py
+  - tests/test_run_python_tests.py
   - tests/test_sequence_contracts.py
   - tests/test_session_referenced_files_exist.py
   - tests/test_session_specificity.py
   - tests/test_support_substance.py
   - tests/test_tp_pedagogical_assets.py
   - tests/test_tp_pedagogical_assets_runtime.py
+  - tests/test_uploaded_archive_policy.py
   - tp_test_alignment_report.md
 - Ressources copiées dans banques :
 
@@ -1349,6 +1357,7 @@
 - missing_documents_register.md
 - missing_documents_register_v2.md
 - pedagogical_blockers_report.md
+- pilot_scope.yml
 - premiere/banques/evaluations/index.md
 - premiere/banques/exercices/index.md
 - premiere/banques/index.md
@@ -1384,6 +1393,7 @@
 - progression_audit.md
 - project_plan_premiere.md
 - project_plan_terminale.md
+- qa_debt_register.md
 - qa_report.md
 - scientific_claims_review_report.md
 - scripts/_course_sheets_common.py
@@ -1533,12 +1543,14 @@
 - tests/test_ready_session_operationality.py
 - tests/test_ready_supports_gates.py
 - tests/test_register_semantic_consistency.py
+- tests/test_run_python_tests.py
 - tests/test_sequence_contracts.py
 - tests/test_session_referenced_files_exist.py
 - tests/test_session_specificity.py
 - tests/test_support_substance.py
 - tests/test_tp_pedagogical_assets.py
 - tests/test_tp_pedagogical_assets_runtime.py
+- tests/test_uploaded_archive_policy.py
 - tp_test_alignment_report.md
 
 ## Ressources haute qualité
@@ -1840,6 +1852,7 @@
 - missing_documents_register.md
 - missing_documents_register_v2.md
 - pedagogical_blockers_report.md
+- pilot_scope.yml
 - premiere/banques/evaluations/index.md
 - premiere/banques/exercices/index.md
 - premiere/banques/index.md
@@ -1879,6 +1892,7 @@
 - progression_audit.md
 - project_plan_premiere.md
 - project_plan_terminale.md
+- qa_debt_register.md
 - qa_report.md
 - scientific_claims_review_report.md
 - scripts/_course_sheets_common.py
@@ -2034,12 +2048,14 @@
 - tests/test_ready_session_operationality.py
 - tests/test_ready_supports_gates.py
 - tests/test_register_semantic_consistency.py
+- tests/test_run_python_tests.py
 - tests/test_sequence_contracts.py
 - tests/test_session_referenced_files_exist.py
 - tests/test_session_specificity.py
 - tests/test_support_substance.py
 - tests/test_tp_pedagogical_assets.py
 - tests/test_tp_pedagogical_assets_runtime.py
+- tests/test_uploaded_archive_policy.py
 - tp_test_alignment_report.md
 
 ## Doublons (même hash SHA256)

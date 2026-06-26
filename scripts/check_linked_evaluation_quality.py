@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 
 from _qa_common import ROOT, read_frontmatter, strip_frontmatter
-from _operational_links import operational_resource_links, resolve_reference
+from _operational_links import ReferenceResolution, operational_resource_links, resolve_reference
 
 REQUIRED_FRONTMATTER = ["title", "level", "sequence_id", "document_type", "status", "official_program"]
 
@@ -20,11 +20,11 @@ class LinkedEvaluationQualityResult:
 
 
 def target_evaluation_files(root: Path = ROOT) -> list[Path]:
-    return sorted(path for path in expected_evaluation_files(root).values() if path is not None)
+    return sorted(resolution.path for resolution in expected_evaluation_files(root).values() if resolution.path is not None)
 
 
-def expected_evaluation_files(root: Path = ROOT) -> dict[str, Path | None]:
-    expected: dict[str, Path | None] = {}
+def expected_evaluation_files(root: Path = ROOT) -> dict[str, ReferenceResolution]:
+    expected: dict[str, ReferenceResolution] = {}
     for resource in operational_resource_links(root, {"évaluation", "evaluation"}):
         expected[resource.link.file] = resolve_reference(root, resource.link.file)
     return expected
@@ -86,9 +86,12 @@ def analyze_linked_evaluation_quality(root: Path = ROOT, files: list[Path] | Non
         paths = {path.as_posix(): path for path in files}
     else:
         expected = expected_evaluation_files(root)
-        paths = {reference: path for reference, path in expected.items() if path is not None}
-        for reference, path in expected.items():
-            if path is None:
+        paths = {reference: resolution.path for reference, resolution in expected.items() if resolution.path is not None}
+        for reference, resolution in expected.items():
+            if resolution.ambiguous:
+                candidates = ", ".join(path.as_posix() for path in resolution.candidates)
+                result.errors.append(f"{reference}: support évaluation ambigu -> {candidates}")
+            elif resolution.absent:
                 result.errors.append(f"{reference}: support évaluation absent")
     for path in paths.values():
         result.checked_files += 1

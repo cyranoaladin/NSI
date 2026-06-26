@@ -10,10 +10,59 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import check_linked_evaluation_quality as evaluation_quality
 import check_linked_td_quality as td_quality
+import _operational_links as operational_links
 import check_operational_supports_no_indicative_debt as operational_debt
 
 
 class LinkedSupportQualityTest(unittest.TestCase):
+    def test_reference_resolution_rejects_ambiguous_basename(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            first = root / "a" / "P01_TD_conversions.md"
+            second = root / "b" / "P01_TD_conversions.md"
+            first.parent.mkdir(parents=True)
+            second.parent.mkdir(parents=True)
+            first.write_text("a", encoding="utf-8")
+            second.write_text("b", encoding="utf-8")
+
+            resolution = operational_links.resolve_reference(root, "P01_TD_conversions.md")
+
+            self.assertTrue(resolution.ambiguous)
+            self.assertEqual(set(resolution.candidates), {first, second})
+
+    def test_reference_resolution_accepts_full_non_ambiguous_path(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            target = root / "a" / "P01_TD_conversions.md"
+            target.parent.mkdir(parents=True)
+            target.write_text("a", encoding="utf-8")
+            (root / "b").mkdir()
+
+            resolution = operational_links.resolve_reference(root, "a/P01_TD_conversions.md")
+
+            self.assertEqual(resolution.path, target)
+            self.assertFalse(resolution.ambiguous)
+
+    def test_reference_resolution_accepts_unique_basename(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            target = root / "a" / "P01_TD_conversions.md"
+            target.parent.mkdir(parents=True)
+            target.write_text("a", encoding="utf-8")
+
+            resolution = operational_links.resolve_reference(root, "P01_TD_conversions.md")
+
+            self.assertEqual(resolution.path, target)
+            self.assertFalse(resolution.ambiguous)
+
+    def test_reference_resolution_reports_absent_reference(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+
+            resolution = operational_links.resolve_reference(root, "P01_TD_conversions.md")
+
+            self.assertTrue(resolution.absent)
+
     def test_td_requires_eight_exercises_and_required_exercise_types(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)

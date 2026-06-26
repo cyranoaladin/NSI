@@ -169,6 +169,8 @@ def main() -> int:
     total, statuses, sources, publishable = count_manifest()
     cov = coverage_counts()
     release_code, release_tail = release_blocker_status()
+    release_status = "RELEASE_AUDIT_FAIL" if release_code != 0 else "RELEASE_AUDIT_PASS"
+    final_status = "NON_RELEASE_READY" if release_code != 0 else "RELEASE_READY"
     indicative_rows = indicative_gate_rows()
     sheet_stats = course_sheet_stats()
     linked_rows = linked_course_sheet_rows()
@@ -192,7 +194,11 @@ def main() -> int:
         "- Archive globale contenant .git : interdite comme livraison principale",
         "- L’archive principale de livraison est dist/source_clean.tar.gz. Toute archive contenant .git/ est interdite comme livraison pédagogique.",
         "- make audit : PASS prototype uniquement si exécuté après génération de ce rapport",
-        f"- make --no-print-directory release-audit : {'KO attendu' if release_code != 0 else 'PASS inattendu'}",
+        "- QUALITY_GATES_PASS : qualité interne contrôlée par scripts/check_quality_gates.py.",
+        "- PACKAGE_AUDIT_PASS : paquet source propre attendu via make package-audit.",
+        "- EXTRACTED_SOURCE_AUDIT_PASS : audit source extrait attendu sans dépendance Git.",
+        f"- RELEASE_AUDIT_STATUS : {release_status}",
+        f"- FINAL_STATUS = {final_status}",
         "- Décision : ne pas générer de nouvelles séquences",
         "",
         "## Commandes de référence",
@@ -259,6 +265,8 @@ def main() -> int:
             ]
             or ["| Aucun échec indicatif observé pendant cette génération. | - | - | - |"]
         ),
+        "",
+        "Les dettes indicatives ouvertes sont aussi suivies dans `qa_debt_register.md` avec cause, risque, impact, responsable et critère de fermeture.",
         "",
         "## Décisions",
         "",

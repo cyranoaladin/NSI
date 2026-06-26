@@ -10,6 +10,7 @@ import unicodedata
 
 from _qa_common import ROOT, strip_frontmatter
 from check_linked_evaluation_quality import target_evaluation_files
+from check_linked_td_substance import correction_has_substance as td_correction_has_substance
 
 VAGUE_ANSWERS = [
     "solution explicite attendue",
@@ -61,6 +62,10 @@ def has_concrete_evidence(text: str) -> bool:
     return any(re.search(pattern, text, flags=re.I | re.S) for pattern in CONCRETE_PATTERNS)
 
 
+def correction_has_substance(path: Path, question: str, correction: str) -> bool:
+    return td_correction_has_substance(path, question, f"{question}\n{correction}")
+
+
 def numbered_blocks(body: str, title: str) -> dict[int, str]:
     pattern = re.compile(
         rf"^###\s+{re.escape(title)}\s+(\d+)\b(.*?)(?=^###\s+{re.escape(title)}\s+\d+\b|^##\s+|\Z)",
@@ -74,6 +79,21 @@ def bareme_entries(body: str) -> dict[int, str]:
     for match in re.finditer(r"(?:Question|Q)\s*(\d+)\s*:\s*(.+)", body, flags=re.I):
         entries[int(match.group(1))] = match.group(2).strip()
     return entries
+
+
+def bareme_is_repetitive(baremes: dict[int, str]) -> bool:
+    if len(baremes) < 4:
+        return False
+    normalized = {normalize(value) for value in baremes.values() if value}
+    generic = {
+        "n point methode n point resultat",
+        "n points methode n points resultat",
+        "n point méthode n point résultat",
+    }
+    if len(normalized) <= 1:
+        only = next(iter(normalized), "")
+        return only in generic
+    return all(value in generic for value in normalized)
 
 
 def analyze_one_evaluation(path: Path, root: Path = ROOT) -> list[str]:
@@ -91,22 +111,23 @@ def analyze_one_evaluation(path: Path, root: Path = ROOT) -> list[str]:
 
     questions = numbered_blocks(body, "Question")
     corrections = numbered_blocks(body, "Corrigé question")
-    if not corrections:
-        corrections = numbered_blocks(body, "Question")
     baremes = bareme_entries(body)
 
+    if questions and not corrections:
+        errors.append(f"{rel}: section Corrigé question explicite absente")
+
     if questions:
-        for number in questions:
+        for number, question in questions.items():
             if number not in baremes:
                 errors.append(f"{rel}: barème absent pour question {number}")
             correction = corrections.get(number, "")
             if not correction:
                 errors.append(f"{rel}: corrigé absent pour question {number}")
-            elif any(normalize(phrase) in normalize(correction) for phrase in VAGUE_ANSWERS) and not has_concrete_evidence(correction):
-                errors.append(f"{rel}: corrigé question {number} sans valeur, requête, trace, schéma ou algorithme attendu")
+            elif not correction_has_substance(path, question, correction):
+                errors.append(f"{rel}: corrigé question {number} sans preuve disciplinaire suffisante")
 
     normalized_baremes = {normalize(value) for value in baremes.values() if value}
-    if has_vague_answer and len(baremes) >= 4 and len(normalized_baremes) <= 1:
+    if bareme_is_repetitive(baremes) or (has_vague_answer and len(baremes) >= 4 and len(normalized_baremes) <= 1):
         errors.append(f"{rel}: barème trop répétitif, éléments observables non différenciés")
 
     lower = body.lower()

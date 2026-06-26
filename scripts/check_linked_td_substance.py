@@ -45,6 +45,15 @@ CONCRETE_PATTERNS = [
     r"```",
 ]
 
+VAGUE_CORRECTION_PATTERNS = [
+    r"\br[eé]ponse acceptable\b",
+    r"\bexplique correctement\b",
+    r"\bconclut correctement\b",
+    r"\bmeilleure valeur\b",
+    r"\bsituation\b",
+    r"\bd[ée]marche vue en cours\b",
+]
+
 
 @dataclass
 class TDSubstanceResult:
@@ -63,6 +72,126 @@ def normalize(value: str) -> str:
 
 def has_concrete_evidence(text: str) -> bool:
     return any(re.search(pattern, text, flags=re.I | re.S) for pattern in CONCRETE_PATTERNS)
+
+
+def meaningful_words(text: str) -> list[str]:
+    text = re.sub(r"`[^`]+`", " ", text)
+    text = re.sub(r"^\s*\|.*\|\s*$", " ", text, flags=re.M)
+    normalized = normalize(text)
+    return [word for word in normalized.split() if word not in {"le", "la", "les", "un", "une", "de", "du", "des", "est"}]
+
+
+def has_markdown_table(text: str) -> bool:
+    return bool(re.search(r"^\s*\|.+\|\s*$", text, flags=re.M))
+
+
+def mostly_table_without_interpretation(text: str) -> bool:
+    if not has_markdown_table(text):
+        return False
+    return len(meaningful_words(text)) < 10
+
+
+def contains_vague_only_answer(text: str) -> bool:
+    normalized = normalize(text)
+    if any(normalize(phrase) in normalized for phrase in GENERIC_PHRASES):
+        return True
+    return any(re.search(pattern, text, flags=re.I) for pattern in VAGUE_CORRECTION_PATTERNS)
+
+
+def domain_for(path: Path) -> str:
+    name = path.name.lower()
+    if "sql" in name:
+        return "sql"
+    if any(token in name for token in ["reseaux", "protocoles", "routage", "chiffrement", "https"]):
+        return "network"
+    if any(token in name for token in ["tris", "dichotomie", "glouton", "knn", "parcours", "programmation_dynamique", "boyer", "diviser", "calculabilite"]):
+        return "algorithm"
+    if any(token in name for token in ["bases", "conversions", "complement", "booleens", "flottants", "unicode"]):
+        return "representation"
+    return "general"
+
+
+def correction_has_substance(path: Path, exercise: str, correction: str) -> bool:
+    text = correction.strip()
+    if not text:
+        return False
+    if contains_vague_only_answer(text):
+        return False
+    if mostly_table_without_interpretation(text):
+        return False
+    words = meaningful_words(text)
+    if len(words) < 10:
+        return False
+
+    lower = text.lower()
+    structured_markers = sum(
+        any(token in lower for token in alternatives)
+        for alternatives in [
+            ["donnée utilisée", "donnee utilisee", "donnée", "donnee"],
+            ["méthode", "methode"],
+            ["résultat", "resultat", "réponse attendue", "reponse attendue"],
+            ["contrôle", "controle", "vérification", "verification"],
+            ["erreur traitée", "erreur traitee", "erreur fréquente", "erreur frequente"],
+        ]
+    )
+    concrete_count = sum(
+        bool(re.search(pattern, text, flags=re.I | re.S))
+        for pattern in [
+            r"\b\d+\b",
+            r"`[^`]+`",
+            r"\"[^\"]+\"",
+            r"«[^»]+»",
+            r"\b[PT]-[A-Z0-9-]+\b",
+            r"->|=>",
+            r"\bTrue\b|\bFalse\b",
+            r"```",
+        ]
+    )
+    if structured_markers >= 4 or (structured_markers >= 3 and concrete_count >= 1):
+        return True
+
+    domain = domain_for(path)
+    if domain == "sql":
+        has_query = bool(re.search(r"\b(SELECT|INSERT|UPDATE|DELETE)\b", text, flags=re.I))
+        has_result = any(token in lower for token in ["résultat", "resultat", "renvoie", "ligne", "lignes", "après", "apres", "avant", "table contient"])
+        return has_query and has_result and len(words) >= 12
+    if domain == "network":
+        markers = sum(
+            token in lower
+            for token in ["ttl", "ip", "ack", "tcp", "https", "rip", "ospf", "paquet", "route", "passerelle", "protocole", "source", "destination", "port", "certificat"]
+        )
+        decisions = sum(
+            token in lower
+            for token in ["détruit", "detruit", "retransmet", "renvoie", "envoie", "route", "refuse", "accepte", "reçoit", "recoit", "passe par"]
+        )
+        return markers >= 2 and (decisions >= 1 or structured_markers >= 3)
+    if domain == "algorithm":
+        markers = sum(
+            token in lower
+            for token in [
+                "pseudo-code",
+                "pseudocode",
+                "trace",
+                "tableau",
+                "récurrence",
+                "recurrence",
+                "invariant",
+                "complexité",
+                "complexite",
+                "état",
+                "etat",
+                "initialisation",
+                "dp[",
+                "o(",
+            ]
+        )
+        return markers >= 2
+    if domain == "representation":
+        markers = sum(token in lower for token in ["base", "binaire", "décimal", "decimal", "hexadécimal", "hexadecimal", "bit", "octet", "unicode", "utf-8", "complément", "booleen", "booléen"])
+        return markers >= 1 and (bool(re.search(r"\b\d+\b", text)) or "`" in text)
+
+    has_result_word = any(token in lower for token in ["résultat", "resultat", "réponse attendue", "reponse attendue", "donc", "car"])
+    return has_result_word and concrete_count >= 1 and len(words) >= 12
 
 
 def split_numbered_blocks(body: str, title: str) -> dict[int, str]:
@@ -132,8 +261,8 @@ def analyze_one_td(path: Path, root: Path = ROOT) -> list[str]:
         correction = corrections.get(number, "")
         if not correction:
             errors.append(f"{rel}: corrigé exercice {number} absent")
-        elif any(normalize(phrase) in normalize(correction) for phrase in GENERIC_PHRASES) and not has_concrete_evidence(correction):
-            errors.append(f"{rel}: corrigé exercice {number} sans résultat réel vérifiable")
+        elif not correction_has_substance(path, exercise, correction):
+            errors.append(f"{rel}: corrigé exercice {number} sans preuve disciplinaire suffisante")
 
     values = data_values(body)
     if len(values) >= 8 and len(set(values)) < 5:

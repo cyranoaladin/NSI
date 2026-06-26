@@ -1,0 +1,14 @@
+description: "Périmètres pilotes documentés pour contrôles non-release."
+first_batch_prefixes:
+  - P00
+  - P01
+  - P02
+  - P03
+  - P04
+  - P05
+  - T00
+  - T01
+  - T02
+  - T03
+  - T04
+  - T05

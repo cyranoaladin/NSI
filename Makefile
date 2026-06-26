@@ -1,9 +1,26 @@
 export PYTHONDONTWRITEBYTECODE=1
+DELIVERED_ARCHIVE ?= dist/source_clean.tar.gz
 
 audit: audit-local
 
-audit-local:
+audit-idempotence:
+	$(MAKE) audit
+	test -z "$$(git status --short)"
+	$(MAKE) audit
+	test -z "$$(git status --short)"
+
+generate-reports:
 	python scripts/rebuild_inventory.py
+	python scripts/check_program_coverage.py
+	python scripts/generate_qa_report.py
+	python scripts/rebuild_inventory.py
+
+check-generated-freshness:
+	python scripts/check_build_reports_freshness.py
+	python scripts/check_qa_report_freshness.py
+	python scripts/check_manifest_source_integrity.py
+
+audit-local:
 	python scripts/check_git_clean.py
 	python scripts/check_metadata.py
 	python scripts/check_links.py
@@ -64,7 +81,7 @@ audit-local:
 	python scripts/check_teacher_docs_depth.py
 	python scripts/check_validated_documents_quality_gates.py
 	python scripts/check_program_yaml_atomicity.py
-	python scripts/check_build_reports_freshness.py
+	$(MAKE) check-generated-freshness
 	python scripts/check_archive_portability.py
 	python scripts/check_sequence_completeness.py
 	python scripts/check_course_internal_coherence.py
@@ -75,15 +92,12 @@ audit-local:
 	python scripts/check_differentiation_quality.py
 	python scripts/check_scientific_claims_review.py
 	python scripts/check_program_capacity_evidence_depth.py
-	python scripts/check_program_coverage.py
-	python scripts/generate_qa_report.py
-	python scripts/check_qa_report_freshness.py
-	python scripts/check_manifest_source_integrity.py
 	python scripts/check_teacher_corrections_alignment.py
 	python scripts/check_coverage_evidence.py
 	python scripts/check_no_coverage_from_sheets_only.py
 	python scripts/run_python_tests.py
 	python scripts/check_quality_gates.py
+	python scripts/check_git_clean.py
 
 audit-source:
 	python scripts/cleanup_python_artifacts.py
@@ -153,6 +167,9 @@ package-audit:
 	python scripts/build_source_archive.py
 	python scripts/check_archive_portability.py
 
+verify-delivery-archive:
+	DELIVERED_ARCHIVE="$(DELIVERED_ARCHIVE)" python scripts/check_uploaded_archive_policy.py
+
 render-s01:
 	python scripts/render_sequence.py premiere/sequences/s01_representation_donnees
 
@@ -164,3 +181,10 @@ release-audit:
 	python scripts/check_no_absent_coverage_for_release.py
 	python scripts/check_no_teacher_content_in_student_export.py
 	python scripts/check_validated_statuses.py
+
+pre-release-audit:
+	python scripts/check_git_clean.py
+	python scripts/check_quality_gates.py
+	python scripts/check_archive_portability.py
+	@echo "qualité interne contrôlée"
+	@echo "publication bloquée tant que make release-audit échoue"

@@ -19,7 +19,10 @@
 
 - `NSI.tar` contenant `.git/` est interdit comme livraison principale.
 - `nsi-enseignement.tar` contenant `.git/` est interdit comme livraison pédagogique.
+- `nsi-enseignement.tar`, `nsi-enseignement.tar.gz`, `nsi-enseignement.zip`, `NSI.tar`, `archive.tar`, `archive.tar.gz`, `archive.zip` et toute archive globale équivalente sont refusés comme livrable pédagogique principal.
 - `NSI.tar.gz` ou tout export contenant `.git/` est interdit.
+- Toute archive contenant `.venv/`, `__pycache__/`, `.pytest_cache/`, `.mypy_cache/`, `.ruff_cache/` ou un fichier `.pyc` est refusée.
+- Toute archive globale contenant un sous-dossier `dist/` est refusée comme livraison pédagogique : `dist/source_clean.tar.gz` doit être transmis directement, pas inclus dans une archive du dépôt complet.
 - Le dossier `.git/` local sert au versionnement de travail, pas à la livraison pédagogique.
 
 ## Règles de livraison
@@ -29,5 +32,12 @@
 - Pour historique technique : envoyer `dist/git_bundle.bundle` séparément.
 - Ne jamais envoyer une archive contenant `.git/` comme livraison principale.
 - Ne pas transmettre `nsi-enseignement.tar` comme livrable pédagogique si ce fichier contient `.git/`.
-- Si une archive transmise doit être auditée explicitement, lancer `DELIVERED_ARCHIVE=<chemin> python scripts/check_uploaded_archive_policy.py`.
-- Toute archive principale nommée `NSI.tar`, `NSI.tar.gz`, `archive.tar`, `archive.tar.gz` ou équivalent est refusée si elle contient ou peut contenir `.git/`.
+- Commande unique de création et vérification du livrable pédagogique :
+
+```bash
+make package-audit
+DELIVERED_ARCHIVE=dist/source_clean.tar.gz make verify-delivery-archive
+```
+
+- Si une archive transmise doit être auditée explicitement, lancer `DELIVERED_ARCHIVE=<chemin> make verify-delivery-archive`.
+- Si `DELIVERED_ARCHIVE` pointe vers autre chose que `dist/source_clean.tar.gz`, la livraison est refusée sauf exception documentée dans une politique dédiée.

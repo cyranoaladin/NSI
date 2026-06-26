@@ -17,7 +17,11 @@ sys.dont_write_bytecode = True
 
 ROOT = Path(__file__).resolve().parents[1]
 PROGRAM_FILE = ROOT / "00_programmes_officiels" / "programme_nsi_2019.yaml"
+PILOT_SCOPE_FILE = ROOT / "pilot_scope.yml"
 
+# Scope pilote documenté : ces deux séquences servent aux contrôles historiques
+# de complétude de séquence. Les contrôles opérationnels doivent découvrir leur
+# périmètre depuis les fiches/readiness, pas depuis une liste locale de préfixes.
 TARGET_SEQUENCES = {
     "premiere": ROOT / "premiere" / "sequences" / "s01_representation_donnees",
     "terminale": ROOT / "terminale" / "sequences" / "s01_structures_donnees_interfaces_implementations",
@@ -89,6 +93,28 @@ def normalize_text(value: str) -> str:
     value = "".join(ch for ch in value if not unicodedata.combining(ch))
     value = re.sub(r"[^a-z0-9]+", "-", value).strip("-")
     return value
+
+
+def sequence_id_from_path(path: Path) -> str:
+    match = re.match(r"([PT]\d{2})[_-]", path.name)
+    return match.group(1) if match else ""
+
+
+def load_pilot_scope(root: Path = ROOT) -> Dict[str, List[str]]:
+    path = root / "pilot_scope.yml"
+    if not path.exists():
+        return {}
+    try:
+        payload = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    except Exception:
+        return {}
+    if not isinstance(payload, dict):
+        return {}
+    result: Dict[str, List[str]] = {}
+    for key, value in payload.items():
+        if isinstance(value, list) and all(isinstance(item, str) for item in value):
+            result[key] = list(value)
+    return result
 
 
 def strip_frontmatter(text: str) -> str:

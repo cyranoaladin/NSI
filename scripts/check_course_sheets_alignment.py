@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import ROOT, read_frontmatter
+from _qa_common import ROOT, read_frontmatter, sequence_id_from_path
 from _course_sheets_common import (
     course_sheet_links,
     frontmatter_capacities,
@@ -80,7 +80,7 @@ def analyze_sheet_alignment(path: Path, program_ids: set[str], planned_ids: set[
     text = path.read_text(encoding="utf-8", errors="replace")
     lowered = text.lower()
     metadata = read_frontmatter(path)
-    sequence_id = str(metadata.get("sequence_id") or path.name[:3])
+    sequence_id = str(metadata.get("sequence_id") or sequence_id_from_path(path))
     if sequence_id not in planned_ids:
         errors.append(f"{path}: sequence_id absent de la progression -> {sequence_id}")
     errors.extend(link_block_errors(path, text, sequence_id, root))

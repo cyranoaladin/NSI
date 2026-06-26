@@ -48,16 +48,21 @@ class OperationalDebtResult:
 
 
 def resolve_resource(root: Path, reference: str) -> Path | None:
-    return resolve_reference(root, reference)
+    return resolve_reference(root, reference).path
 
 
-def linked_operational_supports(root: Path = ROOT) -> list[Path]:
+def linked_operational_supports(root: Path = ROOT) -> tuple[list[Path], list[str]]:
     supports: dict[str, Path] = {}
-    for resource in operational_resource_links(root, existing_only=True):
+    errors: list[str] = []
+    for resource in operational_resource_links(root):
+        if resource.resolution.ambiguous:
+            candidates = ", ".join(path.as_posix() for path in resource.resolution.candidates)
+            errors.append(f"{resource.link.file}: support opérationnel ambigu -> {candidates}")
+            continue
         path = resource.path
         if path and path.suffix == ".md":
             supports[path.as_posix()] = path
-    return [supports[key] for key in sorted(supports)]
+    return [supports[key] for key in sorted(supports)], errors
 
 
 def infer_kind(path: Path, metadata: dict[str, object]) -> str:
@@ -76,7 +81,9 @@ def infer_kind(path: Path, metadata: dict[str, object]) -> str:
 
 def analyze_operational_supports_no_indicative_debt(root: Path = ROOT) -> OperationalDebtResult:
     result = OperationalDebtResult()
-    for path in linked_operational_supports(root):
+    supports, link_errors = linked_operational_supports(root)
+    result.errors.extend(link_errors)
+    for path in supports:
         result.checked_files += 1
         text = path.read_text(encoding="utf-8", errors="replace")
         body = strip_frontmatter(text)

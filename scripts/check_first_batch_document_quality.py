@@ -7,10 +7,10 @@ from dataclasses import dataclass, field
 import re
 from pathlib import Path
 
-from _qa_common import load_program_entries
+from _qa_common import load_pilot_scope, load_program_entries
 
 ROOT = Path(__file__).resolve().parents[1]
-FIRST_BATCH_PREFIXES = ["P00", "P01", "P02", "P03", "P04", "P05", "T00", "T01", "T02", "T03", "T04", "T05"]
+FIRST_BATCH_PREFIXES = load_pilot_scope().get("first_batch_prefixes", [])
 REQUIRED_KINDS = [
     "cours",
     "trace",
