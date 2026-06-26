@@ -11,7 +11,7 @@ from _qa_common import ROOT, print_result
 
 TEXT_SUFFIXES = {".md", ".tex", ".json", ".yml", ".yaml", ".csv", ".txt"}
 PLACEHOLDER_RE = re.compile(
-    r"(?<!`)(TO\s*DO|TBD|A\s+COMPLETER|À\s+COMPLETER|X\s*X\s*X|FIX\s*ME|A\s+FAIRE|À\s+FAIRE)(?!`)",
+    r"(?<!`)(TO[ \t]*DO|TBD|A[ \t]+COMPLETER|À[ \t]+COMPLETER|X[ \t]*X[ \t]*X|FIX[ \t]*ME|A[ \t]+FAIRE|À[ \t]+FAIRE)(?!`)",
     re.IGNORECASE,
 )
 

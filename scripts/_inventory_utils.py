@@ -9,8 +9,11 @@ from typing import Dict, Iterable, List, Optional
 import csv
 import hashlib
 import re
+import sys
 import unicodedata
 import yaml
+
+sys.dont_write_bytecode = True
 
 ROOT = Path(__file__).resolve().parents[1]
 

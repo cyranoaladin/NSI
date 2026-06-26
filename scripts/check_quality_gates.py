@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from pathlib import Path
 import os
+import shutil
 import subprocess
 import sys
 
@@ -21,6 +22,7 @@ BLOCKING_CHECKS = [
     "scripts/check_no_build_artifacts_in_index.py",
     "scripts/check_uploaded_archive_policy.py",
     "scripts/check_qcm_schema.py",
+    "scripts/check_qcm_contract_consistency.py",
     "scripts/check_progression_calendar_alignment.py",
     "scripts/check_project_quarter_requirement.py",
     "scripts/check_progression_project_consistency.py",
@@ -31,12 +33,16 @@ BLOCKING_CHECKS = [
     "scripts/check_session_project_hours.py",
     "scripts/check_session_week_calendar_consistency.py",
     "scripts/check_session_specificity.py",
+    "scripts/check_session_referenced_files_exist.py",
+    "scripts/check_document_naming_conventions.py",
     "scripts/check_evaluation_distribution.py",
     "scripts/check_teacher_docs_depth.py",
+    "scripts/check_validated_documents_quality_gates.py",
     "scripts/check_program_yaml_atomicity.py",
     "scripts/check_build_reports_freshness.py",
     "scripts/check_archive_portability.py",
     "scripts/check_python_quality.py",
+    "scripts/check_python_cache_stability.py",
     "scripts/check_sequence_completeness.py",
     "scripts/check_course_internal_coherence.py",
     "scripts/check_td_corrige_alignment.py",
@@ -64,6 +70,12 @@ INDICATIVE_CHECKS = [
 ]
 
 
+def remove_python_caches() -> None:
+    for path in ROOT.rglob("__pycache__"):
+        if path.is_dir():
+            shutil.rmtree(path)
+
+
 def run_check(script: str, env: dict[str, str], indicative: bool = False) -> int:
     suffix = " (indicatif)" if indicative else ""
     print(f"== {script}{suffix} ==")
@@ -76,22 +88,26 @@ def main() -> None:
     indicative_failures: list[str] = []
     env = os.environ.copy()
     env["PYTHONDONTWRITEBYTECODE"] = "1"
-    for script in BLOCKING_CHECKS:
-        if run_check(script, env) != 0:
-            failures.append(script)
-    for script in INDICATIVE_CHECKS:
-        if run_check(script, env, indicative=True) != 0:
-            indicative_failures.append(script)
-    if failures:
-        print("check_quality_gates: KO")
-        for script in failures:
-            print(f"- {script}")
-        raise SystemExit(1)
-    if indicative_failures:
-        print("Gates indicatifs non bloquants en échec:")
-        for script in indicative_failures:
-            print(f"- {script}")
-    print("check_quality_gates: PASS")
+    remove_python_caches()
+    try:
+        for script in BLOCKING_CHECKS:
+            if run_check(script, env) != 0:
+                failures.append(script)
+        for script in INDICATIVE_CHECKS:
+            if run_check(script, env, indicative=True) != 0:
+                indicative_failures.append(script)
+        if failures:
+            print("check_quality_gates: KO")
+            for script in failures:
+                print(f"- {script}")
+            raise SystemExit(1)
+        if indicative_failures:
+            print("Gates indicatifs non bloquants en échec:")
+            for script in indicative_failures:
+                print(f"- {script}")
+        print("check_quality_gates: PASS")
+    finally:
+        remove_python_caches()
 
 if __name__ == "__main__":
     main()

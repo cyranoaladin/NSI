@@ -3,7 +3,7 @@ title: "S01 - Représenter des données : bits, textes et types construits"
 level: "premiere"
 sequence_id: "s01_representation_donnees"
 document_type: "cours"
-status: "validated_pedagogy"
+status: "needs_review"
 version: "0.3.0"
 authors: ["NSI"]
 source: "BO spécial n°1 du 22 janvier 2019"

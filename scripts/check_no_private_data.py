@@ -30,6 +30,7 @@ ADDRESS_RE = re.compile(
 PROPER_NAME_RE = re.compile(
     r"\b[A-ZÉÈÀÂÊÎÔÛÇ][a-zéèàâêîôûç]+(?:[- ][A-ZÉÈÀÂÊÎÔÛÇ][a-zéèàâêîôûç]+)+\b"
 )
+ISO_DATE_RE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b")
 
 
 def load_allowlist() -> Dict[str, List[str]]:
@@ -109,6 +110,8 @@ def main() -> None:
         }.items():
             for match in regex.finditer(text):
                 value = match.group(0)
+                if label.startswith("telephone") and ISO_DATE_RE.fullmatch(value):
+                    continue
                 item = f"{rel}: {label} possible -> {value}"
                 if allowed(value, allowlist) or allowed(str(rel), allowlist):
                     allowlisted.append(item)

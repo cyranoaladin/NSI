@@ -1,32 +1,32 @@
 # Inventaire ressources NSI
 
-- Total ressources : 170
-- Ressources pédagogiques : 52
-- Ressources techniques : 118
+- Total ressources : 180
+- Ressources pédagogiques : 53
+- Ressources techniques : 127
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - drive: 0
-- generated: 170
+- generated: 180
 
 ## Répartition par niveau
-- interne: 112
-- premiere: 29
+- interne: 121
+- premiere: 30
 - terminale: 29
 
 ## Répartition par type
 - banque: 14
-- document: 48
-- script: 64
-- sequence: 44
+- document: 51
+- script: 70
+- sequence: 45
 
 ## Répartition par statut
-- needs_review: 170
+- needs_review: 180
 
 ## Répartition audience
 - corrige: 9
 - eleve: 18
-- mixte: 140
+- mixte: 150
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -52,9 +52,11 @@
   - 03_progressions/seances_premiere.md
   - 03_progressions/seances_terminale.md
   - INDEX.md
+  - METHODE_PRODUCTION_REELLE.md
   - README.md
   - bank_strategy.md
   - calendar_2026_2027_tunisia.md
+  - carnet_de_bord.md
   - course_internal_coherence_report.md
   - delivery_policy.md
   - differentiation_quality_report.md
@@ -66,6 +68,7 @@
   - evaluation_bareme_alignment_report.md
   - learning_objectives_assessed_report.md
   - missing_capabilities.md
+  - missing_documents_register.md
   - pedagogical_blockers_report.md
   - premiere/banques/evaluations/index.md
   - premiere/banques/exercices/index.md
@@ -89,6 +92,7 @@
   - premiere/sequences/s01_representation_donnees/python/representation_tools.py
   - premiere/sequences/s01_representation_donnees/qcm.json
   - premiere/sequences/s01_representation_donnees/quality_audit_s01.md
+  - premiere/sequences/s01_representation_donnees/revue_substance.md
   - premiere/sequences/s01_representation_donnees/sequence.yaml
   - premiere/sequences/s01_representation_donnees/sources.md
   - premiere/sequences/s01_representation_donnees/td.md
@@ -120,6 +124,7 @@
   - scripts/check_coverage_evidence.py
   - scripts/check_differentiation_quality.py
   - scripts/check_document_depth.py
+  - scripts/check_document_naming_conventions.py
   - scripts/check_document_style.py
   - scripts/check_drive_mapping.py
   - scripts/check_drive_mapping_release.py
@@ -147,8 +152,10 @@
   - scripts/check_progression_calendar_alignment.py
   - scripts/check_progression_project_consistency.py
   - scripts/check_project_quarter_requirement.py
+  - scripts/check_python_cache_stability.py
   - scripts/check_python_quality.py
   - scripts/check_qa_report_freshness.py
+  - scripts/check_qcm_contract_consistency.py
   - scripts/check_qcm_schema.py
   - scripts/check_quality_gates.py
   - scripts/check_required_sections.py
@@ -158,6 +165,7 @@
   - scripts/check_session_level_planning.py
   - scripts/check_session_monthly_total.py
   - scripts/check_session_project_hours.py
+  - scripts/check_session_referenced_files_exist.py
   - scripts/check_session_specificity.py
   - scripts/check_session_week_calendar_consistency.py
   - scripts/check_td_corrige_alignment.py
@@ -165,11 +173,13 @@
   - scripts/check_teacher_docs_depth.py
   - scripts/check_tp_test_alignment.py
   - scripts/check_uploaded_archive_policy.py
+  - scripts/check_validated_documents_quality_gates.py
   - scripts/check_validated_statuses.py
   - scripts/generate_index.py
   - scripts/generate_qa_report.py
   - scripts/ingest_drive_export.py
   - scripts/rebuild_inventory.py
+  - scripts/render_sequence.py
   - scripts/run_python_tests.py
   - td_corrige_alignment_report.md
   - terminale/banques/evaluations/index.md
@@ -224,6 +234,7 @@
   - premiere/sequences/s01_representation_donnees/projet_associe.md
   - premiere/sequences/s01_representation_donnees/qcm.json
   - premiere/sequences/s01_representation_donnees/quality_audit_s01.md
+  - premiere/sequences/s01_representation_donnees/revue_substance.md
   - premiere/sequences/s01_representation_donnees/sources.md
   - premiere/sequences/s01_representation_donnees/td.md
   - premiere/sequences/s01_representation_donnees/tp.md
@@ -276,9 +287,11 @@
   - 03_progressions/seances_premiere.md
   - 03_progressions/seances_terminale.md
   - INDEX.md
+  - METHODE_PRODUCTION_REELLE.md
   - README.md
   - bank_strategy.md
   - calendar_2026_2027_tunisia.md
+  - carnet_de_bord.md
   - course_internal_coherence_report.md
   - delivery_policy.md
   - differentiation_quality_report.md
@@ -290,6 +303,7 @@
   - evaluation_bareme_alignment_report.md
   - learning_objectives_assessed_report.md
   - missing_capabilities.md
+  - missing_documents_register.md
   - pedagogical_blockers_report.md
   - premiere/sequences/s01_representation_donnees/python/representation_tools.py
   - premiere/sequences/s01_representation_donnees/sequence.yaml
@@ -318,6 +332,7 @@
   - scripts/check_coverage_evidence.py
   - scripts/check_differentiation_quality.py
   - scripts/check_document_depth.py
+  - scripts/check_document_naming_conventions.py
   - scripts/check_document_style.py
   - scripts/check_drive_mapping.py
   - scripts/check_drive_mapping_release.py
@@ -345,8 +360,10 @@
   - scripts/check_progression_calendar_alignment.py
   - scripts/check_progression_project_consistency.py
   - scripts/check_project_quarter_requirement.py
+  - scripts/check_python_cache_stability.py
   - scripts/check_python_quality.py
   - scripts/check_qa_report_freshness.py
+  - scripts/check_qcm_contract_consistency.py
   - scripts/check_qcm_schema.py
   - scripts/check_quality_gates.py
   - scripts/check_required_sections.py
@@ -356,6 +373,7 @@
   - scripts/check_session_level_planning.py
   - scripts/check_session_monthly_total.py
   - scripts/check_session_project_hours.py
+  - scripts/check_session_referenced_files_exist.py
   - scripts/check_session_specificity.py
   - scripts/check_session_week_calendar_consistency.py
   - scripts/check_td_corrige_alignment.py
@@ -363,11 +381,13 @@
   - scripts/check_teacher_docs_depth.py
   - scripts/check_tp_test_alignment.py
   - scripts/check_uploaded_archive_policy.py
+  - scripts/check_validated_documents_quality_gates.py
   - scripts/check_validated_statuses.py
   - scripts/generate_index.py
   - scripts/generate_qa_report.py
   - scripts/ingest_drive_export.py
   - scripts/rebuild_inventory.py
+  - scripts/render_sequence.py
   - scripts/run_python_tests.py
   - td_corrige_alignment_report.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/python/structures_tools.py
@@ -380,7 +400,7 @@
 - S01 representation des donnees: 1
 - S01 structures de donnees interfaces implementations: 1
 - bank_index: 14
-- s01_representation_donnees: 21
+- s01_representation_donnees: 22
 - s01_structures_donnees_interfaces_implementations: 21
 
 ## Ressources publiables
@@ -409,9 +429,11 @@
 - 03_progressions/seances_premiere.md
 - 03_progressions/seances_terminale.md
 - INDEX.md
+- METHODE_PRODUCTION_REELLE.md
 - README.md
 - bank_strategy.md
 - calendar_2026_2027_tunisia.md
+- carnet_de_bord.md
 - course_internal_coherence_report.md
 - delivery_policy.md
 - differentiation_quality_report.md
@@ -423,6 +445,7 @@
 - evaluation_bareme_alignment_report.md
 - learning_objectives_assessed_report.md
 - missing_capabilities.md
+- missing_documents_register.md
 - pedagogical_blockers_report.md
 - premiere/banques/evaluations/index.md
 - premiere/banques/exercices/index.md
@@ -442,6 +465,7 @@
 - premiere/sequences/s01_representation_donnees/python/representation_tools.py
 - premiere/sequences/s01_representation_donnees/qcm.json
 - premiere/sequences/s01_representation_donnees/quality_audit_s01.md
+- premiere/sequences/s01_representation_donnees/revue_substance.md
 - premiere/sequences/s01_representation_donnees/sequence.yaml
 - premiere/sequences/s01_representation_donnees/sources.md
 - premiere/sequences/s01_representation_donnees/td.md
@@ -473,6 +497,7 @@
 - scripts/check_coverage_evidence.py
 - scripts/check_differentiation_quality.py
 - scripts/check_document_depth.py
+- scripts/check_document_naming_conventions.py
 - scripts/check_document_style.py
 - scripts/check_drive_mapping.py
 - scripts/check_drive_mapping_release.py
@@ -500,8 +525,10 @@
 - scripts/check_progression_calendar_alignment.py
 - scripts/check_progression_project_consistency.py
 - scripts/check_project_quarter_requirement.py
+- scripts/check_python_cache_stability.py
 - scripts/check_python_quality.py
 - scripts/check_qa_report_freshness.py
+- scripts/check_qcm_contract_consistency.py
 - scripts/check_qcm_schema.py
 - scripts/check_quality_gates.py
 - scripts/check_required_sections.py
@@ -511,17 +538,20 @@
 - scripts/check_session_level_planning.py
 - scripts/check_session_monthly_total.py
 - scripts/check_session_project_hours.py
+- scripts/check_session_referenced_files_exist.py
 - scripts/check_session_specificity.py
 - scripts/check_session_week_calendar_consistency.py
 - scripts/check_teacher_corrections_alignment.py
 - scripts/check_teacher_docs_depth.py
 - scripts/check_tp_test_alignment.py
 - scripts/check_uploaded_archive_policy.py
+- scripts/check_validated_documents_quality_gates.py
 - scripts/check_validated_statuses.py
 - scripts/generate_index.py
 - scripts/generate_qa_report.py
 - scripts/ingest_drive_export.py
 - scripts/rebuild_inventory.py
+- scripts/render_sequence.py
 - scripts/run_python_tests.py
 - terminale/banques/evaluations/index.md
 - terminale/banques/exercices/index.md
@@ -574,9 +604,11 @@
 - 03_progressions/seances_premiere.md
 - 03_progressions/seances_terminale.md
 - INDEX.md
+- METHODE_PRODUCTION_REELLE.md
 - README.md
 - bank_strategy.md
 - calendar_2026_2027_tunisia.md
+- carnet_de_bord.md
 - course_internal_coherence_report.md
 - delivery_policy.md
 - differentiation_quality_report.md
@@ -588,6 +620,7 @@
 - evaluation_bareme_alignment_report.md
 - learning_objectives_assessed_report.md
 - missing_capabilities.md
+- missing_documents_register.md
 - pedagogical_blockers_report.md
 - premiere/banques/evaluations/index.md
 - premiere/banques/exercices/index.md
@@ -611,6 +644,7 @@
 - premiere/sequences/s01_representation_donnees/python/representation_tools.py
 - premiere/sequences/s01_representation_donnees/qcm.json
 - premiere/sequences/s01_representation_donnees/quality_audit_s01.md
+- premiere/sequences/s01_representation_donnees/revue_substance.md
 - premiere/sequences/s01_representation_donnees/sequence.yaml
 - premiere/sequences/s01_representation_donnees/sources.md
 - premiere/sequences/s01_representation_donnees/td.md
@@ -642,6 +676,7 @@
 - scripts/check_coverage_evidence.py
 - scripts/check_differentiation_quality.py
 - scripts/check_document_depth.py
+- scripts/check_document_naming_conventions.py
 - scripts/check_document_style.py
 - scripts/check_drive_mapping.py
 - scripts/check_drive_mapping_release.py
@@ -669,8 +704,10 @@
 - scripts/check_progression_calendar_alignment.py
 - scripts/check_progression_project_consistency.py
 - scripts/check_project_quarter_requirement.py
+- scripts/check_python_cache_stability.py
 - scripts/check_python_quality.py
 - scripts/check_qa_report_freshness.py
+- scripts/check_qcm_contract_consistency.py
 - scripts/check_qcm_schema.py
 - scripts/check_quality_gates.py
 - scripts/check_required_sections.py
@@ -680,6 +717,7 @@
 - scripts/check_session_level_planning.py
 - scripts/check_session_monthly_total.py
 - scripts/check_session_project_hours.py
+- scripts/check_session_referenced_files_exist.py
 - scripts/check_session_specificity.py
 - scripts/check_session_week_calendar_consistency.py
 - scripts/check_td_corrige_alignment.py
@@ -687,11 +725,13 @@
 - scripts/check_teacher_docs_depth.py
 - scripts/check_tp_test_alignment.py
 - scripts/check_uploaded_archive_policy.py
+- scripts/check_validated_documents_quality_gates.py
 - scripts/check_validated_statuses.py
 - scripts/generate_index.py
 - scripts/generate_qa_report.py
 - scripts/ingest_drive_export.py
 - scripts/rebuild_inventory.py
+- scripts/render_sequence.py
 - scripts/run_python_tests.py
 - td_corrige_alignment_report.md
 - terminale/banques/evaluations/index.md

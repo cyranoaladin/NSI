@@ -3,8 +3,11 @@
 from __future__ import annotations
 
 import re
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
+
+sys.dont_write_bytecode = True
 
 ROOT = Path(__file__).resolve().parents[1]
 NATURES = {"cours", "TD", "TP", "projet", "évaluation", "remédiation"}

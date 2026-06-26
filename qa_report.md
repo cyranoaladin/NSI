@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 170
-- Ressources needs_review : 170
+- Ressources inventoriées : 180
+- Ressources needs_review : 180
 - Ressources publiables : 0
-- Source generated : 170
+- Source generated : 180
 - Source drive : 0
 - Lignes drive_inventory.csv : 22
 - Couverture covered : 0
@@ -28,12 +28,14 @@ make --no-print-directory release-audit
 ## Dernier release-audit observé
 
 ```text
-python scripts/check_git_clean.py
-check_git_clean: PASS
-python scripts/check_drive_mapping_release.py
-check_drive_mapping_release: KO
-- ressources Drive référencées mais non intégrées localement: copie_de_progres_nsi_amelioree.pdf, copie_de_progres_nsi_amelioree.tex, guide_enseignant_reprise_nsi_ameliore.tex, Cours.pdf, 2_TP.pdf, eval_nsi_corrige.pdf, eval_nsi.pdf, rendus_eleves, .git, .venv, TP_SOC.tex, Séquence1_Histoire de l'informatique, Séquence4_Types construits, 1_Cours_Types_construits.pdf, 1_RdD_Entier naturel.pdf, pays_monde.csv, NotesEleves.csv, Fichier_Eleves.csv, tri_bulles_eleve.py, Séquence1_TAD_Théorie
-make: *** [Makefile:56: release-audit] Error 1
+?? carnet_de_bord.md
+?? missing_documents_register.md
+?? scripts/check_document_naming_conventions.py
+?? scripts/check_python_cache_stability.py
+?? scripts/check_qcm_contract_consistency.py
+?? scripts/check_session_referenced_files_exist.py
+?? scripts/check_validated_documents_quality_gates.py
+make: *** [Makefile:82: release-audit] Error 1
 ```
 
 ## Bloquants restants

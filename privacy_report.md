@@ -46,6 +46,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - AGENTS.md: nom propre suspect -> Agent Évaluation
 - AGENTS.md: nom propre suspect -> Agent Différenciation
 - AGENTS.md: nom propre suspect -> Agent Édition
+- METHODE_PRODUCTION_REELLE.md: nom propre suspect -> Claude Code
 - calendar_2026_2027_tunisia.md: nom propre suspect -> Grand Oral
 - course_internal_coherence_report.md: nom propre suspect -> Course Internal Coherence Report
 - coverage.md: nom propre suspect -> Formulaire Web
@@ -68,38 +69,148 @@ Les noms propres suspects sont listés pour revue humaine.
 - drive_sources.yml: nom propre suspect -> Ressources Drive
 - evaluation_bareme_alignment_report.md: nom propre suspect -> Evaluation Bareme Alignment Report
 - learning_objectives_assessed_report.md: nom propre suspect -> Learning Objectives Assessed Report
-- pedagogical_blockers_report.md: nom propre suspect -> Pedagogical Blockers Report
-- pedagogical_blockers_report.md: nom propre suspect -> Ressources Drive
-- premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> American Standard Code
-- premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> Information Interchange
-- premiere/sequences/s01_representation_donnees/sources.md: nom propre suspect -> Ressources Drive
-- program_capacity_evidence_depth_report.md: nom propre suspect -> Program Capacity Evidence Depth Report
-- programme_matrix_premiere.md: nom propre suspect -> Formulaire Web
-- progression_audit.md: nom propre suspect -> Calendrier Tunisie
-- progression_audit.md: nom propre suspect -> Ressources Drive
-- qa_report.md: nom propre suspect -> Ressources Drive
-- scientific_claims_review_report.md: nom propre suspect -> Scientific Claims Review Report
-- scripts/check_course_internal_coherence.py: nom propre suspect -> Course Internal Coherence Report
-- scripts/check_differentiation_quality.py: nom propre suspect -> Differentiation Quality Report
-- scripts/check_drive_mapping.py: nom propre suspect -> Prototype Drive
-- scripts/check_drive_mapping_release.py: nom propre suspect -> Release Drive
-- scripts/check_evaluation_bareme_alignment.py: nom propre suspect -> Evaluation Bareme Alignment Report
-- scripts/check_git_clean.py: nom propre suspect -> Check Git
-- scripts/check_learning_objectives_assessed.py: nom propre suspect -> Learning Objectives Assessed Report
-- scripts/check_program_capacity_evidence_depth.py: nom propre suspect -> Program Capacity Evidence Depth Report
-- scripts/check_progression_calendar_alignment.py: nom propre suspect -> Ressources Drive
-- scripts/check_scientific_claims_review.py: nom propre suspect -> Scientific Claims Review Report
-- scripts/check_td_corrige_alignment.py: nom propre suspect -> Corrige Alignment Report
-- scripts/check_teacher_docs_depth.py: nom propre suspect -> Ressources Drive
-- scripts/check_tp_test_alignment.py: nom propre suspect -> Test Alignment Report
-- scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
-- scripts/render_sequence.py: nom propre suspect -> Fira Code
-- scripts/render_sequence.py: nom propre suspect -> Sans Mono
-- scripts/render_sequence.py: nom propre suspect -> Fira Code
-- scripts/render_sequence.py: nom propre suspect -> Fira Code
-- scripts/render_sequence.py: nom propre suspect -> Sans Mono
-- td_corrige_alignment_report.md: nom propre suspect -> Corrige Alignment Report
-- tp_test_alignment_report.md: nom propre suspect -> Test Alignment Report
+- missing_documents_register.md: nom propre suspect -> Lien Drive
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Auteur
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- missing_documents_register.md: nom propre suspect -> Agent Programme
+- ... 836 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
@@ -193,6 +304,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
 - 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
 - 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
+- METHODE_PRODUCTION_REELLE.md: telephone_tn possible -> 2026-2027
 - calendar_2026_2027_tunisia.md: telephone_tn possible -> 2026-2027
 - coverage.md: nom propre suspect -> Boyer-Moore
 - drive_mapping.md: nom propre suspect -> Google Drive

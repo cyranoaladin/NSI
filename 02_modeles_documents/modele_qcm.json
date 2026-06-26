@@ -15,7 +15,12 @@
       "question": "[question]",
       "propositions": ["A", "B", "C", "D"],
       "bonne_reponse": "A",
-      "explication": "[explication]",
+      "explications": {
+        "A": "[explication proposition A]",
+        "B": "[explication proposition B]",
+        "C": "[explication proposition C]",
+        "D": "[explication proposition D]"
+      },
       "niveau": "base"
     }
   ]

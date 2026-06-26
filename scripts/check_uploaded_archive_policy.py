@@ -5,6 +5,7 @@ from __future__ import annotations
 import sys
 import tarfile
 import zipfile
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,12 +34,25 @@ def main() -> int:
     for required in ALLOWED:
         if not required.exists():
             errors.append(f"required delivery artifact absent: {required.relative_to(ROOT)}")
-    for path in ROOT.iterdir():
+    delivered = os.environ.get("DELIVERED_ARCHIVE", "").strip()
+    scan_dirs = [ROOT, ROOT.parent]
+    candidates: set[Path] = set()
+    for directory in scan_dirs:
+        if directory.exists():
+            candidates.update(path for path in directory.iterdir() if path.is_file())
+    if delivered:
+        delivered_path = Path(delivered)
+        candidates.add(delivered_path if delivered_path.is_absolute() else ROOT / delivered_path)
+
+    for path in sorted(candidates):
         if path.name in FORBIDDEN_NAMES:
             errors.append(f"forbidden global archive present: {path.name}")
         if path.is_file() and path not in ALLOWED and (path.name.endswith(".tar") or path.name.endswith(".tar.gz") or path.name.endswith(".tgz") or path.suffix == ".zip"):
             if archive_contains_git(path):
                 errors.append(f"archive contains or may contain .git: {path.name}")
+        if delivered and path == (Path(delivered) if Path(delivered).is_absolute() else ROOT / delivered):
+            if path.name != "source_clean.tar.gz":
+                errors.append(f"delivered archive must be dist/source_clean.tar.gz, got {path.name}")
     if errors:
         print("check_uploaded_archive_policy: KO")
         for error in errors:

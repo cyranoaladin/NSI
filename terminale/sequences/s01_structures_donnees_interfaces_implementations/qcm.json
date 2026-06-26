@@ -43,7 +43,6 @@
       "difficulte": "socle",
       "capacite_officielle": "T-STRUCT-01A",
       "erreur_ciblee": "Confusion entre usage abstrait et détails de code",
-      "explication": "L'interface décrit ce que l'on peut demander à la structure.",
       "explications": {
         "Les opérations disponibles": "C'est le rôle de l'interface.",
         "Le nom exact des variables Python": "C'est un détail d'implémentation.",
@@ -59,7 +58,6 @@
       "difficulte": "socle",
       "capacite_officielle": "T-STRUCT-02A",
       "erreur_ciblee": "Inversion pile/file",
-      "explication": "Une pile suit le principe dernier entré, premier sorti.",
       "explications": {
         "Une pile": "Réponse attendue : LIFO.",
         "Une file": "Une file retire le premier élément ajouté.",
@@ -75,7 +73,6 @@
       "difficulte": "socle",
       "capacite_officielle": "T-STRUCT-02A",
       "erreur_ciblee": "Mauvaise lecture de l'ordre de traitement",
-      "explication": "La file conserve l'ordre premier entré, premier sorti.",
       "explications": {
         "Une file": "C'est la structure attendue pour FIFO.",
         "Une pile": "La pile inverse l'ordre de retrait.",
@@ -91,7 +88,6 @@
       "difficulte": "standard",
       "capacite_officielle": "T-STRUCT-03B",
       "erreur_ciblee": "Réduction du dictionnaire à une liste améliorée",
-      "explication": "Un dictionnaire modélise une association clé-valeur.",
       "explications": {
         "Pour associer des clés à des valeurs": "C'est son usage central.",
         "Pour retirer le plus ancien élément": "C'est le rôle d'une file.",
@@ -107,7 +103,6 @@
       "difficulte": "standard",
       "capacite_officielle": "T-STRUCT-05A",
       "erreur_ciblee": "Confusion entre représentations de graphe",
-      "explication": "La liste d'adjacence associe chaque sommet à ses voisins.",
       "explications": {
         "Une liste d'adjacence": "C'est la représentation décrite.",
         "Une matrice identité": "Elle ne décrit que des relations d'un sommet avec lui-même.",
@@ -123,7 +118,6 @@
       "difficulte": "standard",
       "capacite_officielle": "T-STRUCT-05A",
       "erreur_ciblee": "Choix de représentation sans opération cible",
-      "explication": "L'accès par deux indices permet de tester directement une liaison.",
       "explications": {
         "Tester rapidement l'existence d'une arête": "C'est un avantage de la matrice.",
         "Retirer le dernier élément ajouté": "C'est une opération de pile.",
@@ -139,7 +133,6 @@
       "difficulte": "expert",
       "capacite_officielle": "T-STRUCT-01A",
       "erreur_ciblee": "Dépendance excessive aux détails internes",
-      "explication": "Le code utilisateur dépend des opérations publiques, pas du stockage interne.",
       "explications": {
         "Parce que l'interface reste identique": "C'est le principe d'abstraction.",
         "Parce que Python ignore les erreurs": "Python signale des erreurs ; ce n'est pas l'explication.",
@@ -155,7 +148,6 @@
       "difficulte": "expert",
       "capacite_officielle": "T-STRUCT-05A",
       "erreur_ciblee": "Mauvais compromis place/accès",
-      "explication": "La liste d'adjacence évite de stocker beaucoup d'absences de relation.",
       "explications": {
         "Liste d'adjacence": "Elle est adaptée aux graphes peu denses et aux parcours de voisins.",
         "Matrice d'adjacence systématique": "Elle peut stocker beaucoup de zéros inutiles.",

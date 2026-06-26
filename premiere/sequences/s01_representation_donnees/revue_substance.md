@@ -29,7 +29,7 @@ PREUVE ENTRAÎNEMENT : « Convertir 18₁₀, 31₁₀, 42₁₀ en base 2. Conv
 PREUVE CORRECTION : « 18₁₀ = 10010₂ (16 + 2). 31₁₀ = 11111₂ (16 + 8 + 4 + 2 + 1). [...] Justification : développer avec les puissances ou relire les restes des divisions. » (corrige.md#exercice-1--conversions-de-bases)
    -> l'élève peut s'auto-corriger ? oui
 
-VERDICT : validated_pedagogy
+VERDICT : needs_review
 JUSTIFICATION : Le cours enseigne la méthode des divisions successives et le développement positionnel avec un exemple corrigé détaillé (45₁₀). Le TD fait pratiquer sur 8 valeurs dans les trois bases. Le corrigé fournit chaque résultat avec la justification par les puissances.
 
 ---
@@ -45,7 +45,7 @@ PREUVE ENTRAÎNEMENT : « Sur 8 bits, encoder 5, −1, −7, −128. Sur 8 bits,
 PREUVE CORRECTION : « −1 sur 8 bits : 11111111 (car 256 − 1 = 255). [...] Décodage : 11111111 → 255 − 256 = −1 [...] Sur 4 bits, l'intervalle est [−8 ; 7]. −9 est hors de cet intervalle, donc non représentable. » (corrige.md#exercice-3--complément-à-deux)
    -> l'élève peut s'auto-corriger ? oui
 
-VERDICT : validated_pedagogy
+VERDICT : needs_review
 JUSTIFICATION : Le cours détaille l'encodage et le décodage avec l'exemple −5 sur 8 bits et donne la formule de l'intervalle. Le TD fait pratiquer sur 4 encodages et 4 décodages. Le corrigé détaille chaque étape, y compris l'intervalle et le cas hors borne.
 
 ---
@@ -61,7 +61,7 @@ PREUVE ENTRAÎNEMENT : « Dresser la table de vérité de a and b. Dresser la ta
 PREUVE CORRECTION : « Table de vérité de not a or b : [table 4 lignes] Seul le cas a = True, b = False donne False. [...] L'expression (a and b) or (a and not b) se simplifie en a. En effet, (a and b) or (a and not b) = a and (b or not b) = a and True = a. » (corrige.md#exercice-intégré-3--tables-de-vérité-p-data-base-04)
    -> l'élève peut s'auto-corriger ? oui
 
-VERDICT : validated_pedagogy
+VERDICT : needs_review
 JUSTIFICATION : Le cours fournit un exemple complet avec colonnes intermédiaires. Le TD demande de dresser trois tables distinctes. Le corrigé donne les tables complètes avec une simplification algébrique.
 
 ---
@@ -77,7 +77,7 @@ PREUVE ENTRAÎNEMENT : « Avec Python, on obtient ord("A") = 65 et ord("é") = 2
 PREUVE CORRECTION : « 65 et 233 sont des points de code Unicode. "A" est codé sur un seul octet en UTF-8 (car son code est < 128), tandis que "é" est codé sur deux octets. Le nombre de caractères ne suffit donc pas à déduire le nombre d'octets en mémoire. » (corrige.md#exercice-5--texte-et-encodage)
    -> l'élève peut s'auto-corriger ? oui
 
-VERDICT : validated_pedagogy
+VERDICT : needs_review
 JUSTIFICATION : Le cours distingue clairement caractère, point de code et encodage, avec un exemple Python concret (A = 1 octet, é = 2 octets). Le TD fait comparer les représentations. Le corrigé explique la distinction et la raison de la différence de taille.
 
 ---
@@ -93,7 +93,7 @@ PREUVE ENTRAÎNEMENT : « On représente un point par (x, y). Écrire une foncti
 PREUVE CORRECTION : « def milieu(p1, p2): return ((p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2). Le tuple est adapté au point car il regroupe exactement deux coordonnées liées dans un ordre fixé, et on n'a pas besoin de les modifier après création. » (corrige.md#exercice-6--tuples-et-listes-p-data-constr-01-p-data-constr-02a)
    -> l'élève peut s'auto-corriger ? oui
 
-VERDICT : validated_pedagogy
+VERDICT : needs_review
 JUSTIFICATION : Le cours montre explicitement une fonction qui renvoie un tuple avec le mot-clé return. Le TD demande d'écrire cette fonction et de justifier le choix du tuple. Le corrigé donne le code, la justification et une variante acceptable.
 
 ---
@@ -109,7 +109,7 @@ PREUVE ENTRAÎNEMENT : « On représente des températures par une liste. Écrir
 PREUVE CORRECTION : « La compréhension [t + 1 for t in temperatures] convient pour ajouter 1. [...] [x * 2 for x in [3, 5, 8]] produit [6, 10, 16]. Boucle de somme : total = 0 ; for n in nombres: total += n. Variante : total = sum(nombres). » (corrige.md#exercice-intégré-4--listes-p-data-constr-02a)
    -> l'élève peut s'auto-corriger ? oui
 
-VERDICT : validated_pedagogy
+VERDICT : needs_review
 JUSTIFICATION : Le cours enseigne lecture, modification, ajout, boucle for et compréhension de liste avec des exemples spécifiques. Le TD et l'exercice intégré 4 font pratiquer ces opérations. Le corrigé donne les résultats avec variantes acceptables.
 
 ---
@@ -125,7 +125,7 @@ PREUVE ENTRAÎNEMENT : « On dispose de votes = ["A", "B", "A", "C", "A", "B"]. 
 PREUVE CORRECTION : « Résultat attendu : {"A": 3, "B": 2, "C": 1}. La clé de plus grand effectif est "A". Un dictionnaire est adapté car on associe chaque choix à son effectif et on y accède directement par le nom du choix. » (corrige.md#exercice-7--dictionnaires-p-data-constr-03a)
    -> l'élève peut s'auto-corriger ? oui
 
-VERDICT : validated_pedagogy
+VERDICT : needs_review
 JUSTIFICATION : Le cours montre la construction, l'accès par clé et le parcours avec keys/values/items sur un exemple concret (stock, puis comptage de votes). Le TD demande de construire un dictionnaire et de justifier le choix. Le corrigé donne le résultat, la justification et une variante acceptable.
 
 ---
@@ -141,7 +141,7 @@ PREUVE ENTRAÎNEMENT : « Tester mentalement mystere(6). Identifier le cas limit
 PREUVE CORRECTION : « Le cas limite non géré est n = 0 : la boucle while n > 0 ne s'exécute pas, et la fonction renvoie une chaîne vide au lieu de "0". Correction : ajouter if n == 0: return "0". Trois tests pertinents : mystere(0) (cas limite), mystere(1) (plus petit non nul), mystere(6) (cas ordinaire). » (corrige.md#exercice-9--analyse-de-code-p-lang-04)
    -> l'élève peut s'auto-corriger ? oui
 
-VERDICT : validated_pedagogy
+VERDICT : needs_review
 JUSTIFICATION : Le cours définit test et cas limite, donne des exemples spécifiques par notion et explique les limites d'un jeu de tests. Le TD demande d'analyser une fonction, d'identifier un cas limite non géré et de proposer trois tests. Le corrigé fournit le cas limite, la correction et les trois tests avec justifications.
 
 ---
@@ -150,13 +150,13 @@ JUSTIFICATION : Le cours définit test et cas limite, donne des exemples spécif
 
 | Capacité | Verdict |
 |----------|---------|
-| P-DATA-BASE-01 | validated_pedagogy |
-| P-DATA-BASE-02B | validated_pedagogy |
-| P-DATA-BASE-04 | validated_pedagogy |
-| P-DATA-BASE-05A | validated_pedagogy |
-| P-DATA-CONSTR-01 | validated_pedagogy |
-| P-DATA-CONSTR-02A | validated_pedagogy |
-| P-DATA-CONSTR-03A | validated_pedagogy |
-| P-LANG-04 | validated_pedagogy |
+| P-DATA-BASE-01 | needs_review |
+| P-DATA-BASE-02B | needs_review |
+| P-DATA-BASE-04 | needs_review |
+| P-DATA-BASE-05A | needs_review |
+| P-DATA-CONSTR-01 | needs_review |
+| P-DATA-CONSTR-02A | needs_review |
+| P-DATA-CONSTR-03A | needs_review |
+| P-LANG-04 | needs_review |
 
-**8/8 capacités au verdict validated_pedagogy avec preuve citée.**
+**8/8 capacités avec preuves citées, statut needs_review en attente de validation pédagogique et scientifique indépendante.**

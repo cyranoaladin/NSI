@@ -8,9 +8,12 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List
 import json
 import re
+import sys
 import unicodedata
 
 import yaml
+
+sys.dont_write_bytecode = True
 
 ROOT = Path(__file__).resolve().parents[1]
 PROGRAM_FILE = ROOT / "00_programmes_officiels" / "programme_nsi_2019.yaml"

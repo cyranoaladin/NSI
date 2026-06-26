@@ -8,6 +8,8 @@ from typing import Dict, List
 import sys
 import json
 
+sys.dont_write_bytecode = True
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.append(str(ROOT))
 from scripts._inventory_utils import (
