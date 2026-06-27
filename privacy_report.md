@@ -52,6 +52,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md: nom propre suspect -> Filtrage Europe
+- 03_progressions/supports/premiere/P07/code/P07_tests_attendus_fonctions_tests_specifications.py: nom propre suspect -> Ada Lovelace
 - AGENTS.md: nom propre suspect -> Agent Inventaire
 - AGENTS.md: nom propre suspect -> Agent Programme
 - AGENTS.md: nom propre suspect -> Agent Auteur
@@ -129,6 +130,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - progression_audit.md: nom propre suspect -> Calendrier Tunisie
 - progression_audit.md: nom propre suspect -> Ressources Drive
 - qa_debt_register.md: nom propre suspect -> Portabilité Drive
+- qa_report.md: nom propre suspect -> Plan Drive
 - qa_report.md: nom propre suspect -> Lots Drive
 - qa_report.md: nom propre suspect -> Dossier Git Drive
 - qa_report.md: nom propre suspect -> Ressources Drive
@@ -144,6 +146,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scientific_claims_review_report.md: nom propre suspect -> Scientific Claims Review Report
 - scripts/check_course_internal_coherence.py: nom propre suspect -> Course Internal Coherence Report
 - scripts/check_differentiation_quality.py: nom propre suspect -> Differentiation Quality Report
+- scripts/check_drive_action_plan_completeness.py: nom propre suspect -> Ressources Drive
 - scripts/check_drive_enrichment_traceability.py: nom propre suspect -> Ressource Drive
 - scripts/check_drive_enrichment_traceability.py: nom propre suspect -> Ressource Drive
 - scripts/check_drive_enrichment_traceability_portable.py: nom propre suspect -> Portable Drive
@@ -161,6 +164,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_td_corrige_alignment.py: nom propre suspect -> Corrige Alignment Report
 - scripts/check_teacher_docs_depth.py: nom propre suspect -> Ressources Drive
 - scripts/check_tp_test_alignment.py: nom propre suspect -> Test Alignment Report
+- scripts/generate_qa_report.py: nom propre suspect -> Plan Drive
 - scripts/generate_qa_report.py: nom propre suspect -> Lots Drive
 - scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
 - scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
@@ -359,6 +363,13 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P03/code/P03_starter_texte_reels.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P03/code/P03_tests_attendus_texte_reels.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md: nom propre suspect -> Fonctions Python
+- 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md: nom propre suspect -> Assets Python
+- 03_progressions/supports/premiere/P07/P07_tp_fonctions_tests_specifications.md: nom propre suspect -> Assets Python
+- 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md: nom propre suspect -> Assets Python
+- 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md: nom propre suspect -> Assets Python
+- 03_progressions/supports/premiere/P09/P09_tp_architecture_os_droits.md: nom propre suspect -> Assets Python
+- 03_progressions/supports/premiere/P10/P10_tp_reseaux_protocoles_paquets.md: nom propre suspect -> Assets Python
+- 03_progressions/supports/premiere/P11/P11_tp_parcours_recherche_extremum_moyenne.md: nom propre suspect -> Assets Python
 - 03_progressions/supports/premiere/P12/P12_tp_tris_invariants_complexite.md: nom propre suspect -> Assets Python
 - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md: nom propre suspect -> Reprise Python
@@ -375,11 +386,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 258 alertes supplémentaires non affichées
+- ... 274 alertes supplémentaires non affichées
