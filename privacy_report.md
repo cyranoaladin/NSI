@@ -130,6 +130,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - progression_audit.md: nom propre suspect -> Calendrier Tunisie
 - progression_audit.md: nom propre suspect -> Ressources Drive
 - qa_debt_register.md: nom propre suspect -> Portabilité Drive
+- qa_gate_policy.md: nom propre suspect -> Informational Metrics
 - qa_report.md: nom propre suspect -> Plan Drive
 - qa_report.md: nom propre suspect -> Lots Drive
 - qa_report.md: nom propre suspect -> Dossier Git Drive
@@ -386,4 +387,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 274 alertes supplémentaires non affichées
+- ... 275 alertes supplémentaires non affichées
