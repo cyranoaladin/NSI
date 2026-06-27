@@ -53,12 +53,12 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 ## Méthode générale de correction
 - Point 1 : pour tuple de coordonnées, exiger la donnée `(36.8, 10.2)`, la méthode « lire sans modifier et nommer latitude puis longitude » et le contrôle « tentative de modification interdite ».
 - Point 2 : pour liste de relevés, exiger la donnée `[18, 20, 19]`, la méthode « parcourir les valeurs et calculer une moyenne » et le contrôle « liste vide ».
-- Point 3 : pour dictionnaire, exiger la donnée `{"temp": 21, "vent": 12}`, la méthode « tester la présence de la clé avant lecture » et le contrôle « clé absente ».
+- Point 3 : pour dictionnaire, exiger la donnée `{"temperature": 21, "vent": 12}`, la méthode « tester la présence de la clé avant lecture » et le contrôle « clé absente ».
 - Point 4 : pour copie de liste, exiger la donnée `[[1], [2]]`, la méthode « distinguer copie superficielle et copie indépendante » et le contrôle « liste imbriquée ».
 ## Exercices numérotés
 - Exercice 1 : résoudre tuple de coordonnées avec `(36.8, 10.2)` ; attendu : coordonnées conservées.
 - Exercice 2 : expliquer liste de relevés à partir de `[18, 20, 19]` ; attendu : `19`.
-- Exercice 3 : comparer dictionnaire avec `{"temp": 21, "vent": 12}` ; attendu : `21` pour `temp`.
+- Exercice 3 : comparer dictionnaire avec `{"temperature": 21, "vent": 12}` ; attendu : `21` pour `temperature`.
 - Exercice 4 : corriger copie de liste pour `[[1], [2]]` ; attendu : modification locale contrôlée.
 - Exercice 5 : tester un cas limite lié à tentative de modification interdite ; attendu : le comportement de tuple de coordonnées est contrôlé.
 - Exercice 6 : classer deux méthodes possibles pour liste de relevés ; attendu : la méthode robuste est choisie et justifiée.
@@ -77,8 +77,8 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Parcourir les indices quand les valeurs suffisent.
 ### Corrigé exercice 3
-- Méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temp`.
-- Résultat : `21` pour `temp`.
+- Méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temperature`.
+- Résultat : `21` pour `temperature`.
 - Contrôle : comparer avec le cas « clé absente ».
 - Erreur traitée : EF3 - Accéder à une clé sans vérifier sa présence.
 ### Corrigé exercice 4
@@ -97,7 +97,7 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Contrôle : identifier pourquoi « Parcourir les indices quand les valeurs suffisent. » est une erreur.
 - Erreur traitée : EF2 - Parcourir les indices quand les valeurs suffisent.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temp`.
+- Méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temperature`.
 - Résultat : la justification reste valable sur le nouveau cas.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Accéder à une clé sans vérifier sa présence.
@@ -152,8 +152,8 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 
 ### Corrigé exercice 11
 - Valeur attendue : `["A", "C"]`.
-- Justification : les dictionnaires des stations A et C ont `temp >= 20`.
-- Contrôle : le filtre lit la clé `temp` et ne compare pas le dictionnaire complet.
+- Justification : les dictionnaires des stations A et C ont `temperature >= 20`.
+- Contrôle : le filtre lit la clé `temperature` et ne compare pas le dictionnaire complet.
 
 ### Corrigé exercice 12
 - Valeurs attendues : mauvaise taille pour `(2,)`, clé absente pour `"pression"`, liste vide pour `[]`.

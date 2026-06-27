@@ -10,6 +10,7 @@ import zipfile
 from build_source_archive import ROOT, DIST, excluded
 
 ZIP_PATH = DIST / "nsi-enseignement_source_clean.zip"
+STABLE_ZIP_DATETIME = (1980, 1, 1, 0, 0, 0)
 
 
 def build_zip(root: Path = ROOT, target: Path = ZIP_PATH) -> Path:
@@ -25,7 +26,10 @@ def build_zip(root: Path = ROOT, target: Path = ZIP_PATH) -> Path:
                 continue
             arcname = Path("nsi-enseignement") / rel
             if path.is_file():
-                archive.write(path, arcname.as_posix())
+                info = zipfile.ZipInfo(arcname.as_posix(), date_time=STABLE_ZIP_DATETIME)
+                info.compress_type = zipfile.ZIP_DEFLATED
+                info.external_attr = (0o644 & 0xFFFF) << 16
+                archive.writestr(info, path.read_bytes())
     return target
 
 

@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 530
+- Total ressources : 541
 - Ressources pédagogiques : 53
-- Ressources techniques : 477
+- Ressources techniques : 488
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 522
+- generated: 533
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 225
+- interne: 236
 - premiere: 147
 - terminale: 158
 
@@ -19,17 +19,17 @@
 - banque: 14
 - document: 278
 - python: 36
-- script: 122
+- script: 130
 - sequence: 45
-- test: 35
+- test: 38
 
 ## Répartition par statut
-- needs_review: 530
+- needs_review: 541
 
 ## Répartition audience
 - corrige: 33
 - eleve: 110
-- mixte: 384
+- mixte: 395
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -391,6 +391,7 @@
   - scripts/check_build_reports_freshness.py
   - scripts/check_corrected_answers_are_concrete.py
   - scripts/check_course_internal_coherence.py
+  - scripts/check_course_sheet_exercise_answer_count.py
   - scripts/check_course_sheet_linked_resources_exist.py
   - scripts/check_course_sheet_readiness.py
   - scripts/check_course_sheet_readiness_strict.py
@@ -400,6 +401,7 @@
   - scripts/check_course_sheets_quality.py
   - scripts/check_course_sheets_substance.py
   - scripts/check_coverage_evidence.py
+  - scripts/check_csv_numeric_fields_are_parseable.py
   - scripts/check_delivered_archive_exactly_source_clean.py
   - scripts/check_differentiation_quality.py
   - scripts/check_document_depth.py
@@ -434,6 +436,7 @@
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
   - scripts/check_no_coverage_from_sheets_only.py
+  - scripts/check_no_duplicate_capacity_lines.py
   - scripts/check_no_generic_scaffold_overuse.py
   - scripts/check_no_global_archive_in_delivery_context.py
   - scripts/check_no_line_padding.py
@@ -447,6 +450,10 @@
   - scripts/check_no_teacher_content_in_student_export.py
   - scripts/check_operational_readiness_quality_coupling.py
   - scripts/check_operational_supports_no_indicative_debt.py
+  - scripts/check_p04_key_consistency.py
+  - scripts/check_p05_expected_outputs_are_explicit.py
+  - scripts/check_p05_pipeline_consistency.py
+  - scripts/check_packaging_mode.py
   - scripts/check_pedagogical_alignment.py
   - scripts/check_program_capacity_evidence_depth.py
   - scripts/check_program_coverage.py
@@ -479,6 +486,7 @@
   - scripts/check_session_week_calendar_consistency.py
   - scripts/check_student_supports_no_scaffold_language.py
   - scripts/check_support_substance.py
+  - scripts/check_t18_trace_table_quality.py
   - scripts/check_td_corrige_alignment.py
   - scripts/check_teacher_corrections_alignment.py
   - scripts/check_teacher_docs_depth.py
@@ -548,6 +556,8 @@
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
   - tests/test_operational_substance_controls.py
+  - tests/test_p05_p04_controls.py
+  - tests/test_packaging_modes.py
   - tests/test_private_data_detection.py
   - tests/test_ready_session_operationality.py
   - tests/test_ready_supports_gates.py
@@ -558,6 +568,7 @@
   - tests/test_session_referenced_files_exist.py
   - tests/test_session_specificity.py
   - tests/test_source_zip_delivery.py
+  - tests/test_source_zip_timestamps.py
   - tests/test_support_substance.py
   - tests/test_tp_pedagogical_assets.py
   - tests/test_tp_pedagogical_assets_no_hang.py
@@ -949,6 +960,7 @@
   - scripts/check_build_reports_freshness.py
   - scripts/check_corrected_answers_are_concrete.py
   - scripts/check_course_internal_coherence.py
+  - scripts/check_course_sheet_exercise_answer_count.py
   - scripts/check_course_sheet_linked_resources_exist.py
   - scripts/check_course_sheet_readiness.py
   - scripts/check_course_sheet_readiness_strict.py
@@ -958,6 +970,7 @@
   - scripts/check_course_sheets_quality.py
   - scripts/check_course_sheets_substance.py
   - scripts/check_coverage_evidence.py
+  - scripts/check_csv_numeric_fields_are_parseable.py
   - scripts/check_delivered_archive_exactly_source_clean.py
   - scripts/check_differentiation_quality.py
   - scripts/check_document_depth.py
@@ -992,6 +1005,7 @@
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
   - scripts/check_no_coverage_from_sheets_only.py
+  - scripts/check_no_duplicate_capacity_lines.py
   - scripts/check_no_generic_scaffold_overuse.py
   - scripts/check_no_global_archive_in_delivery_context.py
   - scripts/check_no_line_padding.py
@@ -1005,6 +1019,10 @@
   - scripts/check_no_teacher_content_in_student_export.py
   - scripts/check_operational_readiness_quality_coupling.py
   - scripts/check_operational_supports_no_indicative_debt.py
+  - scripts/check_p04_key_consistency.py
+  - scripts/check_p05_expected_outputs_are_explicit.py
+  - scripts/check_p05_pipeline_consistency.py
+  - scripts/check_packaging_mode.py
   - scripts/check_pedagogical_alignment.py
   - scripts/check_program_capacity_evidence_depth.py
   - scripts/check_program_coverage.py
@@ -1037,6 +1055,7 @@
   - scripts/check_session_week_calendar_consistency.py
   - scripts/check_student_supports_no_scaffold_language.py
   - scripts/check_support_substance.py
+  - scripts/check_t18_trace_table_quality.py
   - scripts/check_td_corrige_alignment.py
   - scripts/check_teacher_corrections_alignment.py
   - scripts/check_teacher_docs_depth.py
@@ -1080,6 +1099,8 @@
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
   - tests/test_operational_substance_controls.py
+  - tests/test_p05_p04_controls.py
+  - tests/test_packaging_modes.py
   - tests/test_private_data_detection.py
   - tests/test_ready_session_operationality.py
   - tests/test_ready_supports_gates.py
@@ -1090,6 +1111,7 @@
   - tests/test_session_referenced_files_exist.py
   - tests/test_session_specificity.py
   - tests/test_source_zip_delivery.py
+  - tests/test_source_zip_timestamps.py
   - tests/test_support_substance.py
   - tests/test_tp_pedagogical_assets.py
   - tests/test_tp_pedagogical_assets_no_hang.py
@@ -1475,6 +1497,7 @@
 - scripts/check_build_reports_freshness.py
 - scripts/check_corrected_answers_are_concrete.py
 - scripts/check_course_internal_coherence.py
+- scripts/check_course_sheet_exercise_answer_count.py
 - scripts/check_course_sheet_linked_resources_exist.py
 - scripts/check_course_sheet_readiness.py
 - scripts/check_course_sheet_readiness_strict.py
@@ -1484,6 +1507,7 @@
 - scripts/check_course_sheets_quality.py
 - scripts/check_course_sheets_substance.py
 - scripts/check_coverage_evidence.py
+- scripts/check_csv_numeric_fields_are_parseable.py
 - scripts/check_delivered_archive_exactly_source_clean.py
 - scripts/check_differentiation_quality.py
 - scripts/check_document_depth.py
@@ -1518,6 +1542,7 @@
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
 - scripts/check_no_coverage_from_sheets_only.py
+- scripts/check_no_duplicate_capacity_lines.py
 - scripts/check_no_generic_scaffold_overuse.py
 - scripts/check_no_global_archive_in_delivery_context.py
 - scripts/check_no_line_padding.py
@@ -1531,6 +1556,10 @@
 - scripts/check_no_teacher_content_in_student_export.py
 - scripts/check_operational_readiness_quality_coupling.py
 - scripts/check_operational_supports_no_indicative_debt.py
+- scripts/check_p04_key_consistency.py
+- scripts/check_p05_expected_outputs_are_explicit.py
+- scripts/check_p05_pipeline_consistency.py
+- scripts/check_packaging_mode.py
 - scripts/check_pedagogical_alignment.py
 - scripts/check_program_capacity_evidence_depth.py
 - scripts/check_program_coverage.py
@@ -1563,6 +1592,7 @@
 - scripts/check_session_week_calendar_consistency.py
 - scripts/check_student_supports_no_scaffold_language.py
 - scripts/check_support_substance.py
+- scripts/check_t18_trace_table_quality.py
 - scripts/check_teacher_corrections_alignment.py
 - scripts/check_teacher_docs_depth.py
 - scripts/check_tp_pedagogical_assets.py
@@ -1626,6 +1656,8 @@
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
 - tests/test_operational_substance_controls.py
+- tests/test_p05_p04_controls.py
+- tests/test_packaging_modes.py
 - tests/test_private_data_detection.py
 - tests/test_ready_session_operationality.py
 - tests/test_ready_supports_gates.py
@@ -1636,6 +1668,7 @@
 - tests/test_session_referenced_files_exist.py
 - tests/test_session_specificity.py
 - tests/test_source_zip_delivery.py
+- tests/test_source_zip_timestamps.py
 - tests/test_support_substance.py
 - tests/test_tp_pedagogical_assets.py
 - tests/test_tp_pedagogical_assets_no_hang.py
@@ -2004,6 +2037,7 @@
 - scripts/check_build_reports_freshness.py
 - scripts/check_corrected_answers_are_concrete.py
 - scripts/check_course_internal_coherence.py
+- scripts/check_course_sheet_exercise_answer_count.py
 - scripts/check_course_sheet_linked_resources_exist.py
 - scripts/check_course_sheet_readiness.py
 - scripts/check_course_sheet_readiness_strict.py
@@ -2013,6 +2047,7 @@
 - scripts/check_course_sheets_quality.py
 - scripts/check_course_sheets_substance.py
 - scripts/check_coverage_evidence.py
+- scripts/check_csv_numeric_fields_are_parseable.py
 - scripts/check_delivered_archive_exactly_source_clean.py
 - scripts/check_differentiation_quality.py
 - scripts/check_document_depth.py
@@ -2047,6 +2082,7 @@
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
 - scripts/check_no_coverage_from_sheets_only.py
+- scripts/check_no_duplicate_capacity_lines.py
 - scripts/check_no_generic_scaffold_overuse.py
 - scripts/check_no_global_archive_in_delivery_context.py
 - scripts/check_no_line_padding.py
@@ -2060,6 +2096,10 @@
 - scripts/check_no_teacher_content_in_student_export.py
 - scripts/check_operational_readiness_quality_coupling.py
 - scripts/check_operational_supports_no_indicative_debt.py
+- scripts/check_p04_key_consistency.py
+- scripts/check_p05_expected_outputs_are_explicit.py
+- scripts/check_p05_pipeline_consistency.py
+- scripts/check_packaging_mode.py
 - scripts/check_pedagogical_alignment.py
 - scripts/check_program_capacity_evidence_depth.py
 - scripts/check_program_coverage.py
@@ -2092,6 +2132,7 @@
 - scripts/check_session_week_calendar_consistency.py
 - scripts/check_student_supports_no_scaffold_language.py
 - scripts/check_support_substance.py
+- scripts/check_t18_trace_table_quality.py
 - scripts/check_td_corrige_alignment.py
 - scripts/check_teacher_corrections_alignment.py
 - scripts/check_teacher_docs_depth.py
@@ -2161,6 +2202,8 @@
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
 - tests/test_operational_substance_controls.py
+- tests/test_p05_p04_controls.py
+- tests/test_packaging_modes.py
 - tests/test_private_data_detection.py
 - tests/test_ready_session_operationality.py
 - tests/test_ready_supports_gates.py
@@ -2171,6 +2214,7 @@
 - tests/test_session_referenced_files_exist.py
 - tests/test_session_specificity.py
 - tests/test_source_zip_delivery.py
+- tests/test_source_zip_timestamps.py
 - tests/test_support_substance.py
 - tests/test_tp_pedagogical_assets.py
 - tests/test_tp_pedagogical_assets_no_hang.py

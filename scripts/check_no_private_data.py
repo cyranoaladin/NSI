@@ -67,6 +67,16 @@ def student_names(allowlist: Dict[str, List[str]]) -> List[str]:
     return names
 
 
+def is_population_context(text: str, start: int, end: int) -> bool:
+    """Ignore country population values that look like Tunisian phone numbers."""
+    window = text[max(0, start - 120): min(len(text), end + 120)]
+    if "POPULATION" in window or "pays_monde.csv" in window:
+        return True
+    if re.search(r"\b[A-ZÉÈÀÂÎÔÛÇA-Za-zéèàâîôûç-]+,[^,\n]+,[^,\n]+,\d{7,10}\b", window):
+        return True
+    return False
+
+
 def iter_text_files() -> Iterable[Path]:
     for path in sorted(ROOT.rglob("*")):
         if path.is_dir():
@@ -112,6 +122,8 @@ def main() -> None:
             for match in regex.finditer(text):
                 value = match.group(0)
                 if label.startswith("telephone") and (ISO_DATE_RE.fullmatch(value) or YEAR_RANGE_RE.fullmatch(value)):
+                    continue
+                if label.startswith("telephone") and is_population_context(text, match.start(), match.end()):
                     continue
                 item = f"{rel}: {label} possible -> {value}"
                 if allowed(value, allowlist) or allowed(str(rel), allowlist):

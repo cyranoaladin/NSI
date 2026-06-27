@@ -145,6 +145,7 @@ Associer P-TABLE-01 à l'étape d'import avec `csv.DictReader`, puis P-TABLE-02 
 3. Tri lexicographique : `["100", "20", "3"]`; tri numérique : `[3, 20, 100]`.
 4. La conversion lève `ValueError`; la ligne est ajoutée à la liste des rejets.
 5. `key=lambda row: (row["CONTINENT"], -row["POPULATION"], row["PAYS"])`, après conversion de `POPULATION`.
+6. P-TABLE-01 correspond à l’import et au parcours de table avec `csv.DictReader`; P-TABLE-02 correspond au filtrage, à la conversion numérique, au tri et à la recherche dans la table.
 
 ## À retenir
 - `csv.reader` donne des listes ; `csv.DictReader` donne des dictionnaires.
@@ -171,3 +172,16 @@ Associer P-TABLE-01 à l'étape d'import avec `csv.DictReader`, puis P-TABLE-02 
 - Je sais dire pourquoi un tri lexicographique peut être faux pour des populations.
 - Je sais isoler une ligne invalide au lieu de produire un résultat arbitraire.
 - Je sais relier P-TABLE-01 à l'import et P-TABLE-02 au filtrage ou au tri.
+
+
+## Pipeline contrôlé P05
+1. Charger avec `csv.DictReader`.
+2. Convertir `POPULATION` avec `int(row["POPULATION"])`.
+3. Séparer `valides` et `erreurs`.
+4. Filtrer les lignes valides par `CONTINENT`.
+5. Trier les lignes valides par `CONTINENT` puis `POPULATION`.
+
+Résultats attendus sur l’extrait de référence :
+- `valides = ["Allemagne", "Albanie", "Brésil"]`.
+- `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]`.
+- `Europe valide = ["Allemagne", "Albanie"]`.

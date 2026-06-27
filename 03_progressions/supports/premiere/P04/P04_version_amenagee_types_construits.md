@@ -62,7 +62,7 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Espace de réponse : méthode : ______ ; résultat : ______ ; contrôle : ______.
 - Point de vigilance : Parcourir les indices quand les valeurs suffisent.
 ### Question aménagée 3
-- Énoncé élève : traiter dictionnaire avec la donnée `{"temp": 21, "vent": 12}`.
+- Énoncé élève : traiter dictionnaire avec la donnée `{"temperature": 21, "vent": 12}`.
 - Aide intégrée : commencer par tester la présence de la clé avant lecture.
 - Espace de réponse : méthode : ______ ; résultat : ______ ; contrôle : ______.
 - Point de vigilance : Accéder à une clé sans vérifier sa présence.
@@ -74,7 +74,7 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 ## Exercices numérotés
 - Exercice 1 : résoudre tuple de coordonnées avec `(36.8, 10.2)` avec aide possible sur la méthode.
 - Exercice 2 : expliquer liste de relevés à partir de `[18, 20, 19]` avec aide possible sur la méthode.
-- Exercice 3 : comparer dictionnaire avec `{"temp": 21, "vent": 12}` avec aide possible sur la méthode.
+- Exercice 3 : comparer dictionnaire avec `{"temperature": 21, "vent": 12}` avec aide possible sur la méthode.
 - Exercice 4 : corriger copie de liste pour `[[1], [2]]` avec aide possible sur la méthode.
 - Exercice 5 : tester un cas limite lié à tentative de modification interdite avec aide possible sur la méthode.
 - Exercice 6 : classer deux méthodes possibles pour liste de relevés avec aide possible sur la méthode.
@@ -83,11 +83,11 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 ## Corrigés complets des exercices du cours
 - Corrigé exercice 1 : méthode : identifier `(36.8, 10.2)`, appliquer la méthode « lire sans modifier et nommer latitude puis longitude », puis écrire coordonnées conservées ; résultat : coordonnées conservées ; contrôle : faire apparaître le contrôle « tentative de modification interdite ».
 - Corrigé exercice 2 : méthode : expliciter chaque étape de parcourir les valeurs et calculer une moyenne avant de conclure par `19` ; résultat : `19` ; contrôle : rédiger la méthode avant le résultat.
-- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temp` ; résultat : `21` pour `temp` ; contrôle : comparer avec le cas « clé absente ».
+- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temperature` ; résultat : `21` pour `temperature` ; contrôle : comparer avec le cas « clé absente ».
 - Corrigé exercice 4 : méthode : isoler l’erreur fréquente « Copier une liste imbriquée seulement au premier niveau. » puis reprendre la procédure correcte ; résultat : modification locale contrôlée ; contrôle : corriger l’erreur « Copier une liste imbriquée seulement au premier niveau. ».
 - Corrigé exercice 5 : méthode : identifier `(36.8, 10.2)`, appliquer la méthode « lire sans modifier et nommer latitude puis longitude », puis écrire coordonnées conservées ; résultat : le comportement de tuple de coordonnées est contrôlé ; contrôle : nommer la donnée minimale et la conclusion.
 - Corrigé exercice 6 : méthode : expliciter chaque étape de parcourir les valeurs et calculer une moyenne avant de conclure par `19` ; résultat : la méthode robuste est choisie et justifiée ; contrôle : identifier pourquoi « Parcourir les indices quand les valeurs suffisent. » est une erreur.
-- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temp` ; résultat : la justification reste valable sur le nouveau cas ; contrôle : inclure une étape calculable par un pair.
+- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temperature` ; résultat : la justification reste valable sur le nouveau cas ; contrôle : inclure une étape calculable par un pair.
 - Corrigé exercice 8 : méthode : isoler l’erreur fréquente « Copier une liste imbriquée seulement au premier niveau. » puis reprendre la procédure correcte ; résultat : l’erreur est localisée puis réparée ; contrôle : proposer une activité corrective inspirée de « Modifier une sous-liste et observer l’effet sur la copie. ».
 
 ## Erreurs fréquentes

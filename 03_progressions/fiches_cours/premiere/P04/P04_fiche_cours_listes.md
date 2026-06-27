@@ -90,8 +90,8 @@ Proposer un cas limite pertinent pour types construits et expliquer le résultat
 ## Complément types construits P04
 - Tuple immuable : `point = (3.0, 5.0)` représente une coordonnée fixe ; `point[0] = 4.0` doit être refusé car un tuple ne se modifie pas.
 - Liste mutable : `notes = [8, 12, 10]`, puis `notes[1] = 14` donne `[8, 14, 10]`.
-- Dictionnaire par clé : `station = {"nom": "Carthage", "temp": 21}` ; `station["temp"]` vaut `21`.
-- Liste de dictionnaires : `stations = [{"nom": "A", "temp": 21}, {"nom": "B", "temp": 18}]` permet de filtrer les stations dont `temp >= 20`.
+- Dictionnaire par clé : `station = {"nom": "Carthage", "temperature": 21}` ; `station["temperature"]` vaut `21`.
+- Liste de dictionnaires : `stations = [{"nom": "A", "temperature": 21}, {"nom": "B", "temperature": 18}]` permet de filtrer les stations dont `temperature >= 20`.
 - Tuple de coordonnées : pour `A = (2, 3)` et `B = (8, 7)`, le milieu vaut `((2+8)/2, (3+7)/2) = (5.0, 5.0)`.
 - Distance : avec les mêmes points, `dx = 6`, `dy = 4`, donc `distance = sqrt(6**2 + 4**2) = sqrt(52)`.
 - Cas limite tuple : `(2,)` n’a pas deux coordonnées ; une fonction `milieu(A, B)` doit lever `ValueError` si `len(A) != 2`.
@@ -105,7 +105,7 @@ Calculer le milieu de `A=(0, 4)` et `B=(6, 10)`.
 Réponse : `((0+6)/2, (4+10)/2) = (3.0, 7.0)`.
 
 ### Mini-exercice 6
-Après `mesures = [{"jour": "lundi", "temp": 20}, {"jour": "mardi", "temp": 17}]`, donner les jours de température au moins 18.
+Après `mesures = [{"jour": "lundi", "temperature": 20}, {"jour": "mardi", "temperature": 17}]`, donner les jours de température au moins 18.
 
 Réponse : seul `"lundi"` est gardé, car `20 >= 18` et `17 < 18`.
 

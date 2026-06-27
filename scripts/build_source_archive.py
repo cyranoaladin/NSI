@@ -2,7 +2,6 @@
 """Build portable delivery artifacts without embedding .git in source archive."""
 from __future__ import annotations
 
-import os
 import shutil
 import subprocess
 import tarfile
@@ -40,7 +39,12 @@ def copy_tree(target: Path) -> None:
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(path, dest)
 
-def main() -> int:
+
+def has_git_metadata(root: Path = ROOT) -> bool:
+    return (root / ".git").exists()
+
+
+def build_source_tar() -> None:
     DIST.mkdir(exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp)
@@ -49,10 +53,24 @@ def main() -> int:
             SOURCE_TAR.unlink()
         with tarfile.open(SOURCE_TAR, 'w:gz') as tar:
             tar.add(tmp_path / 'nsi-enseignement', arcname='nsi-enseignement')
+
+
+def build_git_bundle() -> int:
     result = subprocess.run(['git', 'bundle', 'create', str(BUNDLE), '--all'], cwd=ROOT)
-    if result.returncode != 0:
-        return result.returncode
+    return result.returncode
+
+
+def main() -> int:
+    build_source_tar()
     print(f'build_source_archive: wrote {SOURCE_TAR.relative_to(ROOT)}')
+    if not has_git_metadata(ROOT):
+        if BUNDLE.exists():
+            BUNDLE.unlink()
+        print('build_source_archive: git bundle non généré car archive source sans .git')
+        return 0
+    bundle_status = build_git_bundle()
+    if bundle_status != 0:
+        return bundle_status
     print(f'build_source_archive: wrote {BUNDLE.relative_to(ROOT)}')
     return 0
 

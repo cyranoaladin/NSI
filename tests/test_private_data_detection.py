@@ -28,6 +28,13 @@ class PrivateDataDetectionTest(unittest.TestCase):
 
         self.assertEqual([match.group(0) for match in privacy.TN_PHONE_RE.finditer(text)], [value])
 
+    def test_population_context_is_not_tunisian_phone(self) -> None:
+        text = 'Espagne,Madrid,Europe,46754778 ; int(row["POPULATION"]) donne 46754778.'
+        matches = list(privacy.TN_PHONE_RE.finditer(text))
+
+        self.assertTrue(matches)
+        self.assertTrue(all(privacy.is_population_context(text, match.start(), match.end()) for match in matches))
+
 
 if __name__ == "__main__":
     unittest.main()

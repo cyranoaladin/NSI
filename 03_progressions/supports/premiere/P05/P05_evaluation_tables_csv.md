@@ -59,25 +59,25 @@ Le fichier `pays_monde.csv` contient des pays, capitales, continents et populati
 - Énoncé : résoudre lecture CSV avec `PAYS,CAPITALE,CONTINENT,POPULATION
 Allemagne,Berlin,Europe,82801531`.
 - Réponse attendue : `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}`.
-- Critère de réussite : méthode visible, résultat correct et contrôle « fichier pays_monde.csv vide ».
+- Critère de réussite : en-tête identifié, `csv.DictReader` utilisé, `POPULATION` convertie, `ValueError` gérée, résultat exact produit et contrôle « fichier pays_monde.csv vide ».
 ### Question 2
 - Objectif évalué : O2.
 - Capacité officielle : P-TABLE-01.
 - Énoncé : expliquer filtrage à partir de un extrait contenant Allemagne, Albanie et Brésil.
-- Réponse attendue : deux lignes européennes sélectionnées.
-- Critère de réussite : méthode visible, résultat correct et contrôle « aucun pays du continent demandé ».
+- Réponse attendue : `["Allemagne", "Albanie"]`.
+- Critère de réussite : en-tête identifié, `csv.DictReader` utilisé, `POPULATION` convertie, `ValueError` gérée, résultat exact produit et contrôle « aucun pays du continent demandé ».
 ### Question 3
 - Objectif évalué : O3.
 - Capacité officielle : P-TABLE-01.
 - Énoncé : comparer traitement numérique des populations avec `82801531`, `3063320`, valeur `invalide`.
-- Réponse attendue : ligne invalide isolée avant conversion.
-- Critère de réussite : méthode visible, résultat correct et contrôle « sélection vide avant tri numérique ».
+- Réponse attendue : `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]`.
+- Critère de réussite : en-tête identifié, `csv.DictReader` utilisé, `POPULATION` convertie, `ValueError` gérée, résultat exact produit et contrôle « sélection vide avant tri numérique ».
 ### Question 4
 - Objectif évalué : O4.
 - Capacité officielle : P-TABLE-01.
 - Énoncé : corriger tri par continent puis population pour lignes regroupées par CONTINENT.
 - Réponse attendue : dans le groupe Europe : Allemagne `(82801531)` avant Albanie `(3063320)`, puis les autres continents selon `CONTINENT`.
-- Critère de réussite : méthode visible, résultat correct et contrôle « continent absent ».
+- Critère de réussite : en-tête identifié, `csv.DictReader` utilisé, `POPULATION` convertie, `ValueError` gérée, résultat exact produit et contrôle « continent absent ».
 ## Barème
 - Question 1 : 2 points méthode, 1 point résultat, 1 point justification liée à fichier pays_monde.csv vide.
 - Question 2 : 2 points méthode, 1 point résultat, 1 point justification liée à aucun pays du continent demandé.
@@ -117,19 +117,19 @@ Allemagne,Berlin,Europe,82801531` avec une fiche méthode fournie.
 ### Corrigé question 1
 - Résultat attendu : `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}`.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 1.
-- Critère de validation : méthode visible, résultat correct et contrôle « fichier pays_monde.csv vide ».
+- Critère de validation : en-tête identifié, `csv.DictReader` utilisé, `POPULATION` convertie, `ValueError` gérée, résultat exact produit et contrôle « fichier pays_monde.csv vide ».
 ### Corrigé question 2
-- Résultat attendu : deux lignes européennes sélectionnées.
+- Résultat attendu : `["Allemagne", "Albanie"]`.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 2.
-- Critère de validation : méthode visible, résultat correct et contrôle « aucun pays du continent demandé ».
+- Critère de validation : en-tête identifié, `csv.DictReader` utilisé, `POPULATION` convertie, `ValueError` gérée, résultat exact produit et contrôle « aucun pays du continent demandé ».
 ### Corrigé question 3
-- Résultat attendu : ligne invalide isolée avant conversion.
+- Résultat attendu : `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]`.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 3.
-- Critère de validation : méthode visible, résultat correct et contrôle « sélection vide avant tri numérique ».
+- Critère de validation : en-tête identifié, `csv.DictReader` utilisé, `POPULATION` convertie, `ValueError` gérée, résultat exact produit et contrôle « sélection vide avant tri numérique ».
 ### Corrigé question 4
 - Résultat attendu : dans le groupe Europe : Allemagne `(82801531)` avant Albanie `(3063320)`, puis les autres continents selon `CONTINENT`.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
-- Critère de validation : méthode visible, résultat correct et contrôle « continent absent ».
+- Critère de validation : en-tête identifié, `csv.DictReader` utilisé, `POPULATION` convertie, `ValueError` gérée, résultat exact produit et contrôle « continent absent ».
 
 ## Modalités de passation
 - Durée : 25 minutes.
@@ -155,3 +155,16 @@ Allemagne,Berlin,Europe,82801531` avec une fiche méthode fournie.
 - Tri lexicographique : `sorted(["100", "20", "3"])` donne `"100", "20", "3"`; ce n’est pas un tri numérique.
 - Tri numérique : `sorted([100, 20, 3])` donne `3, 20, 100`.
 - Tri par continent puis population : la clé `(row["CONTINENT"], -row["POPULATION"], row["PAYS"])` classe d’abord par continent, puis par population décroissante.
+
+
+## Pipeline contrôlé P05
+1. Charger avec `csv.DictReader`.
+2. Convertir `POPULATION` avec `int(row["POPULATION"])`.
+3. Séparer `valides` et `erreurs`.
+4. Filtrer les lignes valides par `CONTINENT`.
+5. Trier les lignes valides par `CONTINENT` puis `POPULATION`.
+
+Résultats attendus sur l’extrait de référence :
+- `valides = ["Allemagne", "Albanie", "Brésil"]`.
+- `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]`.
+- `Europe valide = ["Allemagne", "Albanie"]`.

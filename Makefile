@@ -56,6 +56,13 @@ audit-local:
 	python scripts/check_support_substance.py
 	python scripts/check_no_line_padding.py
 	python scripts/check_sequence_pack_consistency.py
+	python scripts/check_csv_numeric_fields_are_parseable.py
+	python scripts/check_p05_pipeline_consistency.py
+	python scripts/check_p05_expected_outputs_are_explicit.py
+	python scripts/check_course_sheet_exercise_answer_count.py
+	python scripts/check_no_duplicate_capacity_lines.py
+	python scripts/check_p04_key_consistency.py
+	python scripts/check_t18_trace_table_quality.py
 	python scripts/check_no_generic_scaffold_overuse.py
 	python scripts/check_student_supports_no_scaffold_language.py
 	python scripts/check_corrected_answers_are_concrete.py
@@ -142,6 +149,13 @@ audit-extracted-source:
 	python scripts/check_support_substance.py
 	python scripts/check_no_line_padding.py
 	python scripts/check_sequence_pack_consistency.py
+	python scripts/check_csv_numeric_fields_are_parseable.py
+	python scripts/check_p05_pipeline_consistency.py
+	python scripts/check_p05_expected_outputs_are_explicit.py
+	python scripts/check_course_sheet_exercise_answer_count.py
+	python scripts/check_no_duplicate_capacity_lines.py
+	python scripts/check_p04_key_consistency.py
+	python scripts/check_t18_trace_table_quality.py
 	python scripts/check_no_generic_scaffold_overuse.py
 	python scripts/check_student_supports_no_scaffold_language.py
 	python scripts/check_corrected_answers_are_concrete.py
@@ -178,6 +192,7 @@ audit-extracted-source:
 package-audit:
 	python scripts/cleanup_python_artifacts.py
 	python scripts/build_source_archive.py
+	python scripts/check_packaging_mode.py
 	python scripts/check_archive_portability.py
 	python scripts/check_no_sensitive_drive_in_source_clean.py
 	python scripts/check_no_global_archive_in_delivery_context.py
@@ -187,6 +202,7 @@ verify-delivery-archive:
 
 deliver-pedagogical-archive:
 	python scripts/build_source_archive.py
+	python scripts/check_packaging_mode.py
 	DELIVERED_ARCHIVE=dist/source_clean.tar.gz python scripts/check_delivered_archive_exactly_source_clean.py
 	python scripts/check_no_global_archive_in_delivery_context.py
 	@echo "LIVRABLE_PEDAGOGIQUE=dist/source_clean.tar.gz"

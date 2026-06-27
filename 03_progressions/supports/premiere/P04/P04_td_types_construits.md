@@ -61,9 +61,9 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Résultat obtenu : `19`.
 - Contrôle : le cas limite « liste vide » est vérifié séparément.
 ### Exemple corrigé 3 - dictionnaire
-- Donnée étudiée : `{"temp": 21, "vent": 12}`.
+- Donnée étudiée : `{"temperature": 21, "vent": 12}`.
 - Méthode : tester la présence de la clé avant lecture.
-- Résultat obtenu : `21` pour `temp`.
+- Résultat obtenu : `21` pour `temperature`.
 - Contrôle : le cas limite « clé absente » est vérifié séparément.
 ### Exemple corrigé 4 - copie de liste
 - Donnée étudiée : `[[1], [2]]`.
@@ -88,8 +88,8 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 ### Exercice 3
 - Objectif travaillé : O3.
 - Capacité officielle : P-DATA-CONSTR-02A.
-- Énoncé disciplinaire : comparer dictionnaire avec `{"temp": 21, "vent": 12}`.
-- Production attendue : `21` pour `temp`.
+- Énoncé disciplinaire : comparer dictionnaire avec `{"temperature": 21, "vent": 12}`.
+- Production attendue : `21` pour `temperature`.
 - Contrainte de contrôle : comparer avec le cas « clé absente ».
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 4
@@ -139,8 +139,8 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Parcourir les indices quand les valeurs suffisent.
 ### Corrigé exercice 3
-- Méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temp`.
-- Résultat : `21` pour `temp`.
+- Méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temperature`.
+- Résultat : `21` pour `temperature`.
 - Contrôle : comparer avec le cas « clé absente ».
 - Erreur traitée : EF3 - Accéder à une clé sans vérifier sa présence.
 ### Corrigé exercice 4
@@ -159,7 +159,7 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Contrôle : identifier pourquoi « Parcourir les indices quand les valeurs suffisent. » est une erreur.
 - Erreur traitée : EF2 - Parcourir les indices quand les valeurs suffisent.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temp`.
+- Méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temperature`.
 - Résultat : la justification reste valable sur le nouveau cas.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Accéder à une clé sans vérifier sa présence.
@@ -201,11 +201,11 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Consigne : remplacer la deuxième note par `14`, puis donner la liste.
 
 ### Exercice 11 - Liste de dictionnaires
-- Données : `stations = [{"nom": "A", "temp": 21}, {"nom": "B", "temp": 18}, {"nom": "C", "temp": 23}]`.
+- Données : `stations = [{"nom": "A", "temperature": 21}, {"nom": "B", "temperature": 18}, {"nom": "C", "temperature": 23}]`.
 - Consigne : extraire les noms des stations dont la température est au moins `20`.
 
 ### Exercice 12 - Cas limites
-- Données : `point = (2,)`, `station = {"temp": 21}`, `notes = []`.
+- Données : `point = (2,)`, `station = {"temperature": 21}`, `notes = []`.
 - Consigne : associer chaque donnée à l’erreur possible.
 
 ### Corrigé exercice 9
@@ -221,13 +221,13 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Contrôle : la longueur reste `3`, seule la valeur de rang 2 change.
 
 ### Corrigé exercice 11
-- Donnée utilisée : `stations = [{"nom": "A", "temp": 21}, {"nom": "B", "temp": 18}, {"nom": "C", "temp": 23}]`.
-- Méthode : parcourir la liste, lire la clé `temp`, conserver les dictionnaires dont `temp >= 20`, puis lire la clé `nom`.
+- Donnée utilisée : `stations = [{"nom": "A", "temperature": 21}, {"nom": "B", "temperature": 18}, {"nom": "C", "temperature": 23}]`.
+- Méthode : parcourir la liste, lire la clé `temperature`, conserver les dictionnaires dont `temperature >= 20`, puis lire la clé `nom`.
 - Résultat attendu : les noms extraits sont `["A", "C"]`.
 - Contrôle : la station `"B"` est exclue car `18 < 20`.
 
 ### Corrigé exercice 12
-- Donnée utilisée : `point = (2,)`, `station = {"temp": 21}`, `notes = []`.
+- Donnée utilisée : `point = (2,)`, `station = {"temperature": 21}`, `notes = []`.
 - Méthode : associer chaque donnée à son cas limite structurel.
 - Résultat attendu : `point` a une mauvaise taille pour une coordonnée 2D ; `station["pression"]` provoquerait une clé absente ; `notes` ne permet pas de moyenne sans convention.
 - Contrôle : chaque erreur est liée à un type différent : tuple, dictionnaire, liste.

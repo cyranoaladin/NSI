@@ -57,7 +57,7 @@ Un extrait CSV de pays contient `PAYS`, `CAPITALE`, `CONTINENT`, `POPULATION`. I
 - Fichier élève : `data/pays_monde_extrait.csv`.
 - Origine : ressource Drive `pays_monde.csv`, reprise partiellement et normalisée.
 - Champs attendus : `PAYS`, `CAPITALE`, `CONTINENT`, `POPULATION`.
-- Résultat de contrôle sur l’extrait : les pays européens Allemagne, Albanie et Andorre totalisent `85942132` habitants.
+- Résultat de contrôle sur l’extrait : les pays européens Allemagne, Albanie et Brésil totalisent `valides = ["Allemagne", "Albanie", "Brésil"]` et `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]` habitants.
 
 ## Consigne technique détaillée
 - Problème à programmer : Lire pays_monde.csv avec csv.reader et csv.DictReader, filtrer par CONTINENT, convertir POPULATION en int, comparer tri numérique et tri lexicographique, puis isoler une ligne invalide.
@@ -75,7 +75,7 @@ Un extrait CSV de pays contient `PAYS`, `CAPITALE`, `CONTINENT`, `POPULATION`. I
 ## Étapes de réalisation
 - Étape 1 : coder ou tester la lecture de `Allemagne,Berlin,Europe,82801531`, puis contrôler fichier pays_monde.csv vide.
 - Étape 2 : coder ou tester le filtrage du continent Europe, puis contrôler aucun pays du continent demandé.
-- Étape 3 : coder ou tester le traitement numérique des populations `82801531 + 3063320 + 77281`, puis contrôler sélection vide avant tri numérique ou sélection vide.
+- Étape 3 : coder ou tester le traitement numérique des populations `82801531, 3063320 et la ligne invalide `POPULATION="invalide"``, puis contrôler sélection vide avant tri numérique ou sélection vide.
 - Étape 4 : coder ou tester tri par continent puis population à partir de lignes regroupées par CONTINENT, puis contrôler continent absent.
 ## Tests attendus
 - Test nominal : donnée ordinaire issue du premier exemple.
@@ -83,24 +83,24 @@ Un extrait CSV de pays contient `PAYS`, `CAPITALE`, `CONTINENT`, `POPULATION`. I
 - Test invalide : type ou valeur explicitement refusé par la spécification.
 ## Exercices numérotés
 - Exercice 1 : résoudre la lecture CSV de `Allemagne,Berlin,Europe,82801531` ; attendu : dictionnaire typé.
-- Exercice 2 : expliquer le filtrage Europe sur Allemagne, Albanie, Brésil ; attendu : deux lignes européennes sélectionnées.
-- Exercice 3 : comparer le traitement numérique des populations des populations Allemagne, Albanie, Andorre ; attendu : `85942132`.
+- Exercice 2 : expliquer le filtrage Europe sur Allemagne, Albanie, Brésil ; attendu : `["Allemagne", "Albanie"]`.
+- Exercice 3 : comparer le traitement numérique des populations des populations Allemagne, Albanie, Andorre ; attendu : `valides = ["Allemagne", "Albanie", "Brésil"]` et `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]`.
 - Exercice 4 : corriger tri par continent puis population pour lignes regroupées par CONTINENT ; attendu : dans le groupe Europe : Allemagne `(82801531)` avant Albanie `(3063320)`, puis les autres continents selon `CONTINENT`.
 - Exercice 5 : tester un cas limite lié à fichier pays_monde.csv vide ; attendu : un fichier avec seulement l’en-tête `PAYS,CAPITALE,CONTINENT,POPULATION` donne une liste vide de pays.
 - Exercice 6 : classer deux méthodes possibles pour filtrage ; attendu : la méthode `csv.DictReader` est choisie pour accéder à `row["CONTINENT"]` sans indice fragile.
-- Exercice 7 : justifier un transfert qui utilise traitement numérique des populations avec une donnée nouvelle ; attendu : sur `Espagne,Madrid,Europe,46,754,778`, `int(row["POPULATION"])` donne `46,754,778` et la ligne reste dans Europe.
+- Exercice 7 : justifier un transfert qui utilise traitement numérique des populations avec une donnée nouvelle ; attendu : sur `Espagne,Madrid,Europe,46754778`, `int(row["POPULATION"])` donne `46754778` et la ligne reste dans Europe.
 - Exercice 8 : étendre un énoncé volontairement erroné sur tri par continent puis population ; attendu : l’erreur est le tri de chaînes ; réparation : convertir puis utiliser la clé `(CONTINENT, -POPULATION, PAYS)`.
 
 ## Corrigés complets des exercices du cours
 - Corrigé exercice 1 : méthode : identifier `PAYS,CAPITALE,CONTINENT,POPULATION
 Allemagne,Berlin,Europe,82801531`, appliquer la méthode « lire avec csv.reader puis convertir POPULATION en int », puis écrire `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}` ; résultat : `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}` ; contrôle : faire apparaître le contrôle « fichier pays_monde.csv vide ».
-- Corrigé exercice 2 : méthode : expliciter chaque étape de conserver les lignes dont CONTINENT vaut Europe avant de conclure par deux lignes européennes sélectionnées ; résultat : deux lignes européennes sélectionnées ; contrôle : rédiger la méthode avant le résultat.
-- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider le rejet de la ligne invalide avant conversion ; résultat : ligne invalide isolée avant conversion ; contrôle : comparer avec le cas « sélection vide avant tri numérique ».
+- Corrigé exercice 2 : méthode : expliciter chaque étape de conserver les lignes dont CONTINENT vaut Europe avant de conclure par `["Allemagne", "Albanie"]` ; résultat : `["Allemagne", "Albanie"]` ; contrôle : rédiger la méthode avant le résultat.
+- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider le rejet de la ligne invalide avant conversion ; résultat : `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]` ; contrôle : comparer avec le cas « sélection vide avant tri numérique ».
 - Corrigé exercice 4 : méthode : isoler l’erreur fréquente « Ignorer silencieusement une ligne mal formée. » puis reprendre la procédure correcte ; résultat : dans le groupe Europe : Allemagne `(82801531)` avant Albanie `(3063320)`, puis les autres continents selon `CONTINENT` ; contrôle : corriger l’erreur « Ignorer silencieusement une ligne mal formée. ».
 - Corrigé exercice 5 : méthode : identifier `PAYS,CAPITALE,CONTINENT,POPULATION
 Allemagne,Berlin,Europe,82801531`, appliquer la méthode « lire avec csv.reader puis convertir POPULATION en int », puis écrire `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}` ; résultat : un fichier avec seulement l’en-tête `PAYS,CAPITALE,CONTINENT,POPULATION` donne une liste vide de pays ; contrôle : nommer la donnée minimale et la conclusion.
-- Corrigé exercice 6 : méthode : expliciter chaque étape de conserver les lignes dont CONTINENT vaut Europe avant de conclure par deux lignes européennes sélectionnées ; résultat : la méthode `csv.DictReader` est choisie pour accéder à `row["CONTINENT"]` sans indice fragile ; contrôle : identifier pourquoi « Comparer une valeur numérique restée chaîne. » est une erreur.
-- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider le rejet de la ligne invalide avant conversion ; résultat : sur `Espagne,Madrid,Europe,46,754,778`, `int(row["POPULATION"])` donne `46,754,778` et la ligne reste dans Europe ; contrôle : inclure une étape calculable par un pair.
+- Corrigé exercice 6 : méthode : expliciter chaque étape de conserver les lignes dont CONTINENT vaut Europe avant de conclure par `["Allemagne", "Albanie"]` ; résultat : la méthode `csv.DictReader` est choisie pour accéder à `row["CONTINENT"]` sans indice fragile ; contrôle : identifier pourquoi « Comparer une valeur numérique restée chaîne. » est une erreur.
+- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider le rejet de la ligne invalide avant conversion ; résultat : sur `Espagne,Madrid,Europe,46754778`, `int(row["POPULATION"])` donne `46754778` et la ligne reste dans Europe ; contrôle : inclure une étape calculable par un pair.
 - Corrigé exercice 8 : méthode : isoler l’erreur fréquente « Ignorer silencieusement une ligne mal formée. » puis reprendre la procédure correcte ; résultat : l’erreur est le tri de chaînes ; réparation : convertir puis utiliser la clé `(CONTINENT, -POPULATION, PAYS)` ; contrôle : proposer une activité corrective inspirée de « Isoler les lignes invalides dans une liste de rejets. ».
 
 ## Erreurs fréquentes
@@ -145,3 +145,16 @@ Allemagne,Berlin,Europe,82801531` avec une fiche méthode fournie.
 - Tri lexicographique : `sorted(["100", "20", "3"])` donne `"100", "20", "3"`; ce n’est pas un tri numérique.
 - Tri numérique : `sorted([100, 20, 3])` donne `3, 20, 100`.
 - Tri par continent puis population : la clé `(row["CONTINENT"], -row["POPULATION"], row["PAYS"])` classe d’abord par continent, puis par population décroissante.
+
+
+## Pipeline contrôlé P05
+1. Charger avec `csv.DictReader`.
+2. Convertir `POPULATION` avec `int(row["POPULATION"])`.
+3. Séparer `valides` et `erreurs`.
+4. Filtrer les lignes valides par `CONTINENT`.
+5. Trier les lignes valides par `CONTINENT` puis `POPULATION`.
+
+Résultats attendus sur l’extrait de référence :
+- `valides = ["Allemagne", "Albanie", "Brésil"]`.
+- `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]`.
+- `Europe valide = ["Allemagne", "Albanie"]`.

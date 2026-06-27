@@ -47,8 +47,6 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md: nom propre suspect -> Filtrage Europe
-- 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv: nom propre suspect -> Andorre La Vieille
-- 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv: nom propre suspect -> Saint-Jean
 - 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md: nom propre suspect -> Trame Ethernet
 - 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md: nom propre suspect -> Trame Ethernet
 - 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md: nom propre suspect -> Time Exceeded
@@ -356,4 +354,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/code/T00_corrige_professeur_diagnostic_tests.py: nom propre suspect -> Asset Python
-- ... 122 alertes supplémentaires non affichées
+- ... 124 alertes supplémentaires non affichées

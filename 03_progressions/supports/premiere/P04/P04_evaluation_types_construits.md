@@ -66,8 +66,8 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 ### Question 3
 - Objectif évalué : O3.
 - Capacité officielle : P-DATA-CONSTR-02A.
-- Énoncé : comparer dictionnaire avec `{"temp": 21, "vent": 12}`.
-- Réponse attendue : `21` pour `temp`.
+- Énoncé : comparer dictionnaire avec `{"temperature": 21, "vent": 12}`.
+- Réponse attendue : `21` pour `temperature`.
 - Critère de réussite : méthode visible, résultat correct et contrôle « clé absente ».
 ### Question 4
 - Objectif évalué : O4.
@@ -106,12 +106,12 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 
 ## Question complémentaire - structures combinées
 ### Question 5
-- Données : `stations = [{"nom": "A", "coord": (0, 4), "temp": 21}, {"nom": "B", "coord": (6, 10), "temp": 18}]`.
+- Données : `stations = [{"nom": "A", "coord": (0, 4), "temperature": 21}, {"nom": "B", "coord": (6, 10), "temperature": 18}]`.
 - Travail : expliquer le rôle du tuple, de la liste et du dictionnaire dans cette donnée, puis calculer le milieu des deux coordonnées.
 
 ### Corrigé question 5
 - Tuple : chaque `coord` est un couple immuable.
-- Dictionnaire : chaque station associe les clés `nom`, `coord`, `temp` à des valeurs.
+- Dictionnaire : chaque station associe les clés `nom`, `coord`, `temperature` à des valeurs.
 - Liste : `stations` rassemble plusieurs dictionnaires et se parcourt.
 - Résultat attendu : le milieu est `((0+6)/2, (4+10)/2) = (3.0, 7.0)`.
 - Contrôle : le résultat est un tuple numérique de deux coordonnées.
@@ -132,7 +132,7 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 2.
 - Critère de validation : méthode visible, résultat correct et contrôle « liste vide ».
 ### Corrigé question 3
-- Résultat attendu : `21` pour `temp`.
+- Résultat attendu : `21` pour `temperature`.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 3.
 - Critère de validation : méthode visible, résultat correct et contrôle « clé absente ».
 ### Corrigé question 4

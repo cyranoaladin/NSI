@@ -68,9 +68,9 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Résultat obtenu : `19`.
 - Contrôle : le cas limite « liste vide » est vérifié séparément.
 ### Exemple corrigé 3 - dictionnaire
-- Donnée étudiée : `{"temp": 21, "vent": 12}`.
+- Donnée étudiée : `{"temperature": 21, "vent": 12}`.
 - Méthode : tester la présence de la clé avant lecture.
-- Résultat obtenu : `21` pour `temp`.
+- Résultat obtenu : `21` pour `temperature`.
 - Contrôle : le cas limite « clé absente » est vérifié séparément.
 ### Exemple corrigé 4 - copie de liste
 - Donnée étudiée : `[[1], [2]]`.
@@ -97,10 +97,10 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Mini-production : produire une procédure numérotée avec contrôle intermédiaire.
 ## Objectif O3 - Justifier le résultat sur un cas différent
 - Capacité mobilisée : P-DATA-CONSTR-02A.
-- Point de départ : `{"temp": 21, "vent": 12}`.
+- Point de départ : `{"temperature": 21, "vent": 12}`.
 - Angle disciplinaire : transfert argumenté autour de dictionnaire.
 - Démarche attendue : tester la présence de la clé avant lecture.
-- Exemple associé : `21` pour `temp`.
+- Exemple associé : `21` pour `temperature`.
 - Point de vigilance : Accéder à une clé sans vérifier sa présence.
 - Activité de reprise associée : Tester `cle in dictionnaire` avant la lecture.
 - Mini-production : produire une justification qui compare deux cas distincts.
@@ -116,7 +116,7 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 ## Exercices numérotés
 - Exercice 1 : résoudre tuple de coordonnées avec `(36.8, 10.2)` ; attendu : coordonnées conservées.
 - Exercice 2 : expliquer liste de relevés à partir de `[18, 20, 19]` ; attendu : `19`.
-- Exercice 3 : comparer dictionnaire avec `{"temp": 21, "vent": 12}` ; attendu : `21` pour `temp`.
+- Exercice 3 : comparer dictionnaire avec `{"temperature": 21, "vent": 12}` ; attendu : `21` pour `temperature`.
 - Exercice 4 : corriger copie de liste pour `[[1], [2]]` ; attendu : modification locale contrôlée.
 - Exercice 5 : tester un cas limite lié à tentative de modification interdite ; attendu : le comportement de tuple de coordonnées est contrôlé.
 - Exercice 6 : classer deux méthodes possibles pour liste de relevés ; attendu : la méthode robuste est choisie et justifiée.
@@ -125,11 +125,11 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 ## Corrigés complets des exercices du cours
 - Corrigé exercice 1 : méthode : identifier `(36.8, 10.2)`, appliquer la méthode « lire sans modifier et nommer latitude puis longitude », puis écrire coordonnées conservées ; résultat : coordonnées conservées ; contrôle : faire apparaître le contrôle « tentative de modification interdite ».
 - Corrigé exercice 2 : méthode : expliciter chaque étape de parcourir les valeurs et calculer une moyenne avant de conclure par `19` ; résultat : `19` ; contrôle : rédiger la méthode avant le résultat.
-- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temp` ; résultat : `21` pour `temp` ; contrôle : comparer avec le cas « clé absente ».
+- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temperature` ; résultat : `21` pour `temperature` ; contrôle : comparer avec le cas « clé absente ».
 - Corrigé exercice 4 : méthode : isoler l’erreur fréquente « Copier une liste imbriquée seulement au premier niveau. » puis reprendre la procédure correcte ; résultat : modification locale contrôlée ; contrôle : corriger l’erreur « Copier une liste imbriquée seulement au premier niveau. ».
 - Corrigé exercice 5 : méthode : identifier `(36.8, 10.2)`, appliquer la méthode « lire sans modifier et nommer latitude puis longitude », puis écrire coordonnées conservées ; résultat : le comportement de tuple de coordonnées est contrôlé ; contrôle : nommer la donnée minimale et la conclusion.
 - Corrigé exercice 6 : méthode : expliciter chaque étape de parcourir les valeurs et calculer une moyenne avant de conclure par `19` ; résultat : la méthode robuste est choisie et justifiée ; contrôle : identifier pourquoi « Parcourir les indices quand les valeurs suffisent. » est une erreur.
-- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temp` ; résultat : la justification reste valable sur le nouveau cas ; contrôle : inclure une étape calculable par un pair.
+- Corrigé exercice 7 : méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temperature` ; résultat : la justification reste valable sur le nouveau cas ; contrôle : inclure une étape calculable par un pair.
 - Corrigé exercice 8 : méthode : isoler l’erreur fréquente « Copier une liste imbriquée seulement au premier niveau. » puis reprendre la procédure correcte ; résultat : l’erreur est localisée puis réparée ; contrôle : proposer une activité corrective inspirée de « Modifier une sous-liste et observer l’effet sur la copie. ».
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Modifier un tuple comme une liste.

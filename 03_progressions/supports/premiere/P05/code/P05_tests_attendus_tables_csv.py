@@ -35,8 +35,11 @@ def test_nominal() -> None:
         loaded = charger_pays_csv(str(path))
     assert loaded[0]["PAYS"] == "Allemagne"
     assert loaded[0]["CAPITALE"] == "Berlin"
-    result = filtrer_par_continent(EXTRAIT, "Europe")
-    assert [row["PAYS"] for row in result] == ["Allemagne", "Albanie", "Erreur"]
+    valides, erreurs = convertir_populations(EXTRAIT)
+    assert [row["PAYS"] for row in erreurs] == ["Erreur"]
+    assert [row["PAYS"] for row in valides] == ["Allemagne", "Albanie", "Brésil"]
+    europe = filtrer_par_continent(valides, "Europe")
+    assert [row["PAYS"] for row in europe] == ["Allemagne", "Albanie"]
 
 def test_limite() -> None:
     valides, erreurs = convertir_populations(EXTRAIT)
