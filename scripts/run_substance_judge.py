@@ -26,6 +26,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 import yaml
+from collections.abc import Sequence
 
 from check_substance_anchors import parse_sections, load_official_labels
 
@@ -112,25 +113,6 @@ def build_user_message(repo_root: Path, unit: str, level: str,
     return "\n".join(out)
 
 
-def call_judge(system_prompt: str, user_message: str, model: str) -> dict:
-    """Appel du modèle juge. À brancher sur l'API Anthropic.
-
-    Exemple (décommenter et installer anthropic) :
-
-        from anthropic import Anthropic
-        client = Anthropic()
-        resp = client.messages.create(
-            model=model, max_tokens=4000,
-            system=system_prompt,
-            messages=[{"role": "user", "content": user_message}],
-        )
-        raw = "".join(b.text for b in resp.content if b.type == "text")
-        return json.loads(raw)
-    """
-    raise NotImplementedError(
-        "Brancher call_judge sur l'API. Utiliser --dry-run pour le prompt seul.")
-
-
 def first_quote(section_body: str) -> str:
     for raw in section_body.splitlines():
         line = raw.strip().lstrip("- ").strip()
@@ -147,7 +129,7 @@ def first_section(path: Path) -> tuple[str, str]:
     return f"#{slug}", first_quote(section.body)
 
 
-def proof_from(paths: list[Path], repo: Path, keywords: tuple[str, ...]) -> dict:
+def proof_from(paths: list[Path], repo: Path, keywords: Sequence[str]) -> dict:
     for path in paths:
         lower = path.name.lower()
         if any(keyword in lower for keyword in keywords):
