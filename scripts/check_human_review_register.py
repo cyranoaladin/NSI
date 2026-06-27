@@ -59,6 +59,8 @@ def manifest_major_resources(root: Path = ROOT) -> dict[str, dict[str, str]]:
             path = row.get("chemin") or row.get("path") or ""
             if not path.startswith("03_progressions/"):
                 continue
+            if path.endswith("_substance_review.json"):
+                continue
             if not (path.endswith(".md") or path.endswith(".json") or path.endswith(".py") or path.endswith(".yml")):
                 continue
             resource_type = row.get("type", "")
