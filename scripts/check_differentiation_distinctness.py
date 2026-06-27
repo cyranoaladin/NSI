@@ -37,7 +37,7 @@ def normalize(text: str) -> str:
 
 
 def nearest_standard(version_path: Path) -> Path | None:
-    seq = version_path.name[:3]
+    seq = version_path.parent.name
     base = version_path.parent
     candidates = [
         path for path in base.glob(f"{seq}_*.md")
