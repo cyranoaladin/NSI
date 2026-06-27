@@ -30,6 +30,7 @@ IGNORED_DIRS = {
     '.ipynb_checkpoints',
     'build',
     'dist',
+    'AUDIT',
 }
 
 IGNORED_SUFFIXES = {

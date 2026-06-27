@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "P05",
+  "level": "premiere",
+  "judged_at": "2026-06-27T22:15:59Z",
+  "judge_model": "deterministic-substance-prejudge",
+  "author_model": "codex-authoring-agent",
+  "capacities": [
+    {
+      "capacity_id": "P-TABLE-01",
+      "official_label": "Importer une table depuis un fichier texte tabulé ou un fichier CSV.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P05/P05_cours_tables_csv.md",
+        "anchor": "#p05---cours---tables-csv",
+        "quote": "Objectif O1 - Identifier précisément la représentation ou la structure en jeu.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P05/P05_td_tables_csv.md",
+        "anchor": "#p05---td---tables-csv",
+        "quote": "Objectif O1 - Identifier précisément la représentation ou la structure en jeu.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P05/P05_corrige_tables_csv.md",
+        "anchor": "#p05---corrigé-professeur---tables-csv",
+        "quote": "Objectif O1 - Identifier précisément la représentation ou la structure en jeu.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "verdict": "needs_content",
+      "justification": "Pré-jugement mécanique : les ancres existent mais aucune validation humaine n'est déclarée.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    },
+    {
+      "capacity_id": "P-TABLE-02",
+      "official_label": "Rechercher les lignes d'une table vérifiant des critères exprimés en logique propositionnelle.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P05/P05_cours_tables_csv.md",
+        "anchor": "#p05---cours---tables-csv",
+        "quote": "Objectif O1 - Identifier précisément la représentation ou la structure en jeu.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P05/P05_td_tables_csv.md",
+        "anchor": "#p05---td---tables-csv",
+        "quote": "Objectif O1 - Identifier précisément la représentation ou la structure en jeu.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P05/P05_corrige_tables_csv.md",
+        "anchor": "#p05---corrigé-professeur---tables-csv",
+        "quote": "Objectif O1 - Identifier précisément la représentation ou la structure en jeu.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "verdict": "needs_content",
+      "justification": "Pré-jugement mécanique : les ancres existent mais aucune validation humaine n'est déclarée.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

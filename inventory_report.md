@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 813
+- Total ressources : 838
 - Ressources pédagogiques : 53
-- Ressources techniques : 760
+- Ressources techniques : 785
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 805
+- generated: 830
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 301
-- premiere: 230
-- terminale: 282
+- interne: 318
+- premiere: 232
+- terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 469
+- document: 483
 - python: 84
-- script: 157
+- script: 167
 - sequence: 45
-- test: 44
+- test: 45
 
 ## Répartition par statut
-- needs_review: 813
+- needs_review: 838
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 613
+- mixte: 638
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -204,6 +204,7 @@
   - 03_progressions/supports/premiere/P05/P05_remediation_tables_csv.md
   - 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md
   - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md
+  - 03_progressions/supports/premiere/P05/_substance_review.json
   - 03_progressions/supports/premiere/P05/code/P05_corrige_professeur_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
@@ -216,6 +217,7 @@
   - 03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md
   - 03_progressions/supports/premiere/P06/P06_trace_tables_recherche_tri_fusion.md
   - 03_progressions/supports/premiere/P06/P06_version_amenagee_tables_recherche_tri_fusion.md
+  - 03_progressions/supports/premiere/P06/_substance_review.json
   - 03_progressions/supports/premiere/P06/code/P06_corrige_professeur_tables_recherche_tri_fusion.py
   - 03_progressions/supports/premiere/P06/code/P06_starter_tables_recherche_tri_fusion.py
   - 03_progressions/supports/premiere/P06/code/P06_tests_attendus_tables_recherche_tri_fusion.py
@@ -395,6 +397,7 @@
   - 03_progressions/supports/terminale/T06/T06_tp_arbres_binaires_recherche.md
   - 03_progressions/supports/terminale/T06/T06_trace_arbres_binaires_recherche.md
   - 03_progressions/supports/terminale/T06/T06_version_amenagee_arbres_binaires_recherche.md
+  - 03_progressions/supports/terminale/T06/_substance_review.json
   - 03_progressions/supports/terminale/T06/code/T06_corrige_professeur_arbres_binaires_recherche.py
   - 03_progressions/supports/terminale/T06/code/T06_starter_arbres_binaires_recherche.py
   - 03_progressions/supports/terminale/T06/code/T06_tests_attendus_arbres_binaires_recherche.py
@@ -408,6 +411,7 @@
   - 03_progressions/supports/terminale/T07/T07_tp_graphes_modelisation_listes_matrices.md
   - 03_progressions/supports/terminale/T07/T07_trace_graphes_modelisation_listes_matrices.md
   - 03_progressions/supports/terminale/T07/T07_version_amenagee_graphes_modelisation_listes_matrices.md
+  - 03_progressions/supports/terminale/T07/_substance_review.json
   - 03_progressions/supports/terminale/T07/code/T07_corrige_professeur_graphes_modelisation_listes_matrices.py
   - 03_progressions/supports/terminale/T07/code/T07_starter_graphes_modelisation_listes_matrices.py
   - 03_progressions/supports/terminale/T07/code/T07_tests_attendus_graphes_modelisation_listes_matrices.py
@@ -421,6 +425,7 @@
   - 03_progressions/supports/terminale/T08/T08_tp_bfs_dfs_cycles_chemins.md
   - 03_progressions/supports/terminale/T08/T08_trace_bfs_dfs_cycles_chemins.md
   - 03_progressions/supports/terminale/T08/T08_version_amenagee_bfs_dfs_cycles_chemins.md
+  - 03_progressions/supports/terminale/T08/_substance_review.json
   - 03_progressions/supports/terminale/T08/code/T08_corrige_professeur_bfs_dfs_cycles_chemins.py
   - 03_progressions/supports/terminale/T08/code/T08_starter_bfs_dfs_cycles_chemins.py
   - 03_progressions/supports/terminale/T08/code/T08_tests_attendus_bfs_dfs_cycles_chemins.py
@@ -447,6 +452,7 @@
   - 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md
   - 03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md
   - 03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md
+  - 03_progressions/supports/terminale/T10/_substance_review.json
   - 03_progressions/supports/terminale/T10/code/T10_corrige_professeur_sql_select_where_join.py
   - 03_progressions/supports/terminale/T10/code/T10_starter_sql_select_where_join.py
   - 03_progressions/supports/terminale/T10/code/T10_tests_attendus_sql_select_where_join.py
@@ -519,6 +525,7 @@
   - 03_progressions/supports/terminale/T17/T17_tp_programmation_dynamique.md
   - 03_progressions/supports/terminale/T17/T17_trace_programmation_dynamique.md
   - 03_progressions/supports/terminale/T17/T17_version_amenagee_programmation_dynamique.md
+  - 03_progressions/supports/terminale/T17/_substance_review.json
   - 03_progressions/supports/terminale/T17/code/T17_corrige_professeur_programmation_dynamique.py
   - 03_progressions/supports/terminale/T17/code/T17_starter_programmation_dynamique.py
   - 03_progressions/supports/terminale/T17/code/T17_tests_attendus_programmation_dynamique.py
@@ -531,6 +538,7 @@
   - 03_progressions/supports/terminale/T18/T18_tp_boyer_moore.md
   - 03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md
   - 03_progressions/supports/terminale/T18/T18_version_amenagee_boyer_moore.md
+  - 03_progressions/supports/terminale/T18/_substance_review.json
   - 03_progressions/supports/terminale/T18/code/T18_corrige_professeur_boyer_moore.py
   - 03_progressions/supports/terminale/T18/code/T18_starter_boyer_moore.py
   - 03_progressions/supports/terminale/T18/code/T18_tests_attendus_boyer_moore.py
@@ -549,7 +557,9 @@
   - bank_strategy.md
   - calendar_2026_2027_tunisia.md
   - carnet_de_bord.md
+  - content_tree_policy.md
   - course_internal_coherence_report.md
+  - coverage_sources.md
   - delivery_policy.md
   - differentiation_quality_report.md
   - drive_inventory.csv
@@ -611,6 +621,7 @@
   - project_plan_premiere.md
   - project_plan_terminale.md
   - qa_debt_register.md
+  - qa_gate_policy.md
   - qa_report.md
   - reports/drive_enrichment_report.md
   - scientific_claims_review_report.md
@@ -621,15 +632,19 @@
   - scripts/_pedagogy_reports.py
   - scripts/_qa_common.py
   - scripts/_session_checks.py
+  - scripts/_supports_evidence.py
   - scripts/build_all.py
   - scripts/build_source_archive.py
   - scripts/build_source_zip.py
   - scripts/check_archive_portability.py
   - scripts/check_audit_extracted_runtime_budget.py
+  - scripts/check_audit_folder_policy.py
   - scripts/check_bank_strategy.py
   - scripts/check_boyer_moore_trace_consistency.py
   - scripts/check_build_reports_freshness.py
   - scripts/check_capacity_status_ladder.py
+  - scripts/check_content_tree_policy.py
+  - scripts/check_contract_substance_quality.py
   - scripts/check_corrected_answers_are_concrete.py
   - scripts/check_course_explanatory_quality.py
   - scripts/check_course_internal_coherence.py
@@ -645,6 +660,7 @@
   - scripts/check_coverage_evidence.py
   - scripts/check_csv_numeric_fields_are_parseable.py
   - scripts/check_delivered_archive_exactly_source_clean.py
+  - scripts/check_differentiation_distinctness.py
   - scripts/check_differentiation_quality.py
   - scripts/check_document_depth.py
   - scripts/check_document_naming_conventions.py
@@ -665,6 +681,7 @@
   - scripts/check_first_batch_tp_assets.py
   - scripts/check_full_notional_resource_matrix.py
   - scripts/check_full_sequence_resource_matrix.py
+  - scripts/check_gate_policy_consistency.py
   - scripts/check_generated_template_residue.py
   - scripts/check_git_clean.py
   - scripts/check_graph_algorithm_trace_consistency.py
@@ -728,6 +745,7 @@
   - scripts/check_ready_supports_depth.py
   - scripts/check_ready_supports_required_sections.py
   - scripts/check_register_no_hidden_operational_debt.py
+  - scripts/check_rendered_unit_artifacts.py
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_capacity_alignment.py
@@ -747,6 +765,7 @@
   - scripts/check_session_week_calendar_consistency.py
   - scripts/check_sql_query_result_consistency.py
   - scripts/check_student_supports_no_scaffold_language.py
+  - scripts/check_substance_anchors.py
   - scripts/check_support_pedagogical_depth.py
   - scripts/check_support_substance.py
   - scripts/check_t18_trace_table_quality.py
@@ -770,7 +789,12 @@
   - scripts/ingest_drive_export.py
   - scripts/rebuild_inventory.py
   - scripts/render_sequence.py
+  - scripts/render_unit.py
   - scripts/run_python_tests.py
+  - scripts/run_substance_judge.py
+  - substance_reviews/_adversarial/poisoned.verdict.json
+  - substance_reviews_index.md
+  - substance_verdict.schema.json
   - support_source_trace.yml
   - td_corrige_alignment_report.md
   - terminale/banques/evaluations/index.md
@@ -804,6 +828,7 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
   - tests/test_archive_portability_modes.py
   - tests/test_audit_extracted_source_no_hang.py
+  - tests/test_audit_strategic_integration.py
   - tests/test_build_artifacts.py
   - tests/test_consolidation_strict.py
   - tests/test_course_sheets.py
@@ -1070,6 +1095,7 @@
   - 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md
   - 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md
   - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md
+  - 03_progressions/supports/premiere/P05/_substance_review.json
   - 03_progressions/supports/premiere/P05/code/P05_corrige_professeur_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
@@ -1083,6 +1109,7 @@
   - 03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md
   - 03_progressions/supports/premiere/P06/P06_trace_tables_recherche_tri_fusion.md
   - 03_progressions/supports/premiere/P06/P06_version_amenagee_tables_recherche_tri_fusion.md
+  - 03_progressions/supports/premiere/P06/_substance_review.json
   - 03_progressions/supports/premiere/P06/code/P06_corrige_professeur_tables_recherche_tri_fusion.py
   - 03_progressions/supports/premiere/P06/code/P06_starter_tables_recherche_tri_fusion.py
   - 03_progressions/supports/premiere/P06/code/P06_tests_attendus_tables_recherche_tri_fusion.py
@@ -1262,6 +1289,7 @@
   - 03_progressions/supports/terminale/T06/T06_tp_arbres_binaires_recherche.md
   - 03_progressions/supports/terminale/T06/T06_trace_arbres_binaires_recherche.md
   - 03_progressions/supports/terminale/T06/T06_version_amenagee_arbres_binaires_recherche.md
+  - 03_progressions/supports/terminale/T06/_substance_review.json
   - 03_progressions/supports/terminale/T06/code/T06_corrige_professeur_arbres_binaires_recherche.py
   - 03_progressions/supports/terminale/T06/code/T06_starter_arbres_binaires_recherche.py
   - 03_progressions/supports/terminale/T06/code/T06_tests_attendus_arbres_binaires_recherche.py
@@ -1275,6 +1303,7 @@
   - 03_progressions/supports/terminale/T07/T07_tp_graphes_modelisation_listes_matrices.md
   - 03_progressions/supports/terminale/T07/T07_trace_graphes_modelisation_listes_matrices.md
   - 03_progressions/supports/terminale/T07/T07_version_amenagee_graphes_modelisation_listes_matrices.md
+  - 03_progressions/supports/terminale/T07/_substance_review.json
   - 03_progressions/supports/terminale/T07/code/T07_corrige_professeur_graphes_modelisation_listes_matrices.py
   - 03_progressions/supports/terminale/T07/code/T07_starter_graphes_modelisation_listes_matrices.py
   - 03_progressions/supports/terminale/T07/code/T07_tests_attendus_graphes_modelisation_listes_matrices.py
@@ -1288,6 +1317,7 @@
   - 03_progressions/supports/terminale/T08/T08_tp_bfs_dfs_cycles_chemins.md
   - 03_progressions/supports/terminale/T08/T08_trace_bfs_dfs_cycles_chemins.md
   - 03_progressions/supports/terminale/T08/T08_version_amenagee_bfs_dfs_cycles_chemins.md
+  - 03_progressions/supports/terminale/T08/_substance_review.json
   - 03_progressions/supports/terminale/T08/code/T08_corrige_professeur_bfs_dfs_cycles_chemins.py
   - 03_progressions/supports/terminale/T08/code/T08_starter_bfs_dfs_cycles_chemins.py
   - 03_progressions/supports/terminale/T08/code/T08_tests_attendus_bfs_dfs_cycles_chemins.py
@@ -1314,6 +1344,7 @@
   - 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md
   - 03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md
   - 03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md
+  - 03_progressions/supports/terminale/T10/_substance_review.json
   - 03_progressions/supports/terminale/T10/code/T10_corrige_professeur_sql_select_where_join.py
   - 03_progressions/supports/terminale/T10/code/T10_starter_sql_select_where_join.py
   - 03_progressions/supports/terminale/T10/code/T10_tests_attendus_sql_select_where_join.py
@@ -1386,6 +1417,7 @@
   - 03_progressions/supports/terminale/T17/T17_tp_programmation_dynamique.md
   - 03_progressions/supports/terminale/T17/T17_trace_programmation_dynamique.md
   - 03_progressions/supports/terminale/T17/T17_version_amenagee_programmation_dynamique.md
+  - 03_progressions/supports/terminale/T17/_substance_review.json
   - 03_progressions/supports/terminale/T17/code/T17_corrige_professeur_programmation_dynamique.py
   - 03_progressions/supports/terminale/T17/code/T17_starter_programmation_dynamique.py
   - 03_progressions/supports/terminale/T17/code/T17_tests_attendus_programmation_dynamique.py
@@ -1398,6 +1430,7 @@
   - 03_progressions/supports/terminale/T18/T18_tp_boyer_moore.md
   - 03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md
   - 03_progressions/supports/terminale/T18/T18_version_amenagee_boyer_moore.md
+  - 03_progressions/supports/terminale/T18/_substance_review.json
   - 03_progressions/supports/terminale/T18/code/T18_corrige_professeur_boyer_moore.py
   - 03_progressions/supports/terminale/T18/code/T18_starter_boyer_moore.py
   - 03_progressions/supports/terminale/T18/code/T18_tests_attendus_boyer_moore.py
@@ -1416,7 +1449,9 @@
   - bank_strategy.md
   - calendar_2026_2027_tunisia.md
   - carnet_de_bord.md
+  - content_tree_policy.md
   - course_internal_coherence_report.md
+  - coverage_sources.md
   - delivery_policy.md
   - differentiation_quality_report.md
   - drive_inventory.csv
@@ -1452,6 +1487,7 @@
   - project_plan_premiere.md
   - project_plan_terminale.md
   - qa_debt_register.md
+  - qa_gate_policy.md
   - qa_report.md
   - reports/drive_enrichment_report.md
   - scientific_claims_review_report.md
@@ -1462,15 +1498,19 @@
   - scripts/_pedagogy_reports.py
   - scripts/_qa_common.py
   - scripts/_session_checks.py
+  - scripts/_supports_evidence.py
   - scripts/build_all.py
   - scripts/build_source_archive.py
   - scripts/build_source_zip.py
   - scripts/check_archive_portability.py
   - scripts/check_audit_extracted_runtime_budget.py
+  - scripts/check_audit_folder_policy.py
   - scripts/check_bank_strategy.py
   - scripts/check_boyer_moore_trace_consistency.py
   - scripts/check_build_reports_freshness.py
   - scripts/check_capacity_status_ladder.py
+  - scripts/check_content_tree_policy.py
+  - scripts/check_contract_substance_quality.py
   - scripts/check_corrected_answers_are_concrete.py
   - scripts/check_course_explanatory_quality.py
   - scripts/check_course_internal_coherence.py
@@ -1486,6 +1526,7 @@
   - scripts/check_coverage_evidence.py
   - scripts/check_csv_numeric_fields_are_parseable.py
   - scripts/check_delivered_archive_exactly_source_clean.py
+  - scripts/check_differentiation_distinctness.py
   - scripts/check_differentiation_quality.py
   - scripts/check_document_depth.py
   - scripts/check_document_naming_conventions.py
@@ -1506,6 +1547,7 @@
   - scripts/check_first_batch_tp_assets.py
   - scripts/check_full_notional_resource_matrix.py
   - scripts/check_full_sequence_resource_matrix.py
+  - scripts/check_gate_policy_consistency.py
   - scripts/check_generated_template_residue.py
   - scripts/check_git_clean.py
   - scripts/check_graph_algorithm_trace_consistency.py
@@ -1569,6 +1611,7 @@
   - scripts/check_ready_supports_depth.py
   - scripts/check_ready_supports_required_sections.py
   - scripts/check_register_no_hidden_operational_debt.py
+  - scripts/check_rendered_unit_artifacts.py
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_capacity_alignment.py
@@ -1588,6 +1631,7 @@
   - scripts/check_session_week_calendar_consistency.py
   - scripts/check_sql_query_result_consistency.py
   - scripts/check_student_supports_no_scaffold_language.py
+  - scripts/check_substance_anchors.py
   - scripts/check_support_pedagogical_depth.py
   - scripts/check_support_substance.py
   - scripts/check_t18_trace_table_quality.py
@@ -1611,7 +1655,12 @@
   - scripts/ingest_drive_export.py
   - scripts/rebuild_inventory.py
   - scripts/render_sequence.py
+  - scripts/render_unit.py
   - scripts/run_python_tests.py
+  - scripts/run_substance_judge.py
+  - substance_reviews/_adversarial/poisoned.verdict.json
+  - substance_reviews_index.md
+  - substance_verdict.schema.json
   - support_source_trace.yml
   - td_corrige_alignment_report.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/python/structures_tools.py
@@ -1619,6 +1668,7 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tests/test_structures_tools.py
   - tests/test_archive_portability_modes.py
   - tests/test_audit_extracted_source_no_hang.py
+  - tests/test_audit_strategic_integration.py
   - tests/test_build_artifacts.py
   - tests/test_consolidation_strict.py
   - tests/test_course_sheets.py
@@ -1869,6 +1919,7 @@
 - 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md
 - 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md
 - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md
+- 03_progressions/supports/premiere/P05/_substance_review.json
 - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
 - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
 - 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv
@@ -1880,6 +1931,7 @@
 - 03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md
 - 03_progressions/supports/premiere/P06/P06_trace_tables_recherche_tri_fusion.md
 - 03_progressions/supports/premiere/P06/P06_version_amenagee_tables_recherche_tri_fusion.md
+- 03_progressions/supports/premiere/P06/_substance_review.json
 - 03_progressions/supports/premiere/P06/code/P06_starter_tables_recherche_tri_fusion.py
 - 03_progressions/supports/premiere/P06/code/P06_tests_attendus_tables_recherche_tri_fusion.py
 - 03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md
@@ -2031,6 +2083,7 @@
 - 03_progressions/supports/terminale/T06/T06_tp_arbres_binaires_recherche.md
 - 03_progressions/supports/terminale/T06/T06_trace_arbres_binaires_recherche.md
 - 03_progressions/supports/terminale/T06/T06_version_amenagee_arbres_binaires_recherche.md
+- 03_progressions/supports/terminale/T06/_substance_review.json
 - 03_progressions/supports/terminale/T06/code/T06_starter_arbres_binaires_recherche.py
 - 03_progressions/supports/terminale/T06/code/T06_tests_attendus_arbres_binaires_recherche.py
 - 03_progressions/supports/terminale/T07/T07_TD_graphes_modelisation_listes_matrices.md
@@ -2042,6 +2095,7 @@
 - 03_progressions/supports/terminale/T07/T07_tp_graphes_modelisation_listes_matrices.md
 - 03_progressions/supports/terminale/T07/T07_trace_graphes_modelisation_listes_matrices.md
 - 03_progressions/supports/terminale/T07/T07_version_amenagee_graphes_modelisation_listes_matrices.md
+- 03_progressions/supports/terminale/T07/_substance_review.json
 - 03_progressions/supports/terminale/T07/code/T07_starter_graphes_modelisation_listes_matrices.py
 - 03_progressions/supports/terminale/T07/code/T07_tests_attendus_graphes_modelisation_listes_matrices.py
 - 03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md
@@ -2053,6 +2107,7 @@
 - 03_progressions/supports/terminale/T08/T08_tp_bfs_dfs_cycles_chemins.md
 - 03_progressions/supports/terminale/T08/T08_trace_bfs_dfs_cycles_chemins.md
 - 03_progressions/supports/terminale/T08/T08_version_amenagee_bfs_dfs_cycles_chemins.md
+- 03_progressions/supports/terminale/T08/_substance_review.json
 - 03_progressions/supports/terminale/T08/code/T08_starter_bfs_dfs_cycles_chemins.py
 - 03_progressions/supports/terminale/T08/code/T08_tests_attendus_bfs_dfs_cycles_chemins.py
 - 03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md
@@ -2075,6 +2130,7 @@
 - 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md
 - 03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md
 - 03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md
+- 03_progressions/supports/terminale/T10/_substance_review.json
 - 03_progressions/supports/terminale/T10/code/T10_starter_sql_select_where_join.py
 - 03_progressions/supports/terminale/T10/code/T10_tests_attendus_sql_select_where_join.py
 - 03_progressions/supports/terminale/T11/T11_TD_processus_ordonnancement_interblocage.md
@@ -2137,6 +2193,7 @@
 - 03_progressions/supports/terminale/T17/T17_tp_programmation_dynamique.md
 - 03_progressions/supports/terminale/T17/T17_trace_programmation_dynamique.md
 - 03_progressions/supports/terminale/T17/T17_version_amenagee_programmation_dynamique.md
+- 03_progressions/supports/terminale/T17/_substance_review.json
 - 03_progressions/supports/terminale/T17/code/T17_starter_programmation_dynamique.py
 - 03_progressions/supports/terminale/T17/code/T17_tests_attendus_programmation_dynamique.py
 - 03_progressions/supports/terminale/T18/T18_TD_boyer_moore.md
@@ -2147,6 +2204,7 @@
 - 03_progressions/supports/terminale/T18/T18_tp_boyer_moore.md
 - 03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md
 - 03_progressions/supports/terminale/T18/T18_version_amenagee_boyer_moore.md
+- 03_progressions/supports/terminale/T18/_substance_review.json
 - 03_progressions/supports/terminale/T18/code/T18_starter_boyer_moore.py
 - 03_progressions/supports/terminale/T18/code/T18_tests_attendus_boyer_moore.py
 - 03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md
@@ -2163,7 +2221,9 @@
 - bank_strategy.md
 - calendar_2026_2027_tunisia.md
 - carnet_de_bord.md
+- content_tree_policy.md
 - course_internal_coherence_report.md
+- coverage_sources.md
 - delivery_policy.md
 - differentiation_quality_report.md
 - drive_inventory.csv
@@ -2222,6 +2282,7 @@
 - project_plan_premiere.md
 - project_plan_terminale.md
 - qa_debt_register.md
+- qa_gate_policy.md
 - qa_report.md
 - reports/drive_enrichment_report.md
 - scientific_claims_review_report.md
@@ -2232,15 +2293,19 @@
 - scripts/_pedagogy_reports.py
 - scripts/_qa_common.py
 - scripts/_session_checks.py
+- scripts/_supports_evidence.py
 - scripts/build_all.py
 - scripts/build_source_archive.py
 - scripts/build_source_zip.py
 - scripts/check_archive_portability.py
 - scripts/check_audit_extracted_runtime_budget.py
+- scripts/check_audit_folder_policy.py
 - scripts/check_bank_strategy.py
 - scripts/check_boyer_moore_trace_consistency.py
 - scripts/check_build_reports_freshness.py
 - scripts/check_capacity_status_ladder.py
+- scripts/check_content_tree_policy.py
+- scripts/check_contract_substance_quality.py
 - scripts/check_corrected_answers_are_concrete.py
 - scripts/check_course_explanatory_quality.py
 - scripts/check_course_internal_coherence.py
@@ -2256,6 +2321,7 @@
 - scripts/check_coverage_evidence.py
 - scripts/check_csv_numeric_fields_are_parseable.py
 - scripts/check_delivered_archive_exactly_source_clean.py
+- scripts/check_differentiation_distinctness.py
 - scripts/check_differentiation_quality.py
 - scripts/check_document_depth.py
 - scripts/check_document_naming_conventions.py
@@ -2276,6 +2342,7 @@
 - scripts/check_first_batch_tp_assets.py
 - scripts/check_full_notional_resource_matrix.py
 - scripts/check_full_sequence_resource_matrix.py
+- scripts/check_gate_policy_consistency.py
 - scripts/check_generated_template_residue.py
 - scripts/check_git_clean.py
 - scripts/check_graph_algorithm_trace_consistency.py
@@ -2339,6 +2406,7 @@
 - scripts/check_ready_supports_depth.py
 - scripts/check_ready_supports_required_sections.py
 - scripts/check_register_no_hidden_operational_debt.py
+- scripts/check_rendered_unit_artifacts.py
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
 - scripts/check_sequence_capacity_alignment.py
@@ -2358,6 +2426,7 @@
 - scripts/check_session_week_calendar_consistency.py
 - scripts/check_sql_query_result_consistency.py
 - scripts/check_student_supports_no_scaffold_language.py
+- scripts/check_substance_anchors.py
 - scripts/check_support_pedagogical_depth.py
 - scripts/check_support_substance.py
 - scripts/check_t18_trace_table_quality.py
@@ -2380,7 +2449,12 @@
 - scripts/ingest_drive_export.py
 - scripts/rebuild_inventory.py
 - scripts/render_sequence.py
+- scripts/render_unit.py
 - scripts/run_python_tests.py
+- scripts/run_substance_judge.py
+- substance_reviews/_adversarial/poisoned.verdict.json
+- substance_reviews_index.md
+- substance_verdict.schema.json
 - support_source_trace.yml
 - terminale/banques/evaluations/index.md
 - terminale/banques/exercices/index.md
@@ -2409,6 +2483,7 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
 - tests/test_archive_portability_modes.py
 - tests/test_audit_extracted_source_no_hang.py
+- tests/test_audit_strategic_integration.py
 - tests/test_build_artifacts.py
 - tests/test_consolidation_strict.py
 - tests/test_course_sheets.py
@@ -2625,6 +2700,7 @@
 - 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md
 - 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md
 - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md
+- 03_progressions/supports/premiere/P05/_substance_review.json
 - 03_progressions/supports/premiere/P05/code/P05_corrige_professeur_tables_csv.py
 - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
 - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
@@ -2638,6 +2714,7 @@
 - 03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md
 - 03_progressions/supports/premiere/P06/P06_trace_tables_recherche_tri_fusion.md
 - 03_progressions/supports/premiere/P06/P06_version_amenagee_tables_recherche_tri_fusion.md
+- 03_progressions/supports/premiere/P06/_substance_review.json
 - 03_progressions/supports/premiere/P06/code/P06_corrige_professeur_tables_recherche_tri_fusion.py
 - 03_progressions/supports/premiere/P06/code/P06_starter_tables_recherche_tri_fusion.py
 - 03_progressions/supports/premiere/P06/code/P06_tests_attendus_tables_recherche_tri_fusion.py
@@ -2817,6 +2894,7 @@
 - 03_progressions/supports/terminale/T06/T06_tp_arbres_binaires_recherche.md
 - 03_progressions/supports/terminale/T06/T06_trace_arbres_binaires_recherche.md
 - 03_progressions/supports/terminale/T06/T06_version_amenagee_arbres_binaires_recherche.md
+- 03_progressions/supports/terminale/T06/_substance_review.json
 - 03_progressions/supports/terminale/T06/code/T06_corrige_professeur_arbres_binaires_recherche.py
 - 03_progressions/supports/terminale/T06/code/T06_starter_arbres_binaires_recherche.py
 - 03_progressions/supports/terminale/T06/code/T06_tests_attendus_arbres_binaires_recherche.py
@@ -2830,6 +2908,7 @@
 - 03_progressions/supports/terminale/T07/T07_tp_graphes_modelisation_listes_matrices.md
 - 03_progressions/supports/terminale/T07/T07_trace_graphes_modelisation_listes_matrices.md
 - 03_progressions/supports/terminale/T07/T07_version_amenagee_graphes_modelisation_listes_matrices.md
+- 03_progressions/supports/terminale/T07/_substance_review.json
 - 03_progressions/supports/terminale/T07/code/T07_corrige_professeur_graphes_modelisation_listes_matrices.py
 - 03_progressions/supports/terminale/T07/code/T07_starter_graphes_modelisation_listes_matrices.py
 - 03_progressions/supports/terminale/T07/code/T07_tests_attendus_graphes_modelisation_listes_matrices.py
@@ -2843,6 +2922,7 @@
 - 03_progressions/supports/terminale/T08/T08_tp_bfs_dfs_cycles_chemins.md
 - 03_progressions/supports/terminale/T08/T08_trace_bfs_dfs_cycles_chemins.md
 - 03_progressions/supports/terminale/T08/T08_version_amenagee_bfs_dfs_cycles_chemins.md
+- 03_progressions/supports/terminale/T08/_substance_review.json
 - 03_progressions/supports/terminale/T08/code/T08_corrige_professeur_bfs_dfs_cycles_chemins.py
 - 03_progressions/supports/terminale/T08/code/T08_starter_bfs_dfs_cycles_chemins.py
 - 03_progressions/supports/terminale/T08/code/T08_tests_attendus_bfs_dfs_cycles_chemins.py
@@ -2869,6 +2949,7 @@
 - 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md
 - 03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md
 - 03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md
+- 03_progressions/supports/terminale/T10/_substance_review.json
 - 03_progressions/supports/terminale/T10/code/T10_corrige_professeur_sql_select_where_join.py
 - 03_progressions/supports/terminale/T10/code/T10_starter_sql_select_where_join.py
 - 03_progressions/supports/terminale/T10/code/T10_tests_attendus_sql_select_where_join.py
@@ -2941,6 +3022,7 @@
 - 03_progressions/supports/terminale/T17/T17_tp_programmation_dynamique.md
 - 03_progressions/supports/terminale/T17/T17_trace_programmation_dynamique.md
 - 03_progressions/supports/terminale/T17/T17_version_amenagee_programmation_dynamique.md
+- 03_progressions/supports/terminale/T17/_substance_review.json
 - 03_progressions/supports/terminale/T17/code/T17_corrige_professeur_programmation_dynamique.py
 - 03_progressions/supports/terminale/T17/code/T17_starter_programmation_dynamique.py
 - 03_progressions/supports/terminale/T17/code/T17_tests_attendus_programmation_dynamique.py
@@ -2953,6 +3035,7 @@
 - 03_progressions/supports/terminale/T18/T18_tp_boyer_moore.md
 - 03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md
 - 03_progressions/supports/terminale/T18/T18_version_amenagee_boyer_moore.md
+- 03_progressions/supports/terminale/T18/_substance_review.json
 - 03_progressions/supports/terminale/T18/code/T18_corrige_professeur_boyer_moore.py
 - 03_progressions/supports/terminale/T18/code/T18_starter_boyer_moore.py
 - 03_progressions/supports/terminale/T18/code/T18_tests_attendus_boyer_moore.py
@@ -2971,7 +3054,9 @@
 - bank_strategy.md
 - calendar_2026_2027_tunisia.md
 - carnet_de_bord.md
+- content_tree_policy.md
 - course_internal_coherence_report.md
+- coverage_sources.md
 - delivery_policy.md
 - differentiation_quality_report.md
 - drive_inventory.csv
@@ -3034,6 +3119,7 @@
 - project_plan_premiere.md
 - project_plan_terminale.md
 - qa_debt_register.md
+- qa_gate_policy.md
 - qa_report.md
 - reports/drive_enrichment_report.md
 - scientific_claims_review_report.md
@@ -3044,15 +3130,19 @@
 - scripts/_pedagogy_reports.py
 - scripts/_qa_common.py
 - scripts/_session_checks.py
+- scripts/_supports_evidence.py
 - scripts/build_all.py
 - scripts/build_source_archive.py
 - scripts/build_source_zip.py
 - scripts/check_archive_portability.py
 - scripts/check_audit_extracted_runtime_budget.py
+- scripts/check_audit_folder_policy.py
 - scripts/check_bank_strategy.py
 - scripts/check_boyer_moore_trace_consistency.py
 - scripts/check_build_reports_freshness.py
 - scripts/check_capacity_status_ladder.py
+- scripts/check_content_tree_policy.py
+- scripts/check_contract_substance_quality.py
 - scripts/check_corrected_answers_are_concrete.py
 - scripts/check_course_explanatory_quality.py
 - scripts/check_course_internal_coherence.py
@@ -3068,6 +3158,7 @@
 - scripts/check_coverage_evidence.py
 - scripts/check_csv_numeric_fields_are_parseable.py
 - scripts/check_delivered_archive_exactly_source_clean.py
+- scripts/check_differentiation_distinctness.py
 - scripts/check_differentiation_quality.py
 - scripts/check_document_depth.py
 - scripts/check_document_naming_conventions.py
@@ -3088,6 +3179,7 @@
 - scripts/check_first_batch_tp_assets.py
 - scripts/check_full_notional_resource_matrix.py
 - scripts/check_full_sequence_resource_matrix.py
+- scripts/check_gate_policy_consistency.py
 - scripts/check_generated_template_residue.py
 - scripts/check_git_clean.py
 - scripts/check_graph_algorithm_trace_consistency.py
@@ -3151,6 +3243,7 @@
 - scripts/check_ready_supports_depth.py
 - scripts/check_ready_supports_required_sections.py
 - scripts/check_register_no_hidden_operational_debt.py
+- scripts/check_rendered_unit_artifacts.py
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
 - scripts/check_sequence_capacity_alignment.py
@@ -3170,6 +3263,7 @@
 - scripts/check_session_week_calendar_consistency.py
 - scripts/check_sql_query_result_consistency.py
 - scripts/check_student_supports_no_scaffold_language.py
+- scripts/check_substance_anchors.py
 - scripts/check_support_pedagogical_depth.py
 - scripts/check_support_substance.py
 - scripts/check_t18_trace_table_quality.py
@@ -3193,7 +3287,12 @@
 - scripts/ingest_drive_export.py
 - scripts/rebuild_inventory.py
 - scripts/render_sequence.py
+- scripts/render_unit.py
 - scripts/run_python_tests.py
+- scripts/run_substance_judge.py
+- substance_reviews/_adversarial/poisoned.verdict.json
+- substance_reviews_index.md
+- substance_verdict.schema.json
 - support_source_trace.yml
 - td_corrige_alignment_report.md
 - terminale/banques/evaluations/index.md
@@ -3227,6 +3326,7 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
 - tests/test_archive_portability_modes.py
 - tests/test_audit_extracted_source_no_hang.py
+- tests/test_audit_strategic_integration.py
 - tests/test_build_artifacts.py
 - tests/test_consolidation_strict.py
 - tests/test_course_sheets.py
@@ -3273,7 +3373,15 @@
 - tp_test_alignment_report.md
 
 ## Métadonnées incomplètes
+- 03_progressions/supports/premiere/P05/_substance_review.json (niveau=premiere, statut=needs_review)
 - 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv (niveau=premiere, statut=needs_review)
+- 03_progressions/supports/premiere/P06/_substance_review.json (niveau=premiere, statut=needs_review)
+- 03_progressions/supports/terminale/T06/_substance_review.json (niveau=terminale, statut=needs_review)
+- 03_progressions/supports/terminale/T07/_substance_review.json (niveau=terminale, statut=needs_review)
+- 03_progressions/supports/terminale/T08/_substance_review.json (niveau=terminale, statut=needs_review)
+- 03_progressions/supports/terminale/T10/_substance_review.json (niveau=terminale, statut=needs_review)
+- 03_progressions/supports/terminale/T17/_substance_review.json (niveau=terminale, statut=needs_review)
+- 03_progressions/supports/terminale/T18/_substance_review.json (niveau=terminale, statut=needs_review)
 
 ## Doublons (même hash SHA256)
 - Groupe (2):

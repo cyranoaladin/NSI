@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Aggregate quality checks without hiding individual failures."""
+"""Run the documented blocking QA core.
+
+The repository still keeps many historical `check_*` scripts for metrics and
+diagnostics. This aggregate gate is intentionally limited to the documented
+blocking core in `qa_gate_policy.md`; broad counting checks remain callable
+directly but are no longer treated as proof of pedagogical validation.
+"""
 
 from __future__ import annotations
 
@@ -9,148 +15,37 @@ import shutil
 import subprocess
 import sys
 
+
 ROOT = Path(__file__).resolve().parents[1]
 PYTHON = sys.executable
 
-BLOCKING_CHECKS = [
-    "scripts/check_git_clean.py",
-    "scripts/check_metadata.py",
-    "scripts/check_links.py",
-    "scripts/check_no_private_data.py",
-    "scripts/check_no_placeholders_docs.py",
-    "scripts/check_no_placeholders_code.py",
-    "scripts/check_no_build_artifacts_in_index.py",
-    "scripts/check_uploaded_archive_policy.py",
-    "scripts/check_no_global_archive_in_delivery_context.py",
-    "scripts/check_qcm_schema.py",
-    "scripts/check_qcm_contract_consistency.py",
-    "scripts/check_progression_calendar_alignment.py",
-    "scripts/check_project_quarter_requirement.py",
-    "scripts/check_progression_project_consistency.py",
-    "scripts/check_monthly_load_balance.py",
-    "scripts/check_session_level_planning.py",
-    "scripts/check_session_duration_consistency.py",
-    "scripts/check_session_monthly_total.py",
-    "scripts/check_session_project_hours.py",
-    "scripts/check_session_week_calendar_consistency.py",
-    "scripts/check_session_specificity.py",
-    "scripts/check_session_referenced_files_exist.py",
-    "scripts/check_missing_register_actionability.py",
-    "scripts/check_missing_register_semantic_consistency.py",
-    "scripts/check_register_no_hidden_operational_debt.py",
-    "scripts/check_document_naming_conventions.py",
-    "scripts/check_first_batch_document_quality.py",
-    "scripts/check_first_batch_alignment.py",
-    "scripts/check_first_batch_tp_assets.py",
-    "scripts/check_support_substance.py",
-    "scripts/check_no_line_padding.py",
-    "scripts/check_full_sequence_resource_matrix.py",
-    "scripts/check_full_notional_resource_matrix.py",
-    "scripts/check_official_program_capacity_coverage_matrix.py",
-    "scripts/check_capacity_status_ladder.py",
-    "scripts/check_course_explanatory_quality.py",
-    "scripts/check_sequence_pedagogical_coherence.py",
-    "scripts/check_paper_tp_justification.py",
-    "scripts/check_tp_executable_opportunity.py",
-    "scripts/check_session_to_resource_alignment.py",
-    "scripts/check_session_classroom_operationality.py",
-    "scripts/check_human_review_register.py",
-    "scripts/check_human_review_wave_plan.py",
-    "scripts/check_sql_query_result_consistency.py",
-    "scripts/check_graph_algorithm_trace_consistency.py",
-    "scripts/check_tree_bst_invariant_consistency.py",
-    "scripts/check_network_packet_trace_consistency.py",
-    "scripts/check_dynamic_programming_recurrence_consistency.py",
-    "scripts/check_boyer_moore_trace_consistency.py",
-    "scripts/check_generated_template_residue.py",
-    "scripts/check_question_capacity_alignment.py",
-    "scripts/check_support_pedagogical_depth.py",
-    "scripts/check_session_operationalization_plan.py",
-    "scripts/check_sequence_pack_consistency.py",
-    "scripts/check_csv_numeric_fields_are_parseable.py",
-    "scripts/check_p05_pipeline_consistency.py",
-    "scripts/check_p05_semantic_consistency.py",
-    "scripts/check_p05_expected_outputs_are_explicit.py",
-    "scripts/check_course_sheet_exercise_answer_count.py",
-    "scripts/check_no_duplicate_capacity_lines.py",
-    "scripts/check_p04_key_consistency.py",
-    "scripts/check_t18_trace_table_quality.py",
-    "scripts/check_paper_tp_contract.py",
-    "scripts/check_no_token_only_validation.py",
-    "scripts/check_no_generic_scaffold_overuse.py",
-    "scripts/check_student_supports_no_scaffold_language.py",
-    "scripts/check_corrected_answers_are_concrete.py",
-    "scripts/check_tp_text_asset_alignment.py",
-    "scripts/check_sequence_capacity_alignment.py",
-    "scripts/check_tp_pedagogical_assets_runtime.py",
-    "scripts/check_sequence_contracts.py",
-    "scripts/check_local_drive_traceability.py",
-    "scripts/check_drive_integration_plan.py",
-    "scripts/check_drive_action_plan_completeness.py",
-    "scripts/check_drive_enrichment_traceability.py",
-    "scripts/check_drive_enrichment_traceability_portable.py",
-    "scripts/check_manifest_source_trace_consistency.py",
-    "scripts/check_drive_trace_no_absolute_local_paths.py",
-    "scripts/check_delivered_archive_exactly_source_clean.py",
-    "scripts/check_no_sensitive_drive_in_source_clean.py",
-    "scripts/check_ready_supports_required_sections.py",
-    "scripts/check_ready_supports_depth.py",
-    "scripts/check_ready_session_operationality.py",
-    "scripts/check_course_sheets_coverage.py",
-    "scripts/check_course_sheets_quality.py",
-    "scripts/check_course_sheets_alignment.py",
-    "scripts/check_course_sheets_substance.py",
-    "scripts/check_course_sheet_linked_resources_exist.py",
-    "scripts/check_course_sheets_no_template_abuse.py",
-    "scripts/check_course_sheet_readiness.py",
-    "scripts/check_course_sheet_readiness_strict.py",
-    "scripts/check_linked_td_quality.py",
-    "scripts/check_linked_td_substance.py",
-    "scripts/check_linked_evaluation_quality.py",
-    "scripts/check_linked_evaluation_substance.py",
-    "scripts/check_no_operational_scope_hardcoding.py",
-    "scripts/check_operational_supports_no_indicative_debt.py",
-    "scripts/check_operational_readiness_quality_coupling.py",
-    "scripts/check_evaluation_distribution.py",
-    "scripts/check_teacher_docs_depth.py",
-    "scripts/check_validated_documents_quality_gates.py",
-    "scripts/check_program_yaml_atomicity.py",
-    "scripts/check_build_reports_freshness.py",
-    "scripts/check_archive_portability.py",
-    "scripts/check_python_quality.py",
-    "scripts/check_python_cache_stability.py",
-    "scripts/check_sequence_completeness.py",
-    "scripts/check_course_internal_coherence.py",
-    "scripts/check_td_corrige_alignment.py",
-    "scripts/check_tp_test_alignment.py",
-    "scripts/check_evaluation_bareme_alignment.py",
-    "scripts/check_learning_objectives_assessed.py",
-    "scripts/check_differentiation_quality.py",
-    "scripts/check_scientific_claims_review.py",
-    "scripts/check_program_capacity_evidence_depth.py",
-    "scripts/check_pedagogical_alignment.py",
-    "scripts/check_bank_strategy.py",
-    "scripts/check_drive_mapping.py",
-    "scripts/check_drive_quarantine_privacy.py",
-    "scripts/check_coverage_evidence.py",
-    "scripts/check_no_coverage_from_sheets_only.py",
-    "scripts/check_qa_report_freshness.py",
-    "scripts/check_manifest_source_integrity.py",
-    "scripts/check_teacher_corrections_alignment.py",
-    "scripts/run_python_tests.py",
+CORE_CHECKS: list[list[str]] = [
+    ["scripts/check_git_clean.py"],
+    ["scripts/check_audit_folder_policy.py"],
+    ["scripts/check_content_tree_policy.py"],
+    ["scripts/check_metadata.py"],
+    ["scripts/check_links.py"],
+    ["scripts/check_no_private_data.py"],
+    ["scripts/check_no_placeholders_docs.py"],
+    ["scripts/check_no_placeholders_code.py"],
+    ["scripts/check_no_build_artifacts_in_index.py"],
+    ["scripts/check_uploaded_archive_policy.py"],
+    ["scripts/check_program_coverage.py"],
+    ["scripts/check_substance_anchors.py"],
+    ["scripts/check_contract_substance_quality.py"],
+    ["scripts/check_differentiation_distinctness.py"],
+    ["scripts/check_rendered_unit_artifacts.py", "--unit", "P05"],
+    ["scripts/check_drive_enrichment_traceability_portable.py"],
+    ["scripts/check_drive_action_plan_completeness.py"],
+    ["scripts/check_no_coverage_from_sheets_only.py"],
+    ["scripts/run_python_tests.py"],
 ]
 
-INDICATIVE_CHECKS = [
-    "scripts/check_required_sections.py",
-    "scripts/check_document_depth.py",
-    "scripts/check_document_style.py",
+INDICATIVE_CHECKS: list[list[str]] = [
+    ["scripts/check_required_sections.py"],
+    ["scripts/check_document_depth.py"],
+    ["scripts/check_document_style.py"],
 ]
-
-STRICT_ENV_BY_SCRIPT = {
-    "scripts/check_tp_executable_opportunity.py": {
-        "MAX_EXECUTABLE_TP_OPPORTUNITIES": "8",
-    },
-}
 
 
 def remove_python_caches() -> None:
@@ -159,13 +54,11 @@ def remove_python_caches() -> None:
             shutil.rmtree(path)
 
 
-def run_check(script: str, env: dict[str, str], indicative: bool = False) -> int:
+def run_check(command: list[str], env: dict[str, str], indicative: bool = False) -> int:
+    label = " ".join(command)
     suffix = " (indicatif)" if indicative else ""
-    print(f"== {script}{suffix} ==")
-    check_env = env.copy()
-    check_env.update(STRICT_ENV_BY_SCRIPT.get(script, {}))
-    result = subprocess.run([PYTHON, script], cwd=ROOT, env=check_env)
-    return result.returncode
+    print(f"== {label}{suffix} ==")
+    return subprocess.run([PYTHON, *command], cwd=ROOT, env=env).returncode
 
 
 def main() -> None:
@@ -175,24 +68,25 @@ def main() -> None:
     env["PYTHONDONTWRITEBYTECODE"] = "1"
     remove_python_caches()
     try:
-        for script in BLOCKING_CHECKS:
-            if run_check(script, env) != 0:
-                failures.append(script)
-        for script in INDICATIVE_CHECKS:
-            if run_check(script, env, indicative=True) != 0:
-                indicative_failures.append(script)
+        for command in CORE_CHECKS:
+            if run_check(command, env) != 0:
+                failures.append(" ".join(command))
+        for command in INDICATIVE_CHECKS:
+            if run_check(command, env, indicative=True) != 0:
+                indicative_failures.append(" ".join(command))
         if failures:
             print("check_quality_gates: KO")
-            for script in failures:
-                print(f"- {script}")
+            for item in failures:
+                print(f"- {item}")
             raise SystemExit(1)
         if indicative_failures:
             print("Gates indicatifs non bloquants en échec:")
-            for script in indicative_failures:
-                print(f"- {script}")
+            for item in indicative_failures:
+                print(f"- {item}")
         print("check_quality_gates: PASS")
     finally:
         remove_python_caches()
+
 
 if __name__ == "__main__":
     main()

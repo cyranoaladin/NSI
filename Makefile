@@ -22,6 +22,9 @@ check-generated-freshness:
 
 audit-local:
 	python scripts/check_git_clean.py
+	python scripts/check_audit_folder_policy.py
+	python scripts/check_content_tree_policy.py
+	python scripts/check_gate_policy_consistency.py
 	python scripts/check_metadata.py
 	python scripts/check_links.py
 	python scripts/check_no_private_data.py
@@ -58,6 +61,7 @@ audit-local:
 	python scripts/check_full_sequence_resource_matrix.py
 	python scripts/check_full_notional_resource_matrix.py
 	python scripts/check_official_program_capacity_coverage_matrix.py
+	python scripts/check_program_coverage.py
 	python scripts/check_capacity_status_ladder.py
 	python scripts/check_course_explanatory_quality.py
 	python scripts/check_sequence_pedagogical_coherence.py
@@ -76,6 +80,11 @@ audit-local:
 	python scripts/check_generated_template_residue.py
 	python scripts/check_question_capacity_alignment.py
 	python scripts/check_support_pedagogical_depth.py
+	python scripts/check_substance_anchors.py
+	python scripts/check_contract_substance_quality.py
+	python scripts/check_differentiation_distinctness.py
+	python scripts/check_rendered_unit_artifacts.py --unit P05
+	python scripts/check_rendered_unit_artifacts.py --unit T10
 	python scripts/check_session_operationalization_plan.py
 	python scripts/check_sequence_pack_consistency.py
 	python scripts/check_csv_numeric_fields_are_parseable.py
@@ -166,6 +175,9 @@ audit-source:
 
 audit-extracted-source:
 	python scripts/cleanup_python_artifacts.py
+	python scripts/check_audit_folder_policy.py
+	python scripts/check_content_tree_policy.py
+	python scripts/check_gate_policy_consistency.py
 	python scripts/check_metadata.py
 	python scripts/check_qcm_schema.py
 	timeout 30 python scripts/check_session_referenced_files_exist.py
@@ -177,6 +189,7 @@ audit-extracted-source:
 	timeout 30 python scripts/check_full_sequence_resource_matrix.py
 	timeout 30 python scripts/check_full_notional_resource_matrix.py
 	timeout 30 python scripts/check_official_program_capacity_coverage_matrix.py
+	timeout 30 python scripts/check_program_coverage.py
 	timeout 30 python scripts/check_capacity_status_ladder.py
 	timeout 30 python scripts/check_course_explanatory_quality.py
 	timeout 30 python scripts/check_sequence_pedagogical_coherence.py
@@ -195,6 +208,10 @@ audit-extracted-source:
 	python scripts/check_generated_template_residue.py
 	python scripts/check_question_capacity_alignment.py
 	timeout 30 python scripts/check_support_pedagogical_depth.py
+	timeout 30 python scripts/check_substance_anchors.py
+	timeout 30 python scripts/check_contract_substance_quality.py
+	timeout 30 python scripts/check_differentiation_distinctness.py
+	timeout 30 python scripts/check_rendered_unit_artifacts.py --unit P05
 	timeout 30 python scripts/check_session_operationalization_plan.py
 	python scripts/check_sequence_pack_consistency.py
 	python scripts/check_csv_numeric_fields_are_parseable.py
@@ -265,6 +282,9 @@ deliver-source-zip:
 
 render-s01:
 	python scripts/render_sequence.py premiere/sequences/s01_representation_donnees
+
+render-unit:
+	python scripts/render_unit.py --unit "$(U)"
 
 release-audit:
 	python scripts/cleanup_python_artifacts.py

@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "T06",
+  "level": "terminale",
+  "judged_at": "2026-06-27T22:15:59Z",
+  "judge_model": "deterministic-substance-prejudge",
+  "author_model": "codex-authoring-agent",
+  "capacities": [
+    {
+      "capacity_id": "T-ALGO-01E",
+      "official_label": "Rechercher une clé dans un arbre de recherche.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T06/T06_cours_arbres_binaires_recherche.md",
+        "anchor": "#t06---cours---arbres-binaires-de-recherche",
+        "quote": "Identifier les données utiles de la situation : ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T06/T06_TD_arbres_binaires_recherche.md",
+        "anchor": "#t06---td---arbres-binaires-de-recherche",
+        "quote": "Travailler invariant ABR, recherche, insertion, parcours infixe, arbre vide.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md",
+        "anchor": "#t06---corrigé---arbres-binaires-de-recherche",
+        "quote": "Réponse attendue : chercher 6 : 8 -> 3 -> 6.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "verdict": "needs_content",
+      "justification": "Pré-jugement mécanique : les ancres existent mais aucune validation humaine n'est déclarée.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    },
+    {
+      "capacity_id": "T-ALGO-01F",
+      "official_label": "Insérer une clé dans un arbre de recherche.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T06/T06_cours_arbres_binaires_recherche.md",
+        "anchor": "#t06---cours---arbres-binaires-de-recherche",
+        "quote": "Identifier les données utiles de la situation : ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T06/T06_TD_arbres_binaires_recherche.md",
+        "anchor": "#t06---td---arbres-binaires-de-recherche",
+        "quote": "Travailler invariant ABR, recherche, insertion, parcours infixe, arbre vide.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md",
+        "anchor": "#t06---corrigé---arbres-binaires-de-recherche",
+        "quote": "Réponse attendue : chercher 6 : 8 -> 3 -> 6.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "verdict": "needs_content",
+      "justification": "Pré-jugement mécanique : les ancres existent mais aucune validation humaine n'est déclarée.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

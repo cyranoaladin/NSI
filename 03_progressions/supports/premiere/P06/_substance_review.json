@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "P06",
+  "level": "premiere",
+  "judged_at": "2026-06-27T22:15:59Z",
+  "judge_model": "deterministic-substance-prejudge",
+  "author_model": "codex-authoring-agent",
+  "capacities": [
+    {
+      "capacity_id": "P-TABLE-03",
+      "official_label": "Trier une table suivant une colonne.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P06/P06_cours_tables_recherche_tri_fusion.md",
+        "anchor": "#p06---cours---recherche-tri-et-fusion-de-tables",
+        "quote": "Identifier les données utiles de la situation : inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}].",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P06/P06_TD_tables_recherche_tri_fusion.md",
+        "anchor": "#p06---td---recherche-tri-et-fusion-de-tables",
+        "quote": "Travailler recherche dans une table, clé id, doublon id=17, tri stable, tri par clé composée.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P06/P06_corrige_tables_recherche_tri_fusion.md",
+        "anchor": "#p06---corrigé---recherche-tri-et-fusion-de-tables",
+        "quote": "Réponse attendue : première ligne id=17 -> Ada/robot.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "verdict": "needs_content",
+      "justification": "Pré-jugement mécanique : les ancres existent mais aucune validation humaine n'est déclarée.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    },
+    {
+      "capacity_id": "P-TABLE-04",
+      "official_label": "Construire une nouvelle table en combinant les données de deux tables.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P06/P06_cours_tables_recherche_tri_fusion.md",
+        "anchor": "#p06---cours---recherche-tri-et-fusion-de-tables",
+        "quote": "Identifier les données utiles de la situation : inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}].",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P06/P06_TD_tables_recherche_tri_fusion.md",
+        "anchor": "#p06---td---recherche-tri-et-fusion-de-tables",
+        "quote": "Travailler recherche dans une table, clé id, doublon id=17, tri stable, tri par clé composée.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P06/P06_corrige_tables_recherche_tri_fusion.md",
+        "anchor": "#p06---corrigé---recherche-tri-et-fusion-de-tables",
+        "quote": "Réponse attendue : première ligne id=17 -> Ada/robot.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "verdict": "needs_content",
+      "justification": "Pré-jugement mécanique : les ancres existent mais aucune validation humaine n'est déclarée.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

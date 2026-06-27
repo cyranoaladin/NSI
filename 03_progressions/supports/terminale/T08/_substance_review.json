@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "T08",
+  "level": "terminale",
+  "judged_at": "2026-06-27T22:15:59Z",
+  "judge_model": "deterministic-substance-prejudge",
+  "author_model": "codex-authoring-agent",
+  "capacities": [
+    {
+      "capacity_id": "T-ALGO-02A",
+      "official_label": "Parcourir un graphe en largeur d'abord.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T08/T08_cours_bfs_dfs_cycles_chemins.md",
+        "anchor": "#t08---cours---bfs-dfs-cycles-et-chemins",
+        "quote": "Identifier les données utiles de la situation : adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md",
+        "anchor": "#t08---td---bfs-dfs-cycles-et-chemins",
+        "quote": "Travailler BFS avec file, DFS avec pile, marquage, prédécesseurs, chemin reconstruit.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T08/T08_corrige_bfs_dfs_cycles_chemins.md",
+        "anchor": "#t08---corrigé---bfs-dfs-cycles-et-chemins",
+        "quote": "Réponse attendue : BFS -> A,B,C,D,E.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "verdict": "needs_content",
+      "justification": "Pré-jugement mécanique : les ancres existent mais aucune validation humaine n'est déclarée.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    },
+    {
+      "capacity_id": "T-ALGO-02B",
+      "official_label": "Parcourir un graphe en profondeur d'abord.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T08/T08_cours_bfs_dfs_cycles_chemins.md",
+        "anchor": "#t08---cours---bfs-dfs-cycles-et-chemins",
+        "quote": "Identifier les données utiles de la situation : adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md",
+        "anchor": "#t08---td---bfs-dfs-cycles-et-chemins",
+        "quote": "Travailler BFS avec file, DFS avec pile, marquage, prédécesseurs, chemin reconstruit.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T08/T08_corrige_bfs_dfs_cycles_chemins.md",
+        "anchor": "#t08---corrigé---bfs-dfs-cycles-et-chemins",
+        "quote": "Réponse attendue : BFS -> A,B,C,D,E.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "verdict": "needs_content",
+      "justification": "Pré-jugement mécanique : les ancres existent mais aucune validation humaine n'est déclarée.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    },
+    {
+      "capacity_id": "T-ALGO-02C",
+      "official_label": "Repérer la présence d'un cycle dans un graphe.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T08/T08_cours_bfs_dfs_cycles_chemins.md",
+        "anchor": "#t08---cours---bfs-dfs-cycles-et-chemins",
+        "quote": "Identifier les données utiles de la situation : adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md",
+        "anchor": "#t08---td---bfs-dfs-cycles-et-chemins",
+        "quote": "Travailler BFS avec file, DFS avec pile, marquage, prédécesseurs, chemin reconstruit.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T08/T08_corrige_bfs_dfs_cycles_chemins.md",
+        "anchor": "#t08---corrigé---bfs-dfs-cycles-et-chemins",
+        "quote": "Réponse attendue : BFS -> A,B,C,D,E.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "verdict": "needs_content",
+      "justification": "Pré-jugement mécanique : les ancres existent mais aucune validation humaine n'est déclarée.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    },
+    {
+      "capacity_id": "T-ALGO-02D",
+      "official_label": "Chercher un chemin dans un graphe.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T08/T08_cours_bfs_dfs_cycles_chemins.md",
+        "anchor": "#t08---cours---bfs-dfs-cycles-et-chemins",
+        "quote": "Identifier les données utiles de la situation : adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md",
+        "anchor": "#t08---td---bfs-dfs-cycles-et-chemins",
+        "quote": "Travailler BFS avec file, DFS avec pile, marquage, prédécesseurs, chemin reconstruit.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T08/T08_corrige_bfs_dfs_cycles_chemins.md",
+        "anchor": "#t08---corrigé---bfs-dfs-cycles-et-chemins",
+        "quote": "Réponse attendue : BFS -> A,B,C,D,E.",
+        "teaches": false,
+        "note": "Pré-jugement outillé : preuve mécanique trouvée, relecture humaine requise."
+      },
+      "verdict": "needs_content",
+      "justification": "Pré-jugement mécanique : les ancres existent mais aucune validation humaine n'est déclarée.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

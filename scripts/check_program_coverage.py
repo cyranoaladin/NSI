@@ -15,11 +15,13 @@ from _qa_common import (
     iter_declared_evidence,
     load_program_entries,
 )
+from _supports_evidence import iter_support_evidence
 
 COVERAGE = ROOT / "coverage.md"
 MATRIX_PREMIERE = ROOT / "programme_matrix_premiere.md"
 MATRIX_TERMINALE = ROOT / "programme_matrix_terminale.md"
 MISSING = ROOT / "missing_capabilities.md"
+COVERAGE_SOURCES = ROOT / "coverage_sources.md"
 
 FORCED_STATUS = {
     "T-ALGO-02A": ("partial", "parcours en largeur présent seulement comme application, pas comme séquence évaluée complète"),
@@ -64,7 +66,12 @@ def status_and_blocker(capacity_id: str, items: List[Evidence]) -> tuple[str, st
 def build_rows() -> List[Dict[str, str]]:
     program = load_program_entries()
     by_capacity: Dict[str, List[Evidence]] = defaultdict(list)
-    for item in iter_declared_evidence():
+    seen: set[tuple[str, str, str, str]] = set()
+    for item in list(iter_declared_evidence()) + list(iter_support_evidence()):
+        key = (item.capacity_id, item.file, item.anchor, item.evidence_type)
+        if key in seen:
+            continue
+        seen.add(key)
         by_capacity[item.capacity_id].append(item)
 
     rows: List[Dict[str, str]] = []
@@ -86,6 +93,48 @@ def build_rows() -> List[Dict[str, str]]:
             }
         )
     return rows
+
+
+def write_sources(rows: List[Dict[str, str]]) -> None:
+    program = load_program_entries()
+    by_capacity: Dict[str, List[Evidence]] = defaultdict(list)
+    for item in list(iter_declared_evidence()) + list(iter_support_evidence()):
+        if item.capacity_id in program:
+            by_capacity[item.capacity_id].append(item)
+
+    lines = [
+        "# Sources de couverture",
+        "",
+        "Ce rapport explicite les preuves prises en compte par `coverage.md`.",
+        "`03_progressions/supports/` est l'arbre canonique de production ;",
+        "`premiere/sequences/` et `terminale/sequences/` restent des pilotes de référence.",
+        "",
+        "Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressources restent `needs_review`.",
+        "",
+    ]
+    status_by_cap = {row["capacite"].split(" - ", 1)[0]: row["statut"] for row in rows}
+    for cap_id in sorted(program):
+        entry = program[cap_id]
+        items = sorted(
+            by_capacity.get(cap_id, []),
+            key=lambda item: (item.evidence_type, item.file, item.anchor),
+        )
+        lines.append(f"## {cap_id}")
+        lines.append("")
+        lines.append(f"- Niveau : {entry.get('level')}")
+        lines.append(f"- Statut coverage.md : {status_by_cap.get(cap_id, 'absent')}")
+        if not items:
+            lines.append("- Preuves : aucune")
+            lines.append("")
+            continue
+        lines.append("")
+        lines.append("| type | fichier | statut ressource |")
+        lines.append("| --- | --- | --- |")
+        for item in items:
+            suffix = item.anchor or ""
+            lines.append(f"| {item.evidence_type} | {item.file}{suffix} | {item.status} |")
+        lines.append("")
+    COVERAGE_SOURCES.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def write_table(path: Path, rows: List[Dict[str, str]]) -> None:
@@ -131,7 +180,8 @@ def main() -> None:
     write_table(MATRIX_PREMIERE, [row for row in rows if row["niveau"] == "premiere"])
     write_table(MATRIX_TERMINALE, [row for row in rows if row["niveau"] == "terminale"])
     write_missing(rows)
-    print("check_program_coverage: generated coverage.md and programme matrices")
+    write_sources(rows)
+    print("check_program_coverage: generated coverage.md, coverage_sources.md and programme matrices")
 
 
 if __name__ == "__main__":
