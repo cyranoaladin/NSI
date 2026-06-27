@@ -11,6 +11,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import check_corrected_answers_are_concrete as concrete_answers
 import check_no_generic_scaffold_overuse as scaffold
 import check_sequence_pack_consistency as pack_consistency
+import check_sequence_capacity_alignment as capacity_alignment
+import check_student_supports_no_scaffold_language as student_scaffold
 
 
 def write_support(path: Path, body: str) -> None:
@@ -57,12 +59,71 @@ class SequencePackAndScaffoldControlsTest(unittest.TestCase):
                     "# Support\n"
                     "Fil conducteur : `pays_monde.csv` avec champs `PAYS`, `CAPITALE`, `CONTINENT`, `POPULATION`.\n"
                     "On utilise `csv.reader`, `csv.DictReader`, un filtrage par `CONTINENT`, "
-                    "la conversion de `POPULATION` en `int`, un tri numérique et une ligne invalide.\n",
+                    "la conversion `int(row[\"POPULATION\"])`, un tri numérique, un tri lexicographique, "
+                    "un tri par continent puis population et une ligne invalide.\n"
+                    "Capacités : P-TABLE-01 et P-TABLE-02.\n",
                 )
 
             result = pack_consistency.analyze_sequence_pack_consistency(root, prefixes=["P05"])
 
             self.assertEqual([], result.errors)
+
+    def test_sequence_pack_rejects_pays_monde_file_missing_required_thread_terms(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            support = root / "03_progressions" / "supports" / "premiere" / "P05" / "P05_td_tables_csv.md"
+            write_support(
+                support,
+                "# TD\n"
+                "On utilise `pays_monde.csv` avec `PAYS`, `CAPITALE`, `CONTINENT`, `POPULATION`.\n"
+                "On filtre des lignes mais sans `csv.DictReader`, sans tri lexicographique et sans P-TABLE-02.\n",
+            )
+
+            result = pack_consistency.analyze_sequence_pack_consistency(root, prefixes=["P05"])
+
+            self.assertTrue(any("fil pays_monde incomplet" in error for error in result.errors))
+
+    def test_student_scaffold_language_rejects_generic_td_phrase(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            support = root / "03_progressions" / "supports" / "premiere" / "P05" / "P05_td_tables_csv.md"
+            write_support(
+                support,
+                "# TD\n"
+                "### Exercice 1\n"
+                "- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.\n",
+            )
+
+            result = student_scaffold.analyze_student_supports_no_scaffold_language(root)
+
+            self.assertTrue(any("P05_td_tables_csv.md" in error for error in result.errors))
+
+    def test_student_scaffold_language_allows_teacher_guide(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            guide = root / "03_progressions" / "supports" / "premiere" / "P05" / "P05_guide_professeur_tables_csv.md"
+            write_support(
+                guide,
+                "# Guide\n"
+                "Phrase modèle interne : réponse structurée en donnée, méthode, résultat et contrôle.\n",
+            )
+
+            result = student_scaffold.analyze_student_supports_no_scaffold_language(root)
+
+            self.assertEqual([], result.errors)
+
+    def test_sequence_capacity_alignment_requires_p05_capacities_in_each_pack_file(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            base = root / "03_progressions" / "supports" / "premiere" / "P05"
+            write_support(
+                base / "P05_td_tables_csv.md",
+                "# TD\npays_monde.csv ; P-TABLE-01 seulement.\n",
+            )
+
+            result = capacity_alignment.analyze_sequence_capacity_alignment(root, prefixes=["P05"])
+
+            self.assertTrue(any("P-TABLE-02" in error for error in result.errors))
 
     def test_generic_scaffold_rejects_massive_phrase_without_concrete_result(self) -> None:
         with tempfile.TemporaryDirectory() as raw:

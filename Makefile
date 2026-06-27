@@ -57,7 +57,10 @@ audit-local:
 	python scripts/check_no_line_padding.py
 	python scripts/check_sequence_pack_consistency.py
 	python scripts/check_no_generic_scaffold_overuse.py
+	python scripts/check_student_supports_no_scaffold_language.py
 	python scripts/check_corrected_answers_are_concrete.py
+	python scripts/check_tp_text_asset_alignment.py
+	python scripts/check_sequence_capacity_alignment.py
 	timeout 90 python -u scripts/check_tp_pedagogical_assets_runtime.py
 	python scripts/check_sequence_contracts.py
 	python scripts/check_local_drive_traceability.py
@@ -140,7 +143,10 @@ audit-extracted-source:
 	python scripts/check_no_line_padding.py
 	python scripts/check_sequence_pack_consistency.py
 	python scripts/check_no_generic_scaffold_overuse.py
+	python scripts/check_student_supports_no_scaffold_language.py
 	python scripts/check_corrected_answers_are_concrete.py
+	python scripts/check_tp_text_asset_alignment.py
+	python scripts/check_sequence_capacity_alignment.py
 	timeout 90 python -u scripts/check_tp_pedagogical_assets_runtime.py
 	python scripts/check_sequence_contracts.py
 	python scripts/check_drive_enrichment_traceability_portable.py

@@ -865,10 +865,10 @@ supports:
   readiness: operational
 - support: 03_progressions/fiches_cours/premiere/P05/P05_fiche_cours_tables_csv_import_coherence.md
   source_officielle: BO 2019
-  source_locale_drive: ''
-  type_reprise: création originale
-  hash_source: ''
-  statut_rgpd: non concerné - aucune donnée personnelle intégrée
+  source_locale_drive: Documents_DRIVE/2_NSI/Cours/Première NSI Pierrot caillabet/1_2019-2020/1_Cours/11_traitement de tables/pays_monde.csv
+  type_reprise: adaptation_drive
+  hash_source: 57359dcc669fa30c547923cea12fd3d0cbe1268b5ecf200411e0e61dd855e958
+  statut_rgpd: conforme - données géographiques non personnelles
   statut_relecture: needs_review
   readiness: operational
 - support: 03_progressions/fiches_cours/premiere/P06/P06_fiche_cours_tables_recherche_tri_fusion.md

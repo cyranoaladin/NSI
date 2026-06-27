@@ -1,4 +1,4 @@
-"""Asset Python TP. Statut pédagogique: needs_review."""
+"""Tests attendus TP T01. Statut pédagogique: needs_review."""
 
 from __future__ import annotations
 
@@ -6,19 +6,39 @@ import importlib
 import os
 
 MODULE = importlib.import_module(os.environ.get("TP_MODULE", "T01_starter_interfaces_structures"))
-scenario_structure = MODULE.scenario_structure
+Pile = MODULE.Pile
+File = MODULE.File
 
 def test_nominal() -> None:
-    result = scenario_structure([("ajouter", 4), ("ajouter", 7), ("retirer", None)])
-    assert result == [7]
+    pile = Pile()
+    pile.empiler("A")
+    pile.empiler("B")
+    assert pile.sommet() == "B"
+    assert pile.depiler() == "B"
+    assert pile.depiler() == "A"
+    assert pile.est_vide()
+
+    file = File()
+    file.enfiler("A")
+    file.enfiler("B")
+    assert file.premier() == "A"
+    assert file.defiler() == "A"
+    assert file.defiler() == "B"
+    assert file.est_vide()
 
 def test_limite() -> None:
-    result = scenario_structure([("ajouter", 1), ("retirer", None)])
-    assert result == [1]
+    pile = Pile()
+    try:
+        pile.depiler()
+    except (IndexError, ValueError):
+        return
+    else:
+        raise AssertionError("depiler sur pile vide doit lever une erreur")
 
 def test_invalide() -> None:
+    file = File()
     try:
-        scenario_structure([("retirer", None)])
+        file.premier()
     except (ValueError, TypeError, IndexError):
         return
     raise AssertionError("exception attendue")

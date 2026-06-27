@@ -53,106 +53,106 @@ Un navigateur établit une connexion HTTPS avec serveur.example.
 - Capacité officielle : T-ARCH-04A.
 - Données : Clé publique serveur Kpub, clé privée Kpriv, clé de session Ks.
 - Consigne : Associer les rôles.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 2 - Lire un certificat
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-ARCH-04B.
 - Données : Certificat: sujet serveur.example, émetteur CA-NSI, validité 2026-01-01 à 2027-01-01.
 - Consigne : Dire ce qui est vérifié.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 3 - Dérouler un handshake simplifié
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-04A.
 - Données : Client propose suites ; serveur envoie certificat ; secret de session établi.
 - Consigne : Écrire les étapes.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 4 - Calculer un haché jouet
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-04B.
 - Données : h(m)=somme codes ASCII mod 10, message "AB".
 - Consigne : Calculer h.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 5 - Certificat expiré
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-04A.
 - Données : Date du jour 2028-03-01, certificat valable jusqu’à 2027-01-01.
 - Consigne : Dire la décision.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 6 - Justifier HTTPS contre écoute
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-04B.
 - Données : Un attaquant lit le trafic Wi-Fi.
 - Consigne : Expliquer ce qui reste visible.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 7 - Identifier attaque homme du milieu
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-ARCH-04A.
 - Données : Certificat présenté: sujet serveur.example, émetteur inconnu LocalProxy.
 - Consigne : Conclure.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 8 - Écrire une politique de mot de passe
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-ARCH-04B.
 - Données : Service interne NSI.
 - Consigne : Donner trois règles justifiées.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-ARCH-04A.
 - Donnée utilisée : Clé publique serveur Kpub, clé privée Kpriv, clé de session Ks.
 - Résultat attendu : Kpub/Kpriv servent à authentifier/établir le secret ; Ks sert ensuite au chiffrement symétrique rapide des données.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-ARCH-04B.
 - Donnée utilisée : Certificat: sujet serveur.example, émetteur CA-NSI, validité 2026-01-01 à 2027-01-01.
 - Résultat attendu : Le navigateur vérifie le nom serveur.example, la période de validité et la signature par une autorité de confiance CA-NSI.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-ARCH-04A.
 - Donnée utilisée : Client propose suites ; serveur envoie certificat ; secret de session établi.
 - Résultat attendu : 1 ClientHello ; 2 ServerHello+certificat ; 3 vérification certificat ; 4 établissement Ks ; 5 données chiffrées avec Ks.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-ARCH-04B.
 - Donnée utilisée : h(m)=somme codes ASCII mod 10, message "AB".
 - Résultat attendu : ASCII A=65, B=66, somme=131, 131 mod 10 = 1. Ce haché jouet n’est pas cryptographiquement sûr.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-ARCH-04A.
 - Donnée utilisée : Date du jour 2028-03-01, certificat valable jusqu’à 2027-01-01.
 - Résultat attendu : Le navigateur doit refuser ou afficher une alerte forte : la validité temporelle est dépassée.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-ARCH-04B.
 - Donnée utilisée : Un attaquant lit le trafic Wi-Fi.
 - Résultat attendu : L’attaquant peut voir l’adresse IP et le domaine selon contexte, mais pas le contenu HTTP chiffré par la clé de session.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-ARCH-04A.
 - Donnée utilisée : Certificat présenté: sujet serveur.example, émetteur inconnu LocalProxy.
 - Résultat attendu : Si LocalProxy n’est pas une autorité approuvée, la chaîne de confiance échoue : risque de MITM.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-ARCH-04B.
 - Donnée utilisée : Service interne NSI.
 - Résultat attendu : Longueur minimale 12, interdiction mots de passe connus, hachage salé côté serveur. Ces règles limitent brute force et fuite de base.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
 - EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.

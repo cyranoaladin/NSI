@@ -38,6 +38,15 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
 - 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
 - 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/supports/premiere/P05/P05_bareme_tables_csv.md: nom propre suspect -> Filtrage Europe
+- 03_progressions/supports/premiere/P05/P05_corrige_tables_csv.md: nom propre suspect -> Filtrage Europe
+- 03_progressions/supports/premiere/P05/P05_cours_tables_csv.md: nom propre suspect -> Filtrage Europe
+- 03_progressions/supports/premiere/P05/P05_evaluation_tables_csv.md: nom propre suspect -> Filtrage Europe
+- 03_progressions/supports/premiere/P05/P05_remediation_tables_csv.md: nom propre suspect -> Filtrage Europe
+- 03_progressions/supports/premiere/P05/P05_td_tables_csv.md: nom propre suspect -> Filtrage Europe
+- 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md: nom propre suspect -> Filtrage Europe
+- 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md: nom propre suspect -> Filtrage Europe
+- 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv: nom propre suspect -> Andorre La Vieille
 - 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv: nom propre suspect -> Saint-Jean
 - 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md: nom propre suspect -> Trame Ethernet
@@ -321,9 +330,6 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P03/code/P03_corrige_professeur_texte_reels.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P03/code/P03_starter_texte_reels.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P03/code/P03_tests_attendus_texte_reels.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/premiere/P04/code/P04_corrige_professeur_types_construits.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/premiere/P04/code/P04_starter_types_construits.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/premiere/P04/code/P04_tests_attendus_types_construits.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
 - 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
 - 03_progressions/supports/premiere/P07/P07_evaluation_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
@@ -347,4 +353,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md: nom propre suspect -> Reprise Python
+- 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
+- 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
+- 03_progressions/supports/terminale/T00/code/T00_corrige_professeur_diagnostic_tests.py: nom propre suspect -> Asset Python
 - ... 122 alertes supplémentaires non affichées

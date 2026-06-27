@@ -68,19 +68,19 @@ official_program:
 ## Corrigé
 ### Corrigé question 1
 - Démarche : dessiner le graphe non orienté.
-- Résultat attendu : une conclusion compatible avec `S = {A, B, C, D}, E = {(A,B), (A,C), (B,D)}`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `S = {A, B, C, D}, E = {(A,B), (A,C), (B,D)}`.
 - Justification : le contrôle explicite empêche l’erreur « oublier la symétrie en non orienté ».
 ### Corrigé question 2
 - Démarche : écrire la liste d’adjacence.
-- Résultat attendu : une conclusion compatible avec `S = {A, B, C, D}, E = {(A,B), (A,C), (B,D)}`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `S = {A, B, C, D}, E = {(A,B), (A,C), (B,D)}`.
 - Justification : le contrôle explicite empêche l’erreur « confondre sommet et arête ».
 ### Corrigé question 3
 - Démarche : construire la matrice 4 x 4.
-- Résultat attendu : une conclusion compatible avec `S = {A, B, C, D}, E = {(A,B), (A,C), (B,D)}`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `S = {A, B, C, D}, E = {(A,B), (A,C), (B,D)}`.
 - Justification : le contrôle explicite empêche l’erreur « mettre des doublons dans la liste ».
 ### Corrigé question 4
 - Démarche : comparer accès à un voisin et test d’adjacence.
-- Résultat attendu : une conclusion compatible avec `S = {A, B, C, D}, E = {(A,B), (A,C), (B,D)}`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `S = {A, B, C, D}, E = {(A,B), (A,C), (B,D)}`.
 - Justification : le contrôle explicite empêche l’erreur « choisir une matrice sans discuter la densité ».
 
 ## Critères de réussite

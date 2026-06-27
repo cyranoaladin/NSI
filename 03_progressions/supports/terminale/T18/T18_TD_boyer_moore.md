@@ -51,106 +51,106 @@ On recherche le motif ABA dans le texte CABAABABA.
 - Capacité officielle : T-ALGO-05.
 - Données : motif ABA.
 - Consigne : Donner derniers indices.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 2 - Comparer depuis la droite
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-ALGO-05.
 - Données : texte CABAABABA, motif ABA aligné au début.
 - Consigne : Donner première comparaison.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 3 - Tracer la première occurrence
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-05.
 - Données : texte CABAABABA, motif ABA.
 - Consigne : Donner indice trouvé.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 4 - Écrire pseudo-code simplifié
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-05.
 - Données : motif m, texte t.
 - Consigne : Produire boucle.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 5 - Motif plus long que texte
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-05.
 - Données : texte AB, motif ABA.
 - Consigne : Donner résultat.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 6 - Justifier saut minimal 1
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-05.
 - Données : Mismatch sur caractère absent du motif.
 - Consigne : Expliquer.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 7 - Comparer naïf et Boyer-Moore
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-ALGO-05.
 - Données : texte AAAAAAB, motif AAAB.
 - Consigne : Expliquer avantage.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 8 - Gérer motif vide
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-ALGO-05.
 - Données : motif "".
 - Consigne : Proposer contrat.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-ALGO-05.
 - Donnée utilisée : motif ABA.
 - Résultat attendu : A apparaît aux indices 0 et 2, donc dernier indice A=2 ; B=1 ; autre caractère -> -1.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-ALGO-05.
 - Donnée utilisée : texte CABAABABA, motif ABA aligné au début.
 - Résultat attendu : On compare motif[2]=A avec texte[2]=B : mismatch B. Dernier B dans motif à 1, décalage max(1,2-1)=1.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-ALGO-05.
 - Donnée utilisée : texte CABAABABA, motif ABA.
 - Résultat attendu : Après décalage 1, alignement texte[1:4]=ABA. Comparaisons droite à gauche A=A, B=B, A=A. Occurrence trouvée à l’indice 1.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-ALGO-05.
 - Donnée utilisée : motif m, texte t.
 - Résultat attendu : i=0 ; tant que i<=n-p: comparer j=p-1 vers 0 ; si j<0 retourner i ; sinon i += max(1, j-last[t[i+j]]).
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-ALGO-05.
 - Donnée utilisée : texte AB, motif ABA.
 - Résultat attendu : Aucun alignement possible car len(motif)=3 > len(texte)=2. Résultat -1 ou None selon contrat.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-ALGO-05.
 - Donnée utilisée : Mismatch sur caractère absent du motif.
 - Résultat attendu : Si last[c]=-1 et mismatch à j=2, décalage j-(-1)=3. max(1,...) évite aussi un décalage nul dans tous les cas.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-ALGO-05.
 - Donnée utilisée : texte AAAAAAB, motif AAAB.
 - Résultat attendu : La comparaison depuis la droite voit vite B attendu contre A et décale selon mauvais caractère, évitant plusieurs essais naïfs.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-ALGO-05.
 - Donnée utilisée : motif "".
 - Résultat attendu : Contrat explicite: motif vide trouvé à l’indice 0, ou bien ValueError. Le TD choisit indice 0 et le teste.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
 - EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.

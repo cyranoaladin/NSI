@@ -55,106 +55,106 @@ Table Livre(id, titre, stock) initiale: (1,"Algo",2), (2,"Reseaux",0).
 - Capacité officielle : T-BDD-03F.
 - Données : Livre: (1,"Algo",2), (2,"Reseaux",0).
 - Consigne : Dire quel livre est indisponible.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 2 - Prévoir un INSERT
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-BDD-03G.
 - Données : INSERT INTO Livre(id,titre,stock) VALUES (3,"SQL",5);
 - Consigne : Donner la table après.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 3 - Écrire un UPDATE ciblé
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-BDD-03H.
 - Données : On emprunte Algo id=1, stock passe de 2 à 1.
 - Consigne : Écrire la requête.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 4 - Écrire un DELETE ciblé
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-BDD-03F.
 - Données : Supprimer le livre id=2 uniquement.
 - Consigne : Écrire la requête et vérification.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 5 - Identifier UPDATE sans WHERE
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-BDD-03G.
 - Données : UPDATE Livre SET stock=0;
 - Consigne : Dire l’effet.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 6 - Justifier une vérification par SELECT
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-BDD-03H.
 - Données : Après UPDATE id=1.
 - Consigne : Donner le SELECT utile.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 7 - Détecter violation de clé
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-BDD-03F.
 - Données : INSERT id=1 alors que id=1 existe déjà.
 - Consigne : Prévoir le résultat.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 8 - Transaction courte
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-BDD-03G.
 - Données : Emprunt: diminuer stock puis créer ligne Emprunt.
 - Consigne : Écrire les étapes.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-BDD-03F.
 - Donnée utilisée : Livre: (1,"Algo",2), (2,"Reseaux",0).
 - Résultat attendu : Le livre id=2, titre Reseaux, a stock=0 : il est indisponible.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-BDD-03G.
 - Donnée utilisée : INSERT INTO Livre(id,titre,stock) VALUES (3,"SQL",5);
 - Résultat attendu : Nouvelle ligne ajoutée: (3,"SQL",5). La table contient maintenant ids 1,2,3.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-BDD-03H.
 - Donnée utilisée : On emprunte Algo id=1, stock passe de 2 à 1.
 - Résultat attendu : UPDATE Livre SET stock = stock - 1 WHERE id = 1; Après exécution, Algo a stock=1.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-BDD-03F.
 - Donnée utilisée : Supprimer le livre id=2 uniquement.
 - Résultat attendu : DELETE FROM Livre WHERE id = 2; Vérification: SELECT * FROM Livre WHERE id=2; renvoie 0 ligne.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-BDD-03G.
 - Donnée utilisée : UPDATE Livre SET stock=0;
 - Résultat attendu : Toutes les lignes passent à stock=0. C’est dangereux car Algo, Reseaux et SQL deviennent indisponibles.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-BDD-03H.
 - Donnée utilisée : Après UPDATE id=1.
 - Résultat attendu : SELECT id,titre,stock FROM Livre WHERE id=1; doit renvoyer (1,"Algo",1). Cette requête vérifie la ligne modifiée seulement.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-BDD-03F.
 - Donnée utilisée : INSERT id=1 alors que id=1 existe déjà.
 - Résultat attendu : La clé primaire id interdit deux lignes id=1. Le SGBD refuse l’insertion avec une erreur de contrainte.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-BDD-03G.
 - Donnée utilisée : Emprunt: diminuer stock puis créer ligne Emprunt.
 - Résultat attendu : BEGIN; UPDATE Livre SET stock=stock-1 WHERE id=1 AND stock>0; INSERT INTO Emprunt(id_livre) VALUES(1); COMMIT; si stock=0, ROLLBACK.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
 - EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.

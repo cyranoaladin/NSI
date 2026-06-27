@@ -1,40 +1,41 @@
 # Inventaire ressources NSI
 
-- Total ressources : 525
+- Total ressources : 530
 - Ressources pédagogiques : 53
-- Ressources techniques : 472
+- Ressources techniques : 477
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
-- adapted_from_drive: 6
-- generated: 518
+- adapted_from_drive: 7
+- generated: 522
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 221
+- interne: 225
 - premiere: 147
-- terminale: 157
+- terminale: 158
 
 ## Répartition par type
 - banque: 14
-- document: 277
+- document: 278
 - python: 36
-- script: 119
+- script: 122
 - sequence: 45
-- test: 34
+- test: 35
 
 ## Répartition par statut
-- needs_review: 525
+- needs_review: 530
 
 ## Répartition audience
 - corrige: 33
 - eleve: 110
-- mixte: 379
+- mixte: 384
 - professeur: 3
 
 ## Catégories (distinguer exigences)
 - Sources issues du Drive ou adaptées depuis Drive :
   - 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_tuples.md
+  - 03_progressions/fiches_cours/premiere/P05/P05_fiche_cours_tables_csv_import_coherence.md
   - 03_progressions/fiches_cours/terminale/T01/T01_fiche_cours_interface_implementation_tad.md
   - 03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md
   - 03_progressions/supports/premiere/P05/P05_td_tables_csv.md
@@ -64,7 +65,6 @@
   - 03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_texte_unicode.md
   - 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_dictionnaires.md
   - 03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_listes.md
-  - 03_progressions/fiches_cours/premiere/P05/P05_fiche_cours_tables_csv_import_coherence.md
   - 03_progressions/fiches_cours/premiere/P06/P06_fiche_cours_tables_recherche_tri_fusion.md
   - 03_progressions/fiches_cours/premiere/P07/P07_fiche_cours_fonctions_tests_specifications.md
   - 03_progressions/fiches_cours/premiere/P08/P08_fiche_cours_html_css_dom.md
@@ -310,6 +310,7 @@
   - 03_progressions/supports/terminale/T17/T17_evaluation_programmation_dynamique.md
   - 03_progressions/supports/terminale/T18/T18_TD_boyer_moore.md
   - 03_progressions/supports/terminale/T18/T18_evaluation_boyer_moore.md
+  - 03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md
   - 03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md
   - 03_progressions/supports/terminale/T19/T19_evaluation_bac_pratique_grand_oral_projet.md
   - INDEX.md
@@ -465,6 +466,7 @@
   - scripts/check_register_no_hidden_operational_debt.py
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
+  - scripts/check_sequence_capacity_alignment.py
   - scripts/check_sequence_completeness.py
   - scripts/check_sequence_contracts.py
   - scripts/check_sequence_pack_consistency.py
@@ -475,6 +477,7 @@
   - scripts/check_session_referenced_files_exist.py
   - scripts/check_session_specificity.py
   - scripts/check_session_week_calendar_consistency.py
+  - scripts/check_student_supports_no_scaffold_language.py
   - scripts/check_support_substance.py
   - scripts/check_td_corrige_alignment.py
   - scripts/check_teacher_corrections_alignment.py
@@ -482,6 +485,7 @@
   - scripts/check_tp_pedagogical_assets.py
   - scripts/check_tp_pedagogical_assets_runtime.py
   - scripts/check_tp_test_alignment.py
+  - scripts/check_tp_text_asset_alignment.py
   - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_documents_quality_gates.py
   - scripts/check_validated_statuses.py
@@ -558,6 +562,7 @@
   - tests/test_tp_pedagogical_assets.py
   - tests/test_tp_pedagogical_assets_no_hang.py
   - tests/test_tp_pedagogical_assets_runtime.py
+  - tests/test_tp_text_asset_alignment.py
   - tests/test_uploaded_archive_policy.py
   - tp_test_alignment_report.md
 - Ressources pédagogiques :
@@ -889,6 +894,7 @@
   - 03_progressions/supports/terminale/T17/T17_evaluation_programmation_dynamique.md
   - 03_progressions/supports/terminale/T18/T18_TD_boyer_moore.md
   - 03_progressions/supports/terminale/T18/T18_evaluation_boyer_moore.md
+  - 03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md
   - 03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md
   - 03_progressions/supports/terminale/T19/T19_evaluation_bac_pratique_grand_oral_projet.md
   - INDEX.md
@@ -1018,6 +1024,7 @@
   - scripts/check_register_no_hidden_operational_debt.py
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
+  - scripts/check_sequence_capacity_alignment.py
   - scripts/check_sequence_completeness.py
   - scripts/check_sequence_contracts.py
   - scripts/check_sequence_pack_consistency.py
@@ -1028,6 +1035,7 @@
   - scripts/check_session_referenced_files_exist.py
   - scripts/check_session_specificity.py
   - scripts/check_session_week_calendar_consistency.py
+  - scripts/check_student_supports_no_scaffold_language.py
   - scripts/check_support_substance.py
   - scripts/check_td_corrige_alignment.py
   - scripts/check_teacher_corrections_alignment.py
@@ -1035,6 +1043,7 @@
   - scripts/check_tp_pedagogical_assets.py
   - scripts/check_tp_pedagogical_assets_runtime.py
   - scripts/check_tp_test_alignment.py
+  - scripts/check_tp_text_asset_alignment.py
   - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_documents_quality_gates.py
   - scripts/check_validated_statuses.py
@@ -1085,6 +1094,7 @@
   - tests/test_tp_pedagogical_assets.py
   - tests/test_tp_pedagogical_assets_no_hang.py
   - tests/test_tp_pedagogical_assets_runtime.py
+  - tests/test_tp_text_asset_alignment.py
   - tests/test_uploaded_archive_policy.py
   - tp_test_alignment_report.md
 - Ressources copiées dans banques :
@@ -1125,7 +1135,7 @@
 - T15: 3
 - T16: 3
 - T17: 3
-- T18: 3
+- T18: 4
 - T19: 3
 - bank_index: 14
 - s01_representation_donnees: 22
@@ -1387,6 +1397,7 @@
 - 03_progressions/supports/terminale/T17/T17_evaluation_programmation_dynamique.md
 - 03_progressions/supports/terminale/T18/T18_TD_boyer_moore.md
 - 03_progressions/supports/terminale/T18/T18_evaluation_boyer_moore.md
+- 03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md
 - 03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md
 - 03_progressions/supports/terminale/T19/T19_evaluation_bac_pratique_grand_oral_projet.md
 - INDEX.md
@@ -1539,6 +1550,7 @@
 - scripts/check_register_no_hidden_operational_debt.py
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
+- scripts/check_sequence_capacity_alignment.py
 - scripts/check_sequence_completeness.py
 - scripts/check_sequence_contracts.py
 - scripts/check_sequence_pack_consistency.py
@@ -1549,12 +1561,14 @@
 - scripts/check_session_referenced_files_exist.py
 - scripts/check_session_specificity.py
 - scripts/check_session_week_calendar_consistency.py
+- scripts/check_student_supports_no_scaffold_language.py
 - scripts/check_support_substance.py
 - scripts/check_teacher_corrections_alignment.py
 - scripts/check_teacher_docs_depth.py
 - scripts/check_tp_pedagogical_assets.py
 - scripts/check_tp_pedagogical_assets_runtime.py
 - scripts/check_tp_test_alignment.py
+- scripts/check_tp_text_asset_alignment.py
 - scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_documents_quality_gates.py
 - scripts/check_validated_statuses.py
@@ -1626,6 +1640,7 @@
 - tests/test_tp_pedagogical_assets.py
 - tests/test_tp_pedagogical_assets_no_hang.py
 - tests/test_tp_pedagogical_assets_runtime.py
+- tests/test_tp_text_asset_alignment.py
 - tests/test_uploaded_archive_policy.py
 - tp_test_alignment_report.md
 
@@ -1907,6 +1922,7 @@
 - 03_progressions/supports/terminale/T17/T17_evaluation_programmation_dynamique.md
 - 03_progressions/supports/terminale/T18/T18_TD_boyer_moore.md
 - 03_progressions/supports/terminale/T18/T18_evaluation_boyer_moore.md
+- 03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md
 - 03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md
 - 03_progressions/supports/terminale/T19/T19_evaluation_bac_pratique_grand_oral_projet.md
 - INDEX.md
@@ -2063,6 +2079,7 @@
 - scripts/check_register_no_hidden_operational_debt.py
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
+- scripts/check_sequence_capacity_alignment.py
 - scripts/check_sequence_completeness.py
 - scripts/check_sequence_contracts.py
 - scripts/check_sequence_pack_consistency.py
@@ -2073,6 +2090,7 @@
 - scripts/check_session_referenced_files_exist.py
 - scripts/check_session_specificity.py
 - scripts/check_session_week_calendar_consistency.py
+- scripts/check_student_supports_no_scaffold_language.py
 - scripts/check_support_substance.py
 - scripts/check_td_corrige_alignment.py
 - scripts/check_teacher_corrections_alignment.py
@@ -2080,6 +2098,7 @@
 - scripts/check_tp_pedagogical_assets.py
 - scripts/check_tp_pedagogical_assets_runtime.py
 - scripts/check_tp_test_alignment.py
+- scripts/check_tp_text_asset_alignment.py
 - scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_documents_quality_gates.py
 - scripts/check_validated_statuses.py
@@ -2156,6 +2175,7 @@
 - tests/test_tp_pedagogical_assets.py
 - tests/test_tp_pedagogical_assets_no_hang.py
 - tests/test_tp_pedagogical_assets_runtime.py
+- tests/test_tp_text_asset_alignment.py
 - tests/test_uploaded_archive_policy.py
 - tp_test_alignment_report.md
 

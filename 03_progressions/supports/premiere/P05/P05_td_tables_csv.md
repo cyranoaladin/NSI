@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "P-TABLE-01"
+    - "P-TABLE-02"
 ---
 
 # P05 - TD - Tables CSV
@@ -30,6 +31,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - P-TABLE-01
+- P-TABLE-02
 
 ## Prérequis
 - Reconnaître une consigne liée à table.
@@ -72,7 +74,7 @@ Le fichier élève normalisé est `03_progressions/supports/premiere/P05/data/pa
 ### Exemple corrigé 4 - tri par continent puis population
 - Donnée étudiée : lignes regroupées par CONTINENT.
 - Méthode : associer par une clé commune.
-- Résultat obtenu : pays triés par CONTINENT puis POPULATION.
+- Résultat obtenu : dans le groupe Europe : Allemagne `(82801531)` avant Albanie `(3063320)`, puis les autres continents selon `CONTINENT`.
 - Contrôle : le cas limite « continent absent » est vérifié séparément.
 ## Exercices numérotés
 ### Exercice 1
@@ -100,35 +102,35 @@ Le fichier élève normalisé est `03_progressions/supports/premiere/P05/data/pa
 - Objectif travaillé : O4.
 - Capacité officielle : P-TABLE-01.
 - Énoncé disciplinaire : corriger tri par continent puis population pour lignes regroupées par CONTINENT.
-- Production attendue : pays triés par CONTINENT puis POPULATION.
+- Production attendue : dans le groupe Europe : Allemagne `(82801531)` avant Albanie `(3063320)`, puis les autres continents selon `CONTINENT`.
 - Contrainte de contrôle : corriger l’erreur « Ignorer silencieusement une ligne mal formée. ».
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 5
 - Objectif travaillé : O1.
 - Capacité officielle : P-TABLE-01.
 - Énoncé disciplinaire : tester un cas limite lié à fichier pays_monde.csv vide.
-- Production attendue : le comportement de lecture CSV est contrôlé.
+- Production attendue : un fichier avec seulement l’en-tête `PAYS,CAPITALE,CONTINENT,POPULATION` donne une liste vide de pays.
 - Contrainte de contrôle : nommer la donnée minimale et la conclusion.
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 6
 - Objectif travaillé : O2.
 - Capacité officielle : P-TABLE-01.
 - Énoncé disciplinaire : classer deux méthodes possibles pour filtrage.
-- Production attendue : la méthode robuste est choisie et justifiée.
+- Production attendue : la méthode `csv.DictReader` est choisie pour accéder à `row["CONTINENT"]` sans indice fragile.
 - Contrainte de contrôle : identifier pourquoi « Comparer une valeur numérique restée chaîne. » est une erreur.
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 7
 - Objectif travaillé : O3.
 - Capacité officielle : P-TABLE-01.
 - Énoncé disciplinaire : justifier un transfert qui utilise traitement numérique des populations avec une donnée nouvelle.
-- Production attendue : la justification reste valable sur le nouveau cas.
+- Production attendue : sur `Espagne,Madrid,Europe,46,754,778`, `int(row["POPULATION"])` donne `46,754,778` et la ligne reste dans Europe.
 - Contrainte de contrôle : inclure une étape calculable par un pair.
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 8
 - Objectif travaillé : O4.
 - Capacité officielle : P-TABLE-01.
 - Énoncé disciplinaire : étendre un énoncé volontairement erroné sur tri par continent puis population.
-- Production attendue : l’erreur est localisée puis réparée.
+- Production attendue : l’erreur est le tri de chaînes ; réparation : convertir puis utiliser la clé `(CONTINENT, -POPULATION, PAYS)`.
 - Contrainte de contrôle : proposer une activité corrective inspirée de « Isoler les lignes invalides dans une liste de rejets. ».
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
@@ -149,28 +151,28 @@ Le fichier élève normalisé est `03_progressions/supports/premiere/P05/data/pa
 - Erreur traitée : EF3 - Diviser par zéro après filtrage vide.
 ### Corrigé exercice 4
 - Méthode : isoler l’erreur fréquente « Ignorer silencieusement une ligne mal formée. » puis reprendre la procédure correcte.
-- Résultat : pays triés par CONTINENT puis POPULATION.
+- Résultat : dans le groupe Europe : Allemagne `(82801531)` avant Albanie `(3063320)`, puis les autres continents selon `CONTINENT`.
 - Contrôle : corriger l’erreur « Ignorer silencieusement une ligne mal formée. ».
 - Erreur traitée : EF4 - Ignorer silencieusement une ligne mal formée.
 ### Corrigé exercice 5
 - Méthode : identifier `PAYS,CAPITALE,CONTINENT,POPULATION
-Allemagne,Berlin,Europe,82801531`, appliquer la méthode « lire avec csv.reader puis convertir POPULATION en int », puis écrire une ligne exploitable.
-- Résultat : le comportement de lecture CSV est contrôlé.
+Allemagne,Berlin,Europe,82801531`, appliquer la méthode « lire avec csv.reader puis convertir POPULATION en int », puis écrire `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}`.
+- Résultat : un fichier avec seulement l’en-tête `PAYS,CAPITALE,CONTINENT,POPULATION` donne une liste vide de pays.
 - Contrôle : nommer la donnée minimale et la conclusion.
 - Erreur traitée : EF1 - Traiter l’en-tête comme une donnée.
 ### Corrigé exercice 6
 - Méthode : expliciter chaque étape de conserver les lignes dont CONTINENT vaut Europe avant de conclure par deux lignes européennes sélectionnées.
-- Résultat : la méthode robuste est choisie et justifiée.
+- Résultat : la méthode `csv.DictReader` est choisie pour accéder à `row["CONTINENT"]` sans indice fragile.
 - Contrôle : identifier pourquoi « Comparer une valeur numérique restée chaîne. » est une erreur.
 - Erreur traitée : EF2 - Comparer une valeur numérique restée chaîne.
 ### Corrigé exercice 7
 - Méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider le rejet de la ligne invalide avant conversion.
-- Résultat : la justification reste valable sur le nouveau cas.
+- Résultat : sur `Espagne,Madrid,Europe,46,754,778`, `int(row["POPULATION"])` donne `46,754,778` et la ligne reste dans Europe.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Diviser par zéro après filtrage vide.
 ### Corrigé exercice 8
 - Méthode : isoler l’erreur fréquente « Ignorer silencieusement une ligne mal formée. » puis reprendre la procédure correcte.
-- Résultat : l’erreur est localisée puis réparée.
+- Résultat : l’erreur est le tri de chaînes ; réparation : convertir puis utiliser la clé `(CONTINENT, -POPULATION, PAYS)`.
 - Contrôle : proposer une activité corrective inspirée de « Isoler les lignes invalides dans une liste de rejets. ».
 - Erreur traitée : EF4 - Ignorer silencieusement une ligne mal formée.
 ## Erreurs fréquentes
@@ -196,3 +198,14 @@ Allemagne,Berlin,Europe,82801531` avec une fiche méthode fournie.
 - La méthode contient au moins une étape vérifiable par un pair.
 - Le cas limite est discuté avec une donnée concrète.
 - La correction explique quelle erreur fréquente est évitée.
+
+
+## Fil conducteur P05 - pays_monde.csv
+- Capacités travaillées : P-TABLE-01 pour importer et parcourir `pays_monde.csv`, P-TABLE-02 pour filtrer, convertir et trier la table.
+- Champs obligatoires : `PAYS`, `CAPITALE`, `CONTINENT`, `POPULATION`.
+- Lecture comparée : `csv.reader` donne des listes, `csv.DictReader` donne des dictionnaires comme `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": "82801531"}`.
+- Conversion obligatoire : `int(row["POPULATION"])` transforme `"82801531"` en `82801531` et rejette la ligne invalide `POPULATION="invalide"`.
+- Filtrage Europe : Allemagne et Albanie sont conservées, Brésil est exclu.
+- Tri lexicographique : `sorted(["100", "20", "3"])` donne `"100", "20", "3"`; ce n’est pas un tri numérique.
+- Tri numérique : `sorted([100, 20, 3])` donne `3, 20, 100`.
+- Tri par continent puis population : la clé `(row["CONTINENT"], -row["POPULATION"], row["PAYS"])` classe d’abord par continent, puis par population décroissante.

@@ -55,106 +55,106 @@ On classe des programmes selon terminaison observable et limites théoriques.
 - Capacité officielle : T-LANG-01A.
 - Données : n=3 ; while n>0: n=n-1.
 - Consigne : Donner la trace.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 2 - Repérer une boucle infinie
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-LANG-01B.
 - Données : while True: pass.
 - Consigne : Dire ce qui manque pour terminer.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 3 - Écrire un variant
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-LANG-01C.
 - Données : while n>0: n=n//2 pour n=10.
 - Consigne : Donner variant et trace.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 4 - Construire un semi-décideur
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-LANG-01A.
 - Données : Chercher si une valeur apparaît dans un flux infini.
 - Consigne : Expliquer.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 5 - Entrée déjà au cas d’arrêt
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-LANG-01B.
 - Données : n=0 pour while n>0.
 - Consigne : Donner comportement.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 6 - Expliquer l’indécidabilité de l’arrêt
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-LANG-01C.
 - Données : Supposer un programme HALT(P,x).
 - Consigne : Donner l’idée de contradiction.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 7 - Distinguer bug et limite théorique
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-LANG-01A.
 - Données : Un test timeout après 2 secondes.
 - Consigne : Peut-on conclure non-terminaison ?
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 8 - Classer trois programmes
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-LANG-01B.
 - Données : A termine toujours, B boucle toujours, C dépend d’une conjecture.
 - Consigne : Donner statut.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-LANG-01A.
 - Donnée utilisée : n=3 ; while n>0: n=n-1.
 - Résultat attendu : Trace n: 3 -> 2 -> 1 -> 0, puis condition n>0 fausse. Le programme termine.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-LANG-01B.
 - Donnée utilisée : while True: pass.
 - Résultat attendu : Aucune variable ne rapproche d’un cas d’arrêt et la condition reste True. La boucle ne termine pas.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-LANG-01C.
 - Donnée utilisée : while n>0: n=n//2 pour n=10.
 - Résultat attendu : Variant n entier naturel diminue: 10 -> 5 -> 2 -> 1 -> 0. Il assure la terminaison.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-LANG-01A.
 - Donnée utilisée : Chercher si une valeur apparaît dans un flux infini.
 - Résultat attendu : On lit les valeurs une à une ; si cible trouvée, on répond oui. Si elle n’apparaît jamais, l’algorithme peut tourner sans répondre.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-LANG-01B.
 - Donnée utilisée : n=0 pour while n>0.
 - Résultat attendu : La condition est fausse au départ ; zéro itération ; terminaison immédiate.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-LANG-01C.
 - Donnée utilisée : Supposer un programme HALT(P,x).
 - Résultat attendu : Construire D(P): si HALT(P,P) répond oui alors boucler, sinon terminer. Exécuter D(D) contredit la réponse de HALT.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-LANG-01A.
 - Donnée utilisée : Un test timeout après 2 secondes.
 - Résultat attendu : Non. Le programme peut terminer après 3 secondes. Le timeout est une observation pratique, pas une preuve générale.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-LANG-01B.
 - Donnée utilisée : A termine toujours, B boucle toujours, C dépend d’une conjecture.
 - Résultat attendu : A décidable par preuve directe ; B non-terminaison prouvée par invariant True ; C peut être hors de portée sans preuve mathématique supplémentaire.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
 - EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.

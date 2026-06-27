@@ -74,19 +74,19 @@ official_program:
 ## Corrigé
 ### Corrigé question 1
 - Démarche : écrire la signature et le rôle des paramètres.
-- Résultat attendu : une conclusion compatible avec `prix_ttc(80, 0.20), prix_ttc(0, 0.20), prix_ttc(-5, 0.20)`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `prix_ttc(80, 0.20), prix_ttc(0, 0.20), prix_ttc(-5, 0.20)`.
 - Justification : le contrôle explicite empêche l’erreur « écrire un print au lieu de return ».
 ### Corrigé question 2
 - Démarche : formuler précondition et postcondition.
-- Résultat attendu : une conclusion compatible avec `prix_ttc(80, 0.20), prix_ttc(0, 0.20), prix_ttc(-5, 0.20)`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `prix_ttc(80, 0.20), prix_ttc(0, 0.20), prix_ttc(-5, 0.20)`.
 - Justification : le contrôle explicite empêche l’erreur « oublier le cas limite ht=0 ».
 ### Corrigé question 3
 - Démarche : ajouter une assertion sur le prix négatif.
-- Résultat attendu : une conclusion compatible avec `prix_ttc(80, 0.20), prix_ttc(0, 0.20), prix_ttc(-5, 0.20)`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `prix_ttc(80, 0.20), prix_ttc(0, 0.20), prix_ttc(-5, 0.20)`.
 - Justification : le contrôle explicite empêche l’erreur « tester seulement la valeur 80 ».
 ### Corrigé question 4
 - Démarche : tester cas nominal, zéro et entrée invalide.
-- Résultat attendu : une conclusion compatible avec `prix_ttc(80, 0.20), prix_ttc(0, 0.20), prix_ttc(-5, 0.20)`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `prix_ttc(80, 0.20), prix_ttc(0, 0.20), prix_ttc(-5, 0.20)`.
 - Justification : le contrôle explicite empêche l’erreur « modifier une variable globale depuis la fonction ».
 
 ## Critères de réussite

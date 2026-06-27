@@ -51,106 +51,106 @@ On résout un problème de nombre de chemins dans une grille 3 x 3 puis un rendu
 - Capacité officielle : T-ALGO-04.
 - Données : Grille 3x3, déplacements droite ou bas.
 - Consigne : Définir dp[i][j].
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 2 - Remplir les bords
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-ALGO-04.
 - Données : dp sur grille 3x3.
 - Consigne : Donner première ligne et première colonne.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 3 - Écrire la récurrence
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-04.
 - Données : Case intérieure (i,j).
 - Consigne : Donner relation.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 4 - Remplir le tableau 3x3
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-04.
 - Données : Grille 3x3.
 - Consigne : Donner la table.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 5 - Grille 1x1
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-04.
 - Données : Départ égale arrivée.
 - Consigne : Donner dp.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 6 - Comparer récursion et tabulation
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-04.
 - Données : Calcul chemins(4,4).
 - Consigne : Expliquer les doublons.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 7 - Rendu de monnaie dynamique
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-ALGO-04.
 - Données : pièces [1,3,4], montant 6.
 - Consigne : Donner dp[0..6].
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 8 - Écrire pseudo-code tabulation
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-ALGO-04.
 - Données : pièces [1,3,4], montant M.
 - Consigne : Produire pseudo-code.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-ALGO-04.
 - Donnée utilisée : Grille 3x3, déplacements droite ou bas.
 - Résultat attendu : dp[i][j] = nombre de chemins depuis (0,0) vers la case (i,j).
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-ALGO-04.
 - Donnée utilisée : dp sur grille 3x3.
 - Résultat attendu : dp[0][j]=1 et dp[i][0]=1 car un seul chemin en ligne droite. Bords: 1,1,1.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-ALGO-04.
 - Donnée utilisée : Case intérieure (i,j).
 - Résultat attendu : dp[i][j] = dp[i-1][j] + dp[i][j-1]. Pour (1,1): 1+1=2.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-ALGO-04.
 - Donnée utilisée : Grille 3x3.
 - Résultat attendu : Table dp: ligne0 [1,1,1], ligne1 [1,2,3], ligne2 [1,3,6]. Il y a 6 chemins vers (2,2).
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-ALGO-04.
 - Donnée utilisée : Départ égale arrivée.
 - Résultat attendu : dp[0][0]=1 : il existe un chemin vide. Ne pas renvoyer 0.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-ALGO-04.
 - Donnée utilisée : Calcul chemins(4,4).
 - Résultat attendu : La récursion naïve recalcule chemins(2,2) plusieurs fois ; la tabulation calcule chaque état une seule fois, donc O(n*m).
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-ALGO-04.
 - Donnée utilisée : pièces [1,3,4], montant 6.
 - Résultat attendu : dp: [0,1,2,1,1,2,2]. Pour 6, optimal 3+3 donc 2 pièces.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-ALGO-04.
 - Donnée utilisée : pièces [1,3,4], montant M.
 - Résultat attendu : dp[0]=0 ; dp[a]=inf ; pour a de 1 à M, pour p dans pièces si a>=p: dp[a]=min(dp[a],1+dp[a-p]).
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
 - EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.

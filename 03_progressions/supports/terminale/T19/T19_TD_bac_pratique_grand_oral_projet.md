@@ -51,106 +51,106 @@ Préparation finale: exercice pratique Python, analyse de complexité et oral de
 - Capacité officielle : T-LANG-05.
 - Données : Écrire occurrence(valeurs, x) qui compte x dans valeurs.
 - Consigne : Identifier entrée/sortie.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 2 - Analyser un test
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-LANG-05.
 - Données : assert occurrence([1,2,1],1)==2 ; assert occurrence([],3)==0.
 - Consigne : Dire les cas couverts.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 3 - Écrire la fonction
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-LANG-05.
 - Données : valeurs=[4,4,2], x=4.
 - Consigne : Donner code.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 4 - Préparer explication orale
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-LANG-05.
 - Données : Fonction occurrence.
 - Consigne : Plan en 45 secondes.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 5 - Entrée vide
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-LANG-05.
 - Données : occurrence([],5).
 - Consigne : Donner résultat.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 6 - Justifier complexité
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-LANG-05.
 - Données : liste longueur n.
 - Consigne : Donner ordre.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 7 - Évaluer une réponse orale
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-LANG-05.
 - Données : Un élève donne code mais aucun test ni complexité.
 - Consigne : Identifier manque.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 8 - Relier projet et programme
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-LANG-05.
 - Données : Projet: moteur de recherche de mots.
 - Consigne : Faire le lien.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-LANG-05.
 - Donnée utilisée : Écrire occurrence(valeurs, x) qui compte x dans valeurs.
 - Résultat attendu : Entrée: liste valeurs et cible x. Sortie: entier nombre d’occurrences. Exemple [1,2,1],1 -> 2.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-LANG-05.
 - Donnée utilisée : assert occurrence([1,2,1],1)==2 ; assert occurrence([],3)==0.
 - Résultat attendu : Cas nominal avec doublon et cas limite liste vide.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-LANG-05.
 - Donnée utilisée : valeurs=[4,4,2], x=4.
 - Résultat attendu : def occurrence(valeurs,x): c=0 ; for v in valeurs: if v==x: c+=1 ; return c. Résultat 2.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-LANG-05.
 - Donnée utilisée : Fonction occurrence.
 - Résultat attendu : Dire contrat, boucle et invariant c compte les occurrences déjà lues, puis complexité O(n).
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-LANG-05.
 - Donnée utilisée : occurrence([],5).
 - Résultat attendu : La boucle ne s’exécute pas ; c reste 0 ; résultat 0.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-LANG-05.
 - Donnée utilisée : liste longueur n.
 - Résultat attendu : Chaque élément est comparé une fois à x ; temps O(n), mémoire O(1).
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-LANG-05.
 - Donnée utilisée : Un élève donne code mais aucun test ni complexité.
 - Résultat attendu : Il manque au moins un test nominal, un test limite et l’analyse O(n). La réponse n’est pas complète pour le bac.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-LANG-05.
 - Donnée utilisée : Projet: moteur de recherche de mots.
 - Résultat attendu : Capacités mobilisées: parcours de chaîne/liste, dictionnaire d’index, tests unitaires, complexité de recherche. Donner une donnée exemple: texte "nsi nsi bac" -> index {"nsi":[0,1],"bac":[2]}.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
 - EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.

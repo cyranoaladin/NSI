@@ -72,19 +72,19 @@ official_program:
 ## Corrigé
 ### Corrigé question 1
 - Démarche : repérer méthode, URL, paramètres et corps.
-- Résultat attendu : une conclusion compatible avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`.
 - Justification : le contrôle explicite empêche l’erreur « mettre un mot de passe dans une URL GET ».
 ### Corrigé question 2
 - Démarche : justifier GET pour une recherche partageable.
-- Résultat attendu : une conclusion compatible avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`.
 - Justification : le contrôle explicite empêche l’erreur « confondre code de statut et méthode HTTP ».
 ### Corrigé question 3
 - Démarche : justifier POST pour une donnée sensible.
-- Résultat attendu : une conclusion compatible avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`.
 - Justification : le contrôle explicite empêche l’erreur « croire que POST chiffre automatiquement ».
 ### Corrigé question 4
 - Démarche : identifier le risque de mot de passe dans l’URL.
-- Résultat attendu : une conclusion compatible avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`.
 - Justification : le contrôle explicite empêche l’erreur « oublier le nom des champs du formulaire ».
 
 ## Critères de réussite

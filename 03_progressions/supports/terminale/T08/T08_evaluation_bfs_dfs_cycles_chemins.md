@@ -68,19 +68,19 @@ official_program:
 ## Corrigé
 ### Corrigé question 1
 - Démarche : exécuter BFS avec file.
-- Résultat attendu : une conclusion compatible avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`.
 - Justification : le contrôle explicite empêche l’erreur « marquer un sommet trop tard ».
 ### Corrigé question 2
 - Démarche : exécuter DFS avec pile ou récursion.
-- Résultat attendu : une conclusion compatible avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`.
 - Justification : le contrôle explicite empêche l’erreur « croire que DFS donne toujours un plus court chemin ».
 ### Corrigé question 3
 - Démarche : reconstruire un chemin par prédécesseurs.
-- Résultat attendu : une conclusion compatible avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`.
 - Justification : le contrôle explicite empêche l’erreur « oublier les prédécesseurs ».
 ### Corrigé question 4
 - Démarche : détecter un cycle en évitant le parent.
-- Résultat attendu : une conclusion compatible avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`.
 - Justification : le contrôle explicite empêche l’erreur « confondre cycle et simple retour vers le parent ».
 
 ## Critères de réussite

@@ -51,106 +51,106 @@ On applique le tri fusion à des listes de temps de calcul.
 - Capacité officielle : T-ALGO-03.
 - Données : [8,3,5,1,9,2].
 - Consigne : Donner les deux moitiés.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 2 - Fusionner deux listes triées
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-ALGO-03.
 - Données : [2,5,8] et [1,3,9].
 - Consigne : Donner la fusion.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 3 - Écrire pseudo-code fusion
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-03.
 - Données : g=[2,8], d=[1,5].
 - Consigne : Produire pseudo-code.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 4 - Tracer tri fusion complet
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-03.
 - Données : [4,1,3,2].
 - Consigne : Donner étapes.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 5 - Liste vide ou singleton
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-03.
 - Données : [] et [7].
 - Consigne : Dire le résultat.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 6 - Justifier complexité
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-ALGO-03.
 - Données : n éléments, découpe en deux et fusion linéaire.
 - Consigne : Donner ordre.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 7 - Comparer à tri insertion
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-ALGO-03.
 - Données : n=1024.
 - Consigne : Ordres de grandeur.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 8 - Garantir stabilité
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-ALGO-03.
 - Données : Deux éléments égaux 5a et 5b.
 - Consigne : Donner règle.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-ALGO-03.
 - Donnée utilisée : [8,3,5,1,9,2].
 - Résultat attendu : Moitié gauche [8,3,5], moitié droite [1,9,2]. On continue jusqu’aux listes de taille 1.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-ALGO-03.
 - Donnée utilisée : [2,5,8] et [1,3,9].
 - Résultat attendu : Comparer têtes: 1, puis 2, puis 3, puis 5, puis 8, puis 9. Résultat [1,2,3,5,8,9].
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-ALGO-03.
 - Donnée utilisée : g=[2,8], d=[1,5].
 - Résultat attendu : i=j=0 ; tant que i<len(g) et j<len(d), prendre le plus petit ; ajouter le reste. Résultat [1,2,5,8].
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-ALGO-03.
 - Donnée utilisée : [4,1,3,2].
 - Résultat attendu : Découpe [4,1]|[3,2], puis [4],[1],[3],[2]. Fusions [1,4], [2,3], puis [1,2,3,4].
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-ALGO-03.
 - Donnée utilisée : [] et [7].
 - Résultat attendu : Le tri fusion renvoie [] pour liste vide et [7] pour singleton : ce sont des cas de base sans fusion.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-ALGO-03.
 - Donnée utilisée : n éléments, découpe en deux et fusion linéaire.
 - Résultat attendu : Il y a log2(n) niveaux de découpe et chaque niveau fusionne n éléments. Complexité O(n log n).
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-ALGO-03.
 - Donnée utilisée : n=1024.
 - Résultat attendu : Tri fusion: 1024*10 environ 10240 opérations ; insertion pire cas environ 1024^2 = 1 048 576.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-ALGO-03.
 - Donnée utilisée : Deux éléments égaux 5a et 5b.
 - Résultat attendu : Lors d’une égalité, prendre l’élément de la liste gauche en premier. L’ordre 5a avant 5b est conservé.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
 - EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.

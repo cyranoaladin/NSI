@@ -70,19 +70,19 @@ official_program:
 ## Corrigé
 ### Corrigé question 1
 - Démarche : distinguer chemin absolu et relatif.
-- Résultat attendu : une conclusion compatible avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`.
 - Justification : le contrôle explicite empêche l’erreur « confondre lecture et exécution ».
 ### Corrigé question 2
 - Démarche : interpréter r, w, x pour propriétaire/groupe/autres.
-- Résultat attendu : une conclusion compatible avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`.
 - Justification : le contrôle explicite empêche l’erreur « utiliser un chemin valable seulement dans son dossier courant ».
 ### Corrigé question 3
 - Démarche : proposer chmod u+x scripts/run.sh.
-- Résultat attendu : une conclusion compatible avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`.
 - Justification : le contrôle explicite empêche l’erreur « donner tous les droits avec chmod 777 ».
 ### Corrigé question 4
 - Démarche : expliquer l’erreur Permission denied.
-- Résultat attendu : une conclusion compatible avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`.
 - Justification : le contrôle explicite empêche l’erreur « oublier le rôle du système d’exploitation ».
 
 ## Critères de réussite

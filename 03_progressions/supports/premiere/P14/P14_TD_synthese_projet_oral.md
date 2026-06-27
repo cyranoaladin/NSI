@@ -51,106 +51,106 @@ Un groupe prépare une démonstration de mini-projet NSI avec code, tests et jus
 - Capacité officielle : P-HIST-01.
 - Données : Projet: carnet de scores, données stockées en CSV, recherche par joueur, tri par score.
 - Consigne : Identifier deux fonctionnalités et deux contraintes.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 2 - Analyser un extrait de test
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : P-HIST-01.
 - Données : assert meilleur_score([12,9,15]) == 15 ; assert meilleur_score([]) is None.
 - Consigne : Dire les cas couverts.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 3 - Rédiger une spécification de fonction
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : P-HIST-01.
 - Données : fonction moyenne_scores(scores).
 - Consigne : Écrire entrée, sortie, cas limite.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 4 - Construire un plan d’oral
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : P-HIST-01.
 - Données : Sujet: expliquer un tri utilisé dans le projet.
 - Consigne : Donner un plan en trois parties.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 5 - Identifier un risque de démonstration
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : P-HIST-01.
 - Données : Le projet lit scores.csv, mais le fichier peut être absent.
 - Consigne : Prévoir le comportement.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 6 - Justifier une décision technique
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : P-HIST-01.
 - Données : Choix: dictionnaire joueur -> liste de scores.
 - Consigne : Justifier.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 7 - Évaluer une grille de projet
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : P-HIST-01.
 - Données : Critères: exactitude, tests, lisibilité, oral. Scores 3/4, 2/4, 3/4, 1/4.
 - Consigne : Identifier priorité de remédiation.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 8 - Écrire une conclusion d’oral
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : P-HIST-01.
 - Données : Projet carnet de scores.
 - Consigne : Rédiger une conclusion qui cite résultat et limite.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : P-HIST-01.
 - Donnée utilisée : Projet: carnet de scores, données stockées en CSV, recherche par joueur, tri par score.
 - Résultat attendu : Fonctionnalités: ajouter un score, rechercher un joueur, trier par score. Contraintes: format CSV cohérent et tests sur recherche/tri.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : P-HIST-01.
 - Donnée utilisée : assert meilleur_score([12,9,15]) == 15 ; assert meilleur_score([]) is None.
 - Résultat attendu : Premier test couvre cas nominal avec maximum 15 ; second test couvre cas limite liste vide, contrat None.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : P-HIST-01.
 - Donnée utilisée : fonction moyenne_scores(scores).
 - Résultat attendu : Entrée: liste de nombres. Sortie: moyenne flottante. Cas limite: liste vide -> None ou ValueError ; choix à fixer dans la spécification.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : P-HIST-01.
 - Donnée utilisée : Sujet: expliquer un tri utilisé dans le projet.
 - Résultat attendu : Plan: 1 contexte du besoin ; 2 principe du tri avec exemple [3,1,2] -> [1,2,3] ; 3 limites et complexité O(n^2) ou O(n log n) selon algorithme.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : P-HIST-01.
 - Donnée utilisée : Le projet lit scores.csv, mais le fichier peut être absent.
 - Résultat attendu : La démonstration doit tester l’existence du fichier, afficher un message clair ou créer un fichier vide. Elle ne doit pas échouer avec une trace non expliquée.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : P-HIST-01.
 - Donnée utilisée : Choix: dictionnaire joueur -> liste de scores.
 - Résultat attendu : Le dictionnaire donne accès direct par nom de joueur ; la liste conserve plusieurs scores. Exemple: scores["A"]=[12,15], meilleur=15.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : P-HIST-01.
 - Donnée utilisée : Critères: exactitude, tests, lisibilité, oral. Scores 3/4, 2/4, 3/4, 1/4.
 - Résultat attendu : Oral est prioritaire avec 1/4, puis tests 2/4. L’action suivante: préparer une démonstration guidée et ajouter deux tests limites.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : P-HIST-01.
 - Donnée utilisée : Projet carnet de scores.
 - Résultat attendu : Conclusion attendue: le programme ajoute, recherche et trie les scores ; les tests couvrent liste vide et doublons ; limite restante: pas d’interface graphique ni gestion multi-utilisateur.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
 - EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.

@@ -11,6 +11,7 @@ notions_exigibles:
   - tri lexicographique
 capacites_officielles:
   - P-TABLE-01
+  - P-TABLE-02
 exemples_obligatoires:
   - "lecture CSV : `pays_monde.csv` avec champs `PAYS`, `CAPITALE`, `CONTINENT`, `POPULATION`"
   - "filtrage par continent : `CONTINENT == \"Europe\"` conserve Allemagne et Albanie dans l’extrait"
@@ -58,7 +59,10 @@ must_include:
   - csv.reader
   - csv.DictReader
   - filtrage
-  - int
+  - int(row["POPULATION"])
+  - tri par continent puis population
+  - P-TABLE-01
+  - P-TABLE-02
   - tri numérique
   - tri lexicographique
   - ligne invalide

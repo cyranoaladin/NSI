@@ -61,7 +61,7 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 ## Étapes de réalisation
 - Étape 1 : coder ou tester tuple de coordonnées à partir de `(36.8, 10.2)`, puis contrôler tentative de modification interdite.
 - Étape 2 : coder ou tester liste de relevés à partir de `[18, 20, 19]`, puis contrôler liste vide.
-- Étape 3 : coder ou tester dictionnaire à partir de `{"temp": 21, "vent": 12}`, puis contrôler clé absente.
+- Étape 3 : coder ou tester dictionnaire à partir de `{"nom": "A", "temperature": 21}`, puis contrôler clé absente.
 - Étape 4 : coder ou tester copie de liste à partir de `[[1], [2]]`, puis contrôler liste imbriquée.
 ## Tests attendus
 - Test nominal : donnée ordinaire issue du premier exemple.
@@ -70,7 +70,7 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 ## Exercices numérotés
 - Exercice 1 : résoudre tuple de coordonnées avec `(36.8, 10.2)` ; attendu : coordonnées conservées.
 - Exercice 2 : expliquer liste de relevés à partir de `[18, 20, 19]` ; attendu : `19`.
-- Exercice 3 : comparer dictionnaire avec `{"temp": 21, "vent": 12}` ; attendu : `21` pour `temp`.
+- Exercice 3 : comparer dictionnaire avec `{"nom": "A", "temperature": 21}` ; attendu : `21` pour `temperature`.
 - Exercice 4 : corriger copie de liste pour `[[1], [2]]` ; attendu : modification locale contrôlée.
 - Exercice 5 : tester un cas limite lié à tentative de modification interdite ; attendu : le comportement de tuple de coordonnées est contrôlé.
 - Exercice 6 : classer deux méthodes possibles pour liste de relevés ; attendu : la méthode robuste est choisie et justifiée.
@@ -80,7 +80,7 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 ## Corrigés complets des exercices du cours
 - Corrigé exercice 1 : méthode : identifier `(36.8, 10.2)`, appliquer la méthode « lire sans modifier et nommer latitude puis longitude », puis écrire coordonnées conservées ; résultat : coordonnées conservées ; contrôle : faire apparaître le contrôle « tentative de modification interdite ».
 - Corrigé exercice 2 : méthode : expliciter chaque étape de parcourir les valeurs et calculer une moyenne avant de conclure par `19` ; résultat : `19` ; contrôle : rédiger la méthode avant le résultat.
-- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temp` ; résultat : `21` pour `temp` ; contrôle : comparer avec le cas « clé absente ».
+- Corrigé exercice 3 : méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temperature` ; résultat : `21` pour `temperature` ; contrôle : comparer avec le cas « clé absente ».
 - Corrigé exercice 4 : méthode : isoler l’erreur fréquente « Copier une liste imbriquée seulement au premier niveau. » puis reprendre la procédure correcte ; résultat : modification locale contrôlée ; contrôle : corriger l’erreur « Copier une liste imbriquée seulement au premier niveau. ».
 - Corrigé exercice 5 : méthode : identifier `(36.8, 10.2)`, appliquer la méthode « lire sans modifier et nommer latitude puis longitude », puis écrire coordonnées conservées ; résultat : le comportement de tuple de coordonnées est contrôlé ; contrôle : nommer la donnée minimale et la conclusion.
 - Corrigé exercice 6 : méthode : expliciter chaque étape de parcourir les valeurs et calculer une moyenne avant de conclure par `19` ; résultat : la méthode robuste est choisie et justifiée ; contrôle : identifier pourquoi « Parcourir les indices quand les valeurs suffisent. » est une erreur.
@@ -127,7 +127,7 @@ def moyenne_notes(notes: list[int]) -> float:
 
 ### Tests attendus
 - `milieu((0, 4), (6, 10))` renvoie `(3.0, 7.0)`.
-- `stations_chaudes([{"nom": "A", "temp": 21}, {"nom": "B", "temp": 18}], 20)` renvoie `["A"]`.
+- `stations_chaudes([{"nom": "A", "temperature": 21}, {"nom": "B", "temperature": 18}], 20)` renvoie `["A"]`.
 - `moyenne_notes([])` lève `ValueError`.
 - `milieu((2,), (4, 5))` lève `ValueError` car le tuple n’a pas deux coordonnées.
 

@@ -85,7 +85,7 @@ Une association dispose de deux fichiers : inscriptions aux ateliers et résulta
 ### Exercice 8
 - Objectif travaillé : O4.
 - Capacité officielle : P-TABLE-04.
-- Énoncé : Créer une nouvelle donnée de test et vérifier que la méthode reste valable.
+- Énoncé : Construire un cas de test numérique ou textuel inédit et vérifier que la méthode reste valable.
 - Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
 - Critère de réussite : la conclusion est vérifiable par un pair.
 

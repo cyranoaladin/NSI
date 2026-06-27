@@ -55,106 +55,106 @@ On choisit des algorithmes pour rechercher une valeur, rendre la monnaie et clas
 - Capacité officielle : P-ALGO-03.
 - Données : tableau trié [3,8,12,19,27,31], cible=19.
 - Consigne : Donner les bornes et milieux successifs.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 2 - Repérer la condition de tri
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : P-ALGO-04.
 - Données : tableau [4,9,2,11], cible=2.
 - Consigne : Dire si la dichotomie est applicable.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 3 - Écrire un glouton de monnaie
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : P-ALGO-05.
 - Données : pièces [50,20,10,5,2,1], montant=87.
 - Consigne : Donner les pièces choisies.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 4 - Calculer un k-NN
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : P-ALGO-03.
 - Données : Points A(0,0) rouge, B(2,0) rouge, C(0,3) bleu ; point X(1,1), k=3.
 - Consigne : Calculer les distances carrées et la classe.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 5 - Dichotomie sur tableau vide
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : P-ALGO-04.
 - Données : tableau [], cible=5.
 - Consigne : Donner la réponse et éviter l’erreur d’indice.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 6 - Justifier le choix glouton
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : P-ALGO-05.
 - Données : Système de pièces [4,3,1], montant=6.
 - Consigne : Montrer que le glouton peut échouer.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 7 - Comparer linéaire et dichotomique
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : P-ALGO-03.
 - Données : n=64 éléments triés.
 - Consigne : Donner le nombre maximal d’étapes dichotomiques.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 8 - Gérer égalité en k-NN
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : P-ALGO-04.
 - Données : Voisins: rouge, bleu, bleu, rouge avec k=4.
 - Consigne : Proposer une règle explicite.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : P-ALGO-03.
 - Donnée utilisée : tableau trié [3,8,12,19,27,31], cible=19.
 - Résultat attendu : g=0,d=5,m=2,val=12 -> cible à droite ; g=3,d=5,m=4,val=27 -> cible à gauche ; g=3,d=3,m=3,val=19 -> trouvé indice 3.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : P-ALGO-04.
 - Donnée utilisée : tableau [4,9,2,11], cible=2.
 - Résultat attendu : Non, le tableau n’est pas trié. Une dichotomie pourrait éliminer la mauvaise moitié. Il faut trier ou utiliser une recherche séquentielle.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : P-ALGO-05.
 - Donnée utilisée : pièces [50,20,10,5,2,1], montant=87.
 - Résultat attendu : Choix glouton: 50 reste 37 ; 20 reste 17 ; 10 reste 7 ; 5 reste 2 ; 2 reste 0. Réponse [50,20,10,5,2].
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : P-ALGO-03.
 - Donnée utilisée : Points A(0,0) rouge, B(2,0) rouge, C(0,3) bleu ; point X(1,1), k=3.
 - Résultat attendu : d2(A)=2, d2(B)=2, d2(C)=5. Les 3 voisins contiennent 2 rouges et 1 bleu ; X est classé rouge.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : P-ALGO-04.
 - Donnée utilisée : tableau [], cible=5.
 - Résultat attendu : g=0,d=-1 donc la boucle ne démarre pas. Résultat: absent, par exemple -1 ou None selon le contrat.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : P-ALGO-05.
 - Donnée utilisée : Système de pièces [4,3,1], montant=6.
 - Résultat attendu : Glouton prend 4 puis 1 puis 1 -> 3 pièces. Solution optimale: 3+3 -> 2 pièces. Le glouton n’est pas toujours optimal.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : P-ALGO-03.
 - Donnée utilisée : n=64 éléments triés.
 - Résultat attendu : On divise par 2 à chaque étape ; 64 -> 32 -> 16 -> 8 -> 4 -> 2 -> 1. Au plus 7 tests environ, contre 64 en linéaire.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : P-ALGO-04.
 - Donnée utilisée : Voisins: rouge, bleu, bleu, rouge avec k=4.
 - Résultat attendu : Égalité 2 rouges / 2 bleus. Règle possible: diminuer k à 3 avec les plus proches ou choisir la classe du voisin le plus proche. La règle doit être annoncée avant le calcul.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
 - EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.

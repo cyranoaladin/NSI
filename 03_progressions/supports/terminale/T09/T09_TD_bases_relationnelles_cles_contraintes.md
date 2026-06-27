@@ -89,7 +89,7 @@ Un lycée modélise Eleve(id_eleve, nom, classe) et Note(id_note, id_eleve, mati
 ### Exercice 8
 - Objectif travaillé : O4.
 - Capacité officielle : T-BDD-02.
-- Énoncé : Créer une nouvelle donnée de test et vérifier que la méthode reste valable.
+- Énoncé : Construire un cas de test numérique ou textuel inédit et vérifier que la méthode reste valable.
 - Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
 - Critère de réussite : la conclusion est vérifiable par un pair.
 

@@ -64,19 +64,19 @@ official_program:
 ## Corrigé
 ### Corrigé question 1
 - Démarche : rechercher la première ligne où id vaut 17.
-- Résultat attendu : une conclusion compatible avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`.
 - Justification : le contrôle explicite empêche l’erreur « utiliser la position de ligne comme clé stable ».
 ### Corrigé question 2
 - Démarche : trier les lignes par nom puis par atelier.
-- Résultat attendu : une conclusion compatible avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`.
 - Justification : le contrôle explicite empêche l’erreur « supprimer silencieusement un doublon ».
 ### Corrigé question 3
 - Démarche : fusionner avec une table de présences par identifiant.
-- Résultat attendu : une conclusion compatible avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`.
 - Justification : le contrôle explicite empêche l’erreur « trier des nombres stockés comme chaînes ».
 ### Corrigé question 4
 - Démarche : signaler le doublon id=17 au lieu de l’écraser.
-- Résultat attendu : une conclusion compatible avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`.
 - Justification : le contrôle explicite empêche l’erreur « fusionner deux tables sans vérifier les clés absentes ».
 
 ## Critères de réussite

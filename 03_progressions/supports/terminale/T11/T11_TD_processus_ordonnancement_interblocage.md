@@ -57,106 +57,106 @@ Trois processus P1, P2, P3 se partagent CPU, imprimante R1 et fichier R2.
 - Capacité officielle : T-ARCH-01.
 - Données : P1 arrivée 0 durée 3 ; P2 arrivée 1 durée 2 ; P3 arrivée 2 durée 1.
 - Consigne : Donner le diagramme.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 2 - Tracer Round Robin quantum 1
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-ARCH-02A.
 - Données : P1 durée 3, P2 durée 2, arrivées toutes à 0.
 - Consigne : Donner la séquence CPU.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 3 - Calculer temps de séjour
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-02B.
 - Données : Données FCFS de l’exercice 1.
 - Consigne : Calculer turnaround.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 4 - Écrire un pseudo-code ordonnanceur simple
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-02C.
 - Données : File prête [P1,P2,P3].
 - Consigne : Produire pseudo-code FCFS.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 5 - Processus bloqué en E/S
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-01.
 - Données : P1 demande imprimante occupée de t=2 à t=5.
 - Consigne : Dire son état.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 6 - Justifier un interblocage
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-02A.
 - Données : P1 détient R1 et attend R2 ; P2 détient R2 et attend R1.
 - Consigne : Montrer le cycle.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 7 - Comparer équité
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-ARCH-02B.
 - Données : P1 durée 10, P2 durée 1, P3 durée 1.
 - Consigne : Comparer FCFS et RR.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 8 - Prévenir interblocage
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-ARCH-02C.
 - Données : Ressources R1,R2.
 - Consigne : Proposer une règle.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-ARCH-01.
 - Donnée utilisée : P1 arrivée 0 durée 3 ; P2 arrivée 1 durée 2 ; P3 arrivée 2 durée 1.
 - Résultat attendu : FCFS: P1 de 0 à 3, P2 de 3 à 5, P3 de 5 à 6. Attentes: P1=0, P2=2, P3=3.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-ARCH-02A.
 - Donnée utilisée : P1 durée 3, P2 durée 2, arrivées toutes à 0.
 - Résultat attendu : RR q=1: P1(0-1), P2(1-2), P1(2-3), P2(3-4), P1(4-5). Fin P2=4, P1=5.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-ARCH-02B.
 - Donnée utilisée : Données FCFS de l’exercice 1.
 - Résultat attendu : Séjour = fin - arrivée: P1=3-0=3, P2=5-1=4, P3=6-2=4.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-ARCH-02C.
 - Donnée utilisée : File prête [P1,P2,P3].
 - Résultat attendu : tant que file non vide: p=defiler(); exécuter p jusqu’à fin; enregistrer temps_fin[p]. La file conserve l’ordre d’arrivée.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-ARCH-01.
 - Donnée utilisée : P1 demande imprimante occupée de t=2 à t=5.
 - Résultat attendu : P1 quitte l’état élu et passe bloqué jusqu’à libération de l’imprimante ; le CPU peut être donné à un autre processus.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-ARCH-02A.
 - Donnée utilisée : P1 détient R1 et attend R2 ; P2 détient R2 et attend R1.
 - Résultat attendu : Graphe: P1 -> R2 -> P2 -> R1 -> P1. Cycle avec ressources non préemptibles : interblocage possible.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-ARCH-02B.
 - Donnée utilisée : P1 durée 10, P2 durée 1, P3 durée 1.
 - Résultat attendu : FCFS retarde P2/P3 jusqu’à t=10 si P1 commence ; RR q=1 permet à P2 et P3 de finir tôt, mais ajoute des commutations.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-ARCH-02C.
 - Donnée utilisée : Ressources R1,R2.
 - Résultat attendu : Imposer un ordre global: toujours demander R1 avant R2. Alors aucun cycle P1/R2/P2/R1 ne peut se former.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
 - EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.

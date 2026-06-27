@@ -51,106 +51,106 @@ Topologie: R1-R2 coût1, R2-R3 coût1, R1-R3 coût4, R3-R4 coût2.
 - Capacité officielle : T-ARCH-03.
 - Données : R1 connaît R2 coût1, R3 coût4 direct, R4 via R3 coût6.
 - Consigne : Identifier la meilleure route vers R3.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 2 - Calculer métrique RIP
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-ARCH-03.
 - Données : R1 vers R4 via R2 puis R3, 3 sauts.
 - Consigne : Donner métrique.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 3 - Appliquer Dijkstra OSPF
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-03.
 - Données : Coûts: R1-R2=1, R2-R3=1, R1-R3=4, R3-R4=2.
 - Consigne : Donner distances depuis R1.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 4 - Écrire une entrée de table
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-03.
 - Données : Destination réseau 10.4.0.0/24 derrière R4.
 - Consigne : Donner next-hop depuis R1.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 5 - Lien R2-R3 coupé
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-03.
 - Données : Après coupure, R1-R3 direct coût4 existe.
 - Consigne : Recalculer R1 vers R4.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 6 - Comparer RIP et OSPF
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-ARCH-03.
 - Données : Chemin A 2 sauts coût 100, chemin B 3 sauts coût 3.
 - Consigne : Dire protocole choisi.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 7 - Détecter boucle temporaire
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-ARCH-03.
 - Données : R1 croit R4 via R2, R2 croit R4 via R1.
 - Consigne : Expliquer le risque.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 8 - Pseudo-code de next-hop
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-ARCH-03.
 - Données : Distances candidates vers R4: via R2 coût4, via R3 coût6.
 - Consigne : Écrire la sélection.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-ARCH-03.
 - Donnée utilisée : R1 connaît R2 coût1, R3 coût4 direct, R4 via R3 coût6.
 - Résultat attendu : Meilleure route R1->R2->R3 coût 2 si R2 annonce R3 à 1 ; elle bat le lien direct coût 4.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-ARCH-03.
 - Donnée utilisée : R1 vers R4 via R2 puis R3, 3 sauts.
 - Résultat attendu : En RIP, la métrique est le nombre de sauts: R1->R2, R2->R3, R3->R4 donc 3.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-ARCH-03.
 - Donnée utilisée : Coûts: R1-R2=1, R2-R3=1, R1-R3=4, R3-R4=2.
 - Résultat attendu : D(R1)=0, D(R2)=1, D(R3)=2 via R2, D(R4)=4 via R2 puis R3.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-ARCH-03.
 - Donnée utilisée : Destination réseau 10.4.0.0/24 derrière R4.
 - Résultat attendu : Entrée: destination 10.4.0.0/24, next-hop R2, coût OSPF 4. Le chemin calculé est R1-R2-R3-R4.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-ARCH-03.
 - Donnée utilisée : Après coupure, R1-R3 direct coût4 existe.
 - Résultat attendu : Chemin devient R1-R3-R4 coût 4+2=6. La route via R2 n’est plus valide.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-ARCH-03.
 - Donnée utilisée : Chemin A 2 sauts coût 100, chemin B 3 sauts coût 3.
 - Résultat attendu : RIP préfère A car 2 sauts < 3. OSPF préfère B car coût total 3 < 100.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-ARCH-03.
 - Donnée utilisée : R1 croit R4 via R2, R2 croit R4 via R1.
 - Résultat attendu : Les paquets peuvent alterner R1/R2 jusqu’à TTL=0. Les protocoles utilisent temporisateurs et annonces pour corriger.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-ARCH-03.
 - Donnée utilisée : Distances candidates vers R4: via R2 coût4, via R3 coût6.
 - Résultat attendu : min_cost=inf; pour voisin, coût=c_lien + annonce[voisin][R4]; garder voisin minimal. Résultat next-hop R2 coût4.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
 - EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.

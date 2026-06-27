@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "P-TABLE-01"
+    - "P-TABLE-02"
 ---
 
 
@@ -31,6 +32,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - P-TABLE-01
+- P-TABLE-02
 
 ## Prérequis
 - Reconnaître une consigne liée à table.
@@ -56,7 +58,7 @@ Le fichier `pays_monde.csv` contient des pays, capitales, continents et populati
 - Capacité officielle : P-TABLE-01.
 - Énoncé : résoudre lecture CSV avec `PAYS,CAPITALE,CONTINENT,POPULATION
 Allemagne,Berlin,Europe,82801531`.
-- Réponse attendue : une ligne exploitable.
+- Réponse attendue : `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}`.
 - Critère de réussite : méthode visible, résultat correct et contrôle « fichier pays_monde.csv vide ».
 ### Question 2
 - Objectif évalué : O2.
@@ -74,7 +76,7 @@ Allemagne,Berlin,Europe,82801531`.
 - Objectif évalué : O4.
 - Capacité officielle : P-TABLE-01.
 - Énoncé : corriger tri par continent puis population pour lignes regroupées par CONTINENT.
-- Réponse attendue : pays triés par CONTINENT puis POPULATION.
+- Réponse attendue : dans le groupe Europe : Allemagne `(82801531)` avant Albanie `(3063320)`, puis les autres continents selon `CONTINENT`.
 - Critère de réussite : méthode visible, résultat correct et contrôle « continent absent ».
 ## Barème
 - Question 1 : 2 points méthode, 1 point résultat, 1 point justification liée à fichier pays_monde.csv vide.
@@ -113,7 +115,7 @@ Allemagne,Berlin,Europe,82801531` avec une fiche méthode fournie.
 
 ## Corrigé
 ### Corrigé question 1
-- Résultat attendu : une ligne exploitable.
+- Résultat attendu : `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}`.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 1.
 - Critère de validation : méthode visible, résultat correct et contrôle « fichier pays_monde.csv vide ».
 ### Corrigé question 2
@@ -125,7 +127,7 @@ Allemagne,Berlin,Europe,82801531` avec une fiche méthode fournie.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 3.
 - Critère de validation : méthode visible, résultat correct et contrôle « sélection vide avant tri numérique ».
 ### Corrigé question 4
-- Résultat attendu : pays triés par CONTINENT puis POPULATION.
+- Résultat attendu : dans le groupe Europe : Allemagne `(82801531)` avant Albanie `(3063320)`, puis les autres continents selon `CONTINENT`.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
 - Critère de validation : méthode visible, résultat correct et contrôle « continent absent ».
 
@@ -142,3 +144,14 @@ Allemagne,Berlin,Europe,82801531` avec une fiche méthode fournie.
 - Version aménagée : données import, cohérence et recherche surlignées et tableau réponse en trois zones.
 - Remédiation : contrôler une ligne CSV avec clé manquante, puis verbaliser la méthode en binôme.
 
+
+
+## Fil conducteur P05 - pays_monde.csv
+- Capacités travaillées : P-TABLE-01 pour importer et parcourir `pays_monde.csv`, P-TABLE-02 pour filtrer, convertir et trier la table.
+- Champs obligatoires : `PAYS`, `CAPITALE`, `CONTINENT`, `POPULATION`.
+- Lecture comparée : `csv.reader` donne des listes, `csv.DictReader` donne des dictionnaires comme `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": "82801531"}`.
+- Conversion obligatoire : `int(row["POPULATION"])` transforme `"82801531"` en `82801531` et rejette la ligne invalide `POPULATION="invalide"`.
+- Filtrage Europe : Allemagne et Albanie sont conservées, Brésil est exclu.
+- Tri lexicographique : `sorted(["100", "20", "3"])` donne `"100", "20", "3"`; ce n’est pas un tri numérique.
+- Tri numérique : `sorted([100, 20, 3])` donne `3, 20, 100`.
+- Tri par continent puis population : la clé `(row["CONTINENT"], -row["POPULATION"], row["PAYS"])` classe d’abord par continent, puis par population décroissante.

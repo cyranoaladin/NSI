@@ -95,7 +95,7 @@ On veut écrire une fonction prix_ttc(ht, taux) utilisable dans plusieurs exerci
 ### Exercice 8
 - Objectif travaillé : O4.
 - Capacité officielle : P-LANG-01.
-- Énoncé : Créer une nouvelle donnée de test et vérifier que la méthode reste valable.
+- Énoncé : Construire un cas de test numérique ou textuel inédit et vérifier que la méthode reste valable.
 - Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
 - Critère de réussite : la conclusion est vérifiable par un pair.
 

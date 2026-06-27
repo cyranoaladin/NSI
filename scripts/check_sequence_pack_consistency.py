@@ -25,10 +25,13 @@ P05_REQUIRED_TERMS = [
     "csv.reader",
     "csv.DictReader",
     "filtrage",
-    "int",
+    "int(row[\"POPULATION\"])",
     "tri numérique",
     "tri lexicographique",
+    "tri par continent puis population",
     "ligne invalide",
+    "P-TABLE-01",
+    "P-TABLE-02",
 ]
 
 OLD_P05_MARKERS = [
@@ -64,9 +67,9 @@ def p05_pack_errors(path: Path, text: str, root: Path) -> list[str]:
     if old:
         errors.append(f"{rel}: fil conducteur P05 contradictoire pays_monde/villes-temp -> {', '.join(old)}")
     required = contains_any(body, P05_REQUIRED_TERMS)
-    if "pays_monde.csv" in body and len(required) < 8:
+    if "pays_monde.csv" in body and len(required) < len(P05_REQUIRED_TERMS):
         missing = [term for term in P05_REQUIRED_TERMS if term not in required]
-        errors.append(f"{rel}: fil pays_monde incomplet, éléments manquants -> {', '.join(missing[:6])}")
+        errors.append(f"{rel}: fil pays_monde incomplet, éléments manquants -> {', '.join(missing[:8])}")
     return errors
 
 

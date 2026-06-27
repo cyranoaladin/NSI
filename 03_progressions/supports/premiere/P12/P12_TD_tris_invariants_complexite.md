@@ -57,106 +57,106 @@ On trie des séries de temps de réponse collectées pendant un TP réseau.
 - Capacité officielle : P-ALGO-02A.
 - Données : liste initiale [5, 2, 4, 1].
 - Consigne : Donner les états après chaque insertion.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 2 - Reconnaître un invariant
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : P-ALGO-02B.
 - Données : Dans le tri par insertion, après l’étape i, le préfixe de longueur i+1 est trié.
 - Consigne : Vérifier l’invariant après l’insertion de 4 dans [5,2,4,1].
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 3 - Écrire un tri par sélection
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : P-ALGO-02C.
 - Données : liste [3, 1, 4, 2].
 - Consigne : Donner pseudo-code et premier échange.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 4 - Compter les comparaisons
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : P-ALGO-02D.
 - Données : tri par sélection sur n=5 éléments.
 - Consigne : Calculer le nombre de comparaisons.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 5 - Trier une liste déjà triée
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : P-ALGO-02A.
 - Données : liste [1, 2, 3, 4].
 - Consigne : Comparer insertion et sélection.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 6 - Justifier la terminaison
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : P-ALGO-02B.
 - Données : Boucle pour i allant de 1 à n-1 dans insertion.
 - Consigne : Dire pourquoi l’algorithme termine.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 7 - Comparer complexités
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : P-ALGO-02C.
 - Données : n=1000, tri quadratique versus tri en n log2 n.
 - Consigne : Donner les ordres de grandeur.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 8 - Détecter une erreur d’invariant
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : P-ALGO-02D.
 - Données : Un élève écrit: “après chaque échange, toute la liste est triée”.
 - Consigne : Corriger l’invariant.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : P-ALGO-02A.
 - Donnée utilisée : liste initiale [5, 2, 4, 1].
 - Résultat attendu : États: [5,2,4,1] ; insérer 2 -> [2,5,4,1] ; insérer 4 -> [2,4,5,1] ; insérer 1 -> [1,2,4,5].
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : P-ALGO-02B.
 - Donnée utilisée : Dans le tri par insertion, après l’étape i, le préfixe de longueur i+1 est trié.
 - Résultat attendu : Après insertion de 4, le préfixe [2,4,5] est trié. L’invariant est vrai pour i=2 ; le suffixe [1] n’est pas encore traité.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : P-ALGO-02C.
 - Donnée utilisée : liste [3, 1, 4, 2].
 - Résultat attendu : Pseudo-code: pour i, chercher j_min dans i..n-1 puis échanger. Pour i=0, minimum 1 à j=1, échange -> [1,3,4,2].
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : P-ALGO-02D.
 - Donnée utilisée : tri par sélection sur n=5 éléments.
 - Résultat attendu : Comparaisons: 4+3+2+1=10. Formule n(n-1)/2 = 5*4/2 = 10.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : P-ALGO-02A.
 - Donnée utilisée : liste [1, 2, 3, 4].
 - Résultat attendu : Insertion ne décale aucun élément et reste très rapide ; sélection effectue quand même 6 comparaisons pour n=4. Le résultat reste [1,2,3,4].
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : P-ALGO-02B.
 - Donnée utilisée : Boucle pour i allant de 1 à n-1 dans insertion.
 - Résultat attendu : i augmente d’une unité et n est fini. La boucle interne décale j vers la gauche ; j diminue jusqu’à 0 au plus. Les deux boucles terminent.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : P-ALGO-02C.
 - Donnée utilisée : n=1000, tri quadratique versus tri en n log2 n.
 - Résultat attendu : n^2 = 1 000 000 opérations ; n log2 n environ 1000*10=10 000. L’écart justifie un tri plus avancé pour grandes données.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : P-ALGO-02D.
 - Donnée utilisée : Un élève écrit: “après chaque échange, toute la liste est triée”.
 - Résultat attendu : Invariant correct pour sélection: après l’itération i, les i+1 plus petits éléments sont placés au début et triés ; le suffixe peut rester non trié.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
 - EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.

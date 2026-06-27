@@ -64,19 +64,19 @@ official_program:
 ## Corrigé
 ### Corrigé question 1
 - Démarche : suivre les comparaisons depuis la racine.
-- Résultat attendu : une conclusion compatible avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`.
 - Justification : le contrôle explicite empêche l’erreur « parcourir tout l’arbre comme dans un arbre quelconque ».
 ### Corrigé question 2
 - Démarche : justifier le chemin vers 6.
-- Résultat attendu : une conclusion compatible avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`.
 - Justification : le contrôle explicite empêche l’erreur « oublier l’invariant après insertion ».
 ### Corrigé question 3
 - Démarche : placer 7 à droite de 6.
-- Résultat attendu : une conclusion compatible avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`.
 - Justification : le contrôle explicite empêche l’erreur « placer une clé égale sans convention ».
 ### Corrigé question 4
 - Démarche : repérer le cas dégénéré d’insertions triées.
-- Résultat attendu : une conclusion compatible avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`.
 - Justification : le contrôle explicite empêche l’erreur « annoncer une complexité logarithmique sans condition d’équilibre ».
 
 ## Critères de réussite

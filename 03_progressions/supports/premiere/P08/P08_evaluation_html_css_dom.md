@@ -68,19 +68,19 @@ official_program:
 ## Corrigé
 ### Corrigé question 1
 - Démarche : identifier balise, attribut id et classe CSS.
-- Résultat attendu : une conclusion compatible avec `<ul><li id="t1">Réviser</li><li id="t2">Tester</li></ul>`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `<ul><li id="t1">Réviser</li><li id="t2">Tester</li></ul>`.
 - Justification : le contrôle explicite empêche l’erreur « confondre HTML et CSS ».
 ### Corrigé question 2
 - Démarche : sélectionner un élément du DOM.
-- Résultat attendu : une conclusion compatible avec `<ul><li id="t1">Réviser</li><li id="t2">Tester</li></ul>`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `<ul><li id="t1">Réviser</li><li id="t2">Tester</li></ul>`.
 - Justification : le contrôle explicite empêche l’erreur « modifier tous les li avec un sélecteur trop large ».
 ### Corrigé question 3
 - Démarche : associer un événement clic.
-- Résultat attendu : une conclusion compatible avec `<ul><li id="t1">Réviser</li><li id="t2">Tester</li></ul>`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `<ul><li id="t1">Réviser</li><li id="t2">Tester</li></ul>`.
 - Justification : le contrôle explicite empêche l’erreur « écrire du style en dur sans classe ».
 ### Corrigé question 4
 - Démarche : contrôler que seul t2 change de classe.
-- Résultat attendu : une conclusion compatible avec `<ul><li id="t1">Réviser</li><li id="t2">Tester</li></ul>`.
+- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `<ul><li id="t1">Réviser</li><li id="t2">Tester</li></ul>`.
 - Justification : le contrôle explicite empêche l’erreur « oublier que le DOM est l’arbre manipulé par JavaScript ».
 
 ## Critères de réussite

@@ -61,106 +61,106 @@ On transforme un script monolithique de notes en module testable.
 - Capacité officielle : T-LANG-03A.
 - Données : Module notes.py expose moyenne(notes) et mediane(notes).
 - Consigne : Dire ce qui appartient à l’API.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 2 - Lire une trace d’erreur
 - Type : lecture/analyse.
 - Niveau : socle.
 - Capacité officielle : T-LANG-03B.
 - Données : TypeError: unsupported operand type(s) for +: int and str dans somme += note.
 - Consigne : Identifier la cause.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 3 - Écrire une fonction pure
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-LANG-03C.
 - Données : notes=[10,14,16].
 - Consigne : Coder moyenne sans effet de bord.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 4 - Ajouter un test unitaire
 - Type : production/écriture.
 - Niveau : standard.
 - Capacité officielle : T-LANG-04A.
 - Données : moyenne([10,20]) doit valoir 15.
 - Consigne : Écrire un assert.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 5 - Contrat liste vide
 - Type : cas limite.
 - Niveau : standard.
 - Capacité officielle : T-LANG-04B.
 - Données : moyenne([]).
 - Consigne : Choisir une gestion.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 6 - Justifier la modularité
 - Type : justification.
 - Niveau : standard.
 - Capacité officielle : T-LANG-05.
 - Données : Script avec lecture fichier, calcul et affichage mélangés.
 - Consigne : Expliquer le découpage.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 7 - Comparer paradigmes
 - Type : lecture/analyse.
 - Niveau : approfondissement.
 - Capacité officielle : T-LANG-03A.
 - Données : Calculer les carrés de [1,2,3].
 - Consigne : Donner version impérative et fonctionnelle.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 ### Exercice 8 - Déboguer mutation non voulue
 - Type : production/écriture.
 - Niveau : approfondissement.
 - Capacité officielle : T-LANG-03B.
 - Données : fonction ajoute_zero(l) fait l.append(0).
 - Consigne : Proposer correction.
-- Production attendue : une réponse structurée en donnée, méthode, résultat et contrôle.
-- Critère de réussite : un pair peut vérifier le résultat à partir de la donnée.
+- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
+- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-LANG-03A.
 - Donnée utilisée : Module notes.py expose moyenne(notes) et mediane(notes).
 - Résultat attendu : Les signatures moyenne(notes) et mediane(notes), leur contrat d’entrée/sortie et exceptions appartiennent à l’API ; les variables internes non.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-LANG-03B.
 - Donnée utilisée : TypeError: unsupported operand type(s) for +: int and str dans somme += note.
 - Résultat attendu : Une note est une chaîne comme "12" au lieu d’un entier/float. Il faut convertir ou valider l’entrée.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-LANG-03C.
 - Donnée utilisée : notes=[10,14,16].
 - Résultat attendu : def moyenne(notes): return sum(notes)/len(notes). Pour [10,14,16], résultat 40/3 environ 13.33 ; la liste n’est pas modifiée.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-LANG-04A.
 - Donnée utilisée : moyenne([10,20]) doit valoir 15.
 - Résultat attendu : assert moyenne([10,20]) == 15. On ajoute aussi le cas vide selon contrat, par exemple pytest.raises(ValueError).
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-LANG-04B.
 - Donnée utilisée : moyenne([]).
 - Résultat attendu : Contrat retenu: lever ValueError("liste vide"). Cela évite division par zéro silencieuse.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-LANG-05.
 - Donnée utilisée : Script avec lecture fichier, calcul et affichage mélangés.
 - Résultat attendu : Séparer lire_csv, moyenne, afficher_resultat permet de tester moyenne sans fichier et de changer l’affichage sans toucher le calcul.
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-LANG-03A.
 - Donnée utilisée : Calculer les carrés de [1,2,3].
 - Résultat attendu : Impératif: boucle append. Fonctionnel: list(map(lambda x: x*x, valeurs)) ou compréhension [x*x for x in valeurs]. Résultat [1,4,9].
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-LANG-03B.
 - Donnée utilisée : fonction ajoute_zero(l) fait l.append(0).
 - Résultat attendu : Retourner une nouvelle liste: return l + [0]. Ainsi l’entrée originale [1,2] reste [1,2], sortie [1,2,0].
-- Contrôle : comparer la réponse avec la donnée de départ et expliciter le cas limite si l’exercice le demande.
+- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
 
 ## Erreurs fréquentes
 - EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
