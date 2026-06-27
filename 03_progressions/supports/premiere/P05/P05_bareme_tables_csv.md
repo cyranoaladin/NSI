@@ -56,19 +56,19 @@ Le fichier `pays_monde.csv` contient des pays, capitales, continents et populati
 - 1 point : identifier correctement lecture CSV et la donnée `PAYS,CAPITALE,CONTINENT,POPULATION
 Allemagne,Berlin,Europe,82801531`.
 - 1 point : appliquer la méthode « lire avec csv.reader puis convertir POPULATION en int ».
-- 1 point : obtenir `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}`.
+- 1 point : produire le dictionnaire Allemagne avec `POPULATION` convertie en entier `82801531`.
 - 1 point : contrôler le cas limite « fichier pays_monde.csv vide » ou expliquer pourquoi il ne s’applique pas.
 - Retrait possible : confusion avec l’erreur fréquente EF1 - Traiter l’en-tête comme une donnée.
 ### Barème question 2
 - 1 point : identifier correctement filtrage et la donnée un extrait contenant Allemagne, Albanie et Brésil.
 - 1 point : appliquer la méthode « conserver les lignes dont CONTINENT vaut Europe ».
-- 1 point : obtenir `["Allemagne", "Albanie"]`.
+- 1 point : lister exactement les pays européens valides `["Allemagne", "Albanie"]`.
 - 1 point : contrôler le cas limite « aucun pays du continent demandé » ou expliquer pourquoi il ne s’applique pas.
 - Retrait possible : confusion avec l’erreur fréquente EF2 - Comparer une valeur numérique restée chaîne.
 ### Barème question 3
 - 1 point : identifier correctement traitement numérique des populations et la donnée `82801531`, `3063320`, valeur `invalide`.
 - 1 point : appliquer la méthode « isoler une ligne invalide avant conversion de POPULATION en int ».
-- 1 point : obtenir `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]`.
+- 1 point : placer la ligne `Erreur,NA,Europe,invalide` dans `erreurs` sans fabriquer de population.
 - 1 point : contrôler le cas limite « sélection vide avant tri numérique » ou expliquer pourquoi il ne s’applique pas.
 - Retrait possible : confusion avec l’erreur fréquente EF3 - Diviser par zéro après filtrage vide.
 ### Barème question 4

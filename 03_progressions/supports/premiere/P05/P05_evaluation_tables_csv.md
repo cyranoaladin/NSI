@@ -58,19 +58,19 @@ Le fichier `pays_monde.csv` contient des pays, capitales, continents et populati
 - Capacité officielle : P-TABLE-01.
 - Énoncé : résoudre lecture CSV avec `PAYS,CAPITALE,CONTINENT,POPULATION
 Allemagne,Berlin,Europe,82801531`.
-- Réponse attendue : `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}`.
+- Solution Q1 : dictionnaire Allemagne `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}`.
 - Critère de réussite : en-tête identifié, `csv.DictReader` utilisé, `POPULATION` convertie, `ValueError` gérée, résultat exact produit et contrôle « fichier pays_monde.csv vide ».
 ### Question 2
 - Objectif évalué : O2.
 - Capacité officielle : P-TABLE-01.
 - Énoncé : expliquer filtrage à partir de un extrait contenant Allemagne, Albanie et Brésil.
-- Réponse attendue : `["Allemagne", "Albanie"]`.
+- Sortie Q2 : la liste des pays européens valides est `["Allemagne", "Albanie"]`.
 - Critère de réussite : en-tête identifié, `csv.DictReader` utilisé, `POPULATION` convertie, `ValueError` gérée, résultat exact produit et contrôle « aucun pays du continent demandé ».
 ### Question 3
 - Objectif évalué : O3.
 - Capacité officielle : P-TABLE-01.
 - Énoncé : comparer traitement numérique des populations avec `82801531`, `3063320`, valeur `invalide`.
-- Réponse attendue : `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]`.
+- Rejet Q3 : `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]`.
 - Critère de réussite : en-tête identifié, `csv.DictReader` utilisé, `POPULATION` convertie, `ValueError` gérée, résultat exact produit et contrôle « sélection vide avant tri numérique ».
 ### Question 4
 - Objectif évalué : O4.

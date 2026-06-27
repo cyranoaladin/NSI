@@ -86,7 +86,7 @@ Allemagne,Berlin,Europe,82801531`.
 Allemagne,Berlin,Europe,82801531`.
 - Angle disciplinaire : repérage initial autour de lecture CSV.
 - Démarche attendue : lire avec csv.reader puis convertir POPULATION en int.
-- Exemple associé : `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}`.
+- Exemple associé : dictionnaire Allemagne avec `POPULATION` convertie en entier `82801531`.
 - Point de vigilance : Traiter l’en-tête comme une donnée.
 - Activité de reprise associée : Marquer l’en-tête et commencer les données à la ligne suivante.
 - Mini-production : produire un court diagnostic de la donnée et du vocabulaire.
@@ -95,7 +95,7 @@ Allemagne,Berlin,Europe,82801531`.
 - Point de départ : un extrait contenant Allemagne, Albanie et Brésil.
 - Angle disciplinaire : méthode guidée autour de filtrage.
 - Démarche attendue : conserver les lignes dont CONTINENT vaut Europe.
-- Exemple associé : `["Allemagne", "Albanie"]`.
+- Exemple associé : liste Europe valide `["Allemagne", "Albanie"]` après exclusion de Brésil et de la ligne invalide.
 - Point de vigilance : Comparer une valeur numérique restée chaîne.
 - Activité de reprise associée : Convertir explicitement avant les comparaisons numériques.
 - Mini-production : produire une procédure numérotée avec contrôle intermédiaire.
@@ -104,7 +104,7 @@ Allemagne,Berlin,Europe,82801531`.
 - Point de départ : `82801531`, `3063320`, valeur `invalide`.
 - Angle disciplinaire : transfert argumenté autour de traitement numérique des populations.
 - Démarche attendue : isoler une ligne invalide avant conversion de POPULATION en int.
-- Exemple associé : `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]`.
+- Exemple associé : liste `erreurs` contenant uniquement `{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}`.
 - Point de vigilance : Diviser par zéro après filtrage vide.
 - Activité de reprise associée : Tester la sélection avant le tri numérique.
 - Mini-production : produire une justification qui compare deux cas distincts.
