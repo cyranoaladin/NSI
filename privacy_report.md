@@ -88,6 +88,24 @@ Les noms propres suspects sont listés pour revue humaine.
 - drive_sources.yml: nom propre suspect -> Ressources Drive
 - evaluation_bareme_alignment_report.md: nom propre suspect -> Evaluation Bareme Alignment Report
 - learning_objectives_assessed_report.md: nom propre suspect -> Learning Objectives Assessed Report
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
+- manifest.csv: nom propre suspect -> Grand Oral
 - missing_documents_register_v2.md: nom propre suspect -> Lien Drive
 - missing_documents_register_v2.md: nom propre suspect -> Lien Drive
 - missing_documents_register_v2.md: nom propre suspect -> Lien Drive
@@ -354,4 +372,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/code/T00_corrige_professeur_diagnostic_tests.py: nom propre suspect -> Asset Python
-- ... 223 alertes supplémentaires non affichées
+- ... 229 alertes supplémentaires non affichées
