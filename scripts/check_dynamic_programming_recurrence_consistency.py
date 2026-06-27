@@ -22,6 +22,26 @@ class DynamicProgrammingResult:
     files_checked: int = 0
 
 
+def fibonacci_table(n: int) -> list[int]:
+    if n < 0:
+        raise ValueError("n must be non-negative")
+    if n == 0:
+        return [0]
+    values = [0, 1]
+    for index in range(2, n + 1):
+        values.append(values[index - 1] + values[index - 2])
+    return values
+
+
+def parse_first_integer_list(text: str) -> list[int]:
+    matches = re.findall(r"\[([0-9,\s]+)\]", text)
+    if not matches:
+        return []
+    lists = [[int(value) for value in re.findall(r"\d+", match)] for match in matches]
+    long_lists = [values for values in lists if len(values) >= 3]
+    return long_lists[-1] if long_lists else lists[-1]
+
+
 def dp_block_errors(text: str) -> list[str]:
     errors: list[str] = []
     lowered = text.lower()
@@ -38,6 +58,16 @@ def dp_block_errors(text: str) -> list[str]:
             errors.append("programmation dynamique sans relation de récurrence")
         if "résultat final" in lowered and not has_table:
             errors.append("résultat final annoncé sans table ou trace")
+        table = parse_first_integer_list(text)
+        fib_table_context = bool(re.search(r"fib(?:onacci)?[^.\n]{0,160}\[[0-9,\s]+\]", text, re.I | re.S))
+        if table and fib_table_context:
+            expected = fibonacci_table(len(table) - 1)
+            if table != expected:
+                errors.append(f"table Fibonacci incohérente: annoncé {table}, attendu {expected}")
+        if table and re.search(r"dp\[i\]\s*=\s*dp\[i-1\]\s*\+\s*dp\[i-2\]", lowered):
+            expected = fibonacci_table(len(table) - 1)
+            if table != expected:
+                errors.append(f"relation dp[i]=dp[i-1]+dp[i-2] contredite par la table {table}")
     return errors
 
 

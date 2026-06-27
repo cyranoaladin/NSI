@@ -10,8 +10,11 @@ from collections import Counter
 from pathlib import Path
 
 from _course_sheets_common import compute_sheet_readiness, course_sheet_links, frontmatter_capacities, planned_sequences, read_frontmatter, resource_exists, sheets_by_sequence
+from check_capacity_status_ladder import analyze_capacity_status_ladder
 from check_course_sheet_readiness_strict import analyze_course_sheet_readiness_strict
 from check_missing_register_actionability import load_register_rows
+from check_paper_tp_justification import analyze_paper_tp_justification
+from check_session_to_resource_alignment import analyze_session_to_resource_alignment
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "manifest.csv"
@@ -185,6 +188,15 @@ def main() -> int:
     indicative_rows = indicative_gate_rows()
     sheet_stats = course_sheet_stats()
     linked_rows = linked_course_sheet_rows()
+    capacity_ladder = analyze_capacity_status_ladder(ROOT)
+    capacity_counts = {
+        "documented": sum(1 for row in capacity_ladder.rows.values() if row["documented"] == "oui"),
+        "practiced": sum(1 for row in capacity_ladder.rows.values() if row["practiced"] == "oui"),
+        "assessed": sum(1 for row in capacity_ladder.rows.values() if row["assessed"] == "oui"),
+        "covered": sum(1 for row in capacity_ladder.rows.values() if row["covered"] == "oui"),
+    }
+    paper_tp = analyze_paper_tp_justification(ROOT)
+    session_alignment = analyze_session_to_resource_alignment(ROOT)
     lines = [
         "# QA Report",
         "",
@@ -252,7 +264,8 @@ def main() -> int:
         "- Aucune capacité n'est covered.",
         "- Documents professeurs encore en needs_review.",
         "- Revue pédagogique et scientifique humaine absente.",
-        "- Les séances hors première tranche restent théoriques et non prêtes.",
+        f"- Séances opérationnelles ou reliées : {session_alignment.operational_count}.",
+        f"- Séances théoriques ou non reliées : {session_alignment.theoretical_count}.",
         "",
         "## Fiches de cours",
         "",
@@ -271,6 +284,29 @@ def main() -> int:
         f"- Liens vers supports inscrits au registre : {sheet_stats['registered_links']}",
         "- Statut : needs_review",
         "- Effet couverture : aucun ; les fiches ne rendent aucune capacité covered.",
+        "",
+        "## Échelle capacités officielles",
+        "",
+        f"- Capacités documented : {capacity_counts['documented']}",
+        f"- Capacités practiced : {capacity_counts['practiced']}",
+        f"- Capacités assessed : {capacity_counts['assessed']}",
+        "- Capacités reviewed_pedagogy : 0",
+        "- Capacités reviewed_science : 0",
+        f"- Capacités covered : {capacity_counts['covered']}",
+        "- Décision : documented/practiced/assessed ne valent pas validation humaine.",
+        "",
+        "## TP papier / exécutables",
+        "",
+        f"- TP papier : {paper_tp.paper_count}",
+        f"- TP exécutables : {paper_tp.executable_count}",
+        f"- Ratio papier : {(paper_tp.paper_count / (paper_tp.paper_count + paper_tp.executable_count) * 100) if (paper_tp.paper_count + paper_tp.executable_count) else 0:.1f}%",
+        "- Les TP papier restent `needs_review` et ne remplacent pas une revue humaine.",
+        "",
+        "## Séances opérationnelles / théoriques",
+        "",
+        f"- Séances opérationnelles ou reliées : {session_alignment.operational_count}",
+        f"- Séances théoriques ou non reliées : {session_alignment.theoretical_count}",
+        "- Les séances théoriques restantes doivent être reliées explicitement aux supports produits avant publication.",
         "",
         "## Fiches liées non opérationnelles",
         "",

@@ -24,6 +24,53 @@ class TreeTraceResult:
     files_checked: int = 0
 
 
+@dataclass
+class BstNode:
+    value: int
+    left: "BstNode | None" = None
+    right: "BstNode | None" = None
+
+
+def insert_bst(node: BstNode | None, value: int, *, allow_duplicates: bool = False) -> BstNode:
+    if node is None:
+        return BstNode(value)
+    if value == node.value and not allow_duplicates:
+        return node
+    if value < node.value:
+        node.left = insert_bst(node.left, value, allow_duplicates=allow_duplicates)
+    else:
+        node.right = insert_bst(node.right, value, allow_duplicates=allow_duplicates)
+    return node
+
+
+def build_bst(values: list[int], *, allow_duplicates: bool = False) -> BstNode | None:
+    root: BstNode | None = None
+    for value in values:
+        root = insert_bst(root, value, allow_duplicates=allow_duplicates)
+    return root
+
+
+def inorder(node: BstNode | None) -> list[int]:
+    if node is None:
+        return []
+    return [*inorder(node.left), node.value, *inorder(node.right)]
+
+
+def search_bst(node: BstNode | None, value: int) -> bool:
+    while node is not None:
+        if value == node.value:
+            return True
+        node = node.left if value < node.value else node.right
+    return False
+
+
+def insertion_values(text: str) -> list[int]:
+    match = re.search(r"insertion\s*[:：]\s*([0-9,\s>\-]+)", text, re.I)
+    if not match:
+        return []
+    return [int(value) for value in re.findall(r"\d+", match.group(1))]
+
+
 def numbers_after(label: str, text: str) -> list[int]:
     match = re.search(rf"{label}\s*[:：]\s*([0-9,\s>\-]+)", text, re.I)
     if not match:
@@ -38,6 +85,11 @@ def tree_block_errors(text: str) -> list[str]:
         infix = numbers_after(r"parcours\s+infixe", text)
         if infix and infix != sorted(infix):
             errors.append(f"parcours infixe non trié pour un ABR: {infix}")
+        values = insertion_values(text)
+        if values and infix:
+            expected = inorder(build_bst(values))
+            if infix != expected:
+                errors.append(f"parcours infixe annoncé {infix} différent de l'ABR reconstruit {expected}")
         if re.search(r"racine\s+(\d+).*gauche\s+(\d+).*droite\s+(\d+)", text, re.I | re.S):
             root, left, right = map(int, re.search(r"racine\s+(\d+).*gauche\s+(\d+).*droite\s+(\d+)", text, re.I | re.S).groups())
             if not (left < root < right):

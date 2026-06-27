@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
+import ipaddress
 import re
 
 from _qa_common import ROOT
@@ -26,6 +27,26 @@ class NetworkTraceResult:
     files_checked: int = 0
 
 
+def decrement_ttl(ttl: int) -> tuple[int, str]:
+    next_ttl = ttl - 1
+    return next_ttl, "drop" if next_ttl <= 0 else "forward"
+
+
+def route_decision(destination: str, local_prefix: str) -> str:
+    address = ipaddress.ip_address(destination)
+    network = ipaddress.ip_network(local_prefix, strict=False)
+    return "local" if address in network else "gateway"
+
+
+def protocol_default_port(protocol: str) -> int | None:
+    normalized = protocol.lower()
+    if normalized == "http":
+        return 80
+    if normalized == "https":
+        return 443
+    return None
+
+
 def network_block_errors(text: str) -> list[str]:
     errors: list[str] = []
     lowered = text.lower()
@@ -36,6 +57,25 @@ def network_block_errors(text: str) -> list[str]:
         errors.append("adresse MAC confondue avec une adresse IP")
     if "https" in lowered and re.search(r"\b80\b", lowered) and "443" not in lowered:
         errors.append("HTTPS associé au port 80 sans correction vers 443")
+    for protocol, raw_port in re.findall(r"\b(HTTPS?|https?)\b[^\n]{0,40}\bport\s*(\d+)", text):
+        expected = protocol_default_port(protocol)
+        if expected is not None and int(raw_port) != expected:
+            errors.append(f"{protocol.upper()} associé au port {raw_port}, attendu {expected}")
+    ttl_match = re.search(r"ttl\s*=\s*(\d+)", lowered)
+    if ttl_match and re.search(r"ttl\s*après|ttl\s+apres|ttl\s*->|ttl\s*=\s*\d+\s+après", lowered):
+        ttl = int(ttl_match.group(1))
+        expected_ttl, expected_decision = decrement_ttl(ttl)
+        if expected_decision == "drop" and not re.search(r"drop|rejeter|détruit|detruit|expir|supprim", lowered):
+            errors.append(f"TTL={ttl} devrait être supprimé après décrément à {expected_ttl}")
+    for dest, prefix, announced in re.findall(
+        r"destination\s+(\d+\.\d+\.\d+\.\d+).*?préfixe\s+(\d+\.\d+\.\d+\.\d+/\d{1,2}).*?(locale|passerelle|gateway)",
+        lowered,
+        flags=re.S,
+    ):
+        expected = route_decision(dest, prefix)
+        normalized = "gateway" if announced in {"passerelle", "gateway"} else "local"
+        if expected != normalized:
+            errors.append(f"route incohérente pour {dest} dans {prefix}: annoncé {announced}, attendu {expected}")
     if re.search(r"destination\s+locale", lowered) and re.search(r"passerelle", lowered):
         if not re.search(r"sinon|si.*pas locale|préfixe|masque", lowered):
             errors.append("destination locale et passerelle mélangées sans décision par préfixe")

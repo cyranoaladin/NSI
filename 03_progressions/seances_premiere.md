@@ -656,16 +656,16 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : TD
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P06-E2 à P06-E4 sur tri de table, fusion par clé et doublons avec justification écrite.
 - Capacité officielle : P-TABLE-03, P-TABLE-04
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P06_TD_tables_recherche_tri_fusion.md, P06_corrige_tables_recherche_tri_fusion.md, P06_trace_tables_recherche_tri_fusion.md.
 - Déroulé : 1. rappel méthode; 2. exercices P06-E2, P06-E3, P06-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P06-E2 et P06-E3 guidés; avancé : exercice P06-E5 avec justification complète.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P06_TD_tables_recherche_tri_fusion.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P06_trace_tables_recherche_tri_fusion.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P06_TD_tables_recherche_tri_fusion.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P06_remediation_tables_recherche_tri_fusion.md.
 
 ### Séance P06-S3
 - Durée : 1 h
@@ -674,16 +674,16 @@
 - Période : période courte avec férié tunisien du 17 décembre signalé
 - Mois : décembre
 - Nature : remédiation
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P06-R3 et consolider la trace écrite sur tri de table, fusion par clé et doublons.
 - Capacité officielle : P-TABLE-03, P-TABLE-04
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P06_remediation_tables_recherche_tri_fusion.md, P06_corrige_tables_recherche_tri_fusion.md, P06_trace_tables_recherche_tri_fusion.md.
 - Déroulé : 1. retour sur erreurs de P06; 2. correction guidée de P06-R3; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P06-R3; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P06_remediation_tables_recherche_tri_fusion.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P06_trace_tables_recherche_tri_fusion.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P06_TD_tables_recherche_tri_fusion.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P06_remediation_tables_recherche_tri_fusion.md.
 
 ### Séance P06-S4
 - Durée : 1 h
@@ -692,16 +692,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : remédiation
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P06-R4 et consolider la trace écrite sur tri de table, fusion par clé et doublons.
 - Capacité officielle : P-TABLE-03, P-TABLE-04
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P06_remediation_tables_recherche_tri_fusion.md, P06_corrige_tables_recherche_tri_fusion.md, P06_trace_tables_recherche_tri_fusion.md.
 - Déroulé : 1. retour sur erreurs de P06; 2. correction guidée de P06-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P06-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P06_remediation_tables_recherche_tri_fusion.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P06_trace_tables_recherche_tri_fusion.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P06_TD_tables_recherche_tri_fusion.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P06_remediation_tables_recherche_tri_fusion.md.
 
 ### Séance P06-S5
 - Durée : 2 h
@@ -710,19 +710,19 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P06-J5 en produisant un livrable vérifiable lié à tri de table, fusion par clé et doublons.
 - Capacité officielle : P-TABLE-03, P-TABLE-04
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P06_tp_tables_recherche_tri_fusion.md, P06_trace_tables_recherche_tri_fusion.md.
 - Déroulé : 1. choix de l’objectif du jalon P06; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P06 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P06_tp_tables_recherche_tri_fusion.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P06_trace_tables_recherche_tri_fusion.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P06_TD_tables_recherche_tri_fusion.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P06_remediation_tables_recherche_tri_fusion.md.
 - Jalon projet : P06-J5 sur tri de table, fusion par clé et doublons.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P06-J5.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P06_tp_tables_recherche_tri_fusion.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P06-S6
@@ -732,19 +732,19 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P06-J6 en produisant un livrable vérifiable lié à tri de table, fusion par clé et doublons.
 - Capacité officielle : P-TABLE-03, P-TABLE-04
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P06_tp_tables_recherche_tri_fusion.md, P06_trace_tables_recherche_tri_fusion.md.
 - Déroulé : 1. choix de l’objectif du jalon P06; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P06 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P06_tp_tables_recherche_tri_fusion.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P06_trace_tables_recherche_tri_fusion.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P06_TD_tables_recherche_tri_fusion.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P06_remediation_tables_recherche_tri_fusion.md.
 - Jalon projet : P06-J6 sur tri de table, fusion par clé et doublons.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P06-J6.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P06_tp_tables_recherche_tri_fusion.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P07-S1
@@ -772,16 +772,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : TD
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P07-E2 à P07-E4 sur spécification de fonctions et jeux de tests avec justification écrite.
 - Capacité officielle : P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P07_TD_fonctions_tests_specifications.md, P07_corrige_fonctions_tests_specifications.md, P07_trace_fonctions_tests_specifications.md.
 - Déroulé : 1. rappel méthode; 2. exercices P07-E2, P07-E3, P07-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P07-E2 et P07-E3 guidés; avancé : exercice P07-E5 avec justification complète.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P07_TD_fonctions_tests_specifications.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P07_trace_fonctions_tests_specifications.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P07_TD_fonctions_tests_specifications.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P07_remediation_fonctions_tests_specifications.md.
 
 ### Séance P07-S3
 - Durée : 2 h
@@ -790,16 +790,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : TP
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : réaliser le TP representation_tools.py sur spécification de fonctions et jeux de tests et exécuter deux tests de cas limites.
 - Capacité officielle : P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P07_TP_fonctions_tests_specifications.md, P07_trace_fonctions_tests_specifications.md.
 - Déroulé : 1. lecture du cahier des charges TP P07; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P07_TP_fonctions_tests_specifications.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P07_trace_fonctions_tests_specifications.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P07_TD_fonctions_tests_specifications.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P07_remediation_fonctions_tests_specifications.md.
 
 ### Séance P07-S4
 - Durée : 1 h
@@ -808,16 +808,16 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : remédiation
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P07-R4 et consolider la trace écrite sur spécification de fonctions et jeux de tests.
 - Capacité officielle : P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P07_remediation_fonctions_tests_specifications.md, P07_corrige_fonctions_tests_specifications.md, P07_trace_fonctions_tests_specifications.md.
 - Déroulé : 1. retour sur erreurs de P07; 2. correction guidée de P07-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P07-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P07_remediation_fonctions_tests_specifications.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P07_trace_fonctions_tests_specifications.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P07_TD_fonctions_tests_specifications.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P07_remediation_fonctions_tests_specifications.md.
 
 ### Séance P07-S5
 - Durée : 2 h
@@ -826,19 +826,19 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P07-J5 en produisant un livrable vérifiable lié à spécification de fonctions et jeux de tests.
 - Capacité officielle : P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P07_TP_fonctions_tests_specifications.md, P07_trace_fonctions_tests_specifications.md.
 - Déroulé : 1. choix de l’objectif du jalon P07; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P07 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P07_TP_fonctions_tests_specifications.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P07_trace_fonctions_tests_specifications.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P07_TD_fonctions_tests_specifications.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P07_remediation_fonctions_tests_specifications.md.
 - Jalon projet : P07-J5 sur spécification de fonctions et jeux de tests.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P07-J5.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P07_TP_fonctions_tests_specifications.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P07-S6
@@ -848,19 +848,19 @@
 - Période : période normale avec 1er janvier signalé et évaluations avant Ramadan
 - Mois : janvier
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P07-J6 en produisant un livrable vérifiable lié à spécification de fonctions et jeux de tests.
 - Capacité officielle : P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P07_TP_fonctions_tests_specifications.md, P07_trace_fonctions_tests_specifications.md.
 - Déroulé : 1. choix de l’objectif du jalon P07; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P07 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P07_TP_fonctions_tests_specifications.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P07_trace_fonctions_tests_specifications.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P07_TD_fonctions_tests_specifications.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P07_remediation_fonctions_tests_specifications.md.
 - Jalon projet : P07-J6 sur spécification de fonctions et jeux de tests.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P07-J6.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P07_TP_fonctions_tests_specifications.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P08-S1
@@ -888,16 +888,16 @@
 - Période : Ramadan du 8 février au 7 mars : activités guidées et évaluations courtes
 - Mois : février
 - Nature : TD
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P08-E2 à P08-E4 sur formulaire Web local, événement clic et GET POST avec justification écrite.
 - Capacité officielle : P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P08_TD_html_css_dom.md, P08_corrige_web_http_dom_formulaires.md, P08_trace_web_http_dom_formulaires.md.
 - Déroulé : 1. rappel méthode; 2. exercices P08-E2, P08-E3, P08-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P08-E2 et P08-E3 guidés; avancé : exercice P08-E5 avec justification complète.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P08_TD_html_css_dom.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P08_trace_web_http_dom_formulaires.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P08_TD_html_css_dom.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P08_remediation_web_http_dom_formulaires.md.
 
 ### Séance P08-S3
 - Durée : 2 h
@@ -906,16 +906,16 @@
 - Période : Ramadan du 8 février au 7 mars : activités guidées et évaluations courtes
 - Mois : février
 - Nature : TP
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : réaliser le TP representation_tools.py sur formulaire Web local, événement clic et GET POST et exécuter deux tests de cas limites.
 - Capacité officielle : P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P08_TD_http_get_post_formulaires.md, P08_trace_web_http_dom_formulaires.md.
 - Déroulé : 1. lecture du cahier des charges TP P08; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P08_TD_http_get_post_formulaires.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P08_trace_web_http_dom_formulaires.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P08_TD_html_css_dom.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P08_remediation_web_http_dom_formulaires.md.
 
 ### Séance P08-S4
 - Durée : 1 h
@@ -924,16 +924,16 @@
 - Période : Ramadan du 8 février au 7 mars : activités guidées et évaluations courtes
 - Mois : février
 - Nature : évaluation
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : passer évaluation projet Web avec questions ciblées sur formulaire Web local, événement clic et GET POST, puis identifier les erreurs à corriger.
 - Capacité officielle : P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P08_evaluation_html_css_dom.md, P08_version_amenagee_web_http_dom_formulaires.md.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse P08; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P08_evaluation_html_css_dom.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P08_trace_web_http_dom_formulaires.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P08_TD_html_css_dom.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P08_remediation_web_http_dom_formulaires.md.
 
 ### Séance P08-S5
 - Durée : 1 h
@@ -942,16 +942,16 @@
 - Période : Ramadan du 8 février au 7 mars : activités guidées et évaluations courtes
 - Mois : février
 - Nature : remédiation
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P08-R5 et consolider la trace écrite sur formulaire Web local, événement clic et GET POST.
 - Capacité officielle : P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P08_remediation_web_http_dom_formulaires.md, P08_corrige_web_http_dom_formulaires.md, P08_trace_web_http_dom_formulaires.md.
 - Déroulé : 1. retour sur erreurs de P08; 2. correction guidée de P08-R5; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P08-R5; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P08_remediation_web_http_dom_formulaires.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P08_trace_web_http_dom_formulaires.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P08_TD_html_css_dom.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P08_remediation_web_http_dom_formulaires.md.
 
 ### Séance P08-S6
 - Durée : 2 h
@@ -960,19 +960,19 @@
 - Période : Ramadan du 8 février au 7 mars : activités guidées et évaluations courtes
 - Mois : février
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P08-J6 en produisant un livrable vérifiable lié à formulaire Web local, événement clic et GET POST.
 - Capacité officielle : P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P08_TD_http_get_post_formulaires.md, P08_trace_web_http_dom_formulaires.md.
 - Déroulé : 1. choix de l’objectif du jalon P08; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P08 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P08_TD_http_get_post_formulaires.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P08_trace_web_http_dom_formulaires.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P08_TD_html_css_dom.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P08_remediation_web_http_dom_formulaires.md.
 - Jalon projet : P08-J6 sur formulaire Web local, événement clic et GET POST.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P08-J6.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P08_TD_http_get_post_formulaires.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P08-S7
@@ -982,19 +982,19 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P08-J7 en produisant un livrable vérifiable lié à formulaire Web local, événement clic et GET POST.
 - Capacité officielle : P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P08_TD_http_get_post_formulaires.md, P08_trace_web_http_dom_formulaires.md.
 - Déroulé : 1. choix de l’objectif du jalon P08; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P08 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P08_TD_http_get_post_formulaires.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P08_trace_web_http_dom_formulaires.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P08_TD_html_css_dom.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P08_remediation_web_http_dom_formulaires.md.
 - Jalon projet : P08-J7 sur formulaire Web local, événement clic et GET POST.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P08-J7.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P08_TD_http_get_post_formulaires.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P09-S1
@@ -1022,16 +1022,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : TD
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P09-E2 à P09-E4 sur commandes shell et droits sur arborescence fictive avec justification écrite.
 - Capacité officielle : P-ARCH-01A, P-ARCH-01B, P-ARCH-03A, P-ARCH-03B, P-ARCH-03C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P09_TD_architecture_os_droits.md, P09_corrige_architecture_os_droits.md, P09_trace_architecture_os_droits.md.
 - Déroulé : 1. rappel méthode; 2. exercices P09-E2, P09-E3, P09-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P09-E2 et P09-E3 guidés; avancé : exercice P09-E5 avec justification complète.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P09_TD_architecture_os_droits.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P09_trace_architecture_os_droits.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P09_TD_architecture_os_droits.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P09_remediation_architecture_os_droits.md.
 
 ### Séance P09-S3
 - Durée : 2 h
@@ -1040,16 +1040,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : TP
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : réaliser le TP representation_tools.py sur commandes shell et droits sur arborescence fictive et exécuter deux tests de cas limites.
 - Capacité officielle : P-ARCH-01A, P-ARCH-01B, P-ARCH-03A, P-ARCH-03B, P-ARCH-03C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P09_tp_architecture_os_droits.md, P09_trace_architecture_os_droits.md.
 - Déroulé : 1. lecture du cahier des charges TP P09; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P09_tp_architecture_os_droits.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P09_trace_architecture_os_droits.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P09_TD_architecture_os_droits.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P09_remediation_architecture_os_droits.md.
 
 ### Séance P09-S4
 - Durée : 2 h
@@ -1058,16 +1058,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : remédiation
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P09-R4 et consolider la trace écrite sur commandes shell et droits sur arborescence fictive.
 - Capacité officielle : P-ARCH-01A, P-ARCH-01B, P-ARCH-03A, P-ARCH-03B, P-ARCH-03C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P09_remediation_architecture_os_droits.md, P09_corrige_architecture_os_droits.md, P09_trace_architecture_os_droits.md.
 - Déroulé : 1. retour sur erreurs de P09; 2. correction guidée de P09-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P09-R4; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P09_remediation_architecture_os_droits.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P09_trace_architecture_os_droits.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P09_TD_architecture_os_droits.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P09_remediation_architecture_os_droits.md.
 
 ### Séance P09-S5
 - Durée : 2 h
@@ -1076,19 +1076,19 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P09-J5 en produisant un livrable vérifiable lié à commandes shell et droits sur arborescence fictive.
 - Capacité officielle : P-ARCH-01A, P-ARCH-01B, P-ARCH-03A, P-ARCH-03B, P-ARCH-03C
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P09_tp_architecture_os_droits.md, P09_trace_architecture_os_droits.md.
 - Déroulé : 1. choix de l’objectif du jalon P09; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P09 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P09_tp_architecture_os_droits.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P09_trace_architecture_os_droits.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P09_TD_architecture_os_droits.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P09_remediation_architecture_os_droits.md.
 - Jalon projet : P09-J5 sur commandes shell et droits sur arborescence fictive.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P09-J5.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P09_tp_architecture_os_droits.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P10-S1
@@ -1098,16 +1098,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : cours
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : introduire simulation de paquets et protocole à bit alterné à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P10_cours_reseaux_protocoles_paquets.md, P10_trace_reseaux_protocoles_paquets.md.
 - Déroulé : 1. question flash P10-Q1; 2. activité P10_intro sur simulation de paquets et protocole à bit alterné; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P10; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P10_cours_reseaux_protocoles_paquets.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P10_trace_reseaux_protocoles_paquets.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P10_TD_reseaux_protocoles_paquets.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P10_remediation_reseaux_protocoles_paquets.md.
 
 ### Séance P10-S2
 - Durée : 2 h
@@ -1116,16 +1116,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : TD
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P10-E2 à P10-E4 sur simulation de paquets et protocole à bit alterné avec justification écrite.
 - Capacité officielle : P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P10_TD_reseaux_protocoles_paquets.md, P10_corrige_reseaux_protocoles_paquets.md, P10_trace_reseaux_protocoles_paquets.md.
 - Déroulé : 1. rappel méthode; 2. exercices P10-E2, P10-E3, P10-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P10-E2 et P10-E3 guidés; avancé : exercice P10-E5 avec justification complète.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P10_TD_reseaux_protocoles_paquets.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P10_trace_reseaux_protocoles_paquets.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P10_TD_reseaux_protocoles_paquets.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P10_remediation_reseaux_protocoles_paquets.md.
 
 ### Séance P10-S3
 - Durée : 2 h
@@ -1134,16 +1134,16 @@
 - Période : Ramadan puis Aïd al-Fitr du 8 au 10 mars et férié tunisien du 20 mars signalés
 - Mois : mars
 - Nature : remédiation
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P10-R3 et consolider la trace écrite sur simulation de paquets et protocole à bit alterné.
 - Capacité officielle : P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P10_remediation_reseaux_protocoles_paquets.md, P10_corrige_reseaux_protocoles_paquets.md, P10_trace_reseaux_protocoles_paquets.md.
 - Déroulé : 1. retour sur erreurs de P10; 2. correction guidée de P10-R3; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P10-R3; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P10_remediation_reseaux_protocoles_paquets.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P10_trace_reseaux_protocoles_paquets.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P10_TD_reseaux_protocoles_paquets.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P10_remediation_reseaux_protocoles_paquets.md.
 
 ### Séance P10-S4
 - Durée : 2 h
@@ -1152,19 +1152,19 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P10-J4 en produisant un livrable vérifiable lié à simulation de paquets et protocole à bit alterné.
 - Capacité officielle : P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P10_tp_reseaux_protocoles_paquets.md, P10_trace_reseaux_protocoles_paquets.md.
 - Déroulé : 1. choix de l’objectif du jalon P10; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P10 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P10_tp_reseaux_protocoles_paquets.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P10_trace_reseaux_protocoles_paquets.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P10_TD_reseaux_protocoles_paquets.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P10_remediation_reseaux_protocoles_paquets.md.
 - Jalon projet : P10-J4 sur simulation de paquets et protocole à bit alterné.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P10-J4.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P10_tp_reseaux_protocoles_paquets.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P10-S5
@@ -1174,19 +1174,19 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P10-J5 en produisant un livrable vérifiable lié à simulation de paquets et protocole à bit alterné.
 - Capacité officielle : P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P10_tp_reseaux_protocoles_paquets.md, P10_trace_reseaux_protocoles_paquets.md.
 - Déroulé : 1. choix de l’objectif du jalon P10; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P10 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P10_tp_reseaux_protocoles_paquets.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P10_trace_reseaux_protocoles_paquets.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P10_TD_reseaux_protocoles_paquets.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P10_remediation_reseaux_protocoles_paquets.md.
 - Jalon projet : P10-J5 sur simulation de paquets et protocole à bit alterné.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P10-J5.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P10_tp_reseaux_protocoles_paquets.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P11-S1
@@ -1196,16 +1196,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : cours
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : introduire parcours de tableau, occurrence, extremum, moyenne à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : P-ALGO-01A, P-ALGO-01B
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P11_TD_parcours_recherche_extremum_moyenne.md, P11_trace_parcours_recherche_extremum_moyenne.md.
 - Déroulé : 1. question flash P11-Q1; 2. activité P11_intro sur parcours de tableau, occurrence, extremum, moyenne; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P11; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P11_TD_parcours_recherche_extremum_moyenne.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P11_trace_parcours_recherche_extremum_moyenne.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P11_TD_parcours_recherche_extremum_moyenne.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P11_remediation_parcours_recherche_extremum_moyenne.md.
 
 ### Séance P11-S2
 - Durée : 1,5 h
@@ -1214,16 +1214,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : TD
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P11-E2 à P11-E4 sur parcours de tableau, occurrence, extremum, moyenne avec justification écrite.
 - Capacité officielle : P-ALGO-01A, P-ALGO-01B
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P11_TD_parcours_recherche_extremum_moyenne.md, P11_corrige_parcours_recherche_extremum_moyenne.md, P11_trace_parcours_recherche_extremum_moyenne.md.
 - Déroulé : 1. rappel méthode; 2. exercices P11-E2, P11-E3, P11-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P11-E2 et P11-E3 guidés; avancé : exercice P11-E5 avec justification complète.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P11_TD_parcours_recherche_extremum_moyenne.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P11_trace_parcours_recherche_extremum_moyenne.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P11_TD_parcours_recherche_extremum_moyenne.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P11_remediation_parcours_recherche_extremum_moyenne.md.
 
 ### Séance P11-S3
 - Durée : 1 h
@@ -1232,16 +1232,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : TP
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : réaliser le TP representation_tools.py sur parcours de tableau, occurrence, extremum, moyenne et exécuter deux tests de cas limites.
 - Capacité officielle : P-ALGO-01A, P-ALGO-01B
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P11_tp_parcours_recherche_extremum_moyenne.md, P11_trace_parcours_recherche_extremum_moyenne.md.
 - Déroulé : 1. lecture du cahier des charges TP P11; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P11_tp_parcours_recherche_extremum_moyenne.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P11_trace_parcours_recherche_extremum_moyenne.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P11_TD_parcours_recherche_extremum_moyenne.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P11_remediation_parcours_recherche_extremum_moyenne.md.
 
 ### Séance P11-S4
 - Durée : 1 h
@@ -1250,16 +1250,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : évaluation
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : passer évaluation parcours de tableaux avec questions ciblées sur parcours de tableau, occurrence, extremum, moyenne, puis identifier les erreurs à corriger.
 - Capacité officielle : P-ALGO-01A, P-ALGO-01B
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P11_evaluation_parcours_recherche_extremum_moyenne.md, P11_version_amenagee_parcours_recherche_extremum_moyenne.md.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse P11; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P11_evaluation_parcours_recherche_extremum_moyenne.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P11_trace_parcours_recherche_extremum_moyenne.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P11_TD_parcours_recherche_extremum_moyenne.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P11_remediation_parcours_recherche_extremum_moyenne.md.
 
 ### Séance P11-S5
 - Durée : 1 h
@@ -1268,16 +1268,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : remédiation
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P11-R5 et consolider la trace écrite sur parcours de tableau, occurrence, extremum, moyenne.
 - Capacité officielle : P-ALGO-01A, P-ALGO-01B
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P11_remediation_parcours_recherche_extremum_moyenne.md, P11_corrige_parcours_recherche_extremum_moyenne.md, P11_trace_parcours_recherche_extremum_moyenne.md.
 - Déroulé : 1. retour sur erreurs de P11; 2. correction guidée de P11-R5; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P11-R5; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P11_remediation_parcours_recherche_extremum_moyenne.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P11_trace_parcours_recherche_extremum_moyenne.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P11_TD_parcours_recherche_extremum_moyenne.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P11_remediation_parcours_recherche_extremum_moyenne.md.
 
 ### Séance P11-S6
 - Durée : 2 h
@@ -1286,19 +1286,19 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P11-J6 en produisant un livrable vérifiable lié à parcours de tableau, occurrence, extremum, moyenne.
 - Capacité officielle : P-ALGO-01A, P-ALGO-01B
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P11_tp_parcours_recherche_extremum_moyenne.md, P11_trace_parcours_recherche_extremum_moyenne.md.
 - Déroulé : 1. choix de l’objectif du jalon P11; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P11 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P11_tp_parcours_recherche_extremum_moyenne.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P11_trace_parcours_recherche_extremum_moyenne.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P11_TD_parcours_recherche_extremum_moyenne.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P11_remediation_parcours_recherche_extremum_moyenne.md.
 - Jalon projet : P11-J6 sur parcours de tableau, occurrence, extremum, moyenne.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P11-J6.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P11_tp_parcours_recherche_extremum_moyenne.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P12-S1
@@ -1308,16 +1308,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : cours
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : introduire tri insertion, tri sélection, invariant et coût quadratique à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P12_cours_tris_invariants_complexite.md, P12_trace_tris_invariants_complexite.md.
 - Déroulé : 1. question flash P12-Q1; 2. activité P12_intro sur tri insertion, tri sélection, invariant et coût quadratique; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P12; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P12_cours_tris_invariants_complexite.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P12_trace_tris_invariants_complexite.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P12_TD_tris_invariants_complexite.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P12_remediation_tris_invariants_complexite.md.
 
 ### Séance P12-S2
 - Durée : 1,5 h
@@ -1326,16 +1326,16 @@
 - Période : période avec férié tunisien du 9 avril signalé
 - Mois : avril
 - Nature : TD
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P12-E2 à P12-E4 sur tri insertion, tri sélection, invariant et coût quadratique avec justification écrite.
 - Capacité officielle : P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P12_TD_tris_invariants_complexite.md, P12_corrige_tris_invariants_complexite.md, P12_trace_tris_invariants_complexite.md.
 - Déroulé : 1. rappel méthode; 2. exercices P12-E2, P12-E3, P12-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P12-E2 et P12-E3 guidés; avancé : exercice P12-E5 avec justification complète.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P12_TD_tris_invariants_complexite.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P12_trace_tris_invariants_complexite.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P12_TD_tris_invariants_complexite.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P12_remediation_tris_invariants_complexite.md.
 
 ### Séance P12-S3
 - Durée : 1 h
@@ -1344,16 +1344,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : TD
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P12-E3 à P12-E5 sur tri insertion, tri sélection, invariant et coût quadratique avec justification écrite.
 - Capacité officielle : P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P12_TD_tris_invariants_complexite.md, P12_corrige_tris_invariants_complexite.md, P12_trace_tris_invariants_complexite.md.
 - Déroulé : 1. rappel méthode; 2. exercices P12-E3, P12-E4, P12-E5; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P12-E3 et P12-E4 guidés; avancé : exercice P12-E6 avec justification complète.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P12_TD_tris_invariants_complexite.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P12_trace_tris_invariants_complexite.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P12_TD_tris_invariants_complexite.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P12_remediation_tris_invariants_complexite.md.
 
 ### Séance P12-S4
 - Durée : 1 h
@@ -1362,16 +1362,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : TP
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : réaliser le TP representation_tools.py sur tri insertion, tri sélection, invariant et coût quadratique et exécuter deux tests de cas limites.
 - Capacité officielle : P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P12_tp_tris_invariants_complexite.md, P12_trace_tris_invariants_complexite.md.
 - Déroulé : 1. lecture du cahier des charges TP P12; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P12_tp_tris_invariants_complexite.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P12_trace_tris_invariants_complexite.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P12_TD_tris_invariants_complexite.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P12_remediation_tris_invariants_complexite.md.
 
 ### Séance P12-S5
 - Durée : 1 h
@@ -1380,16 +1380,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : évaluation
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : passer évaluation tris avec questions ciblées sur tri insertion, tri sélection, invariant et coût quadratique, puis identifier les erreurs à corriger.
 - Capacité officielle : P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P12_evaluation_tris_invariants_complexite.md, P12_version_amenagee_tris_invariants_complexite.md.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse P12; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P12_evaluation_tris_invariants_complexite.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P12_trace_tris_invariants_complexite.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P12_TD_tris_invariants_complexite.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P12_remediation_tris_invariants_complexite.md.
 
 ### Séance P12-S6
 - Durée : 1 h
@@ -1398,16 +1398,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : remédiation
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P12-R6 et consolider la trace écrite sur tri insertion, tri sélection, invariant et coût quadratique.
 - Capacité officielle : P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P12_remediation_tris_invariants_complexite.md, P12_corrige_tris_invariants_complexite.md, P12_trace_tris_invariants_complexite.md.
 - Déroulé : 1. retour sur erreurs de P12; 2. correction guidée de P12-R6; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P12-R6; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P12_remediation_tris_invariants_complexite.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P12_trace_tris_invariants_complexite.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P12_TD_tris_invariants_complexite.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P12_remediation_tris_invariants_complexite.md.
 
 ### Séance P12-S7
 - Durée : 2 h
@@ -1416,19 +1416,19 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P12-J7 en produisant un livrable vérifiable lié à tri insertion, tri sélection, invariant et coût quadratique.
 - Capacité officielle : P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P12_tp_tris_invariants_complexite.md, P12_trace_tris_invariants_complexite.md.
 - Déroulé : 1. choix de l’objectif du jalon P12; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P12 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P12_tp_tris_invariants_complexite.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P12_trace_tris_invariants_complexite.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P12_TD_tris_invariants_complexite.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P12_remediation_tris_invariants_complexite.md.
 - Jalon projet : P12-J7 sur tri insertion, tri sélection, invariant et coût quadratique.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P12-J7.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P12_tp_tris_invariants_complexite.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P13-S1
@@ -1438,16 +1438,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : cours
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : introduire recherche dichotomique, choix glouton et k plus proches voisins à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : P-ALGO-03, P-ALGO-04, P-ALGO-05
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P13_cours_dichotomie_glouton_knn.md, P13_trace_dichotomie_glouton_knn.md.
 - Déroulé : 1. question flash P13-Q1; 2. activité P13_intro sur recherche dichotomique, choix glouton et k plus proches voisins; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P13; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P13_cours_dichotomie_glouton_knn.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P13_trace_dichotomie_glouton_knn.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P13_TD_dichotomie_glouton_knn.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P13_remediation_dichotomie_glouton_knn.md.
 
 ### Séance P13-S2
 - Durée : 2 h
@@ -1456,16 +1456,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : TD
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P13-E2 à P13-E4 sur recherche dichotomique, choix glouton et k plus proches voisins avec justification écrite.
 - Capacité officielle : P-ALGO-03, P-ALGO-04, P-ALGO-05
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P13_TD_dichotomie_glouton_knn.md, P13_corrige_dichotomie_glouton_knn.md, P13_trace_dichotomie_glouton_knn.md.
 - Déroulé : 1. rappel méthode; 2. exercices P13-E2, P13-E3, P13-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P13-E2 et P13-E3 guidés; avancé : exercice P13-E5 avec justification complète.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P13_TD_dichotomie_glouton_knn.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P13_trace_dichotomie_glouton_knn.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P13_TD_dichotomie_glouton_knn.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P13_remediation_dichotomie_glouton_knn.md.
 
 ### Séance P13-S3
 - Durée : 1 h
@@ -1474,16 +1474,16 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : remédiation
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P13-R3 et consolider la trace écrite sur recherche dichotomique, choix glouton et k plus proches voisins.
 - Capacité officielle : P-ALGO-03, P-ALGO-04, P-ALGO-05
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P13_remediation_dichotomie_glouton_knn.md, P13_corrige_dichotomie_glouton_knn.md, P13_trace_dichotomie_glouton_knn.md.
 - Déroulé : 1. retour sur erreurs de P13; 2. correction guidée de P13-R3; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P13-R3; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P13_remediation_dichotomie_glouton_knn.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P13_trace_dichotomie_glouton_knn.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P13_TD_dichotomie_glouton_knn.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P13_remediation_dichotomie_glouton_knn.md.
 
 ### Séance P13-S4
 - Durée : 2 h
@@ -1492,19 +1492,19 @@
 - Période : période avec 1er mai et Aïd al-Adha des 17 et 18 mai signalés
 - Mois : mai
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P13-J4 en produisant un livrable vérifiable lié à recherche dichotomique, choix glouton et k plus proches voisins.
 - Capacité officielle : P-ALGO-03, P-ALGO-04, P-ALGO-05
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P13_tp_dichotomie_glouton_knn.md, P13_trace_dichotomie_glouton_knn.md.
 - Déroulé : 1. choix de l’objectif du jalon P13; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P13 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P13_tp_dichotomie_glouton_knn.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P13_trace_dichotomie_glouton_knn.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P13_TD_dichotomie_glouton_knn.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P13_remediation_dichotomie_glouton_knn.md.
 - Jalon projet : P13-J4 sur recherche dichotomique, choix glouton et k plus proches voisins.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P13-J4.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P13_tp_dichotomie_glouton_knn.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P13-S5
@@ -1514,19 +1514,19 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P13-J5 en produisant un livrable vérifiable lié à recherche dichotomique, choix glouton et k plus proches voisins.
 - Capacité officielle : P-ALGO-03, P-ALGO-04, P-ALGO-05
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P13_tp_dichotomie_glouton_knn.md, P13_trace_dichotomie_glouton_knn.md.
 - Déroulé : 1. choix de l’objectif du jalon P13; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P13 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P13_tp_dichotomie_glouton_knn.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P13_trace_dichotomie_glouton_knn.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P13_TD_dichotomie_glouton_knn.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P13_remediation_dichotomie_glouton_knn.md.
 - Jalon projet : P13-J5 sur recherche dichotomique, choix glouton et k plus proches voisins.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P13-J5.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P13_tp_dichotomie_glouton_knn.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P14-S1
@@ -1536,16 +1536,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : cours
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : introduire dossier final, démonstration, soutenance et synthèse à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P14_cours_synthese_projet_oral.md, P14_trace_synthese_projet_oral.md.
 - Déroulé : 1. question flash P14-Q1; 2. activité P14_intro sur dossier final, démonstration, soutenance et synthèse; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P14; avancé : contre-exemple à formuler pour la définition.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P14_cours_synthese_projet_oral.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P14_trace_synthese_projet_oral.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P14_TD_synthese_projet_oral.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P14_remediation_synthese_projet_oral.md.
 
 ### Séance P14-S2
 - Durée : 2 h
@@ -1554,16 +1554,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : TD
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P14-E2 à P14-E4 sur dossier final, démonstration, soutenance et synthèse avec justification écrite.
 - Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P14_TD_synthese_projet_oral.md, P14_corrige_synthese_projet_oral.md, P14_trace_synthese_projet_oral.md.
 - Déroulé : 1. rappel méthode; 2. exercices P14-E2, P14-E3, P14-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P14-E2 et P14-E3 guidés; avancé : exercice P14-E5 avec justification complète.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P14_TD_synthese_projet_oral.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P14_trace_synthese_projet_oral.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P14_TD_synthese_projet_oral.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P14_remediation_synthese_projet_oral.md.
 
 ### Séance P14-S3
 - Durée : 2 h
@@ -1572,16 +1572,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : TP
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : réaliser le TP representation_tools.py sur dossier final, démonstration, soutenance et synthèse et exécuter deux tests de cas limites.
 - Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P14_tp_synthese_projet_oral.md, P14_trace_synthese_projet_oral.md.
 - Déroulé : 1. lecture du cahier des charges TP P14; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P14_tp_synthese_projet_oral.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P14_trace_synthese_projet_oral.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P14_TD_synthese_projet_oral.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P14_remediation_synthese_projet_oral.md.
 
 ### Séance P14-S4
 - Durée : 1 h
@@ -1590,16 +1590,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : évaluation
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : passer évaluation projet final avec questions ciblées sur dossier final, démonstration, soutenance et synthèse, puis identifier les erreurs à corriger.
 - Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P14_evaluation_synthese_projet_oral.md, P14_version_amenagee_synthese_projet_oral.md.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse P14; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P14_evaluation_synthese_projet_oral.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P14_trace_synthese_projet_oral.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P14_TD_synthese_projet_oral.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P14_remediation_synthese_projet_oral.md.
 
 ### Séance P14-S5
 - Durée : 1 h
@@ -1608,16 +1608,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : remédiation
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P14-R5 et consolider la trace écrite sur dossier final, démonstration, soutenance et synthèse.
 - Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P14_remediation_synthese_projet_oral.md, P14_corrige_synthese_projet_oral.md, P14_trace_synthese_projet_oral.md.
 - Déroulé : 1. retour sur erreurs de P14; 2. correction guidée de P14-R5; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P14-R5; avancé : produire une variante de l’exercice corrigé.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P14_remediation_synthese_projet_oral.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P14_trace_synthese_projet_oral.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P14_TD_synthese_projet_oral.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P14_remediation_synthese_projet_oral.md.
 
 ### Séance P14-S6
 - Durée : 2 h
@@ -1626,19 +1626,19 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P14-J6 en produisant un livrable vérifiable lié à dossier final, démonstration, soutenance et synthèse.
 - Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P14_tp_synthese_projet_oral.md, P14_trace_synthese_projet_oral.md.
 - Déroulé : 1. choix de l’objectif du jalon P14; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P14 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P14_tp_synthese_projet_oral.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P14_trace_synthese_projet_oral.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P14_TD_synthese_projet_oral.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P14_remediation_synthese_projet_oral.md.
 - Jalon projet : P14-J6 sur dossier final, démonstration, soutenance et synthèse.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P14-J6.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P14_tp_synthese_projet_oral.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P14-S7
@@ -1648,19 +1648,19 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P14-J7 en produisant un livrable vérifiable lié à dossier final, démonstration, soutenance et synthèse.
 - Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Document utilisé : P14_tp_synthese_projet_oral.md, P14_trace_synthese_projet_oral.md.
 - Déroulé : 1. choix de l’objectif du jalon P14; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P14 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production dans P14_tp_synthese_projet_oral.md avec résultat, trace ou justification vérifiable.
+- Trace écrite : synthèse courte issue de P14_trace_synthese_projet_oral.md, à relire avant publication.
+- Devoir ou préparation : terminer une question ciblée de P14_TD_synthese_projet_oral.md.
+- Remédiation : reprendre EF1 ou EF2 à partir de P14_remediation_synthese_projet_oral.md.
 - Jalon projet : P14-J7 sur dossier final, démonstration, soutenance et synthèse.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P14-J7.
-- Livrable projet : jalon à cadrer après production du support projet.
+- Livrable projet : note de carnet reliée à P14_tp_synthese_projet_oral.md avec sortie ou assertion vérifiable.
 - Évaluation projet : formative, preuve de travail et justification du choix technique.
 
 ### Séance P14-S8

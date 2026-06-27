@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 748
-- Ressources needs_review : 748
+- Ressources inventoriées : 757
+- Ressources needs_review : 757
 - Ressources publiables : 0
-- Source generated : 740
+- Source generated : 749
 - Source adapted_from_drive : 7
 - Source import_partiel : 1
 - Source inspiration_drive : 0
@@ -73,7 +73,8 @@ python scripts/check_drive_mapping_release.py
 - Aucune capacité n'est covered.
 - Documents professeurs encore en needs_review.
 - Revue pédagogique et scientifique humaine absente.
-- Les séances hors première tranche restent théoriques et non prêtes.
+- Séances opérationnelles ou reliées : 127.
+- Séances théoriques ou non reliées : 95.
 
 ## Fiches de cours
 
@@ -90,6 +91,29 @@ python scripts/check_drive_mapping_release.py
 - Liens vers supports inscrits au registre : 0
 - Statut : needs_review
 - Effet couverture : aucun ; les fiches ne rendent aucune capacité covered.
+
+## Échelle capacités officielles
+
+- Capacités documented : 114
+- Capacités practiced : 92
+- Capacités assessed : 92
+- Capacités reviewed_pedagogy : 0
+- Capacités reviewed_science : 0
+- Capacités covered : 0
+- Décision : documented/practiced/assessed ne valent pas validation humaine.
+
+## TP papier / exécutables
+
+- TP papier : 27
+- TP exécutables : 13
+- Ratio papier : 67.5%
+- Les TP papier restent `needs_review` et ne remplacent pas une revue humaine.
+
+## Séances opérationnelles / théoriques
+
+- Séances opérationnelles ou reliées : 127
+- Séances théoriques ou non reliées : 95
+- Les séances théoriques restantes doivent être reliées explicitement aux supports produits avant publication.
 
 ## Fiches liées non opérationnelles
 

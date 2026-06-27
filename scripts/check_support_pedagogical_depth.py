@@ -125,6 +125,9 @@ def analyze_support_file(path: Path, root: Path) -> list[str]:
     if document_type in {"td", "tp", "tp_papier", "evaluation"} or any(token in lower_name for token in ["td", "tp", "evaluation"]):
         if correction_count < 2:
             errors.append(f"{rel}: corrigé vérifiable insuffisant ({correction_count}<2)")
+        data_lines = normalized_lines(body, "Donnée", mask_literals=True)
+        if len(data_lines) >= 6 and len(set(data_lines)) < 3:
+            errors.append(f"{rel}: données d'exercices trop répétitives ({len(set(data_lines))} variantes pour {len(data_lines)} données)")
         consignes = normalized_lines(body, "Consigne")
         if len(consignes) >= 6 and len(set(consignes)) < 3:
             errors.append(f"{rel}: consignes trop répétitives ({len(set(consignes))} variantes pour {len(consignes)} consignes)")

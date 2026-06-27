@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 748
+- Total ressources : 757
 - Ressources pédagogiques : 53
-- Ressources techniques : 695
+- Ressources techniques : 704
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 740
+- generated: 749
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 281
+- interne: 290
 - premiere: 212
 - terminale: 255
 
 ## Répartition par type
 - banque: 14
-- document: 461
+- document: 465
 - python: 39
-- script: 147
+- script: 151
 - sequence: 45
-- test: 42
+- test: 43
 
 ## Répartition par statut
-- needs_review: 748
+- needs_review: 757
 
 ## Répartition audience
 - corrige: 57
 - eleve: 105
-- mixte: 583
+- mixte: 592
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -513,6 +513,10 @@
   - drive_quarantine_manifest.csv
   - drive_sources.yml
   - evaluation_bareme_alignment_report.md
+  - human_review_checklist_accessibility.md
+  - human_review_checklist_pedagogy.md
+  - human_review_checklist_science.md
+  - human_review_protocol.md
   - learning_objectives_assessed_report.md
   - missing_capabilities.md
   - missing_documents_register.md
@@ -577,7 +581,9 @@
   - scripts/check_bank_strategy.py
   - scripts/check_boyer_moore_trace_consistency.py
   - scripts/check_build_reports_freshness.py
+  - scripts/check_capacity_status_ladder.py
   - scripts/check_corrected_answers_are_concrete.py
+  - scripts/check_course_explanatory_quality.py
   - scripts/check_course_internal_coherence.py
   - scripts/check_course_sheet_exercise_answer_count.py
   - scripts/check_course_sheet_linked_resources_exist.py
@@ -652,6 +658,7 @@
   - scripts/check_p05_semantic_consistency.py
   - scripts/check_packaging_mode.py
   - scripts/check_paper_tp_contract.py
+  - scripts/check_paper_tp_justification.py
   - scripts/check_pedagogical_alignment.py
   - scripts/check_program_capacity_evidence_depth.py
   - scripts/check_program_coverage.py
@@ -683,6 +690,7 @@
   - scripts/check_session_project_hours.py
   - scripts/check_session_referenced_files_exist.py
   - scripts/check_session_specificity.py
+  - scripts/check_session_to_resource_alignment.py
   - scripts/check_session_week_calendar_consistency.py
   - scripts/check_sql_query_result_consistency.py
   - scripts/check_student_supports_no_scaffold_language.py
@@ -750,6 +758,7 @@
   - tests/test_drive_local_pipeline.py
   - tests/test_drive_mapping_release.py
   - tests/test_drive_portable_and_manifest.py
+  - tests/test_executable_quality_controls.py
   - tests/test_first_batch_alignment.py
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
@@ -1315,6 +1324,10 @@
   - drive_quarantine_manifest.csv
   - drive_sources.yml
   - evaluation_bareme_alignment_report.md
+  - human_review_checklist_accessibility.md
+  - human_review_checklist_pedagogy.md
+  - human_review_checklist_science.md
+  - human_review_protocol.md
   - learning_objectives_assessed_report.md
   - missing_capabilities.md
   - missing_documents_register.md
@@ -1353,7 +1366,9 @@
   - scripts/check_bank_strategy.py
   - scripts/check_boyer_moore_trace_consistency.py
   - scripts/check_build_reports_freshness.py
+  - scripts/check_capacity_status_ladder.py
   - scripts/check_corrected_answers_are_concrete.py
+  - scripts/check_course_explanatory_quality.py
   - scripts/check_course_internal_coherence.py
   - scripts/check_course_sheet_exercise_answer_count.py
   - scripts/check_course_sheet_linked_resources_exist.py
@@ -1428,6 +1443,7 @@
   - scripts/check_p05_semantic_consistency.py
   - scripts/check_packaging_mode.py
   - scripts/check_paper_tp_contract.py
+  - scripts/check_paper_tp_justification.py
   - scripts/check_pedagogical_alignment.py
   - scripts/check_program_capacity_evidence_depth.py
   - scripts/check_program_coverage.py
@@ -1459,6 +1475,7 @@
   - scripts/check_session_project_hours.py
   - scripts/check_session_referenced_files_exist.py
   - scripts/check_session_specificity.py
+  - scripts/check_session_to_resource_alignment.py
   - scripts/check_session_week_calendar_consistency.py
   - scripts/check_sql_query_result_consistency.py
   - scripts/check_student_supports_no_scaffold_language.py
@@ -1500,6 +1517,7 @@
   - tests/test_drive_local_pipeline.py
   - tests/test_drive_mapping_release.py
   - tests/test_drive_portable_and_manifest.py
+  - tests/test_executable_quality_controls.py
   - tests/test_first_batch_alignment.py
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
@@ -2012,6 +2030,10 @@
 - drive_quarantine_manifest.csv
 - drive_sources.yml
 - evaluation_bareme_alignment_report.md
+- human_review_checklist_accessibility.md
+- human_review_checklist_pedagogy.md
+- human_review_checklist_science.md
+- human_review_protocol.md
 - learning_objectives_assessed_report.md
 - missing_capabilities.md
 - missing_documents_register.md
@@ -2073,7 +2095,9 @@
 - scripts/check_bank_strategy.py
 - scripts/check_boyer_moore_trace_consistency.py
 - scripts/check_build_reports_freshness.py
+- scripts/check_capacity_status_ladder.py
 - scripts/check_corrected_answers_are_concrete.py
+- scripts/check_course_explanatory_quality.py
 - scripts/check_course_internal_coherence.py
 - scripts/check_course_sheet_exercise_answer_count.py
 - scripts/check_course_sheet_linked_resources_exist.py
@@ -2148,6 +2172,7 @@
 - scripts/check_p05_semantic_consistency.py
 - scripts/check_packaging_mode.py
 - scripts/check_paper_tp_contract.py
+- scripts/check_paper_tp_justification.py
 - scripts/check_pedagogical_alignment.py
 - scripts/check_program_capacity_evidence_depth.py
 - scripts/check_program_coverage.py
@@ -2179,6 +2204,7 @@
 - scripts/check_session_project_hours.py
 - scripts/check_session_referenced_files_exist.py
 - scripts/check_session_specificity.py
+- scripts/check_session_to_resource_alignment.py
 - scripts/check_session_week_calendar_consistency.py
 - scripts/check_sql_query_result_consistency.py
 - scripts/check_student_supports_no_scaffold_language.py
@@ -2240,6 +2266,7 @@
 - tests/test_drive_local_pipeline.py
 - tests/test_drive_mapping_release.py
 - tests/test_drive_portable_and_manifest.py
+- tests/test_executable_quality_controls.py
 - tests/test_first_batch_alignment.py
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py
@@ -2755,6 +2782,10 @@
 - drive_quarantine_manifest.csv
 - drive_sources.yml
 - evaluation_bareme_alignment_report.md
+- human_review_checklist_accessibility.md
+- human_review_checklist_pedagogy.md
+- human_review_checklist_science.md
+- human_review_protocol.md
 - learning_objectives_assessed_report.md
 - missing_capabilities.md
 - missing_documents_register.md
@@ -2820,7 +2851,9 @@
 - scripts/check_bank_strategy.py
 - scripts/check_boyer_moore_trace_consistency.py
 - scripts/check_build_reports_freshness.py
+- scripts/check_capacity_status_ladder.py
 - scripts/check_corrected_answers_are_concrete.py
+- scripts/check_course_explanatory_quality.py
 - scripts/check_course_internal_coherence.py
 - scripts/check_course_sheet_exercise_answer_count.py
 - scripts/check_course_sheet_linked_resources_exist.py
@@ -2895,6 +2928,7 @@
 - scripts/check_p05_semantic_consistency.py
 - scripts/check_packaging_mode.py
 - scripts/check_paper_tp_contract.py
+- scripts/check_paper_tp_justification.py
 - scripts/check_pedagogical_alignment.py
 - scripts/check_program_capacity_evidence_depth.py
 - scripts/check_program_coverage.py
@@ -2926,6 +2960,7 @@
 - scripts/check_session_project_hours.py
 - scripts/check_session_referenced_files_exist.py
 - scripts/check_session_specificity.py
+- scripts/check_session_to_resource_alignment.py
 - scripts/check_session_week_calendar_consistency.py
 - scripts/check_sql_query_result_consistency.py
 - scripts/check_student_supports_no_scaffold_language.py
@@ -2993,6 +3028,7 @@
 - tests/test_drive_local_pipeline.py
 - tests/test_drive_mapping_release.py
 - tests/test_drive_portable_and_manifest.py
+- tests/test_executable_quality_controls.py
 - tests/test_first_batch_alignment.py
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py

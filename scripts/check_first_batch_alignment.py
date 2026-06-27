@@ -76,13 +76,15 @@ def student_session_errors(root: Path, prefixes: list[str]) -> list[str]:
     errors: list[str] = []
     forbidden = re.compile(r"\b[PT]\d{2}_(?:corrige|bareme)_[A-Za-z0-9_]+\.md\b")
     prefix_re = re.compile(r"^### Séance ((?:%s)-S\d+)" % "|".join(prefixes), re.M)
+    any_session_re = re.compile(r"^### Séance [PT]\d{2}-S\d+", re.M)
     for session_file in SESSION_FILES:
         if not session_file.exists() or not session_file.is_relative_to(root):
             continue
         text = session_file.read_text(encoding="utf-8", errors="replace")
         starts = [(match.group(1), match.start()) for match in prefix_re.finditer(text)]
         for index, (session_id, start) in enumerate(starts):
-            end = starts[index + 1][1] if index + 1 < len(starts) else len(text)
+            next_any = any_session_re.search(text, start + 1)
+            end = next_any.start() if next_any else len(text)
             block = text[start:end]
             for line in block.splitlines():
                 if line.startswith("- Document utilisé :") and forbidden.search(line):
