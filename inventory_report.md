@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 541
+- Total ressources : 542
 - Ressources pédagogiques : 53
-- Ressources techniques : 488
+- Ressources techniques : 489
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 533
+- generated: 534
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 236
+- interne: 237
 - premiere: 147
 - terminale: 158
 
@@ -21,15 +21,15 @@
 - python: 36
 - script: 130
 - sequence: 45
-- test: 38
+- test: 39
 
 ## Répartition par statut
-- needs_review: 541
+- needs_review: 542
 
 ## Répartition audience
 - corrige: 33
 - eleve: 110
-- mixte: 395
+- mixte: 396
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -537,6 +537,7 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
+  - tests/test_archive_portability_modes.py
   - tests/test_audit_extracted_source_no_hang.py
   - tests/test_build_artifacts.py
   - tests/test_consolidation_strict.py
@@ -1080,6 +1081,7 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/python/structures_tools.py
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/sequence.yaml
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tests/test_structures_tools.py
+  - tests/test_archive_portability_modes.py
   - tests/test_audit_extracted_source_no_hang.py
   - tests/test_build_artifacts.py
   - tests/test_consolidation_strict.py
@@ -1637,6 +1639,7 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
+- tests/test_archive_portability_modes.py
 - tests/test_audit_extracted_source_no_hang.py
 - tests/test_build_artifacts.py
 - tests/test_consolidation_strict.py
@@ -2183,6 +2186,7 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
+- tests/test_archive_portability_modes.py
 - tests/test_audit_extracted_source_no_hang.py
 - tests/test_build_artifacts.py
 - tests/test_consolidation_strict.py
