@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import importlib
 import tempfile
 import unittest
 from pathlib import Path
@@ -140,6 +141,109 @@ class FinalQualityHardeningTest(unittest.TestCase):
 
     def test_runtime_budget_requires_source_archive_extraction(self) -> None:
         self.assertTrue(runtime_budget.uses_source_archive_extraction(runtime_budget.analyze_audit_extracted_runtime_budget))
+
+    def test_runtime_budget_runs_in_extracted_source_mode_without_archive(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            write(
+                root / "Makefile",
+                "audit-extracted-source:\n"
+                "\tpython -c \"import os; assert 'NSI_DOCUMENTS_DRIVE_ROOT' not in os.environ; print('portable')\"\n",
+            )
+
+            result = runtime_budget.analyze_audit_extracted_runtime_budget(root)
+
+            self.assertEqual(result.mode, "source_clean_extracted")
+            self.assertFalse(result.errors)
+            self.assertEqual(result.commands[0].returncode, 0)
+
+    def test_tp_opportunity_strict_mode_blocks_above_threshold(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            for index in range(9):
+                prefix = f"P{index:02d}"
+                write(
+                    root / f"03_progressions/supports/premiere/{prefix}/{prefix}_tp_test.md",
+                    "---\ndocument_type: tp_papier\nstatus: needs_review\n---\n"
+                    "# TP papier\n"
+                    "Ce TP papier porte sur fonction, test, algorithme et Python sans assets exécutables.\n",
+                )
+
+            result = tp_opportunity.analyze_tp_executable_opportunity(
+                root,
+                strict=True,
+                max_opportunities=8,
+            )
+
+            self.assertEqual(len(result.opportunities), 9)
+            self.assertTrue(any("plus de 8" in error for error in result.errors))
+
+    def test_session_classroom_operationality_distinguishes_linked_from_ready(self) -> None:
+        module = importlib.import_module("check_session_classroom_operationality")
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            write(
+                root / "03_progressions/seances_premiere.md",
+                "### Séance P00-S1\n"
+                "- Objectif : comprendre P-TEST-01\n"
+                "- Document utilisé : P00_cours_test.md\n",
+            )
+            write(
+                root / "03_progressions/supports/premiere/P00/P00_cours_test.md",
+                "---\nstatus: needs_review\n---\nP-TEST-01\n",
+            )
+
+            result = module.analyze_session_classroom_operationality(root)
+
+            self.assertEqual(result.linked_count, 1)
+            self.assertEqual(result.classroom_ready_count, 0)
+            self.assertEqual(result.human_review_pending_count, 1)
+
+    def test_human_review_wave_plan_requires_twenty_existing_pending_resources(self) -> None:
+        module = importlib.import_module("check_human_review_wave_plan")
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            write(root / "human_review_wave_1_plan.md", "# Plan\n- `03_progressions/supports/terminale/T10/missing.md` | T10 | priorité haute | pending\n")
+
+            result = module.analyze_human_review_wave_plan(root)
+
+            self.assertTrue(any("20 ressources" in error for error in result.errors))
+            self.assertTrue(any("absente" in error for error in result.errors))
+
+    def test_drive_action_plan_requires_complete_release_fields(self) -> None:
+        module = importlib.import_module("check_drive_action_plan_completeness")
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            write(
+                root / "drive_inventory.csv",
+                "name,decision\n"
+                "missing.pdf,missing_local_copy\n",
+            )
+            write(
+                root / "drive_remaining_action_plan.md",
+                "| Ressource | Décision | Action |\n|---|---|---|\n| missing.pdf | missing_local_copy | retrouver |\n",
+            )
+
+            result = module.analyze_drive_action_plan(root)
+
+            self.assertTrue(any("responsable" in error for error in result.errors))
+            self.assertTrue(any("date cible" in error for error in result.errors))
+
+    def test_sequence_pedagogical_coherence_rejects_unprepared_evaluation(self) -> None:
+        module = importlib.import_module("check_sequence_pedagogical_coherence")
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            base = root / "03_progressions/supports/premiere/P00"
+            write(base / "P00_cours_test.md", "---\nstatus: needs_review\n---\nP-TEST-01\nnotion A\n")
+            write(base / "P00_TD_test.md", "---\nstatus: needs_review\n---\nP-TEST-01\nnotion A\n")
+            write(base / "P00_tp_test.md", "---\nstatus: needs_review\n---\nP-TEST-01\nnotion A\n")
+            write(base / "P00_evaluation_test.md", "---\nstatus: needs_review\n---\nP-TEST-02\nnotion B\n")
+            write(base / "P00_remediation_test.md", "---\nstatus: needs_review\n---\nerreur fréquente notion A\n")
+            write(base / "P00_version_amenagee_test.md", "---\nstatus: needs_review\n---\nP-TEST-01\n")
+
+            result = module.analyze_sequence_pedagogical_coherence(root)
+
+            self.assertTrue(any("P00" in error and "évaluation" in error for error in result.errors))
 
 
 if __name__ == "__main__":

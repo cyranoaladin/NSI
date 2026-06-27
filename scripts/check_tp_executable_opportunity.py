@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
+import os
 import re
 
 from _qa_common import ROOT, read_frontmatter, sequence_id_from_path, strip_frontmatter
@@ -22,6 +23,7 @@ EXECUTABLE_TOPICS_RE = re.compile(
 @dataclass
 class TPExecutableOpportunityResult:
     opportunities: list[str] = field(default_factory=list)
+    errors: list[str] = field(default_factory=list)
     paper_count: int = 0
     executable_count: int = 0
     register_path: Path | None = None
@@ -72,7 +74,12 @@ def write_register(root: Path, opportunities: list[str]) -> Path:
     return path
 
 
-def analyze_tp_executable_opportunity(root: Path = ROOT, write_report: bool = False) -> TPExecutableOpportunityResult:
+def analyze_tp_executable_opportunity(
+    root: Path = ROOT,
+    write_report: bool = False,
+    strict: bool = False,
+    max_opportunities: int | None = None,
+) -> TPExecutableOpportunityResult:
     result = TPExecutableOpportunityResult()
     for path in sorted((root / "03_progressions" / "supports").rglob("*.md")):
         if "_tp_" not in path.name.lower() and "_TP_" not in path.name:
@@ -87,11 +94,24 @@ def analyze_tp_executable_opportunity(root: Path = ROOT, write_report: bool = Fa
             result.executable_count += 1
     if write_report:
         result.register_path = write_register(root, result.opportunities)
+    if strict:
+        limit = 8 if max_opportunities is None else max_opportunities
+        if len(result.opportunities) > limit:
+            result.errors.append(
+                f"plus de {limit} opportunités de TP exécutables restantes: {len(result.opportunities)}"
+            )
     return result
 
 
 def main() -> int:
-    result = analyze_tp_executable_opportunity(write_report=True)
+    env_limit = os.environ.get("MAX_EXECUTABLE_TP_OPPORTUNITIES")
+    strict = env_limit is not None
+    max_opportunities = int(env_limit) if env_limit and env_limit.isdigit() else 8
+    result = analyze_tp_executable_opportunity(
+        write_report=True,
+        strict=strict,
+        max_opportunities=max_opportunities,
+    )
     print(f"TP papier : {result.paper_count}")
     print(f"TP exécutables : {result.executable_count}")
     print(f"Opportunités de conversion en TP exécutable : {len(result.opportunities)}")
@@ -99,6 +119,11 @@ def main() -> int:
         print(f"Registre : {result.register_path.relative_to(ROOT).as_posix()}")
     for item in result.opportunities[:120]:
         print(f"- {item}")
+    if result.errors:
+        print("check_tp_executable_opportunity: KO")
+        for error in result.errors:
+            print(f"- {error}")
+        return 1
     print("check_tp_executable_opportunity: PASS (registre informatif)")
     return 0
 

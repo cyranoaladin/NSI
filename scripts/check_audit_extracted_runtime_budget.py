@@ -28,6 +28,7 @@ class RuntimeBudgetResult:
     errors: list[str] = field(default_factory=list)
     commands: list[MeasuredCommand] = field(default_factory=list)
     total_seconds: float = 0.0
+    mode: str = ""
 
 
 def audit_extracted_commands(root: Path = ROOT) -> list[str]:
@@ -117,31 +118,50 @@ def extract_source_clean(root: Path = ROOT) -> tuple[tempfile.TemporaryDirectory
     return temp, extracted
 
 
+def source_clean_root(root: Path = ROOT) -> bool:
+    return (root / "Makefile").exists() and not (root / ".git").exists()
+
+
+def measured_root(root: Path = ROOT) -> tuple[str, tempfile.TemporaryDirectory[str] | None, Path]:
+    archive = root / "dist" / "source_clean.tar.gz"
+    if archive.exists():
+        temp, extracted = extract_source_clean(root)
+        return "repository_archive", temp, extracted
+    if source_clean_root(root):
+        return "source_clean_extracted", None, root
+    if (root / "Makefile").exists():
+        return "source_tree_without_archive", None, root
+    raise FileNotFoundError("ni dist/source_clean.tar.gz ni Makefile de source propre")
+
+
 def analyze_audit_extracted_runtime_budget(root: Path = ROOT) -> RuntimeBudgetResult:
     start_total = time.monotonic()
     try:
-        temp, extracted = extract_source_clean(root)
+        mode, temp, audit_root = measured_root(root)
     except Exception as exc:
         return RuntimeBudgetResult(errors=[str(exc)])
     try:
-        commands = audit_extracted_commands(extracted)
-        measured = [run_command(command, extracted, timeout_seconds=180) for command in commands]
+        commands = audit_extracted_commands(audit_root)
+        measured = [run_command(command, audit_root, timeout_seconds=180) for command in commands]
         result = evaluate_runtime_budget(measured)
+        result.mode = mode
         result.total_seconds = time.monotonic() - start_total
-        if any(path.name == "__pycache__" for path in extracted.rglob("__pycache__")):
+        if any(path.name == "__pycache__" for path in audit_root.rglob("__pycache__")):
             result.errors.append("archive extraite salie par __pycache__")
         return result
     finally:
-        temp.cleanup()
+        if temp is not None:
+            temp.cleanup()
 
 
 def uses_source_archive_extraction(func: object) -> bool:
     source = inspect.getsource(func)
-    return "extract_source_clean" in source or "source_clean.tar.gz" in source
+    return "extract_source_clean" in source or "measured_root" in source or "source_clean.tar.gz" in source
 
 
 def main() -> int:
     result = analyze_audit_extracted_runtime_budget()
+    print(f"mode={result.mode or 'unknown'}", flush=True)
     print("Durées audit-extracted-source:")
     for item in result.commands:
         print(f"- {item.seconds:.2f}s rc={item.returncode} :: {item.command}", flush=True)

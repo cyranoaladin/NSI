@@ -3,7 +3,7 @@ title: "T18 - trace - Boyer-Moore"
 level: "terminale"
 sequence_id: "T18"
 document_type: "trace"
-tp_mode: "papier"
+tp_mode: "executable_trace"
 status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
@@ -40,8 +40,8 @@ official_program:
 - Résultat final : alignement 0 : N comparé à A -> décalage 1.
 - Cas limite : motif absent.
 
-## Table de trace TP papier Boyer-Moore
-Ce document est une trace de TP papier : aucune ressource Python n est attendu.
+## Table de trace algorithmique Boyer-Moore
+Ce document prépare le TP exécutable `T18_tp_boyer_moore.md` : la table ci-dessous doit correspondre aux décalages produits par les assets Python.
 
 | Alignement | Fenêtre du texte | Comparaison de droite à gauche | Mauvais caractère | Décalage calculé | Décision |
 |---|---|---|---|---|---|
@@ -49,7 +49,7 @@ Ce document est une trace de TP papier : aucune ressource Python n est attendu.
 | 1 | `ANA` face à `ANA` | `A`, puis `N`, puis `A` correspondent | aucun | 0 | motif trouvé à l indice 1 |
 | 4 | `NAS` face à `ANA` | `S` comparé à `A` | `S` absent du motif | `max(1, 2-(-1))=3` | sortie du texte, motif absent après indice 1 |
 
-## Pseudo-code papier
+## Pseudo-code de référence
 1. Construire `dernier = {"A": 2, "N": 1}` pour le motif `ANA`.
 2. Placer le motif sous le texte `BANANAS` à l alignement `i`.
 3. Comparer `motif[j]` et `texte[i+j]` en partant de `j = len(motif)-1`.
@@ -79,4 +79,5 @@ Résultat attendu : motif absent `XYZ`, caractère absent traité par `dernier.g
 ## Liens TD et évaluation
 - TD lié : `T18_TD_boyer_moore.md`.
 - Évaluation liée : `T18_evaluation_boyer_moore.md`.
-- Aucune ressource Python n est attendue pour ce TP papier.
+- TP exécutable lié : `T18_tp_boyer_moore.md`.
+- Assets Python liés : `code/T18_starter_boyer_moore.py`, `code/T18_tests_attendus_boyer_moore.py`, `code/T18_corrige_professeur_boyer_moore.py`.

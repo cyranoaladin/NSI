@@ -12,3 +12,15 @@ first_batch_prefixes:
   - T03
   - T04
   - T05
+human_review_wave_priority_prefixes:
+  - T10
+  - T07
+  - T08
+  - T06
+  - T17
+  - T18
+  - P05
+  - P06
+  - P10
+  - P12
+  - P13

@@ -12,9 +12,13 @@ from pathlib import Path
 from _course_sheets_common import compute_sheet_readiness, course_sheet_links, frontmatter_capacities, planned_sequences, read_frontmatter, resource_exists, sheets_by_sequence
 from check_capacity_status_ladder import analyze_capacity_status_ladder
 from check_course_sheet_readiness_strict import analyze_course_sheet_readiness_strict
+from check_drive_action_plan_completeness import analyze_drive_action_plan
 from check_human_review_register import analyze_human_review_register
+from check_human_review_wave_plan import analyze_human_review_wave_plan
 from check_missing_register_actionability import load_register_rows
 from check_paper_tp_justification import analyze_paper_tp_justification
+from check_sequence_pedagogical_coherence import analyze_sequence_pedagogical_coherence
+from check_session_classroom_operationality import analyze_session_classroom_operationality
 from check_session_to_resource_alignment import analyze_session_to_resource_alignment
 from check_tp_executable_opportunity import analyze_tp_executable_opportunity
 
@@ -199,9 +203,13 @@ def main() -> int:
         "covered": sum(1 for row in capacity_ladder.rows.values() if row["covered"] == "oui"),
     }
     paper_tp = analyze_paper_tp_justification(ROOT)
-    tp_opportunities = analyze_tp_executable_opportunity(ROOT)
+    tp_opportunities = analyze_tp_executable_opportunity(ROOT, strict=True, max_opportunities=8)
     human_review = analyze_human_review_register(ROOT)
+    human_wave = analyze_human_review_wave_plan(ROOT)
     session_alignment = analyze_session_to_resource_alignment(ROOT)
+    session_classroom = analyze_session_classroom_operationality(ROOT)
+    drive_plan = analyze_drive_action_plan(ROOT)
+    sequence_coherence = analyze_sequence_pedagogical_coherence(ROOT)
     lines = [
         "# QA Report",
         "",
@@ -241,6 +249,7 @@ def main() -> int:
         f"- Drive missing_local_copy : {drive_counts.get('missing_local_copy', 0)}",
         f"- Drive deferred : {drive_counts.get('deferred', 0)}",
         f"- Drive quarantined : {drive_counts.get('quarantined', 0)}",
+        f"- Plan Drive restant : {len(drive_plan.rows)}/{len(drive_plan.expected)} ressources non soldées documentées.",
         "- Décision : ne pas générer de nouvelles séquences",
         "- Lots Drive planifiés : P05 traitement_tables complet ; T01 TAD complet ; T18 Boyer-Moore complet ; P12 tri/complexité ; P13 glouton.",
         "- ZIP exploitable sans `.git` : dist/nsi-enseignement_source_clean.zip, archive séparée du livrable pédagogique de référence.",
@@ -307,6 +316,8 @@ def main() -> int:
         f"- TP exécutables : {paper_tp.executable_count}",
         f"- Ratio papier : {(paper_tp.paper_count / (paper_tp.paper_count + paper_tp.executable_count) * 100) if (paper_tp.paper_count + paper_tp.executable_count) else 0:.1f}%",
         f"- Opportunités de conversion exécutable signalées : {len(tp_opportunities.opportunities)}",
+        f"- Seuil strict opportunités restantes : 8",
+        f"- État seuil strict : {'PASS' if not tp_opportunities.errors else 'KO'}",
         "- Registre : `tp_executable_opportunity_register.md`.",
         "- Les TP papier restent `needs_review` et ne remplacent pas une revue humaine.",
         "",
@@ -314,12 +325,24 @@ def main() -> int:
         "",
         f"- Séances opérationnelles ou reliées : {session_alignment.operational_count}",
         f"- Séances théoriques ou non reliées : {session_alignment.theoretical_count}",
+        f"- Séances linked : {session_classroom.linked_count}",
+        f"- Séances classroom_ready : {session_classroom.classroom_ready_count}",
+        f"- Séances human_review_pending : {session_classroom.human_review_pending_count}",
+        f"- Séances validated : {session_classroom.validated_count}",
+        "- `classroom_ready` signifie exploitable documentairement ; la revue humaine reste pending.",
         "- Les séances théoriques restantes doivent être reliées explicitement aux supports produits avant publication.",
+        "",
+        "## Cohérence pédagogique par séquence",
+        "",
+        f"- Séquences vérifiées : {sequence_coherence.checked_sequences}",
+        f"- Erreurs de cohérence détectées : {len(sequence_coherence.errors)}",
         "",
         "## Revue humaine",
         "",
         f"- Ressources majeures à relire : {human_review.expected_count}",
         f"- Lignes dans `human_review_register.csv` : {human_review.registered_count}",
+        f"- Ressources prioritaires vague 1 : {len(human_wave.resources)}",
+        f"- Priorités vague 1 couvertes : {', '.join(sorted(human_wave.priority_hits))}",
         "- Statut initial : pending pour science, pédagogie, accessibilité et technique.",
         "- Aucune ligne du registre ne promeut `validated_*`, `published` ou `covered`.",
         "",

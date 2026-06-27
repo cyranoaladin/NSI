@@ -35,9 +35,6 @@ def candidate_files(root: Path) -> list[Path]:
         document_type = str(metadata.get("document_type", ""))
         if str(metadata.get("tp_mode", "")).lower() == "papier" or document_type == "tp_papier":
             files.append(path)
-    t18 = root / "03_progressions" / "supports" / "terminale" / "T18" / "T18_trace_boyer_moore.md"
-    if t18.exists() and t18 not in files:
-        files.append(t18)
     return sorted(files)
 
 

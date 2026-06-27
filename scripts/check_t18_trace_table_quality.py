@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check that T18 is explicitly a paper TP with a complete Boyer-Moore trace."""
+"""Check that T18 has a complete Boyer-Moore trace linked to executable assets."""
 
 from __future__ import annotations
 
@@ -31,26 +31,30 @@ def analyze_t18_trace_table_quality(root: Path = ROOT) -> T18TraceResult:
     text = trace.read_text(encoding="utf-8", errors="replace")
     metadata = read_frontmatter(trace)
     document_type = str(metadata.get("document_type", ""))
-    if document_type not in {"trace", "tp_papier"}:
-        result.errors.append(f"T18: document_type ambigu -> {document_type}")
+    tp_mode = str(metadata.get("tp_mode", ""))
+    if document_type != "trace":
+        result.errors.append(f"T18: document_type attendu trace -> {document_type}")
+    if tp_mode != "executable_trace":
+        result.errors.append(f"T18: tp_mode attendu executable_trace -> {tp_mode}")
     for token in [
-        "TP papier",
+        "Table de trace algorithmique",
         "Table du mauvais caractère",
         "| Alignement |",
         "Décalage calculé",
-        "Pseudo-code",
+        "Pseudo-code de référence",
         "Barème associé",
         "Corrigé question par question",
         "T18_TD_boyer_moore.md",
         "T18_evaluation_boyer_moore.md",
+        "T18_tp_boyer_moore.md",
+        "T18_tests_attendus_boyer_moore.py",
     ]:
         if token not in text:
-            result.errors.append(f"T18: élément de trace papier absent -> {token}")
+            result.errors.append(f"T18: élément de trace algorithmique absent -> {token}")
     code_dir = trace.parent / "code"
-    if code_dir.exists():
-        for pattern in CODE_PATTERNS:
-            if (code_dir / pattern).exists():
-                result.errors.append(f"T18: TP papier déclaré mais asset Python présent -> {pattern}")
+    for pattern in CODE_PATTERNS:
+        if not (code_dir / pattern).exists():
+            result.errors.append(f"T18: asset Python attendu absent -> {pattern}")
     return result
 
 

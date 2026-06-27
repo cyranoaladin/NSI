@@ -1,8 +1,8 @@
 ---
-title: "P11 - tp_papier - parcours, recherche, extremum et moyenne"
+title: "P11 - tp - parcours, recherche, extremum et moyenne"
 level: "premiere"
 sequence_id: "P11"
-document_type: "tp_papier"
+document_type: "tp"
 status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
@@ -19,7 +19,7 @@ official_program:
 # P11 - TP - parcours, recherche, extremum et moyenne
 
 ## Statut du TP
-TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
+TP exécutable : le livrable élève est un fichier Python de parcours de listes vérifié par tests.
 
 ## Donnée fournie
 `mesures=[18,21,17,24,21], cible=21, seuil=22`
@@ -66,3 +66,9 @@ Résultat attendu : `liste vide` traité sans ambiguïté.
 - La trace ou le pseudo-code conduit à `première occurrence de 21 -> indice 1`.
 - Au moins un cas limite de la section précédente est décidé.
 
+## Assets Python
+- Starter élève : `code/P11_starter_parcours_recherche_extremum_moyenne.py`.
+- Tests attendus : `code/P11_tests_attendus_parcours_recherche_extremum_moyenne.py`.
+- Corrigé professeur : `code/P11_corrige_professeur_parcours_recherche_extremum_moyenne.py`.
+- Fonctions à compléter : `maximum`, `indices_de`, `moyenne`.
+- Cas testés : maximum positif/négatif, cible doublée ou absente, liste vide refusée.

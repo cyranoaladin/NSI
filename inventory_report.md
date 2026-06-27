@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 787
+- Total ressources : 813
 - Ressources pédagogiques : 53
-- Ressources techniques : 734
+- Ressources techniques : 760
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 779
+- generated: 805
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 296
-- premiere: 215
-- terminale: 276
+- interne: 301
+- premiere: 230
+- terminale: 282
 
 ## Répartition par type
 - banque: 14
-- document: 468
-- python: 63
-- script: 153
+- document: 469
+- python: 84
+- script: 157
 - sequence: 45
 - test: 44
 
 ## Répartition par statut
-- needs_review: 787
+- needs_review: 813
 
 ## Répartition audience
-- corrige: 65
-- eleve: 116
-- mixte: 603
+- corrige: 72
+- eleve: 125
+- mixte: 613
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -229,6 +229,9 @@
   - 03_progressions/supports/premiere/P07/P07_tp_fonctions_tests_specifications.md
   - 03_progressions/supports/premiere/P07/P07_trace_fonctions_tests_specifications.md
   - 03_progressions/supports/premiere/P07/P07_version_amenagee_fonctions_tests_specifications.md
+  - 03_progressions/supports/premiere/P07/code/P07_corrige_professeur_fonctions_tests_specifications.py
+  - 03_progressions/supports/premiere/P07/code/P07_starter_fonctions_tests_specifications.py
+  - 03_progressions/supports/premiere/P07/code/P07_tests_attendus_fonctions_tests_specifications.py
   - 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md
   - 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
@@ -241,6 +244,9 @@
   - 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md
+  - 03_progressions/supports/premiere/P08/code/P08_corrige_professeur_web_http_dom_formulaires.py
+  - 03_progressions/supports/premiere/P08/code/P08_starter_web_http_dom_formulaires.py
+  - 03_progressions/supports/premiere/P08/code/P08_tests_attendus_web_http_dom_formulaires.py
   - 03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md
   - 03_progressions/supports/premiere/P09/P09_bareme_architecture_os_droits.md
   - 03_progressions/supports/premiere/P09/P09_corrige_architecture_os_droits.md
@@ -250,6 +256,9 @@
   - 03_progressions/supports/premiere/P09/P09_tp_architecture_os_droits.md
   - 03_progressions/supports/premiere/P09/P09_trace_architecture_os_droits.md
   - 03_progressions/supports/premiere/P09/P09_version_amenagee_architecture_os_droits.md
+  - 03_progressions/supports/premiere/P09/code/P09_corrige_professeur_architecture_os_droits.py
+  - 03_progressions/supports/premiere/P09/code/P09_starter_architecture_os_droits.py
+  - 03_progressions/supports/premiere/P09/code/P09_tests_attendus_architecture_os_droits.py
   - 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md
   - 03_progressions/supports/premiere/P10/P10_bareme_reseaux_protocoles_paquets.md
   - 03_progressions/supports/premiere/P10/P10_corrige_reseaux_protocoles_paquets.md
@@ -259,6 +268,9 @@
   - 03_progressions/supports/premiere/P10/P10_tp_reseaux_protocoles_paquets.md
   - 03_progressions/supports/premiere/P10/P10_trace_reseaux_protocoles_paquets.md
   - 03_progressions/supports/premiere/P10/P10_version_amenagee_reseaux_protocoles_paquets.md
+  - 03_progressions/supports/premiere/P10/code/P10_corrige_professeur_reseaux_protocoles_paquets.py
+  - 03_progressions/supports/premiere/P10/code/P10_starter_reseaux_protocoles_paquets.py
+  - 03_progressions/supports/premiere/P10/code/P10_tests_attendus_reseaux_protocoles_paquets.py
   - 03_progressions/supports/premiere/P11/P11_TD_parcours_recherche_extremum_moyenne.md
   - 03_progressions/supports/premiere/P11/P11_bareme_parcours_recherche_extremum_moyenne.md
   - 03_progressions/supports/premiere/P11/P11_corrige_parcours_recherche_extremum_moyenne.md
@@ -268,6 +280,9 @@
   - 03_progressions/supports/premiere/P11/P11_tp_parcours_recherche_extremum_moyenne.md
   - 03_progressions/supports/premiere/P11/P11_trace_parcours_recherche_extremum_moyenne.md
   - 03_progressions/supports/premiere/P11/P11_version_amenagee_parcours_recherche_extremum_moyenne.md
+  - 03_progressions/supports/premiere/P11/code/P11_corrige_professeur_parcours_recherche_extremum_moyenne.py
+  - 03_progressions/supports/premiere/P11/code/P11_starter_parcours_recherche_extremum_moyenne.py
+  - 03_progressions/supports/premiere/P11/code/P11_tests_attendus_parcours_recherche_extremum_moyenne.py
   - 03_progressions/supports/premiere/P12/P12_TD_tris_invariants_complexite.md
   - 03_progressions/supports/premiere/P12/P12_bareme_tris_invariants_complexite.md
   - 03_progressions/supports/premiere/P12/P12_corrige_tris_invariants_complexite.md
@@ -418,6 +433,9 @@
   - 03_progressions/supports/terminale/T09/T09_tp_bases_relationnelles_cles_contraintes.md
   - 03_progressions/supports/terminale/T09/T09_trace_bases_relationnelles_cles_contraintes.md
   - 03_progressions/supports/terminale/T09/T09_version_amenagee_bases_relationnelles_cles_contraintes.md
+  - 03_progressions/supports/terminale/T09/code/T09_corrige_professeur_bases_relationnelles_cles_contraintes.py
+  - 03_progressions/supports/terminale/T09/code/T09_starter_bases_relationnelles_cles_contraintes.py
+  - 03_progressions/supports/terminale/T09/code/T09_tests_attendus_bases_relationnelles_cles_contraintes.py
   - 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md
   - 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md
   - 03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md
@@ -513,6 +531,9 @@
   - 03_progressions/supports/terminale/T18/T18_tp_boyer_moore.md
   - 03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md
   - 03_progressions/supports/terminale/T18/T18_version_amenagee_boyer_moore.md
+  - 03_progressions/supports/terminale/T18/code/T18_corrige_professeur_boyer_moore.py
+  - 03_progressions/supports/terminale/T18/code/T18_starter_boyer_moore.py
+  - 03_progressions/supports/terminale/T18/code/T18_tests_attendus_boyer_moore.py
   - 03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md
   - 03_progressions/supports/terminale/T19/T19_bareme_bac_pratique_grand_oral_projet.md
   - 03_progressions/supports/terminale/T19/T19_corrige_bac_pratique_grand_oral_projet.md
@@ -543,6 +564,7 @@
   - human_review_checklist_science.md
   - human_review_protocol.md
   - human_review_register.csv
+  - human_review_wave_1_plan.md
   - learning_objectives_assessed_report.md
   - missing_capabilities.md
   - missing_documents_register.md
@@ -627,6 +649,7 @@
   - scripts/check_document_depth.py
   - scripts/check_document_naming_conventions.py
   - scripts/check_document_style.py
+  - scripts/check_drive_action_plan_completeness.py
   - scripts/check_drive_enrichment_traceability.py
   - scripts/check_drive_enrichment_traceability_portable.py
   - scripts/check_drive_integration_plan.py
@@ -646,6 +669,7 @@
   - scripts/check_git_clean.py
   - scripts/check_graph_algorithm_trace_consistency.py
   - scripts/check_human_review_register.py
+  - scripts/check_human_review_wave_plan.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_linked_evaluation_quality.py
   - scripts/check_linked_evaluation_substance.py
@@ -710,6 +734,8 @@
   - scripts/check_sequence_completeness.py
   - scripts/check_sequence_contracts.py
   - scripts/check_sequence_pack_consistency.py
+  - scripts/check_sequence_pedagogical_coherence.py
+  - scripts/check_session_classroom_operationality.py
   - scripts/check_session_duration_consistency.py
   - scripts/check_session_level_planning.py
   - scripts/check_session_monthly_total.py
@@ -1070,6 +1096,9 @@
   - 03_progressions/supports/premiere/P07/P07_tp_fonctions_tests_specifications.md
   - 03_progressions/supports/premiere/P07/P07_trace_fonctions_tests_specifications.md
   - 03_progressions/supports/premiere/P07/P07_version_amenagee_fonctions_tests_specifications.md
+  - 03_progressions/supports/premiere/P07/code/P07_corrige_professeur_fonctions_tests_specifications.py
+  - 03_progressions/supports/premiere/P07/code/P07_starter_fonctions_tests_specifications.py
+  - 03_progressions/supports/premiere/P07/code/P07_tests_attendus_fonctions_tests_specifications.py
   - 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md
   - 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
@@ -1082,6 +1111,9 @@
   - 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md
+  - 03_progressions/supports/premiere/P08/code/P08_corrige_professeur_web_http_dom_formulaires.py
+  - 03_progressions/supports/premiere/P08/code/P08_starter_web_http_dom_formulaires.py
+  - 03_progressions/supports/premiere/P08/code/P08_tests_attendus_web_http_dom_formulaires.py
   - 03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md
   - 03_progressions/supports/premiere/P09/P09_bareme_architecture_os_droits.md
   - 03_progressions/supports/premiere/P09/P09_corrige_architecture_os_droits.md
@@ -1091,6 +1123,9 @@
   - 03_progressions/supports/premiere/P09/P09_tp_architecture_os_droits.md
   - 03_progressions/supports/premiere/P09/P09_trace_architecture_os_droits.md
   - 03_progressions/supports/premiere/P09/P09_version_amenagee_architecture_os_droits.md
+  - 03_progressions/supports/premiere/P09/code/P09_corrige_professeur_architecture_os_droits.py
+  - 03_progressions/supports/premiere/P09/code/P09_starter_architecture_os_droits.py
+  - 03_progressions/supports/premiere/P09/code/P09_tests_attendus_architecture_os_droits.py
   - 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md
   - 03_progressions/supports/premiere/P10/P10_bareme_reseaux_protocoles_paquets.md
   - 03_progressions/supports/premiere/P10/P10_corrige_reseaux_protocoles_paquets.md
@@ -1100,6 +1135,9 @@
   - 03_progressions/supports/premiere/P10/P10_tp_reseaux_protocoles_paquets.md
   - 03_progressions/supports/premiere/P10/P10_trace_reseaux_protocoles_paquets.md
   - 03_progressions/supports/premiere/P10/P10_version_amenagee_reseaux_protocoles_paquets.md
+  - 03_progressions/supports/premiere/P10/code/P10_corrige_professeur_reseaux_protocoles_paquets.py
+  - 03_progressions/supports/premiere/P10/code/P10_starter_reseaux_protocoles_paquets.py
+  - 03_progressions/supports/premiere/P10/code/P10_tests_attendus_reseaux_protocoles_paquets.py
   - 03_progressions/supports/premiere/P11/P11_TD_parcours_recherche_extremum_moyenne.md
   - 03_progressions/supports/premiere/P11/P11_bareme_parcours_recherche_extremum_moyenne.md
   - 03_progressions/supports/premiere/P11/P11_corrige_parcours_recherche_extremum_moyenne.md
@@ -1109,6 +1147,9 @@
   - 03_progressions/supports/premiere/P11/P11_tp_parcours_recherche_extremum_moyenne.md
   - 03_progressions/supports/premiere/P11/P11_trace_parcours_recherche_extremum_moyenne.md
   - 03_progressions/supports/premiere/P11/P11_version_amenagee_parcours_recherche_extremum_moyenne.md
+  - 03_progressions/supports/premiere/P11/code/P11_corrige_professeur_parcours_recherche_extremum_moyenne.py
+  - 03_progressions/supports/premiere/P11/code/P11_starter_parcours_recherche_extremum_moyenne.py
+  - 03_progressions/supports/premiere/P11/code/P11_tests_attendus_parcours_recherche_extremum_moyenne.py
   - 03_progressions/supports/premiere/P12/P12_TD_tris_invariants_complexite.md
   - 03_progressions/supports/premiere/P12/P12_bareme_tris_invariants_complexite.md
   - 03_progressions/supports/premiere/P12/P12_corrige_tris_invariants_complexite.md
@@ -1259,6 +1300,9 @@
   - 03_progressions/supports/terminale/T09/T09_tp_bases_relationnelles_cles_contraintes.md
   - 03_progressions/supports/terminale/T09/T09_trace_bases_relationnelles_cles_contraintes.md
   - 03_progressions/supports/terminale/T09/T09_version_amenagee_bases_relationnelles_cles_contraintes.md
+  - 03_progressions/supports/terminale/T09/code/T09_corrige_professeur_bases_relationnelles_cles_contraintes.py
+  - 03_progressions/supports/terminale/T09/code/T09_starter_bases_relationnelles_cles_contraintes.py
+  - 03_progressions/supports/terminale/T09/code/T09_tests_attendus_bases_relationnelles_cles_contraintes.py
   - 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md
   - 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md
   - 03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md
@@ -1354,6 +1398,9 @@
   - 03_progressions/supports/terminale/T18/T18_tp_boyer_moore.md
   - 03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md
   - 03_progressions/supports/terminale/T18/T18_version_amenagee_boyer_moore.md
+  - 03_progressions/supports/terminale/T18/code/T18_corrige_professeur_boyer_moore.py
+  - 03_progressions/supports/terminale/T18/code/T18_starter_boyer_moore.py
+  - 03_progressions/supports/terminale/T18/code/T18_tests_attendus_boyer_moore.py
   - 03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md
   - 03_progressions/supports/terminale/T19/T19_bareme_bac_pratique_grand_oral_projet.md
   - 03_progressions/supports/terminale/T19/T19_corrige_bac_pratique_grand_oral_projet.md
@@ -1384,6 +1431,7 @@
   - human_review_checklist_science.md
   - human_review_protocol.md
   - human_review_register.csv
+  - human_review_wave_1_plan.md
   - learning_objectives_assessed_report.md
   - missing_capabilities.md
   - missing_documents_register.md
@@ -1442,6 +1490,7 @@
   - scripts/check_document_depth.py
   - scripts/check_document_naming_conventions.py
   - scripts/check_document_style.py
+  - scripts/check_drive_action_plan_completeness.py
   - scripts/check_drive_enrichment_traceability.py
   - scripts/check_drive_enrichment_traceability_portable.py
   - scripts/check_drive_integration_plan.py
@@ -1461,6 +1510,7 @@
   - scripts/check_git_clean.py
   - scripts/check_graph_algorithm_trace_consistency.py
   - scripts/check_human_review_register.py
+  - scripts/check_human_review_wave_plan.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_linked_evaluation_quality.py
   - scripts/check_linked_evaluation_substance.py
@@ -1525,6 +1575,8 @@
   - scripts/check_sequence_completeness.py
   - scripts/check_sequence_contracts.py
   - scripts/check_sequence_pack_consistency.py
+  - scripts/check_sequence_pedagogical_coherence.py
+  - scripts/check_session_classroom_operationality.py
   - scripts/check_session_duration_consistency.py
   - scripts/check_session_level_planning.py
   - scripts/check_session_monthly_total.py
@@ -1839,6 +1891,8 @@
 - 03_progressions/supports/premiere/P07/P07_tp_fonctions_tests_specifications.md
 - 03_progressions/supports/premiere/P07/P07_trace_fonctions_tests_specifications.md
 - 03_progressions/supports/premiere/P07/P07_version_amenagee_fonctions_tests_specifications.md
+- 03_progressions/supports/premiere/P07/code/P07_starter_fonctions_tests_specifications.py
+- 03_progressions/supports/premiere/P07/code/P07_tests_attendus_fonctions_tests_specifications.py
 - 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md
 - 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
@@ -1850,6 +1904,8 @@
 - 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md
+- 03_progressions/supports/premiere/P08/code/P08_starter_web_http_dom_formulaires.py
+- 03_progressions/supports/premiere/P08/code/P08_tests_attendus_web_http_dom_formulaires.py
 - 03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md
 - 03_progressions/supports/premiere/P09/P09_bareme_architecture_os_droits.md
 - 03_progressions/supports/premiere/P09/P09_cours_architecture_os_droits.md
@@ -1858,6 +1914,8 @@
 - 03_progressions/supports/premiere/P09/P09_tp_architecture_os_droits.md
 - 03_progressions/supports/premiere/P09/P09_trace_architecture_os_droits.md
 - 03_progressions/supports/premiere/P09/P09_version_amenagee_architecture_os_droits.md
+- 03_progressions/supports/premiere/P09/code/P09_starter_architecture_os_droits.py
+- 03_progressions/supports/premiere/P09/code/P09_tests_attendus_architecture_os_droits.py
 - 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md
 - 03_progressions/supports/premiere/P10/P10_bareme_reseaux_protocoles_paquets.md
 - 03_progressions/supports/premiere/P10/P10_cours_reseaux_protocoles_paquets.md
@@ -1866,6 +1924,8 @@
 - 03_progressions/supports/premiere/P10/P10_tp_reseaux_protocoles_paquets.md
 - 03_progressions/supports/premiere/P10/P10_trace_reseaux_protocoles_paquets.md
 - 03_progressions/supports/premiere/P10/P10_version_amenagee_reseaux_protocoles_paquets.md
+- 03_progressions/supports/premiere/P10/code/P10_starter_reseaux_protocoles_paquets.py
+- 03_progressions/supports/premiere/P10/code/P10_tests_attendus_reseaux_protocoles_paquets.py
 - 03_progressions/supports/premiere/P11/P11_TD_parcours_recherche_extremum_moyenne.md
 - 03_progressions/supports/premiere/P11/P11_bareme_parcours_recherche_extremum_moyenne.md
 - 03_progressions/supports/premiere/P11/P11_cours_parcours_recherche_extremum_moyenne.md
@@ -1874,6 +1934,8 @@
 - 03_progressions/supports/premiere/P11/P11_tp_parcours_recherche_extremum_moyenne.md
 - 03_progressions/supports/premiere/P11/P11_trace_parcours_recherche_extremum_moyenne.md
 - 03_progressions/supports/premiere/P11/P11_version_amenagee_parcours_recherche_extremum_moyenne.md
+- 03_progressions/supports/premiere/P11/code/P11_starter_parcours_recherche_extremum_moyenne.py
+- 03_progressions/supports/premiere/P11/code/P11_tests_attendus_parcours_recherche_extremum_moyenne.py
 - 03_progressions/supports/premiere/P12/P12_TD_tris_invariants_complexite.md
 - 03_progressions/supports/premiere/P12/P12_bareme_tris_invariants_complexite.md
 - 03_progressions/supports/premiere/P12/P12_cours_tris_invariants_complexite.md
@@ -2001,6 +2063,8 @@
 - 03_progressions/supports/terminale/T09/T09_tp_bases_relationnelles_cles_contraintes.md
 - 03_progressions/supports/terminale/T09/T09_trace_bases_relationnelles_cles_contraintes.md
 - 03_progressions/supports/terminale/T09/T09_version_amenagee_bases_relationnelles_cles_contraintes.md
+- 03_progressions/supports/terminale/T09/code/T09_starter_bases_relationnelles_cles_contraintes.py
+- 03_progressions/supports/terminale/T09/code/T09_tests_attendus_bases_relationnelles_cles_contraintes.py
 - 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md
 - 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md
 - 03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md
@@ -2083,6 +2147,8 @@
 - 03_progressions/supports/terminale/T18/T18_tp_boyer_moore.md
 - 03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md
 - 03_progressions/supports/terminale/T18/T18_version_amenagee_boyer_moore.md
+- 03_progressions/supports/terminale/T18/code/T18_starter_boyer_moore.py
+- 03_progressions/supports/terminale/T18/code/T18_tests_attendus_boyer_moore.py
 - 03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md
 - 03_progressions/supports/terminale/T19/T19_bareme_bac_pratique_grand_oral_projet.md
 - 03_progressions/supports/terminale/T19/T19_cours_bac_pratique_grand_oral_projet.md
@@ -2112,6 +2178,7 @@
 - human_review_checklist_science.md
 - human_review_protocol.md
 - human_review_register.csv
+- human_review_wave_1_plan.md
 - learning_objectives_assessed_report.md
 - missing_capabilities.md
 - missing_documents_register.md
@@ -2193,6 +2260,7 @@
 - scripts/check_document_depth.py
 - scripts/check_document_naming_conventions.py
 - scripts/check_document_style.py
+- scripts/check_drive_action_plan_completeness.py
 - scripts/check_drive_enrichment_traceability.py
 - scripts/check_drive_enrichment_traceability_portable.py
 - scripts/check_drive_integration_plan.py
@@ -2212,6 +2280,7 @@
 - scripts/check_git_clean.py
 - scripts/check_graph_algorithm_trace_consistency.py
 - scripts/check_human_review_register.py
+- scripts/check_human_review_wave_plan.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_linked_evaluation_quality.py
 - scripts/check_linked_evaluation_substance.py
@@ -2276,6 +2345,8 @@
 - scripts/check_sequence_completeness.py
 - scripts/check_sequence_contracts.py
 - scripts/check_sequence_pack_consistency.py
+- scripts/check_sequence_pedagogical_coherence.py
+- scripts/check_session_classroom_operationality.py
 - scripts/check_session_duration_consistency.py
 - scripts/check_session_level_planning.py
 - scripts/check_session_monthly_total.py
@@ -2580,6 +2651,9 @@
 - 03_progressions/supports/premiere/P07/P07_tp_fonctions_tests_specifications.md
 - 03_progressions/supports/premiere/P07/P07_trace_fonctions_tests_specifications.md
 - 03_progressions/supports/premiere/P07/P07_version_amenagee_fonctions_tests_specifications.md
+- 03_progressions/supports/premiere/P07/code/P07_corrige_professeur_fonctions_tests_specifications.py
+- 03_progressions/supports/premiere/P07/code/P07_starter_fonctions_tests_specifications.py
+- 03_progressions/supports/premiere/P07/code/P07_tests_attendus_fonctions_tests_specifications.py
 - 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md
 - 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
@@ -2592,6 +2666,9 @@
 - 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md
+- 03_progressions/supports/premiere/P08/code/P08_corrige_professeur_web_http_dom_formulaires.py
+- 03_progressions/supports/premiere/P08/code/P08_starter_web_http_dom_formulaires.py
+- 03_progressions/supports/premiere/P08/code/P08_tests_attendus_web_http_dom_formulaires.py
 - 03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md
 - 03_progressions/supports/premiere/P09/P09_bareme_architecture_os_droits.md
 - 03_progressions/supports/premiere/P09/P09_corrige_architecture_os_droits.md
@@ -2601,6 +2678,9 @@
 - 03_progressions/supports/premiere/P09/P09_tp_architecture_os_droits.md
 - 03_progressions/supports/premiere/P09/P09_trace_architecture_os_droits.md
 - 03_progressions/supports/premiere/P09/P09_version_amenagee_architecture_os_droits.md
+- 03_progressions/supports/premiere/P09/code/P09_corrige_professeur_architecture_os_droits.py
+- 03_progressions/supports/premiere/P09/code/P09_starter_architecture_os_droits.py
+- 03_progressions/supports/premiere/P09/code/P09_tests_attendus_architecture_os_droits.py
 - 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md
 - 03_progressions/supports/premiere/P10/P10_bareme_reseaux_protocoles_paquets.md
 - 03_progressions/supports/premiere/P10/P10_corrige_reseaux_protocoles_paquets.md
@@ -2610,6 +2690,9 @@
 - 03_progressions/supports/premiere/P10/P10_tp_reseaux_protocoles_paquets.md
 - 03_progressions/supports/premiere/P10/P10_trace_reseaux_protocoles_paquets.md
 - 03_progressions/supports/premiere/P10/P10_version_amenagee_reseaux_protocoles_paquets.md
+- 03_progressions/supports/premiere/P10/code/P10_corrige_professeur_reseaux_protocoles_paquets.py
+- 03_progressions/supports/premiere/P10/code/P10_starter_reseaux_protocoles_paquets.py
+- 03_progressions/supports/premiere/P10/code/P10_tests_attendus_reseaux_protocoles_paquets.py
 - 03_progressions/supports/premiere/P11/P11_TD_parcours_recherche_extremum_moyenne.md
 - 03_progressions/supports/premiere/P11/P11_bareme_parcours_recherche_extremum_moyenne.md
 - 03_progressions/supports/premiere/P11/P11_corrige_parcours_recherche_extremum_moyenne.md
@@ -2619,6 +2702,9 @@
 - 03_progressions/supports/premiere/P11/P11_tp_parcours_recherche_extremum_moyenne.md
 - 03_progressions/supports/premiere/P11/P11_trace_parcours_recherche_extremum_moyenne.md
 - 03_progressions/supports/premiere/P11/P11_version_amenagee_parcours_recherche_extremum_moyenne.md
+- 03_progressions/supports/premiere/P11/code/P11_corrige_professeur_parcours_recherche_extremum_moyenne.py
+- 03_progressions/supports/premiere/P11/code/P11_starter_parcours_recherche_extremum_moyenne.py
+- 03_progressions/supports/premiere/P11/code/P11_tests_attendus_parcours_recherche_extremum_moyenne.py
 - 03_progressions/supports/premiere/P12/P12_TD_tris_invariants_complexite.md
 - 03_progressions/supports/premiere/P12/P12_bareme_tris_invariants_complexite.md
 - 03_progressions/supports/premiere/P12/P12_corrige_tris_invariants_complexite.md
@@ -2769,6 +2855,9 @@
 - 03_progressions/supports/terminale/T09/T09_tp_bases_relationnelles_cles_contraintes.md
 - 03_progressions/supports/terminale/T09/T09_trace_bases_relationnelles_cles_contraintes.md
 - 03_progressions/supports/terminale/T09/T09_version_amenagee_bases_relationnelles_cles_contraintes.md
+- 03_progressions/supports/terminale/T09/code/T09_corrige_professeur_bases_relationnelles_cles_contraintes.py
+- 03_progressions/supports/terminale/T09/code/T09_starter_bases_relationnelles_cles_contraintes.py
+- 03_progressions/supports/terminale/T09/code/T09_tests_attendus_bases_relationnelles_cles_contraintes.py
 - 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md
 - 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md
 - 03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md
@@ -2864,6 +2953,9 @@
 - 03_progressions/supports/terminale/T18/T18_tp_boyer_moore.md
 - 03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md
 - 03_progressions/supports/terminale/T18/T18_version_amenagee_boyer_moore.md
+- 03_progressions/supports/terminale/T18/code/T18_corrige_professeur_boyer_moore.py
+- 03_progressions/supports/terminale/T18/code/T18_starter_boyer_moore.py
+- 03_progressions/supports/terminale/T18/code/T18_tests_attendus_boyer_moore.py
 - 03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md
 - 03_progressions/supports/terminale/T19/T19_bareme_bac_pratique_grand_oral_projet.md
 - 03_progressions/supports/terminale/T19/T19_corrige_bac_pratique_grand_oral_projet.md
@@ -2894,6 +2986,7 @@
 - human_review_checklist_science.md
 - human_review_protocol.md
 - human_review_register.csv
+- human_review_wave_1_plan.md
 - learning_objectives_assessed_report.md
 - missing_capabilities.md
 - missing_documents_register.md
@@ -2979,6 +3072,7 @@
 - scripts/check_document_depth.py
 - scripts/check_document_naming_conventions.py
 - scripts/check_document_style.py
+- scripts/check_drive_action_plan_completeness.py
 - scripts/check_drive_enrichment_traceability.py
 - scripts/check_drive_enrichment_traceability_portable.py
 - scripts/check_drive_integration_plan.py
@@ -2998,6 +3092,7 @@
 - scripts/check_git_clean.py
 - scripts/check_graph_algorithm_trace_consistency.py
 - scripts/check_human_review_register.py
+- scripts/check_human_review_wave_plan.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_linked_evaluation_quality.py
 - scripts/check_linked_evaluation_substance.py
@@ -3062,6 +3157,8 @@
 - scripts/check_sequence_completeness.py
 - scripts/check_sequence_contracts.py
 - scripts/check_sequence_pack_consistency.py
+- scripts/check_sequence_pedagogical_coherence.py
+- scripts/check_session_classroom_operationality.py
 - scripts/check_session_duration_consistency.py
 - scripts/check_session_level_planning.py
 - scripts/check_session_monthly_total.py

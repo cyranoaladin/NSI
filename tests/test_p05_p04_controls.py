@@ -116,7 +116,7 @@ class P05P04ControlsTest(unittest.TestCase):
 
             self.assertTrue(any('"temp"' in error for error in result.errors))
 
-    def test_t18_trace_requires_paper_tp_declaration_and_trace_quality(self) -> None:
+    def test_t18_trace_requires_executable_trace_and_assets(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             trace = root / "03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md"
@@ -124,18 +124,19 @@ class P05P04ControlsTest(unittest.TestCase):
 
             result = t18_trace.analyze_t18_trace_table_quality(root)
 
-            self.assertTrue(any("TP papier" in error for error in result.errors))
+            self.assertTrue(any("executable_trace" in error for error in result.errors))
+            self.assertTrue(any("asset Python attendu absent" in error for error in result.errors))
             self.assertTrue(any("barème" in error.lower() for error in result.errors))
 
-    def test_paper_tp_contract_rejects_ambiguous_trace(self) -> None:
+    def test_paper_tp_contract_rejects_incomplete_paper_tp(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
-            trace = root / "03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md"
+            trace = root / "03_progressions/supports/premiere/P13/P13_tp_dichotomie_glouton_knn.md"
             write(
                 trace,
                 "---\n"
-                "document_type: trace\n"
-                "sequence_id: T18\n"
+                "document_type: tp_papier\n"
+                "sequence_id: P13\n"
                 "---\n"
                 "# Trace\n"
                 "## Table du mauvais caractère\n",
@@ -143,7 +144,7 @@ class P05P04ControlsTest(unittest.TestCase):
 
             result = paper_tp.analyze_paper_tp_contract(root)
 
-            self.assertTrue(any("tp_mode" in error for error in result.errors))
+            self.assertTrue(any("TP papier" in error for error in result.errors))
             self.assertTrue(any("barème" in error.lower() for error in result.errors))
 
     def test_p05_semantic_consistency_rejects_stale_body_contradictions(self) -> None:

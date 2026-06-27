@@ -1,8 +1,8 @@
 ---
-title: "T09 - tp_papier - bases relationnelles, clés et contraintes"
+title: "T09 - tp - bases relationnelles, clés et contraintes"
 level: "terminale"
 sequence_id: "T09"
-document_type: "tp_papier"
+document_type: "tp"
 status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
@@ -21,7 +21,7 @@ official_program:
 # T09 - TP - bases relationnelles, clés et contraintes
 
 ## Statut du TP
-TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
+TP exécutable : le livrable élève est un fichier Python de vérification de contraintes relationnelles.
 
 ## Donnée fournie
 `Livre(1,Dune), Livre(2,Fondation) ; Emprunt(10,1,Nora), Emprunt(11,9,Sam) invalide`
@@ -68,3 +68,9 @@ Résultat attendu : `clé primaire nulle` traité sans ambiguïté.
 - La trace ou le pseudo-code conduit à `Livre.id_livre identifie chaque livre`.
 - Au moins un cas limite de la section précédente est décidé.
 
+## Assets Python
+- Starter élève : `code/T09_starter_bases_relationnelles_cles_contraintes.py`.
+- Tests attendus : `code/T09_tests_attendus_bases_relationnelles_cles_contraintes.py`.
+- Corrigé professeur : `code/T09_corrige_professeur_bases_relationnelles_cles_contraintes.py`.
+- Fonctions à compléter : `cles_primaires_uniques`, `references_valides`, `violations_domaine`.
+- Cas testés : clé primaire dupliquée, clé étrangère absente, domaine de note invalide.

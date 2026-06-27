@@ -1,8 +1,8 @@
 ---
-title: "P09 - tp_papier - architecture, système et droits Unix"
+title: "P09 - tp - architecture, système et droits Unix"
 level: "premiere"
 sequence_id: "P09"
-document_type: "tp_papier"
+document_type: "tp"
 status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
@@ -22,7 +22,7 @@ official_program:
 # P09 - TP - architecture, système et droits Unix
 
 ## Statut du TP
-TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
+TP exécutable : le livrable élève est un fichier Python de décision sur droits Unix vérifié par tests.
 
 ## Donnée fournie
 `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`
@@ -69,3 +69,9 @@ Résultat attendu : `fichier absent` traité sans ambiguïté.
 - La trace ou le pseudo-code conduit à `-rw-r----- -> propriétaire rw, groupe r, autres aucun droit`.
 - Au moins un cas limite de la section précédente est décidé.
 
+## Assets Python
+- Starter élève : `code/P09_starter_architecture_os_droits.py`.
+- Tests attendus : `code/P09_tests_attendus_architecture_os_droits.py`.
+- Corrigé professeur : `code/P09_corrige_professeur_architecture_os_droits.py`.
+- Fonctions à compléter : `droits_symboliques`, `peut_lire`, `chmod_ajouter_execution`.
+- Cas testés : chmod 640, accès propriétaire/groupe/autres, mode invalide refusé.

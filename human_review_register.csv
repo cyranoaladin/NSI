@@ -172,6 +172,9 @@ ressource,niveau,sequence,notion,reviewer,date,science_status,pedagogy_status,ac
 03_progressions/supports/premiere/P07/P07_tp_fonctions_tests_specifications.md,premiere,,"fonctions, tests et spécifications",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P07/P07_trace_fonctions_tests_specifications.md,premiere,,"fonctions, tests et spécifications",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P07/P07_version_amenagee_fonctions_tests_specifications.md,premiere,,"fonctions, tests et spécifications",,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P07/code/P07_corrige_professeur_fonctions_tests_specifications.py,premiere,P07,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
+03_progressions/supports/premiere/P07/code/P07_starter_fonctions_tests_specifications.py,premiere,P07,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
+03_progressions/supports/premiere/P07/code/P07_tests_attendus_fonctions_tests_specifications.py,premiere,P07,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md,premiere,,"HTML, CSS, DOM, HTTP et formulaires",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md,premiere,,"HTML, CSS, DOM, HTTP et formulaires",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md,premiere,,"HTML, CSS, DOM, HTTP et formulaires",,,pending,pending,pending,pending,pending,revue humaine non réalisée
@@ -184,6 +187,9 @@ ressource,niveau,sequence,notion,reviewer,date,science_status,pedagogy_status,ac
 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md,premiere,,"HTML, CSS, DOM, HTTP et formulaires",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md,premiere,,"HTML, CSS, DOM, HTTP et formulaires",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md,premiere,,"HTML, CSS, DOM, HTTP et formulaires",,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P08/code/P08_corrige_professeur_web_http_dom_formulaires.py,premiere,P08,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
+03_progressions/supports/premiere/P08/code/P08_starter_web_http_dom_formulaires.py,premiere,P08,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
+03_progressions/supports/premiere/P08/code/P08_tests_attendus_web_http_dom_formulaires.py,premiere,P08,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
 03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md,premiere,,"architecture, système et droits Unix",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P09/P09_bareme_architecture_os_droits.md,premiere,,"architecture, système et droits Unix",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P09/P09_corrige_architecture_os_droits.md,premiere,,"architecture, système et droits Unix",,,pending,pending,pending,pending,pending,revue humaine non réalisée
@@ -193,6 +199,9 @@ ressource,niveau,sequence,notion,reviewer,date,science_status,pedagogy_status,ac
 03_progressions/supports/premiere/P09/P09_tp_architecture_os_droits.md,premiere,,"architecture, système et droits Unix",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P09/P09_trace_architecture_os_droits.md,premiere,,"architecture, système et droits Unix",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P09/P09_version_amenagee_architecture_os_droits.md,premiere,,"architecture, système et droits Unix",,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P09/code/P09_corrige_professeur_architecture_os_droits.py,premiere,P09,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
+03_progressions/supports/premiere/P09/code/P09_starter_architecture_os_droits.py,premiere,P09,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
+03_progressions/supports/premiere/P09/code/P09_tests_attendus_architecture_os_droits.py,premiere,P09,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md,premiere,,"réseaux, protocoles et paquets",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P10/P10_bareme_reseaux_protocoles_paquets.md,premiere,,"réseaux, protocoles et paquets",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P10/P10_corrige_reseaux_protocoles_paquets.md,premiere,,"réseaux, protocoles et paquets",,,pending,pending,pending,pending,pending,revue humaine non réalisée
@@ -202,6 +211,9 @@ ressource,niveau,sequence,notion,reviewer,date,science_status,pedagogy_status,ac
 03_progressions/supports/premiere/P10/P10_tp_reseaux_protocoles_paquets.md,premiere,,"réseaux, protocoles et paquets",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P10/P10_trace_reseaux_protocoles_paquets.md,premiere,,"réseaux, protocoles et paquets",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P10/P10_version_amenagee_reseaux_protocoles_paquets.md,premiere,,"réseaux, protocoles et paquets",,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P10/code/P10_corrige_professeur_reseaux_protocoles_paquets.py,premiere,P10,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
+03_progressions/supports/premiere/P10/code/P10_starter_reseaux_protocoles_paquets.py,premiere,P10,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
+03_progressions/supports/premiere/P10/code/P10_tests_attendus_reseaux_protocoles_paquets.py,premiere,P10,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
 03_progressions/supports/premiere/P11/P11_TD_parcours_recherche_extremum_moyenne.md,premiere,,"parcours, recherche, extremum et moyenne",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P11/P11_bareme_parcours_recherche_extremum_moyenne.md,premiere,,"parcours, recherche, extremum et moyenne",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P11/P11_corrige_parcours_recherche_extremum_moyenne.md,premiere,,"parcours, recherche, extremum et moyenne",,,pending,pending,pending,pending,pending,revue humaine non réalisée
@@ -211,6 +223,9 @@ ressource,niveau,sequence,notion,reviewer,date,science_status,pedagogy_status,ac
 03_progressions/supports/premiere/P11/P11_tp_parcours_recherche_extremum_moyenne.md,premiere,,"parcours, recherche, extremum et moyenne",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P11/P11_trace_parcours_recherche_extremum_moyenne.md,premiere,,"parcours, recherche, extremum et moyenne",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P11/P11_version_amenagee_parcours_recherche_extremum_moyenne.md,premiere,,"parcours, recherche, extremum et moyenne",,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P11/code/P11_corrige_professeur_parcours_recherche_extremum_moyenne.py,premiere,P11,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
+03_progressions/supports/premiere/P11/code/P11_starter_parcours_recherche_extremum_moyenne.py,premiere,P11,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
+03_progressions/supports/premiere/P11/code/P11_tests_attendus_parcours_recherche_extremum_moyenne.py,premiere,P11,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
 03_progressions/supports/premiere/P12/P12_TD_tris_invariants_complexite.md,premiere,,"tris, invariants et complexité",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P12/P12_bareme_tris_invariants_complexite.md,premiere,,"tris, invariants et complexité",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P12/P12_corrige_tris_invariants_complexite.md,premiere,,"tris, invariants et complexité",,,pending,pending,pending,pending,pending,revue humaine non réalisée
@@ -361,6 +376,9 @@ ressource,niveau,sequence,notion,reviewer,date,science_status,pedagogy_status,ac
 03_progressions/supports/terminale/T09/T09_tp_bases_relationnelles_cles_contraintes.md,terminale,,"bases relationnelles, clés et contraintes",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/terminale/T09/T09_trace_bases_relationnelles_cles_contraintes.md,terminale,,"bases relationnelles, clés et contraintes",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/terminale/T09/T09_version_amenagee_bases_relationnelles_cles_contraintes.md,terminale,,"bases relationnelles, clés et contraintes",,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T09/code/T09_corrige_professeur_bases_relationnelles_cles_contraintes.py,terminale,T09,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
+03_progressions/supports/terminale/T09/code/T09_starter_bases_relationnelles_cles_contraintes.py,terminale,T09,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
+03_progressions/supports/terminale/T09/code/T09_tests_attendus_bases_relationnelles_cles_contraintes.py,terminale,T09,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md,terminale,,"SQL SELECT, JOIN, INSERT, UPDATE et DELETE",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md,terminale,,"SQL SELECT, JOIN, INSERT, UPDATE et DELETE",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md,terminale,,"SQL SELECT, JOIN, INSERT, UPDATE et DELETE",,,pending,pending,pending,pending,pending,revue humaine non réalisée
@@ -456,6 +474,9 @@ ressource,niveau,sequence,notion,reviewer,date,science_status,pedagogy_status,ac
 03_progressions/supports/terminale/T18/T18_tp_boyer_moore.md,terminale,,Boyer-Moore,,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md,terminale,,Boyer-Moore,,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/terminale/T18/T18_version_amenagee_boyer_moore.md,terminale,,Boyer-Moore,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T18/code/T18_corrige_professeur_boyer_moore.py,terminale,T18,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
+03_progressions/supports/terminale/T18/code/T18_starter_boyer_moore.py,terminale,T18,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
+03_progressions/supports/terminale/T18/code/T18_tests_attendus_boyer_moore.py,terminale,T18,python,,,pending,pending,pending,pending,needs_review,revue humaine non réalisée
 03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md,terminale,,"bac pratique, écrit, Grand Oral et projet",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/terminale/T19/T19_bareme_bac_pratique_grand_oral_projet.md,terminale,,"bac pratique, écrit, Grand Oral et projet",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/terminale/T19/T19_corrige_bac_pratique_grand_oral_projet.md,terminale,,"bac pratique, écrit, Grand Oral et projet",,,pending,pending,pending,pending,pending,revue humaine non réalisée

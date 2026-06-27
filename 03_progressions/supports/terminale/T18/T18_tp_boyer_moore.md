@@ -1,8 +1,8 @@
 ---
-title: "T18 - tp_papier - Boyer-Moore"
+title: "T18 - tp - Boyer-Moore"
 level: "terminale"
 sequence_id: "T18"
-document_type: "tp_papier"
+document_type: "tp"
 status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
@@ -18,7 +18,7 @@ official_program:
 # T18 - TP - Boyer-Moore
 
 ## Statut du TP
-TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
+TP exécutable : le livrable élève est un fichier Python de recherche Boyer-Moore simplifiée vérifié par tests.
 
 ## Donnée fournie
 `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`
@@ -28,12 +28,12 @@ TP papier : ce support n attend aucune ressource Python ; le livrable est une tr
 2. Réaliser : prétraiter dernière position de chaque caractère.
 3. Réaliser : comparer depuis la droite.
 4. Tester le cas limite `motif absent`.
-5. Produire le livrable : table : A->2, N->1.
+5. Produire le livrable : table : A->2, N->1 et indice trouvé 1 pour `texte="BANANAS"`, `motif="ANA"`.
 
 ## Barème associé
 - 2 points : donnée préparée.
 - 3 points : méthode principale.
-- 3 points : résultat `table : A->2, N->1`.
+- 3 points : résultat `table : A->2, N->1` et indice trouvé `1`.
 - 2 points : cas limite `motif absent`.
 
 ## Corrigé question par question
@@ -44,7 +44,7 @@ Résultat attendu : table : A->2, N->1.
 ### Corrigé question 3
 Résultat attendu : alignement 0 : N comparé à A -> décalage 1.
 ### Corrigé question 4
-Résultat attendu : `motif absent` traité sans ambiguïté.
+Résultat attendu : alignement 1 : `ANA` correspond, motif trouvé à l indice 1 ; motif absent renvoie -1.
 
 ## Liens
 - TD lié : `T18_TD_boyer_moore.md`.
@@ -62,6 +62,12 @@ Résultat attendu : `motif absent` traité sans ambiguïté.
 
 ## Critères de réussite observables
 - La donnée de départ est recopiée exactement.
-- La trace ou le pseudo-code conduit à `table : A->2, N->1`.
+- La trace ou le pseudo-code conduit à `table : A->2, N->1` et à l indice trouvé `1`.
 - Au moins un cas limite de la section précédente est décidé.
 
+## Assets Python
+- Starter élève : `code/T18_starter_boyer_moore.py`.
+- Tests attendus : `code/T18_tests_attendus_boyer_moore.py`.
+- Corrigé professeur : `code/T18_corrige_professeur_boyer_moore.py`.
+- Fonctions à compléter : `table_mauvais_caractere`, `boyer_moore`, `trace_decalages`.
+- Cas testés : motif trouvé dans `BANANAS`, motif absent, motif plus long que le texte.

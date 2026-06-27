@@ -60,10 +60,13 @@ audit-local:
 	python scripts/check_official_program_capacity_coverage_matrix.py
 	python scripts/check_capacity_status_ladder.py
 	python scripts/check_course_explanatory_quality.py
+	python scripts/check_sequence_pedagogical_coherence.py
 	python scripts/check_paper_tp_justification.py
-	python scripts/check_tp_executable_opportunity.py
+	MAX_EXECUTABLE_TP_OPPORTUNITIES=8 python scripts/check_tp_executable_opportunity.py
 	python scripts/check_session_to_resource_alignment.py
+	python scripts/check_session_classroom_operationality.py
 	python scripts/check_human_review_register.py
+	python scripts/check_human_review_wave_plan.py
 	python scripts/check_sql_query_result_consistency.py
 	python scripts/check_graph_algorithm_trace_consistency.py
 	python scripts/check_tree_bst_invariant_consistency.py
@@ -94,6 +97,7 @@ audit-local:
 	python scripts/check_sequence_contracts.py
 	python scripts/check_local_drive_traceability.py
 	python scripts/check_drive_integration_plan.py
+	python scripts/check_drive_action_plan_completeness.py
 	python scripts/check_drive_enrichment_traceability.py
 	python scripts/check_ready_supports_required_sections.py
 	python scripts/check_ready_supports_depth.py
@@ -175,10 +179,13 @@ audit-extracted-source:
 	timeout 30 python scripts/check_official_program_capacity_coverage_matrix.py
 	timeout 30 python scripts/check_capacity_status_ladder.py
 	timeout 30 python scripts/check_course_explanatory_quality.py
+	timeout 30 python scripts/check_sequence_pedagogical_coherence.py
 	timeout 30 python scripts/check_paper_tp_justification.py
-	timeout 30 python scripts/check_tp_executable_opportunity.py
+	MAX_EXECUTABLE_TP_OPPORTUNITIES=8 timeout 30 python scripts/check_tp_executable_opportunity.py
 	timeout 30 python scripts/check_session_to_resource_alignment.py
+	timeout 30 python scripts/check_session_classroom_operationality.py
 	timeout 30 python scripts/check_human_review_register.py
+	timeout 30 python scripts/check_human_review_wave_plan.py
 	python scripts/check_sql_query_result_consistency.py
 	python scripts/check_graph_algorithm_trace_consistency.py
 	python scripts/check_tree_bst_invariant_consistency.py
@@ -208,6 +215,7 @@ audit-extracted-source:
 	timeout 90 python -u scripts/check_tp_pedagogical_assets_runtime.py
 	python scripts/check_sequence_contracts.py
 	python scripts/check_drive_enrichment_traceability_portable.py
+	python scripts/check_drive_action_plan_completeness.py
 	python scripts/check_drive_trace_no_absolute_local_paths.py
 	timeout 30 python scripts/check_ready_supports_required_sections.py
 	timeout 30 python scripts/check_ready_supports_depth.py

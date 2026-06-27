@@ -49,10 +49,13 @@ BLOCKING_CHECKS = [
     "scripts/check_official_program_capacity_coverage_matrix.py",
     "scripts/check_capacity_status_ladder.py",
     "scripts/check_course_explanatory_quality.py",
+    "scripts/check_sequence_pedagogical_coherence.py",
     "scripts/check_paper_tp_justification.py",
     "scripts/check_tp_executable_opportunity.py",
     "scripts/check_session_to_resource_alignment.py",
+    "scripts/check_session_classroom_operationality.py",
     "scripts/check_human_review_register.py",
+    "scripts/check_human_review_wave_plan.py",
     "scripts/check_sql_query_result_consistency.py",
     "scripts/check_graph_algorithm_trace_consistency.py",
     "scripts/check_tree_bst_invariant_consistency.py",
@@ -83,6 +86,7 @@ BLOCKING_CHECKS = [
     "scripts/check_sequence_contracts.py",
     "scripts/check_local_drive_traceability.py",
     "scripts/check_drive_integration_plan.py",
+    "scripts/check_drive_action_plan_completeness.py",
     "scripts/check_drive_enrichment_traceability.py",
     "scripts/check_drive_enrichment_traceability_portable.py",
     "scripts/check_manifest_source_trace_consistency.py",
@@ -142,6 +146,12 @@ INDICATIVE_CHECKS = [
     "scripts/check_document_style.py",
 ]
 
+STRICT_ENV_BY_SCRIPT = {
+    "scripts/check_tp_executable_opportunity.py": {
+        "MAX_EXECUTABLE_TP_OPPORTUNITIES": "8",
+    },
+}
+
 
 def remove_python_caches() -> None:
     for path in ROOT.rglob("__pycache__"):
@@ -152,7 +162,9 @@ def remove_python_caches() -> None:
 def run_check(script: str, env: dict[str, str], indicative: bool = False) -> int:
     suffix = " (indicatif)" if indicative else ""
     print(f"== {script}{suffix} ==")
-    result = subprocess.run([PYTHON, script], cwd=ROOT, env=env)
+    check_env = env.copy()
+    check_env.update(STRICT_ENV_BY_SCRIPT.get(script, {}))
+    result = subprocess.run([PYTHON, script], cwd=ROOT, env=check_env)
     return result.returncode
 
 

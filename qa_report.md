@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 787
-- Ressources needs_review : 787
+- Ressources inventoriées : 813
+- Ressources needs_review : 813
 - Ressources publiables : 0
-- Source generated : 779
+- Source generated : 805
 - Source adapted_from_drive : 7
 - Source import_partiel : 1
 - Source inspiration_drive : 0
@@ -36,6 +36,7 @@
 - Drive missing_local_copy : 7
 - Drive deferred : 3
 - Drive quarantined : 0
+- Plan Drive restant : 15/15 ressources non soldées documentées.
 - Décision : ne pas générer de nouvelles séquences
 - Lots Drive planifiés : P05 traitement_tables complet ; T01 TAD complet ; T18 Boyer-Moore complet ; P12 tri/complexité ; P13 glouton.
 - ZIP exploitable sans `.git` : dist/nsi-enseignement_source_clean.zip, archive séparée du livrable pédagogique de référence.
@@ -105,10 +106,12 @@ python scripts/check_drive_mapping_release.py
 
 ## TP papier / exécutables
 
-- TP papier : 16
-- TP exécutables : 24
-- Ratio papier : 40.0%
-- Opportunités de conversion exécutable signalées : 16
+- TP papier : 7
+- TP exécutables : 33
+- Ratio papier : 17.5%
+- Opportunités de conversion exécutable signalées : 7
+- Seuil strict opportunités restantes : 8
+- État seuil strict : PASS
 - Registre : `tp_executable_opportunity_register.md`.
 - Les TP papier restent `needs_review` et ne remplacent pas une revue humaine.
 
@@ -116,12 +119,24 @@ python scripts/check_drive_mapping_release.py
 
 - Séances opérationnelles ou reliées : 222
 - Séances théoriques ou non reliées : 0
+- Séances linked : 222
+- Séances classroom_ready : 222
+- Séances human_review_pending : 222
+- Séances validated : 0
+- `classroom_ready` signifie exploitable documentairement ; la revue humaine reste pending.
 - Les séances théoriques restantes doivent être reliées explicitement aux supports produits avant publication.
+
+## Cohérence pédagogique par séquence
+
+- Séquences vérifiées : 35
+- Erreurs de cohérence détectées : 0
 
 ## Revue humaine
 
-- Ressources majeures à relire : 466
-- Lignes dans `human_review_register.csv` : 466
+- Ressources majeures à relire : 487
+- Lignes dans `human_review_register.csv` : 487
+- Ressources prioritaires vague 1 : 20
+- Priorités vague 1 couvertes : P05, P06, P10, P12, P13, T06, T07, T08, T10, T17, T18
 - Statut initial : pending pour science, pédagogie, accessibilité et technique.
 - Aucune ligne du registre ne promeut `validated_*`, `published` ou `covered`.
 
