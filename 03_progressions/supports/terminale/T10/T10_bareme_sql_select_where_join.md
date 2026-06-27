@@ -35,7 +35,7 @@ official_program:
 
 ## Évaluation question par question
 - Question 1 : 4 points sur T-BDD-03A avec résultat `SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus`.
-- Question 2 : 4 points sur T-BDD-03B avec résultat `JOIN -> Ada 17, Linus 13`.
+- Question 2 : 4 points sur T-BDD-03B avec résultat `JOIN -> Ada 17`.
 - Question 3 : 4 points sur T-BDD-03C avec résultat `UPDATE id_note=10 -> Ada 18`.
 - Question 4 : 4 points sur T-BDD-03D avec résultat `DELETE WHERE id_note=11 retire Linus`.
 

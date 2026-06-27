@@ -35,6 +35,8 @@ private_data: false
 Dans Fibonacci, `fib(3)` est demandé plusieurs fois sans mémoïsation.
 ### Exemple corrigé 2 - Contrôle ou contre-exemple
 Une table de sommes cible stocke le meilleur résultat pour chaque montant intermédiaire.
+### Exemple corrigé 3 - Somme cible par tabulation
+On dispose des valeurs `[2, 5, 7]` et on veut atteindre la cible `9`. État : `dp[s]` vaut `True` si la somme `s` est atteignable. Initialisation : `dp[0] = True` et `dp[1..9] = False`. Relation de récurrence : pour chaque valeur `v`, mettre `dp[s] = dp[s] or dp[s-v]` pour `s` décroissant de `9` à `v`. Table partielle après `2` puis `5` : `dp[0]=True`, `dp[2]=True`, `dp[5]=True`, `dp[7]=True`. Après `7`, `dp[9]=True` car `9 = 2 + 7`. Résultat final : la cible 9 est atteignable.
 
 ## Erreurs fréquentes
 - Confondre le vocabulaire de programmation dynamique avec une simple récitation : corriger par un exemple calculé ou exécuté.

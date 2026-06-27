@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 738
+- Total ressources : 748
 - Ressources pédagogiques : 53
-- Ressources techniques : 685
+- Ressources techniques : 695
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 730
+- generated: 740
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 271
+- interne: 281
 - premiere: 212
 - terminale: 255
 
@@ -19,17 +19,17 @@
 - banque: 14
 - document: 461
 - python: 39
-- script: 138
+- script: 147
 - sequence: 45
-- test: 41
+- test: 42
 
 ## Répartition par statut
-- needs_review: 738
+- needs_review: 748
 
 ## Répartition audience
 - corrige: 57
 - eleve: 105
-- mixte: 573
+- mixte: 583
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -575,6 +575,7 @@
   - scripts/check_archive_portability.py
   - scripts/check_audit_extracted_runtime_budget.py
   - scripts/check_bank_strategy.py
+  - scripts/check_boyer_moore_trace_consistency.py
   - scripts/check_build_reports_freshness.py
   - scripts/check_corrected_answers_are_concrete.py
   - scripts/check_course_internal_coherence.py
@@ -601,14 +602,17 @@
   - scripts/check_drive_mapping_release.py
   - scripts/check_drive_quarantine_privacy.py
   - scripts/check_drive_trace_no_absolute_local_paths.py
+  - scripts/check_dynamic_programming_recurrence_consistency.py
   - scripts/check_evaluation_bareme_alignment.py
   - scripts/check_evaluation_distribution.py
   - scripts/check_first_batch_alignment.py
   - scripts/check_first_batch_document_quality.py
   - scripts/check_first_batch_tp_assets.py
+  - scripts/check_full_notional_resource_matrix.py
   - scripts/check_full_sequence_resource_matrix.py
   - scripts/check_generated_template_residue.py
   - scripts/check_git_clean.py
+  - scripts/check_graph_algorithm_trace_consistency.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_linked_evaluation_quality.py
   - scripts/check_linked_evaluation_substance.py
@@ -622,6 +626,7 @@
   - scripts/check_missing_register_actionability.py
   - scripts/check_missing_register_semantic_consistency.py
   - scripts/check_monthly_load_balance.py
+  - scripts/check_network_packet_trace_consistency.py
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
   - scripts/check_no_coverage_from_sheets_only.py
@@ -638,6 +643,7 @@
   - scripts/check_no_sensitive_drive_in_source_clean.py
   - scripts/check_no_teacher_content_in_student_export.py
   - scripts/check_no_token_only_validation.py
+  - scripts/check_official_program_capacity_coverage_matrix.py
   - scripts/check_operational_readiness_quality_coupling.py
   - scripts/check_operational_supports_no_indicative_debt.py
   - scripts/check_p04_key_consistency.py
@@ -673,10 +679,12 @@
   - scripts/check_session_duration_consistency.py
   - scripts/check_session_level_planning.py
   - scripts/check_session_monthly_total.py
+  - scripts/check_session_operationalization_plan.py
   - scripts/check_session_project_hours.py
   - scripts/check_session_referenced_files_exist.py
   - scripts/check_session_specificity.py
   - scripts/check_session_week_calendar_consistency.py
+  - scripts/check_sql_query_result_consistency.py
   - scripts/check_student_supports_no_scaffold_language.py
   - scripts/check_support_pedagogical_depth.py
   - scripts/check_support_substance.py
@@ -688,6 +696,7 @@
   - scripts/check_tp_pedagogical_assets_runtime.py
   - scripts/check_tp_test_alignment.py
   - scripts/check_tp_text_asset_alignment.py
+  - scripts/check_tree_bst_invariant_consistency.py
   - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_documents_quality_gates.py
   - scripts/check_validated_statuses.py
@@ -751,6 +760,7 @@
   - tests/test_missing_register_actionability.py
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
+  - tests/test_notional_and_disciplinary_controls.py
   - tests/test_operational_substance_controls.py
   - tests/test_p05_p04_controls.py
   - tests/test_packaging_modes.py
@@ -1341,6 +1351,7 @@
   - scripts/check_archive_portability.py
   - scripts/check_audit_extracted_runtime_budget.py
   - scripts/check_bank_strategy.py
+  - scripts/check_boyer_moore_trace_consistency.py
   - scripts/check_build_reports_freshness.py
   - scripts/check_corrected_answers_are_concrete.py
   - scripts/check_course_internal_coherence.py
@@ -1367,14 +1378,17 @@
   - scripts/check_drive_mapping_release.py
   - scripts/check_drive_quarantine_privacy.py
   - scripts/check_drive_trace_no_absolute_local_paths.py
+  - scripts/check_dynamic_programming_recurrence_consistency.py
   - scripts/check_evaluation_bareme_alignment.py
   - scripts/check_evaluation_distribution.py
   - scripts/check_first_batch_alignment.py
   - scripts/check_first_batch_document_quality.py
   - scripts/check_first_batch_tp_assets.py
+  - scripts/check_full_notional_resource_matrix.py
   - scripts/check_full_sequence_resource_matrix.py
   - scripts/check_generated_template_residue.py
   - scripts/check_git_clean.py
+  - scripts/check_graph_algorithm_trace_consistency.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_linked_evaluation_quality.py
   - scripts/check_linked_evaluation_substance.py
@@ -1388,6 +1402,7 @@
   - scripts/check_missing_register_actionability.py
   - scripts/check_missing_register_semantic_consistency.py
   - scripts/check_monthly_load_balance.py
+  - scripts/check_network_packet_trace_consistency.py
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
   - scripts/check_no_coverage_from_sheets_only.py
@@ -1404,6 +1419,7 @@
   - scripts/check_no_sensitive_drive_in_source_clean.py
   - scripts/check_no_teacher_content_in_student_export.py
   - scripts/check_no_token_only_validation.py
+  - scripts/check_official_program_capacity_coverage_matrix.py
   - scripts/check_operational_readiness_quality_coupling.py
   - scripts/check_operational_supports_no_indicative_debt.py
   - scripts/check_p04_key_consistency.py
@@ -1439,10 +1455,12 @@
   - scripts/check_session_duration_consistency.py
   - scripts/check_session_level_planning.py
   - scripts/check_session_monthly_total.py
+  - scripts/check_session_operationalization_plan.py
   - scripts/check_session_project_hours.py
   - scripts/check_session_referenced_files_exist.py
   - scripts/check_session_specificity.py
   - scripts/check_session_week_calendar_consistency.py
+  - scripts/check_sql_query_result_consistency.py
   - scripts/check_student_supports_no_scaffold_language.py
   - scripts/check_support_pedagogical_depth.py
   - scripts/check_support_substance.py
@@ -1454,6 +1472,7 @@
   - scripts/check_tp_pedagogical_assets_runtime.py
   - scripts/check_tp_test_alignment.py
   - scripts/check_tp_text_asset_alignment.py
+  - scripts/check_tree_bst_invariant_consistency.py
   - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_documents_quality_gates.py
   - scripts/check_validated_statuses.py
@@ -1491,6 +1510,7 @@
   - tests/test_missing_register_actionability.py
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
+  - tests/test_notional_and_disciplinary_controls.py
   - tests/test_operational_substance_controls.py
   - tests/test_p05_p04_controls.py
   - tests/test_packaging_modes.py
@@ -2051,6 +2071,7 @@
 - scripts/check_archive_portability.py
 - scripts/check_audit_extracted_runtime_budget.py
 - scripts/check_bank_strategy.py
+- scripts/check_boyer_moore_trace_consistency.py
 - scripts/check_build_reports_freshness.py
 - scripts/check_corrected_answers_are_concrete.py
 - scripts/check_course_internal_coherence.py
@@ -2077,14 +2098,17 @@
 - scripts/check_drive_mapping_release.py
 - scripts/check_drive_quarantine_privacy.py
 - scripts/check_drive_trace_no_absolute_local_paths.py
+- scripts/check_dynamic_programming_recurrence_consistency.py
 - scripts/check_evaluation_bareme_alignment.py
 - scripts/check_evaluation_distribution.py
 - scripts/check_first_batch_alignment.py
 - scripts/check_first_batch_document_quality.py
 - scripts/check_first_batch_tp_assets.py
+- scripts/check_full_notional_resource_matrix.py
 - scripts/check_full_sequence_resource_matrix.py
 - scripts/check_generated_template_residue.py
 - scripts/check_git_clean.py
+- scripts/check_graph_algorithm_trace_consistency.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_linked_evaluation_quality.py
 - scripts/check_linked_evaluation_substance.py
@@ -2098,6 +2122,7 @@
 - scripts/check_missing_register_actionability.py
 - scripts/check_missing_register_semantic_consistency.py
 - scripts/check_monthly_load_balance.py
+- scripts/check_network_packet_trace_consistency.py
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
 - scripts/check_no_coverage_from_sheets_only.py
@@ -2114,6 +2139,7 @@
 - scripts/check_no_sensitive_drive_in_source_clean.py
 - scripts/check_no_teacher_content_in_student_export.py
 - scripts/check_no_token_only_validation.py
+- scripts/check_official_program_capacity_coverage_matrix.py
 - scripts/check_operational_readiness_quality_coupling.py
 - scripts/check_operational_supports_no_indicative_debt.py
 - scripts/check_p04_key_consistency.py
@@ -2149,10 +2175,12 @@
 - scripts/check_session_duration_consistency.py
 - scripts/check_session_level_planning.py
 - scripts/check_session_monthly_total.py
+- scripts/check_session_operationalization_plan.py
 - scripts/check_session_project_hours.py
 - scripts/check_session_referenced_files_exist.py
 - scripts/check_session_specificity.py
 - scripts/check_session_week_calendar_consistency.py
+- scripts/check_sql_query_result_consistency.py
 - scripts/check_student_supports_no_scaffold_language.py
 - scripts/check_support_pedagogical_depth.py
 - scripts/check_support_substance.py
@@ -2163,6 +2191,7 @@
 - scripts/check_tp_pedagogical_assets_runtime.py
 - scripts/check_tp_test_alignment.py
 - scripts/check_tp_text_asset_alignment.py
+- scripts/check_tree_bst_invariant_consistency.py
 - scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_documents_quality_gates.py
 - scripts/check_validated_statuses.py
@@ -2221,6 +2250,7 @@
 - tests/test_missing_register_actionability.py
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
+- tests/test_notional_and_disciplinary_controls.py
 - tests/test_operational_substance_controls.py
 - tests/test_p05_p04_controls.py
 - tests/test_packaging_modes.py
@@ -2788,6 +2818,7 @@
 - scripts/check_archive_portability.py
 - scripts/check_audit_extracted_runtime_budget.py
 - scripts/check_bank_strategy.py
+- scripts/check_boyer_moore_trace_consistency.py
 - scripts/check_build_reports_freshness.py
 - scripts/check_corrected_answers_are_concrete.py
 - scripts/check_course_internal_coherence.py
@@ -2814,14 +2845,17 @@
 - scripts/check_drive_mapping_release.py
 - scripts/check_drive_quarantine_privacy.py
 - scripts/check_drive_trace_no_absolute_local_paths.py
+- scripts/check_dynamic_programming_recurrence_consistency.py
 - scripts/check_evaluation_bareme_alignment.py
 - scripts/check_evaluation_distribution.py
 - scripts/check_first_batch_alignment.py
 - scripts/check_first_batch_document_quality.py
 - scripts/check_first_batch_tp_assets.py
+- scripts/check_full_notional_resource_matrix.py
 - scripts/check_full_sequence_resource_matrix.py
 - scripts/check_generated_template_residue.py
 - scripts/check_git_clean.py
+- scripts/check_graph_algorithm_trace_consistency.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_linked_evaluation_quality.py
 - scripts/check_linked_evaluation_substance.py
@@ -2835,6 +2869,7 @@
 - scripts/check_missing_register_actionability.py
 - scripts/check_missing_register_semantic_consistency.py
 - scripts/check_monthly_load_balance.py
+- scripts/check_network_packet_trace_consistency.py
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
 - scripts/check_no_coverage_from_sheets_only.py
@@ -2851,6 +2886,7 @@
 - scripts/check_no_sensitive_drive_in_source_clean.py
 - scripts/check_no_teacher_content_in_student_export.py
 - scripts/check_no_token_only_validation.py
+- scripts/check_official_program_capacity_coverage_matrix.py
 - scripts/check_operational_readiness_quality_coupling.py
 - scripts/check_operational_supports_no_indicative_debt.py
 - scripts/check_p04_key_consistency.py
@@ -2886,10 +2922,12 @@
 - scripts/check_session_duration_consistency.py
 - scripts/check_session_level_planning.py
 - scripts/check_session_monthly_total.py
+- scripts/check_session_operationalization_plan.py
 - scripts/check_session_project_hours.py
 - scripts/check_session_referenced_files_exist.py
 - scripts/check_session_specificity.py
 - scripts/check_session_week_calendar_consistency.py
+- scripts/check_sql_query_result_consistency.py
 - scripts/check_student_supports_no_scaffold_language.py
 - scripts/check_support_pedagogical_depth.py
 - scripts/check_support_substance.py
@@ -2901,6 +2939,7 @@
 - scripts/check_tp_pedagogical_assets_runtime.py
 - scripts/check_tp_test_alignment.py
 - scripts/check_tp_text_asset_alignment.py
+- scripts/check_tree_bst_invariant_consistency.py
 - scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_documents_quality_gates.py
 - scripts/check_validated_statuses.py
@@ -2964,6 +3003,7 @@
 - tests/test_missing_register_actionability.py
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
+- tests/test_notional_and_disciplinary_controls.py
 - tests/test_operational_substance_controls.py
 - tests/test_p05_p04_controls.py
 - tests/test_packaging_modes.py

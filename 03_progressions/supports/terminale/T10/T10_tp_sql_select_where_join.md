@@ -49,7 +49,7 @@ Résultat attendu : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Not
 ### Corrigé question 2
 Résultat attendu : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.
 ### Corrigé question 3
-Résultat attendu : JOIN -> Ada 17, Linus 13.
+Résultat attendu : JOIN -> Ada 17.
 ### Corrigé question 4
 Résultat attendu : `JOIN sans ON` traité sans ambiguïté.
 

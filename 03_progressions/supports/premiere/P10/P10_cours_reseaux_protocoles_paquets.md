@@ -62,6 +62,7 @@ src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24
 - Donnée : `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`.
 - Méthode : distinguer MAC et IP.
 - Résultat attendu : MAC change à chaque saut, IP reste de bout en bout.
+- Décision locale/passerelle : si `dst` appartient au préfixe `192.168.1.0/24`, l’hôte résout la MAC locale ; sinon il envoie le paquet à la passerelle.
 - Contrôle : capacité P-ARCH-02B et cas limite `destination locale 192.168.1.34`.
 ### Exemple corrigé 3
 - Donnée : `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`.

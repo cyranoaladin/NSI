@@ -67,6 +67,26 @@ def concrete_marker_count(text: str) -> int:
     return count
 
 
+def normalized_lines(body: str, label: str, *, mask_literals: bool = True) -> list[str]:
+    result: list[str] = []
+    for line in body.splitlines():
+        if label.lower() not in line.lower():
+            continue
+        value = line.lower()
+        if mask_literals:
+            value = re.sub(r"`[^`]*`", "`…`", value)
+            value = re.sub(r"\b(?:alpha|beta|gamma|delta|epsilon|zeta|eta|theta)\b", "jeu", value)
+            value = re.sub(r"\d+", "n", value)
+        result.append(value.strip())
+    return result
+
+
+def has_explanatory_course_block_before_examples(body: str) -> bool:
+    first_example = re.search(r"^###?\s+.*(?:exemple|exercice|question)", body, flags=re.I | re.M)
+    prefix = body[: first_example.start()] if first_example else body[:1200]
+    return bool(re.search(r"##\s+(?:À savoir|A savoir|Méthodes|Methodes|Définitions?|Definitions?)", prefix, flags=re.I))
+
+
 def analyze_support_file(path: Path, root: Path) -> list[str]:
     errors: list[str] = []
     rel = path.relative_to(root).as_posix()
@@ -98,10 +118,20 @@ def analyze_support_file(path: Path, root: Path) -> list[str]:
         errors.append(f"{rel}: critères de réussite observables insuffisants ({criteria_count}<2)")
     if marker_count < 8:
         errors.append(f"{rel}: données, code, tables ou traces vérifiables insuffisants ({marker_count}<8)")
+    if document_type == "cours" or "_cours_" in lower_name:
+        if not has_explanatory_course_block_before_examples(body):
+            errors.append(f"{rel}: cours sans bloc explicatif avant les exemples")
 
     if document_type in {"td", "tp", "tp_papier", "evaluation"} or any(token in lower_name for token in ["td", "tp", "evaluation"]):
         if correction_count < 2:
             errors.append(f"{rel}: corrigé vérifiable insuffisant ({correction_count}<2)")
+        consignes = normalized_lines(body, "Consigne")
+        if len(consignes) >= 6 and len(set(consignes)) < 3:
+            errors.append(f"{rel}: consignes trop répétitives ({len(set(consignes))} variantes pour {len(consignes)} consignes)")
+        results = normalized_lines(body, "Résultat attendu", mask_literals=False)
+        results += normalized_lines(body, "Réponse attendue", mask_literals=False)
+        if len(results) >= 6 and len(set(results)) < 3:
+            errors.append(f"{rel}: résultats attendus trop répétitifs ({len(set(results))} variantes pour {len(results)} résultats)")
     return errors
 
 

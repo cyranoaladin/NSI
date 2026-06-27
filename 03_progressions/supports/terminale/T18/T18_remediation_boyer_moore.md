@@ -25,8 +25,9 @@ official_program:
 ## Activités correctives
 1. Annoter `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`.
 2. Refaire la tâche `prétraiter dernière position de chaque caractère` et comparer avec `table : A->2, N->1`.
-3. Traiter le cas limite `motif absent`.
-4. Relier la réponse à T-ALGO-05.
+3. Reprendre la comparaison depuis la droite : à l’alignement `0`, comparer `N` du texte avec `A` du motif, puis calculer le décalage `1`.
+4. Traiter le cas limite `motif absent`.
+5. Relier la réponse à T-ALGO-05.
 
 ## Critères de sortie
 - Donnée exacte.

@@ -36,7 +36,7 @@ official_program:
 ### Question 3
 - Capacité officielle : T-ALGO-05.
 - Énoncé : à partir de `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`, calculer max(1, j - dernière_position).
-- Réponse attendue : alignement 1 : ANA trouvé.
+- Réponse attendue : alignement 1 : ANA trouvé à l'indice 1.
 - Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `caractère absent du motif`.
 ### Question 4
 - Capacité officielle : T-ALGO-05.
@@ -52,7 +52,7 @@ official_program:
 - Résultat attendu : alignement 0 : N comparé à A -> décalage 1.
 - Critère spécifique : comparer depuis la droite et éviter `décalage nul`.
 ### Corrigé question 3
-- Résultat attendu : alignement 1 : ANA trouvé.
+- Résultat attendu : alignement 1 : ANA trouvé à l'indice 1.
 - Critère spécifique : calculer max(1, j - dernière_position) et éviter `caractère absent oublié`.
 ### Corrigé question 4
 - Résultat attendu : motif XYZ absent.

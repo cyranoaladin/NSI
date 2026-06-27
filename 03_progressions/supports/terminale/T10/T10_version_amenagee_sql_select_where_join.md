@@ -37,5 +37,5 @@ official_program:
 
 ## Réponses rapides
 - Réponse 1 : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.
-- Réponse 2 : JOIN -> Ada 17, Linus 13.
+- Réponse 2 : JOIN -> Ada 17.
 - Réponse 3 : UPDATE id_note=10 -> Ada 18.

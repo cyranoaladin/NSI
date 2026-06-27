@@ -43,5 +43,5 @@ official_program:
 
 ## Critères de réussite observables
 - Capacité : T-BDD-03A.
-- Résultat final : JOIN -> Ada 17, Linus 13.
+- Résultat final : JOIN -> Ada 17.
 - Cas limite : JOIN sans ON.

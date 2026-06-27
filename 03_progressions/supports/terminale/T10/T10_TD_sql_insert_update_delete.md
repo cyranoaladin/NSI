@@ -46,7 +46,7 @@ official_program:
 - Capacité officielle : T-BDD-03B.
 - Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=beta
 - Consigne : filtrer note >= 15 ; traiter aussi `UPDATE sans WHERE` si nécessaire.
-- Réponse attendue : JOIN -> Ada 17, Linus 13.
+- Réponse attendue : JOIN -> Ada 17.
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `UPDATE sans WHERE`.
 ### Exercice 3
 - Type : production/écriture.
@@ -74,7 +74,7 @@ official_program:
 - Capacité officielle : T-BDD-03F.
 - Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=zeta
 - Consigne : filtrer note >= 15 ; traiter aussi `DELETE sans WHERE` si nécessaire.
-- Réponse attendue : JOIN -> Ada 17, Linus 13.
+- Réponse attendue : JOIN -> Ada 17.
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `DELETE sans WHERE`.
 ### Exercice 7
 - Type : production/écriture.
@@ -102,7 +102,7 @@ official_program:
 - Contrôle alpha dans T10 TD sql insert update delete : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-BDD-03B.
-- Résultat attendu : JOIN -> Ada 17, Linus 13.
+- Résultat attendu : JOIN -> Ada 17.
 - Justification : la tâche `filtrer note >= 15` s applique à `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)` ; erreur évitée : WHERE confondu avec ORDER BY.
 - Donnée utilisée beta dans T10 TD sql insert update delete : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
 - Méthode beta dans T10 TD sql insert update delete : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
@@ -134,7 +134,7 @@ official_program:
 - Contrôle epsilon dans T10 TD sql insert update delete : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-BDD-03F.
-- Résultat attendu : JOIN -> Ada 17, Linus 13.
+- Résultat attendu : JOIN -> Ada 17.
 - Justification : la tâche `filtrer note >= 15` s applique à `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)` ; erreur évitée : WHERE omis dans UPDATE.
 - Donnée utilisée zeta dans T10 TD sql insert update delete : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
 - Méthode zeta dans T10 TD sql insert update delete : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.

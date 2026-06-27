@@ -46,7 +46,7 @@ official_program:
 - Capacité officielle : T-ALGO-05.
 - Données : `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`. ; jeu_exercice=gamma
 - Consigne : calculer max(1, j - dernière_position) ; traiter aussi `caractère absent du motif` si nécessaire.
-- Réponse attendue : alignement 1 : ANA trouvé.
+- Réponse attendue : alignement 1 : ANA trouvé à l'indice 1.
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `caractère absent du motif`.
 ### Exercice 4
 - Type : cas limite.
@@ -74,7 +74,7 @@ official_program:
 - Capacité officielle : T-ALGO-05.
 - Données : `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`. ; jeu_exercice=eta
 - Consigne : calculer max(1, j - dernière_position) ; traiter aussi `motif absent` si nécessaire.
-- Réponse attendue : alignement 1 : ANA trouvé.
+- Réponse attendue : alignement 1 : ANA trouvé à l'indice 1.
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `motif absent`.
 ### Exercice 8
 - Type : justification.
@@ -103,7 +103,7 @@ official_program:
 - Contrôle beta dans T18 TD boyer moore : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-ALGO-05.
-- Résultat attendu : alignement 1 : ANA trouvé.
+- Résultat attendu : alignement 1 : ANA trouvé à l'indice 1.
 - Justification : la tâche `calculer max(1, j - dernière_position)` s applique à `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1` ; erreur évitée : caractère absent oublié.
 - Donnée utilisée gamma dans T18 TD boyer moore : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
 - Méthode gamma dans T18 TD boyer moore : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
@@ -135,7 +135,7 @@ official_program:
 - Contrôle zeta dans T18 TD boyer moore : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-ALGO-05.
-- Résultat attendu : alignement 1 : ANA trouvé.
+- Résultat attendu : alignement 1 : ANA trouvé à l'indice 1.
 - Justification : la tâche `calculer max(1, j - dernière_position)` s applique à `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1` ; erreur évitée : comparaison gauche à droite.
 - Donnée utilisée eta dans T18 TD boyer moore : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
 - Méthode eta dans T18 TD boyer moore : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.

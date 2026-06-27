@@ -31,4 +31,4 @@ official_program:
 ## Réponses rapides
 - Réponse 1 : table : A->2, N->1.
 - Réponse 2 : alignement 0 : N comparé à A -> décalage 1.
-- Réponse 3 : alignement 1 : ANA trouvé.
+- Réponse 3 : alignement 1 : ANA trouvé à l'indice 1.

@@ -58,7 +58,7 @@ texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1
 ### Exemple corrigé 3
 - Donnée : `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`.
 - Méthode : calculer max(1, j - dernière_position).
-- Résultat attendu : alignement 1 : ANA trouvé.
+- Résultat attendu : alignement 1 : ANA trouvé à l'indice 1.
 - Contrôle : capacité T-ALGO-05 et cas limite `caractère absent du motif`.
 ### Exemple corrigé 4
 - Donnée : `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`.

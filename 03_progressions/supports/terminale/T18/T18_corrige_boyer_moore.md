@@ -27,7 +27,7 @@ official_program:
 - Méthode : comparer depuis la droite.
 - Cas limite : motif plus long que texte.
 ### Exercice 3
-- Réponse attendue : alignement 1 : ANA trouvé.
+- Réponse attendue : alignement 1 : ANA trouvé à l'indice 1.
 - Méthode : calculer max(1, j - dernière_position).
 - Cas limite : caractère absent du motif.
 ### Exercice 4
@@ -43,7 +43,7 @@ official_program:
 - Méthode : comparer depuis la droite.
 - Cas limite : caractère absent du motif.
 ### Exercice 7
-- Réponse attendue : alignement 1 : ANA trouvé.
+- Réponse attendue : alignement 1 : ANA trouvé à l'indice 1.
 - Méthode : calculer max(1, j - dernière_position).
 - Cas limite : motif absent.
 ### Exercice 8
@@ -59,5 +59,5 @@ official_program:
 ## Corrigé de l évaluation
 - Question 1 : table : A->2, N->1.
 - Question 2 : alignement 0 : N comparé à A -> décalage 1.
-- Question 3 : alignement 1 : ANA trouvé.
+- Question 3 : alignement 1 : ANA trouvé à l'indice 1.
 - Question 4 : motif XYZ absent.

@@ -67,7 +67,7 @@ Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)
 ### Exemple corrigé 2
 - Donnée : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`.
 - Méthode : filtrer note >= 15.
-- Résultat attendu : JOIN -> Ada 17, Linus 13.
+- Résultat attendu : JOIN -> Ada 17.
 - Contrôle : capacité T-BDD-03B et cas limite `UPDATE sans WHERE`.
 ### Exemple corrigé 3
 - Donnée : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`.

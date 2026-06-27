@@ -23,7 +23,7 @@ capacites_officielles:
 - T-BDD-03H
 exemples_obligatoires:
 - SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus
-- JOIN -> Ada 17, Linus 13
+- JOIN -> Ada 17
 - UPDATE id_note=10 -> Ada 18
 - DELETE WHERE id_note=11 retire Linus
 cas_limites:

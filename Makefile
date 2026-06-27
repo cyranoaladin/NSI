@@ -56,9 +56,18 @@ audit-local:
 	python scripts/check_support_substance.py
 	python scripts/check_no_line_padding.py
 	python scripts/check_full_sequence_resource_matrix.py
+	python scripts/check_full_notional_resource_matrix.py
+	python scripts/check_official_program_capacity_coverage_matrix.py
+	python scripts/check_sql_query_result_consistency.py
+	python scripts/check_graph_algorithm_trace_consistency.py
+	python scripts/check_tree_bst_invariant_consistency.py
+	python scripts/check_network_packet_trace_consistency.py
+	python scripts/check_dynamic_programming_recurrence_consistency.py
+	python scripts/check_boyer_moore_trace_consistency.py
 	python scripts/check_generated_template_residue.py
 	python scripts/check_question_capacity_alignment.py
 	python scripts/check_support_pedagogical_depth.py
+	python scripts/check_session_operationalization_plan.py
 	python scripts/check_sequence_pack_consistency.py
 	python scripts/check_csv_numeric_fields_are_parseable.py
 	python scripts/check_p05_pipeline_consistency.py
@@ -156,9 +165,18 @@ audit-extracted-source:
 	timeout 30 python scripts/check_support_substance.py
 	python scripts/check_no_line_padding.py
 	python scripts/check_full_sequence_resource_matrix.py
+	python scripts/check_full_notional_resource_matrix.py
+	python scripts/check_official_program_capacity_coverage_matrix.py
+	python scripts/check_sql_query_result_consistency.py
+	python scripts/check_graph_algorithm_trace_consistency.py
+	python scripts/check_tree_bst_invariant_consistency.py
+	python scripts/check_network_packet_trace_consistency.py
+	python scripts/check_dynamic_programming_recurrence_consistency.py
+	python scripts/check_boyer_moore_trace_consistency.py
 	python scripts/check_generated_template_residue.py
 	python scripts/check_question_capacity_alignment.py
 	python scripts/check_support_pedagogical_depth.py
+	python scripts/check_session_operationalization_plan.py
 	python scripts/check_sequence_pack_consistency.py
 	python scripts/check_csv_numeric_fields_are_parseable.py
 	python scripts/check_p05_pipeline_consistency.py

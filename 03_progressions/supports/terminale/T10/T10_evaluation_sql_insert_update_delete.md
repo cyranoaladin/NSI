@@ -38,7 +38,7 @@ official_program:
 ### Question 2
 - Capacité officielle : T-BDD-03B.
 - Énoncé : à partir de `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`, filtrer note >= 15.
-- Réponse attendue : JOIN -> Ada 17, Linus 13.
+- Réponse attendue : JOIN -> Ada 17.
 - Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `UPDATE sans WHERE`.
 ### Question 3
 - Capacité officielle : T-BDD-03C.
@@ -56,7 +56,7 @@ official_program:
 - Résultat attendu : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.
 - Critère spécifique : projeter nom et classe et éviter `condition de jointure oubliée`.
 ### Corrigé question 2
-- Résultat attendu : JOIN -> Ada 17, Linus 13.
+- Résultat attendu : JOIN -> Ada 17.
 - Critère spécifique : filtrer note >= 15 et éviter `WHERE confondu avec ORDER BY`.
 ### Corrigé question 3
 - Résultat attendu : UPDATE id_note=10 -> Ada 18.

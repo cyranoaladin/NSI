@@ -30,7 +30,7 @@ official_program:
 - Méthode : projeter nom et classe.
 - Cas limite : JOIN sans ON.
 ### Exercice 2
-- Réponse attendue : JOIN -> Ada 17, Linus 13.
+- Réponse attendue : JOIN -> Ada 17.
 - Méthode : filtrer note >= 15.
 - Cas limite : UPDATE sans WHERE.
 ### Exercice 3
@@ -46,7 +46,7 @@ official_program:
 - Méthode : projeter nom et classe.
 - Cas limite : UPDATE sans WHERE.
 ### Exercice 6
-- Réponse attendue : JOIN -> Ada 17, Linus 13.
+- Réponse attendue : JOIN -> Ada 17.
 - Méthode : filtrer note >= 15.
 - Cas limite : DELETE sans WHERE.
 ### Exercice 7
@@ -61,10 +61,10 @@ official_program:
 ## Corrigé du TP
 - Donnée : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`.
 - Résultat principal : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.
-- Résultat secondaire : JOIN -> Ada 17, Linus 13.
+- Résultat secondaire : JOIN -> Ada 17.
 
 ## Corrigé de l évaluation
 - Question 1 : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.
-- Question 2 : JOIN -> Ada 17, Linus 13.
+- Question 2 : JOIN -> Ada 17.
 - Question 3 : UPDATE id_note=10 -> Ada 18.
 - Question 4 : DELETE WHERE id_note=11 retire Linus.
