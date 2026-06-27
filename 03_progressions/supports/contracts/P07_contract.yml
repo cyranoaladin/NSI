@@ -1,0 +1,24 @@
+sequence: P07
+level: premiere
+theme: Langage Python
+notion: fonctions, contrats, assertions et tests
+status: needs_review
+capacities:
+  - P-LANG-01
+  - P-LANG-02
+  - P-LANG-03A
+  - P-LANG-03B
+  - P-LANG-03C
+  - P-LANG-04
+  - P-LANG-05
+must_include:
+  - écrire une signature explicite avec return
+  - rédiger précondition ht >= 0 et taux >= 0
+  - tester nominal, zéro et entrée invalide avant généralisation
+  - données de référence: prix_ttc(80, 0.20) -> 96.0 ; prix_ttc(0, 0.20) -> 0.0 ; prix_ttc(-5, 0.20) lève AssertionError
+  - résultat attendu: fonction prix_ttc(ht, taux) retourne round(ht * (1 + taux), 2), refuse ht négatif et garde le cas ht=0
+must_not:
+  - réponse sans donnée exploitable
+  - résultat non vérifiable
+  - capacité citée sans exercice associé
+human_validation_required: true

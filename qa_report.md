@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 542
-- Ressources needs_review : 542
+- Ressources inventoriées : 608
+- Ressources needs_review : 608
 - Ressources publiables : 0
-- Source generated : 534
+- Source generated : 600
 - Source adapted_from_drive : 7
 - Source import_partiel : 1
 - Source inspiration_drive : 0

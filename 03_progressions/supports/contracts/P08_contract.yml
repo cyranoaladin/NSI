@@ -1,0 +1,23 @@
+sequence: P08
+level: premiere
+theme: IHM sur le Web
+notion: HTML, CSS, DOM, HTTP GET/POST
+status: needs_review
+capacities:
+  - P-IHM-01A
+  - P-IHM-01B
+  - P-IHM-02
+  - P-IHM-03A
+  - P-IHM-03B
+  - P-IHM-03C
+must_include:
+  - séparer structure HTML, style CSS et comportement DOM
+  - identifier méthode GET pour lecture et POST pour envoi
+  - modifier textContent sans injecter de HTML non contrôlé
+  - données de référence: <form method="post" action="/reservation"><input name="nom"><button>Envoyer</button></form>
+  - résultat attendu: le formulaire POST transporte nom=Ada ; le DOM affiche Réservation enregistrée pour Ada ; GET reste réservé à une URL consultable
+must_not:
+  - réponse sans donnée exploitable
+  - résultat non vérifiable
+  - capacité citée sans exercice associé
+human_validation_required: true

@@ -1,0 +1,21 @@
+sequence: T08
+level: terminale
+theme: Graphes et parcours
+notion: BFS, DFS, cycles et chemins
+status: needs_review
+capacities:
+  - T-ALGO-02A
+  - T-ALGO-02B
+  - T-ALGO-02C
+  - T-ALGO-02D
+must_include:
+  - BFS utilise une file et découvre par distance croissante
+  - DFS utilise une pile ou récursion et explore en profondeur
+  - marquer visité pour éviter le cycle A-B-D-C-A
+  - données de référence: file BFS initiale [A] ; pile DFS initiale [A] ; voisins triés alphabétiquement
+  - résultat attendu: BFS découvre A, B, C, D, E et donne distance 3 ; DFS peut suivre A, B, D, E selon ordre choisi
+must_not:
+  - réponse sans donnée exploitable
+  - résultat non vérifiable
+  - capacité citée sans exercice associé
+human_validation_required: true

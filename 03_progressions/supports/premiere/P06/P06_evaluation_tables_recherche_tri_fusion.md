@@ -91,8 +91,6 @@ official_program:
 - Capacités évaluées :
 - P-TABLE-03
 - P-TABLE-04
-- P-TABLE-03
-- P-TABLE-04
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence P06, statut `needs_review`.

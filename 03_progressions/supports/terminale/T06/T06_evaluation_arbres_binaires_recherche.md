@@ -91,8 +91,6 @@ official_program:
 - Capacités évaluées :
 - T-ALGO-01E
 - T-ALGO-01F
-- T-ALGO-01E
-- T-ALGO-01F
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence T06, statut `needs_review`.

@@ -97,10 +97,6 @@ official_program:
 - P-IHM-01B
 - P-IHM-02
 - P-IHM-03A
-- P-IHM-01A
-- P-IHM-01B
-- P-IHM-02
-- P-IHM-03A
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence P08, statut `needs_review`.

@@ -100,11 +100,6 @@ official_program:
 - P-ARCH-03A
 - P-ARCH-03B
 - P-ARCH-03C
-- P-ARCH-01A
-- P-ARCH-01B
-- P-ARCH-03A
-- P-ARCH-03B
-- P-ARCH-03C
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence P09, statut `needs_review`.

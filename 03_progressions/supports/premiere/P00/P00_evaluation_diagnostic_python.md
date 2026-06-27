@@ -132,7 +132,6 @@ Un groupe reçoit quatre fragments Python issus de copies anonymisées et doit p
 - Matériel autorisé : fiche diagnostic Python annotée, sans corrigé distribué ni navigation externe.
 - Capacités évaluées :
 - P-LANG-01
-- P-LANG-01
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence P00, statut `needs_review`.

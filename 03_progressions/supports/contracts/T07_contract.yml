@@ -1,0 +1,21 @@
+sequence: T07
+level: terminale
+theme: Graphes
+notion: modélisation, listes d’adjacence, matrices
+status: needs_review
+capacities:
+  - T-STRUCT-05A
+  - T-STRUCT-05B
+  - T-STRUCT-05C
+  - T-STRUCT-05D
+must_include:
+  - écrire la liste d’adjacence sans doublon
+  - construire la matrice symétrique 4x4
+  - comparer coût mémoire liste/matrice
+  - données de référence: sommets A,B,C,D ; arêtes AB, AC, BD, CD
+  - résultat attendu: adj[A]=[B,C], adj[B]=[A,D], adj[C]=[A,D], adj[D]=[B,C] ; matrice symétrique avec quatre arêtes
+must_not:
+  - réponse sans donnée exploitable
+  - résultat non vérifiable
+  - capacité citée sans exercice associé
+human_validation_required: true

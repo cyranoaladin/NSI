@@ -56,7 +56,7 @@ Le fichier `pays_monde.csv` contient des pays, capitales, continents et populati
 - Point 1 : pour lecture CSV, exiger la donnée `PAYS,CAPITALE,CONTINENT,POPULATION
 Allemagne,Berlin,Europe,82801531`, la méthode « lire avec csv.reader puis convertir POPULATION en int » et le contrôle « fichier pays_monde.csv vide ».
 - Point 2 : pour filtrage, exiger la donnée un extrait contenant Allemagne, Albanie et Brésil, la méthode « conserver les lignes dont CONTINENT vaut Europe » et le contrôle « aucun pays du continent demandé ».
-- Point 3 : pour traitement numérique des populations, exiger la donnée `82801531`, `3063320`, valeur `invalide`, la méthode « isoler une ligne invalide avant conversion de POPULATION en int » et le contrôle « sélection vide avant tri numérique ».
+- Point 3 : pour traitement numérique des populations, exiger la donnée `82801531`, `3063320`, valeur `invalide`, la méthode « convertir POPULATION avec int(row["POPULATION"]), puis placer la ligne dans erreurs si ValueError est levée » et le contrôle « sélection vide avant tri numérique ».
 - Point 4 : pour tri par continent puis population, exiger la donnée lignes regroupées par CONTINENT, la méthode « associer par une clé commune » et le contrôle « continent absent ».
 ## Exercices numérotés
 - Exercice 1 : résoudre lecture CSV avec `PAYS,CAPITALE,CONTINENT,POPULATION
@@ -82,7 +82,7 @@ Allemagne,Berlin,Europe,82801531`, appliquer la méthode « lire avec csv.reader
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Comparer une valeur numérique restée chaîne.
 ### Corrigé exercice 3
-- Méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider le rejet de la ligne invalide avant conversion.
+- Méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider que ValueError place la ligne invalide dans erreurs.
 - Résultat : `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]`.
 - Contrôle : comparer avec le cas « sélection vide avant tri numérique ».
 - Erreur traitée : EF3 - Diviser par zéro après filtrage vide.
@@ -102,7 +102,7 @@ Allemagne,Berlin,Europe,82801531`, appliquer la méthode « lire avec csv.reader
 - Contrôle : identifier pourquoi « Comparer une valeur numérique restée chaîne. » est une erreur.
 - Erreur traitée : EF2 - Comparer une valeur numérique restée chaîne.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider le rejet de la ligne invalide avant conversion.
+- Méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider que ValueError place la ligne invalide dans erreurs.
 - Résultat : sur `Espagne,Madrid,Europe,46754778`, `int(row["POPULATION"])` donne `46754778` et la ligne reste dans Europe.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Diviser par zéro après filtrage vide.

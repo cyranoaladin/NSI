@@ -132,7 +132,6 @@ Un serveur journalise des tâches en attente et doit choisir entre pile, file et
 - Matériel autorisé : fiche piles, files, dictionnaires, sans corrigé distribué ni navigation externe.
 - Capacités évaluées :
 - T-STRUCT-03A
-- T-STRUCT-03A
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence T03, statut `needs_review`.

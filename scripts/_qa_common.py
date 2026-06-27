@@ -18,6 +18,14 @@ sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[1]
 PROGRAM_FILE = ROOT / "00_programmes_officiels" / "programme_nsi_2019.yaml"
 PILOT_SCOPE_FILE = ROOT / "pilot_scope.yml"
+FULL_SEQUENCE_SCOPE = {
+    "premiere": [f"P{index:02d}" for index in range(15)],
+    "terminale": [f"T{index:02d}" for index in range(20)],
+}
+FULL_SEQUENCE_CURRENT_LOT = {
+    "premiere": [f"P{index:02d}" for index in range(6, 10)],
+    "terminale": [f"T{index:02d}" for index in range(6, 10)],
+}
 
 # Scope pilote documenté : ces deux séquences servent aux contrôles historiques
 # de complétude de séquence. Les contrôles opérationnels doivent découvrir leur

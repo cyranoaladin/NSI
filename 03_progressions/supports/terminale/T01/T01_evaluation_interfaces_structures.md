@@ -143,7 +143,6 @@ Un module doit exposer une pile sans révéler si elle est stockée par liste Py
 - Matériel autorisé : fiche interface et TAD, sans corrigé distribué ni navigation externe.
 - Capacités évaluées :
 - T-STRUCT-01A
-- T-STRUCT-01A
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence T01, statut `needs_review`.

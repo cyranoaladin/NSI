@@ -97,10 +97,6 @@ official_program:
 - T-ALGO-02B
 - T-ALGO-02C
 - T-ALGO-02D
-- T-ALGO-02A
-- T-ALGO-02B
-- T-ALGO-02C
-- T-ALGO-02D
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence T08, statut `needs_review`.

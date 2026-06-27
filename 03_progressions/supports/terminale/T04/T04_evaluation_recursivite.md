@@ -132,7 +132,6 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 - Matériel autorisé : fiche récursivité, sans corrigé distribué ni navigation externe.
 - Capacités évaluées :
 - T-LANG-02A
-- T-LANG-02A
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence T04, statut `needs_review`.

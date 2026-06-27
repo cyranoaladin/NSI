@@ -1,0 +1,21 @@
+sequence: T09
+level: terminale
+theme: Bases de données relationnelles
+notion: relations, clés primaires, clés étrangères, contraintes
+status: needs_review
+capacities:
+  - T-BDD-01A
+  - T-BDD-01B
+  - T-BDD-01C
+  - T-BDD-02
+must_include:
+  - identifier clé primaire id_livre
+  - vérifier clé étrangère Emprunt.id_livre vers Livre.id_livre
+  - refuser un emprunt sur livre absent
+  - données de référence: Livre(1,"1984"), Livre(2,"Dune") ; Emprunt(10,2,"Ada") ; Emprunt(11,9,"Linus") invalide
+  - résultat attendu: Emprunt 10 est valide ; Emprunt 11 viole la contrainte de clé étrangère car id_livre=9 absent
+must_not:
+  - réponse sans donnée exploitable
+  - résultat non vérifiable
+  - capacité citée sans exercice associé
+human_validation_required: true

@@ -132,7 +132,6 @@ Une équipe reprend une bibliothèque Python de Première et doit écrire des te
 - Matériel autorisé : fiche reprise Python et tests, sans corrigé distribué ni navigation externe.
 - Capacités évaluées :
 - T-LANG-03A
-- T-LANG-03A
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence T00, statut `needs_review`.

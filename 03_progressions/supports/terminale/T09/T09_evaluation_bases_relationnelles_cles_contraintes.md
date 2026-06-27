@@ -97,10 +97,6 @@ official_program:
 - T-BDD-01B
 - T-BDD-01C
 - T-BDD-02
-- T-BDD-01A
-- T-BDD-01B
-- T-BDD-01C
-- T-BDD-02
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence T09, statut `needs_review`.

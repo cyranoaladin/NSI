@@ -67,7 +67,7 @@ Le fichier élève normalisé est `03_progressions/supports/premiere/P05/data/pa
 - Résultat obtenu : Allemagne et Albanie sont retenues ; Brésil est exclu.
 - Contrôle : le cas limite « aucun pays du continent demandé » est vérifié séparément.
 ### Exemple corrigé 3 - traitement numérique des populations
-- Donnée étudiée : populations Allemagne `82801531`, Albanie `3063320`, Andorre `77281`.
+- Donnée étudiée : populations Allemagne `82801531`, Albanie `3063320`, Brésil `204259812` et Erreur `invalide`.
 - Méthode : convertir les trois populations en entiers puis additionner.
 - Résultat obtenu : `valides = ["Allemagne", "Albanie", "Brésil"]` et `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]`.
 - Contrôle : le cas limite « sélection vide avant tri numérique » est vérifié séparément.
@@ -94,7 +94,7 @@ Le fichier élève normalisé est `03_progressions/supports/premiere/P05/data/pa
 ### Exercice 3
 - Objectif travaillé : O3.
 - Capacité officielle : P-TABLE-01.
-- Énoncé disciplinaire : contrôler et convertir les populations Allemagne, Albanie, Andorre.
+- Énoncé disciplinaire : contrôler et convertir les populations Allemagne, Albanie, Brésil et Erreur.
 - Production attendue : `valides = ["Allemagne", "Albanie", "Brésil"]` et `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]`.
 - Contrainte de contrôle : comparer avec le cas « sélection vide avant tri numérique ».
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
@@ -166,7 +166,7 @@ Allemagne,Berlin,Europe,82801531`, appliquer la méthode « lire avec csv.reader
 - Contrôle : identifier pourquoi « Comparer une valeur numérique restée chaîne. » est une erreur.
 - Erreur traitée : EF2 - Comparer une valeur numérique restée chaîne.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider le rejet de la ligne invalide avant conversion.
+- Méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider que ValueError place la ligne invalide dans erreurs.
 - Résultat : sur `Espagne,Madrid,Europe,46754778`, `int(row["POPULATION"])` donne `46754778` et la ligne reste dans Europe.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Diviser par zéro après filtrage vide.

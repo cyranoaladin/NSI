@@ -1,0 +1,19 @@
+sequence: T06
+level: terminale
+theme: Arbres binaires de recherche
+notion: invariant ABR, recherche et insertion
+status: needs_review
+capacities:
+  - T-ALGO-01E
+  - T-ALGO-01F
+must_include:
+  - suivre les comparaisons 7<8 puis 7>3 puis 7>6
+  - placer 7 comme fils droit de 6
+  - vérifier le parcours infixe trié
+  - données de référence: racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10
+  - résultat attendu: chemin insertion : 8 -> 3 -> 6 ; parcours infixe après insertion : [1, 3, 6, 7, 8, 10]
+must_not:
+  - réponse sans donnée exploitable
+  - résultat non vérifiable
+  - capacité citée sans exercice associé
+human_validation_required: true

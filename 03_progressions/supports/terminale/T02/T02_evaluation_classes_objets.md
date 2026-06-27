@@ -132,7 +132,6 @@ Une application de gestion de comptes doit garantir qu’aucune opération ne cr
 - Matériel autorisé : fiche classes et objets, sans corrigé distribué ni navigation externe.
 - Capacités évaluées :
 - T-STRUCT-02A
-- T-STRUCT-02A
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence T02, statut `needs_review`.

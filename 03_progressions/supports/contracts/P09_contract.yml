@@ -1,0 +1,21 @@
+sequence: P09
+level: premiere
+theme: Architecture matérielle et systèmes
+notion: architecture, système d’exploitation, droits
+status: needs_review
+capacities:
+  - P-ARCH-01A
+  - P-ARCH-01B
+  - P-ARCH-03A
+  - P-ARCH-03B
+must_include:
+  - distinguer processeur, mémoire, stockage et périphériques
+  - repérer le rôle du système d’exploitation
+  - interpréter r/w/x pour utilisateur, groupe, autres
+  - données de référence: droits initiaux -rw-r--r--; commande visée chmod u+x projet.py; résultat -rwxr--r--
+  - résultat attendu: seul le propriétaire gagne x ; le groupe et les autres gardent lecture seule ; l’OS contrôle l’accès au fichier
+must_not:
+  - réponse sans donnée exploitable
+  - résultat non vérifiable
+  - capacité citée sans exercice associé
+human_validation_required: true

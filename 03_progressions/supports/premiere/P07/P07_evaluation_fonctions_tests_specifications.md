@@ -106,13 +106,6 @@ official_program:
 - P-LANG-03C
 - P-LANG-04
 - P-LANG-05
-- P-LANG-01
-- P-LANG-02
-- P-LANG-03A
-- P-LANG-03B
-- P-LANG-03C
-- P-LANG-04
-- P-LANG-05
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence P07, statut `needs_review`.

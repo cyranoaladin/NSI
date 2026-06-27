@@ -15,6 +15,9 @@ import check_p04_key_consistency as p04_keys
 import check_p05_expected_outputs_are_explicit as p05_outputs
 import check_p05_pipeline_consistency as p05_pipeline
 import check_t18_trace_table_quality as t18_trace
+import check_paper_tp_contract as paper_tp
+import check_p05_semantic_consistency as p05_semantic
+import check_no_token_only_validation as token_only
 
 
 def write(path: Path, content: str) -> None:
@@ -92,7 +95,8 @@ class P05P04ControlsTest(unittest.TestCase):
             evaluation = root / "03_progressions/supports/premiere/P05/P05_evaluation_tables_csv.md"
             write(
                 evaluation,
-                "## Capacités évaluées\n"
+                "## Modalités de passation\n"
+                "- Capacités évaluées :\n"
                 "- P-TABLE-01\n"
                 "- P-TABLE-01\n",
             )
@@ -122,6 +126,71 @@ class P05P04ControlsTest(unittest.TestCase):
 
             self.assertTrue(any("TP papier" in error for error in result.errors))
             self.assertTrue(any("barème" in error.lower() for error in result.errors))
+
+    def test_paper_tp_contract_rejects_ambiguous_trace(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            trace = root / "03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md"
+            write(
+                trace,
+                "---\n"
+                "document_type: trace\n"
+                "sequence_id: T18\n"
+                "---\n"
+                "# Trace\n"
+                "## Table du mauvais caractère\n",
+            )
+
+            result = paper_tp.analyze_paper_tp_contract(root)
+
+            self.assertTrue(any("tp_mode" in error for error in result.errors))
+            self.assertTrue(any("barème" in error.lower() for error in result.errors))
+
+    def test_p05_semantic_consistency_rejects_stale_body_contradictions(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            support = root / "03_progressions/supports/premiere/P05/P05_td_tables_csv.md"
+            write(
+                support,
+                "# P05\n"
+                "Brésil est conservé dans la sélection Europe.\n"
+                "Andorre sert d'exemple de population.\n"
+                "La ligne invalide est rejetée avant conversion.\n"
+                "## Pipeline contrôlé P05\n"
+                "1. Charger avec `csv.DictReader`.\n"
+                "2. Convertir `POPULATION` avec `int(row[\"POPULATION\"])`.\n"
+                "3. Séparer `valides` et `erreurs`.\n"
+                "4. Filtrer les lignes valides par `CONTINENT`.\n"
+                "5. Trier les lignes valides par `CONTINENT` puis `POPULATION`.\n"
+                "- `valides = [\"Allemagne\", \"Albanie\", \"Brésil\"]`.\n"
+                "- `Europe valide = [\"Allemagne\", \"Albanie\"]`.\n",
+            )
+
+            result = p05_semantic.analyze_p05_semantic_consistency(root)
+
+            self.assertTrue(any("Brésil" in error for error in result.errors))
+            self.assertTrue(any("Andorre" in error for error in result.errors))
+            self.assertTrue(any("avant conversion" in error for error in result.errors))
+
+    def test_no_token_only_validation_rejects_tail_pipeline_with_body_conflict(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            support = root / "03_progressions/supports/premiere/P05/P05_cours_tables_csv.md"
+            write(
+                support,
+                "# P05\n"
+                "On filtre d'abord l'Europe, puis on convertit les populations ensuite.\n"
+                "## Pipeline contrôlé P05\n"
+                "1. Charger avec `csv.DictReader`.\n"
+                "2. Convertir `POPULATION` avec `int(row[\"POPULATION\"])`.\n"
+                "3. Séparer `valides` et `erreurs`.\n"
+                "4. Filtrer les lignes valides par `CONTINENT`.\n"
+                "5. Trier les lignes valides par `CONTINENT` puis `POPULATION`.\n",
+            )
+
+            result = token_only.analyze_no_token_only_validation(root)
+
+            self.assertTrue(any("bloc final" in error for error in result.errors))
 
 
 if __name__ == "__main__":

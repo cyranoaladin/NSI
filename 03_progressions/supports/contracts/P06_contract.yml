@@ -1,0 +1,19 @@
+sequence: P06
+level: premiere
+theme: Traitement de tables
+notion: recherche, tri et fusion de tables
+status: needs_review
+capacities:
+  - P-TABLE-03
+  - P-TABLE-04
+must_include:
+  - rechercher la première ligne de clé id=17 sans écraser le doublon
+  - trier par (nom, atelier)
+  - fusionner inscriptions et présences avec vérification des clés absentes
+  - données de référence: inscriptions = [{"id": 17, "nom": "Ada", "atelier": "robot"}, {"id": 4, "nom": "Linus", "atelier": "web"}, {"id": 17, "nom": "Ada", "atelier": "python"}]
+  - résultat attendu: première ligne id=17 : Ada/robot ; doublon id=17 signalé ; tri : Ada/python, Ada/robot, Linus/web ; absence id=9 notée dans erreurs
+must_not:
+  - réponse sans donnée exploitable
+  - résultat non vérifiable
+  - capacité citée sans exercice associé
+human_validation_required: true

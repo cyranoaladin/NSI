@@ -97,10 +97,6 @@ official_program:
 - T-STRUCT-05B
 - T-STRUCT-05C
 - T-STRUCT-05D
-- T-STRUCT-05A
-- T-STRUCT-05B
-- T-STRUCT-05C
-- T-STRUCT-05D
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence T07, statut `needs_review`.

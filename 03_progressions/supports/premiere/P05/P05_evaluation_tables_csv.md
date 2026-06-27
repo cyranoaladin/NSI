@@ -136,7 +136,7 @@ Allemagne,Berlin,Europe,82801531` avec une fiche méthode fournie.
 - Matériel autorisé : fiche tables CSV, sans corrigé distribué ni navigation externe.
 - Capacités évaluées :
 - P-TABLE-01
-- P-TABLE-01
+- P-TABLE-02
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence P05, statut `needs_review`.

@@ -16,7 +16,12 @@ class DuplicateCapacityResult:
     checked_files: int = 0
 
 
-CAPACITY_RE = re.compile(r"\b[PT]-[A-Z]+-\d{2}\b")
+CAPACITY_RE = re.compile(r"\b[PT]-[A-Z]+-\d{2}[A-Z]?\b")
+CAPABILITY_CONTEXT_RE = re.compile(
+    r"(Capacit[ée]s\s+(?:[ée]valu[ée]es|travaill[ée]es|officielles)|"
+    r"official_program\.capacities|capacities\s*:)",
+    flags=re.I,
+)
 
 
 def support_files(root: Path) -> list[Path]:
@@ -24,13 +29,44 @@ def support_files(root: Path) -> list[Path]:
     return sorted(base.rglob("*.md")) if base.exists() else []
 
 
-def capacity_sections(text: str) -> list[str]:
+def markdown_heading_capacity_sections(text: str) -> list[str]:
     sections: list[str] = []
     for match in re.finditer(r"^## .*Capacit[ée]s.*$", text, flags=re.M):
         start = match.end()
         next_match = re.search(r"^##\s+", text[start:], flags=re.M)
         end = start + next_match.start() if next_match else len(text)
         sections.append(text[start:end])
+    return sections
+
+
+def contextual_capacity_blocks(text: str) -> list[str]:
+    lines = text.splitlines()
+    blocks: list[str] = []
+    for index, line in enumerate(lines):
+        if not CAPABILITY_CONTEXT_RE.search(line):
+            continue
+        block = [line]
+        for following in lines[index + 1 : index + 10]:
+            stripped = following.strip()
+            if not stripped:
+                break
+            if stripped.startswith("## ") and "Capacit" not in stripped:
+                break
+            if CAPACITY_RE.search(stripped) or stripped.startswith(("-", "*")) or ":" in stripped:
+                block.append(following)
+                continue
+            break
+        blocks.append("\n".join(block))
+    return blocks
+
+
+def capacity_sections(text: str) -> list[str]:
+    seen: set[str] = set()
+    sections: list[str] = []
+    for block in markdown_heading_capacity_sections(text) + contextual_capacity_blocks(text):
+        if block not in seen:
+            seen.add(block)
+            sections.append(block)
     return sections
 
 

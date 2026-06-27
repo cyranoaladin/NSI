@@ -132,7 +132,6 @@ Une expression arithmétique est représentée par un arbre dont les feuilles so
 - Matériel autorisé : fiche arbres binaires, sans corrigé distribué ni navigation externe.
 - Capacités évaluées :
 - T-STRUCT-04A
-- T-STRUCT-04A
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence T05, statut `needs_review`.
