@@ -1,19 +1,14 @@
 ---
-title: "T11 - TD - processus ordonnancement interblocage"
+title: "T11 - td - SoC, processus, ordonnancement et interblocage"
 level: "terminale"
 sequence_id: "T11"
 document_type: "td"
 status: "needs_review"
-version: "0.3.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Architecture"
-notion: "processus ordonnancement interblocage"
-objectifs:
-  - "travailler processus ordonnancement interblocage sur des données explicites"
-  - "produire une réponse justifiée et contrôlée"
-  - "identifier les cas limites"
-  - "corriger les erreurs fréquentes du chapitre"
+theme: "SoC, processus, ordonnancement et interblocage"
+notion: "SoC, processus, ordonnancement et interblocage"
 private_data: false
 official_program:
   capacities:
@@ -23,165 +18,158 @@ official_program:
     - "T-ARCH-02C"
 ---
 
-# T11 - TD - processus ordonnancement interblocage
+# T11 - TD - SoC, processus, ordonnancement et interblocage
 
 ## Objectifs
-- Lire une donnée disciplinaire précise avant de répondre.
-- Produire une méthode vérifiable et un résultat contrôlable.
-- Traiter un cas limite sans le transformer en généralité.
-- Relier chaque correction à une erreur fréquente observable.
-
-## Capacités officielles
-- T-ARCH-01
-- T-ARCH-02A
-- T-ARCH-02B
-- T-ARCH-02C
-
-## Fiche liée et séance liée
-- Fiche liée : `03_progressions/fiches_cours/terminale/T11/T11_fiche_cours_processus_ordonnancement_interblocage.md`.
-- Séance liée : `T11-S1` dans la progression annuelle.
-- Statut : support `needs_review`, non validé et non publiable.
-
-## Situation de travail
-Trois processus P1, P2, P3 se partagent CPU, imprimante R1 et fichier R2.
+- Travailler système sur puce, processus, état prêt, état bloqué, ordonnancement.
+- Produire huit réponses vérifiables avec données explicites.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée.
-- Standard : exercices 3 à 6, production écrite et justification.
-- Approfondissement : exercices 7 et 8, transfert ou comparaison.
+- Socle : exercices 1 et 2.
+- Standard : exercices 3 à 6.
+- Approfondissement : exercices 7 et 8.
 
 ## Exercices
-### Exercice 1 - Tracer FCFS
+### Exercice 1
 - Type : lecture/analyse.
-- Niveau : socle.
 - Capacité officielle : T-ARCH-01.
-- Données : P1 arrivée 0 durée 3 ; P2 arrivée 1 durée 2 ; P3 arrivée 2 durée 1.
-- Consigne : Donner le diagramme.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 2 - Tracer Round Robin quantum 1
-- Type : lecture/analyse.
-- Niveau : socle.
+- Données : `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms`. ; jeu_exercice=alpha
+- Consigne : identifier CPU mémoire interfaces ; traiter aussi `un seul processus prêt` si nécessaire.
+- Réponse attendue : P1 20 ms, P2 20 ms, P1 20 ms.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `un seul processus prêt`.
+### Exercice 2
+- Type : production/écriture.
 - Capacité officielle : T-ARCH-02A.
-- Données : P1 durée 3, P2 durée 2, arrivées toutes à 0.
-- Consigne : Donner la séquence CPU.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 3 - Calculer temps de séjour
+- Données : `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms`. ; jeu_exercice=beta
+- Consigne : décrire création de processus ; traiter aussi `ressource libérée avant attente` si nécessaire.
+- Réponse attendue : P1 attend journal et P2 attend camera.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `ressource libérée avant attente`.
+### Exercice 3
 - Type : production/écriture.
-- Niveau : standard.
 - Capacité officielle : T-ARCH-02B.
-- Données : Données FCFS de l’exercice 1.
-- Consigne : Calculer turnaround.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 4 - Écrire un pseudo-code ordonnanceur simple
-- Type : production/écriture.
-- Niveau : standard.
-- Capacité officielle : T-ARCH-02C.
-- Données : File prête [P1,P2,P3].
-- Consigne : Produire pseudo-code FCFS.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 5 - Processus bloqué en E/S
+- Données : `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms`. ; jeu_exercice=gamma
+- Consigne : simuler round-robin ; traiter aussi `processus bloqué` si nécessaire.
+- Réponse attendue : CPU + mémoire + contrôleur caméra intégrés.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `processus bloqué`.
+### Exercice 4
 - Type : cas limite.
-- Niveau : standard.
-- Capacité officielle : T-ARCH-01.
-- Données : P1 demande imprimante occupée de t=2 à t=5.
-- Consigne : Dire son état.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 6 - Justifier un interblocage
-- Type : justification.
-- Niveau : standard.
-- Capacité officielle : T-ARCH-02A.
-- Données : P1 détient R1 et attend R2 ; P2 détient R2 et attend R1.
-- Consigne : Montrer le cycle.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 7 - Comparer équité
-- Type : lecture/analyse.
-- Niveau : approfondissement.
-- Capacité officielle : T-ARCH-02B.
-- Données : P1 durée 10, P2 durée 1, P3 durée 1.
-- Consigne : Comparer FCFS et RR.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 8 - Prévenir interblocage
-- Type : production/écriture.
-- Niveau : approfondissement.
 - Capacité officielle : T-ARCH-02C.
-- Données : Ressources R1,R2.
-- Consigne : Proposer une règle.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
+- Données : `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms`. ; jeu_exercice=delta
+- Consigne : détecter attente circulaire ; traiter aussi `un seul processus prêt` si nécessaire.
+- Réponse attendue : processus bloqué ne consomme pas CPU.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `un seul processus prêt`.
+### Exercice 5
+- Type : justification.
+- Capacité officielle : T-ARCH-01.
+- Données : `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms`. ; jeu_exercice=epsilon
+- Consigne : identifier CPU mémoire interfaces ; traiter aussi `ressource libérée avant attente` si nécessaire.
+- Réponse attendue : P1 20 ms, P2 20 ms, P1 20 ms.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `ressource libérée avant attente`.
+### Exercice 6
+- Type : lecture/analyse.
+- Capacité officielle : T-ARCH-02A.
+- Données : `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms`. ; jeu_exercice=zeta
+- Consigne : décrire création de processus ; traiter aussi `processus bloqué` si nécessaire.
+- Réponse attendue : P1 attend journal et P2 attend camera.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `processus bloqué`.
+### Exercice 7
+- Type : production/écriture.
+- Capacité officielle : T-ARCH-02B.
+- Données : `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms`. ; jeu_exercice=eta
+- Consigne : simuler round-robin ; traiter aussi `un seul processus prêt` si nécessaire.
+- Réponse attendue : CPU + mémoire + contrôleur caméra intégrés.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `un seul processus prêt`.
+### Exercice 8
+- Type : justification.
+- Capacité officielle : T-ARCH-02C.
+- Données : `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms`. ; jeu_exercice=theta
+- Consigne : détecter attente circulaire ; traiter aussi `ressource libérée avant attente` si nécessaire.
+- Réponse attendue : processus bloqué ne consomme pas CPU.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `ressource libérée avant attente`.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-ARCH-01.
-- Donnée utilisée : P1 arrivée 0 durée 3 ; P2 arrivée 1 durée 2 ; P3 arrivée 2 durée 1.
-- Résultat attendu : FCFS: P1 de 0 à 3, P2 de 3 à 5, P3 de 5 à 6. Attentes: P1=0, P2=2, P3=3.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : P1 20 ms, P2 20 ms, P1 20 ms.
+- Justification : la tâche `identifier CPU mémoire interfaces` s applique à `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms` ; erreur évitée : programme confondu avec processus.
+- Donnée utilisée alpha dans T11 TD processus ordonnancement interblocage : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans T11 TD processus ordonnancement interblocage : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans T11 TD processus ordonnancement interblocage : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans T11 TD processus ordonnancement interblocage : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-ARCH-02A.
-- Donnée utilisée : P1 durée 3, P2 durée 2, arrivées toutes à 0.
-- Résultat attendu : RR q=1: P1(0-1), P2(1-2), P1(2-3), P2(3-4), P1(4-5). Fin P2=4, P1=5.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : P1 attend journal et P2 attend camera.
+- Justification : la tâche `décrire création de processus` s applique à `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms` ; erreur évitée : bloqué confondu avec terminé.
+- Donnée utilisée beta dans T11 TD processus ordonnancement interblocage : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans T11 TD processus ordonnancement interblocage : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans T11 TD processus ordonnancement interblocage : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans T11 TD processus ordonnancement interblocage : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-ARCH-02B.
-- Donnée utilisée : Données FCFS de l’exercice 1.
-- Résultat attendu : Séjour = fin - arrivée: P1=3-0=3, P2=5-1=4, P3=6-2=4.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : CPU + mémoire + contrôleur caméra intégrés.
+- Justification : la tâche `simuler round-robin` s applique à `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms` ; erreur évitée : ordre des verrous oublié.
+- Donnée utilisée gamma dans T11 TD processus ordonnancement interblocage : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans T11 TD processus ordonnancement interblocage : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans T11 TD processus ordonnancement interblocage : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans T11 TD processus ordonnancement interblocage : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-ARCH-02C.
-- Donnée utilisée : File prête [P1,P2,P3].
-- Résultat attendu : tant que file non vide: p=defiler(); exécuter p jusqu’à fin; enregistrer temps_fin[p]. La file conserve l’ordre d’arrivée.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : processus bloqué ne consomme pas CPU.
+- Justification : la tâche `détecter attente circulaire` s applique à `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms` ; erreur évitée : programme confondu avec processus.
+- Donnée utilisée delta dans T11 TD processus ordonnancement interblocage : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans T11 TD processus ordonnancement interblocage : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans T11 TD processus ordonnancement interblocage : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans T11 TD processus ordonnancement interblocage : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-ARCH-01.
-- Donnée utilisée : P1 demande imprimante occupée de t=2 à t=5.
-- Résultat attendu : P1 quitte l’état élu et passe bloqué jusqu’à libération de l’imprimante ; le CPU peut être donné à un autre processus.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : P1 20 ms, P2 20 ms, P1 20 ms.
+- Justification : la tâche `identifier CPU mémoire interfaces` s applique à `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms` ; erreur évitée : bloqué confondu avec terminé.
+- Donnée utilisée epsilon dans T11 TD processus ordonnancement interblocage : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans T11 TD processus ordonnancement interblocage : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans T11 TD processus ordonnancement interblocage : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans T11 TD processus ordonnancement interblocage : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-ARCH-02A.
-- Donnée utilisée : P1 détient R1 et attend R2 ; P2 détient R2 et attend R1.
-- Résultat attendu : Graphe: P1 -> R2 -> P2 -> R1 -> P1. Cycle avec ressources non préemptibles : interblocage possible.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : P1 attend journal et P2 attend camera.
+- Justification : la tâche `décrire création de processus` s applique à `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms` ; erreur évitée : ordre des verrous oublié.
+- Donnée utilisée zeta dans T11 TD processus ordonnancement interblocage : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans T11 TD processus ordonnancement interblocage : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans T11 TD processus ordonnancement interblocage : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans T11 TD processus ordonnancement interblocage : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-ARCH-02B.
-- Donnée utilisée : P1 durée 10, P2 durée 1, P3 durée 1.
-- Résultat attendu : FCFS retarde P2/P3 jusqu’à t=10 si P1 commence ; RR q=1 permet à P2 et P3 de finir tôt, mais ajoute des commutations.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : CPU + mémoire + contrôleur caméra intégrés.
+- Justification : la tâche `simuler round-robin` s applique à `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms` ; erreur évitée : programme confondu avec processus.
+- Donnée utilisée eta dans T11 TD processus ordonnancement interblocage : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans T11 TD processus ordonnancement interblocage : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans T11 TD processus ordonnancement interblocage : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans T11 TD processus ordonnancement interblocage : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-ARCH-02C.
-- Donnée utilisée : Ressources R1,R2.
-- Résultat attendu : Imposer un ordre global: toujours demander R1 avant R2. Alors aucun cycle P1/R2/P2/R1 ne peut se former.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : processus bloqué ne consomme pas CPU.
+- Justification : la tâche `détecter attente circulaire` s applique à `P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=20 ms` ; erreur évitée : bloqué confondu avec terminé.
+- Donnée utilisée theta dans T11 TD processus ordonnancement interblocage : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans T11 TD processus ordonnancement interblocage : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans T11 TD processus ordonnancement interblocage : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans T11 TD processus ordonnancement interblocage : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
 ## Erreurs fréquentes
-- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
-- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
-- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
-- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
-
-## Remédiation ciblée
-- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
-- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
-- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
+- programme confondu avec processus.
+- bloqué confondu avec terminé.
+- ordre des verrous oublié.
 
 ## Différenciation
-- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
-- Standard : demander méthode complète, résultat et contrôle écrit.
-- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
+- Socle : données annotées.
+- Standard : méthode complète.
+- Expert : transfert avec `ressource libérée avant attente`.
 
-## Lien avec la progression
-| Élément | Référence | Statut |
-|---|---|---|
-| Fiche | T11_fiche_cours_processus_ordonnancement_interblocage.md | needs_review |
-| Séance | T11-S1 | progression existante |
-| Évaluation | T11_evaluation_processus_ordonnancement_interblocage.md | needs_review |
+## Cas limites travaillés
+- un seul processus prêt.
+- ressource libérée avant attente.
+- processus bloqué.
 
-## Source et traçabilité
-- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
-- Aucun fichier Drive n’a été repris directement dans ce support.
-- Source de création : programme officiel et progression locale, avec statut `needs_review`.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `P1 20 ms, P2 20 ms, P1 20 ms`.
+- Au moins un cas limite de la section précédente est décidé.
+

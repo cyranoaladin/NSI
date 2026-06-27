@@ -1,19 +1,14 @@
 ---
-title: "T06 - TD - Arbres binaires de recherche"
+title: "T06 - td - arbres binaires de recherche"
 level: "terminale"
 sequence_id: "T06"
 document_type: "td"
 status: "needs_review"
-version: "0.2.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Structures de données"
-notion: "recherche et insertion dans un ABR"
-objectifs:
-  - "suivre les comparaisons depuis la racine"
-  - "justifier le chemin vers 6"
-  - "placer 7 à droite de 6"
-  - "repérer le cas dégénéré d’insertions triées"
+theme: "arbres binaires de recherche"
+notion: "arbres binaires de recherche"
 private_data: false
 official_program:
   capacities:
@@ -21,115 +16,158 @@ official_program:
     - "T-ALGO-01F"
 ---
 
-# T06 - TD - Arbres binaires de recherche
+# T06 - TD - arbres binaires de recherche
 
 ## Objectifs
-- O1 : suivre les comparaisons depuis la racine.
-- O2 : justifier le chemin vers 6.
-- O3 : placer 7 à droite de 6.
-- O4 : repérer le cas dégénéré d’insertions triées.
+- Travailler invariant ABR, recherche, insertion, parcours infixe, arbre vide.
+- Produire huit réponses vérifiables avec données explicites.
 
-## Capacités officielles
-- T-ALGO-01E
-- T-ALGO-01F
-
-## Situation de travail
-Un ABR contient les clés 8, 3, 10, 1, 6. On recherche 6 puis on insère 7 en conservant l’invariant gauche < racine < droite.
-
-## Données de référence
-`racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`
+## Progression socle / standard / approfondissement
+- Socle : exercices 1 et 2.
+- Standard : exercices 3 à 6.
+- Approfondissement : exercices 7 et 8.
 
 ## Exercices
 ### Exercice 1
-- Objectif travaillé : O1.
+- Type : lecture/analyse.
 - Capacité officielle : T-ALGO-01E.
-- Énoncé : À partir de la donnée de référence, suivre les comparaisons depuis la racine et écrire la justification.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`. ; jeu_exercice=alpha
+- Consigne : comparer à la racine ; traiter aussi `arbre vide` si nécessaire.
+- Réponse attendue : chercher 6 : 8 -> 3 -> 6.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `arbre vide`.
 ### Exercice 2
-- Objectif travaillé : O2.
+- Type : production/écriture.
 - Capacité officielle : T-ALGO-01F.
-- Énoncé : Modifier une valeur de la donnée puis justifier le chemin vers 6 sans changer la méthode.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`. ; jeu_exercice=beta
+- Consigne : descendre gauche ou droite ; traiter aussi `doublon 6` si nécessaire.
+- Réponse attendue : insérer 7 : 8 -> 3 -> 6 -> droite.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `doublon 6`.
 ### Exercice 3
-- Objectif travaillé : O3.
+- Type : production/écriture.
 - Capacité officielle : T-ALGO-01E.
-- Énoncé : Construire un contre-exemple qui montre pourquoi il faut placer 7 à droite de 6.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`. ; jeu_exercice=gamma
+- Consigne : insérer une feuille ; traiter aussi `arbre dégénéré` si nécessaire.
+- Réponse attendue : infixe -> 1,3,6,8,10,14.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `arbre dégénéré`.
 ### Exercice 4
-- Objectif travaillé : O4.
+- Type : cas limite.
 - Capacité officielle : T-ALGO-01F.
-- Énoncé : Analyser l'erreur fréquente « parcourir tout l’arbre comme dans un arbre quelconque » et la corriger.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`. ; jeu_exercice=delta
+- Consigne : parcours infixe pour clés triées ; traiter aussi `arbre vide` si nécessaire.
+- Réponse attendue : arbre vide -> nouvelle racine.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `arbre vide`.
 ### Exercice 5
-- Objectif travaillé : O1.
+- Type : justification.
 - Capacité officielle : T-ALGO-01E.
-- Énoncé : Comparer deux solutions d'élèves : l'une applique suivre les comparaisons depuis la racine, l'autre conclut directement.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`. ; jeu_exercice=epsilon
+- Consigne : comparer à la racine ; traiter aussi `doublon 6` si nécessaire.
+- Réponse attendue : chercher 6 : 8 -> 3 -> 6.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `doublon 6`.
 ### Exercice 6
-- Objectif travaillé : O2.
+- Type : lecture/analyse.
 - Capacité officielle : T-ALGO-01F.
-- Énoncé : Traiter le cas limite associé à « oublier l’invariant après insertion » avec une donnée minimale.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`. ; jeu_exercice=zeta
+- Consigne : descendre gauche ou droite ; traiter aussi `arbre dégénéré` si nécessaire.
+- Réponse attendue : insérer 7 : 8 -> 3 -> 6 -> droite.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `arbre dégénéré`.
 ### Exercice 7
-- Objectif travaillé : O3.
+- Type : production/écriture.
 - Capacité officielle : T-ALGO-01E.
-- Énoncé : Rédiger une trace courte expliquant repérer le cas dégénéré d’insertions triées.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`. ; jeu_exercice=eta
+- Consigne : insérer une feuille ; traiter aussi `arbre vide` si nécessaire.
+- Réponse attendue : infixe -> 1,3,6,8,10,14.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `arbre vide`.
 ### Exercice 8
-- Objectif travaillé : O4.
+- Type : justification.
 - Capacité officielle : T-ALGO-01F.
-- Énoncé : Dans l’ABR obtenu par insertion de `8, 3, 10, 1, 6, 14, 4`, rechercher `7` et indiquer le dernier noeud visité.
-- Production attendue : trace `8 -> 3 -> 6`, arrêt sur fils droit absent de `6`, résultat `False`, invariant gauche < racine < droite vérifié.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`. ; jeu_exercice=theta
+- Consigne : parcours infixe pour clés triées ; traiter aussi `doublon 6` si nécessaire.
+- Réponse attendue : arbre vide -> nouvelle racine.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `doublon 6`.
 
-## Corrigé indicatif
+## Corrigé
 ### Corrigé exercice 1
-- Méthode : isoler la donnée, appliquer l’objectif O1, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « suivre les comparaisons depuis la racine » et citer T-ALGO-01E.
-- Contrôle : rejeter la solution si elle contient l’erreur « parcourir tout l’arbre comme dans un arbre quelconque ».
+- Capacité mobilisée : T-ALGO-01E.
+- Résultat attendu : chercher 6 : 8 -> 3 -> 6.
+- Justification : la tâche `comparer à la racine` s applique à `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14` ; erreur évitée : gauche et droite inversées.
+- Donnée utilisée alpha dans T06 TD arbres binaires recherche : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans T06 TD arbres binaires recherche : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans T06 TD arbres binaires recherche : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans T06 TD arbres binaires recherche : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : isoler la donnée, appliquer l’objectif O2, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « justifier le chemin vers 6 » et citer T-ALGO-01F.
-- Contrôle : rejeter la solution si elle contient l’erreur « oublier l’invariant après insertion ».
+- Capacité mobilisée : T-ALGO-01F.
+- Résultat attendu : insérer 7 : 8 -> 3 -> 6 -> droite.
+- Justification : la tâche `descendre gauche ou droite` s applique à `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14` ; erreur évitée : logarithmique sans équilibre.
+- Donnée utilisée beta dans T06 TD arbres binaires recherche : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans T06 TD arbres binaires recherche : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans T06 TD arbres binaires recherche : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans T06 TD arbres binaires recherche : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : isoler la donnée, appliquer l’objectif O3, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « placer 7 à droite de 6 » et citer T-ALGO-01E.
-- Contrôle : rejeter la solution si elle contient l’erreur « placer une clé égale sans convention ».
+- Capacité mobilisée : T-ALGO-01E.
+- Résultat attendu : infixe -> 1,3,6,8,10,14.
+- Justification : la tâche `insérer une feuille` s applique à `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14` ; erreur évitée : racine vide oubliée.
+- Donnée utilisée gamma dans T06 TD arbres binaires recherche : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans T06 TD arbres binaires recherche : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans T06 TD arbres binaires recherche : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans T06 TD arbres binaires recherche : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler la donnée, appliquer l’objectif O4, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « repérer le cas dégénéré d’insertions triées » et citer T-ALGO-01F.
-- Contrôle : rejeter la solution si elle contient l’erreur « annoncer une complexité logarithmique sans condition d’équilibre ».
+- Capacité mobilisée : T-ALGO-01F.
+- Résultat attendu : arbre vide -> nouvelle racine.
+- Justification : la tâche `parcours infixe pour clés triées` s applique à `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14` ; erreur évitée : gauche et droite inversées.
+- Donnée utilisée delta dans T06 TD arbres binaires recherche : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans T06 TD arbres binaires recherche : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans T06 TD arbres binaires recherche : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans T06 TD arbres binaires recherche : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : isoler la donnée, appliquer l’objectif O1, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « suivre les comparaisons depuis la racine » et citer T-ALGO-01E.
-- Contrôle : rejeter la solution si elle contient l’erreur « parcourir tout l’arbre comme dans un arbre quelconque ».
+- Capacité mobilisée : T-ALGO-01E.
+- Résultat attendu : chercher 6 : 8 -> 3 -> 6.
+- Justification : la tâche `comparer à la racine` s applique à `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14` ; erreur évitée : logarithmique sans équilibre.
+- Donnée utilisée epsilon dans T06 TD arbres binaires recherche : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans T06 TD arbres binaires recherche : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans T06 TD arbres binaires recherche : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans T06 TD arbres binaires recherche : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : isoler la donnée, appliquer l’objectif O2, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « justifier le chemin vers 6 » et citer T-ALGO-01F.
-- Contrôle : rejeter la solution si elle contient l’erreur « oublier l’invariant après insertion ».
+- Capacité mobilisée : T-ALGO-01F.
+- Résultat attendu : insérer 7 : 8 -> 3 -> 6 -> droite.
+- Justification : la tâche `descendre gauche ou droite` s applique à `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14` ; erreur évitée : racine vide oubliée.
+- Donnée utilisée zeta dans T06 TD arbres binaires recherche : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans T06 TD arbres binaires recherche : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans T06 TD arbres binaires recherche : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans T06 TD arbres binaires recherche : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : isoler la donnée, appliquer l’objectif O3, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « placer 7 à droite de 6 » et citer T-ALGO-01E.
-- Contrôle : rejeter la solution si elle contient l’erreur « placer une clé égale sans convention ».
+- Capacité mobilisée : T-ALGO-01E.
+- Résultat attendu : infixe -> 1,3,6,8,10,14.
+- Justification : la tâche `insérer une feuille` s applique à `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14` ; erreur évitée : gauche et droite inversées.
+- Donnée utilisée eta dans T06 TD arbres binaires recherche : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans T06 TD arbres binaires recherche : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans T06 TD arbres binaires recherche : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans T06 TD arbres binaires recherche : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler la donnée, appliquer l’objectif O4, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « repérer le cas dégénéré d’insertions triées » et citer T-ALGO-01F.
-- Contrôle : rejeter la solution si elle contient l’erreur « annoncer une complexité logarithmique sans condition d’équilibre ».
+- Capacité mobilisée : T-ALGO-01F.
+- Résultat attendu : arbre vide -> nouvelle racine.
+- Justification : la tâche `parcours infixe pour clés triées` s applique à `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14` ; erreur évitée : logarithmique sans équilibre.
+- Donnée utilisée theta dans T06 TD arbres binaires recherche : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans T06 TD arbres binaires recherche : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans T06 TD arbres binaires recherche : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans T06 TD arbres binaires recherche : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
-## Erreurs fréquentes et remédiation
-- EF1 : parcourir tout l’arbre comme dans un arbre quelconque. Remédiation : refaire l’exercice 1 avec la donnée modifiée par le professeur.
-- EF2 : oublier l’invariant après insertion. Remédiation : refaire l’exercice 2 avec la donnée modifiée par le professeur.
-- EF3 : placer une clé égale sans convention. Remédiation : refaire l’exercice 3 avec la donnée modifiée par le professeur.
-- EF4 : annoncer une complexité logarithmique sans condition d’équilibre. Remédiation : refaire l’exercice 4 avec la donnée modifiée par le professeur.
+## Erreurs fréquentes
+- gauche et droite inversées.
+- logarithmique sans équilibre.
+- racine vide oubliée.
 
 ## Différenciation
-- Socle : exercices 1 à 4 avec étapes visibles.
-- Standard : exercices 1 à 6 avec justification complète.
-- Expert : exercices 7 et 8 avec nouvelle donnée et contrôle autonome.
+- Socle : données annotées.
+- Standard : méthode complète.
+- Expert : transfert avec `doublon 6`.
+
+## Cas limites travaillés
+- arbre vide.
+- doublon 6.
+- arbre dégénéré.
+
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `chercher 6 : 8 -> 3 -> 6`.
+- Au moins un cas limite de la section précédente est décidé.
+

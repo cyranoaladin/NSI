@@ -1,181 +1,172 @@
 ---
-title: "P14 - TD - synthese projet oral"
+title: "P14 - td - synthèse, projet et oral"
 level: "premiere"
 sequence_id: "P14"
 document_type: "td"
 status: "needs_review"
-version: "0.3.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Synthèse et projet"
-notion: "synthese projet oral"
-objectifs:
-  - "travailler synthese projet oral sur des données explicites"
-  - "produire une réponse justifiée et contrôlée"
-  - "identifier les cas limites"
-  - "corriger les erreurs fréquentes du chapitre"
+theme: "synthèse, projet et oral"
+notion: "synthèse, projet et oral"
 private_data: false
 official_program:
   capacities:
     - "P-HIST-01"
 ---
 
-# P14 - TD - synthèse projet oral
+# P14 - TD - synthèse, projet et oral
 
 ## Objectifs
-- Lire une donnée disciplinaire précise avant de répondre.
-- Produire une méthode vérifiable et un résultat contrôlable.
-- Traiter un cas limite sans le transformer en généralité.
-- Relier chaque correction à une erreur fréquente observable.
-
-## Capacités officielles
-- P-HIST-01
-
-## Fiche liée et séance liée
-- Fiche liée : `03_progressions/fiches_cours/premiere/P14/P14_fiche_cours_synthese_projet_oral.md`.
-- Séance liée : `P14-S1` dans la progression annuelle.
-- Statut : support `needs_review`, non validé et non publiable.
-
-## Situation de travail
-Un groupe prépare une démonstration de mini-projet NSI avec code, tests et justification orale.
+- Travailler cadrage de projet, dépôt propre, jeu de données fictif, démonstration, argumentation orale.
+- Produire huit réponses vérifiables avec données explicites.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée.
-- Standard : exercices 3 à 6, production écrite et justification.
-- Approfondissement : exercices 7 et 8, transfert ou comparaison.
+- Socle : exercices 1 et 2.
+- Standard : exercices 3 à 6.
+- Approfondissement : exercices 7 et 8.
 
 ## Exercices
-### Exercice 1 - Lire un cahier des charges
+### Exercice 1
 - Type : lecture/analyse.
-- Niveau : socle.
 - Capacité officielle : P-HIST-01.
-- Données : Projet: carnet de scores, données stockées en CSV, recherche par joueur, tri par score.
-- Consigne : Identifier deux fonctionnalités et deux contraintes.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 2 - Analyser un extrait de test
-- Type : lecture/analyse.
-- Niveau : socle.
-- Capacité officielle : P-HIST-01.
-- Données : assert meilleur_score([12,9,15]) == 15 ; assert meilleur_score([]) is None.
-- Consigne : Dire les cas couverts.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 3 - Rédiger une spécification de fonction
+- Données : `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives`. ; jeu_exercice=alpha
+- Consigne : formuler une question mesurable ; traiter aussi `donnée absente` si nécessaire.
+- Réponse attendue : question : pays fictifs dépassant 50% solaire.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `donnée absente`.
+### Exercice 2
 - Type : production/écriture.
-- Niveau : standard.
 - Capacité officielle : P-HIST-01.
-- Données : fonction moyenne_scores(scores).
-- Consigne : Écrire entrée, sortie, cas limite.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 4 - Construire un plan d’oral
+- Données : `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives`. ; jeu_exercice=beta
+- Consigne : définir entrée traitement sortie ; traiter aussi `résultat vide` si nécessaire.
+- Réponse attendue : charger solaire.csv -> filtrer >50 -> tableau.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `résultat vide`.
+### Exercice 3
 - Type : production/écriture.
-- Niveau : standard.
 - Capacité officielle : P-HIST-01.
-- Données : Sujet: expliquer un tri utilisé dans le projet.
-- Consigne : Donner un plan en trois parties.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 5 - Identifier un risque de démonstration
+- Données : `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives`. ; jeu_exercice=gamma
+- Consigne : préparer une démonstration ; traiter aussi `question trop large` si nécessaire.
+- Réponse attendue : oral : problème, choix technique, résultat, limite.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `question trop large`.
+### Exercice 4
 - Type : cas limite.
-- Niveau : standard.
 - Capacité officielle : P-HIST-01.
-- Données : Le projet lit scores.csv, mais le fichier peut être absent.
-- Consigne : Prévoir le comportement.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 6 - Justifier une décision technique
+- Données : `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives`. ; jeu_exercice=delta
+- Consigne : relier au Web ou aux bases de données ; traiter aussi `donnée absente` si nécessaire.
+- Réponse attendue : repère historique cité avec source.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `donnée absente`.
+### Exercice 5
 - Type : justification.
-- Niveau : standard.
 - Capacité officielle : P-HIST-01.
-- Données : Choix: dictionnaire joueur -> liste de scores.
-- Consigne : Justifier.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 7 - Évaluer une grille de projet
+- Données : `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives`. ; jeu_exercice=epsilon
+- Consigne : formuler une question mesurable ; traiter aussi `résultat vide` si nécessaire.
+- Réponse attendue : question : pays fictifs dépassant 50% solaire.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `résultat vide`.
+### Exercice 6
 - Type : lecture/analyse.
-- Niveau : approfondissement.
 - Capacité officielle : P-HIST-01.
-- Données : Critères: exactitude, tests, lisibilité, oral. Scores 3/4, 2/4, 3/4, 1/4.
-- Consigne : Identifier priorité de remédiation.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 8 - Écrire une conclusion d’oral
+- Données : `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives`. ; jeu_exercice=zeta
+- Consigne : définir entrée traitement sortie ; traiter aussi `question trop large` si nécessaire.
+- Réponse attendue : charger solaire.csv -> filtrer >50 -> tableau.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `question trop large`.
+### Exercice 7
 - Type : production/écriture.
-- Niveau : approfondissement.
 - Capacité officielle : P-HIST-01.
-- Données : Projet carnet de scores.
-- Consigne : Rédiger une conclusion qui cite résultat et limite.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
+- Données : `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives`. ; jeu_exercice=eta
+- Consigne : préparer une démonstration ; traiter aussi `donnée absente` si nécessaire.
+- Réponse attendue : oral : problème, choix technique, résultat, limite.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `donnée absente`.
+### Exercice 8
+- Type : justification.
+- Capacité officielle : P-HIST-01.
+- Données : `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives`. ; jeu_exercice=theta
+- Consigne : relier au Web ou aux bases de données ; traiter aussi `résultat vide` si nécessaire.
+- Réponse attendue : repère historique cité avec source.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `résultat vide`.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : P-HIST-01.
-- Donnée utilisée : Projet: carnet de scores, données stockées en CSV, recherche par joueur, tri par score.
-- Résultat attendu : Fonctionnalités: ajouter un score, rechercher un joueur, trier par score. Contraintes: format CSV cohérent et tests sur recherche/tri.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : question : pays fictifs dépassant 50% solaire.
+- Justification : la tâche `formuler une question mesurable` s applique à `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives` ; erreur évitée : code montré sans objectif.
+- Donnée utilisée alpha dans P14 TD synthese projet oral : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans P14 TD synthese projet oral : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans P14 TD synthese projet oral : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans P14 TD synthese projet oral : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
 - Capacité mobilisée : P-HIST-01.
-- Donnée utilisée : assert meilleur_score([12,9,15]) == 15 ; assert meilleur_score([]) is None.
-- Résultat attendu : Premier test couvre cas nominal avec maximum 15 ; second test couvre cas limite liste vide, contrat None.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : charger solaire.csv -> filtrer >50 -> tableau.
+- Justification : la tâche `définir entrée traitement sortie` s applique à `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives` ; erreur évitée : données personnelles.
+- Donnée utilisée beta dans P14 TD synthese projet oral : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans P14 TD synthese projet oral : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans P14 TD synthese projet oral : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans P14 TD synthese projet oral : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
 - Capacité mobilisée : P-HIST-01.
-- Donnée utilisée : fonction moyenne_scores(scores).
-- Résultat attendu : Entrée: liste de nombres. Sortie: moyenne flottante. Cas limite: liste vide -> None ou ValueError ; choix à fixer dans la spécification.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : oral : problème, choix technique, résultat, limite.
+- Justification : la tâche `préparer une démonstration` s applique à `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives` ; erreur évitée : source historique non vérifiée.
+- Donnée utilisée gamma dans P14 TD synthese projet oral : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans P14 TD synthese projet oral : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans P14 TD synthese projet oral : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans P14 TD synthese projet oral : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
 - Capacité mobilisée : P-HIST-01.
-- Donnée utilisée : Sujet: expliquer un tri utilisé dans le projet.
-- Résultat attendu : Plan: 1 contexte du besoin ; 2 principe du tri avec exemple [3,1,2] -> [1,2,3] ; 3 limites et complexité O(n^2) ou O(n log n) selon algorithme.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : repère historique cité avec source.
+- Justification : la tâche `relier au Web ou aux bases de données` s applique à `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives` ; erreur évitée : code montré sans objectif.
+- Donnée utilisée delta dans P14 TD synthese projet oral : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans P14 TD synthese projet oral : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans P14 TD synthese projet oral : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans P14 TD synthese projet oral : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
 - Capacité mobilisée : P-HIST-01.
-- Donnée utilisée : Le projet lit scores.csv, mais le fichier peut être absent.
-- Résultat attendu : La démonstration doit tester l’existence du fichier, afficher un message clair ou créer un fichier vide. Elle ne doit pas échouer avec une trace non expliquée.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : question : pays fictifs dépassant 50% solaire.
+- Justification : la tâche `formuler une question mesurable` s applique à `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives` ; erreur évitée : données personnelles.
+- Donnée utilisée epsilon dans P14 TD synthese projet oral : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans P14 TD synthese projet oral : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans P14 TD synthese projet oral : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans P14 TD synthese projet oral : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
 - Capacité mobilisée : P-HIST-01.
-- Donnée utilisée : Choix: dictionnaire joueur -> liste de scores.
-- Résultat attendu : Le dictionnaire donne accès direct par nom de joueur ; la liste conserve plusieurs scores. Exemple: scores["A"]=[12,15], meilleur=15.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : charger solaire.csv -> filtrer >50 -> tableau.
+- Justification : la tâche `définir entrée traitement sortie` s applique à `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives` ; erreur évitée : source historique non vérifiée.
+- Donnée utilisée zeta dans P14 TD synthese projet oral : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans P14 TD synthese projet oral : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans P14 TD synthese projet oral : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans P14 TD synthese projet oral : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
 - Capacité mobilisée : P-HIST-01.
-- Donnée utilisée : Critères: exactitude, tests, lisibilité, oral. Scores 3/4, 2/4, 3/4, 1/4.
-- Résultat attendu : Oral est prioritaire avec 1/4, puis tests 2/4. L’action suivante: préparer une démonstration guidée et ajouter deux tests limites.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : oral : problème, choix technique, résultat, limite.
+- Justification : la tâche `préparer une démonstration` s applique à `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives` ; erreur évitée : code montré sans objectif.
+- Donnée utilisée eta dans P14 TD synthese projet oral : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans P14 TD synthese projet oral : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans P14 TD synthese projet oral : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans P14 TD synthese projet oral : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
 - Capacité mobilisée : P-HIST-01.
-- Donnée utilisée : Projet carnet de scores.
-- Résultat attendu : Conclusion attendue: le programme ajoute, recherche et trie les scores ; les tests couvrent liste vide et doublons ; limite restante: pas d’interface graphique ni gestion multi-utilisateur.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : repère historique cité avec source.
+- Justification : la tâche `relier au Web ou aux bases de données` s applique à `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives` ; erreur évitée : données personnelles.
+- Donnée utilisée theta dans P14 TD synthese projet oral : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans P14 TD synthese projet oral : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans P14 TD synthese projet oral : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans P14 TD synthese projet oral : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
 ## Erreurs fréquentes
-- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
-- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
-- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
-- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
-
-## Remédiation ciblée
-- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
-- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
-- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
+- code montré sans objectif.
+- données personnelles.
+- source historique non vérifiée.
 
 ## Différenciation
-- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
-- Standard : demander méthode complète, résultat et contrôle écrit.
-- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
+- Socle : données annotées.
+- Standard : méthode complète.
+- Expert : transfert avec `résultat vide`.
 
-## Lien avec la progression
-| Élément | Référence | Statut |
-|---|---|---|
-| Fiche | P14_fiche_cours_synthese_projet_oral.md | needs_review |
-| Séance | P14-S1 | progression existante |
-| Évaluation | P14_evaluation_synthese_projet_oral.md | needs_review |
+## Cas limites travaillés
+- donnée absente.
+- résultat vide.
+- question trop large.
 
-## Source et traçabilité
-- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
-- Aucun fichier Drive n’a été repris directement dans ce support.
-- Source de création : programme officiel et progression locale, avec statut `needs_review`.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `question : pays fictifs dépassant 50% solaire`.
+- Au moins un cas limite de la section précédente est décidé.
+

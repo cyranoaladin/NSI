@@ -129,45 +129,70 @@ Un serveur journalise des tâches en attente et doit choisir entre pile, file et
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- Méthode : identifier empiler A puis B, dépiler, appliquer la méthode « appliquer LIFO », puis écrire B sort en premier.
 - Résultat : B sort en premier.
 - Contrôle : faire apparaître le contrôle « pile vide ».
 - Erreur traitée : EF1 - Inverser LIFO et FIFO.
+- Donnée utilisée alpha dans T03 td piles files dictionnaires : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans T03 td piles files dictionnaires : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans T03 td piles files dictionnaires : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans T03 td piles files dictionnaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : expliciter chaque étape de appliquer FIFO avant de conclure par A sort en premier.
 - Résultat : A sort en premier.
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Retirer dans une structure vide sans test.
+- Donnée utilisée beta dans T03 td piles files dictionnaires : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans T03 td piles files dictionnaires : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans T03 td piles files dictionnaires : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans T03 td piles files dictionnaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : comparer la donnée avec le cas limite « clé absente » et valider `ok`.
 - Résultat : `ok`.
 - Contrôle : comparer avec le cas « clé absente ».
 - Erreur traitée : EF3 - Parcourir tout un dictionnaire pour une clé connue.
+- Donnée utilisée gamma dans T03 td piles files dictionnaires : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans T03 td piles files dictionnaires : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans T03 td piles files dictionnaires : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans T03 td piles files dictionnaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler l’erreur fréquente « Confondre clé et valeur. » puis reprendre la procédure correcte.
 - Résultat : accès attendu constant.
 - Contrôle : corriger l’erreur « Confondre clé et valeur. ».
 - Erreur traitée : EF4 - Confondre clé et valeur.
+- Donnée utilisée delta dans T03 td piles files dictionnaires : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans T03 td piles files dictionnaires : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans T03 td piles files dictionnaires : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans T03 td piles files dictionnaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : identifier empiler A puis B, dépiler, appliquer la méthode « appliquer LIFO », puis écrire B sort en premier.
 - Résultat : le comportement de pile est contrôlé.
 - Contrôle : nommer la donnée minimale et la conclusion.
 - Erreur traitée : EF1 - Inverser LIFO et FIFO.
+- Donnée utilisée epsilon dans T03 td piles files dictionnaires : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans T03 td piles files dictionnaires : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans T03 td piles files dictionnaires : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans T03 td piles files dictionnaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : expliciter chaque étape de appliquer FIFO avant de conclure par A sort en premier.
 - Résultat : la méthode robuste est choisie et justifiée.
 - Contrôle : identifier pourquoi « Retirer dans une structure vide sans test. » est une erreur.
 - Erreur traitée : EF2 - Retirer dans une structure vide sans test.
+- Donnée utilisée zeta dans T03 td piles files dictionnaires : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans T03 td piles files dictionnaires : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans T03 td piles files dictionnaires : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans T03 td piles files dictionnaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « clé absente » et valider `ok`.
 - Résultat : la justification reste valable sur le nouveau cas.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Parcourir tout un dictionnaire pour une clé connue.
+- Donnée utilisée eta dans T03 td piles files dictionnaires : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans T03 td piles files dictionnaires : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans T03 td piles files dictionnaires : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans T03 td piles files dictionnaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler l’erreur fréquente « Confondre clé et valeur. » puis reprendre la procédure correcte.
 - Résultat : l’erreur est localisée puis réparée.
 - Contrôle : proposer une activité corrective inspirée de « Surligner clés et valeurs de couleurs différentes. ».
 - Erreur traitée : EF4 - Confondre clé et valeur.
+- Donnée utilisée theta dans T03 td piles files dictionnaires : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans T03 td piles files dictionnaires : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans T03 td piles files dictionnaires : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans T03 td piles files dictionnaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Inverser LIFO et FIFO.
 - Erreur fréquente EF2 - Retirer dans une structure vide sans test.

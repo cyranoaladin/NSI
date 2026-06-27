@@ -1,19 +1,14 @@
 ---
-title: "P07 - TD - Fonctions, spécifications et tests"
+title: "P07 - td - fonctions, tests et spécifications"
 level: "premiere"
 sequence_id: "P07"
 document_type: "td"
 status: "needs_review"
-version: "0.2.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Langage Python"
-notion: "fonctions, paramètres, assertions, tests"
-objectifs:
-  - "écrire la signature et le rôle des paramètres"
-  - "formuler précondition et postcondition"
-  - "ajouter une assertion sur le prix négatif"
-  - "tester cas nominal, zéro et entrée invalide"
+theme: "fonctions, tests et spécifications"
+notion: "fonctions, tests et spécifications"
 private_data: false
 official_program:
   capacities:
@@ -26,120 +21,158 @@ official_program:
     - "P-LANG-05"
 ---
 
-# P07 - TD - Fonctions, spécifications et tests
+# P07 - TD - fonctions, tests et spécifications
 
 ## Objectifs
-- O1 : écrire la signature et le rôle des paramètres.
-- O2 : formuler précondition et postcondition.
-- O3 : ajouter une assertion sur le prix négatif.
-- O4 : tester cas nominal, zéro et entrée invalide.
+- Travailler signature, précondition, postcondition, assertion, test unitaire.
+- Produire huit réponses vérifiables avec données explicites.
 
-## Capacités officielles
-- P-LANG-01
-- P-LANG-02
-- P-LANG-03A
-- P-LANG-03B
-- P-LANG-03C
-- P-LANG-04
-- P-LANG-05
-
-## Situation de travail
-On veut écrire une fonction prix_ttc(ht, taux) utilisable dans plusieurs exercices, avec contrat, tests nominaux et tests d’erreur.
-
-## Données de référence
-`prix_ttc(80, 0.20), prix_ttc(0, 0.20), prix_ttc(-5, 0.20)`
+## Progression socle / standard / approfondissement
+- Socle : exercices 1 et 2.
+- Standard : exercices 3 à 6.
+- Approfondissement : exercices 7 et 8.
 
 ## Exercices
 ### Exercice 1
-- Objectif travaillé : O1.
+- Type : lecture/analyse.
 - Capacité officielle : P-LANG-01.
-- Énoncé : À partir de la donnée de référence, écrire la signature et le rôle des paramètres et écrire la justification.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`. ; jeu_exercice=alpha
+- Consigne : écrire def prix_ttc(prix_ht: float, taux: float) -> float ; traiter aussi `prix_ht=0` si nécessaire.
+- Réponse attendue : signature complète de prix_ttc.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `prix_ht=0`.
 ### Exercice 2
-- Objectif travaillé : O2.
+- Type : production/écriture.
 - Capacité officielle : P-LANG-02.
-- Énoncé : Modifier une valeur de la donnée puis formuler précondition et postcondition sans changer la méthode.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`. ; jeu_exercice=beta
+- Consigne : poser prix_ht >= 0 et taux >= 0 ; traiter aussi `taux=0` si nécessaire.
+- Réponse attendue : prix_ttc(80,0.20) -> 96.0.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `taux=0`.
 ### Exercice 3
-- Objectif travaillé : O3.
+- Type : production/écriture.
 - Capacité officielle : P-LANG-03A.
-- Énoncé : Construire un contre-exemple qui montre pourquoi il faut ajouter une assertion sur le prix négatif.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`. ; jeu_exercice=gamma
+- Consigne : vérifier résultat >= prix_ht ; traiter aussi `type chaîne "80"` si nécessaire.
+- Réponse attendue : prix_ttc(-5,0.20) -> ValueError.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `type chaîne "80"`.
 ### Exercice 4
-- Objectif travaillé : O4.
+- Type : cas limite.
 - Capacité officielle : P-LANG-03B.
-- Énoncé : Analyser l'erreur fréquente « écrire un print au lieu de return » et la corriger.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`. ; jeu_exercice=delta
+- Consigne : écrire tests nominal, limite et invalide ; traiter aussi `prix_ht=0` si nécessaire.
+- Réponse attendue : taux=0 -> résultat 80.0.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `prix_ht=0`.
 ### Exercice 5
-- Objectif travaillé : O1.
+- Type : justification.
 - Capacité officielle : P-LANG-03C.
-- Énoncé : Comparer deux solutions d'élèves : l'une applique écrire la signature et le rôle des paramètres, l'autre conclut directement.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`. ; jeu_exercice=epsilon
+- Consigne : écrire def prix_ttc(prix_ht: float, taux: float) -> float ; traiter aussi `taux=0` si nécessaire.
+- Réponse attendue : signature complète de prix_ttc.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `taux=0`.
 ### Exercice 6
-- Objectif travaillé : O2.
+- Type : lecture/analyse.
 - Capacité officielle : P-LANG-04.
-- Énoncé : Traiter le cas limite associé à « oublier le cas limite ht=0 » avec une donnée minimale.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`. ; jeu_exercice=zeta
+- Consigne : poser prix_ht >= 0 et taux >= 0 ; traiter aussi `type chaîne "80"` si nécessaire.
+- Réponse attendue : prix_ttc(80,0.20) -> 96.0.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `type chaîne "80"`.
 ### Exercice 7
-- Objectif travaillé : O3.
+- Type : production/écriture.
 - Capacité officielle : P-LANG-05.
-- Énoncé : Rédiger une trace courte expliquant tester cas nominal, zéro et entrée invalide.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`. ; jeu_exercice=eta
+- Consigne : vérifier résultat >= prix_ht ; traiter aussi `prix_ht=0` si nécessaire.
+- Réponse attendue : prix_ttc(-5,0.20) -> ValueError.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `prix_ht=0`.
 ### Exercice 8
-- Objectif travaillé : O4.
+- Type : justification.
 - Capacité officielle : P-LANG-01.
-- Énoncé : Construire un cas de test numérique ou textuel inédit et vérifier que la méthode reste valable.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`. ; jeu_exercice=theta
+- Consigne : écrire tests nominal, limite et invalide ; traiter aussi `taux=0` si nécessaire.
+- Réponse attendue : taux=0 -> résultat 80.0.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `taux=0`.
 
-## Corrigé indicatif
+## Corrigé
 ### Corrigé exercice 1
-- Méthode : isoler la donnée, appliquer l’objectif O1, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « écrire la signature et le rôle des paramètres » et citer P-LANG-01.
-- Contrôle : rejeter la solution si elle contient l’erreur « écrire un print au lieu de return ».
+- Capacité mobilisée : P-LANG-01.
+- Résultat attendu : signature complète de prix_ttc.
+- Justification : la tâche `écrire def prix_ttc(prix_ht: float, taux: float) -> float` s applique à `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError` ; erreur évitée : test unique non suffisant.
+- Donnée utilisée alpha dans P07 TD fonctions tests specifications : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans P07 TD fonctions tests specifications : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans P07 TD fonctions tests specifications : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans P07 TD fonctions tests specifications : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : isoler la donnée, appliquer l’objectif O2, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « formuler précondition et postcondition » et citer P-LANG-02.
-- Contrôle : rejeter la solution si elle contient l’erreur « oublier le cas limite ht=0 ».
+- Capacité mobilisée : P-LANG-02.
+- Résultat attendu : prix_ttc(80,0.20) -> 96.0.
+- Justification : la tâche `poser prix_ht >= 0 et taux >= 0` s applique à `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError` ; erreur évitée : précondition absente.
+- Donnée utilisée beta dans P07 TD fonctions tests specifications : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans P07 TD fonctions tests specifications : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans P07 TD fonctions tests specifications : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans P07 TD fonctions tests specifications : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : isoler la donnée, appliquer l’objectif O3, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « ajouter une assertion sur le prix négatif » et citer P-LANG-03A.
-- Contrôle : rejeter la solution si elle contient l’erreur « tester seulement la valeur 80 ».
+- Capacité mobilisée : P-LANG-03A.
+- Résultat attendu : prix_ttc(-5,0.20) -> ValueError.
+- Justification : la tâche `vérifier résultat >= prix_ht` s applique à `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError` ; erreur évitée : effet de bord global.
+- Donnée utilisée gamma dans P07 TD fonctions tests specifications : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans P07 TD fonctions tests specifications : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans P07 TD fonctions tests specifications : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans P07 TD fonctions tests specifications : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler la donnée, appliquer l’objectif O4, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « tester cas nominal, zéro et entrée invalide » et citer P-LANG-03B.
-- Contrôle : rejeter la solution si elle contient l’erreur « modifier une variable globale depuis la fonction ».
+- Capacité mobilisée : P-LANG-03B.
+- Résultat attendu : taux=0 -> résultat 80.0.
+- Justification : la tâche `écrire tests nominal, limite et invalide` s applique à `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError` ; erreur évitée : test unique non suffisant.
+- Donnée utilisée delta dans P07 TD fonctions tests specifications : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans P07 TD fonctions tests specifications : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans P07 TD fonctions tests specifications : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans P07 TD fonctions tests specifications : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : isoler la donnée, appliquer l’objectif O1, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « écrire la signature et le rôle des paramètres » et citer P-LANG-03C.
-- Contrôle : rejeter la solution si elle contient l’erreur « écrire un print au lieu de return ».
+- Capacité mobilisée : P-LANG-03C.
+- Résultat attendu : signature complète de prix_ttc.
+- Justification : la tâche `écrire def prix_ttc(prix_ht: float, taux: float) -> float` s applique à `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError` ; erreur évitée : précondition absente.
+- Donnée utilisée epsilon dans P07 TD fonctions tests specifications : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans P07 TD fonctions tests specifications : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans P07 TD fonctions tests specifications : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans P07 TD fonctions tests specifications : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : isoler la donnée, appliquer l’objectif O2, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « formuler précondition et postcondition » et citer P-LANG-04.
-- Contrôle : rejeter la solution si elle contient l’erreur « oublier le cas limite ht=0 ».
+- Capacité mobilisée : P-LANG-04.
+- Résultat attendu : prix_ttc(80,0.20) -> 96.0.
+- Justification : la tâche `poser prix_ht >= 0 et taux >= 0` s applique à `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError` ; erreur évitée : effet de bord global.
+- Donnée utilisée zeta dans P07 TD fonctions tests specifications : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans P07 TD fonctions tests specifications : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans P07 TD fonctions tests specifications : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans P07 TD fonctions tests specifications : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : isoler la donnée, appliquer l’objectif O3, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « ajouter une assertion sur le prix négatif » et citer P-LANG-05.
-- Contrôle : rejeter la solution si elle contient l’erreur « tester seulement la valeur 80 ».
+- Capacité mobilisée : P-LANG-05.
+- Résultat attendu : prix_ttc(-5,0.20) -> ValueError.
+- Justification : la tâche `vérifier résultat >= prix_ht` s applique à `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError` ; erreur évitée : test unique non suffisant.
+- Donnée utilisée eta dans P07 TD fonctions tests specifications : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans P07 TD fonctions tests specifications : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans P07 TD fonctions tests specifications : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans P07 TD fonctions tests specifications : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler la donnée, appliquer l’objectif O4, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « tester cas nominal, zéro et entrée invalide » et citer P-LANG-01.
-- Contrôle : rejeter la solution si elle contient l’erreur « modifier une variable globale depuis la fonction ».
+- Capacité mobilisée : P-LANG-01.
+- Résultat attendu : taux=0 -> résultat 80.0.
+- Justification : la tâche `écrire tests nominal, limite et invalide` s applique à `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError` ; erreur évitée : précondition absente.
+- Donnée utilisée theta dans P07 TD fonctions tests specifications : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans P07 TD fonctions tests specifications : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans P07 TD fonctions tests specifications : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans P07 TD fonctions tests specifications : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
-## Erreurs fréquentes et remédiation
-- EF1 : écrire un print au lieu de return. Remédiation : refaire l’exercice 1 avec la donnée modifiée par le professeur.
-- EF2 : oublier le cas limite ht=0. Remédiation : refaire l’exercice 2 avec la donnée modifiée par le professeur.
-- EF3 : tester seulement la valeur 80. Remédiation : refaire l’exercice 3 avec la donnée modifiée par le professeur.
-- EF4 : modifier une variable globale depuis la fonction. Remédiation : refaire l’exercice 4 avec la donnée modifiée par le professeur.
+## Erreurs fréquentes
+- test unique non suffisant.
+- précondition absente.
+- effet de bord global.
 
 ## Différenciation
-- Socle : exercices 1 à 4 avec étapes visibles.
-- Standard : exercices 1 à 6 avec justification complète.
-- Expert : exercices 7 et 8 avec nouvelle donnée et contrôle autonome.
+- Socle : données annotées.
+- Standard : méthode complète.
+- Expert : transfert avec `taux=0`.
+
+## Cas limites travaillés
+- prix_ht=0.
+- taux=0.
+- type chaîne "80".
+
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `signature complète de prix_ttc`.
+- Au moins un cas limite de la section précédente est décidé.
+

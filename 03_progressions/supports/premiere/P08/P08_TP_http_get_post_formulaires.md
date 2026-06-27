@@ -1,22 +1,20 @@
 ---
-title: "P08 - TP - HTTP, GET, POST et formulaires"
+title: "P08 - tp_papier - HTML, CSS, DOM, HTTP et formulaires"
 level: "premiere"
 sequence_id: "P08"
-document_type: "tp"
+document_type: "tp_papier"
 status: "needs_review"
-version: "0.2.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Interactions sur le Web"
-notion: "requêtes HTTP et formulaires"
-objectifs:
-  - "repérer méthode, URL, paramètres et corps"
-  - "justifier GET pour une recherche partageable"
-  - "justifier POST pour une donnée sensible"
-  - "identifier le risque de mot de passe dans l’URL"
+theme: "HTML, CSS, DOM, HTTP et formulaires"
+notion: "HTML, CSS, DOM, HTTP et formulaires"
 private_data: false
 official_program:
   capacities:
+    - "P-IHM-01A"
+    - "P-IHM-01B"
+    - "P-IHM-02"
     - "P-IHM-03A"
     - "P-IHM-03B"
     - "P-IHM-03C"
@@ -25,98 +23,68 @@ official_program:
     - "P-IHM-04C"
 ---
 
-# P08 - TP - HTTP, GET, POST et formulaires
+# P08 - TP - HTML, CSS, DOM, HTTP et formulaires
 
-## Objectif technique
-Un formulaire de recherche envoie un mot-clé public en GET, tandis qu’un formulaire de connexion doit envoyer les identifiants en POST.
+## Statut du TP
+TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
 
-## Consigne technique détaillée
-- repérer méthode, URL, paramètres et corps.
-- justifier GET pour une recherche partageable.
-- justifier POST pour une donnée sensible.
-- identifier le risque de mot de passe dans l’URL.
+## Donnée fournie
+`<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`
 
-## Starter code
-```python
-def verifier_http_get_post_formulaires(donnee):
-    """À compléter : renvoyer une structure vérifiable, pas un texte hardcodé."""
-    raise NotImplementedError("à compléter par l’élève")
-```
+## Travail demandé
+1. Préparer la donnée et nommer les champs utiles.
+2. Réaliser : repérer header main form label input.
+3. Réaliser : cibler #nom en CSS et DOM.
+4. Tester le cas limite `champ nom vide`.
+5. Produire le livrable : <label for=nom>Nom</label><input id=nom name=nom>.
 
-## Tests attendus
-- Test nominal : donnée de référence acceptée et résultat exact.
-- Test limite : donnée vide ou minimale traitée selon la convention.
-- Test invalide : donnée incohérente refusée avec exception ou message explicite.
+## Barème associé
+- 2 points : donnée préparée.
+- 3 points : méthode principale.
+- 3 points : résultat `<label for=nom>Nom</label><input id=nom name=nom>`.
+- 2 points : cas limite `champ nom vide`.
 
-## Exemple d’exécution
-- Entrée : `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`.
-- Sortie attendue : structure contrôlable par assertions, pas phrase libre.
+## Corrigé question par question
+### Corrigé question 1
+Résultat attendu : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`.
+### Corrigé question 2
+Résultat attendu : `<label for="nom">Nom</label><input id="nom" name="nom">` relie le libellé au champ.
+### Corrigé question 3
+Résultat attendu : `document.querySelector("#nom").value` renvoie par exemple `"Nora"` après saisie.
+### Corrigé question 4
+Résultat attendu : `champ nom vide` traité sans ambiguïté.
 
-## Livrable vérifiable
-- Un fichier `P08_solution_http_get_post_formulaires.py` avec au moins trois tests personnels.
-- Une capture texte des tests exécutés.
+## Liens
+- TD lié : `P08_TD_web_http_dom_formulaires.md`.
+- Évaluation liée : `P08_evaluation_web_http_dom_formulaires.md`.
 
-## Cas limite
-- Cas à discuter : confondre code de statut et méthode HTTP.
+## Cas limites travaillés
+- champ nom vide.
+- paramètre jour absent.
+- formulaire sans action.
 
-## Corrigé professeur séparé
-- Le corrigé professeur doit être conservé séparément et ne pas être cité comme document élève.
+## Erreurs fréquentes
+- bouton hors formulaire.
+- sélecteur trop large.
+- POST confondu avec chiffrement.
 
-## Critères de réussite
-- Le code ne retourne pas une constante unique.
-- Les tests distinguent cas nominal, cas limite et entrée invalide.
-- La justification relie le résultat à une capacité officielle.
-## Déroulé opérationnel détaillé
-1. créer un formulaire GET avec champ `q`.
-2. observer l’URL produite après soumission GET.
-3. créer un formulaire POST fictif vers `/contact`.
-4. distinguer paramètres visibles et corps de requête.
-5. encoder correctement espace et accent dans une valeur.
-6. rédiger une trace comparant GET et POST.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `<label for=nom>Nom</label><input id=nom name=nom>`.
+- Au moins un cas limite de la section précédente est décidé.
 
-## Tests vérifiables attendus
-- Test 1 : GET `/recherche?q=nsi` affiche le paramètre dans l’URL.
-- Test 2 : GET avec `q=site web` encode l’espace en `+` ou `%20`.
-- Test 3 : POST ne met pas le message complet dans l’URL.
-- Test 4 : un champ obligatoire vide bloque la soumission côté navigateur.
-- Test 5 : la méthode est lisible dans le HTML.
-- Test 6 : la trace cite au moins deux en-têtes ou champs utiles.
 
-## Cas limites à documenter
-- Cas limite : champ vide.
-- Cas limite : caractère accentué.
-- Cas limite : mot avec espace.
-- Cas limite : message long.
-- Cas limite : donnée sensible.
-- Cas limite : rafraîchissement de page.
 
-## Plan de correction professeur
-- Vérifier que le programme se lance dans un répertoire temporaire propre.
-- Lire les fonctions avant les tests pour repérer un retour constant ou hardcodé.
-- Exécuter les tests nominaux puis les tests limites.
-- Ajouter un test invalide avant toute correction manuelle.
-- Comparer la sortie obtenue avec le résultat attendu écrit dans ce TP.
-- Refuser une solution qui supprime le cas limite au lieu de le traiter.
-- Noter séparément exactitude, robustesse, lisibilité et justification.
+## Protocole de validation complémentaire
+1. Préparer un jeu nominal propre à P08 et noter la sortie attendue avant exécution.
+2. Préparer un cas limite distinct et expliquer pourquoi il doit être accepté ou refusé.
+3. Exécuter le starter : il doit échouer sur au moins un test complet, ce qui confirme que le travail élève reste à produire.
+4. Exécuter le corrigé professeur : il doit produire exactement les valeurs attendues dans les tests.
+5. Comparer la trace obtenue avec la consigne : chaque étape doit être justifiée par une donnée du sujet.
+6. Noter l'erreur fréquente observée et choisir la remédiation ciblée dans le support associé.
 
-## Grille de vérification élève
-- [ ] le fichier demandé existe avec le bon nom.
-- [ ] le starter n’a pas été remplacé par une constante.
-- [ ] chaque fonction possède une docstring ou un commentaire de contrat.
-- [ ] les tests nominaux passent.
-- [ ] les tests limites passent.
-- [ ] les entrées invalides sont refusées explicitement.
-- [ ] le livrable ne dépend pas d’un chemin absolu local.
-- [ ] la réponse cite la capacité travaillée.
-
-## Différenciation opérationnelle
-- Socle : compléter les fonctions dans l’ordre des tests fournis.
-- Standard : ajouter deux tests personnels avant de demander la validation.
-- Approfondissement : proposer une variante de donnée et expliquer pourquoi les tests restent pertinents.
-- Aide autorisée : rappel de syntaxe, sans fournir le corps complet de la fonction.
-- Aide interdite : donner directement le résultat attendu comme unique retour de fonction.
-
-## Livrable final contrôlable
-- Livrable : `formulaires.html` avec deux formulaires et un tableau comparatif GET/POST..
-- Le professeur peut vérifier le livrable sans accès au Drive distant.
-- Toute source locale éventuellement utilisée doit être tracée dans `support_source_trace.yml`.
+## Livrable vérifiable complémentaire
+- Fichier élève complété avec les fonctions demandées dans le TP.
+- Trace courte indiquant entrée, traitement, sortie et cas limite.
+- Capture textuelle des tests attendus : nominal OK, cas limite OK, entrée invalide traitée.
+- Commentaire final indiquant la capacité officielle réellement travaillée.

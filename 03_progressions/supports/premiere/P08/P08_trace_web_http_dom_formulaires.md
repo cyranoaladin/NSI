@@ -1,19 +1,14 @@
 ---
-title: "P08 - Trace écrite - HTML, CSS, DOM, HTTP GET/POST"
+title: "P08 - trace - HTML, CSS, DOM, HTTP et formulaires"
 level: "premiere"
 sequence_id: "P08"
 document_type: "trace"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "IHM sur le Web"
-notion: "HTML, CSS, DOM, HTTP GET/POST"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "HTML, CSS, DOM, HTTP et formulaires"
+notion: "HTML, CSS, DOM, HTTP et formulaires"
 private_data: false
 official_program:
   capacities:
@@ -23,27 +18,31 @@ official_program:
     - "P-IHM-03A"
     - "P-IHM-03B"
     - "P-IHM-03C"
+    - "P-IHM-04A"
+    - "P-IHM-04B"
+    - "P-IHM-04C"
 ---
 
-# P08 - Trace écrite - HTML, CSS, DOM, HTTP GET/POST
+# P08 - Trace - HTML, CSS, DOM, HTTP et formulaires
 
-## À retenir
-- Situation : Une page de réservation affiche un formulaire et met à jour une zone DOM après validation.
-- Donnée de référence : `<form method="post" action="/reservation"><input name="nom"><button>Envoyer</button></form>`.
-- Résultat de référence : le formulaire POST transporte nom=Ada ; le DOM affiche Réservation enregistrée pour Ada ; GET reste réservé à une URL consultable.
+## Trace courte
+- Donnée : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`.
+- Vocabulaire : HTML structurel, sélecteur CSS, DOM, événement submit, GET.
+- Étape 1 : repérer header main form label input.
+- Étape 2 : cibler #nom en CSS et DOM.
+- Résultat de référence : <label for=nom>Nom</label><input id=nom name=nom>.
 
-## Méthode courte
-- séparer structure HTML, style CSS et comportement DOM.
-- identifier méthode GET pour lecture et POST pour envoi.
-- modifier textContent sans injecter de HTML non contrôlé.
+## Cas limites à mémoriser
+- champ nom vide.
+- paramètre jour absent.
+- formulaire sans action.
 
-## Exemple minimal corrigé
-Entrée : `<form method="post" action="/reservation"><input name="nom"><button>Envoyer</button></form>`.
-Sortie attendue : le formulaire POST transporte nom=Ada ; le DOM affiche Réservation enregistrée pour Ada ; GET reste réservé à une URL consultable.
+## Erreurs fréquentes
+- bouton hors formulaire.
+- sélecteur trop large.
+- POST confondu avec chiffrement.
 
-## Point de vigilance
-Le résultat doit être calculable à partir de la donnée, sans phrase de validation vague.
-
-## Lien séance
-- Séance P08-S1 : découverte et exemple.
-- Séance P08-S2 : exercices et correction.
+## Critères de réussite observables
+- Capacité : P-IHM-01A.
+- Résultat final : document.querySelector("#nom").value lit la saisie.
+- Cas limite : champ nom vide.

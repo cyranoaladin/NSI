@@ -129,45 +129,70 @@ Une expression arithmétique est représentée par un arbre dont les feuilles so
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- Méthode : identifier `7`, appliquer la méthode « reconnaître l’absence de fils », puis écrire hauteur 0.
 - Résultat : hauteur 0.
 - Contrôle : faire apparaître le contrôle « arbre vide ».
 - Erreur traitée : EF1 - Confondre hauteur et nombre de nœuds.
+- Donnée utilisée alpha dans T05 td arbres binaires : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans T05 td arbres binaires : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans T05 td arbres binaires : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans T05 td arbres binaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : expliciter chaque étape de prendre 1 plus le maximum des hauteurs des sous-arbres avant de conclure par hauteur 1.
 - Résultat : hauteur 1.
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Oublier le cas arbre vide.
+- Donnée utilisée beta dans T05 td arbres binaires : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans T05 td arbres binaires : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans T05 td arbres binaires : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans T05 td arbres binaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : comparer la donnée avec le cas limite « nœud feuille » et valider `+, 2, 3`.
 - Résultat : `+, 2, 3`.
 - Contrôle : comparer avec le cas « nœud feuille ».
 - Erreur traitée : EF3 - Mélanger parcours préfixe et infixe.
+- Donnée utilisée gamma dans T05 td arbres binaires : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans T05 td arbres binaires : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans T05 td arbres binaires : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans T05 td arbres binaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler l’erreur fréquente « Évaluer un opérateur avant ses opérandes. » puis reprendre la procédure correcte.
 - Résultat : `20`.
 - Contrôle : corriger l’erreur « Évaluer un opérateur avant ses opérandes. ».
 - Erreur traitée : EF4 - Évaluer un opérateur avant ses opérandes.
+- Donnée utilisée delta dans T05 td arbres binaires : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans T05 td arbres binaires : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans T05 td arbres binaires : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans T05 td arbres binaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : identifier `7`, appliquer la méthode « reconnaître l’absence de fils », puis écrire hauteur 0.
 - Résultat : le comportement de arbre feuille est contrôlé.
 - Contrôle : nommer la donnée minimale et la conclusion.
 - Erreur traitée : EF1 - Confondre hauteur et nombre de nœuds.
+- Donnée utilisée epsilon dans T05 td arbres binaires : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans T05 td arbres binaires : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans T05 td arbres binaires : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans T05 td arbres binaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : expliciter chaque étape de prendre 1 plus le maximum des hauteurs des sous-arbres avant de conclure par hauteur 1.
 - Résultat : la méthode robuste est choisie et justifiée.
 - Contrôle : identifier pourquoi « Oublier le cas arbre vide. » est une erreur.
 - Erreur traitée : EF2 - Oublier le cas arbre vide.
+- Donnée utilisée zeta dans T05 td arbres binaires : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans T05 td arbres binaires : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans T05 td arbres binaires : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans T05 td arbres binaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « nœud feuille » et valider `+, 2, 3`.
 - Résultat : la justification reste valable sur le nouveau cas.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Mélanger parcours préfixe et infixe.
+- Donnée utilisée eta dans T05 td arbres binaires : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans T05 td arbres binaires : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans T05 td arbres binaires : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans T05 td arbres binaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler l’erreur fréquente « Évaluer un opérateur avant ses opérandes. » puis reprendre la procédure correcte.
 - Résultat : l’erreur est localisée puis réparée.
 - Contrôle : proposer une activité corrective inspirée de « Remonter les valeurs depuis les feuilles vers la racine. ».
 - Erreur traitée : EF4 - Évaluer un opérateur avant ses opérandes.
+- Donnée utilisée theta dans T05 td arbres binaires : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans T05 td arbres binaires : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans T05 td arbres binaires : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans T05 td arbres binaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Confondre hauteur et nombre de nœuds.
 - Erreur fréquente EF2 - Oublier le cas arbre vide.

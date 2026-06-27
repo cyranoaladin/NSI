@@ -1,21 +1,58 @@
 sequence: T08
 level: terminale
-theme: Graphes et parcours
+theme: BFS, DFS, cycles et chemins
 notion: BFS, DFS, cycles et chemins
 status: needs_review
-capacities:
-  - T-ALGO-02A
-  - T-ALGO-02B
-  - T-ALGO-02C
-  - T-ALGO-02D
+notions_exigibles:
+- BFS avec file
+- DFS avec pile
+- marquage
+- prédécesseurs
+- chemin reconstruit
+- cycle
+- graphe non connexe
+- complexité
+capacites_officielles:
+- T-ALGO-02A
+- T-ALGO-02B
+- T-ALGO-02C
+- T-ALGO-02D
+exemples_obligatoires:
+- BFS -> A,B,C,D,E
+- prédécesseurs E<-C<-A donc chemin A-C-E
+- F isolé -> aucun chemin
+- complexité O(V+E)
+cas_limites:
+- sommet isolé F
+- destination absente
+- cycle D-C-D
+erreurs_frequentes:
+- marquage trop tardif
+- BFS confondu avec DFS
+- prédécesseurs oubliés
+types_exercices_attendus:
+- lecture de donnée
+- production de méthode
+- cas limite
+- justification
+- transfert
+tp_attendu: TP papier justifié avec trace, barème et corrigé question par question
+interdits_pedagogiques:
+- réponse sans donnée exploitable
+- résultat non vérifiable
+- capacité citée sans exercice associé
+criteres_validation_humaine:
+- relecture pédagogique indépendante
+- vérification scientifique
+- alignement BO 2019
+- décision de publication séparée
 must_include:
-  - BFS utilise une file et découvre par distance croissante
-  - DFS utilise une pile ou récursion et explore en profondeur
-  - marquer visité pour éviter le cycle A-B-D-C-A
-  - données de référence: file BFS initiale [A] ; pile DFS initiale [A] ; voisins triés alphabétiquement
-  - résultat attendu: BFS découvre A, B, C, D, E et donne distance 3 ; DFS peut suivre A, B, D, E selon ordre choisi
+- BFS avec file
+- DFS avec pile
+- marquage
+- prédécesseurs
+- BFS -> A,B,C,D,E
+- sommet isolé F
 must_not:
-  - réponse sans donnée exploitable
-  - résultat non vérifiable
-  - capacité citée sans exercice associé
-human_validation_required: true
+- réponse sans donnée exploitable
+- résultat non vérifiable

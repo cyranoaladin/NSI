@@ -1,19 +1,14 @@
 ---
-title: "P07 - Version aménagée - fonctions, contrats, assertions et tests"
+title: "P07 - version_amenagee - fonctions, tests et spécifications"
 level: "premiere"
 sequence_id: "P07"
 document_type: "version_amenagee"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Langage Python"
-notion: "fonctions, contrats, assertions et tests"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "fonctions, tests et spécifications"
+notion: "fonctions, tests et spécifications"
 private_data: false
 official_program:
   capacities:
@@ -26,21 +21,20 @@ official_program:
     - "P-LANG-05"
 ---
 
-# P07 - Version aménagée - fonctions, contrats, assertions et tests
+# P07 - Version aménagée - fonctions, tests et spécifications
 
-## Consigne aménagée
-Tu travailles sur la donnée suivante : `prix_ttc(80, 0.20) -> 96.0 ; prix_ttc(0, 0.20) -> 0.0 ; prix_ttc(-5, 0.20) lève AssertionError`.
+## Aides intégrées
+- Donnée fournie : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`.
+- Mots utiles : signature, précondition, postcondition, assertion, test unitaire.
+- Méthode guidée : écrire def prix_ttc(prix_ht: float, taux: float) -> float puis poser prix_ht >= 0 et taux >= 0.
 
-## Étapes guidées
-1. Entoure la valeur ou la clé utile.
-2. Applique seulement cette méthode : écrire une signature explicite avec return.
-3. Compare ton résultat avec : fonction prix_ttc(ht, taux) retourne round(ht * (1 + taux), 2), refuse ht négatif et garde le cas ht=0.
-4. Explique un cas limite en une phrase.
+## Exercice guidé
+1. Recopier la donnée utile.
+2. Choisir la capacité : P-LANG-01 ou P-LANG-02.
+3. Compléter le résultat : signature complète de prix_ttc.
+4. Cocher le cas limite : prix_ht=0.
 
-## Aides graduées
-- Aide 1 : relire la donnée et nommer les objets.
-- Aide 2 : écrire la première étape de calcul ou de parcours.
-- Aide 3 : vérifier le résultat avec la trace fournie par le cours.
-
-## Réponse attendue
-La réponse minimale contient la donnée utilisée, l’étape appliquée et le résultat exact.
+## Réponses rapides
+- Réponse 1 : signature complète de prix_ttc.
+- Réponse 2 : prix_ttc(80,0.20) -> 96.0.
+- Réponse 3 : prix_ttc(-5,0.20) -> ValueError.

@@ -1,19 +1,14 @@
 ---
-title: "P09 - Barème - architecture, système d’exploitation, droits"
+title: "P09 - bareme - architecture, système et droits Unix"
 level: "premiere"
 sequence_id: "P09"
 document_type: "bareme"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Architecture matérielle et systèmes"
-notion: "architecture, système d’exploitation, droits"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "architecture, système et droits Unix"
+notion: "architecture, système et droits Unix"
 private_data: false
 official_program:
   capacities:
@@ -21,16 +16,26 @@ official_program:
     - "P-ARCH-01B"
     - "P-ARCH-03A"
     - "P-ARCH-03B"
+    - "P-ARCH-03C"
 ---
 
-# P09 - Barème - architecture, système d’exploitation, droits
+# P09 - Barème - architecture, système et droits Unix
 
-## Barème question par question
-- Question 1 : 2 points pour la donnée exacte `droits initiaux -rw-r--r--; commande visée chmod u+x projet.py; résultat -rwxr--r--`.
-- Question 2 : 3 points pour la méthode `distinguer processeur, mémoire, stockage et périphériques`.
-- Question 3 : 3 points pour le résultat `seul le propriétaire gagne x ; le groupe et les autres gardent lecture seule ; l’OS contrôle l’accès au fichier`.
-- Question 4 : 2 points pour un cas limite cohérent.
+## TD
+- 8 exercices : 1 point donnée, 1 point méthode, 1 point résultat, 1 point cas limite.
+
+## TP
+- 2 points donnée `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`.
+- 3 points tâche `distinguer mémoire vive et stockage`.
+- 3 points résultat `-rw-r----- -> propriétaire rw, groupe r, autres aucun droit`.
+- 2 points cas limite `fichier absent`.
+
+## Évaluation question par question
+- Question 1 : 4 points sur P-ARCH-01A avec résultat `-rw-r----- -> propriétaire rw, groupe r, autres aucun droit`.
+- Question 2 : 4 points sur P-ARCH-01B avec résultat `chmod 640 mesures.csv donne rw-r-----`.
+- Question 3 : 4 points sur P-ARCH-03A avec résultat `PID 2314 python collecte.py est un processus`.
+- Question 4 : 4 points sur P-ARCH-03B avec résultat `sans x sur dossier, lecture du fichier impossible`.
 
 ## Critères observables
-- Les capacités évaluées sont : P-ARCH-01A, P-ARCH-01B, P-ARCH-03A, P-ARCH-03B.
-- Le résultat doit être écrit sous une forme vérifiable, pas seulement commenté.
+- Trace, table, valeur ou pseudo-code présent.
+- Cas limite et erreur fréquente explicités.

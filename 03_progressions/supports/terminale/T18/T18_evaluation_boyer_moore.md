@@ -1,19 +1,14 @@
 ---
-title: "T18 - Évaluation - Boyer-Moore"
+title: "T18 - evaluation - Boyer-Moore"
 level: "terminale"
 sequence_id: "T18"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.3.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Algorithmique"
+theme: "Boyer-Moore"
 notion: "Boyer-Moore"
-objectifs:
-  - "évaluer la compréhension de la fiche"
-  - "vérifier la capacité à produire une réponse justifiée"
-  - "identifier les erreurs fréquentes"
-  - "préparer une remédiation ciblée"
 private_data: false
 official_program:
   capacities:
@@ -22,114 +17,72 @@ official_program:
 
 # T18 - Évaluation - Boyer-Moore
 
-## Durée et matériel autorisé
-- Durée : 25 minutes.
-- Matériel autorisé : fiche personnelle, sans accès réseau ni corrigé.
-- Statut : évaluation `needs_review`, non validée et non publiable.
-
-## Capacités évaluées
-- T-ALGO-05
-
-## Fiche liée
-- Fiche liée : `03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md`.
-- Séance liée : `T18-S1`.
-- TD lié : `T18_TD_boyer_moore.md`.
-
-## Consignes
-Répondre directement sur copie. Chaque réponse doit montrer la donnée utilisée, la méthode et un contrôle rapide.
+## Modalités
+- Durée : 30 minutes.
+- Matériel autorisé : fiche de cours.
+- Capacités évaluées : T-ALGO-05.
 
 ## Questions
-### Question 1 - Construire table mauvais caractère
-- Capacité : T-ALGO-05.
-- Données : motif ABA.
-- Consigne : Donner derniers indices.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
-### Question 2 - Comparer depuis la droite
-- Capacité : T-ALGO-05.
-- Données : texte CABAABABA, motif ABA aligné au début.
-- Consigne : Donner première comparaison.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
-### Question 3 - Tracer la première occurrence
-- Capacité : T-ALGO-05.
-- Données : texte CABAABABA, motif ABA.
-- Consigne : Donner indice trouvé.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
-### Question 4 - Écrire pseudo-code simplifié
-- Capacité : T-ALGO-05.
-- Données : motif m, texte t.
-- Consigne : Produire boucle.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 1
+- Capacité officielle : T-ALGO-05.
+- Énoncé : à partir de `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`, prétraiter dernière position de chaque caractère.
+- Réponse attendue : table : A->2, N->1.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `motif absent`.
+### Question 2
+- Capacité officielle : T-ALGO-05.
+- Énoncé : à partir de `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`, comparer depuis la droite.
+- Réponse attendue : alignement 0 : N comparé à A -> décalage 1.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `motif plus long que texte`.
+### Question 3
+- Capacité officielle : T-ALGO-05.
+- Énoncé : à partir de `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`, calculer max(1, j - dernière_position).
+- Réponse attendue : alignement 1 : ANA trouvé.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `caractère absent du motif`.
+### Question 4
+- Capacité officielle : T-ALGO-05.
+- Énoncé : à partir de `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`, comparer avec recherche naïve.
+- Réponse attendue : motif XYZ absent.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `motif absent`.
 
-## Barème
-- Question 1: 1 point identification de la donnée, 1 point méthode, 1 point résultat exact, 1 point contrôle.
-- Question 2: 1 point vocabulaire précis, 1 point méthode, 1 point résultat, 1 point justification.
-- Question 3: 1 point modélisation, 1 point production correcte, 1 point test du résultat, 1 point lisibilité.
-- Question 4: 1 point cas traité, 1 point résultat, 1 point justification, 1 point erreur fréquente évitée.
-- Question 5: 1 point table mauvais caractère, 1 point décalage `1`, 1 point trace droite à gauche, 1 point indice trouvé `1`.
-- Total : 16 points, conversion sur 20 après relecture pédagogique.
-
-## Corrigé professeur
+## Corrigé question par question
 ### Corrigé question 1
-- Capacité évaluée : T-ALGO-05.
-- Donnée utilisée : motif ABA.
-- Réponse attendue : A apparaît aux indices 0 et 2, donc dernier indice A=2 ; B=1 ; autre caractère -> -1.
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
+- Résultat attendu : table : A->2, N->1.
+- Critère spécifique : prétraiter dernière position de chaque caractère et éviter `comparaison gauche à droite`.
 ### Corrigé question 2
-- Capacité évaluée : T-ALGO-05.
-- Donnée utilisée : texte CABAABABA, motif ABA aligné au début.
-- Réponse attendue : On compare motif[2]=A avec texte[2]=B : mismatch B. Dernier B dans motif à 1, décalage max(1,2-1)=1.
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
+- Résultat attendu : alignement 0 : N comparé à A -> décalage 1.
+- Critère spécifique : comparer depuis la droite et éviter `décalage nul`.
 ### Corrigé question 3
-- Capacité évaluée : T-ALGO-05.
-- Donnée utilisée : texte CABAABABA, motif ABA.
-- Réponse attendue : Après décalage 1, alignement texte[1:4]=ABA. Comparaisons droite à gauche A=A, B=B, A=A. Occurrence trouvée à l’indice 1.
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
+- Résultat attendu : alignement 1 : ANA trouvé.
+- Critère spécifique : calculer max(1, j - dernière_position) et éviter `caractère absent oublié`.
 ### Corrigé question 4
-- Capacité évaluée : T-ALGO-05.
-- Donnée utilisée : motif m, texte t.
-- Réponse attendue : i=0 ; tant que i<=n-p: comparer j=p-1 vers 0 ; si j<0 retourner i ; sinon i += max(1, j-last[t[i+j]]).
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
-
-## Critères de réussite
-- Les capacités officielles sont reliées à une action observable.
-- Le résultat attendu peut être comparé à une valeur, une table, une trace ou un pseudo-code.
-- Le cas limite ou le contrôle demandé apparaît explicitement.
-- Le vocabulaire disciplinaire est utilisé dans le contexte de la donnée.
-
-## Version aménagée et indications d’aménagement
-- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un tableau méthode / résultat / contrôle.
-- Aménagement temps : ajouter 10 minutes si l’élève doit recopier les données.
-- Aide autorisée : liste des verbes d’action, sans résultat numérique ni requête complète.
+- Résultat attendu : motif XYZ absent.
+- Critère spécifique : comparer avec recherche naïve et éviter `comparaison gauche à droite`.
 
 ## Erreurs fréquentes et remédiation
-- EF1 : réponse sans donnée citée ; remédiation : refaire la question 1 avec les valeurs encadrées.
-- EF2 : méthode correcte mais résultat non contrôlé ; remédiation : ajouter une ligne de vérification.
-- EF3 : confusion entre vocabulaire et preuve ; remédiation : demander une phrase « parce que ».
-- EF4 : oubli du cas limite ; remédiation : reprendre le TD associé, exercice 5.
+- comparaison gauche à droite.
+- décalage nul.
+- caractère absent oublié.
 
-## Source et traçabilité
-- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
-- Aucun fichier Drive n’a été repris directement dans cette évaluation.
-- Source de création : programme officiel et progression locale, avec statut `needs_review`.
+## Cas limites travaillés
+- motif absent.
+- motif plus long que texte.
+- caractère absent du motif.
 
-## Question complémentaire - trace Boyer-Moore
-### Question 5
-- Données : texte `CABAABABA`, motif `ABA`, table mauvais caractère `A -> 2`, `B -> 1`.
-- Travail : donner le premier décalage, puis l’indice trouvé.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `table : A->2, N->1`.
+- Au moins un cas limite de la section précédente est décidé.
 
-### Corrigé question 5
-- Alignement `i=0` : comparaison depuis la droite, désaccord `A` attendu contre `B` lu dans le texte.
-- Décalage : `j=2`, dernier `B` dans le motif à `1`, donc `max(1, 2-1) = 1`.
-- Alignement `i=1` : fenêtre `ABA`, toutes les comparaisons réussissent.
-- Résultat attendu : motif trouvé à l’indice `1`.
-- Contrôle : la trace contient un alignement échoué puis un alignement réussi.
 
-## Barème complémentaire - question 5
-- 1 point : table du mauvais caractère utilisée correctement.
-- 1 point : décalage `1` justifié par `2-1`.
-- 1 point : comparaison droite à gauche explicitée.
-- 1 point : indice final `1` donné.
+
+## Barème question par question
+- question 1: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 2: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 3: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 4: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+
+## Fiche liée
+- Fiche liée : fiche de cours T18 sur `boyer_moore`.
+
+## Aménagement
+- Version aménagée : `T18_version_amenagee_boyer_moore.md` ; consignes découpées et barème conservé.

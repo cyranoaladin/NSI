@@ -38,6 +38,11 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
 - 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
 - 03_progressions/progression_premiere.md: nom propre suspect -> Ressources Drive
+- 03_progressions/supports/contracts/T13_contract.yml: nom propre suspect -> Autorité-Test
+- 03_progressions/supports/contracts/T19_contract.yml: nom propre suspect -> Grand Oral
+- 03_progressions/supports/contracts/T19_contract.yml: nom propre suspect -> Grand Oral
+- 03_progressions/supports/contracts/T19_contract.yml: nom propre suspect -> Grand Oral
+- 03_progressions/supports/contracts/T19_contract.yml: nom propre suspect -> Grand Oral
 - 03_progressions/supports/premiere/P05/P05_bareme_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P05/P05_corrige_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P05/P05_cours_tables_csv.md: nom propre suspect -> Filtrage Europe
@@ -47,11 +52,6 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md: nom propre suspect -> Filtrage Europe
-- 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md: nom propre suspect -> Trame Ethernet
-- 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md: nom propre suspect -> Trame Ethernet
-- 03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md: nom propre suspect -> Time Exceeded
-- 03_progressions/supports/premiere/P10/P10_evaluation_reseaux_protocoles_paquets.md: nom propre suspect -> Trame Ethernet
-- 03_progressions/supports/premiere/P10/P10_evaluation_reseaux_protocoles_paquets.md: nom propre suspect -> Trame Ethernet
 - AGENTS.md: nom propre suspect -> Agent Inventaire
 - AGENTS.md: nom propre suspect -> Agent Programme
 - AGENTS.md: nom propre suspect -> Agent Auteur
@@ -277,8 +277,9 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
 - 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
 - 03_progressions/seances_terminale.md: nom propre suspect -> Grand Oral
-- 03_progressions/supports/contracts/P07_contract.yml: nom propre suspect -> Langage Python
 - 03_progressions/supports/contracts/T00_contract.yml: nom propre suspect -> Reprise Python
+- 03_progressions/supports/contracts/T18_contract.yml: nom propre suspect -> Boyer-Moore
+- 03_progressions/supports/contracts/T18_contract.yml: nom propre suspect -> Boyer-Moore
 - 03_progressions/supports/premiere/P00/P00_bareme_diagnostic_python.md: nom propre suspect -> Diagnostic Python
 - 03_progressions/supports/premiere/P00/P00_bareme_diagnostic_python.md: nom propre suspect -> Diagnostic Python
 - 03_progressions/supports/premiere/P00/P00_corrige_diagnostic_python.md: nom propre suspect -> Diagnostic Python
@@ -329,15 +330,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P03/code/P03_corrige_professeur_texte_reels.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P03/code/P03_starter_texte_reels.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P03/code/P03_tests_attendus_texte_reels.py: nom propre suspect -> Asset Python
-- 03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
-- 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
-- 03_progressions/supports/premiere/P07/P07_bareme_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
-- 03_progressions/supports/premiere/P07/P07_corrige_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
-- 03_progressions/supports/premiere/P07/P07_cours_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
-- 03_progressions/supports/premiere/P07/P07_evaluation_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
-- 03_progressions/supports/premiere/P07/P07_remediation_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
-- 03_progressions/supports/premiere/P07/P07_trace_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
-- 03_progressions/supports/premiere/P07/P07_version_amenagee_fonctions_tests_specifications.md: nom propre suspect -> Langage Python
+- 03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md: nom propre suspect -> Fonctions Python
 - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md: nom propre suspect -> Reprise Python
@@ -354,4 +347,11 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 138 alertes supplémentaires non affichées
+- 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md: nom propre suspect -> Reprise Python
+- 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md: nom propre suspect -> Reprise Python
+- 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md: nom propre suspect -> Reprise Python
+- 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md: nom propre suspect -> Reprise Python
+- 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
+- 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
+- 03_progressions/supports/terminale/T00/code/T00_corrige_professeur_diagnostic_tests.py: nom propre suspect -> Asset Python
+- ... 223 alertes supplémentaires non affichées

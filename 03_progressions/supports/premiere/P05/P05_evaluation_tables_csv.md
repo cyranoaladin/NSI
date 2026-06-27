@@ -62,19 +62,19 @@ Allemagne,Berlin,Europe,82801531`.
 - Critère de réussite : en-tête identifié, `csv.DictReader` utilisé, `POPULATION` convertie, `ValueError` gérée, résultat exact produit et contrôle « fichier pays_monde.csv vide ».
 ### Question 2
 - Objectif évalué : O2.
-- Capacité officielle : P-TABLE-01.
+- Capacité officielle : P-TABLE-02.
 - Énoncé : expliquer filtrage à partir de un extrait contenant Allemagne, Albanie et Brésil.
 - Sortie Q2 : la liste des pays européens valides est `["Allemagne", "Albanie"]`.
 - Critère de réussite : en-tête identifié, `csv.DictReader` utilisé, `POPULATION` convertie, `ValueError` gérée, résultat exact produit et contrôle « aucun pays du continent demandé ».
 ### Question 3
 - Objectif évalué : O3.
-- Capacité officielle : P-TABLE-01.
+- Capacité officielle : P-TABLE-02.
 - Énoncé : comparer traitement numérique des populations avec `82801531`, `3063320`, valeur `invalide`.
 - Rejet Q3 : `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]`.
 - Critère de réussite : en-tête identifié, `csv.DictReader` utilisé, `POPULATION` convertie, `ValueError` gérée, résultat exact produit et contrôle « sélection vide avant tri numérique ».
 ### Question 4
 - Objectif évalué : O4.
-- Capacité officielle : P-TABLE-01.
+- Capacité officielle : P-TABLE-02.
 - Énoncé : corriger tri par continent puis population pour lignes regroupées par CONTINENT.
 - Réponse attendue : dans le groupe Europe : Allemagne `(82801531)` avant Albanie `(3063320)`, puis les autres continents selon `CONTINENT`.
 - Critère de réussite : en-tête identifié, `csv.DictReader` utilisé, `POPULATION` convertie, `ValueError` gérée, résultat exact produit et contrôle « continent absent ».

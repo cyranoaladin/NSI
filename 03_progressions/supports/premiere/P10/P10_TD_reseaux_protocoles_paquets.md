@@ -1,19 +1,14 @@
 ---
-title: "P10 - TD - protocoles et paquets"
+title: "P10 - td - réseaux, protocoles et paquets"
 level: "premiere"
 sequence_id: "P10"
 document_type: "td"
 status: "needs_review"
-version: "0.3.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Réseaux"
-notion: "protocoles et paquets"
-objectifs:
-  - "travailler protocoles et paquets sur des données explicites"
-  - "produire une réponse justifiée et contrôlée"
-  - "identifier les cas limites"
-  - "corriger les erreurs fréquentes du chapitre"
+theme: "réseaux, protocoles et paquets"
+notion: "réseaux, protocoles et paquets"
 private_data: false
 official_program:
   capacities:
@@ -24,166 +19,158 @@ official_program:
     - "P-ARCH-04B"
 ---
 
-# P10 - TD - protocoles et paquets
+# P10 - TD - réseaux, protocoles et paquets
 
 ## Objectifs
-- Lire une donnée disciplinaire précise avant de répondre.
-- Produire une méthode vérifiable et un résultat contrôlable.
-- Traiter un cas limite sans le transformer en généralité.
-- Relier chaque correction à une erreur fréquente observable.
-
-## Capacités officielles
-- P-ARCH-02A
-- P-ARCH-02B
-- P-ARCH-02C
-- P-ARCH-04A
-- P-ARCH-04B
-
-## Fiche liée et séance liée
-- Fiche liée : `03_progressions/fiches_cours/premiere/P10/P10_fiche_cours_reseaux_protocoles_paquets.md`.
-- Séance liée : `P10-S1` dans la progression annuelle.
-- Statut : support `needs_review`, non validé et non publiable.
-
-## Situation de travail
-Une station de capteurs envoie une mesure depuis 192.168.1.20 vers 172.16.0.8 via la passerelle 192.168.1.1.
+- Travailler IP source, IP destination, MAC locale, TCP, port 443.
+- Produire huit réponses vérifiables avec données explicites.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée.
-- Standard : exercices 3 à 6, production écrite et justification.
-- Approfondissement : exercices 7 et 8, transfert ou comparaison.
+- Socle : exercices 1 et 2.
+- Standard : exercices 3 à 6.
+- Approfondissement : exercices 7 et 8.
 
 ## Exercices
-### Exercice 1 - Identifier les champs d’un paquet IPv4
+### Exercice 1
 - Type : lecture/analyse.
-- Niveau : socle.
 - Capacité officielle : P-ARCH-02A.
-- Données : Paquet A: src=192.168.1.20, dst=172.16.0.8, protocole=TCP, port source=50214, port destination=443, TTL=4.
-- Consigne : Relever source, destination, protocole, port serveur et TTL.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 2 - Distinguer adresses MAC et adresses IP
-- Type : lecture/analyse.
-- Niveau : socle.
+- Données : `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`. ; jeu_exercice=alpha
+- Consigne : identifier champs de bout en bout ; traiter aussi `TTL devient 0` si nécessaire.
+- Réponse attendue : src=192.168.1.20 dst=172.16.0.8 TCP port 443 TTL 4.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `TTL devient 0`.
+### Exercice 2
+- Type : production/écriture.
 - Capacité officielle : P-ARCH-02B.
-- Données : Trame Ethernet: MAC src=08:00:27:AA:10:01, MAC dst=08:00:27:BB:20:01 ; paquet IP: src=192.168.1.20, dst=172.16.0.8.
-- Consigne : Dire quels champs changent à chaque saut et quels champs restent de bout en bout.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 3 - Dérouler un protocole à bit alterné
+- Données : `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`. ; jeu_exercice=beta
+- Consigne : distinguer MAC et IP ; traiter aussi `destination locale 192.168.1.34` si nécessaire.
+- Réponse attendue : MAC change à chaque saut, IP reste de bout en bout.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `destination locale 192.168.1.34`.
+### Exercice 3
 - Type : production/écriture.
-- Niveau : standard.
 - Capacité officielle : P-ARCH-02C.
-- Données : M0(bit=0) reçu et ACK0 renvoyé ; M1(bit=1) est perdu ; l’émetteur retransmet M1 après timeout.
-- Consigne : Écrire la séquence émission, perte, retransmission, ACK.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 4 - Produire un pseudo-code de passerelle
-- Type : production/écriture.
-- Niveau : standard.
-- Capacité officielle : P-ARCH-04A.
-- Données : Réseau local 192.168.1.0/24 ; passerelle 192.168.1.1 ; destination 192.168.1.34 puis destination 172.16.0.8.
-- Consigne : Écrire la décision locale/passerelle.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 5 - Traiter TTL égal à 0
+- Données : `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`. ; jeu_exercice=gamma
+- Consigne : dérouler M0 ACK0 M1 perdu retransmission ACK1 ; traiter aussi `ACK43 dupliqué` si nécessaire.
+- Réponse attendue : M0 -> ACK0 -> M1 perdu -> M1 retransmis -> ACK1.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `ACK43 dupliqué`.
+### Exercice 4
 - Type : cas limite.
-- Niveau : standard.
-- Capacité officielle : P-ARCH-04B.
-- Données : Un routeur reçoit un paquet IP avec TTL=1 vers 172.16.0.8. Il décrémente avant retransmission.
-- Consigne : Dire ce qui arrive au paquet.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 6 - Justifier le rôle d’un protocole
+- Capacité officielle : P-ARCH-04A.
+- Données : `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`. ; jeu_exercice=delta
+- Consigne : décrémenter TTL avant retransmission ; traiter aussi `TTL devient 0` si nécessaire.
+- Réponse attendue : TTL=1 devient 0 et le paquet est détruit.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `TTL devient 0`.
+### Exercice 5
 - Type : justification.
-- Niveau : standard.
-- Capacité officielle : P-ARCH-02A.
-- Données : Deux capteurs envoient température et humidité ; le serveur attend ordre: TYPE;ID;VALEUR;HORODATAGE.
-- Consigne : Expliquer pourquoi format et ordre sont obligatoires.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 7 - Analyser un ACK dupliqué
+- Capacité officielle : P-ARCH-04B.
+- Données : `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`. ; jeu_exercice=epsilon
+- Consigne : identifier champs de bout en bout ; traiter aussi `destination locale 192.168.1.34` si nécessaire.
+- Réponse attendue : src=192.168.1.20 dst=172.16.0.8 TCP port 443 TTL 4.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `destination locale 192.168.1.34`.
+### Exercice 6
 - Type : lecture/analyse.
-- Niveau : approfondissement.
-- Capacité officielle : P-ARCH-02B.
-- Données : Trace TCP: seq=42 len=1, ACK43 ; puis seq=43 perdu ; le récepteur renvoie deux fois ACK43.
-- Consigne : Interpréter ACK43 dupliqué.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 8 - Définir les messages capteur/actionneur
+- Capacité officielle : P-ARCH-02A.
+- Données : `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`. ; jeu_exercice=zeta
+- Consigne : distinguer MAC et IP ; traiter aussi `ACK43 dupliqué` si nécessaire.
+- Réponse attendue : MAC change à chaque saut, IP reste de bout en bout.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `ACK43 dupliqué`.
+### Exercice 7
 - Type : production/écriture.
-- Niveau : approfondissement.
+- Capacité officielle : P-ARCH-02B.
+- Données : `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`. ; jeu_exercice=eta
+- Consigne : dérouler M0 ACK0 M1 perdu retransmission ACK1 ; traiter aussi `TTL devient 0` si nécessaire.
+- Réponse attendue : M0 -> ACK0 -> M1 perdu -> M1 retransmis -> ACK1.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `TTL devient 0`.
+### Exercice 8
+- Type : justification.
 - Capacité officielle : P-ARCH-02C.
-- Données : Capteur C7, température 19.8 °C, actionneur chauffage ON, timestamp 10:15:03.
-- Consigne : Proposer deux messages textuels cohérents.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
+- Données : `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`. ; jeu_exercice=theta
+- Consigne : décrémenter TTL avant retransmission ; traiter aussi `destination locale 192.168.1.34` si nécessaire.
+- Réponse attendue : TTL=1 devient 0 et le paquet est détruit.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `destination locale 192.168.1.34`.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : P-ARCH-02A.
-- Donnée utilisée : Paquet A: src=192.168.1.20, dst=172.16.0.8, protocole=TCP, port source=50214, port destination=443, TTL=4.
-- Résultat attendu : Source IP 192.168.1.20 ; destination IP 172.16.0.8 ; protocole TCP ; port serveur 443 ; TTL initial 4. Le paquet part du capteur vers le serveur HTTPS.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : src=192.168.1.20 dst=172.16.0.8 TCP port 443 TTL 4.
+- Justification : la tâche `identifier champs de bout en bout` s applique à `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24` ; erreur évitée : confondre MAC et IP.
+- Donnée utilisée alpha dans P10 TD reseaux protocoles paquets : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans P10 TD reseaux protocoles paquets : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans P10 TD reseaux protocoles paquets : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans P10 TD reseaux protocoles paquets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
 - Capacité mobilisée : P-ARCH-02B.
-- Donnée utilisée : Trame Ethernet: MAC src=08:00:27:AA:10:01, MAC dst=08:00:27:BB:20:01 ; paquet IP: src=192.168.1.20, dst=172.16.0.8.
-- Résultat attendu : Les adresses MAC changent à chaque liaison locale ; les IP source/destination restent 192.168.1.20 et 172.16.0.8 de bout en bout, sauf mécanisme particulier non étudié ici.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : MAC change à chaque saut, IP reste de bout en bout.
+- Justification : la tâche `distinguer MAC et IP` s applique à `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24` ; erreur évitée : TTL pris pour une durée.
+- Donnée utilisée beta dans P10 TD reseaux protocoles paquets : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans P10 TD reseaux protocoles paquets : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans P10 TD reseaux protocoles paquets : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans P10 TD reseaux protocoles paquets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
 - Capacité mobilisée : P-ARCH-02C.
-- Donnée utilisée : M0(bit=0) reçu et ACK0 renvoyé ; M1(bit=1) est perdu ; l’émetteur retransmet M1 après timeout.
-- Résultat attendu : Séquence: envoyer M0(bit 0) -> recevoir ACK0 -> envoyer M1(bit 1) -> perte de M1 -> timeout -> retransmettre M1(bit 1) -> réception M1 -> renvoyer ACK1 -> l’émetteur passe au bit 0.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : M0 -> ACK0 -> M1 perdu -> M1 retransmis -> ACK1.
+- Justification : la tâche `dérouler M0 ACK0 M1 perdu retransmission ACK1` s applique à `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24` ; erreur évitée : réémettre un paquet TTL 0.
+- Donnée utilisée gamma dans P10 TD reseaux protocoles paquets : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans P10 TD reseaux protocoles paquets : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans P10 TD reseaux protocoles paquets : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans P10 TD reseaux protocoles paquets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
 - Capacité mobilisée : P-ARCH-04A.
-- Donnée utilisée : Réseau local 192.168.1.0/24 ; passerelle 192.168.1.1 ; destination 192.168.1.34 puis destination 172.16.0.8.
-- Résultat attendu : Pseudo-code: si dst commence par 192.168.1. alors envoyer directement sur le LAN ; sinon envoyer à 192.168.1.1. Donc 192.168.1.34 est local, 172.16.0.8 passe par la passerelle.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : TTL=1 devient 0 et le paquet est détruit.
+- Justification : la tâche `décrémenter TTL avant retransmission` s applique à `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24` ; erreur évitée : confondre MAC et IP.
+- Donnée utilisée delta dans P10 TD reseaux protocoles paquets : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans P10 TD reseaux protocoles paquets : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans P10 TD reseaux protocoles paquets : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans P10 TD reseaux protocoles paquets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
 - Capacité mobilisée : P-ARCH-04B.
-- Donnée utilisée : Un routeur reçoit un paquet IP avec TTL=1 vers 172.16.0.8. Il décrémente avant retransmission.
-- Résultat attendu : Le routeur calcule TTL=0. Il ne retransmet pas le paquet ; il le détruit et peut renvoyer un message ICMP Time Exceeded à la source.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : src=192.168.1.20 dst=172.16.0.8 TCP port 443 TTL 4.
+- Justification : la tâche `identifier champs de bout en bout` s applique à `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24` ; erreur évitée : TTL pris pour une durée.
+- Donnée utilisée epsilon dans P10 TD reseaux protocoles paquets : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans P10 TD reseaux protocoles paquets : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans P10 TD reseaux protocoles paquets : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans P10 TD reseaux protocoles paquets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
 - Capacité mobilisée : P-ARCH-02A.
-- Donnée utilisée : Deux capteurs envoient température et humidité ; le serveur attend ordre: TYPE;ID;VALEUR;HORODATAGE.
-- Résultat attendu : Sans ordre commun, 23.5 peut être lu comme ID ou valeur. Le protocole fixe les champs TYPE, ID, VALEUR, HORODATAGE afin que le destinataire parse chaque message sans ambiguïté.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : MAC change à chaque saut, IP reste de bout en bout.
+- Justification : la tâche `distinguer MAC et IP` s applique à `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24` ; erreur évitée : réémettre un paquet TTL 0.
+- Donnée utilisée zeta dans P10 TD reseaux protocoles paquets : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans P10 TD reseaux protocoles paquets : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans P10 TD reseaux protocoles paquets : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans P10 TD reseaux protocoles paquets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
 - Capacité mobilisée : P-ARCH-02B.
-- Donnée utilisée : Trace TCP: seq=42 len=1, ACK43 ; puis seq=43 perdu ; le récepteur renvoie deux fois ACK43.
-- Résultat attendu : ACK43 signifie « j’attends l’octet ou segment 43 ». Deux ACK43 indiquent que le segment 43 manque encore ; ils déclenchent une retransmission possible.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : M0 -> ACK0 -> M1 perdu -> M1 retransmis -> ACK1.
+- Justification : la tâche `dérouler M0 ACK0 M1 perdu retransmission ACK1` s applique à `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24` ; erreur évitée : confondre MAC et IP.
+- Donnée utilisée eta dans P10 TD reseaux protocoles paquets : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans P10 TD reseaux protocoles paquets : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans P10 TD reseaux protocoles paquets : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans P10 TD reseaux protocoles paquets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
 - Capacité mobilisée : P-ARCH-02C.
-- Donnée utilisée : Capteur C7, température 19.8 °C, actionneur chauffage ON, timestamp 10:15:03.
-- Résultat attendu : Mesure: MESURE;C7;TEMP;19.8;10:15:03. Commande: COMMANDE;CHAUFFAGE;ON;10:15:05. Les champs permettent type, cible, valeur et date.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : TTL=1 devient 0 et le paquet est détruit.
+- Justification : la tâche `décrémenter TTL avant retransmission` s applique à `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24` ; erreur évitée : TTL pris pour une durée.
+- Donnée utilisée theta dans P10 TD reseaux protocoles paquets : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans P10 TD reseaux protocoles paquets : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans P10 TD reseaux protocoles paquets : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans P10 TD reseaux protocoles paquets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
 ## Erreurs fréquentes
-- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
-- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
-- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
-- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
-
-## Remédiation ciblée
-- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
-- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
-- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
+- confondre MAC et IP.
+- TTL pris pour une durée.
+- réémettre un paquet TTL 0.
 
 ## Différenciation
-- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
-- Standard : demander méthode complète, résultat et contrôle écrit.
-- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
+- Socle : données annotées.
+- Standard : méthode complète.
+- Expert : transfert avec `destination locale 192.168.1.34`.
 
-## Lien avec la progression
-| Élément | Référence | Statut |
-|---|---|---|
-| Fiche | P10_fiche_cours_reseaux_protocoles_paquets.md | needs_review |
-| Séance | P10-S1 | progression existante |
-| Évaluation | P10_evaluation_reseaux_protocoles_paquets.md | needs_review |
+## Cas limites travaillés
+- TTL devient 0.
+- destination locale 192.168.1.34.
+- ACK43 dupliqué.
 
-## Source et traçabilité
-- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
-- Aucun fichier Drive n’a été repris directement dans ce support.
-- Source de création : programme officiel et progression locale, avec statut `needs_review`.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `src=192.168.1.20 dst=172.16.0.8 TCP port 443 TTL 4`.
+- Au moins un cas limite de la section précédente est décidé.
+

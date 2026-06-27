@@ -1,19 +1,14 @@
 ---
-title: "T07 - Trace écrite - modélisation, listes d’adjacence, matrices"
+title: "T07 - trace - graphes, listes et matrices"
 level: "terminale"
 sequence_id: "T07"
 document_type: "trace"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Graphes"
-notion: "modélisation, listes d’adjacence, matrices"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "graphes, listes et matrices"
+notion: "graphes, listes et matrices"
 private_data: false
 official_program:
   capacities:
@@ -23,25 +18,26 @@ official_program:
     - "T-STRUCT-05D"
 ---
 
-# T07 - Trace écrite - modélisation, listes d’adjacence, matrices
+# T07 - Trace - graphes, listes et matrices
 
-## À retenir
-- Situation : On modélise un mini-réseau A-B, A-C, B-D, C-D en graphe non orienté.
-- Donnée de référence : `sommets A,B,C,D ; arêtes AB, AC, BD, CD`.
-- Résultat de référence : adj[A]=[B,C], adj[B]=[A,D], adj[C]=[A,D], adj[D]=[B,C] ; matrice symétrique avec quatre arêtes.
+## Trace courte
+- Donnée : `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`.
+- Vocabulaire : graphe orienté, graphe non orienté, liste d adjacence, matrice d adjacence, degré.
+- Étape 1 : lister voisins sortants.
+- Étape 2 : remplir matrice 0/1.
+- Résultat de référence : A -> [B,C], B -> [D], C -> [D], D -> [B].
 
-## Méthode courte
-- écrire la liste d’adjacence sans doublon.
-- construire la matrice symétrique 4x4.
-- comparer coût mémoire liste/matrice.
+## Cas limites à mémoriser
+- sommet isolé E.
+- boucle A->A.
+- arête non orientée.
 
-## Exemple minimal corrigé
-Entrée : `sommets A,B,C,D ; arêtes AB, AC, BD, CD`.
-Sortie attendue : adj[A]=[B,C], adj[B]=[A,D], adj[C]=[A,D], adj[D]=[B,C] ; matrice symétrique avec quatre arêtes.
+## Erreurs fréquentes
+- voisin entrant confondu.
+- sommet isolé oublié.
+- coût mémoire ignoré.
 
-## Point de vigilance
-Le résultat doit être calculable à partir de la donnée, sans phrase de validation vague.
-
-## Lien séance
-- Séance T07-S1 : découverte et exemple.
-- Séance T07-S2 : exercices et correction.
+## Critères de réussite observables
+- Capacité : T-STRUCT-05A.
+- Résultat final : ligne A : colonnes B et C valent 1.
+- Cas limite : sommet isolé E.

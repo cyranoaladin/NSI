@@ -1,19 +1,14 @@
 ---
-title: "P10 - Évaluation - protocoles et paquets"
+title: "P10 - evaluation - réseaux, protocoles et paquets"
 level: "premiere"
 sequence_id: "P10"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.3.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Réseaux"
-notion: "protocoles et paquets"
-objectifs:
-  - "évaluer la compréhension de la fiche"
-  - "vérifier la capacité à produire une réponse justifiée"
-  - "identifier les erreurs fréquentes"
-  - "préparer une remédiation ciblée"
+theme: "réseaux, protocoles et paquets"
+notion: "réseaux, protocoles et paquets"
 private_data: false
 official_program:
   capacities:
@@ -24,101 +19,74 @@ official_program:
     - "P-ARCH-04B"
 ---
 
-# P10 - Évaluation - protocoles et paquets
+# P10 - Évaluation - réseaux, protocoles et paquets
 
-## Durée et matériel autorisé
-- Durée : 25 minutes.
-- Matériel autorisé : fiche personnelle, sans accès réseau ni corrigé.
-- Statut : évaluation `needs_review`, non validée et non publiable.
-
-## Capacités évaluées
-- P-ARCH-02A
-- P-ARCH-02B
-- P-ARCH-02C
-- P-ARCH-04A
-- P-ARCH-04B
-
-## Fiche liée
-- Fiche liée : `03_progressions/fiches_cours/premiere/P10/P10_fiche_cours_reseaux_protocoles_paquets.md`.
-- Séance liée : `P10-S1`.
-- TD lié : `P10_TD_reseaux_protocoles_paquets.md`.
-
-## Consignes
-Répondre directement sur copie. Chaque réponse doit montrer la donnée utilisée, la méthode et un contrôle rapide.
+## Modalités
+- Durée : 30 minutes.
+- Matériel autorisé : fiche de cours.
+- Capacités évaluées : P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B.
 
 ## Questions
-### Question 1 - Identifier les champs d’un paquet IPv4
-- Capacité : P-ARCH-02A.
-- Données : Paquet A: src=192.168.1.20, dst=172.16.0.8, protocole=TCP, port source=50214, port destination=443, TTL=4.
-- Consigne : Relever source, destination, protocole, port serveur et TTL.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
-### Question 2 - Distinguer adresses MAC et adresses IP
-- Capacité : P-ARCH-02B.
-- Données : Trame Ethernet: MAC src=08:00:27:AA:10:01, MAC dst=08:00:27:BB:20:01 ; paquet IP: src=192.168.1.20, dst=172.16.0.8.
-- Consigne : Dire quels champs changent à chaque saut et quels champs restent de bout en bout.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
-### Question 3 - Dérouler un protocole à bit alterné
-- Capacité : P-ARCH-02C.
-- Données : M0(bit=0) reçu et ACK0 renvoyé ; M1(bit=1) est perdu ; l’émetteur retransmet M1 après timeout.
-- Consigne : Écrire la séquence émission, perte, retransmission, ACK.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
-### Question 4 - Produire un pseudo-code de passerelle
-- Capacité : P-ARCH-04A.
-- Données : Réseau local 192.168.1.0/24 ; passerelle 192.168.1.1 ; destination 192.168.1.34 puis destination 172.16.0.8.
-- Consigne : Écrire la décision locale/passerelle.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 1
+- Capacité officielle : P-ARCH-02A.
+- Énoncé : à partir de `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`, identifier champs de bout en bout.
+- Réponse attendue : src=192.168.1.20 dst=172.16.0.8 TCP port 443 TTL 4.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `TTL devient 0`.
+### Question 2
+- Capacité officielle : P-ARCH-02B.
+- Énoncé : à partir de `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`, distinguer MAC et IP.
+- Réponse attendue : MAC change à chaque saut, IP reste de bout en bout.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `destination locale 192.168.1.34`.
+### Question 3
+- Capacité officielle : P-ARCH-02C.
+- Énoncé : à partir de `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`, dérouler M0 ACK0 M1 perdu retransmission ACK1.
+- Réponse attendue : M0 -> ACK0 -> M1 perdu -> M1 retransmis -> ACK1.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `ACK43 dupliqué`.
+### Question 4
+- Capacité officielle : P-ARCH-04A.
+- Énoncé : à partir de `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`, décrémenter TTL avant retransmission.
+- Réponse attendue : TTL=1 devient 0 et le paquet est détruit.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `TTL devient 0`.
 
-## Barème
-- Question 1: 1 point identification de la donnée, 1 point méthode, 1 point résultat exact, 1 point contrôle.
-- Question 2: 1 point vocabulaire précis, 1 point méthode, 1 point résultat, 1 point justification.
-- Question 3: 1 point modélisation, 1 point production correcte, 1 point test du résultat, 1 point lisibilité.
-- Question 4: 1 point cas traité, 1 point résultat, 1 point justification, 1 point erreur fréquente évitée.
-- Total : 16 points, conversion sur 20 après relecture pédagogique.
-
-## Corrigé professeur
+## Corrigé question par question
 ### Corrigé question 1
-- Capacité évaluée : P-ARCH-02A.
-- Donnée utilisée : Paquet A: src=192.168.1.20, dst=172.16.0.8, protocole=TCP, port source=50214, port destination=443, TTL=4.
-- Réponse attendue : Source IP 192.168.1.20 ; destination IP 172.16.0.8 ; protocole TCP ; port serveur 443 ; TTL initial 4. Le paquet part du capteur vers le serveur HTTPS.
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
+- Résultat attendu : src=192.168.1.20 dst=172.16.0.8 TCP port 443 TTL 4.
+- Critère spécifique : identifier champs de bout en bout et éviter `confondre MAC et IP`.
 ### Corrigé question 2
-- Capacité évaluée : P-ARCH-02B.
-- Donnée utilisée : Trame Ethernet: MAC src=08:00:27:AA:10:01, MAC dst=08:00:27:BB:20:01 ; paquet IP: src=192.168.1.20, dst=172.16.0.8.
-- Réponse attendue : Les adresses MAC changent à chaque liaison locale ; les IP source/destination restent 192.168.1.20 et 172.16.0.8 de bout en bout, sauf mécanisme particulier non étudié ici.
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
+- Résultat attendu : MAC change à chaque saut, IP reste de bout en bout.
+- Critère spécifique : distinguer MAC et IP et éviter `TTL pris pour une durée`.
 ### Corrigé question 3
-- Capacité évaluée : P-ARCH-02C.
-- Donnée utilisée : M0(bit=0) reçu et ACK0 renvoyé ; M1(bit=1) est perdu ; l’émetteur retransmet M1 après timeout.
-- Réponse attendue : Séquence: envoyer M0(bit 0) -> recevoir ACK0 -> envoyer M1(bit 1) -> perte de M1 -> timeout -> retransmettre M1(bit 1) -> réception M1 -> renvoyer ACK1 -> l’émetteur passe au bit 0.
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
+- Résultat attendu : M0 -> ACK0 -> M1 perdu -> M1 retransmis -> ACK1.
+- Critère spécifique : dérouler M0 ACK0 M1 perdu retransmission ACK1 et éviter `réémettre un paquet TTL 0`.
 ### Corrigé question 4
-- Capacité évaluée : P-ARCH-04A.
-- Donnée utilisée : Réseau local 192.168.1.0/24 ; passerelle 192.168.1.1 ; destination 192.168.1.34 puis destination 172.16.0.8.
-- Réponse attendue : Pseudo-code: si dst commence par 192.168.1. alors envoyer directement sur le LAN ; sinon envoyer à 192.168.1.1. Donc 192.168.1.34 est local, 172.16.0.8 passe par la passerelle.
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
-
-## Critères de réussite
-- Les capacités officielles sont reliées à une action observable.
-- Le résultat attendu peut être comparé à une valeur, une table, une trace ou un pseudo-code.
-- Le cas limite ou le contrôle demandé apparaît explicitement.
-- Le vocabulaire disciplinaire est utilisé dans le contexte de la donnée.
-
-## Version aménagée et indications d’aménagement
-- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un tableau méthode / résultat / contrôle.
-- Aménagement temps : ajouter 10 minutes si l’élève doit recopier les données.
-- Aide autorisée : liste des verbes d’action, sans résultat numérique ni requête complète.
+- Résultat attendu : TTL=1 devient 0 et le paquet est détruit.
+- Critère spécifique : décrémenter TTL avant retransmission et éviter `confondre MAC et IP`.
 
 ## Erreurs fréquentes et remédiation
-- EF1 : réponse sans donnée citée ; remédiation : refaire la question 1 avec les valeurs encadrées.
-- EF2 : méthode correcte mais résultat non contrôlé ; remédiation : ajouter une ligne de vérification.
-- EF3 : confusion entre vocabulaire et preuve ; remédiation : demander une phrase « parce que ».
-- EF4 : oubli du cas limite ; remédiation : reprendre le TD associé, exercice 5.
+- confondre MAC et IP.
+- TTL pris pour une durée.
+- réémettre un paquet TTL 0.
 
-## Source et traçabilité
-- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
-- Aucun fichier Drive n’a été repris directement dans cette évaluation.
-- Source de création : programme officiel et progression locale, avec statut `needs_review`.
+## Cas limites travaillés
+- TTL devient 0.
+- destination locale 192.168.1.34.
+- ACK43 dupliqué.
+
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `src=192.168.1.20 dst=172.16.0.8 TCP port 443 TTL 4`.
+- Au moins un cas limite de la section précédente est décidé.
+
+
+
+## Barème question par question
+- question 1: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 2: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 3: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 4: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+
+## Fiche liée
+- Fiche liée : fiche de cours P10 sur `reseaux_protocoles_paquets`.
+
+## Aménagement
+- Version aménagée : `P10_version_amenagee_reseaux_protocoles_paquets.md` ; consignes découpées et barème conservé.

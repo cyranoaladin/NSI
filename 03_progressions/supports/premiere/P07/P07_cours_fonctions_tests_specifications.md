@@ -1,19 +1,14 @@
 ---
-title: "P07 - Cours - fonctions, contrats, assertions et tests"
+title: "P07 - cours - fonctions, tests et spécifications"
 level: "premiere"
 sequence_id: "P07"
 document_type: "cours"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Langage Python"
-notion: "fonctions, contrats, assertions et tests"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "fonctions, tests et spécifications"
+notion: "fonctions, tests et spécifications"
 private_data: false
 official_program:
   capacities:
@@ -26,48 +21,86 @@ official_program:
     - "P-LANG-05"
 ---
 
-# P07 - Cours - fonctions, contrats, assertions et tests
+# P07 - Cours - fonctions, tests et spécifications
 
-## Objectifs
-- Lire la situation sans modifier les données.
-- Appliquer une méthode explicitement liée aux capacités.
-- Produire un résultat contrôlable.
+## Objectifs spécifiques
+- Identifier les données utiles de la situation : prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError.
+- Employer le vocabulaire : signature, précondition, postcondition, assertion, test unitaire, test limite.
+- Produire une trace, une table, une valeur ou un pseudo-code vérifiable.
 
-## Capacités travaillées
-- P-LANG-01
-- P-LANG-02
-- P-LANG-03A
-- P-LANG-03B
-- P-LANG-03C
-- P-LANG-04
-- P-LANG-05
+## Capacités officielles
+- P-LANG-01.
+- P-LANG-02.
+- P-LANG-03A.
+- P-LANG-03B.
+- P-LANG-03C.
+- P-LANG-04.
+- P-LANG-05.
 
 ## Situation-problème
-On stabilise la fonction prix_ttc(ht, taux) avec contrat, assertions et tests.
+prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError
 
-## Données de référence
-`prix_ttc(80, 0.20) -> 96.0 ; prix_ttc(0, 0.20) -> 0.0 ; prix_ttc(-5, 0.20) lève AssertionError`
+## À savoir
+- signature.
+- précondition.
+- postcondition.
+- assertion.
+- test unitaire.
+- test limite.
+- erreur de type.
+- fonction pure.
 
-## Méthodes disciplinaires
-- écrire une signature explicite avec return.
-- rédiger précondition ht >= 0 et taux >= 0.
-- tester nominal, zéro et entrée invalide avant généralisation.
+## Méthodes
+- écrire def prix_ttc(prix_ht: float, taux: float) -> float.
+- poser prix_ht >= 0 et taux >= 0.
+- vérifier résultat >= prix_ht.
+- écrire tests nominal, limite et invalide.
 
-## Exemple corrigé 1
-Donnée : `prix_ttc(80, 0.20) -> 96.0 ; prix_ttc(0, 0.20) -> 0.0 ; prix_ttc(-5, 0.20) lève AssertionError`.
-Méthode : écrire une signature explicite avec return.
-Résultat : fonction prix_ttc(ht, taux) retourne round(ht * (1 + taux), 2), refuse ht négatif et garde le cas ht=0.
+## Exemples corrigés
+### Exemple corrigé 1
+- Donnée : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`.
+- Méthode : écrire def prix_ttc(prix_ht: float, taux: float) -> float.
+- Résultat attendu : signature complète de prix_ttc.
+- Contrôle : capacité P-LANG-01 et cas limite `prix_ht=0`.
+### Exemple corrigé 2
+- Donnée : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`.
+- Méthode : poser prix_ht >= 0 et taux >= 0.
+- Résultat attendu : prix_ttc(80,0.20) -> 96.0.
+- Contrôle : capacité P-LANG-02 et cas limite `taux=0`.
+### Exemple corrigé 3
+- Donnée : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`.
+- Méthode : vérifier résultat >= prix_ht.
+- Résultat attendu : prix_ttc(-5,0.20) -> ValueError.
+- Contrôle : capacité P-LANG-03A et cas limite `type chaîne "80"`.
+### Exemple corrigé 4
+- Donnée : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`.
+- Méthode : écrire tests nominal, limite et invalide.
+- Résultat attendu : taux=0 -> résultat 80.0.
+- Contrôle : capacité P-LANG-03B et cas limite `prix_ht=0`.
 
-## Exemple corrigé 2 - cas limite
-On modifie une seule donnée pour tester le cas limite du chapitre. La correction attendue explique pourquoi la méthode reste valable ou pourquoi elle doit refuser l’entrée.
+## Cas limites
+- prix_ht=0.
+- taux=0.
+- type chaîne "80".
 
 ## Erreurs fréquentes
-- Confondre une clé, un indice ou un état temporaire avec la donnée stable.
-- Conclure sans écrire le résultat contrôlable.
-- Oublier le cas vide, absent ou invalide.
+- test unique non suffisant.
+- précondition absente.
+- effet de bord global.
 
 ## Exercices intégrés
-1. Reprendre la donnée de référence et écrire toutes les étapes.
-2. Modifier une valeur et prévoir le nouveau résultat.
-3. Construire un cas limite et dire si la méthode accepte ou refuse.
-4. Relier chaque étape à une capacité officielle.
+1. Identifier les données utiles dans `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`.
+2. Appliquer : écrire def prix_ttc(prix_ht: float, taux: float) -> float.
+3. Appliquer : poser prix_ht >= 0 et taux >= 0.
+4. Décider le cas limite `prix_ht=0`.
+
+## Critères de réussite observables
+- Une capacité parmi P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05 est citée et utilisée.
+- Le résultat attendu est explicite : signature complète de prix_ttc.
+- Le cas limite `taux=0` est tranché.
+
+## Lien avec la progression
+- Séance : P07-S1 à P07-S4.
+- TD : `P07_TD_fonctions_tests_specifications.md`.
+- TP : `P07_tp_fonctions_tests_specifications.md`.
+- Évaluation : `P07_evaluation_fonctions_tests_specifications.md`.

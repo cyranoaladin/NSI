@@ -9,8 +9,7 @@ import re
 
 import yaml
 
-from _qa_common import ROOT
-from check_first_batch_document_quality import FIRST_BATCH_PREFIXES
+from _qa_common import FULL_SEQUENCE_SCOPE, ROOT
 
 CONTRACT_DIR = ROOT / "03_progressions" / "supports" / "contracts"
 
@@ -42,7 +41,7 @@ def analyze_contracts(
     contract_dir: Path = CONTRACT_DIR,
     prefixes: list[str] | None = None,
 ) -> ContractResult:
-    prefixes = prefixes or FIRST_BATCH_PREFIXES
+    prefixes = prefixes or [*FULL_SEQUENCE_SCOPE["premiere"], *FULL_SEQUENCE_SCOPE["terminale"]]
     result = ContractResult()
     for prefix in prefixes:
         contract_path = contract_dir / f"{prefix}_contract.yml"

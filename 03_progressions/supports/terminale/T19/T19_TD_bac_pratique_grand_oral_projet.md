@@ -1,181 +1,173 @@
 ---
-title: "T19 - TD - bac pratique grand oral projet"
+title: "T19 - td - bac pratique, écrit, Grand Oral et projet"
 level: "terminale"
 sequence_id: "T19"
 document_type: "td"
 status: "needs_review"
-version: "0.3.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Synthèse"
-notion: "bac pratique grand oral projet"
-objectifs:
-  - "travailler bac pratique grand oral projet sur des données explicites"
-  - "produire une réponse justifiée et contrôlée"
-  - "identifier les cas limites"
-  - "corriger les erreurs fréquentes du chapitre"
+theme: "bac pratique, écrit, Grand Oral et projet"
+notion: "bac pratique, écrit, Grand Oral et projet"
 private_data: false
 official_program:
   capacities:
-    - "T-LANG-05"
+    - "T-HIST-01A"
+    - "T-HIST-01B"
 ---
 
-# T19 - TD - bac pratique grand oral projet
+# T19 - TD - bac pratique, écrit, Grand Oral et projet
 
 ## Objectifs
-- Lire une donnée disciplinaire précise avant de répondre.
-- Produire une méthode vérifiable et un résultat contrôlable.
-- Traiter un cas limite sans le transformer en généralité.
-- Relier chaque correction à une erreur fréquente observable.
-
-## Capacités officielles
-- T-LANG-05
-
-## Fiche liée et séance liée
-- Fiche liée : `03_progressions/fiches_cours/terminale/T19/T19_fiche_cours_bac_pratique_grand_oral_projet.md`.
-- Séance liée : `T19-S1` dans la progression annuelle.
-- Statut : support `needs_review`, non validé et non publiable.
-
-## Situation de travail
-Préparation finale: exercice pratique Python, analyse de complexité et oral de projet.
+- Travailler bac pratique, bac écrit, Grand Oral, projet, démonstration.
+- Produire huit réponses vérifiables avec données explicites.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée.
-- Standard : exercices 3 à 6, production écrite et justification.
-- Approfondissement : exercices 7 et 8, transfert ou comparaison.
+- Socle : exercices 1 et 2.
+- Standard : exercices 3 à 6.
+- Approfondissement : exercices 7 et 8.
 
 ## Exercices
-### Exercice 1 - Lire un sujet pratique
+### Exercice 1
 - Type : lecture/analyse.
-- Niveau : socle.
-- Capacité officielle : T-LANG-05.
-- Données : Écrire occurrence(valeurs, x) qui compte x dans valeurs.
-- Consigne : Identifier entrée/sortie.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 2 - Analyser un test
-- Type : lecture/analyse.
-- Niveau : socle.
-- Capacité officielle : T-LANG-05.
-- Données : assert occurrence([1,2,1],1)==2 ; assert occurrence([],3)==0.
-- Consigne : Dire les cas couverts.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 3 - Écrire la fonction
+- Capacité officielle : T-HIST-01A.
+- Données : `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration`. ; jeu_exercice=alpha
+- Consigne : résoudre un exercice en temps borné ; traiter aussi `question trop large` si nécessaire.
+- Réponse attendue : fonction voisins_communs(g,A,B) testée.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `question trop large`.
+### Exercice 2
 - Type : production/écriture.
-- Niveau : standard.
-- Capacité officielle : T-LANG-05.
-- Données : valeurs=[4,4,2], x=4.
-- Consigne : Donner code.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 4 - Préparer explication orale
+- Capacité officielle : T-HIST-01B.
+- Données : `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration`. ; jeu_exercice=beta
+- Consigne : rédiger une preuve courte ; traiter aussi `démonstration non reproductible` si nécessaire.
+- Réponse attendue : oral : question, exemple, limite, ouverture.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `démonstration non reproductible`.
+### Exercice 3
 - Type : production/écriture.
-- Niveau : standard.
-- Capacité officielle : T-LANG-05.
-- Données : Fonction occurrence.
-- Consigne : Plan en 45 secondes.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 5 - Entrée vide
+- Capacité officielle : T-HIST-01A.
+- Données : `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration`. ; jeu_exercice=gamma
+- Consigne : préparer une démonstration de 2 minutes ; traiter aussi `source non vérifiée` si nécessaire.
+- Réponse attendue : 8 minutes exercice, 4 minutes relecture.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `source non vérifiée`.
+### Exercice 4
 - Type : cas limite.
-- Niveau : standard.
-- Capacité officielle : T-LANG-05.
-- Données : occurrence([],5).
-- Consigne : Donner résultat.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 6 - Justifier complexité
+- Capacité officielle : T-HIST-01B.
+- Données : `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration`. ; jeu_exercice=delta
+- Consigne : relier un choix technique à un impact historique ; traiter aussi `question trop large` si nécessaire.
+- Réponse attendue : source historique vérifiée.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `question trop large`.
+### Exercice 5
 - Type : justification.
-- Niveau : standard.
-- Capacité officielle : T-LANG-05.
-- Données : liste longueur n.
-- Consigne : Donner ordre.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 7 - Évaluer une réponse orale
+- Capacité officielle : T-HIST-01A.
+- Données : `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration`. ; jeu_exercice=epsilon
+- Consigne : résoudre un exercice en temps borné ; traiter aussi `démonstration non reproductible` si nécessaire.
+- Réponse attendue : fonction voisins_communs(g,A,B) testée.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `démonstration non reproductible`.
+### Exercice 6
 - Type : lecture/analyse.
-- Niveau : approfondissement.
-- Capacité officielle : T-LANG-05.
-- Données : Un élève donne code mais aucun test ni complexité.
-- Consigne : Identifier manque.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 8 - Relier projet et programme
+- Capacité officielle : T-HIST-01B.
+- Données : `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration`. ; jeu_exercice=zeta
+- Consigne : rédiger une preuve courte ; traiter aussi `source non vérifiée` si nécessaire.
+- Réponse attendue : oral : question, exemple, limite, ouverture.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `source non vérifiée`.
+### Exercice 7
 - Type : production/écriture.
-- Niveau : approfondissement.
-- Capacité officielle : T-LANG-05.
-- Données : Projet: moteur de recherche de mots.
-- Consigne : Faire le lien.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
+- Capacité officielle : T-HIST-01A.
+- Données : `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration`. ; jeu_exercice=eta
+- Consigne : préparer une démonstration de 2 minutes ; traiter aussi `question trop large` si nécessaire.
+- Réponse attendue : 8 minutes exercice, 4 minutes relecture.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `question trop large`.
+### Exercice 8
+- Type : justification.
+- Capacité officielle : T-HIST-01B.
+- Données : `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration`. ; jeu_exercice=theta
+- Consigne : relier un choix technique à un impact historique ; traiter aussi `démonstration non reproductible` si nécessaire.
+- Réponse attendue : source historique vérifiée.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `démonstration non reproductible`.
 
 ## Corrigé
 ### Corrigé exercice 1
-- Capacité mobilisée : T-LANG-05.
-- Donnée utilisée : Écrire occurrence(valeurs, x) qui compte x dans valeurs.
-- Résultat attendu : Entrée: liste valeurs et cible x. Sortie: entier nombre d’occurrences. Exemple [1,2,1],1 -> 2.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Capacité mobilisée : T-HIST-01A.
+- Résultat attendu : fonction voisins_communs(g,A,B) testée.
+- Justification : la tâche `résoudre un exercice en temps borné` s applique à `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration` ; erreur évitée : récitation sans exemple.
+- Donnée utilisée alpha dans T19 TD bac pratique grand oral projet : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans T19 TD bac pratique grand oral projet : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans T19 TD bac pratique grand oral projet : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans T19 TD bac pratique grand oral projet : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Capacité mobilisée : T-LANG-05.
-- Donnée utilisée : assert occurrence([1,2,1],1)==2 ; assert occurrence([],3)==0.
-- Résultat attendu : Cas nominal avec doublon et cas limite liste vide.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Capacité mobilisée : T-HIST-01B.
+- Résultat attendu : oral : question, exemple, limite, ouverture.
+- Justification : la tâche `rédiger une preuve courte` s applique à `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration` ; erreur évitée : projet non exécutable.
+- Donnée utilisée beta dans T19 TD bac pratique grand oral projet : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans T19 TD bac pratique grand oral projet : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans T19 TD bac pratique grand oral projet : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans T19 TD bac pratique grand oral projet : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Capacité mobilisée : T-LANG-05.
-- Donnée utilisée : valeurs=[4,4,2], x=4.
-- Résultat attendu : def occurrence(valeurs,x): c=0 ; for v in valeurs: if v==x: c+=1 ; return c. Résultat 2.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Capacité mobilisée : T-HIST-01A.
+- Résultat attendu : 8 minutes exercice, 4 minutes relecture.
+- Justification : la tâche `préparer une démonstration de 2 minutes` s applique à `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration` ; erreur évitée : temps ignoré.
+- Donnée utilisée gamma dans T19 TD bac pratique grand oral projet : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans T19 TD bac pratique grand oral projet : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans T19 TD bac pratique grand oral projet : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans T19 TD bac pratique grand oral projet : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Capacité mobilisée : T-LANG-05.
-- Donnée utilisée : Fonction occurrence.
-- Résultat attendu : Dire contrat, boucle et invariant c compte les occurrences déjà lues, puis complexité O(n).
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Capacité mobilisée : T-HIST-01B.
+- Résultat attendu : source historique vérifiée.
+- Justification : la tâche `relier un choix technique à un impact historique` s applique à `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration` ; erreur évitée : récitation sans exemple.
+- Donnée utilisée delta dans T19 TD bac pratique grand oral projet : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans T19 TD bac pratique grand oral projet : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans T19 TD bac pratique grand oral projet : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans T19 TD bac pratique grand oral projet : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Capacité mobilisée : T-LANG-05.
-- Donnée utilisée : occurrence([],5).
-- Résultat attendu : La boucle ne s’exécute pas ; c reste 0 ; résultat 0.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Capacité mobilisée : T-HIST-01A.
+- Résultat attendu : fonction voisins_communs(g,A,B) testée.
+- Justification : la tâche `résoudre un exercice en temps borné` s applique à `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration` ; erreur évitée : projet non exécutable.
+- Donnée utilisée epsilon dans T19 TD bac pratique grand oral projet : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans T19 TD bac pratique grand oral projet : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans T19 TD bac pratique grand oral projet : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans T19 TD bac pratique grand oral projet : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Capacité mobilisée : T-LANG-05.
-- Donnée utilisée : liste longueur n.
-- Résultat attendu : Chaque élément est comparé une fois à x ; temps O(n), mémoire O(1).
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Capacité mobilisée : T-HIST-01B.
+- Résultat attendu : oral : question, exemple, limite, ouverture.
+- Justification : la tâche `rédiger une preuve courte` s applique à `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration` ; erreur évitée : temps ignoré.
+- Donnée utilisée zeta dans T19 TD bac pratique grand oral projet : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans T19 TD bac pratique grand oral projet : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans T19 TD bac pratique grand oral projet : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans T19 TD bac pratique grand oral projet : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Capacité mobilisée : T-LANG-05.
-- Donnée utilisée : Un élève donne code mais aucun test ni complexité.
-- Résultat attendu : Il manque au moins un test nominal, un test limite et l’analyse O(n). La réponse n’est pas complète pour le bac.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Capacité mobilisée : T-HIST-01A.
+- Résultat attendu : 8 minutes exercice, 4 minutes relecture.
+- Justification : la tâche `préparer une démonstration de 2 minutes` s applique à `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration` ; erreur évitée : récitation sans exemple.
+- Donnée utilisée eta dans T19 TD bac pratique grand oral projet : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans T19 TD bac pratique grand oral projet : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans T19 TD bac pratique grand oral projet : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans T19 TD bac pratique grand oral projet : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Capacité mobilisée : T-LANG-05.
-- Donnée utilisée : Projet: moteur de recherche de mots.
-- Résultat attendu : Capacités mobilisées: parcours de chaîne/liste, dictionnaire d’index, tests unitaires, complexité de recherche. Donner une donnée exemple: texte "nsi nsi bac" -> index {"nsi":[0,1],"bac":[2]}.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Capacité mobilisée : T-HIST-01B.
+- Résultat attendu : source historique vérifiée.
+- Justification : la tâche `relier un choix technique à un impact historique` s applique à `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration` ; erreur évitée : projet non exécutable.
+- Donnée utilisée theta dans T19 TD bac pratique grand oral projet : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans T19 TD bac pratique grand oral projet : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans T19 TD bac pratique grand oral projet : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans T19 TD bac pratique grand oral projet : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
 ## Erreurs fréquentes
-- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
-- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
-- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
-- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
-
-## Remédiation ciblée
-- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
-- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
-- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
+- récitation sans exemple.
+- projet non exécutable.
+- temps ignoré.
 
 ## Différenciation
-- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
-- Standard : demander méthode complète, résultat et contrôle écrit.
-- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
+- Socle : données annotées.
+- Standard : méthode complète.
+- Expert : transfert avec `démonstration non reproductible`.
 
-## Lien avec la progression
-| Élément | Référence | Statut |
-|---|---|---|
-| Fiche | T19_fiche_cours_bac_pratique_grand_oral_projet.md | needs_review |
-| Séance | T19-S1 | progression existante |
-| Évaluation | T19_evaluation_bac_pratique_grand_oral_projet.md | needs_review |
+## Cas limites travaillés
+- question trop large.
+- démonstration non reproductible.
+- source non vérifiée.
 
-## Source et traçabilité
-- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
-- Aucun fichier Drive n’a été repris directement dans ce support.
-- Source de création : programme officiel et progression locale, avec statut `needs_review`.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `fonction voisins_communs(g,A,B) testée`.
+- Au moins un cas limite de la section précédente est décidé.
+

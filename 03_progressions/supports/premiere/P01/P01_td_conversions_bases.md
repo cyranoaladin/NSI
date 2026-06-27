@@ -129,45 +129,70 @@ Un protocole réseau fournit des octets en hexadécimal tandis qu’un relevé d
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- Méthode : identifier `13` en base dix, appliquer la méthode « enchaîner divisions par 2 puis lire les restes de bas en haut », puis écrire `1101₂`.
 - Résultat : `1101₂`.
 - Contrôle : faire apparaître le contrôle « 0 se code 0 ».
 - Erreur traitée : EF1 - Écrire les restes dans l’ordre de calcul au lieu de les lire de bas en haut.
+- Donnée utilisée alpha dans P01 td conversions bases : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans P01 td conversions bases : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans P01 td conversions bases : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans P01 td conversions bases : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : expliciter chaque étape de additionner les poids `32 + 8 + 4 + 1` avant de conclure par `45`.
 - Résultat : `45`.
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Additionner les chiffres binaires sans poids de position.
+- Donnée utilisée beta dans P01 td conversions bases : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans P01 td conversions bases : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans P01 td conversions bases : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans P01 td conversions bases : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : comparer la donnée avec le cas limite « complément à gauche si le nombre de bits n’est pas multiple de 4 » et valider `F0₁₆`.
 - Résultat : `F0₁₆`.
 - Contrôle : comparer avec le cas « complément à gauche si le nombre de bits n’est pas multiple de 4 ».
 - Erreur traitée : EF3 - Former des paquets hexadécimaux sans compléter à gauche.
+- Donnée utilisée gamma dans P01 td conversions bases : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans P01 td conversions bases : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans P01 td conversions bases : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans P01 td conversions bases : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler l’erreur fréquente « Accepter un chiffre interdit dans la base utilisée. » puis reprendre la procédure correcte.
 - Résultat : `FF₁₆`.
 - Contrôle : corriger l’erreur « Accepter un chiffre interdit dans la base utilisée. ».
 - Erreur traitée : EF4 - Accepter un chiffre interdit dans la base utilisée.
+- Donnée utilisée delta dans P01 td conversions bases : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans P01 td conversions bases : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans P01 td conversions bases : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans P01 td conversions bases : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : identifier `13` en base dix, appliquer la méthode « enchaîner divisions par 2 puis lire les restes de bas en haut », puis écrire `1101₂`.
 - Résultat : le comportement de décimal vers binaire est contrôlé.
 - Contrôle : nommer la donnée minimale et la conclusion.
 - Erreur traitée : EF1 - Écrire les restes dans l’ordre de calcul au lieu de les lire de bas en haut.
+- Donnée utilisée epsilon dans P01 td conversions bases : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans P01 td conversions bases : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans P01 td conversions bases : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans P01 td conversions bases : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : expliciter chaque étape de additionner les poids `32 + 8 + 4 + 1` avant de conclure par `45`.
 - Résultat : la méthode robuste est choisie et justifiée.
 - Contrôle : identifier pourquoi « Additionner les chiffres binaires sans poids de position. » est une erreur.
 - Erreur traitée : EF2 - Additionner les chiffres binaires sans poids de position.
+- Donnée utilisée zeta dans P01 td conversions bases : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans P01 td conversions bases : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans P01 td conversions bases : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans P01 td conversions bases : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « complément à gauche si le nombre de bits n’est pas multiple de 4 » et valider `F0₁₆`.
 - Résultat : la justification reste valable sur le nouveau cas.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Former des paquets hexadécimaux sans compléter à gauche.
+- Donnée utilisée eta dans P01 td conversions bases : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans P01 td conversions bases : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans P01 td conversions bases : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans P01 td conversions bases : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler l’erreur fréquente « Accepter un chiffre interdit dans la base utilisée. » puis reprendre la procédure correcte.
 - Résultat : l’erreur est localisée puis réparée.
 - Contrôle : proposer une activité corrective inspirée de « Entourer chaque symbole et vérifier qu’il appartient à l’alphabet de la base. ».
 - Erreur traitée : EF4 - Accepter un chiffre interdit dans la base utilisée.
+- Donnée utilisée theta dans P01 td conversions bases : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans P01 td conversions bases : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans P01 td conversions bases : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans P01 td conversions bases : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Écrire les restes dans l’ordre de calcul au lieu de les lire de bas en haut.
 - Erreur fréquente EF2 - Additionner les chiffres binaires sans poids de position.

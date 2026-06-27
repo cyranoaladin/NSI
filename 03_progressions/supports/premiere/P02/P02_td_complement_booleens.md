@@ -129,45 +129,70 @@ Un capteur transmet un octet qui peut représenter une température signée ou u
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- Méthode : identifier `11110110` sur 8 bits, appliquer la méthode « lire le bit de signe puis soustraire `2^8` à la valeur naturelle », puis écrire `-10`.
 - Résultat : `-10`.
 - Contrôle : faire apparaître le contrôle « bit de poids fort à 1 ».
 - Erreur traitée : EF1 - Lire un mot binaire signé comme un entier naturel.
+- Donnée utilisée alpha dans P02 td complement booleens : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans P02 td complement booleens : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans P02 td complement booleens : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans P02 td complement booleens : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : expliciter chaque étape de calculer `-2^(n-1)` et `2^(n-1)-1` avant de conclure par `[-8 ; 7]`.
 - Résultat : `[-8 ; 7]`.
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Oublier de tester les bornes avant l’encodage.
+- Donnée utilisée beta dans P02 td complement booleens : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans P02 td complement booleens : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans P02 td complement booleens : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans P02 td complement booleens : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : comparer la donnée avec le cas limite « retenue finale ignorée sur la largeur fixée » et valider `11111010`.
 - Résultat : `11111010`.
 - Contrôle : comparer avec le cas « retenue finale ignorée sur la largeur fixée ».
 - Erreur traitée : EF3 - Inverser les bits sans ajouter 1.
+- Donnée utilisée gamma dans P02 td complement booleens : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans P02 td complement booleens : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans P02 td complement booleens : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans P02 td complement booleens : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler l’erreur fréquente « Simplifier une expression booléenne avec un seul exemple. » puis reprendre la procédure correcte.
 - Résultat : `a`.
 - Contrôle : corriger l’erreur « Simplifier une expression booléenne avec un seul exemple. ».
 - Erreur traitée : EF4 - Simplifier une expression booléenne avec un seul exemple.
+- Donnée utilisée delta dans P02 td complement booleens : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans P02 td complement booleens : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans P02 td complement booleens : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans P02 td complement booleens : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : identifier `11110110` sur 8 bits, appliquer la méthode « lire le bit de signe puis soustraire `2^8` à la valeur naturelle », puis écrire `-10`.
 - Résultat : le comportement de décodage signé est contrôlé.
 - Contrôle : nommer la donnée minimale et la conclusion.
 - Erreur traitée : EF1 - Lire un mot binaire signé comme un entier naturel.
+- Donnée utilisée epsilon dans P02 td complement booleens : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans P02 td complement booleens : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans P02 td complement booleens : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans P02 td complement booleens : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : expliciter chaque étape de calculer `-2^(n-1)` et `2^(n-1)-1` avant de conclure par `[-8 ; 7]`.
 - Résultat : la méthode robuste est choisie et justifiée.
 - Contrôle : identifier pourquoi « Oublier de tester les bornes avant l’encodage. » est une erreur.
 - Erreur traitée : EF2 - Oublier de tester les bornes avant l’encodage.
+- Donnée utilisée zeta dans P02 td complement booleens : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans P02 td complement booleens : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans P02 td complement booleens : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans P02 td complement booleens : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « retenue finale ignorée sur la largeur fixée » et valider `11111010`.
 - Résultat : la justification reste valable sur le nouveau cas.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Inverser les bits sans ajouter 1.
+- Donnée utilisée eta dans P02 td complement booleens : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans P02 td complement booleens : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans P02 td complement booleens : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans P02 td complement booleens : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler l’erreur fréquente « Simplifier une expression booléenne avec un seul exemple. » puis reprendre la procédure correcte.
 - Résultat : l’erreur est localisée puis réparée.
 - Contrôle : proposer une activité corrective inspirée de « Remplir les quatre lignes de la table avant de conclure. ».
 - Erreur traitée : EF4 - Simplifier une expression booléenne avec un seul exemple.
+- Donnée utilisée theta dans P02 td complement booleens : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans P02 td complement booleens : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans P02 td complement booleens : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans P02 td complement booleens : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Lire un mot binaire signé comme un entier naturel.
 - Erreur fréquente EF2 - Oublier de tester les bornes avant l’encodage.

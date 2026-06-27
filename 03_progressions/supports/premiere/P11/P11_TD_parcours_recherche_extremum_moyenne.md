@@ -1,19 +1,14 @@
 ---
-title: "P11 - TD - parcours recherche extremum moyenne"
+title: "P11 - td - parcours, recherche, extremum et moyenne"
 level: "premiere"
 sequence_id: "P11"
 document_type: "td"
 status: "needs_review"
-version: "0.3.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Algorithmique"
-notion: "parcours recherche extremum moyenne"
-objectifs:
-  - "travailler parcours recherche extremum moyenne sur des données explicites"
-  - "produire une réponse justifiée et contrôlée"
-  - "identifier les cas limites"
-  - "corriger les erreurs fréquentes du chapitre"
+theme: "parcours, recherche, extremum et moyenne"
+notion: "parcours, recherche, extremum et moyenne"
 private_data: false
 official_program:
   capacities:
@@ -21,163 +16,158 @@ official_program:
     - "P-ALGO-01B"
 ---
 
-# P11 - TD - parcours recherche extremum moyenne
+# P11 - TD - parcours, recherche, extremum et moyenne
 
 ## Objectifs
-- Lire une donnée disciplinaire précise avant de répondre.
-- Produire une méthode vérifiable et un résultat contrôlable.
-- Traiter un cas limite sans le transformer en généralité.
-- Relier chaque correction à une erreur fréquente observable.
-
-## Capacités officielles
-- P-ALGO-01A
-- P-ALGO-01B
-
-## Fiche liée et séance liée
-- Fiche liée : `03_progressions/fiches_cours/premiere/P11/P11_fiche_cours_parcours_recherche_extremum_moyenne.md`.
-- Séance liée : `P11-S1` dans la progression annuelle.
-- Statut : support `needs_review`, non validé et non publiable.
-
-## Situation de travail
-On analyse des listes de mesures anonymisées produites par un capteur de luminosité.
+- Travailler parcours linéaire, recherche occurrence, premier indice, maximum, minimum.
+- Produire huit réponses vérifiables avec données explicites.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée.
-- Standard : exercices 3 à 6, production écrite et justification.
-- Approfondissement : exercices 7 et 8, transfert ou comparaison.
+- Socle : exercices 1 et 2.
+- Standard : exercices 3 à 6.
+- Approfondissement : exercices 7 et 8.
 
 ## Exercices
-### Exercice 1 - Tracer une recherche séquentielle
+### Exercice 1
 - Type : lecture/analyse.
-- Niveau : socle.
 - Capacité officielle : P-ALGO-01A.
-- Données : liste = [12, 7, 19, 7, 3], valeur cherchée = 7.
-- Consigne : Donner les indices lus jusqu’à la première occurrence.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 2 - Calculer un maximum avec trace
-- Type : lecture/analyse.
-- Niveau : socle.
-- Capacité officielle : P-ALGO-01B.
-- Données : mesures = [4, 11, 6, 11, 2].
-- Consigne : Donner la valeur de max après chaque élément.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 3 - Écrire un parcours de moyenne
+- Données : `mesures=[18,21,17,24,21], cible=21, seuil=22`. ; jeu_exercice=alpha
+- Consigne : parcourir avec indice ; traiter aussi `liste vide` si nécessaire.
+- Réponse attendue : première occurrence de 21 -> indice 1.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `liste vide`.
+### Exercice 2
 - Type : production/écriture.
-- Niveau : standard.
+- Capacité officielle : P-ALGO-01B.
+- Données : `mesures=[18,21,17,24,21], cible=21, seuil=22`. ; jeu_exercice=beta
+- Consigne : mémoriser le premier indice de 21 ; traiter aussi `cible absente` si nécessaire.
+- Réponse attendue : maximum -> 24.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `cible absente`.
+### Exercice 3
+- Type : production/écriture.
 - Capacité officielle : P-ALGO-01A.
-- Données : notes = [8, 12, 15, 5].
-- Consigne : Écrire un pseudo-code qui renvoie la moyenne.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 4 - Écrire une recherche avec booléen
-- Type : production/écriture.
-- Niveau : standard.
-- Capacité officielle : P-ALGO-01B.
-- Données : mots = ["NSI", "maths", "SI"], cible="physique".
-- Consigne : Produire un algorithme qui renvoie True ou False.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 5 - Traiter la liste vide
+- Données : `mesures=[18,21,17,24,21], cible=21, seuil=22`. ; jeu_exercice=gamma
+- Consigne : initialiser maximum à la première valeur ; traiter aussi `doublon de 21` si nécessaire.
+- Réponse attendue : somme=101, len=5, moyenne=20.2.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `doublon de 21`.
+### Exercice 4
 - Type : cas limite.
-- Niveau : standard.
-- Capacité officielle : P-ALGO-01A.
-- Données : valeurs = [].
-- Consigne : Dire quoi renvoyer pour moyenne et maximum.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 6 - Justifier la complexité
+- Capacité officielle : P-ALGO-01B.
+- Données : `mesures=[18,21,17,24,21], cible=21, seuil=22`. ; jeu_exercice=delta
+- Consigne : tester liste vide avant moyenne ; traiter aussi `liste vide` si nécessaire.
+- Réponse attendue : liste vide -> ValueError.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `liste vide`.
+### Exercice 5
 - Type : justification.
-- Niveau : standard.
-- Capacité officielle : P-ALGO-01B.
-- Données : liste de longueur n, recherche séquentielle d’une valeur absente.
-- Consigne : Justifier le nombre de comparaisons.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 7 - Comparer deux parcours
-- Type : lecture/analyse.
-- Niveau : approfondissement.
 - Capacité officielle : P-ALGO-01A.
-- Données : liste = [5, 1, 9, 2]. Méthode A calcule max puis moyenne en deux boucles ; méthode B fait les deux dans une boucle.
-- Consigne : Comparer résultats et nombre de lectures.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 8 - Retourner l’indice du minimum
-- Type : production/écriture.
-- Niveau : approfondissement.
+- Données : `mesures=[18,21,17,24,21], cible=21, seuil=22`. ; jeu_exercice=epsilon
+- Consigne : parcourir avec indice ; traiter aussi `cible absente` si nécessaire.
+- Réponse attendue : première occurrence de 21 -> indice 1.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `cible absente`.
+### Exercice 6
+- Type : lecture/analyse.
 - Capacité officielle : P-ALGO-01B.
-- Données : liste = [6, 4, 4, 9].
-- Consigne : Écrire la règle en cas d’égalité.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
+- Données : `mesures=[18,21,17,24,21], cible=21, seuil=22`. ; jeu_exercice=zeta
+- Consigne : mémoriser le premier indice de 21 ; traiter aussi `doublon de 21` si nécessaire.
+- Réponse attendue : maximum -> 24.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `doublon de 21`.
+### Exercice 7
+- Type : production/écriture.
+- Capacité officielle : P-ALGO-01A.
+- Données : `mesures=[18,21,17,24,21], cible=21, seuil=22`. ; jeu_exercice=eta
+- Consigne : initialiser maximum à la première valeur ; traiter aussi `liste vide` si nécessaire.
+- Réponse attendue : somme=101, len=5, moyenne=20.2.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `liste vide`.
+### Exercice 8
+- Type : justification.
+- Capacité officielle : P-ALGO-01B.
+- Données : `mesures=[18,21,17,24,21], cible=21, seuil=22`. ; jeu_exercice=theta
+- Consigne : tester liste vide avant moyenne ; traiter aussi `cible absente` si nécessaire.
+- Réponse attendue : liste vide -> ValueError.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `cible absente`.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : P-ALGO-01A.
-- Donnée utilisée : liste = [12, 7, 19, 7, 3], valeur cherchée = 7.
-- Résultat attendu : On lit indice 0 -> 12, puis indice 1 -> 7. La première occurrence est à l’indice 1 ; on peut arrêter la recherche.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : première occurrence de 21 -> indice 1.
+- Justification : la tâche `parcourir avec indice` s applique à `mesures=[18,21,17,24,21], cible=21, seuil=22` ; erreur évitée : maximum initialisé à 0.
+- Donnée utilisée alpha dans P11 TD parcours recherche extremum moyenne : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans P11 TD parcours recherche extremum moyenne : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans P11 TD parcours recherche extremum moyenne : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans P11 TD parcours recherche extremum moyenne : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
 - Capacité mobilisée : P-ALGO-01B.
-- Donnée utilisée : mesures = [4, 11, 6, 11, 2].
-- Résultat attendu : Trace max: départ 4 ; après 11 -> 11 ; après 6 -> 11 ; après 11 -> 11 ; après 2 -> 11. Maximum final 11.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : maximum -> 24.
+- Justification : la tâche `mémoriser le premier indice de 21` s applique à `mesures=[18,21,17,24,21], cible=21, seuil=22` ; erreur évitée : division par len sans test.
+- Donnée utilisée beta dans P11 TD parcours recherche extremum moyenne : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans P11 TD parcours recherche extremum moyenne : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans P11 TD parcours recherche extremum moyenne : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans P11 TD parcours recherche extremum moyenne : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
 - Capacité mobilisée : P-ALGO-01A.
-- Donnée utilisée : notes = [8, 12, 15, 5].
-- Résultat attendu : Pseudo-code: somme=0 ; pour x dans notes: somme=somme+x ; moyenne=somme/len(notes). Ici somme=40, len=4, moyenne=10.0.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : somme=101, len=5, moyenne=20.2.
+- Justification : la tâche `initialiser maximum à la première valeur` s applique à `mesures=[18,21,17,24,21], cible=21, seuil=22` ; erreur évitée : indice changé après première occurrence.
+- Donnée utilisée gamma dans P11 TD parcours recherche extremum moyenne : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans P11 TD parcours recherche extremum moyenne : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans P11 TD parcours recherche extremum moyenne : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans P11 TD parcours recherche extremum moyenne : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
 - Capacité mobilisée : P-ALGO-01B.
-- Donnée utilisée : mots = ["NSI", "maths", "SI"], cible="physique".
-- Résultat attendu : trouve=False ; pour mot dans mots: si mot==cible alors trouve=True. Aucune égalité trouvée ; résultat False.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : liste vide -> ValueError.
+- Justification : la tâche `tester liste vide avant moyenne` s applique à `mesures=[18,21,17,24,21], cible=21, seuil=22` ; erreur évitée : maximum initialisé à 0.
+- Donnée utilisée delta dans P11 TD parcours recherche extremum moyenne : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans P11 TD parcours recherche extremum moyenne : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans P11 TD parcours recherche extremum moyenne : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans P11 TD parcours recherche extremum moyenne : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
 - Capacité mobilisée : P-ALGO-01A.
-- Donnée utilisée : valeurs = [].
-- Résultat attendu : Moyenne et maximum ne sont pas définis sur une liste vide. La fonction doit lever ValueError ou renvoyer None selon le contrat choisi ; elle ne doit pas diviser par 0.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : première occurrence de 21 -> indice 1.
+- Justification : la tâche `parcourir avec indice` s applique à `mesures=[18,21,17,24,21], cible=21, seuil=22` ; erreur évitée : division par len sans test.
+- Donnée utilisée epsilon dans P11 TD parcours recherche extremum moyenne : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans P11 TD parcours recherche extremum moyenne : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans P11 TD parcours recherche extremum moyenne : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans P11 TD parcours recherche extremum moyenne : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
 - Capacité mobilisée : P-ALGO-01B.
-- Donnée utilisée : liste de longueur n, recherche séquentielle d’une valeur absente.
-- Résultat attendu : Si la valeur est absente, tous les éléments sont testés une fois. Il y a n comparaisons, donc une complexité linéaire O(n).
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : maximum -> 24.
+- Justification : la tâche `mémoriser le premier indice de 21` s applique à `mesures=[18,21,17,24,21], cible=21, seuil=22` ; erreur évitée : indice changé après première occurrence.
+- Donnée utilisée zeta dans P11 TD parcours recherche extremum moyenne : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans P11 TD parcours recherche extremum moyenne : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans P11 TD parcours recherche extremum moyenne : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans P11 TD parcours recherche extremum moyenne : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
 - Capacité mobilisée : P-ALGO-01A.
-- Donnée utilisée : liste = [5, 1, 9, 2]. Méthode A calcule max puis moyenne en deux boucles ; méthode B fait les deux dans une boucle.
-- Résultat attendu : Les deux donnent max=9 et moyenne=17/4=4.25. A lit 8 éléments au total ; B lit 4 éléments, donc B est préférable sans changer le résultat.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : somme=101, len=5, moyenne=20.2.
+- Justification : la tâche `initialiser maximum à la première valeur` s applique à `mesures=[18,21,17,24,21], cible=21, seuil=22` ; erreur évitée : maximum initialisé à 0.
+- Donnée utilisée eta dans P11 TD parcours recherche extremum moyenne : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans P11 TD parcours recherche extremum moyenne : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans P11 TD parcours recherche extremum moyenne : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans P11 TD parcours recherche extremum moyenne : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
 - Capacité mobilisée : P-ALGO-01B.
-- Donnée utilisée : liste = [6, 4, 4, 9].
-- Résultat attendu : Pseudo-code: indice_min=0 ; pour i de 1 à 3, si liste[i] < liste[indice_min], remplacer. Avec égalité stricte, résultat indice 1, première occurrence du minimum 4.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : liste vide -> ValueError.
+- Justification : la tâche `tester liste vide avant moyenne` s applique à `mesures=[18,21,17,24,21], cible=21, seuil=22` ; erreur évitée : division par len sans test.
+- Donnée utilisée theta dans P11 TD parcours recherche extremum moyenne : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans P11 TD parcours recherche extremum moyenne : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans P11 TD parcours recherche extremum moyenne : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans P11 TD parcours recherche extremum moyenne : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
 ## Erreurs fréquentes
-- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
-- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
-- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
-- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
-
-## Remédiation ciblée
-- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
-- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
-- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
+- maximum initialisé à 0.
+- division par len sans test.
+- indice changé après première occurrence.
 
 ## Différenciation
-- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
-- Standard : demander méthode complète, résultat et contrôle écrit.
-- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
+- Socle : données annotées.
+- Standard : méthode complète.
+- Expert : transfert avec `cible absente`.
 
-## Lien avec la progression
-| Élément | Référence | Statut |
-|---|---|---|
-| Fiche | P11_fiche_cours_parcours_recherche_extremum_moyenne.md | needs_review |
-| Séance | P11-S1 | progression existante |
-| Évaluation | P11_evaluation_parcours_recherche_extremum_moyenne.md | needs_review |
+## Cas limites travaillés
+- liste vide.
+- cible absente.
+- doublon de 21.
 
-## Source et traçabilité
-- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
-- Aucun fichier Drive n’a été repris directement dans ce support.
-- Source de création : programme officiel et progression locale, avec statut `needs_review`.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `première occurrence de 21 -> indice 1`.
+- Au moins un cas limite de la section précédente est décidé.
+

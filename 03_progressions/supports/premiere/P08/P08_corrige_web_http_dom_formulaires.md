@@ -1,19 +1,14 @@
 ---
-title: "P08 - Corrigé - HTML, CSS, DOM, HTTP GET/POST"
+title: "P08 - corrige - HTML, CSS, DOM, HTTP et formulaires"
 level: "premiere"
 sequence_id: "P08"
 document_type: "corrige"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "IHM sur le Web"
-notion: "HTML, CSS, DOM, HTTP GET/POST"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "HTML, CSS, DOM, HTTP et formulaires"
+notion: "HTML, CSS, DOM, HTTP et formulaires"
 private_data: false
 official_program:
   capacities:
@@ -23,24 +18,54 @@ official_program:
     - "P-IHM-03A"
     - "P-IHM-03B"
     - "P-IHM-03C"
+    - "P-IHM-04A"
+    - "P-IHM-04B"
+    - "P-IHM-04C"
 ---
 
-# P08 - Corrigé - HTML, CSS, DOM, HTTP GET/POST
+# P08 - Corrigé - HTML, CSS, DOM, HTTP et formulaires
 
-## Réponse attendue principale
-Donnée : `<form method="post" action="/reservation"><input name="nom"><button>Envoyer</button></form>`.
-Étapes :
-- séparer structure HTML, style CSS et comportement DOM.
-- identifier méthode GET pour lecture et POST pour envoi.
-- modifier textContent sans injecter de HTML non contrôlé.
-Résultat final : le formulaire POST transporte nom=Ada ; le DOM affiche Réservation enregistrée pour Ada ; GET reste réservé à une URL consultable.
-
-## Corrigé des exercices
+## Corrigé du TD
 ### Exercice 1
-La donnée de référence est recopiée, puis la première méthode est appliquée. Résultat : le formulaire POST transporte nom=Ada ; le DOM affiche Réservation enregistrée pour Ada ; GET reste réservé à une URL consultable.
+- Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.
+- Méthode : repérer header main form label input.
+- Cas limite : champ nom vide.
 ### Exercice 2
-La variante doit conserver la structure du problème et produire un résultat recalculé.
+- Réponse attendue : document.querySelector("#nom").value lit la saisie.
+- Méthode : cibler #nom en CSS et DOM.
+- Cas limite : paramètre jour absent.
 ### Exercice 3
-Le cas limite est accepté seulement si la copie indique l’effet exact sur la méthode.
+- Réponse attendue : GET /club?jour=mercredi transporte jour.
+- Méthode : lire jour dans URL.
+- Cas limite : formulaire sans action.
 ### Exercice 4
-La capacité citée doit être reliée à une étape précise du raisonnement.
+- Réponse attendue : POST sans HTTPS ne chiffre pas.
+- Méthode : distinguer GET, POST et HTTPS.
+- Cas limite : champ nom vide.
+### Exercice 5
+- Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.
+- Méthode : repérer header main form label input.
+- Cas limite : paramètre jour absent.
+### Exercice 6
+- Réponse attendue : document.querySelector("#nom").value lit la saisie.
+- Méthode : cibler #nom en CSS et DOM.
+- Cas limite : formulaire sans action.
+### Exercice 7
+- Réponse attendue : GET /club?jour=mercredi transporte jour.
+- Méthode : lire jour dans URL.
+- Cas limite : champ nom vide.
+### Exercice 8
+- Réponse attendue : POST sans HTTPS ne chiffre pas.
+- Méthode : distinguer GET, POST et HTTPS.
+- Cas limite : paramètre jour absent.
+
+## Corrigé du TP
+- Donnée : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`.
+- Résultat principal : <label for=nom>Nom</label><input id=nom name=nom>.
+- Résultat secondaire : document.querySelector("#nom").value lit la saisie.
+
+## Corrigé de l évaluation
+- Question 1 : <label for=nom>Nom</label><input id=nom name=nom>.
+- Question 2 : document.querySelector("#nom").value lit la saisie.
+- Question 3 : GET /club?jour=mercredi transporte jour.
+- Question 4 : POST sans HTTPS ne chiffre pas.

@@ -1,22 +1,20 @@
 ---
-title: "P08 - EVALUATION - HTTP, GET, POST et formulaires"
+title: "P08 - evaluation - HTML, CSS, DOM, HTTP et formulaires"
 level: "premiere"
 sequence_id: "P08"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.2.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Interactions sur le Web"
-notion: "requêtes HTTP et formulaires"
-objectifs:
-  - "repérer méthode, URL, paramètres et corps"
-  - "justifier GET pour une recherche partageable"
-  - "justifier POST pour une donnée sensible"
-  - "identifier le risque de mot de passe dans l’URL"
+theme: "HTML, CSS, DOM, HTTP et formulaires"
+notion: "HTML, CSS, DOM, HTTP et formulaires"
 private_data: false
 official_program:
   capacities:
+    - "P-IHM-01A"
+    - "P-IHM-01B"
+    - "P-IHM-02"
     - "P-IHM-03A"
     - "P-IHM-03B"
     - "P-IHM-03C"
@@ -25,92 +23,74 @@ official_program:
     - "P-IHM-04C"
 ---
 
-# P08 - Évaluation courte - HTTP, GET, POST et formulaires
+# P08 - Évaluation - HTML, CSS, DOM, HTTP et formulaires
 
-## Objectifs évalués
-- O1 : repérer méthode, URL, paramètres et corps.
-- O2 : justifier GET pour une recherche partageable.
-- O3 : justifier POST pour une donnée sensible.
-- O4 : identifier le risque de mot de passe dans l’URL.
-
-## Capacités officielles
-- P-IHM-03A
-- P-IHM-03B
-- P-IHM-03C
-- P-IHM-04A
-- P-IHM-04B
-- P-IHM-04C
+## Modalités
+- Durée : 30 minutes.
+- Matériel autorisé : fiche de cours.
+- Capacités évaluées : P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C.
 
 ## Questions
 ### Question 1
-- Capacité : P-IHM-03A.
-- Énoncé : avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`, repérer méthode, URL, paramètres et corps.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre P08.
-- Critère de réussite : l’erreur « mettre un mot de passe dans une URL GET » est évitée ou corrigée.
+- Capacité officielle : P-IHM-01A.
+- Énoncé : à partir de `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`, repérer header main form label input.
+- Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `champ nom vide`.
 ### Question 2
-- Capacité : P-IHM-03B.
-- Énoncé : avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`, justifier GET pour une recherche partageable.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre P08.
-- Critère de réussite : l’erreur « confondre code de statut et méthode HTTP » est évitée ou corrigée.
+- Capacité officielle : P-IHM-01B.
+- Énoncé : à partir de `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`, cibler #nom en CSS et DOM.
+- Réponse attendue : document.querySelector("#nom").value lit la saisie.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `paramètre jour absent`.
 ### Question 3
-- Capacité : P-IHM-03C.
-- Énoncé : avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`, justifier POST pour une donnée sensible.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre P08.
-- Critère de réussite : l’erreur « croire que POST chiffre automatiquement » est évitée ou corrigée.
+- Capacité officielle : P-IHM-02.
+- Énoncé : à partir de `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`, lire jour dans URL.
+- Réponse attendue : GET /club?jour=mercredi transporte jour.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `formulaire sans action`.
 ### Question 4
-- Capacité : P-IHM-04A.
-- Énoncé : avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`, identifier le risque de mot de passe dans l’URL.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre P08.
-- Critère de réussite : l’erreur « oublier le nom des champs du formulaire » est évitée ou corrigée.
+- Capacité officielle : P-IHM-03A.
+- Énoncé : à partir de `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`, distinguer GET, POST et HTTPS.
+- Réponse attendue : POST sans HTTPS ne chiffre pas.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `champ nom vide`.
 
-## Barème
-- Question 1 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-- Question 2 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-- Question 3 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-- Question 4 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-
-## Corrigé
+## Corrigé question par question
 ### Corrigé question 1
-- Démarche : repérer méthode, URL, paramètres et corps.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`.
-- Justification : le contrôle explicite empêche l’erreur « mettre un mot de passe dans une URL GET ».
+- Résultat attendu : <label for=nom>Nom</label><input id=nom name=nom>.
+- Critère spécifique : repérer header main form label input et éviter `bouton hors formulaire`.
 ### Corrigé question 2
-- Démarche : justifier GET pour une recherche partageable.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`.
-- Justification : le contrôle explicite empêche l’erreur « confondre code de statut et méthode HTTP ».
+- Résultat attendu : document.querySelector("#nom").value lit la saisie.
+- Critère spécifique : cibler #nom en CSS et DOM et éviter `sélecteur trop large`.
 ### Corrigé question 3
-- Démarche : justifier POST pour une donnée sensible.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`.
-- Justification : le contrôle explicite empêche l’erreur « croire que POST chiffre automatiquement ».
+- Résultat attendu : GET /club?jour=mercredi transporte jour.
+- Critère spécifique : lire jour dans URL et éviter `POST confondu avec chiffrement`.
 ### Corrigé question 4
-- Démarche : identifier le risque de mot de passe dans l’URL.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`.
-- Justification : le contrôle explicite empêche l’erreur « oublier le nom des champs du formulaire ».
+- Résultat attendu : POST sans HTTPS ne chiffre pas.
+- Critère spécifique : distinguer GET, POST et HTTPS et éviter `bouton hors formulaire`.
 
-## Critères de réussite
-- Les capacités officielles sont citées dans les réponses.
-- Chaque question contient donnée, méthode, résultat et contrôle.
-- Le vocabulaire disciplinaire est utilisé sans remplacer la justification.
-- Le barème reste indicatif tant que la ressource est en needs_review.
+## Erreurs fréquentes et remédiation
+- bouton hors formulaire.
+- sélecteur trop large.
+- POST confondu avec chiffrement.
 
-## Modalités de passation
-- Durée : 25 minutes.
-- Matériel autorisé : fiche personnelle, sans corrigé ni accès réseau.
-- Capacités évaluées :
-- P-IHM-03A
-- P-IHM-03B
-- P-IHM-03C
-- P-IHM-04A
-- P-IHM-04B
-- P-IHM-04C
+## Cas limites travaillés
+- champ nom vide.
+- paramètre jour absent.
+- formulaire sans action.
 
-## Fiche liée et aménagement
-- Fiche liée : fiche de cours opérationnelle de la séquence P08, statut `needs_review`.
-- Séance liée : `P08-S1` dans la progression annuelle.
-- Version aménagée : même sujet avec données surlignées et tableau méthode / résultat / contrôle.
-- Remédiation : reprendre la question la moins réussie avec une donnée plus courte puis faire verbaliser la méthode.
-## Erreurs fréquentes
-- EF1 : répondre sans citer la donnée utilisée ; correction : encadrer la donnée avant de rédiger.
-- EF2 : donner un résultat sans méthode ; correction : séparer méthode, résultat et contrôle.
-- EF3 : oublier le cas limite ; correction : refaire une question avec une donnée minimale.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `<label for=nom>Nom</label><input id=nom name=nom>`.
+- Au moins un cas limite de la section précédente est décidé.
 
+
+
+## Barème question par question
+- question 1: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 2: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 3: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 4: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+
+## Fiche liée
+- Fiche liée : fiche de cours P08 sur `http_get_post_formulaires`.
+
+## Aménagement
+- Version aménagée : `P08_version_amenagee_http_get_post_formulaires.md` ; consignes découpées et barème conservé.

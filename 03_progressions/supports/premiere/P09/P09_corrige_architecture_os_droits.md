@@ -1,19 +1,14 @@
 ---
-title: "P09 - Corrigé - architecture, système d’exploitation, droits"
+title: "P09 - corrige - architecture, système et droits Unix"
 level: "premiere"
 sequence_id: "P09"
 document_type: "corrige"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Architecture matérielle et systèmes"
-notion: "architecture, système d’exploitation, droits"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "architecture, système et droits Unix"
+notion: "architecture, système et droits Unix"
 private_data: false
 official_program:
   capacities:
@@ -21,24 +16,52 @@ official_program:
     - "P-ARCH-01B"
     - "P-ARCH-03A"
     - "P-ARCH-03B"
+    - "P-ARCH-03C"
 ---
 
-# P09 - Corrigé - architecture, système d’exploitation, droits
+# P09 - Corrigé - architecture, système et droits Unix
 
-## Réponse attendue principale
-Donnée : `droits initiaux -rw-r--r--; commande visée chmod u+x projet.py; résultat -rwxr--r--`.
-Étapes :
-- distinguer processeur, mémoire, stockage et périphériques.
-- repérer le rôle du système d’exploitation.
-- interpréter r/w/x pour utilisateur, groupe, autres.
-Résultat final : seul le propriétaire gagne x ; le groupe et les autres gardent lecture seule ; l’OS contrôle l’accès au fichier.
-
-## Corrigé des exercices
+## Corrigé du TD
 ### Exercice 1
-La donnée de référence est recopiée, puis la première méthode est appliquée. Résultat : seul le propriétaire gagne x ; le groupe et les autres gardent lecture seule ; l’OS contrôle l’accès au fichier.
+- Réponse attendue : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
+- Méthode : distinguer mémoire vive et stockage.
+- Cas limite : fichier absent.
 ### Exercice 2
-La variante doit conserver la structure du problème et produire un résultat recalculé.
+- Réponse attendue : chmod 640 mesures.csv donne rw-r-----.
+- Méthode : identifier PID et processus.
+- Cas limite : droit x manquant sur dossier.
 ### Exercice 3
-Le cas limite est accepté seulement si la copie indique l’effet exact sur la méthode.
+- Réponse attendue : PID 2314 python collecte.py est un processus.
+- Méthode : lire rwx pour propriétaire groupe autres.
+- Cas limite : chmod 777 trop permissif.
 ### Exercice 4
-La capacité citée doit être reliée à une étape précise du raisonnement.
+- Réponse attendue : sans x sur dossier, lecture du fichier impossible.
+- Méthode : calculer chmod 640 et droit x dossier.
+- Cas limite : fichier absent.
+### Exercice 5
+- Réponse attendue : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
+- Méthode : distinguer mémoire vive et stockage.
+- Cas limite : droit x manquant sur dossier.
+### Exercice 6
+- Réponse attendue : chmod 640 mesures.csv donne rw-r-----.
+- Méthode : identifier PID et processus.
+- Cas limite : chmod 777 trop permissif.
+### Exercice 7
+- Réponse attendue : PID 2314 python collecte.py est un processus.
+- Méthode : lire rwx pour propriétaire groupe autres.
+- Cas limite : fichier absent.
+### Exercice 8
+- Réponse attendue : sans x sur dossier, lecture du fichier impossible.
+- Méthode : calculer chmod 640 et droit x dossier.
+- Cas limite : droit x manquant sur dossier.
+
+## Corrigé du TP
+- Donnée : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`.
+- Résultat principal : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
+- Résultat secondaire : chmod 640 mesures.csv donne rw-r-----.
+
+## Corrigé de l évaluation
+- Question 1 : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
+- Question 2 : chmod 640 mesures.csv donne rw-r-----.
+- Question 3 : PID 2314 python collecte.py est un processus.
+- Question 4 : sans x sur dossier, lecture du fichier impossible.

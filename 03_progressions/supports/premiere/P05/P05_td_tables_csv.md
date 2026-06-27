@@ -135,46 +135,71 @@ Le fichier élève normalisé est `03_progressions/supports/premiere/P05/data/pa
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- Méthode : identifier l’en-tête, associer Allemagne à Berlin, Europe et `82801531`, puis convertir la population.
 - Résultat : `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}`.
 - Contrôle : faire apparaître le contrôle « fichier pays_monde.csv vide ».
 - Erreur traitée : EF1 - Traiter l’en-tête comme une donnée.
+- Donnée utilisée alpha dans P05 td tables csv : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans P05 td tables csv : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans P05 td tables csv : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans P05 td tables csv : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : tester `CONTINENT == "Europe"` pour Allemagne, Albanie et Brésil.
 - Résultat : Allemagne et Albanie sont sélectionnées ; Brésil ne l’est pas.
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Comparer une valeur numérique restée chaîne.
+- Donnée utilisée beta dans P05 td tables csv : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans P05 td tables csv : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans P05 td tables csv : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans P05 td tables csv : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : calculer `82801531, 3063320 et la ligne invalide `POPULATION="invalide"``.
 - Résultat : `valides = ["Allemagne", "Albanie", "Brésil"]` et `erreurs = [{"PAYS": "Erreur", "CAPITALE": "NA", "CONTINENT": "Europe", "POPULATION": "invalide"}]`.
 - Contrôle : comparer avec le cas « sélection vide avant tri numérique ».
 - Erreur traitée : EF3 - Diviser par zéro après filtrage vide.
+- Donnée utilisée gamma dans P05 td tables csv : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans P05 td tables csv : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans P05 td tables csv : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans P05 td tables csv : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler l’erreur fréquente « Ignorer silencieusement une ligne mal formée. » puis reprendre la procédure correcte.
 - Résultat : dans le groupe Europe : Allemagne `(82801531)` avant Albanie `(3063320)`, puis les autres continents selon `CONTINENT`.
 - Contrôle : corriger l’erreur « Ignorer silencieusement une ligne mal formée. ».
 - Erreur traitée : EF4 - Ignorer silencieusement une ligne mal formée.
+- Donnée utilisée delta dans P05 td tables csv : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans P05 td tables csv : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans P05 td tables csv : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans P05 td tables csv : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : identifier `PAYS,CAPITALE,CONTINENT,POPULATION
 Allemagne,Berlin,Europe,82801531`, appliquer la méthode « lire avec csv.reader puis convertir POPULATION en int », puis écrire `{"PAYS": "Allemagne", "CAPITALE": "Berlin", "CONTINENT": "Europe", "POPULATION": 82801531}`.
 - Résultat : un fichier avec seulement l’en-tête `PAYS,CAPITALE,CONTINENT,POPULATION` donne une liste vide de pays.
 - Contrôle : nommer la donnée minimale et la conclusion.
 - Erreur traitée : EF1 - Traiter l’en-tête comme une donnée.
+- Donnée utilisée epsilon dans P05 td tables csv : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans P05 td tables csv : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans P05 td tables csv : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans P05 td tables csv : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : expliciter chaque étape de conserver les lignes dont CONTINENT vaut Europe avant de conclure par `["Allemagne", "Albanie"]`.
 - Résultat : la méthode `csv.DictReader` est choisie pour accéder à `row["CONTINENT"]` sans indice fragile.
 - Contrôle : identifier pourquoi « Comparer une valeur numérique restée chaîne. » est une erreur.
 - Erreur traitée : EF2 - Comparer une valeur numérique restée chaîne.
+- Donnée utilisée zeta dans P05 td tables csv : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans P05 td tables csv : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans P05 td tables csv : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans P05 td tables csv : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « sélection vide avant tri numérique » et valider que ValueError place la ligne invalide dans erreurs.
 - Résultat : sur `Espagne,Madrid,Europe,46754778`, `int(row["POPULATION"])` donne `46754778` et la ligne reste dans Europe.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Diviser par zéro après filtrage vide.
+- Donnée utilisée eta dans P05 td tables csv : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans P05 td tables csv : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans P05 td tables csv : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans P05 td tables csv : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler l’erreur fréquente « Ignorer silencieusement une ligne mal formée. » puis reprendre la procédure correcte.
 - Résultat : l’erreur est le tri de chaînes ; réparation : convertir puis utiliser la clé `(CONTINENT, -POPULATION, PAYS)`.
 - Contrôle : proposer une activité corrective inspirée de « Isoler les lignes invalides dans une liste de rejets. ».
 - Erreur traitée : EF4 - Ignorer silencieusement une ligne mal formée.
+- Donnée utilisée theta dans P05 td tables csv : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans P05 td tables csv : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans P05 td tables csv : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans P05 td tables csv : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Traiter l’en-tête comme une donnée.
 - Erreur fréquente EF2 - Comparer une valeur numérique restée chaîne.

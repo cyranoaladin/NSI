@@ -1,19 +1,14 @@
 ---
-title: "T09 - Remédiation - relations, clés primaires, clés étrangères, contraintes"
+title: "T09 - remediation - bases relationnelles, clés et contraintes"
 level: "terminale"
 sequence_id: "T09"
 document_type: "remediation"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Bases de données relationnelles"
-notion: "relations, clés primaires, clés étrangères, contraintes"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "bases relationnelles, clés et contraintes"
+notion: "bases relationnelles, clés et contraintes"
 private_data: false
 official_program:
   capacities:
@@ -23,18 +18,20 @@ official_program:
     - "T-BDD-02"
 ---
 
-# T09 - Remédiation - relations, clés primaires, clés étrangères, contraintes
+# T09 - Remédiation - bases relationnelles, clés et contraintes
 
-## Erreur fréquente 1
-Oublier la donnée stable. Activité corrective : surligner dans `Livre(1,"1984"), Livre(2,"Dune") ; Emprunt(10,2,"Ada") ; Emprunt(11,9,"Linus") invalide` les valeurs qui pilotent la méthode.
+## Diagnostic
+- attribut confondu avec valeur.
+- clé étrangère supposée unique.
+- domaine ignoré.
 
-## Erreur fréquente 2
-Appliquer une étape dans le mauvais ordre. Activité corrective : remettre ces étapes dans l’ordre : identifier clé primaire id_livre, vérifier clé étrangère Emprunt.id_livre vers Livre.id_livre, refuser un emprunt sur livre absent.
+## Activités correctives
+1. Annoter `Livre(1,Dune), Livre(2,Fondation) ; Emprunt(10,1,Nora), Emprunt(11,9,Sam) invalide`.
+2. Refaire la tâche `identifier schéma et instance` et comparer avec `Livre.id_livre identifie chaque livre`.
+3. Traiter le cas limite `clé primaire nulle`.
+4. Relier la réponse à T-BDD-01A.
 
-## Erreur fréquente 3
-Donner une conclusion non vérifiable. Activité corrective : retrouver le résultat `Emprunt 10 est valide ; Emprunt 11 viole la contrainte de clé étrangère car id_livre=9 absent` à partir de la donnée.
-
-## Différenciation
-- Socle : refaire l’exemple de référence.
-- Standard : traiter une valeur modifiée.
-- Approfondissement : créer un cas limite et le corriger.
+## Critères de sortie
+- Donnée exacte.
+- Résultat final explicite.
+- Cas limite décidé.

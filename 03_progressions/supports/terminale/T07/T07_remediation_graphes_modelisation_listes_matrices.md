@@ -1,19 +1,14 @@
 ---
-title: "T07 - Remédiation - modélisation, listes d’adjacence, matrices"
+title: "T07 - remediation - graphes, listes et matrices"
 level: "terminale"
 sequence_id: "T07"
 document_type: "remediation"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Graphes"
-notion: "modélisation, listes d’adjacence, matrices"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "graphes, listes et matrices"
+notion: "graphes, listes et matrices"
 private_data: false
 official_program:
   capacities:
@@ -23,18 +18,20 @@ official_program:
     - "T-STRUCT-05D"
 ---
 
-# T07 - Remédiation - modélisation, listes d’adjacence, matrices
+# T07 - Remédiation - graphes, listes et matrices
 
-## Erreur fréquente 1
-Oublier la donnée stable. Activité corrective : surligner dans `sommets A,B,C,D ; arêtes AB, AC, BD, CD` les valeurs qui pilotent la méthode.
+## Diagnostic
+- voisin entrant confondu.
+- sommet isolé oublié.
+- coût mémoire ignoré.
 
-## Erreur fréquente 2
-Appliquer une étape dans le mauvais ordre. Activité corrective : remettre ces étapes dans l’ordre : écrire la liste d’adjacence sans doublon, construire la matrice symétrique 4x4, comparer coût mémoire liste/matrice.
+## Activités correctives
+1. Annoter `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`.
+2. Refaire la tâche `lister voisins sortants` et comparer avec `A -> [B,C], B -> [D], C -> [D], D -> [B]`.
+3. Traiter le cas limite `sommet isolé E`.
+4. Relier la réponse à T-STRUCT-05A.
 
-## Erreur fréquente 3
-Donner une conclusion non vérifiable. Activité corrective : retrouver le résultat `adj[A]=[B,C], adj[B]=[A,D], adj[C]=[A,D], adj[D]=[B,C] ; matrice symétrique avec quatre arêtes` à partir de la donnée.
-
-## Différenciation
-- Socle : refaire l’exemple de référence.
-- Standard : traiter une valeur modifiée.
-- Approfondissement : créer un cas limite et le corriger.
+## Critères de sortie
+- Donnée exacte.
+- Résultat final explicite.
+- Cas limite décidé.

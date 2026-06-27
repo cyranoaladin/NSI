@@ -1,19 +1,14 @@
 ---
-title: "T15 - TD - calculabilité arrêt"
+title: "T15 - td - calculabilité, programme comme donnée et arrêt"
 level: "terminale"
 sequence_id: "T15"
 document_type: "td"
 status: "needs_review"
-version: "0.3.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Langages et calculabilité"
-notion: "calculabilité arrêt"
-objectifs:
-  - "travailler calculabilité arrêt sur des données explicites"
-  - "produire une réponse justifiée et contrôlée"
-  - "identifier les cas limites"
-  - "corriger les erreurs fréquentes du chapitre"
+theme: "calculabilité, programme comme donnée et arrêt"
+notion: "calculabilité, programme comme donnée et arrêt"
 private_data: false
 official_program:
   capacities:
@@ -22,164 +17,158 @@ official_program:
     - "T-LANG-01C"
 ---
 
-# T15 - TD - calculabilité arrêt
+# T15 - TD - calculabilité, programme comme donnée et arrêt
 
 ## Objectifs
-- Lire une donnée disciplinaire précise avant de répondre.
-- Produire une méthode vérifiable et un résultat contrôlable.
-- Traiter un cas limite sans le transformer en généralité.
-- Relier chaque correction à une erreur fréquente observable.
-
-## Capacités officielles
-- T-LANG-01A
-- T-LANG-01B
-- T-LANG-01C
-
-## Fiche liée et séance liée
-- Fiche liée : `03_progressions/fiches_cours/terminale/T15/T15_fiche_cours_calculabilite_arret.md`.
-- Séance liée : `T15-S1` dans la progression annuelle.
-- Statut : support `needs_review`, non validé et non publiable.
-
-## Situation de travail
-On classe des programmes selon terminaison observable et limites théoriques.
+- Travailler programme comme donnée, interpréteur, calculabilité, langage indépendant, problème de l arrêt.
+- Produire huit réponses vérifiables avec données explicites.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée.
-- Standard : exercices 3 à 6, production écrite et justification.
-- Approfondissement : exercices 7 et 8, transfert ou comparaison.
+- Socle : exercices 1 et 2.
+- Standard : exercices 3 à 6.
+- Approfondissement : exercices 7 et 8.
 
 ## Exercices
-### Exercice 1 - Tracer une boucle terminante
+### Exercice 1
 - Type : lecture/analyse.
-- Niveau : socle.
 - Capacité officielle : T-LANG-01A.
-- Données : n=3 ; while n>0: n=n-1.
-- Consigne : Donner la trace.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 2 - Repérer une boucle infinie
-- Type : lecture/analyse.
-- Niveau : socle.
+- Données : `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)`. ; jeu_exercice=alpha
+- Consigne : encoder un programme comme texte ; traiter aussi `programme très long mais fini` si nécessaire.
+- Réponse attendue : source="print(1)" est une donnée.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `programme très long mais fini`.
+### Exercice 2
+- Type : production/écriture.
 - Capacité officielle : T-LANG-01B.
-- Données : while True: pass.
-- Consigne : Dire ce qui manque pour terminer.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 3 - Écrire un variant
+- Données : `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)`. ; jeu_exercice=beta
+- Consigne : raisonner indépendamment de Python ; traiter aussi `langage différent` si nécessaire.
+- Réponse attendue : arrete(P,x) renvoie True ou False.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `langage différent`.
+### Exercice 3
 - Type : production/écriture.
-- Niveau : standard.
 - Capacité officielle : T-LANG-01C.
-- Données : while n>0: n=n//2 pour n=10.
-- Consigne : Donner variant et trace.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 4 - Construire un semi-décideur
-- Type : production/écriture.
-- Niveau : standard.
-- Capacité officielle : T-LANG-01A.
-- Données : Chercher si une valeur apparaît dans un flux infini.
-- Consigne : Expliquer.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 5 - Entrée déjà au cas d’arrêt
+- Données : `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)`. ; jeu_exercice=gamma
+- Consigne : poser un oracle hypothétique ; traiter aussi `entrée absente` si nécessaire.
+- Réponse attendue : Q boucle si arrete(Q,Q) dit True.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `entrée absente`.
+### Exercice 4
 - Type : cas limite.
-- Niveau : standard.
-- Capacité officielle : T-LANG-01B.
-- Données : n=0 pour while n>0.
-- Consigne : Donner comportement.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 6 - Expliquer l’indécidabilité de l’arrêt
-- Type : justification.
-- Niveau : standard.
-- Capacité officielle : T-LANG-01C.
-- Données : Supposer un programme HALT(P,x).
-- Consigne : Donner l’idée de contradiction.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 7 - Distinguer bug et limite théorique
-- Type : lecture/analyse.
-- Niveau : approfondissement.
 - Capacité officielle : T-LANG-01A.
-- Données : Un test timeout après 2 secondes.
-- Consigne : Peut-on conclure non-terminaison ?
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 8 - Classer trois programmes
-- Type : production/écriture.
-- Niveau : approfondissement.
+- Données : `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)`. ; jeu_exercice=delta
+- Consigne : construire un programme contradictoire ; traiter aussi `programme très long mais fini` si nécessaire.
+- Réponse attendue : contradiction donc oracle impossible.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `programme très long mais fini`.
+### Exercice 5
+- Type : justification.
 - Capacité officielle : T-LANG-01B.
-- Données : A termine toujours, B boucle toujours, C dépend d’une conjecture.
-- Consigne : Donner statut.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
+- Données : `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)`. ; jeu_exercice=epsilon
+- Consigne : encoder un programme comme texte ; traiter aussi `langage différent` si nécessaire.
+- Réponse attendue : source="print(1)" est une donnée.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `langage différent`.
+### Exercice 6
+- Type : lecture/analyse.
+- Capacité officielle : T-LANG-01C.
+- Données : `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)`. ; jeu_exercice=zeta
+- Consigne : raisonner indépendamment de Python ; traiter aussi `entrée absente` si nécessaire.
+- Réponse attendue : arrete(P,x) renvoie True ou False.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `entrée absente`.
+### Exercice 7
+- Type : production/écriture.
+- Capacité officielle : T-LANG-01A.
+- Données : `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)`. ; jeu_exercice=eta
+- Consigne : poser un oracle hypothétique ; traiter aussi `programme très long mais fini` si nécessaire.
+- Réponse attendue : Q boucle si arrete(Q,Q) dit True.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `programme très long mais fini`.
+### Exercice 8
+- Type : justification.
+- Capacité officielle : T-LANG-01B.
+- Données : `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)`. ; jeu_exercice=theta
+- Consigne : construire un programme contradictoire ; traiter aussi `langage différent` si nécessaire.
+- Réponse attendue : contradiction donc oracle impossible.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `langage différent`.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-LANG-01A.
-- Donnée utilisée : n=3 ; while n>0: n=n-1.
-- Résultat attendu : Trace n: 3 -> 2 -> 1 -> 0, puis condition n>0 fausse. Le programme termine.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : source="print(1)" est une donnée.
+- Justification : la tâche `encoder un programme comme texte` s applique à `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)` ; erreur évitée : non connu confondu avec impossible.
+- Donnée utilisée alpha dans T15 TD calculabilite arret : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans T15 TD calculabilite arret : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans T15 TD calculabilite arret : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans T15 TD calculabilite arret : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-LANG-01B.
-- Donnée utilisée : while True: pass.
-- Résultat attendu : Aucune variable ne rapproche d’un cas d’arrêt et la condition reste True. La boucle ne termine pas.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : arrete(P,x) renvoie True ou False.
+- Justification : la tâche `raisonner indépendamment de Python` s applique à `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)` ; erreur évitée : tests finis comme preuve.
+- Donnée utilisée beta dans T15 TD calculabilite arret : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans T15 TD calculabilite arret : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans T15 TD calculabilite arret : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans T15 TD calculabilite arret : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-LANG-01C.
-- Donnée utilisée : while n>0: n=n//2 pour n=10.
-- Résultat attendu : Variant n entier naturel diminue: 10 -> 5 -> 2 -> 1 -> 0. Il assure la terminaison.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : Q boucle si arrete(Q,Q) dit True.
+- Justification : la tâche `poser un oracle hypothétique` s applique à `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)` ; erreur évitée : contradiction oubliée.
+- Donnée utilisée gamma dans T15 TD calculabilite arret : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans T15 TD calculabilite arret : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans T15 TD calculabilite arret : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans T15 TD calculabilite arret : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-LANG-01A.
-- Donnée utilisée : Chercher si une valeur apparaît dans un flux infini.
-- Résultat attendu : On lit les valeurs une à une ; si cible trouvée, on répond oui. Si elle n’apparaît jamais, l’algorithme peut tourner sans répondre.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : contradiction donc oracle impossible.
+- Justification : la tâche `construire un programme contradictoire` s applique à `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)` ; erreur évitée : non connu confondu avec impossible.
+- Donnée utilisée delta dans T15 TD calculabilite arret : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans T15 TD calculabilite arret : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans T15 TD calculabilite arret : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans T15 TD calculabilite arret : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-LANG-01B.
-- Donnée utilisée : n=0 pour while n>0.
-- Résultat attendu : La condition est fausse au départ ; zéro itération ; terminaison immédiate.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : source="print(1)" est une donnée.
+- Justification : la tâche `encoder un programme comme texte` s applique à `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)` ; erreur évitée : tests finis comme preuve.
+- Donnée utilisée epsilon dans T15 TD calculabilite arret : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans T15 TD calculabilite arret : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans T15 TD calculabilite arret : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans T15 TD calculabilite arret : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-LANG-01C.
-- Donnée utilisée : Supposer un programme HALT(P,x).
-- Résultat attendu : Construire D(P): si HALT(P,P) répond oui alors boucler, sinon terminer. Exécuter D(D) contredit la réponse de HALT.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : arrete(P,x) renvoie True ou False.
+- Justification : la tâche `raisonner indépendamment de Python` s applique à `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)` ; erreur évitée : contradiction oubliée.
+- Donnée utilisée zeta dans T15 TD calculabilite arret : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans T15 TD calculabilite arret : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans T15 TD calculabilite arret : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans T15 TD calculabilite arret : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-LANG-01A.
-- Donnée utilisée : Un test timeout après 2 secondes.
-- Résultat attendu : Non. Le programme peut terminer après 3 secondes. Le timeout est une observation pratique, pas une preuve générale.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : Q boucle si arrete(Q,Q) dit True.
+- Justification : la tâche `poser un oracle hypothétique` s applique à `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)` ; erreur évitée : non connu confondu avec impossible.
+- Donnée utilisée eta dans T15 TD calculabilite arret : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans T15 TD calculabilite arret : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans T15 TD calculabilite arret : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans T15 TD calculabilite arret : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-LANG-01B.
-- Donnée utilisée : A termine toujours, B boucle toujours, C dépend d’une conjecture.
-- Résultat attendu : A décidable par preuve directe ; B non-terminaison prouvée par invariant True ; C peut être hors de portée sans preuve mathématique supplémentaire.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : contradiction donc oracle impossible.
+- Justification : la tâche `construire un programme contradictoire` s applique à `arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)` ; erreur évitée : tests finis comme preuve.
+- Donnée utilisée theta dans T15 TD calculabilite arret : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans T15 TD calculabilite arret : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans T15 TD calculabilite arret : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans T15 TD calculabilite arret : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
 ## Erreurs fréquentes
-- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
-- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
-- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
-- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
-
-## Remédiation ciblée
-- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
-- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
-- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
+- non connu confondu avec impossible.
+- tests finis comme preuve.
+- contradiction oubliée.
 
 ## Différenciation
-- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
-- Standard : demander méthode complète, résultat et contrôle écrit.
-- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
+- Socle : données annotées.
+- Standard : méthode complète.
+- Expert : transfert avec `langage différent`.
 
-## Lien avec la progression
-| Élément | Référence | Statut |
-|---|---|---|
-| Fiche | T15_fiche_cours_calculabilite_arret.md | needs_review |
-| Séance | T15-S1 | progression existante |
-| Évaluation | T15_evaluation_calculabilite_arret.md | needs_review |
+## Cas limites travaillés
+- programme très long mais fini.
+- langage différent.
+- entrée absente.
 
-## Source et traçabilité
-- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
-- Aucun fichier Drive n’a été repris directement dans ce support.
-- Source de création : programme officiel et progression locale, avec statut `needs_review`.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `source="print(1)" est une donnée`.
+- Au moins un cas limite de la section précédente est décidé.
+

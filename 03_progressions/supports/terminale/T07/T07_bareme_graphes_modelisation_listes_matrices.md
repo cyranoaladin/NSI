@@ -1,19 +1,14 @@
 ---
-title: "T07 - Barème - modélisation, listes d’adjacence, matrices"
+title: "T07 - bareme - graphes, listes et matrices"
 level: "terminale"
 sequence_id: "T07"
 document_type: "bareme"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Graphes"
-notion: "modélisation, listes d’adjacence, matrices"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "graphes, listes et matrices"
+notion: "graphes, listes et matrices"
 private_data: false
 official_program:
   capacities:
@@ -23,14 +18,23 @@ official_program:
     - "T-STRUCT-05D"
 ---
 
-# T07 - Barème - modélisation, listes d’adjacence, matrices
+# T07 - Barème - graphes, listes et matrices
 
-## Barème question par question
-- Question 1 : 2 points pour la donnée exacte `sommets A,B,C,D ; arêtes AB, AC, BD, CD`.
-- Question 2 : 3 points pour la méthode `écrire la liste d’adjacence sans doublon`.
-- Question 3 : 3 points pour le résultat `adj[A]=[B,C], adj[B]=[A,D], adj[C]=[A,D], adj[D]=[B,C] ; matrice symétrique avec quatre arêtes`.
-- Question 4 : 2 points pour un cas limite cohérent.
+## TD
+- 8 exercices : 1 point donnée, 1 point méthode, 1 point résultat, 1 point cas limite.
+
+## TP
+- 2 points donnée `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`.
+- 3 points tâche `lister voisins sortants`.
+- 3 points résultat `A -> [B,C], B -> [D], C -> [D], D -> [B]`.
+- 2 points cas limite `sommet isolé E`.
+
+## Évaluation question par question
+- Question 1 : 4 points sur T-STRUCT-05A avec résultat `A -> [B,C], B -> [D], C -> [D], D -> [B]`.
+- Question 2 : 4 points sur T-STRUCT-05B avec résultat `ligne A : colonnes B et C valent 1`.
+- Question 3 : 4 points sur T-STRUCT-05C avec résultat `matrice 4x4 -> 16 cases`.
+- Question 4 : 4 points sur T-STRUCT-05D avec résultat `sommet E isolé -> liste vide`.
 
 ## Critères observables
-- Les capacités évaluées sont : T-STRUCT-05A, T-STRUCT-05B, T-STRUCT-05C, T-STRUCT-05D.
-- Le résultat doit être écrit sous une forme vérifiable, pas seulement commenté.
+- Trace, table, valeur ou pseudo-code présent.
+- Cas limite et erreur fréquente explicités.

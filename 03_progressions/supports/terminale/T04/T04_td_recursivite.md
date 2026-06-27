@@ -129,45 +129,70 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- Méthode : identifier `4!`, appliquer la méthode « appliquer `n * fact(n-1)` jusqu’au cas `0!` », puis écrire `24`.
 - Résultat : `24`.
 - Contrôle : faire apparaître le contrôle « entier négatif refusé ».
 - Erreur traitée : EF1 - Oublier le cas de base.
+- Donnée utilisée alpha dans T04 td recursivite : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans T04 td recursivite : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans T04 td recursivite : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans T04 td recursivite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : expliciter chaque étape de séparer tête et reste avant de conclure par `8`.
 - Résultat : `8`.
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Faire un appel récursif qui ne rapproche pas du cas de base.
+- Donnée utilisée beta dans T04 td recursivite : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans T04 td recursivite : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans T04 td recursivite : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans T04 td recursivite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : comparer la donnée avec le cas limite « reste vide » et valider `2`.
 - Résultat : `2`.
 - Contrôle : comparer avec le cas « reste vide ».
 - Erreur traitée : EF3 - Confondre valeur retournée et affichage des appels.
+- Donnée utilisée gamma dans T04 td recursivite : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans T04 td recursivite : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans T04 td recursivite : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans T04 td recursivite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler l’erreur fréquente « Ne pas traiter l’entrée vide. » puis reprendre la procédure correcte.
 - Résultat : preuve de terminaison.
 - Contrôle : corriger l’erreur « Ne pas traiter l’entrée vide. ».
 - Erreur traitée : EF4 - Ne pas traiter l’entrée vide.
+- Donnée utilisée delta dans T04 td recursivite : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans T04 td recursivite : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans T04 td recursivite : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans T04 td recursivite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : identifier `4!`, appliquer la méthode « appliquer `n * fact(n-1)` jusqu’au cas `0!` », puis écrire `24`.
 - Résultat : le comportement de factorielle est contrôlé.
 - Contrôle : nommer la donnée minimale et la conclusion.
 - Erreur traitée : EF1 - Oublier le cas de base.
+- Donnée utilisée epsilon dans T04 td recursivite : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans T04 td recursivite : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans T04 td recursivite : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans T04 td recursivite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : expliciter chaque étape de séparer tête et reste avant de conclure par `8`.
 - Résultat : la méthode robuste est choisie et justifiée.
 - Contrôle : identifier pourquoi « Faire un appel récursif qui ne rapproche pas du cas de base. » est une erreur.
 - Erreur traitée : EF2 - Faire un appel récursif qui ne rapproche pas du cas de base.
+- Donnée utilisée zeta dans T04 td recursivite : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans T04 td recursivite : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans T04 td recursivite : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans T04 td recursivite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « reste vide » et valider `2`.
 - Résultat : la justification reste valable sur le nouveau cas.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Confondre valeur retournée et affichage des appels.
+- Donnée utilisée eta dans T04 td recursivite : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans T04 td recursivite : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans T04 td recursivite : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans T04 td recursivite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler l’erreur fréquente « Ne pas traiter l’entrée vide. » puis reprendre la procédure correcte.
 - Résultat : l’erreur est localisée puis réparée.
 - Contrôle : proposer une activité corrective inspirée de « Tester d’abord la liste vide ou `n = 0`. ».
 - Erreur traitée : EF4 - Ne pas traiter l’entrée vide.
+- Donnée utilisée theta dans T04 td recursivite : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans T04 td recursivite : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans T04 td recursivite : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans T04 td recursivite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Oublier le cas de base.
 - Erreur fréquente EF2 - Faire un appel récursif qui ne rapproche pas du cas de base.

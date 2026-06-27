@@ -1,19 +1,14 @@
 ---
-title: "P06 - Corrigé - recherche, tri et fusion de tables"
+title: "P06 - corrige - recherche, tri et fusion de tables"
 level: "premiere"
 sequence_id: "P06"
 document_type: "corrige"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Traitement de tables"
+theme: "recherche, tri et fusion de tables"
 notion: "recherche, tri et fusion de tables"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
 private_data: false
 official_program:
   capacities:
@@ -23,20 +18,47 @@ official_program:
 
 # P06 - Corrigé - recherche, tri et fusion de tables
 
-## Réponse attendue principale
-Donnée : `inscriptions = [{"id": 17, "nom": "Ada", "atelier": "robot"}, {"id": 4, "nom": "Linus", "atelier": "web"}, {"id": 17, "nom": "Ada", "atelier": "python"}]`.
-Étapes :
-- rechercher la première ligne de clé id=17 sans écraser le doublon.
-- trier par (nom, atelier).
-- fusionner inscriptions et présences avec vérification des clés absentes.
-Résultat final : première ligne id=17 : Ada/robot ; doublon id=17 signalé ; tri : Ada/python, Ada/robot, Linus/web ; absence id=9 notée dans erreurs.
-
-## Corrigé des exercices
+## Corrigé du TD
 ### Exercice 1
-La donnée de référence est recopiée, puis la première méthode est appliquée. Résultat : première ligne id=17 : Ada/robot ; doublon id=17 signalé ; tri : Ada/python, Ada/robot, Linus/web ; absence id=9 notée dans erreurs.
+- Réponse attendue : première ligne id=17 -> Ada/robot.
+- Méthode : chercher la première ligne id=17.
+- Cas limite : table vide.
 ### Exercice 2
-La variante doit conserver la structure du problème et produire un résultat recalculé.
+- Réponse attendue : doublon id=17 -> Ada/python signalé.
+- Méthode : détecter le doublon id=17.
+- Cas limite : clé id=9 absente.
 ### Exercice 3
-Le cas limite est accepté seulement si la copie indique l’effet exact sur la méthode.
+- Réponse attendue : tri -> Ada/python, Ada/robot, Linus/web.
+- Méthode : trier par (nom, atelier).
+- Cas limite : conflit de clé id=17.
 ### Exercice 4
-La capacité citée doit être reliée à une étape précise du raisonnement.
+- Réponse attendue : fusion -> erreur id_absent=9.
+- Méthode : fusionner inscriptions et présences.
+- Cas limite : table vide.
+### Exercice 5
+- Réponse attendue : première ligne id=17 -> Ada/robot.
+- Méthode : chercher la première ligne id=17.
+- Cas limite : clé id=9 absente.
+### Exercice 6
+- Réponse attendue : doublon id=17 -> Ada/python signalé.
+- Méthode : détecter le doublon id=17.
+- Cas limite : conflit de clé id=17.
+### Exercice 7
+- Réponse attendue : tri -> Ada/python, Ada/robot, Linus/web.
+- Méthode : trier par (nom, atelier).
+- Cas limite : table vide.
+### Exercice 8
+- Réponse attendue : fusion -> erreur id_absent=9.
+- Méthode : fusionner inscriptions et présences.
+- Cas limite : clé id=9 absente.
+
+## Corrigé du TP
+- Donnée : `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`.
+- Résultat principal : première ligne id=17 -> Ada/robot.
+- Résultat secondaire : doublon id=17 -> Ada/python signalé.
+
+## Corrigé de l évaluation
+- Question 1 : première ligne id=17 -> Ada/robot.
+- Question 2 : doublon id=17 -> Ada/python signalé.
+- Question 3 : tri -> Ada/python, Ada/robot, Linus/web.
+- Question 4 : fusion -> erreur id_absent=9.

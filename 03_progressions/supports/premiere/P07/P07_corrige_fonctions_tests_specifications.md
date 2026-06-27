@@ -1,19 +1,14 @@
 ---
-title: "P07 - Corrigé - fonctions, contrats, assertions et tests"
+title: "P07 - corrige - fonctions, tests et spécifications"
 level: "premiere"
 sequence_id: "P07"
 document_type: "corrige"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Langage Python"
-notion: "fonctions, contrats, assertions et tests"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "fonctions, tests et spécifications"
+notion: "fonctions, tests et spécifications"
 private_data: false
 official_program:
   capacities:
@@ -26,22 +21,49 @@ official_program:
     - "P-LANG-05"
 ---
 
-# P07 - Corrigé - fonctions, contrats, assertions et tests
+# P07 - Corrigé - fonctions, tests et spécifications
 
-## Réponse attendue principale
-Donnée : `prix_ttc(80, 0.20) -> 96.0 ; prix_ttc(0, 0.20) -> 0.0 ; prix_ttc(-5, 0.20) lève AssertionError`.
-Étapes :
-- écrire une signature explicite avec return.
-- rédiger précondition ht >= 0 et taux >= 0.
-- tester nominal, zéro et entrée invalide avant généralisation.
-Résultat final : fonction prix_ttc(ht, taux) retourne round(ht * (1 + taux), 2), refuse ht négatif et garde le cas ht=0.
-
-## Corrigé des exercices
+## Corrigé du TD
 ### Exercice 1
-La donnée de référence est recopiée, puis la première méthode est appliquée. Résultat : fonction prix_ttc(ht, taux) retourne round(ht * (1 + taux), 2), refuse ht négatif et garde le cas ht=0.
+- Réponse attendue : signature complète de prix_ttc.
+- Méthode : écrire def prix_ttc(prix_ht: float, taux: float) -> float.
+- Cas limite : prix_ht=0.
 ### Exercice 2
-La variante doit conserver la structure du problème et produire un résultat recalculé.
+- Réponse attendue : prix_ttc(80,0.20) -> 96.0.
+- Méthode : poser prix_ht >= 0 et taux >= 0.
+- Cas limite : taux=0.
 ### Exercice 3
-Le cas limite est accepté seulement si la copie indique l’effet exact sur la méthode.
+- Réponse attendue : prix_ttc(-5,0.20) -> ValueError.
+- Méthode : vérifier résultat >= prix_ht.
+- Cas limite : type chaîne "80".
 ### Exercice 4
-La capacité citée doit être reliée à une étape précise du raisonnement.
+- Réponse attendue : taux=0 -> résultat 80.0.
+- Méthode : écrire tests nominal, limite et invalide.
+- Cas limite : prix_ht=0.
+### Exercice 5
+- Réponse attendue : signature complète de prix_ttc.
+- Méthode : écrire def prix_ttc(prix_ht: float, taux: float) -> float.
+- Cas limite : taux=0.
+### Exercice 6
+- Réponse attendue : prix_ttc(80,0.20) -> 96.0.
+- Méthode : poser prix_ht >= 0 et taux >= 0.
+- Cas limite : type chaîne "80".
+### Exercice 7
+- Réponse attendue : prix_ttc(-5,0.20) -> ValueError.
+- Méthode : vérifier résultat >= prix_ht.
+- Cas limite : prix_ht=0.
+### Exercice 8
+- Réponse attendue : taux=0 -> résultat 80.0.
+- Méthode : écrire tests nominal, limite et invalide.
+- Cas limite : taux=0.
+
+## Corrigé du TP
+- Donnée : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`.
+- Résultat principal : signature complète de prix_ttc.
+- Résultat secondaire : prix_ttc(80,0.20) -> 96.0.
+
+## Corrigé de l évaluation
+- Question 1 : signature complète de prix_ttc.
+- Question 2 : prix_ttc(80,0.20) -> 96.0.
+- Question 3 : prix_ttc(-5,0.20) -> ValueError.
+- Question 4 : taux=0 -> résultat 80.0.

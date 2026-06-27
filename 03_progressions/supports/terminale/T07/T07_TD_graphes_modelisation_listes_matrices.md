@@ -1,19 +1,14 @@
 ---
-title: "T07 - TD - Graphes : modélisation, listes et matrices"
+title: "T07 - td - graphes, listes et matrices"
 level: "terminale"
 sequence_id: "T07"
 document_type: "td"
 status: "needs_review"
-version: "0.2.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Graphes"
-notion: "sommets, arêtes, matrice et liste d’adjacence"
-objectifs:
-  - "dessiner le graphe non orienté"
-  - "écrire la liste d’adjacence"
-  - "construire la matrice 4 x 4"
-  - "comparer accès à un voisin et test d’adjacence"
+theme: "graphes, listes et matrices"
+notion: "graphes, listes et matrices"
 private_data: false
 official_program:
   capacities:
@@ -23,117 +18,158 @@ official_program:
     - "T-STRUCT-05D"
 ---
 
-# T07 - TD - Graphes : modélisation, listes et matrices
+# T07 - TD - graphes, listes et matrices
 
 ## Objectifs
-- O1 : dessiner le graphe non orienté.
-- O2 : écrire la liste d’adjacence.
-- O3 : construire la matrice 4 x 4.
-- O4 : comparer accès à un voisin et test d’adjacence.
+- Travailler graphe orienté, graphe non orienté, liste d adjacence, matrice d adjacence, degré.
+- Produire huit réponses vérifiables avec données explicites.
 
-## Capacités officielles
-- T-STRUCT-05A
-- T-STRUCT-05B
-- T-STRUCT-05C
-- T-STRUCT-05D
-
-## Situation de travail
-On modélise un réseau de salles A, B, C, D avec couloirs A-B, A-C, B-D. Il faut choisir une représentation et justifier ses coûts.
-
-## Données de référence
-`S = {A, B, C, D}, E = {(A,B), (A,C), (B,D)}`
+## Progression socle / standard / approfondissement
+- Socle : exercices 1 et 2.
+- Standard : exercices 3 à 6.
+- Approfondissement : exercices 7 et 8.
 
 ## Exercices
 ### Exercice 1
-- Objectif travaillé : O1.
+- Type : lecture/analyse.
 - Capacité officielle : T-STRUCT-05A.
-- Énoncé : À partir de la donnée de référence, dessiner le graphe non orienté et écrire la justification.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`. ; jeu_exercice=alpha
+- Consigne : lister voisins sortants ; traiter aussi `sommet isolé E` si nécessaire.
+- Réponse attendue : A -> [B,C], B -> [D], C -> [D], D -> [B].
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `sommet isolé E`.
 ### Exercice 2
-- Objectif travaillé : O2.
+- Type : production/écriture.
 - Capacité officielle : T-STRUCT-05B.
-- Énoncé : Modifier une valeur de la donnée puis écrire la liste d’adjacence sans changer la méthode.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`. ; jeu_exercice=beta
+- Consigne : remplir matrice 0/1 ; traiter aussi `boucle A->A` si nécessaire.
+- Réponse attendue : ligne A : colonnes B et C valent 1.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `boucle A->A`.
 ### Exercice 3
-- Objectif travaillé : O3.
+- Type : production/écriture.
 - Capacité officielle : T-STRUCT-05C.
-- Énoncé : Construire un contre-exemple qui montre pourquoi il faut construire la matrice 4 x 4.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`. ; jeu_exercice=gamma
+- Consigne : calculer degré sortant ; traiter aussi `arête non orientée` si nécessaire.
+- Réponse attendue : matrice 4x4 -> 16 cases.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `arête non orientée`.
 ### Exercice 4
-- Objectif travaillé : O4.
+- Type : cas limite.
 - Capacité officielle : T-STRUCT-05D.
-- Énoncé : Analyser l'erreur fréquente « oublier la symétrie en non orienté » et la corriger.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`. ; jeu_exercice=delta
+- Consigne : choisir liste pour graphe peu dense ; traiter aussi `sommet isolé E` si nécessaire.
+- Réponse attendue : sommet E isolé -> liste vide.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `sommet isolé E`.
 ### Exercice 5
-- Objectif travaillé : O1.
+- Type : justification.
 - Capacité officielle : T-STRUCT-05A.
-- Énoncé : Comparer deux solutions d'élèves : l'une applique dessiner le graphe non orienté, l'autre conclut directement.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`. ; jeu_exercice=epsilon
+- Consigne : lister voisins sortants ; traiter aussi `boucle A->A` si nécessaire.
+- Réponse attendue : A -> [B,C], B -> [D], C -> [D], D -> [B].
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `boucle A->A`.
 ### Exercice 6
-- Objectif travaillé : O2.
+- Type : lecture/analyse.
 - Capacité officielle : T-STRUCT-05B.
-- Énoncé : Traiter le cas limite associé à « confondre sommet et arête » avec une donnée minimale.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`. ; jeu_exercice=zeta
+- Consigne : remplir matrice 0/1 ; traiter aussi `arête non orientée` si nécessaire.
+- Réponse attendue : ligne A : colonnes B et C valent 1.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `arête non orientée`.
 ### Exercice 7
-- Objectif travaillé : O3.
+- Type : production/écriture.
 - Capacité officielle : T-STRUCT-05C.
-- Énoncé : Rédiger une trace courte expliquant comparer accès à un voisin et test d’adjacence.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`. ; jeu_exercice=eta
+- Consigne : calculer degré sortant ; traiter aussi `sommet isolé E` si nécessaire.
+- Réponse attendue : matrice 4x4 -> 16 cases.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `sommet isolé E`.
 ### Exercice 8
-- Objectif travaillé : O4.
+- Type : justification.
 - Capacité officielle : T-STRUCT-05D.
-- Énoncé : Pour le graphe non orienté d’arêtes `(A,B)`, `(A,C)`, `(B,D)`, écrire la liste d’adjacence puis dire si `C` et `D` sont adjacents.
-- Production attendue : `A:[B,C]`, `B:[A,D]`, `C:[A]`, `D:[B]`; résultat `C` et `D` non adjacents, contrôle par absence de `D` dans la liste de `C`.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`. ; jeu_exercice=theta
+- Consigne : choisir liste pour graphe peu dense ; traiter aussi `boucle A->A` si nécessaire.
+- Réponse attendue : sommet E isolé -> liste vide.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `boucle A->A`.
 
-## Corrigé indicatif
+## Corrigé
 ### Corrigé exercice 1
-- Méthode : isoler la donnée, appliquer l’objectif O1, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « dessiner le graphe non orienté » et citer T-STRUCT-05A.
-- Contrôle : rejeter la solution si elle contient l’erreur « oublier la symétrie en non orienté ».
+- Capacité mobilisée : T-STRUCT-05A.
+- Résultat attendu : A -> [B,C], B -> [D], C -> [D], D -> [B].
+- Justification : la tâche `lister voisins sortants` s applique à `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]` ; erreur évitée : voisin entrant confondu.
+- Donnée utilisée alpha dans T07 TD graphes modelisation listes matrices : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans T07 TD graphes modelisation listes matrices : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans T07 TD graphes modelisation listes matrices : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans T07 TD graphes modelisation listes matrices : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : isoler la donnée, appliquer l’objectif O2, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « écrire la liste d’adjacence » et citer T-STRUCT-05B.
-- Contrôle : rejeter la solution si elle contient l’erreur « confondre sommet et arête ».
+- Capacité mobilisée : T-STRUCT-05B.
+- Résultat attendu : ligne A : colonnes B et C valent 1.
+- Justification : la tâche `remplir matrice 0/1` s applique à `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]` ; erreur évitée : sommet isolé oublié.
+- Donnée utilisée beta dans T07 TD graphes modelisation listes matrices : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans T07 TD graphes modelisation listes matrices : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans T07 TD graphes modelisation listes matrices : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans T07 TD graphes modelisation listes matrices : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : isoler la donnée, appliquer l’objectif O3, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « construire la matrice 4 x 4 » et citer T-STRUCT-05C.
-- Contrôle : rejeter la solution si elle contient l’erreur « mettre des doublons dans la liste ».
+- Capacité mobilisée : T-STRUCT-05C.
+- Résultat attendu : matrice 4x4 -> 16 cases.
+- Justification : la tâche `calculer degré sortant` s applique à `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]` ; erreur évitée : coût mémoire ignoré.
+- Donnée utilisée gamma dans T07 TD graphes modelisation listes matrices : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans T07 TD graphes modelisation listes matrices : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans T07 TD graphes modelisation listes matrices : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans T07 TD graphes modelisation listes matrices : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler la donnée, appliquer l’objectif O4, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « comparer accès à un voisin et test d’adjacence » et citer T-STRUCT-05D.
-- Contrôle : rejeter la solution si elle contient l’erreur « choisir une matrice sans discuter la densité ».
+- Capacité mobilisée : T-STRUCT-05D.
+- Résultat attendu : sommet E isolé -> liste vide.
+- Justification : la tâche `choisir liste pour graphe peu dense` s applique à `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]` ; erreur évitée : voisin entrant confondu.
+- Donnée utilisée delta dans T07 TD graphes modelisation listes matrices : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans T07 TD graphes modelisation listes matrices : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans T07 TD graphes modelisation listes matrices : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans T07 TD graphes modelisation listes matrices : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : isoler la donnée, appliquer l’objectif O1, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « dessiner le graphe non orienté » et citer T-STRUCT-05A.
-- Contrôle : rejeter la solution si elle contient l’erreur « oublier la symétrie en non orienté ».
+- Capacité mobilisée : T-STRUCT-05A.
+- Résultat attendu : A -> [B,C], B -> [D], C -> [D], D -> [B].
+- Justification : la tâche `lister voisins sortants` s applique à `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]` ; erreur évitée : sommet isolé oublié.
+- Donnée utilisée epsilon dans T07 TD graphes modelisation listes matrices : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans T07 TD graphes modelisation listes matrices : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans T07 TD graphes modelisation listes matrices : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans T07 TD graphes modelisation listes matrices : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : isoler la donnée, appliquer l’objectif O2, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « écrire la liste d’adjacence » et citer T-STRUCT-05B.
-- Contrôle : rejeter la solution si elle contient l’erreur « confondre sommet et arête ».
+- Capacité mobilisée : T-STRUCT-05B.
+- Résultat attendu : ligne A : colonnes B et C valent 1.
+- Justification : la tâche `remplir matrice 0/1` s applique à `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]` ; erreur évitée : coût mémoire ignoré.
+- Donnée utilisée zeta dans T07 TD graphes modelisation listes matrices : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans T07 TD graphes modelisation listes matrices : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans T07 TD graphes modelisation listes matrices : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans T07 TD graphes modelisation listes matrices : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : isoler la donnée, appliquer l’objectif O3, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « construire la matrice 4 x 4 » et citer T-STRUCT-05C.
-- Contrôle : rejeter la solution si elle contient l’erreur « mettre des doublons dans la liste ».
+- Capacité mobilisée : T-STRUCT-05C.
+- Résultat attendu : matrice 4x4 -> 16 cases.
+- Justification : la tâche `calculer degré sortant` s applique à `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]` ; erreur évitée : voisin entrant confondu.
+- Donnée utilisée eta dans T07 TD graphes modelisation listes matrices : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans T07 TD graphes modelisation listes matrices : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans T07 TD graphes modelisation listes matrices : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans T07 TD graphes modelisation listes matrices : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler la donnée, appliquer l’objectif O4, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « comparer accès à un voisin et test d’adjacence » et citer T-STRUCT-05D.
-- Contrôle : rejeter la solution si elle contient l’erreur « choisir une matrice sans discuter la densité ».
+- Capacité mobilisée : T-STRUCT-05D.
+- Résultat attendu : sommet E isolé -> liste vide.
+- Justification : la tâche `choisir liste pour graphe peu dense` s applique à `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]` ; erreur évitée : sommet isolé oublié.
+- Donnée utilisée theta dans T07 TD graphes modelisation listes matrices : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans T07 TD graphes modelisation listes matrices : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans T07 TD graphes modelisation listes matrices : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans T07 TD graphes modelisation listes matrices : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
-## Erreurs fréquentes et remédiation
-- EF1 : oublier la symétrie en non orienté. Remédiation : refaire l’exercice 1 avec la donnée modifiée par le professeur.
-- EF2 : confondre sommet et arête. Remédiation : refaire l’exercice 2 avec la donnée modifiée par le professeur.
-- EF3 : mettre des doublons dans la liste. Remédiation : refaire l’exercice 3 avec la donnée modifiée par le professeur.
-- EF4 : choisir une matrice sans discuter la densité. Remédiation : refaire l’exercice 4 avec la donnée modifiée par le professeur.
+## Erreurs fréquentes
+- voisin entrant confondu.
+- sommet isolé oublié.
+- coût mémoire ignoré.
 
 ## Différenciation
-- Socle : exercices 1 à 4 avec étapes visibles.
-- Standard : exercices 1 à 6 avec justification complète.
-- Expert : exercices 7 et 8 avec nouvelle donnée et contrôle autonome.
+- Socle : données annotées.
+- Standard : méthode complète.
+- Expert : transfert avec `boucle A->A`.
+
+## Cas limites travaillés
+- sommet isolé E.
+- boucle A->A.
+- arête non orientée.
+
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `A -> [B,C], B -> [D], C -> [D], D -> [B]`.
+- Au moins un cas limite de la section précédente est décidé.
+

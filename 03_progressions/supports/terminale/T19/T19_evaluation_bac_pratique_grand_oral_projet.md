@@ -1,116 +1,89 @@
 ---
-title: "T19 - Évaluation - bac pratique grand oral projet"
+title: "T19 - evaluation - bac pratique, écrit, Grand Oral et projet"
 level: "terminale"
 sequence_id: "T19"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.3.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Synthèse"
-notion: "bac pratique grand oral projet"
-objectifs:
-  - "évaluer la compréhension de la fiche"
-  - "vérifier la capacité à produire une réponse justifiée"
-  - "identifier les erreurs fréquentes"
-  - "préparer une remédiation ciblée"
+theme: "bac pratique, écrit, Grand Oral et projet"
+notion: "bac pratique, écrit, Grand Oral et projet"
 private_data: false
 official_program:
   capacities:
-    - "T-LANG-05"
+    - "T-HIST-01A"
+    - "T-HIST-01B"
 ---
 
-# T19 - Évaluation - bac pratique grand oral projet
+# T19 - Évaluation - bac pratique, écrit, Grand Oral et projet
 
-## Durée et matériel autorisé
-- Durée : 25 minutes.
-- Matériel autorisé : fiche personnelle, sans accès réseau ni corrigé.
-- Statut : évaluation `needs_review`, non validée et non publiable.
-
-## Capacités évaluées
-- T-LANG-05
-
-## Fiche liée
-- Fiche liée : `03_progressions/fiches_cours/terminale/T19/T19_fiche_cours_bac_pratique_grand_oral_projet.md`.
-- Séance liée : `T19-S1`.
-- TD lié : `T19_TD_bac_pratique_grand_oral_projet.md`.
-
-## Consignes
-Répondre directement sur copie. Chaque réponse doit montrer la donnée utilisée, la méthode et un contrôle rapide.
+## Modalités
+- Durée : 30 minutes.
+- Matériel autorisé : fiche de cours.
+- Capacités évaluées : T-HIST-01A, T-HIST-01B.
 
 ## Questions
-### Question 1 - Lire un sujet pratique
-- Capacité : T-LANG-05.
-- Données : Écrire occurrence(valeurs, x) qui compte x dans valeurs.
-- Consigne : Identifier entrée/sortie.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
-### Question 2 - Analyser un test
-- Capacité : T-LANG-05.
-- Données : assert occurrence([1,2,1],1)==2 ; assert occurrence([],3)==0.
-- Consigne : Dire les cas couverts.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
-### Question 3 - Écrire la fonction
-- Capacité : T-LANG-05.
-- Données : valeurs=[4,4,2], x=4.
-- Consigne : Donner code.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
-### Question 4 - Préparer explication orale
-- Capacité : T-LANG-05.
-- Données : Fonction occurrence.
-- Consigne : Plan en 45 secondes.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 1
+- Capacité officielle : T-HIST-01A.
+- Énoncé : à partir de `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration`, résoudre un exercice en temps borné.
+- Réponse attendue : fonction voisins_communs(g,A,B) testée.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `question trop large`.
+### Question 2
+- Capacité officielle : T-HIST-01B.
+- Énoncé : à partir de `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration`, rédiger une preuve courte.
+- Réponse attendue : oral : question, exemple, limite, ouverture.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `démonstration non reproductible`.
+### Question 3
+- Capacité officielle : T-HIST-01A.
+- Énoncé : à partir de `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration`, préparer une démonstration de 2 minutes.
+- Réponse attendue : 8 minutes exercice, 4 minutes relecture.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `source non vérifiée`.
+### Question 4
+- Capacité officielle : T-HIST-01B.
+- Énoncé : à partir de `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration`, relier un choix technique à un impact historique.
+- Réponse attendue : source historique vérifiée.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `question trop large`.
 
-## Barème
-- Question 1: 1 point identification de la donnée, 1 point méthode, 1 point résultat exact, 1 point contrôle.
-- Question 2: 1 point vocabulaire précis, 1 point méthode, 1 point résultat, 1 point justification.
-- Question 3: 1 point modélisation, 1 point production correcte, 1 point test du résultat, 1 point lisibilité.
-- Question 4: 1 point cas traité, 1 point résultat, 1 point justification, 1 point erreur fréquente évitée.
-- Total : 16 points, conversion sur 20 après relecture pédagogique.
-
-## Corrigé professeur
+## Corrigé question par question
 ### Corrigé question 1
-- Capacité évaluée : T-LANG-05.
-- Donnée utilisée : Écrire occurrence(valeurs, x) qui compte x dans valeurs.
-- Réponse attendue : Entrée: liste valeurs et cible x. Sortie: entier nombre d’occurrences. Exemple [1,2,1],1 -> 2.
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
+- Résultat attendu : fonction voisins_communs(g,A,B) testée.
+- Critère spécifique : résoudre un exercice en temps borné et éviter `récitation sans exemple`.
 ### Corrigé question 2
-- Capacité évaluée : T-LANG-05.
-- Donnée utilisée : assert occurrence([1,2,1],1)==2 ; assert occurrence([],3)==0.
-- Réponse attendue : Cas nominal avec doublon et cas limite liste vide.
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
+- Résultat attendu : oral : question, exemple, limite, ouverture.
+- Critère spécifique : rédiger une preuve courte et éviter `projet non exécutable`.
 ### Corrigé question 3
-- Capacité évaluée : T-LANG-05.
-- Donnée utilisée : valeurs=[4,4,2], x=4.
-- Réponse attendue : def occurrence(valeurs,x): c=0 ; for v in valeurs: if v==x: c+=1 ; return c. Résultat 2.
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
+- Résultat attendu : 8 minutes exercice, 4 minutes relecture.
+- Critère spécifique : préparer une démonstration de 2 minutes et éviter `temps ignoré`.
 ### Corrigé question 4
-- Capacité évaluée : T-LANG-05.
-- Donnée utilisée : Fonction occurrence.
-- Réponse attendue : Dire contrat, boucle et invariant c compte les occurrences déjà lues, puis complexité O(n).
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
-
-## Critères de réussite
-- Les capacités officielles sont reliées à une action observable.
-- Le résultat attendu peut être comparé à une valeur, une table, une trace ou un pseudo-code.
-- Le cas limite ou le contrôle demandé apparaît explicitement.
-- Le vocabulaire disciplinaire est utilisé dans le contexte de la donnée.
-
-## Version aménagée et indications d’aménagement
-- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un tableau méthode / résultat / contrôle.
-- Aménagement temps : ajouter 10 minutes si l’élève doit recopier les données.
-- Aide autorisée : liste des verbes d’action, sans résultat numérique ni requête complète.
+- Résultat attendu : source historique vérifiée.
+- Critère spécifique : relier un choix technique à un impact historique et éviter `récitation sans exemple`.
 
 ## Erreurs fréquentes et remédiation
-- EF1 : réponse sans donnée citée ; remédiation : refaire la question 1 avec les valeurs encadrées.
-- EF2 : méthode correcte mais résultat non contrôlé ; remédiation : ajouter une ligne de vérification.
-- EF3 : confusion entre vocabulaire et preuve ; remédiation : demander une phrase « parce que ».
-- EF4 : oubli du cas limite ; remédiation : reprendre le TD associé, exercice 5.
+- récitation sans exemple.
+- projet non exécutable.
+- temps ignoré.
 
-## Source et traçabilité
-- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
-- Aucun fichier Drive n’a été repris directement dans cette évaluation.
-- Source de création : programme officiel et progression locale, avec statut `needs_review`.
+## Cas limites travaillés
+- question trop large.
+- démonstration non reproductible.
+- source non vérifiée.
+
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `fonction voisins_communs(g,A,B) testée`.
+- Au moins un cas limite de la section précédente est décidé.
+
+
+
+## Barème question par question
+- question 1: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 2: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 3: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 4: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+
+## Fiche liée
+- Fiche liée : fiche de cours T19 sur `bac_pratique_grand_oral_projet`.
+
+## Aménagement
+- Version aménagée : `T19_version_amenagee_bac_pratique_grand_oral_projet.md` ; consignes découpées et barème conservé.

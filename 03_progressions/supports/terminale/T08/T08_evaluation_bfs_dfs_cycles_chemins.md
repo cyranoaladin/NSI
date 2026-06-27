@@ -1,19 +1,14 @@
 ---
-title: "T08 - EVALUATION - Parcours BFS, DFS, cycles et chemins"
+title: "T08 - evaluation - BFS, DFS, cycles et chemins"
 level: "terminale"
 sequence_id: "T08"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.2.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Algorithmes sur graphes"
-notion: "parcours en largeur, profondeur, chemins, cycles"
-objectifs:
-  - "exécuter BFS avec file"
-  - "exécuter DFS avec pile ou récursion"
-  - "reconstruire un chemin par prédécesseurs"
-  - "détecter un cycle en évitant le parent"
+theme: "BFS, DFS, cycles et chemins"
+notion: "BFS, DFS, cycles et chemins"
 private_data: false
 official_program:
   capacities:
@@ -23,88 +18,74 @@ official_program:
     - "T-ALGO-02D"
 ---
 
-# T08 - Évaluation courte - Parcours BFS, DFS, cycles et chemins
+# T08 - Évaluation - BFS, DFS, cycles et chemins
 
-## Objectifs évalués
-- O1 : exécuter BFS avec file.
-- O2 : exécuter DFS avec pile ou récursion.
-- O3 : reconstruire un chemin par prédécesseurs.
-- O4 : détecter un cycle en évitant le parent.
-
-## Capacités officielles
-- T-ALGO-02A
-- T-ALGO-02B
-- T-ALGO-02C
-- T-ALGO-02D
+## Modalités
+- Durée : 30 minutes.
+- Matériel autorisé : fiche de cours.
+- Capacités évaluées : T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D.
 
 ## Questions
 ### Question 1
-- Capacité : T-ALGO-02A.
-- Énoncé : avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`, exécuter BFS avec file.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre T08.
-- Critère de réussite : l’erreur « marquer un sommet trop tard » est évitée ou corrigée.
+- Capacité officielle : T-ALGO-02A.
+- Énoncé : à partir de `adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}`, BFS file A puis B,C puis D,E.
+- Réponse attendue : BFS -> A,B,C,D,E.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `sommet isolé F`.
 ### Question 2
-- Capacité : T-ALGO-02B.
-- Énoncé : avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`, exécuter DFS avec pile ou récursion.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre T08.
-- Critère de réussite : l’erreur « croire que DFS donne toujours un plus court chemin » est évitée ou corrigée.
+- Capacité officielle : T-ALGO-02B.
+- Énoncé : à partir de `adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}`, mémoriser prédécesseurs.
+- Réponse attendue : prédécesseurs E<-C<-A donc chemin A-C-E.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `destination absente`.
 ### Question 3
-- Capacité : T-ALGO-02C.
-- Énoncé : avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`, reconstruire un chemin par prédécesseurs.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre T08.
-- Critère de réussite : l’erreur « oublier les prédécesseurs » est évitée ou corrigée.
+- Capacité officielle : T-ALGO-02C.
+- Énoncé : à partir de `adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}`, DFS explore un chemin avant retour.
+- Réponse attendue : F isolé -> aucun chemin.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `cycle D-C-D`.
 ### Question 4
-- Capacité : T-ALGO-02D.
-- Énoncé : avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`, détecter un cycle en évitant le parent.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre T08.
-- Critère de réussite : l’erreur « confondre cycle et simple retour vers le parent » est évitée ou corrigée.
+- Capacité officielle : T-ALGO-02D.
+- Énoncé : à partir de `adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}`, détecter cycle par sommet gris.
+- Réponse attendue : complexité O(V+E).
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `sommet isolé F`.
 
-## Barème
-- Question 1 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-- Question 2 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-- Question 3 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-- Question 4 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-
-## Corrigé
+## Corrigé question par question
 ### Corrigé question 1
-- Démarche : exécuter BFS avec file.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`.
-- Justification : le contrôle explicite empêche l’erreur « marquer un sommet trop tard ».
+- Résultat attendu : BFS -> A,B,C,D,E.
+- Critère spécifique : BFS file A puis B,C puis D,E et éviter `marquage trop tardif`.
 ### Corrigé question 2
-- Démarche : exécuter DFS avec pile ou récursion.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`.
-- Justification : le contrôle explicite empêche l’erreur « croire que DFS donne toujours un plus court chemin ».
+- Résultat attendu : prédécesseurs E<-C<-A donc chemin A-C-E.
+- Critère spécifique : mémoriser prédécesseurs et éviter `BFS confondu avec DFS`.
 ### Corrigé question 3
-- Démarche : reconstruire un chemin par prédécesseurs.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`.
-- Justification : le contrôle explicite empêche l’erreur « oublier les prédécesseurs ».
+- Résultat attendu : F isolé -> aucun chemin.
+- Critère spécifique : DFS explore un chemin avant retour et éviter `prédécesseurs oubliés`.
 ### Corrigé question 4
-- Démarche : détecter un cycle en évitant le parent.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`.
-- Justification : le contrôle explicite empêche l’erreur « confondre cycle et simple retour vers le parent ».
+- Résultat attendu : complexité O(V+E).
+- Critère spécifique : détecter cycle par sommet gris et éviter `marquage trop tardif`.
 
-## Critères de réussite
-- Les capacités officielles sont citées dans les réponses.
-- Chaque question contient donnée, méthode, résultat et contrôle.
-- Le vocabulaire disciplinaire est utilisé sans remplacer la justification.
-- Le barème reste indicatif tant que la ressource est en needs_review.
+## Erreurs fréquentes et remédiation
+- marquage trop tardif.
+- BFS confondu avec DFS.
+- prédécesseurs oubliés.
 
-## Modalités de passation
-- Durée : 25 minutes.
-- Matériel autorisé : fiche personnelle, sans corrigé ni accès réseau.
-- Capacités évaluées :
-- T-ALGO-02A
-- T-ALGO-02B
-- T-ALGO-02C
-- T-ALGO-02D
+## Cas limites travaillés
+- sommet isolé F.
+- destination absente.
+- cycle D-C-D.
 
-## Fiche liée et aménagement
-- Fiche liée : fiche de cours opérationnelle de la séquence T08, statut `needs_review`.
-- Séance liée : `T08-S1` dans la progression annuelle.
-- Version aménagée : même sujet avec données surlignées et tableau méthode / résultat / contrôle.
-- Remédiation : reprendre la question la moins réussie avec une donnée plus courte puis faire verbaliser la méthode.
-## Erreurs fréquentes
-- EF1 : répondre sans citer la donnée utilisée ; correction : encadrer la donnée avant de rédiger.
-- EF2 : donner un résultat sans méthode ; correction : séparer méthode, résultat et contrôle.
-- EF3 : oublier le cas limite ; correction : refaire une question avec une donnée minimale.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `BFS -> A,B,C,D,E`.
+- Au moins un cas limite de la section précédente est décidé.
 
+
+
+## Barème question par question
+- question 1: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 2: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 3: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 4: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+
+## Fiche liée
+- Fiche liée : fiche de cours T08 sur `bfs_dfs_cycles_chemins`.
+
+## Aménagement
+- Version aménagée : `T08_version_amenagee_bfs_dfs_cycles_chemins.md` ; consignes découpées et barème conservé.

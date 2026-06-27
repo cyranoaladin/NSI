@@ -1,19 +1,14 @@
 ---
-title: "T08 - Corrigé - BFS, DFS, cycles et chemins"
+title: "T08 - corrige - BFS, DFS, cycles et chemins"
 level: "terminale"
 sequence_id: "T08"
 document_type: "corrige"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Graphes et parcours"
+theme: "BFS, DFS, cycles et chemins"
 notion: "BFS, DFS, cycles et chemins"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
 private_data: false
 official_program:
   capacities:
@@ -25,20 +20,47 @@ official_program:
 
 # T08 - Corrigé - BFS, DFS, cycles et chemins
 
-## Réponse attendue principale
-Donnée : `file BFS initiale [A] ; pile DFS initiale [A] ; voisins triés alphabétiquement`.
-Étapes :
-- BFS utilise une file et découvre par distance croissante.
-- DFS utilise une pile ou récursion et explore en profondeur.
-- marquer visité pour éviter le cycle A-B-D-C-A.
-Résultat final : BFS découvre A, B, C, D, E et donne distance 3 ; DFS peut suivre A, B, D, E selon ordre choisi.
-
-## Corrigé des exercices
+## Corrigé du TD
 ### Exercice 1
-La donnée de référence est recopiée, puis la première méthode est appliquée. Résultat : BFS découvre A, B, C, D, E et donne distance 3 ; DFS peut suivre A, B, D, E selon ordre choisi.
+- Réponse attendue : BFS -> A,B,C,D,E.
+- Méthode : BFS file A puis B,C puis D,E.
+- Cas limite : sommet isolé F.
 ### Exercice 2
-La variante doit conserver la structure du problème et produire un résultat recalculé.
+- Réponse attendue : prédécesseurs E<-C<-A donc chemin A-C-E.
+- Méthode : mémoriser prédécesseurs.
+- Cas limite : destination absente.
 ### Exercice 3
-Le cas limite est accepté seulement si la copie indique l’effet exact sur la méthode.
+- Réponse attendue : F isolé -> aucun chemin.
+- Méthode : DFS explore un chemin avant retour.
+- Cas limite : cycle D-C-D.
 ### Exercice 4
-La capacité citée doit être reliée à une étape précise du raisonnement.
+- Réponse attendue : complexité O(V+E).
+- Méthode : détecter cycle par sommet gris.
+- Cas limite : sommet isolé F.
+### Exercice 5
+- Réponse attendue : BFS -> A,B,C,D,E.
+- Méthode : BFS file A puis B,C puis D,E.
+- Cas limite : destination absente.
+### Exercice 6
+- Réponse attendue : prédécesseurs E<-C<-A donc chemin A-C-E.
+- Méthode : mémoriser prédécesseurs.
+- Cas limite : cycle D-C-D.
+### Exercice 7
+- Réponse attendue : F isolé -> aucun chemin.
+- Méthode : DFS explore un chemin avant retour.
+- Cas limite : sommet isolé F.
+### Exercice 8
+- Réponse attendue : complexité O(V+E).
+- Méthode : détecter cycle par sommet gris.
+- Cas limite : destination absente.
+
+## Corrigé du TP
+- Donnée : `adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}`.
+- Résultat principal : BFS -> A,B,C,D,E.
+- Résultat secondaire : prédécesseurs E<-C<-A donc chemin A-C-E.
+
+## Corrigé de l évaluation
+- Question 1 : BFS -> A,B,C,D,E.
+- Question 2 : prédécesseurs E<-C<-A donc chemin A-C-E.
+- Question 3 : F isolé -> aucun chemin.
+- Question 4 : complexité O(V+E).

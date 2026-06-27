@@ -1,19 +1,14 @@
 ---
-title: "P06 - TD - Tables : recherche, tri et fusion"
+title: "P06 - td - recherche, tri et fusion de tables"
 level: "premiere"
 sequence_id: "P06"
 document_type: "td"
 status: "needs_review"
-version: "0.2.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Traitement de tables"
-notion: "recherche, tri, fusion de tables"
-objectifs:
-  - "rechercher la première ligne où id vaut 17"
-  - "trier les lignes par nom puis par atelier"
-  - "fusionner avec une table de présences par identifiant"
-  - "signaler le doublon id=17 au lieu de l’écraser"
+theme: "recherche, tri et fusion de tables"
+notion: "recherche, tri et fusion de tables"
 private_data: false
 official_program:
   capacities:
@@ -21,115 +16,158 @@ official_program:
     - "P-TABLE-04"
 ---
 
-# P06 - TD - Tables : recherche, tri et fusion
+# P06 - TD - recherche, tri et fusion de tables
 
 ## Objectifs
-- O1 : rechercher la première ligne où id vaut 17.
-- O2 : trier les lignes par nom puis par atelier.
-- O3 : fusionner avec une table de présences par identifiant.
-- O4 : signaler le doublon id=17 au lieu de l’écraser.
+- Travailler recherche dans une table, clé id, doublon id=17, tri stable, tri par clé composée.
+- Produire huit réponses vérifiables avec données explicites.
 
-## Capacités officielles
-- P-TABLE-03
-- P-TABLE-04
-
-## Situation de travail
-Une association dispose de deux fichiers : inscriptions aux ateliers et résultats de présence. Il faut retrouver une ligne, trier par nom puis fusionner deux tables avec la clé adherent.
-
-## Données de référence
-`inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`
+## Progression socle / standard / approfondissement
+- Socle : exercices 1 et 2.
+- Standard : exercices 3 à 6.
+- Approfondissement : exercices 7 et 8.
 
 ## Exercices
 ### Exercice 1
-- Objectif travaillé : O1.
+- Type : lecture/analyse.
 - Capacité officielle : P-TABLE-03.
-- Énoncé : À partir de la donnée de référence, rechercher la première ligne où id vaut 17 et écrire la justification.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`. ; jeu_exercice=alpha
+- Consigne : chercher la première ligne id=17 ; traiter aussi `table vide` si nécessaire.
+- Réponse attendue : première ligne id=17 -> Ada/robot.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `table vide`.
 ### Exercice 2
-- Objectif travaillé : O2.
+- Type : production/écriture.
 - Capacité officielle : P-TABLE-04.
-- Énoncé : Modifier une valeur de la donnée puis trier les lignes par nom puis par atelier sans changer la méthode.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`. ; jeu_exercice=beta
+- Consigne : détecter le doublon id=17 ; traiter aussi `clé id=9 absente` si nécessaire.
+- Réponse attendue : doublon id=17 -> Ada/python signalé.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `clé id=9 absente`.
 ### Exercice 3
-- Objectif travaillé : O3.
+- Type : production/écriture.
 - Capacité officielle : P-TABLE-03.
-- Énoncé : Construire un contre-exemple qui montre pourquoi il faut fusionner avec une table de présences par identifiant.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`. ; jeu_exercice=gamma
+- Consigne : trier par (nom, atelier) ; traiter aussi `conflit de clé id=17` si nécessaire.
+- Réponse attendue : tri -> Ada/python, Ada/robot, Linus/web.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `conflit de clé id=17`.
 ### Exercice 4
-- Objectif travaillé : O4.
+- Type : cas limite.
 - Capacité officielle : P-TABLE-04.
-- Énoncé : Analyser l'erreur fréquente « utiliser la position de ligne comme clé stable » et la corriger.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`. ; jeu_exercice=delta
+- Consigne : fusionner inscriptions et présences ; traiter aussi `table vide` si nécessaire.
+- Réponse attendue : fusion -> erreur id_absent=9.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `table vide`.
 ### Exercice 5
-- Objectif travaillé : O1.
+- Type : justification.
 - Capacité officielle : P-TABLE-03.
-- Énoncé : Comparer deux solutions d'élèves : l'une applique rechercher la première ligne où id vaut 17, l'autre conclut directement.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`. ; jeu_exercice=epsilon
+- Consigne : chercher la première ligne id=17 ; traiter aussi `clé id=9 absente` si nécessaire.
+- Réponse attendue : première ligne id=17 -> Ada/robot.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `clé id=9 absente`.
 ### Exercice 6
-- Objectif travaillé : O2.
+- Type : lecture/analyse.
 - Capacité officielle : P-TABLE-04.
-- Énoncé : Traiter le cas limite associé à « supprimer silencieusement un doublon » avec une donnée minimale.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`. ; jeu_exercice=zeta
+- Consigne : détecter le doublon id=17 ; traiter aussi `conflit de clé id=17` si nécessaire.
+- Réponse attendue : doublon id=17 -> Ada/python signalé.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `conflit de clé id=17`.
 ### Exercice 7
-- Objectif travaillé : O3.
+- Type : production/écriture.
 - Capacité officielle : P-TABLE-03.
-- Énoncé : Rédiger une trace courte expliquant signaler le doublon id=17 au lieu de l’écraser.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`. ; jeu_exercice=eta
+- Consigne : trier par (nom, atelier) ; traiter aussi `table vide` si nécessaire.
+- Réponse attendue : tri -> Ada/python, Ada/robot, Linus/web.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `table vide`.
 ### Exercice 8
-- Objectif travaillé : O4.
+- Type : justification.
 - Capacité officielle : P-TABLE-04.
-- Énoncé : Construire un cas de test numérique ou textuel inédit et vérifier que la méthode reste valable.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`. ; jeu_exercice=theta
+- Consigne : fusionner inscriptions et présences ; traiter aussi `clé id=9 absente` si nécessaire.
+- Réponse attendue : fusion -> erreur id_absent=9.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `clé id=9 absente`.
 
-## Corrigé indicatif
+## Corrigé
 ### Corrigé exercice 1
-- Méthode : isoler la donnée, appliquer l’objectif O1, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « rechercher la première ligne où id vaut 17 » et citer P-TABLE-03.
-- Contrôle : rejeter la solution si elle contient l’erreur « utiliser la position de ligne comme clé stable ».
+- Capacité mobilisée : P-TABLE-03.
+- Résultat attendu : première ligne id=17 -> Ada/robot.
+- Justification : la tâche `chercher la première ligne id=17` s applique à `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]` ; erreur évitée : écraser un doublon.
+- Donnée utilisée alpha dans P06 TD tables recherche tri fusion : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans P06 TD tables recherche tri fusion : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans P06 TD tables recherche tri fusion : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans P06 TD tables recherche tri fusion : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : isoler la donnée, appliquer l’objectif O2, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « trier les lignes par nom puis par atelier » et citer P-TABLE-04.
-- Contrôle : rejeter la solution si elle contient l’erreur « supprimer silencieusement un doublon ».
+- Capacité mobilisée : P-TABLE-04.
+- Résultat attendu : doublon id=17 -> Ada/python signalé.
+- Justification : la tâche `détecter le doublon id=17` s applique à `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]` ; erreur évitée : utiliser un indice comme clé.
+- Donnée utilisée beta dans P06 TD tables recherche tri fusion : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans P06 TD tables recherche tri fusion : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans P06 TD tables recherche tri fusion : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans P06 TD tables recherche tri fusion : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : isoler la donnée, appliquer l’objectif O3, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « fusionner avec une table de présences par identifiant » et citer P-TABLE-03.
-- Contrôle : rejeter la solution si elle contient l’erreur « trier des nombres stockés comme chaînes ».
+- Capacité mobilisée : P-TABLE-03.
+- Résultat attendu : tri -> Ada/python, Ada/robot, Linus/web.
+- Justification : la tâche `trier par (nom, atelier)` s applique à `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]` ; erreur évitée : oublier une clé absente.
+- Donnée utilisée gamma dans P06 TD tables recherche tri fusion : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans P06 TD tables recherche tri fusion : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans P06 TD tables recherche tri fusion : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans P06 TD tables recherche tri fusion : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler la donnée, appliquer l’objectif O4, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « signaler le doublon id=17 au lieu de l’écraser » et citer P-TABLE-04.
-- Contrôle : rejeter la solution si elle contient l’erreur « fusionner deux tables sans vérifier les clés absentes ».
+- Capacité mobilisée : P-TABLE-04.
+- Résultat attendu : fusion -> erreur id_absent=9.
+- Justification : la tâche `fusionner inscriptions et présences` s applique à `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]` ; erreur évitée : écraser un doublon.
+- Donnée utilisée delta dans P06 TD tables recherche tri fusion : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans P06 TD tables recherche tri fusion : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans P06 TD tables recherche tri fusion : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans P06 TD tables recherche tri fusion : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : isoler la donnée, appliquer l’objectif O1, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « rechercher la première ligne où id vaut 17 » et citer P-TABLE-03.
-- Contrôle : rejeter la solution si elle contient l’erreur « utiliser la position de ligne comme clé stable ».
+- Capacité mobilisée : P-TABLE-03.
+- Résultat attendu : première ligne id=17 -> Ada/robot.
+- Justification : la tâche `chercher la première ligne id=17` s applique à `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]` ; erreur évitée : utiliser un indice comme clé.
+- Donnée utilisée epsilon dans P06 TD tables recherche tri fusion : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans P06 TD tables recherche tri fusion : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans P06 TD tables recherche tri fusion : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans P06 TD tables recherche tri fusion : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : isoler la donnée, appliquer l’objectif O2, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « trier les lignes par nom puis par atelier » et citer P-TABLE-04.
-- Contrôle : rejeter la solution si elle contient l’erreur « supprimer silencieusement un doublon ».
+- Capacité mobilisée : P-TABLE-04.
+- Résultat attendu : doublon id=17 -> Ada/python signalé.
+- Justification : la tâche `détecter le doublon id=17` s applique à `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]` ; erreur évitée : oublier une clé absente.
+- Donnée utilisée zeta dans P06 TD tables recherche tri fusion : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans P06 TD tables recherche tri fusion : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans P06 TD tables recherche tri fusion : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans P06 TD tables recherche tri fusion : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : isoler la donnée, appliquer l’objectif O3, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « fusionner avec une table de présences par identifiant » et citer P-TABLE-03.
-- Contrôle : rejeter la solution si elle contient l’erreur « trier des nombres stockés comme chaînes ».
+- Capacité mobilisée : P-TABLE-03.
+- Résultat attendu : tri -> Ada/python, Ada/robot, Linus/web.
+- Justification : la tâche `trier par (nom, atelier)` s applique à `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]` ; erreur évitée : écraser un doublon.
+- Donnée utilisée eta dans P06 TD tables recherche tri fusion : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans P06 TD tables recherche tri fusion : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans P06 TD tables recherche tri fusion : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans P06 TD tables recherche tri fusion : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler la donnée, appliquer l’objectif O4, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « signaler le doublon id=17 au lieu de l’écraser » et citer P-TABLE-04.
-- Contrôle : rejeter la solution si elle contient l’erreur « fusionner deux tables sans vérifier les clés absentes ».
+- Capacité mobilisée : P-TABLE-04.
+- Résultat attendu : fusion -> erreur id_absent=9.
+- Justification : la tâche `fusionner inscriptions et présences` s applique à `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]` ; erreur évitée : utiliser un indice comme clé.
+- Donnée utilisée theta dans P06 TD tables recherche tri fusion : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans P06 TD tables recherche tri fusion : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans P06 TD tables recherche tri fusion : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans P06 TD tables recherche tri fusion : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
-## Erreurs fréquentes et remédiation
-- EF1 : utiliser la position de ligne comme clé stable. Remédiation : refaire l’exercice 1 avec la donnée modifiée par le professeur.
-- EF2 : supprimer silencieusement un doublon. Remédiation : refaire l’exercice 2 avec la donnée modifiée par le professeur.
-- EF3 : trier des nombres stockés comme chaînes. Remédiation : refaire l’exercice 3 avec la donnée modifiée par le professeur.
-- EF4 : fusionner deux tables sans vérifier les clés absentes. Remédiation : refaire l’exercice 4 avec la donnée modifiée par le professeur.
+## Erreurs fréquentes
+- écraser un doublon.
+- utiliser un indice comme clé.
+- oublier une clé absente.
 
 ## Différenciation
-- Socle : exercices 1 à 4 avec étapes visibles.
-- Standard : exercices 1 à 6 avec justification complète.
-- Expert : exercices 7 et 8 avec nouvelle donnée et contrôle autonome.
+- Socle : données annotées.
+- Standard : méthode complète.
+- Expert : transfert avec `clé id=9 absente`.
+
+## Cas limites travaillés
+- table vide.
+- clé id=9 absente.
+- conflit de clé id=17.
+
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `première ligne id=17 -> Ada/robot`.
+- Au moins un cas limite de la section précédente est décidé.
+

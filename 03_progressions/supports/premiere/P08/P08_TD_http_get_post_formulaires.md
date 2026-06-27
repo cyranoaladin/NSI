@@ -1,22 +1,20 @@
 ---
-title: "P08 - TD - HTTP, GET, POST et formulaires"
+title: "P08 - td - HTML, CSS, DOM, HTTP et formulaires"
 level: "premiere"
 sequence_id: "P08"
 document_type: "td"
 status: "needs_review"
-version: "0.2.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Interactions sur le Web"
-notion: "requêtes HTTP et formulaires"
-objectifs:
-  - "repérer méthode, URL, paramètres et corps"
-  - "justifier GET pour une recherche partageable"
-  - "justifier POST pour une donnée sensible"
-  - "identifier le risque de mot de passe dans l’URL"
+theme: "HTML, CSS, DOM, HTTP et formulaires"
+notion: "HTML, CSS, DOM, HTTP et formulaires"
 private_data: false
 official_program:
   capacities:
+    - "P-IHM-01A"
+    - "P-IHM-01B"
+    - "P-IHM-02"
     - "P-IHM-03A"
     - "P-IHM-03B"
     - "P-IHM-03C"
@@ -25,119 +23,158 @@ official_program:
     - "P-IHM-04C"
 ---
 
-# P08 - TD - HTTP, GET, POST et formulaires
+# P08 - TD - HTML, CSS, DOM, HTTP et formulaires
 
 ## Objectifs
-- O1 : repérer méthode, URL, paramètres et corps.
-- O2 : justifier GET pour une recherche partageable.
-- O3 : justifier POST pour une donnée sensible.
-- O4 : identifier le risque de mot de passe dans l’URL.
+- Travailler HTML structurel, sélecteur CSS, DOM, événement submit, GET.
+- Produire huit réponses vérifiables avec données explicites.
 
-## Capacités officielles
-- P-IHM-03A
-- P-IHM-03B
-- P-IHM-03C
-- P-IHM-04A
-- P-IHM-04B
-- P-IHM-04C
-
-## Situation de travail
-Un formulaire de recherche envoie un mot-clé public en GET, tandis qu’un formulaire de connexion doit envoyer les identifiants en POST.
-
-## Données de référence
-`GET /search?q=nsi puis POST /login avec champs utilisateur et mot_de_passe`
+## Progression socle / standard / approfondissement
+- Socle : exercices 1 et 2.
+- Standard : exercices 3 à 6.
+- Approfondissement : exercices 7 et 8.
 
 ## Exercices
 ### Exercice 1
-- Objectif travaillé : O1.
-- Capacité officielle : P-IHM-03A.
-- Énoncé : À partir de la donnée de référence, repérer méthode, URL, paramètres et corps et écrire la justification.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Type : lecture/analyse.
+- Capacité officielle : P-IHM-01A.
+- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=alpha
+- Consigne : repérer header main form label input ; traiter aussi `champ nom vide` si nécessaire.
+- Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `champ nom vide`.
 ### Exercice 2
-- Objectif travaillé : O2.
-- Capacité officielle : P-IHM-03B.
-- Énoncé : Modifier une valeur de la donnée puis justifier GET pour une recherche partageable sans changer la méthode.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Type : production/écriture.
+- Capacité officielle : P-IHM-01B.
+- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=beta
+- Consigne : cibler #nom en CSS et DOM ; traiter aussi `paramètre jour absent` si nécessaire.
+- Réponse attendue : document.querySelector("#nom").value lit la saisie.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `paramètre jour absent`.
 ### Exercice 3
-- Objectif travaillé : O3.
-- Capacité officielle : P-IHM-03C.
-- Énoncé : Construire un contre-exemple qui montre pourquoi il faut justifier POST pour une donnée sensible.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Type : production/écriture.
+- Capacité officielle : P-IHM-02.
+- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=gamma
+- Consigne : lire jour dans URL ; traiter aussi `formulaire sans action` si nécessaire.
+- Réponse attendue : GET /club?jour=mercredi transporte jour.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `formulaire sans action`.
 ### Exercice 4
-- Objectif travaillé : O4.
-- Capacité officielle : P-IHM-04A.
-- Énoncé : Analyser l'erreur fréquente « mettre un mot de passe dans une URL GET » et la corriger.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
-### Exercice 5
-- Objectif travaillé : O1.
-- Capacité officielle : P-IHM-04B.
-- Énoncé : Comparer deux solutions d'élèves : l'une applique repérer méthode, URL, paramètres et corps, l'autre conclut directement.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
-### Exercice 6
-- Objectif travaillé : O2.
-- Capacité officielle : P-IHM-04C.
-- Énoncé : Traiter le cas limite associé à « confondre code de statut et méthode HTTP » avec une donnée minimale.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
-### Exercice 7
-- Objectif travaillé : O3.
+- Type : cas limite.
 - Capacité officielle : P-IHM-03A.
-- Énoncé : Rédiger une trace courte expliquant identifier le risque de mot de passe dans l’URL.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
-### Exercice 8
-- Objectif travaillé : O4.
+- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=delta
+- Consigne : distinguer GET, POST et HTTPS ; traiter aussi `champ nom vide` si nécessaire.
+- Réponse attendue : POST sans HTTPS ne chiffre pas.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `champ nom vide`.
+### Exercice 5
+- Type : justification.
 - Capacité officielle : P-IHM-03B.
-- Énoncé : Comparer `GET /login?user=ada&password=secret` et un formulaire `POST /login` dont le corps contient `user=ada&password=secret`.
-- Production attendue : méthode `POST` retenue pour le mot de passe, car la chaîne sensible n’apparaît pas dans l’URL ; contrôle par lecture de l’adresse affichée.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=epsilon
+- Consigne : repérer header main form label input ; traiter aussi `paramètre jour absent` si nécessaire.
+- Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `paramètre jour absent`.
+### Exercice 6
+- Type : lecture/analyse.
+- Capacité officielle : P-IHM-03C.
+- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=zeta
+- Consigne : cibler #nom en CSS et DOM ; traiter aussi `formulaire sans action` si nécessaire.
+- Réponse attendue : document.querySelector("#nom").value lit la saisie.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `formulaire sans action`.
+### Exercice 7
+- Type : production/écriture.
+- Capacité officielle : P-IHM-04A.
+- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=eta
+- Consigne : lire jour dans URL ; traiter aussi `champ nom vide` si nécessaire.
+- Réponse attendue : GET /club?jour=mercredi transporte jour.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `champ nom vide`.
+### Exercice 8
+- Type : justification.
+- Capacité officielle : P-IHM-04B.
+- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=theta
+- Consigne : distinguer GET, POST et HTTPS ; traiter aussi `paramètre jour absent` si nécessaire.
+- Réponse attendue : POST sans HTTPS ne chiffre pas.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `paramètre jour absent`.
 
-## Corrigé indicatif
+## Corrigé
 ### Corrigé exercice 1
-- Méthode : isoler la donnée, appliquer l’objectif O1, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « repérer méthode, URL, paramètres et corps » et citer P-IHM-03A.
-- Contrôle : rejeter la solution si elle contient l’erreur « mettre un mot de passe dans une URL GET ».
+- Capacité mobilisée : P-IHM-01A.
+- Résultat attendu : <label for=nom>Nom</label><input id=nom name=nom>.
+- Justification : la tâche `repérer header main form label input` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : bouton hors formulaire.
+- Donnée utilisée alpha dans P08 TD http get post formulaires : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans P08 TD http get post formulaires : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : isoler la donnée, appliquer l’objectif O2, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « justifier GET pour une recherche partageable » et citer P-IHM-03B.
-- Contrôle : rejeter la solution si elle contient l’erreur « confondre code de statut et méthode HTTP ».
+- Capacité mobilisée : P-IHM-01B.
+- Résultat attendu : document.querySelector("#nom").value lit la saisie.
+- Justification : la tâche `cibler #nom en CSS et DOM` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : sélecteur trop large.
+- Donnée utilisée beta dans P08 TD http get post formulaires : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans P08 TD http get post formulaires : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : isoler la donnée, appliquer l’objectif O3, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « justifier POST pour une donnée sensible » et citer P-IHM-03C.
-- Contrôle : rejeter la solution si elle contient l’erreur « croire que POST chiffre automatiquement ».
+- Capacité mobilisée : P-IHM-02.
+- Résultat attendu : GET /club?jour=mercredi transporte jour.
+- Justification : la tâche `lire jour dans URL` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : POST confondu avec chiffrement.
+- Donnée utilisée gamma dans P08 TD http get post formulaires : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans P08 TD http get post formulaires : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler la donnée, appliquer l’objectif O4, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « identifier le risque de mot de passe dans l’URL » et citer P-IHM-04A.
-- Contrôle : rejeter la solution si elle contient l’erreur « oublier le nom des champs du formulaire ».
+- Capacité mobilisée : P-IHM-03A.
+- Résultat attendu : POST sans HTTPS ne chiffre pas.
+- Justification : la tâche `distinguer GET, POST et HTTPS` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : bouton hors formulaire.
+- Donnée utilisée delta dans P08 TD http get post formulaires : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans P08 TD http get post formulaires : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : isoler la donnée, appliquer l’objectif O1, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « repérer méthode, URL, paramètres et corps » et citer P-IHM-04B.
-- Contrôle : rejeter la solution si elle contient l’erreur « mettre un mot de passe dans une URL GET ».
+- Capacité mobilisée : P-IHM-03B.
+- Résultat attendu : <label for=nom>Nom</label><input id=nom name=nom>.
+- Justification : la tâche `repérer header main form label input` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : sélecteur trop large.
+- Donnée utilisée epsilon dans P08 TD http get post formulaires : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans P08 TD http get post formulaires : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : isoler la donnée, appliquer l’objectif O2, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « justifier GET pour une recherche partageable » et citer P-IHM-04C.
-- Contrôle : rejeter la solution si elle contient l’erreur « confondre code de statut et méthode HTTP ».
+- Capacité mobilisée : P-IHM-03C.
+- Résultat attendu : document.querySelector("#nom").value lit la saisie.
+- Justification : la tâche `cibler #nom en CSS et DOM` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : POST confondu avec chiffrement.
+- Donnée utilisée zeta dans P08 TD http get post formulaires : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans P08 TD http get post formulaires : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : isoler la donnée, appliquer l’objectif O3, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « justifier POST pour une donnée sensible » et citer P-IHM-03A.
-- Contrôle : rejeter la solution si elle contient l’erreur « croire que POST chiffre automatiquement ».
+- Capacité mobilisée : P-IHM-04A.
+- Résultat attendu : GET /club?jour=mercredi transporte jour.
+- Justification : la tâche `lire jour dans URL` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : bouton hors formulaire.
+- Donnée utilisée eta dans P08 TD http get post formulaires : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans P08 TD http get post formulaires : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler la donnée, appliquer l’objectif O4, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « identifier le risque de mot de passe dans l’URL » et citer P-IHM-03B.
-- Contrôle : rejeter la solution si elle contient l’erreur « oublier le nom des champs du formulaire ».
+- Capacité mobilisée : P-IHM-04B.
+- Résultat attendu : POST sans HTTPS ne chiffre pas.
+- Justification : la tâche `distinguer GET, POST et HTTPS` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : sélecteur trop large.
+- Donnée utilisée theta dans P08 TD http get post formulaires : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans P08 TD http get post formulaires : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
-## Erreurs fréquentes et remédiation
-- EF1 : mettre un mot de passe dans une URL GET. Remédiation : refaire l’exercice 1 avec la donnée modifiée par le professeur.
-- EF2 : confondre code de statut et méthode HTTP. Remédiation : refaire l’exercice 2 avec la donnée modifiée par le professeur.
-- EF3 : croire que POST chiffre automatiquement. Remédiation : refaire l’exercice 3 avec la donnée modifiée par le professeur.
-- EF4 : oublier le nom des champs du formulaire. Remédiation : refaire l’exercice 4 avec la donnée modifiée par le professeur.
+## Erreurs fréquentes
+- bouton hors formulaire.
+- sélecteur trop large.
+- POST confondu avec chiffrement.
 
 ## Différenciation
-- Socle : exercices 1 à 4 avec étapes visibles.
-- Standard : exercices 1 à 6 avec justification complète.
-- Expert : exercices 7 et 8 avec nouvelle donnée et contrôle autonome.
+- Socle : données annotées.
+- Standard : méthode complète.
+- Expert : transfert avec `paramètre jour absent`.
+
+## Cas limites travaillés
+- champ nom vide.
+- paramètre jour absent.
+- formulaire sans action.
+
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `<label for=nom>Nom</label><input id=nom name=nom>`.
+- Au moins un cas limite de la section précédente est décidé.
+

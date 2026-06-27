@@ -1,19 +1,14 @@
 ---
-title: "P09 - Version aménagée - architecture, système d’exploitation, droits"
+title: "P09 - version_amenagee - architecture, système et droits Unix"
 level: "premiere"
 sequence_id: "P09"
 document_type: "version_amenagee"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Architecture matérielle et systèmes"
-notion: "architecture, système d’exploitation, droits"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "architecture, système et droits Unix"
+notion: "architecture, système et droits Unix"
 private_data: false
 official_program:
   capacities:
@@ -21,23 +16,23 @@ official_program:
     - "P-ARCH-01B"
     - "P-ARCH-03A"
     - "P-ARCH-03B"
+    - "P-ARCH-03C"
 ---
 
-# P09 - Version aménagée - architecture, système d’exploitation, droits
+# P09 - Version aménagée - architecture, système et droits Unix
 
-## Consigne aménagée
-Tu travailles sur la donnée suivante : `droits initiaux -rw-r--r--; commande visée chmod u+x projet.py; résultat -rwxr--r--`.
+## Aides intégrées
+- Donnée fournie : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`.
+- Mots utiles : processeur, mémoire, stockage, processus, PID.
+- Méthode guidée : distinguer mémoire vive et stockage puis identifier PID et processus.
 
-## Étapes guidées
-1. Entoure la valeur ou la clé utile.
-2. Applique seulement cette méthode : distinguer processeur, mémoire, stockage et périphériques.
-3. Compare ton résultat avec : seul le propriétaire gagne x ; le groupe et les autres gardent lecture seule ; l’OS contrôle l’accès au fichier.
-4. Explique un cas limite en une phrase.
+## Exercice guidé
+1. Recopier la donnée utile.
+2. Choisir la capacité : P-ARCH-01A ou P-ARCH-01B.
+3. Compléter le résultat : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
+4. Cocher le cas limite : fichier absent.
 
-## Aides graduées
-- Aide 1 : relire la donnée et nommer les objets.
-- Aide 2 : écrire la première étape de calcul ou de parcours.
-- Aide 3 : vérifier le résultat avec la trace fournie par le cours.
-
-## Réponse attendue
-La réponse minimale contient la donnée utilisée, l’étape appliquée et le résultat exact.
+## Réponses rapides
+- Réponse 1 : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
+- Réponse 2 : chmod 640 mesures.csv donne rw-r-----.
+- Réponse 3 : PID 2314 python collecte.py est un processus.

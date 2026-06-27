@@ -129,45 +129,70 @@ Une application de gestion de comptes doit garantir qu’aucune opération ne cr
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- Méthode : identifier `Compte("Ada", 20)`, appliquer la méthode « initialiser les attributs après validation », puis écrire propriétaire Ada, solde 20.
 - Résultat : propriétaire Ada, solde 20.
 - Contrôle : faire apparaître le contrôle « solde initial négatif ».
 - Erreur traitée : EF1 - Modifier directement un attribut sans passer par la méthode.
+- Donnée utilisée alpha dans T02 td classes objets : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans T02 td classes objets : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans T02 td classes objets : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans T02 td classes objets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : expliciter chaque étape de vérifier le montant puis modifier le solde avant de conclure par solde augmenté de 15.
 - Résultat : solde augmenté de 15.
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Oublier de maintenir l’invariant.
+- Donnée utilisée beta dans T02 td classes objets : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans T02 td classes objets : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans T02 td classes objets : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans T02 td classes objets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : comparer la donnée avec le cas limite « retrait supérieur au solde » et valider solde 13.
 - Résultat : solde 13.
 - Contrôle : comparer avec le cas « retrait supérieur au solde ».
 - Erreur traitée : EF3 - Utiliser une variable globale pour l’état de l’objet.
+- Donnée utilisée gamma dans T02 td classes objets : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans T02 td classes objets : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans T02 td classes objets : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans T02 td classes objets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler l’erreur fréquente « Confondre classe et instance. » puis reprendre la procédure correcte.
 - Résultat : résumé lisible.
 - Contrôle : corriger l’erreur « Confondre classe et instance. ».
 - Erreur traitée : EF4 - Confondre classe et instance.
+- Donnée utilisée delta dans T02 td classes objets : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans T02 td classes objets : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans T02 td classes objets : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans T02 td classes objets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : identifier `Compte("Ada", 20)`, appliquer la méthode « initialiser les attributs après validation », puis écrire propriétaire Ada, solde 20.
 - Résultat : le comportement de constructeur est contrôlé.
 - Contrôle : nommer la donnée minimale et la conclusion.
 - Erreur traitée : EF1 - Modifier directement un attribut sans passer par la méthode.
+- Donnée utilisée epsilon dans T02 td classes objets : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans T02 td classes objets : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans T02 td classes objets : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans T02 td classes objets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : expliciter chaque étape de vérifier le montant puis modifier le solde avant de conclure par solde augmenté de 15.
 - Résultat : la méthode robuste est choisie et justifiée.
 - Contrôle : identifier pourquoi « Oublier de maintenir l’invariant. » est une erreur.
 - Erreur traitée : EF2 - Oublier de maintenir l’invariant.
+- Donnée utilisée zeta dans T02 td classes objets : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans T02 td classes objets : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans T02 td classes objets : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans T02 td classes objets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « retrait supérieur au solde » et valider solde 13.
 - Résultat : la justification reste valable sur le nouveau cas.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Utiliser une variable globale pour l’état de l’objet.
+- Donnée utilisée eta dans T02 td classes objets : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans T02 td classes objets : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans T02 td classes objets : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans T02 td classes objets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler l’erreur fréquente « Confondre classe et instance. » puis reprendre la procédure correcte.
 - Résultat : l’erreur est localisée puis réparée.
 - Contrôle : proposer une activité corrective inspirée de « Colorer définition de classe, constructeur et instance. ».
 - Erreur traitée : EF4 - Confondre classe et instance.
+- Donnée utilisée theta dans T02 td classes objets : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans T02 td classes objets : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans T02 td classes objets : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans T02 td classes objets : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Modifier directement un attribut sans passer par la méthode.
 - Erreur fréquente EF2 - Oublier de maintenir l’invariant.

@@ -56,6 +56,9 @@ audit-local:
 	python scripts/check_support_substance.py
 	python scripts/check_no_line_padding.py
 	python scripts/check_full_sequence_resource_matrix.py
+	python scripts/check_generated_template_residue.py
+	python scripts/check_question_capacity_alignment.py
+	python scripts/check_support_pedagogical_depth.py
 	python scripts/check_sequence_pack_consistency.py
 	python scripts/check_csv_numeric_fields_are_parseable.py
 	python scripts/check_p05_pipeline_consistency.py
@@ -146,13 +149,16 @@ audit-extracted-source:
 	python scripts/cleanup_python_artifacts.py
 	python scripts/check_metadata.py
 	python scripts/check_qcm_schema.py
-	python scripts/check_session_referenced_files_exist.py
-	python scripts/check_first_batch_document_quality.py
-	python scripts/check_first_batch_alignment.py
+	timeout 30 python scripts/check_session_referenced_files_exist.py
+	timeout 30 python scripts/check_first_batch_document_quality.py
+	timeout 30 python scripts/check_first_batch_alignment.py
 	python scripts/check_first_batch_tp_assets.py
-	python scripts/check_support_substance.py
+	timeout 30 python scripts/check_support_substance.py
 	python scripts/check_no_line_padding.py
 	python scripts/check_full_sequence_resource_matrix.py
+	python scripts/check_generated_template_residue.py
+	python scripts/check_question_capacity_alignment.py
+	python scripts/check_support_pedagogical_depth.py
 	python scripts/check_sequence_pack_consistency.py
 	python scripts/check_csv_numeric_fields_are_parseable.py
 	python scripts/check_p05_pipeline_consistency.py
@@ -173,9 +179,9 @@ audit-extracted-source:
 	python scripts/check_sequence_contracts.py
 	python scripts/check_drive_enrichment_traceability_portable.py
 	python scripts/check_drive_trace_no_absolute_local_paths.py
-	python scripts/check_ready_supports_required_sections.py
-	python scripts/check_ready_supports_depth.py
-	python scripts/check_ready_session_operationality.py
+	timeout 30 python scripts/check_ready_supports_required_sections.py
+	timeout 30 python scripts/check_ready_supports_depth.py
+	timeout 30 python scripts/check_ready_session_operationality.py
 	python scripts/check_course_sheets_coverage.py
 	python scripts/check_course_sheets_quality.py
 	python scripts/check_course_sheets_alignment.py
@@ -190,7 +196,7 @@ audit-extracted-source:
 	python scripts/check_linked_evaluation_substance.py
 	python scripts/check_no_operational_scope_hardcoding.py
 	python scripts/check_operational_supports_no_indicative_debt.py
-	python scripts/check_operational_readiness_quality_coupling.py
+	timeout 30 python scripts/check_operational_readiness_quality_coupling.py
 	python scripts/check_no_private_data.py
 	python scripts/check_no_placeholders_docs.py
 	python scripts/check_no_build_artifacts_in_index.py

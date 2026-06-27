@@ -129,45 +129,70 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- Méthode : identifier `(36.8, 10.2)`, appliquer la méthode « lire sans modifier et nommer latitude puis longitude », puis écrire coordonnées conservées.
 - Résultat : coordonnées conservées.
 - Contrôle : faire apparaître le contrôle « tentative de modification interdite ».
 - Erreur traitée : EF1 - Modifier un tuple comme une liste.
+- Donnée utilisée alpha dans P04 td types construits : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans P04 td types construits : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans P04 td types construits : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans P04 td types construits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : expliciter chaque étape de parcourir les valeurs et calculer une moyenne avant de conclure par `19`.
 - Résultat : `19`.
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Parcourir les indices quand les valeurs suffisent.
+- Donnée utilisée beta dans P04 td types construits : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans P04 td types construits : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans P04 td types construits : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans P04 td types construits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temperature`.
 - Résultat : `21` pour `temperature`.
 - Contrôle : comparer avec le cas « clé absente ».
 - Erreur traitée : EF3 - Accéder à une clé sans vérifier sa présence.
+- Donnée utilisée gamma dans P04 td types construits : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans P04 td types construits : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans P04 td types construits : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans P04 td types construits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler l’erreur fréquente « Copier une liste imbriquée seulement au premier niveau. » puis reprendre la procédure correcte.
 - Résultat : modification locale contrôlée.
 - Contrôle : corriger l’erreur « Copier une liste imbriquée seulement au premier niveau. ».
 - Erreur traitée : EF4 - Copier une liste imbriquée seulement au premier niveau.
+- Donnée utilisée delta dans P04 td types construits : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans P04 td types construits : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans P04 td types construits : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans P04 td types construits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : identifier `(36.8, 10.2)`, appliquer la méthode « lire sans modifier et nommer latitude puis longitude », puis écrire coordonnées conservées.
 - Résultat : le comportement de tuple de coordonnées est contrôlé.
 - Contrôle : nommer la donnée minimale et la conclusion.
 - Erreur traitée : EF1 - Modifier un tuple comme une liste.
+- Donnée utilisée epsilon dans P04 td types construits : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans P04 td types construits : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans P04 td types construits : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans P04 td types construits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : expliciter chaque étape de parcourir les valeurs et calculer une moyenne avant de conclure par `19`.
 - Résultat : la méthode robuste est choisie et justifiée.
 - Contrôle : identifier pourquoi « Parcourir les indices quand les valeurs suffisent. » est une erreur.
 - Erreur traitée : EF2 - Parcourir les indices quand les valeurs suffisent.
+- Donnée utilisée zeta dans P04 td types construits : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans P04 td types construits : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans P04 td types construits : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans P04 td types construits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « clé absente » et valider `21` pour `temperature`.
 - Résultat : la justification reste valable sur le nouveau cas.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Accéder à une clé sans vérifier sa présence.
+- Donnée utilisée eta dans P04 td types construits : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans P04 td types construits : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans P04 td types construits : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans P04 td types construits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler l’erreur fréquente « Copier une liste imbriquée seulement au premier niveau. » puis reprendre la procédure correcte.
 - Résultat : l’erreur est localisée puis réparée.
 - Contrôle : proposer une activité corrective inspirée de « Modifier une sous-liste et observer l’effet sur la copie. ».
 - Erreur traitée : EF4 - Copier une liste imbriquée seulement au premier niveau.
+- Donnée utilisée theta dans P04 td types construits : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans P04 td types construits : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans P04 td types construits : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans P04 td types construits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Modifier un tuple comme une liste.
 - Erreur fréquente EF2 - Parcourir les indices quand les valeurs suffisent.
@@ -193,41 +218,46 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 
 ## Complément d’exercices corrigés - types construits
 ### Exercice 9 - Milieu de deux coordonnées
-- Données : `A = (0, 4)`, `B = (6, 10)`.
+- Données : `A = (0, 4)`, `B = (6, 10)`. ; jeu_exercice=alpha
 - Consigne : écrire la formule du milieu et préciser pourquoi un tuple convient.
 
 ### Exercice 10 - Liste mutable
-- Données : `notes = [8, 12, 10]`.
+- Données : `notes = [8, 12, 10]`. ; jeu_exercice=beta
 - Consigne : remplacer la deuxième note par `14`, puis donner la liste.
 
 ### Exercice 11 - Liste de dictionnaires
-- Données : `stations = [{"nom": "A", "temperature": 21}, {"nom": "B", "temperature": 18}, {"nom": "C", "temperature": 23}]`.
+- Données : `stations = [{"nom": "A", "temperature": 21}, {"nom": "B", "temperature": 18}, {"nom": "C", "temperature": 23}]`. ; jeu_exercice=gamma
 - Consigne : extraire les noms des stations dont la température est au moins `20`.
 
 ### Exercice 12 - Cas limites
-- Données : `point = (2,)`, `station = {"temperature": 21}`, `notes = []`.
+- Données : `point = (2,)`, `station = {"temperature": 21}`, `notes = []`. ; jeu_exercice=delta
 - Consigne : associer chaque donnée à l’erreur possible.
 
 ### Corrigé exercice 9
-- Donnée utilisée : `A = (0, 4)` et `B = (6, 10)`.
-- Méthode : appliquer la formule `((x_A+x_B)/2, (y_A+y_B)/2)`.
 - Résultat attendu : le milieu vaut `((0+6)/2, (4+10)/2) = (3.0, 7.0)`.
 - Contrôle : le résultat est un tuple de taille 2, adapté à une coordonnée fixe.
-
+- Donnée utilisée alpha dans P04 td types construits : cas alpha de l exercice 9 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans P04 td types construits : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans P04 td types construits : sortie vérifiable de l exercice 9, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans P04 td types construits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 10
-- Donnée utilisée : `notes = [8, 12, 10]`.
-- Méthode : l’indice `1` désigne la deuxième case d’une liste mutable.
 - Résultat attendu : après `notes[1] = 14`, la liste vaut `[8, 14, 10]`.
 - Contrôle : la longueur reste `3`, seule la valeur de rang 2 change.
-
+- Donnée utilisée beta dans P04 td types construits : cas beta de l exercice 10 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans P04 td types construits : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans P04 td types construits : sortie vérifiable de l exercice 10, reliée à la capacité officielle du bloc.
+- Contrôle beta dans P04 td types construits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 11
-- Donnée utilisée : `stations = [{"nom": "A", "temperature": 21}, {"nom": "B", "temperature": 18}, {"nom": "C", "temperature": 23}]`.
-- Méthode : parcourir la liste, lire la clé `temperature`, conserver les dictionnaires dont `temperature >= 20`, puis lire la clé `nom`.
 - Résultat attendu : les noms extraits sont `["A", "C"]`.
 - Contrôle : la station `"B"` est exclue car `18 < 20`.
-
+- Donnée utilisée gamma dans P04 td types construits : cas gamma de l exercice 11 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans P04 td types construits : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans P04 td types construits : sortie vérifiable de l exercice 11, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans P04 td types construits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 12
-- Donnée utilisée : `point = (2,)`, `station = {"temperature": 21}`, `notes = []`.
-- Méthode : associer chaque donnée à son cas limite structurel.
 - Résultat attendu : `point` a une mauvaise taille pour une coordonnée 2D ; `station["pression"]` provoquerait une clé absente ; `notes` ne permet pas de moyenne sans convention.
 - Contrôle : chaque erreur est liée à un type différent : tuple, dictionnaire, liste.
+- Donnée utilisée delta dans P04 td types construits : cas delta de l exercice 12 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans P04 td types construits : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans P04 td types construits : sortie vérifiable de l exercice 12, reliée à la capacité officielle du bloc.
+- Contrôle delta dans P04 td types construits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.

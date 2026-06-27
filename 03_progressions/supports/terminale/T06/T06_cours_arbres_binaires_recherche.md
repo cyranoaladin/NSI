@@ -1,19 +1,14 @@
 ---
-title: "T06 - Cours - invariant ABR, recherche et insertion"
+title: "T06 - cours - arbres binaires de recherche"
 level: "terminale"
 sequence_id: "T06"
 document_type: "cours"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Arbres binaires de recherche"
-notion: "invariant ABR, recherche et insertion"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "arbres binaires de recherche"
+notion: "arbres binaires de recherche"
 private_data: false
 official_program:
   capacities:
@@ -21,43 +16,80 @@ official_program:
     - "T-ALGO-01F"
 ---
 
-# T06 - Cours - invariant ABR, recherche et insertion
+# T06 - Cours - arbres binaires de recherche
 
-## Objectifs
-- Lire la situation sans modifier les données.
-- Appliquer une méthode explicitement liée aux capacités.
-- Produire un résultat contrôlable.
+## Objectifs spécifiques
+- Identifier les données utiles de la situation : ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14.
+- Employer le vocabulaire : invariant ABR, recherche, insertion, parcours infixe, arbre vide, doublon.
+- Produire une trace, une table, une valeur ou un pseudo-code vérifiable.
 
-## Capacités travaillées
-- T-ALGO-01E
-- T-ALGO-01F
+## Capacités officielles
+- T-ALGO-01E.
+- T-ALGO-01F.
 
 ## Situation-problème
-On insère 7 dans un ABR contenant 8, 3, 10, 1, 6.
+ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14
 
-## Données de référence
-`racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`
+## À savoir
+- invariant ABR.
+- recherche.
+- insertion.
+- parcours infixe.
+- arbre vide.
+- doublon.
+- complexité hauteur.
 
-## Méthodes disciplinaires
-- suivre les comparaisons 7<8 puis 7>3 puis 7>6.
-- placer 7 comme fils droit de 6.
-- vérifier le parcours infixe trié.
+## Méthodes
+- comparer à la racine.
+- descendre gauche ou droite.
+- insérer une feuille.
+- parcours infixe pour clés triées.
 
-## Exemple corrigé 1
-Donnée : `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`.
-Méthode : suivre les comparaisons 7<8 puis 7>3 puis 7>6.
-Résultat : chemin insertion : 8 -> 3 -> 6 ; parcours infixe après insertion : [1, 3, 6, 7, 8, 10].
+## Exemples corrigés
+### Exemple corrigé 1
+- Donnée : `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`.
+- Méthode : comparer à la racine.
+- Résultat attendu : chercher 6 : 8 -> 3 -> 6.
+- Contrôle : capacité T-ALGO-01E et cas limite `arbre vide`.
+### Exemple corrigé 2
+- Donnée : `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`.
+- Méthode : descendre gauche ou droite.
+- Résultat attendu : insérer 7 : 8 -> 3 -> 6 -> droite.
+- Contrôle : capacité T-ALGO-01F et cas limite `doublon 6`.
+### Exemple corrigé 3
+- Donnée : `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`.
+- Méthode : insérer une feuille.
+- Résultat attendu : infixe -> 1,3,6,8,10,14.
+- Contrôle : capacité T-ALGO-01E et cas limite `arbre dégénéré`.
+### Exemple corrigé 4
+- Donnée : `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`.
+- Méthode : parcours infixe pour clés triées.
+- Résultat attendu : arbre vide -> nouvelle racine.
+- Contrôle : capacité T-ALGO-01F et cas limite `arbre vide`.
 
-## Exemple corrigé 2 - cas limite
-On modifie une seule donnée pour tester le cas limite du chapitre. La correction attendue explique pourquoi la méthode reste valable ou pourquoi elle doit refuser l’entrée.
+## Cas limites
+- arbre vide.
+- doublon 6.
+- arbre dégénéré.
 
 ## Erreurs fréquentes
-- Confondre une clé, un indice ou un état temporaire avec la donnée stable.
-- Conclure sans écrire le résultat contrôlable.
-- Oublier le cas vide, absent ou invalide.
+- gauche et droite inversées.
+- logarithmique sans équilibre.
+- racine vide oubliée.
 
 ## Exercices intégrés
-1. Reprendre la donnée de référence et écrire toutes les étapes.
-2. Modifier une valeur et prévoir le nouveau résultat.
-3. Construire un cas limite et dire si la méthode accepte ou refuse.
-4. Relier chaque étape à une capacité officielle.
+1. Identifier les données utiles dans `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`.
+2. Appliquer : comparer à la racine.
+3. Appliquer : descendre gauche ou droite.
+4. Décider le cas limite `arbre vide`.
+
+## Critères de réussite observables
+- Une capacité parmi T-ALGO-01E, T-ALGO-01F est citée et utilisée.
+- Le résultat attendu est explicite : chercher 6 : 8 -> 3 -> 6.
+- Le cas limite `doublon 6` est tranché.
+
+## Lien avec la progression
+- Séance : T06-S1 à T06-S4.
+- TD : `T06_TD_arbres_binaires_recherche.md`.
+- TP : `T06_tp_arbres_binaires_recherche.md`.
+- Évaluation : `T06_evaluation_arbres_binaires_recherche.md`.

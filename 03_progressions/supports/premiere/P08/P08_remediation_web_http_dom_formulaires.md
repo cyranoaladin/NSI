@@ -1,19 +1,14 @@
 ---
-title: "P08 - Remédiation - HTML, CSS, DOM, HTTP GET/POST"
+title: "P08 - remediation - HTML, CSS, DOM, HTTP et formulaires"
 level: "premiere"
 sequence_id: "P08"
 document_type: "remediation"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "IHM sur le Web"
-notion: "HTML, CSS, DOM, HTTP GET/POST"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "HTML, CSS, DOM, HTTP et formulaires"
+notion: "HTML, CSS, DOM, HTTP et formulaires"
 private_data: false
 official_program:
   capacities:
@@ -23,20 +18,25 @@ official_program:
     - "P-IHM-03A"
     - "P-IHM-03B"
     - "P-IHM-03C"
+    - "P-IHM-04A"
+    - "P-IHM-04B"
+    - "P-IHM-04C"
 ---
 
-# P08 - Remédiation - HTML, CSS, DOM, HTTP GET/POST
+# P08 - Remédiation - HTML, CSS, DOM, HTTP et formulaires
 
-## Erreur fréquente 1
-Oublier la donnée stable. Activité corrective : surligner dans `<form method="post" action="/reservation"><input name="nom"><button>Envoyer</button></form>` les valeurs qui pilotent la méthode.
+## Diagnostic
+- bouton hors formulaire.
+- sélecteur trop large.
+- POST confondu avec chiffrement.
 
-## Erreur fréquente 2
-Appliquer une étape dans le mauvais ordre. Activité corrective : remettre ces étapes dans l’ordre : séparer structure HTML, style CSS et comportement DOM, identifier méthode GET pour lecture et POST pour envoi, modifier textContent sans injecter de HTML non contrôlé.
+## Activités correctives
+1. Annoter `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`.
+2. Refaire la tâche `repérer header main form label input` et comparer avec `<label for=nom>Nom</label><input id=nom name=nom>`.
+3. Traiter le cas limite `champ nom vide`.
+4. Relier la réponse à P-IHM-01A.
 
-## Erreur fréquente 3
-Donner une conclusion non vérifiable. Activité corrective : retrouver le résultat `le formulaire POST transporte nom=Ada ; le DOM affiche Réservation enregistrée pour Ada ; GET reste réservé à une URL consultable` à partir de la donnée.
-
-## Différenciation
-- Socle : refaire l’exemple de référence.
-- Standard : traiter une valeur modifiée.
-- Approfondissement : créer un cas limite et le corriger.
+## Critères de sortie
+- Donnée exacte.
+- Résultat final explicite.
+- Cas limite décidé.

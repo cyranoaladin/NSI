@@ -1,19 +1,14 @@
 ---
-title: "P06 - Cours - recherche, tri et fusion de tables"
+title: "P06 - cours - recherche, tri et fusion de tables"
 level: "premiere"
 sequence_id: "P06"
 document_type: "cours"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Traitement de tables"
+theme: "recherche, tri et fusion de tables"
 notion: "recherche, tri et fusion de tables"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
 private_data: false
 official_program:
   capacities:
@@ -23,41 +18,79 @@ official_program:
 
 # P06 - Cours - recherche, tri et fusion de tables
 
-## Objectifs
-- Lire la situation sans modifier les données.
-- Appliquer une méthode explicitement liée aux capacités.
-- Produire un résultat contrôlable.
+## Objectifs spécifiques
+- Identifier les données utiles de la situation : inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}].
+- Employer le vocabulaire : recherche dans une table, clé id, doublon id=17, tri stable, tri par clé composée, fusion de tables.
+- Produire une trace, une table, une valeur ou un pseudo-code vérifiable.
 
-## Capacités travaillées
-- P-TABLE-03
-- P-TABLE-04
+## Capacités officielles
+- P-TABLE-03.
+- P-TABLE-04.
 
 ## Situation-problème
-Une association fusionne une table inscriptions et une table présences avec la clé id.
+inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]
 
-## Données de référence
-`inscriptions = [{"id": 17, "nom": "Ada", "atelier": "robot"}, {"id": 4, "nom": "Linus", "atelier": "web"}, {"id": 17, "nom": "Ada", "atelier": "python"}]`
+## À savoir
+- recherche dans une table.
+- clé id.
+- doublon id=17.
+- tri stable.
+- tri par clé composée.
+- fusion de tables.
+- clé absente.
+- complexité linéaire.
 
-## Méthodes disciplinaires
-- rechercher la première ligne de clé id=17 sans écraser le doublon.
+## Méthodes
+- chercher la première ligne id=17.
+- détecter le doublon id=17.
 - trier par (nom, atelier).
-- fusionner inscriptions et présences avec vérification des clés absentes.
+- fusionner inscriptions et présences.
 
-## Exemple corrigé 1
-Donnée : `inscriptions = [{"id": 17, "nom": "Ada", "atelier": "robot"}, {"id": 4, "nom": "Linus", "atelier": "web"}, {"id": 17, "nom": "Ada", "atelier": "python"}]`.
-Méthode : rechercher la première ligne de clé id=17 sans écraser le doublon.
-Résultat : première ligne id=17 : Ada/robot ; doublon id=17 signalé ; tri : Ada/python, Ada/robot, Linus/web ; absence id=9 notée dans erreurs.
+## Exemples corrigés
+### Exemple corrigé 1
+- Donnée : `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`.
+- Méthode : chercher la première ligne id=17.
+- Résultat attendu : première ligne id=17 -> Ada/robot.
+- Contrôle : capacité P-TABLE-03 et cas limite `table vide`.
+### Exemple corrigé 2
+- Donnée : `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`.
+- Méthode : détecter le doublon id=17.
+- Résultat attendu : doublon id=17 -> Ada/python signalé.
+- Contrôle : capacité P-TABLE-04 et cas limite `clé id=9 absente`.
+### Exemple corrigé 3
+- Donnée : `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`.
+- Méthode : trier par (nom, atelier).
+- Résultat attendu : tri -> Ada/python, Ada/robot, Linus/web.
+- Contrôle : capacité P-TABLE-03 et cas limite `conflit de clé id=17`.
+### Exemple corrigé 4
+- Donnée : `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`.
+- Méthode : fusionner inscriptions et présences.
+- Résultat attendu : fusion -> erreur id_absent=9.
+- Contrôle : capacité P-TABLE-04 et cas limite `table vide`.
 
-## Exemple corrigé 2 - cas limite
-On modifie une seule donnée pour tester le cas limite du chapitre. La correction attendue explique pourquoi la méthode reste valable ou pourquoi elle doit refuser l’entrée.
+## Cas limites
+- table vide.
+- clé id=9 absente.
+- conflit de clé id=17.
 
 ## Erreurs fréquentes
-- Confondre une clé, un indice ou un état temporaire avec la donnée stable.
-- Conclure sans écrire le résultat contrôlable.
-- Oublier le cas vide, absent ou invalide.
+- écraser un doublon.
+- utiliser un indice comme clé.
+- oublier une clé absente.
 
 ## Exercices intégrés
-1. Reprendre la donnée de référence et écrire toutes les étapes.
-2. Modifier une valeur et prévoir le nouveau résultat.
-3. Construire un cas limite et dire si la méthode accepte ou refuse.
-4. Relier chaque étape à une capacité officielle.
+1. Identifier les données utiles dans `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`.
+2. Appliquer : chercher la première ligne id=17.
+3. Appliquer : détecter le doublon id=17.
+4. Décider le cas limite `table vide`.
+
+## Critères de réussite observables
+- Une capacité parmi P-TABLE-03, P-TABLE-04 est citée et utilisée.
+- Le résultat attendu est explicite : première ligne id=17 -> Ada/robot.
+- Le cas limite `clé id=9 absente` est tranché.
+
+## Lien avec la progression
+- Séance : P06-S1 à P06-S4.
+- TD : `P06_TD_tables_recherche_tri_fusion.md`.
+- TP : `P06_tp_tables_recherche_tri_fusion.md`.
+- Évaluation : `P06_evaluation_tables_recherche_tri_fusion.md`.

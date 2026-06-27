@@ -1,19 +1,14 @@
 ---
-title: "T09 - Barème - relations, clés primaires, clés étrangères, contraintes"
+title: "T09 - bareme - bases relationnelles, clés et contraintes"
 level: "terminale"
 sequence_id: "T09"
 document_type: "bareme"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Bases de données relationnelles"
-notion: "relations, clés primaires, clés étrangères, contraintes"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "bases relationnelles, clés et contraintes"
+notion: "bases relationnelles, clés et contraintes"
 private_data: false
 official_program:
   capacities:
@@ -23,14 +18,23 @@ official_program:
     - "T-BDD-02"
 ---
 
-# T09 - Barème - relations, clés primaires, clés étrangères, contraintes
+# T09 - Barème - bases relationnelles, clés et contraintes
 
-## Barème question par question
-- Question 1 : 2 points pour la donnée exacte `Livre(1,"1984"), Livre(2,"Dune") ; Emprunt(10,2,"Ada") ; Emprunt(11,9,"Linus") invalide`.
-- Question 2 : 3 points pour la méthode `identifier clé primaire id_livre`.
-- Question 3 : 3 points pour le résultat `Emprunt 10 est valide ; Emprunt 11 viole la contrainte de clé étrangère car id_livre=9 absent`.
-- Question 4 : 2 points pour un cas limite cohérent.
+## TD
+- 8 exercices : 1 point donnée, 1 point méthode, 1 point résultat, 1 point cas limite.
+
+## TP
+- 2 points donnée `Livre(1,Dune), Livre(2,Fondation) ; Emprunt(10,1,Nora), Emprunt(11,9,Sam) invalide`.
+- 3 points tâche `identifier schéma et instance`.
+- 3 points résultat `Livre.id_livre identifie chaque livre`.
+- 2 points cas limite `clé primaire nulle`.
+
+## Évaluation question par question
+- Question 1 : 4 points sur T-BDD-01A avec résultat `Livre.id_livre identifie chaque livre`.
+- Question 2 : 4 points sur T-BDD-01B avec résultat `Emprunt.id_livre référence Livre.id_livre`.
+- Question 3 : 4 points sur T-BDD-01C avec résultat `Emprunt(11,9,Sam) viole la référence`.
+- Question 4 : 4 points sur T-BDD-02 avec résultat `suppression d un livre emprunté refusée`.
 
 ## Critères observables
-- Les capacités évaluées sont : T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02.
-- Le résultat doit être écrit sous une forme vérifiable, pas seulement commenté.
+- Trace, table, valeur ou pseudo-code présent.
+- Cas limite et erreur fréquente explicités.

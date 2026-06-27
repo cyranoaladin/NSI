@@ -1,19 +1,14 @@
 ---
-title: "P06 - EVALUATION - Tables : recherche, tri et fusion"
+title: "P06 - evaluation - recherche, tri et fusion de tables"
 level: "premiere"
 sequence_id: "P06"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.2.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Traitement de tables"
-notion: "recherche, tri, fusion de tables"
-objectifs:
-  - "rechercher la première ligne où id vaut 17"
-  - "trier les lignes par nom puis par atelier"
-  - "fusionner avec une table de présences par identifiant"
-  - "signaler le doublon id=17 au lieu de l’écraser"
+theme: "recherche, tri et fusion de tables"
+notion: "recherche, tri et fusion de tables"
 private_data: false
 official_program:
   capacities:
@@ -21,84 +16,74 @@ official_program:
     - "P-TABLE-04"
 ---
 
-# P06 - Évaluation courte - Tables : recherche, tri et fusion
+# P06 - Évaluation - recherche, tri et fusion de tables
 
-## Objectifs évalués
-- O1 : rechercher la première ligne où id vaut 17.
-- O2 : trier les lignes par nom puis par atelier.
-- O3 : fusionner avec une table de présences par identifiant.
-- O4 : signaler le doublon id=17 au lieu de l’écraser.
-
-## Capacités officielles
-- P-TABLE-03
-- P-TABLE-04
+## Modalités
+- Durée : 30 minutes.
+- Matériel autorisé : fiche de cours.
+- Capacités évaluées : P-TABLE-03, P-TABLE-04.
 
 ## Questions
 ### Question 1
-- Capacité : P-TABLE-03.
-- Énoncé : avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`, rechercher la première ligne où id vaut 17.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre P06.
-- Critère de réussite : l’erreur « utiliser la position de ligne comme clé stable » est évitée ou corrigée.
+- Capacité officielle : P-TABLE-03.
+- Énoncé : à partir de `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`, chercher la première ligne id=17.
+- Réponse attendue : première ligne id=17 -> Ada/robot.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `table vide`.
 ### Question 2
-- Capacité : P-TABLE-04.
-- Énoncé : avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`, trier les lignes par nom puis par atelier.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre P06.
-- Critère de réussite : l’erreur « supprimer silencieusement un doublon » est évitée ou corrigée.
+- Capacité officielle : P-TABLE-04.
+- Énoncé : à partir de `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`, détecter le doublon id=17.
+- Réponse attendue : doublon id=17 -> Ada/python signalé.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `clé id=9 absente`.
 ### Question 3
-- Capacité : P-TABLE-03.
-- Énoncé : avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`, fusionner avec une table de présences par identifiant.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre P06.
-- Critère de réussite : l’erreur « trier des nombres stockés comme chaînes » est évitée ou corrigée.
+- Capacité officielle : P-TABLE-03.
+- Énoncé : à partir de `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`, trier par (nom, atelier).
+- Réponse attendue : tri -> Ada/python, Ada/robot, Linus/web.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `conflit de clé id=17`.
 ### Question 4
-- Capacité : P-TABLE-04.
-- Énoncé : avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`, signaler le doublon id=17 au lieu de l’écraser.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre P06.
-- Critère de réussite : l’erreur « fusionner deux tables sans vérifier les clés absentes » est évitée ou corrigée.
+- Capacité officielle : P-TABLE-04.
+- Énoncé : à partir de `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`, fusionner inscriptions et présences.
+- Réponse attendue : fusion -> erreur id_absent=9.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `table vide`.
 
-## Barème
-- Question 1 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-- Question 2 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-- Question 3 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-- Question 4 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-
-## Corrigé
+## Corrigé question par question
 ### Corrigé question 1
-- Démarche : rechercher la première ligne où id vaut 17.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`.
-- Justification : le contrôle explicite empêche l’erreur « utiliser la position de ligne comme clé stable ».
+- Résultat attendu : première ligne id=17 -> Ada/robot.
+- Critère spécifique : chercher la première ligne id=17 et éviter `écraser un doublon`.
 ### Corrigé question 2
-- Démarche : trier les lignes par nom puis par atelier.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`.
-- Justification : le contrôle explicite empêche l’erreur « supprimer silencieusement un doublon ».
+- Résultat attendu : doublon id=17 -> Ada/python signalé.
+- Critère spécifique : détecter le doublon id=17 et éviter `utiliser un indice comme clé`.
 ### Corrigé question 3
-- Démarche : fusionner avec une table de présences par identifiant.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`.
-- Justification : le contrôle explicite empêche l’erreur « trier des nombres stockés comme chaînes ».
+- Résultat attendu : tri -> Ada/python, Ada/robot, Linus/web.
+- Critère spécifique : trier par (nom, atelier) et éviter `oublier une clé absente`.
 ### Corrigé question 4
-- Démarche : signaler le doublon id=17 au lieu de l’écraser.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `inscriptions = [{"id": 17, "nom": "E1", "atelier": "robot"}, {"id": 4, "nom": "E2", "atelier": "web"}, {"id": 17, "nom": "E1", "atelier": "python"}]`.
-- Justification : le contrôle explicite empêche l’erreur « fusionner deux tables sans vérifier les clés absentes ».
+- Résultat attendu : fusion -> erreur id_absent=9.
+- Critère spécifique : fusionner inscriptions et présences et éviter `écraser un doublon`.
 
-## Critères de réussite
-- Les capacités officielles sont citées dans les réponses.
-- Chaque question contient donnée, méthode, résultat et contrôle.
-- Le vocabulaire disciplinaire est utilisé sans remplacer la justification.
-- Le barème reste indicatif tant que la ressource est en needs_review.
+## Erreurs fréquentes et remédiation
+- écraser un doublon.
+- utiliser un indice comme clé.
+- oublier une clé absente.
 
-## Modalités de passation
-- Durée : 25 minutes.
-- Matériel autorisé : fiche personnelle, sans corrigé ni accès réseau.
-- Capacités évaluées :
-- P-TABLE-03
-- P-TABLE-04
+## Cas limites travaillés
+- table vide.
+- clé id=9 absente.
+- conflit de clé id=17.
 
-## Fiche liée et aménagement
-- Fiche liée : fiche de cours opérationnelle de la séquence P06, statut `needs_review`.
-- Séance liée : `P06-S1` dans la progression annuelle.
-- Version aménagée : même sujet avec données surlignées et tableau méthode / résultat / contrôle.
-- Remédiation : reprendre la question la moins réussie avec une donnée plus courte puis faire verbaliser la méthode.
-## Erreurs fréquentes
-- EF1 : répondre sans citer la donnée utilisée ; correction : encadrer la donnée avant de rédiger.
-- EF2 : donner un résultat sans méthode ; correction : séparer méthode, résultat et contrôle.
-- EF3 : oublier le cas limite ; correction : refaire une question avec une donnée minimale.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `première ligne id=17 -> Ada/robot`.
+- Au moins un cas limite de la section précédente est décidé.
 
+
+
+## Barème question par question
+- question 1: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 2: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 3: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 4: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+
+## Fiche liée
+- Fiche liée : fiche de cours P06 sur `tables_recherche_tri_fusion`.
+
+## Aménagement
+- Version aménagée : `P06_version_amenagee_tables_recherche_tri_fusion.md` ; consignes découpées et barème conservé.

@@ -1,19 +1,14 @@
 ---
-title: "T06 - EVALUATION - Arbres binaires de recherche"
+title: "T06 - evaluation - arbres binaires de recherche"
 level: "terminale"
 sequence_id: "T06"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.2.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Structures de données"
-notion: "recherche et insertion dans un ABR"
-objectifs:
-  - "suivre les comparaisons depuis la racine"
-  - "justifier le chemin vers 6"
-  - "placer 7 à droite de 6"
-  - "repérer le cas dégénéré d’insertions triées"
+theme: "arbres binaires de recherche"
+notion: "arbres binaires de recherche"
 private_data: false
 official_program:
   capacities:
@@ -21,84 +16,74 @@ official_program:
     - "T-ALGO-01F"
 ---
 
-# T06 - Évaluation courte - Arbres binaires de recherche
+# T06 - Évaluation - arbres binaires de recherche
 
-## Objectifs évalués
-- O1 : suivre les comparaisons depuis la racine.
-- O2 : justifier le chemin vers 6.
-- O3 : placer 7 à droite de 6.
-- O4 : repérer le cas dégénéré d’insertions triées.
-
-## Capacités officielles
-- T-ALGO-01E
-- T-ALGO-01F
+## Modalités
+- Durée : 30 minutes.
+- Matériel autorisé : fiche de cours.
+- Capacités évaluées : T-ALGO-01E, T-ALGO-01F.
 
 ## Questions
 ### Question 1
-- Capacité : T-ALGO-01E.
-- Énoncé : avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`, suivre les comparaisons depuis la racine.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre T06.
-- Critère de réussite : l’erreur « parcourir tout l’arbre comme dans un arbre quelconque » est évitée ou corrigée.
+- Capacité officielle : T-ALGO-01E.
+- Énoncé : à partir de `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`, comparer à la racine.
+- Réponse attendue : chercher 6 : 8 -> 3 -> 6.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `arbre vide`.
 ### Question 2
-- Capacité : T-ALGO-01F.
-- Énoncé : avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`, justifier le chemin vers 6.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre T06.
-- Critère de réussite : l’erreur « oublier l’invariant après insertion » est évitée ou corrigée.
+- Capacité officielle : T-ALGO-01F.
+- Énoncé : à partir de `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`, descendre gauche ou droite.
+- Réponse attendue : insérer 7 : 8 -> 3 -> 6 -> droite.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `doublon 6`.
 ### Question 3
-- Capacité : T-ALGO-01E.
-- Énoncé : avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`, placer 7 à droite de 6.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre T06.
-- Critère de réussite : l’erreur « placer une clé égale sans convention » est évitée ou corrigée.
+- Capacité officielle : T-ALGO-01E.
+- Énoncé : à partir de `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`, insérer une feuille.
+- Réponse attendue : infixe -> 1,3,6,8,10,14.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `arbre dégénéré`.
 ### Question 4
-- Capacité : T-ALGO-01F.
-- Énoncé : avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`, repérer le cas dégénéré d’insertions triées.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre T06.
-- Critère de réussite : l’erreur « annoncer une complexité logarithmique sans condition d’équilibre » est évitée ou corrigée.
+- Capacité officielle : T-ALGO-01F.
+- Énoncé : à partir de `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`, parcours infixe pour clés triées.
+- Réponse attendue : arbre vide -> nouvelle racine.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `arbre vide`.
 
-## Barème
-- Question 1 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-- Question 2 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-- Question 3 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-- Question 4 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-
-## Corrigé
+## Corrigé question par question
 ### Corrigé question 1
-- Démarche : suivre les comparaisons depuis la racine.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`.
-- Justification : le contrôle explicite empêche l’erreur « parcourir tout l’arbre comme dans un arbre quelconque ».
+- Résultat attendu : chercher 6 : 8 -> 3 -> 6.
+- Critère spécifique : comparer à la racine et éviter `gauche et droite inversées`.
 ### Corrigé question 2
-- Démarche : justifier le chemin vers 6.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`.
-- Justification : le contrôle explicite empêche l’erreur « oublier l’invariant après insertion ».
+- Résultat attendu : insérer 7 : 8 -> 3 -> 6 -> droite.
+- Critère spécifique : descendre gauche ou droite et éviter `logarithmique sans équilibre`.
 ### Corrigé question 3
-- Démarche : placer 7 à droite de 6.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`.
-- Justification : le contrôle explicite empêche l’erreur « placer une clé égale sans convention ».
+- Résultat attendu : infixe -> 1,3,6,8,10,14.
+- Critère spécifique : insérer une feuille et éviter `racine vide oubliée`.
 ### Corrigé question 4
-- Démarche : repérer le cas dégénéré d’insertions triées.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `racine 8 ; gauche 3 avec enfants 1 et 6 ; droite 10`.
-- Justification : le contrôle explicite empêche l’erreur « annoncer une complexité logarithmique sans condition d’équilibre ».
+- Résultat attendu : arbre vide -> nouvelle racine.
+- Critère spécifique : parcours infixe pour clés triées et éviter `gauche et droite inversées`.
 
-## Critères de réussite
-- Les capacités officielles sont citées dans les réponses.
-- Chaque question contient donnée, méthode, résultat et contrôle.
-- Le vocabulaire disciplinaire est utilisé sans remplacer la justification.
-- Le barème reste indicatif tant que la ressource est en needs_review.
+## Erreurs fréquentes et remédiation
+- gauche et droite inversées.
+- logarithmique sans équilibre.
+- racine vide oubliée.
 
-## Modalités de passation
-- Durée : 25 minutes.
-- Matériel autorisé : fiche personnelle, sans corrigé ni accès réseau.
-- Capacités évaluées :
-- T-ALGO-01E
-- T-ALGO-01F
+## Cas limites travaillés
+- arbre vide.
+- doublon 6.
+- arbre dégénéré.
 
-## Fiche liée et aménagement
-- Fiche liée : fiche de cours opérationnelle de la séquence T06, statut `needs_review`.
-- Séance liée : `T06-S1` dans la progression annuelle.
-- Version aménagée : même sujet avec données surlignées et tableau méthode / résultat / contrôle.
-- Remédiation : reprendre la question la moins réussie avec une donnée plus courte puis faire verbaliser la méthode.
-## Erreurs fréquentes
-- EF1 : répondre sans citer la donnée utilisée ; correction : encadrer la donnée avant de rédiger.
-- EF2 : donner un résultat sans méthode ; correction : séparer méthode, résultat et contrôle.
-- EF3 : oublier le cas limite ; correction : refaire une question avec une donnée minimale.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `chercher 6 : 8 -> 3 -> 6`.
+- Au moins un cas limite de la section précédente est décidé.
 
+
+
+## Barème question par question
+- question 1: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 2: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 3: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 4: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+
+## Fiche liée
+- Fiche liée : fiche de cours T06 sur `arbres_binaires_recherche`.
+
+## Aménagement
+- Version aménagée : `T06_version_amenagee_arbres_binaires_recherche.md` ; consignes découpées et barème conservé.

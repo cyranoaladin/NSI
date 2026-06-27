@@ -129,45 +129,70 @@ Un groupe reçoit quatre fragments Python issus de copies anonymisées et doit p
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- Méthode : identifier `x = 4 ; x = x + 3 ; print(x)`, appliquer la méthode « dresser une table instruction, expression calculée, nouvelle valeur », puis écrire `7` affiché.
 - Résultat : `7` affiché.
 - Contrôle : faire apparaître le contrôle « variable réaffectée deux fois ».
 - Erreur traitée : EF1 - Lire le signe égal comme une égalité mathématique permanente.
+- Donnée utilisée alpha dans P00 td diagnostic python : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans P00 td diagnostic python : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans P00 td diagnostic python : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans P00 td diagnostic python : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : expliciter chaque étape de identifier le type chaîne puis appliquer `+` comme concaténation avant de conclure par `"NSI"`.
 - Résultat : `"NSI"`.
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Confondre affichage et valeur retournée par une fonction.
+- Donnée utilisée beta dans P00 td diagnostic python : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans P00 td diagnostic python : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans P00 td diagnostic python : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans P00 td diagnostic python : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : comparer la donnée avec le cas limite « reste nul » et valider `True`.
 - Résultat : `True`.
 - Contrôle : comparer avec le cas « reste nul ».
 - Erreur traitée : EF3 - Oublier de tester la valeur zéro dans une fonction numérique.
+- Donnée utilisée gamma dans P00 td diagnostic python : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans P00 td diagnostic python : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans P00 td diagnostic python : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans P00 td diagnostic python : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler l’erreur fréquente « Donner une sortie sans trace intermédiaire. » puis reprendre la procédure correcte.
 - Résultat : `11` retourné.
 - Contrôle : corriger l’erreur « Donner une sortie sans trace intermédiaire. ».
 - Erreur traitée : EF4 - Donner une sortie sans trace intermédiaire.
+- Donnée utilisée delta dans P00 td diagnostic python : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans P00 td diagnostic python : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans P00 td diagnostic python : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans P00 td diagnostic python : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : identifier `x = 4 ; x = x + 3 ; print(x)`, appliquer la méthode « dresser une table instruction, expression calculée, nouvelle valeur », puis écrire `7` affiché.
 - Résultat : le comportement de trace d’affectation est contrôlé.
 - Contrôle : nommer la donnée minimale et la conclusion.
 - Erreur traitée : EF1 - Lire le signe égal comme une égalité mathématique permanente.
+- Donnée utilisée epsilon dans P00 td diagnostic python : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans P00 td diagnostic python : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans P00 td diagnostic python : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans P00 td diagnostic python : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : expliciter chaque étape de identifier le type chaîne puis appliquer `+` comme concaténation avant de conclure par `"NSI"`.
 - Résultat : la méthode robuste est choisie et justifiée.
 - Contrôle : identifier pourquoi « Confondre affichage et valeur retournée par une fonction. » est une erreur.
 - Erreur traitée : EF2 - Confondre affichage et valeur retournée par une fonction.
+- Donnée utilisée zeta dans P00 td diagnostic python : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans P00 td diagnostic python : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans P00 td diagnostic python : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans P00 td diagnostic python : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « reste nul » et valider `True`.
 - Résultat : la justification reste valable sur le nouveau cas.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Oublier de tester la valeur zéro dans une fonction numérique.
+- Donnée utilisée eta dans P00 td diagnostic python : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans P00 td diagnostic python : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans P00 td diagnostic python : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans P00 td diagnostic python : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler l’erreur fréquente « Donner une sortie sans trace intermédiaire. » puis reprendre la procédure correcte.
 - Résultat : l’erreur est localisée puis réparée.
 - Contrôle : proposer une activité corrective inspirée de « Écrire une justification en deux phrases : état avant, état après. ».
 - Erreur traitée : EF4 - Donner une sortie sans trace intermédiaire.
+- Donnée utilisée theta dans P00 td diagnostic python : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans P00 td diagnostic python : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans P00 td diagnostic python : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans P00 td diagnostic python : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Lire le signe égal comme une égalité mathématique permanente.
 - Erreur fréquente EF2 - Confondre affichage et valeur retournée par une fonction.

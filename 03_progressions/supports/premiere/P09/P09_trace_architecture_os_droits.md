@@ -1,19 +1,14 @@
 ---
-title: "P09 - Trace écrite - architecture, système d’exploitation, droits"
+title: "P09 - trace - architecture, système et droits Unix"
 level: "premiere"
 sequence_id: "P09"
 document_type: "trace"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Architecture matérielle et systèmes"
-notion: "architecture, système d’exploitation, droits"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "architecture, système et droits Unix"
+notion: "architecture, système et droits Unix"
 private_data: false
 official_program:
   capacities:
@@ -21,27 +16,29 @@ official_program:
     - "P-ARCH-01B"
     - "P-ARCH-03A"
     - "P-ARCH-03B"
+    - "P-ARCH-03C"
 ---
 
-# P09 - Trace écrite - architecture, système d’exploitation, droits
+# P09 - Trace - architecture, système et droits Unix
 
-## À retenir
-- Situation : Un fichier projet.py doit être rendu exécutable seulement par son propriétaire dans un système multi-utilisateur.
-- Donnée de référence : `droits initiaux -rw-r--r--; commande visée chmod u+x projet.py; résultat -rwxr--r--`.
-- Résultat de référence : seul le propriétaire gagne x ; le groupe et les autres gardent lecture seule ; l’OS contrôle l’accès au fichier.
+## Trace courte
+- Donnée : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`.
+- Vocabulaire : processeur, mémoire, stockage, processus, PID.
+- Étape 1 : distinguer mémoire vive et stockage.
+- Étape 2 : identifier PID et processus.
+- Résultat de référence : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
 
-## Méthode courte
-- distinguer processeur, mémoire, stockage et périphériques.
-- repérer le rôle du système d’exploitation.
-- interpréter r/w/x pour utilisateur, groupe, autres.
+## Cas limites à mémoriser
+- fichier absent.
+- droit x manquant sur dossier.
+- chmod 777 trop permissif.
 
-## Exemple minimal corrigé
-Entrée : `droits initiaux -rw-r--r--; commande visée chmod u+x projet.py; résultat -rwxr--r--`.
-Sortie attendue : seul le propriétaire gagne x ; le groupe et les autres gardent lecture seule ; l’OS contrôle l’accès au fichier.
+## Erreurs fréquentes
+- confondre mémoire et disque.
+- oublier x sur dossier.
+- donner tous les droits.
 
-## Point de vigilance
-Le résultat doit être calculable à partir de la donnée, sans phrase de validation vague.
-
-## Lien séance
-- Séance P09-S1 : découverte et exemple.
-- Séance P09-S2 : exercices et correction.
+## Critères de réussite observables
+- Capacité : P-ARCH-01A.
+- Résultat final : chmod 640 mesures.csv donne rw-r-----.
+- Cas limite : fichier absent.

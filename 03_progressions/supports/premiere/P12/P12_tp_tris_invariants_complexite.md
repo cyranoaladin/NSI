@@ -1,0 +1,70 @@
+---
+title: "P12 - tp_papier - tris, invariants et complexité"
+level: "premiere"
+sequence_id: "P12"
+document_type: "tp_papier"
+status: "needs_review"
+version: "0.6.0"
+source: "BO 2019"
+source_creation: "generated_from_program"
+theme: "tris, invariants et complexité"
+notion: "tris, invariants et complexité"
+private_data: false
+official_program:
+  capacities:
+    - "P-ALGO-02A"
+    - "P-ALGO-02B"
+    - "P-ALGO-02C"
+    - "P-ALGO-02D"
+---
+
+# P12 - TP - tris, invariants et complexité
+
+## Statut du TP
+TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
+
+## Donnée fournie
+`temps=[42,17,23,17,9]`
+
+## Travail demandé
+1. Préparer la donnée et nommer les champs utiles.
+2. Réaliser : insérer la clé dans la partie gauche triée.
+3. Réaliser : chercher le minimum du suffixe.
+4. Tester le cas limite `liste vide`.
+5. Produire le livrable : insertion après i=1 -> [17,42,23,17,9].
+
+## Barème associé
+- 2 points : donnée préparée.
+- 3 points : méthode principale.
+- 3 points : résultat `insertion après i=1 -> [17,42,23,17,9]`.
+- 2 points : cas limite `liste vide`.
+
+## Corrigé question par question
+### Corrigé question 1
+Résultat attendu : `temps=[42,17,23,17,9]`.
+### Corrigé question 2
+Résultat attendu : insertion après i=1 -> [17,42,23,17,9].
+### Corrigé question 3
+Résultat attendu : sélection place 9 en tête.
+### Corrigé question 4
+Résultat attendu : `liste vide` traité sans ambiguïté.
+
+## Liens
+- TD lié : `P12_TD_tris_invariants_complexite.md`.
+- Évaluation liée : `P12_evaluation_tris_invariants_complexite.md`.
+
+## Cas limites travaillés
+- liste vide.
+- liste déjà triée.
+- doublons 17.
+
+## Erreurs fréquentes
+- invariant confondu avec résultat.
+- décalage oublié.
+- coût linéaire annoncé.
+
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `insertion après i=1 -> [17,42,23,17,9]`.
+- Au moins un cas limite de la section précédente est décidé.
+

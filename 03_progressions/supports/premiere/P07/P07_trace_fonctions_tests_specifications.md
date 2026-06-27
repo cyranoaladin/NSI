@@ -1,19 +1,14 @@
 ---
-title: "P07 - Trace écrite - fonctions, contrats, assertions et tests"
+title: "P07 - trace - fonctions, tests et spécifications"
 level: "premiere"
 sequence_id: "P07"
 document_type: "trace"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Langage Python"
-notion: "fonctions, contrats, assertions et tests"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "fonctions, tests et spécifications"
+notion: "fonctions, tests et spécifications"
 private_data: false
 official_program:
   capacities:
@@ -26,25 +21,26 @@ official_program:
     - "P-LANG-05"
 ---
 
-# P07 - Trace écrite - fonctions, contrats, assertions et tests
+# P07 - Trace - fonctions, tests et spécifications
 
-## À retenir
-- Situation : On stabilise la fonction prix_ttc(ht, taux) avec contrat, assertions et tests.
-- Donnée de référence : `prix_ttc(80, 0.20) -> 96.0 ; prix_ttc(0, 0.20) -> 0.0 ; prix_ttc(-5, 0.20) lève AssertionError`.
-- Résultat de référence : fonction prix_ttc(ht, taux) retourne round(ht * (1 + taux), 2), refuse ht négatif et garde le cas ht=0.
+## Trace courte
+- Donnée : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`.
+- Vocabulaire : signature, précondition, postcondition, assertion, test unitaire.
+- Étape 1 : écrire def prix_ttc(prix_ht: float, taux: float) -> float.
+- Étape 2 : poser prix_ht >= 0 et taux >= 0.
+- Résultat de référence : signature complète de prix_ttc.
 
-## Méthode courte
-- écrire une signature explicite avec return.
-- rédiger précondition ht >= 0 et taux >= 0.
-- tester nominal, zéro et entrée invalide avant généralisation.
+## Cas limites à mémoriser
+- prix_ht=0.
+- taux=0.
+- type chaîne "80".
 
-## Exemple minimal corrigé
-Entrée : `prix_ttc(80, 0.20) -> 96.0 ; prix_ttc(0, 0.20) -> 0.0 ; prix_ttc(-5, 0.20) lève AssertionError`.
-Sortie attendue : fonction prix_ttc(ht, taux) retourne round(ht * (1 + taux), 2), refuse ht négatif et garde le cas ht=0.
+## Erreurs fréquentes
+- test unique non suffisant.
+- précondition absente.
+- effet de bord global.
 
-## Point de vigilance
-Le résultat doit être calculable à partir de la donnée, sans phrase de validation vague.
-
-## Lien séance
-- Séance P07-S1 : découverte et exemple.
-- Séance P07-S2 : exercices et correction.
+## Critères de réussite observables
+- Capacité : P-LANG-01.
+- Résultat final : prix_ttc(80,0.20) -> 96.0.
+- Cas limite : prix_ht=0.

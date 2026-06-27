@@ -1,19 +1,14 @@
 ---
-title: "P09 - EVALUATION - Architecture, système et droits"
+title: "P09 - evaluation - architecture, système et droits Unix"
 level: "premiere"
 sequence_id: "P09"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.2.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Architecture matérielle et systèmes"
-notion: "chemins, processus, permissions"
-objectifs:
-  - "distinguer chemin absolu et relatif"
-  - "interpréter r, w, x pour propriétaire/groupe/autres"
-  - "proposer chmod u+x scripts/run.sh"
-  - "expliquer l’erreur Permission denied"
+theme: "architecture, système et droits Unix"
+notion: "architecture, système et droits Unix"
 private_data: false
 official_program:
   capacities:
@@ -24,90 +19,74 @@ official_program:
     - "P-ARCH-03C"
 ---
 
-# P09 - Évaluation courte - Architecture, système et droits
+# P09 - Évaluation - architecture, système et droits Unix
 
-## Objectifs évalués
-- O1 : distinguer chemin absolu et relatif.
-- O2 : interpréter r, w, x pour propriétaire/groupe/autres.
-- O3 : proposer chmod u+x scripts/run.sh.
-- O4 : expliquer l’erreur Permission denied.
-
-## Capacités officielles
-- P-ARCH-01A
-- P-ARCH-01B
-- P-ARCH-03A
-- P-ARCH-03B
-- P-ARCH-03C
+## Modalités
+- Durée : 30 minutes.
+- Matériel autorisé : fiche de cours.
+- Capacités évaluées : P-ARCH-01A, P-ARCH-01B, P-ARCH-03A, P-ARCH-03B, P-ARCH-03C.
 
 ## Questions
 ### Question 1
-- Capacité : P-ARCH-01A.
-- Énoncé : avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`, distinguer chemin absolu et relatif.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre P09.
-- Critère de réussite : l’erreur « confondre lecture et exécution » est évitée ou corrigée.
+- Capacité officielle : P-ARCH-01A.
+- Énoncé : à partir de `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`, distinguer mémoire vive et stockage.
+- Réponse attendue : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `fichier absent`.
 ### Question 2
-- Capacité : P-ARCH-01B.
-- Énoncé : avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`, interpréter r, w, x pour propriétaire/groupe/autres.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre P09.
-- Critère de réussite : l’erreur « utiliser un chemin valable seulement dans son dossier courant » est évitée ou corrigée.
+- Capacité officielle : P-ARCH-01B.
+- Énoncé : à partir de `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`, identifier PID et processus.
+- Réponse attendue : chmod 640 mesures.csv donne rw-r-----.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `droit x manquant sur dossier`.
 ### Question 3
-- Capacité : P-ARCH-03A.
-- Énoncé : avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`, proposer chmod u+x scripts/run.sh.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre P09.
-- Critère de réussite : l’erreur « donner tous les droits avec chmod 777 » est évitée ou corrigée.
+- Capacité officielle : P-ARCH-03A.
+- Énoncé : à partir de `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`, lire rwx pour propriétaire groupe autres.
+- Réponse attendue : PID 2314 python collecte.py est un processus.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `chmod 777 trop permissif`.
 ### Question 4
-- Capacité : P-ARCH-03B.
-- Énoncé : avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`, expliquer l’erreur Permission denied.
-- Réponse attendue : méthode explicite, résultat contrôlé et vocabulaire du chapitre P09.
-- Critère de réussite : l’erreur « oublier le rôle du système d’exploitation » est évitée ou corrigée.
+- Capacité officielle : P-ARCH-03B.
+- Énoncé : à partir de `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`, calculer chmod 640 et droit x dossier.
+- Réponse attendue : sans x sur dossier, lecture du fichier impossible.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `fichier absent`.
 
-## Barème
-- Question 1 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-- Question 2 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-- Question 3 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-- Question 4 : 2 points méthode, 1 point résultat, 1 point contrôle du cas limite.
-
-## Corrigé
+## Corrigé question par question
 ### Corrigé question 1
-- Démarche : distinguer chemin absolu et relatif.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`.
-- Justification : le contrôle explicite empêche l’erreur « confondre lecture et exécution ».
+- Résultat attendu : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
+- Critère spécifique : distinguer mémoire vive et stockage et éviter `confondre mémoire et disque`.
 ### Corrigé question 2
-- Démarche : interpréter r, w, x pour propriétaire/groupe/autres.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`.
-- Justification : le contrôle explicite empêche l’erreur « utiliser un chemin valable seulement dans son dossier courant ».
+- Résultat attendu : chmod 640 mesures.csv donne rw-r-----.
+- Critère spécifique : identifier PID et processus et éviter `oublier x sur dossier`.
 ### Corrigé question 3
-- Démarche : proposer chmod u+x scripts/run.sh.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`.
-- Justification : le contrôle explicite empêche l’erreur « donner tous les droits avec chmod 777 ».
+- Résultat attendu : PID 2314 python collecte.py est un processus.
+- Critère spécifique : lire rwx pour propriétaire groupe autres et éviter `donner tous les droits`.
 ### Corrigé question 4
-- Démarche : expliquer l’erreur Permission denied.
-- Résultat attendu : une conclusion justifiée par les valeurs obtenues avec `ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`.
-- Justification : le contrôle explicite empêche l’erreur « oublier le rôle du système d’exploitation ».
+- Résultat attendu : sans x sur dossier, lecture du fichier impossible.
+- Critère spécifique : calculer chmod 640 et droit x dossier et éviter `confondre mémoire et disque`.
 
-## Critères de réussite
-- Les capacités officielles sont citées dans les réponses.
-- Chaque question contient donnée, méthode, résultat et contrôle.
-- Le vocabulaire disciplinaire est utilisé sans remplacer la justification.
-- Le barème reste indicatif tant que la ressource est en needs_review.
+## Erreurs fréquentes et remédiation
+- confondre mémoire et disque.
+- oublier x sur dossier.
+- donner tous les droits.
 
-## Modalités de passation
-- Durée : 25 minutes.
-- Matériel autorisé : fiche personnelle, sans corrigé ni accès réseau.
-- Capacités évaluées :
-- P-ARCH-01A
-- P-ARCH-01B
-- P-ARCH-03A
-- P-ARCH-03B
-- P-ARCH-03C
+## Cas limites travaillés
+- fichier absent.
+- droit x manquant sur dossier.
+- chmod 777 trop permissif.
 
-## Fiche liée et aménagement
-- Fiche liée : fiche de cours opérationnelle de la séquence P09, statut `needs_review`.
-- Séance liée : `P09-S1` dans la progression annuelle.
-- Version aménagée : même sujet avec données surlignées et tableau méthode / résultat / contrôle.
-- Remédiation : reprendre la question la moins réussie avec une donnée plus courte puis faire verbaliser la méthode.
-## Erreurs fréquentes
-- EF1 : répondre sans citer la donnée utilisée ; correction : encadrer la donnée avant de rédiger.
-- EF2 : donner un résultat sans méthode ; correction : séparer méthode, résultat et contrôle.
-- EF3 : oublier le cas limite ; correction : refaire une question avec une donnée minimale.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `-rw-r----- -> propriétaire rw, groupe r, autres aucun droit`.
+- Au moins un cas limite de la section précédente est décidé.
 
+
+
+## Barème question par question
+- question 1: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 2: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 3: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 4: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+
+## Fiche liée
+- Fiche liée : fiche de cours P09 sur `architecture_os_droits`.
+
+## Aménagement
+- Version aménagée : `P09_version_amenagee_architecture_os_droits.md` ; consignes découpées et barème conservé.

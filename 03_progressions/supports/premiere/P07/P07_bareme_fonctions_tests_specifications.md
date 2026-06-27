@@ -1,19 +1,14 @@
 ---
-title: "P07 - Barème - fonctions, contrats, assertions et tests"
+title: "P07 - bareme - fonctions, tests et spécifications"
 level: "premiere"
 sequence_id: "P07"
 document_type: "bareme"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Langage Python"
-notion: "fonctions, contrats, assertions et tests"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "fonctions, tests et spécifications"
+notion: "fonctions, tests et spécifications"
 private_data: false
 official_program:
   capacities:
@@ -26,14 +21,23 @@ official_program:
     - "P-LANG-05"
 ---
 
-# P07 - Barème - fonctions, contrats, assertions et tests
+# P07 - Barème - fonctions, tests et spécifications
 
-## Barème question par question
-- Question 1 : 2 points pour la donnée exacte `prix_ttc(80, 0.20) -> 96.0 ; prix_ttc(0, 0.20) -> 0.0 ; prix_ttc(-5, 0.20) lève AssertionError`.
-- Question 2 : 3 points pour la méthode `écrire une signature explicite avec return`.
-- Question 3 : 3 points pour le résultat `fonction prix_ttc(ht, taux) retourne round(ht * (1 + taux), 2), refuse ht négatif et garde le cas ht=0`.
-- Question 4 : 2 points pour un cas limite cohérent.
+## TD
+- 8 exercices : 1 point donnée, 1 point méthode, 1 point résultat, 1 point cas limite.
+
+## TP
+- 2 points donnée `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`.
+- 3 points tâche `écrire def prix_ttc(prix_ht: float, taux: float) -> float`.
+- 3 points résultat `signature complète de prix_ttc`.
+- 2 points cas limite `prix_ht=0`.
+
+## Évaluation question par question
+- Question 1 : 4 points sur P-LANG-01 avec résultat `signature complète de prix_ttc`.
+- Question 2 : 4 points sur P-LANG-02 avec résultat `prix_ttc(80,0.20) -> 96.0`.
+- Question 3 : 4 points sur P-LANG-03A avec résultat `prix_ttc(-5,0.20) -> ValueError`.
+- Question 4 : 4 points sur P-LANG-03B avec résultat `taux=0 -> résultat 80.0`.
 
 ## Critères observables
-- Les capacités évaluées sont : P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05.
-- Le résultat doit être écrit sous une forme vérifiable, pas seulement commenté.
+- Trace, table, valeur ou pseudo-code présent.
+- Cas limite et erreur fréquente explicités.

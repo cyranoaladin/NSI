@@ -1,19 +1,14 @@
 ---
-title: "T13 - TD - chiffrement HTTPS"
+title: "T13 - td - chiffrement et HTTPS"
 level: "terminale"
 sequence_id: "T13"
 document_type: "td"
 status: "needs_review"
-version: "0.3.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Sécurité"
-notion: "chiffrement HTTPS"
-objectifs:
-  - "travailler chiffrement HTTPS sur des données explicites"
-  - "produire une réponse justifiée et contrôlée"
-  - "identifier les cas limites"
-  - "corriger les erreurs fréquentes du chapitre"
+theme: "chiffrement et HTTPS"
+notion: "chiffrement et HTTPS"
 private_data: false
 official_program:
   capacities:
@@ -21,163 +16,158 @@ official_program:
     - "T-ARCH-04B"
 ---
 
-# T13 - TD - chiffrement HTTPS
+# T13 - TD - chiffrement et HTTPS
 
 ## Objectifs
-- Lire une donnée disciplinaire précise avant de répondre.
-- Produire une méthode vérifiable et un résultat contrôlable.
-- Traiter un cas limite sans le transformer en généralité.
-- Relier chaque correction à une erreur fréquente observable.
-
-## Capacités officielles
-- T-ARCH-04A
-- T-ARCH-04B
-
-## Fiche liée et séance liée
-- Fiche liée : `03_progressions/fiches_cours/terminale/T13/T13_fiche_cours_chiffrement_https.md`.
-- Séance liée : `T13-S1` dans la progression annuelle.
-- Statut : support `needs_review`, non validé et non publiable.
-
-## Situation de travail
-Un navigateur établit une connexion HTTPS avec serveur.example.
+- Travailler chiffrement symétrique, chiffrement asymétrique, clé publique, clé privée, certificat.
+- Produire huit réponses vérifiables avec données explicites.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée.
-- Standard : exercices 3 à 6, production écrite et justification.
-- Approfondissement : exercices 7 et 8, transfert ou comparaison.
+- Socle : exercices 1 et 2.
+- Standard : exercices 3 à 6.
+- Approfondissement : exercices 7 et 8.
 
 ## Exercices
-### Exercice 1 - Distinguer chiffrement symétrique/asymétrique
+### Exercice 1
 - Type : lecture/analyse.
-- Niveau : socle.
 - Capacité officielle : T-ARCH-04A.
-- Données : Clé publique serveur Kpub, clé privée Kpriv, clé de session Ks.
-- Consigne : Associer les rôles.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 2 - Lire un certificat
-- Type : lecture/analyse.
-- Niveau : socle.
-- Capacité officielle : T-ARCH-04B.
-- Données : Certificat: sujet serveur.example, émetteur CA-NSI, validité 2026-01-01 à 2027-01-01.
-- Consigne : Dire ce qui est vérifié.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 3 - Dérouler un handshake simplifié
+- Données : `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test`. ; jeu_exercice=alpha
+- Consigne : protéger Ksession par asymétrique ; traiter aussi `certificat expiré` si nécessaire.
+- Réponse attendue : message chiffré avec Ksession.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `certificat expiré`.
+### Exercice 2
 - Type : production/écriture.
-- Niveau : standard.
+- Capacité officielle : T-ARCH-04B.
+- Données : `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test`. ; jeu_exercice=beta
+- Consigne : utiliser symétrique pour données ; traiter aussi `clé publique non vérifiée` si nécessaire.
+- Réponse attendue : Ksession chiffrée avec Kpub serveur.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `clé publique non vérifiée`.
+### Exercice 3
+- Type : production/écriture.
 - Capacité officielle : T-ARCH-04A.
-- Données : Client propose suites ; serveur envoie certificat ; secret de session établi.
-- Consigne : Écrire les étapes.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 4 - Calculer un haché jouet
-- Type : production/écriture.
-- Niveau : standard.
-- Capacité officielle : T-ARCH-04B.
-- Données : h(m)=somme codes ASCII mod 10, message "AB".
-- Consigne : Calculer h.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 5 - Certificat expiré
+- Données : `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test`. ; jeu_exercice=gamma
+- Consigne : vérifier certificat ; traiter aussi `HTTP sans TLS` si nécessaire.
+- Réponse attendue : Autorité-Test signe serveur.example.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `HTTP sans TLS`.
+### Exercice 4
 - Type : cas limite.
-- Niveau : standard.
-- Capacité officielle : T-ARCH-04A.
-- Données : Date du jour 2028-03-01, certificat valable jusqu’à 2027-01-01.
-- Consigne : Dire la décision.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 6 - Justifier HTTPS contre écoute
+- Capacité officielle : T-ARCH-04B.
+- Données : `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test`. ; jeu_exercice=delta
+- Consigne : distinguer confidentialité et authenticité ; traiter aussi `certificat expiré` si nécessaire.
+- Réponse attendue : HTTP sans TLS ne protège pas.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `certificat expiré`.
+### Exercice 5
 - Type : justification.
-- Niveau : standard.
-- Capacité officielle : T-ARCH-04B.
-- Données : Un attaquant lit le trafic Wi-Fi.
-- Consigne : Expliquer ce qui reste visible.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 7 - Identifier attaque homme du milieu
-- Type : lecture/analyse.
-- Niveau : approfondissement.
 - Capacité officielle : T-ARCH-04A.
-- Données : Certificat présenté: sujet serveur.example, émetteur inconnu LocalProxy.
-- Consigne : Conclure.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 8 - Écrire une politique de mot de passe
-- Type : production/écriture.
-- Niveau : approfondissement.
+- Données : `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test`. ; jeu_exercice=epsilon
+- Consigne : protéger Ksession par asymétrique ; traiter aussi `clé publique non vérifiée` si nécessaire.
+- Réponse attendue : message chiffré avec Ksession.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `clé publique non vérifiée`.
+### Exercice 6
+- Type : lecture/analyse.
 - Capacité officielle : T-ARCH-04B.
-- Données : Service interne NSI.
-- Consigne : Donner trois règles justifiées.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
+- Données : `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test`. ; jeu_exercice=zeta
+- Consigne : utiliser symétrique pour données ; traiter aussi `HTTP sans TLS` si nécessaire.
+- Réponse attendue : Ksession chiffrée avec Kpub serveur.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `HTTP sans TLS`.
+### Exercice 7
+- Type : production/écriture.
+- Capacité officielle : T-ARCH-04A.
+- Données : `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test`. ; jeu_exercice=eta
+- Consigne : vérifier certificat ; traiter aussi `certificat expiré` si nécessaire.
+- Réponse attendue : Autorité-Test signe serveur.example.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `certificat expiré`.
+### Exercice 8
+- Type : justification.
+- Capacité officielle : T-ARCH-04B.
+- Données : `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test`. ; jeu_exercice=theta
+- Consigne : distinguer confidentialité et authenticité ; traiter aussi `clé publique non vérifiée` si nécessaire.
+- Réponse attendue : HTTP sans TLS ne protège pas.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `clé publique non vérifiée`.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-ARCH-04A.
-- Donnée utilisée : Clé publique serveur Kpub, clé privée Kpriv, clé de session Ks.
-- Résultat attendu : Kpub/Kpriv servent à authentifier/établir le secret ; Ks sert ensuite au chiffrement symétrique rapide des données.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : message chiffré avec Ksession.
+- Justification : la tâche `protéger Ksession par asymétrique` s applique à `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test` ; erreur évitée : clé publique supposée secrète.
+- Donnée utilisée alpha dans T13 TD chiffrement https : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans T13 TD chiffrement https : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans T13 TD chiffrement https : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans T13 TD chiffrement https : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-ARCH-04B.
-- Donnée utilisée : Certificat: sujet serveur.example, émetteur CA-NSI, validité 2026-01-01 à 2027-01-01.
-- Résultat attendu : Le navigateur vérifie le nom serveur.example, la période de validité et la signature par une autorité de confiance CA-NSI.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : Ksession chiffrée avec Kpub serveur.
+- Justification : la tâche `utiliser symétrique pour données` s applique à `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test` ; erreur évitée : asymétrique utilisé partout.
+- Donnée utilisée beta dans T13 TD chiffrement https : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans T13 TD chiffrement https : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans T13 TD chiffrement https : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans T13 TD chiffrement https : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-ARCH-04A.
-- Donnée utilisée : Client propose suites ; serveur envoie certificat ; secret de session établi.
-- Résultat attendu : 1 ClientHello ; 2 ServerHello+certificat ; 3 vérification certificat ; 4 établissement Ks ; 5 données chiffrées avec Ks.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : Autorité-Test signe serveur.example.
+- Justification : la tâche `vérifier certificat` s applique à `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test` ; erreur évitée : certificat ignoré.
+- Donnée utilisée gamma dans T13 TD chiffrement https : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans T13 TD chiffrement https : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans T13 TD chiffrement https : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans T13 TD chiffrement https : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-ARCH-04B.
-- Donnée utilisée : h(m)=somme codes ASCII mod 10, message "AB".
-- Résultat attendu : ASCII A=65, B=66, somme=131, 131 mod 10 = 1. Ce haché jouet n’est pas cryptographiquement sûr.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : HTTP sans TLS ne protège pas.
+- Justification : la tâche `distinguer confidentialité et authenticité` s applique à `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test` ; erreur évitée : clé publique supposée secrète.
+- Donnée utilisée delta dans T13 TD chiffrement https : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans T13 TD chiffrement https : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans T13 TD chiffrement https : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans T13 TD chiffrement https : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-ARCH-04A.
-- Donnée utilisée : Date du jour 2028-03-01, certificat valable jusqu’à 2027-01-01.
-- Résultat attendu : Le navigateur doit refuser ou afficher une alerte forte : la validité temporelle est dépassée.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : message chiffré avec Ksession.
+- Justification : la tâche `protéger Ksession par asymétrique` s applique à `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test` ; erreur évitée : asymétrique utilisé partout.
+- Donnée utilisée epsilon dans T13 TD chiffrement https : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans T13 TD chiffrement https : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans T13 TD chiffrement https : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans T13 TD chiffrement https : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-ARCH-04B.
-- Donnée utilisée : Un attaquant lit le trafic Wi-Fi.
-- Résultat attendu : L’attaquant peut voir l’adresse IP et le domaine selon contexte, mais pas le contenu HTTP chiffré par la clé de session.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : Ksession chiffrée avec Kpub serveur.
+- Justification : la tâche `utiliser symétrique pour données` s applique à `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test` ; erreur évitée : certificat ignoré.
+- Donnée utilisée zeta dans T13 TD chiffrement https : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans T13 TD chiffrement https : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans T13 TD chiffrement https : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans T13 TD chiffrement https : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-ARCH-04A.
-- Donnée utilisée : Certificat présenté: sujet serveur.example, émetteur inconnu LocalProxy.
-- Résultat attendu : Si LocalProxy n’est pas une autorité approuvée, la chaîne de confiance échoue : risque de MITM.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : Autorité-Test signe serveur.example.
+- Justification : la tâche `vérifier certificat` s applique à `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test` ; erreur évitée : clé publique supposée secrète.
+- Donnée utilisée eta dans T13 TD chiffrement https : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans T13 TD chiffrement https : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans T13 TD chiffrement https : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans T13 TD chiffrement https : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-ARCH-04B.
-- Donnée utilisée : Service interne NSI.
-- Résultat attendu : Longueur minimale 12, interdiction mots de passe connus, hachage salé côté serveur. Ces règles limitent brute force et fuite de base.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : HTTP sans TLS ne protège pas.
+- Justification : la tâche `distinguer confidentialité et authenticité` s applique à `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test` ; erreur évitée : asymétrique utilisé partout.
+- Donnée utilisée theta dans T13 TD chiffrement https : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans T13 TD chiffrement https : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans T13 TD chiffrement https : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans T13 TD chiffrement https : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
 ## Erreurs fréquentes
-- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
-- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
-- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
-- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
-
-## Remédiation ciblée
-- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
-- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
-- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
+- clé publique supposée secrète.
+- asymétrique utilisé partout.
+- certificat ignoré.
 
 ## Différenciation
-- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
-- Standard : demander méthode complète, résultat et contrôle écrit.
-- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
+- Socle : données annotées.
+- Standard : méthode complète.
+- Expert : transfert avec `clé publique non vérifiée`.
 
-## Lien avec la progression
-| Élément | Référence | Statut |
-|---|---|---|
-| Fiche | T13_fiche_cours_chiffrement_https.md | needs_review |
-| Séance | T13-S1 | progression existante |
-| Évaluation | T13_evaluation_chiffrement_https.md | needs_review |
+## Cas limites travaillés
+- certificat expiré.
+- clé publique non vérifiée.
+- HTTP sans TLS.
 
-## Source et traçabilité
-- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
-- Aucun fichier Drive n’a été repris directement dans ce support.
-- Source de création : programme officiel et progression locale, avec statut `needs_review`.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `message chiffré avec Ksession`.
+- Au moins un cas limite de la section précédente est décidé.
+

@@ -1,19 +1,14 @@
 ---
-title: "T07 - TP - Graphes : modélisation, listes et matrices"
+title: "T07 - tp_papier - graphes, listes et matrices"
 level: "terminale"
 sequence_id: "T07"
-document_type: "tp"
+document_type: "tp_papier"
 status: "needs_review"
-version: "0.2.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Graphes"
-notion: "sommets, arêtes, matrice et liste d’adjacence"
-objectifs:
-  - "dessiner le graphe non orienté"
-  - "écrire la liste d’adjacence"
-  - "construire la matrice 4 x 4"
-  - "comparer accès à un voisin et test d’adjacence"
+theme: "graphes, listes et matrices"
+notion: "graphes, listes et matrices"
 private_data: false
 official_program:
   capacities:
@@ -23,98 +18,68 @@ official_program:
     - "T-STRUCT-05D"
 ---
 
-# T07 - TP - Graphes : modélisation, listes et matrices
+# T07 - TP - graphes, listes et matrices
 
-## Objectif technique
-On modélise un réseau de salles A, B, C, D avec couloirs A-B, A-C, B-D. Il faut choisir une représentation et justifier ses coûts.
+## Statut du TP
+TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
 
-## Consigne technique détaillée
-- dessiner le graphe non orienté.
-- écrire la liste d’adjacence.
-- construire la matrice 4 x 4.
-- comparer accès à un voisin et test d’adjacence.
+## Donnée fournie
+`arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`
 
-## Starter code
-```python
-def verifier_graphes_modelisation_listes_matrices(donnee):
-    """À compléter : renvoyer une structure vérifiable, pas un texte hardcodé."""
-    raise NotImplementedError("à compléter par l’élève")
-```
+## Travail demandé
+1. Préparer la donnée et nommer les champs utiles.
+2. Réaliser : lister voisins sortants.
+3. Réaliser : remplir matrice 0/1.
+4. Tester le cas limite `sommet isolé E`.
+5. Produire le livrable : A -> [B,C], B -> [D], C -> [D], D -> [B].
 
-## Tests attendus
-- Test nominal : donnée de référence acceptée et résultat exact.
-- Test limite : donnée vide ou minimale traitée selon la convention.
-- Test invalide : donnée incohérente refusée avec exception ou message explicite.
+## Barème associé
+- 2 points : donnée préparée.
+- 3 points : méthode principale.
+- 3 points : résultat `A -> [B,C], B -> [D], C -> [D], D -> [B]`.
+- 2 points : cas limite `sommet isolé E`.
 
-## Exemple d’exécution
-- Entrée : `S = {A, B, C, D}, E = {(A,B), (A,C), (B,D)}`.
-- Sortie attendue : structure contrôlable par assertions, pas phrase libre.
+## Corrigé question par question
+### Corrigé question 1
+Résultat attendu : `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`.
+### Corrigé question 2
+Résultat attendu : A -> [B,C], B -> [D], C -> [D], D -> [B].
+### Corrigé question 3
+Résultat attendu : ligne A : colonnes B et C valent 1.
+### Corrigé question 4
+Résultat attendu : `sommet isolé E` traité sans ambiguïté.
 
-## Livrable vérifiable
-- Un fichier `T07_solution_graphes_modelisation_listes_matrices.py` avec au moins trois tests personnels.
-- Une capture texte des tests exécutés.
+## Liens
+- TD lié : `T07_TD_graphes_modelisation_listes_matrices.md`.
+- Évaluation liée : `T07_evaluation_graphes_modelisation_listes_matrices.md`.
 
-## Cas limite
-- Cas à discuter : confondre sommet et arête.
+## Cas limites travaillés
+- sommet isolé E.
+- boucle A->A.
+- arête non orientée.
 
-## Corrigé professeur séparé
-- Le corrigé professeur doit être conservé séparément et ne pas être cité comme document élève.
+## Erreurs fréquentes
+- voisin entrant confondu.
+- sommet isolé oublié.
+- coût mémoire ignoré.
 
-## Critères de réussite
-- Le code ne retourne pas une constante unique.
-- Les tests distinguent cas nominal, cas limite et entrée invalide.
-- La justification relie le résultat à une capacité officielle.
-## Déroulé opérationnel détaillé
-1. modéliser un graphe non orienté par dictionnaire de listes.
-2. convertir ce graphe en matrice d’adjacence.
-3. vérifier la symétrie de la matrice.
-4. calculer le degré de chaque sommet.
-5. détecter une arête absente.
-6. comparer coût mémoire liste/matrice sur un petit exemple.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `A -> [B,C], B -> [D], C -> [D], D -> [B]`.
+- Au moins un cas limite de la section précédente est décidé.
 
-## Tests vérifiables attendus
-- Test 1 : graphe A-B, A-C, B-D donne degré A=2.
-- Test 2 : la matrice contient `1` en A,B et B,A.
-- Test 3 : la diagonale vaut 0 sans boucle.
-- Test 4 : arête C-D absente renvoie `False`.
-- Test 5 : sommet isolé E a degré 0.
-- Test 6 : conversion conserve l’ordre des sommets annoncé.
 
-## Cas limites à documenter
-- Cas limite : sommet isolé.
-- Cas limite : graphe vide.
-- Cas limite : arête dupliquée.
-- Cas limite : boucle A-A.
-- Cas limite : sommet inconnu.
-- Cas limite : graphe orienté non accepté.
 
-## Plan de correction professeur
-- Vérifier que le programme se lance dans un répertoire temporaire propre.
-- Lire les fonctions avant les tests pour repérer un retour constant ou hardcodé.
-- Exécuter les tests nominaux puis les tests limites.
-- Ajouter un test invalide avant toute correction manuelle.
-- Comparer la sortie obtenue avec le résultat attendu écrit dans ce TP.
-- Refuser une solution qui supprime le cas limite au lieu de le traiter.
-- Noter séparément exactitude, robustesse, lisibilité et justification.
+## Protocole de validation complémentaire
+1. Préparer un jeu nominal propre à T07 et noter la sortie attendue avant exécution.
+2. Préparer un cas limite distinct et expliquer pourquoi il doit être accepté ou refusé.
+3. Exécuter le starter : il doit échouer sur au moins un test complet, ce qui confirme que le travail élève reste à produire.
+4. Exécuter le corrigé professeur : il doit produire exactement les valeurs attendues dans les tests.
+5. Comparer la trace obtenue avec la consigne : chaque étape doit être justifiée par une donnée du sujet.
+6. Noter l'erreur fréquente observée et choisir la remédiation ciblée dans le support associé.
 
-## Grille de vérification élève
-- [ ] le fichier demandé existe avec le bon nom.
-- [ ] le starter n’a pas été remplacé par une constante.
-- [ ] chaque fonction possède une docstring ou un commentaire de contrat.
-- [ ] les tests nominaux passent.
-- [ ] les tests limites passent.
-- [ ] les entrées invalides sont refusées explicitement.
-- [ ] le livrable ne dépend pas d’un chemin absolu local.
-- [ ] la réponse cite la capacité travaillée.
-
-## Différenciation opérationnelle
-- Socle : compléter les fonctions dans l’ordre des tests fournis.
-- Standard : ajouter deux tests personnels avant de demander la validation.
-- Approfondissement : proposer une variante de donnée et expliquer pourquoi les tests restent pertinents.
-- Aide autorisée : rappel de syntaxe, sans fournir le corps complet de la fonction.
-- Aide interdite : donner directement le résultat attendu comme unique retour de fonction.
-
-## Livrable final contrôlable
-- Livrable : `T07_solution_graphes.py` et tableau liste/matrice rempli..
-- Le professeur peut vérifier le livrable sans accès au Drive distant.
-- Toute source locale éventuellement utilisée doit être tracée dans `support_source_trace.yml`.
+## Livrable vérifiable complémentaire
+- Fichier élève complété avec les fonctions demandées dans le TP.
+- Trace courte indiquant entrée, traitement, sortie et cas limite.
+- Capture textuelle des tests attendus : nominal OK, cas limite OK, entrée invalide traitée.
+- Commentaire final indiquant la capacité officielle réellement travaillée.

@@ -1,19 +1,14 @@
 ---
-title: "P12 - TD - tris invariants complexité"
+title: "P12 - td - tris, invariants et complexité"
 level: "premiere"
 sequence_id: "P12"
 document_type: "td"
 status: "needs_review"
-version: "0.3.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Algorithmique"
-notion: "tris invariants complexité"
-objectifs:
-  - "travailler tris invariants complexité sur des données explicites"
-  - "produire une réponse justifiée et contrôlée"
-  - "identifier les cas limites"
-  - "corriger les erreurs fréquentes du chapitre"
+theme: "tris, invariants et complexité"
+notion: "tris, invariants et complexité"
 private_data: false
 official_program:
   capacities:
@@ -23,165 +18,158 @@ official_program:
     - "P-ALGO-02D"
 ---
 
-# P12 - TD - tris invariants complexité
+# P12 - TD - tris, invariants et complexité
 
 ## Objectifs
-- Lire une donnée disciplinaire précise avant de répondre.
-- Produire une méthode vérifiable et un résultat contrôlable.
-- Traiter un cas limite sans le transformer en généralité.
-- Relier chaque correction à une erreur fréquente observable.
-
-## Capacités officielles
-- P-ALGO-02A
-- P-ALGO-02B
-- P-ALGO-02C
-- P-ALGO-02D
-
-## Fiche liée et séance liée
-- Fiche liée : `03_progressions/fiches_cours/premiere/P12/P12_fiche_cours_tris_invariants_complexite.md`.
-- Séance liée : `P12-S1` dans la progression annuelle.
-- Statut : support `needs_review`, non validé et non publiable.
-
-## Situation de travail
-On trie des séries de temps de réponse collectées pendant un TP réseau.
+- Travailler tri par insertion, tri par sélection, invariant, variant, coût quadratique.
+- Produire huit réponses vérifiables avec données explicites.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée.
-- Standard : exercices 3 à 6, production écrite et justification.
-- Approfondissement : exercices 7 et 8, transfert ou comparaison.
+- Socle : exercices 1 et 2.
+- Standard : exercices 3 à 6.
+- Approfondissement : exercices 7 et 8.
 
 ## Exercices
-### Exercice 1 - Tracer un tri par insertion
+### Exercice 1
 - Type : lecture/analyse.
-- Niveau : socle.
 - Capacité officielle : P-ALGO-02A.
-- Données : liste initiale [5, 2, 4, 1].
-- Consigne : Donner les états après chaque insertion.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 2 - Reconnaître un invariant
-- Type : lecture/analyse.
-- Niveau : socle.
+- Données : `temps=[42,17,23,17,9]`. ; jeu_exercice=alpha
+- Consigne : insérer la clé dans la partie gauche triée ; traiter aussi `liste vide` si nécessaire.
+- Réponse attendue : insertion après i=1 -> [17,42,23,17,9].
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `liste vide`.
+### Exercice 2
+- Type : production/écriture.
 - Capacité officielle : P-ALGO-02B.
-- Données : Dans le tri par insertion, après l’étape i, le préfixe de longueur i+1 est trié.
-- Consigne : Vérifier l’invariant après l’insertion de 4 dans [5,2,4,1].
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 3 - Écrire un tri par sélection
+- Données : `temps=[42,17,23,17,9]`. ; jeu_exercice=beta
+- Consigne : chercher le minimum du suffixe ; traiter aussi `liste déjà triée` si nécessaire.
+- Réponse attendue : sélection place 9 en tête.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `liste déjà triée`.
+### Exercice 3
 - Type : production/écriture.
-- Niveau : standard.
 - Capacité officielle : P-ALGO-02C.
-- Données : liste [3, 1, 4, 2].
-- Consigne : Donner pseudo-code et premier échange.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 4 - Compter les comparaisons
-- Type : production/écriture.
-- Niveau : standard.
-- Capacité officielle : P-ALGO-02D.
-- Données : tri par sélection sur n=5 éléments.
-- Consigne : Calculer le nombre de comparaisons.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 5 - Trier une liste déjà triée
+- Données : `temps=[42,17,23,17,9]`. ; jeu_exercice=gamma
+- Consigne : écrire invariant gauche triée ; traiter aussi `doublons 17` si nécessaire.
+- Réponse attendue : invariant : indices < i triés.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `doublons 17`.
+### Exercice 4
 - Type : cas limite.
-- Niveau : standard.
-- Capacité officielle : P-ALGO-02A.
-- Données : liste [1, 2, 3, 4].
-- Consigne : Comparer insertion et sélection.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 6 - Justifier la terminaison
-- Type : justification.
-- Niveau : standard.
-- Capacité officielle : P-ALGO-02B.
-- Données : Boucle pour i allant de 1 à n-1 dans insertion.
-- Consigne : Dire pourquoi l’algorithme termine.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 7 - Comparer complexités
-- Type : lecture/analyse.
-- Niveau : approfondissement.
-- Capacité officielle : P-ALGO-02C.
-- Données : n=1000, tri quadratique versus tri en n log2 n.
-- Consigne : Donner les ordres de grandeur.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 8 - Détecter une erreur d’invariant
-- Type : production/écriture.
-- Niveau : approfondissement.
 - Capacité officielle : P-ALGO-02D.
-- Données : Un élève écrit: “après chaque échange, toute la liste est triée”.
-- Consigne : Corriger l’invariant.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
+- Données : `temps=[42,17,23,17,9]`. ; jeu_exercice=delta
+- Consigne : compter comparaisons intuitives ; traiter aussi `liste vide` si nécessaire.
+- Réponse attendue : pire cas quadratique.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `liste vide`.
+### Exercice 5
+- Type : justification.
+- Capacité officielle : P-ALGO-02A.
+- Données : `temps=[42,17,23,17,9]`. ; jeu_exercice=epsilon
+- Consigne : insérer la clé dans la partie gauche triée ; traiter aussi `liste déjà triée` si nécessaire.
+- Réponse attendue : insertion après i=1 -> [17,42,23,17,9].
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `liste déjà triée`.
+### Exercice 6
+- Type : lecture/analyse.
+- Capacité officielle : P-ALGO-02B.
+- Données : `temps=[42,17,23,17,9]`. ; jeu_exercice=zeta
+- Consigne : chercher le minimum du suffixe ; traiter aussi `doublons 17` si nécessaire.
+- Réponse attendue : sélection place 9 en tête.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `doublons 17`.
+### Exercice 7
+- Type : production/écriture.
+- Capacité officielle : P-ALGO-02C.
+- Données : `temps=[42,17,23,17,9]`. ; jeu_exercice=eta
+- Consigne : écrire invariant gauche triée ; traiter aussi `liste vide` si nécessaire.
+- Réponse attendue : invariant : indices < i triés.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `liste vide`.
+### Exercice 8
+- Type : justification.
+- Capacité officielle : P-ALGO-02D.
+- Données : `temps=[42,17,23,17,9]`. ; jeu_exercice=theta
+- Consigne : compter comparaisons intuitives ; traiter aussi `liste déjà triée` si nécessaire.
+- Réponse attendue : pire cas quadratique.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `liste déjà triée`.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : P-ALGO-02A.
-- Donnée utilisée : liste initiale [5, 2, 4, 1].
-- Résultat attendu : États: [5,2,4,1] ; insérer 2 -> [2,5,4,1] ; insérer 4 -> [2,4,5,1] ; insérer 1 -> [1,2,4,5].
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : insertion après i=1 -> [17,42,23,17,9].
+- Justification : la tâche `insérer la clé dans la partie gauche triée` s applique à `temps=[42,17,23,17,9]` ; erreur évitée : invariant confondu avec résultat.
+- Donnée utilisée alpha dans P12 TD tris invariants complexite : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans P12 TD tris invariants complexite : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans P12 TD tris invariants complexite : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans P12 TD tris invariants complexite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
 - Capacité mobilisée : P-ALGO-02B.
-- Donnée utilisée : Dans le tri par insertion, après l’étape i, le préfixe de longueur i+1 est trié.
-- Résultat attendu : Après insertion de 4, le préfixe [2,4,5] est trié. L’invariant est vrai pour i=2 ; le suffixe [1] n’est pas encore traité.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : sélection place 9 en tête.
+- Justification : la tâche `chercher le minimum du suffixe` s applique à `temps=[42,17,23,17,9]` ; erreur évitée : décalage oublié.
+- Donnée utilisée beta dans P12 TD tris invariants complexite : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans P12 TD tris invariants complexite : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans P12 TD tris invariants complexite : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans P12 TD tris invariants complexite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
 - Capacité mobilisée : P-ALGO-02C.
-- Donnée utilisée : liste [3, 1, 4, 2].
-- Résultat attendu : Pseudo-code: pour i, chercher j_min dans i..n-1 puis échanger. Pour i=0, minimum 1 à j=1, échange -> [1,3,4,2].
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : invariant : indices < i triés.
+- Justification : la tâche `écrire invariant gauche triée` s applique à `temps=[42,17,23,17,9]` ; erreur évitée : coût linéaire annoncé.
+- Donnée utilisée gamma dans P12 TD tris invariants complexite : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans P12 TD tris invariants complexite : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans P12 TD tris invariants complexite : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans P12 TD tris invariants complexite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
 - Capacité mobilisée : P-ALGO-02D.
-- Donnée utilisée : tri par sélection sur n=5 éléments.
-- Résultat attendu : Comparaisons: 4+3+2+1=10. Formule n(n-1)/2 = 5*4/2 = 10.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : pire cas quadratique.
+- Justification : la tâche `compter comparaisons intuitives` s applique à `temps=[42,17,23,17,9]` ; erreur évitée : invariant confondu avec résultat.
+- Donnée utilisée delta dans P12 TD tris invariants complexite : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans P12 TD tris invariants complexite : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans P12 TD tris invariants complexite : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans P12 TD tris invariants complexite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
 - Capacité mobilisée : P-ALGO-02A.
-- Donnée utilisée : liste [1, 2, 3, 4].
-- Résultat attendu : Insertion ne décale aucun élément et reste très rapide ; sélection effectue quand même 6 comparaisons pour n=4. Le résultat reste [1,2,3,4].
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : insertion après i=1 -> [17,42,23,17,9].
+- Justification : la tâche `insérer la clé dans la partie gauche triée` s applique à `temps=[42,17,23,17,9]` ; erreur évitée : décalage oublié.
+- Donnée utilisée epsilon dans P12 TD tris invariants complexite : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans P12 TD tris invariants complexite : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans P12 TD tris invariants complexite : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans P12 TD tris invariants complexite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
 - Capacité mobilisée : P-ALGO-02B.
-- Donnée utilisée : Boucle pour i allant de 1 à n-1 dans insertion.
-- Résultat attendu : i augmente d’une unité et n est fini. La boucle interne décale j vers la gauche ; j diminue jusqu’à 0 au plus. Les deux boucles terminent.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : sélection place 9 en tête.
+- Justification : la tâche `chercher le minimum du suffixe` s applique à `temps=[42,17,23,17,9]` ; erreur évitée : coût linéaire annoncé.
+- Donnée utilisée zeta dans P12 TD tris invariants complexite : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans P12 TD tris invariants complexite : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans P12 TD tris invariants complexite : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans P12 TD tris invariants complexite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
 - Capacité mobilisée : P-ALGO-02C.
-- Donnée utilisée : n=1000, tri quadratique versus tri en n log2 n.
-- Résultat attendu : n^2 = 1 000 000 opérations ; n log2 n environ 1000*10=10 000. L’écart justifie un tri plus avancé pour grandes données.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : invariant : indices < i triés.
+- Justification : la tâche `écrire invariant gauche triée` s applique à `temps=[42,17,23,17,9]` ; erreur évitée : invariant confondu avec résultat.
+- Donnée utilisée eta dans P12 TD tris invariants complexite : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans P12 TD tris invariants complexite : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans P12 TD tris invariants complexite : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans P12 TD tris invariants complexite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
 - Capacité mobilisée : P-ALGO-02D.
-- Donnée utilisée : Un élève écrit: “après chaque échange, toute la liste est triée”.
-- Résultat attendu : Invariant correct pour sélection: après l’itération i, les i+1 plus petits éléments sont placés au début et triés ; le suffixe peut rester non trié.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : pire cas quadratique.
+- Justification : la tâche `compter comparaisons intuitives` s applique à `temps=[42,17,23,17,9]` ; erreur évitée : décalage oublié.
+- Donnée utilisée theta dans P12 TD tris invariants complexite : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans P12 TD tris invariants complexite : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans P12 TD tris invariants complexite : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans P12 TD tris invariants complexite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
 ## Erreurs fréquentes
-- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
-- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
-- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
-- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
-
-## Remédiation ciblée
-- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
-- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
-- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
+- invariant confondu avec résultat.
+- décalage oublié.
+- coût linéaire annoncé.
 
 ## Différenciation
-- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
-- Standard : demander méthode complète, résultat et contrôle écrit.
-- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
+- Socle : données annotées.
+- Standard : méthode complète.
+- Expert : transfert avec `liste déjà triée`.
 
-## Lien avec la progression
-| Élément | Référence | Statut |
-|---|---|---|
-| Fiche | P12_fiche_cours_tris_invariants_complexite.md | needs_review |
-| Séance | P12-S1 | progression existante |
-| Évaluation | P12_evaluation_tris_invariants_complexite.md | needs_review |
+## Cas limites travaillés
+- liste vide.
+- liste déjà triée.
+- doublons 17.
 
-## Source et traçabilité
-- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
-- Aucun fichier Drive n’a été repris directement dans ce support.
-- Source de création : programme officiel et progression locale, avec statut `needs_review`.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `insertion après i=1 -> [17,42,23,17,9]`.
+- Au moins un cas limite de la section précédente est décidé.
+

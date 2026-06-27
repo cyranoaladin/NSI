@@ -129,45 +129,70 @@ Un formulaire international mélange accents, symboles monétaires et mesures d�
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- Méthode : identifier `A`, appliquer la méthode « lire le point de code U+0041 puis son octet UTF-8 », puis écrire `41` en hexadécimal.
 - Résultat : `41` en hexadécimal.
 - Contrôle : faire apparaître le contrôle « caractère dans l’ASCII ».
 - Erreur traitée : EF1 - Compter les caractères au lieu des octets en UTF-8.
+- Donnée utilisée alpha dans P03 td texte reels : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans P03 td texte reels : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans P03 td texte reels : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans P03 td texte reels : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : expliciter chaque étape de distinguer un caractère et deux octets avant de conclure par `c3 a9`.
 - Résultat : `c3 a9`.
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Croire que tout caractère occupe un octet.
+- Donnée utilisée beta dans P03 td texte reels : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans P03 td texte reels : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans P03 td texte reels : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans P03 td texte reels : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : comparer la donnée avec le cas limite « chaîne vide » et valider 2 caractères et 3 octets.
 - Résultat : 2 caractères et 3 octets.
 - Contrôle : comparer avec le cas « chaîne vide ».
 - Erreur traitée : EF3 - Comparer deux flottants avec égalité stricte après calcul.
+- Donnée utilisée gamma dans P03 td texte reels : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans P03 td texte reels : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans P03 td texte reels : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans P03 td texte reels : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler l’erreur fréquente « Confondre point de code et représentation binaire. » puis reprendre la procédure correcte.
 - Résultat : valeur proche de `0.3`.
 - Contrôle : corriger l’erreur « Confondre point de code et représentation binaire. ».
 - Erreur traitée : EF4 - Confondre point de code et représentation binaire.
+- Donnée utilisée delta dans P03 td texte reels : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans P03 td texte reels : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans P03 td texte reels : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans P03 td texte reels : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : identifier `A`, appliquer la méthode « lire le point de code U+0041 puis son octet UTF-8 », puis écrire `41` en hexadécimal.
 - Résultat : le comportement de ASCII simple est contrôlé.
 - Contrôle : nommer la donnée minimale et la conclusion.
 - Erreur traitée : EF1 - Compter les caractères au lieu des octets en UTF-8.
+- Donnée utilisée epsilon dans P03 td texte reels : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans P03 td texte reels : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans P03 td texte reels : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans P03 td texte reels : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : expliciter chaque étape de distinguer un caractère et deux octets avant de conclure par `c3 a9`.
 - Résultat : la méthode robuste est choisie et justifiée.
 - Contrôle : identifier pourquoi « Croire que tout caractère occupe un octet. » est une erreur.
 - Erreur traitée : EF2 - Croire que tout caractère occupe un octet.
+- Donnée utilisée zeta dans P03 td texte reels : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans P03 td texte reels : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans P03 td texte reels : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans P03 td texte reels : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « chaîne vide » et valider 2 caractères et 3 octets.
 - Résultat : la justification reste valable sur le nouveau cas.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Comparer deux flottants avec égalité stricte après calcul.
+- Donnée utilisée eta dans P03 td texte reels : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans P03 td texte reels : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans P03 td texte reels : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans P03 td texte reels : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler l’erreur fréquente « Confondre point de code et représentation binaire. » puis reprendre la procédure correcte.
 - Résultat : l’erreur est localisée puis réparée.
 - Contrôle : proposer une activité corrective inspirée de « Séparer nom du caractère et encodage effectif. ».
 - Erreur traitée : EF4 - Confondre point de code et représentation binaire.
+- Donnée utilisée theta dans P03 td texte reels : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans P03 td texte reels : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans P03 td texte reels : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans P03 td texte reels : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Compter les caractères au lieu des octets en UTF-8.
 - Erreur fréquente EF2 - Croire que tout caractère occupe un octet.

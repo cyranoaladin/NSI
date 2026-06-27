@@ -1,19 +1,14 @@
 ---
-title: "T08 - TP - Parcours BFS, DFS, cycles et chemins"
+title: "T08 - tp_papier - BFS, DFS, cycles et chemins"
 level: "terminale"
 sequence_id: "T08"
-document_type: "tp"
+document_type: "tp_papier"
 status: "needs_review"
-version: "0.2.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Algorithmes sur graphes"
-notion: "parcours en largeur, profondeur, chemins, cycles"
-objectifs:
-  - "exécuter BFS avec file"
-  - "exécuter DFS avec pile ou récursion"
-  - "reconstruire un chemin par prédécesseurs"
-  - "détecter un cycle en évitant le parent"
+theme: "BFS, DFS, cycles et chemins"
+notion: "BFS, DFS, cycles et chemins"
 private_data: false
 official_program:
   capacities:
@@ -23,98 +18,68 @@ official_program:
     - "T-ALGO-02D"
 ---
 
-# T08 - TP - Parcours BFS, DFS, cycles et chemins
+# T08 - TP - BFS, DFS, cycles et chemins
 
-## Objectif technique
-Dans un graphe de salles, on cherche le plus petit nombre de couloirs depuis A vers D et on compare BFS avec DFS.
+## Statut du TP
+TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
 
-## Consigne technique détaillée
-- exécuter BFS avec file.
-- exécuter DFS avec pile ou récursion.
-- reconstruire un chemin par prédécesseurs.
-- détecter un cycle en évitant le parent.
+## Donnée fournie
+`adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}`
 
-## Starter code
-```python
-def verifier_bfs_dfs_cycles_chemins(donnee):
-    """À compléter : renvoyer une structure vérifiable, pas un texte hardcodé."""
-    raise NotImplementedError("à compléter par l’élève")
-```
+## Travail demandé
+1. Préparer la donnée et nommer les champs utiles.
+2. Réaliser : BFS file A puis B,C puis D,E.
+3. Réaliser : mémoriser prédécesseurs.
+4. Tester le cas limite `sommet isolé F`.
+5. Produire le livrable : BFS -> A,B,C,D,E.
 
-## Tests attendus
-- Test nominal : donnée de référence acceptée et résultat exact.
-- Test limite : donnée vide ou minimale traitée selon la convention.
-- Test invalide : donnée incohérente refusée avec exception ou message explicite.
+## Barème associé
+- 2 points : donnée préparée.
+- 3 points : méthode principale.
+- 3 points : résultat `BFS -> A,B,C,D,E`.
+- 2 points : cas limite `sommet isolé F`.
 
-## Exemple d’exécution
-- Entrée : `A: B,C ; B: A,D ; C: A,D ; D: B,C,E ; E: D`.
-- Sortie attendue : structure contrôlable par assertions, pas phrase libre.
+## Corrigé question par question
+### Corrigé question 1
+Résultat attendu : `adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}`.
+### Corrigé question 2
+Résultat attendu : BFS -> A,B,C,D,E.
+### Corrigé question 3
+Résultat attendu : `pred = {"B":"A", "C":"A", "D":"B", "E":"C"}` donc chemin reconstruit `A -> C -> E`.
+### Corrigé question 4
+Résultat attendu : `sommet isolé F` traité sans ambiguïté.
 
-## Livrable vérifiable
-- Un fichier `T08_solution_bfs_dfs_cycles_chemins.py` avec au moins trois tests personnels.
-- Une capture texte des tests exécutés.
+## Liens
+- TD lié : `T08_TD_bfs_dfs_cycles_chemins.md`.
+- Évaluation liée : `T08_evaluation_bfs_dfs_cycles_chemins.md`.
 
-## Cas limite
-- Cas à discuter : croire que DFS donne toujours un plus court chemin.
+## Cas limites travaillés
+- sommet isolé F.
+- destination absente.
+- cycle D-C-D.
 
-## Corrigé professeur séparé
-- Le corrigé professeur doit être conservé séparément et ne pas être cité comme document élève.
+## Erreurs fréquentes
+- marquage trop tardif.
+- BFS confondu avec DFS.
+- prédécesseurs oubliés.
 
-## Critères de réussite
-- Le code ne retourne pas une constante unique.
-- Les tests distinguent cas nominal, cas limite et entrée invalide.
-- La justification relie le résultat à une capacité officielle.
-## Déroulé opérationnel détaillé
-1. implémenter BFS avec file explicite.
-2. implémenter DFS avec pile ou récursion contrôlée.
-3. reconstruire un chemin parent depuis BFS.
-4. détecter un cycle dans un graphe non orienté.
-5. comparer ordre de visite BFS/DFS.
-6. tester un graphe non connexe.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `BFS -> A,B,C,D,E`.
+- Au moins un cas limite de la section précédente est décidé.
 
-## Tests vérifiables attendus
-- Test 1 : BFS depuis A visite A puis ses voisins B,C.
-- Test 2 : chemin A vers E reconstruit `A-B-D-E` ou chemin équivalent minimal.
-- Test 3 : DFS atteint tous les sommets de la composante.
-- Test 4 : cycle A-B-C-A détecté.
-- Test 5 : graphe arbre ne signale pas de cycle.
-- Test 6 : sommet F isolé reste non visité depuis A.
 
-## Cas limites à documenter
-- Cas limite : graphe vide.
-- Cas limite : sommet départ absent.
-- Cas limite : cycle de longueur 3.
-- Cas limite : composante isolée.
-- Cas limite : voisin déjà visité.
-- Cas limite : chemin impossible.
 
-## Plan de correction professeur
-- Vérifier que le programme se lance dans un répertoire temporaire propre.
-- Lire les fonctions avant les tests pour repérer un retour constant ou hardcodé.
-- Exécuter les tests nominaux puis les tests limites.
-- Ajouter un test invalide avant toute correction manuelle.
-- Comparer la sortie obtenue avec le résultat attendu écrit dans ce TP.
-- Refuser une solution qui supprime le cas limite au lieu de le traiter.
-- Noter séparément exactitude, robustesse, lisibilité et justification.
+## Protocole de validation complémentaire
+1. Préparer un jeu nominal propre à T08 et noter la sortie attendue avant exécution.
+2. Préparer un cas limite distinct et expliquer pourquoi il doit être accepté ou refusé.
+3. Exécuter le starter : il doit échouer sur au moins un test complet, ce qui confirme que le travail élève reste à produire.
+4. Exécuter le corrigé professeur : il doit produire exactement les valeurs attendues dans les tests.
+5. Comparer la trace obtenue avec la consigne : chaque étape doit être justifiée par une donnée du sujet.
+6. Noter l'erreur fréquente observée et choisir la remédiation ciblée dans le support associé.
 
-## Grille de vérification élève
-- [ ] le fichier demandé existe avec le bon nom.
-- [ ] le starter n’a pas été remplacé par une constante.
-- [ ] chaque fonction possède une docstring ou un commentaire de contrat.
-- [ ] les tests nominaux passent.
-- [ ] les tests limites passent.
-- [ ] les entrées invalides sont refusées explicitement.
-- [ ] le livrable ne dépend pas d’un chemin absolu local.
-- [ ] la réponse cite la capacité travaillée.
-
-## Différenciation opérationnelle
-- Socle : compléter les fonctions dans l’ordre des tests fournis.
-- Standard : ajouter deux tests personnels avant de demander la validation.
-- Approfondissement : proposer une variante de donnée et expliquer pourquoi les tests restent pertinents.
-- Aide autorisée : rappel de syntaxe, sans fournir le corps complet de la fonction.
-- Aide interdite : donner directement le résultat attendu comme unique retour de fonction.
-
-## Livrable final contrôlable
-- Livrable : `T08_solution_parcours_graphes.py` avec sorties BFS, DFS, chemin et cycle..
-- Le professeur peut vérifier le livrable sans accès au Drive distant.
-- Toute source locale éventuellement utilisée doit être tracée dans `support_source_trace.yml`.
+## Livrable vérifiable complémentaire
+- Fichier élève complété avec les fonctions demandées dans le TP.
+- Trace courte indiquant entrée, traitement, sortie et cas limite.
+- Capture textuelle des tests attendus : nominal OK, cas limite OK, entrée invalide traitée.
+- Commentaire final indiquant la capacité officielle réellement travaillée.

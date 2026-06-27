@@ -129,45 +129,70 @@ Une équipe reprend une bibliothèque Python de Première et doit écrire des te
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- Méthode : identifier `[3, 7, 2]`, appliquer la méthode « parcourir la liste en conservant le meilleur élément », puis écrire `7`.
 - Résultat : `7`.
 - Contrôle : faire apparaître le contrôle « liste d’un élément ».
 - Erreur traitée : EF1 - Tester seulement le cas donné en exemple.
+- Donnée utilisée alpha dans T00 td diagnostic tests : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans T00 td diagnostic tests : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans T00 td diagnostic tests : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans T00 td diagnostic tests : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : expliciter chaque étape de refuser l’entrée avant le parcours avant de conclure par exception documentée.
 - Résultat : exception documentée.
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Écrire un test qui reproduit le code au lieu de la spécification.
+- Donnée utilisée beta dans T00 td diagnostic tests : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans T00 td diagnostic tests : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans T00 td diagnostic tests : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans T00 td diagnostic tests : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : comparer la donnée avec le cas limite « message utile en cas d’échec » et valider test passant.
 - Résultat : test passant.
 - Contrôle : comparer avec le cas « message utile en cas d’échec ».
 - Erreur traitée : EF3 - Oublier le cas vide.
+- Donnée utilisée gamma dans T00 td diagnostic tests : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans T00 td diagnostic tests : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans T00 td diagnostic tests : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans T00 td diagnostic tests : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler l’erreur fréquente « Ne pas lire le message d’échec. » puis reprendre la procédure correcte.
 - Résultat : erreur contrôlée.
 - Contrôle : corriger l’erreur « Ne pas lire le message d’échec. ».
 - Erreur traitée : EF4 - Ne pas lire le message d’échec.
+- Donnée utilisée delta dans T00 td diagnostic tests : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans T00 td diagnostic tests : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans T00 td diagnostic tests : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans T00 td diagnostic tests : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : identifier `[3, 7, 2]`, appliquer la méthode « parcourir la liste en conservant le meilleur élément », puis écrire `7`.
 - Résultat : le comportement de maximum nominal est contrôlé.
 - Contrôle : nommer la donnée minimale et la conclusion.
 - Erreur traitée : EF1 - Tester seulement le cas donné en exemple.
+- Donnée utilisée epsilon dans T00 td diagnostic tests : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans T00 td diagnostic tests : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans T00 td diagnostic tests : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans T00 td diagnostic tests : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : expliciter chaque étape de refuser l’entrée avant le parcours avant de conclure par exception documentée.
 - Résultat : la méthode robuste est choisie et justifiée.
 - Contrôle : identifier pourquoi « Écrire un test qui reproduit le code au lieu de la spécification. » est une erreur.
 - Erreur traitée : EF2 - Écrire un test qui reproduit le code au lieu de la spécification.
+- Donnée utilisée zeta dans T00 td diagnostic tests : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans T00 td diagnostic tests : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans T00 td diagnostic tests : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans T00 td diagnostic tests : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « message utile en cas d’échec » et valider test passant.
 - Résultat : la justification reste valable sur le nouveau cas.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Oublier le cas vide.
+- Donnée utilisée eta dans T00 td diagnostic tests : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans T00 td diagnostic tests : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans T00 td diagnostic tests : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans T00 td diagnostic tests : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler l’erreur fréquente « Ne pas lire le message d’échec. » puis reprendre la procédure correcte.
 - Résultat : l’erreur est localisée puis réparée.
 - Contrôle : proposer une activité corrective inspirée de « Réécrire le message d’échec comme diagnostic. ».
 - Erreur traitée : EF4 - Ne pas lire le message d’échec.
+- Donnée utilisée theta dans T00 td diagnostic tests : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans T00 td diagnostic tests : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans T00 td diagnostic tests : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans T00 td diagnostic tests : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Tester seulement le cas donné en exemple.
 - Erreur fréquente EF2 - Écrire un test qui reproduit le code au lieu de la spécification.

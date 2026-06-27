@@ -1,19 +1,14 @@
 ---
-title: "P09 - TP papier - architecture, système d’exploitation, droits"
+title: "P09 - tp_papier - architecture, système et droits Unix"
 level: "premiere"
 sequence_id: "P09"
 document_type: "tp_papier"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Architecture matérielle et systèmes"
-notion: "architecture, système d’exploitation, droits"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "architecture, système et droits Unix"
+notion: "architecture, système et droits Unix"
 private_data: false
 official_program:
   capacities:
@@ -21,38 +16,56 @@ official_program:
     - "P-ARCH-01B"
     - "P-ARCH-03A"
     - "P-ARCH-03B"
+    - "P-ARCH-03C"
 ---
 
-# P09 - TP papier - architecture, système d’exploitation, droits
+# P09 - TP - architecture, système et droits Unix
 
 ## Statut du TP
-Ce support est un TP papier : aucune ressource Python n’est attendue dans cette passe pour P09. Le livrable est une trace manuscrite ou Markdown avec données, méthode, résultat et contrôle du cas limite.
+TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
 
 ## Donnée fournie
-`droits initiaux -rw-r--r--; commande visée chmod u+x projet.py; résultat -rwxr--r--`
+`ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`
 
 ## Travail demandé
-1. Recopier la donnée utile sans l’altérer.
-2. Appliquer la méthode principale : distinguer processeur, mémoire, stockage et périphériques.
-3. Vérifier le résultat : seul le propriétaire gagne x ; le groupe et les autres gardent lecture seule ; l’OS contrôle l’accès au fichier.
-4. Tester un cas limite explicitement.
+1. Préparer la donnée et nommer les champs utiles.
+2. Réaliser : distinguer mémoire vive et stockage.
+3. Réaliser : identifier PID et processus.
+4. Tester le cas limite `fichier absent`.
+5. Produire le livrable : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
 
 ## Barème associé
-- 2 points : donnée de départ correctement identifiée.
-- 3 points : méthode appliquée dans le bon ordre.
-- 3 points : résultat final exact.
-- 2 points : cas limite justifié.
+- 2 points : donnée préparée.
+- 3 points : méthode principale.
+- 3 points : résultat `-rw-r----- -> propriétaire rw, groupe r, autres aucun droit`.
+- 2 points : cas limite `fichier absent`.
 
 ## Corrigé question par question
 ### Corrigé question 1
-Résultat attendu : la donnée utile est `droits initiaux -rw-r--r--; commande visée chmod u+x projet.py; résultat -rwxr--r--`.
+Résultat attendu : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`.
 ### Corrigé question 2
-Résultat attendu : le fichier `projet.py` est une donnée stockée ; le système d'exploitation applique la commande `chmod u+x` et modifie seulement les droits du propriétaire.
+Résultat attendu : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
 ### Corrigé question 3
-Résultat attendu : après `chmod u+x projet.py`, les droits valent `-rwxr--r--`; seul le propriétaire gagne `x`, le groupe et les autres gardent lecture seule, et l’OS contrôle l’accès au fichier.
+Résultat attendu : chmod 640 mesures.csv donne rw-r-----.
 ### Corrigé question 4
-Résultat attendu : avec `chmod go-r projet.py`, le résultat devient `-rwx------` si le propriétaire avait déjà `rwx`; groupe et autres perdent la lecture.
+Résultat attendu : `fichier absent` traité sans ambiguïté.
 
 ## Liens
 - TD lié : `P09_TD_architecture_os_droits.md`.
 - Évaluation liée : `P09_evaluation_architecture_os_droits.md`.
+
+## Cas limites travaillés
+- fichier absent.
+- droit x manquant sur dossier.
+- chmod 777 trop permissif.
+
+## Erreurs fréquentes
+- confondre mémoire et disque.
+- oublier x sur dossier.
+- donner tous les droits.
+
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `-rw-r----- -> propriétaire rw, groupe r, autres aucun droit`.
+- Au moins un cas limite de la section précédente est décidé.
+

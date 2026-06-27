@@ -25,7 +25,7 @@ def analyze_tp_runtime(
     total_timeout_seconds: float = 60.0,
     prefix_timeout_seconds: float = 20.0,
 ) -> TpRuntimeResult:
-    prefixes = prefixes or FIRST_BATCH_PREFIXES
+    prefixes = prefixes or list(dict.fromkeys([*FIRST_BATCH_PREFIXES, "P06"]))
     started = time.monotonic()
     pedagogy = analyze_tp_pedagogy(
         root,

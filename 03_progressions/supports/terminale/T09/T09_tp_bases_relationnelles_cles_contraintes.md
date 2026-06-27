@@ -1,19 +1,14 @@
 ---
-title: "T09 - TP papier - relations, clés primaires, clés étrangères, contraintes"
+title: "T09 - tp_papier - bases relationnelles, clés et contraintes"
 level: "terminale"
 sequence_id: "T09"
 document_type: "tp_papier"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Bases de données relationnelles"
-notion: "relations, clés primaires, clés étrangères, contraintes"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "bases relationnelles, clés et contraintes"
+notion: "bases relationnelles, clés et contraintes"
 private_data: false
 official_program:
   capacities:
@@ -23,36 +18,53 @@ official_program:
     - "T-BDD-02"
 ---
 
-# T09 - TP papier - relations, clés primaires, clés étrangères, contraintes
+# T09 - TP - bases relationnelles, clés et contraintes
 
 ## Statut du TP
-Ce support est un TP papier : aucune ressource Python n’est attendue dans cette passe pour T09. Le livrable est une trace manuscrite ou Markdown avec données, méthode, résultat et contrôle du cas limite.
+TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
 
 ## Donnée fournie
-`Livre(1,"1984"), Livre(2,"Dune") ; Emprunt(10,2,"Ada") ; Emprunt(11,9,"Linus") invalide`
+`Livre(1,Dune), Livre(2,Fondation) ; Emprunt(10,1,Nora), Emprunt(11,9,Sam) invalide`
 
 ## Travail demandé
-1. Recopier la donnée utile sans l’altérer.
-2. Appliquer la méthode principale : identifier clé primaire id_livre.
-3. Vérifier le résultat : Emprunt 10 est valide ; Emprunt 11 viole la contrainte de clé étrangère car id_livre=9 absent.
-4. Tester un cas limite explicitement.
+1. Préparer la donnée et nommer les champs utiles.
+2. Réaliser : identifier schéma et instance.
+3. Réaliser : vérifier unicité id_livre.
+4. Tester le cas limite `clé primaire nulle`.
+5. Produire le livrable : Livre.id_livre identifie chaque livre.
 
 ## Barème associé
-- 2 points : donnée de départ correctement identifiée.
-- 3 points : méthode appliquée dans le bon ordre.
-- 3 points : résultat final exact.
-- 2 points : cas limite justifié.
+- 2 points : donnée préparée.
+- 3 points : méthode principale.
+- 3 points : résultat `Livre.id_livre identifie chaque livre`.
+- 2 points : cas limite `clé primaire nulle`.
 
 ## Corrigé question par question
 ### Corrigé question 1
-Résultat attendu : la donnée utile est `Livre(1,"1984"), Livre(2,"Dune") ; Emprunt(10,2,"Ada") ; Emprunt(11,9,"Linus") invalide`.
+Résultat attendu : `Livre(1,Dune), Livre(2,Fondation) ; Emprunt(10,1,Nora), Emprunt(11,9,Sam) invalide`.
 ### Corrigé question 2
-Résultat attendu : `Livre.id_livre` est clé primaire ; `Emprunt.id_livre` est clé étrangère vers `Livre.id_livre`.
+Résultat attendu : clé primaire `Livre.id_livre` ; valeurs `1` et `2` sont uniques et non nulles.
 ### Corrigé question 3
-Résultat attendu : Emprunt 10 est valide ; Emprunt 11 viole la contrainte de clé étrangère car id_livre=9 absent.
+Résultat attendu : clé étrangère `Emprunt.id_livre -> Livre.id_livre` ; `id_livre=9` est refusé car absent de `Livre`.
 ### Corrigé question 4
-Résultat attendu : si `Livre(9,"Fondation")` est ajouté, `Emprunt(11,9,"Linus")` devient valide ; sans cette ligne, la contrainte est violée.
+Résultat attendu : `clé primaire nulle` traité sans ambiguïté.
 
 ## Liens
 - TD lié : `T09_TD_bases_relationnelles_cles_contraintes.md`.
 - Évaluation liée : `T09_evaluation_bases_relationnelles_cles_contraintes.md`.
+
+## Cas limites travaillés
+- clé primaire nulle.
+- doublon id_livre=1.
+- suppression référencée.
+
+## Erreurs fréquentes
+- attribut confondu avec valeur.
+- clé étrangère supposée unique.
+- domaine ignoré.
+
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `Livre.id_livre identifie chaque livre`.
+- Au moins un cas limite de la section précédente est décidé.
+

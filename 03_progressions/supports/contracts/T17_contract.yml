@@ -1,0 +1,54 @@
+sequence: T17
+level: terminale
+theme: programmation dynamique
+notion: programmation dynamique
+status: needs_review
+notions_exigibles:
+- état
+- récurrence
+- initialisation
+- mémoïsation
+- tabulation
+- sous-problèmes
+- complexité mémoire
+capacites_officielles:
+- T-ALGO-04
+exemples_obligatoires:
+- dp[6]=2 avec 5+1
+- dp[11]=3 avec 5+5+1
+- tabulation stocke chaque dp[m]
+- sans pièce 1 certains montants impossibles
+cas_limites:
+- montant 0
+- montant impossible
+- pièce plus grande que m
+erreurs_frequentes:
+- état ambigu
+- initialisation oubliée
+- choix de pièce confondu avec valeur optimale
+types_exercices_attendus:
+- lecture de donnée
+- production de méthode
+- cas limite
+- justification
+- transfert
+tp_attendu: TP papier justifié avec trace, barème et corrigé question par question
+interdits_pedagogiques:
+- réponse sans donnée exploitable
+- résultat non vérifiable
+- capacité citée sans exercice associé
+criteres_validation_humaine:
+- relecture pédagogique indépendante
+- vérification scientifique
+- alignement BO 2019
+- décision de publication séparée
+must_include:
+- état
+- récurrence
+- initialisation
+- mémoïsation
+- dp[6]=2 avec 5+1
+- montant 0
+must_not:
+- réponse sans donnée exploitable
+- résultat non vérifiable

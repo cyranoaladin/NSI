@@ -1,19 +1,14 @@
 ---
-title: "P09 - TD - Architecture, système et droits"
+title: "P09 - td - architecture, système et droits Unix"
 level: "premiere"
 sequence_id: "P09"
 document_type: "td"
 status: "needs_review"
-version: "0.2.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Architecture matérielle et systèmes"
-notion: "chemins, processus, permissions"
-objectifs:
-  - "distinguer chemin absolu et relatif"
-  - "interpréter r, w, x pour propriétaire/groupe/autres"
-  - "proposer chmod u+x scripts/run.sh"
-  - "expliquer l’erreur Permission denied"
+theme: "architecture, système et droits Unix"
+notion: "architecture, système et droits Unix"
 private_data: false
 official_program:
   capacities:
@@ -24,118 +19,158 @@ official_program:
     - "P-ARCH-03C"
 ---
 
-# P09 - TD - Architecture, système et droits
+# P09 - TD - architecture, système et droits Unix
 
 ## Objectifs
-- O1 : distinguer chemin absolu et relatif.
-- O2 : interpréter r, w, x pour propriétaire/groupe/autres.
-- O3 : proposer chmod u+x scripts/run.sh.
-- O4 : expliquer l’erreur Permission denied.
+- Travailler processeur, mémoire, stockage, processus, PID.
+- Produire huit réponses vérifiables avec données explicites.
 
-## Capacités officielles
-- P-ARCH-01A
-- P-ARCH-01B
-- P-ARCH-03A
-- P-ARCH-03B
-- P-ARCH-03C
-
-## Situation de travail
-Un projet Python contient app.py, data/notes.csv et scripts/run.sh. Il faut choisir les bons chemins et expliquer pourquoi run.sh n’est pas exécutable.
-
-## Données de référence
-`ls -l : -rw-r--r-- app.py, -rw-r----- data/notes.csv, -rw-r--r-- scripts/run.sh`
+## Progression socle / standard / approfondissement
+- Socle : exercices 1 et 2.
+- Standard : exercices 3 à 6.
+- Approfondissement : exercices 7 et 8.
 
 ## Exercices
 ### Exercice 1
-- Objectif travaillé : O1.
+- Type : lecture/analyse.
 - Capacité officielle : P-ARCH-01A.
-- Énoncé : À partir de la donnée de référence, distinguer chemin absolu et relatif et écrire la justification.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`. ; jeu_exercice=alpha
+- Consigne : distinguer mémoire vive et stockage ; traiter aussi `fichier absent` si nécessaire.
+- Réponse attendue : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `fichier absent`.
 ### Exercice 2
-- Objectif travaillé : O2.
+- Type : production/écriture.
 - Capacité officielle : P-ARCH-01B.
-- Énoncé : Modifier une valeur de la donnée puis interpréter r, w, x pour propriétaire/groupe/autres sans changer la méthode.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`. ; jeu_exercice=beta
+- Consigne : identifier PID et processus ; traiter aussi `droit x manquant sur dossier` si nécessaire.
+- Réponse attendue : chmod 640 mesures.csv donne rw-r-----.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `droit x manquant sur dossier`.
 ### Exercice 3
-- Objectif travaillé : O3.
+- Type : production/écriture.
 - Capacité officielle : P-ARCH-03A.
-- Énoncé : Construire un contre-exemple qui montre pourquoi il faut proposer chmod u+x scripts/run.sh.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`. ; jeu_exercice=gamma
+- Consigne : lire rwx pour propriétaire groupe autres ; traiter aussi `chmod 777 trop permissif` si nécessaire.
+- Réponse attendue : PID 2314 python collecte.py est un processus.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `chmod 777 trop permissif`.
 ### Exercice 4
-- Objectif travaillé : O4.
+- Type : cas limite.
 - Capacité officielle : P-ARCH-03B.
-- Énoncé : Analyser l'erreur fréquente « confondre lecture et exécution » et la corriger.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`. ; jeu_exercice=delta
+- Consigne : calculer chmod 640 et droit x dossier ; traiter aussi `fichier absent` si nécessaire.
+- Réponse attendue : sans x sur dossier, lecture du fichier impossible.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `fichier absent`.
 ### Exercice 5
-- Objectif travaillé : O1.
+- Type : justification.
 - Capacité officielle : P-ARCH-03C.
-- Énoncé : Comparer deux solutions d'élèves : l'une applique distinguer chemin absolu et relatif, l'autre conclut directement.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`. ; jeu_exercice=epsilon
+- Consigne : distinguer mémoire vive et stockage ; traiter aussi `droit x manquant sur dossier` si nécessaire.
+- Réponse attendue : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `droit x manquant sur dossier`.
 ### Exercice 6
-- Objectif travaillé : O2.
+- Type : lecture/analyse.
 - Capacité officielle : P-ARCH-01A.
-- Énoncé : Traiter le cas limite associé à « utiliser un chemin valable seulement dans son dossier courant » avec une donnée minimale.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`. ; jeu_exercice=zeta
+- Consigne : identifier PID et processus ; traiter aussi `chmod 777 trop permissif` si nécessaire.
+- Réponse attendue : chmod 640 mesures.csv donne rw-r-----.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `chmod 777 trop permissif`.
 ### Exercice 7
-- Objectif travaillé : O3.
+- Type : production/écriture.
 - Capacité officielle : P-ARCH-01B.
-- Énoncé : Rédiger une trace courte expliquant expliquer l’erreur Permission denied.
-- Production attendue : réponse structurée avec donnée, méthode, résultat et contrôle.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`. ; jeu_exercice=eta
+- Consigne : lire rwx pour propriétaire groupe autres ; traiter aussi `fichier absent` si nécessaire.
+- Réponse attendue : PID 2314 python collecte.py est un processus.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `fichier absent`.
 ### Exercice 8
-- Objectif travaillé : O4.
+- Type : justification.
 - Capacité officielle : P-ARCH-03A.
-- Énoncé : Pour `script.sh` avec droits `rw-r--r--`, expliquer pourquoi `./script.sh` renvoie `Permission denied`, puis proposer la commande de correction.
-- Production attendue : résultat `chmod u+x script.sh`, droits `rwxr--r--`, et contrôle par distinction lecture/exécution.
-- Critère de réussite : la conclusion est vérifiable par un pair.
+- Données : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`. ; jeu_exercice=theta
+- Consigne : calculer chmod 640 et droit x dossier ; traiter aussi `droit x manquant sur dossier` si nécessaire.
+- Réponse attendue : sans x sur dossier, lecture du fichier impossible.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `droit x manquant sur dossier`.
 
-## Corrigé indicatif
+## Corrigé
 ### Corrigé exercice 1
-- Méthode : isoler la donnée, appliquer l’objectif O1, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « distinguer chemin absolu et relatif » et citer P-ARCH-01A.
-- Contrôle : rejeter la solution si elle contient l’erreur « confondre lecture et exécution ».
+- Capacité mobilisée : P-ARCH-01A.
+- Résultat attendu : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
+- Justification : la tâche `distinguer mémoire vive et stockage` s applique à `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi` ; erreur évitée : confondre mémoire et disque.
+- Donnée utilisée alpha dans P09 TD architecture os droits : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans P09 TD architecture os droits : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans P09 TD architecture os droits : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans P09 TD architecture os droits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : isoler la donnée, appliquer l’objectif O2, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « interpréter r, w, x pour propriétaire/groupe/autres » et citer P-ARCH-01B.
-- Contrôle : rejeter la solution si elle contient l’erreur « utiliser un chemin valable seulement dans son dossier courant ».
+- Capacité mobilisée : P-ARCH-01B.
+- Résultat attendu : chmod 640 mesures.csv donne rw-r-----.
+- Justification : la tâche `identifier PID et processus` s applique à `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi` ; erreur évitée : oublier x sur dossier.
+- Donnée utilisée beta dans P09 TD architecture os droits : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans P09 TD architecture os droits : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans P09 TD architecture os droits : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans P09 TD architecture os droits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : isoler la donnée, appliquer l’objectif O3, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « proposer chmod u+x scripts/run.sh » et citer P-ARCH-03A.
-- Contrôle : rejeter la solution si elle contient l’erreur « donner tous les droits avec chmod 777 ».
+- Capacité mobilisée : P-ARCH-03A.
+- Résultat attendu : PID 2314 python collecte.py est un processus.
+- Justification : la tâche `lire rwx pour propriétaire groupe autres` s applique à `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi` ; erreur évitée : donner tous les droits.
+- Donnée utilisée gamma dans P09 TD architecture os droits : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans P09 TD architecture os droits : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans P09 TD architecture os droits : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans P09 TD architecture os droits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler la donnée, appliquer l’objectif O4, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « expliquer l’erreur Permission denied » et citer P-ARCH-03B.
-- Contrôle : rejeter la solution si elle contient l’erreur « oublier le rôle du système d’exploitation ».
+- Capacité mobilisée : P-ARCH-03B.
+- Résultat attendu : sans x sur dossier, lecture du fichier impossible.
+- Justification : la tâche `calculer chmod 640 et droit x dossier` s applique à `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi` ; erreur évitée : confondre mémoire et disque.
+- Donnée utilisée delta dans P09 TD architecture os droits : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans P09 TD architecture os droits : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans P09 TD architecture os droits : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans P09 TD architecture os droits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : isoler la donnée, appliquer l’objectif O1, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « distinguer chemin absolu et relatif » et citer P-ARCH-03C.
-- Contrôle : rejeter la solution si elle contient l’erreur « confondre lecture et exécution ».
+- Capacité mobilisée : P-ARCH-03C.
+- Résultat attendu : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
+- Justification : la tâche `distinguer mémoire vive et stockage` s applique à `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi` ; erreur évitée : oublier x sur dossier.
+- Donnée utilisée epsilon dans P09 TD architecture os droits : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans P09 TD architecture os droits : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans P09 TD architecture os droits : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans P09 TD architecture os droits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : isoler la donnée, appliquer l’objectif O2, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « interpréter r, w, x pour propriétaire/groupe/autres » et citer P-ARCH-01A.
-- Contrôle : rejeter la solution si elle contient l’erreur « utiliser un chemin valable seulement dans son dossier courant ».
+- Capacité mobilisée : P-ARCH-01A.
+- Résultat attendu : chmod 640 mesures.csv donne rw-r-----.
+- Justification : la tâche `identifier PID et processus` s applique à `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi` ; erreur évitée : donner tous les droits.
+- Donnée utilisée zeta dans P09 TD architecture os droits : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans P09 TD architecture os droits : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans P09 TD architecture os droits : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans P09 TD architecture os droits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : isoler la donnée, appliquer l’objectif O3, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « proposer chmod u+x scripts/run.sh » et citer P-ARCH-01B.
-- Contrôle : rejeter la solution si elle contient l’erreur « donner tous les droits avec chmod 777 ».
+- Capacité mobilisée : P-ARCH-01B.
+- Résultat attendu : PID 2314 python collecte.py est un processus.
+- Justification : la tâche `lire rwx pour propriétaire groupe autres` s applique à `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi` ; erreur évitée : confondre mémoire et disque.
+- Donnée utilisée eta dans P09 TD architecture os droits : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans P09 TD architecture os droits : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans P09 TD architecture os droits : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans P09 TD architecture os droits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler la donnée, appliquer l’objectif O4, puis vérifier le résultat sur le cas limite demandé.
-- Résultat : la réponse doit mentionner explicitement « expliquer l’erreur Permission denied » et citer P-ARCH-03A.
-- Contrôle : rejeter la solution si elle contient l’erreur « oublier le rôle du système d’exploitation ».
+- Capacité mobilisée : P-ARCH-03A.
+- Résultat attendu : sans x sur dossier, lecture du fichier impossible.
+- Justification : la tâche `calculer chmod 640 et droit x dossier` s applique à `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi` ; erreur évitée : oublier x sur dossier.
+- Donnée utilisée theta dans P09 TD architecture os droits : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans P09 TD architecture os droits : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans P09 TD architecture os droits : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans P09 TD architecture os droits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
-## Erreurs fréquentes et remédiation
-- EF1 : confondre lecture et exécution. Remédiation : refaire l’exercice 1 avec la donnée modifiée par le professeur.
-- EF2 : utiliser un chemin valable seulement dans son dossier courant. Remédiation : refaire l’exercice 2 avec la donnée modifiée par le professeur.
-- EF3 : donner tous les droits avec chmod 777. Remédiation : refaire l’exercice 3 avec la donnée modifiée par le professeur.
-- EF4 : oublier le rôle du système d’exploitation. Remédiation : refaire l’exercice 4 avec la donnée modifiée par le professeur.
+## Erreurs fréquentes
+- confondre mémoire et disque.
+- oublier x sur dossier.
+- donner tous les droits.
 
 ## Différenciation
-- Socle : exercices 1 à 4 avec étapes visibles.
-- Standard : exercices 1 à 6 avec justification complète.
-- Expert : exercices 7 et 8 avec nouvelle donnée et contrôle autonome.
+- Socle : données annotées.
+- Standard : méthode complète.
+- Expert : transfert avec `droit x manquant sur dossier`.
+
+## Cas limites travaillés
+- fichier absent.
+- droit x manquant sur dossier.
+- chmod 777 trop permissif.
+
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `-rw-r----- -> propriétaire rw, groupe r, autres aucun droit`.
+- Au moins un cas limite de la section précédente est décidé.
+

@@ -1,19 +1,14 @@
 ---
-title: "P09 - Cours - architecture, système d’exploitation, droits"
+title: "P09 - cours - architecture, système et droits Unix"
 level: "premiere"
 sequence_id: "P09"
 document_type: "cours"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Architecture matérielle et systèmes"
-notion: "architecture, système d’exploitation, droits"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "architecture, système et droits Unix"
+notion: "architecture, système et droits Unix"
 private_data: false
 official_program:
   capacities:
@@ -21,47 +16,87 @@ official_program:
     - "P-ARCH-01B"
     - "P-ARCH-03A"
     - "P-ARCH-03B"
+    - "P-ARCH-03C"
 ---
 
-# P09 - Cours - architecture, système d’exploitation, droits
+# P09 - Cours - architecture, système et droits Unix
 
-## Objectifs
-- Lire la situation sans modifier les données.
-- Appliquer une méthode explicitement liée aux capacités.
-- Produire un résultat contrôlable.
+## Objectifs spécifiques
+- Identifier les données utiles de la situation : ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi.
+- Employer le vocabulaire : processeur, mémoire, stockage, processus, PID, système de fichiers.
+- Produire une trace, une table, une valeur ou un pseudo-code vérifiable.
 
-## Capacités travaillées
-- P-ARCH-01A
-- P-ARCH-01B
-- P-ARCH-03A
-- P-ARCH-03B
+## Capacités officielles
+- P-ARCH-01A.
+- P-ARCH-01B.
+- P-ARCH-03A.
+- P-ARCH-03B.
+- P-ARCH-03C.
 
 ## Situation-problème
-Un fichier projet.py doit être rendu exécutable seulement par son propriétaire dans un système multi-utilisateur.
+ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi
 
-## Données de référence
-`droits initiaux -rw-r--r--; commande visée chmod u+x projet.py; résultat -rwxr--r--`
+## À savoir
+- processeur.
+- mémoire.
+- stockage.
+- processus.
+- PID.
+- système de fichiers.
+- chmod.
+- permission denied.
 
-## Méthodes disciplinaires
-- distinguer processeur, mémoire, stockage et périphériques.
-- repérer le rôle du système d’exploitation.
-- interpréter r/w/x pour utilisateur, groupe, autres.
+## Méthodes
+- distinguer mémoire vive et stockage.
+- identifier PID et processus.
+- lire rwx pour propriétaire groupe autres.
+- calculer chmod 640 et droit x dossier.
 
-## Exemple corrigé 1
-Donnée : `droits initiaux -rw-r--r--; commande visée chmod u+x projet.py; résultat -rwxr--r--`.
-Méthode : distinguer processeur, mémoire, stockage et périphériques.
-Résultat : seul le propriétaire gagne x ; le groupe et les autres gardent lecture seule ; l’OS contrôle l’accès au fichier.
+## Exemples corrigés
+### Exemple corrigé 1
+- Donnée : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`.
+- Méthode : distinguer mémoire vive et stockage.
+- Résultat attendu : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
+- Contrôle : capacité P-ARCH-01A et cas limite `fichier absent`.
+### Exemple corrigé 2
+- Donnée : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`.
+- Méthode : identifier PID et processus.
+- Résultat attendu : chmod 640 mesures.csv donne rw-r-----.
+- Contrôle : capacité P-ARCH-01B et cas limite `droit x manquant sur dossier`.
+### Exemple corrigé 3
+- Donnée : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`.
+- Méthode : lire rwx pour propriétaire groupe autres.
+- Résultat attendu : PID 2314 python collecte.py est un processus.
+- Contrôle : capacité P-ARCH-03A et cas limite `chmod 777 trop permissif`.
+### Exemple corrigé 4
+- Donnée : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`.
+- Méthode : calculer chmod 640 et droit x dossier.
+- Résultat attendu : sans x sur dossier, lecture du fichier impossible.
+- Contrôle : capacité P-ARCH-03B et cas limite `fichier absent`.
 
-## Exemple corrigé 2 - cas limite
-On modifie une seule donnée pour tester le cas limite du chapitre. La correction attendue explique pourquoi la méthode reste valable ou pourquoi elle doit refuser l’entrée.
+## Cas limites
+- fichier absent.
+- droit x manquant sur dossier.
+- chmod 777 trop permissif.
 
 ## Erreurs fréquentes
-- Confondre une clé, un indice ou un état temporaire avec la donnée stable.
-- Conclure sans écrire le résultat contrôlable.
-- Oublier le cas vide, absent ou invalide.
+- confondre mémoire et disque.
+- oublier x sur dossier.
+- donner tous les droits.
 
 ## Exercices intégrés
-1. Reprendre la donnée de référence et écrire toutes les étapes.
-2. Modifier une valeur et prévoir le nouveau résultat.
-3. Construire un cas limite et dire si la méthode accepte ou refuse.
-4. Relier chaque étape à une capacité officielle.
+1. Identifier les données utiles dans `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`.
+2. Appliquer : distinguer mémoire vive et stockage.
+3. Appliquer : identifier PID et processus.
+4. Décider le cas limite `fichier absent`.
+
+## Critères de réussite observables
+- Une capacité parmi P-ARCH-01A, P-ARCH-01B, P-ARCH-03A, P-ARCH-03B, P-ARCH-03C est citée et utilisée.
+- Le résultat attendu est explicite : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
+- Le cas limite `droit x manquant sur dossier` est tranché.
+
+## Lien avec la progression
+- Séance : P09-S1 à P09-S4.
+- TD : `P09_TD_architecture_os_droits.md`.
+- TP : `P09_tp_architecture_os_droits.md`.
+- Évaluation : `P09_evaluation_architecture_os_droits.md`.

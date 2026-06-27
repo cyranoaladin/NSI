@@ -1,19 +1,14 @@
 ---
-title: "T08 - Cours - BFS, DFS, cycles et chemins"
+title: "T08 - cours - BFS, DFS, cycles et chemins"
 level: "terminale"
 sequence_id: "T08"
 document_type: "cours"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Graphes et parcours"
+theme: "BFS, DFS, cycles et chemins"
 notion: "BFS, DFS, cycles et chemins"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
 private_data: false
 official_program:
   capacities:
@@ -25,43 +20,81 @@ official_program:
 
 # T08 - Cours - BFS, DFS, cycles et chemins
 
-## Objectifs
-- Lire la situation sans modifier les données.
-- Appliquer une méthode explicitement liée aux capacités.
-- Produire un résultat contrôlable.
+## Objectifs spécifiques
+- Identifier les données utiles de la situation : adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}.
+- Employer le vocabulaire : BFS avec file, DFS avec pile, marquage, prédécesseurs, chemin reconstruit, cycle.
+- Produire une trace, une table, une valeur ou un pseudo-code vérifiable.
 
-## Capacités travaillées
-- T-ALGO-02A
-- T-ALGO-02B
-- T-ALGO-02C
-- T-ALGO-02D
+## Capacités officielles
+- T-ALGO-02A.
+- T-ALGO-02B.
+- T-ALGO-02C.
+- T-ALGO-02D.
 
 ## Situation-problème
-Dans un graphe A-B, A-C, B-D, C-D, D-E, on cherche un chemin de A à E.
+adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}
 
-## Données de référence
-`file BFS initiale [A] ; pile DFS initiale [A] ; voisins triés alphabétiquement`
+## À savoir
+- BFS avec file.
+- DFS avec pile.
+- marquage.
+- prédécesseurs.
+- chemin reconstruit.
+- cycle.
+- graphe non connexe.
+- complexité.
 
-## Méthodes disciplinaires
-- BFS utilise une file et découvre par distance croissante.
-- DFS utilise une pile ou récursion et explore en profondeur.
-- marquer visité pour éviter le cycle A-B-D-C-A.
+## Méthodes
+- BFS file A puis B,C puis D,E.
+- mémoriser prédécesseurs.
+- DFS explore un chemin avant retour.
+- détecter cycle par sommet gris.
 
-## Exemple corrigé 1
-Donnée : `file BFS initiale [A] ; pile DFS initiale [A] ; voisins triés alphabétiquement`.
-Méthode : BFS utilise une file et découvre par distance croissante.
-Résultat : BFS découvre A, B, C, D, E et donne distance 3 ; DFS peut suivre A, B, D, E selon ordre choisi.
+## Exemples corrigés
+### Exemple corrigé 1
+- Donnée : `adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}`.
+- Méthode : BFS file A puis B,C puis D,E.
+- Résultat attendu : BFS -> A,B,C,D,E.
+- Contrôle : capacité T-ALGO-02A et cas limite `sommet isolé F`.
+### Exemple corrigé 2
+- Donnée : `adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}`.
+- Méthode : mémoriser prédécesseurs.
+- Résultat attendu : prédécesseurs E<-C<-A donc chemin A-C-E.
+- Contrôle : capacité T-ALGO-02B et cas limite `destination absente`.
+### Exemple corrigé 3
+- Donnée : `adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}`.
+- Méthode : DFS explore un chemin avant retour.
+- Résultat attendu : F isolé -> aucun chemin.
+- Contrôle : capacité T-ALGO-02C et cas limite `cycle D-C-D`.
+### Exemple corrigé 4
+- Donnée : `adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}`.
+- Méthode : détecter cycle par sommet gris.
+- Résultat attendu : complexité O(V+E).
+- Contrôle : capacité T-ALGO-02D et cas limite `sommet isolé F`.
 
-## Exemple corrigé 2 - cas limite
-On modifie une seule donnée pour tester le cas limite du chapitre. La correction attendue explique pourquoi la méthode reste valable ou pourquoi elle doit refuser l’entrée.
+## Cas limites
+- sommet isolé F.
+- destination absente.
+- cycle D-C-D.
 
 ## Erreurs fréquentes
-- Confondre une clé, un indice ou un état temporaire avec la donnée stable.
-- Conclure sans écrire le résultat contrôlable.
-- Oublier le cas vide, absent ou invalide.
+- marquage trop tardif.
+- BFS confondu avec DFS.
+- prédécesseurs oubliés.
 
 ## Exercices intégrés
-1. Reprendre la donnée de référence et écrire toutes les étapes.
-2. Modifier une valeur et prévoir le nouveau résultat.
-3. Construire un cas limite et dire si la méthode accepte ou refuse.
-4. Relier chaque étape à une capacité officielle.
+1. Identifier les données utiles dans `adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}`.
+2. Appliquer : BFS file A puis B,C puis D,E.
+3. Appliquer : mémoriser prédécesseurs.
+4. Décider le cas limite `sommet isolé F`.
+
+## Critères de réussite observables
+- Une capacité parmi T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D est citée et utilisée.
+- Le résultat attendu est explicite : BFS -> A,B,C,D,E.
+- Le cas limite `destination absente` est tranché.
+
+## Lien avec la progression
+- Séance : T08-S1 à T08-S4.
+- TD : `T08_TD_bfs_dfs_cycles_chemins.md`.
+- TP : `T08_tp_bfs_dfs_cycles_chemins.md`.
+- Évaluation : `T08_evaluation_bfs_dfs_cycles_chemins.md`.

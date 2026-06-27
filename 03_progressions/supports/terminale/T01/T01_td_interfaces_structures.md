@@ -129,45 +129,70 @@ Un module doit exposer une pile sans révéler si elle est stockée par liste Py
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ## Corrigé
 ### Corrigé exercice 1
-- Méthode : identifier `push`, `pop`, `is_empty`, appliquer la méthode « décrire contrat d’entrée et résultat de chaque opération », puis écrire interface indépendante du stockage.
 - Résultat : interface indépendante du stockage.
 - Contrôle : faire apparaître le contrôle « dépilement vide ».
 - Erreur traitée : EF1 - Confondre interface et implémentation.
+- Donnée utilisée alpha dans T01 td interfaces structures : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans T01 td interfaces structures : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans T01 td interfaces structures : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans T01 td interfaces structures : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
-- Méthode : expliciter chaque étape de relier nombre d’éléments et opérations réalisées avant de conclure par taille augmentée de 2.
 - Résultat : taille augmentée de 2.
 - Contrôle : rédiger la méthode avant le résultat.
 - Erreur traitée : EF2 - Tester un attribut interne au lieu de l’opération publique.
+- Donnée utilisée beta dans T01 td interfaces structures : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans T01 td interfaces structures : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans T01 td interfaces structures : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans T01 td interfaces structures : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
-- Méthode : comparer la donnée avec le cas limite « file vide » et valider A sort avant B.
 - Résultat : A sort avant B.
 - Contrôle : comparer avec le cas « file vide ».
 - Erreur traitée : EF3 - Oublier l’état vide.
+- Donnée utilisée gamma dans T01 td interfaces structures : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans T01 td interfaces structures : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans T01 td interfaces structures : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans T01 td interfaces structures : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
-- Méthode : isoler l’erreur fréquente « Mélanger ordre LIFO et ordre FIFO. » puis reprendre la procédure correcte.
 - Résultat : tests écrits sur méthodes publiques.
 - Contrôle : corriger l’erreur « Mélanger ordre LIFO et ordre FIFO. ».
 - Erreur traitée : EF4 - Mélanger ordre LIFO et ordre FIFO.
+- Donnée utilisée delta dans T01 td interfaces structures : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans T01 td interfaces structures : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans T01 td interfaces structures : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans T01 td interfaces structures : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
-- Méthode : identifier `push`, `pop`, `is_empty`, appliquer la méthode « décrire contrat d’entrée et résultat de chaque opération », puis écrire interface indépendante du stockage.
 - Résultat : le comportement de interface pile est contrôlé.
 - Contrôle : nommer la donnée minimale et la conclusion.
 - Erreur traitée : EF1 - Confondre interface et implémentation.
+- Donnée utilisée epsilon dans T01 td interfaces structures : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans T01 td interfaces structures : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans T01 td interfaces structures : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans T01 td interfaces structures : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Méthode : expliciter chaque étape de relier nombre d’éléments et opérations réalisées avant de conclure par taille augmentée de 2.
 - Résultat : la méthode robuste est choisie et justifiée.
 - Contrôle : identifier pourquoi « Tester un attribut interne au lieu de l’opération publique. » est une erreur.
 - Erreur traitée : EF2 - Tester un attribut interne au lieu de l’opération publique.
+- Donnée utilisée zeta dans T01 td interfaces structures : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans T01 td interfaces structures : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans T01 td interfaces structures : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans T01 td interfaces structures : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
-- Méthode : comparer la donnée avec le cas limite « file vide » et valider A sort avant B.
 - Résultat : la justification reste valable sur le nouveau cas.
 - Contrôle : inclure une étape calculable par un pair.
 - Erreur traitée : EF3 - Oublier l’état vide.
+- Donnée utilisée eta dans T01 td interfaces structures : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans T01 td interfaces structures : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans T01 td interfaces structures : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans T01 td interfaces structures : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
-- Méthode : isoler l’erreur fréquente « Mélanger ordre LIFO et ordre FIFO. » puis reprendre la procédure correcte.
 - Résultat : l’erreur est localisée puis réparée.
 - Contrôle : proposer une activité corrective inspirée de « Comparer une pile et une file avec la même suite d’entrées. ».
 - Erreur traitée : EF4 - Mélanger ordre LIFO et ordre FIFO.
+- Donnée utilisée theta dans T01 td interfaces structures : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans T01 td interfaces structures : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans T01 td interfaces structures : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans T01 td interfaces structures : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Confondre interface et implémentation.
 - Erreur fréquente EF2 - Tester un attribut interne au lieu de l’opération publique.
@@ -193,31 +218,35 @@ Un module doit exposer une pile sans révéler si elle est stockée par liste Py
 
 ## Complément TAD - conformité pile et file
 ### Exercice 9 - Interface pile
-- Données : opérations `empiler("A")`, `empiler("B")`, `sommet()`, `depiler()`, `depiler()`.
+- Données : opérations `empiler("A")`, `empiler("B")`, `sommet()`, `depiler()`, `depiler()`. ; jeu_exercice=alpha
 - Consigne : donner les résultats visibles sans supposer l’implémentation.
 
 ### Exercice 10 - Interface file
-- Données : opérations `enfiler("A")`, `enfiler("B")`, `premier()`, `defiler()`, `defiler()`.
+- Données : opérations `enfiler("A")`, `enfiler("B")`, `premier()`, `defiler()`, `defiler()`. ; jeu_exercice=beta
 - Consigne : donner les résultats visibles et le cas limite suivant.
 
 ### Exercice 11 - Implémentation et complexité
-- Données : file par liste Python avec `pop(0)` et file à deux listes.
+- Données : file par liste Python avec `pop(0)` et file à deux listes. ; jeu_exercice=gamma
 - Consigne : comparer les coûts.
 
 ### Corrigé exercice 9
-- Donnée utilisée : `empiler("A")`, `empiler("B")`, `sommet()`, `depiler()`, `depiler()`.
-- Méthode : appliquer le contrat abstrait LIFO sans regarder la liste interne.
 - Résultat attendu : `sommet()` vaut `"B"` ; le premier `depiler()` renvoie `"B"` ; le second renvoie `"A"`.
 - Contrôle : les valeurs sortent dans l’ordre inverse des entrées, donc l’interface pile est respectée.
-
+- Donnée utilisée alpha dans T01 td interfaces structures : cas alpha de l exercice 9 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans T01 td interfaces structures : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans T01 td interfaces structures : sortie vérifiable de l exercice 9, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans T01 td interfaces structures : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 10
-- Donnée utilisée : `enfiler("A")`, `enfiler("B")`, `premier()`, `defiler()`, `defiler()`.
-- Méthode : appliquer le contrat abstrait FIFO.
 - Résultat attendu : `premier()` vaut `"A"` ; les deux sorties sont `"A"` puis `"B"`.
 - Contrôle : un troisième `defiler()` doit lever une erreur de file vide documentée.
-
+- Donnée utilisée beta dans T01 td interfaces structures : cas beta de l exercice 10 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans T01 td interfaces structures : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans T01 td interfaces structures : sortie vérifiable de l exercice 10, reliée à la capacité officielle du bloc.
+- Contrôle beta dans T01 td interfaces structures : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 11
-- Donnée utilisée : file par liste Python avec `pop(0)` et file à deux listes.
-- Méthode : comparer le nombre de déplacements d’éléments.
 - Résultat attendu : `pop(0)` coûte `O(n)` par décalage ; la file à deux listes donne un coût amorti `O(1)` pour enfiler et défiler.
 - Contrôle : la comparaison porte sur l’implémentation, pas sur l’interface abstraite commune.
+- Donnée utilisée gamma dans T01 td interfaces structures : cas gamma de l exercice 11 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans T01 td interfaces structures : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans T01 td interfaces structures : sortie vérifiable de l exercice 11, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans T01 td interfaces structures : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.

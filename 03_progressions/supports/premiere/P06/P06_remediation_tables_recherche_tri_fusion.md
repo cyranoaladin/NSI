@@ -1,19 +1,14 @@
 ---
-title: "P06 - Remédiation - recherche, tri et fusion de tables"
+title: "P06 - remediation - recherche, tri et fusion de tables"
 level: "premiere"
 sequence_id: "P06"
 document_type: "remediation"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Traitement de tables"
+theme: "recherche, tri et fusion de tables"
 notion: "recherche, tri et fusion de tables"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
 private_data: false
 official_program:
   capacities:
@@ -23,16 +18,18 @@ official_program:
 
 # P06 - Remédiation - recherche, tri et fusion de tables
 
-## Erreur fréquente 1
-Oublier la donnée stable. Activité corrective : surligner dans `inscriptions = [{"id": 17, "nom": "Ada", "atelier": "robot"}, {"id": 4, "nom": "Linus", "atelier": "web"}, {"id": 17, "nom": "Ada", "atelier": "python"}]` les valeurs qui pilotent la méthode.
+## Diagnostic
+- écraser un doublon.
+- utiliser un indice comme clé.
+- oublier une clé absente.
 
-## Erreur fréquente 2
-Appliquer une étape dans le mauvais ordre. Activité corrective : remettre ces étapes dans l’ordre : rechercher la première ligne de clé id=17 sans écraser le doublon, trier par (nom, atelier), fusionner inscriptions et présences avec vérification des clés absentes.
+## Activités correctives
+1. Annoter `inscriptions=[{id:17,nom:Ada,atelier:robot},{id:4,nom:Linus,atelier:web},{id:17,nom:Ada,atelier:python}], presences=[{id:17,present:true},{id:9,present:true}]`.
+2. Refaire la tâche `chercher la première ligne id=17` et comparer avec `première ligne id=17 -> Ada/robot`.
+3. Traiter le cas limite `table vide`.
+4. Relier la réponse à P-TABLE-03.
 
-## Erreur fréquente 3
-Donner une conclusion non vérifiable. Activité corrective : retrouver le résultat `première ligne id=17 : Ada/robot ; doublon id=17 signalé ; tri : Ada/python, Ada/robot, Linus/web ; absence id=9 notée dans erreurs` à partir de la donnée.
-
-## Différenciation
-- Socle : refaire l’exemple de référence.
-- Standard : traiter une valeur modifiée.
-- Approfondissement : créer un cas limite et le corriger.
+## Critères de sortie
+- Donnée exacte.
+- Résultat final explicite.
+- Cas limite décidé.

@@ -29,8 +29,16 @@ CURRENT_LOT_REQUIRED = set(FULL_SEQUENCE_CURRENT_LOT["premiere"]) | set(FULL_SEQ
 @dataclass
 class MatrixResult:
     errors: list[str] = field(default_factory=list)
-    matrix: dict[str, dict[str, bool]] = field(default_factory=dict)
+    matrix: dict[str, dict[str, str]] = field(default_factory=dict)
     registered_missing: set[tuple[str, str]] = field(default_factory=set)
+    counts: dict[str, int] = field(
+        default_factory=lambda: {
+            "produced": 0,
+            "missing_registered": 0,
+            "missing_unregistered": 0,
+        }
+    )
+    completeness_percent: float = 0.0
 
 
 def all_sequences() -> list[str]:
@@ -111,16 +119,24 @@ def analyze_full_sequence_resource_matrix(
     result = MatrixResult(registered_missing=parse_register(root))
     seqs = sequences or all_sequences()
     for sequence in seqs:
-        row: dict[str, bool] = {}
+        row: dict[str, str] = {}
         for resource_type in REQUIRED_TYPES:
             present = has_type(root, sequence, resource_type)
-            row[resource_type] = present
             if present:
+                row[resource_type] = "produced"
+                result.counts["produced"] += 1
                 continue
-            if (sequence, resource_type) in result.registered_missing and sequence not in CURRENT_LOT_REQUIRED:
+            if (sequence, resource_type) in result.registered_missing:
+                row[resource_type] = "missing_registered"
+                result.counts["missing_registered"] += 1
+                result.errors.append(f"{sequence}: ressource manquante enregistrée mais non produite -> {resource_type}")
                 continue
-            result.errors.append(f"{sequence}: ressource manquante non soldée -> {resource_type}")
+            row[resource_type] = "missing_unregistered"
+            result.counts["missing_unregistered"] += 1
+            result.errors.append(f"{sequence}: ressource manquante non enregistrée -> {resource_type}")
         result.matrix[sequence] = row
+    total = len(seqs) * len(REQUIRED_TYPES)
+    result.completeness_percent = (result.counts["produced"] / total * 100.0) if total else 100.0
     return result
 
 
@@ -129,7 +145,7 @@ def format_matrix(result: MatrixResult) -> str:
     sep = "|---" * (len(REQUIRED_TYPES) + 1) + "|"
     lines = [header, sep]
     for sequence, row in result.matrix.items():
-        values = ["oui" if row.get(kind) else "non" for kind in REQUIRED_TYPES]
+        values = [row.get(kind, "missing_unregistered") for kind in REQUIRED_TYPES]
         lines.append("| " + sequence + " | " + " | ".join(values) + " |")
     return "\n".join(lines)
 
@@ -137,6 +153,14 @@ def format_matrix(result: MatrixResult) -> str:
 def main() -> int:
     result = analyze_full_sequence_resource_matrix()
     print(format_matrix(result))
+    total = sum(result.counts.values())
+    print(
+        "Ressources produites: "
+        f"{result.counts['produced']}/{total} "
+        f"({result.completeness_percent:.1f}%)"
+    )
+    print(f"Ressources manquantes enregistrées: {result.counts['missing_registered']}")
+    print(f"Ressources manquantes non enregistrées: {result.counts['missing_unregistered']}")
     if result.errors:
         print("check_full_sequence_resource_matrix: KO")
         for error in result.errors[:180]:
@@ -144,7 +168,7 @@ def main() -> int:
         return 1
     print(
         "check_full_sequence_resource_matrix: PASS "
-        f"({len(result.matrix)} séquences, {len(result.registered_missing)} dettes enregistrées)"
+        f"({len(result.matrix)} séquences, complétude réelle {result.completeness_percent:.1f}%)"
     )
     return 0
 

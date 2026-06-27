@@ -1,19 +1,14 @@
 ---
-title: "T09 - Trace écrite - relations, clés primaires, clés étrangères, contraintes"
+title: "T09 - trace - bases relationnelles, clés et contraintes"
 level: "terminale"
 sequence_id: "T09"
 document_type: "trace"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Bases de données relationnelles"
-notion: "relations, clés primaires, clés étrangères, contraintes"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "bases relationnelles, clés et contraintes"
+notion: "bases relationnelles, clés et contraintes"
 private_data: false
 official_program:
   capacities:
@@ -23,25 +18,26 @@ official_program:
     - "T-BDD-02"
 ---
 
-# T09 - Trace écrite - relations, clés primaires, clés étrangères, contraintes
+# T09 - Trace - bases relationnelles, clés et contraintes
 
-## À retenir
-- Situation : Une base bibliothèque relie Livre(id_livre,titre) et Emprunt(id_emprunt,id_livre,lecteur).
-- Donnée de référence : `Livre(1,"1984"), Livre(2,"Dune") ; Emprunt(10,2,"Ada") ; Emprunt(11,9,"Linus") invalide`.
-- Résultat de référence : Emprunt 10 est valide ; Emprunt 11 viole la contrainte de clé étrangère car id_livre=9 absent.
+## Trace courte
+- Donnée : `Livre(1,Dune), Livre(2,Fondation) ; Emprunt(10,1,Nora), Emprunt(11,9,Sam) invalide`.
+- Vocabulaire : relation, attribut, tuple, clé primaire, clé étrangère.
+- Étape 1 : identifier schéma et instance.
+- Étape 2 : vérifier unicité id_livre.
+- Résultat de référence : Livre.id_livre identifie chaque livre.
 
-## Méthode courte
-- identifier clé primaire id_livre.
-- vérifier clé étrangère Emprunt.id_livre vers Livre.id_livre.
-- refuser un emprunt sur livre absent.
+## Cas limites à mémoriser
+- clé primaire nulle.
+- doublon id_livre=1.
+- suppression référencée.
 
-## Exemple minimal corrigé
-Entrée : `Livre(1,"1984"), Livre(2,"Dune") ; Emprunt(10,2,"Ada") ; Emprunt(11,9,"Linus") invalide`.
-Sortie attendue : Emprunt 10 est valide ; Emprunt 11 viole la contrainte de clé étrangère car id_livre=9 absent.
+## Erreurs fréquentes
+- attribut confondu avec valeur.
+- clé étrangère supposée unique.
+- domaine ignoré.
 
-## Point de vigilance
-Le résultat doit être calculable à partir de la donnée, sans phrase de validation vague.
-
-## Lien séance
-- Séance T09-S1 : découverte et exemple.
-- Séance T09-S2 : exercices et correction.
+## Critères de réussite observables
+- Capacité : T-BDD-01A.
+- Résultat final : Emprunt.id_livre référence Livre.id_livre.
+- Cas limite : clé primaire nulle.

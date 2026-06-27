@@ -1,19 +1,14 @@
 ---
-title: "T09 - Version aménagée - relations, clés primaires, clés étrangères, contraintes"
+title: "T09 - version_amenagee - bases relationnelles, clés et contraintes"
 level: "terminale"
 sequence_id: "T09"
 document_type: "version_amenagee"
 status: "needs_review"
-version: "0.1.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Bases de données relationnelles"
-notion: "relations, clés primaires, clés étrangères, contraintes"
-objectifs:
-  - "identifier la donnée de référence"
-  - "appliquer la méthode disciplinaire"
-  - "produire un résultat vérifiable"
-  - "contrôler un cas limite"
+theme: "bases relationnelles, clés et contraintes"
+notion: "bases relationnelles, clés et contraintes"
 private_data: false
 official_program:
   capacities:
@@ -23,21 +18,20 @@ official_program:
     - "T-BDD-02"
 ---
 
-# T09 - Version aménagée - relations, clés primaires, clés étrangères, contraintes
+# T09 - Version aménagée - bases relationnelles, clés et contraintes
 
-## Consigne aménagée
-Tu travailles sur la donnée suivante : `Livre(1,"1984"), Livre(2,"Dune") ; Emprunt(10,2,"Ada") ; Emprunt(11,9,"Linus") invalide`.
+## Aides intégrées
+- Donnée fournie : `Livre(1,Dune), Livre(2,Fondation) ; Emprunt(10,1,Nora), Emprunt(11,9,Sam) invalide`.
+- Mots utiles : relation, attribut, tuple, clé primaire, clé étrangère.
+- Méthode guidée : identifier schéma et instance puis vérifier unicité id_livre.
 
-## Étapes guidées
-1. Entoure la valeur ou la clé utile.
-2. Applique seulement cette méthode : identifier clé primaire id_livre.
-3. Compare ton résultat avec : Emprunt 10 est valide ; Emprunt 11 viole la contrainte de clé étrangère car id_livre=9 absent.
-4. Explique un cas limite en une phrase.
+## Exercice guidé
+1. Recopier la donnée utile.
+2. Choisir la capacité : T-BDD-01A ou T-BDD-01B.
+3. Compléter le résultat : Livre.id_livre identifie chaque livre.
+4. Cocher le cas limite : clé primaire nulle.
 
-## Aides graduées
-- Aide 1 : relire la donnée et nommer les objets.
-- Aide 2 : écrire la première étape de calcul ou de parcours.
-- Aide 3 : vérifier le résultat avec la trace fournie par le cours.
-
-## Réponse attendue
-La réponse minimale contient la donnée utilisée, l’étape appliquée et le résultat exact.
+## Réponses rapides
+- Réponse 1 : Livre.id_livre identifie chaque livre.
+- Réponse 2 : Emprunt.id_livre référence Livre.id_livre.
+- Réponse 3 : Emprunt(11,9,Sam) viole la référence.

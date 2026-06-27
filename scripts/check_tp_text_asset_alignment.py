@@ -17,6 +17,21 @@ class TpTextAssetAlignmentResult:
 
 
 PREFIX_SPECS = {
+    "P06": {
+        "required_symbols": [
+            "rechercher_premiere_ligne",
+            "detecter_doublons",
+            "trier_par_nom_atelier",
+            "fusionner_presences",
+        ],
+        "required_text": [
+            "rechercher_premiere_ligne",
+            "detecter_doublons",
+            "trier_par_nom_atelier",
+            "fusionner_presences",
+        ],
+        "forbidden": ["résultat contrôlable sans donnée"],
+    },
     "P04": {
         "required_symbols": ["milieu", "stations_chaudes", "moyenne_notes"],
         "required_text": ["milieu", "stations_chaudes", "moyenne_notes"],
@@ -109,7 +124,7 @@ def analyze_prefix(root: Path, prefix: str) -> list[str]:
 
 
 def analyze_tp_text_asset_alignment(root: Path = ROOT, prefixes: list[str] | None = None) -> TpTextAssetAlignmentResult:
-    prefixes = prefixes or ["P04", "P05", "T01", "T18"]
+    prefixes = prefixes or ["P04", "P05", "P06", "T01", "T18"]
     result = TpTextAssetAlignmentResult()
     for prefix in prefixes:
         result.checked_prefixes += 1

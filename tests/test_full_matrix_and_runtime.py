@@ -29,7 +29,7 @@ class FullMatrixAndRuntimeTest(unittest.TestCase):
 
             self.assertTrue(any("trace" in error for error in result.errors))
 
-    def test_matrix_accepts_registered_debt_outside_current_lot(self) -> None:
+    def test_matrix_reports_registered_debt_without_treating_it_as_complete(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             write(root / "03_progressions/fiches_cours/premiere/P10/P10_fiche_cours_reseaux_protocoles_paquets.md")
@@ -51,8 +51,9 @@ class FullMatrixAndRuntimeTest(unittest.TestCase):
 
             result = matrix.analyze_full_sequence_resource_matrix(root, sequences=["P10"])
 
-            self.assertFalse(result.errors)
+            self.assertTrue(result.errors)
             self.assertGreaterEqual(len(result.registered_missing), 1)
+            self.assertLess(result.completeness_percent, 100.0)
 
     def test_runtime_budget_fails_when_total_exceeds_budget(self) -> None:
         commands = [runtime_budget.MeasuredCommand("fake", 181.0, 0)]

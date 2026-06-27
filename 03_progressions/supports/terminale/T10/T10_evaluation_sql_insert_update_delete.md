@@ -1,120 +1,95 @@
 ---
-title: "T10 - Évaluation - SQL INSERT UPDATE DELETE"
+title: "T10 - evaluation - SQL SELECT, JOIN, INSERT, UPDATE et DELETE"
 level: "terminale"
 sequence_id: "T10"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.3.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Bases de données"
-notion: "SQL INSERT UPDATE DELETE"
-objectifs:
-  - "évaluer la compréhension de la fiche"
-  - "vérifier la capacité à produire une réponse justifiée"
-  - "identifier les erreurs fréquentes"
-  - "préparer une remédiation ciblée"
+theme: "SQL SELECT, JOIN, INSERT, UPDATE et DELETE"
+notion: "SQL SELECT, JOIN, INSERT, UPDATE et DELETE"
 private_data: false
 official_program:
   capacities:
+    - "T-BDD-03A"
+    - "T-BDD-03B"
+    - "T-BDD-03C"
+    - "T-BDD-03D"
+    - "T-BDD-03E"
     - "T-BDD-03F"
     - "T-BDD-03G"
     - "T-BDD-03H"
 ---
 
-# T10 - Évaluation - SQL INSERT UPDATE DELETE
+# T10 - Évaluation - SQL SELECT, JOIN, INSERT, UPDATE et DELETE
 
-## Durée et matériel autorisé
-- Durée : 25 minutes.
-- Matériel autorisé : fiche personnelle, sans accès réseau ni corrigé.
-- Statut : évaluation `needs_review`, non validée et non publiable.
-
-## Capacités évaluées
-- T-BDD-03F
-- T-BDD-03G
-- T-BDD-03H
-
-## Fiche liée
-- Fiche liée : `03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_insert_update_delete.md`.
-- Séance liée : `T10-S1`.
-- TD lié : `T10_TD_sql_insert_update_delete.md`.
-
-## Consignes
-Répondre directement sur copie. Chaque réponse doit montrer la donnée utilisée, la méthode et un contrôle rapide.
+## Modalités
+- Durée : 30 minutes.
+- Matériel autorisé : fiche de cours.
+- Capacités évaluées : T-BDD-03A, T-BDD-03B, T-BDD-03C, T-BDD-03D, T-BDD-03E, T-BDD-03F, T-BDD-03G, T-BDD-03H.
 
 ## Questions
-### Question 1 - Lire une table avant modification
-- Capacité : T-BDD-03F.
-- Données : Livre: (1,"Algo",2), (2,"Reseaux",0).
-- Consigne : Dire quel livre est indisponible.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
-### Question 2 - Prévoir un INSERT
-- Capacité : T-BDD-03G.
-- Données : INSERT INTO Livre(id,titre,stock) VALUES (3,"SQL",5);
-- Consigne : Donner la table après.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
-### Question 3 - Écrire un UPDATE ciblé
-- Capacité : T-BDD-03H.
-- Données : On emprunte Algo id=1, stock passe de 2 à 1.
-- Consigne : Écrire la requête.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
-### Question 4 - Écrire un DELETE ciblé
-- Capacité : T-BDD-03F.
-- Données : Supprimer le livre id=2 uniquement.
-- Consigne : Écrire la requête et vérification.
-- Format attendu : réponse courte, justifiée, avec tableau, requête, pseudo-code ou trace si nécessaire.
+### Question 1
+- Capacité officielle : T-BDD-03A.
+- Énoncé : à partir de `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`, projeter nom et classe.
+- Réponse attendue : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `JOIN sans ON`.
+### Question 2
+- Capacité officielle : T-BDD-03B.
+- Énoncé : à partir de `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`, filtrer note >= 15.
+- Réponse attendue : JOIN -> Ada 17, Linus 13.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `UPDATE sans WHERE`.
+### Question 3
+- Capacité officielle : T-BDD-03C.
+- Énoncé : à partir de `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`, joindre Eleve.id_eleve = Note.id_eleve.
+- Réponse attendue : UPDATE id_note=10 -> Ada 18.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `DELETE sans WHERE`.
+### Question 4
+- Capacité officielle : T-BDD-03D.
+- Énoncé : à partir de `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`, vérifier modification par SELECT.
+- Réponse attendue : DELETE WHERE id_note=11 retire Linus.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `JOIN sans ON`.
 
-## Barème
-- Question 1: 1 point identification de la donnée, 1 point méthode, 1 point résultat exact, 1 point contrôle.
-- Question 2: 1 point vocabulaire précis, 1 point méthode, 1 point résultat, 1 point justification.
-- Question 3: 1 point modélisation, 1 point production correcte, 1 point test du résultat, 1 point lisibilité.
-- Question 4: 1 point cas traité, 1 point résultat, 1 point justification, 1 point erreur fréquente évitée.
-- Total : 16 points, conversion sur 20 après relecture pédagogique.
-
-## Corrigé professeur
+## Corrigé question par question
 ### Corrigé question 1
-- Capacité évaluée : T-BDD-03F.
-- Donnée utilisée : Livre: (1,"Algo",2), (2,"Reseaux",0).
-- Réponse attendue : Le livre id=2, titre Reseaux, a stock=0 : il est indisponible.
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
+- Résultat attendu : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.
+- Critère spécifique : projeter nom et classe et éviter `condition de jointure oubliée`.
 ### Corrigé question 2
-- Capacité évaluée : T-BDD-03G.
-- Donnée utilisée : INSERT INTO Livre(id,titre,stock) VALUES (3,"SQL",5);
-- Réponse attendue : Nouvelle ligne ajoutée: (3,"SQL",5). La table contient maintenant ids 1,2,3.
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
+- Résultat attendu : JOIN -> Ada 17, Linus 13.
+- Critère spécifique : filtrer note >= 15 et éviter `WHERE confondu avec ORDER BY`.
 ### Corrigé question 3
-- Capacité évaluée : T-BDD-03H.
-- Donnée utilisée : On emprunte Algo id=1, stock passe de 2 à 1.
-- Réponse attendue : UPDATE Livre SET stock = stock - 1 WHERE id = 1; Après exécution, Algo a stock=1.
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
+- Résultat attendu : UPDATE id_note=10 -> Ada 18.
+- Critère spécifique : joindre Eleve.id_eleve = Note.id_eleve et éviter `WHERE omis dans UPDATE`.
 ### Corrigé question 4
-- Capacité évaluée : T-BDD-03F.
-- Donnée utilisée : Supprimer le livre id=2 uniquement.
-- Réponse attendue : DELETE FROM Livre WHERE id = 2; Vérification: SELECT * FROM Livre WHERE id=2; renvoie 0 ligne.
-- Points attribués : les points du barème correspondent à des éléments observables dans cette réponse, pas à une intention supposée.
-- Erreur fréquente liée : résultat donné sans citer la donnée ou sans contrôle.
-
-## Critères de réussite
-- Les capacités officielles sont reliées à une action observable.
-- Le résultat attendu peut être comparé à une valeur, une table, une trace ou un pseudo-code.
-- Le cas limite ou le contrôle demandé apparaît explicitement.
-- Le vocabulaire disciplinaire est utilisé dans le contexte de la donnée.
-
-## Version aménagée et indications d’aménagement
-- Version aménagée : conserver les mêmes questions mais fournir la donnée surlignée et un tableau méthode / résultat / contrôle.
-- Aménagement temps : ajouter 10 minutes si l’élève doit recopier les données.
-- Aide autorisée : liste des verbes d’action, sans résultat numérique ni requête complète.
+- Résultat attendu : DELETE WHERE id_note=11 retire Linus.
+- Critère spécifique : vérifier modification par SELECT et éviter `condition de jointure oubliée`.
 
 ## Erreurs fréquentes et remédiation
-- EF1 : réponse sans donnée citée ; remédiation : refaire la question 1 avec les valeurs encadrées.
-- EF2 : méthode correcte mais résultat non contrôlé ; remédiation : ajouter une ligne de vérification.
-- EF3 : confusion entre vocabulaire et preuve ; remédiation : demander une phrase « parce que ».
-- EF4 : oubli du cas limite ; remédiation : reprendre le TD associé, exercice 5.
+- condition de jointure oubliée.
+- WHERE confondu avec ORDER BY.
+- WHERE omis dans UPDATE.
 
-## Source et traçabilité
-- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
-- Aucun fichier Drive n’a été repris directement dans cette évaluation.
-- Source de création : programme officiel et progression locale, avec statut `needs_review`.
+## Cas limites travaillés
+- JOIN sans ON.
+- UPDATE sans WHERE.
+- DELETE sans WHERE.
+
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus`.
+- Au moins un cas limite de la section précédente est décidé.
+
+
+
+## Barème question par question
+- question 1: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 2: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 3: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+- question 4: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+
+## Fiche liée
+- Fiche liée : fiche de cours T10 sur `sql_insert_update_delete`.
+
+## Aménagement
+- Version aménagée : `T10_version_amenagee_sql_insert_update_delete.md` ; consignes découpées et barème conservé.

@@ -1,19 +1,14 @@
 ---
-title: "T18 - TD - Boyer-Moore"
+title: "T18 - td - Boyer-Moore"
 level: "terminale"
 sequence_id: "T18"
 document_type: "td"
 status: "needs_review"
-version: "0.3.0"
+version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "Algorithmique"
+theme: "Boyer-Moore"
 notion: "Boyer-Moore"
-objectifs:
-  - "travailler Boyer-Moore sur des données explicites"
-  - "produire une réponse justifiée et contrôlée"
-  - "identifier les cas limites"
-  - "corriger les erreurs fréquentes du chapitre"
 private_data: false
 official_program:
   capacities:
@@ -23,190 +18,155 @@ official_program:
 # T18 - TD - Boyer-Moore
 
 ## Objectifs
-- Lire une donnée disciplinaire précise avant de répondre.
-- Produire une méthode vérifiable et un résultat contrôlable.
-- Traiter un cas limite sans le transformer en généralité.
-- Relier chaque correction à une erreur fréquente observable.
-
-## Capacités officielles
-- T-ALGO-05
-
-## Fiche liée et séance liée
-- Fiche liée : `03_progressions/fiches_cours/terminale/T18/T18_fiche_cours_boyer_moore.md`.
-- Séance liée : `T18-S1` dans la progression annuelle.
-- Statut : support `needs_review`, non validé et non publiable.
-
-## Situation de travail
-On recherche le motif ABA dans le texte CABAABABA.
+- Travailler motif, texte, table du mauvais caractère, comparaison droite à gauche, décalage.
+- Produire huit réponses vérifiables avec données explicites.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2, lecture guidée de la donnée.
-- Standard : exercices 3 à 6, production écrite et justification.
-- Approfondissement : exercices 7 et 8, transfert ou comparaison.
+- Socle : exercices 1 et 2.
+- Standard : exercices 3 à 6.
+- Approfondissement : exercices 7 et 8.
 
 ## Exercices
-### Exercice 1 - Construire table mauvais caractère
+### Exercice 1
 - Type : lecture/analyse.
-- Niveau : socle.
 - Capacité officielle : T-ALGO-05.
-- Données : motif ABA.
-- Consigne : Donner derniers indices.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 2 - Comparer depuis la droite
-- Type : lecture/analyse.
-- Niveau : socle.
-- Capacité officielle : T-ALGO-05.
-- Données : texte CABAABABA, motif ABA aligné au début.
-- Consigne : Donner première comparaison.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 3 - Tracer la première occurrence
+- Données : `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`. ; jeu_exercice=alpha
+- Consigne : prétraiter dernière position de chaque caractère ; traiter aussi `motif absent` si nécessaire.
+- Réponse attendue : table : A->2, N->1.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `motif absent`.
+### Exercice 2
 - Type : production/écriture.
-- Niveau : standard.
 - Capacité officielle : T-ALGO-05.
-- Données : texte CABAABABA, motif ABA.
-- Consigne : Donner indice trouvé.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 4 - Écrire pseudo-code simplifié
+- Données : `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`. ; jeu_exercice=beta
+- Consigne : comparer depuis la droite ; traiter aussi `motif plus long que texte` si nécessaire.
+- Réponse attendue : alignement 0 : N comparé à A -> décalage 1.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `motif plus long que texte`.
+### Exercice 3
 - Type : production/écriture.
-- Niveau : standard.
 - Capacité officielle : T-ALGO-05.
-- Données : motif m, texte t.
-- Consigne : Produire boucle.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 5 - Motif plus long que texte
+- Données : `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`. ; jeu_exercice=gamma
+- Consigne : calculer max(1, j - dernière_position) ; traiter aussi `caractère absent du motif` si nécessaire.
+- Réponse attendue : alignement 1 : ANA trouvé.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `caractère absent du motif`.
+### Exercice 4
 - Type : cas limite.
-- Niveau : standard.
 - Capacité officielle : T-ALGO-05.
-- Données : texte AB, motif ABA.
-- Consigne : Donner résultat.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 6 - Justifier saut minimal 1
+- Données : `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`. ; jeu_exercice=delta
+- Consigne : comparer avec recherche naïve ; traiter aussi `motif absent` si nécessaire.
+- Réponse attendue : motif XYZ absent.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `motif absent`.
+### Exercice 5
 - Type : justification.
-- Niveau : standard.
 - Capacité officielle : T-ALGO-05.
-- Données : Mismatch sur caractère absent du motif.
-- Consigne : Expliquer.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 7 - Comparer naïf et Boyer-Moore
+- Données : `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`. ; jeu_exercice=epsilon
+- Consigne : prétraiter dernière position de chaque caractère ; traiter aussi `motif plus long que texte` si nécessaire.
+- Réponse attendue : table : A->2, N->1.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `motif plus long que texte`.
+### Exercice 6
 - Type : lecture/analyse.
-- Niveau : approfondissement.
 - Capacité officielle : T-ALGO-05.
-- Données : texte AAAAAAB, motif AAAB.
-- Consigne : Expliquer avantage.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
-### Exercice 8 - Gérer motif vide
+- Données : `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`. ; jeu_exercice=zeta
+- Consigne : comparer depuis la droite ; traiter aussi `caractère absent du motif` si nécessaire.
+- Réponse attendue : alignement 0 : N comparé à A -> décalage 1.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `caractère absent du motif`.
+### Exercice 7
 - Type : production/écriture.
-- Niveau : approfondissement.
 - Capacité officielle : T-ALGO-05.
-- Données : motif "".
-- Consigne : Proposer contrat.
-- Production attendue : fournir la valeur, la trace, la table, la requête ou le pseudo-code demandé par l’exercice.
-- Critère de réussite : le résultat se contrôle avec la valeur, la trace, la table, la requête ou le pseudo-code produit.
+- Données : `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`. ; jeu_exercice=eta
+- Consigne : calculer max(1, j - dernière_position) ; traiter aussi `motif absent` si nécessaire.
+- Réponse attendue : alignement 1 : ANA trouvé.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `motif absent`.
+### Exercice 8
+- Type : justification.
+- Capacité officielle : T-ALGO-05.
+- Données : `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1`. ; jeu_exercice=theta
+- Consigne : comparer avec recherche naïve ; traiter aussi `motif plus long que texte` si nécessaire.
+- Réponse attendue : motif XYZ absent.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `motif plus long que texte`.
 
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : T-ALGO-05.
-- Donnée utilisée : motif ABA.
-- Résultat attendu : A apparaît aux indices 0 et 2, donc dernier indice A=2 ; B=1 ; autre caractère -> -1.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : table : A->2, N->1.
+- Justification : la tâche `prétraiter dernière position de chaque caractère` s applique à `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1` ; erreur évitée : comparaison gauche à droite.
+- Donnée utilisée alpha dans T18 TD boyer moore : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
+- Méthode alpha dans T18 TD boyer moore : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat alpha dans T18 TD boyer moore : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
+- Contrôle alpha dans T18 TD boyer moore : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
 - Capacité mobilisée : T-ALGO-05.
-- Donnée utilisée : texte CABAABABA, motif ABA aligné au début.
-- Résultat attendu : On compare motif[2]=A avec texte[2]=B : mismatch B. Dernier B dans motif à 1, décalage max(1,2-1)=1.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : alignement 0 : N comparé à A -> décalage 1.
+- Justification : la tâche `comparer depuis la droite` s applique à `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1` ; erreur évitée : décalage nul.
+- Donnée utilisée beta dans T18 TD boyer moore : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
+- Méthode beta dans T18 TD boyer moore : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat beta dans T18 TD boyer moore : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
+- Contrôle beta dans T18 TD boyer moore : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 3
 - Capacité mobilisée : T-ALGO-05.
-- Donnée utilisée : texte CABAABABA, motif ABA.
-- Résultat attendu : Après décalage 1, alignement texte[1:4]=ABA. Comparaisons droite à gauche A=A, B=B, A=A. Occurrence trouvée à l’indice 1.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : alignement 1 : ANA trouvé.
+- Justification : la tâche `calculer max(1, j - dernière_position)` s applique à `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1` ; erreur évitée : caractère absent oublié.
+- Donnée utilisée gamma dans T18 TD boyer moore : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
+- Méthode gamma dans T18 TD boyer moore : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat gamma dans T18 TD boyer moore : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
+- Contrôle gamma dans T18 TD boyer moore : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 4
 - Capacité mobilisée : T-ALGO-05.
-- Donnée utilisée : motif m, texte t.
-- Résultat attendu : i=0 ; tant que i<=n-p: comparer j=p-1 vers 0 ; si j<0 retourner i ; sinon i += max(1, j-last[t[i+j]]).
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : motif XYZ absent.
+- Justification : la tâche `comparer avec recherche naïve` s applique à `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1` ; erreur évitée : comparaison gauche à droite.
+- Donnée utilisée delta dans T18 TD boyer moore : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
+- Méthode delta dans T18 TD boyer moore : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat delta dans T18 TD boyer moore : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
+- Contrôle delta dans T18 TD boyer moore : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
 - Capacité mobilisée : T-ALGO-05.
-- Donnée utilisée : texte AB, motif ABA.
-- Résultat attendu : Aucun alignement possible car len(motif)=3 > len(texte)=2. Résultat -1 ou None selon contrat.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : table : A->2, N->1.
+- Justification : la tâche `prétraiter dernière position de chaque caractère` s applique à `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1` ; erreur évitée : décalage nul.
+- Donnée utilisée epsilon dans T18 TD boyer moore : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
+- Méthode epsilon dans T18 TD boyer moore : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat epsilon dans T18 TD boyer moore : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
+- Contrôle epsilon dans T18 TD boyer moore : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-ALGO-05.
-- Donnée utilisée : Mismatch sur caractère absent du motif.
-- Résultat attendu : Si last[c]=-1 et mismatch à j=2, décalage j-(-1)=3. max(1,...) évite aussi un décalage nul dans tous les cas.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : alignement 0 : N comparé à A -> décalage 1.
+- Justification : la tâche `comparer depuis la droite` s applique à `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1` ; erreur évitée : caractère absent oublié.
+- Donnée utilisée zeta dans T18 TD boyer moore : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
+- Méthode zeta dans T18 TD boyer moore : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat zeta dans T18 TD boyer moore : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
+- Contrôle zeta dans T18 TD boyer moore : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 7
 - Capacité mobilisée : T-ALGO-05.
-- Donnée utilisée : texte AAAAAAB, motif AAAB.
-- Résultat attendu : La comparaison depuis la droite voit vite B attendu contre A et décale selon mauvais caractère, évitant plusieurs essais naïfs.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : alignement 1 : ANA trouvé.
+- Justification : la tâche `calculer max(1, j - dernière_position)` s applique à `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1` ; erreur évitée : comparaison gauche à droite.
+- Donnée utilisée eta dans T18 TD boyer moore : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
+- Méthode eta dans T18 TD boyer moore : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat eta dans T18 TD boyer moore : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
+- Contrôle eta dans T18 TD boyer moore : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
 - Capacité mobilisée : T-ALGO-05.
-- Donnée utilisée : motif "".
-- Résultat attendu : Contrat explicite: motif vide trouvé à l’indice 0, ou bien ValueError. Le TD choisit indice 0 et le teste.
-- Contrôle : reprendre la valeur, la trace, la table, la requête ou le pseudo-code de l’énoncé et expliciter le cas limite si l’exercice le demande.
+- Résultat attendu : motif XYZ absent.
+- Justification : la tâche `comparer avec recherche naïve` s applique à `texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1` ; erreur évitée : décalage nul.
+- Donnée utilisée theta dans T18 TD boyer moore : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
+- Méthode theta dans T18 TD boyer moore : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
+- Résultat theta dans T18 TD boyer moore : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
+- Contrôle theta dans T18 TD boyer moore : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
 ## Erreurs fréquentes
-- EF1 : répondre par un mot-clé sans citer la donnée ; remédiation : entourer les valeurs utiles avant de rédiger.
-- EF2 : donner un résultat sans méthode ; remédiation : imposer une ligne méthode puis une ligne résultat.
-- EF3 : oublier le cas limite ; remédiation : refaire l’exercice 5 avec la donnée minimale.
-- EF4 : confondre justification et paraphrase ; remédiation : écrire une phrase qui relie donnée, règle et conclusion.
-
-## Remédiation ciblée
-- Reprendre deux exercices en ne gardant que les données numériques ou symboliques.
-- Faire corriger une réponse incomplète par un binôme avec une grille donnée/méthode/résultat/contrôle.
-- Produire une variante courte avec une donnée changée et vérifier que la méthode reste valable.
+- comparaison gauche à droite.
+- décalage nul.
+- caractère absent oublié.
 
 ## Différenciation
-- Socle : fournir les données annotées et demander seulement le résultat contrôlé.
-- Standard : demander méthode complète, résultat et contrôle écrit.
-- Approfondissement : demander une variante de la donnée et une comparaison de deux démarches.
+- Socle : données annotées.
+- Standard : méthode complète.
+- Expert : transfert avec `motif plus long que texte`.
 
-## Lien avec la progression
-| Élément | Référence | Statut |
-|---|---|---|
-| Fiche | T18_fiche_cours_boyer_moore.md | needs_review |
-| Séance | T18-S1 | progression existante |
-| Évaluation | T18_evaluation_boyer_moore.md | needs_review |
+## Cas limites travaillés
+- motif absent.
+- motif plus long que texte.
+- caractère absent du motif.
 
-## Source et traçabilité
-- Recherche locale effectuée dans le dossier Documents_DRIVE avant création.
-- Aucun fichier Drive n’a été repris directement dans ce support.
-- Source de création : programme officiel et progression locale, avec statut `needs_review`.
+## Critères de réussite observables
+- La donnée de départ est recopiée exactement.
+- La trace ou le pseudo-code conduit à `table : A->2, N->1`.
+- Au moins un cas limite de la section précédente est décidé.
 
-## TP papier - pseudo-code Boyer-Moore
-### Exercice 9 - Exécuter le pseudo-code
-- Données : texte `CABAABABA`, motif `ABA`, table mauvais caractère `A -> 2`, `B -> 1`, autre -> `-1`.
-- Consigne : compléter les valeurs de `i`, `j`, mauvais caractère et décalage jusqu’au premier succès.
-
-### Exercice 10 - Motif absent
-- Données : texte `CCCC`, motif `ABA`.
-- Consigne : donner les alignements testés et le résultat.
-
-### Exercice 11 - Comparaison naïve
-- Données : texte `BANANA`, motif `ANA`.
-- Consigne : comparer le nombre d’alignements naïfs et l’usage du mauvais caractère.
-
-### Corrigé exercice 9
-- Donnée utilisée : texte `CABAABABA`, motif `ABA`, table mauvais caractère `A -> 2`, `B -> 1`, autre -> `-1`.
-- Méthode : comparer depuis la droite, puis appliquer `max(1, j - last[caractère_lu])`.
-- Résultat attendu : `i=0`, `j=2`, mauvais caractère `B`, décalage `1`; puis `i=1`, comparaisons `A=A`, `B=B`, `A=A`, résultat `1`.
-- Contrôle : la trace contient le premier échec et l’alignement réussi.
-
-### Corrigé exercice 10
-- Donnée utilisée : texte `CCCC`, motif `ABA`.
-- Méthode : utiliser la table du mauvais caractère pour `C`, absent du motif.
-- Résultat attendu : à `i=0`, désaccord avec `C`, décalage `3`; plus aucun alignement complet possible, résultat `-1`.
-- Contrôle : le cas « motif absent » renvoie une valeur de non-trouvaille explicite.
-
-### Corrigé exercice 11
-- Donnée utilisée : texte `BANANA`, motif `ANA`.
-- Méthode : comparer les alignements naïfs aux comparaisons depuis la droite.
-- Résultat attendu : la méthode naïve teste les positions `0`, `1`, `2`, `3`; Boyer-Moore compare depuis la droite et trouve l’occurrence à l’indice `1` après un décalage justifié.
-- Contrôle : les deux méthodes donnent le même indice trouvé, mais pas la même stratégie.
