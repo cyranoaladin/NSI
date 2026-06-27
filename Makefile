@@ -61,7 +61,9 @@ audit-local:
 	python scripts/check_capacity_status_ladder.py
 	python scripts/check_course_explanatory_quality.py
 	python scripts/check_paper_tp_justification.py
+	python scripts/check_tp_executable_opportunity.py
 	python scripts/check_session_to_resource_alignment.py
+	python scripts/check_human_review_register.py
 	python scripts/check_sql_query_result_consistency.py
 	python scripts/check_graph_algorithm_trace_consistency.py
 	python scripts/check_tree_bst_invariant_consistency.py
@@ -168,13 +170,15 @@ audit-extracted-source:
 	python scripts/check_first_batch_tp_assets.py
 	timeout 30 python scripts/check_support_substance.py
 	python scripts/check_no_line_padding.py
-	python scripts/check_full_sequence_resource_matrix.py
-	python scripts/check_full_notional_resource_matrix.py
-	python scripts/check_official_program_capacity_coverage_matrix.py
-	python scripts/check_capacity_status_ladder.py
-	python scripts/check_course_explanatory_quality.py
-	python scripts/check_paper_tp_justification.py
-	python scripts/check_session_to_resource_alignment.py
+	timeout 30 python scripts/check_full_sequence_resource_matrix.py
+	timeout 30 python scripts/check_full_notional_resource_matrix.py
+	timeout 30 python scripts/check_official_program_capacity_coverage_matrix.py
+	timeout 30 python scripts/check_capacity_status_ladder.py
+	timeout 30 python scripts/check_course_explanatory_quality.py
+	timeout 30 python scripts/check_paper_tp_justification.py
+	timeout 30 python scripts/check_tp_executable_opportunity.py
+	timeout 30 python scripts/check_session_to_resource_alignment.py
+	timeout 30 python scripts/check_human_review_register.py
 	python scripts/check_sql_query_result_consistency.py
 	python scripts/check_graph_algorithm_trace_consistency.py
 	python scripts/check_tree_bst_invariant_consistency.py
@@ -183,8 +187,8 @@ audit-extracted-source:
 	python scripts/check_boyer_moore_trace_consistency.py
 	python scripts/check_generated_template_residue.py
 	python scripts/check_question_capacity_alignment.py
-	python scripts/check_support_pedagogical_depth.py
-	python scripts/check_session_operationalization_plan.py
+	timeout 30 python scripts/check_support_pedagogical_depth.py
+	timeout 30 python scripts/check_session_operationalization_plan.py
 	python scripts/check_sequence_pack_consistency.py
 	python scripts/check_csv_numeric_fields_are_parseable.py
 	python scripts/check_p05_pipeline_consistency.py

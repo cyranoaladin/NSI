@@ -25,7 +25,15 @@ def analyze_tp_runtime(
     total_timeout_seconds: float = 60.0,
     prefix_timeout_seconds: float = 20.0,
 ) -> TpRuntimeResult:
-    prefixes = prefixes or list(dict.fromkeys([*FIRST_BATCH_PREFIXES, "P06"]))
+    if prefixes is None:
+        discovered = sorted(
+            {
+                path.name
+                for path in (root / "03_progressions" / "supports").glob("*/*")
+                if (path / "code").exists()
+            }
+        )
+        prefixes = list(dict.fromkeys([*FIRST_BATCH_PREFIXES, "P06", *discovered]))
     started = time.monotonic()
     pedagogy = analyze_tp_pedagogy(
         root,

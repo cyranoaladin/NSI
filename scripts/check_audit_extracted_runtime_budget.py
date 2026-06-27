@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
-"""Measure the portable extracted-source audit command budget."""
+"""Measure the portable extracted-source audit command budget on source_clean."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
+import inspect
 import os
-import shlex
+import signal
 import subprocess
+import tarfile
+import tempfile
 import time
 
 from _qa_common import ROOT
@@ -50,8 +53,9 @@ def run_command(command: str, root: Path, timeout_seconds: int = 120) -> Measure
     env["PYTHONDONTWRITEBYTECODE"] = "1"
     env.pop("NSI_DOCUMENTS_DRIVE_ROOT", None)
     start = time.monotonic()
+    process: subprocess.Popen[str] | None = None
     try:
-        completed = subprocess.run(
+        process = subprocess.Popen(
             command,
             cwd=root,
             env=env,
@@ -59,10 +63,20 @@ def run_command(command: str, root: Path, timeout_seconds: int = 120) -> Measure
             text=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
-            timeout=timeout_seconds,
+            start_new_session=True,
         )
-        returncode = completed.returncode
+        stdout, _ = process.communicate(timeout=timeout_seconds)
+        returncode = process.returncode
     except subprocess.TimeoutExpired:
+        if process is not None:
+            try:
+                os.killpg(process.pid, signal.SIGTERM)
+                process.wait(timeout=3)
+            except Exception:
+                try:
+                    os.killpg(process.pid, signal.SIGKILL)
+                except Exception as kill_error:
+                    _kill_failed = str(kill_error)
         return MeasuredCommand(command, timeout_seconds, 124)
     seconds = time.monotonic() - start
     return MeasuredCommand(command, seconds, returncode)
@@ -84,10 +98,46 @@ def evaluate_runtime_budget(
     return result
 
 
+def extract_source_clean(root: Path = ROOT) -> tuple[tempfile.TemporaryDirectory[str], Path]:
+    archive = root / "dist" / "source_clean.tar.gz"
+    if not archive.exists():
+        raise FileNotFoundError(f"{archive.relative_to(root).as_posix()} absent")
+    temp = tempfile.TemporaryDirectory()
+    temp_path = Path(temp.name)
+    with tarfile.open(archive, "r:gz") as handle:
+        handle.extractall(temp_path)
+    extracted = temp_path / "nsi-enseignement"
+    if not extracted.exists():
+        candidates = [path for path in temp_path.iterdir() if path.is_dir()]
+        if len(candidates) == 1:
+            extracted = candidates[0]
+    if not extracted.exists():
+        temp.cleanup()
+        raise FileNotFoundError("racine nsi-enseignement absente de source_clean.tar.gz")
+    return temp, extracted
+
+
 def analyze_audit_extracted_runtime_budget(root: Path = ROOT) -> RuntimeBudgetResult:
-    commands = audit_extracted_commands(root)
-    measured = [run_command(command, root) for command in commands]
-    return evaluate_runtime_budget(measured)
+    start_total = time.monotonic()
+    try:
+        temp, extracted = extract_source_clean(root)
+    except Exception as exc:
+        return RuntimeBudgetResult(errors=[str(exc)])
+    try:
+        commands = audit_extracted_commands(extracted)
+        measured = [run_command(command, extracted, timeout_seconds=180) for command in commands]
+        result = evaluate_runtime_budget(measured)
+        result.total_seconds = time.monotonic() - start_total
+        if any(path.name == "__pycache__" for path in extracted.rglob("__pycache__")):
+            result.errors.append("archive extraite salie par __pycache__")
+        return result
+    finally:
+        temp.cleanup()
+
+
+def uses_source_archive_extraction(func: object) -> bool:
+    source = inspect.getsource(func)
+    return "extract_source_clean" in source or "source_clean.tar.gz" in source
 
 
 def main() -> int:

@@ -1,8 +1,8 @@
 ---
-title: "T06 - tp_papier - arbres binaires de recherche"
+title: "T06 - tp - arbres binaires de recherche"
 level: "terminale"
 sequence_id: "T06"
-document_type: "tp_papier"
+document_type: "tp"
 status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
@@ -19,7 +19,7 @@ official_program:
 # T06 - TP - arbres binaires de recherche
 
 ## Statut du TP
-TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
+TP exécutable : utiliser les fichiers du dossier `code/` (T06_starter_arbres_binaires_recherche.py, T06_tests_attendus_arbres_binaires_recherche.py, T06_corrige_professeur_arbres_binaires_recherche.py).
 
 ## Donnée fournie
 `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`
@@ -66,3 +66,10 @@ Résultat attendu : `arbre vide` traité sans ambiguïté.
 - La trace ou le pseudo-code conduit à `chercher 6 : 8 -> 3 -> 6`.
 - Au moins un cas limite de la section précédente est décidé.
 
+
+
+## Assets Python
+- Starter élève : `code/T06_starter_arbres_binaires_recherche.py`.
+- Tests attendus : `code/T06_tests_attendus_arbres_binaires_recherche.py`.
+- Corrigé professeur : `code/T06_corrige_professeur_arbres_binaires_recherche.py`.
+- Le starter doit échouer aux tests complets ; le corrigé professeur doit passer.

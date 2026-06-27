@@ -1,8 +1,8 @@
 ---
-title: "T08 - tp_papier - BFS, DFS, cycles et chemins"
+title: "T08 - tp - BFS, DFS, cycles et chemins"
 level: "terminale"
 sequence_id: "T08"
-document_type: "tp_papier"
+document_type: "tp"
 status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
@@ -21,7 +21,7 @@ official_program:
 # T08 - TP - BFS, DFS, cycles et chemins
 
 ## Statut du TP
-TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
+TP exécutable : utiliser les fichiers du dossier `code/` (T08_starter_bfs_dfs_cycles_chemins.py, T08_tests_attendus_bfs_dfs_cycles_chemins.py, T08_corrige_professeur_bfs_dfs_cycles_chemins.py).
 
 ## Donnée fournie
 `adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}`
@@ -68,3 +68,15 @@ Résultat attendu : `sommet isolé F` traité sans ambiguïté.
 - La trace ou le pseudo-code conduit à `BFS -> A,B,C,D,E`.
 - Au moins un cas limite de la section précédente est décidé.
 
+
+
+## Assets Python
+- Starter élève : `code/T08_starter_bfs_dfs_cycles_chemins.py`.
+- Tests attendus : `code/T08_tests_attendus_bfs_dfs_cycles_chemins.py`.
+- Corrigé professeur : `code/T08_corrige_professeur_bfs_dfs_cycles_chemins.py`.
+- Le starter doit échouer aux tests complets ; le corrigé professeur doit passer.
+
+
+## Précision DFS
+- DFS avec pile explicite ou récursion : le parcours empile les voisins non marqués, ou bien appelle récursivement chaque voisin non visité.
+- La trace indique pour chaque sommet son prédécesseur et l’ordre de dépilement ou de retour récursif.

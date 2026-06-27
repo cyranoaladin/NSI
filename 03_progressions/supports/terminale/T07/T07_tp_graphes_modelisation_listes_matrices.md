@@ -1,8 +1,8 @@
 ---
-title: "T07 - tp_papier - graphes, listes et matrices"
+title: "T07 - tp - graphes, listes et matrices"
 level: "terminale"
 sequence_id: "T07"
-document_type: "tp_papier"
+document_type: "tp"
 status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
@@ -21,7 +21,7 @@ official_program:
 # T07 - TP - graphes, listes et matrices
 
 ## Statut du TP
-TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
+TP exécutable : utiliser les fichiers du dossier `code/` (T07_starter_graphes_modelisation_listes_matrices.py, T07_tests_attendus_graphes_modelisation_listes_matrices.py, T07_corrige_professeur_graphes_modelisation_listes_matrices.py).
 
 ## Donnée fournie
 `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`
@@ -68,3 +68,10 @@ Résultat attendu : `sommet isolé E` traité sans ambiguïté.
 - La trace ou le pseudo-code conduit à `A -> [B,C], B -> [D], C -> [D], D -> [B]`.
 - Au moins un cas limite de la section précédente est décidé.
 
+
+
+## Assets Python
+- Starter élève : `code/T07_starter_graphes_modelisation_listes_matrices.py`.
+- Tests attendus : `code/T07_tests_attendus_graphes_modelisation_listes_matrices.py`.
+- Corrigé professeur : `code/T07_corrige_professeur_graphes_modelisation_listes_matrices.py`.
+- Le starter doit échouer aux tests complets ; le corrigé professeur doit passer.

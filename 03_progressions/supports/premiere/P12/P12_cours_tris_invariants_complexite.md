@@ -97,3 +97,31 @@ temps=[42,17,23,17,9]
 - TD : `P12_TD_tris_invariants_complexite.md`.
 - TP : `P12_tp_tris_invariants_complexite.md`.
 - Évaluation : `P12_evaluation_tris_invariants_complexite.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur tris, invariants et complexité. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : tri par insertion, tri par sélection, invariant, comparaison, échange, coût quadratique.
+- Capacités reliées : P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- énoncer l’invariant après chaque passage.
+- compter les comparaisons sur une petite liste.
+- vérifier que la liste reste une permutation des données initiales.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut confondre tri stable et tri en place ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut oublier le cas déjà trié ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut annoncer une complexité sans préciser la grandeur n ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de tris, invariants et complexité.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

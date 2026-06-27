@@ -101,3 +101,31 @@ src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24
 - TD : `P10_TD_reseaux_protocoles_paquets.md`.
 - TP : `P10_tp_reseaux_protocoles_paquets.md`.
 - Évaluation : `P10_evaluation_reseaux_protocoles_paquets.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur réseaux, protocoles et paquets. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : adresse IP, adresse MAC, passerelle, TTL, paquet, protocole, port, routage.
+- Capacités reliées : P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- décrémenter le TTL à chaque routeur traversé.
+- choisir la passerelle quand l’adresse de destination n’est pas locale.
+- distinguer IP de bout en bout et MAC locale.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut confondre MAC et IP ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut oublier de supprimer un paquet dont le TTL devient 0 ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut choisir une route sans comparer les préfixes ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de réseaux, protocoles et paquets.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

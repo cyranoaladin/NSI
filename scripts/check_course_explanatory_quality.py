@@ -33,6 +33,30 @@ def count_heading_or_marker(text: str, pattern: str) -> int:
     return len(re.findall(pattern, strip_frontmatter(text), re.I))
 
 
+def section_text(text: str, heading_pattern: str) -> str:
+    body = strip_frontmatter(text)
+    match = re.search(rf"^##\s+{heading_pattern}\s*$", body, flags=re.I | re.M)
+    if not match:
+        return ""
+    next_heading = re.search(r"^##\s+", body[match.end() :], flags=re.M)
+    end = match.end() + next_heading.start() if next_heading else len(body)
+    return body[match.end() : end]
+
+
+def word_count(value: str) -> int:
+    return len(re.findall(r"\b[\wÀ-ÿ]{3,}\b", value))
+
+
+DISCIPLINARY_TERMS_RE = re.compile(
+    r"\b(?:algorithme|complexité|invariant|variable|fonction|assertion|test|table|clé|"
+    r"dictionnaire|liste|tuple|csv|sql|select|join|graphe|sommet|arête|file|pile|"
+    r"arbre|abr|routage|paquet|ttl|adresse|http|https|processus|mémoire|"
+    r"récurrence|dynamique|boyer|moore|unicode|binaire|hexadécimal|dichotomie|"
+    r"glouton|distance|voisin|calculabilité|arrêt|oral|projet|certificat|api)\b",
+    re.I,
+)
+
+
 def introductory_block(text: str) -> str:
     body = strip_frontmatter(text)
     match = re.search(r"^##\s+Exemples corrigés", body, flags=re.I | re.M)
@@ -43,15 +67,17 @@ def course_quality_errors(text: str, rel: str) -> list[str]:
     errors: list[str] = []
     body = strip_frontmatter(text)
     intro = introductory_block(text)
-    if useful_word_count(text) < 170:
+    if useful_word_count(text) < 220:
         errors.append(f"{rel}: cours trop court pour être autonome")
     if GENERIC_SECTION_ONLY_RE.search(body) and useful_word_count(text) < 80:
         errors.append(f"{rel}: structure de fiche sans explication disciplinaire")
     if not re.search(r"Situation-problème|Situation-probleme|À savoir|A savoir|Définition|Definition", intro, re.I):
         errors.append(f"{rel}: introduction conceptuelle insuffisamment explicative")
+    if word_count(intro) < 35:
+        errors.append(f"{rel}: introduction conceptuelle trop courte")
     if count_heading_or_marker(text, r"Exemple corrigé\s+\d+|###\s+Exemple") < 3:
         errors.append(f"{rel}: moins de trois exemples gradués")
-    if count_heading_or_marker(text, r"erreur fréquente|##\s+Erreurs fréquentes|-\s+[^.\n]*(?:confond|oublie|écrase|inverse)") < 1:
+    if count_heading_or_marker(text, r"erreur fréquente|##\s+Erreurs fréquentes|-\s+[^.\n]*(?:confond|oublie|écrase|inverse|omet|mélange)") < 2:
         errors.append(f"{rel}: erreurs fréquentes spécifiques insuffisantes")
     if count_heading_or_marker(text, r"cas limite|vide|absent|invalide|doublon|exception|interblocage") < 2:
         errors.append(f"{rel}: cas limites spécifiques insuffisants")
@@ -59,10 +85,20 @@ def course_quality_errors(text: str, rel: str) -> list[str]:
         errors.append(f"{rel}: synthèse finale ou critères de révision absents")
     if not re.search(r"[PT](?:-[A-Z]+)+-\d{2}[A-Z]?", text):
         errors.append(f"{rel}: capacité officielle non citée")
-    has_knowledge = bool(re.search(r"À savoir|A savoir|Définitions?|Definitions?|formalisation", body, re.I))
+    has_knowledge = bool(re.search(r"À savoir|A savoir|Définitions?|Definitions?|formalisation|savoir\b", body, re.I))
     has_method = bool(re.search(r"Méthodes?|Methodes?|savoir-faire|Démarche attendue|Demarche attendue", body, re.I))
     if not has_knowledge or not has_method:
         errors.append(f"{rel}: distinction savoir / savoir-faire / méthode insuffisante")
+    operational_re = r"\b(?:calculer|trier|filtrer|tester|vérifier|convertir|parcourir|chercher|joindre|simuler|implémenter|exécuter|expliquer|identifier|définir|comparer|isoler|associer|préparer|contrôler|appliquer|produire|corriger|reconstruire)\b"
+    methods = section_text(text, r"Méthodes?|Methodes?") + "\n" + section_text(
+        text, r"Savoir-faire et méthodes opérationnelles|Savoir-faire et methodes operationnelles"
+    )
+    method_hits = len(re.findall(operational_re, methods, re.I))
+    body_hits = len(re.findall(operational_re, body, re.I))
+    if method_hits < 2 and body_hits < 6:
+        errors.append(f"{rel}: méthodes trop peu opérationnelles")
+    if len(DISCIPLINARY_TERMS_RE.findall(body)) < 8:
+        errors.append(f"{rel}: vocabulaire disciplinaire propre à la notion insuffisant")
     return errors
 
 

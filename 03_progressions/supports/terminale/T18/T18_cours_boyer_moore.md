@@ -92,3 +92,31 @@ texte="BANANAS", motif="ANA", table mauvais caractère A->2, N->1
 - TD : `T18_TD_boyer_moore.md`.
 - TP : `T18_tp_boyer_moore.md`.
 - Évaluation : `T18_evaluation_boyer_moore.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur Boyer-Moore. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : motif, texte, mauvais caractère, comparaison droite-gauche, décalage, indice.
+- Capacités reliées : T-ALGO-05.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- construire la table du mauvais caractère.
+- comparer le motif de droite à gauche.
+- calculer le décalage après une discordance.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut décaler toujours de 1 sans utiliser la table ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut comparer de gauche à droite dans la trace ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut annoncer un indice sans vérifier toutes les lettres ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de Boyer-Moore.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

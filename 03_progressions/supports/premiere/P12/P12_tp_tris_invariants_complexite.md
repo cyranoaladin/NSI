@@ -1,8 +1,8 @@
 ---
-title: "P12 - tp_papier - tris, invariants et complexité"
+title: "P12 - tp - tris, invariants et complexité"
 level: "premiere"
 sequence_id: "P12"
-document_type: "tp_papier"
+document_type: "tp"
 status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
@@ -21,7 +21,7 @@ official_program:
 # P12 - TP - tris, invariants et complexité
 
 ## Statut du TP
-TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
+TP exécutable : utiliser les fichiers du dossier `code/` (P12_starter_tris_invariants_complexite.py, P12_tests_attendus_tris_invariants_complexite.py, P12_corrige_professeur_tris_invariants_complexite.py).
 
 ## Donnée fournie
 `temps=[42,17,23,17,9]`
@@ -68,3 +68,10 @@ Résultat attendu : `liste vide` traité sans ambiguïté.
 - La trace ou le pseudo-code conduit à `insertion après i=1 -> [17,42,23,17,9]`.
 - Au moins un cas limite de la section précédente est décidé.
 
+
+
+## Assets Python
+- Starter élève : `code/P12_starter_tris_invariants_complexite.py`.
+- Tests attendus : `code/P12_tests_attendus_tris_invariants_complexite.py`.
+- Corrigé professeur : `code/P12_corrige_professeur_tris_invariants_complexite.py`.
+- Le starter doit échouer aux tests complets ; le corrigé professeur doit passer.

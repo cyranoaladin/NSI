@@ -100,3 +100,31 @@ ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve 
 - TD : `P09_TD_architecture_os_droits.md`.
 - TP : `P09_tp_architecture_os_droits.md`.
 - Évaluation : `P09_evaluation_architecture_os_droits.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur architecture, système et droits. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : processeur, mémoire vive, stockage, processus, système de fichiers, chmod, permission denied.
+- Capacités reliées : P-ARCH-01A, P-ARCH-01B, P-ARCH-03A, P-ARCH-03B, P-ARCH-03C.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- calculer une permission Unix en lecture/écriture/exécution.
+- expliquer pourquoi un processus ne peut pas lire un fichier.
+- relier une erreur permission denied au propriétaire et au groupe.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut confondre mémoire vive et stockage persistant ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut oublier le bit exécution sur un script ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut attribuer une permission au mauvais groupe ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de architecture, système et droits.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

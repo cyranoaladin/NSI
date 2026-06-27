@@ -1,8 +1,8 @@
 ---
-title: "T12 - tp_papier - routage RIP et OSPF"
+title: "T12 - tp - routage RIP et OSPF"
 level: "terminale"
 sequence_id: "T12"
-document_type: "tp_papier"
+document_type: "tp"
 status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
@@ -18,7 +18,7 @@ official_program:
 # T12 - TP - routage RIP et OSPF
 
 ## Statut du TP
-TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
+TP exécutable : utiliser les fichiers du dossier `code/` (T12_starter_routage_rip_ospf.py, T12_tests_attendus_routage_rip_ospf.py, T12_corrige_professeur_routage_rip_ospf.py).
 
 ## Donnée fournie
 `RIP A-B-D=2 sauts, A-C-D=2 sauts ; OSPF A-B=5, B-D=5, A-C=2, C-D=9`
@@ -65,3 +65,10 @@ Résultat attendu : `égalité exacte` traité sans ambiguïté.
 - La trace ou le pseudo-code conduit à `RIP : A-B-D et A-C-D ont 2 sauts`.
 - Au moins un cas limite de la section précédente est décidé.
 
+
+
+## Assets Python
+- Starter élève : `code/T12_starter_routage_rip_ospf.py`.
+- Tests attendus : `code/T12_tests_attendus_routage_rip_ospf.py`.
+- Corrigé professeur : `code/T12_corrige_professeur_routage_rip_ospf.py`.
+- Le starter doit échouer aux tests complets ; le corrigé professeur doit passer.

@@ -98,3 +98,31 @@ P1 verrouille camera puis journal ; P2 verrouille journal puis camera ; quantum=
 - TD : `T11_TD_processus_ordonnancement_interblocage.md`.
 - TP : `T11_tp_processus_ordonnancement_interblocage.md`.
 - Évaluation : `T11_evaluation_processus_ordonnancement_interblocage.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur processus et ordonnancement. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : processus, état prêt, état bloqué, ordonnanceur, interblocage, ressource.
+- Capacités reliées : T-ARCH-01, T-ARCH-02A, T-ARCH-02B, T-ARCH-02C.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- tracer l’état d’un processus après une demande de ressource.
+- identifier une attente circulaire.
+- distinguer processus prêt et processus bloqué.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut confondre programme et processus ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut oublier qu’un processus bloqué ne consomme pas le processeur ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut ignorer une ressource déjà tenue ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de processus et ordonnancement.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

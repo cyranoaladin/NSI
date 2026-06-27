@@ -94,3 +94,31 @@ mesures=[18,21,17,24,21], cible=21, seuil=22
 - TD : `P11_TD_parcours_recherche_extremum_moyenne.md`.
 - TP : `P11_tp_parcours_recherche_extremum_moyenne.md`.
 - Évaluation : `P11_evaluation_parcours_recherche_extremum_moyenne.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur parcours et recherche. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : indice, accumulateur, maximum, moyenne, compteur, cas liste vide.
+- Capacités reliées : P-ALGO-01A, P-ALGO-01B.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- initialiser correctement un extremum avec le premier élément.
+- parcourir chaque valeur une seule fois.
+- tester le cas liste vide avant de diviser.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut initialiser un maximum à 0 alors que les valeurs peuvent être négatives ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut oublier d’incrémenter le compteur ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut diviser par zéro sur une liste vide ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de parcours et recherche.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

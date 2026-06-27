@@ -1,8 +1,8 @@
 ---
-title: "T17 - tp_papier - programmation dynamique"
+title: "T17 - tp - programmation dynamique"
 level: "terminale"
 sequence_id: "T17"
-document_type: "tp_papier"
+document_type: "tp"
 status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
@@ -18,7 +18,7 @@ official_program:
 # T17 - TP - programmation dynamique
 
 ## Statut du TP
-TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
+TP exécutable : utiliser les fichiers du dossier `code/` (T17_starter_programmation_dynamique.py, T17_tests_attendus_programmation_dynamique.py, T17_corrige_professeur_programmation_dynamique.py).
 
 ## Donnée fournie
 `pieces=[1,5,7], montant=11, dp[0]=0`
@@ -65,3 +65,10 @@ Résultat attendu : `montant 0` traité sans ambiguïté.
 - La trace ou le pseudo-code conduit à `dp[6]=2 avec 5+1`.
 - Au moins un cas limite de la section précédente est décidé.
 
+
+
+## Assets Python
+- Starter élève : `code/T17_starter_programmation_dynamique.py`.
+- Tests attendus : `code/T17_tests_attendus_programmation_dynamique.py`.
+- Corrigé professeur : `code/T17_corrige_professeur_programmation_dynamique.py`.
+- Le starter doit échouer aux tests complets ; le corrigé professeur doit passer.

@@ -29,8 +29,8 @@
 - Mois : septembre
 - Nature : cours
 - Objectif : introduire diagnostic Python et méthode de carnet de bord à partir de l’activité cours_eleve.md et formuler une définition utilisable.
-- Capacité officielle : P-HIST-01, P-LANG-01
-- Document utilisé : P00_cours_diagnostic_python.md, P00_trace_diagnostic_python.md
+- Capacité officielle : P-LANG-01
+- Document utilisé : P00_cours_diagnostic_python.md, P00_trace_diagnostic_python.md.
 - Déroulé : 1. question flash P00-Q1; 2. activité P00_intro sur diagnostic Python et méthode de carnet de bord; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P00; avancé : contre-exemple à formuler pour la définition.
 - Livrable : production élève vérifiable dans P00_trace_diagnostic_python.md ou fichier de TP associé.
@@ -46,8 +46,8 @@
 - Mois : septembre
 - Nature : évaluation
 - Objectif : passer diagnostic avec questions ciblées sur diagnostic Python et méthode de carnet de bord, puis identifier les erreurs à corriger.
-- Capacité officielle : P-HIST-01, P-LANG-01
-- Document utilisé : P00_td_diagnostic_python.md, P00_trace_diagnostic_python.md
+- Capacité officielle : P-LANG-01
+- Document utilisé : P00_td_diagnostic_python.md, P00_trace_diagnostic_python.md.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse P00; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
 - Livrable : production élève vérifiable dans P00_trace_diagnostic_python.md ou fichier de TP associé.
@@ -63,8 +63,8 @@
 - Mois : septembre
 - Nature : remédiation
 - Objectif : corriger l’exercice bilan P00-R3 et consolider la trace écrite sur diagnostic Python et méthode de carnet de bord.
-- Capacité officielle : P-HIST-01, P-LANG-01
-- Document utilisé : P00_tp_diagnostic_python.md, P00_trace_diagnostic_python.md
+- Capacité officielle : P-LANG-01
+- Document utilisé : P00_tp_diagnostic_python.md, P00_trace_diagnostic_python.md.
 - Déroulé : 1. retour sur erreurs de P00; 2. correction guidée de P00-R3; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P00-R3; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production élève vérifiable dans P00_trace_diagnostic_python.md ou fichier de TP associé.
@@ -80,8 +80,8 @@
 - Mois : septembre
 - Nature : projet
 - Objectif : avancer le jalon projet P00-J4 en produisant un livrable vérifiable lié à diagnostic Python et méthode de carnet de bord.
-- Capacité officielle : P-HIST-01, P-LANG-01
-- Document utilisé : P00_evaluation_diagnostic_python.md, P00_version_amenagee_diagnostic_python.md
+- Capacité officielle : P-LANG-01
+- Document utilisé : P00_evaluation_diagnostic_python.md, P00_version_amenagee_diagnostic_python.md.
 - Déroulé : 1. choix de l’objectif du jalon P00; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P00 minimal; groupes avancés : extension bornée avec test et justification.
 - Livrable : production élève vérifiable dans P00_trace_diagnostic_python.md ou fichier de TP associé.
@@ -102,7 +102,7 @@
 - Nature : cours
 - Objectif : introduire conversions par divisions successives et écriture positionnelle à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : P-DATA-BASE-01
-- Document utilisé : P01_cours_conversions_bases.md, P01_trace_conversions_bases.md
+- Document utilisé : P01_cours_conversions_bases.md, P01_trace_conversions_bases.md.
 - Déroulé : 1. question flash P01-Q1; 2. activité P01_intro sur conversions par divisions successives et écriture positionnelle; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P01; avancé : contre-exemple à formuler pour la définition.
 - Livrable : production élève vérifiable dans P01_trace_conversions_bases.md ou fichier de TP associé.
@@ -119,7 +119,7 @@
 - Nature : TD
 - Objectif : résoudre les exercices P01-E2 à P01-E4 sur conversions par divisions successives et écriture positionnelle avec justification écrite.
 - Capacité officielle : P-DATA-BASE-01
-- Document utilisé : P01_td_conversions_bases.md, P01_trace_conversions_bases.md
+- Document utilisé : P01_td_conversions_bases.md, P01_trace_conversions_bases.md.
 - Déroulé : 1. rappel méthode; 2. exercices P01-E2, P01-E3, P01-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P01-E2 et P01-E3 guidés; avancé : exercice P01-E5 avec justification complète.
 - Livrable : production élève vérifiable dans P01_trace_conversions_bases.md ou fichier de TP associé.
@@ -136,7 +136,7 @@
 - Nature : TP
 - Objectif : réaliser le TP representation_tools.py sur conversions par divisions successives et écriture positionnelle et exécuter deux tests de cas limites.
 - Capacité officielle : P-DATA-BASE-01
-- Document utilisé : P01_tp_conversions_bases.md, P01_trace_conversions_bases.md
+- Document utilisé : P01_tp_conversions_bases.md, P01_trace_conversions_bases.md.
 - Déroulé : 1. lecture du cahier des charges TP P01; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
 - Livrable : production élève vérifiable dans P01_trace_conversions_bases.md ou fichier de TP associé.
@@ -153,7 +153,7 @@
 - Nature : remédiation
 - Objectif : corriger l’exercice bilan P01-R4 et consolider la trace écrite sur conversions par divisions successives et écriture positionnelle.
 - Capacité officielle : P-DATA-BASE-01
-- Document utilisé : P01_evaluation_conversions_bases.md, P01_version_amenagee_conversions_bases.md
+- Document utilisé : P01_evaluation_conversions_bases.md, P01_version_amenagee_conversions_bases.md.
 - Déroulé : 1. retour sur erreurs de P01; 2. correction guidée de P01-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P01-R4; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production élève vérifiable dans P01_trace_conversions_bases.md ou fichier de TP associé.
@@ -170,7 +170,7 @@
 - Nature : projet
 - Objectif : avancer le jalon projet P01-J5 en produisant un livrable vérifiable lié à conversions par divisions successives et écriture positionnelle.
 - Capacité officielle : P-DATA-BASE-01
-- Document utilisé : P01_remediation_conversions_bases.md, P01_trace_conversions_bases.md
+- Document utilisé : P01_remediation_conversions_bases.md, P01_trace_conversions_bases.md.
 - Déroulé : 1. choix de l’objectif du jalon P01; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P01 minimal; groupes avancés : extension bornée avec test et justification.
 - Livrable : production élève vérifiable dans P01_trace_conversions_bases.md ou fichier de TP associé.
@@ -190,8 +190,8 @@
 - Mois : septembre
 - Nature : cours
 - Objectif : introduire registre 4 bits, complément à deux et table de vérité à partir de l’activité cours_eleve.md et formuler une définition utilisable.
-- Capacité officielle : P-DATA-BASE-02A, P-DATA-BASE-02B, P-DATA-BASE-04
-- Document utilisé : P02_cours_complement_booleens.md, P02_trace_complement_booleens.md
+- Capacité officielle : P-DATA-BASE-02A
+- Document utilisé : P02_cours_complement_booleens.md, P02_trace_complement_booleens.md.
 - Déroulé : 1. question flash P02-Q1; 2. activité P02_intro sur registre 4 bits, complément à deux et table de vérité; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P02; avancé : contre-exemple à formuler pour la définition.
 - Livrable : production élève vérifiable dans P02_trace_complement_booleens.md ou fichier de TP associé.
@@ -207,8 +207,8 @@
 - Mois : septembre
 - Nature : TD
 - Objectif : résoudre les exercices P02-E2 à P02-E4 sur registre 4 bits, complément à deux et table de vérité avec justification écrite.
-- Capacité officielle : P-DATA-BASE-02A, P-DATA-BASE-02B, P-DATA-BASE-04
-- Document utilisé : P02_td_complement_booleens.md, P02_trace_complement_booleens.md
+- Capacité officielle : P-DATA-BASE-02A
+- Document utilisé : P02_td_complement_booleens.md, P02_trace_complement_booleens.md.
 - Déroulé : 1. rappel méthode; 2. exercices P02-E2, P02-E3, P02-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P02-E2 et P02-E3 guidés; avancé : exercice P02-E5 avec justification complète.
 - Livrable : production élève vérifiable dans P02_trace_complement_booleens.md ou fichier de TP associé.
@@ -224,8 +224,8 @@
 - Mois : septembre
 - Nature : TP
 - Objectif : réaliser le TP representation_tools.py sur registre 4 bits, complément à deux et table de vérité et exécuter deux tests de cas limites.
-- Capacité officielle : P-DATA-BASE-02A, P-DATA-BASE-02B, P-DATA-BASE-04
-- Document utilisé : P02_tp_complement_booleens.md, P02_trace_complement_booleens.md
+- Capacité officielle : P-DATA-BASE-02A
+- Document utilisé : P02_tp_complement_booleens.md, P02_trace_complement_booleens.md.
 - Déroulé : 1. lecture du cahier des charges TP P02; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
 - Livrable : production élève vérifiable dans P02_trace_complement_booleens.md ou fichier de TP associé.
@@ -241,8 +241,8 @@
 - Mois : octobre
 - Nature : évaluation
 - Objectif : passer TD évalué complément à deux avec questions ciblées sur registre 4 bits, complément à deux et table de vérité, puis identifier les erreurs à corriger.
-- Capacité officielle : P-DATA-BASE-02A, P-DATA-BASE-02B, P-DATA-BASE-04
-- Document utilisé : P02_evaluation_complement_booleens.md, P02_version_amenagee_complement_booleens.md
+- Capacité officielle : P-DATA-BASE-02A
+- Document utilisé : P02_evaluation_complement_booleens.md, P02_version_amenagee_complement_booleens.md.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse P02; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
 - Livrable : production élève vérifiable dans P02_trace_complement_booleens.md ou fichier de TP associé.
@@ -258,8 +258,8 @@
 - Mois : octobre
 - Nature : remédiation
 - Objectif : corriger l’exercice bilan P02-R5 et consolider la trace écrite sur registre 4 bits, complément à deux et table de vérité.
-- Capacité officielle : P-DATA-BASE-02A, P-DATA-BASE-02B, P-DATA-BASE-04
-- Document utilisé : P02_remediation_complement_booleens.md, P02_trace_complement_booleens.md
+- Capacité officielle : P-DATA-BASE-02A
+- Document utilisé : P02_remediation_complement_booleens.md, P02_trace_complement_booleens.md.
 - Déroulé : 1. retour sur erreurs de P02; 2. correction guidée de P02-R5; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P02-R5; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production élève vérifiable dans P02_trace_complement_booleens.md ou fichier de TP associé.
@@ -275,8 +275,8 @@
 - Mois : octobre
 - Nature : projet
 - Objectif : avancer le jalon projet P02-J6 en produisant un livrable vérifiable lié à registre 4 bits, complément à deux et table de vérité.
-- Capacité officielle : P-DATA-BASE-02A, P-DATA-BASE-02B, P-DATA-BASE-04
-- Document utilisé : P02_tp_complement_booleens.md, carnet_de_bord.md, P02_trace_complement_booleens.md
+- Capacité officielle : P-DATA-BASE-02A
+- Document utilisé : P02_tp_complement_booleens.md, carnet_de_bord.md, P02_trace_complement_booleens.md.
 - Déroulé : 1. choix de l’objectif du jalon P02; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P02 minimal; groupes avancés : extension bornée avec test et justification.
 - Livrable : production élève vérifiable dans P02_trace_complement_booleens.md ou fichier de TP associé.
@@ -296,8 +296,8 @@
 - Mois : octobre
 - Nature : cours
 - Objectif : introduire points de code Unicode et observation de flottants simples à partir de l’activité cours_eleve.md et formuler une définition utilisable.
-- Capacité officielle : P-DATA-BASE-05A, P-DATA-BASE-05B, P-DATA-BASE-03
-- Document utilisé : P03_cours_texte_reels.md, P03_trace_texte_reels.md
+- Capacité officielle : P-DATA-BASE-05A
+- Document utilisé : P03_cours_texte_reels.md, P03_trace_texte_reels.md.
 - Déroulé : 1. question flash P03-Q1; 2. activité P03_intro sur points de code Unicode et observation de flottants simples; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P03; avancé : contre-exemple à formuler pour la définition.
 - Livrable : production élève vérifiable dans P03_trace_texte_reels.md ou fichier de TP associé.
@@ -313,8 +313,8 @@
 - Mois : octobre
 - Nature : TD
 - Objectif : résoudre les exercices P03-E2 à P03-E4 sur points de code Unicode et observation de flottants simples avec justification écrite.
-- Capacité officielle : P-DATA-BASE-05A, P-DATA-BASE-05B, P-DATA-BASE-03
-- Document utilisé : P03_td_texte_reels.md, P03_trace_texte_reels.md
+- Capacité officielle : P-DATA-BASE-05A
+- Document utilisé : P03_td_texte_reels.md, P03_trace_texte_reels.md.
 - Déroulé : 1. rappel méthode; 2. exercices P03-E2, P03-E3, P03-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P03-E2 et P03-E3 guidés; avancé : exercice P03-E5 avec justification complète.
 - Livrable : production élève vérifiable dans P03_trace_texte_reels.md ou fichier de TP associé.
@@ -330,8 +330,8 @@
 - Mois : octobre
 - Nature : remédiation
 - Objectif : corriger l’exercice bilan P03-R3 et consolider la trace écrite sur points de code Unicode et observation de flottants simples.
-- Capacité officielle : P-DATA-BASE-05A, P-DATA-BASE-05B, P-DATA-BASE-03
-- Document utilisé : P03_tp_texte_reels.md, P03_trace_texte_reels.md
+- Capacité officielle : P-DATA-BASE-05A
+- Document utilisé : P03_tp_texte_reels.md, P03_trace_texte_reels.md.
 - Déroulé : 1. retour sur erreurs de P03; 2. correction guidée de P03-R3; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P03-R3; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production élève vérifiable dans P03_trace_texte_reels.md ou fichier de TP associé.
@@ -347,8 +347,8 @@
 - Mois : novembre
 - Nature : remédiation
 - Objectif : corriger l’exercice bilan P03-R4 et consolider la trace écrite sur points de code Unicode et observation de flottants simples.
-- Capacité officielle : P-DATA-BASE-05A, P-DATA-BASE-05B, P-DATA-BASE-03
-- Document utilisé : P03_evaluation_texte_reels.md, P03_version_amenagee_texte_reels.md
+- Capacité officielle : P-DATA-BASE-05A
+- Document utilisé : P03_evaluation_texte_reels.md, P03_version_amenagee_texte_reels.md.
 - Déroulé : 1. retour sur erreurs de P03; 2. correction guidée de P03-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P03-R4; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production élève vérifiable dans P03_trace_texte_reels.md ou fichier de TP associé.
@@ -364,8 +364,8 @@
 - Mois : novembre
 - Nature : projet
 - Objectif : avancer le jalon projet P03-J5 en produisant un livrable vérifiable lié à points de code Unicode et observation de flottants simples.
-- Capacité officielle : P-DATA-BASE-05A, P-DATA-BASE-05B, P-DATA-BASE-03
-- Document utilisé : P03_remediation_texte_reels.md, P03_trace_texte_reels.md
+- Capacité officielle : P-DATA-BASE-05A
+- Document utilisé : P03_remediation_texte_reels.md, P03_trace_texte_reels.md.
 - Déroulé : 1. choix de l’objectif du jalon P03; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P03 minimal; groupes avancés : extension bornée avec test et justification.
 - Livrable : production élève vérifiable dans P03_trace_texte_reels.md ou fichier de TP associé.
@@ -385,8 +385,8 @@
 - Mois : novembre
 - Nature : cours
 - Objectif : introduire choix liste tuple dictionnaire sur mesures fictives à partir de l’activité cours_eleve.md et formuler une définition utilisable.
-- Capacité officielle : P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C
-- Document utilisé : P04_cours_types_construits.md, P04_trace_types_construits.md
+- Capacité officielle : P-DATA-CONSTR-02A
+- Document utilisé : P04_cours_types_construits.md, P04_trace_types_construits.md.
 - Déroulé : 1. question flash P04-Q1; 2. activité P04_intro sur choix liste tuple dictionnaire sur mesures fictives; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P04; avancé : contre-exemple à formuler pour la définition.
 - Livrable : production élève vérifiable dans P04_trace_types_construits.md ou fichier de TP associé.
@@ -402,8 +402,8 @@
 - Mois : novembre
 - Nature : TD
 - Objectif : résoudre les exercices P04-E2 à P04-E4 sur choix liste tuple dictionnaire sur mesures fictives avec justification écrite.
-- Capacité officielle : P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C
-- Document utilisé : P04_td_types_construits.md, P04_trace_types_construits.md
+- Capacité officielle : P-DATA-CONSTR-02A
+- Document utilisé : P04_td_types_construits.md, P04_trace_types_construits.md.
 - Déroulé : 1. rappel méthode; 2. exercices P04-E2, P04-E3, P04-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P04-E2 et P04-E3 guidés; avancé : exercice P04-E5 avec justification complète.
 - Livrable : production élève vérifiable dans P04_trace_types_construits.md ou fichier de TP associé.
@@ -419,8 +419,8 @@
 - Mois : novembre
 - Nature : TP
 - Objectif : réaliser le TP representation_tools.py sur choix liste tuple dictionnaire sur mesures fictives et exécuter deux tests de cas limites.
-- Capacité officielle : P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C
-- Document utilisé : P04_tp_types_construits.md, P04_trace_types_construits.md
+- Capacité officielle : P-DATA-CONSTR-02A
+- Document utilisé : P04_tp_types_construits.md, P04_trace_types_construits.md.
 - Déroulé : 1. lecture du cahier des charges TP P04; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
 - Livrable : production élève vérifiable dans P04_trace_types_construits.md ou fichier de TP associé.
@@ -436,8 +436,8 @@
 - Mois : novembre
 - Nature : remédiation
 - Objectif : corriger l’exercice bilan P04-R4 et consolider la trace écrite sur choix liste tuple dictionnaire sur mesures fictives.
-- Capacité officielle : P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C
-- Document utilisé : P04_evaluation_types_construits.md, P04_version_amenagee_types_construits.md
+- Capacité officielle : P-DATA-CONSTR-02A
+- Document utilisé : P04_evaluation_types_construits.md, P04_version_amenagee_types_construits.md.
 - Déroulé : 1. retour sur erreurs de P04; 2. correction guidée de P04-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P04-R4; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production élève vérifiable dans P04_trace_types_construits.md ou fichier de TP associé.
@@ -453,8 +453,8 @@
 - Mois : novembre
 - Nature : projet
 - Objectif : avancer le jalon projet P04-J5 en produisant un livrable vérifiable lié à choix liste tuple dictionnaire sur mesures fictives.
-- Capacité officielle : P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C
-- Document utilisé : P04_remediation_types_construits.md, P04_trace_types_construits.md
+- Capacité officielle : P-DATA-CONSTR-02A
+- Document utilisé : P04_remediation_types_construits.md, P04_trace_types_construits.md.
 - Déroulé : 1. choix de l’objectif du jalon P04; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P04 minimal; groupes avancés : extension bornée avec test et justification.
 - Livrable : production élève vérifiable dans P04_trace_types_construits.md ou fichier de TP associé.
@@ -474,8 +474,8 @@
 - Mois : novembre
 - Nature : projet
 - Objectif : avancer le jalon projet P04-J6 en produisant un livrable vérifiable lié à choix liste tuple dictionnaire sur mesures fictives.
-- Capacité officielle : P-DATA-CONSTR-01, P-DATA-CONSTR-02A, P-DATA-CONSTR-02B, P-DATA-CONSTR-02C, P-DATA-CONSTR-02D, P-DATA-CONSTR-03A, P-DATA-CONSTR-03B, P-DATA-CONSTR-03C
-- Document utilisé : P04_tp_types_construits.md, carnet_de_bord.md, P04_trace_types_construits.md
+- Capacité officielle : P-DATA-CONSTR-02A
+- Document utilisé : P04_tp_types_construits.md, carnet_de_bord.md, P04_trace_types_construits.md.
 - Déroulé : 1. choix de l’objectif du jalon P04; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P04 minimal; groupes avancés : extension bornée avec test et justification.
 - Livrable : production élève vérifiable dans P04_trace_types_construits.md ou fichier de TP associé.
@@ -496,7 +496,7 @@
 - Nature : cours
 - Objectif : introduire import CSV fictif, recherche et cohérence de table à partir de l’activité cours_eleve.md et formuler une définition utilisable.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : P05_cours_tables_csv.md, P05_trace_tables_csv.md
+- Document utilisé : P05_cours_tables_csv.md, P05_trace_tables_csv.md.
 - Déroulé : 1. question flash P05-Q1; 2. activité P05_intro sur import CSV fictif, recherche et cohérence de table; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P05; avancé : contre-exemple à formuler pour la définition.
 - Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
@@ -513,7 +513,7 @@
 - Nature : TD
 - Objectif : résoudre les exercices P05-E2 à P05-E4 sur import CSV fictif, recherche et cohérence de table avec justification écrite.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : P05_td_tables_csv.md, P05_trace_tables_csv.md
+- Document utilisé : P05_td_tables_csv.md, P05_trace_tables_csv.md.
 - Déroulé : 1. rappel méthode; 2. exercices P05-E2, P05-E3, P05-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P05-E2 et P05-E3 guidés; avancé : exercice P05-E5 avec justification complète.
 - Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
@@ -530,7 +530,7 @@
 - Nature : TD
 - Objectif : résoudre les exercices P05-E3 à P05-E5 sur import CSV fictif, recherche et cohérence de table avec justification écrite.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : P05_tp_tables_csv.md, P05_trace_tables_csv.md
+- Document utilisé : P05_tp_tables_csv.md, P05_trace_tables_csv.md.
 - Déroulé : 1. rappel méthode; 2. exercices P05-E3, P05-E4, P05-E5; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P05-E3 et P05-E4 guidés; avancé : exercice P05-E6 avec justification complète.
 - Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
@@ -547,7 +547,7 @@
 - Nature : TP
 - Objectif : réaliser le TP representation_tools.py sur import CSV fictif, recherche et cohérence de table et exécuter deux tests de cas limites.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : P05_evaluation_tables_csv.md, P05_version_amenagee_tables_csv.md
+- Document utilisé : P05_evaluation_tables_csv.md, P05_version_amenagee_tables_csv.md.
 - Déroulé : 1. lecture du cahier des charges TP P05; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
 - Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
@@ -564,7 +564,7 @@
 - Nature : évaluation
 - Objectif : passer TP pratique CSV évalué avec questions ciblées sur import CSV fictif, recherche et cohérence de table, puis identifier les erreurs à corriger.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : P05_remediation_tables_csv.md, P05_trace_tables_csv.md
+- Document utilisé : P05_remediation_tables_csv.md, P05_trace_tables_csv.md.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse P05; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
 - Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
@@ -581,7 +581,7 @@
 - Nature : remédiation
 - Objectif : corriger l’exercice bilan P05-R6 et consolider la trace écrite sur import CSV fictif, recherche et cohérence de table.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : P05_tp_tables_csv.md, carnet_de_bord.md, P05_trace_tables_csv.md
+- Document utilisé : P05_tp_tables_csv.md, carnet_de_bord.md, P05_trace_tables_csv.md.
 - Déroulé : 1. retour sur erreurs de P05; 2. correction guidée de P05-R6; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P05-R6; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
@@ -598,7 +598,7 @@
 - Nature : projet
 - Objectif : avancer le jalon projet P05-J7 en produisant un livrable vérifiable lié à import CSV fictif, recherche et cohérence de table.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : P05_tp_tables_csv.md, carnet_de_bord.md, P05_trace_tables_csv.md
+- Document utilisé : P05_tp_tables_csv.md, carnet_de_bord.md, P05_trace_tables_csv.md.
 - Déroulé : 1. choix de l’objectif du jalon P05; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P05 minimal; groupes avancés : extension bornée avec test et justification.
 - Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
@@ -619,7 +619,7 @@
 - Nature : projet
 - Objectif : avancer le jalon projet P05-J8 en produisant un livrable vérifiable lié à import CSV fictif, recherche et cohérence de table.
 - Capacité officielle : P-TABLE-01, P-TABLE-02
-- Document utilisé : P05_tp_tables_csv.md, carnet_de_bord.md, P05_trace_tables_csv.md
+- Document utilisé : P05_tp_tables_csv.md, carnet_de_bord.md, P05_trace_tables_csv.md.
 - Déroulé : 1. choix de l’objectif du jalon P05; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P05 minimal; groupes avancés : extension bornée avec test et justification.
 - Livrable : production élève vérifiable dans P05_trace_tables_csv.md ou fichier de TP associé.
@@ -659,7 +659,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P06-E2 à P06-E4 sur tri de table, fusion par clé et doublons avec justification écrite.
 - Capacité officielle : P-TABLE-03, P-TABLE-04
-- Document utilisé : P06_TD_tables_recherche_tri_fusion.md, P06_corrige_tables_recherche_tri_fusion.md, P06_trace_tables_recherche_tri_fusion.md.
+- Document utilisé : P06_TD_tables_recherche_tri_fusion.md, P06_trace_tables_recherche_tri_fusion.md.
 - Déroulé : 1. rappel méthode; 2. exercices P06-E2, P06-E3, P06-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P06-E2 et P06-E3 guidés; avancé : exercice P06-E5 avec justification complète.
 - Livrable : production dans P06_TD_tables_recherche_tri_fusion.md avec résultat, trace ou justification vérifiable.
@@ -677,7 +677,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P06-R3 et consolider la trace écrite sur tri de table, fusion par clé et doublons.
 - Capacité officielle : P-TABLE-03, P-TABLE-04
-- Document utilisé : P06_remediation_tables_recherche_tri_fusion.md, P06_corrige_tables_recherche_tri_fusion.md, P06_trace_tables_recherche_tri_fusion.md.
+- Document utilisé : P06_remediation_tables_recherche_tri_fusion.md, P06_trace_tables_recherche_tri_fusion.md.
 - Déroulé : 1. retour sur erreurs de P06; 2. correction guidée de P06-R3; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P06-R3; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production dans P06_remediation_tables_recherche_tri_fusion.md avec résultat, trace ou justification vérifiable.
@@ -695,7 +695,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P06-R4 et consolider la trace écrite sur tri de table, fusion par clé et doublons.
 - Capacité officielle : P-TABLE-03, P-TABLE-04
-- Document utilisé : P06_remediation_tables_recherche_tri_fusion.md, P06_corrige_tables_recherche_tri_fusion.md, P06_trace_tables_recherche_tri_fusion.md.
+- Document utilisé : P06_remediation_tables_recherche_tri_fusion.md, P06_trace_tables_recherche_tri_fusion.md.
 - Déroulé : 1. retour sur erreurs de P06; 2. correction guidée de P06-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P06-R4; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production dans P06_remediation_tables_recherche_tri_fusion.md avec résultat, trace ou justification vérifiable.
@@ -775,7 +775,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P07-E2 à P07-E4 sur spécification de fonctions et jeux de tests avec justification écrite.
 - Capacité officielle : P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05
-- Document utilisé : P07_TD_fonctions_tests_specifications.md, P07_corrige_fonctions_tests_specifications.md, P07_trace_fonctions_tests_specifications.md.
+- Document utilisé : P07_TD_fonctions_tests_specifications.md, P07_trace_fonctions_tests_specifications.md.
 - Déroulé : 1. rappel méthode; 2. exercices P07-E2, P07-E3, P07-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P07-E2 et P07-E3 guidés; avancé : exercice P07-E5 avec justification complète.
 - Livrable : production dans P07_TD_fonctions_tests_specifications.md avec résultat, trace ou justification vérifiable.
@@ -811,7 +811,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P07-R4 et consolider la trace écrite sur spécification de fonctions et jeux de tests.
 - Capacité officielle : P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05
-- Document utilisé : P07_remediation_fonctions_tests_specifications.md, P07_corrige_fonctions_tests_specifications.md, P07_trace_fonctions_tests_specifications.md.
+- Document utilisé : P07_remediation_fonctions_tests_specifications.md, P07_trace_fonctions_tests_specifications.md.
 - Déroulé : 1. retour sur erreurs de P07; 2. correction guidée de P07-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P07-R4; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production dans P07_remediation_fonctions_tests_specifications.md avec résultat, trace ou justification vérifiable.
@@ -891,7 +891,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P08-E2 à P08-E4 sur formulaire Web local, événement clic et GET POST avec justification écrite.
 - Capacité officielle : P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C
-- Document utilisé : P08_TD_html_css_dom.md, P08_corrige_web_http_dom_formulaires.md, P08_trace_web_http_dom_formulaires.md.
+- Document utilisé : P08_TD_html_css_dom.md, P08_trace_web_http_dom_formulaires.md.
 - Déroulé : 1. rappel méthode; 2. exercices P08-E2, P08-E3, P08-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P08-E2 et P08-E3 guidés; avancé : exercice P08-E5 avec justification complète.
 - Livrable : production dans P08_TD_html_css_dom.md avec résultat, trace ou justification vérifiable.
@@ -945,7 +945,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P08-R5 et consolider la trace écrite sur formulaire Web local, événement clic et GET POST.
 - Capacité officielle : P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C
-- Document utilisé : P08_remediation_web_http_dom_formulaires.md, P08_corrige_web_http_dom_formulaires.md, P08_trace_web_http_dom_formulaires.md.
+- Document utilisé : P08_remediation_web_http_dom_formulaires.md, P08_trace_web_http_dom_formulaires.md.
 - Déroulé : 1. retour sur erreurs de P08; 2. correction guidée de P08-R5; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P08-R5; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production dans P08_remediation_web_http_dom_formulaires.md avec résultat, trace ou justification vérifiable.
@@ -1025,7 +1025,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P09-E2 à P09-E4 sur commandes shell et droits sur arborescence fictive avec justification écrite.
 - Capacité officielle : P-ARCH-01A, P-ARCH-01B, P-ARCH-03A, P-ARCH-03B, P-ARCH-03C
-- Document utilisé : P09_TD_architecture_os_droits.md, P09_corrige_architecture_os_droits.md, P09_trace_architecture_os_droits.md.
+- Document utilisé : P09_TD_architecture_os_droits.md, P09_trace_architecture_os_droits.md.
 - Déroulé : 1. rappel méthode; 2. exercices P09-E2, P09-E3, P09-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P09-E2 et P09-E3 guidés; avancé : exercice P09-E5 avec justification complète.
 - Livrable : production dans P09_TD_architecture_os_droits.md avec résultat, trace ou justification vérifiable.
@@ -1061,7 +1061,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P09-R4 et consolider la trace écrite sur commandes shell et droits sur arborescence fictive.
 - Capacité officielle : P-ARCH-01A, P-ARCH-01B, P-ARCH-03A, P-ARCH-03B, P-ARCH-03C
-- Document utilisé : P09_remediation_architecture_os_droits.md, P09_corrige_architecture_os_droits.md, P09_trace_architecture_os_droits.md.
+- Document utilisé : P09_remediation_architecture_os_droits.md, P09_trace_architecture_os_droits.md.
 - Déroulé : 1. retour sur erreurs de P09; 2. correction guidée de P09-R4; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P09-R4; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production dans P09_remediation_architecture_os_droits.md avec résultat, trace ou justification vérifiable.
@@ -1119,7 +1119,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P10-E2 à P10-E4 sur simulation de paquets et protocole à bit alterné avec justification écrite.
 - Capacité officielle : P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B
-- Document utilisé : P10_TD_reseaux_protocoles_paquets.md, P10_corrige_reseaux_protocoles_paquets.md, P10_trace_reseaux_protocoles_paquets.md.
+- Document utilisé : P10_TD_reseaux_protocoles_paquets.md, P10_trace_reseaux_protocoles_paquets.md.
 - Déroulé : 1. rappel méthode; 2. exercices P10-E2, P10-E3, P10-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P10-E2 et P10-E3 guidés; avancé : exercice P10-E5 avec justification complète.
 - Livrable : production dans P10_TD_reseaux_protocoles_paquets.md avec résultat, trace ou justification vérifiable.
@@ -1137,7 +1137,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P10-R3 et consolider la trace écrite sur simulation de paquets et protocole à bit alterné.
 - Capacité officielle : P-ARCH-02A, P-ARCH-02B, P-ARCH-02C, P-ARCH-04A, P-ARCH-04B
-- Document utilisé : P10_remediation_reseaux_protocoles_paquets.md, P10_corrige_reseaux_protocoles_paquets.md, P10_trace_reseaux_protocoles_paquets.md.
+- Document utilisé : P10_remediation_reseaux_protocoles_paquets.md, P10_trace_reseaux_protocoles_paquets.md.
 - Déroulé : 1. retour sur erreurs de P10; 2. correction guidée de P10-R3; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P10-R3; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production dans P10_remediation_reseaux_protocoles_paquets.md avec résultat, trace ou justification vérifiable.
@@ -1217,7 +1217,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P11-E2 à P11-E4 sur parcours de tableau, occurrence, extremum, moyenne avec justification écrite.
 - Capacité officielle : P-ALGO-01A, P-ALGO-01B
-- Document utilisé : P11_TD_parcours_recherche_extremum_moyenne.md, P11_corrige_parcours_recherche_extremum_moyenne.md, P11_trace_parcours_recherche_extremum_moyenne.md.
+- Document utilisé : P11_TD_parcours_recherche_extremum_moyenne.md, P11_trace_parcours_recherche_extremum_moyenne.md.
 - Déroulé : 1. rappel méthode; 2. exercices P11-E2, P11-E3, P11-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P11-E2 et P11-E3 guidés; avancé : exercice P11-E5 avec justification complète.
 - Livrable : production dans P11_TD_parcours_recherche_extremum_moyenne.md avec résultat, trace ou justification vérifiable.
@@ -1271,7 +1271,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P11-R5 et consolider la trace écrite sur parcours de tableau, occurrence, extremum, moyenne.
 - Capacité officielle : P-ALGO-01A, P-ALGO-01B
-- Document utilisé : P11_remediation_parcours_recherche_extremum_moyenne.md, P11_corrige_parcours_recherche_extremum_moyenne.md, P11_trace_parcours_recherche_extremum_moyenne.md.
+- Document utilisé : P11_remediation_parcours_recherche_extremum_moyenne.md, P11_trace_parcours_recherche_extremum_moyenne.md.
 - Déroulé : 1. retour sur erreurs de P11; 2. correction guidée de P11-R5; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P11-R5; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production dans P11_remediation_parcours_recherche_extremum_moyenne.md avec résultat, trace ou justification vérifiable.
@@ -1329,7 +1329,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P12-E2 à P12-E4 sur tri insertion, tri sélection, invariant et coût quadratique avec justification écrite.
 - Capacité officielle : P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D
-- Document utilisé : P12_TD_tris_invariants_complexite.md, P12_corrige_tris_invariants_complexite.md, P12_trace_tris_invariants_complexite.md.
+- Document utilisé : P12_TD_tris_invariants_complexite.md, P12_trace_tris_invariants_complexite.md.
 - Déroulé : 1. rappel méthode; 2. exercices P12-E2, P12-E3, P12-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P12-E2 et P12-E3 guidés; avancé : exercice P12-E5 avec justification complète.
 - Livrable : production dans P12_TD_tris_invariants_complexite.md avec résultat, trace ou justification vérifiable.
@@ -1347,7 +1347,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P12-E3 à P12-E5 sur tri insertion, tri sélection, invariant et coût quadratique avec justification écrite.
 - Capacité officielle : P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D
-- Document utilisé : P12_TD_tris_invariants_complexite.md, P12_corrige_tris_invariants_complexite.md, P12_trace_tris_invariants_complexite.md.
+- Document utilisé : P12_TD_tris_invariants_complexite.md, P12_trace_tris_invariants_complexite.md.
 - Déroulé : 1. rappel méthode; 2. exercices P12-E3, P12-E4, P12-E5; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P12-E3 et P12-E4 guidés; avancé : exercice P12-E6 avec justification complète.
 - Livrable : production dans P12_TD_tris_invariants_complexite.md avec résultat, trace ou justification vérifiable.
@@ -1401,7 +1401,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P12-R6 et consolider la trace écrite sur tri insertion, tri sélection, invariant et coût quadratique.
 - Capacité officielle : P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D
-- Document utilisé : P12_remediation_tris_invariants_complexite.md, P12_corrige_tris_invariants_complexite.md, P12_trace_tris_invariants_complexite.md.
+- Document utilisé : P12_remediation_tris_invariants_complexite.md, P12_trace_tris_invariants_complexite.md.
 - Déroulé : 1. retour sur erreurs de P12; 2. correction guidée de P12-R6; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P12-R6; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production dans P12_remediation_tris_invariants_complexite.md avec résultat, trace ou justification vérifiable.
@@ -1459,7 +1459,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P13-E2 à P13-E4 sur recherche dichotomique, choix glouton et k plus proches voisins avec justification écrite.
 - Capacité officielle : P-ALGO-03, P-ALGO-04, P-ALGO-05
-- Document utilisé : P13_TD_dichotomie_glouton_knn.md, P13_corrige_dichotomie_glouton_knn.md, P13_trace_dichotomie_glouton_knn.md.
+- Document utilisé : P13_TD_dichotomie_glouton_knn.md, P13_trace_dichotomie_glouton_knn.md.
 - Déroulé : 1. rappel méthode; 2. exercices P13-E2, P13-E3, P13-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P13-E2 et P13-E3 guidés; avancé : exercice P13-E5 avec justification complète.
 - Livrable : production dans P13_TD_dichotomie_glouton_knn.md avec résultat, trace ou justification vérifiable.
@@ -1477,7 +1477,7 @@
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P13-R3 et consolider la trace écrite sur recherche dichotomique, choix glouton et k plus proches voisins.
 - Capacité officielle : P-ALGO-03, P-ALGO-04, P-ALGO-05
-- Document utilisé : P13_remediation_dichotomie_glouton_knn.md, P13_corrige_dichotomie_glouton_knn.md, P13_trace_dichotomie_glouton_knn.md.
+- Document utilisé : P13_remediation_dichotomie_glouton_knn.md, P13_trace_dichotomie_glouton_knn.md.
 - Déroulé : 1. retour sur erreurs de P13; 2. correction guidée de P13-R3; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P13-R3; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production dans P13_remediation_dichotomie_glouton_knn.md avec résultat, trace ou justification vérifiable.
@@ -1538,7 +1538,7 @@
 - Nature : cours
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : introduire dossier final, démonstration, soutenance et synthèse à partir de l’activité cours_eleve.md et formuler une définition utilisable.
-- Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
+- Capacité officielle : P-HIST-01
 - Document utilisé : P14_cours_synthese_projet_oral.md, P14_trace_synthese_projet_oral.md.
 - Déroulé : 1. question flash P14-Q1; 2. activité P14_intro sur dossier final, démonstration, soutenance et synthèse; 3. exemple guidé annoté; 4. définition à compléter; 5. mini-exercice de vérification.
 - Différenciation : socle : fiche vocabulaire P14; avancé : contre-exemple à formuler pour la définition.
@@ -1556,8 +1556,8 @@
 - Nature : TD
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : résoudre les exercices P14-E2 à P14-E4 sur dossier final, démonstration, soutenance et synthèse avec justification écrite.
-- Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
-- Document utilisé : P14_TD_synthese_projet_oral.md, P14_corrige_synthese_projet_oral.md, P14_trace_synthese_projet_oral.md.
+- Capacité officielle : P-HIST-01
+- Document utilisé : P14_TD_synthese_projet_oral.md, P14_trace_synthese_projet_oral.md.
 - Déroulé : 1. rappel méthode; 2. exercices P14-E2, P14-E3, P14-E4; 3. comparaison de deux démarches; 4. correction argumentée; 5. trace des erreurs fréquentes.
 - Différenciation : socle : exercices P14-E2 et P14-E3 guidés; avancé : exercice P14-E5 avec justification complète.
 - Livrable : production dans P14_TD_synthese_projet_oral.md avec résultat, trace ou justification vérifiable.
@@ -1574,7 +1574,7 @@
 - Nature : TP
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : réaliser le TP representation_tools.py sur dossier final, démonstration, soutenance et synthèse et exécuter deux tests de cas limites.
-- Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
+- Capacité officielle : P-HIST-01
 - Document utilisé : P14_tp_synthese_projet_oral.md, P14_trace_synthese_projet_oral.md.
 - Déroulé : 1. lecture du cahier des charges TP P14; 2. modification du fichier representation_tools.py; 3. exécution des tests; 4. capture des erreurs; 5. bilan dans le carnet.
 - Différenciation : socle : fichier representation_tools.py annoté; avancé : ajouter un test de bord et expliquer l’échec possible.
@@ -1592,7 +1592,7 @@
 - Nature : évaluation
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : passer évaluation projet final avec questions ciblées sur dossier final, démonstration, soutenance et synthèse, puis identifier les erreurs à corriger.
-- Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
+- Capacité officielle : P-HIST-01
 - Document utilisé : P14_evaluation_synthese_projet_oral.md, P14_version_amenagee_synthese_projet_oral.md.
 - Déroulé : 1. consignes et barème; 2. questions de restitution; 3. tâche pratique ou analyse P14; 4. auto-repérage des questions incertaines; 5. collecte pour correction.
 - Différenciation : aménagement : version avec étapes explicites; avancé : question bonus courte sans effet sur les capacités principales.
@@ -1610,8 +1610,8 @@
 - Nature : remédiation
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : corriger l’exercice bilan P14-R5 et consolider la trace écrite sur dossier final, démonstration, soutenance et synthèse.
-- Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
-- Document utilisé : P14_remediation_synthese_projet_oral.md, P14_corrige_synthese_projet_oral.md, P14_trace_synthese_projet_oral.md.
+- Capacité officielle : P-HIST-01
+- Document utilisé : P14_remediation_synthese_projet_oral.md, P14_trace_synthese_projet_oral.md.
 - Déroulé : 1. retour sur erreurs de P14; 2. correction guidée de P14-R5; 3. exercice voisin; 4. mise à jour de la trace; 5. choix d’un entraînement maison.
 - Différenciation : socle : correction pas à pas de P14-R5; avancé : produire une variante de l’exercice corrigé.
 - Livrable : production dans P14_remediation_synthese_projet_oral.md avec résultat, trace ou justification vérifiable.
@@ -1628,7 +1628,7 @@
 - Nature : projet
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P14-J6 en produisant un livrable vérifiable lié à dossier final, démonstration, soutenance et synthèse.
-- Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
+- Capacité officielle : P-HIST-01
 - Document utilisé : P14_tp_synthese_projet_oral.md, P14_trace_synthese_projet_oral.md.
 - Déroulé : 1. choix de l’objectif du jalon P14; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P14 minimal; groupes avancés : extension bornée avec test et justification.
@@ -1650,7 +1650,7 @@
 - Nature : projet
 - Statut support : support spécifique produit en needs_review ; séance opérationnelle à relire, non validée.
 - Objectif : avancer le jalon projet P14-J7 en produisant un livrable vérifiable lié à dossier final, démonstration, soutenance et synthèse.
-- Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
+- Capacité officielle : P-HIST-01
 - Document utilisé : P14_tp_synthese_projet_oral.md, P14_trace_synthese_projet_oral.md.
 - Déroulé : 1. choix de l’objectif du jalon P14; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P14 minimal; groupes avancés : extension bornée avec test et justification.
@@ -1670,16 +1670,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance reliée, non validée.
 - Objectif : avancer le jalon projet P14-J8 en produisant un livrable vérifiable lié à dossier final, démonstration, soutenance et synthèse.
-- Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Capacité officielle : P-HIST-01
+- Document utilisé : P14_tp_synthese_projet_oral.md, carnet_de_bord.md, P14_trace_synthese_projet_oral.md.
 - Déroulé : 1. choix de l’objectif du jalon P14; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P14 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P14_trace_synthese_projet_oral.md et appuyée par P14_tp_synthese_projet_oral.md.
+- Trace écrite : compléter P14_trace_synthese_projet_oral.md avec objectif, exemple corrigé, erreur fréquente et critère de réussite.
+- Devoir ou préparation : terminer un exercice ciblé dans P14_TD_synthese_projet_oral.md ou relire P14_cours_synthese_projet_oral.md.
+- Remédiation : utiliser P14_remediation_synthese_projet_oral.md pour reprendre l’erreur fréquente observée.
 - Jalon projet : P14-J8 sur dossier final, démonstration, soutenance et synthèse.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P14-J8.
 - Livrable projet : jalon à cadrer après production du support projet.
@@ -1692,16 +1692,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance reliée, non validée.
 - Objectif : avancer le jalon projet P14-J9 en produisant un livrable vérifiable lié à dossier final, démonstration, soutenance et synthèse.
-- Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Capacité officielle : P-HIST-01
+- Document utilisé : P14_tp_synthese_projet_oral.md, carnet_de_bord.md, P14_trace_synthese_projet_oral.md.
 - Déroulé : 1. choix de l’objectif du jalon P14; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P14 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P14_trace_synthese_projet_oral.md et appuyée par P14_tp_synthese_projet_oral.md.
+- Trace écrite : compléter P14_trace_synthese_projet_oral.md avec objectif, exemple corrigé, erreur fréquente et critère de réussite.
+- Devoir ou préparation : terminer un exercice ciblé dans P14_TD_synthese_projet_oral.md ou relire P14_cours_synthese_projet_oral.md.
+- Remédiation : utiliser P14_remediation_synthese_projet_oral.md pour reprendre l’erreur fréquente observée.
 - Jalon projet : P14-J9 sur dossier final, démonstration, soutenance et synthèse.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P14-J9.
 - Livrable projet : jalon à cadrer après production du support projet.
@@ -1714,16 +1714,16 @@
 - Période : fin d’année : synthèse, oral, projet final, pas de nouveau chapitre lourd
 - Mois : juin
 - Nature : projet
-- Statut support : théorique non prêt
+- Statut support : support spécifique produit en needs_review ; séance reliée, non validée.
 - Objectif : avancer le jalon projet P14-J10 en produisant un livrable vérifiable lié à dossier final, démonstration, soutenance et synthèse.
-- Capacité officielle : P-HIST-01, synthèse capacités atomiques Première
-- Document utilisé : support spécifique non produit dans cette tranche ; séance théorique non prête.
+- Capacité officielle : P-HIST-01
+- Document utilisé : P14_tp_synthese_projet_oral.md, carnet_de_bord.md, P14_trace_synthese_projet_oral.md.
 - Déroulé : 1. choix de l’objectif du jalon P14; 2. travail sur fichier projet; 3. test ou démonstration courte; 4. note dans le carnet de bord; 5. dépôt du livrable.
 - Différenciation : groupes fragiles : jalon P14 minimal; groupes avancés : extension bornée avec test et justification.
-- Livrable : intention de production à cadrer après création du support spécifique.
-- Trace écrite : non exploitable tant que le support spécifique de séance manque.
-- Devoir ou préparation : non fixé tant que le support spécifique manque.
-- Remédiation : à définir après production du corrigé et de la fiche de remédiation.
+- Livrable : production élève vérifiable dans P14_trace_synthese_projet_oral.md et appuyée par P14_tp_synthese_projet_oral.md.
+- Trace écrite : compléter P14_trace_synthese_projet_oral.md avec objectif, exemple corrigé, erreur fréquente et critère de réussite.
+- Devoir ou préparation : terminer un exercice ciblé dans P14_TD_synthese_projet_oral.md ou relire P14_cours_synthese_projet_oral.md.
+- Remédiation : utiliser P14_remediation_synthese_projet_oral.md pour reprendre l’erreur fréquente observée.
 - Jalon projet : P14-J10 sur dossier final, démonstration, soutenance et synthèse.
 - Rôle dans le carnet de bord : noter objectif, choix, test, blocage et contribution individuelle pour P14-J10.
 - Livrable projet : jalon à cadrer après production du support projet.

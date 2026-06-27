@@ -97,3 +97,31 @@ arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]
 - TD : `T07_TD_graphes_modelisation_listes_matrices.md`.
 - TP : `T07_tp_graphes_modelisation_listes_matrices.md`.
 - Évaluation : `T07_evaluation_graphes_modelisation_listes_matrices.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur graphes et représentations. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : sommet, arête, graphe orienté, liste d’adjacence, matrice d’adjacence, degré.
+- Capacités reliées : T-STRUCT-05A, T-STRUCT-05B, T-STRUCT-05C, T-STRUCT-05D.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- traduire une situation en sommets et arêtes.
+- passer de la liste d’adjacence à la matrice.
+- comparer le coût mémoire des deux représentations.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut oublier la symétrie d’un graphe non orienté ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut confondre voisin et successeur ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut compter deux fois une arête ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de graphes et représentations.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

@@ -98,3 +98,31 @@ adj={A:[B,C], B:[D], C:[E], D:[C], E:[]}
 - TD : `T08_TD_bfs_dfs_cycles_chemins.md`.
 - TP : `T08_tp_bfs_dfs_cycles_chemins.md`.
 - Évaluation : `T08_evaluation_bfs_dfs_cycles_chemins.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur parcours de graphes. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : BFS, DFS, file, pile, marquage, prédécesseur, chemin, cycle.
+- Capacités reliées : T-ALGO-02A, T-ALGO-02B, T-ALGO-02C, T-ALGO-02D.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- enfiler les voisins dans un BFS.
+- empiler ou appeler récursivement en DFS.
+- reconstruire un chemin avec les prédécesseurs.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut marquer un sommet trop tard ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut annoncer un chemin sans prédécesseur cohérent ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut ignorer une composante non connexe ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de parcours de graphes.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

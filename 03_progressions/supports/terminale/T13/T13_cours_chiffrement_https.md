@@ -94,3 +94,31 @@ Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test
 - TD : `T13_TD_chiffrement_https.md`.
 - TP : `T13_tp_chiffrement_https.md`.
 - Évaluation : `T13_evaluation_chiffrement_https.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur chiffrement et HTTPS. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : clé publique, clé privée, certificat, TLS, port 443, empreinte, autorité de certification.
+- Capacités reliées : T-ARCH-04A, T-ARCH-04B.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- expliquer le rôle du certificat serveur.
+- distinguer chiffrement symétrique et asymétrique.
+- repérer le port 443 dans un échange HTTPS.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut confondre hachage et chiffrement ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut faire transiter une clé privée ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut croire que HTTPS cache le nom du site à tous les niveaux ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de chiffrement et HTTPS.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

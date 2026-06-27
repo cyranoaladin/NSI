@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 757
-- Ressources needs_review : 757
+- Ressources inventoriées : 787
+- Ressources needs_review : 787
 - Ressources publiables : 0
-- Source generated : 749
+- Source generated : 779
 - Source adapted_from_drive : 7
 - Source import_partiel : 1
 - Source inspiration_drive : 0
@@ -73,8 +73,8 @@ python scripts/check_drive_mapping_release.py
 - Aucune capacité n'est covered.
 - Documents professeurs encore en needs_review.
 - Revue pédagogique et scientifique humaine absente.
-- Séances opérationnelles ou reliées : 127.
-- Séances théoriques ou non reliées : 95.
+- Séances opérationnelles ou reliées : 222.
+- Séances théoriques ou non reliées : 0.
 
 ## Fiches de cours
 
@@ -95,8 +95,9 @@ python scripts/check_drive_mapping_release.py
 ## Échelle capacités officielles
 
 - Capacités documented : 114
-- Capacités practiced : 92
-- Capacités assessed : 92
+- Capacités practiced : 114
+- Capacités assessed : 114
+- Capacités linked_to_session : 114
 - Capacités reviewed_pedagogy : 0
 - Capacités reviewed_science : 0
 - Capacités covered : 0
@@ -104,16 +105,25 @@ python scripts/check_drive_mapping_release.py
 
 ## TP papier / exécutables
 
-- TP papier : 27
-- TP exécutables : 13
-- Ratio papier : 67.5%
+- TP papier : 16
+- TP exécutables : 24
+- Ratio papier : 40.0%
+- Opportunités de conversion exécutable signalées : 16
+- Registre : `tp_executable_opportunity_register.md`.
 - Les TP papier restent `needs_review` et ne remplacent pas une revue humaine.
 
 ## Séances opérationnelles / théoriques
 
-- Séances opérationnelles ou reliées : 127
-- Séances théoriques ou non reliées : 95
+- Séances opérationnelles ou reliées : 222
+- Séances théoriques ou non reliées : 0
 - Les séances théoriques restantes doivent être reliées explicitement aux supports produits avant publication.
+
+## Revue humaine
+
+- Ressources majeures à relire : 466
+- Lignes dans `human_review_register.csv` : 466
+- Statut initial : pending pour science, pédagogie, accessibilité et technique.
+- Aucune ligne du registre ne promeut `validated_*`, `published` ou `covered`.
 
 ## Fiches liées non opérationnelles
 

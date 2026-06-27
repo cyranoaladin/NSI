@@ -1,8 +1,8 @@
 ---
-title: "T07 - tp_papier - graphes, listes et matrices"
+title: "T07 - tp - graphes, listes et matrices"
 level: "terminale"
 sequence_id: "T07"
-document_type: "tp_papier"
+document_type: "tp"
 status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
@@ -21,7 +21,17 @@ official_program:
 # T07 - TP - graphes, listes et matrices
 
 ## Statut du TP
-TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
+TP exécutable : utiliser les fichiers du dossier `code/` (T07_starter_graphes_modelisation_listes_matrices.py, T07_tests_attendus_graphes_modelisation_listes_matrices.py, T07_corrige_professeur_graphes_modelisation_listes_matrices.py).
+
+## Objectif opérationnel
+Transformer une liste d'arcs en liste d'adjacence et en matrice d'adjacence, puis interpréter les voisins selon l'orientation du graphe.
+
+Le TP sépare volontairement trois représentations :
+- les arcs d'entrée, qui sont des couples ordonnés ;
+- la liste d'adjacence, qui donne les voisins sortants ;
+- la matrice d'adjacence, qui indique `1` quand un arc existe.
+
+Un sommet isolé doit être conservé avec une liste vide et une ligne de matrice remplie de zéros.
 
 ## Donnée fournie
 `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`
@@ -68,6 +78,45 @@ Résultat attendu : `sommet isolé E` traité sans ambiguïté.
 - La trace ou le pseudo-code conduit à `A -> [B,C], B -> [D], C -> [D], D -> [B]`.
 - Au moins un cas limite de la section précédente est décidé.
 
+## Trace attendue détaillée
+Sommets retenus : `A`, `B`, `C`, `D`, `E`.
+
+Construction de la liste d'adjacence :
+1. avec `(A,B)`, ajouter `B` aux voisins sortants de `A` ;
+2. avec `(A,C)`, ajouter `C` aux voisins sortants de `A` ;
+3. avec `(B,D)`, ajouter `D` aux voisins sortants de `B` ;
+4. avec `(C,D)`, ajouter `D` aux voisins sortants de `C` ;
+5. avec `(D,B)`, ajouter `B` aux voisins sortants de `D` ;
+6. le sommet `E` reste présent avec `[]`.
+
+Résultat attendu :
+- `A -> [B, C]`
+- `B -> [D]`
+- `C -> [D]`
+- `D -> [B]`
+- `E -> []`
+
+Construction de la matrice avec l'ordre `A, B, C, D, E` :
+- ligne `A` : `[0, 1, 1, 0, 0]` ;
+- ligne `B` : `[0, 0, 0, 1, 0]` ;
+- ligne `C` : `[0, 0, 0, 1, 0]` ;
+- ligne `D` : `[0, 1, 0, 0, 0]` ;
+- ligne `E` : `[0, 0, 0, 0, 0]`.
+
+## Exigences sur le code
+- La fonction `liste_adjacence` doit créer une entrée pour chaque sommet annoncé, même isolé.
+- La fonction `matrice_adjacence` doit respecter l'ordre des sommets fourni.
+- Un arc `(D,B)` ne doit pas créer automatiquement `(B,D)` : le graphe est orienté.
+- Le degré sortant de `A` vaut `2`.
+- Le degré sortant de `E` vaut `0`.
+
+## Vérifications manuelles avant tests
+- `voisins["A"] == ["B", "C"]`.
+- `voisins["E"] == []`.
+- `matrice[0] == [0, 1, 1, 0, 0]`.
+- `matrice[4] == [0, 0, 0, 0, 0]`.
+- Le coût mémoire de la matrice est expliqué comme proportionnel à `n^2`.
+
 
 
 ## Protocole de validation complémentaire
@@ -83,3 +132,10 @@ Résultat attendu : `sommet isolé E` traité sans ambiguïté.
 - Trace courte indiquant entrée, traitement, sortie et cas limite.
 - Capture textuelle des tests attendus : nominal OK, cas limite OK, entrée invalide traitée.
 - Commentaire final indiquant la capacité officielle réellement travaillée.
+
+
+## Assets Python
+- Starter élève : `code/T07_starter_graphes_modelisation_listes_matrices.py`.
+- Tests attendus : `code/T07_tests_attendus_graphes_modelisation_listes_matrices.py`.
+- Corrigé professeur : `code/T07_corrige_professeur_graphes_modelisation_listes_matrices.py`.
+- Le starter doit échouer aux tests complets ; le corrigé professeur doit passer.

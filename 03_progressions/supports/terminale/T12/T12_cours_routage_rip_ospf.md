@@ -92,3 +92,31 @@ RIP A-B-D=2 sauts, A-C-D=2 sauts ; OSPF A-B=5, B-D=5, A-C=2, C-D=9
 - TD : `T12_TD_routage_rip_ospf.md`.
 - TP : `T12_tp_routage_rip_ospf.md`.
 - Évaluation : `T12_evaluation_routage_rip_ospf.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur routage RIP et OSPF. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : route, métrique, préfixe, passerelle, RIP, OSPF, coût, table de routage.
+- Capacités reliées : T-ARCH-03.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- choisir la route au plus long préfixe.
+- mettre à jour une métrique RIP.
+- comparer un coût OSPF à une métrique de saut.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut confondre route par défaut et route locale ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut oublier le préfixe le plus spécifique ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut mélanger adresse MAC et passerelle IP ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de routage RIP et OSPF.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

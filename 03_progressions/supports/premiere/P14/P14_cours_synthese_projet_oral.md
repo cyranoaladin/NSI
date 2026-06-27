@@ -91,3 +91,31 @@ projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 di
 - TD : `P14_TD_synthese_projet_oral.md`.
 - TP : `P14_tp_synthese_projet_oral.md`.
 - Évaluation : `P14_evaluation_synthese_projet_oral.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur synthèse, projet et oral. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : problématique, démonstration, preuve de test, architecture, choix technique, carnet de bord.
+- Capacités reliées : P-HIST-01.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- relier chaque fonctionnalité à une preuve de test.
+- préparer une démonstration reproductible.
+- expliquer un choix technique avec une contrainte.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut présenter une interface sans expliquer l’algorithme ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut oublier la preuve de fonctionnement ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut confondre journal de bord et rapport final ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de synthèse, projet et oral.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

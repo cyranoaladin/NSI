@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Separate documented/practiced/assessed from human-reviewed and covered."""
+"""Separate documentary progression from human-reviewed and covered status."""
 
 from __future__ import annotations
 
@@ -8,8 +8,9 @@ from pathlib import Path
 import csv
 import re
 
-from _qa_common import ROOT
+from _qa_common import ROOT, sequence_id_from_path
 from check_official_program_capacity_coverage_matrix import load_official_capacities
+from check_session_referenced_files_exist import describe_session, session_blocks
 
 
 CAPACITY_RE = re.compile(r"\b[PT](?:-[A-Z]+)+-\d{2}[A-Z]?\b")
@@ -28,6 +29,31 @@ def docs(root: Path) -> list[Path]:
 
 def contains_capacity(paths: list[Path], capacity_id: str) -> list[Path]:
     return [path for path in paths if capacity_id in path.read_text(encoding="utf-8", errors="replace")]
+
+
+def sequence_ids(paths: list[Path]) -> set[str]:
+    return {sequence for path in paths if (sequence := sequence_id_from_path(path))}
+
+
+def files_in_sequences(paths: list[Path], sequences: set[str]) -> list[Path]:
+    return [path for path in paths if sequence_id_from_path(path) in sequences]
+
+
+def linked_session_exists(root: Path, capacity_id: str, sequences: set[str]) -> bool:
+    for session_path in [
+        root / "03_progressions" / "seances_premiere.md",
+        root / "03_progressions" / "seances_terminale.md",
+    ]:
+        if not session_path.exists():
+            continue
+        for session_id, block in session_blocks(session_path):
+            prefix = session_id.split("-", 1)[0]
+            if prefix not in sequences and capacity_id not in block:
+                continue
+            info = describe_session(root, session_id, block)
+            if info.existing_specific_refs and not info.theoretical:
+                return True
+    return False
 
 
 def manifest_status_errors(root: Path) -> list[str]:
@@ -52,22 +78,39 @@ def analyze_capacity_status_ladder(root: Path = ROOT) -> CapacityLadderResult:
 
     for entry in load_official_capacities(root):
         capacity_id = entry["id"]
-        documented = bool(contains_capacity(sheet_or_course, capacity_id))
-        practiced = bool(contains_capacity(practice, capacity_id))
-        assessed = bool(contains_capacity(assessments, capacity_id))
+        documented_hits = contains_capacity(sheet_or_course, capacity_id)
+        practice_hits = contains_capacity(practice, capacity_id)
+        assessment_hits = contains_capacity(assessments, capacity_id)
+        sequences = sequence_ids(documented_hits + practice_hits + assessment_hits)
+        if documented_hits and not practice_hits:
+            practice_hits = files_in_sequences(practice, sequences)
+        if documented_hits and not assessment_hits:
+            assessment_hits = files_in_sequences(assessments, sequences)
+
+        documented = bool(documented_hits)
+        practiced = bool(practice_hits)
+        assessed = bool(assessment_hits)
+        linked_to_session = linked_session_exists(root, capacity_id, sequences)
+        status = "documentary_ready" if documented and practiced and assessed else "incomplete_documentary"
         row = {
             "niveau": entry["niveau"],
             "thème officiel": entry["theme"],
             "documented": "oui" if documented else "non",
             "practiced": "oui" if practiced else "non",
             "assessed": "oui" if assessed else "non",
+            "linked_to_session": "oui" if linked_to_session else "non",
             "reviewed_pedagogy": "non",
             "reviewed_science": "non",
             "covered": "non",
+            "statut": status,
         }
         result.rows[capacity_id] = row
         if not documented:
             result.errors.append(f"{capacity_id}: documented=non")
+        if documented and not practiced:
+            result.errors.append(f"{capacity_id}: practiced=non")
+        if documented and not assessed:
+            result.errors.append(f"{capacity_id}: assessed=non")
 
     result.errors.extend(manifest_status_errors(root))
     return result
@@ -75,8 +118,8 @@ def analyze_capacity_status_ladder(root: Path = ROOT) -> CapacityLadderResult:
 
 def main() -> int:
     result = analyze_capacity_status_ladder()
-    print("| capacité | documented | practiced | assessed | reviewed_pedagogy | reviewed_science | covered |")
-    print("|---|---|---|---|---|---|---|")
+    print("| capacité | documented | practiced | assessed | linked_to_session | reviewed_pedagogy | reviewed_science | covered | statut |")
+    print("|---|---|---|---|---|---|---|---|---|")
     for capacity_id, row in sorted(result.rows.items()):
         print(
             "| "
@@ -86,9 +129,11 @@ def main() -> int:
                     row["documented"],
                     row["practiced"],
                     row["assessed"],
+                    row["linked_to_session"],
                     row["reviewed_pedagogy"],
                     row["reviewed_science"],
                     row["covered"],
+                    row["statut"],
                 ]
             )
             + " |"

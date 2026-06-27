@@ -93,3 +93,31 @@ ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14
 - TD : `T06_TD_arbres_binaires_recherche.md`.
 - TP : `T06_tp_arbres_binaires_recherche.md`.
 - Évaluation : `T06_evaluation_arbres_binaires_recherche.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur arbres binaires de recherche. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : racine, sous-arbre gauche, sous-arbre droit, invariant, parcours infixe, hauteur.
+- Capacités reliées : T-ALGO-01E, T-ALGO-01F.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- comparer la clé cherchée à la racine puis descendre du bon côté.
+- insérer une clé en préservant gauche < racine < droite.
+- vérifier le parcours infixe trié.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut placer un doublon sans règle explicite ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut confondre arbre binaire et ABR ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut oublier le cas arbre vide ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de arbres binaires de recherche.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

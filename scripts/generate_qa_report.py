@@ -12,9 +12,11 @@ from pathlib import Path
 from _course_sheets_common import compute_sheet_readiness, course_sheet_links, frontmatter_capacities, planned_sequences, read_frontmatter, resource_exists, sheets_by_sequence
 from check_capacity_status_ladder import analyze_capacity_status_ladder
 from check_course_sheet_readiness_strict import analyze_course_sheet_readiness_strict
+from check_human_review_register import analyze_human_review_register
 from check_missing_register_actionability import load_register_rows
 from check_paper_tp_justification import analyze_paper_tp_justification
 from check_session_to_resource_alignment import analyze_session_to_resource_alignment
+from check_tp_executable_opportunity import analyze_tp_executable_opportunity
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "manifest.csv"
@@ -193,9 +195,12 @@ def main() -> int:
         "documented": sum(1 for row in capacity_ladder.rows.values() if row["documented"] == "oui"),
         "practiced": sum(1 for row in capacity_ladder.rows.values() if row["practiced"] == "oui"),
         "assessed": sum(1 for row in capacity_ladder.rows.values() if row["assessed"] == "oui"),
+        "linked_to_session": sum(1 for row in capacity_ladder.rows.values() if row["linked_to_session"] == "oui"),
         "covered": sum(1 for row in capacity_ladder.rows.values() if row["covered"] == "oui"),
     }
     paper_tp = analyze_paper_tp_justification(ROOT)
+    tp_opportunities = analyze_tp_executable_opportunity(ROOT)
+    human_review = analyze_human_review_register(ROOT)
     session_alignment = analyze_session_to_resource_alignment(ROOT)
     lines = [
         "# QA Report",
@@ -290,6 +295,7 @@ def main() -> int:
         f"- Capacités documented : {capacity_counts['documented']}",
         f"- Capacités practiced : {capacity_counts['practiced']}",
         f"- Capacités assessed : {capacity_counts['assessed']}",
+        f"- Capacités linked_to_session : {capacity_counts['linked_to_session']}",
         "- Capacités reviewed_pedagogy : 0",
         "- Capacités reviewed_science : 0",
         f"- Capacités covered : {capacity_counts['covered']}",
@@ -300,6 +306,8 @@ def main() -> int:
         f"- TP papier : {paper_tp.paper_count}",
         f"- TP exécutables : {paper_tp.executable_count}",
         f"- Ratio papier : {(paper_tp.paper_count / (paper_tp.paper_count + paper_tp.executable_count) * 100) if (paper_tp.paper_count + paper_tp.executable_count) else 0:.1f}%",
+        f"- Opportunités de conversion exécutable signalées : {len(tp_opportunities.opportunities)}",
+        "- Registre : `tp_executable_opportunity_register.md`.",
         "- Les TP papier restent `needs_review` et ne remplacent pas une revue humaine.",
         "",
         "## Séances opérationnelles / théoriques",
@@ -307,6 +315,13 @@ def main() -> int:
         f"- Séances opérationnelles ou reliées : {session_alignment.operational_count}",
         f"- Séances théoriques ou non reliées : {session_alignment.theoretical_count}",
         "- Les séances théoriques restantes doivent être reliées explicitement aux supports produits avant publication.",
+        "",
+        "## Revue humaine",
+        "",
+        f"- Ressources majeures à relire : {human_review.expected_count}",
+        f"- Lignes dans `human_review_register.csv` : {human_review.registered_count}",
+        "- Statut initial : pending pour science, pédagogie, accessibilité et technique.",
+        "- Aucune ligne du registre ne promeut `validated_*`, `published` ou `covered`.",
         "",
         "## Fiches liées non opérationnelles",
         "",

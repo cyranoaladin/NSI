@@ -85,8 +85,18 @@ Les noms propres suspects sont listés pour revue humaine.
 - drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
 - drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
 - drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
+- drive_remaining_action_plan.md: nom propre suspect -> Dossier Git Drive
 - drive_sources.yml: nom propre suspect -> Ressources Drive
 - evaluation_bareme_alignment_report.md: nom propre suspect -> Evaluation Bareme Alignment Report
+- human_review_register.csv: nom propre suspect -> Grand Oral
+- human_review_register.csv: nom propre suspect -> Grand Oral
+- human_review_register.csv: nom propre suspect -> Grand Oral
+- human_review_register.csv: nom propre suspect -> Grand Oral
+- human_review_register.csv: nom propre suspect -> Grand Oral
+- human_review_register.csv: nom propre suspect -> Grand Oral
+- human_review_register.csv: nom propre suspect -> Grand Oral
+- human_review_register.csv: nom propre suspect -> Grand Oral
+- human_review_register.csv: nom propre suspect -> Grand Oral
 - learning_objectives_assessed_report.md: nom propre suspect -> Learning Objectives Assessed Report
 - manifest.csv: nom propre suspect -> Grand Oral
 - manifest.csv: nom propre suspect -> Grand Oral
@@ -349,6 +359,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P03/code/P03_starter_texte_reels.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P03/code/P03_tests_attendus_texte_reels.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md: nom propre suspect -> Fonctions Python
+- 03_progressions/supports/premiere/P12/P12_tp_tris_invariants_complexite.md: nom propre suspect -> Assets Python
 - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md: nom propre suspect -> Reprise Python
@@ -371,5 +382,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/code/T00_corrige_professeur_diagnostic_tests.py: nom propre suspect -> Asset Python
-- ... 235 alertes supplémentaires non affichées
+- ... 258 alertes supplémentaires non affichées

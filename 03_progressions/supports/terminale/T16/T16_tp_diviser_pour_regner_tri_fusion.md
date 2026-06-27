@@ -1,8 +1,8 @@
 ---
-title: "T16 - tp_papier - diviser pour régner et tri fusion"
+title: "T16 - tp - diviser pour régner et tri fusion"
 level: "terminale"
 sequence_id: "T16"
-document_type: "tp_papier"
+document_type: "tp"
 status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
@@ -18,7 +18,7 @@ official_program:
 # T16 - TP - diviser pour régner et tri fusion
 
 ## Statut du TP
-TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
+TP exécutable : utiliser les fichiers du dossier `code/` (T16_starter_diviser_pour_regner_tri_fusion.py, T16_tests_attendus_diviser_pour_regner_tri_fusion.py, T16_corrige_professeur_diviser_pour_regner_tri_fusion.py).
 
 ## Donnée fournie
 `valeurs=[38,12,27,12,5,44]`
@@ -65,3 +65,10 @@ Résultat attendu : `liste vide` traité sans ambiguïté.
 - La trace ou le pseudo-code conduit à `division -> [38,12,27] et [12,5,44]`.
 - Au moins un cas limite de la section précédente est décidé.
 
+
+
+## Assets Python
+- Starter élève : `code/T16_starter_diviser_pour_regner_tri_fusion.py`.
+- Tests attendus : `code/T16_tests_attendus_diviser_pour_regner_tri_fusion.py`.
+- Corrigé professeur : `code/T16_corrige_professeur_diviser_pour_regner_tri_fusion.py`.
+- Le starter doit échouer aux tests complets ; le corrigé professeur doit passer.

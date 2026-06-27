@@ -1,8 +1,8 @@
 ---
-title: "T06 - tp_papier - arbres binaires de recherche"
+title: "T06 - tp - arbres binaires de recherche"
 level: "terminale"
 sequence_id: "T06"
-document_type: "tp_papier"
+document_type: "tp"
 status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
@@ -19,7 +19,17 @@ official_program:
 # T06 - TP - arbres binaires de recherche
 
 ## Statut du TP
-TP papier : ce support n attend aucune ressource Python ; le livrable est une trace écrite vérifiable.
+TP exécutable : utiliser les fichiers du dossier `code/` (T06_starter_arbres_binaires_recherche.py, T06_tests_attendus_arbres_binaires_recherche.py, T06_corrige_professeur_arbres_binaires_recherche.py).
+
+## Objectif opérationnel
+Construire un ABR à partir d'insertions successives, vérifier son invariant et produire une trace de recherche lisible.
+
+L'élève doit distinguer trois décisions :
+- comparer la valeur cherchée à la racine courante ;
+- descendre à gauche si la valeur est plus petite ;
+- descendre à droite si la valeur est plus grande.
+
+La règle de doublon retenue dans ce TP est explicite : une valeur déjà présente n'est pas insérée une seconde fois.
 
 ## Donnée fournie
 `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`
@@ -66,6 +76,42 @@ Résultat attendu : `arbre vide` traité sans ambiguïté.
 - La trace ou le pseudo-code conduit à `chercher 6 : 8 -> 3 -> 6`.
 - Au moins un cas limite de la section précédente est décidé.
 
+## Trace attendue détaillée
+Insertion de la séquence `[8, 3, 10, 1, 6, 14]` :
+1. `8` devient racine.
+2. `3 < 8`, donc `3` devient fils gauche de `8`.
+3. `10 > 8`, donc `10` devient fils droit de `8`.
+4. `1 < 8` puis `1 < 3`, donc `1` devient fils gauche de `3`.
+5. `6 < 8` puis `6 > 3`, donc `6` devient fils droit de `3`.
+6. `14 > 8` puis `14 > 10`, donc `14` devient fils droit de `10`.
+
+Parcours infixe attendu : `[1, 3, 6, 8, 10, 14]`.
+
+Recherche de `6` :
+1. comparer `6` à `8` : descendre à gauche ;
+2. comparer `6` à `3` : descendre à droite ;
+3. comparer `6` à `6` : valeur trouvée.
+
+Recherche de `7` :
+1. comparer `7` à `8` : descendre à gauche ;
+2. comparer `7` à `3` : descendre à droite ;
+3. comparer `7` à `6` : descendre à droite ;
+4. le sous-arbre droit de `6` est vide, donc `7` est absent.
+
+## Exigences sur le code
+- La fonction d'insertion ne doit jamais trier une liste à la place de construire l'arbre.
+- La recherche doit suivre les pointeurs gauche/droite et ne pas parcourir tous les noeuds.
+- Le parcours infixe doit visiter gauche, racine, droite.
+- Une insertion de doublon `6` doit laisser le parcours infixe inchangé.
+- Une recherche dans un arbre vide doit retourner `False` ou une trace vide documentée dans le code.
+
+## Vérifications manuelles avant tests
+- `contient(racine, 6)` vaut `True`.
+- `contient(racine, 7)` vaut `False`.
+- `infixe(racine)` donne `[1, 3, 6, 8, 10, 14]`.
+- Après tentative de réinsertion de `6`, `infixe(racine)` reste `[1, 3, 6, 8, 10, 14]`.
+- La hauteur n'est pas présentée comme logarithmique si l'arbre n'est pas équilibré.
+
 
 
 ## Protocole de validation complémentaire
@@ -81,3 +127,10 @@ Résultat attendu : `arbre vide` traité sans ambiguïté.
 - Trace courte indiquant entrée, traitement, sortie et cas limite.
 - Capture textuelle des tests attendus : nominal OK, cas limite OK, entrée invalide traitée.
 - Commentaire final indiquant la capacité officielle réellement travaillée.
+
+
+## Assets Python
+- Starter élève : `code/T06_starter_arbres_binaires_recherche.py`.
+- Tests attendus : `code/T06_tests_attendus_arbres_binaires_recherche.py`.
+- Corrigé professeur : `code/T06_corrige_professeur_arbres_binaires_recherche.py`.
+- Le starter doit échouer aux tests complets ; le corrigé professeur doit passer.

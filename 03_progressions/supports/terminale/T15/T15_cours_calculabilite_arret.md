@@ -94,3 +94,31 @@ arrete(P,x) prétend répondre True si P(x) termine ; Q appelle arrete(Q,Q)
 - TD : `T15_TD_calculabilite_arret.md`.
 - TP : `T15_tp_calculabilite_arret.md`.
 - Évaluation : `T15_evaluation_calculabilite_arret.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur calculabilité et arrêt. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : programme, entrée, terminaison, indécidabilité, contradiction, simulation.
+- Capacités reliées : T-LANG-01A, T-LANG-01B, T-LANG-01C.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- distinguer un programme qui boucle d’un programme lent.
+- formuler le problème de l’arrêt sur une entrée donnée.
+- expliquer le raisonnement par contradiction sans le coder.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut confondre non calculé et non calculable ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut tester quelques cas et conclure universellement ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut oublier que l’entrée fait partie du problème ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de calculabilité et arrêt.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

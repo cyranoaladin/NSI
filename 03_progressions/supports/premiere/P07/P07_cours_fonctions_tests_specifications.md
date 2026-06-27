@@ -104,3 +104,31 @@ prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError
 - TD : `P07_TD_fonctions_tests_specifications.md`.
 - TP : `P07_tp_fonctions_tests_specifications.md`.
 - Évaluation : `P07_evaluation_fonctions_tests_specifications.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur fonctions et tests. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : signature, précondition, postcondition, assertion, test unitaire, effet de bord.
+- Capacités reliées : P-LANG-01, P-LANG-02, P-LANG-03A, P-LANG-03B, P-LANG-03C, P-LANG-04, P-LANG-05.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- vérifier une signature avant d’écrire le corps de la fonction.
+- tester une valeur limite avant une valeur ordinaire.
+- isoler une fonction pure d’une procédure qui modifie une liste.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut confondre précondition et test de sortie ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut oublier le cas liste vide dans une moyenne ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut mélanger valeur renvoyée et affichage avec print ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de fonctions et tests.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

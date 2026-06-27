@@ -102,3 +102,31 @@ meteo.py expose moyenne_temperature(releves) ; releves=[{ville:Sfax,temperature:
 - TD : `T14_TD_modularite_api_paradigmes_bugs.md`.
 - TP : `T14_tp_modularite_api_paradigmes_bugs.md`.
 - Évaluation : `T14_evaluation_modularite_api_paradigmes_bugs.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur modularité, API et bugs. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : module, interface, contrat, API, exception, test de régression, effet de bord.
+- Capacités reliées : T-LANG-03A, T-LANG-03B, T-LANG-03C, T-LANG-04A, T-LANG-04B, T-LANG-05.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- définir une interface minimale avant l’implémentation.
+- écrire un test qui reproduit un bug.
+- isoler une dépendance dans un module.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut modifier une API sans mettre à jour ses appels ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut masquer une exception utile ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut corriger un bug sans test de régression ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de modularité, API et bugs.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

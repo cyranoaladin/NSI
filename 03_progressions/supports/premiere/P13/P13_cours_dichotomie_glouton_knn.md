@@ -95,3 +95,31 @@ tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[
 - TD : `P13_TD_dichotomie_glouton_knn.md`.
 - TP : `P13_tp_dichotomie_glouton_knn.md`.
 - Évaluation : `P13_evaluation_dichotomie_glouton_knn.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur dichotomie, glouton et k plus proches voisins. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : intervalle de recherche, milieu, choix glouton, contre-exemple, distance.
+- Capacités reliées : P-ALGO-03, P-ALGO-04, P-ALGO-05.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- réduire l’intervalle de dichotomie après chaque comparaison.
+- justifier un choix glouton local.
+- calculer les distances avant de classer les voisins.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut oublier que la dichotomie exige des données triées ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut confondre choix local et optimal global ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut ignorer une égalité de distance ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de dichotomie, glouton et k plus proches voisins.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.

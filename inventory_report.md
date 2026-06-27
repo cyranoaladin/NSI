@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 757
+- Total ressources : 787
 - Ressources pédagogiques : 53
-- Ressources techniques : 704
+- Ressources techniques : 734
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 749
+- generated: 779
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 290
-- premiere: 212
-- terminale: 255
+- interne: 296
+- premiere: 215
+- terminale: 276
 
 ## Répartition par type
 - banque: 14
-- document: 465
-- python: 39
-- script: 151
+- document: 468
+- python: 63
+- script: 153
 - sequence: 45
-- test: 43
+- test: 44
 
 ## Répartition par statut
-- needs_review: 757
+- needs_review: 787
 
 ## Répartition audience
-- corrige: 57
-- eleve: 105
-- mixte: 592
+- corrige: 65
+- eleve: 116
+- mixte: 603
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -277,6 +277,9 @@
   - 03_progressions/supports/premiere/P12/P12_tp_tris_invariants_complexite.md
   - 03_progressions/supports/premiere/P12/P12_trace_tris_invariants_complexite.md
   - 03_progressions/supports/premiere/P12/P12_version_amenagee_tris_invariants_complexite.md
+  - 03_progressions/supports/premiere/P12/code/P12_corrige_professeur_tris_invariants_complexite.py
+  - 03_progressions/supports/premiere/P12/code/P12_starter_tris_invariants_complexite.py
+  - 03_progressions/supports/premiere/P12/code/P12_tests_attendus_tris_invariants_complexite.py
   - 03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md
   - 03_progressions/supports/premiere/P13/P13_bareme_dichotomie_glouton_knn.md
   - 03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md
@@ -377,6 +380,9 @@
   - 03_progressions/supports/terminale/T06/T06_tp_arbres_binaires_recherche.md
   - 03_progressions/supports/terminale/T06/T06_trace_arbres_binaires_recherche.md
   - 03_progressions/supports/terminale/T06/T06_version_amenagee_arbres_binaires_recherche.md
+  - 03_progressions/supports/terminale/T06/code/T06_corrige_professeur_arbres_binaires_recherche.py
+  - 03_progressions/supports/terminale/T06/code/T06_starter_arbres_binaires_recherche.py
+  - 03_progressions/supports/terminale/T06/code/T06_tests_attendus_arbres_binaires_recherche.py
   - 03_progressions/supports/terminale/T07/T07_TD_graphes_modelisation_listes_matrices.md
   - 03_progressions/supports/terminale/T07/T07_TP_graphes_modelisation_listes_matrices.md
   - 03_progressions/supports/terminale/T07/T07_bareme_graphes_modelisation_listes_matrices.md
@@ -387,6 +393,9 @@
   - 03_progressions/supports/terminale/T07/T07_tp_graphes_modelisation_listes_matrices.md
   - 03_progressions/supports/terminale/T07/T07_trace_graphes_modelisation_listes_matrices.md
   - 03_progressions/supports/terminale/T07/T07_version_amenagee_graphes_modelisation_listes_matrices.md
+  - 03_progressions/supports/terminale/T07/code/T07_corrige_professeur_graphes_modelisation_listes_matrices.py
+  - 03_progressions/supports/terminale/T07/code/T07_starter_graphes_modelisation_listes_matrices.py
+  - 03_progressions/supports/terminale/T07/code/T07_tests_attendus_graphes_modelisation_listes_matrices.py
   - 03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md
   - 03_progressions/supports/terminale/T08/T08_TP_bfs_dfs_cycles_chemins.md
   - 03_progressions/supports/terminale/T08/T08_bareme_bfs_dfs_cycles_chemins.md
@@ -397,6 +406,9 @@
   - 03_progressions/supports/terminale/T08/T08_tp_bfs_dfs_cycles_chemins.md
   - 03_progressions/supports/terminale/T08/T08_trace_bfs_dfs_cycles_chemins.md
   - 03_progressions/supports/terminale/T08/T08_version_amenagee_bfs_dfs_cycles_chemins.md
+  - 03_progressions/supports/terminale/T08/code/T08_corrige_professeur_bfs_dfs_cycles_chemins.py
+  - 03_progressions/supports/terminale/T08/code/T08_starter_bfs_dfs_cycles_chemins.py
+  - 03_progressions/supports/terminale/T08/code/T08_tests_attendus_bfs_dfs_cycles_chemins.py
   - 03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md
   - 03_progressions/supports/terminale/T09/T09_bareme_bases_relationnelles_cles_contraintes.md
   - 03_progressions/supports/terminale/T09/T09_corrige_bases_relationnelles_cles_contraintes.md
@@ -417,6 +429,9 @@
   - 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md
   - 03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md
   - 03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md
+  - 03_progressions/supports/terminale/T10/code/T10_corrige_professeur_sql_select_where_join.py
+  - 03_progressions/supports/terminale/T10/code/T10_starter_sql_select_where_join.py
+  - 03_progressions/supports/terminale/T10/code/T10_tests_attendus_sql_select_where_join.py
   - 03_progressions/supports/terminale/T11/T11_TD_processus_ordonnancement_interblocage.md
   - 03_progressions/supports/terminale/T11/T11_bareme_processus_ordonnancement_interblocage.md
   - 03_progressions/supports/terminale/T11/T11_corrige_processus_ordonnancement_interblocage.md
@@ -435,6 +450,9 @@
   - 03_progressions/supports/terminale/T12/T12_tp_routage_rip_ospf.md
   - 03_progressions/supports/terminale/T12/T12_trace_routage_rip_ospf.md
   - 03_progressions/supports/terminale/T12/T12_version_amenagee_routage_rip_ospf.md
+  - 03_progressions/supports/terminale/T12/code/T12_corrige_professeur_routage_rip_ospf.py
+  - 03_progressions/supports/terminale/T12/code/T12_starter_routage_rip_ospf.py
+  - 03_progressions/supports/terminale/T12/code/T12_tests_attendus_routage_rip_ospf.py
   - 03_progressions/supports/terminale/T13/T13_TD_chiffrement_https.md
   - 03_progressions/supports/terminale/T13/T13_bareme_chiffrement_https.md
   - 03_progressions/supports/terminale/T13/T13_corrige_chiffrement_https.md
@@ -471,6 +489,9 @@
   - 03_progressions/supports/terminale/T16/T16_tp_diviser_pour_regner_tri_fusion.md
   - 03_progressions/supports/terminale/T16/T16_trace_diviser_pour_regner_tri_fusion.md
   - 03_progressions/supports/terminale/T16/T16_version_amenagee_diviser_pour_regner_tri_fusion.md
+  - 03_progressions/supports/terminale/T16/code/T16_corrige_professeur_diviser_pour_regner_tri_fusion.py
+  - 03_progressions/supports/terminale/T16/code/T16_starter_diviser_pour_regner_tri_fusion.py
+  - 03_progressions/supports/terminale/T16/code/T16_tests_attendus_diviser_pour_regner_tri_fusion.py
   - 03_progressions/supports/terminale/T17/T17_TD_programmation_dynamique.md
   - 03_progressions/supports/terminale/T17/T17_bareme_programmation_dynamique.md
   - 03_progressions/supports/terminale/T17/T17_corrige_programmation_dynamique.md
@@ -480,6 +501,9 @@
   - 03_progressions/supports/terminale/T17/T17_tp_programmation_dynamique.md
   - 03_progressions/supports/terminale/T17/T17_trace_programmation_dynamique.md
   - 03_progressions/supports/terminale/T17/T17_version_amenagee_programmation_dynamique.md
+  - 03_progressions/supports/terminale/T17/code/T17_corrige_professeur_programmation_dynamique.py
+  - 03_progressions/supports/terminale/T17/code/T17_starter_programmation_dynamique.py
+  - 03_progressions/supports/terminale/T17/code/T17_tests_attendus_programmation_dynamique.py
   - 03_progressions/supports/terminale/T18/T18_TD_boyer_moore.md
   - 03_progressions/supports/terminale/T18/T18_bareme_boyer_moore.md
   - 03_progressions/supports/terminale/T18/T18_corrige_boyer_moore.md
@@ -511,12 +535,14 @@
   - drive_mapping.md
   - drive_quarantine/README.md
   - drive_quarantine_manifest.csv
+  - drive_remaining_action_plan.md
   - drive_sources.yml
   - evaluation_bareme_alignment_report.md
   - human_review_checklist_accessibility.md
   - human_review_checklist_pedagogy.md
   - human_review_checklist_science.md
   - human_review_protocol.md
+  - human_review_register.csv
   - learning_objectives_assessed_report.md
   - missing_capabilities.md
   - missing_documents_register.md
@@ -619,6 +645,7 @@
   - scripts/check_generated_template_residue.py
   - scripts/check_git_clean.py
   - scripts/check_graph_algorithm_trace_consistency.py
+  - scripts/check_human_review_register.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_linked_evaluation_quality.py
   - scripts/check_linked_evaluation_substance.py
@@ -700,6 +727,7 @@
   - scripts/check_td_corrige_alignment.py
   - scripts/check_teacher_corrections_alignment.py
   - scripts/check_teacher_docs_depth.py
+  - scripts/check_tp_executable_opportunity.py
   - scripts/check_tp_pedagogical_assets.py
   - scripts/check_tp_pedagogical_assets_runtime.py
   - scripts/check_tp_test_alignment.py
@@ -759,6 +787,7 @@
   - tests/test_drive_mapping_release.py
   - tests/test_drive_portable_and_manifest.py
   - tests/test_executable_quality_controls.py
+  - tests/test_final_quality_hardening.py
   - tests/test_first_batch_alignment.py
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
@@ -791,6 +820,7 @@
   - tests/test_tp_pedagogical_assets_runtime.py
   - tests/test_tp_text_asset_alignment.py
   - tests/test_uploaded_archive_policy.py
+  - tp_executable_opportunity_register.md
   - tp_test_alignment_report.md
 - Ressources pédagogiques :
   - premiere/banques/evaluations/index.md
@@ -1088,6 +1118,9 @@
   - 03_progressions/supports/premiere/P12/P12_tp_tris_invariants_complexite.md
   - 03_progressions/supports/premiere/P12/P12_trace_tris_invariants_complexite.md
   - 03_progressions/supports/premiere/P12/P12_version_amenagee_tris_invariants_complexite.md
+  - 03_progressions/supports/premiere/P12/code/P12_corrige_professeur_tris_invariants_complexite.py
+  - 03_progressions/supports/premiere/P12/code/P12_starter_tris_invariants_complexite.py
+  - 03_progressions/supports/premiere/P12/code/P12_tests_attendus_tris_invariants_complexite.py
   - 03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md
   - 03_progressions/supports/premiere/P13/P13_bareme_dichotomie_glouton_knn.md
   - 03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md
@@ -1188,6 +1221,9 @@
   - 03_progressions/supports/terminale/T06/T06_tp_arbres_binaires_recherche.md
   - 03_progressions/supports/terminale/T06/T06_trace_arbres_binaires_recherche.md
   - 03_progressions/supports/terminale/T06/T06_version_amenagee_arbres_binaires_recherche.md
+  - 03_progressions/supports/terminale/T06/code/T06_corrige_professeur_arbres_binaires_recherche.py
+  - 03_progressions/supports/terminale/T06/code/T06_starter_arbres_binaires_recherche.py
+  - 03_progressions/supports/terminale/T06/code/T06_tests_attendus_arbres_binaires_recherche.py
   - 03_progressions/supports/terminale/T07/T07_TD_graphes_modelisation_listes_matrices.md
   - 03_progressions/supports/terminale/T07/T07_TP_graphes_modelisation_listes_matrices.md
   - 03_progressions/supports/terminale/T07/T07_bareme_graphes_modelisation_listes_matrices.md
@@ -1198,6 +1234,9 @@
   - 03_progressions/supports/terminale/T07/T07_tp_graphes_modelisation_listes_matrices.md
   - 03_progressions/supports/terminale/T07/T07_trace_graphes_modelisation_listes_matrices.md
   - 03_progressions/supports/terminale/T07/T07_version_amenagee_graphes_modelisation_listes_matrices.md
+  - 03_progressions/supports/terminale/T07/code/T07_corrige_professeur_graphes_modelisation_listes_matrices.py
+  - 03_progressions/supports/terminale/T07/code/T07_starter_graphes_modelisation_listes_matrices.py
+  - 03_progressions/supports/terminale/T07/code/T07_tests_attendus_graphes_modelisation_listes_matrices.py
   - 03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md
   - 03_progressions/supports/terminale/T08/T08_TP_bfs_dfs_cycles_chemins.md
   - 03_progressions/supports/terminale/T08/T08_bareme_bfs_dfs_cycles_chemins.md
@@ -1208,6 +1247,9 @@
   - 03_progressions/supports/terminale/T08/T08_tp_bfs_dfs_cycles_chemins.md
   - 03_progressions/supports/terminale/T08/T08_trace_bfs_dfs_cycles_chemins.md
   - 03_progressions/supports/terminale/T08/T08_version_amenagee_bfs_dfs_cycles_chemins.md
+  - 03_progressions/supports/terminale/T08/code/T08_corrige_professeur_bfs_dfs_cycles_chemins.py
+  - 03_progressions/supports/terminale/T08/code/T08_starter_bfs_dfs_cycles_chemins.py
+  - 03_progressions/supports/terminale/T08/code/T08_tests_attendus_bfs_dfs_cycles_chemins.py
   - 03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md
   - 03_progressions/supports/terminale/T09/T09_bareme_bases_relationnelles_cles_contraintes.md
   - 03_progressions/supports/terminale/T09/T09_corrige_bases_relationnelles_cles_contraintes.md
@@ -1228,6 +1270,9 @@
   - 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md
   - 03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md
   - 03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md
+  - 03_progressions/supports/terminale/T10/code/T10_corrige_professeur_sql_select_where_join.py
+  - 03_progressions/supports/terminale/T10/code/T10_starter_sql_select_where_join.py
+  - 03_progressions/supports/terminale/T10/code/T10_tests_attendus_sql_select_where_join.py
   - 03_progressions/supports/terminale/T11/T11_TD_processus_ordonnancement_interblocage.md
   - 03_progressions/supports/terminale/T11/T11_bareme_processus_ordonnancement_interblocage.md
   - 03_progressions/supports/terminale/T11/T11_corrige_processus_ordonnancement_interblocage.md
@@ -1246,6 +1291,9 @@
   - 03_progressions/supports/terminale/T12/T12_tp_routage_rip_ospf.md
   - 03_progressions/supports/terminale/T12/T12_trace_routage_rip_ospf.md
   - 03_progressions/supports/terminale/T12/T12_version_amenagee_routage_rip_ospf.md
+  - 03_progressions/supports/terminale/T12/code/T12_corrige_professeur_routage_rip_ospf.py
+  - 03_progressions/supports/terminale/T12/code/T12_starter_routage_rip_ospf.py
+  - 03_progressions/supports/terminale/T12/code/T12_tests_attendus_routage_rip_ospf.py
   - 03_progressions/supports/terminale/T13/T13_TD_chiffrement_https.md
   - 03_progressions/supports/terminale/T13/T13_bareme_chiffrement_https.md
   - 03_progressions/supports/terminale/T13/T13_corrige_chiffrement_https.md
@@ -1282,6 +1330,9 @@
   - 03_progressions/supports/terminale/T16/T16_tp_diviser_pour_regner_tri_fusion.md
   - 03_progressions/supports/terminale/T16/T16_trace_diviser_pour_regner_tri_fusion.md
   - 03_progressions/supports/terminale/T16/T16_version_amenagee_diviser_pour_regner_tri_fusion.md
+  - 03_progressions/supports/terminale/T16/code/T16_corrige_professeur_diviser_pour_regner_tri_fusion.py
+  - 03_progressions/supports/terminale/T16/code/T16_starter_diviser_pour_regner_tri_fusion.py
+  - 03_progressions/supports/terminale/T16/code/T16_tests_attendus_diviser_pour_regner_tri_fusion.py
   - 03_progressions/supports/terminale/T17/T17_TD_programmation_dynamique.md
   - 03_progressions/supports/terminale/T17/T17_bareme_programmation_dynamique.md
   - 03_progressions/supports/terminale/T17/T17_corrige_programmation_dynamique.md
@@ -1291,6 +1342,9 @@
   - 03_progressions/supports/terminale/T17/T17_tp_programmation_dynamique.md
   - 03_progressions/supports/terminale/T17/T17_trace_programmation_dynamique.md
   - 03_progressions/supports/terminale/T17/T17_version_amenagee_programmation_dynamique.md
+  - 03_progressions/supports/terminale/T17/code/T17_corrige_professeur_programmation_dynamique.py
+  - 03_progressions/supports/terminale/T17/code/T17_starter_programmation_dynamique.py
+  - 03_progressions/supports/terminale/T17/code/T17_tests_attendus_programmation_dynamique.py
   - 03_progressions/supports/terminale/T18/T18_TD_boyer_moore.md
   - 03_progressions/supports/terminale/T18/T18_bareme_boyer_moore.md
   - 03_progressions/supports/terminale/T18/T18_corrige_boyer_moore.md
@@ -1322,12 +1376,14 @@
   - drive_mapping.md
   - drive_quarantine/README.md
   - drive_quarantine_manifest.csv
+  - drive_remaining_action_plan.md
   - drive_sources.yml
   - evaluation_bareme_alignment_report.md
   - human_review_checklist_accessibility.md
   - human_review_checklist_pedagogy.md
   - human_review_checklist_science.md
   - human_review_protocol.md
+  - human_review_register.csv
   - learning_objectives_assessed_report.md
   - missing_capabilities.md
   - missing_documents_register.md
@@ -1404,6 +1460,7 @@
   - scripts/check_generated_template_residue.py
   - scripts/check_git_clean.py
   - scripts/check_graph_algorithm_trace_consistency.py
+  - scripts/check_human_review_register.py
   - scripts/check_learning_objectives_assessed.py
   - scripts/check_linked_evaluation_quality.py
   - scripts/check_linked_evaluation_substance.py
@@ -1485,6 +1542,7 @@
   - scripts/check_td_corrige_alignment.py
   - scripts/check_teacher_corrections_alignment.py
   - scripts/check_teacher_docs_depth.py
+  - scripts/check_tp_executable_opportunity.py
   - scripts/check_tp_pedagogical_assets.py
   - scripts/check_tp_pedagogical_assets_runtime.py
   - scripts/check_tp_test_alignment.py
@@ -1518,6 +1576,7 @@
   - tests/test_drive_mapping_release.py
   - tests/test_drive_portable_and_manifest.py
   - tests/test_executable_quality_controls.py
+  - tests/test_final_quality_hardening.py
   - tests/test_first_batch_alignment.py
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
@@ -1550,6 +1609,7 @@
   - tests/test_tp_pedagogical_assets_runtime.py
   - tests/test_tp_text_asset_alignment.py
   - tests/test_uploaded_archive_policy.py
+  - tp_executable_opportunity_register.md
   - tp_test_alignment_report.md
 - Ressources copiées dans banques :
 
@@ -1822,6 +1882,8 @@
 - 03_progressions/supports/premiere/P12/P12_tp_tris_invariants_complexite.md
 - 03_progressions/supports/premiere/P12/P12_trace_tris_invariants_complexite.md
 - 03_progressions/supports/premiere/P12/P12_version_amenagee_tris_invariants_complexite.md
+- 03_progressions/supports/premiere/P12/code/P12_starter_tris_invariants_complexite.py
+- 03_progressions/supports/premiere/P12/code/P12_tests_attendus_tris_invariants_complexite.py
 - 03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md
 - 03_progressions/supports/premiere/P13/P13_bareme_dichotomie_glouton_knn.md
 - 03_progressions/supports/premiere/P13/P13_cours_dichotomie_glouton_knn.md
@@ -1907,6 +1969,8 @@
 - 03_progressions/supports/terminale/T06/T06_tp_arbres_binaires_recherche.md
 - 03_progressions/supports/terminale/T06/T06_trace_arbres_binaires_recherche.md
 - 03_progressions/supports/terminale/T06/T06_version_amenagee_arbres_binaires_recherche.md
+- 03_progressions/supports/terminale/T06/code/T06_starter_arbres_binaires_recherche.py
+- 03_progressions/supports/terminale/T06/code/T06_tests_attendus_arbres_binaires_recherche.py
 - 03_progressions/supports/terminale/T07/T07_TD_graphes_modelisation_listes_matrices.md
 - 03_progressions/supports/terminale/T07/T07_TP_graphes_modelisation_listes_matrices.md
 - 03_progressions/supports/terminale/T07/T07_bareme_graphes_modelisation_listes_matrices.md
@@ -1916,6 +1980,8 @@
 - 03_progressions/supports/terminale/T07/T07_tp_graphes_modelisation_listes_matrices.md
 - 03_progressions/supports/terminale/T07/T07_trace_graphes_modelisation_listes_matrices.md
 - 03_progressions/supports/terminale/T07/T07_version_amenagee_graphes_modelisation_listes_matrices.md
+- 03_progressions/supports/terminale/T07/code/T07_starter_graphes_modelisation_listes_matrices.py
+- 03_progressions/supports/terminale/T07/code/T07_tests_attendus_graphes_modelisation_listes_matrices.py
 - 03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md
 - 03_progressions/supports/terminale/T08/T08_TP_bfs_dfs_cycles_chemins.md
 - 03_progressions/supports/terminale/T08/T08_bareme_bfs_dfs_cycles_chemins.md
@@ -1925,6 +1991,8 @@
 - 03_progressions/supports/terminale/T08/T08_tp_bfs_dfs_cycles_chemins.md
 - 03_progressions/supports/terminale/T08/T08_trace_bfs_dfs_cycles_chemins.md
 - 03_progressions/supports/terminale/T08/T08_version_amenagee_bfs_dfs_cycles_chemins.md
+- 03_progressions/supports/terminale/T08/code/T08_starter_bfs_dfs_cycles_chemins.py
+- 03_progressions/supports/terminale/T08/code/T08_tests_attendus_bfs_dfs_cycles_chemins.py
 - 03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md
 - 03_progressions/supports/terminale/T09/T09_bareme_bases_relationnelles_cles_contraintes.md
 - 03_progressions/supports/terminale/T09/T09_cours_bases_relationnelles_cles_contraintes.md
@@ -1943,6 +2011,8 @@
 - 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md
 - 03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md
 - 03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md
+- 03_progressions/supports/terminale/T10/code/T10_starter_sql_select_where_join.py
+- 03_progressions/supports/terminale/T10/code/T10_tests_attendus_sql_select_where_join.py
 - 03_progressions/supports/terminale/T11/T11_TD_processus_ordonnancement_interblocage.md
 - 03_progressions/supports/terminale/T11/T11_bareme_processus_ordonnancement_interblocage.md
 - 03_progressions/supports/terminale/T11/T11_cours_processus_ordonnancement_interblocage.md
@@ -1959,6 +2029,8 @@
 - 03_progressions/supports/terminale/T12/T12_tp_routage_rip_ospf.md
 - 03_progressions/supports/terminale/T12/T12_trace_routage_rip_ospf.md
 - 03_progressions/supports/terminale/T12/T12_version_amenagee_routage_rip_ospf.md
+- 03_progressions/supports/terminale/T12/code/T12_starter_routage_rip_ospf.py
+- 03_progressions/supports/terminale/T12/code/T12_tests_attendus_routage_rip_ospf.py
 - 03_progressions/supports/terminale/T13/T13_TD_chiffrement_https.md
 - 03_progressions/supports/terminale/T13/T13_bareme_chiffrement_https.md
 - 03_progressions/supports/terminale/T13/T13_cours_chiffrement_https.md
@@ -1991,6 +2063,8 @@
 - 03_progressions/supports/terminale/T16/T16_tp_diviser_pour_regner_tri_fusion.md
 - 03_progressions/supports/terminale/T16/T16_trace_diviser_pour_regner_tri_fusion.md
 - 03_progressions/supports/terminale/T16/T16_version_amenagee_diviser_pour_regner_tri_fusion.md
+- 03_progressions/supports/terminale/T16/code/T16_starter_diviser_pour_regner_tri_fusion.py
+- 03_progressions/supports/terminale/T16/code/T16_tests_attendus_diviser_pour_regner_tri_fusion.py
 - 03_progressions/supports/terminale/T17/T17_TD_programmation_dynamique.md
 - 03_progressions/supports/terminale/T17/T17_bareme_programmation_dynamique.md
 - 03_progressions/supports/terminale/T17/T17_cours_programmation_dynamique.md
@@ -1999,6 +2073,8 @@
 - 03_progressions/supports/terminale/T17/T17_tp_programmation_dynamique.md
 - 03_progressions/supports/terminale/T17/T17_trace_programmation_dynamique.md
 - 03_progressions/supports/terminale/T17/T17_version_amenagee_programmation_dynamique.md
+- 03_progressions/supports/terminale/T17/code/T17_starter_programmation_dynamique.py
+- 03_progressions/supports/terminale/T17/code/T17_tests_attendus_programmation_dynamique.py
 - 03_progressions/supports/terminale/T18/T18_TD_boyer_moore.md
 - 03_progressions/supports/terminale/T18/T18_bareme_boyer_moore.md
 - 03_progressions/supports/terminale/T18/T18_cours_boyer_moore.md
@@ -2028,12 +2104,14 @@
 - drive_mapping.md
 - drive_quarantine/README.md
 - drive_quarantine_manifest.csv
+- drive_remaining_action_plan.md
 - drive_sources.yml
 - evaluation_bareme_alignment_report.md
 - human_review_checklist_accessibility.md
 - human_review_checklist_pedagogy.md
 - human_review_checklist_science.md
 - human_review_protocol.md
+- human_review_register.csv
 - learning_objectives_assessed_report.md
 - missing_capabilities.md
 - missing_documents_register.md
@@ -2133,6 +2211,7 @@
 - scripts/check_generated_template_residue.py
 - scripts/check_git_clean.py
 - scripts/check_graph_algorithm_trace_consistency.py
+- scripts/check_human_review_register.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_linked_evaluation_quality.py
 - scripts/check_linked_evaluation_substance.py
@@ -2213,6 +2292,7 @@
 - scripts/check_t18_trace_table_quality.py
 - scripts/check_teacher_corrections_alignment.py
 - scripts/check_teacher_docs_depth.py
+- scripts/check_tp_executable_opportunity.py
 - scripts/check_tp_pedagogical_assets.py
 - scripts/check_tp_pedagogical_assets_runtime.py
 - scripts/check_tp_test_alignment.py
@@ -2267,6 +2347,7 @@
 - tests/test_drive_mapping_release.py
 - tests/test_drive_portable_and_manifest.py
 - tests/test_executable_quality_controls.py
+- tests/test_final_quality_hardening.py
 - tests/test_first_batch_alignment.py
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py
@@ -2299,6 +2380,7 @@
 - tests/test_tp_pedagogical_assets_runtime.py
 - tests/test_tp_text_asset_alignment.py
 - tests/test_uploaded_archive_policy.py
+- tp_executable_opportunity_register.md
 - tp_test_alignment_report.md
 
 ## Ressources haute qualité
@@ -2546,6 +2628,9 @@
 - 03_progressions/supports/premiere/P12/P12_tp_tris_invariants_complexite.md
 - 03_progressions/supports/premiere/P12/P12_trace_tris_invariants_complexite.md
 - 03_progressions/supports/premiere/P12/P12_version_amenagee_tris_invariants_complexite.md
+- 03_progressions/supports/premiere/P12/code/P12_corrige_professeur_tris_invariants_complexite.py
+- 03_progressions/supports/premiere/P12/code/P12_starter_tris_invariants_complexite.py
+- 03_progressions/supports/premiere/P12/code/P12_tests_attendus_tris_invariants_complexite.py
 - 03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md
 - 03_progressions/supports/premiere/P13/P13_bareme_dichotomie_glouton_knn.md
 - 03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md
@@ -2646,6 +2731,9 @@
 - 03_progressions/supports/terminale/T06/T06_tp_arbres_binaires_recherche.md
 - 03_progressions/supports/terminale/T06/T06_trace_arbres_binaires_recherche.md
 - 03_progressions/supports/terminale/T06/T06_version_amenagee_arbres_binaires_recherche.md
+- 03_progressions/supports/terminale/T06/code/T06_corrige_professeur_arbres_binaires_recherche.py
+- 03_progressions/supports/terminale/T06/code/T06_starter_arbres_binaires_recherche.py
+- 03_progressions/supports/terminale/T06/code/T06_tests_attendus_arbres_binaires_recherche.py
 - 03_progressions/supports/terminale/T07/T07_TD_graphes_modelisation_listes_matrices.md
 - 03_progressions/supports/terminale/T07/T07_TP_graphes_modelisation_listes_matrices.md
 - 03_progressions/supports/terminale/T07/T07_bareme_graphes_modelisation_listes_matrices.md
@@ -2656,6 +2744,9 @@
 - 03_progressions/supports/terminale/T07/T07_tp_graphes_modelisation_listes_matrices.md
 - 03_progressions/supports/terminale/T07/T07_trace_graphes_modelisation_listes_matrices.md
 - 03_progressions/supports/terminale/T07/T07_version_amenagee_graphes_modelisation_listes_matrices.md
+- 03_progressions/supports/terminale/T07/code/T07_corrige_professeur_graphes_modelisation_listes_matrices.py
+- 03_progressions/supports/terminale/T07/code/T07_starter_graphes_modelisation_listes_matrices.py
+- 03_progressions/supports/terminale/T07/code/T07_tests_attendus_graphes_modelisation_listes_matrices.py
 - 03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md
 - 03_progressions/supports/terminale/T08/T08_TP_bfs_dfs_cycles_chemins.md
 - 03_progressions/supports/terminale/T08/T08_bareme_bfs_dfs_cycles_chemins.md
@@ -2666,6 +2757,9 @@
 - 03_progressions/supports/terminale/T08/T08_tp_bfs_dfs_cycles_chemins.md
 - 03_progressions/supports/terminale/T08/T08_trace_bfs_dfs_cycles_chemins.md
 - 03_progressions/supports/terminale/T08/T08_version_amenagee_bfs_dfs_cycles_chemins.md
+- 03_progressions/supports/terminale/T08/code/T08_corrige_professeur_bfs_dfs_cycles_chemins.py
+- 03_progressions/supports/terminale/T08/code/T08_starter_bfs_dfs_cycles_chemins.py
+- 03_progressions/supports/terminale/T08/code/T08_tests_attendus_bfs_dfs_cycles_chemins.py
 - 03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md
 - 03_progressions/supports/terminale/T09/T09_bareme_bases_relationnelles_cles_contraintes.md
 - 03_progressions/supports/terminale/T09/T09_corrige_bases_relationnelles_cles_contraintes.md
@@ -2686,6 +2780,9 @@
 - 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md
 - 03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md
 - 03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md
+- 03_progressions/supports/terminale/T10/code/T10_corrige_professeur_sql_select_where_join.py
+- 03_progressions/supports/terminale/T10/code/T10_starter_sql_select_where_join.py
+- 03_progressions/supports/terminale/T10/code/T10_tests_attendus_sql_select_where_join.py
 - 03_progressions/supports/terminale/T11/T11_TD_processus_ordonnancement_interblocage.md
 - 03_progressions/supports/terminale/T11/T11_bareme_processus_ordonnancement_interblocage.md
 - 03_progressions/supports/terminale/T11/T11_corrige_processus_ordonnancement_interblocage.md
@@ -2704,6 +2801,9 @@
 - 03_progressions/supports/terminale/T12/T12_tp_routage_rip_ospf.md
 - 03_progressions/supports/terminale/T12/T12_trace_routage_rip_ospf.md
 - 03_progressions/supports/terminale/T12/T12_version_amenagee_routage_rip_ospf.md
+- 03_progressions/supports/terminale/T12/code/T12_corrige_professeur_routage_rip_ospf.py
+- 03_progressions/supports/terminale/T12/code/T12_starter_routage_rip_ospf.py
+- 03_progressions/supports/terminale/T12/code/T12_tests_attendus_routage_rip_ospf.py
 - 03_progressions/supports/terminale/T13/T13_TD_chiffrement_https.md
 - 03_progressions/supports/terminale/T13/T13_bareme_chiffrement_https.md
 - 03_progressions/supports/terminale/T13/T13_corrige_chiffrement_https.md
@@ -2740,6 +2840,9 @@
 - 03_progressions/supports/terminale/T16/T16_tp_diviser_pour_regner_tri_fusion.md
 - 03_progressions/supports/terminale/T16/T16_trace_diviser_pour_regner_tri_fusion.md
 - 03_progressions/supports/terminale/T16/T16_version_amenagee_diviser_pour_regner_tri_fusion.md
+- 03_progressions/supports/terminale/T16/code/T16_corrige_professeur_diviser_pour_regner_tri_fusion.py
+- 03_progressions/supports/terminale/T16/code/T16_starter_diviser_pour_regner_tri_fusion.py
+- 03_progressions/supports/terminale/T16/code/T16_tests_attendus_diviser_pour_regner_tri_fusion.py
 - 03_progressions/supports/terminale/T17/T17_TD_programmation_dynamique.md
 - 03_progressions/supports/terminale/T17/T17_bareme_programmation_dynamique.md
 - 03_progressions/supports/terminale/T17/T17_corrige_programmation_dynamique.md
@@ -2749,6 +2852,9 @@
 - 03_progressions/supports/terminale/T17/T17_tp_programmation_dynamique.md
 - 03_progressions/supports/terminale/T17/T17_trace_programmation_dynamique.md
 - 03_progressions/supports/terminale/T17/T17_version_amenagee_programmation_dynamique.md
+- 03_progressions/supports/terminale/T17/code/T17_corrige_professeur_programmation_dynamique.py
+- 03_progressions/supports/terminale/T17/code/T17_starter_programmation_dynamique.py
+- 03_progressions/supports/terminale/T17/code/T17_tests_attendus_programmation_dynamique.py
 - 03_progressions/supports/terminale/T18/T18_TD_boyer_moore.md
 - 03_progressions/supports/terminale/T18/T18_bareme_boyer_moore.md
 - 03_progressions/supports/terminale/T18/T18_corrige_boyer_moore.md
@@ -2780,12 +2886,14 @@
 - drive_mapping.md
 - drive_quarantine/README.md
 - drive_quarantine_manifest.csv
+- drive_remaining_action_plan.md
 - drive_sources.yml
 - evaluation_bareme_alignment_report.md
 - human_review_checklist_accessibility.md
 - human_review_checklist_pedagogy.md
 - human_review_checklist_science.md
 - human_review_protocol.md
+- human_review_register.csv
 - learning_objectives_assessed_report.md
 - missing_capabilities.md
 - missing_documents_register.md
@@ -2889,6 +2997,7 @@
 - scripts/check_generated_template_residue.py
 - scripts/check_git_clean.py
 - scripts/check_graph_algorithm_trace_consistency.py
+- scripts/check_human_review_register.py
 - scripts/check_learning_objectives_assessed.py
 - scripts/check_linked_evaluation_quality.py
 - scripts/check_linked_evaluation_substance.py
@@ -2970,6 +3079,7 @@
 - scripts/check_td_corrige_alignment.py
 - scripts/check_teacher_corrections_alignment.py
 - scripts/check_teacher_docs_depth.py
+- scripts/check_tp_executable_opportunity.py
 - scripts/check_tp_pedagogical_assets.py
 - scripts/check_tp_pedagogical_assets_runtime.py
 - scripts/check_tp_test_alignment.py
@@ -3029,6 +3139,7 @@
 - tests/test_drive_mapping_release.py
 - tests/test_drive_portable_and_manifest.py
 - tests/test_executable_quality_controls.py
+- tests/test_final_quality_hardening.py
 - tests/test_first_batch_alignment.py
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py
@@ -3061,6 +3172,7 @@
 - tests/test_tp_pedagogical_assets_runtime.py
 - tests/test_tp_text_asset_alignment.py
 - tests/test_uploaded_archive_policy.py
+- tp_executable_opportunity_register.md
 - tp_test_alignment_report.md
 
 ## Métadonnées incomplètes

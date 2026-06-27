@@ -100,3 +100,31 @@ Livre(1,Dune), Livre(2,Fondation) ; Emprunt(10,1,Nora), Emprunt(11,9,Sam) invali
 - TD : `T09_TD_bases_relationnelles_cles_contraintes.md`.
 - TP : `T09_tp_bases_relationnelles_cles_contraintes.md`.
 - Évaluation : `T09_evaluation_bases_relationnelles_cles_contraintes.md`.
+
+## Renforcement explicatif ciblé
+
+Ce cours doit être lu comme une progression sur bases relationnelles. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
+
+### Savoir disciplinaire
+- Vocabulaire à maîtriser : relation, attribut, tuple, clé primaire, clé étrangère, contrainte, schéma, instance.
+- Capacités reliées : T-BDD-01A, T-BDD-01B, T-BDD-01C, T-BDD-02.
+- Le savoir attendu consiste à expliquer le rôle de chaque objet avant de l'utiliser dans un exercice.
+
+### Savoir-faire et méthodes opérationnelles
+- identifier la clé primaire d’une relation.
+- contrôler une clé étrangère avec la table référencée.
+- détecter une anomalie de redondance.
+
+### Erreurs fréquentes spécifiques
+- Un élève peut confondre tuple et attribut ; la correction consiste à reprendre la définition puis à refaire la trace sur un exemple minimal.
+- Un élève peut oublier une contrainte de domaine ; la correction consiste à isoler le cas limite avant de recommencer le calcul ou le raisonnement.
+- Un élève peut créer une clé étrangère sans clé cible ; la correction consiste à vérifier le résultat avec une donnée différente.
+
+### Cas limites à contrôler
+- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
+- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+
+### Synthèse savoir / savoir-faire / méthode
+- Savoir : définir précisément les objets de bases relationnelles.
+- Savoir-faire : appliquer une méthode contrôlable à une donnée explicite.
+- Méthode : annoncer la donnée, exécuter les étapes dans l'ordre, puis vérifier le résultat par un cas limite.
