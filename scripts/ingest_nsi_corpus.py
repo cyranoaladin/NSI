@@ -110,16 +110,68 @@ def sha256(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
-def iter_md_files() -> list[Path]:
+def iter_source_files() -> list[Path]:
+    """Itère les fichiers .md et .py du corpus."""
     files = []
     for d in SOURCE_DIRS:
         if d.exists():
             files.extend(sorted(d.rglob("*.md")))
+            files.extend(sorted(d.rglob("*.py")))
     return files
 
 
+def build_chunks_py(path: Path) -> list[dict]:
+    """Construit un chunk unique pour un fichier Python."""
+    try:
+        text = path.read_text(encoding="utf-8")
+    except Exception:
+        return []
+    if len(text.strip()) < 20:
+        return []
+    rel = path.relative_to(ROOT)
+    parts = rel.parts
+    # Déduire level et sequence_id du chemin (ex: .../premiere/P05/code/...)
+    level = ""
+    seq_id = ""
+    for p in parts:
+        if p in ("premiere", "terminale"):
+            level = p
+        if re.match(r'^[PT]\d{2}$', p):
+            seq_id = p
+    # Déduire document_type du nom
+    name = path.stem.lower()
+    if "corrige" in name or "correction" in name:
+        doc_type = "corrige_code"
+    elif "test" in name:
+        doc_type = "tests_code"
+    elif "starter" in name:
+        doc_type = "starter_code"
+    else:
+        doc_type = "code"
+    return [{
+        "text": text,
+        "metadata": {
+            "path": str(rel),
+            "level": level,
+            "sequence_id": seq_id,
+            "document_type": doc_type,
+            "theme": "",
+            "notion": "",
+            "capacities": "",
+            "status": "needs_review",
+            "anchor": "",
+            "sha256": sha256(text),
+            "chunk_index": "0",
+            "source_type": "nsi_corpus",
+            "collection": "nsi_corpus",
+        }
+    }]
+
+
 def build_chunks(path: Path) -> list[dict]:
-    """Construit les chunks pour un fichier Markdown."""
+    """Construit les chunks pour un fichier Markdown ou Python."""
+    if path.suffix == ".py":
+        return build_chunks_py(path)
     try:
         text = path.read_text(encoding="utf-8")
     except Exception:
@@ -238,7 +290,7 @@ def main() -> int:
 
     env = load_env(ENV_FILE)
 
-    files = iter_md_files()
+    files = iter_source_files()
     if args.limit > 0:
         files = files[:args.limit]
 
