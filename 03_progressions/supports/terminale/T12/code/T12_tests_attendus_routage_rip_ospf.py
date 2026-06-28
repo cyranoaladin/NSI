@@ -13,7 +13,7 @@ def test_nominal_ttl_route_port() -> None:
 
 
 def test_limite_route_defaut_http() -> None:
-    assert MODULE.choisir_route("198.51.100.8", ROUTES) == "box"
+    assert MODULE.choisir_route("8.8.8.8", ROUTES) == "box"
     assert MODULE.port_application("HTTP") == 80
 
 

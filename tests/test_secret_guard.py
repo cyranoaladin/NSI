@@ -10,10 +10,11 @@ import check_no_committed_secrets as secrets
 
 
 def test_detects_public_ip_but_allows_placeholders_and_private_ips(tmp_path: Path) -> None:
-    public_file = tmp_path / "public.txt"
-    placeholder_file = tmp_path / "placeholder.txt"
-    private_file = tmp_path / "private.txt"
+    public_file = tmp_path / "scripts" / "public.py"
+    placeholder_file = tmp_path / "README.md"
+    private_file = tmp_path / "scripts" / "private.py"
     local_env = tmp_path / ".env.rag"
+    public_file.parent.mkdir(parents=True)
     public_ip = "88.99." + "254.59"
     public_file.write_text(f"ssh root@{public_ip}\n", encoding="utf-8")
     placeholder_file.write_text("ssh <user>@<host>\n", encoding="utf-8")
@@ -22,13 +23,14 @@ def test_detects_public_ip_but_allows_placeholders_and_private_ips(tmp_path: Pat
 
     errors = secrets.scan_paths([public_file, placeholder_file, private_file, local_env], tmp_path)
 
-    assert errors == [f"{public_file.name}: adresse IP publique en clair -> {public_ip}"]
+    assert errors == [f"scripts/{public_file.name}: adresse IP publique en clair -> {public_ip}"]
 
 
 def test_detects_token_like_assignments_without_flagging_examples(tmp_path: Path) -> None:
-    secret_file = tmp_path / "secret.env.example"
-    safe_file = tmp_path / "safe.env.example"
-    constant_file = tmp_path / "constants.py"
+    secret_file = tmp_path / ".env.example"
+    safe_file = tmp_path / ".env.safe"
+    constant_file = tmp_path / "scripts" / "constants.py"
+    constant_file.parent.mkdir(parents=True)
     secret_file.write_text("RAG_API_KEY=abc1234567890secret\n", encoding="utf-8")
     safe_file.write_text("RAG_API_KEY=<token Bearer pour l'API>\n", encoding="utf-8")
     constant_file.write_text('CONCRETE_TOKENS = {"trace", "table"}\n', encoding="utf-8")
@@ -36,3 +38,17 @@ def test_detects_token_like_assignments_without_flagging_examples(tmp_path: Path
     errors = secrets.scan_paths([secret_file, safe_file, constant_file], tmp_path)
 
     assert errors == [f"{secret_file.name}: secret potentiel dans RAG_API_KEY"]
+
+
+def test_secret_guard_scans_tooling_not_pedagogical_corpus(tmp_path: Path) -> None:
+    public_ip = "88.99." + "254.59"
+    script_file = tmp_path / "scripts" / "config.py"
+    support_file = tmp_path / "03_progressions" / "supports" / "terminale" / "T12" / "cours.md"
+    script_file.parent.mkdir(parents=True)
+    support_file.parent.mkdir(parents=True)
+    script_file.write_text(f"RAG_SSH_HOST = '{public_ip}'\n", encoding="utf-8")
+    support_file.write_text(f"Route externe d'exemple : {public_ip}\n", encoding="utf-8")
+
+    errors = secrets.scan_paths([script_file, support_file], tmp_path)
+
+    assert errors == [f"scripts/config.py: adresse IP publique en clair -> {public_ip}"]

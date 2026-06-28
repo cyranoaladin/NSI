@@ -17,3 +17,4 @@ __pycache__/
 build/
 dist/
 .env.rag
+scripts/ingestion_errors.csv

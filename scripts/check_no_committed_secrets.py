@@ -26,6 +26,10 @@ TEXT_SUFFIXES = {
     ".yml",
 }
 IGNORED_NAMES = {".env.rag"}
+TOOLING_PARTS = {".github", "scripts"}
+PEDAGOGICAL_PARTS = {"02_modeles_documents", "03_progressions", "premiere", "terminale"}
+ROOT_SCOPED_FILES = {"Makefile", "README.md", "SKILLS.md", ".pre-commit-config.yaml"}
+ROOT_CONFIG_SUFFIXES = {".toml", ".yml", ".yaml"}
 IPV4_RE = re.compile(r"\b(?:\d{1,3}\.){3}\d{1,3}\b")
 SECRET_ASSIGNMENT_RE = re.compile(
     r"(?m)^\s*((?:TOKEN|[A-Z0-9_]+_TOKEN|[A-Z0-9_]*(?:API_KEY|SECRET|PASSWORD|PRIVATE_KEY)))\s*=\s*(.+?)\s*$"
@@ -41,6 +45,24 @@ def is_text_candidate(path: Path) -> bool:
     if path.suffix.lower() in TEXT_SUFFIXES:
         return True
     return path.name in {".pre-commit-config.yaml", "Makefile", "README.md"}
+
+
+def is_secret_scan_scope(path: Path, root: Path) -> bool:
+    rel = path.relative_to(root)
+    if not rel.parts:
+        return False
+    first = rel.parts[0]
+    if first in PEDAGOGICAL_PARTS:
+        return False
+    if first in TOOLING_PARTS:
+        return True
+    if len(rel.parts) == 1:
+        return (
+            path.name in ROOT_SCOPED_FILES
+            or path.name.startswith(".env")
+            or path.suffix.lower() in ROOT_CONFIG_SUFFIXES
+        )
+    return False
 
 
 def tracked_files(root: Path) -> list[Path]:
@@ -102,6 +124,8 @@ def scan_paths(paths: Iterable[Path], root: Path) -> list[str]:
     errors: list[str] = []
     for path in sorted(paths):
         if not path.is_file() or not is_text_candidate(path):
+            continue
+        if not is_secret_scan_scope(path, root):
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         errors.extend(scan_text(path, root, text))

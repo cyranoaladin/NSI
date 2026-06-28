@@ -71,7 +71,7 @@ class ExecutableQualityControlsTest(unittest.TestCase):
     def test_network_simulation_checks_ttl_ports_and_prefixes(self) -> None:
         self.assertEqual(network_trace.decrement_ttl(1), (0, "drop"))
         self.assertEqual(network_trace.route_decision("192.168.1.42", "192.168.1.0/24"), "local")
-        self.assertEqual(network_trace.route_decision("198.51.100.8", "192.168.1.0/24"), "gateway")
+        self.assertEqual(network_trace.route_decision("8.8.8.8", "192.168.1.0/24"), "gateway")
         self.assertFalse(network_trace.network_block_is_consistent("HTTPS vers port 80 uniquement."))
 
     def test_dynamic_programming_table_is_recomputed(self) -> None:
