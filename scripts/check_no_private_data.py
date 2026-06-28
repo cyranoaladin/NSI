@@ -18,7 +18,15 @@ from _qa_common import ROOT, print_result
 ALLOWLIST = ROOT / "privacy_allowlist.yml"
 REPORT = ROOT / "privacy_report.md"
 TEXT_SUFFIXES = {".md", ".tex", ".py", ".json", ".yml", ".yaml", ".txt", ".csv"}
-EXCLUDED_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache"}
+EXCLUDED_PARTS = {
+    ".git",
+    ".venv",
+    "__pycache__",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    "01_build_reports",
+}
 
 EMAIL_RE = re.compile(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}")
 FR_PHONE_RE = re.compile(r"(?:(?:\+|00)33|0)\s*[1-9](?:[\s().-]?\d){8}\b")

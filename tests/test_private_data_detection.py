@@ -35,6 +35,9 @@ class PrivateDataDetectionTest(unittest.TestCase):
         self.assertTrue(matches)
         self.assertTrue(all(privacy.is_population_context(text, match.start(), match.end()) for match in matches))
 
+    def test_build_reports_are_not_source_privacy_scope(self) -> None:
+        self.assertIn("01_build_reports", privacy.EXCLUDED_PARTS)
+
 
 if __name__ == "__main__":
     unittest.main()
