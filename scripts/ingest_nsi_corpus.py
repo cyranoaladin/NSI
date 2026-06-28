@@ -21,9 +21,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 ENV_FILE = ROOT / ".env.rag"
 
-# Répertoires à indexer
+# Répertoires à indexer (tous les contenus pédagogiques)
 SOURCE_DIRS = [
     ROOT / "03_progressions",
+    ROOT / "premiere" / "sequences",
+    ROOT / "terminale" / "sequences",
 ]
 
 
