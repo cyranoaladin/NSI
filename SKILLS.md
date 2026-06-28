@@ -499,24 +499,17 @@ Statuer sur l’enseignement réel d’une capacité dans le corpus.
 
 * **Moteur** : ChromaDB v1.1.1
 * **Collections existantes** :
-  - `rag_education` : **2012 chunks issus de Google Drive** (sujets bac NSI, documents Drive). Schéma de payload : `drive_folder_id`, `drive_file_id`, `drive_file_name`, `title`, `source`, `source_type` (= `gdrive_folder`), `collection`, `section`, `groupe`, `matiere`, `niveau`, `type_ressource`, `modality`, `chunk_index`, `sha256`, `mime_type`, `page`. **Ne contient PAS le corpus `nsi-enseignement`** (aucun champ `sequence_id`, `document_type`, `capacities`).
+  - `rag_education` : **4385 chunks issus de Google Drive** (sujets bac NSI, documents Drive divers). Schéma de payload Drive : `drive_folder_id`, `drive_file_id`, `drive_file_name`, `source_type` (= `gdrive_folder`), etc. Contient des documents hors NSI (philo, maths) — à curer.
+  - `nsi_corpus` : **4182 chunks du corpus `nsi-enseignement`** (374 fichiers, 0 erreurs). Schéma de payload : `path`, `level`, `sequence_id`, `document_type`, `theme`, `notion`, `capacities`, `status`, `anchor`, `sha256`, `chunk_index`, `source_type` (= `nsi_corpus`). **C'est la collection cible pour le juge de substance.**
   - `rag_math_correction` : 67 chunks (maths), dim=768
-  - `ressources_pedagogiques_terminale` : **0 chunks** (vide, dim=None)
-  - `rag_francais_premiere` : 0 chunks (vide, dim=None)
+  - `rag_francais_premiere` : chunks français, dim=768
 * **Distance** : cosine, **dimension** : 768
 
 ### État actuel et prérequis d’ingestion
 
-**Le corpus `nsi-enseignement` n’est pas indexé dans le RAG.** La collection `rag_education` ne contient que des documents Drive (sujets de bac). Le juge de substance ne peut donc pas récupérer de section de cours via le RAG — il est inopérant tant que l’ingestion n’est pas faite.
+**Le corpus `nsi-enseignement` est indexé dans `nsi_corpus`.** 374 fichiers → 4182 chunks, 0 erreurs. Le juge de substance peut interroger cette collection pour récupérer la section pertinente.
 
-**Plan d’ingestion** (à exécuter en mission ultérieure) :
-
-1. Créer une collection dédiée (ex. `nsi_corpus`) ou ingérer dans `rag_education` avec un `source_type` distinctif.
-2. Découper chaque document `.md` par section (réutiliser la carte de slugs du vérificateur d’ancres).
-3. Métadonnées par chunk : `path`, `level`, `sequence_id`, `document_type`, `theme`, `notion`, `capacities[]`, `status`, `anchor` (slug de section), `sha256`.
-4. Filtrage sécurité : marquer `document_type` (corrige/bareme/guide_prof) pour filtrer côté élève ; respecter `private_data`.
-5. Endpoint d’ingestion : `POST /ingest` avec `source_type: "markdown"`, `metadata_hints: {collection: "nsi_corpus", ...}`.
-6. Modèle d’embedding : `nomic-embed-text` (appliqué automatiquement par l’API).
+**Script d’ingestion** : `scripts/ingest_nsi_corpus.py` (idempotent, déduplique par sha256). Prérequis : tunnel SSH (`ssh -L 11435:127.0.0.1:11434 -L 18000:127.0.0.1:8000 root@88.99.254.59`). Métadonnées par chunk : `path`, `level`, `sequence_id`, `document_type`, `theme`, `notion`, `capacities`, `status`, `anchor`, `sha256`. Respecte `private_data`.
 
 ### Modèle d’embedding
 
@@ -545,8 +538,8 @@ Pour un accès direct à ChromaDB ou Ollama, un tunnel SSH est nécessaire (port
 
 ### Usage cible (après ingestion du corpus)
 
-1. **Juge de substance** : interroger le RAG avec l’intitulé officiel de la capacité pour récupérer *la* section qui l’enseigne réellement, au lieu de prendre la première ligne du document. **Prérequis : le corpus doit être ingéré (voir plan ci-dessus).**
-2. **Oracle de cohérence inter-séquences** : détection sémantique des définitions divergentes et des prérequis non couverts entre séquences. **Même prérequis.**
+1. **Juge de substance** : interroger le RAG (`nsi_corpus`) avec l’intitulé officiel de la capacité pour récupérer *la* section qui l’enseigne réellement, au lieu de prendre la première ligne du document. Vérifié : la requête « Importer une table depuis un fichier CSV » retourne `P05_fiche_cours_tables_csv_import_coherence.md` avec anchor et capacités P-TABLE-01/02 (score cosine 0.16).
+2. **Oracle de cohérence inter-séquences** : détection sémantique des définitions divergentes et des prérequis non couverts entre séquences.
 
 ### Variables de connexion
 
