@@ -8,7 +8,7 @@ N'affiche jamais de secret — uniquement des résumés de réponse.
 Prérequis réseau :
   - L'API RAG (/search) est publique (HTTPS) : aucun tunnel nécessaire.
     La vectorisation est faite côté serveur par l'API.
-  - Ollama (vectorisation directe, LLM) est en loopback sur le serveur.
+  - Ollama (vecteurs directs, LLM) est en loopback sur le serveur.
     Pour les tests LLM, un tunnel SSH est nécessaire :
       ssh -L 11434:127.0.0.1:11434 <user>@<host>
     Sans tunnel, le test LLM est sauté avec un message explicite.
@@ -24,7 +24,7 @@ from pathlib import Path
 ENV_FILE = Path(__file__).resolve().parent.parent / ".env.rag"
 
 # Seules les variables pour l'API publique sont obligatoires.
-# LLM et vectorisation directe sont optionnels (tunnel SSH).
+# LLM et vecteurs directs sont optionnels (tunnel SSH).
 REQUIRED_VARS = [
     "RAG_BACKEND",
     "RAG_API_BASE_URL",

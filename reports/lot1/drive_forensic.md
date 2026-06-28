@@ -8,7 +8,7 @@ Mode: lecture seule des roots et du registre existant.
 
 | Élément | Chemin | Existe | Fichiers |
 |---|---:|---:|---:|
-| Drive source | `Documents_DRIVE` | oui | 0 |
+| Drive source | `Documents_DRIVE` adjacent au dépôt | oui | 0 |
 | Banque centralisée | `scrapping_NSI/ressources_nsi_centralisees` | oui | 15906 |
 | Quarantaine doublons Drive | `scrapping_NSI/ressources_nsi_centralisees/_doublons_drive` | oui | 291 |
 | Quarantaine skipped Drive | `scrapping_NSI/ressources_nsi_centralisees/_skipped_drive` | oui | 38 |
@@ -44,7 +44,7 @@ test, pas vers le Drive réel:
 ```
 
 Elle ne constitue donc pas une preuve de relocalisation des fichiers du Drive
-réel `Documents_DRIVE`.
+réel `Documents_DRIVE` adjacent au dépôt.
 
 ## Réconciliation demandée
 
@@ -80,9 +80,10 @@ suivants:
 - snapshot pré-migration du Drive réel avec `chemin_source_original` et
   `hash_sha256`;
 - sauvegarde du dossier `Documents_DRIVE` avant migration;
-- registre de migration antérieur contenant les chemins réels
-  `Documents_DRIVE/...`;
-- logs d'exécution complets de l'organiseur indiquant chaque déplacement Drive.
+- registre de migration antérieur contenant les chemins réels portables
+  `Documents_DRIVE/...` ou la valeur de `NSI_DOCUMENTS_DRIVE_ROOT`;
+- logs d'exécution complets de l'organiseur indiquant chaque déplacement Drive,
+  avec chemins portables ou variables d'environnement.
 
 Conformément à la consigne, aucune Phase 1B / 2 / 3 ne doit être ouverte sans
 arbitrage humain.

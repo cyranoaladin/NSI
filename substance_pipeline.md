@@ -2,33 +2,25 @@
 
 ## Doctrine
 
-Le pipeline de substance distingue strictement deux rôles.
+System A est l'autorité mécanique. `scripts/check_substance_anchors.py` valide le
+schéma, les fichiers, les ancres et les citations, puis applique son veto. Il ne
+promeut jamais un verdict.
 
-## System A - autorité
+System B est un proposeur. `scripts/substance_judge.py` peut proposer
+`needs_content` ou `needs_review`, au format `substance_verdict.schema.json`, avec
+trois preuves structurées (`file`, `anchor`, `quote`). Il ne peut jamais produire
+un statut `validated_pedagogy`.
 
-`scripts/check_substance_anchors.py` et `substance_verdict.schema.json` forment
-le système d'autorité. System A vérifie mécaniquement les fichiers, ancres,
-citations et cohérences déclarées.
+Une promotion pédagogique exige en plus une confirmation humaine conforme à
+`reviewer_confirmation.schema.json`, dont le hash correspond au verdict A.
 
-System A ne promeut jamais un verdict. Il peut seulement accepter un verdict
-déjà correctement soutenu ou le dégrader.
+## Matching des citations
 
-## System B - proposeur
+Une preuve proposée par B est acceptée seulement si A retrouve la citation dans
+la section ancrée. La comparaison conserve la casse et tolère uniquement les
+variations d'espaces.
 
-`scripts/substance_judge.py` est un proposeur outillé par RAG/LLM. Il produit des
-propositions au format de System A, puis elles doivent passer par le veto de
-System A.
+## Publication
 
-System B ne peut jamais écrire `validated_pedagogy` comme verdict final. Ses
-propositions sont limitées à `needs_content` ou `needs_review`, avec preuves
-citées, ancres et chemins vérifiables.
-
-## Relecture humaine
-
-Une promotion ultérieure exige à la fois:
-
-- un verdict conforme au schéma System A;
-- une vérification mécanique par System A;
-- une confirmation relecteur conforme à `reviewer_confirmation.schema.json`.
-
-Sans cette confirmation, `validated_* = 0`, `covered = 0` et `published = 0`.
+Tant qu'aucune confirmation humaine n'est tracée, les compteurs publiables restent
+à zéro : `covered = 0`, `validated_* = 0`, `published = 0`.

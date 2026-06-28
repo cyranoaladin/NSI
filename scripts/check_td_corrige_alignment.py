@@ -28,7 +28,7 @@ def main() -> None:
             f"## {level} - {rel(seq)}",
             f"- Exercices TD : {n_td}",
             f"- Corrections manquantes détectées : {', '.join(missing) if missing else 'aucune'}",
-            "- Limite : l'alignement disciplinaire reste à relire humainement.",
+            "- Limite : l'alignement de fond reste à relire humainement.",
             "",
         ])
         if missing:

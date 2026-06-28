@@ -1,223 +1,256 @@
 #!/usr/bin/env python3
-"""Refuse toute promotion de statut sans verdict A vérifié et relecture humaine."""
+"""Block status promotion without System A verdict and human confirmation."""
 
 from __future__ import annotations
 
-import argparse
+from dataclasses import dataclass, field
 import csv
 import hashlib
 import json
 import re
-from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from check_substance_anchors import check_capacity, load_official_labels, validate_schema
-
-
-ROOT = Path(__file__).resolve().parents[1]
-CAPACITY_RE = re.compile(r"\b[PT]-[A-Z0-9-]+\b")
-PROMOTED_STATUSES = {"validated_pedagogy", "published", "covered"}
-STATUS_FILES = (
-    "coverage.md",
-    "INDEX.md",
-    "manifest.csv",
-    "substance_report*.md",
-    "substance_review*.json",
+from check_substance_anchors import (
+    Section,
+    check_capacity,
+    load_official_labels,
+    validate_schema,
 )
 
 
+ROOT = Path(__file__).resolve().parents[1]
+SUBSTANCE_SCHEMA = ROOT / "substance_verdict.schema.json"
+CONFIRMATION_SCHEMA = ROOT / "reviewer_confirmation.schema.json"
+CAPACITY_RE = re.compile(r"\b[PT]-[A-Z0-9-]+\b")
+POSITIVE_COUNT_RE = re.compile(r"\b(covered|published)\s*[:=]\s*([1-9][0-9]*)\b", re.I)
+
+
 @dataclass(frozen=True)
-class PromotionClaim:
-    capacity_id: str
-    status: str
+class Promotion:
     source: Path
-    detail: str
+    kind: str
+    capacity_id: str | None
+    line_number: int
+    line: str
 
 
-def _normalize_json_strings(value: Any) -> Any:
-    if isinstance(value, dict):
-        return {key: _normalize_json_strings(item) for key, item in value.items()}
-    if isinstance(value, list):
-        return [_normalize_json_strings(item) for item in value]
-    if isinstance(value, str):
-        return re.sub(r"\s+", " ", value).strip()
-    return value
+@dataclass
+class StatusPromotionResult:
+    errors: list[str] = field(default_factory=list)
+    promotions: list[Promotion] = field(default_factory=list)
 
 
 def canonical_verdict_hash(verdict: dict[str, Any]) -> str:
-    normalized = _normalize_json_strings(verdict)
-    payload = json.dumps(
-        normalized,
-        ensure_ascii=False,
-        sort_keys=True,
-        separators=(",", ":"),
-    ).encode("utf-8")
-    return hashlib.sha256(payload).hexdigest()
+    payload = json.dumps(verdict, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
-def _iter_status_files(root: Path) -> list[Path]:
-    files: list[Path] = []
-    for pattern in STATUS_FILES:
-        files.extend(path for path in root.glob(pattern) if path.is_file())
-    return sorted(set(files))
+def status_files(root: Path) -> list[Path]:
+    candidates = [
+        root / "coverage.md",
+        root / "INDEX.md",
+        root / "manifest.csv",
+    ]
+    candidates.extend(sorted(root.glob("substance_review*.json")))
+    candidates.extend(sorted(root.glob("substance_report*.md")))
+    candidates.extend(sorted(root.glob("**/_substance_review.json")))
+    return [path for path in candidates if path.exists() and path.is_file()]
 
 
-def _claims_from_text(path: Path, text: str) -> list[PromotionClaim]:
-    claims: list[PromotionClaim] = []
-    current_capacity = ""
-    for line in text.splitlines():
-        ids = CAPACITY_RE.findall(line)
-        if ids:
-            current_capacity = ids[0]
-        lowered = line.lower()
-        for status in PROMOTED_STATUSES:
-            if status == "covered":
-                count_match = re.search(r"\bcovered\s*[:=]\s*(\d+)\b", lowered)
-                if count_match and int(count_match.group(1)) <= 0:
-                    continue
-                if "covered" not in lowered:
-                    continue
-            elif status not in lowered:
-                continue
-            cid = ids[0] if ids else current_capacity or "__GLOBAL__"
-            claims.append(PromotionClaim(cid, status, path, line.strip()))
-    return claims
+def verdict_files(root: Path) -> list[Path]:
+    files = sorted(root.glob("substance_review*.json"))
+    files.extend(sorted(root.glob("substance_reviews/**/*review*.json")))
+    files.extend(sorted(root.glob("**/_substance_review.json")))
+    return [path for path in files if path.exists() and path.is_file()]
 
 
-def _walk_json_for_claims(path: Path, value: Any, current_capacity: str = "") -> list[PromotionClaim]:
-    claims: list[PromotionClaim] = []
-    if isinstance(value, dict):
-        capacity = str(value.get("capacity_id") or value.get("id") or current_capacity)
-        for key, item in value.items():
-            if key in {"verdict", "status", "statut", "decision"} and str(item) in PROMOTED_STATUSES:
-                claims.append(PromotionClaim(capacity or "__GLOBAL__", str(item), path, key))
-            elif key in {"covered", "published"} and item not in {0, "0", False, None, ""}:
-                claims.append(PromotionClaim(capacity or "__GLOBAL__", key, path, f"{key}={item}"))
-            else:
-                claims.extend(_walk_json_for_claims(path, item, capacity))
-    elif isinstance(value, list):
-        for item in value:
-            claims.extend(_walk_json_for_claims(path, item, current_capacity))
-    return claims
+def confirmation_files(root: Path) -> list[Path]:
+    return [
+        path
+        for path in sorted(root.glob("**/reviewer_confirmation*.json"))
+        if path.exists() and path.is_file()
+    ]
 
 
-def _claims_from_csv(path: Path) -> list[PromotionClaim]:
-    claims: list[PromotionClaim] = []
+def first_capacity_id(text: str) -> str | None:
+    match = CAPACITY_RE.search(text)
+    return match.group(0) if match else None
+
+
+def scan_text_status_file(path: Path, root: Path) -> list[Promotion]:
+    promotions: list[Promotion] = []
+    for line_number, line in enumerate(path.read_text(encoding="utf-8", errors="replace").splitlines(), 1):
+        if "validated_pedagogy" in line:
+            promotions.append(
+                Promotion(
+                    source=path.relative_to(root),
+                    kind="validated_pedagogy",
+                    capacity_id=first_capacity_id(line),
+                    line_number=line_number,
+                    line=line.strip(),
+                )
+            )
+        for match in POSITIVE_COUNT_RE.finditer(line):
+            promotions.append(
+                Promotion(
+                    source=path.relative_to(root),
+                    kind=f"{match.group(1).lower()} > 0",
+                    capacity_id=first_capacity_id(line),
+                    line_number=line_number,
+                    line=line.strip(),
+                )
+            )
+    return promotions
+
+
+def positive_int(value: str) -> bool:
+    try:
+        return int(value.strip()) > 0
+    except ValueError:
+        return False
+
+
+def scan_manifest_csv(path: Path, root: Path) -> list[Promotion]:
+    promotions: list[Promotion] = []
     with path.open(encoding="utf-8", newline="") as handle:
-        for row in csv.DictReader(handle):
-            capacity = (
+        reader = csv.DictReader(handle)
+        for line_number, row in enumerate(reader, 2):
+            capacity_id = (
                 row.get("capacity_id")
                 or row.get("capacite_id")
-                or row.get("capacité")
-                or row.get("id")
-                or "__GLOBAL__"
+                or row.get("capacity")
+                or first_capacity_id(",".join(row.values()))
             )
-            for key, value in row.items():
-                if value in PROMOTED_STATUSES:
-                    claims.append(PromotionClaim(capacity, value, path, key or "csv"))
-                if key and key.lower() in {"covered", "published"} and value not in {"", "0", "false", "False"}:
-                    claims.append(PromotionClaim(capacity, key.lower(), path, f"{key}={value}"))
-    return claims
+            for column in ("covered", "published"):
+                if column in row and positive_int(row.get(column, "")):
+                    promotions.append(
+                        Promotion(
+                            source=path.relative_to(root),
+                            kind=f"{column} > 0",
+                            capacity_id=capacity_id,
+                            line_number=line_number,
+                            line=str(row),
+                        )
+                    )
+            status = row.get("status") or row.get("statut") or ""
+            if status == "validated_pedagogy":
+                promotions.append(
+                    Promotion(
+                        source=path.relative_to(root),
+                        kind="validated_pedagogy",
+                        capacity_id=capacity_id,
+                        line_number=line_number,
+                        line=str(row),
+                    )
+                )
+    return promotions
 
 
-def collect_promotion_claims(root: Path) -> list[PromotionClaim]:
-    claims: list[PromotionClaim] = []
-    for path in _iter_status_files(root):
-        if path.suffix == ".csv":
-            claims.extend(_claims_from_csv(path))
-            continue
-        if path.suffix == ".json":
-            try:
-                claims.extend(_walk_json_for_claims(path, json.loads(path.read_text(encoding="utf-8"))))
-            except json.JSONDecodeError:
-                claims.append(PromotionClaim("__GLOBAL__", "invalid_json", path, "JSON illisible"))
-            continue
-        claims.extend(_claims_from_text(path, path.read_text(encoding="utf-8")))
-    return claims
+def scan_status_promotions(root: Path) -> list[Promotion]:
+    promotions: list[Promotion] = []
+    for path in status_files(root):
+        if path.name == "manifest.csv":
+            promotions.extend(scan_manifest_csv(path, root))
+        else:
+            promotions.extend(scan_text_status_file(path, root))
+    return promotions
 
 
-def _valid_verdict_hashes(root: Path) -> dict[str, set[str]]:
-    valid: dict[str, set[str]] = {}
+def schema_has_hard_error(messages: list[str]) -> bool:
+    return any(message.startswith("schema @") or message.startswith("schéma @") for message in messages)
+
+
+def load_json(path: Path) -> dict[str, Any] | None:
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    return payload if isinstance(payload, dict) else None
+
+
+def validated_system_a_hashes(root: Path) -> dict[str, str]:
     official = load_official_labels(root)
-    schema = root / "substance_verdict.schema.json"
-    section_cache: dict[Path, Any] = {}
-    verdict_files = sorted(root.glob("substance_review*.json"))
-    verdict_files += sorted((root / "substance_reviews").glob("**/*.json")) if (root / "substance_reviews").exists() else []
-    for path in verdict_files:
-        try:
-            verdict = json.loads(path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
+    section_cache: dict[Path, dict[str, Section]] = {}
+    hashes: dict[str, str] = {}
+    for path in verdict_files(root):
+        verdict = load_json(path)
+        if verdict is None:
             continue
-        if not isinstance(verdict, dict) or "capacities" not in verdict:
+        if schema_has_hard_error(validate_schema(verdict, SUBSTANCE_SCHEMA)):
             continue
-        if any(message.startswith("schéma @") for message in validate_schema(verdict, schema)):
+        capacities = verdict.get("capacities", [])
+        if not isinstance(capacities, list):
             continue
-        verdict_hash = canonical_verdict_hash(verdict)
-        for capacity in verdict.get("capacities", []):
+        for capacity in capacities:
+            if not isinstance(capacity, dict):
+                continue
             result = check_capacity(capacity, root, official, section_cache)
-            if (
-                result.capacity_id != "?"
-                and result.declared_verdict == "validated_pedagogy"
-                and result.effective_verdict == "validated_pedagogy"
-                and not result.downgraded
-            ):
-                valid.setdefault(result.capacity_id, set()).add(verdict_hash)
-    return valid
+            if result.effective_verdict == "validated_pedagogy" and not result.downgraded:
+                hashes[result.capacity_id] = canonical_verdict_hash(capacity)
+    return hashes
 
 
-def _load_confirmations(root: Path) -> dict[str, set[str]]:
-    confirmations: dict[str, set[str]] = {}
-    for path in sorted((root / "reviewer_confirmations").glob("*.json")) if (root / "reviewer_confirmations").exists() else []:
-        try:
-            payload = json.loads(path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
+def confirmation_schema_errors(payload: dict[str, Any]) -> list[str]:
+    try:
+        import jsonschema  # type: ignore
+    except ImportError:
+        return []
+    schema = json.loads(CONFIRMATION_SCHEMA.read_text(encoding="utf-8"))
+    validator = jsonschema.Draft202012Validator(schema)
+    return [error.message for error in validator.iter_errors(payload)]
+
+
+def reviewer_confirmations(root: Path) -> dict[str, str]:
+    confirmations: dict[str, str] = {}
+    for path in confirmation_files(root):
+        payload = load_json(path)
+        if payload is None or confirmation_schema_errors(payload):
             continue
-        if not isinstance(payload, dict):
-            continue
-        required = {"capacite_id", "verdict_hash", "relecteur", "date", "marqueur"}
-        if not required <= payload.keys():
-            continue
-        confirmations.setdefault(str(payload["capacite_id"]), set()).add(str(payload["verdict_hash"]))
+        capacity_id = payload.get("capacite_id")
+        verdict_hash = payload.get("verdict_hash")
+        if isinstance(capacity_id, str) and isinstance(verdict_hash, str):
+            confirmations[capacity_id] = verdict_hash
     return confirmations
 
 
-def analyze_status_promotions(root: Path = ROOT) -> list[str]:
-    claims = collect_promotion_claims(root)
-    if not claims:
-        return []
-    valid_hashes = _valid_verdict_hashes(root)
-    confirmations = _load_confirmations(root)
-    errors: list[str] = []
-    for claim in claims:
-        if claim.status == "invalid_json":
-            errors.append(f"{claim.source}: JSON illisible")
+def analyze_status_promotions(root: Path = ROOT) -> StatusPromotionResult:
+    root = root.resolve()
+    result = StatusPromotionResult(promotions=scan_status_promotions(root))
+    if not result.promotions:
+        return result
+
+    system_a_hashes = validated_system_a_hashes(root)
+    confirmations = reviewer_confirmations(root)
+    for promotion in result.promotions:
+        location = f"{promotion.source}:{promotion.line_number}"
+        if not promotion.capacity_id:
+            result.errors.append(
+                f"{location}: {promotion.kind} sans capacity_id traçable -> confirmation impossible"
+            )
             continue
-        cid = claim.capacity_id
-        if cid == "__GLOBAL__":
-            errors.append(f"{claim.source}: promotion globale {claim.status} sans capacité traçable")
+        expected_hash = system_a_hashes.get(promotion.capacity_id)
+        if expected_hash is None:
+            result.errors.append(
+                f"{location}: {promotion.kind} pour {promotion.capacity_id} sans verdict System A valide"
+            )
             continue
-        hashes = valid_hashes.get(cid, set())
-        if not hashes:
-            errors.append(f"{claim.source}: {cid} déclare {claim.status} sans verdict A valide")
-            continue
-        confirmed = confirmations.get(cid, set())
-        if not hashes & confirmed:
-            errors.append(f"{claim.source}: {cid} déclare {claim.status} sans confirmation relecteur concordante")
-    return errors
+        confirmed_hash = confirmations.get(promotion.capacity_id)
+        if confirmed_hash != expected_hash:
+            result.errors.append(
+                f"{location}: {promotion.kind} pour {promotion.capacity_id} sans confirmation humaine concordante"
+            )
+    return result
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Garde anti-promotion doctrinale")
-    parser.add_argument("--root", type=Path, default=ROOT)
-    args = parser.parse_args()
-    errors = analyze_status_promotions(args.root.resolve())
-    if errors:
+    result = analyze_status_promotions(ROOT)
+    if result.errors:
         print("check_status_promotion_guard: KO")
-        for error in errors:
+        for error in result.errors:
             print(f"- {error}")
         return 1
-    print("check_status_promotion_guard: PASS")
+    print(f"check_status_promotion_guard: PASS ({len(result.promotions)} promotion positive)")
     return 0
 
 

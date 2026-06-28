@@ -1,209 +1,134 @@
+from __future__ import annotations
+
+import hashlib
 import json
-import subprocess
 import sys
-import tempfile
-import unittest
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPTS = ROOT / "scripts"
-if str(SCRIPTS) not in sys.path:
-    sys.path.insert(0, str(SCRIPTS))
+sys.path.insert(0, str(ROOT / "scripts"))
+
+import check_status_promotion_guard as guard
 
 
-class StatusPromotionGuardTests(unittest.TestCase):
-    def setUp(self) -> None:
-        self.tmp = tempfile.TemporaryDirectory()
-        self.root = Path(self.tmp.name)
-        (self.root / "00_programmes_officiels").mkdir()
-        (self.root / "substance_reviews").mkdir()
-        (self.root / "reviewer_confirmations").mkdir()
-        (self.root / "source.md").write_text(
-            "# Section\n\n"
-            "Passer de la représentation d'une base dans une autre avec une méthode explicite.\n"
-            "L'élève s'entraîne sur une conversion vérifiable.\n"
-            "Le corrigé donne la base de départ et la base d'arrivée.\n",
-            encoding="utf-8",
+CAPACITY_ID = "P-TABLE-01"
+QUOTE = "Importer un CSV consiste à lire chaque ligne et séparer les champs."
+
+
+def validated_capacity() -> dict[str, object]:
+    evidence = {
+        "present": True,
+        "file": "preuve.md",
+        "anchor": "#preuve",
+        "quote": QUOTE,
+        "teaches": True,
+    }
+    return {
+        "capacity_id": CAPACITY_ID,
+        "official_label": "Importer une table depuis un fichier texte tabulé ou un fichier CSV.",
+        "proof_course": evidence,
+        "proof_practice": evidence,
+        "proof_correction": evidence,
+        "verdict": "validated_pedagogy",
+        "justification": "Les trois preuves sont ancrées, citées et marquées enseignantes.",
+        "scientific_flags": [],
+    }
+
+
+def write_valid_verdict(root: Path) -> dict[str, object]:
+    (root / "preuve.md").write_text(f"# Preuve\n\n{QUOTE}\n", encoding="utf-8")
+    capacity = validated_capacity()
+    verdict = {
+        "schema_version": "1.0.0",
+        "unit": "P05",
+        "level": "premiere",
+        "judged_at": "2026-06-28T20:00:00Z",
+        "judge_model": "system-a",
+        "author_model": "system-b",
+        "capacities": [capacity],
+    }
+    review_dir = root / "substance_reviews"
+    review_dir.mkdir()
+    (review_dir / "P05_substance_review.json").write_text(
+        json.dumps(verdict, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    return capacity
+
+
+def write_confirmation(root: Path, capacity: dict[str, object]) -> None:
+    payload = {
+        "capacite_id": CAPACITY_ID,
+        "verdict_hash": guard.canonical_verdict_hash(capacity),
+        "relecteur": "lecteur-humain",
+        "date": "2026-06-28",
+        "marqueur": "confirmation_humaine_lot1",
+    }
+    (root / "reviewer_confirmation_P_TABLE_01.json").write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+
+def test_canonical_verdict_hash_is_reproducible_and_sensitive() -> None:
+    verdict = {"b": 2, "a": {"z": True, "m": "x"}}
+    same = {"a": {"m": "x", "z": True}, "b": 2}
+    changed = {"a": {"m": "x", "z": False}, "b": 2}
+    expected = hashlib.sha256(
+        json.dumps(verdict, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode(
+            "utf-8"
         )
-        (self.root / "00_programmes_officiels" / "programme_nsi_2019.yaml").write_text(
-            "programmes:\n"
-            "  premiere:\n"
-            "    - id: P-DATA-BASE-01\n"
-            "      capacite_attendue:\n"
-            "        - Passer de la représentation d'une base dans une autre.\n"
-            "      niveau: premiere\n"
-            "  terminale: []\n",
-            encoding="utf-8",
-        )
-        (self.root / "substance_verdict.schema.json").write_text(
-            (ROOT / "substance_verdict.schema.json").read_text(encoding="utf-8"),
-            encoding="utf-8",
-        )
+    ).hexdigest()
 
-    def tearDown(self) -> None:
-        self.tmp.cleanup()
-
-    def write_valid_verdict(self) -> Path:
-        verdict = {
-            "schema_version": "1.0.0",
-            "unit": "P01",
-            "level": "premiere",
-            "judged_at": "2026-06-28T20:00:00Z",
-            "judge_model": "human-reviewer",
-            "author_model": "author",
-            "capacities": [
-                {
-                    "capacity_id": "P-DATA-BASE-01",
-                    "official_label": "Passer de la représentation d'une base dans une autre.",
-                    "proof_course": {
-                        "present": True,
-                        "file": "source.md",
-                        "anchor": "#section",
-                        "quote": "Passer de la représentation d'une base dans une autre avec une méthode explicite.",
-                        "teaches": True,
-                    },
-                    "proof_practice": {
-                        "present": True,
-                        "file": "source.md",
-                        "anchor": "#section",
-                        "quote": "L'élève s'entraîne sur une conversion vérifiable.",
-                        "teaches": True,
-                    },
-                    "proof_correction": {
-                        "present": True,
-                        "file": "source.md",
-                        "anchor": "#section",
-                        "quote": "Le corrigé donne la base de départ et la base d'arrivée.",
-                        "teaches": True,
-                    },
-                    "verdict": "validated_pedagogy",
-                    "justification": "Les trois preuves sont présentes, citées et vérifiables mécaniquement.",
-                    "scientific_flags": [],
-                }
-            ],
-        }
-        path = self.root / "substance_reviews" / "P01.valid.json"
-        path.write_text(json.dumps(verdict, ensure_ascii=False), encoding="utf-8")
-        return path
-
-    def run_guard(self) -> subprocess.CompletedProcess[str]:
-        return subprocess.run(
-            [sys.executable, str(ROOT / "scripts" / "check_status_promotion_guard.py"), "--root", str(self.root)],
-            text=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            timeout=60,
-        )
-
-    def test_canonical_verdict_hash_is_reproducible(self) -> None:
-        from check_status_promotion_guard import canonical_verdict_hash
-
-        first = {"b": [1, 2], "a": {"x": " y "}}
-        second = {"a": {"x": " y "}, "b": [1, 2]}
-        changed = {"a": {"x": "z"}, "b": [1, 2]}
-
-        self.assertEqual(canonical_verdict_hash(first), canonical_verdict_hash(second))
-        self.assertNotEqual(canonical_verdict_hash(first), canonical_verdict_hash(changed))
-
-    def test_rejects_reverted_fraud_report_without_proof(self) -> None:
-        report = "\n".join(
-            [
-                "# Rapport de substance frauduleux reconstruit",
-                "",
-                "validated_pedagogy: 15",
-                "",
-                "| Capacité | Verdict |",
-                "| --- | --- |",
-                *[
-                    f"| P-FAKE-{index:02d} | validated_pedagogy |"
-                    for index in range(1, 16)
-                ],
-            ]
-        )
-        review = {
-            "schema_version": "1.0.0",
-            "unit": "FRAUD",
-            "level": "premiere",
-            "judged_at": "2026-06-28T20:00:00Z",
-            "judge_model": "fraudulent-fixture",
-            "author_model": "unknown",
-            "capacities": [
-                {
-                    "capacity_id": f"P-FAKE-{index:02d}",
-                    "official_label": "Capacité fictive",
-                    "proof_course": {"present": False, "teaches": False},
-                    "proof_practice": {"present": False, "teaches": False},
-                    "proof_correction": {"present": False, "teaches": False},
-                    "verdict": "validated_pedagogy",
-                    "justification": "Promotion sans preuve mécanique.",
-                    "scientific_flags": [],
-                }
-                for index in range(1, 16)
-            ],
-        }
-        (self.root / "substance_report.md").write_text(report, encoding="utf-8")
-        (self.root / "substance_review.json").write_text(
-            json.dumps(review, ensure_ascii=False),
-            encoding="utf-8",
-        )
-
-        result = self.run_guard()
-
-        self.assertNotEqual(result.returncode, 0, result.stdout)
-        self.assertIn("validated_pedagogy", result.stdout)
-
-    def test_rejects_covered_without_valid_verdict(self) -> None:
-        (self.root / "coverage.md").write_text(
-            "- covered : 1\n\n| Capacité | Statut |\n|---|---|\n| P-DATA-BASE-01 | covered |\n",
-            encoding="utf-8",
-        )
-
-        result = self.run_guard()
-
-        self.assertNotEqual(result.returncode, 0, result.stdout)
-        self.assertIn("covered", result.stdout)
-
-    def test_rejects_published_without_reviewer_confirmation(self) -> None:
-        self.write_valid_verdict()
-        (self.root / "manifest.csv").write_text(
-            "id,statut\nP-DATA-BASE-01,published\n",
-            encoding="utf-8",
-        )
-
-        result = self.run_guard()
-
-        self.assertNotEqual(result.returncode, 0, result.stdout)
-        self.assertIn("confirmation", result.stdout)
-
-    def test_accepts_promotion_with_valid_verdict_and_confirmation(self) -> None:
-        from check_status_promotion_guard import canonical_verdict_hash
-
-        verdict_path = self.write_valid_verdict()
-        verdict = json.loads(verdict_path.read_text(encoding="utf-8"))
-        (self.root / "reviewer_confirmations" / "P-DATA-BASE-01.json").write_text(
-            json.dumps(
-                {
-                    "capacite_id": "P-DATA-BASE-01",
-                    "verdict_hash": canonical_verdict_hash(verdict),
-                    "relecteur": "Relecteur NSI",
-                    "date": "2026-06-28",
-                    "marqueur": "confirmation_humaine_tracee",
-                },
-                ensure_ascii=False,
-            ),
-            encoding="utf-8",
-        )
-        (self.root / "manifest.csv").write_text(
-            "id,statut\nP-DATA-BASE-01,validated_pedagogy\n",
-            encoding="utf-8",
-        )
-
-        result = self.run_guard()
-
-        self.assertEqual(result.returncode, 0, result.stdout)
-        self.assertIn("check_status_promotion_guard: PASS", result.stdout)
+    assert guard.canonical_verdict_hash(verdict) == expected
+    assert guard.canonical_verdict_hash(same) == expected
+    assert guard.canonical_verdict_hash(changed) != expected
 
 
-if __name__ == "__main__":
-    unittest.main()
+def test_fraudulent_87a22a2_fixture_is_rejected_without_proof(tmp_path: Path) -> None:
+    (tmp_path / "coverage.md").write_text(
+        "# Fixture commit 87a22a2\n\n15 capacities: validated_pedagogy\n",
+        encoding="utf-8",
+    )
+
+    result = guard.analyze_status_promotions(tmp_path)
+
+    assert any("validated_pedagogy" in error for error in result.errors)
+
+
+def test_covered_positive_without_system_a_verdict_is_rejected(tmp_path: Path) -> None:
+    (tmp_path / "coverage.md").write_text(f"{CAPACITY_ID} covered: 1\n", encoding="utf-8")
+
+    result = guard.analyze_status_promotions(tmp_path)
+
+    assert any("covered > 0" in error for error in result.errors)
+
+
+def test_published_positive_without_human_confirmation_is_rejected(tmp_path: Path) -> None:
+    write_valid_verdict(tmp_path)
+    (tmp_path / "manifest.csv").write_text(f"id,capacity,published\n1,{CAPACITY_ID},1\n", encoding="utf-8")
+
+    result = guard.analyze_status_promotions(tmp_path)
+
+    assert any("confirmation" in error for error in result.errors)
+
+
+def test_promoted_status_with_valid_system_a_and_confirmation_is_accepted(tmp_path: Path) -> None:
+    capacity = write_valid_verdict(tmp_path)
+    write_confirmation(tmp_path, capacity)
+    (tmp_path / "coverage.md").write_text(f"{CAPACITY_ID} validated_pedagogy\n", encoding="utf-8")
+
+    result = guard.analyze_status_promotions(tmp_path)
+
+    assert result.errors == []
+
+
+def test_quality_gate_and_ci_include_status_promotion_guard() -> None:
+    import check_quality_gates
+
+    commands = {" ".join(command) for command in check_quality_gates.CORE_CHECKS}
+    assert "scripts/check_status_promotion_guard.py" in commands
+    assert "check_status_promotion_guard.py" in (ROOT / ".github/workflows/ci.yml").read_text(
+        encoding="utf-8"
+    )

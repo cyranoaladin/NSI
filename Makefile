@@ -290,8 +290,8 @@ render-unit:
 
 judge:
 	test -n "$(U)"
-	python scripts/substance_judge.py --offline-fixture --unit "$(U)" --output /tmp/substance_judge_$(U).json
-	python scripts/check_substance_anchors.py /tmp/substance_judge_$(U).json --repo-root .
+	python scripts/substance_judge.py --unit "$(U)" --level premiere --offline-fixture "tests/fixtures/substance_judge/$(U).json" --output "01_build_reports/$(U)_substance_review.json"
+	python scripts/check_substance_anchors.py "01_build_reports/$(U)_substance_review.json" --repo-root .
 
 release-audit:
 	python scripts/cleanup_python_artifacts.py

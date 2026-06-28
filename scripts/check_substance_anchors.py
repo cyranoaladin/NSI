@@ -126,38 +126,24 @@ def normalize(s: str) -> str:
     return s
 
 
-def normalize_spaces(s: str) -> str:
-    """Collapse uniquement les espaces, sans changer la casse."""
+def normalize_citation_spaces(s: str) -> str:
+    """Collapse whitespace for citation matching without changing case."""
     return re.sub(r"\s+", " ", s).strip()
 
 
-def citation_status(quote: str, body: str, *, strict: bool = False) -> tuple[str, float]:
-    """Renvoie ('exact'|'normalized'|'fuzzy'|'absent', recouvrement[0..1]).
+def citation_status(quote: str, body: str) -> tuple[str, float]:
+    """Renvoie ('exact'|'normalized'|'absent', recouvrement[0..1]).
 
-    'normalized' = sous-chaîne après normalisation typographique (cas normal).
-    'fuzzy' = recouvrement de tokens >= 0.85 sans sous-chaîne exacte
-    (citation légèrement tronquée/recollée). En dessous : 'absent'.
-    En mode strict, seule la sous-chaîne exacte ou la normalisation des espaces
-    est acceptée ; la casse reste significative et le fuzzy est désactivé.
+    Le matching des citations est volontairement mécanique : sous-chaîne exacte,
+    ou sous-chaîne après collapse des espaces. La comparaison reste sensible à
+    la casse et n'accepte aucune approximation.
     """
     if quote in body:
         return "exact", 1.0
-    if strict:
-        nq, nb = normalize_spaces(quote), normalize_spaces(body)
-        if nq and nq in nb:
-            return "normalized", 1.0
-        return "absent", 0.0
-    nq, nb = normalize(quote), normalize(body)
+    nq, nb = normalize_citation_spaces(quote), normalize_citation_spaces(body)
     if nq and nq in nb:
         return "normalized", 1.0
-    q_tokens = nq.split()
-    if not q_tokens:
-        return "absent", 0.0
-    b_tokens = set(nb.split())
-    overlap = sum(1 for t in q_tokens if t in b_tokens) / len(q_tokens)
-    if overlap >= 0.85:
-        return "fuzzy", overlap
-    return "absent", overlap
+    return "absent", 0.0
 
 
 # --- chargement du programme officiel ----------------------------------------
@@ -228,10 +214,10 @@ def check_proof(role: str, ev: dict[str, Any], repo_root: Path,
         return pc
 
     file_rel = ev.get("file")
-    anchor = ev.get("anchor") or ""
-    quote = ev.get("quote") or ""
+    anchor = str(ev.get("anchor") or "")
+    quote = str(ev.get("quote") or "")
 
-    if not file_rel:
+    if not isinstance(file_rel, str) or not file_rel:
         pc.file_ok = False
         pc.messages.append("present=true mais file manquant")
         return pc
@@ -294,16 +280,17 @@ def check_capacity(
     official: dict[str, str],
     section_cache: dict[Path, dict[str, Section]],
 ) -> CapacityResult:
-    cid = cap.get("capacity_id", "?")
-    declared = cap.get("verdict", "needs_content")
+    cid = str(cap.get("capacity_id", "?"))
+    declared = str(cap.get("verdict", "needs_content"))
     reasons: list[str] = []
 
     # 1. concordance de l'intitulé officiel
     label_ok = True
     off = official.get(cid)
     if off is not None:
-        if normalize(cap.get("official_label", "")) not in normalize(off) \
-           and normalize(off) not in normalize(cap.get("official_label", "")):
+        official_label = str(cap.get("official_label", ""))
+        if normalize(official_label) not in normalize(off) \
+           and normalize(off) not in normalize(official_label):
             label_ok = False
             reasons.append(
                 f"official_label ne concorde pas avec le YAML pour {cid}")

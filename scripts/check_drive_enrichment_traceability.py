@@ -13,7 +13,7 @@ from typing import Iterable
 
 import yaml
 
-from _drive_paths import resolve_drive_reference
+from _drive_paths import documents_drive_root, resolve_drive_reference
 from _qa_common import ROOT, read_frontmatter
 
 INVENTORY = "drive_inventory.csv"
@@ -176,15 +176,28 @@ def trace_by_source(rows: list[dict[str, str]], root: Path) -> dict[Path, list[d
     return result
 
 
+def drive_root_errors(root: Path) -> list[str]:
+    drive_root = documents_drive_root(root)
+    if not drive_root.exists():
+        return [f"Documents_DRIVE absent -> {drive_root}"]
+    if not any(path.is_file() for path in drive_root.rglob("*")):
+        return [f"Documents_DRIVE vide -> {drive_root}"]
+    return []
+
+
 def analyze_drive_enrichment_traceability(root: Path = ROOT) -> DriveEnrichmentResult:
     result = DriveEnrichmentResult()
+    result.errors.extend(drive_root_errors(root))
     inventory_path = root / INVENTORY
     trace_path = root / TRACE
+    blocking_missing_inputs = False
     if not inventory_path.exists():
         result.errors.append(f"{INVENTORY} absent")
+        blocking_missing_inputs = True
     if not trace_path.exists():
         result.errors.append(f"{TRACE} absent")
-    if result.errors:
+        blocking_missing_inputs = True
+    if blocking_missing_inputs:
         return result
 
     inventory = read_inventory(root)

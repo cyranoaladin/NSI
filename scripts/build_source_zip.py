@@ -7,7 +7,7 @@ from pathlib import Path
 import sys
 import zipfile
 
-from build_source_archive import ROOT, DIST, excluded
+from build_source_archive import ROOT, DIST, excluded, iter_source_paths
 
 ZIP_PATH = DIST / "nsi-enseignement_source_clean.zip"
 STABLE_ZIP_DATETIME = (1980, 1, 1, 0, 0, 0)
@@ -18,7 +18,7 @@ def build_zip(root: Path = ROOT, target: Path = ZIP_PATH) -> Path:
     if target.exists():
         target.unlink()
     with zipfile.ZipFile(target, "w", compression=zipfile.ZIP_DEFLATED) as archive:
-        for path in sorted(root.rglob("*")):
+        for path in iter_source_paths(root):
             rel = path.relative_to(root)
             if excluded(rel):
                 continue

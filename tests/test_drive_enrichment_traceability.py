@@ -36,6 +36,22 @@ def write_minimal_report(root: Path, name: str = "source.pdf") -> None:
 
 
 class DriveEnrichmentTraceabilityTest(unittest.TestCase):
+    def test_drive_gate_rejects_absent_or_empty_documents_drive(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw) / "repo"
+            root.mkdir()
+            (root / "drive_inventory.csv").write_text(FIELDS, encoding="utf-8")
+            (root / "support_source_trace.yml").write_text("supports: []\n", encoding="utf-8")
+            write_minimal_report(root)
+
+            absent_result = drive_enrichment.analyze_drive_enrichment_traceability(root)
+            self.assertTrue(any("Documents_DRIVE" in error and "absent" in error for error in absent_result.errors))
+
+            drive = root.parent / "Documents_DRIVE"
+            drive.mkdir()
+            empty_result = drive_enrichment.analyze_drive_enrichment_traceability(root)
+            self.assertTrue(any("Documents_DRIVE" in error and "vide" in error for error in empty_result.errors))
+
     def test_integrated_drive_resource_without_hash_is_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)

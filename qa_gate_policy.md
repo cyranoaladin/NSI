@@ -20,7 +20,7 @@ Les gates bloquants doivent rester peu nombreux, explicites et défendables. Les
 | scripts/check_uploaded_archive_policy.py | blocking_structure | politique archives |
 | scripts/check_program_coverage.py | blocking_structure | indicateur central de couverture documentaire |
 | scripts/check_substance_anchors.py | blocking_substance | garde-fou mécanique du juge de substance |
-| scripts/check_status_promotion_guard.py | blocking_substance | interdit `validated_*`, `covered>0` ou `published>0` sans verdict A vérifié et confirmation relecteur |
+| scripts/check_status_promotion_guard.py | blocking_substance | interdit toute promotion sans verdict A et confirmation humaine |
 | scripts/check_contract_substance_quality.py | blocking_substance | contrats de séquence |
 | scripts/check_differentiation_distinctness.py | blocking_substance | différenciation non copiée |
 | scripts/check_rendered_unit_artifacts.py | blocking_structure | rendu charté pilote |
@@ -33,28 +33,15 @@ Les gates bloquants doivent rester peu nombreux, explicites et défendables. Les
 
 Les scripts de matrices, comptages de lignes, sections requises, profondeur approximative, ratios TP papier/exécutable et listes de séances sont des `informational_metric` sauf lorsqu'un autre gate bloquant s'appuie explicitement sur une preuve de substance.
 
-## Gates clone-propre
+## Frontière clone-propre / Drive local
 
-Ces gates doivent fonctionner dans une archive extraite sans miroir local
-`Documents_DRIVE` et peuvent donc être appelés par la CI et par
-`make audit-extracted-source`.
+### Gates clone-propre
 
-- `scripts/check_drive_enrichment_traceability_portable.py`
-- `scripts/check_drive_action_plan_completeness.py`
-- `scripts/check_drive_trace_no_absolute_local_paths.py`
-- `scripts/check_status_promotion_guard.py`
+Les gates de clone-propre doivent fonctionner dans une archive source ou un checkout CI sans miroir Drive local. Ils ne déréférencent pas `Documents_DRIVE` et s'appuient uniquement sur les traces publiables suivies dans Git. Sont notamment classés clone-propre : `scripts/check_drive_enrichment_traceability_portable.py`, `scripts/check_drive_action_plan_completeness.py`, `scripts/check_status_promotion_guard.py`, `scripts/check_substance_anchors.py` et l'agrégateur `scripts/check_quality_gates.py`.
 
-## Gates Drive-requis
+### Gates Drive-requis
 
-Ces gates d'audit local déréférencent le miroir brut `Documents_DRIVE`. Ils ne
-doivent pas être appelés par la CI ni par `make audit-extracted-source`. S'ils
-sont exécutés avec un miroir absent ou vide alors que des ressources locales sont
-déclarées intégrées, ils doivent échouer bruyamment au lieu de passer par
-vacuité.
-
-- `scripts/check_local_drive_traceability.py`
-- `scripts/check_drive_integration_plan.py`
-- `scripts/check_drive_enrichment_traceability.py`
+Les gates Drive-requis exigent explicitement un miroir `Documents_DRIVE` réel, non vide, adjacent au dépôt ou désigné par `NSI_DOCUMENTS_DRIVE_ROOT`. Ils doivent échouer bruyamment si ce dossier est absent ou vide afin d'éviter un passage au vert par vacuité. Sont classés Drive local : `scripts/check_drive_enrichment_traceability.py`, `scripts/check_local_drive_traceability.py`, `scripts/drive_local_inventory.py` et `scripts/drive_resource_triage.py`.
 
 ## Legacy
 

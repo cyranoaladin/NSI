@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build portable delivery artifacts without including .git in source archive."""
+"""Build portable delivery artifacts without packaging .git in source archive."""
 from __future__ import annotations
 
 import shutil
@@ -35,19 +35,35 @@ def excluded(rel: Path) -> bool:
         return True
     return False
 
+
+def iter_source_paths(root: Path = ROOT) -> list[Path]:
+    result = subprocess.run(
+        ["git", "ls-files", "-z"],
+        cwd=root,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    if result.returncode == 0:
+        paths = [
+            root / raw.decode("utf-8")
+            for raw in result.stdout.split(b"\0")
+            if raw
+        ]
+        return [path for path in paths if path.exists()]
+    return sorted(path for path in root.rglob("*") if path.is_file())
+
+
 def copy_tree(target: Path) -> None:
     root_target = target / 'nsi-enseignement'
     root_target.mkdir(parents=True)
-    for path in ROOT.rglob('*'):
+    for path in iter_source_paths(ROOT):
         rel = path.relative_to(ROOT)
         if excluded(rel):
             continue
         dest = root_target / rel
-        if path.is_dir():
-            dest.mkdir(parents=True, exist_ok=True)
-        elif path.is_file():
-            dest.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(path, dest)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(path, dest)
 
 
 def has_git_metadata(root: Path = ROOT) -> bool:
