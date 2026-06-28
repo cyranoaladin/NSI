@@ -133,6 +133,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - progression_audit.md: nom propre suspect -> Ressources Drive
 - qa_debt_register.md: nom propre suspect -> Portabilité Drive
 - qa_gate_policy.md: nom propre suspect -> Informational Metrics
+- qa_gate_policy.md: nom propre suspect -> Gates Drive
 - qa_report.md: nom propre suspect -> Plan Drive
 - qa_report.md: nom propre suspect -> Lots Drive
 - qa_report.md: nom propre suspect -> Dossier Git Drive
@@ -146,6 +147,10 @@ Les noms propres suspects sont listés pour revue humaine.
 - reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
 - reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
 - reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
+- reports/lot1/repo_map.md: nom propre suspect -> Alaeddine Ben Rhouma
+- reports/lot1/repo_map.md: nom propre suspect -> Claude Opus
+- reports/lot1/repo_map.md: nom propre suspect -> Proposeur System
+- reports/lot1/repo_map.md: nom propre suspect -> Conclusion Phase
 - scientific_claims_review_report.md: nom propre suspect -> Scientific Claims Review Report
 - scripts/check_course_internal_coherence.py: nom propre suspect -> Course Internal Coherence Report
 - scripts/check_differentiation_quality.py: nom propre suspect -> Differentiation Quality Report
@@ -185,6 +190,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - tests/test_course_sheets.py: nom propre suspect -> Lien Drive
 - tests/test_drive_enrichment_traceability.py: nom propre suspect -> Ressource Drive
 - tests/test_drive_portable_and_manifest.py: nom propre suspect -> Ressource Drive
+- tests/test_lot1_drive_gate_boundary.py: nom propre suspect -> Gates Drive
+- tests/test_lot1_drive_gate_boundary.py: nom propre suspect -> Ressource Drive
 - tests/test_missing_register_actionability.py: nom propre suspect -> Lien Drive
 - tests/test_operational_substance_controls.py: nom propre suspect -> Lien Drive
 - tests/test_session_referenced_files_exist.py: nom propre suspect -> Lien Drive
@@ -392,4 +399,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 282 alertes supplémentaires non affichées
+- ... 318 alertes supplémentaires non affichées

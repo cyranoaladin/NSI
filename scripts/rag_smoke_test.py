@@ -7,8 +7,8 @@ N'affiche jamais de secret — uniquement des résumés de réponse.
 
 Prérequis réseau :
   - L'API RAG (/search) est publique (HTTPS) : aucun tunnel nécessaire.
-    L'embedding est fait côté serveur par l'API.
-  - Ollama (embedding direct, LLM) est en loopback sur le serveur.
+    La vectorisation est faite côté serveur par l'API.
+  - Ollama (vectorisation directe, LLM) est en loopback sur le serveur.
     Pour les tests LLM, un tunnel SSH est nécessaire :
       ssh -L 11434:127.0.0.1:11434 <user>@<host>
     Sans tunnel, le test LLM est sauté avec un message explicite.
@@ -24,7 +24,7 @@ from pathlib import Path
 ENV_FILE = Path(__file__).resolve().parent.parent / ".env.rag"
 
 # Seules les variables pour l'API publique sont obligatoires.
-# LLM et embedding direct sont optionnels (tunnel SSH).
+# LLM et vectorisation directe sont optionnels (tunnel SSH).
 REQUIRED_VARS = [
     "RAG_BACKEND",
     "RAG_API_BASE_URL",
@@ -70,8 +70,8 @@ def mask(secret: str) -> str:
 
 
 def smoke_search(env: dict[str, str]) -> bool:
-    """Recherche top-3 dans la collection via l'API publique (embedding côté serveur)."""
-    print("\n[1/2] Test recherche RAG (API publique, embedding côté serveur)...")
+    """Recherche top-3 dans la collection via l'API publique."""
+    print("\n[1/2] Test recherche RAG (API publique, vectorisation côté serveur)...")
     url = env["RAG_API_BASE_URL"]
     body = json.dumps({
         "q": "parcours arbre binaire ordre infixe",

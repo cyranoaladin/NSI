@@ -37,6 +37,7 @@ import sys
 import unicodedata
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
+from typing import Any
 
 # --- slugifieur (dupliqué ici pour faire du script un fichier autonome) -------
 
@@ -125,15 +126,27 @@ def normalize(s: str) -> str:
     return s
 
 
-def citation_status(quote: str, body: str) -> tuple[str, float]:
+def normalize_spaces(s: str) -> str:
+    """Collapse uniquement les espaces, sans changer la casse."""
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def citation_status(quote: str, body: str, *, strict: bool = False) -> tuple[str, float]:
     """Renvoie ('exact'|'normalized'|'fuzzy'|'absent', recouvrement[0..1]).
 
     'normalized' = sous-chaîne après normalisation typographique (cas normal).
     'fuzzy' = recouvrement de tokens >= 0.85 sans sous-chaîne exacte
     (citation légèrement tronquée/recollée). En dessous : 'absent'.
+    En mode strict, seule la sous-chaîne exacte ou la normalisation des espaces
+    est acceptée ; la casse reste significative et le fuzzy est désactivé.
     """
     if quote in body:
         return "exact", 1.0
+    if strict:
+        nq, nb = normalize_spaces(quote), normalize_spaces(body)
+        if nq and nq in nb:
+            return "normalized", 1.0
+        return "absent", 0.0
     nq, nb = normalize(quote), normalize(body)
     if nq and nq in nb:
         return "normalized", 1.0
@@ -207,7 +220,7 @@ class ProofCheck:
         return self.file_ok and self.anchor_ok and self.quote_ok
 
 
-def check_proof(role: str, ev: dict, repo_root: Path,
+def check_proof(role: str, ev: dict[str, Any], repo_root: Path,
                 section_cache: dict[Path, dict[str, Section]]) -> ProofCheck:
     pc = ProofCheck(role=role, present=bool(ev.get("present")),
                     teaches=bool(ev.get("teaches")))
@@ -275,8 +288,12 @@ class CapacityResult:
     reasons: list[str]
 
 
-def check_capacity(cap: dict, repo_root: Path, official: dict[str, str],
-                   section_cache) -> CapacityResult:
+def check_capacity(
+    cap: dict[str, Any],
+    repo_root: Path,
+    official: dict[str, str],
+    section_cache: dict[Path, dict[str, Section]],
+) -> CapacityResult:
     cid = cap.get("capacity_id", "?")
     declared = cap.get("verdict", "needs_content")
     reasons: list[str] = []
@@ -320,7 +337,7 @@ def check_capacity(cap: dict, repo_root: Path, official: dict[str, str],
 
 # --- validation de schéma (optionnelle) --------------------------------------
 
-def validate_schema(verdict: dict, schema_path: Path) -> list[str]:
+def validate_schema(verdict: dict[str, Any], schema_path: Path) -> list[str]:
     try:
         import jsonschema  # type: ignore
     except ImportError:
@@ -329,7 +346,7 @@ def validate_schema(verdict: dict, schema_path: Path) -> list[str]:
     if not schema_path.exists():
         return [f"schéma introuvable : {schema_path}"]
     schema = json.loads(schema_path.read_text(encoding="utf-8"))
-    errs = []
+    errs: list[str] = []
     validator = jsonschema.Draft202012Validator(schema)
     for e in sorted(validator.iter_errors(verdict), key=lambda x: x.path):
         loc = "/".join(str(p) for p in e.path) or "(racine)"

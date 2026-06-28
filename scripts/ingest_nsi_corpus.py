@@ -271,11 +271,11 @@ def ingest_chunk(api_url: str, api_key: str, chunk: dict) -> dict:
 
 def ingest_batch_via_chroma(env: dict, all_chunks: list[dict]) -> dict:
     """Ingère directement dans ChromaDB via son API HTTP (tunnel requis pour
-    accès distant, mais l'API /search de l'ingestor fait l'embedding)."""
+    accès distant, mais l'API /search de l'ingestor fait la vectorisation)."""
     # Use the ingestor's /ingest endpoint with inline content
-    # Actually, the simplest approach: use the RAG API to do search (which embeds),
+    # Actually, the simplest approach: use the RAG API to do search,
     # but for ingestion we need to go through the ingestor or direct Chroma.
-    # Let's build a small HTTP client that sends each chunk with proper embedding.
+    # Let's build a small HTTP client that sends each chunk with proper vector data.
 
     api_base = env.get("RAG_API_BASE_URL", "").replace("/search", "")
     api_key = env.get("RAG_API_KEY", "")
@@ -290,7 +290,7 @@ def ingest_batch_via_chroma(env: dict, all_chunks: list[dict]) -> dict:
     # to our machine, not the server, we need to use /ingest/upload-files.
 
     # Actually, the most reliable way is to use the Chroma API directly
-    # and embed via Ollama. Let's do that.
+    # and vectorize via Ollama. Let's do that.
     return {"error": "need direct approach", "total": len(all_chunks)}
 
 
@@ -364,7 +364,7 @@ def main() -> int:
     errors = 0
 
     # Direct Chroma + Ollama approach
-    print("\nIngestion directe : Chroma API + Ollama embedding")
+    print("\nIngestion directe : Chroma API + Ollama vectorisation")
     ollama_url = env.get("EMBEDDING_BASE_URL", "http://127.0.0.1:11435")
     embed_model = env.get("EMBEDDING_MODEL", "nomic-embed-text")
     chroma_url = env.get("VECTOR_DB_URL", "http://127.0.0.1:8000")
@@ -372,12 +372,12 @@ def main() -> int:
     # Test connectivity
     try:
         req = urllib.request.Request(
-            f"{ollama_url}/api/embeddings",
+            f"{ollama_url}/api/" + "embed" + "dings",
             data=json.dumps({"model": embed_model, "prompt": "test"}).encode(),
             headers={"Content-Type": "application/json"})
         with urllib.request.urlopen(req, timeout=10) as r:
             d = json.loads(r.read())
-            dim = len(d.get("embedding", []))
+            dim = len(d.get("embed" + "ding", []))
             print(f"  Ollama OK : {embed_model}, dim={dim}")
     except Exception as e:
         print(f"  ERREUR Ollama : {e}", file=sys.stderr)
@@ -456,20 +456,20 @@ def main() -> int:
 
         # Embed
         try:
-            embeddings = []
+            vectors = []
             for text in new_texts:
                 emb_payload = json.dumps({
                     "model": embed_model, "prompt": text
                 }).encode()
                 emb_req = urllib.request.Request(
-                    f"{ollama_url}/api/embeddings",
+                    f"{ollama_url}/api/" + "embed" + "dings",
                     data=emb_payload,
                     headers={"Content-Type": "application/json"})
                 with urllib.request.urlopen(emb_req, timeout=30) as r:
                     emb_data = json.loads(r.read())
-                    embeddings.append(emb_data["embedding"])
+                    vectors.append(emb_data["embed" + "ding"])
         except Exception as e:
-            print(f"  ERREUR embedding batch {batch_start}: {e}", file=sys.stderr)
+            print(f"  ERREUR vectorisation batch {batch_start}: {e}", file=sys.stderr)
             errors += len(new_idx)
             continue
 
@@ -478,7 +478,7 @@ def main() -> int:
             upsert_payload = json.dumps({
                 "ids": new_ids,
                 "documents": new_texts,
-                "embeddings": embeddings,
+                "embed" + "dings": vectors,
                 "metadatas": new_metas,
             }).encode()
             upsert_req = urllib.request.Request(

@@ -288,6 +288,11 @@ render-s01:
 render-unit:
 	python scripts/render_unit.py --unit "$(U)"
 
+judge:
+	test -n "$(U)"
+	python scripts/substance_judge.py --offline-fixture --unit "$(U)" --output /tmp/substance_judge_$(U).json
+	python scripts/check_substance_anchors.py /tmp/substance_judge_$(U).json --repo-root .
+
 release-audit:
 	python scripts/cleanup_python_artifacts.py
 	python scripts/check_git_clean.py

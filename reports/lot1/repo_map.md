@@ -12,8 +12,8 @@ Le run GitHub Actions associé (`28334022625`) est terminé avec `conclusion=suc
 
 Le commit `05fa3c8` est signé par l'humain:
 
-- auteur: `Alaeddine Ben Rhouma <cyranoaladin@gmail.com>`
-- co-auteur: `Claude Opus 4.6 (1M context) <noreply@anthropic.com>`
+- auteur: `Alaeddine Ben Rhouma (humain)`
+- co-auteur: `Claude Opus 4.6 (outil)`
 - message: `Ajuster la config après restructuration du dépôt distant`
 
 Le diff de `05fa3c8` est confiné à `scrapping_NSI/.coveragerc` et

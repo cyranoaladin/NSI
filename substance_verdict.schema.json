@@ -117,8 +117,8 @@
           "description": "Preuve de correction (corrigé) permettant l'auto-correction."
         },
         "verdict": {
-          "enum": ["validated_pedagogy", "needs_content", "BLOCKER"],
-          "description": "validated_pedagogy uniquement si les trois preuves sont present=true ET teaches=true. Sinon needs_content (contenu insuffisant) ou BLOCKER (incohérence empêchant tout jugement)."
+          "enum": ["validated_pedagogy", "needs_review", "needs_content", "BLOCKER"],
+          "description": "validated_pedagogy uniquement si les trois preuves sont present=true ET teaches=true et confirmées par relecture humaine. Un proposeur outillé peut seulement écrire needs_review ou needs_content. BLOCKER signale une incohérence empêchant tout jugement."
         },
         "justification": {
           "type": "string",

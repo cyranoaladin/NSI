@@ -32,6 +32,7 @@ CORE_CHECKS: list[list[str]] = [
     ["scripts/check_uploaded_archive_policy.py"],
     ["scripts/check_program_coverage.py"],
     ["scripts/check_substance_anchors.py"],
+    ["scripts/check_status_promotion_guard.py"],
     ["scripts/check_contract_substance_quality.py"],
     ["scripts/check_differentiation_distinctness.py"],
     ["scripts/check_rendered_unit_artifacts.py", "--unit", "P05"],

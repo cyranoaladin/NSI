@@ -37,5 +37,8 @@ jobs:
           test "$status" -eq 1
           grep -q "DÉGRADÉ" /tmp/poisoned_guard.log
 
+      - name: Status promotion guard
+        run: python scripts/check_status_promotion_guard.py
+
       - name: Secret guard
         run: python scripts/check_no_committed_secrets.py

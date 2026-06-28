@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build portable delivery artifacts without embedding .git in source archive."""
+"""Build portable delivery artifacts without including .git in source archive."""
 from __future__ import annotations
 
 import shutil

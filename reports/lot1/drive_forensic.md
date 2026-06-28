@@ -8,11 +8,11 @@ Mode: lecture seule des roots et du registre existant.
 
 | Élément | Chemin | Existe | Fichiers |
 |---|---:|---:|---:|
-| Drive source | `/home/alaeddine/Documents/NSI/Documents_DRIVE` | oui | 0 |
-| Banque centralisée | `/home/alaeddine/Documents/NSI/scrapping_NSI/ressources_nsi_centralisees` | oui | 15906 |
-| Quarantaine doublons Drive | `/home/alaeddine/Documents/NSI/scrapping_NSI/ressources_nsi_centralisees/_doublons_drive` | oui | 291 |
-| Quarantaine skipped Drive | `/home/alaeddine/Documents/NSI/scrapping_NSI/ressources_nsi_centralisees/_skipped_drive` | oui | 38 |
-| Registre migration | `/home/alaeddine/Documents/NSI/scrapping_NSI/migration_registry.json` | oui | n/a |
+| Drive source | `Documents_DRIVE` | oui | 0 |
+| Banque centralisée | `scrapping_NSI/ressources_nsi_centralisees` | oui | 15906 |
+| Quarantaine doublons Drive | `scrapping_NSI/ressources_nsi_centralisees/_doublons_drive` | oui | 291 |
+| Quarantaine skipped Drive | `scrapping_NSI/ressources_nsi_centralisees/_skipped_drive` | oui | 38 |
+| Registre migration | `scrapping_NSI/migration_registry.json` | oui | n/a |
 
 ## Registre existant
 
@@ -44,7 +44,7 @@ test, pas vers le Drive réel:
 ```
 
 Elle ne constitue donc pas une preuve de relocalisation des fichiers du Drive
-réel `/home/alaeddine/Documents/NSI/Documents_DRIVE`.
+réel `Documents_DRIVE`.
 
 ## Réconciliation demandée
 
@@ -81,7 +81,7 @@ suivants:
   `hash_sha256`;
 - sauvegarde du dossier `Documents_DRIVE` avant migration;
 - registre de migration antérieur contenant les chemins réels
-  `/home/alaeddine/Documents/NSI/Documents_DRIVE/...`;
+  `Documents_DRIVE/...`;
 - logs d'exécution complets de l'organiseur indiquant chaque déplacement Drive.
 
 Conformément à la consigne, aucune Phase 1B / 2 / 3 ne doit être ouverte sans
