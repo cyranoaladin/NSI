@@ -120,8 +120,35 @@ def iter_source_files() -> list[Path]:
     return files
 
 
+def _find_sequence_capacities(path: Path) -> tuple[str, str, str]:
+    """Cherche les capacités depuis un .md frère dans le même répertoire de séquence."""
+    # Remonter du dossier code/ vers le dossier séquence
+    seq_dir = path.parent
+    if seq_dir.name == "code":
+        seq_dir = seq_dir.parent
+    theme, notion, caps = "", "", ""
+    for md in sorted(seq_dir.glob("*.md")):
+        try:
+            text = md.read_text(encoding="utf-8")[:2000]
+        except Exception:
+            continue
+        meta, _ = parse_frontmatter(text)
+        if meta.get("capacities"):
+            cap_list = meta["capacities"]
+            if isinstance(cap_list, str):
+                cap_list = [cap_list]
+            caps = ",".join(cap_list)
+        if not theme:
+            theme = meta.get("theme", "")
+        if not notion:
+            notion = meta.get("notion", "")
+        if caps:
+            break
+    return theme, notion, caps
+
+
 def build_chunks_py(path: Path) -> list[dict]:
-    """Construit un chunk unique pour un fichier Python."""
+    """Construit un chunk unique pour un fichier Python, avec capacités héritées."""
     try:
         text = path.read_text(encoding="utf-8")
     except Exception:
@@ -130,7 +157,6 @@ def build_chunks_py(path: Path) -> list[dict]:
         return []
     rel = path.relative_to(ROOT)
     parts = rel.parts
-    # Déduire level et sequence_id du chemin (ex: .../premiere/P05/code/...)
     level = ""
     seq_id = ""
     for p in parts:
@@ -138,7 +164,6 @@ def build_chunks_py(path: Path) -> list[dict]:
             level = p
         if re.match(r'^[PT]\d{2}$', p):
             seq_id = p
-    # Déduire document_type du nom
     name = path.stem.lower()
     if "corrige" in name or "correction" in name:
         doc_type = "corrige_code"
@@ -148,6 +173,8 @@ def build_chunks_py(path: Path) -> list[dict]:
         doc_type = "starter_code"
     else:
         doc_type = "code"
+    # Hériter les capacités de la séquence parente
+    theme, notion, caps = _find_sequence_capacities(path)
     return [{
         "text": text,
         "metadata": {
@@ -155,9 +182,9 @@ def build_chunks_py(path: Path) -> list[dict]:
             "level": level,
             "sequence_id": seq_id,
             "document_type": doc_type,
-            "theme": "",
-            "notion": "",
-            "capacities": "",
+            "theme": theme,
+            "notion": notion,
+            "capacities": caps,
             "status": "needs_review",
             "anchor": "",
             "sha256": sha256(text),
