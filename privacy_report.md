@@ -185,6 +185,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/render_sequence.py: nom propre suspect -> Fira Code
 - scripts/render_sequence.py: nom propre suspect -> Sans Mono
 - scripts/substance_judge.py: nom propre suspect -> Content-Type
+- scripts/substance_report_renderer.py: nom propre suspect -> Raisons System
+- scripts/substance_report_renderer.py: nom propre suspect -> Raisons System
 - td_corrige_alignment_report.md: nom propre suspect -> Corrige Alignment Report
 - tests/test_course_sheets.py: nom propre suspect -> Lien Drive
 - tests/test_course_sheets.py: nom propre suspect -> Lien Drive
