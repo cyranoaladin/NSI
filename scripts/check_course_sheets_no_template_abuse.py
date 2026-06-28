@@ -6,7 +6,6 @@ from __future__ import annotations
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
-import re
 
 from _qa_common import ROOT
 from _course_sheets_common import normalize, section_text, sheet_files, useful_lines

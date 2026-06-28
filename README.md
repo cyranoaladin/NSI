@@ -14,8 +14,8 @@ Corpus pédagogique versionné pour la spécialité NSI (Première/Terminale), s
 - `00_programmes_officiels/` : sources institutionnelles et références du programme.
 - `01_charte_graphique_et_pedagogique/` : charte visuelle + schéma de métadonnées.
 - `02_modeles_documents/` : modèles réutilisables (cours, TD, TP, évaluation, corrigé, guide prof, qcm, séquence).
-- `03_progressions/` : progressions annuelles proposées.
-- `premiere/`, `terminale/` : corpus par niveau (séquences + banques réutilisables).
+- `03_progressions/supports/` : canon de production du corpus.
+- `premiere/`, `terminale/` : pilotes et références de style, pas cible des nouvelles productions.
 - `scripts/` : scripts de build, contrôle qualité, tests.
 
 ## 2.1) Sources locales Drive
@@ -34,12 +34,21 @@ registres. Cette source locale ne change pas les statuts : une ressource adapté
 
 ## 4) Compilation / production des livrables
 
+Depuis la racine du dépôt :
+
+```bash
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements.txt
+ruff check .
+pytest
+```
+
 1. Vérifier l’arborescence.
 2. Mettre à jour le `manifest.csv` si de nouvelles ressources sont ajoutées.
 3. Lancer :
 
 ```bash
-cd nsi-enseignement
 python scripts/build_all.py
 python scripts/check_metadata.py
 python scripts/check_links.py
@@ -55,7 +64,8 @@ python scripts/generate_index.py
 
 ## 5) Ajouter une séquence
 
-1. Créer un dossier dans `premiere/sequences/` ou `terminale/sequences/`.
+1. Créer ou modifier les supports dans `03_progressions/supports/`.
+   Les dossiers `premiere/sequences/` et `terminale/sequences/` restent des pilotes de style.
 2. Créer les fichiers obligatoires :
    - `cours_eleve.md`
    - `trace_ecrite.md`
@@ -97,13 +107,26 @@ Les documents QCM/corrigé/tests restent dans les fichiers dédiés.
 ## 9) Commandes de vérification complètes
 
 ```bash
-cd nsi-enseignement
-python scripts/build_all.py
-python scripts/check_links.py
-python scripts/check_metadata.py
-python scripts/check_program_coverage.py
-python scripts/run_python_tests.py
-python scripts/generate_index.py
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements.txt
+ruff check .
+pytest
+make audit
 ```
 
 Le dépôt est orienté vers une revue continue : chaque ajout doit être répercuté dans `manifest.csv`, `coverage.md` et `inventory_report.md`.
+
+## 10) Substance et statuts
+
+Le pipeline de substance est conservateur :
+
+- `scripts/run_substance_judge.py` et `scripts/check_substance_anchors.py` produisent et vérifient les verdicts au format `substance_verdict.schema.json`.
+- `scripts/substance_judge.py` peut proposer des preuves depuis le RAG/LLM, mais ne constitue pas une validation humaine.
+- `covered`, `validated_*` et `published` restent à `0` tant qu’une revue humaine pédagogique et scientifique n’est pas tracée.
+
+Le smoke RAG est optionnel et séparé des tests pytest :
+
+```bash
+python scripts/rag_smoke_test.py
+```

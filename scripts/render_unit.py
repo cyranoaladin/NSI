@@ -6,7 +6,6 @@ from __future__ import annotations
 import argparse
 import html
 import re
-import sys
 from pathlib import Path
 
 from _qa_common import ROOT, strip_frontmatter

@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 from typing import List
-from pathlib import Path
 
 from _qa_common import ROOT, print_result
 

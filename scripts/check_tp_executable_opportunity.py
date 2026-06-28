@@ -8,7 +8,7 @@ from pathlib import Path
 import os
 import re
 
-from _qa_common import ROOT, read_frontmatter, sequence_id_from_path, strip_frontmatter
+from _qa_common import ROOT, sequence_id_from_path, strip_frontmatter
 from check_paper_tp_justification import is_paper_tp
 
 

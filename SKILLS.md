@@ -509,7 +509,7 @@ Statuer sur l’enseignement réel d’une capacité dans le corpus.
 
 **Le corpus `nsi-enseignement` est indexé dans `nsi_corpus`.** 374 fichiers → 4182 chunks, 0 erreurs. Le juge de substance peut interroger cette collection pour récupérer la section pertinente.
 
-**Script d’ingestion** : `scripts/ingest_nsi_corpus.py` (idempotent, déduplique par sha256). Prérequis : tunnel SSH (`ssh -L 11435:127.0.0.1:11434 -L 18000:127.0.0.1:8000 root@88.99.254.59`). Métadonnées par chunk : `path`, `level`, `sequence_id`, `document_type`, `theme`, `notion`, `capacities`, `status`, `anchor`, `sha256`. Respecte `private_data`.
+**Script d’ingestion** : `scripts/ingest_nsi_corpus.py` (idempotent, déduplique par sha256). Prérequis : tunnel SSH (`ssh -L 11435:127.0.0.1:11434 -L 18000:127.0.0.1:8000 root@<host>`). Métadonnées par chunk : `path`, `level`, `sequence_id`, `document_type`, `theme`, `notion`, `capacities`, `status`, `anchor`, `sha256`. Respecte `private_data`.
 
 ### Modèle d’embedding
 
@@ -534,7 +534,7 @@ Réponse : `{"query", "collection", "k", "returned", "hits": [{"id", "metadata",
 Score = distance cosine (plus bas = plus proche).
 
 Pour un accès direct à ChromaDB ou Ollama, un tunnel SSH est nécessaire (port 11435 pour éviter conflit Ollama local) :
-`ssh -L 11435:127.0.0.1:11434 -L 8000:127.0.0.1:8000 root@88.99.254.59`
+`ssh -L 11435:127.0.0.1:11434 -L 8000:127.0.0.1:8000 root@<host>`
 
 ### Usage cible (après ingestion du corpus)
 

@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import csv
 import tarfile
 import tempfile
 import unittest

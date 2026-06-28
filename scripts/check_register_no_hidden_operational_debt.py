@@ -5,7 +5,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
-import re
 
 from _qa_common import ROOT, read_frontmatter
 from _course_sheets_common import course_sheet_links, resource_exists, sheet_files

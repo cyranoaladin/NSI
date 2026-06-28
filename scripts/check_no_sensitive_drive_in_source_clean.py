@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-import re
 import sys
 import tarfile
 from pathlib import Path

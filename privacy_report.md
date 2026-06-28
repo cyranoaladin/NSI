@@ -172,6 +172,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
 - scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
 - scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
+- scripts/ingestion_errors.csv: nom propre suspect -> Von-Koch
 - scripts/rag_smoke_test.py: nom propre suspect -> Content-Type
 - scripts/rag_smoke_test.py: nom propre suspect -> Content-Type
 - scripts/render_sequence.py: nom propre suspect -> Fira Code
@@ -179,6 +180,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/render_sequence.py: nom propre suspect -> Fira Code
 - scripts/render_sequence.py: nom propre suspect -> Fira Code
 - scripts/render_sequence.py: nom propre suspect -> Sans Mono
+- scripts/substance_judge.py: nom propre suspect -> Content-Type
 - td_corrige_alignment_report.md: nom propre suspect -> Corrige Alignment Report
 - tests/test_course_sheets.py: nom propre suspect -> Lien Drive
 - tests/test_course_sheets.py: nom propre suspect -> Lien Drive
@@ -391,4 +393,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 276 alertes supplémentaires non affichées
+- ... 1100 alertes supplémentaires non affichées

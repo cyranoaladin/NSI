@@ -7,7 +7,7 @@ import argparse
 import tempfile
 from pathlib import Path
 
-from _qa_common import ROOT, print_result
+from _qa_common import print_result
 from render_unit import CHARTER, render
 
 

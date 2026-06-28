@@ -1,0 +1,33 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+include = [
+    "scripts/**/*.py",
+    "tests/**/*.py",
+]
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "dist",
+    "01_build_reports",
+]
+
+[tool.ruff.lint]
+select = ["E", "F"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["E402"]
+"scripts/check_git_clean.py" = ["E402"]
+"scripts/check_metadata.py" = ["E402"]
+"scripts/check_session_duration_consistency.py" = ["E402"]
+"scripts/check_session_level_planning.py" = ["E402"]
+"scripts/check_session_monthly_total.py" = ["E402"]
+"scripts/check_session_project_hours.py" = ["E402"]
+"scripts/rebuild_inventory.py" = ["E402"]

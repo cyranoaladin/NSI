@@ -1,6 +1,7 @@
 allowed_emails: []
 allowed_phone_patterns:
   - "^2026-2027$"
+  - "^29-09-2025$"
 allowed_name_patterns: []
 institutional_patterns:
   - "education.gouv.fr"
@@ -21,4 +22,4 @@ allowed_privacy_warning_patterns:
   - "Toulouse"
   - "scripts/check_no_private_data.py"
 student_names_files: []
-notes: "Aucune exception nominative ou coordonnée personnelle n'est autorisée à ce stade. Le motif 2026-2027 est l'année scolaire, pas un numéro de téléphone."
+notes: "Aucune exception nominative ou coordonnée personnelle n'est autorisée à ce stade. Les motifs 2026-2027 et 29-09-2025 sont respectivement une année scolaire et une date de nom de fichier, pas des numéros de téléphone."

@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 import shutil
 import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -18,8 +19,18 @@ class AuditExtractedSourceNoHangTest(unittest.TestCase):
         self.assertNotIn("\n\tpython scripts/check_tp_pedagogical_assets.py", makefile)
 
     def test_source_clean_audit_extracted_source_finishes_without_drive_mirror(self) -> None:
+        completed_build = subprocess.run(
+            [sys.executable, "scripts/build_source_archive.py"],
+            cwd=ROOT,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            timeout=60,
+        )
+        self.assertEqual(completed_build.returncode, 0, completed_build.stdout)
+
         archive = ROOT / "dist" / "source_clean.tar.gz"
-        self.assertTrue(archive.exists(), "dist/source_clean.tar.gz doit exister avant ce test")
+        self.assertTrue(archive.exists(), "dist/source_clean.tar.gz doit être généré par ce test")
         with tempfile.TemporaryDirectory() as raw:
             completed_extract = subprocess.run(
                 ["tar", "-xzf", str(archive), "-C", raw],

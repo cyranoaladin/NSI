@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Ruff
+        run: ruff check .
+
+      - name: Tests
+        run: pytest
+
+      - name: Substance adversarial guard
+        run: |
+          set +e
+          python scripts/check_substance_anchors.py substance_reviews/_adversarial/poisoned.verdict.json --repo-root . > /tmp/poisoned_guard.log 2>&1
+          status=$?
+          cat /tmp/poisoned_guard.log
+          test "$status" -eq 1
+          grep -q "DÉGRADÉ" /tmp/poisoned_guard.log
+
+      - name: Secret guard
+        run: python scripts/check_no_committed_secrets.py

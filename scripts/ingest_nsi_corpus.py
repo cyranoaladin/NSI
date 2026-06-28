@@ -220,9 +220,6 @@ def build_chunks(path: Path) -> list[dict]:
     capacities = meta.get("capacities", [])
     if isinstance(capacities, str):
         capacities = [capacities]
-    # Flatten nested official_program.capacities
-    if not capacities and "official_program" not in meta:
-        pass  # no capacities
     cap_str = ",".join(capacities) if capacities else ""
 
     sections = split_sections(body)
@@ -261,20 +258,15 @@ def build_chunks(path: Path) -> list[dict]:
 def ingest_chunk(api_url: str, api_key: str, chunk: dict) -> dict:
     """Envoie un chunk à l'API /ingest."""
     meta = dict(chunk["metadata"])
-    body = json.dumps({
-        "source_type": "markdown",
-        "source": meta.get("path", ""),
-        "metadata": meta,
-    }).encode()
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {api_key}",
-    }
     # We need to send the text content — use /ingest which loads from source.
     # But /ingest expects a URL or path the server can access.
     # Instead, use the direct Chroma API through the ingestor.
     # Actually, let's batch via a different approach: upload the text directly.
-    return {"status": "skip", "detail": "need batch endpoint"}
+    return {
+        "status": "skip",
+        "source": meta.get("path", ""),
+        "detail": f"need batch endpoint at {api_url} with key length {len(api_key)}",
+    }
 
 
 def ingest_batch_via_chroma(env: dict, all_chunks: list[dict]) -> dict:
@@ -291,10 +283,6 @@ def ingest_batch_via_chroma(env: dict, all_chunks: list[dict]) -> dict:
     if not api_base or not api_key:
         return {"error": "RAG_API_BASE_URL ou RAG_API_KEY manquant"}
 
-    # Group chunks by file for reporting
-    stats = {"total": len(all_chunks), "added": 0, "skipped": 0, "errors": 0,
-             "error_details": []}
-
     # Use /ingest/urls with data: URIs? No.
     # Best approach: POST each chunk as markdown via /ingest
     # The ingestor's /ingest accepts source_type="markdown" with source=<path>
@@ -303,7 +291,7 @@ def ingest_batch_via_chroma(env: dict, all_chunks: list[dict]) -> dict:
 
     # Actually, the most reliable way is to use the Chroma API directly
     # and embed via Ollama. Let's do that.
-    return {"error": "need direct approach"}
+    return {"error": "need direct approach", "total": len(all_chunks)}
 
 
 def main() -> int:
@@ -350,7 +338,7 @@ def main() -> int:
         # Show sample
         if all_chunks:
             c = all_chunks[0]
-            print(f"\nExemple chunk :")
+            print("\nExemple chunk :")
             print(f"  path     : {c['metadata']['path']}")
             print(f"  anchor   : {c['metadata']['anchor']}")
             print(f"  seq_id   : {c['metadata']['sequence_id']}")
@@ -369,24 +357,11 @@ def main() -> int:
 
     ingest_url = f"{api_base}/ingest"
     print(f"\nIngestion vers : {ingest_url}")
-    print(f"Collection     : nsi_corpus")
+    print("Collection     : nsi_corpus")
 
     added = 0
     skipped = 0
     errors = 0
-
-    for i, chunk in enumerate(all_chunks):
-        meta = chunk["metadata"]
-        payload = {
-            "source_type": "markdown",
-            "source": meta["path"],
-            "metadata": meta,
-        }
-        # The /ingest endpoint needs the text content.
-        # Since it tries to load from source path (local to server),
-        # we need to send via a method that includes the text.
-        # Let's use direct Chroma + Ollama embedding instead.
-        pass
 
     # Direct Chroma + Ollama approach
     print("\nIngestion directe : Chroma API + Ollama embedding")
@@ -407,7 +382,7 @@ def main() -> int:
     except Exception as e:
         print(f"  ERREUR Ollama : {e}", file=sys.stderr)
         print("  Prérequis : tunnel SSH actif", file=sys.stderr)
-        print("  ssh -L 11435:127.0.0.1:11434 -L 8000:127.0.0.1:8000 root@88.99.254.59",
+        print("  ssh -L 11435:127.0.0.1:11434 -L 8000:127.0.0.1:8000 <user>@<host>",
               file=sys.stderr)
         return 1
 
@@ -512,7 +487,7 @@ def main() -> int:
                 headers={"Content-Type": "application/json"},
                 method="POST")
             with urllib.request.urlopen(upsert_req, timeout=60) as r:
-                pass
+                r.read()
             added += len(new_idx)
             skipped += len(batch) - len(new_idx)
         except Exception as e:
@@ -523,7 +498,7 @@ def main() -> int:
         pct = min(100, int((batch_start + len(batch)) / len(all_chunks) * 100))
         print(f"  [{pct:3d}%] +{len(new_idx)} chunks (total ajouté: {added})", end="\r")
 
-    print(f"\n\nRésultat :")
+    print("\n\nRésultat :")
     print(f"  Ajoutés  : {added}")
     print(f"  Existants: {skipped}")
     print(f"  Erreurs  : {errors}")
@@ -534,8 +509,8 @@ def main() -> int:
         with urllib.request.urlopen(req, timeout=10) as r:
             count = r.read().decode()
             print(f"  Total collection nsi_corpus : {count} points")
-    except Exception:
-        pass
+    except Exception as exc:
+        print(f"  AVERTISSEMENT count final indisponible : {exc}", file=sys.stderr)
 
     return 0 if errors == 0 else 1
 

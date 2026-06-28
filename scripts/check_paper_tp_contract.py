@@ -30,7 +30,6 @@ def candidate_files(root: Path) -> list[Path]:
         return []
     files: list[Path] = []
     for path in sorted(base.rglob("*.md")):
-        text = path.read_text(encoding="utf-8", errors="replace")
         metadata = read_frontmatter(path)
         document_type = str(metadata.get("document_type", ""))
         if str(metadata.get("tp_mode", "")).lower() == "papier" or document_type == "tp_papier":

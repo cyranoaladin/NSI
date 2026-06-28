@@ -368,7 +368,7 @@ def main() -> int:
         f"- TP exécutables : {paper_tp.executable_count}",
         f"- Ratio papier : {(paper_tp.paper_count / (paper_tp.paper_count + paper_tp.executable_count) * 100) if (paper_tp.paper_count + paper_tp.executable_count) else 0:.1f}%",
         f"- Opportunités de conversion exécutable signalées : {len(tp_opportunities.opportunities)}",
-        f"- Seuil strict opportunités restantes : 8",
+        "- Seuil strict opportunités restantes : 8",
         f"- État seuil strict : {'PASS' if not tp_opportunities.errors else 'KO'}",
         "- Registre : `tp_executable_opportunity_register.md`.",
         "- Les TP papier restent `needs_review` et ne remplacent pas une revue humaine.",

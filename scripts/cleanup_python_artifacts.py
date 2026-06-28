@@ -7,11 +7,12 @@ import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+CACHE_DIRS = {"__pycache__", ".pytest_cache", ".ruff_cache", ".mypy_cache"}
 
 
 def cleanup(root: Path = ROOT) -> list[Path]:
     removed: list[Path] = []
-    for path in sorted(root.rglob("__pycache__")):
+    for path in sorted(candidate for name in CACHE_DIRS for candidate in root.rglob(name)):
         if ".git" in path.relative_to(root).parts:
             continue
         if path.is_dir():

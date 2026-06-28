@@ -28,6 +28,7 @@ audit-local:
 	python scripts/check_metadata.py
 	python scripts/check_links.py
 	python scripts/check_no_private_data.py
+	python scripts/check_no_committed_secrets.py
 	python scripts/check_no_placeholders_docs.py
 	python scripts/check_no_placeholders_code.py
 	python scripts/cleanup_python_artifacts.py
@@ -165,6 +166,7 @@ audit-source:
 	python scripts/check_metadata.py
 	python scripts/check_links.py
 	python scripts/check_no_private_data.py
+	python scripts/check_no_committed_secrets.py
 	python scripts/check_no_placeholders_docs.py
 	python scripts/check_no_placeholders_code.py
 	python scripts/check_no_build_artifacts_in_index.py

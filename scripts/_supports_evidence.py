@@ -19,8 +19,6 @@ Le module ne fabrique aucune validation ; il rend visible l'existant.
 
 from __future__ import annotations
 
-import re
-from pathlib import Path
 from typing import Iterable
 
 from _qa_common import ROOT, Evidence, get_status, read_frontmatter

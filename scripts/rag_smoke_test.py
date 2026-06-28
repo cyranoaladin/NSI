@@ -10,7 +10,7 @@ Prérequis réseau :
     L'embedding est fait côté serveur par l'API.
   - Ollama (embedding direct, LLM) est en loopback sur le serveur.
     Pour les tests LLM, un tunnel SSH est nécessaire :
-      ssh -L 11434:127.0.0.1:11434 root@88.99.254.59
+      ssh -L 11434:127.0.0.1:11434 <user>@<host>
     Sans tunnel, le test LLM est sauté avec un message explicite.
 """
 from __future__ import annotations
@@ -69,7 +69,7 @@ def mask(secret: str) -> str:
     return f"****{secret[-4:]}"
 
 
-def test_search(env: dict[str, str]) -> bool:
+def smoke_search(env: dict[str, str]) -> bool:
     """Recherche top-3 dans la collection via l'API publique (embedding côté serveur)."""
     print("\n[1/2] Test recherche RAG (API publique, embedding côté serveur)...")
     url = env["RAG_API_BASE_URL"]
@@ -113,7 +113,7 @@ def test_search(env: dict[str, str]) -> bool:
     return True
 
 
-def test_llm(env: dict[str, str]) -> bool:
+def smoke_llm(env: dict[str, str]) -> bool:
     """Envoie une complétion courte au modèle LLM retenu (nécessite tunnel SSH)."""
     llm_url = env.get("LOCAL_LLM_BASE_URL", "")
     llm_model = env.get("LOCAL_LLM_MODEL", "")
@@ -140,7 +140,7 @@ def test_llm(env: dict[str, str]) -> bool:
     except (urllib.error.URLError, TimeoutError, OSError) as exc:
         print(f"  ÉCHEC: impossible de joindre {url} — {exc}", file=sys.stderr)
         print("  Prérequis : tunnel SSH actif vers le serveur.", file=sys.stderr)
-        print("  Commande : ssh -L 11434:127.0.0.1:11434 root@88.99.254.59",
+        print("  Commande : ssh -L 11434:127.0.0.1:11434 <user>@<host>",
               file=sys.stderr)
         return False
     answer = data["choices"][0]["message"]["content"]
@@ -160,8 +160,8 @@ def main() -> None:
     print(f"LLM      : {llm_url}  modèle={llm_model}")
 
     ok = True
-    ok = test_search(env) and ok
-    ok = test_llm(env) and ok
+    ok = smoke_search(env) and ok
+    ok = smoke_llm(env) and ok
 
     if ok:
         print("\n--- Tous les tests ont réussi.")

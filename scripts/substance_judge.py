@@ -219,9 +219,6 @@ def judge_capacity(env: dict, cap: dict, used_citations: set,
     intitule = cap["intitule"]
     query = f"{cap['contenu']} {intitule}"
 
-    # Embedding de l'intitulé (calculé une fois, réutilisé pour les 3 rôles)
-    intitule_emb = intitule_embeddings.get(cap_id)
-
     result = {
         "capacity_id": cap_id,
         "intitule": intitule,
@@ -368,7 +365,7 @@ def main() -> int:
         f.write("## Synthèse\n\n| Verdict | Nombre |\n|---|---|\n")
         for v in ("validated_pedagogy", "needs_review", "needs_content"):
             f.write(f"| {v} | {stats.get(v, 0)} |\n")
-        f.write(f"\n## Détail\n\n")
+        f.write("\n## Détail\n\n")
         for r in results:
             em = {"validated_pedagogy": "V", "needs_review": "R", "needs_content": "X"}.get(r["verdict"], "?")
             f.write(f"### [{em}] {r['capacity_id']} — {r['intitule'][:80]}\n\n")

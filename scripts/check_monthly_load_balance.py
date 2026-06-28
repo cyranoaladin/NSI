@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -98,15 +99,15 @@ def fail_or_pass(name: str, errors: list[str]) -> int:
     print(f'{name}: PASS')
     return 0
 
-import sys
-
 def main() -> int:
     errors = []
     for level, cfg in LEVELS.items():
         monthly = parse_table_hours(cfg['monthly'])
         total = 0.0
         for month, row in monthly.items():
-            planned = float(row['planned']); available = float(row['available']); total += planned
+            planned = float(row['planned'])
+            available = float(row['available'])
+            total += planned
             if planned > available + 0.01:
                 errors.append(f"{level}: {month} planned {planned:g} h exceeds available {available:g} h")
             if available - planned > 2.5:

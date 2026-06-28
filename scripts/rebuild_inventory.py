@@ -25,9 +25,6 @@ TRACE_PATH = ROOT / 'support_source_trace.yml'
 sys.path.append(str(ROOT))
 from scripts._inventory_utils import (
     IGNORED_SUFFIXES,
-    PROGRAM_STEPS,
-    SEQUENCE_NAME_ALIASES,
-    SEQUENCE_DOCS,
     STATUT_ALLOWED,
     SOURCE_TYPE_GENERATED,
     parse_frontmatter,
