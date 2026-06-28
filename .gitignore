@@ -1,0 +1,35 @@
+# Environnements et caches Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Donnees scrapees et banques volumineuses
+scrapping_NSI/ressources_nsi_extraites/
+scrapping_NSI/ressources_nsi_extraites_v2/
+scrapping_NSI/ressources_nsi_centralisees/
+scrapping_NSI/migration_registry.json
+scrapping_NSI/last_run_summary.log
+scrapping_NSI/audit_reconciliation_report.md
+scrapping_NSI/dossier_technique_nsi.pdf
+
+# Sources Drive locales et donnees personnelles potentielles
+Documents_DRIVE/
+
+# Depot pedagogique separe, versionne ailleurs
+nsi-enseignement/
+AGENTS.md
+SKILLS.md
+
+# Artefacts generiques
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.log
+*.tmp
+*.part

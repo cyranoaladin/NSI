@@ -1,0 +1,9 @@
+Nom_Site,URL,Type_Structure,Description_Ressources
+Éduscol STI - Hub Spécialité NSI,https://sti.eduscol.education.fr/formations/bac-voie-generale/specialite-nsi-numerique-et-sciences-informatiques,Institutionnel HTML/PDF/ZIP,"Hub institutionnel STI Éduscol pour la spécialité NSI."
+Éduscol STI - Référentiels NSI,https://sti.eduscol.education.fr/referentiels-par-competences-bac-scientifique/specialite-nsi-numerique-et-sciences-informatiques,Institutionnel HTML/PDF,"Référentiels et ressources officielles NSI."
+Manuel de G. Swinnen - Python,https://inforef.be/swi/python.htm,HTML/PDF/ePub,"Manuel Python officiel librement diffusé par l'auteur."
+Wikibooks - Communauté NSI,https://fr.wikibooks.org/wiki/Num%C3%A9rique_et_sciences_informatiques,Wiki HTML,"Ressource communautaire NSI exportable."
+Webftts - Cours de NSI et SNT,https://webftts.com/,HTML/PDF/Capytale,"Cours Première et Terminale NSI/SNT avec livrets et fiches."
+David Latreyte - Informatique et Sciences,https://dlatreyte.github.io/,MkDocs/Jupyter,"Cours, notebooks et polycopiés de D. Latreyte."
+Dépôt Source David Latreyte,https://github.com/DLatreyte/dlatreyte.github.io,GitHub ZIP,"Dépôt source complet du site de D. Latreyte."
+NSI Première - Institution des Chartreux,https://nsipremiere.fr/,HTML/PDF,"Cahier de cours et ressources de Première NSI."

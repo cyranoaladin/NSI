@@ -1,0 +1,21 @@
+Nom_Site,URL,Type_Structure,Description_Ressources
+Gilles Lassus - 1ère NSI,https://glassus.github.io/premiere_nsi/,MkDocs,"Cours complets, TP, fiches d'exercices rédigées en Markdown/HTML."
+Gilles Lassus - Tle NSI,https://glassus.github.io/terminale_nsi/,MkDocs,"Cours, TP, fiches de révision et projets de Terminale."
+C. Gouygou - Tle NSI,https://cgouygou.github.io/TNSI/,MkDocs,"Cours, TD, TP et projets de Terminale NSI très structurés."
+M. Monnier - Tle NSI,https://mmonnier.forge.apps.education.fr/tnsi/,Forge MkDocs,Hébergé sur la Forge Éducation. Contenus officiels conformes au programme.
+M. Courtois - 1ère NSI,https://prolifaxe.github.io/coursdecourtois/NSI_1ere.html,Custom HTML,Idéal pour cibler les notebooks Capytale et les fichiers PDF.
+Franck Chambon - Classe Virtuelle,https://franckchambon.github.io/ClasseVirtuelle/NSI/nsi-accueil.html,Custom HTML,"Spécialisé en algorithmique, programmation Python et exercices interactifs."
+NSI Meyroneinc - Tle NSI,https://nsimeyroneinc.github.io/NSITerm/,MkDocs,Cours complets et TP progressifs de Terminale.
+David Roche - Pixees,https://pixees.fr/informatiquelycee/n_site/nsi_prem.html,Custom HTML,"Le pionnier des ressources NSI et SNT en France, forte densité de TP."
+Nathalie Bessonnet - Annuaire,https://bessonnetnathalie.forge.apps.education.fr/ressources-nsi/cours/sites_cours/,Forge HTML/MkDocs,Méta-index répertoriant plus de 30 sites de collègues de NSI à extraire.
+Frédéric Junier,https://frederic-junier.org/,Custom HTML/Forge,Cours très pointus sur l'algorithmique avancée et la théorie.
+Eric Tixidor - Allophysique,https://allophysique.com/,WordPress,Ressources NSI propres et structurées mêlant physique et informatique.
+Math93 - Spé NSI,https://www.math93.com/index.php/lycee/1re-spe-nsi,Joomla/Custom,"Énoncés de devoirs surveillés (DS), évaluations et fiches de révision."
+Éduscol STI - Hub Spécialité NSI,https://sti.eduscol.education.fr/formations/bac-voie-generale/specialite-nsi-numerique-et-sciences-informatiques,Institutionnel HTML/PDF/ZIP,"Hub institutionnel STI Éduscol pour la spécialité NSI."
+Éduscol STI - Référentiels NSI,https://sti.eduscol.education.fr/referentiels-par-competences-bac-scientifique/specialite-nsi-numerique-et-sciences-informatiques,Institutionnel HTML/PDF,"Référentiels et ressources officielles NSI."
+Manuel de G. Swinnen - Python,https://inforef.be/swi/python.htm,HTML/PDF/ePub,"Manuel Python officiel librement diffusé par l'auteur."
+Wikibooks - Communauté NSI,https://fr.wikibooks.org/wiki/Num%C3%A9rique_et_sciences_informatiques,Wiki HTML,"Ressource communautaire NSI exportable."
+Webftts - Cours de NSI et SNT,https://webftts.com/,HTML/PDF/Capytale,"Cours Première et Terminale NSI/SNT avec livrets et fiches."
+David Latreyte - Informatique et Sciences,https://dlatreyte.github.io/,MkDocs/Jupyter,"Cours, notebooks et polycopiés de D. Latreyte."
+Dépôt Source David Latreyte,https://github.com/DLatreyte/dlatreyte.github.io,GitHub ZIP,"Dépôt source complet du site de D. Latreyte."
+NSI Première - Institution des Chartreux,https://nsipremiere.fr/,HTML/PDF,"Cahier de cours et ressources de Première NSI."
