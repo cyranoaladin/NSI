@@ -1,0 +1,10 @@
+target-version = "py312"
+line-length = 100
+include = [
+    "organizer_nsi.py",
+    "scraper_nsi_v2.py",
+    "scraper_eduscol.py",
+    "netpolicy.py",
+    "provenance.py",
+    "test_*.py",
+]
