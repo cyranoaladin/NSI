@@ -30,7 +30,7 @@ EXCLUDED_PARTS = {
 
 EMAIL_RE = re.compile(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}")
 FR_PHONE_RE = re.compile(r"(?:(?:\+|00)33|0)\s*[1-9](?:[\s().-]?\d){8}\b")
-TN_PHONE_RE = re.compile(r"(?<![A-Za-z0-9])(?:(?:\+|00)216\s*)?(?:[24579]\d)(?:[\s().-]?\d){6}(?![A-Za-z0-9])")
+TN_PHONE_RE = re.compile(r"(?<![A-Za-z0-9.])(?:(?:\+|00)216\s*)?(?:[24579]\d)(?:[\s().-]?\d){6}(?![A-Za-z0-9])")
 ADDRESS_RE = re.compile(
     r"\b(?:adresse personnelle|domicile|rue|avenue|boulevard|code postal|gouvernorat|ville de résidence)\b",
     re.IGNORECASE,

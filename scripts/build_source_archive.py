@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import shutil
 import subprocess
+import sys
 import tarfile
 import tempfile
 from pathlib import Path
@@ -12,7 +13,14 @@ ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / 'dist'
 SOURCE_TAR = DIST / 'source_clean.tar.gz'
 BUNDLE = DIST / 'git_bundle.bundle'
-EXCLUDED_PARTS = {'.git', '__pycache__', '.pytest_cache', '.mypy_cache', '.ruff_cache', '.venv', 'dist', 'build', '01_build_reports'}
+
+# Source de vérité unique : réutilise CACHE_DIRS de cleanup_python_artifacts
+# pour garantir que toute entrée de cache nettoyée à l'audit est aussi exclue
+# de l'archive de livraison.
+sys.path.insert(0, str(ROOT / 'scripts'))
+from cleanup_python_artifacts import CACHE_DIRS  # noqa: E402
+
+EXCLUDED_PARTS = {'.git', '.venv', 'dist', 'build', '01_build_reports'} | CACHE_DIRS
 EXCLUDED_SUFFIXES = {'.pyc', '.pyo', '.aux', '.log', '.toc', '.out', '.fls'}
 EXCLUDED_NAMES = {'.DS_Store'}
 

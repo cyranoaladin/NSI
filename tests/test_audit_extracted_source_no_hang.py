@@ -19,18 +19,45 @@ class AuditExtractedSourceNoHangTest(unittest.TestCase):
         self.assertNotIn("\n\tpython scripts/check_tp_pedagogical_assets.py", makefile)
 
     def test_source_clean_audit_extracted_source_finishes_without_drive_mirror(self) -> None:
-        completed_build = subprocess.run(
-            [sys.executable, "scripts/build_source_archive.py"],
-            cwd=ROOT,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            text=True,
-            timeout=60,
-        )
+        # RC3 : Générer des caches factices avant le build pour reproduire
+        # le scénario CI (ruff + pytest génèrent des caches, puis le build
+        # doit les exclure de l'archive).
+        fake_caches = []
+        for name in ("__pycache__", ".pytest_cache", ".ruff_cache"):
+            d = ROOT / "tests" / name
+            if not d.exists():
+                d.mkdir(parents=True)
+                (d / "dummy.dat").write_bytes(b"cache")
+                fake_caches.append(d)
+
+        try:
+            completed_build = subprocess.run(
+                [sys.executable, "scripts/build_source_archive.py"],
+                cwd=ROOT,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                timeout=60,
+            )
+        finally:
+            for d in fake_caches:
+                if d.exists():
+                    shutil.rmtree(d)
         self.assertEqual(completed_build.returncode, 0, completed_build.stdout)
 
         archive = ROOT / "dist" / "source_clean.tar.gz"
         self.assertTrue(archive.exists(), "dist/source_clean.tar.gz doit être généré par ce test")
+
+        # Vérifier qu'aucun cache n'a fui dans l'archive
+        completed_check = subprocess.run(
+            ["tar", "-tzf", str(archive)],
+            stdout=subprocess.PIPE, text=True, timeout=10,
+        )
+        cache_leaks = [
+            line for line in completed_check.stdout.splitlines()
+            if any(c in line for c in ("__pycache__", ".pytest_cache", ".ruff_cache", ".pyc"))
+        ]
+        self.assertEqual(cache_leaks, [], f"Caches ont fui dans l'archive : {cache_leaks}")
         with tempfile.TemporaryDirectory() as raw:
             completed_extract = subprocess.run(
                 ["tar", "-xzf", str(archive), "-C", raw],
