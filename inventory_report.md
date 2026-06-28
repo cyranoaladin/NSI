@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 838
+- Total ressources : 840
 - Ressources pédagogiques : 53
-- Ressources techniques : 785
+- Ressources techniques : 787
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 830
+- generated: 832
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 318
+- interne: 320
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 483
+- document: 484
 - python: 84
-- script: 167
+- script: 168
 - sequence: 45
 - test: 45
 
 ## Répartition par statut
-- needs_review: 838
+- needs_review: 840
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 638
+- mixte: 640
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -43,6 +43,7 @@
   - 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv
   - premiere/sequences/s01_representation_donnees/cours_eleve.md
 - Sources générées :
+  - .env.rag.example
   - 00_programmes_officiels/README.md
   - 00_programmes_officiels/programme_nsi_2019.yaml
   - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
@@ -787,6 +788,7 @@
   - scripts/generate_index.py
   - scripts/generate_qa_report.py
   - scripts/ingest_drive_export.py
+  - scripts/rag_smoke_test.py
   - scripts/rebuild_inventory.py
   - scripts/render_sequence.py
   - scripts/render_unit.py
@@ -928,6 +930,7 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
 - Ressources techniques :
+  - .env.rag.example
   - 00_programmes_officiels/README.md
   - 00_programmes_officiels/programme_nsi_2019.yaml
   - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
@@ -1653,6 +1656,7 @@
   - scripts/generate_index.py
   - scripts/generate_qa_report.py
   - scripts/ingest_drive_export.py
+  - scripts/rag_smoke_test.py
   - scripts/rebuild_inventory.py
   - scripts/render_sequence.py
   - scripts/render_unit.py
@@ -1765,6 +1769,7 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/guide_professeur.md
 
 ## Ressources élève
+- .env.rag.example
 - 00_programmes_officiels/README.md
 - 00_programmes_officiels/programme_nsi_2019.yaml
 - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
@@ -2447,6 +2452,7 @@
 - scripts/generate_index.py
 - scripts/generate_qa_report.py
 - scripts/ingest_drive_export.py
+- scripts/rag_smoke_test.py
 - scripts/rebuild_inventory.py
 - scripts/render_sequence.py
 - scripts/render_unit.py
@@ -2533,6 +2539,7 @@
 - Aucune ressource avec statut final pour l’instant.
 
 ## Ressources à corriger / compléter
+- .env.rag.example
 - 00_programmes_officiels/README.md
 - 00_programmes_officiels/programme_nsi_2019.yaml
 - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
@@ -3285,6 +3292,7 @@
 - scripts/generate_index.py
 - scripts/generate_qa_report.py
 - scripts/ingest_drive_export.py
+- scripts/rag_smoke_test.py
 - scripts/rebuild_inventory.py
 - scripts/render_sequence.py
 - scripts/render_unit.py

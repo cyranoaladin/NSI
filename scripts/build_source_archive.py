@@ -21,6 +21,8 @@ def excluded(rel: Path) -> bool:
         return True
     if rel.name in EXCLUDED_NAMES or rel.suffix in EXCLUDED_SUFFIXES:
         return True
+    if rel.name.startswith('.env') and rel.name != '.env.rag.example':
+        return True
     if rel.name.endswith('.synctex.gz') or rel.name.endswith('.fdb_latexmk'):
         return True
     return False

@@ -16,3 +16,4 @@ __pycache__/
 01_build_reports/
 build/
 dist/
+.env.rag

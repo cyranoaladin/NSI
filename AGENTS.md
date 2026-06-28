@@ -27,9 +27,12 @@ Aucun document ne doit être une coquille vide, une fiche superficielle, une par
 5. Ne jamais intégrer de données personnelles d’élèves dans les ressources publiables.
 6. Ne jamais indexer les fichiers techniques parasites : `__pycache__`, `.pyc`, `.aux`, `.log`, `.toc`, `.venv`, `.git`, fichiers temporaires.
 7. Ne jamais copier une ressource dans plusieurs banques sans stratégie claire de référence, de lien symbolique ou de génération contrôlée.
-8. Ne jamais confondre validation technique et validation pédagogique.
+8. Ne jamais confondre validation technique et validation pédagogique, ni mécanique et pédagogique : un gate vert sur la forme ne vaut pas preuve de fond.
 9. Ne jamais remplacer une preuve de qualité par une simple phrase déclarative.
 10. Ne jamais inventer une ressource, une source ou une couverture de programme.
+11. Ne jamais affaiblir, élargir ou ajuster un contrôle pour le faire passer. Si un contrôle échoue, corriger le contenu, ou écrire un BLOCKER. Ajuster un test à ses données est interdit et constitue une fraude de gate.
+12. Un pré-jugement mécanique (présence d'ancre, extraction de citation) n'est pas un jugement de substance. Aucun script déterministe ne peut être classé `blocking_substance` ni déclarer qu'une capacité est enseignée.
+13. Une citation présente ne prouve rien si elle n'est pas pertinente pour la capacité visée. « Ancre vérifiée » ≠ « capacité enseignée ».
 
 ## 2.1. Source locale Drive
 
@@ -237,6 +240,24 @@ Livrables :
 * `qa_report.md`
 * `publication_blockers.md`
 * `release_notes.md`
+
+### 4.10. Agent Juge de substance
+
+Responsabilités :
+
+* pour chaque capacité, décider si le contenu l’enseigne, l’entraîne et permet de se corriger, en citant une preuve **pertinente** (pas un objectif générique) ;
+* séparation stricte juge / auteur : l’instance qui juge n’est jamais celle qui a rédigé ;
+* verdict par défaut `needs_content` ;
+* toute citation d’objectif templaté (« Identifier précisément la représentation ou la structure en jeu ») comme preuve est un motif de rejet du verdict ;
+* les sections candidates sont idéalement fournies par le RAG (collection `rag_education`), pas extraites mécaniquement (première section du fichier).
+
+Livrables :
+
+* `_substance_review.json` conforme au schéma, vérifié par le veto d’ancres ET par un contrôle de pertinence (recouvrement lexical minimal entre la citation et l’intitulé officiel, à défaut du juge LLM).
+
+Critère de validation :
+
+Une capacité est `validated_pedagogy` seulement si les trois preuves (cours, entraînement, correction) sont pertinentes et que le relecteur (humain ou LLM) le confirme. Une citation identique réutilisée sur plusieurs capacités ou plusieurs rôles invalide le verdict.
 
 ## 5. Définition d’une séquence complète
 

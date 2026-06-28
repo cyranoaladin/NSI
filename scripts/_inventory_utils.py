@@ -413,6 +413,8 @@ def iter_files(root: Path) -> Iterable[Path]:
             continue
         if path.name in {'manifest.csv', 'inventory_report.md', 'duplicates_report.md', 'coverage.md', 'quality_checklist.md'}:
             continue
+        if path.name.startswith('.env') and path.name != '.env.rag.example':
+            continue
         if any(part in IGNORED_DIRS for part in path.parts):
             continue
         if path.suffix in IGNORED_SUFFIXES:

@@ -61,7 +61,9 @@ Les noms propres suspects sont listés pour revue humaine.
 - AGENTS.md: nom propre suspect -> Agent Évaluation
 - AGENTS.md: nom propre suspect -> Agent Différenciation
 - AGENTS.md: nom propre suspect -> Agent Édition
+- AGENTS.md: nom propre suspect -> Agent Juge
 - METHODE_PRODUCTION_REELLE.md: nom propre suspect -> Claude Code
+- SKILLS.md: nom propre suspect -> Content-Type
 - calendar_2026_2027_tunisia.md: nom propre suspect -> Grand Oral
 - course_internal_coherence_report.md: nom propre suspect -> Course Internal Coherence Report
 - coverage.md: nom propre suspect -> Formulaire Web
@@ -170,6 +172,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
 - scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
 - scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
+- scripts/rag_smoke_test.py: nom propre suspect -> Content-Type
+- scripts/rag_smoke_test.py: nom propre suspect -> Content-Type
 - scripts/render_sequence.py: nom propre suspect -> Fira Code
 - scripts/render_sequence.py: nom propre suspect -> Sans Mono
 - scripts/render_sequence.py: nom propre suspect -> Fira Code
@@ -387,4 +391,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 275 alertes supplémentaires non affichées
+- ... 276 alertes supplémentaires non affichées

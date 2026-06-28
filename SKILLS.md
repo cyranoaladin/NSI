@@ -23,6 +23,8 @@ registre de documents manquants. Cette substitution ne vaut pas validation péda
 fichier importé ou adapté depuis `Documents_DRIVE` reste `needs_review` jusqu’à relecture
 humaine et contrôles QA.
 
+**Attention aux placeholders génériques.** Des `objectifs` de la forme « Objectif O1 – Identifier précisément la représentation ou la structure en jeu » sont des **placeholders génériques** et constituent une erreur qualité bloquante, pas un objectif valide. Leur présence dans un document doit être détectée et corrigée avant toute promotion de statut.
+
 Chaque document pédagogique doit commencer par un bloc de métadonnées.
 
 ```yaml
@@ -149,6 +151,15 @@ Sinon elle doit être marquée :
 * marquer une capacité couverte à partir du seul titre d’un document ;
 * associer une séquence entière à toutes les capacités d’un thème ;
 * confondre présence d’un fichier et couverture pédagogique.
+
+### Compléments (couverture étendue)
+
+La couverture doit indexer `03_progressions/supports/**` et produire `coverage_sources.md` traçant la provenance de chaque association capacité → ressource. Avant de déclarer une capacité `absent`, distinguer explicitement :
+
+* **trou de contenu** : aucune ressource n’enseigne cette capacité ;
+* **trou d’étiquetage** : le contenu existe probablement dans une autre séquence mais n’est pas étiqueté avec la bonne `capacity_id`.
+
+Cette distinction est obligatoire pour éviter de produire du contenu redondant.
 
 ## 5. Skill : rédiger un cours élève
 
@@ -407,6 +418,10 @@ Un document est refusé si :
 * il n’a pas de différenciation ;
 * il n’a pas de corrigé associé quand nécessaire.
 
+### Clause anti-fitting
+
+Un contrôle ne doit jamais être assoupli pour passer. Les seuils sont justifiés *a priori* (par les exigences du programme et les attentes pédagogiques), pas calés *a posteriori* sur le corpus existant. Élargir une liste de marqueurs ou abaisser un seuil pour rendre un gate vert est interdit — c'est du fitting, pas de la qualité. Si un contrôle échoue, corriger le contenu ou écrire un BLOCKER.
+
 ### Commande cible
 
 ```bash
@@ -443,7 +458,113 @@ Produire une version propre pour les élèves et une version professeur.
 * l’index pédagogique est propre ;
 * le rapport de publication est produit.
 
-## 16. Critère ultime
+## 16. Skill : juger la substance d’une capacité
+
+### Objectif
+
+Statuer sur l’enseignement réel d’une capacité dans le corpus.
+
+### Entrées
+
+* intitulé officiel exact de la capacité (depuis `programme_nsi_2019.yaml`) ;
+* contrat de l’unité (séquence, rôles attendus) ;
+* sections candidates, idéalement fournies par le RAG (recherche sémantique dans `rag_education`), pas la première section du fichier.
+
+### Sorties
+
+* verdict cité par capacité : `validated_pedagogy`, `needs_content`, `needs_review` ;
+* citation pertinente extraite du corpus avec `path` et `anchor` ;
+* justification du verdict.
+
+### Critères d’acceptation
+
+* la citation enseigne *cette* capacité (pertinence vérifiée, pas un objectif générique) ;
+* verdict `validated_pedagogy` seulement si les trois preuves (cours, entraînement, correction) sont pertinentes et que le relecteur (humain ou LLM) le confirme ;
+* le juge n’est jamais l’auteur du contenu jugé.
+
+### Erreurs bloquantes
+
+* citer un objectif générique (« Objectif O1 – Identifier précisément… ») comme preuve ;
+* réutiliser la même citation pour plusieurs capacités ou plusieurs rôles ;
+* produire un verdict sans relecture qui prétende juger la substance ;
+* utiliser un stub déterministe classé `blocking_substance`.
+
+## 17. Skill : connecter le corpus au RAG
+
+### Objectif
+
+Établir et maintenir la connexion entre le corpus NSI et le magasin vectoriel RAG pour alimenter le juge de substance et l’oracle de cohérence.
+
+### Backend vectoriel
+
+* **Moteur** : ChromaDB v1.1.1
+* **Collections existantes** :
+  - `rag_education` : **2012 chunks issus de Google Drive** (sujets bac NSI, documents Drive). Schéma de payload : `drive_folder_id`, `drive_file_id`, `drive_file_name`, `title`, `source`, `source_type` (= `gdrive_folder`), `collection`, `section`, `groupe`, `matiere`, `niveau`, `type_ressource`, `modality`, `chunk_index`, `sha256`, `mime_type`, `page`. **Ne contient PAS le corpus `nsi-enseignement`** (aucun champ `sequence_id`, `document_type`, `capacities`).
+  - `rag_math_correction` : 67 chunks (maths), dim=768
+  - `ressources_pedagogiques_terminale` : **0 chunks** (vide, dim=None)
+  - `rag_francais_premiere` : 0 chunks (vide, dim=None)
+* **Distance** : cosine, **dimension** : 768
+
+### État actuel et prérequis d’ingestion
+
+**Le corpus `nsi-enseignement` n’est pas indexé dans le RAG.** La collection `rag_education` ne contient que des documents Drive (sujets de bac). Le juge de substance ne peut donc pas récupérer de section de cours via le RAG — il est inopérant tant que l’ingestion n’est pas faite.
+
+**Plan d’ingestion** (à exécuter en mission ultérieure) :
+
+1. Créer une collection dédiée (ex. `nsi_corpus`) ou ingérer dans `rag_education` avec un `source_type` distinctif.
+2. Découper chaque document `.md` par section (réutiliser la carte de slugs du vérificateur d’ancres).
+3. Métadonnées par chunk : `path`, `level`, `sequence_id`, `document_type`, `theme`, `notion`, `capacities[]`, `status`, `anchor` (slug de section), `sha256`.
+4. Filtrage sécurité : marquer `document_type` (corrige/bareme/guide_prof) pour filtrer côté élève ; respecter `private_data`.
+5. Endpoint d’ingestion : `POST /ingest` avec `source_type: "markdown"`, `metadata_hints: {collection: "nsi_corpus", ...}`.
+6. Modèle d’embedding : `nomic-embed-text` (appliqué automatiquement par l’API).
+
+### Modèle d’embedding
+
+* **Modèle** : `nomic-embed-text` (servi par Ollama v0.3.13)
+* **Dimension** : 768 (correspond aux collections existantes)
+* **Accès** : interne au Docker (Ollama sur port 11434 loopback) ; l’API `/search` embarque l’embedding
+
+### Contrat de requête fonctionnel
+
+Requête minimale qui marche (sur les données Drive existantes) :
+
+```
+POST https://rag-api.nexusreussite.academy/search
+Headers:
+  Content-Type: application/json
+  Authorization: Bearer <RAG_API_KEY>
+Body:
+  {"q": "<texte>", "collection": "rag_education", "k": 5, "include_documents": true}
+```
+
+Réponse : `{"query", "collection", "k", "returned", "hits": [{"id", "metadata", "document", "score"}]}`.
+Score = distance cosine (plus bas = plus proche).
+
+Pour un accès direct à ChromaDB ou Ollama, un tunnel SSH est nécessaire (port 11435 pour éviter conflit Ollama local) :
+`ssh -L 11435:127.0.0.1:11434 -L 8000:127.0.0.1:8000 root@88.99.254.59`
+
+### Usage cible (après ingestion du corpus)
+
+1. **Juge de substance** : interroger le RAG avec l’intitulé officiel de la capacité pour récupérer *la* section qui l’enseigne réellement, au lieu de prendre la première ligne du document. **Prérequis : le corpus doit être ingéré (voir plan ci-dessus).**
+2. **Oracle de cohérence inter-séquences** : détection sémantique des définitions divergentes et des prérequis non couverts entre séquences. **Même prérequis.**
+
+### Variables de connexion
+
+Voir `.env.rag.example` pour le modèle de configuration. **Ne jamais recopier de secret dans ce fichier ni dans aucun `.md`.**
+
+### Critères d’acceptation
+
+* `scripts/rag_smoke_test.py` passe sans erreur (embed + search + LLM) ;
+* les secrets restent dans `.env.rag` (chmod 600, gitignoré) ;
+* aucun secret n’apparaît dans les rapports, les logs, ni les fichiers committés.
+
+### Erreurs bloquantes
+
+* committer `.env.rag` ou un secret en clair ;
+* utiliser des valeurs devinées au lieu de valeurs découvertes sur le serveur ;
+* déclarer la connexion fonctionnelle sans preuve d’exécution (smoke test).
+
+## 18. Critère ultime
 
 Un document doit pouvoir répondre à cette question :
 
