@@ -1,7 +1,6 @@
 [run]
 branch = True
 source =
-    organizer_nsi
     scraper_nsi_v2
     scraper_eduscol
     netpolicy
