@@ -107,18 +107,46 @@ class StatusPromotionGuardTests(unittest.TestCase):
         self.assertNotEqual(canonical_verdict_hash(first), canonical_verdict_hash(changed))
 
     def test_rejects_reverted_fraud_report_without_proof(self) -> None:
-        report = subprocess.check_output(
-            ["git", "show", "87a22a2:substance_report.md"],
-            cwd=ROOT,
-            text=True,
+        report = "\n".join(
+            [
+                "# Rapport de substance frauduleux reconstruit",
+                "",
+                "validated_pedagogy: 15",
+                "",
+                "| Capacité | Verdict |",
+                "| --- | --- |",
+                *[
+                    f"| P-FAKE-{index:02d} | validated_pedagogy |"
+                    for index in range(1, 16)
+                ],
+            ]
         )
-        review = subprocess.check_output(
-            ["git", "show", "87a22a2:substance_review.json"],
-            cwd=ROOT,
-            text=True,
-        )
+        review = {
+            "schema_version": "1.0.0",
+            "unit": "FRAUD",
+            "level": "premiere",
+            "judged_at": "2026-06-28T20:00:00Z",
+            "judge_model": "fraudulent-fixture",
+            "author_model": "unknown",
+            "capacities": [
+                {
+                    "capacity_id": f"P-FAKE-{index:02d}",
+                    "official_label": "Capacité fictive",
+                    "proof_course": {"present": False, "teaches": False},
+                    "proof_practice": {"present": False, "teaches": False},
+                    "proof_correction": {"present": False, "teaches": False},
+                    "verdict": "validated_pedagogy",
+                    "justification": "Promotion sans preuve mécanique.",
+                    "scientific_flags": [],
+                }
+                for index in range(1, 16)
+            ],
+        }
         (self.root / "substance_report.md").write_text(report, encoding="utf-8")
-        (self.root / "substance_review.json").write_text(review, encoding="utf-8")
+        (self.root / "substance_review.json").write_text(
+            json.dumps(review, ensure_ascii=False),
+            encoding="utf-8",
+        )
 
         result = self.run_guard()
 
