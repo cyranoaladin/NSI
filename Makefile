@@ -293,6 +293,11 @@ judge:
 	python scripts/substance_judge.py --unit "$(U)" --level premiere --offline-fixture "tests/fixtures/substance_judge/$(U).json" --output "01_build_reports/$(U)_substance_review.json"
 	python scripts/check_substance_anchors.py "01_build_reports/$(U)_substance_review.json" --repo-root .
 
+render-substance-report:
+	test -n "$(V)"
+	mkdir -p 01_build_reports/substance_reports
+	python scripts/render_substance_report.py --verdict "$(V)" --repo-root . --out-md 01_build_reports/substance_reports/$$(basename "$(V)" .json).md --out-html 01_build_reports/substance_reports/$$(basename "$(V)" .json).html
+
 release-audit:
 	python scripts/cleanup_python_artifacts.py
 	python scripts/check_git_clean.py
