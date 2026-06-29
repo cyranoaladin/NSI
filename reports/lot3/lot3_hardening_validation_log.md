@@ -204,7 +204,7 @@ Premier run PR distant :
 $ gh run view --repo cyranoaladin/NSI 28408192759 --job 84175269789 --log
 FAILED tests/test_repo_topology.py::test_check_repo_topology_passes_current_workspace
 AssertionError: check_repo_topology: KO
-- dépôt canonique inattendu: /home/runner/work/NSI/NSI
+- dépôt canonique inattendu: <github_actions_checkout>
 ```
 
 Cause racine : le garde topologie couplait l'identité du dépôt canonique au nom
