@@ -53,7 +53,7 @@ Sortie pertinente:
 ```text
 ============================= test session starts ==============================
 platform linux -- Python 3.12.3, pytest-9.0.2, pluggy-1.6.0
-rootdir: /home/alaeddine/Documents/NSI
+rootdir: <repo>
 configfile: pyproject.toml
 testpaths: tests
 collected 262 items

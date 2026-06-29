@@ -147,10 +147,18 @@ Les noms propres suspects sont listés pour revue humaine.
 - reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
 - reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
 - reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
-- reports/lot1/repo_map.md: nom propre suspect -> Alaeddine Ben Rhouma
-- reports/lot1/repo_map.md: nom propre suspect -> Claude Opus
+- reports/lot1/lot1_validation_log.md: nom propre suspect -> Alaeddine Ben Rhouma
+- reports/lot1/lot1_validation_log.md: nom propre suspect -> Mon Jun
+- reports/lot1/lot1_validation_log.md: nom propre suspect -> Sun Jun
+- reports/lot1/lot1_validation_log.md: nom propre suspect -> Grep-Garde
 - reports/lot1/repo_map.md: nom propre suspect -> Proposeur System
 - reports/lot1/repo_map.md: nom propre suspect -> Conclusion Phase
+- reports/lot2/lot2_validation_log.md: nom propre suspect -> Miss Branch
+- reports/lot3/lot3_validation_log.md: nom propre suspect -> Validation Zip-Slip
+- reports/lot3/lot3_validation_log.md: nom propre suspect -> Zip-Bomb
+- reports/lot3/lot3_validation_log.md: nom propre suspect -> Miss Branch
+- reports/lot3/lot3_validation_log.md: nom propre suspect -> Grep-Garde
+- reports/lot3/lot3_validation_log.md: nom propre suspect -> Statut Lot
 - scientific_claims_review_report.md: nom propre suspect -> Scientific Claims Review Report
 - scripts/check_course_internal_coherence.py: nom propre suspect -> Course Internal Coherence Report
 - scripts/check_differentiation_quality.py: nom propre suspect -> Differentiation Quality Report
@@ -185,6 +193,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/render_sequence.py: nom propre suspect -> Fira Code
 - scripts/render_sequence.py: nom propre suspect -> Sans Mono
 - scripts/substance_judge.py: nom propre suspect -> Content-Type
+- scripts/substance_judge.py: nom propre suspect -> Proposition System
+- scripts/substance_judge.py: nom propre suspect -> Proposition System
 - scripts/substance_report_renderer.py: nom propre suspect -> Raisons System
 - scripts/substance_report_renderer.py: nom propre suspect -> Raisons System
 - td_corrige_alignment_report.md: nom propre suspect -> Corrige Alignment Report
@@ -194,15 +204,25 @@ Les noms propres suspects sont listés pour revue humaine.
 - tests/test_drive_portable_and_manifest.py: nom propre suspect -> Ressource Drive
 - tests/test_lot1_drive_gate_boundary.py: nom propre suspect -> Gates Drive
 - tests/test_lot1_drive_gate_boundary.py: nom propre suspect -> Ressource Drive
+- tests/test_lot3_archive_security.py: nom propre suspect -> Zip-Slip
+- tests/test_lot3_archive_security.py: nom propre suspect -> Zip-Slip
+- tests/test_lot3_archive_security.py: nom propre suspect -> Zip-Slip
 - tests/test_missing_register_actionability.py: nom propre suspect -> Lien Drive
 - tests/test_operational_substance_controls.py: nom propre suspect -> Lien Drive
 - tests/test_session_referenced_files_exist.py: nom propre suspect -> Lien Drive
-- tp_test_alignment_report.md: nom propre suspect -> Test Alignment Report
+- ... 3 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
 - 00_programmes_officiels/programme_nsi_2019.yaml: nom propre suspect -> Formulaire Web
 - 00_programmes_officiels/programme_nsi_2019.yaml: nom propre suspect -> Boyer-Moore
+- 00_programmes_officiels/programme_nsi_premiere.txt: nom propre suspect -> En Python
+- 00_programmes_officiels/programme_nsi_premiere.txt: nom propre suspect -> Interface Homme-Machine
+- 00_programmes_officiels/programme_nsi_premiere.txt: nom propre suspect -> Interface Homme
+- 00_programmes_officiels/programme_nsi_terminale.txt: nom propre suspect -> Application Programming Interface
+- 00_programmes_officiels/programme_nsi_terminale.txt: nom propre suspect -> Structured Query Language
+- 00_programmes_officiels/programme_nsi_terminale.txt: nom propre suspect -> Secure Sockets Layer
+- 00_programmes_officiels/programme_nsi_terminale.txt: nom propre suspect -> Programming Interface
 - 03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_texte_unicode.md: nom propre suspect -> Contrôler Unicode
 - 03_progressions/fiches_cours/terminale/T00/T00_fiche_cours_reprise_python_tests_complexite.md: nom propre suspect -> Reprise Python
 - 03_progressions/fiches_cours/terminale/T00/T00_fiche_cours_reprise_python_tests_complexite.md: nom propre suspect -> Reprise Python
@@ -394,11 +414,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_evaluation_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_evaluation_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 318 alertes supplémentaires non affichées
+- ... 266560 alertes supplémentaires non affichées
