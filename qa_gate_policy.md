@@ -2,7 +2,12 @@
 
 ## Principe
 
-Les gates bloquants doivent rester peu nombreux, explicites et défendables. Les scripts de comptage, de longueur, de présence de sections ou de métrique documentaire restent utiles, mais ils ne doivent pas remplacer le jugement de substance.
+Les gates bloquants doivent rester bornés, explicites et défendables. Le noyau
+peut dépasser l'ancien seuil historique de 20 scripts lorsque le cahier des
+charges impose des verrous structurels supplémentaires, mais il doit rester sous
+un plafond documenté de 30 gates bloquants hors tests. Les scripts de comptage,
+de longueur, de présence de sections ou de métrique documentaire restent utiles,
+mais ils ne doivent pas remplacer le jugement de substance.
 
 ## Classes
 
@@ -11,6 +16,10 @@ Les gates bloquants doivent rester peu nombreux, explicites et défendables. Les
 | scripts/check_git_clean.py | blocking_structure | dépôt propre avant audit |
 | scripts/check_audit_folder_policy.py | blocking_structure | `/AUDIT` hors corpus pédagogique |
 | scripts/check_content_tree_policy.py | blocking_structure | arbre canonique `supports/` |
+| scripts/check_rag_config.py | blocking_structure | configuration RAG sans secret et cible `nsi_corpus` |
+| scripts/rag_smoke_test.py | blocking_structure | skip propre sans config, smoke réel avec `.env.rag` |
+| scripts/check_agents_governance.py | blocking_structure | doctrine AGENTS minimale |
+| scripts/check_skills_governance.py | blocking_structure | compétences SKILLS minimales |
 | scripts/check_metadata.py | blocking_structure | métadonnées minimales |
 | scripts/check_links.py | blocking_structure | liens internes |
 | scripts/check_no_private_data.py | blocking_privacy | données personnelles |
@@ -19,6 +28,9 @@ Les gates bloquants doivent rester peu nombreux, explicites et défendables. Les
 | scripts/check_no_build_artifacts_in_index.py | blocking_structure | artefacts suivis |
 | scripts/check_uploaded_archive_policy.py | blocking_structure | politique archives |
 | scripts/check_program_coverage.py | blocking_structure | indicateur central de couverture documentaire |
+| scripts/check_coverage_gap_action_plan.py | blocking_structure | chaque absence a une action |
+| scripts/check_sources_catalog.py | blocking_structure | sources classées avant usage |
+| scripts/check_pedagogical_indexes.py | blocking_structure | index pédagogiques générés |
 | scripts/check_substance_anchors.py | blocking_substance | garde-fou mécanique du juge de substance |
 | scripts/check_status_promotion_guard.py | blocking_substance | interdit toute promotion sans verdict A et confirmation humaine |
 | scripts/check_contract_substance_quality.py | blocking_substance | contrats de séquence |
@@ -32,6 +44,18 @@ Les gates bloquants doivent rester peu nombreux, explicites et défendables. Les
 ## Informational Metrics
 
 Les scripts de matrices, comptages de lignes, sections requises, profondeur approximative, ratios TP papier/exécutable et listes de séances sont des `informational_metric` sauf lorsqu'un autre gate bloquant s'appuie explicitement sur une preuve de substance.
+
+## Cibles Makefile
+
+`make audit-core` exécute le noyau bloquant documenté ci-dessus. Il peut s'exécuter
+en clone propre : si `.env.rag` est absent, le smoke RAG doit afficher
+`RAG_SMOKE_TEST_SKIPPED_NO_CONFIG` et ne pas ouvrir le réseau.
+
+`make audit-metrics` exécute les métriques indicatives et rapports de profondeur.
+Ces métriques peuvent signaler une dette documentaire, mais elles ne prouvent pas
+une validation pédagogique.
+
+`make audit` exécute `audit-core` puis `audit-metrics`.
 
 ## Frontière clone-propre / Drive local
 

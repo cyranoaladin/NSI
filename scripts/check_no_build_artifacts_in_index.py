@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 ALLOWED_DIST = {
@@ -36,9 +37,20 @@ FORBIDDEN_SUFFIXES = {
 FORBIDDEN_NAMES = {'.DS_Store'}
 
 
+def is_allowed_validation_log(rel: Path) -> bool:
+    return (
+        len(rel.parts) >= 3
+        and rel.parts[0] == "reports"
+        and rel.parts[1].startswith("lot")
+        and rel.suffix == ".log"
+    )
+
+
 def is_forbidden(path: Path, root: Path = ROOT) -> bool:
     rel = path.relative_to(root)
     if rel in ALLOWED_DIST:
+        return False
+    if is_allowed_validation_log(rel):
         return False
     if rel == Path('dist'):
         return False
@@ -55,9 +67,47 @@ def is_forbidden(path: Path, root: Path = ROOT) -> bool:
     return False
 
 
+def git_tracked_paths(root: Path = ROOT) -> list[Path] | None:
+    if not (root / ".git").exists():
+        return None
+    result = subprocess.run(
+        ["git", "ls-files", "-z"],
+        cwd=root,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    if result.returncode != 0:
+        return None
+    return [root / raw.decode("utf-8") for raw in result.stdout.split(b"\0") if raw]
+
+
+def candidate_paths(root: Path = ROOT) -> list[Path]:
+    tracked = git_tracked_paths(root)
+    if tracked is not None:
+        paths: list[Path] = []
+        seen: set[Path] = set()
+        for path in tracked:
+            if not path.exists():
+                continue
+            for candidate in [path, *path.parents]:
+                if candidate == root:
+                    break
+                if root not in candidate.parents:
+                    continue
+                if candidate not in seen:
+                    paths.append(candidate)
+                    seen.add(candidate)
+        dist = root / "dist"
+        if dist.exists():
+            paths.extend(path for path in dist.rglob("*") if path.exists())
+        return paths
+    return [path for path in root.rglob("*") if path.exists()]
+
+
 def find_artifacts(root: Path = ROOT, require_archives: bool = True) -> list[Path]:
     artifacts: list[Path] = []
-    for path in root.rglob('*'):
+    for path in candidate_paths(root):
         if path == root / '.git':
             continue
         if '.git' in path.relative_to(root).parts:

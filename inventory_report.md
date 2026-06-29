@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 840
+- Total ressources : 917
 - Ressources pédagogiques : 53
-- Ressources techniques : 787
+- Ressources techniques : 864
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 832
+- generated: 909
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 320
+- interne: 397
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 484
-- python: 84
-- script: 168
+- document: 521
+- python: 93
+- script: 189
 - sequence: 45
-- test: 45
+- test: 55
 
 ## Répartition par statut
-- needs_review: 840
+- needs_review: 917
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 640
+- mixte: 717
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -44,8 +44,15 @@
   - premiere/sequences/s01_representation_donnees/cours_eleve.md
 - Sources générées :
   - .env.rag.example
+  - .github/workflows/ci.yml
+  - .pre-commit-config.yaml
   - 00_programmes_officiels/README.md
   - 00_programmes_officiels/programme_nsi_2019.yaml
+  - 01_build_reports/P05_substance_review.json
+  - 01_build_reports/substance_report.md
+  - 01_build_reports/substance_reports/_substance_review.html
+  - 01_build_reports/substance_reports/_substance_review.md
+  - 01_build_reports/substance_review.json
   - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
   - 01_charte_graphique_et_pedagogique/charte_graphique.md
   - 01_charte_graphique_et_pedagogique/metadata_schema.md
@@ -553,6 +560,16 @@
   - 03_progressions/supports/terminale/T19/T19_trace_bac_pratique_grand_oral_projet.md
   - 03_progressions/supports/terminale/T19/T19_version_amenagee_bac_pratique_grand_oral_projet.md
   - INDEX.md
+  - INDEX_BY_AUDIENCE.md
+  - INDEX_BY_CAPACITY.md
+  - INDEX_BY_CHAPTER.md
+  - INDEX_BY_DOCUMENT_TYPE.md
+  - INDEX_BY_DOMAIN.md
+  - INDEX_BY_LEVEL.md
+  - INDEX_BY_RAG_COLLECTION.md
+  - INDEX_BY_SEQUENCE.md
+  - INDEX_BY_SESSION.md
+  - INDEX_BY_THEME.md
   - METHODE_PRODUCTION_REELLE.md
   - README.md
   - bank_strategy.md
@@ -560,6 +577,7 @@
   - carnet_de_bord.md
   - content_tree_policy.md
   - course_internal_coherence_report.md
+  - coverage_gap_action_plan.md
   - coverage_sources.md
   - delivery_policy.md
   - differentiation_quality_report.md
@@ -621,11 +639,35 @@
   - progression_audit.md
   - project_plan_premiere.md
   - project_plan_terminale.md
+  - pyproject.toml
   - qa_debt_register.md
   - qa_gate_policy.md
   - qa_report.md
+  - rag_coherence_report.md
+  - rag_config.example.yml
+  - rag_connection.md
   - reports/drive_enrichment_report.md
+  - reports/lot0_ruff_autofix_review.md
+  - reports/lot1/drive_forensic.md
+  - reports/lot1/lot1_validation_log.md
+  - reports/lot1/repo_map.md
+  - reports/lot2/lot2_validation_log.md
+  - requirements.txt
+  - reviewer_confirmation.schema.json
   - scientific_claims_review_report.md
+  - scraping_ingestion_plan.md
+  - scraping_strategy.md
+  - scrapping_NSI/netpolicy.py
+  - scrapping_NSI/organizer_nsi.py
+  - scrapping_NSI/provenance.py
+  - scrapping_NSI/pyproject.toml
+  - scrapping_NSI/ruff.toml
+  - scrapping_NSI/scraper_eduscol.py
+  - scrapping_NSI/scraper_nsi_v2.py
+  - scrapping_NSI/test_netpolicy.py
+  - scrapping_NSI/test_provenance.py
+  - scrapping_NSI/test_scraper_eduscol.py
+  - scrapping_NSI/test_scraper_nsi_v2.py
   - scripts/_course_sheets_common.py
   - scripts/_drive_paths.py
   - scripts/_inventory_utils.py
@@ -637,6 +679,7 @@
   - scripts/build_all.py
   - scripts/build_source_archive.py
   - scripts/build_source_zip.py
+  - scripts/check_agents_governance.py
   - scripts/check_archive_portability.py
   - scripts/check_audit_extracted_runtime_budget.py
   - scripts/check_audit_folder_policy.py
@@ -659,6 +702,7 @@
   - scripts/check_course_sheets_quality.py
   - scripts/check_course_sheets_substance.py
   - scripts/check_coverage_evidence.py
+  - scripts/check_coverage_gap_action_plan.py
   - scripts/check_csv_numeric_fields_are_parseable.py
   - scripts/check_delivered_archive_exactly_source_clean.py
   - scripts/check_differentiation_distinctness.py
@@ -704,6 +748,7 @@
   - scripts/check_network_packet_trace_consistency.py
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
+  - scripts/check_no_committed_secrets.py
   - scripts/check_no_coverage_from_sheets_only.py
   - scripts/check_no_duplicate_capacity_lines.py
   - scripts/check_no_generic_scaffold_overuse.py
@@ -729,6 +774,7 @@
   - scripts/check_paper_tp_contract.py
   - scripts/check_paper_tp_justification.py
   - scripts/check_pedagogical_alignment.py
+  - scripts/check_pedagogical_indexes.py
   - scripts/check_program_capacity_evidence_depth.py
   - scripts/check_program_coverage.py
   - scripts/check_program_yaml_atomicity.py
@@ -742,6 +788,8 @@
   - scripts/check_qcm_schema.py
   - scripts/check_quality_gates.py
   - scripts/check_question_capacity_alignment.py
+  - scripts/check_rag_config.py
+  - scripts/check_rag_index_metadata.py
   - scripts/check_ready_session_operationality.py
   - scripts/check_ready_supports_depth.py
   - scripts/check_ready_supports_required_sections.py
@@ -764,9 +812,13 @@
   - scripts/check_session_specificity.py
   - scripts/check_session_to_resource_alignment.py
   - scripts/check_session_week_calendar_consistency.py
+  - scripts/check_skills_governance.py
+  - scripts/check_sources_catalog.py
   - scripts/check_sql_query_result_consistency.py
+  - scripts/check_status_promotion_guard.py
   - scripts/check_student_supports_no_scaffold_language.py
   - scripts/check_substance_anchors.py
+  - scripts/check_substance_report_artifacts.py
   - scripts/check_support_pedagogical_depth.py
   - scripts/check_support_substance.py
   - scripts/check_t18_trace_table_quality.py
@@ -782,18 +834,32 @@
   - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_documents_quality_gates.py
   - scripts/check_validated_statuses.py
+  - scripts/classify_scraped_resource.py
   - scripts/cleanup_python_artifacts.py
   - scripts/drive_local_inventory.py
   - scripts/drive_resource_triage.py
   - scripts/generate_index.py
+  - scripts/generate_pedagogical_indexes.py
   - scripts/generate_qa_report.py
   - scripts/ingest_drive_export.py
+  - scripts/ingest_nsi_corpus.py
+  - scripts/prepare_scraped_docs_for_rag.py
+  - scripts/rag_coherence_report.py
+  - scripts/rag_index_plan.py
+  - scripts/rag_query_example.py
   - scripts/rag_smoke_test.py
   - scripts/rebuild_inventory.py
   - scripts/render_sequence.py
+  - scripts/render_substance_report.py
   - scripts/render_unit.py
+  - scripts/run_audit_extracted_source.py
   - scripts/run_python_tests.py
   - scripts/run_substance_judge.py
+  - scripts/substance_judge.py
+  - scripts/substance_report_renderer.py
+  - sources_catalog.yml
+  - substance_pipeline.md
+  - substance_rag_pilot_report.md
   - substance_reviews/_adversarial/poisoned.verdict.json
   - substance_reviews_index.md
   - substance_verdict.schema.json
@@ -828,6 +894,8 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
+  - tests/conftest.py
+  - tests/fixtures/substance_judge/P05.json
   - tests/test_archive_portability_modes.py
   - tests/test_audit_extracted_source_no_hang.py
   - tests/test_audit_strategic_integration.py
@@ -848,25 +916,34 @@
   - tests/test_line_padding.py
   - tests/test_linked_support_quality.py
   - tests/test_local_drive_traceability.py
+  - tests/test_lot1_drive_gate_boundary.py
+  - tests/test_lot2_scraper_content_dedup.py
   - tests/test_missing_register_actionability.py
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
   - tests/test_notional_and_disciplinary_controls.py
   - tests/test_operational_substance_controls.py
+  - tests/test_organizer_nsi_safety.py
   - tests/test_p05_p04_controls.py
   - tests/test_packaging_modes.py
   - tests/test_private_data_detection.py
+  - tests/test_rag_governance_and_indexes.py
   - tests/test_ready_session_operationality.py
   - tests/test_ready_supports_gates.py
   - tests/test_register_semantic_consistency.py
+  - tests/test_render_substance_report_cli.py
   - tests/test_run_python_tests.py
+  - tests/test_secret_guard.py
   - tests/test_sequence_contracts.py
   - tests/test_sequence_pack_and_scaffold_controls.py
   - tests/test_session_referenced_files_exist.py
   - tests/test_session_specificity.py
   - tests/test_source_zip_delivery.py
   - tests/test_source_zip_timestamps.py
+  - tests/test_status_promotion_guard.py
   - tests/test_strict_full_bank_controls.py
+  - tests/test_substance_judge_pipeline.py
+  - tests/test_substance_report_renderer.py
   - tests/test_support_substance.py
   - tests/test_tp_pedagogical_assets.py
   - tests/test_tp_pedagogical_assets_no_hang.py
@@ -931,8 +1008,15 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
 - Ressources techniques :
   - .env.rag.example
+  - .github/workflows/ci.yml
+  - .pre-commit-config.yaml
   - 00_programmes_officiels/README.md
   - 00_programmes_officiels/programme_nsi_2019.yaml
+  - 01_build_reports/P05_substance_review.json
+  - 01_build_reports/substance_report.md
+  - 01_build_reports/substance_reports/_substance_review.html
+  - 01_build_reports/substance_reports/_substance_review.md
+  - 01_build_reports/substance_review.json
   - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
   - 01_charte_graphique_et_pedagogique/charte_graphique.md
   - 01_charte_graphique_et_pedagogique/metadata_schema.md
@@ -1447,6 +1531,16 @@
   - 03_progressions/supports/terminale/T19/T19_trace_bac_pratique_grand_oral_projet.md
   - 03_progressions/supports/terminale/T19/T19_version_amenagee_bac_pratique_grand_oral_projet.md
   - INDEX.md
+  - INDEX_BY_AUDIENCE.md
+  - INDEX_BY_CAPACITY.md
+  - INDEX_BY_CHAPTER.md
+  - INDEX_BY_DOCUMENT_TYPE.md
+  - INDEX_BY_DOMAIN.md
+  - INDEX_BY_LEVEL.md
+  - INDEX_BY_RAG_COLLECTION.md
+  - INDEX_BY_SEQUENCE.md
+  - INDEX_BY_SESSION.md
+  - INDEX_BY_THEME.md
   - METHODE_PRODUCTION_REELLE.md
   - README.md
   - bank_strategy.md
@@ -1454,6 +1548,7 @@
   - carnet_de_bord.md
   - content_tree_policy.md
   - course_internal_coherence_report.md
+  - coverage_gap_action_plan.md
   - coverage_sources.md
   - delivery_policy.md
   - differentiation_quality_report.md
@@ -1489,11 +1584,35 @@
   - progression_audit.md
   - project_plan_premiere.md
   - project_plan_terminale.md
+  - pyproject.toml
   - qa_debt_register.md
   - qa_gate_policy.md
   - qa_report.md
+  - rag_coherence_report.md
+  - rag_config.example.yml
+  - rag_connection.md
   - reports/drive_enrichment_report.md
+  - reports/lot0_ruff_autofix_review.md
+  - reports/lot1/drive_forensic.md
+  - reports/lot1/lot1_validation_log.md
+  - reports/lot1/repo_map.md
+  - reports/lot2/lot2_validation_log.md
+  - requirements.txt
+  - reviewer_confirmation.schema.json
   - scientific_claims_review_report.md
+  - scraping_ingestion_plan.md
+  - scraping_strategy.md
+  - scrapping_NSI/netpolicy.py
+  - scrapping_NSI/organizer_nsi.py
+  - scrapping_NSI/provenance.py
+  - scrapping_NSI/pyproject.toml
+  - scrapping_NSI/ruff.toml
+  - scrapping_NSI/scraper_eduscol.py
+  - scrapping_NSI/scraper_nsi_v2.py
+  - scrapping_NSI/test_netpolicy.py
+  - scrapping_NSI/test_provenance.py
+  - scrapping_NSI/test_scraper_eduscol.py
+  - scrapping_NSI/test_scraper_nsi_v2.py
   - scripts/_course_sheets_common.py
   - scripts/_drive_paths.py
   - scripts/_inventory_utils.py
@@ -1505,6 +1624,7 @@
   - scripts/build_all.py
   - scripts/build_source_archive.py
   - scripts/build_source_zip.py
+  - scripts/check_agents_governance.py
   - scripts/check_archive_portability.py
   - scripts/check_audit_extracted_runtime_budget.py
   - scripts/check_audit_folder_policy.py
@@ -1527,6 +1647,7 @@
   - scripts/check_course_sheets_quality.py
   - scripts/check_course_sheets_substance.py
   - scripts/check_coverage_evidence.py
+  - scripts/check_coverage_gap_action_plan.py
   - scripts/check_csv_numeric_fields_are_parseable.py
   - scripts/check_delivered_archive_exactly_source_clean.py
   - scripts/check_differentiation_distinctness.py
@@ -1572,6 +1693,7 @@
   - scripts/check_network_packet_trace_consistency.py
   - scripts/check_no_absent_coverage_for_release.py
   - scripts/check_no_build_artifacts_in_index.py
+  - scripts/check_no_committed_secrets.py
   - scripts/check_no_coverage_from_sheets_only.py
   - scripts/check_no_duplicate_capacity_lines.py
   - scripts/check_no_generic_scaffold_overuse.py
@@ -1597,6 +1719,7 @@
   - scripts/check_paper_tp_contract.py
   - scripts/check_paper_tp_justification.py
   - scripts/check_pedagogical_alignment.py
+  - scripts/check_pedagogical_indexes.py
   - scripts/check_program_capacity_evidence_depth.py
   - scripts/check_program_coverage.py
   - scripts/check_program_yaml_atomicity.py
@@ -1610,6 +1733,8 @@
   - scripts/check_qcm_schema.py
   - scripts/check_quality_gates.py
   - scripts/check_question_capacity_alignment.py
+  - scripts/check_rag_config.py
+  - scripts/check_rag_index_metadata.py
   - scripts/check_ready_session_operationality.py
   - scripts/check_ready_supports_depth.py
   - scripts/check_ready_supports_required_sections.py
@@ -1632,9 +1757,13 @@
   - scripts/check_session_specificity.py
   - scripts/check_session_to_resource_alignment.py
   - scripts/check_session_week_calendar_consistency.py
+  - scripts/check_skills_governance.py
+  - scripts/check_sources_catalog.py
   - scripts/check_sql_query_result_consistency.py
+  - scripts/check_status_promotion_guard.py
   - scripts/check_student_supports_no_scaffold_language.py
   - scripts/check_substance_anchors.py
+  - scripts/check_substance_report_artifacts.py
   - scripts/check_support_pedagogical_depth.py
   - scripts/check_support_substance.py
   - scripts/check_t18_trace_table_quality.py
@@ -1650,18 +1779,32 @@
   - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_documents_quality_gates.py
   - scripts/check_validated_statuses.py
+  - scripts/classify_scraped_resource.py
   - scripts/cleanup_python_artifacts.py
   - scripts/drive_local_inventory.py
   - scripts/drive_resource_triage.py
   - scripts/generate_index.py
+  - scripts/generate_pedagogical_indexes.py
   - scripts/generate_qa_report.py
   - scripts/ingest_drive_export.py
+  - scripts/ingest_nsi_corpus.py
+  - scripts/prepare_scraped_docs_for_rag.py
+  - scripts/rag_coherence_report.py
+  - scripts/rag_index_plan.py
+  - scripts/rag_query_example.py
   - scripts/rag_smoke_test.py
   - scripts/rebuild_inventory.py
   - scripts/render_sequence.py
+  - scripts/render_substance_report.py
   - scripts/render_unit.py
+  - scripts/run_audit_extracted_source.py
   - scripts/run_python_tests.py
   - scripts/run_substance_judge.py
+  - scripts/substance_judge.py
+  - scripts/substance_report_renderer.py
+  - sources_catalog.yml
+  - substance_pipeline.md
+  - substance_rag_pilot_report.md
   - substance_reviews/_adversarial/poisoned.verdict.json
   - substance_reviews_index.md
   - substance_verdict.schema.json
@@ -1670,6 +1813,8 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/python/structures_tools.py
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/sequence.yaml
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tests/test_structures_tools.py
+  - tests/conftest.py
+  - tests/fixtures/substance_judge/P05.json
   - tests/test_archive_portability_modes.py
   - tests/test_audit_extracted_source_no_hang.py
   - tests/test_audit_strategic_integration.py
@@ -1690,25 +1835,34 @@
   - tests/test_line_padding.py
   - tests/test_linked_support_quality.py
   - tests/test_local_drive_traceability.py
+  - tests/test_lot1_drive_gate_boundary.py
+  - tests/test_lot2_scraper_content_dedup.py
   - tests/test_missing_register_actionability.py
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
   - tests/test_notional_and_disciplinary_controls.py
   - tests/test_operational_substance_controls.py
+  - tests/test_organizer_nsi_safety.py
   - tests/test_p05_p04_controls.py
   - tests/test_packaging_modes.py
   - tests/test_private_data_detection.py
+  - tests/test_rag_governance_and_indexes.py
   - tests/test_ready_session_operationality.py
   - tests/test_ready_supports_gates.py
   - tests/test_register_semantic_consistency.py
+  - tests/test_render_substance_report_cli.py
   - tests/test_run_python_tests.py
+  - tests/test_secret_guard.py
   - tests/test_sequence_contracts.py
   - tests/test_sequence_pack_and_scaffold_controls.py
   - tests/test_session_referenced_files_exist.py
   - tests/test_session_specificity.py
   - tests/test_source_zip_delivery.py
   - tests/test_source_zip_timestamps.py
+  - tests/test_status_promotion_guard.py
   - tests/test_strict_full_bank_controls.py
+  - tests/test_substance_judge_pipeline.py
+  - tests/test_substance_report_renderer.py
   - tests/test_support_substance.py
   - tests/test_tp_pedagogical_assets.py
   - tests/test_tp_pedagogical_assets_no_hang.py
@@ -1770,8 +1924,15 @@
 
 ## Ressources élève
 - .env.rag.example
+- .github/workflows/ci.yml
+- .pre-commit-config.yaml
 - 00_programmes_officiels/README.md
 - 00_programmes_officiels/programme_nsi_2019.yaml
+- 01_build_reports/P05_substance_review.json
+- 01_build_reports/substance_report.md
+- 01_build_reports/substance_reports/_substance_review.html
+- 01_build_reports/substance_reports/_substance_review.md
+- 01_build_reports/substance_review.json
 - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
 - 01_charte_graphique_et_pedagogique/charte_graphique.md
 - 01_charte_graphique_et_pedagogique/metadata_schema.md
@@ -2221,6 +2382,16 @@
 - 03_progressions/supports/terminale/T19/T19_trace_bac_pratique_grand_oral_projet.md
 - 03_progressions/supports/terminale/T19/T19_version_amenagee_bac_pratique_grand_oral_projet.md
 - INDEX.md
+- INDEX_BY_AUDIENCE.md
+- INDEX_BY_CAPACITY.md
+- INDEX_BY_CHAPTER.md
+- INDEX_BY_DOCUMENT_TYPE.md
+- INDEX_BY_DOMAIN.md
+- INDEX_BY_LEVEL.md
+- INDEX_BY_RAG_COLLECTION.md
+- INDEX_BY_SEQUENCE.md
+- INDEX_BY_SESSION.md
+- INDEX_BY_THEME.md
 - METHODE_PRODUCTION_REELLE.md
 - README.md
 - bank_strategy.md
@@ -2228,6 +2399,7 @@
 - carnet_de_bord.md
 - content_tree_policy.md
 - course_internal_coherence_report.md
+- coverage_gap_action_plan.md
 - coverage_sources.md
 - delivery_policy.md
 - differentiation_quality_report.md
@@ -2286,11 +2458,35 @@
 - progression_audit.md
 - project_plan_premiere.md
 - project_plan_terminale.md
+- pyproject.toml
 - qa_debt_register.md
 - qa_gate_policy.md
 - qa_report.md
+- rag_coherence_report.md
+- rag_config.example.yml
+- rag_connection.md
 - reports/drive_enrichment_report.md
+- reports/lot0_ruff_autofix_review.md
+- reports/lot1/drive_forensic.md
+- reports/lot1/lot1_validation_log.md
+- reports/lot1/repo_map.md
+- reports/lot2/lot2_validation_log.md
+- requirements.txt
+- reviewer_confirmation.schema.json
 - scientific_claims_review_report.md
+- scraping_ingestion_plan.md
+- scraping_strategy.md
+- scrapping_NSI/netpolicy.py
+- scrapping_NSI/organizer_nsi.py
+- scrapping_NSI/provenance.py
+- scrapping_NSI/pyproject.toml
+- scrapping_NSI/ruff.toml
+- scrapping_NSI/scraper_eduscol.py
+- scrapping_NSI/scraper_nsi_v2.py
+- scrapping_NSI/test_netpolicy.py
+- scrapping_NSI/test_provenance.py
+- scrapping_NSI/test_scraper_eduscol.py
+- scrapping_NSI/test_scraper_nsi_v2.py
 - scripts/_course_sheets_common.py
 - scripts/_drive_paths.py
 - scripts/_inventory_utils.py
@@ -2302,6 +2498,7 @@
 - scripts/build_all.py
 - scripts/build_source_archive.py
 - scripts/build_source_zip.py
+- scripts/check_agents_governance.py
 - scripts/check_archive_portability.py
 - scripts/check_audit_extracted_runtime_budget.py
 - scripts/check_audit_folder_policy.py
@@ -2324,6 +2521,7 @@
 - scripts/check_course_sheets_quality.py
 - scripts/check_course_sheets_substance.py
 - scripts/check_coverage_evidence.py
+- scripts/check_coverage_gap_action_plan.py
 - scripts/check_csv_numeric_fields_are_parseable.py
 - scripts/check_delivered_archive_exactly_source_clean.py
 - scripts/check_differentiation_distinctness.py
@@ -2369,6 +2567,7 @@
 - scripts/check_network_packet_trace_consistency.py
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
+- scripts/check_no_committed_secrets.py
 - scripts/check_no_coverage_from_sheets_only.py
 - scripts/check_no_duplicate_capacity_lines.py
 - scripts/check_no_generic_scaffold_overuse.py
@@ -2394,6 +2593,7 @@
 - scripts/check_paper_tp_contract.py
 - scripts/check_paper_tp_justification.py
 - scripts/check_pedagogical_alignment.py
+- scripts/check_pedagogical_indexes.py
 - scripts/check_program_capacity_evidence_depth.py
 - scripts/check_program_coverage.py
 - scripts/check_program_yaml_atomicity.py
@@ -2407,6 +2607,8 @@
 - scripts/check_qcm_schema.py
 - scripts/check_quality_gates.py
 - scripts/check_question_capacity_alignment.py
+- scripts/check_rag_config.py
+- scripts/check_rag_index_metadata.py
 - scripts/check_ready_session_operationality.py
 - scripts/check_ready_supports_depth.py
 - scripts/check_ready_supports_required_sections.py
@@ -2429,9 +2631,13 @@
 - scripts/check_session_specificity.py
 - scripts/check_session_to_resource_alignment.py
 - scripts/check_session_week_calendar_consistency.py
+- scripts/check_skills_governance.py
+- scripts/check_sources_catalog.py
 - scripts/check_sql_query_result_consistency.py
+- scripts/check_status_promotion_guard.py
 - scripts/check_student_supports_no_scaffold_language.py
 - scripts/check_substance_anchors.py
+- scripts/check_substance_report_artifacts.py
 - scripts/check_support_pedagogical_depth.py
 - scripts/check_support_substance.py
 - scripts/check_t18_trace_table_quality.py
@@ -2446,18 +2652,32 @@
 - scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_documents_quality_gates.py
 - scripts/check_validated_statuses.py
+- scripts/classify_scraped_resource.py
 - scripts/cleanup_python_artifacts.py
 - scripts/drive_local_inventory.py
 - scripts/drive_resource_triage.py
 - scripts/generate_index.py
+- scripts/generate_pedagogical_indexes.py
 - scripts/generate_qa_report.py
 - scripts/ingest_drive_export.py
+- scripts/ingest_nsi_corpus.py
+- scripts/prepare_scraped_docs_for_rag.py
+- scripts/rag_coherence_report.py
+- scripts/rag_index_plan.py
+- scripts/rag_query_example.py
 - scripts/rag_smoke_test.py
 - scripts/rebuild_inventory.py
 - scripts/render_sequence.py
+- scripts/render_substance_report.py
 - scripts/render_unit.py
+- scripts/run_audit_extracted_source.py
 - scripts/run_python_tests.py
 - scripts/run_substance_judge.py
+- scripts/substance_judge.py
+- scripts/substance_report_renderer.py
+- sources_catalog.yml
+- substance_pipeline.md
+- substance_rag_pilot_report.md
 - substance_reviews/_adversarial/poisoned.verdict.json
 - substance_reviews_index.md
 - substance_verdict.schema.json
@@ -2487,6 +2707,8 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
+- tests/conftest.py
+- tests/fixtures/substance_judge/P05.json
 - tests/test_archive_portability_modes.py
 - tests/test_audit_extracted_source_no_hang.py
 - tests/test_audit_strategic_integration.py
@@ -2507,25 +2729,34 @@
 - tests/test_line_padding.py
 - tests/test_linked_support_quality.py
 - tests/test_local_drive_traceability.py
+- tests/test_lot1_drive_gate_boundary.py
+- tests/test_lot2_scraper_content_dedup.py
 - tests/test_missing_register_actionability.py
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
 - tests/test_notional_and_disciplinary_controls.py
 - tests/test_operational_substance_controls.py
+- tests/test_organizer_nsi_safety.py
 - tests/test_p05_p04_controls.py
 - tests/test_packaging_modes.py
 - tests/test_private_data_detection.py
+- tests/test_rag_governance_and_indexes.py
 - tests/test_ready_session_operationality.py
 - tests/test_ready_supports_gates.py
 - tests/test_register_semantic_consistency.py
+- tests/test_render_substance_report_cli.py
 - tests/test_run_python_tests.py
+- tests/test_secret_guard.py
 - tests/test_sequence_contracts.py
 - tests/test_sequence_pack_and_scaffold_controls.py
 - tests/test_session_referenced_files_exist.py
 - tests/test_session_specificity.py
 - tests/test_source_zip_delivery.py
 - tests/test_source_zip_timestamps.py
+- tests/test_status_promotion_guard.py
 - tests/test_strict_full_bank_controls.py
+- tests/test_substance_judge_pipeline.py
+- tests/test_substance_report_renderer.py
 - tests/test_support_substance.py
 - tests/test_tp_pedagogical_assets.py
 - tests/test_tp_pedagogical_assets_no_hang.py
@@ -2540,8 +2771,15 @@
 
 ## Ressources à corriger / compléter
 - .env.rag.example
+- .github/workflows/ci.yml
+- .pre-commit-config.yaml
 - 00_programmes_officiels/README.md
 - 00_programmes_officiels/programme_nsi_2019.yaml
+- 01_build_reports/P05_substance_review.json
+- 01_build_reports/substance_report.md
+- 01_build_reports/substance_reports/_substance_review.html
+- 01_build_reports/substance_reports/_substance_review.md
+- 01_build_reports/substance_review.json
 - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
 - 01_charte_graphique_et_pedagogique/charte_graphique.md
 - 01_charte_graphique_et_pedagogique/metadata_schema.md
@@ -3056,6 +3294,16 @@
 - 03_progressions/supports/terminale/T19/T19_trace_bac_pratique_grand_oral_projet.md
 - 03_progressions/supports/terminale/T19/T19_version_amenagee_bac_pratique_grand_oral_projet.md
 - INDEX.md
+- INDEX_BY_AUDIENCE.md
+- INDEX_BY_CAPACITY.md
+- INDEX_BY_CHAPTER.md
+- INDEX_BY_DOCUMENT_TYPE.md
+- INDEX_BY_DOMAIN.md
+- INDEX_BY_LEVEL.md
+- INDEX_BY_RAG_COLLECTION.md
+- INDEX_BY_SEQUENCE.md
+- INDEX_BY_SESSION.md
+- INDEX_BY_THEME.md
 - METHODE_PRODUCTION_REELLE.md
 - README.md
 - bank_strategy.md
@@ -3063,6 +3311,7 @@
 - carnet_de_bord.md
 - content_tree_policy.md
 - course_internal_coherence_report.md
+- coverage_gap_action_plan.md
 - coverage_sources.md
 - delivery_policy.md
 - differentiation_quality_report.md
@@ -3125,11 +3374,35 @@
 - progression_audit.md
 - project_plan_premiere.md
 - project_plan_terminale.md
+- pyproject.toml
 - qa_debt_register.md
 - qa_gate_policy.md
 - qa_report.md
+- rag_coherence_report.md
+- rag_config.example.yml
+- rag_connection.md
 - reports/drive_enrichment_report.md
+- reports/lot0_ruff_autofix_review.md
+- reports/lot1/drive_forensic.md
+- reports/lot1/lot1_validation_log.md
+- reports/lot1/repo_map.md
+- reports/lot2/lot2_validation_log.md
+- requirements.txt
+- reviewer_confirmation.schema.json
 - scientific_claims_review_report.md
+- scraping_ingestion_plan.md
+- scraping_strategy.md
+- scrapping_NSI/netpolicy.py
+- scrapping_NSI/organizer_nsi.py
+- scrapping_NSI/provenance.py
+- scrapping_NSI/pyproject.toml
+- scrapping_NSI/ruff.toml
+- scrapping_NSI/scraper_eduscol.py
+- scrapping_NSI/scraper_nsi_v2.py
+- scrapping_NSI/test_netpolicy.py
+- scrapping_NSI/test_provenance.py
+- scrapping_NSI/test_scraper_eduscol.py
+- scrapping_NSI/test_scraper_nsi_v2.py
 - scripts/_course_sheets_common.py
 - scripts/_drive_paths.py
 - scripts/_inventory_utils.py
@@ -3141,6 +3414,7 @@
 - scripts/build_all.py
 - scripts/build_source_archive.py
 - scripts/build_source_zip.py
+- scripts/check_agents_governance.py
 - scripts/check_archive_portability.py
 - scripts/check_audit_extracted_runtime_budget.py
 - scripts/check_audit_folder_policy.py
@@ -3163,6 +3437,7 @@
 - scripts/check_course_sheets_quality.py
 - scripts/check_course_sheets_substance.py
 - scripts/check_coverage_evidence.py
+- scripts/check_coverage_gap_action_plan.py
 - scripts/check_csv_numeric_fields_are_parseable.py
 - scripts/check_delivered_archive_exactly_source_clean.py
 - scripts/check_differentiation_distinctness.py
@@ -3208,6 +3483,7 @@
 - scripts/check_network_packet_trace_consistency.py
 - scripts/check_no_absent_coverage_for_release.py
 - scripts/check_no_build_artifacts_in_index.py
+- scripts/check_no_committed_secrets.py
 - scripts/check_no_coverage_from_sheets_only.py
 - scripts/check_no_duplicate_capacity_lines.py
 - scripts/check_no_generic_scaffold_overuse.py
@@ -3233,6 +3509,7 @@
 - scripts/check_paper_tp_contract.py
 - scripts/check_paper_tp_justification.py
 - scripts/check_pedagogical_alignment.py
+- scripts/check_pedagogical_indexes.py
 - scripts/check_program_capacity_evidence_depth.py
 - scripts/check_program_coverage.py
 - scripts/check_program_yaml_atomicity.py
@@ -3246,6 +3523,8 @@
 - scripts/check_qcm_schema.py
 - scripts/check_quality_gates.py
 - scripts/check_question_capacity_alignment.py
+- scripts/check_rag_config.py
+- scripts/check_rag_index_metadata.py
 - scripts/check_ready_session_operationality.py
 - scripts/check_ready_supports_depth.py
 - scripts/check_ready_supports_required_sections.py
@@ -3268,9 +3547,13 @@
 - scripts/check_session_specificity.py
 - scripts/check_session_to_resource_alignment.py
 - scripts/check_session_week_calendar_consistency.py
+- scripts/check_skills_governance.py
+- scripts/check_sources_catalog.py
 - scripts/check_sql_query_result_consistency.py
+- scripts/check_status_promotion_guard.py
 - scripts/check_student_supports_no_scaffold_language.py
 - scripts/check_substance_anchors.py
+- scripts/check_substance_report_artifacts.py
 - scripts/check_support_pedagogical_depth.py
 - scripts/check_support_substance.py
 - scripts/check_t18_trace_table_quality.py
@@ -3286,18 +3569,32 @@
 - scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_documents_quality_gates.py
 - scripts/check_validated_statuses.py
+- scripts/classify_scraped_resource.py
 - scripts/cleanup_python_artifacts.py
 - scripts/drive_local_inventory.py
 - scripts/drive_resource_triage.py
 - scripts/generate_index.py
+- scripts/generate_pedagogical_indexes.py
 - scripts/generate_qa_report.py
 - scripts/ingest_drive_export.py
+- scripts/ingest_nsi_corpus.py
+- scripts/prepare_scraped_docs_for_rag.py
+- scripts/rag_coherence_report.py
+- scripts/rag_index_plan.py
+- scripts/rag_query_example.py
 - scripts/rag_smoke_test.py
 - scripts/rebuild_inventory.py
 - scripts/render_sequence.py
+- scripts/render_substance_report.py
 - scripts/render_unit.py
+- scripts/run_audit_extracted_source.py
 - scripts/run_python_tests.py
 - scripts/run_substance_judge.py
+- scripts/substance_judge.py
+- scripts/substance_report_renderer.py
+- sources_catalog.yml
+- substance_pipeline.md
+- substance_rag_pilot_report.md
 - substance_reviews/_adversarial/poisoned.verdict.json
 - substance_reviews_index.md
 - substance_verdict.schema.json
@@ -3332,6 +3629,8 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
+- tests/conftest.py
+- tests/fixtures/substance_judge/P05.json
 - tests/test_archive_portability_modes.py
 - tests/test_audit_extracted_source_no_hang.py
 - tests/test_audit_strategic_integration.py
@@ -3352,25 +3651,34 @@
 - tests/test_line_padding.py
 - tests/test_linked_support_quality.py
 - tests/test_local_drive_traceability.py
+- tests/test_lot1_drive_gate_boundary.py
+- tests/test_lot2_scraper_content_dedup.py
 - tests/test_missing_register_actionability.py
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
 - tests/test_notional_and_disciplinary_controls.py
 - tests/test_operational_substance_controls.py
+- tests/test_organizer_nsi_safety.py
 - tests/test_p05_p04_controls.py
 - tests/test_packaging_modes.py
 - tests/test_private_data_detection.py
+- tests/test_rag_governance_and_indexes.py
 - tests/test_ready_session_operationality.py
 - tests/test_ready_supports_gates.py
 - tests/test_register_semantic_consistency.py
+- tests/test_render_substance_report_cli.py
 - tests/test_run_python_tests.py
+- tests/test_secret_guard.py
 - tests/test_sequence_contracts.py
 - tests/test_sequence_pack_and_scaffold_controls.py
 - tests/test_session_referenced_files_exist.py
 - tests/test_session_specificity.py
 - tests/test_source_zip_delivery.py
 - tests/test_source_zip_timestamps.py
+- tests/test_status_promotion_guard.py
 - tests/test_strict_full_bank_controls.py
+- tests/test_substance_judge_pipeline.py
+- tests/test_substance_report_renderer.py
 - tests/test_support_substance.py
 - tests/test_tp_pedagogical_assets.py
 - tests/test_tp_pedagogical_assets_no_hang.py

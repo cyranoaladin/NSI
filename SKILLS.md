@@ -12,6 +12,15 @@ Chaque compétence décrit :
 * ses critères d’acceptation ;
 * ses erreurs bloquantes.
 
+## 1.1. Liste canonique des compétences
+
+Compétences essentielles : inventorier les ressources ; mapper le programme officiel ;
+rédiger cours ; rédiger trace ; rédiger TD ; rédiger TP ; rédiger évaluation ;
+rédiger corrigé ; produire QCM ; produire guide professeur ; contrôler la qualité
+pédagogique ; contrôler la qualité technique ; publier ; juger la substance ;
+connecter le corpus au RAG ; intégrer `/AUDIT` ; réconcilier couverture programme ;
+rendre une unité chartée ; piloter les gates ; scraper/classifier les sources.
+
 ## 2. Métadonnées communes obligatoires
 
 ## 2.1. Recherche de sources locales
@@ -468,7 +477,7 @@ Statuer sur l’enseignement réel d’une capacité dans le corpus.
 
 * intitulé officiel exact de la capacité (depuis `programme_nsi_2019.yaml`) ;
 * contrat de l’unité (séquence, rôles attendus) ;
-* sections candidates, idéalement fournies par le RAG (recherche sémantique dans `rag_education`), pas la première section du fichier.
+* sections candidates, idéalement fournies par le RAG interne (recherche sémantique dans `nsi_corpus`), pas la première section du fichier.
 
 ### Sorties
 
@@ -527,7 +536,7 @@ Headers:
   Content-Type: application/json
   Authorization: Bearer <RAG_API_KEY>
 Body:
-  {"q": "<texte>", "collection": "rag_education", "k": 5, "include_documents": true}
+  {"q": "<texte>", "collection": "nsi_corpus", "k": 5, "include_documents": true}
 ```
 
 Réponse : `{"query", "collection", "k", "returned", "hits": [{"id", "metadata", "document", "score"}]}`.
@@ -557,7 +566,60 @@ Voir `.env.rag.example` pour le modèle de configuration. **Ne jamais recopier d
 * utiliser des valeurs devinées au lieu de valeurs découvertes sur le serveur ;
 * déclarer la connexion fonctionnelle sans preuve d’exécution (smoke test).
 
-## 18. Critère ultime
+## 18. Skill : intégrer `/AUDIT`
+
+### Objectif
+
+Exploiter les rapports d’audit comme traces de pilotage sans les indexer comme ressources
+pédagogiques ni les ingérer dans `nsi_corpus`.
+
+### Critères
+
+* `/AUDIT` reste hors corpus pédagogique ;
+* les rapports peuvent nourrir les plans d’action ;
+* aucune donnée sensible ou élève n’est réinjectée dans les supports.
+
+## 19. Skill : réconcilier couverture programme
+
+### Objectif
+
+Transformer les statuts `absent` et `partial` en actions explicites sans promouvoir
+`covered`.
+
+### Critères
+
+* chaque capacité absente possède une action suivante ;
+* toute preuve reste documentaire tant qu’une revue humaine n’est pas tracée ;
+* `covered = 0` est maintenu.
+
+## 20. Skill : rendre une unité chartée
+
+### Objectif
+
+Produire les artefacts élève/professeur d’une unité pilote sans fuite de corrigé ni
+régression de charte.
+
+## 21. Skill : piloter les gates
+
+### Objectif
+
+Exécuter `audit-core`, distinguer `audit-metrics`, et refuser tout ajustement de gate
+destiné à masquer une lacune.
+
+## 22. Skill : scraper/classifier les sources
+
+### Objectif
+
+Classer chaque source avant usage pédagogique ou RAG.
+
+### Critères
+
+* pas de scraping aveugle ;
+* pas de données élèves ;
+* pas de source externe comme preuve de couverture interne ;
+* chaque source a licence, statut RGPD, politique de réutilisation et collection cible.
+
+## 23. Critère ultime
 
 Un document doit pouvoir répondre à cette question :
 

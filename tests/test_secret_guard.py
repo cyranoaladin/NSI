@@ -40,6 +40,33 @@ def test_detects_token_like_assignments_without_flagging_examples(tmp_path: Path
     assert errors == [f"{secret_file.name}: secret potentiel dans RAG_API_KEY"]
 
 
+def test_blank_secret_assignments_do_not_consume_next_line(tmp_path: Path) -> None:
+    env_example = tmp_path / ".env.rag.example"
+    env_example.write_text(
+        "RAG_API_KEY=\n"
+        "RAG_COLLECTION=nsi_corpus\n"
+        "LOCAL_LLM_API_KEY=\n",
+        encoding="utf-8",
+    )
+
+    errors = secrets.scan_paths([env_example], tmp_path)
+
+    assert errors == []
+
+
+def test_allows_documented_public_rag_host_only_in_env_example(tmp_path: Path) -> None:
+    public_ip = "88.99." + "254.59"
+    env_example = tmp_path / ".env.rag.example"
+    script_file = tmp_path / "scripts" / "config.py"
+    script_file.parent.mkdir(parents=True)
+    env_example.write_text(f"RAG_SSH_HOST={public_ip}\n", encoding="utf-8")
+    script_file.write_text(f"RAG_SSH_HOST={public_ip}\n", encoding="utf-8")
+
+    errors = secrets.scan_paths([env_example, script_file], tmp_path)
+
+    assert errors == [f"scripts/{script_file.name}: adresse IP publique en clair -> {public_ip}"]
+
+
 def test_secret_guard_scans_tooling_not_pedagogical_corpus(tmp_path: Path) -> None:
     public_ip = "88.99." + "254.59"
     script_file = tmp_path / "scripts" / "config.py"

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
+from collections.abc import Callable
 import inspect
 import os
 import signal
@@ -31,13 +32,13 @@ class RuntimeBudgetResult:
     mode: str = ""
 
 
-def audit_extracted_commands(root: Path = ROOT) -> list[str]:
+def make_target_commands(root: Path, target: str) -> list[str]:
     makefile = (root / "Makefile").read_text(encoding="utf-8")
     lines = makefile.splitlines()
     commands: list[str] = []
     in_target = False
     for line in lines:
-        if line.startswith("audit-extracted-source:"):
+        if line.startswith(f"{target}:"):
             in_target = True
             continue
         if in_target and line and not line.startswith("\t") and not line.startswith(" "):
@@ -47,6 +48,13 @@ def audit_extracted_commands(root: Path = ROOT) -> list[str]:
             if command and not command.startswith("@"):
                 commands.append(command)
     return commands
+
+
+def audit_extracted_commands(root: Path = ROOT) -> list[str]:
+    local_commands = make_target_commands(root, "audit-extracted-source-local")
+    if local_commands:
+        return local_commands
+    return make_target_commands(root, "audit-extracted-source")
 
 
 def run_command(command: str, root: Path, timeout_seconds: int = 120) -> MeasuredCommand:
@@ -154,7 +162,7 @@ def analyze_audit_extracted_runtime_budget(root: Path = ROOT) -> RuntimeBudgetRe
             temp.cleanup()
 
 
-def uses_source_archive_extraction(func: object) -> bool:
+def uses_source_archive_extraction(func: Callable[[], object]) -> bool:
     source = inspect.getsource(func)
     return "extract_source_clean" in source or "measured_root" in source or "source_clean.tar.gz" in source
 

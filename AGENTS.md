@@ -44,6 +44,15 @@ le registre ou le rapport d’inventaire. Une ressource repérée dans `Document
 `needs_review` tant qu’elle n’a pas été auditée, nettoyée des données privées éventuelles
 et alignée avec le programme.
 
+## 2.2. Arbre canonique et politique `/AUDIT`
+
+`03_progressions/supports/` est le canon de production. Les dossiers
+`premiere/sequences/` et `terminale/sequences/` sont des pilotes historiques et des
+exemples de style ; ils ne doivent pas masquer une absence dans `supports/`.
+
+Le dossier `/AUDIT` et tout artefact de build (`dist/`, `01_build_reports/`, caches,
+archives, exports temporaires) restent hors corpus pédagogique et hors index RAG.
+
 ## 3. Statuts autorisés
 
 Les statuts autorisés sont strictement les suivants :
@@ -241,7 +250,26 @@ Livrables :
 * `publication_blockers.md`
 * `release_notes.md`
 
-### 4.10. Agent Juge de substance
+### 4.10. Agent RAG
+
+Responsabilités :
+
+* maintenir `rag_connection.md`, `.env.rag.example` et `rag_config.example.yml` ;
+* vérifier que `.env.rag` reste ignoré et qu’aucun secret n’est committé ;
+* exécuter `scripts/rag_smoke_test.py` ou documenter explicitement son skip sans config ;
+* préparer les plans d’ingestion et les contrôles de métadonnées ;
+* exclure `/AUDIT`, `dist/`, `.git/`, `Documents_DRIVE/` et les données élèves du corpus RAG interne ;
+* alimenter le juge de substance avec des candidats issus de `nsi_corpus` ;
+* produire `rag_coherence_report.md` ;
+* ne jamais valider pédagogiquement une ressource.
+
+Critère de validation :
+
+`nsi_corpus` est la seule collection autorisée pour juger les preuves internes du corpus.
+`rag_education` peut servir d'inspiration ou de comparaison externe, jamais de preuve de
+couverture interne.
+
+### 4.11. Agent Juge de substance
 
 Responsabilités :
 
@@ -249,7 +277,7 @@ Responsabilités :
 * séparation stricte juge / auteur : l’instance qui juge n’est jamais celle qui a rédigé ;
 * verdict par défaut `needs_content` ;
 * toute citation d’objectif templaté (« Identifier précisément la représentation ou la structure en jeu ») comme preuve est un motif de rejet du verdict ;
-* les sections candidates sont idéalement fournies par le RAG (collection `rag_education`), pas extraites mécaniquement (première section du fichier).
+* les sections candidates sont idéalement fournies par le RAG interne (collection `nsi_corpus`), pas extraites mécaniquement (première section du fichier).
 
 Livrables :
 
@@ -258,6 +286,8 @@ Livrables :
 Critère de validation :
 
 Une capacité est `validated_pedagogy` seulement si les trois preuves (cours, entraînement, correction) sont pertinentes et que le relecteur (humain ou LLM) le confirme. Une citation identique réutilisée sur plusieurs capacités ou plusieurs rôles invalide le verdict.
+Une validation LLM seule ne vaut jamais revue humaine et ne peut pas promouvoir `covered`,
+`published` ou `validated_*`.
 
 ## 5. Définition d’une séquence complète
 

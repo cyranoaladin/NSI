@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 838
-- Ressources needs_review : 838
+- Ressources inventoriées : 917
+- Ressources needs_review : 917
 - Ressources publiables : 0
-- Source generated : 830
+- Source generated : 909
 - Source adapted_from_drive : 7
 - Source import_partiel : 1
 - Source inspiration_drive : 0
@@ -30,7 +30,7 @@
 - L’audit portable ne vérifie pas les fichiers bruts Drive.
 - L’audit local vérifie les fichiers bruts Drive lorsque le miroir Documents_DRIVE est présent.
 - Le dépôt reste NON_RELEASE_READY.
-- Audit externe /AUDIT : présent comme documentation stratégique hors corpus
+- Audit externe /AUDIT : absent en mode portable
 - Arbre canonique de production : 03_progressions/supports/.
 - Arbres premiere/sequences/ et terminale/sequences/ : pilotes de référence, pas canon de production.
 - Drive integrated_adapted : 6
@@ -82,7 +82,7 @@ python scripts/check_drive_mapping_release.py
 
 ## Politique /AUDIT
 
-- Dossier /AUDIT : présent à côté du dépôt.
+- Dossier /AUDIT : absent en mode portable.
 - Usage : documentation d'audit externe et stratégique.
 - Exclusion : non compté comme corpus pédagogique, non compté dans `manifest.csv`, non utilisé comme preuve dans `coverage.md`.
 - Intégration : les prototypes repris sont adaptés dans `scripts/`, testés et versionnés.

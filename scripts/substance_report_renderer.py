@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import html
 import json
+from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -38,7 +39,7 @@ class ProofReport:
     teaches: bool
     verified: bool
     quote_method: str
-    messages: tuple[str, ...]
+    messages: Sequence[str]
 
 
 @dataclass(frozen=True)
@@ -48,9 +49,9 @@ class CapacityReport:
     effective_verdict: str
     downgraded: bool
     label_ok: bool
-    proofs: tuple[ProofReport, ...]
-    reasons: tuple[str, ...]
-    scientific_flags: tuple[str, ...]
+    proofs: Sequence[ProofReport]
+    reasons: Sequence[str]
+    scientific_flags: Sequence[str]
     justification: str
 
 
@@ -60,8 +61,8 @@ class ReportModel:
     level: str
     judged_at: str
     judge_model: str
-    capacities: tuple[CapacityReport, ...]
-    schema_errors: tuple[str, ...] = ()
+    capacities: Sequence[CapacityReport]
+    schema_errors: Sequence[str] = ()
 
     @property
     def effective_counts(self) -> dict[str, int]:

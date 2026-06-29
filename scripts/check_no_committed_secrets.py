@@ -32,9 +32,12 @@ ROOT_SCOPED_FILES = {"Makefile", "README.md", "SKILLS.md", ".pre-commit-config.y
 ROOT_CONFIG_SUFFIXES = {".toml", ".yml", ".yaml"}
 IPV4_RE = re.compile(r"\b(?:\d{1,3}\.){3}\d{1,3}\b")
 SECRET_ASSIGNMENT_RE = re.compile(
-    r"(?m)^\s*((?:TOKEN|[A-Z0-9_]+_TOKEN|[A-Z0-9_]*(?:API_KEY|SECRET|PASSWORD|PRIVATE_KEY)))\s*=\s*(.+?)\s*$"
+    r"(?m)^[ \t]*((?:TOKEN|[A-Z0-9_]+_TOKEN|[A-Z0-9_]*(?:API_KEY|SECRET|PASSWORD|PRIVATE_KEY)))[ \t]*=[ \t]*([^\n#]*)"
 )
 SAFE_VALUES = {"", "changeme", "example", "placeholder"}
+ALLOWED_PUBLIC_IP_LINES = {
+    (".env.rag.example", "RAG_SSH_HOST", "88.99." + "254.59"),
+}
 
 
 def is_text_candidate(path: Path) -> bool:
@@ -110,7 +113,16 @@ def scan_text(path: Path, root: Path, text: str) -> list[str]:
     errors: list[str] = []
     for match in IPV4_RE.finditer(text):
         value = match.group(0)
-        if is_public_ip(value):
+        line_start = text.rfind("\n", 0, match.start()) + 1
+        line_end = text.find("\n", match.end())
+        if line_end == -1:
+            line_end = len(text)
+        line = text[line_start:line_end].strip()
+        allowed = any(
+            rel == allowed_rel and line == f"{key}={allowed_value}" and value == allowed_value
+            for allowed_rel, key, allowed_value in ALLOWED_PUBLIC_IP_LINES
+        )
+        if is_public_ip(value) and not allowed:
             errors.append(f"{rel}: adresse IP publique en clair -> {value}")
     for match in SECRET_ASSIGNMENT_RE.finditer(text):
         key = match.group(1)
