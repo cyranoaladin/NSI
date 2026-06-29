@@ -27,13 +27,22 @@ audit-core:
 	python scripts/check_content_tree_policy.py
 	python scripts/check_rag_config.py
 	RAG_ENV_FILE=.env.rag.audit-core-missing python scripts/rag_smoke_test.py
+	RAG_ENV_FILE=.env.rag.audit-core-missing python scripts/rag_diagnose_search_timeout.py
+	python scripts/check_rag_collection_policy.py
+	python scripts/check_rag_golden_examples_policy.py
+	python scripts/check_rag_metadata_canonical_fields.py
+	python scripts/check_no_secret_file_mutation_policy.py
 	python scripts/check_agents_governance.py
 	python scripts/check_skills_governance.py
 	python scripts/check_program_coverage.py
+	python scripts/generate_coverage_gap_action_plan.py
 	python scripts/check_coverage_gap_action_plan.py
 	python scripts/check_sources_catalog.py
+	python scripts/check_sources_catalog_schema.py
 	python scripts/generate_pedagogical_indexes.py
 	python scripts/check_pedagogical_indexes.py
+	python scripts/check_makefile_audit_policy.py
+	python scripts/check_reports_policy.py
 	python scripts/check_substance_anchors.py
 	python scripts/check_contract_substance_quality.py
 	python scripts/check_differentiation_distinctness.py
@@ -58,6 +67,9 @@ audit-metrics:
 	python scripts/check_session_project_hours.py
 	python scripts/check_session_week_calendar_consistency.py
 	python scripts/check_session_specificity.py
+
+rag-smoke-required:
+	python scripts/rag_smoke_test.py
 
 audit-local:
 	python scripts/check_git_clean.py

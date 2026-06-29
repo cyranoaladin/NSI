@@ -4,8 +4,9 @@
 from __future__ import annotations
 
 from pathlib import Path
+import re
 
-from _qa_common import ROOT, print_result
+from _qa_common import ROOT, load_program_entries, print_result
 
 
 PLAN = ROOT / "coverage_gap_action_plan.md"
@@ -16,6 +17,7 @@ REQUIRED_COLUMNS = [
     "contenu officiel",
     "capacité officielle",
     "statut actuel",
+    "type_ecart",
     "diagnostic",
     "séquence cible",
     "ressources existantes possibles",
@@ -24,6 +26,9 @@ REQUIRED_COLUMNS = [
     "priorité",
     "action suivante",
 ]
+DIAGNOSTICS = {"trou de contenu", "trou d'étiquetage", "trou d’étiquetage", "contenu présent mal rattaché", "différé justifié"}
+TYPES = {"content_gap", "tagging_gap", "misaligned_evidence", "deferred_with_blocker"}
+PRIORITIES = {"haute", "moyenne", "basse"}
 
 
 def absent_from_coverage(path: Path) -> set[str]:
@@ -61,20 +66,42 @@ def main() -> None:
     if not PLAN.exists():
         print_result("check_coverage_gap_action_plan", ["coverage_gap_action_plan.md absent"])
     header, rows = parse_plan(PLAN)
+    absent_ids = absent_from_coverage(ROOT / "coverage.md")
+    program = load_program_entries()
     if header != REQUIRED_COLUMNS:
         errors.append("colonnes du plan absentes ou non conformes")
-    for capacity_id in sorted(absent_from_coverage(ROOT / "coverage.md")):
+    for capacity_id in sorted(absent_ids):
         row = rows.get(capacity_id)
         if row is None:
             errors.append(f"{capacity_id}: aucune ligne d'action")
             continue
+        if capacity_id not in program:
+            errors.append(f"{capacity_id}: absent du programme officiel YAML")
         for key in REQUIRED_COLUMNS:
             if not row.get(key) or row[key] == "-":
                 errors.append(f"{capacity_id}: colonne vide -> {key}")
         if row.get("statut actuel") != "absent":
             errors.append(f"{capacity_id}: statut actuel doit rester absent")
-        if row.get("action suivante", "").lower() in {"à définir", "todo", "tbd"}:
+        if row.get("type_ecart") not in TYPES:
+            errors.append(f"{capacity_id}: type_ecart invalide")
+        if row.get("diagnostic") not in DIAGNOSTICS:
+            errors.append(f"{capacity_id}: diagnostic invalide")
+        if row.get("priorité") not in PRIORITIES:
+            errors.append(f"{capacity_id}: priorité invalide")
+        sequence = row.get("séquence cible", "")
+        if sequence != "à créer" and not re.fullmatch(r"[PT]\d{2}", sequence):
+            errors.append(f"{capacity_id}: séquence cible invalide")
+        contract = row.get("contrat à enrichir", "")
+        if contract != "à créer" and not (ROOT / contract).exists():
+            errors.append(f"{capacity_id}: contrat à enrichir absent")
+        action = row.get("action suivante", "")
+        if not action.strip() or action.lower() in {"à définir", "todo", "tbd"}:
             errors.append(f"{capacity_id}: action suivante non actionnable")
+        if any(marker in action.lower() for marker in ("todo", "tbd", "à définir")):
+            errors.append(f"{capacity_id}: action suivante contient un marqueur interdit")
+    for capacity_id, row in sorted(rows.items()):
+        if capacity_id not in absent_ids and row.get("statut actuel") != "résolu":
+            errors.append(f"{capacity_id}: ligne présente alors que la capacité n'est plus absent")
     print_result("check_coverage_gap_action_plan", errors)
 
 

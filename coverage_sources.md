@@ -2,7 +2,8 @@
 
 Ce rapport explicite les preuves prises en compte par `coverage.md`.
 `03_progressions/supports/` est l'arbre canonique de production ;
-`premiere/sequences/` et `terminale/sequences/` restent des pilotes de référence.
+Les dossiers pilotes de première et terminale restent des références de style
+et ne sont pas utilisés comme preuves de couverture interne.
 
 Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressources restent `needs_review`.
 
@@ -338,19 +339,12 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | --- | --- | --- |
 | bareme | 03_progressions/supports/premiere/P01/P01_bareme_conversions_bases.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P01/P01_corrige_conversions_bases.md | needs_review |
-| corrige | premiere/sequences/s01_representation_donnees/corrige.md#exercices-intégrés-du-cours | needs_review |
 | cours | 03_progressions/supports/premiere/P01/P01_cours_conversions_bases.md | needs_review |
-| cours | premiere/sequences/s01_representation_donnees/cours_eleve.md#bases-2-10-et-16 | needs_review |
 | evaluation | 03_progressions/supports/premiere/P01/P01_evaluation_conversions_bases.md | needs_review |
-| evaluation | premiere/sequences/s01_representation_donnees/evaluation.md#questions-progressives | needs_review |
-| qcm | premiere/sequences/s01_representation_donnees/qcm.json#questions | needs_review |
 | remediation | 03_progressions/supports/premiere/P01/P01_remediation_conversions_bases.md | needs_review |
 | td | 03_progressions/supports/premiere/P01/P01_td_conversions_bases.md | needs_review |
-| td | premiere/sequences/s01_representation_donnees/td.md#exercices | needs_review |
 | tp | 03_progressions/supports/premiere/P01/P01_tp_conversions_bases.md | needs_review |
-| tp | premiere/sequences/s01_representation_donnees/tp.md#étapes | needs_review |
 | trace | 03_progressions/supports/premiere/P01/P01_trace_conversions_bases.md | needs_review |
-| trace | premiere/sequences/s01_representation_donnees/trace_ecrite.md#notions-essentielles | needs_review |
 | version_amenagee | 03_progressions/supports/premiere/P01/P01_version_amenagee_conversions_bases.md | needs_review |
 
 ## P-DATA-BASE-02A
@@ -373,17 +367,8 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## P-DATA-BASE-02B
 
 - Niveau : premiere
-- Statut coverage.md : needs_review
-
-| type | fichier | statut ressource |
-| --- | --- | --- |
-| corrige | premiere/sequences/s01_representation_donnees/corrige.md#exercices-intégrés-du-cours | needs_review |
-| cours | premiere/sequences/s01_representation_donnees/cours_eleve.md#entiers-relatifs-et-complément-à-deux | needs_review |
-| evaluation | premiere/sequences/s01_representation_donnees/evaluation.md#questions-progressives | needs_review |
-| qcm | premiere/sequences/s01_representation_donnees/qcm.json#questions | needs_review |
-| td | premiere/sequences/s01_representation_donnees/td.md#exercices | needs_review |
-| tp | premiere/sequences/s01_representation_donnees/tp.md#étapes | needs_review |
-| trace | premiere/sequences/s01_representation_donnees/trace_ecrite.md#définitions | needs_review |
+- Statut coverage.md : absent
+- Preuves : aucune
 
 ## P-DATA-BASE-03
 
@@ -394,17 +379,8 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## P-DATA-BASE-04
 
 - Niveau : premiere
-- Statut coverage.md : needs_review
-
-| type | fichier | statut ressource |
-| --- | --- | --- |
-| corrige | premiere/sequences/s01_representation_donnees/corrige.md#exercices-intégrés-du-cours | needs_review |
-| cours | premiere/sequences/s01_representation_donnees/cours_eleve.md#booléens-et-tables-de-vérité | needs_review |
-| evaluation | premiere/sequences/s01_representation_donnees/evaluation.md#questions-progressives | needs_review |
-| qcm | premiere/sequences/s01_representation_donnees/qcm.json#questions | needs_review |
-| td | premiere/sequences/s01_representation_donnees/td.md#exercices | needs_review |
-| tp | premiere/sequences/s01_representation_donnees/tp.md#étapes | needs_review |
-| trace | premiere/sequences/s01_representation_donnees/trace_ecrite.md#méthodes | needs_review |
+- Statut coverage.md : absent
+- Preuves : aucune
 
 ## P-DATA-BASE-05A
 
@@ -415,19 +391,12 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | --- | --- | --- |
 | bareme | 03_progressions/supports/premiere/P03/P03_bareme_texte_reels.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P03/P03_corrige_texte_reels.md | needs_review |
-| corrige | premiere/sequences/s01_representation_donnees/corrige.md#réponse-attendue--td | needs_review |
 | cours | 03_progressions/supports/premiere/P03/P03_cours_texte_reels.md | needs_review |
-| cours | premiere/sequences/s01_representation_donnees/cours_eleve.md#texte-ascii-et-unicode | needs_review |
 | evaluation | 03_progressions/supports/premiere/P03/P03_evaluation_texte_reels.md | needs_review |
-| evaluation | premiere/sequences/s01_representation_donnees/evaluation.md#questions-progressives | needs_review |
-| qcm | premiere/sequences/s01_representation_donnees/qcm.json#questions | needs_review |
 | remediation | 03_progressions/supports/premiere/P03/P03_remediation_texte_reels.md | needs_review |
 | td | 03_progressions/supports/premiere/P03/P03_td_texte_reels.md | needs_review |
-| td | premiere/sequences/s01_representation_donnees/td.md#exercices | needs_review |
 | tp | 03_progressions/supports/premiere/P03/P03_tp_texte_reels.md | needs_review |
-| tp | premiere/sequences/s01_representation_donnees/tp.md#étapes | needs_review |
 | trace | 03_progressions/supports/premiere/P03/P03_trace_texte_reels.md | needs_review |
-| trace | premiere/sequences/s01_representation_donnees/trace_ecrite.md#points-de-vigilance | needs_review |
 | version_amenagee | 03_progressions/supports/premiere/P03/P03_version_amenagee_texte_reels.md | needs_review |
 
 ## P-DATA-BASE-05B
@@ -439,17 +408,8 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## P-DATA-CONSTR-01
 
 - Niveau : premiere
-- Statut coverage.md : needs_review
-
-| type | fichier | statut ressource |
-| --- | --- | --- |
-| corrige | premiere/sequences/s01_representation_donnees/corrige.md#réponse-attendue--td | needs_review |
-| cours | premiere/sequences/s01_representation_donnees/cours_eleve.md#tuples-et-p-uplets | needs_review |
-| evaluation | premiere/sequences/s01_representation_donnees/evaluation.md#programmation | needs_review |
-| qcm | premiere/sequences/s01_representation_donnees/qcm.json#questions | needs_review |
-| td | premiere/sequences/s01_representation_donnees/td.md#exercices | needs_review |
-| tp | premiere/sequences/s01_representation_donnees/tp.md#travail-demandé | needs_review |
-| trace | premiere/sequences/s01_representation_donnees/trace_ecrite.md#exemples-minimaux | needs_review |
+- Statut coverage.md : absent
+- Preuves : aucune
 
 ## P-DATA-CONSTR-02A
 
@@ -460,19 +420,12 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | --- | --- | --- |
 | bareme | 03_progressions/supports/premiere/P04/P04_bareme_types_construits.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P04/P04_corrige_types_construits.md | needs_review |
-| corrige | premiere/sequences/s01_representation_donnees/corrige.md#exercices-intégrés-du-cours | needs_review |
 | cours | 03_progressions/supports/premiere/P04/P04_cours_types_construits.md | needs_review |
-| cours | premiere/sequences/s01_representation_donnees/cours_eleve.md#listes-et-tableaux-python | needs_review |
 | evaluation | 03_progressions/supports/premiere/P04/P04_evaluation_types_construits.md | needs_review |
-| evaluation | premiere/sequences/s01_representation_donnees/evaluation.md#programmation | needs_review |
-| qcm | premiere/sequences/s01_representation_donnees/qcm.json#questions | needs_review |
 | remediation | 03_progressions/supports/premiere/P04/P04_remediation_types_construits.md | needs_review |
 | td | 03_progressions/supports/premiere/P04/P04_td_types_construits.md | needs_review |
-| td | premiere/sequences/s01_representation_donnees/td.md#exercices | needs_review |
 | tp | 03_progressions/supports/premiere/P04/P04_tp_types_construits.md | needs_review |
-| tp | premiere/sequences/s01_representation_donnees/tp.md#travail-demandé | needs_review |
 | trace | 03_progressions/supports/premiere/P04/P04_trace_types_construits.md | needs_review |
-| trace | premiere/sequences/s01_representation_donnees/trace_ecrite.md#à-savoir-refaire | needs_review |
 | version_amenagee | 03_progressions/supports/premiere/P04/P04_version_amenagee_types_construits.md | needs_review |
 
 ## P-DATA-CONSTR-02B
@@ -496,17 +449,8 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## P-DATA-CONSTR-03A
 
 - Niveau : premiere
-- Statut coverage.md : needs_review
-
-| type | fichier | statut ressource |
-| --- | --- | --- |
-| corrige | premiere/sequences/s01_representation_donnees/corrige.md#réponse-attendue--td | needs_review |
-| cours | premiere/sequences/s01_representation_donnees/cours_eleve.md#dictionnaires | needs_review |
-| evaluation | premiere/sequences/s01_representation_donnees/evaluation.md#programmation | needs_review |
-| qcm | premiere/sequences/s01_representation_donnees/qcm.json#questions | needs_review |
-| td | premiere/sequences/s01_representation_donnees/td.md#exercices | needs_review |
-| tp | premiere/sequences/s01_representation_donnees/tp.md#travail-demandé | needs_review |
-| trace | premiere/sequences/s01_representation_donnees/trace_ecrite.md#à-savoir-refaire | needs_review |
+- Statut coverage.md : absent
+- Preuves : aucune
 
 ## P-DATA-CONSTR-03B
 
@@ -825,20 +769,13 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | --- | --- | --- |
 | bareme | 03_progressions/supports/premiere/P07/P07_bareme_fonctions_tests_specifications.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P07/P07_corrige_fonctions_tests_specifications.md | needs_review |
-| corrige | premiere/sequences/s01_representation_donnees/corrige.md#code-testé | needs_review |
 | cours | 03_progressions/supports/premiere/P07/P07_cours_fonctions_tests_specifications.md | needs_review |
-| cours | premiere/sequences/s01_representation_donnees/cours_eleve.md#tests-et-cas-limites | needs_review |
 | evaluation | 03_progressions/supports/premiere/P07/P07_evaluation_fonctions_tests_specifications.md | needs_review |
-| evaluation | premiere/sequences/s01_representation_donnees/evaluation.md#analyse-de-code | needs_review |
-| qcm | premiere/sequences/s01_representation_donnees/qcm.json#questions | needs_review |
 | remediation | 03_progressions/supports/premiere/P07/P07_remediation_fonctions_tests_specifications.md | needs_review |
 | td | 03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md | needs_review |
-| td | premiere/sequences/s01_representation_donnees/td.md#analyse-de-code | needs_review |
 | tp | 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md | needs_review |
 | tp | 03_progressions/supports/premiere/P07/P07_tp_fonctions_tests_specifications.md | needs_review |
-| tp | premiere/sequences/s01_representation_donnees/tp.md#tests | needs_review |
 | trace | 03_progressions/supports/premiere/P07/P07_trace_fonctions_tests_specifications.md | needs_review |
-| trace | premiere/sequences/s01_representation_donnees/trace_ecrite.md#auto-positionnement | needs_review |
 | version_amenagee | 03_progressions/supports/premiere/P07/P07_version_amenagee_fonctions_tests_specifications.md | needs_review |
 
 ## P-LANG-05
@@ -996,18 +933,13 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | --- | --- | --- |
 | bareme | 03_progressions/supports/terminale/T08/T08_bareme_bfs_dfs_cycles_chemins.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T08/T08_corrige_bfs_dfs_cycles_chemins.md | needs_review |
-| corrige | terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md#variante-acceptable | needs_review |
 | cours | 03_progressions/supports/terminale/T08/T08_cours_bfs_dfs_cycles_chemins.md | needs_review |
-| cours | terminale/sequences/s01_structures_donnees_interfaces_implementations/cours_eleve.md#bfs-et-dfs-comme-activité-dapplication | needs_review |
 | evaluation | 03_progressions/supports/terminale/T08/T08_evaluation_bfs_dfs_cycles_chemins.md | needs_review |
 | remediation | 03_progressions/supports/terminale/T08/T08_remediation_bfs_dfs_cycles_chemins.md | needs_review |
 | td | 03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md | needs_review |
-| td | terminale/sequences/s01_structures_donnees_interfaces_implementations/td.md#exercices | needs_review |
 | tp | 03_progressions/supports/terminale/T08/T08_TP_bfs_dfs_cycles_chemins.md | needs_review |
 | tp | 03_progressions/supports/terminale/T08/T08_tp_bfs_dfs_cycles_chemins.md | needs_review |
-| tp | terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md#extension-experte | needs_review |
 | trace | 03_progressions/supports/terminale/T08/T08_trace_bfs_dfs_cycles_chemins.md | needs_review |
-| trace | terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md#à-savoir-refaire | needs_review |
 | version_amenagee | 03_progressions/supports/terminale/T08/T08_version_amenagee_bfs_dfs_cycles_chemins.md | needs_review |
 
 ## T-ALGO-02B
@@ -1573,23 +1505,18 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | bareme | 03_progressions/supports/terminale/T14/T14_bareme_modularite_api_paradigmes_bugs.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T14/T14_corrige_modularite_api_paradigmes_bugs.md | needs_review |
-| corrige | terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md#code-testé | needs_review |
 | cours | 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md | needs_review |
 | cours | 03_progressions/supports/terminale/T14/T14_cours_modularite_api_paradigmes_bugs.md | needs_review |
-| cours | terminale/sequences/s01_structures_donnees_interfaces_implementations/cours_eleve.md#modularité-et-api | needs_review |
 | evaluation | 03_progressions/supports/terminale/T00/T00_evaluation_diagnostic_tests.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T14/T14_evaluation_modularite_api_paradigmes_bugs.md | needs_review |
 | remediation | 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md | needs_review |
 | remediation | 03_progressions/supports/terminale/T14/T14_remediation_modularite_api_paradigmes_bugs.md | needs_review |
 | td | 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md | needs_review |
 | td | 03_progressions/supports/terminale/T14/T14_TD_modularite_api_paradigmes_bugs.md | needs_review |
-| td | terminale/sequences/s01_structures_donnees_interfaces_implementations/td.md#analyse-de-code | needs_review |
 | tp | 03_progressions/supports/terminale/T00/T00_tp_diagnostic_tests.md | needs_review |
 | tp | 03_progressions/supports/terminale/T14/T14_tp_modularite_api_paradigmes_bugs.md | needs_review |
-| tp | terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md#fichiers-fournis | needs_review |
 | trace | 03_progressions/supports/terminale/T00/T00_trace_diagnostic_tests.md | needs_review |
 | trace | 03_progressions/supports/terminale/T14/T14_trace_modularite_api_paradigmes_bugs.md | needs_review |
-| trace | terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md#à-savoir-refaire | needs_review |
 | version_amenagee | 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md | needs_review |
 | version_amenagee | 03_progressions/supports/terminale/T14/T14_version_amenagee_modularite_api_paradigmes_bugs.md | needs_review |
 
@@ -1670,17 +1597,12 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | --- | --- | --- |
 | bareme | 03_progressions/supports/terminale/T14/T14_bareme_modularite_api_paradigmes_bugs.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T14/T14_corrige_modularite_api_paradigmes_bugs.md | needs_review |
-| corrige | terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md#erreurs-fréquentes | needs_review |
 | cours | 03_progressions/supports/terminale/T14/T14_cours_modularite_api_paradigmes_bugs.md | needs_review |
-| cours | terminale/sequences/s01_structures_donnees_interfaces_implementations/cours_eleve.md#tests-bugs-et-cas-limites | needs_review |
 | evaluation | 03_progressions/supports/terminale/T14/T14_evaluation_modularite_api_paradigmes_bugs.md | needs_review |
 | remediation | 03_progressions/supports/terminale/T14/T14_remediation_modularite_api_paradigmes_bugs.md | needs_review |
 | td | 03_progressions/supports/terminale/T14/T14_TD_modularite_api_paradigmes_bugs.md | needs_review |
-| td | terminale/sequences/s01_structures_donnees_interfaces_implementations/td.md#analyse-de-code | needs_review |
 | tp | 03_progressions/supports/terminale/T14/T14_tp_modularite_api_paradigmes_bugs.md | needs_review |
-| tp | terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md#tests | needs_review |
 | trace | 03_progressions/supports/terminale/T14/T14_trace_modularite_api_paradigmes_bugs.md | needs_review |
-| trace | terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md#points-de-vigilance | needs_review |
 | version_amenagee | 03_progressions/supports/terminale/T14/T14_version_amenagee_modularite_api_paradigmes_bugs.md | needs_review |
 
 ## T-STRUCT-01A
@@ -1692,19 +1614,12 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | --- | --- | --- |
 | bareme | 03_progressions/supports/terminale/T01/T01_bareme_interfaces_structures.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T01/T01_corrige_interfaces_structures.md | needs_review |
-| corrige | terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md#réponse-attendue-td | needs_review |
 | cours | 03_progressions/supports/terminale/T01/T01_cours_interfaces_structures.md | needs_review |
-| cours | terminale/sequences/s01_structures_donnees_interfaces_implementations/cours_eleve.md#structure-abstraite-interface-implémentation | needs_review |
 | evaluation | 03_progressions/supports/terminale/T01/T01_evaluation_interfaces_structures.md | needs_review |
-| evaluation | terminale/sequences/s01_structures_donnees_interfaces_implementations/evaluation.md#compétences-évaluées | needs_review |
-| qcm | terminale/sequences/s01_structures_donnees_interfaces_implementations/qcm.json#questions | needs_review |
 | remediation | 03_progressions/supports/terminale/T01/T01_remediation_interfaces_structures.md | needs_review |
 | td | 03_progressions/supports/terminale/T01/T01_td_interfaces_structures.md | needs_review |
-| td | terminale/sequences/s01_structures_donnees_interfaces_implementations/td.md#exercices | needs_review |
 | tp | 03_progressions/supports/terminale/T01/T01_tp_interfaces_structures.md | needs_review |
-| tp | terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md#étapes | needs_review |
 | trace | 03_progressions/supports/terminale/T01/T01_trace_interfaces_structures.md | needs_review |
-| trace | terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md#notions-essentielles | needs_review |
 | version_amenagee | 03_progressions/supports/terminale/T01/T01_version_amenagee_interfaces_structures.md | needs_review |
 
 ## T-STRUCT-01B
@@ -1728,19 +1643,12 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | --- | --- | --- |
 | bareme | 03_progressions/supports/terminale/T02/T02_bareme_classes_objets.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T02/T02_corrige_classes_objets.md | needs_review |
-| corrige | terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md#réponse-attendue-td | needs_review |
 | cours | 03_progressions/supports/terminale/T02/T02_cours_classes_objets.md | needs_review |
-| cours | terminale/sequences/s01_structures_donnees_interfaces_implementations/cours_eleve.md#classes-attributs-et-méthodes | needs_review |
 | evaluation | 03_progressions/supports/terminale/T02/T02_evaluation_classes_objets.md | needs_review |
-| evaluation | terminale/sequences/s01_structures_donnees_interfaces_implementations/evaluation.md#questions-progressives | needs_review |
-| qcm | terminale/sequences/s01_structures_donnees_interfaces_implementations/qcm.json#questions | needs_review |
 | remediation | 03_progressions/supports/terminale/T02/T02_remediation_classes_objets.md | needs_review |
 | td | 03_progressions/supports/terminale/T02/T02_td_classes_objets.md | needs_review |
-| td | terminale/sequences/s01_structures_donnees_interfaces_implementations/td.md#écriture-de-code | needs_review |
 | tp | 03_progressions/supports/terminale/T02/T02_tp_classes_objets.md | needs_review |
-| tp | terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md#travail-demandé | needs_review |
 | trace | 03_progressions/supports/terminale/T02/T02_trace_classes_objets.md | needs_review |
-| trace | terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md#définitions | needs_review |
 | version_amenagee | 03_progressions/supports/terminale/T02/T02_version_amenagee_classes_objets.md | needs_review |
 
 ## T-STRUCT-02B
@@ -1769,15 +1677,8 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## T-STRUCT-03B
 
 - Niveau : terminale
-- Statut coverage.md : partial
-
-| type | fichier | statut ressource |
-| --- | --- | --- |
-| corrige | terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md#réponse-attendue-td | needs_review |
-| cours | terminale/sequences/s01_structures_donnees_interfaces_implementations/cours_eleve.md#piles-files-et-dictionnaires | needs_review |
-| td | terminale/sequences/s01_structures_donnees_interfaces_implementations/td.md#exercices | needs_review |
-| tp | terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md#travail-demandé | needs_review |
-| trace | terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md#méthodes | needs_review |
+- Statut coverage.md : absent
+- Preuves : aucune
 
 ## T-STRUCT-03C
 
@@ -1817,20 +1718,13 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | --- | --- | --- |
 | bareme | 03_progressions/supports/terminale/T07/T07_bareme_graphes_modelisation_listes_matrices.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T07/T07_corrige_graphes_modelisation_listes_matrices.md | needs_review |
-| corrige | terminale/sequences/s01_structures_donnees_interfaces_implementations/corrige.md#réponse-attendue-td | needs_review |
 | cours | 03_progressions/supports/terminale/T07/T07_cours_graphes_modelisation_listes_matrices.md | needs_review |
-| cours | terminale/sequences/s01_structures_donnees_interfaces_implementations/cours_eleve.md#graphes-comme-structures-relationnelles | needs_review |
 | evaluation | 03_progressions/supports/terminale/T07/T07_evaluation_graphes_modelisation_listes_matrices.md | needs_review |
-| evaluation | terminale/sequences/s01_structures_donnees_interfaces_implementations/evaluation.md#analyse-de-code | needs_review |
-| qcm | terminale/sequences/s01_structures_donnees_interfaces_implementations/qcm.json#questions | needs_review |
 | remediation | 03_progressions/supports/terminale/T07/T07_remediation_graphes_modelisation_listes_matrices.md | needs_review |
 | td | 03_progressions/supports/terminale/T07/T07_TD_graphes_modelisation_listes_matrices.md | needs_review |
-| td | terminale/sequences/s01_structures_donnees_interfaces_implementations/td.md#exercices | needs_review |
 | tp | 03_progressions/supports/terminale/T07/T07_TP_graphes_modelisation_listes_matrices.md | needs_review |
 | tp | 03_progressions/supports/terminale/T07/T07_tp_graphes_modelisation_listes_matrices.md | needs_review |
-| tp | terminale/sequences/s01_structures_donnees_interfaces_implementations/tp.md#étapes | needs_review |
 | trace | 03_progressions/supports/terminale/T07/T07_trace_graphes_modelisation_listes_matrices.md | needs_review |
-| trace | terminale/sequences/s01_structures_donnees_interfaces_implementations/trace_ecrite.md#exemples-minimaux | needs_review |
 | version_amenagee | 03_progressions/supports/terminale/T07/T07_version_amenagee_graphes_modelisation_listes_matrices.md | needs_review |
 
 ## T-STRUCT-05B

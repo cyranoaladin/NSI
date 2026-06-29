@@ -7,6 +7,7 @@ import sys
 import tarfile
 import tempfile
 import unittest
+import io
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -51,6 +52,50 @@ class AuditExtractedSourceNoHangTest(unittest.TestCase):
             status = run_audit_extracted_source.run_audit_extracted_source(root)
 
             self.assertEqual(status, 0)
+
+    def test_safe_extract_tar_rejects_parent_traversal(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            archive = root / "evil.tar.gz"
+            payload = root / "payload.txt"
+            payload.write_text("evil\n", encoding="utf-8")
+            with tarfile.open(archive, "w:gz") as handle:
+                handle.add(payload, arcname="../evil.txt")
+
+            with tarfile.open(archive, "r:gz") as handle:
+                with self.assertRaisesRegex(ValueError, "chemin sortant"):
+                    run_audit_extracted_source.safe_extract_tar(handle, root / "out")
+            self.assertFalse((root / "evil.txt").exists())
+
+    def test_safe_extract_tar_rejects_absolute_member(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            archive = root / "absolute.tar.gz"
+            with tarfile.open(archive, "w:gz") as handle:
+                payload = b"evil\n"
+                info = tarfile.TarInfo("/tmp/evil.txt")
+                info.size = len(payload)
+                handle.addfile(info, io.BytesIO(payload))
+
+            with tarfile.open(archive, "r:gz") as handle:
+                with self.assertRaisesRegex(ValueError, "chemin absolu"):
+                    run_audit_extracted_source.safe_extract_tar(handle, root / "out")
+
+    def test_safe_extract_tar_accepts_normal_source_clean_layout(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            archive = root / "normal.tar.gz"
+            source = root / "source" / "nsi-enseignement"
+            source.mkdir(parents=True)
+            (source / "README.md").write_text("ok\n", encoding="utf-8")
+            with tarfile.open(archive, "w:gz") as handle:
+                handle.add(source, arcname="nsi-enseignement")
+
+            destination = root / "out"
+            with tarfile.open(archive, "r:gz") as handle:
+                run_audit_extracted_source.safe_extract_tar(handle, destination)
+
+            self.assertEqual((destination / "nsi-enseignement" / "README.md").read_text(encoding="utf-8"), "ok\n")
 
     def test_source_clean_audit_extracted_source_finishes_without_drive_mirror(self) -> None:
         # RC3 : Générer des caches factices avant le build pour reproduire

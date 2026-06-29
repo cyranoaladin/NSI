@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 917
+- Total ressources : 930
 - Ressources pédagogiques : 53
-- Ressources techniques : 864
+- Ressources techniques : 877
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 909
+- generated: 922
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 397
+- interne: 410
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 521
+- document: 525
 - python: 93
-- script: 189
+- script: 198
 - sequence: 45
 - test: 55
 
 ## Répartition par statut
-- needs_review: 917
+- needs_review: 930
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 717
+- mixte: 730
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -646,12 +646,15 @@
   - rag_coherence_report.md
   - rag_config.example.yml
   - rag_connection.md
+  - rag_server_fix_plan.md
+  - rag_timeout_diagnostic.md
   - reports/drive_enrichment_report.md
   - reports/lot0_ruff_autofix_review.md
   - reports/lot1/drive_forensic.md
   - reports/lot1/lot1_validation_log.md
   - reports/lot1/repo_map.md
   - reports/lot2/lot2_validation_log.md
+  - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
   - scientific_claims_review_report.md
@@ -739,6 +742,7 @@
   - scripts/check_linked_td_substance.py
   - scripts/check_links.py
   - scripts/check_local_drive_traceability.py
+  - scripts/check_makefile_audit_policy.py
   - scripts/check_manifest_source_integrity.py
   - scripts/check_manifest_source_trace_consistency.py
   - scripts/check_metadata.py
@@ -760,6 +764,7 @@
   - scripts/check_no_placeholders_code.py
   - scripts/check_no_placeholders_docs.py
   - scripts/check_no_private_data.py
+  - scripts/check_no_secret_file_mutation_policy.py
   - scripts/check_no_sensitive_drive_in_source_clean.py
   - scripts/check_no_teacher_content_in_student_export.py
   - scripts/check_no_token_only_validation.py
@@ -788,13 +793,17 @@
   - scripts/check_qcm_schema.py
   - scripts/check_quality_gates.py
   - scripts/check_question_capacity_alignment.py
+  - scripts/check_rag_collection_policy.py
   - scripts/check_rag_config.py
+  - scripts/check_rag_golden_examples_policy.py
   - scripts/check_rag_index_metadata.py
+  - scripts/check_rag_metadata_canonical_fields.py
   - scripts/check_ready_session_operationality.py
   - scripts/check_ready_supports_depth.py
   - scripts/check_ready_supports_required_sections.py
   - scripts/check_register_no_hidden_operational_debt.py
   - scripts/check_rendered_unit_artifacts.py
+  - scripts/check_reports_policy.py
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_capacity_alignment.py
@@ -814,6 +823,7 @@
   - scripts/check_session_week_calendar_consistency.py
   - scripts/check_skills_governance.py
   - scripts/check_sources_catalog.py
+  - scripts/check_sources_catalog_schema.py
   - scripts/check_sql_query_result_consistency.py
   - scripts/check_status_promotion_guard.py
   - scripts/check_student_supports_no_scaffold_language.py
@@ -838,6 +848,7 @@
   - scripts/cleanup_python_artifacts.py
   - scripts/drive_local_inventory.py
   - scripts/drive_resource_triage.py
+  - scripts/generate_coverage_gap_action_plan.py
   - scripts/generate_index.py
   - scripts/generate_pedagogical_indexes.py
   - scripts/generate_qa_report.py
@@ -845,6 +856,7 @@
   - scripts/ingest_nsi_corpus.py
   - scripts/prepare_scraped_docs_for_rag.py
   - scripts/rag_coherence_report.py
+  - scripts/rag_diagnose_search_timeout.py
   - scripts/rag_index_plan.py
   - scripts/rag_query_example.py
   - scripts/rag_smoke_test.py
@@ -857,6 +869,7 @@
   - scripts/run_substance_judge.py
   - scripts/substance_judge.py
   - scripts/substance_report_renderer.py
+  - sources_catalog.schema.json
   - sources_catalog.yml
   - substance_pipeline.md
   - substance_rag_pilot_report.md
@@ -1591,12 +1604,15 @@
   - rag_coherence_report.md
   - rag_config.example.yml
   - rag_connection.md
+  - rag_server_fix_plan.md
+  - rag_timeout_diagnostic.md
   - reports/drive_enrichment_report.md
   - reports/lot0_ruff_autofix_review.md
   - reports/lot1/drive_forensic.md
   - reports/lot1/lot1_validation_log.md
   - reports/lot1/repo_map.md
   - reports/lot2/lot2_validation_log.md
+  - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
   - scientific_claims_review_report.md
@@ -1684,6 +1700,7 @@
   - scripts/check_linked_td_substance.py
   - scripts/check_links.py
   - scripts/check_local_drive_traceability.py
+  - scripts/check_makefile_audit_policy.py
   - scripts/check_manifest_source_integrity.py
   - scripts/check_manifest_source_trace_consistency.py
   - scripts/check_metadata.py
@@ -1705,6 +1722,7 @@
   - scripts/check_no_placeholders_code.py
   - scripts/check_no_placeholders_docs.py
   - scripts/check_no_private_data.py
+  - scripts/check_no_secret_file_mutation_policy.py
   - scripts/check_no_sensitive_drive_in_source_clean.py
   - scripts/check_no_teacher_content_in_student_export.py
   - scripts/check_no_token_only_validation.py
@@ -1733,13 +1751,17 @@
   - scripts/check_qcm_schema.py
   - scripts/check_quality_gates.py
   - scripts/check_question_capacity_alignment.py
+  - scripts/check_rag_collection_policy.py
   - scripts/check_rag_config.py
+  - scripts/check_rag_golden_examples_policy.py
   - scripts/check_rag_index_metadata.py
+  - scripts/check_rag_metadata_canonical_fields.py
   - scripts/check_ready_session_operationality.py
   - scripts/check_ready_supports_depth.py
   - scripts/check_ready_supports_required_sections.py
   - scripts/check_register_no_hidden_operational_debt.py
   - scripts/check_rendered_unit_artifacts.py
+  - scripts/check_reports_policy.py
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
   - scripts/check_sequence_capacity_alignment.py
@@ -1759,6 +1781,7 @@
   - scripts/check_session_week_calendar_consistency.py
   - scripts/check_skills_governance.py
   - scripts/check_sources_catalog.py
+  - scripts/check_sources_catalog_schema.py
   - scripts/check_sql_query_result_consistency.py
   - scripts/check_status_promotion_guard.py
   - scripts/check_student_supports_no_scaffold_language.py
@@ -1783,6 +1806,7 @@
   - scripts/cleanup_python_artifacts.py
   - scripts/drive_local_inventory.py
   - scripts/drive_resource_triage.py
+  - scripts/generate_coverage_gap_action_plan.py
   - scripts/generate_index.py
   - scripts/generate_pedagogical_indexes.py
   - scripts/generate_qa_report.py
@@ -1790,6 +1814,7 @@
   - scripts/ingest_nsi_corpus.py
   - scripts/prepare_scraped_docs_for_rag.py
   - scripts/rag_coherence_report.py
+  - scripts/rag_diagnose_search_timeout.py
   - scripts/rag_index_plan.py
   - scripts/rag_query_example.py
   - scripts/rag_smoke_test.py
@@ -1802,6 +1827,7 @@
   - scripts/run_substance_judge.py
   - scripts/substance_judge.py
   - scripts/substance_report_renderer.py
+  - sources_catalog.schema.json
   - sources_catalog.yml
   - substance_pipeline.md
   - substance_rag_pilot_report.md
@@ -2465,12 +2491,15 @@
 - rag_coherence_report.md
 - rag_config.example.yml
 - rag_connection.md
+- rag_server_fix_plan.md
+- rag_timeout_diagnostic.md
 - reports/drive_enrichment_report.md
 - reports/lot0_ruff_autofix_review.md
 - reports/lot1/drive_forensic.md
 - reports/lot1/lot1_validation_log.md
 - reports/lot1/repo_map.md
 - reports/lot2/lot2_validation_log.md
+- reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json
 - scientific_claims_review_report.md
@@ -2558,6 +2587,7 @@
 - scripts/check_linked_td_substance.py
 - scripts/check_links.py
 - scripts/check_local_drive_traceability.py
+- scripts/check_makefile_audit_policy.py
 - scripts/check_manifest_source_integrity.py
 - scripts/check_manifest_source_trace_consistency.py
 - scripts/check_metadata.py
@@ -2579,6 +2609,7 @@
 - scripts/check_no_placeholders_code.py
 - scripts/check_no_placeholders_docs.py
 - scripts/check_no_private_data.py
+- scripts/check_no_secret_file_mutation_policy.py
 - scripts/check_no_sensitive_drive_in_source_clean.py
 - scripts/check_no_teacher_content_in_student_export.py
 - scripts/check_no_token_only_validation.py
@@ -2607,13 +2638,17 @@
 - scripts/check_qcm_schema.py
 - scripts/check_quality_gates.py
 - scripts/check_question_capacity_alignment.py
+- scripts/check_rag_collection_policy.py
 - scripts/check_rag_config.py
+- scripts/check_rag_golden_examples_policy.py
 - scripts/check_rag_index_metadata.py
+- scripts/check_rag_metadata_canonical_fields.py
 - scripts/check_ready_session_operationality.py
 - scripts/check_ready_supports_depth.py
 - scripts/check_ready_supports_required_sections.py
 - scripts/check_register_no_hidden_operational_debt.py
 - scripts/check_rendered_unit_artifacts.py
+- scripts/check_reports_policy.py
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
 - scripts/check_sequence_capacity_alignment.py
@@ -2633,6 +2668,7 @@
 - scripts/check_session_week_calendar_consistency.py
 - scripts/check_skills_governance.py
 - scripts/check_sources_catalog.py
+- scripts/check_sources_catalog_schema.py
 - scripts/check_sql_query_result_consistency.py
 - scripts/check_status_promotion_guard.py
 - scripts/check_student_supports_no_scaffold_language.py
@@ -2656,6 +2692,7 @@
 - scripts/cleanup_python_artifacts.py
 - scripts/drive_local_inventory.py
 - scripts/drive_resource_triage.py
+- scripts/generate_coverage_gap_action_plan.py
 - scripts/generate_index.py
 - scripts/generate_pedagogical_indexes.py
 - scripts/generate_qa_report.py
@@ -2663,6 +2700,7 @@
 - scripts/ingest_nsi_corpus.py
 - scripts/prepare_scraped_docs_for_rag.py
 - scripts/rag_coherence_report.py
+- scripts/rag_diagnose_search_timeout.py
 - scripts/rag_index_plan.py
 - scripts/rag_query_example.py
 - scripts/rag_smoke_test.py
@@ -2675,6 +2713,7 @@
 - scripts/run_substance_judge.py
 - scripts/substance_judge.py
 - scripts/substance_report_renderer.py
+- sources_catalog.schema.json
 - sources_catalog.yml
 - substance_pipeline.md
 - substance_rag_pilot_report.md
@@ -3381,12 +3420,15 @@
 - rag_coherence_report.md
 - rag_config.example.yml
 - rag_connection.md
+- rag_server_fix_plan.md
+- rag_timeout_diagnostic.md
 - reports/drive_enrichment_report.md
 - reports/lot0_ruff_autofix_review.md
 - reports/lot1/drive_forensic.md
 - reports/lot1/lot1_validation_log.md
 - reports/lot1/repo_map.md
 - reports/lot2/lot2_validation_log.md
+- reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json
 - scientific_claims_review_report.md
@@ -3474,6 +3516,7 @@
 - scripts/check_linked_td_substance.py
 - scripts/check_links.py
 - scripts/check_local_drive_traceability.py
+- scripts/check_makefile_audit_policy.py
 - scripts/check_manifest_source_integrity.py
 - scripts/check_manifest_source_trace_consistency.py
 - scripts/check_metadata.py
@@ -3495,6 +3538,7 @@
 - scripts/check_no_placeholders_code.py
 - scripts/check_no_placeholders_docs.py
 - scripts/check_no_private_data.py
+- scripts/check_no_secret_file_mutation_policy.py
 - scripts/check_no_sensitive_drive_in_source_clean.py
 - scripts/check_no_teacher_content_in_student_export.py
 - scripts/check_no_token_only_validation.py
@@ -3523,13 +3567,17 @@
 - scripts/check_qcm_schema.py
 - scripts/check_quality_gates.py
 - scripts/check_question_capacity_alignment.py
+- scripts/check_rag_collection_policy.py
 - scripts/check_rag_config.py
+- scripts/check_rag_golden_examples_policy.py
 - scripts/check_rag_index_metadata.py
+- scripts/check_rag_metadata_canonical_fields.py
 - scripts/check_ready_session_operationality.py
 - scripts/check_ready_supports_depth.py
 - scripts/check_ready_supports_required_sections.py
 - scripts/check_register_no_hidden_operational_debt.py
 - scripts/check_rendered_unit_artifacts.py
+- scripts/check_reports_policy.py
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
 - scripts/check_sequence_capacity_alignment.py
@@ -3549,6 +3597,7 @@
 - scripts/check_session_week_calendar_consistency.py
 - scripts/check_skills_governance.py
 - scripts/check_sources_catalog.py
+- scripts/check_sources_catalog_schema.py
 - scripts/check_sql_query_result_consistency.py
 - scripts/check_status_promotion_guard.py
 - scripts/check_student_supports_no_scaffold_language.py
@@ -3573,6 +3622,7 @@
 - scripts/cleanup_python_artifacts.py
 - scripts/drive_local_inventory.py
 - scripts/drive_resource_triage.py
+- scripts/generate_coverage_gap_action_plan.py
 - scripts/generate_index.py
 - scripts/generate_pedagogical_indexes.py
 - scripts/generate_qa_report.py
@@ -3580,6 +3630,7 @@
 - scripts/ingest_nsi_corpus.py
 - scripts/prepare_scraped_docs_for_rag.py
 - scripts/rag_coherence_report.py
+- scripts/rag_diagnose_search_timeout.py
 - scripts/rag_index_plan.py
 - scripts/rag_query_example.py
 - scripts/rag_smoke_test.py
@@ -3592,6 +3643,7 @@
 - scripts/run_substance_judge.py
 - scripts/substance_judge.py
 - scripts/substance_report_renderer.py
+- sources_catalog.schema.json
 - sources_catalog.yml
 - substance_pipeline.md
 - substance_rag_pilot_report.md

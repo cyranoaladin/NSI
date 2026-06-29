@@ -3,19 +3,19 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 917
-- Ressources needs_review : 917
+- Ressources inventoriées : 930
+- Ressources needs_review : 930
 - Ressources publiables : 0
-- Source generated : 909
+- Source generated : 922
 - Source adapted_from_drive : 7
 - Source import_partiel : 1
 - Source inspiration_drive : 0
 - Source drive : 0
 - Lignes drive_inventory.csv : 22
 - Couverture covered : 0
-- Couverture needs_review : 95
-- Couverture partial : 2
-- Couverture absent : 17
+- Couverture needs_review : 91
+- Couverture partial : 1
+- Couverture absent : 22
 - Archive pédagogique à transmettre : dist/source_clean.tar.gz
 - Archive globale contenant .git : interdite comme livraison principale
 - L’archive principale de livraison est dist/source_clean.tar.gz. Toute archive contenant .git/ est interdite comme livraison pédagogique.
@@ -115,9 +115,9 @@ python scripts/check_drive_mapping_release.py
 - `coverage.md` indexe désormais les preuves issues de `03_progressions/supports/**`.
 - `coverage_sources.md` liste les fichiers sources par capacité.
 - Couverture covered : 0
-- Couverture needs_review : 95
-- Couverture partial : 2
-- Couverture absent : 17
+- Couverture needs_review : 91
+- Couverture partial : 1
+- Couverture absent : 22
 - Décision : les preuves documentaires issues de `supports/` rendent visibles les capacités, mais ne créent aucune validation humaine.
 
 ## Juge de substance

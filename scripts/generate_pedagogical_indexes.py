@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from collections import defaultdict
+from collections import Counter, defaultdict
 import csv
 import re
 from pathlib import Path
@@ -70,6 +70,39 @@ def infer_document_type(path_text: str, row_type: str, metadata: dict[str, objec
     return row_type or "document"
 
 
+def infer_audience(document_type: str, row_audience: str, metadata: dict[str, object]) -> str:
+    explicit = str(metadata.get("audience") or "").strip()
+    if explicit and explicit not in {"mixte", "non renseigné", "non renseignée"}:
+        return explicit
+    if document_type in {"corrige", "bareme", "guide_prof", "corrige_code", "tests_code"}:
+        return "professeur"
+    if document_type in {
+        "cours",
+        "trace",
+        "td",
+        "tp",
+        "tp_papier",
+        "evaluation",
+        "qcm",
+        "fiche_cours",
+        "fiche",
+        "remediation",
+        "version_amenagee",
+        "starter_code",
+    }:
+        return "eleve"
+    return row_audience if row_audience not in {"", "mixte"} else "eleve"
+
+
+def infer_session(metadata: dict[str, object], sequence: str) -> str:
+    explicit = str(metadata.get("session") or metadata.get("session_id") or "").strip()
+    if explicit:
+        return explicit
+    if re.fullmatch(r"[PT]\d{2}", sequence):
+        return f"{sequence}-S1..{sequence}-S7"
+    return "hors séance"
+
+
 def metadata_capacities(path: Path, metadata: dict[str, object]) -> list[str]:
     raw = metadata.get("capacities")
     capacities: list[str] = []
@@ -100,6 +133,8 @@ def indexed_resources() -> list[dict[str, object]]:
         sequence = infer_sequence(path_text, row.get("sequence_possible", ""))
         level = str(metadata.get("level") or row.get("niveau") or "non renseigné")
         theme = str(metadata.get("theme") or row.get("theme") or "non renseigné")
+        document_type = infer_document_type(path_text, row.get("type", ""), metadata)
+        capacities = metadata_capacities(path, metadata)
         resources.append(
             {
                 "path": path_text,
@@ -109,10 +144,11 @@ def indexed_resources() -> list[dict[str, object]]:
                 "domain": str(metadata.get("domain") or theme or "NSI"),
                 "chapter": str(metadata.get("chapter") or sequence),
                 "sequence": sequence,
-                "session": str(metadata.get("session") or "non renseignée"),
-                "document_type": infer_document_type(path_text, row.get("type", ""), metadata),
-                "capacity": metadata_capacities(path, metadata),
-                "audience": str(metadata.get("audience") or row.get("audience") or "mixte"),
+                "session": infer_session(metadata, sequence),
+                "document_type": document_type,
+                "capacity": capacities,
+                "has_capacity_ids": capacities != ["non rattachée"],
+                "audience": infer_audience(document_type, row.get("audience", ""), metadata),
                 "rag_collection": "nsi_corpus",
                 "status": row.get("statut", "needs_review"),
                 "source": row.get("source", ""),
@@ -139,7 +175,26 @@ def write_index(filename: str, key: str, resources: list[dict[str, object]]) -> 
         "Généré par `scripts/generate_pedagogical_indexes.py` depuis `manifest.csv` et les métadonnées.",
         "Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.",
         "",
+        "## Synthèse",
+        "",
     ]
+    status_counts = Counter(str(item["status"]) for item in resources)
+    type_counts = Counter(str(item["document_type"]) for item in resources)
+    with_capacity = sum(1 for item in resources if item["has_capacity_ids"])
+    with_audience = sum(1 for item in resources if str(item["audience"]) not in {"", "mixte", "non renseigné", "non renseignée"})
+    with_session = sum(1 for item in resources if str(item["session"]) not in {"", "non renseignée", "non renseigné"})
+    lines.extend(
+        [
+            f"- Nombre total de ressources : {len(resources)}",
+            f"- Nombre par statut : {dict(sorted(status_counts.items()))}",
+            f"- Nombre par type de document : {dict(sorted(type_counts.items()))}",
+            f"- Ressources avec capacity_ids : {with_capacity}",
+            f"- Ressources sans capacity_ids : {len(resources) - with_capacity}",
+            f"- Ressources avec audience renseignée : {with_audience}",
+            f"- Ressources avec session renseignée : {with_session}",
+            "",
+        ]
+    )
     if not groups:
         lines.append("- Aucune ressource pédagogique indexable.")
     for group, items in sorted(groups.items()):

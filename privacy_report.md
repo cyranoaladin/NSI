@@ -190,6 +190,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_evaluation_bareme_alignment.py: nom propre suspect -> Evaluation Bareme Alignment Report
 - scripts/check_git_clean.py: nom propre suspect -> Check Git
 - scripts/check_learning_objectives_assessed.py: nom propre suspect -> Learning Objectives Assessed Report
+- scripts/check_makefile_audit_policy.py: nom propre suspect -> Check Makefile
 - scripts/check_missing_register_actionability.py: nom propre suspect -> Lien Drive
 - scripts/check_program_capacity_evidence_depth.py: nom propre suspect -> Program Capacity Evidence Depth Report
 - scripts/check_progression_calendar_alignment.py: nom propre suspect -> Ressources Drive
@@ -203,14 +204,13 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
 - scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
 - scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
+- scripts/rag_diagnose_search_timeout.py: nom propre suspect -> Content-Type
 - scripts/rag_query_example.py: nom propre suspect -> Content-Type
 - scripts/rag_smoke_test.py: nom propre suspect -> Content-Type
 - scripts/render_sequence.py: nom propre suspect -> Fira Code
 - scripts/render_sequence.py: nom propre suspect -> Sans Mono
 - scripts/render_sequence.py: nom propre suspect -> Fira Code
-- scripts/render_sequence.py: nom propre suspect -> Fira Code
-- scripts/render_sequence.py: nom propre suspect -> Sans Mono
-- ... 18 alertes supplémentaires non affichées
+- ... 20 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
@@ -414,4 +414,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_remediation_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_td_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 324 alertes supplémentaires non affichées
+- ... 323 alertes supplémentaires non affichées

@@ -9,7 +9,7 @@ from _qa_common import ROOT, print_result
 
 POLICY = ROOT / "qa_gate_policy.md"
 BLOCKING_CLASSES = {"blocking_structure", "blocking_privacy", "blocking_tests", "blocking_substance"}
-MAX_BLOCKING_NON_TEST_GATES = 30
+MAX_BLOCKING_NON_TEST_GATES = 40
 
 
 def parse_policy() -> list[tuple[str, str]]:

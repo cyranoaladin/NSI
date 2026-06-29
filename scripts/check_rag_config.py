@@ -111,6 +111,16 @@ def validate_yaml(errors: list[str]) -> None:
         errors.append("rag_config.example.yml: api.collection doit valoir nsi_corpus")
     if not isinstance(vector, dict) or vector.get("dimension") != 768:
         errors.append("rag_config.example.yml: vector.dimension doit valoir 768")
+    collections = data.get("collections")
+    if not isinstance(collections, dict) or "nsi_golden_examples" not in collections:
+        errors.append("rag_config.example.yml: collection nsi_golden_examples manquante")
+    metadata_required = data.get("metadata_required")
+    if not isinstance(metadata_required, list):
+        errors.append("rag_config.example.yml: metadata_required doit être une liste")
+    else:
+        for key in ("section_anchor", "capacity_ids", "private_data", "proof_scope"):
+            if key not in {str(item) for item in metadata_required}:
+                errors.append(f"rag_config.example.yml: metadata_required manque {key}")
     exclusions = data.get("exclusions")
     if not isinstance(exclusions, list):
         errors.append("rag_config.example.yml: exclusions doit être une liste")

@@ -48,9 +48,9 @@ RAG_SMOKE_TEST_SKIPPED_NO_CONFIG
 ```
 
 Avec `.env.rag`, il appelle `/search` en Bearer sur `nsi_corpus`, vérifie la
-présence de résultats et exige les métadonnées minimales : `path`,
-`anchor` ou `section_anchor`, `capacities` ou `capacity_ids`, `document_type`,
-`status`, `source_type`.
+présence de résultats et exige les métadonnées minimales. Les champs canoniques
+des nouveaux chunks sont `section_anchor` et `capacity_ids`. Les anciens champs
+`anchor` et `capacities` ne sont tolérés que comme alias de compatibilité.
 
 Observation du 2026-06-29 :
 
@@ -84,7 +84,14 @@ métadonnées.
 ## Ingestion
 
 `scripts/ingest_nsi_corpus.py` prépare des chunks internes avec `source_type =
-nsi_corpus` et `collection = nsi_corpus`. Toute ingestion réelle nécessite un
-plan, un dry-run et un contrôle des métadonnées. Aucune donnée élève, aucun
-fichier `/AUDIT`, `dist/`, `.git/` ou `Documents_DRIVE/` ne doit être indexé
-comme corpus pédagogique interne.
+nsi_corpus`, `proof_scope = internal_coverage_candidate`, `collection =
+nsi_corpus`, `section_anchor`, `capacity_ids` et `private_data = false`. Toute
+ingestion réelle nécessite un plan, un dry-run et un contrôle des métadonnées.
+Aucune donnée élève, aucun fichier `/AUDIT`, `dist/`, `.git/` ou
+`Documents_DRIVE/` ne doit être indexé comme corpus pédagogique interne.
+
+Option stricte retenue : `nsi_corpus` ne contient que
+`03_progressions/supports/` et `03_progressions/fiches_cours/`. Les dossiers
+`premiere/sequences/` et `terminale/sequences/` sont des golden examples ; s'ils
+sont indexés un jour, ce sera dans `nsi_golden_examples` avec
+`proof_scope = style_reference_only` et `usable_for_coverage = false`.

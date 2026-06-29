@@ -16,12 +16,15 @@ REQUIRED_METADATA = {
     "document_type",
     "theme",
     "notion",
-    "capacities",
+    "capacity_ids",
     "status",
-    "anchor",
+    "section_anchor",
     "sha256",
     "chunk_index",
     "source_type",
+    "proof_scope",
+    "usable_for_coverage",
+    "private_data",
     "collection",
 }
 
@@ -38,8 +41,16 @@ def check_chunk(chunk: dict[str, Any]) -> list[str]:
         errors.append(f"{metadata.get('path', '?')}: collection != nsi_corpus")
     if metadata.get("source_type") != "nsi_corpus":
         errors.append(f"{metadata.get('path', '?')}: source_type != nsi_corpus")
+    if metadata.get("proof_scope") != "internal_coverage_candidate":
+        errors.append(f"{metadata.get('path', '?')}: proof_scope non interne")
+    if metadata.get("usable_for_coverage") is not True:
+        errors.append(f"{metadata.get('path', '?')}: usable_for_coverage doit être true")
+    if metadata.get("private_data") is not False:
+        errors.append(f"{metadata.get('path', '?')}: private_data doit être false")
     if metadata.get("status") not in {"needs_review", "needs_content", "draft"}:
         errors.append(f"{metadata.get('path', '?')}: statut RAG non conservateur")
+    if not isinstance(metadata.get("capacity_ids"), list):
+        errors.append(f"{metadata.get('path', '?')}: capacity_ids doit être une liste")
     return errors
 
 

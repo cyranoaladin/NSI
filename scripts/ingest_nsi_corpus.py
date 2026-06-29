@@ -22,14 +22,13 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent
 ENV_FILE = ROOT / ".env.rag"
 
-# Répertoires à indexer comme corpus interne. Les fichiers de planification de
-# `03_progressions/` restent hors RAG pédagogique : seules les ressources
-# canoniques et fiches de cours sont admissibles.
+# Répertoires à indexer comme corpus interne. Option stricte : seuls le canon
+# `03_progressions/supports/` et les fiches de cours peuvent entrer dans
+# `nsi_corpus`. Les pilotes `premiere/sequences/` et `terminale/sequences/`
+# relèvent de `nsi_golden_examples` et ne servent jamais de preuve de couverture.
 SOURCE_DIRS = [
     ROOT / "03_progressions" / "supports",
     ROOT / "03_progressions" / "fiches_cours",
-    ROOT / "premiere" / "sequences",
-    ROOT / "terminale" / "sequences",
 ]
 
 
@@ -151,6 +150,17 @@ def _find_sequence_capacities(path: Path) -> tuple[str, str, str]:
     return theme, notion, caps
 
 
+def source_kind(path: Path) -> tuple[str, str, str]:
+    rel = path.relative_to(ROOT).as_posix()
+    if rel.startswith("03_progressions/fiches_cours/"):
+        return "nsi_corpus", "internal_coverage_candidate", "nsi_corpus"
+    if rel.startswith("03_progressions/supports/"):
+        return "nsi_corpus", "internal_coverage_candidate", "nsi_corpus"
+    if rel.startswith(("premiere/sequences/", "terminale/sequences/")):
+        return "golden_example", "style_reference_only", "nsi_golden_examples"
+    return "excluded", "not_for_coverage", ""
+
+
 def build_chunks_py(path: Path) -> list[dict[str, Any]]:
     """Construit un chunk unique pour un fichier Python, avec capacités héritées."""
     try:
@@ -179,6 +189,8 @@ def build_chunks_py(path: Path) -> list[dict[str, Any]]:
         doc_type = "code"
     # Hériter les capacités de la séquence parente
     theme, notion, caps = _find_sequence_capacities(path)
+    source_type, proof_scope, collection = source_kind(path)
+    capacity_ids = [cap for cap in caps.split(",") if cap]
     return [{
         "text": text,
         "metadata": {
@@ -188,13 +200,18 @@ def build_chunks_py(path: Path) -> list[dict[str, Any]]:
             "document_type": doc_type,
             "theme": theme,
             "notion": notion,
+            "capacity_ids": capacity_ids,
             "capacities": caps,
             "status": "needs_review",
+            "section_anchor": "",
             "anchor": "",
             "sha256": sha256(text),
             "chunk_index": "0",
-            "source_type": "nsi_corpus",
-            "collection": "nsi_corpus",
+            "source_type": source_type,
+            "proof_scope": proof_scope,
+            "usable_for_coverage": source_type == "nsi_corpus",
+            "private_data": False,
+            "collection": collection,
         }
     }]
 
@@ -225,6 +242,7 @@ def build_chunks(path: Path) -> list[dict[str, Any]]:
     if isinstance(capacities, str):
         capacities = [capacities]
     cap_str = ",".join(capacities) if capacities else ""
+    source_type, proof_scope, collection = source_kind(path)
 
     sections = split_sections(body)
     if not sections:
@@ -245,13 +263,18 @@ def build_chunks(path: Path) -> list[dict[str, Any]]:
                 "document_type": doc_type,
                 "theme": theme,
                 "notion": notion,
+                "capacity_ids": capacities,
                 "capacities": cap_str,
                 "status": status,
+                "section_anchor": anchor,
                 "anchor": anchor,
                 "sha256": sha256(section_text),
                 "chunk_index": str(i),
-                "source_type": "nsi_corpus",
-                "collection": "nsi_corpus",
+                "source_type": source_type,
+                "proof_scope": proof_scope,
+                "usable_for_coverage": source_type == "nsi_corpus",
+                "private_data": False,
+                "collection": collection,
             }
         }
         chunks.append(chunk)

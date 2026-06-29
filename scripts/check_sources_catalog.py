@@ -12,6 +12,7 @@ from _qa_common import ROOT, print_result
 
 CATALOG = ROOT / "sources_catalog.yml"
 REQUIRED_FIELDS = {
+    "id",
     "title",
     "url",
     "local_path",
@@ -25,6 +26,10 @@ REQUIRED_FIELDS = {
     "reuse_policy",
     "rag_collection",
     "decision",
+    "reviewer",
+    "date_review",
+    "risk_level",
+    "allowed_actions",
 }
 SOURCE_TYPES = {
     "officiel",
@@ -78,8 +83,10 @@ def main() -> None:
                 errors.append(f"source #{index}: chemin interdit {local_path}")
         if "donnees_personnelles" in str(row.get("rgpd_status", "")) and row.get("decision") != "rejet":
             errors.append(f"source #{index}: données personnelles non rejetées")
-        if collection == "nsi_corpus" and source_type != "ressource_pedagogique_ouverte":
-            errors.append(f"source #{index}: nsi_corpus réservé aux ressources internes classées")
+        if not isinstance(row.get("allowed_actions"), list):
+            errors.append(f"source #{index}: allowed_actions doit être une liste")
+        if collection == "nsi_corpus":
+            errors.append(f"source #{index}: nsi_corpus réservé aux ressources internes produites, pas au catalogue externe")
     print_result("check_sources_catalog", errors)
 
 

@@ -3,17 +3,17 @@
 - premiere | P-HIST-01 - Situer dans le temps les principaux événements de l'histoire de l'informatique et leurs protagonistes. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-DATA-BASE-01 - Passer de la représentation d'une base dans une autre. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-DATA-BASE-02A - Evaluer le nombre de bits nécessaires à l'écriture en base 2 d'un entier, d'une somme ou d'un produit. | needs_review | ressources présentes mais statuts non validants
-- premiere | P-DATA-BASE-02B - Utiliser le complément à deux. | needs_review | ressources présentes mais statuts non validants
+- premiere | P-DATA-BASE-02B - Utiliser le complément à deux. | absent | aucune ressource associée
 - premiere | P-DATA-BASE-03 - Calculer sur quelques exemples la représentation de nombres réels simples. | absent | aucune ressource associée
-- premiere | P-DATA-BASE-04 - Dresser la table d'une expression booléenne. | needs_review | ressources présentes mais statuts non validants
+- premiere | P-DATA-BASE-04 - Dresser la table d'une expression booléenne. | absent | aucune ressource associée
 - premiere | P-DATA-BASE-05A - Identifier l'intérêt des différents systèmes d'encodage. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-DATA-BASE-05B - Convertir un fichier texte dans différents formats d'encodage. | absent | aucune ressource associée
-- premiere | P-DATA-CONSTR-01 - Ecrire une fonction renvoyant un p-uplet de valeurs. | needs_review | ressources présentes mais statuts non validants
+- premiere | P-DATA-CONSTR-01 - Ecrire une fonction renvoyant un p-uplet de valeurs. | absent | aucune ressource associée
 - premiere | P-DATA-CONSTR-02A - Lire et modifier les éléments d'un tableau grâce à leurs index. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-DATA-CONSTR-02B - Construire un tableau par compréhension. | absent | aucune ressource associée
 - premiere | P-DATA-CONSTR-02C - Utiliser des tableaux de tableaux pour représenter des matrices. | absent | aucune ressource associée
 - premiere | P-DATA-CONSTR-02D - Itérer sur les éléments d'un tableau. | absent | aucune ressource associée
-- premiere | P-DATA-CONSTR-03A - Construire une entrée de dictionnaire. | needs_review | ressources présentes mais statuts non validants
+- premiere | P-DATA-CONSTR-03A - Construire une entrée de dictionnaire. | absent | aucune ressource associée
 - premiere | P-DATA-CONSTR-03B - Itérer sur les éléments d'un dictionnaire. | absent | aucune ressource associée
 - premiere | P-DATA-CONSTR-03C - Utiliser les méthodes keys, values et items. | absent | aucune ressource associée
 - premiere | P-TABLE-01 - Importer une table depuis un fichier texte tabulé ou un fichier CSV. | needs_review | ressources présentes mais statuts non validants
@@ -63,7 +63,7 @@
 - terminale | T-STRUCT-02A - Ecrire la définition d'une classe. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-STRUCT-02B - Accéder aux attributs et méthodes d'une classe. | absent | aucune ressource associée
 - terminale | T-STRUCT-03A - Distinguer des structures par le jeu des méthodes qui les caractérisent. | needs_review | ressources présentes mais statuts non validants
-- terminale | T-STRUCT-03B - Choisir une structure de données adaptée à la situation à modéliser. | partial | preuves manquantes: evaluation
+- terminale | T-STRUCT-03B - Choisir une structure de données adaptée à la situation à modéliser. | absent | aucune ressource associée
 - terminale | T-STRUCT-03C - Distinguer la recherche d'une valeur dans une liste et dans un dictionnaire. | absent | aucune ressource associée
 - terminale | T-STRUCT-04A - Identifier des situations nécessitant une structure de données arborescente. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-STRUCT-04B - Evaluer quelques mesures des arbres binaires. | absent | aucune ressource associée

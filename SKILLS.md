@@ -477,7 +477,7 @@ Statuer sur l’enseignement réel d’une capacité dans le corpus.
 
 * intitulé officiel exact de la capacité (depuis `programme_nsi_2019.yaml`) ;
 * contrat de l’unité (séquence, rôles attendus) ;
-* sections candidates, idéalement fournies par le RAG interne (recherche sémantique dans `nsi_corpus`), pas la première section du fichier.
+* sections candidates, idéalement fournies par le RAG interne (`nsi_corpus`) quand le smoke réel est vert, pas la première section du fichier.
 
 ### Sorties
 
@@ -507,18 +507,27 @@ Statuer sur l’enseignement réel d’une capacité dans le corpus.
 ### Backend vectoriel
 
 * **Moteur** : ChromaDB v1.1.1
-* **Collections existantes** :
-  - `rag_education` : **4385 chunks issus de Google Drive** (sujets bac NSI, documents Drive divers). Schéma de payload Drive : `drive_folder_id`, `drive_file_id`, `drive_file_name`, `source_type` (= `gdrive_folder`), etc. Contient des documents hors NSI (philo, maths) — à curer.
-  - `nsi_corpus` : **4182 chunks du corpus `nsi-enseignement`** (374 fichiers, 0 erreurs). Schéma de payload : `path`, `level`, `sequence_id`, `document_type`, `theme`, `notion`, `capacities`, `status`, `anchor`, `sha256`, `chunk_index`, `source_type` (= `nsi_corpus`). **C'est la collection cible pour le juge de substance.**
-  - `rag_math_correction` : 67 chunks (maths), dim=768
-  - `rag_francais_premiere` : chunks français, dim=768
+* **Collections observées ou prévues** :
+  - `rag_education` : inspiration externe / Drive / ressources ouvertes, jamais preuve de couverture interne.
+  - `nsi_corpus` : collection cible du corpus interne pour le juge de substance, mais son accès `/search` authentifié est bloqué tant que le timeout persiste.
+  - `nsi_golden_examples` : collection éventuelle pour les pilotes `premiere/sequences` et `terminale/sequences`, avec `usable_for_coverage=false`.
+  - `nsi_official` : textes officiels.
+  - `nsi_annales` : annales publiques si licence OK.
 * **Distance** : cosine, **dimension** : 768
 
 ### État actuel et prérequis d’ingestion
 
-**Le corpus `nsi-enseignement` est indexé dans `nsi_corpus`.** 374 fichiers → 4182 chunks, 0 erreurs. Le juge de substance peut interroger cette collection pour récupérer la section pertinente.
+État bloquant : `/health` répond et `/search` sans token renvoie `HTTP 401`,
+mais `/search` authentifié time out. Le dépôt ne déclare donc pas le RAG
+fonctionnel et le juge de substance doit rester conservateur.
 
-**Script d’ingestion** : `scripts/ingest_nsi_corpus.py` (idempotent, déduplique par sha256). Prérequis : tunnel SSH (`ssh -L 11435:127.0.0.1:11434 -L 18000:127.0.0.1:8000 root@<host>`). Métadonnées par chunk : `path`, `level`, `sequence_id`, `document_type`, `theme`, `notion`, `capacities`, `status`, `anchor`, `sha256`. Respecte `private_data`.
+**Script d’ingestion** : `scripts/ingest_nsi_corpus.py`. Il prépare uniquement
+`03_progressions/supports/` et `03_progressions/fiches_cours/` pour
+`nsi_corpus`. Métadonnées canoniques par chunk : `path`, `level`,
+`sequence_id`, `document_type`, `theme`, `notion`, `capacity_ids`, `status`,
+`section_anchor`, `sha256`, `chunk_index`, `source_type`, `proof_scope`,
+`private_data`. Les anciens champs `anchor` et `capacities` ne sont que des
+alias de transition.
 
 ### Modèle d’embedding
 
@@ -526,9 +535,9 @@ Statuer sur l’enseignement réel d’une capacité dans le corpus.
 * **Dimension** : 768 (correspond aux collections existantes)
 * **Accès** : interne au Docker (Ollama sur port 11434 loopback) ; l’API `/search` embarque l’embedding
 
-### Contrat de requête fonctionnel
+### Contrat de requête attendu
 
-Requête minimale qui marche (sur les données Drive existantes) :
+Requête minimale requise avant toute déclaration de fonctionnement :
 
 ```
 POST https://rag-api.nexusreussite.academy/search
@@ -539,16 +548,16 @@ Body:
   {"q": "<texte>", "collection": "nsi_corpus", "k": 5, "include_documents": true}
 ```
 
-Réponse : `{"query", "collection", "k", "returned", "hits": [{"id", "metadata", "document", "score"}]}`.
-Score = distance cosine (plus bas = plus proche).
+Réponse attendue : `{"query", "collection", "k", "returned", "hits": [{"id", "metadata", "document", "score"}]}`.
+Tant que cette réponse time out, le RAG reste bloquant.
 
 Pour un accès direct à ChromaDB ou Ollama, un tunnel SSH est nécessaire (port 11435 pour éviter conflit Ollama local) :
 `ssh -L 11435:127.0.0.1:11434 -L 8000:127.0.0.1:8000 root@<host>`
 
-### Usage cible (après ingestion du corpus)
+### Usage cible après smoke vert
 
-1. **Juge de substance** : interroger le RAG (`nsi_corpus`) avec l’intitulé officiel de la capacité pour récupérer *la* section qui l’enseigne réellement, au lieu de prendre la première ligne du document. Vérifié : la requête « Importer une table depuis un fichier CSV » retourne `P05_fiche_cours_tables_csv_import_coherence.md` avec anchor et capacités P-TABLE-01/02 (score cosine 0.16).
-2. **Oracle de cohérence inter-séquences** : détection sémantique des définitions divergentes et des prérequis non couverts entre séquences.
+1. **Juge de substance** : interroger `nsi_corpus` avec l’intitulé officiel de la capacité pour récupérer des sections candidates, puis appliquer le veto mécanique et la revue humaine.
+2. **Oracle de cohérence inter-séquences** : proposer des divergences ou prérequis à auditer, sans promouvoir de statut.
 
 ### Variables de connexion
 
@@ -556,7 +565,7 @@ Voir `.env.rag.example` pour le modèle de configuration. **Ne jamais recopier d
 
 ### Critères d’acceptation
 
-* `scripts/rag_smoke_test.py` passe sans erreur (embed + search + LLM) ;
+* `scripts/rag_smoke_test.py` passe sans erreur sur `/search` authentifié ;
 * les secrets restent dans `.env.rag` (chmod 600, gitignoré) ;
 * aucun secret n’apparaît dans les rapports, les logs, ni les fichiers committés.
 
