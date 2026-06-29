@@ -45,6 +45,19 @@ def test_check_repo_topology_passes_current_workspace() -> None:
     assert completed.returncode == 0, completed.stdout
 
 
+def test_check_repo_topology_accepts_github_actions_checkout_name(tmp_path: Path) -> None:
+    from check_repo_topology import analyze_topology
+
+    repo = tmp_path / "NSI"
+    repo.mkdir()
+    _git(repo, "init")
+    _git(repo, "remote", "add", "origin", "https://github.com/cyranoaladin/NSI.git")
+
+    result = analyze_topology(repo_root=repo, parent_root=tmp_path)
+
+    assert "dépôt canonique inattendu" not in "\n".join(result.errors)
+
+
 def test_check_repo_topology_detects_tracked_nested_repo_and_mirrors(tmp_path: Path) -> None:
     from check_repo_topology import analyze_topology
 

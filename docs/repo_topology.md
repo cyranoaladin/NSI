@@ -6,6 +6,10 @@ Le dépôt canonique de production et de validation est `nsi-enseignement/`.
 Il est un clone Git autonome situé dans le dossier parent local
 `<workspace_parent>/`.
 
+En CI GitHub Actions, le même dépôt peut être extrait dans un répertoire nommé
+`NSI`. Dans ce cas, l'identité canonique est vérifiée par le remote Git
+`cyranoaladin/NSI` et non par le nom absolu du dossier local.
+
 Le dépôt parent local peut contenir des outils ou miroirs de travail, mais
 `nsi-enseignement/` ne doit pas être suivi comme simple sous-dossier du dépôt
 parent. La relation correcte est donc :

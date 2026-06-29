@@ -195,3 +195,51 @@ $ git status --ignored --short dist 01_build_reports .coverage .pytest_cache .ru
 ```
 
 Interprétation : aucun fichier suivi modifié ; seuls les livrables ignorés sont présents.
+
+## Correction CI post-PR
+
+Premier run PR distant :
+
+```text
+$ gh run view --repo cyranoaladin/NSI 28408192759 --job 84175269789 --log
+FAILED tests/test_repo_topology.py::test_check_repo_topology_passes_current_workspace
+AssertionError: check_repo_topology: KO
+- dépôt canonique inattendu: /home/runner/work/NSI/NSI
+```
+
+Cause racine : le garde topologie couplait l'identité du dépôt canonique au nom
+local `nsi-enseignement`, alors que GitHub Actions extrait le dépôt
+`cyranoaladin/NSI` dans un répertoire nommé `NSI`.
+
+Test rouge ajouté :
+
+```text
+$ python -m pytest -q tests/test_repo_topology.py::test_check_repo_topology_accepts_github_actions_checkout_name
+FAILED tests/test_repo_topology.py::test_check_repo_topology_accepts_github_actions_checkout_name
+AssertionError: assert 'dépôt canonique inattendu' not in ...
+```
+
+Après correction, l'identité canonique accepte le nom local `nsi-enseignement`
+ou un remote Git contenant `cyranoaladin/NSI`.
+
+Sorties vertes :
+
+```text
+$ python -m pytest -q tests/test_repo_topology.py::test_check_repo_topology_accepts_github_actions_checkout_name
+1 passed in 0.12s
+
+$ python -m pytest -q tests/test_repo_topology.py
+4 passed in 0.31s
+
+$ python scripts/check_repo_topology.py
+check_repo_topology: PASS
+
+$ python -m pytest -q
+325 passed, 2 subtests passed in 72.29s (0:01:12)
+
+$ ruff check scripts/check_repo_topology.py tests/test_repo_topology.py
+All checks passed!
+
+$ /tmp/nsi_post_lot3_venv/bin/mypy --strict scripts/check_repo_topology.py
+Success: no issues found in 1 source file
+```

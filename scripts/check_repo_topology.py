@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PARENT_ROOT = ROOT.parent
 
 PARENT_NESTED_REPO = "nsi-enseignement"
+EXPECTED_REMOTE_FRAGMENT = "cyranoaladin/NSI"
 MIRROR_PATHS = [
     "scrapping_NSI/ressources_nsi_centralisees",
     "scrapping_NSI/ressources_nsi_extraites",
@@ -51,6 +52,12 @@ def _has_git_repo(root: Path) -> bool:
 
 def _is_tracked(root: Path, path: str) -> bool:
     return bool(_git_lines(root, ["ls-files", "--", path]))
+
+
+def _is_expected_canonical_repo(repo_root: Path) -> bool:
+    if repo_root.name == PARENT_NESTED_REPO:
+        return True
+    return any(EXPECTED_REMOTE_FRAGMENT in line for line in _git_lines(repo_root, ["remote", "-v"]))
 
 
 def _versioned_policy_text(repo_root: Path, parent_root: Path) -> str:
@@ -108,7 +115,7 @@ def _check_archives(repo_root: Path, errors: list[str]) -> None:
 def analyze_topology(repo_root: Path = ROOT, parent_root: Path = PARENT_ROOT) -> TopologyResult:
     result = TopologyResult()
     errors = result.errors
-    if repo_root.name != PARENT_NESTED_REPO:
+    if not _is_expected_canonical_repo(repo_root):
         errors.append(f"dépôt canonique inattendu: {repo_root}")
     if not (repo_root / ".git").exists():
         errors.append("dépôt canonique sans .git local")
