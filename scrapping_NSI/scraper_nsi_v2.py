@@ -13,6 +13,7 @@ Améliorations par rapport à scraper_nsi.py :
 from __future__ import annotations
 
 import csv
+import json
 import os
 import re
 import sys
@@ -95,6 +96,7 @@ class SiteStats:
     pages_seen: int = 0
     files_downloaded: int = 0
     files_skipped: int = 0
+    files_duplicate_content: int = 0
     robots_blocked: int = 0
     errors: list[str] = field(default_factory=list)
     external_sites_discovered: int = 0
@@ -102,35 +104,103 @@ class SiteStats:
 
 @dataclass
 class DuplicateIndex:
-    """In-memory guard against re-downloading files already extracted locally."""
+    """In-memory guard against duplicate URLs and duplicate file contents.
 
-    filenames: set[str] = field(default_factory=set)
+    Bootstrap order is deliberate: `provenance.jsonl` is the durable source of
+    truth across scraper runs. A bounded disk scan of `DUPLICATE_SCAN_ROOTS` is
+    only a fallback when provenance is absent or structurally incomplete.
+    """
+
     urls: set[str] = field(default_factory=set)
+    content_hashes: set[str] = field(default_factory=set)
+    bootstrap_source: str = "empty"
+    disk_scan_performed: bool = False
 
     @staticmethod
-    def filename_key(filename: str) -> str:
-        return clean_filename(filename).casefold()
+    def _valid_sha256(value: object) -> bool:
+        return isinstance(value, str) and re.fullmatch(r"[0-9a-f]{64}", value) is not None
 
     @classmethod
-    def from_roots(cls, roots: Iterable[Path]) -> "DuplicateIndex":
+    def from_roots(
+        cls,
+        roots: Iterable[Path],
+        *,
+        provenance_path: Path | None = None,
+    ) -> "DuplicateIndex":
         index = cls()
+        provenance_complete = False
+        if provenance_path is not None and provenance_path.exists():
+            provenance_complete = index._load_from_provenance(provenance_path)
+            if provenance_complete:
+                index.bootstrap_source = "provenance"
+                return index
+
+        index._scan_content_hashes(roots)
+        if provenance_path is not None and provenance_path.exists():
+            index.bootstrap_source = "provenance+disk"
+        else:
+            index.bootstrap_source = "disk"
+        return index
+
+    def _load_from_provenance(self, provenance_path: Path) -> bool:
+        complete = True
+        saw_record = False
+        with provenance_path.open(encoding="utf-8") as handle:
+            for line in handle:
+                line = line.strip()
+                if not line:
+                    continue
+                saw_record = True
+                try:
+                    record = json.loads(line)
+                except json.JSONDecodeError:
+                    complete = False
+                    continue
+                if not isinstance(record, dict):
+                    complete = False
+                    continue
+                sha = record.get("sha256")
+                source_url = record.get("source_url")
+                if not self._valid_sha256(sha):
+                    complete = False
+                else:
+                    self.content_hashes.add(str(sha))
+                if isinstance(source_url, str) and source_url:
+                    self.urls.add(canonicalize_url(source_url))
+                else:
+                    complete = False
+        return complete and saw_record
+
+    def _scan_content_hashes(self, roots: Iterable[Path]) -> None:
+        self.disk_scan_performed = True
         for root in roots:
             if not root.exists():
                 continue
             for path in root.rglob("*"):
                 if path.is_file() and not path.name.endswith(".part"):
-                    index.filenames.add(cls.filename_key(path.name))
-        return index
-
-    def has_filename(self, filename: str) -> bool:
-        return self.filename_key(filename) in self.filenames
+                    self.content_hashes.add(compute_sha256(path))
 
     def has_url(self, url: str) -> bool:
         return canonicalize_url(url) in self.urls
 
-    def register_file(self, url: str, file_path: Path) -> None:
+    def has_content_hash(self, content_hash: str) -> bool:
+        return content_hash in self.content_hashes
+
+    def register_url(self, url: str) -> None:
         self.urls.add(canonicalize_url(url))
-        self.filenames.add(self.filename_key(file_path.name))
+
+    def register_file(
+        self,
+        url: str,
+        file_path: Path,
+        *,
+        content_hash: str | None = None,
+    ) -> None:
+        self.register_url(url)
+        if content_hash is None and file_path.exists():
+            content_hash = compute_sha256(file_path)
+        if content_hash is not None:
+            self.content_hashes.add(content_hash)
 
 
 def normalize_href(href: str) -> str:
@@ -361,10 +431,8 @@ def download_file(
 
         file_path = folder_destination / filename
 
-        if duplicate_index and (
-            duplicate_index.has_url(url) or duplicate_index.has_filename(filename)
-        ):
-            print(f"    [Sauté] Déjà extrait ailleurs : {filename}", flush=True)
+        if duplicate_index and duplicate_index.has_url(url):
+            print(f"    [Sauté] URL déjà traitée : {filename}", flush=True)
             stats.files_skipped += 1
             return True
 
@@ -400,14 +468,40 @@ def download_file(
                 for chunk in response.iter_content(chunk_size=8192):
                     if chunk:
                         output.write(chunk)
+            sha = compute_sha256(partial_path)
+            byte_count = partial_path.stat().st_size
+            content_type = response.headers.get("content-type", "")
+
+            if duplicate_index and duplicate_index.has_content_hash(sha):
+                partial_path.unlink()
+                partial_path = None
+                duplicate_index.register_url(url)
+                stats.files_duplicate_content += 1
+                if provenance_path:
+                    write_provenance_record(
+                        provenance_path,
+                        sha256=sha,
+                        filename=filename,
+                        source_url=url,
+                        site_name=site_name,
+                        page_url=page_url,
+                        http_status=200,
+                        content_type=content_type,
+                        byte_count=byte_count,
+                        robots_allowed=True,
+                        license_guess=guess_license(page_html),
+                        duplicate_of=sha,
+                    )
+                print(f"    [Doublon contenu] {url} -> sha256={sha}", flush=True)
+                return True
+
             partial_path.replace(file_path)
+            partial_path = None
             stats.files_downloaded += 1
             if duplicate_index:
-                duplicate_index.register_file(url, file_path)
+                duplicate_index.register_file(url, file_path, content_hash=sha)
 
             if provenance_path:
-                sha = compute_sha256(file_path)
-                content_type = response.headers.get("content-type", "")
                 write_provenance_record(
                     provenance_path,
                     sha256=sha,
@@ -417,7 +511,7 @@ def download_file(
                     page_url=page_url,
                     http_status=200,
                     content_type=content_type,
-                    byte_count=file_path.stat().st_size,
+                    byte_count=byte_count,
                     robots_allowed=True,
                     license_guess=guess_license(page_html),
                 )
@@ -566,6 +660,7 @@ def scrape_site(
     print(
         f"=== Fin v2 : {site_name} | pages={stats.pages_seen}, "
         f"téléchargés={stats.files_downloaded}, sautés={stats.files_skipped}, "
+        f"doublons_contenu={stats.files_duplicate_content}, "
         f"robots_bloqués={stats.robots_blocked}, "
         f"erreurs={len(stats.errors)}, sites_annuaire={stats.external_sites_discovered} ===",
         flush=True,
@@ -609,17 +704,22 @@ def main() -> None:
     print("=" * 72, flush=True)
     print(f"Dossier de sortie : {OUTPUT_ROOT}", flush=True)
     print(f"Limites : profondeur={MAX_DEPTH}, sous-pages/site={MAX_SUBPAGES_PER_SITE}", flush=True)
-    duplicate_index = DuplicateIndex.from_roots(DUPLICATE_SCAN_ROOTS)
+    provenance_path = Path(os.getenv("NSI_PROVENANCE_FILE", "provenance.jsonl"))
+    duplicate_index = DuplicateIndex.from_roots(
+        DUPLICATE_SCAN_ROOTS,
+        provenance_path=provenance_path,
+    )
     print(
-        f"Anti-doublons : {len(duplicate_index.filenames)} noms de fichiers connus "
-        f"depuis {', '.join(str(root) for root in DUPLICATE_SCAN_ROOTS)}",
+        f"Anti-doublons : {len(duplicate_index.urls)} URLs, "
+        f"{len(duplicate_index.content_hashes)} empreintes sha256 "
+        f"(amorçage={duplicate_index.bootstrap_source}) depuis "
+        f"{', '.join(str(root) for root in DUPLICATE_SCAN_ROOTS)}",
         flush=True,
     )
 
     session = build_session(user_agent=DEFAULT_USER_AGENT)
     robots = RobotsCache(user_agent=DEFAULT_USER_AGENT, session=session)
     throttle = DomainThrottle()
-    provenance_path = Path(os.getenv("NSI_PROVENANCE_FILE", "provenance.jsonl"))
 
     sites_queue: deque[tuple[str, str, str, bool]] = deque(
         (name, url, structure, False) for name, url, structure in load_csv_sites(CSV_FILE)
@@ -660,12 +760,17 @@ def main() -> None:
     print(f"Pages HTML visitées : {sum(s.pages_seen for s in all_stats)}", flush=True)
     print(f"Fichiers téléchargés : {sum(s.files_downloaded for s in all_stats)}", flush=True)
     print(f"Fichiers déjà présents sautés : {sum(s.files_skipped for s in all_stats)}", flush=True)
+    print(
+        f"Fichiers doublons de contenu : {sum(s.files_duplicate_content for s in all_stats)}",
+        flush=True,
+    )
     print(f"Robots bloqués : {sum(s.robots_blocked for s in all_stats)}", flush=True)
     print(f"Erreurs : {sum(len(s.errors) for s in all_stats)}", flush=True)
     for stat in all_stats:
         print(
             f"- {stat.site_name}: pages={stat.pages_seen}, téléchargés={stat.files_downloaded}, "
-            f"sautés={stat.files_skipped}, robots={stat.robots_blocked}, "
+            f"sautés={stat.files_skipped}, doublons_contenu={stat.files_duplicate_content}, "
+            f"robots={stat.robots_blocked}, "
             f"erreurs={len(stat.errors)}, "
             f"annuaire={stat.external_sites_discovered}",
             flush=True,
@@ -674,5 +779,5 @@ def main() -> None:
     print(f"PROCESSUS TERMINÉ. Consultez '{OUTPUT_ROOT}/'.", flush=True)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     main()

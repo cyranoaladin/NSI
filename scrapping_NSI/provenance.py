@@ -13,7 +13,7 @@ import json
 import re
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import TextIO
+from typing import Any, TextIO
 
 
 def compute_sha256(file_path: Path) -> str:
@@ -113,7 +113,7 @@ PROVENANCE_OPTIONAL_KEYS = {"duplicate_of"}
 PROVENANCE_ALLOWED_KEYS = PROVENANCE_REQUIRED_KEYS | PROVENANCE_OPTIONAL_KEYS
 
 
-def validate_provenance_record(record: dict) -> bool:
+def validate_provenance_record(record: dict[str, object]) -> bool:
     """Vérifie qu'un enregistrement contient toutes les clés requises et aucune clé inconnue."""
     keys = set(record.keys())
     return PROVENANCE_REQUIRED_KEYS.issubset(keys) and keys.issubset(PROVENANCE_ALLOWED_KEYS)
@@ -121,7 +121,9 @@ def validate_provenance_record(record: dict) -> bool:
 
 def generate_notice_sources(provenance_path: Path, output_path: Path) -> None:
     """Génère NOTICE_SOURCES.md depuis le fichier provenance.jsonl."""
-    sites: dict[str, dict] = {}
+    sites: dict[str, dict[str, Any]] = {}
+    downloaded_hashes: set[str] = set()
+    duplicate_content = 0
 
     if not provenance_path.exists():
         output_path.write_text(
@@ -145,13 +147,25 @@ def generate_notice_sources(provenance_path: Path, output_path: Path) -> None:
                 }
             sites[site]["urls"].add(record.get("page_url", ""))
             sites[site]["licenses"].add(record.get("license_guess", "unknown"))
-            sites[site]["count"] += 1
+            sha = record.get("sha256", "")
+            if record.get("duplicate_of"):
+                duplicate_content += 1
+                continue
+            if sha and sha not in downloaded_hashes:
+                downloaded_hashes.add(sha)
+                sites[site]["count"] += 1
 
     lines = [
         "# Notice des sources",
         "",
         "> **Usage** : matière première de réécriture, jamais republication telle quelle.",
         "> Cf. METHODE_PRODUCTION_REELLE.md §9/§5 sur la quarantaine.",
+        "",
+        "## Résumé",
+        "",
+        f"- files_downloaded: {len(downloaded_hashes)}",
+        "- files_skipped: 0",
+        f"- files_duplicate_content: {duplicate_content}",
         "",
         "| Site | URL(s) exemple | Licence détectée | Fichiers | À vérifier |",
         "|------|---------------|-----------------|----------|------------|",

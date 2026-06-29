@@ -157,18 +157,19 @@ class ScraperNsiV2HelpersTest(unittest.TestCase):
         )
         self.assertEqual(links.external_sites, ["https://collegue.example/nsi/"])
 
-    def test_duplicate_index_detects_existing_file_names_across_roots(self):
+    def test_duplicate_index_detects_existing_file_hashes_across_roots(self):
         with TemporaryDirectory() as tmp:
             root = Path(tmp)
             existing = root / "site_a" / "pdf"
             existing.mkdir(parents=True)
-            (existing / "Cours NSI.pdf").write_bytes(b"deja extrait")
+            file_path = existing / "Cours NSI.pdf"
+            file_path.write_bytes(b"deja extrait")
 
             index = DuplicateIndex.from_roots([root])
 
-            self.assertTrue(index.has_filename("Cours NSI.pdf"))
-            self.assertTrue(index.has_filename("cours nsi.pdf"))
-            self.assertFalse(index.has_filename("autre.pdf"))
+            self.assertIn(scraper_module.compute_sha256(file_path), index.content_hashes)
+            self.assertFalse(hasattr(index, "has_filename"))
+            self.assertFalse(hasattr(index, "filenames"))
 
     def test_duplicate_index_ignores_absent_roots_and_registers_url(self):
         with TemporaryDirectory() as tmp:
@@ -180,7 +181,7 @@ class ScraperNsiV2HelpersTest(unittest.TestCase):
             index.register_file("https://example.test/cours.pdf#section", target)
 
             self.assertTrue(index.has_url("https://example.test/cours.pdf"))
-            self.assertTrue(index.has_filename("cours.pdf"))
+            self.assertIn(scraper_module.compute_sha256(target), index.content_hashes)
 
     def test_filename_and_url_helpers_cover_fallbacks(self):
         self.assertEqual(clean_filename("!?"), "ressource")
@@ -200,7 +201,7 @@ class ScraperNsiV2HelpersTest(unittest.TestCase):
         self.assertIn("Éduscol STI - Hub Spécialité NSI", scraper_module.OUT_OF_SCOPE_SCRAPE_TARGETS)
         self.assertIn("Wikibooks - Communauté NSI", scraper_module.OUT_OF_SCOPE_SCRAPE_TARGETS)
 
-    def test_download_skips_global_duplicate_without_network_request(self):
+    def test_download_does_not_skip_same_basename_without_matching_url_or_hash(self):
         session, robots, throttle = _mock_netpolicy()
         with TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -211,7 +212,15 @@ class ScraperNsiV2HelpersTest(unittest.TestCase):
             index = DuplicateIndex.from_roots([root])
             stats = SiteStats("Site B", "https://example.test/")
 
-            with redirect_stdout(io.StringIO()):
+            resp_pdf = _make_polite_get_response(
+                status_code=200,
+                chunks=[b"contenu different"],
+                headers={"content-type": "application/pdf"},
+            )
+            with redirect_stdout(io.StringIO()), patch(
+                "scraper_nsi_v2.polite_get",
+                return_value=(resp_pdf, None, False),
+            ) as polite_get:
                 self.assertTrue(
                     download_file(
                         "https://example.test/nouveau/fiche.pdf",
@@ -224,10 +233,10 @@ class ScraperNsiV2HelpersTest(unittest.TestCase):
                     )
                 )
 
-            self.assertEqual(stats.files_skipped, 1)
-            self.assertFalse((target / "fiche.pdf").exists())
-            # polite_get ne doit jamais avoir été appelé
-            session.get.assert_not_called()
+            self.assertEqual(stats.files_downloaded, 1)
+            self.assertEqual(stats.files_skipped, 0)
+            self.assertTrue((target / "fiche.pdf").exists())
+            self.assertEqual(polite_get.call_count, 1)
 
     def test_download_handles_missing_filename_existing_file_http_error_and_success(self):
         session, robots, throttle = _mock_netpolicy()
@@ -260,9 +269,9 @@ class ScraperNsiV2HelpersTest(unittest.TestCase):
                         session=session, robots=robots, throttle=throttle,
                         duplicate_index=duplicate_index,
                     )
-                )
+            )
             self.assertEqual(stats.files_skipped, 1)
-            self.assertTrue(duplicate_index.has_filename("cours.pdf"))
+            self.assertIn(scraper_module.compute_sha256(existing), duplicate_index.content_hashes)
 
             # Erreur HTTP 404
             resp_404 = _make_polite_get_response(status_code=404)
