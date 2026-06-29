@@ -11,6 +11,7 @@ import hashlib
 import json
 import os
 import shutil
+import sys
 import unicodedata
 import zipfile
 from collections import Counter
@@ -21,6 +22,11 @@ from tempfile import TemporaryDirectory
 
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+from scrapping_NSI.safe_archive import ArchiveSecurityError, safe_extract_zip  # noqa: E402
+
 SOURCE_DIRS = [Path("ressources_nsi_extraites"), Path("ressources_nsi_extraites_v2")]
 DRIVE_DIR = Path(os.getenv("NSI_DOCUMENTS_DRIVE_ROOT", str(ROOT_DIR / "Documents_DRIVE")))
 TRANSIT_DIR = Path(os.getenv("NSI_TRANSIT_DIR", "/tmp/nsi_transit"))
@@ -843,18 +849,9 @@ def extract_zip_to_transit(
     while extract_base.exists():
         extract_base = transit_root / EXTRACTED_ZIP_DIR / f"{safe_stem(archive.stem)}_{counter}"
         counter += 1
-    extract_base.mkdir(parents=True, exist_ok=True)
-
     try:
-        with zipfile.ZipFile(archive) as zf:
-            bad = zf.testzip()
-            if bad:
-                print(f"[ZIP CORROMPU] {archive} entrée={bad}", flush=True)
-                shutil.rmtree(extract_base, ignore_errors=True)
-                record_processed_archive(registry, archive_hash, archive)
-                return 0
-            zf.extractall(extract_base)
-    except (zipfile.BadZipFile, OSError, RuntimeError) as exc:
+        safe_extract_zip(archive, extract_base)
+    except (ArchiveSecurityError, zipfile.BadZipFile, OSError, RuntimeError) as exc:
         print(f"[ZIP ERREUR] {archive}: {exc}", flush=True)
         shutil.rmtree(extract_base, ignore_errors=True)
         record_processed_archive(registry, archive_hash, archive)

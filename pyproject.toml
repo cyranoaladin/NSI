@@ -2,11 +2,23 @@
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 addopts = "-ra"
+norecursedirs = [
+    ".*",
+    "__pycache__",
+    "build",
+    "dist",
+    "*.egg",
+    "node_modules",
+    "nsi-enseignement",
+]
 
 [tool.ruff]
 target-version = "py312"
 line-length = 100
 include = [
+    "scrapping_NSI/safe_archive.py",
+    "scrapping_NSI/organizer_nsi.py",
+    "scrapping_NSI/scraper_eduscol.py",
     "scripts/**/*.py",
     "tests/**/*.py",
 ]
@@ -16,6 +28,7 @@ exclude = [
     "__pycache__",
     "dist",
     "01_build_reports",
+    "nsi-enseignement",
 ]
 
 [tool.ruff.lint]

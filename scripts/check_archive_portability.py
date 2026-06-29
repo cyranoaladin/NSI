@@ -4,12 +4,16 @@ from __future__ import annotations
 
 import subprocess
 import sys
-import tarfile
 import tempfile
 from dataclasses import dataclass, field
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scrapping_NSI.safe_archive import safe_extract_tar  # noqa: E402
+
 ARCHIVE = ROOT / 'dist/source_clean.tar.gz'
 BUNDLE = ROOT / 'dist/git_bundle.bundle'
 FORBIDDEN_PARTS = {'.git', '__pycache__', '.pytest_cache', '.mypy_cache', '.ruff_cache', '.venv'}
@@ -47,20 +51,19 @@ def analyze_archive_portability(root: Path = ROOT) -> ArchivePortabilityResult:
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp)
         try:
-            with tarfile.open(archive, 'r:gz') as tar:
-                tar.extractall(tmp_path)
+            safe_extract_tar(archive, tmp_path)
         except Exception as exc:
             errors.append(f'archive extraction failed: {exc}')
             return result
         repo = tmp_path / 'nsi-enseignement'
         for path in repo.rglob('*'):
-            rel = path.relative_to(repo)
-            if forbidden(rel):
-                errors.append(f'forbidden artifact in archive: {rel}')
-        for rel in REQUIRED_FILES:
-            path = repo / rel
+            rel_path = path.relative_to(repo)
+            if forbidden(rel_path):
+                errors.append(f'forbidden artifact in archive: {rel_path}')
+        for required in REQUIRED_FILES:
+            path = repo / required
             if not path.exists() or not path.read_text(encoding='utf-8', errors='replace').strip():
-                errors.append(f'required progression file unreadable: {rel}')
+                errors.append(f'required progression file unreadable: {required}')
         env = {'PYTHONDONTWRITEBYTECODE': '1'}
         for script in CHECKS:
             run = subprocess.run([sys.executable, script], cwd=repo, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
