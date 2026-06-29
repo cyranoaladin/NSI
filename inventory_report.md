@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 930
+- Total ressources : 941
 - Ressources pédagogiques : 53
-- Ressources techniques : 877
+- Ressources techniques : 888
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 922
+- generated: 933
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 410
+- interne: 421
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 525
-- python: 93
-- script: 198
+- document: 530
+- python: 95
+- script: 200
 - sequence: 45
-- test: 55
+- test: 57
 
 ## Répartition par statut
-- needs_review: 930
+- needs_review: 941
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 730
+- mixte: 741
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -48,6 +48,10 @@
   - .pre-commit-config.yaml
   - 00_programmes_officiels/README.md
   - 00_programmes_officiels/programme_nsi_2019.yaml
+  - 00_programmes_officiels/programme_nsi_premiere.pdf
+  - 00_programmes_officiels/programme_nsi_premiere.txt
+  - 00_programmes_officiels/programme_nsi_terminale.pdf
+  - 00_programmes_officiels/programme_nsi_terminale.txt
   - 01_build_reports/P05_substance_review.json
   - 01_build_reports/substance_report.md
   - 01_build_reports/substance_reports/_substance_review.html
@@ -654,23 +658,27 @@
   - reports/lot1/lot1_validation_log.md
   - reports/lot1/repo_map.md
   - reports/lot2/lot2_validation_log.md
+  - reports/lot3/lot3_validation_log.md
   - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
   - scientific_claims_review_report.md
   - scraping_ingestion_plan.md
   - scraping_strategy.md
+  - scrapping_NSI/__init__.py
   - scrapping_NSI/netpolicy.py
   - scrapping_NSI/organizer_nsi.py
   - scrapping_NSI/provenance.py
   - scrapping_NSI/pyproject.toml
   - scrapping_NSI/ruff.toml
+  - scrapping_NSI/safe_archive.py
   - scrapping_NSI/scraper_eduscol.py
   - scrapping_NSI/scraper_nsi_v2.py
   - scrapping_NSI/test_netpolicy.py
   - scrapping_NSI/test_provenance.py
   - scrapping_NSI/test_scraper_eduscol.py
   - scrapping_NSI/test_scraper_nsi_v2.py
+  - scripts/__init__.py
   - scripts/_course_sheets_common.py
   - scripts/_drive_paths.py
   - scripts/_inventory_utils.py
@@ -679,6 +687,7 @@
   - scripts/_qa_common.py
   - scripts/_session_checks.py
   - scripts/_supports_evidence.py
+  - scripts/archive_security.py
   - scripts/build_all.py
   - scripts/build_source_archive.py
   - scripts/build_source_zip.py
@@ -931,6 +940,8 @@
   - tests/test_local_drive_traceability.py
   - tests/test_lot1_drive_gate_boundary.py
   - tests/test_lot2_scraper_content_dedup.py
+  - tests/test_lot3_archive_security.py
+  - tests/test_lot3_topological_isolation.py
   - tests/test_missing_register_actionability.py
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
@@ -1025,6 +1036,10 @@
   - .pre-commit-config.yaml
   - 00_programmes_officiels/README.md
   - 00_programmes_officiels/programme_nsi_2019.yaml
+  - 00_programmes_officiels/programme_nsi_premiere.pdf
+  - 00_programmes_officiels/programme_nsi_premiere.txt
+  - 00_programmes_officiels/programme_nsi_terminale.pdf
+  - 00_programmes_officiels/programme_nsi_terminale.txt
   - 01_build_reports/P05_substance_review.json
   - 01_build_reports/substance_report.md
   - 01_build_reports/substance_reports/_substance_review.html
@@ -1612,23 +1627,27 @@
   - reports/lot1/lot1_validation_log.md
   - reports/lot1/repo_map.md
   - reports/lot2/lot2_validation_log.md
+  - reports/lot3/lot3_validation_log.md
   - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
   - scientific_claims_review_report.md
   - scraping_ingestion_plan.md
   - scraping_strategy.md
+  - scrapping_NSI/__init__.py
   - scrapping_NSI/netpolicy.py
   - scrapping_NSI/organizer_nsi.py
   - scrapping_NSI/provenance.py
   - scrapping_NSI/pyproject.toml
   - scrapping_NSI/ruff.toml
+  - scrapping_NSI/safe_archive.py
   - scrapping_NSI/scraper_eduscol.py
   - scrapping_NSI/scraper_nsi_v2.py
   - scrapping_NSI/test_netpolicy.py
   - scrapping_NSI/test_provenance.py
   - scrapping_NSI/test_scraper_eduscol.py
   - scrapping_NSI/test_scraper_nsi_v2.py
+  - scripts/__init__.py
   - scripts/_course_sheets_common.py
   - scripts/_drive_paths.py
   - scripts/_inventory_utils.py
@@ -1637,6 +1656,7 @@
   - scripts/_qa_common.py
   - scripts/_session_checks.py
   - scripts/_supports_evidence.py
+  - scripts/archive_security.py
   - scripts/build_all.py
   - scripts/build_source_archive.py
   - scripts/build_source_zip.py
@@ -1863,6 +1883,8 @@
   - tests/test_local_drive_traceability.py
   - tests/test_lot1_drive_gate_boundary.py
   - tests/test_lot2_scraper_content_dedup.py
+  - tests/test_lot3_archive_security.py
+  - tests/test_lot3_topological_isolation.py
   - tests/test_missing_register_actionability.py
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
@@ -1954,6 +1976,10 @@
 - .pre-commit-config.yaml
 - 00_programmes_officiels/README.md
 - 00_programmes_officiels/programme_nsi_2019.yaml
+- 00_programmes_officiels/programme_nsi_premiere.pdf
+- 00_programmes_officiels/programme_nsi_premiere.txt
+- 00_programmes_officiels/programme_nsi_terminale.pdf
+- 00_programmes_officiels/programme_nsi_terminale.txt
 - 01_build_reports/P05_substance_review.json
 - 01_build_reports/substance_report.md
 - 01_build_reports/substance_reports/_substance_review.html
@@ -2499,23 +2525,27 @@
 - reports/lot1/lot1_validation_log.md
 - reports/lot1/repo_map.md
 - reports/lot2/lot2_validation_log.md
+- reports/lot3/lot3_validation_log.md
 - reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json
 - scientific_claims_review_report.md
 - scraping_ingestion_plan.md
 - scraping_strategy.md
+- scrapping_NSI/__init__.py
 - scrapping_NSI/netpolicy.py
 - scrapping_NSI/organizer_nsi.py
 - scrapping_NSI/provenance.py
 - scrapping_NSI/pyproject.toml
 - scrapping_NSI/ruff.toml
+- scrapping_NSI/safe_archive.py
 - scrapping_NSI/scraper_eduscol.py
 - scrapping_NSI/scraper_nsi_v2.py
 - scrapping_NSI/test_netpolicy.py
 - scrapping_NSI/test_provenance.py
 - scrapping_NSI/test_scraper_eduscol.py
 - scrapping_NSI/test_scraper_nsi_v2.py
+- scripts/__init__.py
 - scripts/_course_sheets_common.py
 - scripts/_drive_paths.py
 - scripts/_inventory_utils.py
@@ -2524,6 +2554,7 @@
 - scripts/_qa_common.py
 - scripts/_session_checks.py
 - scripts/_supports_evidence.py
+- scripts/archive_security.py
 - scripts/build_all.py
 - scripts/build_source_archive.py
 - scripts/build_source_zip.py
@@ -2770,6 +2801,8 @@
 - tests/test_local_drive_traceability.py
 - tests/test_lot1_drive_gate_boundary.py
 - tests/test_lot2_scraper_content_dedup.py
+- tests/test_lot3_archive_security.py
+- tests/test_lot3_topological_isolation.py
 - tests/test_missing_register_actionability.py
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
@@ -2814,6 +2847,10 @@
 - .pre-commit-config.yaml
 - 00_programmes_officiels/README.md
 - 00_programmes_officiels/programme_nsi_2019.yaml
+- 00_programmes_officiels/programme_nsi_premiere.pdf
+- 00_programmes_officiels/programme_nsi_premiere.txt
+- 00_programmes_officiels/programme_nsi_terminale.pdf
+- 00_programmes_officiels/programme_nsi_terminale.txt
 - 01_build_reports/P05_substance_review.json
 - 01_build_reports/substance_report.md
 - 01_build_reports/substance_reports/_substance_review.html
@@ -3428,23 +3465,27 @@
 - reports/lot1/lot1_validation_log.md
 - reports/lot1/repo_map.md
 - reports/lot2/lot2_validation_log.md
+- reports/lot3/lot3_validation_log.md
 - reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json
 - scientific_claims_review_report.md
 - scraping_ingestion_plan.md
 - scraping_strategy.md
+- scrapping_NSI/__init__.py
 - scrapping_NSI/netpolicy.py
 - scrapping_NSI/organizer_nsi.py
 - scrapping_NSI/provenance.py
 - scrapping_NSI/pyproject.toml
 - scrapping_NSI/ruff.toml
+- scrapping_NSI/safe_archive.py
 - scrapping_NSI/scraper_eduscol.py
 - scrapping_NSI/scraper_nsi_v2.py
 - scrapping_NSI/test_netpolicy.py
 - scrapping_NSI/test_provenance.py
 - scrapping_NSI/test_scraper_eduscol.py
 - scrapping_NSI/test_scraper_nsi_v2.py
+- scripts/__init__.py
 - scripts/_course_sheets_common.py
 - scripts/_drive_paths.py
 - scripts/_inventory_utils.py
@@ -3453,6 +3494,7 @@
 - scripts/_qa_common.py
 - scripts/_session_checks.py
 - scripts/_supports_evidence.py
+- scripts/archive_security.py
 - scripts/build_all.py
 - scripts/build_source_archive.py
 - scripts/build_source_zip.py
@@ -3705,6 +3747,8 @@
 - tests/test_local_drive_traceability.py
 - tests/test_lot1_drive_gate_boundary.py
 - tests/test_lot2_scraper_content_dedup.py
+- tests/test_lot3_archive_security.py
+- tests/test_lot3_topological_isolation.py
 - tests/test_missing_register_actionability.py
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py

@@ -13,6 +13,7 @@ import logging
 import os
 import time
 import urllib.request
+from typing import Any, Protocol, cast
 from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
@@ -111,19 +112,19 @@ class CappedRetry(Retry):
     la valeur à max_retry_after secondes.
     """
 
-    def __init__(self, *, max_retry_after: int = MAX_RETRY_AFTER, **kwargs: object) -> None:
+    def __init__(self, *, max_retry_after: int = MAX_RETRY_AFTER, **kwargs: Any) -> None:
         self.max_retry_after = max_retry_after
         super().__init__(**kwargs)
 
-    def get_retry_after(self, response: object) -> float | None:
-        retry_after = super().get_retry_after(response)  # type: ignore[arg-type]
+    def get_retry_after(self, response: Any) -> float | None:
+        retry_after = super().get_retry_after(response)
         if retry_after is not None and retry_after > self.max_retry_after:
             return float(self.max_retry_after)
         return retry_after
 
-    def new(self, **kw: object) -> CappedRetry:
+    def new(self, **kw: Any) -> CappedRetry:
         kw.setdefault("max_retry_after", self.max_retry_after)
-        return super().new(**kw)  # type: ignore[return-value]
+        return super().new(**kw)
 
 
 def build_session(
@@ -151,21 +152,29 @@ def build_session(
     return session
 
 
+class ThrottleClock(Protocol):
+    def monotonic(self) -> float:
+        raise RuntimeError("Protocol method")
+
+    def sleep(self, seconds: float) -> None:
+        raise RuntimeError("Protocol method")
+
+
 class DomainThrottle:
     """Maintient une carte domaine → dernier_fetch sur horloge monotone."""
 
-    def __init__(self, clock: object = None) -> None:
+    def __init__(self, clock: ThrottleClock | None = None) -> None:
         self._last_fetch: dict[str, float] = {}
-        self._clock = clock or time
+        self._clock: ThrottleClock = clock or cast(ThrottleClock, time)
 
     def wait(self, domain: str, delay: float) -> None:
         """Attend le délai requis depuis le dernier fetch sur ce domaine."""
-        now = self._clock.monotonic()  # type: ignore[union-attr]
+        now = self._clock.monotonic()
         last = self._last_fetch.get(domain, 0.0)
         remaining = delay - (now - last)
         if remaining > 0:
-            self._clock.sleep(remaining)  # type: ignore[union-attr]
-        self._last_fetch[domain] = self._clock.monotonic()  # type: ignore[union-attr]
+            self._clock.sleep(remaining)
+        self._last_fetch[domain] = self._clock.monotonic()
 
 
 def polite_get(

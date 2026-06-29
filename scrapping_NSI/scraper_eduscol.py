@@ -13,13 +13,13 @@ et provenance pour la traçabilité de l'origine des ressources.
 from __future__ import annotations
 
 import os
-import zipfile
 import shutil
+import sys
+import zipfile
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
 from bs4 import BeautifulSoup
-
 from netpolicy import (
     DEFAULT_USER_AGENT,
     DomainThrottle,
@@ -28,6 +28,12 @@ from netpolicy import (
     polite_get,
 )
 from provenance import compute_sha256, guess_license, write_provenance_record
+
+ROOT_DIR = Path(__file__).resolve().parents[1]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+from scrapping_NSI.safe_archive import ArchiveSecurityError, safe_extract_zip  # noqa: E402
 
 # URLs racines officielles de la spécialité NSI sur Eduscol STI
 EDUSCOL_NSI_URLS = [
@@ -48,16 +54,14 @@ def clean_name(name: str) -> str:
 def extract_and_sort_zip(zip_path: str, base_dest_dir: str) -> None:
     """Extrait une archive ZIP et trie son contenu par extension.
 
-    Le dédoublonnage par compteur (Lot 1) et le tri sont testés.
-    Le durcissement zip-slip / zip-bomb / BadZipFile sera ajouté au Lot 3.
+    Le ZIP est extrait via le garde Lot 3 avant tri: zip-slip, volume
+    décompressé, nombre de fichiers et ratio de compression sont bloqués.
     """
     temp_extraction_dir = os.path.join(base_dest_dir, "_temp_zip_extraction")
-    os.makedirs(temp_extraction_dir, exist_ok=True)
 
     try:
         print(f"  [ZIP] Décompression de l'archive : {os.path.basename(zip_path)}...")
-        with zipfile.ZipFile(zip_path, "r") as zip_ref:
-            zip_ref.extractall(temp_extraction_dir)  # pragma: no cover — durcissement Lot 3
+        safe_extract_zip(Path(zip_path), Path(temp_extraction_dir))
 
         compteur_fichiers = 0
         for root, _, files in os.walk(temp_extraction_dir):
@@ -105,9 +109,12 @@ def extract_and_sort_zip(zip_path: str, base_dest_dir: str) -> None:
 
         print(f"  [ZIP] Extraction réussie : {compteur_fichiers} fichiers triés et classés.")
 
-    except zipfile.BadZipFile:  # pragma: no cover — durcissement Lot 3
+    except ArchiveSecurityError as exc:
+        print(f"  [Erreur ZIP] Archive refusée pour raison de sécurité : {exc}")
+        raise
+    except zipfile.BadZipFile:  # pragma: no cover
         print(f"  [Erreur ZIP] L'archive {os.path.basename(zip_path)} semble corrompue.")
-    except Exception as e:  # pragma: no cover — durcissement Lot 3
+    except Exception as e:  # pragma: no cover
         print(f"  [Erreur ZIP] Échec lors du traitement de l'archive : {e}")
     finally:
         if os.path.exists(temp_extraction_dir):
@@ -145,6 +152,9 @@ def scrape_eduscol_nsi(
             continue
         if error:
             print(f"  [Erreur] {error}")
+            continue
+        if response is None:
+            print("  [Erreur] Réponse vide inattendue")
             continue
         if response.status_code != 200:
             print(f"  [Erreur] Impossible d'accéder à la page (Code : {response.status_code})")
@@ -212,6 +222,9 @@ def scrape_eduscol_nsi(
                     continue
                 if file_error:
                     print(f"    [Erreur requête] {file_error}")
+                    continue
+                if file_resp is None:
+                    print("    [Erreur requête] Réponse fichier vide inattendue")
                     continue
 
                 if file_resp.status_code == 200:

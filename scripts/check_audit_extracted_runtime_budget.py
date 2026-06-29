@@ -5,16 +5,21 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from collections.abc import Callable
 import inspect
 import os
 import signal
 import subprocess
-import tarfile
+import sys
 import tempfile
 import time
+from types import FunctionType
 
-from _qa_common import ROOT
+SCRIPT_ROOT = Path(__file__).resolve().parents[1]
+if str(SCRIPT_ROOT) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_ROOT))
+
+from scripts._qa_common import ROOT  # noqa: E402
+from scrapping_NSI.safe_archive import safe_extract_tar  # noqa: E402
 
 
 @dataclass
@@ -113,8 +118,7 @@ def extract_source_clean(root: Path = ROOT) -> tuple[tempfile.TemporaryDirectory
         raise FileNotFoundError(f"{archive.relative_to(root).as_posix()} absent")
     temp = tempfile.TemporaryDirectory()
     temp_path = Path(temp.name)
-    with tarfile.open(archive, "r:gz") as handle:
-        handle.extractall(temp_path)
+    safe_extract_tar(archive, temp_path)
     extracted = temp_path / "nsi-enseignement"
     if not extracted.exists():
         candidates = [path for path in temp_path.iterdir() if path.is_dir()]
@@ -162,7 +166,7 @@ def analyze_audit_extracted_runtime_budget(root: Path = ROOT) -> RuntimeBudgetRe
             temp.cleanup()
 
 
-def uses_source_archive_extraction(func: Callable[[], object]) -> bool:
+def uses_source_archive_extraction(func: FunctionType) -> bool:
     source = inspect.getsource(func)
     return "extract_source_clean" in source or "measured_root" in source or "source_clean.tar.gz" in source
 

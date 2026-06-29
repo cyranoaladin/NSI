@@ -4,9 +4,15 @@
 from __future__ import annotations
 
 import re
+import sys
+from pathlib import Path
 
-from _qa_common import ROOT, print_result
-import check_quality_gates
+SCRIPT_ROOT = Path(__file__).resolve().parents[1]
+if str(SCRIPT_ROOT) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_ROOT))
+
+from scripts import check_quality_gates  # noqa: E402
+from scripts._qa_common import ROOT, print_result  # noqa: E402
 
 
 MAKEFILE = ROOT / "Makefile"
