@@ -2,7 +2,6 @@
 branch = True
 omit =
     nsi-enseignement/*
-    */nsi-enseignement/*
     .venv/*
     */.venv/*
     tests/*

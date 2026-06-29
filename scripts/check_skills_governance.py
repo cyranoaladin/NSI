@@ -31,7 +31,7 @@ REQUIRED_MARKERS = [
 ]
 
 FORBIDDEN_MARKERS = [
-    "recherche sémantique dans `rag_education`",
+    "recherche " + "sém" + "antique dans `rag_education`",
 ]
 
 

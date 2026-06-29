@@ -168,6 +168,10 @@ Les noms propres suspects sont listés pour revue humaine.
 - reports/lot1/repo_map.md: nom propre suspect -> Proposeur System
 - reports/lot1/repo_map.md: nom propre suspect -> Conclusion Phase
 - reports/lot2/lot2_validation_log.md: nom propre suspect -> Miss Branch
+- reports/lot3/lot3_hardening_validation_log.md: nom propre suspect -> Miss Branch
+- reports/lot3/lot3_hardening_validation_log.md: nom propre suspect -> Grep-Garde
+- reports/lot3/lot3_hardening_validation_log.md: nom propre suspect -> Cibles Makefile
+- reports/lot3/lot3_hardening_validation_log.md: nom propre suspect -> État Git
 - reports/lot3/lot3_validation_log.md: nom propre suspect -> Validation Zip-Slip
 - reports/lot3/lot3_validation_log.md: nom propre suspect -> Zip-Bomb
 - reports/lot3/lot3_validation_log.md: nom propre suspect -> Miss Branch
@@ -206,11 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_tp_test_alignment.py: nom propre suspect -> Test Alignment Report
 - scripts/generate_qa_report.py: nom propre suspect -> Plan Drive
 - scripts/generate_qa_report.py: nom propre suspect -> Lots Drive
-- scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
-- scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
-- scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
-- scripts/rag_diagnose_search_timeout.py: nom propre suspect -> Content-Type
-- ... 28 alertes supplémentaires non affichées
+- ... 36 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 

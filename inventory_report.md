@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 941
+- Total ressources : 950
 - Ressources pédagogiques : 53
-- Ressources techniques : 888
+- Ressources techniques : 897
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 933
+- generated: 942
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 421
+- interne: 430
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 530
+- document: 534
 - python: 95
-- script: 200
+- script: 201
 - sequence: 45
-- test: 57
+- test: 61
 
 ## Répartition par statut
-- needs_review: 941
+- needs_review: 950
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 741
+- mixte: 750
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -53,10 +53,6 @@
   - 00_programmes_officiels/programme_nsi_terminale.pdf
   - 00_programmes_officiels/programme_nsi_terminale.txt
   - 01_build_reports/P05_substance_review.json
-  - 01_build_reports/substance_report.md
-  - 01_build_reports/substance_reports/_substance_review.html
-  - 01_build_reports/substance_reports/_substance_review.md
-  - 01_build_reports/substance_review.json
   - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
   - 01_charte_graphique_et_pedagogique/charte_graphique.md
   - 01_charte_graphique_et_pedagogique/metadata_schema.md
@@ -585,6 +581,10 @@
   - coverage_sources.md
   - delivery_policy.md
   - differentiation_quality_report.md
+  - docs/archive_security_policy.md
+  - docs/local_excludes_required.md
+  - docs/repo_topology.md
+  - docs/source_archive_policy.md
   - drive_inventory.csv
   - drive_mapping.md
   - drive_quarantine/README.md
@@ -658,7 +658,11 @@
   - reports/lot1/lot1_validation_log.md
   - reports/lot1/repo_map.md
   - reports/lot2/lot2_validation_log.md
+  - reports/lot3/archive_extraction_inventory.md
+  - reports/lot3/archive_security_inventory.md
+  - reports/lot3/lot3_hardening_validation_log.md
   - reports/lot3/lot3_validation_log.md
+  - reports/lot3/post_merge_audit.md
   - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
@@ -812,6 +816,7 @@
   - scripts/check_ready_supports_required_sections.py
   - scripts/check_register_no_hidden_operational_debt.py
   - scripts/check_rendered_unit_artifacts.py
+  - scripts/check_repo_topology.py
   - scripts/check_reports_policy.py
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
@@ -918,7 +923,9 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
   - tests/conftest.py
   - tests/fixtures/substance_judge/P05.json
+  - tests/test_archive_integration_wrappers.py
   - tests/test_archive_portability_modes.py
+  - tests/test_archive_security_imports.py
   - tests/test_audit_extracted_source_no_hang.py
   - tests/test_audit_strategic_integration.py
   - tests/test_build_artifacts.py
@@ -956,12 +963,14 @@
   - tests/test_ready_supports_gates.py
   - tests/test_register_semantic_consistency.py
   - tests/test_render_substance_report_cli.py
+  - tests/test_repo_topology.py
   - tests/test_run_python_tests.py
   - tests/test_secret_guard.py
   - tests/test_sequence_contracts.py
   - tests/test_sequence_pack_and_scaffold_controls.py
   - tests/test_session_referenced_files_exist.py
   - tests/test_session_specificity.py
+  - tests/test_source_archive_policy.py
   - tests/test_source_zip_delivery.py
   - tests/test_source_zip_timestamps.py
   - tests/test_status_promotion_guard.py
@@ -1041,10 +1050,6 @@
   - 00_programmes_officiels/programme_nsi_terminale.pdf
   - 00_programmes_officiels/programme_nsi_terminale.txt
   - 01_build_reports/P05_substance_review.json
-  - 01_build_reports/substance_report.md
-  - 01_build_reports/substance_reports/_substance_review.html
-  - 01_build_reports/substance_reports/_substance_review.md
-  - 01_build_reports/substance_review.json
   - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
   - 01_charte_graphique_et_pedagogique/charte_graphique.md
   - 01_charte_graphique_et_pedagogique/metadata_schema.md
@@ -1580,6 +1585,10 @@
   - coverage_sources.md
   - delivery_policy.md
   - differentiation_quality_report.md
+  - docs/archive_security_policy.md
+  - docs/local_excludes_required.md
+  - docs/repo_topology.md
+  - docs/source_archive_policy.md
   - drive_inventory.csv
   - drive_mapping.md
   - drive_quarantine/README.md
@@ -1627,7 +1636,11 @@
   - reports/lot1/lot1_validation_log.md
   - reports/lot1/repo_map.md
   - reports/lot2/lot2_validation_log.md
+  - reports/lot3/archive_extraction_inventory.md
+  - reports/lot3/archive_security_inventory.md
+  - reports/lot3/lot3_hardening_validation_log.md
   - reports/lot3/lot3_validation_log.md
+  - reports/lot3/post_merge_audit.md
   - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
@@ -1781,6 +1794,7 @@
   - scripts/check_ready_supports_required_sections.py
   - scripts/check_register_no_hidden_operational_debt.py
   - scripts/check_rendered_unit_artifacts.py
+  - scripts/check_repo_topology.py
   - scripts/check_reports_policy.py
   - scripts/check_required_sections.py
   - scripts/check_scientific_claims_review.py
@@ -1861,7 +1875,9 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tests/test_structures_tools.py
   - tests/conftest.py
   - tests/fixtures/substance_judge/P05.json
+  - tests/test_archive_integration_wrappers.py
   - tests/test_archive_portability_modes.py
+  - tests/test_archive_security_imports.py
   - tests/test_audit_extracted_source_no_hang.py
   - tests/test_audit_strategic_integration.py
   - tests/test_build_artifacts.py
@@ -1899,12 +1915,14 @@
   - tests/test_ready_supports_gates.py
   - tests/test_register_semantic_consistency.py
   - tests/test_render_substance_report_cli.py
+  - tests/test_repo_topology.py
   - tests/test_run_python_tests.py
   - tests/test_secret_guard.py
   - tests/test_sequence_contracts.py
   - tests/test_sequence_pack_and_scaffold_controls.py
   - tests/test_session_referenced_files_exist.py
   - tests/test_session_specificity.py
+  - tests/test_source_archive_policy.py
   - tests/test_source_zip_delivery.py
   - tests/test_source_zip_timestamps.py
   - tests/test_status_promotion_guard.py
@@ -1981,10 +1999,6 @@
 - 00_programmes_officiels/programme_nsi_terminale.pdf
 - 00_programmes_officiels/programme_nsi_terminale.txt
 - 01_build_reports/P05_substance_review.json
-- 01_build_reports/substance_report.md
-- 01_build_reports/substance_reports/_substance_review.html
-- 01_build_reports/substance_reports/_substance_review.md
-- 01_build_reports/substance_review.json
 - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
 - 01_charte_graphique_et_pedagogique/charte_graphique.md
 - 01_charte_graphique_et_pedagogique/metadata_schema.md
@@ -2455,6 +2469,10 @@
 - coverage_sources.md
 - delivery_policy.md
 - differentiation_quality_report.md
+- docs/archive_security_policy.md
+- docs/local_excludes_required.md
+- docs/repo_topology.md
+- docs/source_archive_policy.md
 - drive_inventory.csv
 - drive_mapping.md
 - drive_quarantine/README.md
@@ -2525,7 +2543,11 @@
 - reports/lot1/lot1_validation_log.md
 - reports/lot1/repo_map.md
 - reports/lot2/lot2_validation_log.md
+- reports/lot3/archive_extraction_inventory.md
+- reports/lot3/archive_security_inventory.md
+- reports/lot3/lot3_hardening_validation_log.md
 - reports/lot3/lot3_validation_log.md
+- reports/lot3/post_merge_audit.md
 - reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json
@@ -2679,6 +2701,7 @@
 - scripts/check_ready_supports_required_sections.py
 - scripts/check_register_no_hidden_operational_debt.py
 - scripts/check_rendered_unit_artifacts.py
+- scripts/check_repo_topology.py
 - scripts/check_reports_policy.py
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
@@ -2779,7 +2802,9 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
 - tests/conftest.py
 - tests/fixtures/substance_judge/P05.json
+- tests/test_archive_integration_wrappers.py
 - tests/test_archive_portability_modes.py
+- tests/test_archive_security_imports.py
 - tests/test_audit_extracted_source_no_hang.py
 - tests/test_audit_strategic_integration.py
 - tests/test_build_artifacts.py
@@ -2817,12 +2842,14 @@
 - tests/test_ready_supports_gates.py
 - tests/test_register_semantic_consistency.py
 - tests/test_render_substance_report_cli.py
+- tests/test_repo_topology.py
 - tests/test_run_python_tests.py
 - tests/test_secret_guard.py
 - tests/test_sequence_contracts.py
 - tests/test_sequence_pack_and_scaffold_controls.py
 - tests/test_session_referenced_files_exist.py
 - tests/test_session_specificity.py
+- tests/test_source_archive_policy.py
 - tests/test_source_zip_delivery.py
 - tests/test_source_zip_timestamps.py
 - tests/test_status_promotion_guard.py
@@ -2852,10 +2879,6 @@
 - 00_programmes_officiels/programme_nsi_terminale.pdf
 - 00_programmes_officiels/programme_nsi_terminale.txt
 - 01_build_reports/P05_substance_review.json
-- 01_build_reports/substance_report.md
-- 01_build_reports/substance_reports/_substance_review.html
-- 01_build_reports/substance_reports/_substance_review.md
-- 01_build_reports/substance_review.json
 - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
 - 01_charte_graphique_et_pedagogique/charte_graphique.md
 - 01_charte_graphique_et_pedagogique/metadata_schema.md
@@ -3391,6 +3414,10 @@
 - coverage_sources.md
 - delivery_policy.md
 - differentiation_quality_report.md
+- docs/archive_security_policy.md
+- docs/local_excludes_required.md
+- docs/repo_topology.md
+- docs/source_archive_policy.md
 - drive_inventory.csv
 - drive_mapping.md
 - drive_quarantine/README.md
@@ -3465,7 +3492,11 @@
 - reports/lot1/lot1_validation_log.md
 - reports/lot1/repo_map.md
 - reports/lot2/lot2_validation_log.md
+- reports/lot3/archive_extraction_inventory.md
+- reports/lot3/archive_security_inventory.md
+- reports/lot3/lot3_hardening_validation_log.md
 - reports/lot3/lot3_validation_log.md
+- reports/lot3/post_merge_audit.md
 - reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json
@@ -3619,6 +3650,7 @@
 - scripts/check_ready_supports_required_sections.py
 - scripts/check_register_no_hidden_operational_debt.py
 - scripts/check_rendered_unit_artifacts.py
+- scripts/check_repo_topology.py
 - scripts/check_reports_policy.py
 - scripts/check_required_sections.py
 - scripts/check_scientific_claims_review.py
@@ -3725,7 +3757,9 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
 - tests/conftest.py
 - tests/fixtures/substance_judge/P05.json
+- tests/test_archive_integration_wrappers.py
 - tests/test_archive_portability_modes.py
+- tests/test_archive_security_imports.py
 - tests/test_audit_extracted_source_no_hang.py
 - tests/test_audit_strategic_integration.py
 - tests/test_build_artifacts.py
@@ -3763,12 +3797,14 @@
 - tests/test_ready_supports_gates.py
 - tests/test_register_semantic_consistency.py
 - tests/test_render_substance_report_cli.py
+- tests/test_repo_topology.py
 - tests/test_run_python_tests.py
 - tests/test_secret_guard.py
 - tests/test_sequence_contracts.py
 - tests/test_sequence_pack_and_scaffold_controls.py
 - tests/test_session_referenced_files_exist.py
 - tests/test_session_specificity.py
+- tests/test_source_archive_policy.py
 - tests/test_source_zip_delivery.py
 - tests/test_source_zip_timestamps.py
 - tests/test_status_promotion_guard.py

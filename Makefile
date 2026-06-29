@@ -23,6 +23,7 @@ check-generated-freshness:
 
 audit-core:
 	python scripts/check_git_clean.py
+	python scripts/check_repo_topology.py
 	python scripts/check_audit_folder_policy.py
 	python scripts/check_content_tree_policy.py
 	python scripts/check_rag_config.py

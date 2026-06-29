@@ -25,7 +25,7 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
-from scrapping_NSI.safe_archive import ArchiveSecurityError, safe_extract_zip  # noqa: E402
+from scripts.archive_security import ArchiveSecurityError, safe_extract_zip  # noqa: E402
 
 SOURCE_DIRS = [Path("ressources_nsi_extraites"), Path("ressources_nsi_extraites_v2")]
 DRIVE_DIR = Path(os.getenv("NSI_DOCUMENTS_DRIVE_ROOT", str(ROOT_DIR / "Documents_DRIVE")))

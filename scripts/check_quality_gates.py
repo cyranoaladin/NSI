@@ -21,6 +21,7 @@ PYTHON = sys.executable
 
 CORE_CHECKS: list[list[str]] = [
     ["scripts/check_git_clean.py"],
+    ["scripts/check_repo_topology.py"],
     ["scripts/check_audit_folder_policy.py"],
     ["scripts/check_content_tree_policy.py"],
     ["scripts/check_rag_config.py"],

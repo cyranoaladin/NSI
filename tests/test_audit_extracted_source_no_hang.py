@@ -63,7 +63,7 @@ class AuditExtractedSourceNoHangTest(unittest.TestCase):
                 handle.add(payload, arcname="../evil.txt")
 
             with tarfile.open(archive, "r:gz") as handle:
-                with self.assertRaisesRegex(ValueError, "chemin sortant"):
+                with self.assertRaisesRegex(ValueError, "hors du repertoire cible|Zip-Slip"):
                     run_audit_extracted_source.safe_extract_tar(handle, root / "out")
             self.assertFalse((root / "evil.txt").exists())
 
@@ -78,7 +78,7 @@ class AuditExtractedSourceNoHangTest(unittest.TestCase):
                 handle.addfile(info, io.BytesIO(payload))
 
             with tarfile.open(archive, "r:gz") as handle:
-                with self.assertRaisesRegex(ValueError, "chemin absolu"):
+                with self.assertRaisesRegex(ValueError, "chemin archive absolu|Zip-Slip"):
                     run_audit_extracted_source.safe_extract_tar(handle, root / "out")
 
     def test_safe_extract_tar_accepts_normal_source_clean_layout(self) -> None:

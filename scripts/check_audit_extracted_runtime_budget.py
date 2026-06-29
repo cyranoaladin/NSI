@@ -19,7 +19,7 @@ if str(SCRIPT_ROOT) not in sys.path:
     sys.path.insert(0, str(SCRIPT_ROOT))
 
 from scripts._qa_common import ROOT  # noqa: E402
-from scrapping_NSI.safe_archive import safe_extract_tar  # noqa: E402
+from scripts.archive_security import safe_extract_tar  # noqa: E402
 
 
 @dataclass

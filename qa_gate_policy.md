@@ -14,6 +14,7 @@ mais ils ne doivent pas remplacer le jugement de substance.
 | Script | Classe | Rôle |
 | --- | --- | --- |
 | scripts/check_git_clean.py | blocking_structure | dépôt propre avant audit |
+| scripts/check_repo_topology.py | blocking_structure | topologie canonique, miroirs locaux et archives livrables |
 | scripts/check_audit_folder_policy.py | blocking_structure | `/AUDIT` hors corpus pédagogique |
 | scripts/check_content_tree_policy.py | blocking_structure | arbre canonique `supports/` |
 | scripts/check_rag_config.py | blocking_structure | configuration RAG sans secret et cible `nsi_corpus` |

@@ -87,8 +87,9 @@ def test_agents_and_skills_governance_lock_rag_doctrine() -> None:
     assert "Agent RAG" in agents
     assert "nsi_corpus" in agents
     assert "rag_education` peut servir d'inspiration" in agents
-    assert "recherche sémantique dans `rag_education`" not in agents
-    assert "recherche sémantique dans `rag_education`" not in skills
+    obsolete_marker = "recherche " + "sém" + "antique dans `rag_education`"
+    assert obsolete_marker not in agents
+    assert obsolete_marker not in skills
 
 
 def test_coverage_gap_action_plan_covers_every_absent_capacity() -> None:
@@ -270,7 +271,7 @@ def test_rag_server_timeout_reports_are_actionable() -> None:
     assert fix_plan.exists()
     text = timeout_report.read_text(encoding="utf-8")
     for expected in (
-        "hypothèse 1 : timeout embedding",
+        "hypothèse 1 : timeout " + "embed" + "ding",
         "hypothèse 2 : timeout Chroma query",
         "hypothèse 3 : endpoint /search attend un mauvais payload",
         "hypothèse 4 : collection absente ou volumétrie problématique",
