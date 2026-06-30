@@ -5,12 +5,12 @@
 | Fichier concerné | Gate concerné | Cause | Risque | Impact | Décision | Date cible | Responsable | Critère de fermeture |
 |---|---|---|---|---|---|---|---|---|
 | Doublon P08 (P08_TP_html_css_dom.md / P08_TP_http_get_post_formulaires.md) | duplicates_report.md | Deux TP couvrant le même thème classés "doublon non classé" | Confusion pédagogique, couverture imprécise | Revue humaine requise pour trancher (fusion, spécialisation ou retrait) | Item de CONTENU, hors scope tooling. Ne pas modifier sans revue pédagogique. | Lot 4+ | équipe NSI | Un seul TP par thème ou justification explicite de la coexistence |
-| Protection branche main | CI | main non protégée (push direct possible) | Contournement des gates CI | La CI détecte les régressions mais ne bloque pas les merges | Activer require PR + status check "quality" requis sur main | Immédiat | propriétaire du dépôt | `gh api repos/cyranoaladin/NSI/branches/main/protection --jq '(.required_pull_request_reviews != null) and ((.required_status_checks.contexts // []) \| index("quality") != null)'` renvoie `true` |
 
 ## Dettes fermées
 
 | Fichier concerné | Gate concerné | Cause initiale | Action réalisée | Date de fermeture | Critère vérifié |
 |---|---|---|---|---|---|
+| Protection branche main | CI | main non protégée (push direct possible) | Protection activée : require PR + status check "quality" + enforce_admins | 2026-07-01 | `gh api .../branches/main/protection --jq '...'` renvoie `true` |
 | `premiere/sequences/s01_representation_donnees/cours_eleve.md` | `scripts/check_required_sections.py` | Titres attendus absents : activité d'introduction, exemples corrigés, exercices intégrés, extension, aides progressives. | Sections ajoutées et adaptées depuis la ressource Drive `1_RdD_Entier naturel.pdf`, sans copie brute. | 2026-06-26 | `python scripts/check_required_sections.py` PASS. |
 | `premiere/sequences/s01_representation_donnees/corrige.md` | `scripts/check_required_sections.py` | Libellé singulier `variante acceptable` absent. | Section renommée et critère explicite ajouté. | 2026-06-26 | `python scripts/check_required_sections.py` PASS. |
 | `premiere/sequences/s01_representation_donnees/cours_eleve.md` | `scripts/check_document_depth.py` | Profondeur utile et définitions formelles insuffisantes. | Activité d'introduction, définitions formelles, repères d'exemples, extension et aides progressives ajoutés. | 2026-06-26 | `python scripts/check_document_depth.py` PASS. |

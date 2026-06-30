@@ -351,7 +351,7 @@ Action nécessaire :
 
 Il est interdit de masquer une lacune par une formulation vague.
 
-## 8. Standard fail-closed pour les gates et tests de policy
+## 9. Standard fail-closed pour les gates et tests de policy
 
 Tout gate ou test de policy DOIT échouer (fail-closed) si son evidence est
 absente. Un test qui vérifie `X not in body` doit d'abord assert que `body`
