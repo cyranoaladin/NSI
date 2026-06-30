@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 971
+- Total ressources : 972
 - Ressources pédagogiques : 53
-- Ressources techniques : 918
+- Ressources techniques : 919
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 963
+- generated: 964
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 451
+- interne: 452
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 548
+- document: 549
 - python: 95
 - script: 202
 - sequence: 45
 - test: 67
 
 ## Répartition par statut
-- needs_review: 971
+- needs_review: 972
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 771
+- mixte: 772
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -653,6 +653,7 @@
   - reports/closure2/corrective3_report.md
   - reports/closure2/corrective_report.md
   - reports/closure2/phaseA_closure_report.md
+  - reports/closure2/phaseA_final_report.md
   - reports/closure2/rag_prod_cutover_runbook.md
   - reports/closure2/rag_state_of_truth.md
   - reports/closure2/rag_target_architecture.md
@@ -1652,6 +1653,7 @@
   - reports/closure2/corrective3_report.md
   - reports/closure2/corrective_report.md
   - reports/closure2/phaseA_closure_report.md
+  - reports/closure2/phaseA_final_report.md
   - reports/closure2/rag_prod_cutover_runbook.md
   - reports/closure2/rag_state_of_truth.md
   - reports/closure2/rag_target_architecture.md
@@ -2580,6 +2582,7 @@
 - reports/closure2/corrective3_report.md
 - reports/closure2/corrective_report.md
 - reports/closure2/phaseA_closure_report.md
+- reports/closure2/phaseA_final_report.md
 - reports/closure2/rag_prod_cutover_runbook.md
 - reports/closure2/rag_state_of_truth.md
 - reports/closure2/rag_target_architecture.md
@@ -3550,6 +3553,7 @@
 - reports/closure2/corrective3_report.md
 - reports/closure2/corrective_report.md
 - reports/closure2/phaseA_closure_report.md
+- reports/closure2/phaseA_final_report.md
 - reports/closure2/rag_prod_cutover_runbook.md
 - reports/closure2/rag_state_of_truth.md
 - reports/closure2/rag_target_architecture.md
