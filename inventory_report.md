@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 961
+- Total ressources : 966
 - Ressources pédagogiques : 53
-- Ressources techniques : 908
+- Ressources techniques : 913
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 953
+- generated: 958
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 441
+- interne: 446
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 541
+- document: 544
 - python: 95
-- script: 201
+- script: 202
 - sequence: 45
-- test: 65
+- test: 66
 
 ## Répartition par statut
-- needs_review: 961
+- needs_review: 966
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 761
+- mixte: 766
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -649,6 +649,9 @@
   - rag_connection.md
   - rag_server_fix_plan.md
   - rag_timeout_diagnostic.md
+  - reports/closure2/rag_prod_cutover_runbook.md
+  - reports/closure2/rag_state_of_truth.md
+  - reports/closure2/rag_target_architecture.md
   - reports/drive_enrichment_report.md
   - reports/lot0_ruff_autofix_review.md
   - reports/lot1/drive_forensic.md
@@ -878,6 +881,7 @@
   - scripts/rag_coherence_report.py
   - scripts/rag_diagnose_search_timeout.py
   - scripts/rag_index_plan.py
+  - scripts/rag_ingest.py
   - scripts/rag_query_example.py
   - scripts/rag_smoke_test.py
   - scripts/rebuild_inventory.py
@@ -970,6 +974,7 @@
   - tests/test_packaging_modes.py
   - tests/test_private_data_detection.py
   - tests/test_rag_governance_and_indexes.py
+  - tests/test_rag_ingest.py
   - tests/test_ready_session_operationality.py
   - tests/test_ready_supports_gates.py
   - tests/test_register_semantic_consistency.py
@@ -1638,6 +1643,9 @@
   - rag_connection.md
   - rag_server_fix_plan.md
   - rag_timeout_diagnostic.md
+  - reports/closure2/rag_prod_cutover_runbook.md
+  - reports/closure2/rag_state_of_truth.md
+  - reports/closure2/rag_target_architecture.md
   - reports/drive_enrichment_report.md
   - reports/lot0_ruff_autofix_review.md
   - reports/lot1/drive_forensic.md
@@ -1867,6 +1875,7 @@
   - scripts/rag_coherence_report.py
   - scripts/rag_diagnose_search_timeout.py
   - scripts/rag_index_plan.py
+  - scripts/rag_ingest.py
   - scripts/rag_query_example.py
   - scripts/rag_smoke_test.py
   - scripts/rebuild_inventory.py
@@ -1933,6 +1942,7 @@
   - tests/test_packaging_modes.py
   - tests/test_private_data_detection.py
   - tests/test_rag_governance_and_indexes.py
+  - tests/test_rag_ingest.py
   - tests/test_ready_session_operationality.py
   - tests/test_ready_supports_gates.py
   - tests/test_register_semantic_consistency.py
@@ -2556,6 +2566,9 @@
 - rag_connection.md
 - rag_server_fix_plan.md
 - rag_timeout_diagnostic.md
+- reports/closure2/rag_prod_cutover_runbook.md
+- reports/closure2/rag_state_of_truth.md
+- reports/closure2/rag_target_architecture.md
 - reports/drive_enrichment_report.md
 - reports/lot0_ruff_autofix_review.md
 - reports/lot1/drive_forensic.md
@@ -2784,6 +2797,7 @@
 - scripts/rag_coherence_report.py
 - scripts/rag_diagnose_search_timeout.py
 - scripts/rag_index_plan.py
+- scripts/rag_ingest.py
 - scripts/rag_query_example.py
 - scripts/rag_smoke_test.py
 - scripts/rebuild_inventory.py
@@ -2871,6 +2885,7 @@
 - tests/test_packaging_modes.py
 - tests/test_private_data_detection.py
 - tests/test_rag_governance_and_indexes.py
+- tests/test_rag_ingest.py
 - tests/test_ready_session_operationality.py
 - tests/test_ready_supports_gates.py
 - tests/test_register_semantic_consistency.py
@@ -3516,6 +3531,9 @@
 - rag_connection.md
 - rag_server_fix_plan.md
 - rag_timeout_diagnostic.md
+- reports/closure2/rag_prod_cutover_runbook.md
+- reports/closure2/rag_state_of_truth.md
+- reports/closure2/rag_target_architecture.md
 - reports/drive_enrichment_report.md
 - reports/lot0_ruff_autofix_review.md
 - reports/lot1/drive_forensic.md
@@ -3745,6 +3763,7 @@
 - scripts/rag_coherence_report.py
 - scripts/rag_diagnose_search_timeout.py
 - scripts/rag_index_plan.py
+- scripts/rag_ingest.py
 - scripts/rag_query_example.py
 - scripts/rag_smoke_test.py
 - scripts/rebuild_inventory.py
@@ -3837,6 +3856,7 @@
 - tests/test_packaging_modes.py
 - tests/test_private_data_detection.py
 - tests/test_rag_governance_and_indexes.py
+- tests/test_rag_ingest.py
 - tests/test_ready_session_operationality.py
 - tests/test_ready_supports_gates.py
 - tests/test_register_semantic_consistency.py
