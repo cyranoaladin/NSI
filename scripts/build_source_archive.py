@@ -17,8 +17,9 @@ BUNDLE = DIST / 'git_bundle.bundle'
 # Source de vérité unique : réutilise CACHE_DIRS de cleanup_python_artifacts
 # pour garantir que toute entrée de cache nettoyée à l'audit est aussi exclue
 # de l'archive de livraison.
-sys.path.insert(0, str(ROOT / 'scripts'))
-from cleanup_python_artifacts import CACHE_DIRS  # noqa: E402
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from scripts.cleanup_python_artifacts import CACHE_DIRS  # noqa: E402
 
 EXCLUDED_PARTS = {'.git', '.venv', 'dist', 'build', '01_build_reports'} | CACHE_DIRS
 EXCLUDED_SUFFIXES = {'.pyc', '.pyo', '.aux', '.log', '.toc', '.out', '.fls'}
@@ -51,14 +52,19 @@ def iter_source_paths(root: Path = ROOT) -> list[Path]:
             if raw
         ]
         return [path for path in paths if path.exists()]
+    print(
+        "build_source_archive: fallback sans git - périmètre rglob indicatif, "
+        "à ne pas utiliser pour une release réelle sans revue",
+        file=sys.stderr,
+    )
     return sorted(path for path in root.rglob("*") if path.is_file())
 
 
-def copy_tree(target: Path) -> None:
+def copy_tree(target: Path, root: Path = ROOT) -> None:
     root_target = target / 'nsi-enseignement'
     root_target.mkdir(parents=True)
-    for path in iter_source_paths(ROOT):
-        rel = path.relative_to(ROOT)
+    for path in iter_source_paths(root):
+        rel = path.relative_to(root)
         if excluded(rel):
             continue
         dest = root_target / rel
@@ -70,15 +76,16 @@ def has_git_metadata(root: Path = ROOT) -> bool:
     return (root / ".git").exists()
 
 
-def build_source_tar() -> None:
-    DIST.mkdir(exist_ok=True)
+def build_source_tar(root: Path = ROOT, target: Path = SOURCE_TAR) -> Path:
+    target.parent.mkdir(exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp)
-        copy_tree(tmp_path)
-        if SOURCE_TAR.exists():
-            SOURCE_TAR.unlink()
-        with tarfile.open(SOURCE_TAR, 'w:gz') as tar:
+        copy_tree(tmp_path, root=root)
+        if target.exists():
+            target.unlink()
+        with tarfile.open(target, 'w:gz') as tar:
             tar.add(tmp_path / 'nsi-enseignement', arcname='nsi-enseignement')
+    return target
 
 
 def build_git_bundle() -> int:
@@ -87,7 +94,7 @@ def build_git_bundle() -> int:
 
 
 def main() -> int:
-    build_source_tar()
+    build_source_tar(ROOT, SOURCE_TAR)
     print(f'build_source_archive: wrote {SOURCE_TAR.relative_to(ROOT)}')
     if not has_git_metadata(ROOT):
         if BUNDLE.exists():

@@ -36,6 +36,12 @@ def write_zip(path: Path, files: dict[str, bytes]) -> None:
             archive.writestr(name, content)
 
 
+def write_zip_with_info(path: Path, infos: list[tuple[zipfile.ZipInfo, bytes]]) -> None:
+    with zipfile.ZipFile(path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+        for info, content in infos:
+            archive.writestr(info, content)
+
+
 def write_tar(path: Path, files: dict[str, bytes]) -> None:
     with tarfile.open(path, "w:gz") as archive:
         for name, content in files.items():
@@ -276,6 +282,140 @@ def test_safe_zip_rejects_absolute_member_and_file_count_limit(tmp_path: Path) -
         )
 
 
+@pytest.mark.parametrize(
+    "member_name",
+    [
+        "C:\\evil.txt",
+        "\\\\server\\share\\evil.txt",
+        "..\\..\\evil.txt",
+        ".",
+    ],
+)
+def test_safe_zip_rejects_windows_unc_mixed_and_empty_targets(
+    tmp_path: Path,
+    member_name: str,
+) -> None:
+    from scripts.archive_security import safe_extract_zip
+
+    archive = tmp_path / "bad_path.zip"
+    write_zip(archive, {member_name: b"owned"})
+
+    with pytest.raises(ValueError, match="zip-slip|Zip-Slip|chemin"):
+        safe_extract_zip(archive, tmp_path / "dest")
+
+    assert not (tmp_path / "evil.txt").exists()
+    assert not (tmp_path / "dest").exists()
+    assert not (tmp_path / "dest.part").exists()
+
+
+def test_safe_zip_rejects_symlink_external_attr(tmp_path: Path) -> None:
+    from scripts.archive_security import safe_extract_zip
+
+    archive = tmp_path / "symlink.zip"
+    info = zipfile.ZipInfo("link")
+    info.external_attr = (0o120777 & 0xFFFF) << 16
+    write_zip_with_info(archive, [(info, b"target")])
+
+    with pytest.raises(ValueError, match="symlink|lien|type"):
+        safe_extract_zip(archive, tmp_path / "dest")
+
+    assert not (tmp_path / "dest").exists()
+    assert not (tmp_path / "dest.part").exists()
+
+
+def test_safe_zip_rejects_duplicate_target_paths(tmp_path: Path) -> None:
+    from scripts.archive_security import safe_extract_zip
+
+    archive = tmp_path / "duplicate.zip"
+    with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as zip_handle:
+        zip_handle.writestr("same.txt", b"first")
+        zip_handle.writestr("./same.txt", b"second")
+
+    with pytest.raises(ValueError, match="doublon|duplicate"):
+        safe_extract_zip(archive, tmp_path / "dest")
+
+    assert not (tmp_path / "dest").exists()
+    assert not (tmp_path / "dest.part").exists()
+
+
+def test_safe_zip_rejects_more_than_default_member_limit_by_metadata(
+    tmp_path: Path,
+) -> None:
+    from scripts.archive_security import safe_extract_zip
+
+    archive = tmp_path / "many.zip"
+    write_zip(archive, {"one.txt": b"one"})
+
+    def many_members(self: zipfile.ZipFile) -> list[zipfile.ZipInfo]:
+        return [zipfile.ZipInfo(f"f{i}.txt") for i in range(10_001)]
+
+    with patch.object(zipfile.ZipFile, "infolist", many_members):
+        with pytest.raises(ValueError, match="nombre de fichiers"):
+            safe_extract_zip(archive, tmp_path / "dest")
+
+    assert not (tmp_path / "dest").exists()
+    assert not (tmp_path / "dest.part").exists()
+
+
+def test_safe_zip_runtime_volume_limit_cleans_staging_and_official_destination(
+    tmp_path: Path,
+) -> None:
+    from scripts.archive_security import ArchiveSecurityLimits, safe_extract_zip
+
+    archive = tmp_path / "stream_limit.zip"
+    write_zip(archive, {"payload.bin": b"abc"})
+    destination = tmp_path / "dest"
+    original_infolist = zipfile.ZipFile.infolist
+
+    def weak_metadata(self: zipfile.ZipFile) -> list[zipfile.ZipInfo]:
+        infos = original_infolist(self)
+        infos[0].file_size = 2
+        return infos
+
+    with patch.object(zipfile.ZipFile, "infolist", weak_metadata):
+        with patch.object(zipfile.ZipFile, "open", return_value=io.BytesIO(b"abc")):
+            with pytest.raises(ValueError, match="flux decompresse"):
+                safe_extract_zip(
+                    archive,
+                    destination,
+                    limits=ArchiveSecurityLimits(max_total_uncompressed_bytes=2),
+                )
+
+    assert not destination.exists()
+    assert not (tmp_path / "dest.part").exists()
+
+
+def test_safe_zip_failure_does_not_modify_existing_official_destination(
+    tmp_path: Path,
+) -> None:
+    from scripts.archive_security import ArchiveSecurityLimits, safe_extract_zip
+
+    archive = tmp_path / "stream_limit.zip"
+    write_zip(archive, {"new.txt": b"abc"})
+    destination = tmp_path / "dest"
+    destination.mkdir()
+    (destination / "existing.txt").write_text("kept", encoding="utf-8")
+    original_infolist = zipfile.ZipFile.infolist
+
+    def weak_metadata(self: zipfile.ZipFile) -> list[zipfile.ZipInfo]:
+        infos = original_infolist(self)
+        infos[0].file_size = 2
+        return infos
+
+    with patch.object(zipfile.ZipFile, "infolist", weak_metadata):
+        with patch.object(zipfile.ZipFile, "open", return_value=io.BytesIO(b"abc")):
+            with pytest.raises(ValueError, match="flux decompresse"):
+                safe_extract_zip(
+                    archive,
+                    destination,
+                    limits=ArchiveSecurityLimits(max_total_uncompressed_bytes=2),
+                )
+
+    assert (destination / "existing.txt").read_text(encoding="utf-8") == "kept"
+    assert not (destination / "new.txt").exists()
+    assert not (tmp_path / "dest.part").exists()
+
+
 def test_safe_tar_rejects_unsupported_members_in_preflight_and_stream(
     tmp_path: Path,
 ) -> None:
@@ -299,6 +439,117 @@ def test_safe_tar_rejects_unsupported_members_in_preflight_and_stream(
     assert not (tmp_path / "preflight-dest").exists()
     assert not (tmp_path / "stream-dest").exists()
     assert not (tmp_path / "stream-dest.part").exists()
+
+
+@pytest.mark.parametrize(
+    ("member_type", "linkname"),
+    [
+        (tarfile.SYMTYPE, "target"),
+        (tarfile.LNKTYPE, "target"),
+        (tarfile.SYMTYPE, "/tmp/evil"),
+        (tarfile.LNKTYPE, "../evil"),
+    ],
+)
+def test_safe_tar_rejects_symlink_hardlink_and_unsafe_linknames(
+    tmp_path: Path,
+    member_type: bytes,
+    linkname: str,
+) -> None:
+    from scripts.archive_security import safe_extract_tar
+
+    archive = tmp_path / "link.tar.gz"
+    with tarfile.open(archive, "w:gz") as tar:
+        link = tarfile.TarInfo("link")
+        link.type = member_type
+        link.linkname = linkname
+        tar.addfile(link)
+
+    with pytest.raises(ValueError, match="type de membre tar refuse|lien"):
+        safe_extract_tar(archive, tmp_path / "dest")
+
+    assert not (tmp_path / "dest").exists()
+    assert not (tmp_path / "dest.part").exists()
+
+
+def test_safe_tar_failure_does_not_modify_existing_destination(
+    tmp_path: Path,
+) -> None:
+    from scripts.archive_security import ArchiveSecurityLimits, safe_extract_tar
+
+    archive = tmp_path / "stream_limit.tar.gz"
+    write_tar(archive, {"new.txt": b"abc"})
+    destination = tmp_path / "dest"
+    destination.mkdir()
+    (destination / "existing.txt").write_text("kept", encoding="utf-8")
+
+    import scrapping_NSI.safe_archive as safe_archive
+
+    with patch.object(safe_archive, "_preflight_tar_members", return_value=None):
+        with pytest.raises(ValueError, match="flux decompresse"):
+            safe_extract_tar(
+                archive,
+                destination,
+                limits=ArchiveSecurityLimits(max_total_uncompressed_bytes=2),
+            )
+
+    assert (destination / "existing.txt").read_text(encoding="utf-8") == "kept"
+    assert not (destination / "new.txt").exists()
+    assert not (tmp_path / "dest.part").exists()
+
+
+def test_commit_staging_restores_existing_destination_when_final_rename_fails(
+    tmp_path: Path,
+) -> None:
+    import scrapping_NSI.safe_archive as safe_archive
+
+    destination = tmp_path / "dest"
+    destination.mkdir()
+    (destination / "existing.txt").write_text("kept", encoding="utf-8")
+    (tmp_path / "dest.backup").mkdir()
+    staging = tmp_path / "dest.part"
+    staging.mkdir()
+    (staging / "new.txt").write_text("new", encoding="utf-8")
+    original_rename = Path.rename
+
+    def fail_staging_rename(self: Path, target: Path) -> Path:
+        if self == staging:
+            target.mkdir()
+            raise OSError("rename failed")
+        return original_rename(self, target)
+
+    with patch.object(Path, "rename", fail_staging_rename):
+        with pytest.raises(OSError, match="rename failed"):
+            safe_archive._commit_staging_dir(staging, destination)
+
+    assert (destination / "existing.txt").read_text(encoding="utf-8") == "kept"
+    assert not (destination / "new.txt").exists()
+    assert (tmp_path / "dest.backup").exists()
+
+
+def test_commit_staging_restores_existing_destination_when_target_absent_after_failure(
+    tmp_path: Path,
+) -> None:
+    import scrapping_NSI.safe_archive as safe_archive
+
+    destination = tmp_path / "dest"
+    destination.mkdir()
+    (destination / "existing.txt").write_text("kept", encoding="utf-8")
+    staging = tmp_path / "dest.part"
+    staging.mkdir()
+    (staging / "new.txt").write_text("new", encoding="utf-8")
+    original_rename = Path.rename
+
+    def fail_staging_rename(self: Path, target: Path) -> Path:
+        if self == staging:
+            raise OSError("rename failed")
+        return original_rename(self, target)
+
+    with patch.object(Path, "rename", fail_staging_rename):
+        with pytest.raises(OSError, match="rename failed"):
+            safe_archive._commit_staging_dir(staging, destination)
+
+    assert (destination / "existing.txt").read_text(encoding="utf-8") == "kept"
+    assert not (destination / "new.txt").exists()
 
 
 def test_safe_tar_rejects_unreadable_regular_member(tmp_path: Path) -> None:
@@ -337,3 +588,12 @@ def test_copy_stream_enforces_runtime_limit(tmp_path: Path) -> None:
 
     with pytest.raises(Exception, match="flux decompresse"):
         _copy_stream_with_limit(io.BytesIO(b"abc"), tmp_path / "out.txt", 2)
+
+
+def test_archive_security_policy_mentions_atomicity_and_limits() -> None:
+    policy = ROOT / "docs" / "archive_security_policy.md"
+
+    text = policy.read_text(encoding="utf-8")
+
+    for expected in ("zip-slip", "zip-bomb", "symlink", "hardlink", ".part", "500 Mo", "10 000", "100x"):
+        assert expected in text

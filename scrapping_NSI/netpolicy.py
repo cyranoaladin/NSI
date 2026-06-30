@@ -153,9 +153,11 @@ def build_session(
 
 
 class ThrottleClock(Protocol):
-    def monotonic(self) -> float: ...
+    def monotonic(self) -> float:
+        raise RuntimeError("Protocol method")
 
-    def sleep(self, seconds: float) -> None: ...
+    def sleep(self, seconds: float) -> None:
+        raise RuntimeError("Protocol method")
 
 
 class DomainThrottle:

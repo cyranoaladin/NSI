@@ -264,7 +264,7 @@ def accepted_evidence(
     if not isinstance(metadata, dict):
         return None
     file_rel = str(metadata.get("path", ""))
-    anchor = str(metadata.get("anchor", ""))
+    anchor = str(metadata.get("section_anchor") or metadata.get("anchor", ""))
     quote = str(llm_result.get("citation", ""))
     if not file_rel or not anchor or not quote:
         return None
@@ -284,7 +284,7 @@ def document_text_for_hit(repo_root: Path, hit: dict[str, Any]) -> str:
     metadata = hit.get("metadata", {})
     if isinstance(metadata, dict):
         file_rel = str(metadata.get("path", ""))
-        anchor = str(metadata.get("anchor", ""))
+        anchor = str(metadata.get("section_anchor") or metadata.get("anchor", ""))
         if file_rel and anchor:
             body = section_body(repo_root, file_rel, anchor)
             if body:

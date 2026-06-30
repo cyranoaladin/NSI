@@ -12,7 +12,6 @@ from _qa_common import (
     REQUIRED_EVIDENCE,
     VALIDATED_STATUSES,
     Evidence,
-    iter_declared_evidence,
     load_program_entries,
 )
 from _supports_evidence import iter_support_evidence
@@ -67,7 +66,7 @@ def build_rows() -> List[Dict[str, str]]:
     program = load_program_entries()
     by_capacity: Dict[str, List[Evidence]] = defaultdict(list)
     seen: set[tuple[str, str, str, str]] = set()
-    for item in list(iter_declared_evidence()) + list(iter_support_evidence()):
+    for item in iter_support_evidence():
         key = (item.capacity_id, item.file, item.anchor, item.evidence_type)
         if key in seen:
             continue
@@ -98,7 +97,7 @@ def build_rows() -> List[Dict[str, str]]:
 def write_sources(rows: List[Dict[str, str]]) -> None:
     program = load_program_entries()
     by_capacity: Dict[str, List[Evidence]] = defaultdict(list)
-    for item in list(iter_declared_evidence()) + list(iter_support_evidence()):
+    for item in iter_support_evidence():
         if item.capacity_id in program:
             by_capacity[item.capacity_id].append(item)
 
@@ -107,7 +106,8 @@ def write_sources(rows: List[Dict[str, str]]) -> None:
         "",
         "Ce rapport explicite les preuves prises en compte par `coverage.md`.",
         "`03_progressions/supports/` est l'arbre canonique de production ;",
-        "`premiere/sequences/` et `terminale/sequences/` restent des pilotes de référence.",
+        "Les dossiers pilotes de première et terminale restent des références de style",
+        "et ne sont pas utilisés comme preuves de couverture interne.",
         "",
         "Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressources restent `needs_review`.",
         "",

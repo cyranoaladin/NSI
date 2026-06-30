@@ -17,15 +17,18 @@ import sys
 import urllib.request
 import urllib.error
 from pathlib import Path
+from typing import Any
 
 ROOT = Path(__file__).resolve().parent.parent
 ENV_FILE = ROOT / ".env.rag"
 
-# Répertoires à indexer (tous les contenus pédagogiques)
+# Répertoires à indexer comme corpus interne. Option stricte : seuls le canon
+# `03_progressions/supports/` et les fiches de cours peuvent entrer dans
+# `nsi_corpus`. Les pilotes `premiere/sequences/` et `terminale/sequences/`
+# relèvent de `nsi_golden_examples` et ne servent jamais de preuve de couverture.
 SOURCE_DIRS = [
-    ROOT / "03_progressions",
-    ROOT / "premiere" / "sequences",
-    ROOT / "terminale" / "sequences",
+    ROOT / "03_progressions" / "supports",
+    ROOT / "03_progressions" / "fiches_cours",
 ]
 
 
@@ -45,7 +48,7 @@ def load_env(path: Path) -> dict[str, str]:
     return env
 
 
-def parse_frontmatter(text: str) -> tuple[dict, str]:
+def parse_frontmatter(text: str) -> tuple[dict[str, Any], str]:
     """Extrait le frontmatter YAML et retourne (metadata, body)."""
     if not text.startswith("---"):
         return {}, text
@@ -54,7 +57,7 @@ def parse_frontmatter(text: str) -> tuple[dict, str]:
         return {}, text
     fm_text = text[3:end].strip()
     body = text[end + 4:].strip()
-    meta: dict = {}
+    meta: dict[str, Any] = {}
     current_key = ""
     list_mode = False
     for line in fm_text.split("\n"):
@@ -137,7 +140,7 @@ def _find_sequence_capacities(path: Path) -> tuple[str, str, str]:
             cap_list = meta["capacities"]
             if isinstance(cap_list, str):
                 cap_list = [cap_list]
-            caps = ",".join(cap_list)
+            caps = ",".join(str(item) for item in cap_list)
         if not theme:
             theme = meta.get("theme", "")
         if not notion:
@@ -147,7 +150,18 @@ def _find_sequence_capacities(path: Path) -> tuple[str, str, str]:
     return theme, notion, caps
 
 
-def build_chunks_py(path: Path) -> list[dict]:
+def source_kind(path: Path) -> tuple[str, str, str]:
+    rel = path.relative_to(ROOT).as_posix()
+    if rel.startswith("03_progressions/fiches_cours/"):
+        return "nsi_corpus", "internal_coverage_candidate", "nsi_corpus"
+    if rel.startswith("03_progressions/supports/"):
+        return "nsi_corpus", "internal_coverage_candidate", "nsi_corpus"
+    if rel.startswith(("premiere/sequences/", "terminale/sequences/")):
+        return "golden_example", "style_reference_only", "nsi_golden_examples"
+    return "excluded", "not_for_coverage", ""
+
+
+def build_chunks_py(path: Path) -> list[dict[str, Any]]:
     """Construit un chunk unique pour un fichier Python, avec capacités héritées."""
     try:
         text = path.read_text(encoding="utf-8")
@@ -175,6 +189,8 @@ def build_chunks_py(path: Path) -> list[dict]:
         doc_type = "code"
     # Hériter les capacités de la séquence parente
     theme, notion, caps = _find_sequence_capacities(path)
+    source_type, proof_scope, collection = source_kind(path)
+    capacity_ids = [cap for cap in caps.split(",") if cap]
     return [{
         "text": text,
         "metadata": {
@@ -184,18 +200,23 @@ def build_chunks_py(path: Path) -> list[dict]:
             "document_type": doc_type,
             "theme": theme,
             "notion": notion,
+            "capacity_ids": capacity_ids,
             "capacities": caps,
             "status": "needs_review",
+            "section_anchor": "",
             "anchor": "",
             "sha256": sha256(text),
             "chunk_index": "0",
-            "source_type": "nsi_corpus",
-            "collection": "nsi_corpus",
+            "source_type": source_type,
+            "proof_scope": proof_scope,
+            "usable_for_coverage": source_type == "nsi_corpus",
+            "private_data": False,
+            "collection": collection,
         }
     }]
 
 
-def build_chunks(path: Path) -> list[dict]:
+def build_chunks(path: Path) -> list[dict[str, Any]]:
     """Construit les chunks pour un fichier Markdown ou Python."""
     if path.suffix == ".py":
         return build_chunks_py(path)
@@ -221,6 +242,7 @@ def build_chunks(path: Path) -> list[dict]:
     if isinstance(capacities, str):
         capacities = [capacities]
     cap_str = ",".join(capacities) if capacities else ""
+    source_type, proof_scope, collection = source_kind(path)
 
     sections = split_sections(body)
     if not sections:
@@ -228,7 +250,7 @@ def build_chunks(path: Path) -> list[dict]:
         if body.strip():
             sections = [("", body.strip())]
 
-    chunks = []
+    chunks: list[dict[str, Any]] = []
     for i, (anchor, section_text) in enumerate(sections):
         if len(section_text.strip()) < 20:
             continue
@@ -241,13 +263,18 @@ def build_chunks(path: Path) -> list[dict]:
                 "document_type": doc_type,
                 "theme": theme,
                 "notion": notion,
+                "capacity_ids": capacities,
                 "capacities": cap_str,
                 "status": status,
+                "section_anchor": anchor,
                 "anchor": anchor,
                 "sha256": sha256(section_text),
                 "chunk_index": str(i),
-                "source_type": "nsi_corpus",
-                "collection": "nsi_corpus",
+                "source_type": source_type,
+                "proof_scope": proof_scope,
+                "usable_for_coverage": source_type == "nsi_corpus",
+                "private_data": False,
+                "collection": collection,
             }
         }
         chunks.append(chunk)
@@ -255,7 +282,7 @@ def build_chunks(path: Path) -> list[dict]:
     return chunks
 
 
-def ingest_chunk(api_url: str, api_key: str, chunk: dict) -> dict:
+def ingest_chunk(api_url: str, api_key: str, chunk: dict[str, Any]) -> dict[str, Any]:
     """Envoie un chunk à l'API /ingest."""
     meta = dict(chunk["metadata"])
     # We need to send the text content — use /ingest which loads from source.
@@ -269,7 +296,9 @@ def ingest_chunk(api_url: str, api_key: str, chunk: dict) -> dict:
     }
 
 
-def ingest_batch_via_chroma(env: dict, all_chunks: list[dict]) -> dict:
+def ingest_batch_via_chroma(
+    env: dict[str, str], all_chunks: list[dict[str, Any]]
+) -> dict[str, Any]:
     """Ingère directement dans ChromaDB via son API HTTP (tunnel requis pour
     accès distant, avec vectorisation côté service)."""
     # Use the ingestor's /ingest endpoint with inline content
@@ -311,7 +340,7 @@ def main() -> int:
 
     print(f"Fichiers source : {len(files)}")
 
-    all_chunks: list[dict] = []
+    all_chunks: list[dict[str, Any]] = []
     files_with_chunks = 0
     files_private = 0
     files_empty = 0

@@ -21,16 +21,35 @@ PYTHON = sys.executable
 
 CORE_CHECKS: list[list[str]] = [
     ["scripts/check_git_clean.py"],
+    ["scripts/check_repo_topology.py"],
     ["scripts/check_audit_folder_policy.py"],
     ["scripts/check_content_tree_policy.py"],
+    ["scripts/check_rag_config.py"],
+    ["scripts/rag_smoke_test.py"],
+    ["scripts/rag_diagnose_search_timeout.py"],
+    ["scripts/check_rag_collection_policy.py"],
+    ["scripts/check_rag_golden_examples_policy.py"],
+    ["scripts/check_rag_metadata_canonical_fields.py"],
+    ["scripts/check_no_secret_file_mutation_policy.py"],
+    ["scripts/check_agents_governance.py"],
+    ["scripts/check_skills_governance.py"],
     ["scripts/check_metadata.py"],
     ["scripts/check_links.py"],
     ["scripts/check_no_private_data.py"],
+    ["scripts/check_no_committed_secrets.py"],
     ["scripts/check_no_placeholders_docs.py"],
     ["scripts/check_no_placeholders_code.py"],
     ["scripts/check_no_build_artifacts_in_index.py"],
     ["scripts/check_uploaded_archive_policy.py"],
     ["scripts/check_program_coverage.py"],
+    ["scripts/generate_coverage_gap_action_plan.py"],
+    ["scripts/check_coverage_gap_action_plan.py"],
+    ["scripts/check_sources_catalog.py"],
+    ["scripts/check_sources_catalog_schema.py"],
+    ["scripts/generate_pedagogical_indexes.py"],
+    ["scripts/check_pedagogical_indexes.py"],
+    ["scripts/check_makefile_audit_policy.py"],
+    ["scripts/check_reports_policy.py"],
     ["scripts/check_substance_anchors.py"],
     ["scripts/check_status_promotion_guard.py"],
     ["scripts/check_contract_substance_quality.py"],
@@ -59,7 +78,11 @@ def run_check(command: list[str], env: dict[str, str], indicative: bool = False)
     label = " ".join(command)
     suffix = " (indicatif)" if indicative else ""
     print(f"== {label}{suffix} ==")
-    return subprocess.run([PYTHON, *command], cwd=ROOT, env=env).returncode
+    command_env = env
+    if command in (["scripts/rag_smoke_test.py"], ["scripts/rag_diagnose_search_timeout.py"]) and "RAG_ENV_FILE" not in env:
+        command_env = env.copy()
+        command_env["RAG_ENV_FILE"] = str(ROOT / ".env.rag.audit-core-missing")
+    return subprocess.run([PYTHON, *command], cwd=ROOT, env=command_env).returncode
 
 
 def main() -> None:

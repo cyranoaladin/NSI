@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import logging
 import shutil
+import stat
 import tarfile
 import zipfile
 from dataclasses import dataclass
@@ -133,10 +134,13 @@ def _preflight_zip_members(
     limits: ArchiveSecurityLimits,
 ) -> None:
     total = 0
+    targets: set[Path] = set()
     for member in members:
-        _member_target(destination, member.filename)
+        member_target = _member_target(destination, member.filename)
+        _validate_unique_target(member_target, targets, member.filename)
         if member.is_dir():
             continue
+        _validate_zip_member_type(member)
         total += member.file_size
         _validate_total_size(total, limits)
         _validate_compression_ratio(member.file_size, member.compress_size, limits)
@@ -149,8 +153,10 @@ def _preflight_tar_members(
     limits: ArchiveSecurityLimits,
 ) -> None:
     total = 0
+    targets: set[Path] = set()
     for member in members:
-        _member_target(destination, member.name)
+        member_target = _member_target(destination, member.name)
+        _validate_unique_target(member_target, targets, member.name)
         if member.isdir():
             continue
         if not member.isfile():
@@ -162,10 +168,14 @@ def _preflight_tar_members(
 
 def _member_target(root: Path, member_name: str) -> Path:
     normalized_name = member_name.replace("\\", "/")
+    windows_path = PureWindowsPath(member_name)
     if (
         not normalized_name
+        or normalized_name == "."
         or PurePosixPath(normalized_name).is_absolute()
-        or PureWindowsPath(member_name).is_absolute()
+        or windows_path.is_absolute()
+        or bool(windows_path.drive)
+        or member_name.startswith("\\")
     ):
         raise ArchiveSecurityError(
             f"Tentative de Zip-Slip détectée (zip-slip): chemin archive absolu refuse: {member_name}"
@@ -180,6 +190,18 @@ def _member_target(root: Path, member_name: str) -> Path:
             f"membre hors du repertoire cible: {member_name}"
         ) from exc
     return target
+
+
+def _validate_unique_target(target: Path, targets: set[Path], member_name: str) -> None:
+    if target in targets:
+        raise ArchiveSecurityError(f"chemin archive doublon refuse: {member_name}")
+    targets.add(target)
+
+
+def _validate_zip_member_type(member: zipfile.ZipInfo) -> None:
+    mode = (member.external_attr >> 16) & 0xFFFF
+    if stat.S_IFMT(mode) == stat.S_IFLNK:
+        raise ArchiveSecurityError(f"type de membre zip refuse (symlink): {member.filename}")
 
 
 def _validate_member_count(count: int, limits: ArchiveSecurityLimits) -> None:
@@ -220,12 +242,30 @@ def _prepare_staging_dir(destination: Path) -> Path:
 
 
 def _commit_staging_dir(staging: Path, destination: Path) -> None:
-    if destination.exists():
-        for child in staging.iterdir():
-            shutil.move(str(child), str(destination))
-        shutil.rmtree(staging)
+    if not destination.exists():
+        staging.rename(destination)
         return
-    staging.rename(destination)
+
+    backup = _unique_sibling(destination, ".backup")
+    destination.rename(backup)
+    try:
+        staging.rename(destination)
+    except Exception:
+        if destination.exists():
+            shutil.rmtree(destination)
+        backup.rename(destination)
+        raise
+    else:
+        shutil.rmtree(backup)
+
+
+def _unique_sibling(path: Path, suffix: str) -> Path:
+    candidate = path.with_name(f"{path.name}{suffix}")
+    counter = 2
+    while candidate.exists():
+        candidate = path.with_name(f"{path.name}{suffix}{counter}")
+        counter += 1
+    return candidate
 
 
 def _cleanup_staging_dir(staging: Path | None) -> None:

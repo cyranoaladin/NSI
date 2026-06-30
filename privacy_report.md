@@ -62,6 +62,18 @@ Les noms propres suspects sont listés pour revue humaine.
 - AGENTS.md: nom propre suspect -> Agent Différenciation
 - AGENTS.md: nom propre suspect -> Agent Édition
 - AGENTS.md: nom propre suspect -> Agent Juge
+- INDEX_BY_AUDIENCE.md: nom propre suspect -> Index By Audience
+- INDEX_BY_CAPACITY.md: nom propre suspect -> Index By Capacity
+- INDEX_BY_CHAPTER.md: nom propre suspect -> Index By Chapter
+- INDEX_BY_DOCUMENT_TYPE.md: nom propre suspect -> Index By Document Type
+- INDEX_BY_DOMAIN.md: nom propre suspect -> Index By Domain
+- INDEX_BY_DOMAIN.md: nom propre suspect -> Grand Oral
+- INDEX_BY_LEVEL.md: nom propre suspect -> Index By Level
+- INDEX_BY_RAG_COLLECTION.md: nom propre suspect -> Index By Rag Collection
+- INDEX_BY_SEQUENCE.md: nom propre suspect -> Index By Sequence
+- INDEX_BY_SESSION.md: nom propre suspect -> Index By Session
+- INDEX_BY_THEME.md: nom propre suspect -> Index By Theme
+- INDEX_BY_THEME.md: nom propre suspect -> Grand Oral
 - METHODE_PRODUCTION_REELLE.md: nom propre suspect -> Claude Code
 - SKILLS.md: nom propre suspect -> Content-Type
 - calendar_2026_2027_tunisia.md: nom propre suspect -> Grand Oral
@@ -133,6 +145,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - progression_audit.md: nom propre suspect -> Ressources Drive
 - qa_debt_register.md: nom propre suspect -> Portabilité Drive
 - qa_gate_policy.md: nom propre suspect -> Informational Metrics
+- qa_gate_policy.md: nom propre suspect -> Cibles Makefile
 - qa_gate_policy.md: nom propre suspect -> Gates Drive
 - qa_report.md: nom propre suspect -> Plan Drive
 - qa_report.md: nom propre suspect -> Lots Drive
@@ -140,6 +153,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - qa_report.md: nom propre suspect -> Ressources Drive
 - qa_report.md: nom propre suspect -> Ressources Drive
 - qa_report.md: nom propre suspect -> Ressources Drive
+- rag_connection.md: nom propre suspect -> Content-Type
 - reports/drive_enrichment_report.md: nom propre suspect -> Ressource Drive
 - reports/drive_enrichment_report.md: nom propre suspect -> Source Drive
 - reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
@@ -154,12 +168,25 @@ Les noms propres suspects sont listés pour revue humaine.
 - reports/lot1/repo_map.md: nom propre suspect -> Proposeur System
 - reports/lot1/repo_map.md: nom propre suspect -> Conclusion Phase
 - reports/lot2/lot2_validation_log.md: nom propre suspect -> Miss Branch
+- reports/lot3/lot3_hardening_validation_log.md: nom propre suspect -> Miss Branch
+- reports/lot3/lot3_hardening_validation_log.md: nom propre suspect -> Grep-Garde
+- reports/lot3/lot3_hardening_validation_log.md: nom propre suspect -> Cibles Makefile
+- reports/lot3/lot3_hardening_validation_log.md: nom propre suspect -> État Git
 - reports/lot3/lot3_validation_log.md: nom propre suspect -> Validation Zip-Slip
 - reports/lot3/lot3_validation_log.md: nom propre suspect -> Zip-Bomb
 - reports/lot3/lot3_validation_log.md: nom propre suspect -> Miss Branch
 - reports/lot3/lot3_validation_log.md: nom propre suspect -> Grep-Garde
 - reports/lot3/lot3_validation_log.md: nom propre suspect -> Statut Lot
 - scientific_claims_review_report.md: nom propre suspect -> Scientific Claims Review Report
+- scripts/check_agents_governance.py: nom propre suspect -> Agent Inventaire
+- scripts/check_agents_governance.py: nom propre suspect -> Agent Programme
+- scripts/check_agents_governance.py: nom propre suspect -> Agent Auteur
+- scripts/check_agents_governance.py: nom propre suspect -> Agent Scientifique
+- scripts/check_agents_governance.py: nom propre suspect -> Agent Code
+- scripts/check_agents_governance.py: nom propre suspect -> Agent Évaluation
+- scripts/check_agents_governance.py: nom propre suspect -> Agent Différenciation
+- scripts/check_agents_governance.py: nom propre suspect -> Agent Édition
+- scripts/check_agents_governance.py: nom propre suspect -> Agent Juge
 - scripts/check_course_internal_coherence.py: nom propre suspect -> Course Internal Coherence Report
 - scripts/check_differentiation_quality.py: nom propre suspect -> Differentiation Quality Report
 - scripts/check_drive_action_plan_completeness.py: nom propre suspect -> Ressources Drive
@@ -172,6 +199,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_evaluation_bareme_alignment.py: nom propre suspect -> Evaluation Bareme Alignment Report
 - scripts/check_git_clean.py: nom propre suspect -> Check Git
 - scripts/check_learning_objectives_assessed.py: nom propre suspect -> Learning Objectives Assessed Report
+- scripts/check_makefile_audit_policy.py: nom propre suspect -> Check Makefile
 - scripts/check_missing_register_actionability.py: nom propre suspect -> Lien Drive
 - scripts/check_program_capacity_evidence_depth.py: nom propre suspect -> Program Capacity Evidence Depth Report
 - scripts/check_progression_calendar_alignment.py: nom propre suspect -> Ressources Drive
@@ -182,35 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_tp_test_alignment.py: nom propre suspect -> Test Alignment Report
 - scripts/generate_qa_report.py: nom propre suspect -> Plan Drive
 - scripts/generate_qa_report.py: nom propre suspect -> Lots Drive
-- scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
-- scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
-- scripts/generate_qa_report.py: nom propre suspect -> Ressources Drive
-- scripts/rag_smoke_test.py: nom propre suspect -> Content-Type
-- scripts/rag_smoke_test.py: nom propre suspect -> Content-Type
-- scripts/render_sequence.py: nom propre suspect -> Fira Code
-- scripts/render_sequence.py: nom propre suspect -> Sans Mono
-- scripts/render_sequence.py: nom propre suspect -> Fira Code
-- scripts/render_sequence.py: nom propre suspect -> Fira Code
-- scripts/render_sequence.py: nom propre suspect -> Sans Mono
-- scripts/substance_judge.py: nom propre suspect -> Content-Type
-- scripts/substance_judge.py: nom propre suspect -> Proposition System
-- scripts/substance_judge.py: nom propre suspect -> Proposition System
-- scripts/substance_report_renderer.py: nom propre suspect -> Raisons System
-- scripts/substance_report_renderer.py: nom propre suspect -> Raisons System
-- td_corrige_alignment_report.md: nom propre suspect -> Corrige Alignment Report
-- tests/test_course_sheets.py: nom propre suspect -> Lien Drive
-- tests/test_course_sheets.py: nom propre suspect -> Lien Drive
-- tests/test_drive_enrichment_traceability.py: nom propre suspect -> Ressource Drive
-- tests/test_drive_portable_and_manifest.py: nom propre suspect -> Ressource Drive
-- tests/test_lot1_drive_gate_boundary.py: nom propre suspect -> Gates Drive
-- tests/test_lot1_drive_gate_boundary.py: nom propre suspect -> Ressource Drive
-- tests/test_lot3_archive_security.py: nom propre suspect -> Zip-Slip
-- tests/test_lot3_archive_security.py: nom propre suspect -> Zip-Slip
-- tests/test_lot3_archive_security.py: nom propre suspect -> Zip-Slip
-- tests/test_missing_register_actionability.py: nom propre suspect -> Lien Drive
-- tests/test_operational_substance_controls.py: nom propre suspect -> Lien Drive
-- tests/test_session_referenced_files_exist.py: nom propre suspect -> Lien Drive
-- ... 3 alertes supplémentaires non affichées
+- ... 36 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
@@ -414,4 +414,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 266560 alertes supplémentaires non affichées
+- ... 332 alertes supplémentaires non affichées

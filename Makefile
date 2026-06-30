@@ -1,7 +1,7 @@
 export PYTHONDONTWRITEBYTECODE=1
 DELIVERED_ARCHIVE ?= dist/source_clean.tar.gz
 
-audit: audit-local
+audit: audit-core audit-metrics
 
 audit-idempotence:
 	$(MAKE) audit
@@ -12,6 +12,7 @@ audit-idempotence:
 generate-reports:
 	python scripts/rebuild_inventory.py
 	python scripts/check_program_coverage.py
+	python scripts/generate_pedagogical_indexes.py
 	python scripts/generate_qa_report.py
 	python scripts/rebuild_inventory.py
 
@@ -19,6 +20,57 @@ check-generated-freshness:
 	python scripts/check_build_reports_freshness.py
 	python scripts/check_qa_report_freshness.py
 	python scripts/check_manifest_source_integrity.py
+
+audit-core:
+	python scripts/check_git_clean.py
+	python scripts/check_repo_topology.py
+	python scripts/check_audit_folder_policy.py
+	python scripts/check_content_tree_policy.py
+	python scripts/check_rag_config.py
+	RAG_ENV_FILE=.env.rag.audit-core-missing python scripts/rag_smoke_test.py
+	RAG_ENV_FILE=.env.rag.audit-core-missing python scripts/rag_diagnose_search_timeout.py
+	python scripts/check_rag_collection_policy.py
+	python scripts/check_rag_golden_examples_policy.py
+	python scripts/check_rag_metadata_canonical_fields.py
+	python scripts/check_no_secret_file_mutation_policy.py
+	python scripts/check_agents_governance.py
+	python scripts/check_skills_governance.py
+	python scripts/check_program_coverage.py
+	python scripts/generate_coverage_gap_action_plan.py
+	python scripts/check_coverage_gap_action_plan.py
+	python scripts/check_sources_catalog.py
+	python scripts/check_sources_catalog_schema.py
+	python scripts/generate_pedagogical_indexes.py
+	python scripts/check_pedagogical_indexes.py
+	python scripts/check_makefile_audit_policy.py
+	python scripts/check_reports_policy.py
+	python scripts/check_substance_anchors.py
+	python scripts/check_contract_substance_quality.py
+	python scripts/check_differentiation_distinctness.py
+	python scripts/check_rendered_unit_artifacts.py --unit P05
+	python scripts/check_rendered_unit_artifacts.py --unit T10
+	python scripts/check_no_private_data.py
+	python scripts/check_no_committed_secrets.py
+	python scripts/check_no_placeholders_docs.py
+	python scripts/check_no_placeholders_code.py
+	python scripts/run_python_tests.py
+
+audit-metrics:
+	-python scripts/check_required_sections.py
+	-python scripts/check_document_depth.py
+	-python scripts/check_document_style.py
+	python scripts/check_full_sequence_resource_matrix.py
+	python scripts/check_full_notional_resource_matrix.py
+	python scripts/check_official_program_capacity_coverage_matrix.py
+	python scripts/check_session_level_planning.py
+	python scripts/check_session_duration_consistency.py
+	python scripts/check_session_monthly_total.py
+	python scripts/check_session_project_hours.py
+	python scripts/check_session_week_calendar_consistency.py
+	python scripts/check_session_specificity.py
+
+rag-smoke-required:
+	python scripts/rag_smoke_test.py
 
 audit-local:
 	python scripts/check_git_clean.py
@@ -176,6 +228,9 @@ audit-source:
 	-python scripts/check_document_style.py
 
 audit-extracted-source:
+	@if test -d .git; then PYTHONDONTWRITEBYTECODE=1 python scripts/run_audit_extracted_source.py; else $(MAKE) audit-extracted-source-local; fi
+
+audit-extracted-source-local:
 	python scripts/cleanup_python_artifacts.py
 	python scripts/check_audit_folder_policy.py
 	python scripts/check_content_tree_policy.py
