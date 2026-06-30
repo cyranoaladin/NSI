@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 978
+- Total ressources : 979
 - Ressources pédagogiques : 53
-- Ressources techniques : 925
+- Ressources techniques : 926
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 970
+- generated: 971
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 458
+- interne: 459
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 552
+- document: 553
 - python: 95
 - script: 204
 - sequence: 45
 - test: 68
 
 ## Répartition par statut
-- needs_review: 978
+- needs_review: 979
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 778
+- mixte: 779
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -659,6 +659,7 @@
   - reports/closure2/rag_prod_cutover_runbook.md
   - reports/closure2/rag_state_of_truth.md
   - reports/closure2/rag_target_architecture.md
+  - reports/closure2/rag_v2_rebuilt_report.md
   - reports/closure2/rag_v2_versioned_report.md
   - reports/drive_enrichment_report.md
   - reports/lot0_ruff_autofix_review.md
@@ -1665,6 +1666,7 @@
   - reports/closure2/rag_prod_cutover_runbook.md
   - reports/closure2/rag_state_of_truth.md
   - reports/closure2/rag_target_architecture.md
+  - reports/closure2/rag_v2_rebuilt_report.md
   - reports/closure2/rag_v2_versioned_report.md
   - reports/drive_enrichment_report.md
   - reports/lot0_ruff_autofix_review.md
@@ -2600,6 +2602,7 @@
 - reports/closure2/rag_prod_cutover_runbook.md
 - reports/closure2/rag_state_of_truth.md
 - reports/closure2/rag_target_architecture.md
+- reports/closure2/rag_v2_rebuilt_report.md
 - reports/closure2/rag_v2_versioned_report.md
 - reports/drive_enrichment_report.md
 - reports/lot0_ruff_autofix_review.md
@@ -3577,6 +3580,7 @@
 - reports/closure2/rag_prod_cutover_runbook.md
 - reports/closure2/rag_state_of_truth.md
 - reports/closure2/rag_target_architecture.md
+- reports/closure2/rag_v2_rebuilt_report.md
 - reports/closure2/rag_v2_versioned_report.md
 - reports/drive_enrichment_report.md
 - reports/lot0_ruff_autofix_review.md
