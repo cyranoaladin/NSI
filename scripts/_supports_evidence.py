@@ -19,7 +19,8 @@ Le module ne fabrique aucune validation ; il rend visible l'existant.
 
 from __future__ import annotations
 
-from typing import Iterable
+from collections import Counter
+from typing import Any, Iterable
 
 from scripts._qa_common import ROOT, Evidence, get_status, read_frontmatter
 
@@ -44,7 +45,7 @@ DOCTYPE_TO_EVIDENCE = {
 }
 
 
-def _capacities_from_frontmatter(metadata: dict) -> list[str]:
+def _capacities_from_frontmatter(metadata: dict[str, Any]) -> list[str]:
     official = metadata.get("official_program")
     if not isinstance(official, dict):
         return []
@@ -91,7 +92,7 @@ if __name__ == "__main__":
     from collections import Counter
 
     by_cap: dict[str, set[str]] = {}
-    types = Counter()
+    types: Counter[str] = Counter()
     for ev in iter_support_evidence():
         by_cap.setdefault(ev.capacity_id, set()).add(ev.evidence_type)
         types[ev.evidence_type] += 1

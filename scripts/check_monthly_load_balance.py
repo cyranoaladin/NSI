@@ -40,7 +40,7 @@ def parse_sessions(path: Path) -> list[dict[str, object]]:
     return sessions
 
 def parse_table_hours(path: Path) -> dict[str, dict[str, float | str]]:
-    rows = {}
+    rows: dict[str, dict[str, float | str]] = {}
     for line in path.read_text(encoding='utf-8', errors='replace').splitlines():
         if not line.startswith('| ') or '---' in line or 'Mois' in line:
             continue
@@ -102,7 +102,7 @@ def fail_or_pass(name: str, errors: list[str]) -> int:
 def main() -> int:
     errors = []
     for level, cfg in LEVELS.items():
-        monthly = parse_table_hours(cfg['monthly'])
+        monthly = parse_table_hours(Path(str(cfg['monthly'])))
         total = 0.0
         for month, row in monthly.items():
             planned = float(row['planned'])
@@ -112,8 +112,9 @@ def main() -> int:
                 errors.append(f"{level}: {month} planned {planned:g} h exceeds available {available:g} h")
             if available - planned > 2.5:
                 errors.append(f"{level}: {month} underplanned by more than one session")
-        if abs(total - cfg['total']) > 0.01:
-            errors.append(f"{level}: monthly planned total {total:g} h != annual {cfg['total']:g} h")
+        expected_total = float(str(cfg['total']))
+        if abs(total - expected_total) > 0.01:
+            errors.append(f"{level}: monthly planned total {total:g} h != annual {expected_total:g} h")
         if level == 'premiere' and float(monthly.get('février',{}).get('planned',99)) > 8.1:
             errors.append('premiere: February not lightened for Ramadan')
         if level == 'terminale':

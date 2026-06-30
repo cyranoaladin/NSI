@@ -54,6 +54,17 @@ class PrivateDataDetectionTest(unittest.TestCase):
             "real phone should not be suppressed by hex hash heuristic",
         )
 
+    def test_phone_near_hash_on_same_line_still_detected(self) -> None:
+        phone = "06 12" + " 34 56 78"
+        text = f"sha256=270881f4b45a8cd741ddad93bf7ed63adcf668455847c7ea71311f0946533745; tel={phone}"
+        matches = list(privacy.FR_PHONE_RE.finditer(text))
+        self.assertTrue(matches, "regex should match the phone number")
+        not_suppressed = [
+            m for m in matches
+            if not privacy.is_hex_hash_context(text, m.start(), m.end())
+        ]
+        self.assertTrue(not_suppressed, "phone near hash must NOT be suppressed")
+
     def test_build_reports_are_not_source_privacy_scope(self) -> None:
         self.assertIn("01_build_reports", privacy.EXCLUDED_PARTS)
 

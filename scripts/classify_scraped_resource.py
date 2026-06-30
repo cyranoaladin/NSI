@@ -11,6 +11,7 @@ from typing import Any
 
 def classify(path: Path, *, source_type: str = "inspiration", collection: str = "rag_education") -> dict[str, Any]:
     return {
+        "id": f"src-{path.stem}",
         "title": path.name,
         "url": "",
         "local_path": path.as_posix(),
@@ -24,6 +25,10 @@ def classify(path: Path, *, source_type: str = "inspiration", collection: str = 
         "reuse_policy": "classification préalable requise",
         "rag_collection": collection,
         "decision": "a_classifier_avant_ingestion",
+        "reviewer": "needs_review",
+        "date_review": "needs_review",
+        "risk_level": "medium",
+        "allowed_actions": ["inspire"],
     }
 
 

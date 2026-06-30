@@ -79,9 +79,11 @@ HEX_CONTEXT_RE = re.compile(r"[0-9a-fA-F]{32,}")
 
 
 def is_hex_hash_context(text: str, start: int, end: int) -> bool:
-    """Ignore phone-like digit sequences embedded in hex hashes (SHA-256, etc.)."""
-    window = text[max(0, start - 40): min(len(text), end + 40)]
-    return bool(HEX_CONTEXT_RE.search(window))
+    """Suppress only if the match's digits are CONTAINED within a contiguous hex token."""
+    for m in HEX_CONTEXT_RE.finditer(text):
+        if m.start() <= start and m.end() >= end:
+            return True
+    return False
 
 
 def is_population_context(text: str, start: int, end: int) -> bool:

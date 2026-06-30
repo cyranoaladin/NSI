@@ -104,12 +104,12 @@ import sys
 def main() -> int:
     errors = []
     for level, cfg in LEVELS.items():
-        sessions = parse_sessions(cfg['session'])
-        progression = parse_progression_projects(cfg['progression'], cfg['prefix'])
-        project_plan = parse_project_plan(cfg['project'], cfg['prefix'])
-        by_seq = {}
-        by_month = {}
-        monthly = parse_table_hours(cfg['monthly'])
+        sessions = parse_sessions(Path(str(cfg['session'])))
+        progression = parse_progression_projects(Path(str(cfg['progression'])), str(cfg['prefix']))
+        project_plan = parse_project_plan(Path(str(cfg['project'])), str(cfg['prefix']))
+        by_seq: dict[str, float] = {}
+        by_month: dict[str, float] = {}
+        monthly = parse_table_hours(Path(str(cfg['monthly'])))
         for session in sessions:
             if session.get('Nature') == 'projet':
                 hours = float(session.get('hours', 0.0))
@@ -126,8 +126,9 @@ def main() -> int:
             if abs(by_month.get(month, 0.0) - float(row['project'])) > 0.01:
                 errors.append(f"{level}: {month} project subtotal mismatch")
         total = sum(by_seq.values())
-        if abs(total - cfg['project_total']) > 0.01:
-            errors.append(f"{level}: annual project total {total:g} h != expected {cfg['project_total']:g} h")
+        expected_project = float(str(cfg['project_total']))
+        if abs(total - expected_project) > 0.01:
+            errors.append(f"{level}: annual project total {total:g} h != expected {expected_project:g} h")
     return fail_or_pass('check_session_project_hours', errors)
 
 if __name__ == '__main__':

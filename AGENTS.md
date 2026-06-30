@@ -329,14 +329,14 @@ Une séquence est publiable seulement si :
 ## 7. Commandes minimales de contrôle
 
 ```bash
-python scripts/check_metadata.py
-python scripts/check_links.py
-python scripts/check_program_coverage.py
-python scripts/check_quality_gates.py
-python scripts/check_no_placeholders.py
-python scripts/check_no_private_data.py
-python scripts/run_python_tests.py
-python scripts/generate_index.py
+python -m scripts.check_metadata
+python -m scripts.check_links
+python -m scripts.check_program_coverage
+python -m scripts.check_quality_gates
+python -m scripts.check_no_placeholders
+python -m scripts.check_no_private_data
+python -m scripts.run_python_tests
+python -m scripts.generate_index
 ```
 
 ## 8. Règle de blocage

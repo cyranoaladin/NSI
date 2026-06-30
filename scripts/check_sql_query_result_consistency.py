@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Any
 import re
 import sqlite3
 
@@ -61,7 +62,7 @@ def normalize_query(query: str) -> str:
     return query
 
 
-def execute_sql_query(query: str) -> list[tuple]:
+def execute_sql_query(query: str) -> list[tuple[Any, ...]]:
     query = normalize_query(query)
     if not query.upper().startswith("SELECT"):
         raise ValueError("not a SELECT query")

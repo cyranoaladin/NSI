@@ -343,7 +343,7 @@ def detect_source_type(path: Path, frontmatter: Dict[str, Any] | None = None) ->
     return SOURCE_TYPE_GENERATED
 
 
-def evidence_category(path: Path, frontmatter: Dict[str, Any] = None) -> Optional[str]:
+def evidence_category(path: Path, frontmatter: Dict[str, Any] | None = None) -> Optional[str]:
     n = path.name.lower()
     doc_type = (frontmatter or {}).get('document_type')
     if isinstance(doc_type, str):
