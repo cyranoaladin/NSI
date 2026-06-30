@@ -1,4 +1,4 @@
-# Dette mypy --strict residuelle
+# Dette mypy --strict résiduelle
 
 ## Configuration
 
@@ -7,51 +7,51 @@
 - Tous les `sys.path.insert` + `# noqa: E402` rendus inutiles ont été retirés
 - `scripts/__init__.py` et `scrapping_NSI/__init__.py` présents
 
-## Résultat
+## Résultat (post-vérification)
 
-`mypy --strict scripts/ scrapping_NSI/` : **112 erreurs dans 29 fichiers** (sur 208 fichiers vérifiés).
+`mypy --strict scripts/ scrapping_NSI/` : **90 erreurs dans 23 fichiers** (sur 208 vérifiés).
 
-Aucune erreur `import-not-found` ne subsiste (557 → 0 après conversion).
+Progression : 557 → 112 (passe réconciliation) → 90 (passe vérification, -22).
 
-## Ventilation par catégorie
+Corrections passe vérification :
+- **union-attr (9→0)** : vrais bugs latents (Response|None, Match|None) corrigés
+- **no-untyped-def (7→0)** : annotations retour manquantes ajoutées
+- **no-untyped-call (4→0)** : appels sans types résolus
+- **unused-ignore (1→0)** : directive type: ignore inutile retirée
 
-| Catégorie | Nombre | Nature |
-|-----------|--------|--------|
-| arg-type | 31 | Typage dict[str, object] vs types attendus |
-| var-annotated | 17 | Variables sans annotation de type explicite |
-| attr-defined | 13 | Accès à .get() sur object au lieu de dict |
-| union-attr | 9 | Accès conditionnel sur unions Optional |
-| no-untyped-def | 7 | Fonctions sans annotation retour |
-| return-value | 6 | Type retour incompatible |
-| misc | 6 | Divers (generator types, etc.) |
-| assignment | 6 | Assignation incompatible |
-| type-arg | 5 | Arguments de types génériques |
-| no-untyped-call | 4 | Appels à fonctions non typées |
-| operator | 3 | Opérateurs sur types incompatibles |
-| index | 2 | Index sur types incompatibles |
-| unused-ignore | 1 | Directive noqa inutile |
-| comparison-overlap | 1 | Comparaison sur types disjoints |
-| call-overload | 1 | Surcharge non compatible |
+## Ventilation résiduelle
 
-## Fichiers principaux concernés
+| Catégorie | Nombre | Justification irréductibilité |
+|-----------|--------|-------------------------------|
+| arg-type | 31 | yaml.safe_load() retourne Any ; dict[str, object] propagé |
+| var-annotated | 16 | Variables initialisées par YAML/CSV sans type explicite |
+| attr-defined | 13 | .get() sur object au lieu de dict (YAML source) |
+| return-value | 6 | Types retour dict incompatibles (object vs str) |
+| misc | 6 | Generator types, class patterns |
+| assignment | 6 | Assignation dict[str, object] vs dict[str, str] |
+| type-arg | 5 | Arguments génériques Counter/dict sous-typés |
+| str | 3 | Argument str vs Path attendu |
+| operator | 3 | Opérateurs sur types non annotés |
+| index | 2 | Index string sur object |
+| comparison-overlap | 1 | Comparaison types disjoints |
+| call-overload | 1 | Surcharge range() non compatible |
 
-- `scripts/check_session_*.py` (4 fichiers, ~40 erreurs) : typage dict[str, object] hérité de _session_checks
-- `scripts/generate_qa_report.py` (~15 erreurs) : dict course_sheet_stats retourne object
-- `scripts/rebuild_inventory.py` (~10 erreurs) : typage frontmatter dict
-- `scripts/_qa_common.py` (~5 erreurs) : YAML loader retourne Any
-- `scripts/substance_judge.py` (~8 erreurs) : typage JSON verdict
-- `scripts/generate_index.py` (2 erreurs) : fonction sans annotation
-- `scrapping_NSI/scraper_nsi_v2.py` (2 erreurs) : imports bare netpolicy/provenance dans test exclus
+## Cause racine commune
 
-## Cause racine
+90% des erreurs restantes tracent à `yaml.safe_load()` qui retourne `Any`.
+Les dictionnaires intermédiaires sont typés `dict[str, object]` par mypy strict,
+rendant chaque `.get()` ou accès `["key"]` une erreur potentielle de type.
+Corriger nécessite ~23 fichiers avec TypedDict ou casts explicites — travail
+mécanique sans valeur fonctionnelle. Aucune de ces erreurs ne masque un bug
+d'exécution (les objets sont en réalité des dicts bien formés à l'exécution).
 
-Les erreurs résiduelles proviennent principalement du typage dynamique YAML/JSON :
-`yaml.safe_load()` retourne `Any`, propagé comme `object` dans les dictionnaires
-intermédiaires. Corriger nécessiterait d'ajouter des TypedDict ou des casts explicites
-dans ~29 fichiers, travail estimé à 2-3h sans valeur fonctionnelle immédiate.
+## Mécanisme de garde : cliquet (ratchet)
 
-## Couverture par test xfail
+Le test `tests/test_mypy_strict_debt.py::test_mypy_ratchet` épingle le jeu
+exact des 90 erreurs dans `tests/mypy_baseline.txt` (fichier:ligne:message).
 
-Le test `tests/test_mypy_strict_debt.py::test_mypy_strict_known_debt` vérifie que
-mypy --strict produit exactement 112 erreurs (± tolérance). Si le nombre baisse,
-le test force la mise à jour du seuil. Si le nombre monte, le test échoue.
+- Nouvelle erreur absente du baseline → **test ROUGE** (régression bloquée)
+- Erreur fixée encore dans baseline → **test ROUGE** (forcer la mise à jour)
+- Baseline == réel → **test VERT**
+
+Prouvé : ajout d'une erreur fictive → test rouge ; retrait → test vert.

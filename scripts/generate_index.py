@@ -46,7 +46,7 @@ def should_include(path: Path) -> bool:
     return True
 
 
-def list_files_by_level(level: str):
+def list_files_by_level(level: str) -> list[Path]:
     root = ROOT / level / 'sequences'
     if not root.exists():
         return []
@@ -69,7 +69,7 @@ def main() -> None:
             lines.append('')
             continue
 
-        grouped = {}
+        grouped: dict[str, list[Path]] = {}
         for f in files:
             seq = f.parts[1] if len(f.parts) > 1 else 'root'
             grouped.setdefault(seq, []).append(f)

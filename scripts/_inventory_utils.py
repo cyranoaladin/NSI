@@ -230,7 +230,7 @@ def detect_sequence_id(path: Path, frontmatter: Dict[str, object]) -> str:
 
 
 def extract_theme_and_notion(path: Path, frontmatter: Dict[str, object]) -> tuple[str, str]:
-    def _s(v):
+    def _s(v: object) -> str:
         if isinstance(v, list):
             return ', '.join(str(x) for x in v)
         if v is None:
