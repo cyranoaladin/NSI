@@ -6,15 +6,16 @@
 
 | Branche | SHA avant | SHA après |
 |---------|-----------|-----------|
-| main | 0d886e0 | 069eabf |
+| main | 0d886e0 | 8f1c0bf |
 | lot1/substance-gouvernance | e06eb2b | 0e3484c (ff lot3) |
 | lot3-post-merge-hardening | 0e3484c | — (intégré) |
-| merge PR #3 | — | 069eabf |
+| merge PR #3 (lots 1-3) | — | 069eabf |
+| merge PR #4 (dette+rapports) | — | 8f1c0bf |
 
 ## CI main
 
-- RUN_ID : 28411264279
-- headSha : 069eabf00df19c7956bdaf311966ee94d0916bd6
+- RUN_ID : 28412829616
+- headSha : 8f1c0bf474af7fc8210924cf4c0d4321caffa92e
 - conclusion : success
 - jobs : quality=success
 
