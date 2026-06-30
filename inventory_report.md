@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 966
+- Total ressources : 968
 - Ressources pédagogiques : 53
-- Ressources techniques : 913
+- Ressources techniques : 915
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 958
+- generated: 960
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 446
+- interne: 448
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 544
+- document: 545
 - python: 95
 - script: 202
 - sequence: 45
-- test: 66
+- test: 67
 
 ## Répartition par statut
-- needs_review: 966
+- needs_review: 968
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 766
+- mixte: 768
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -649,6 +649,7 @@
   - rag_connection.md
   - rag_server_fix_plan.md
   - rag_timeout_diagnostic.md
+  - reports/closure2/corrective_report.md
   - reports/closure2/rag_prod_cutover_runbook.md
   - reports/closure2/rag_state_of_truth.md
   - reports/closure2/rag_target_architecture.md
@@ -949,6 +950,7 @@
   - tests/test_drive_local_pipeline.py
   - tests/test_drive_mapping_release.py
   - tests/test_drive_portable_and_manifest.py
+  - tests/test_ellipsis_scoping.py
   - tests/test_executable_quality_controls.py
   - tests/test_final_quality_hardening.py
   - tests/test_first_batch_alignment.py
@@ -1643,6 +1645,7 @@
   - rag_connection.md
   - rag_server_fix_plan.md
   - rag_timeout_diagnostic.md
+  - reports/closure2/corrective_report.md
   - reports/closure2/rag_prod_cutover_runbook.md
   - reports/closure2/rag_state_of_truth.md
   - reports/closure2/rag_target_architecture.md
@@ -1917,6 +1920,7 @@
   - tests/test_drive_local_pipeline.py
   - tests/test_drive_mapping_release.py
   - tests/test_drive_portable_and_manifest.py
+  - tests/test_ellipsis_scoping.py
   - tests/test_executable_quality_controls.py
   - tests/test_final_quality_hardening.py
   - tests/test_first_batch_alignment.py
@@ -2566,6 +2570,7 @@
 - rag_connection.md
 - rag_server_fix_plan.md
 - rag_timeout_diagnostic.md
+- reports/closure2/corrective_report.md
 - reports/closure2/rag_prod_cutover_runbook.md
 - reports/closure2/rag_state_of_truth.md
 - reports/closure2/rag_target_architecture.md
@@ -2860,6 +2865,7 @@
 - tests/test_drive_local_pipeline.py
 - tests/test_drive_mapping_release.py
 - tests/test_drive_portable_and_manifest.py
+- tests/test_ellipsis_scoping.py
 - tests/test_executable_quality_controls.py
 - tests/test_final_quality_hardening.py
 - tests/test_first_batch_alignment.py
@@ -3531,6 +3537,7 @@
 - rag_connection.md
 - rag_server_fix_plan.md
 - rag_timeout_diagnostic.md
+- reports/closure2/corrective_report.md
 - reports/closure2/rag_prod_cutover_runbook.md
 - reports/closure2/rag_state_of_truth.md
 - reports/closure2/rag_target_architecture.md
@@ -3831,6 +3838,7 @@
 - tests/test_drive_local_pipeline.py
 - tests/test_drive_mapping_release.py
 - tests/test_drive_portable_and_manifest.py
+- tests/test_ellipsis_scoping.py
 - tests/test_executable_quality_controls.py
 - tests/test_final_quality_hardening.py
 - tests/test_first_batch_alignment.py

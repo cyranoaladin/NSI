@@ -34,6 +34,26 @@
 - Corrigé en passe 5 : capacity_ids lu depuis official_program.capacities,
   sérialisation CSV, re-preuve depuis venv propre.
 
+## Incident 5 : CLOSED_CLEAN declaree a tort (passe 5)
+
+- Ellipsis exemption basee sur le texte de ligne (cassee pour `def f(): ...`)
+- audit-core non executable a froid (check_no_build_artifacts_in_index exige dist/)
+- RAG rag_ingest.py sans fallback chemin pour les .py sous code/
+- Inventaire non rafraichi pour corrective_report.md, CI verte quand meme
+  (la CI n'executait pas make audit ni gate de fraicheur)
+- Corrige en passe 6 : AST scoping, etagement gates, path fallback,
+  freshness gate + make audit complet en CI
+
+## Protection de branche main
+
+- Etat (2026-07-01) : **NON PROTEGEE** (`gh api .../branches/main/protection` → 404)
+- Recommandation : activer la protection de branche main :
+  - Require pull request before merging
+  - Require status check "quality" to pass before merging
+  - Do not allow bypassing the above settings
+- Action : configuration manuelle par le proprietaire du depot.
+  L'agent ne tente aucune modification de protection.
+
 ## Politique adoptée
 
 - Commit poussé = immuable. Toute correction = nouveau commit.

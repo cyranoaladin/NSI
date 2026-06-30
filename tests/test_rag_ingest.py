@@ -76,6 +76,22 @@ def test_build_chunks_refuses_private_data_flag() -> None:
         sentinel.unlink(missing_ok=True)
 
 
+def test_code_file_gets_level_from_path_fallback() -> None:
+    """A .py file under code/ with no frontmatter still gets level/sequence_id."""
+    code_dirs = list((ROOT / "03_progressions" / "supports").rglob("code"))
+    py_files = []
+    for d in code_dirs:
+        py_files.extend(d.glob("*.py"))
+    if not py_files:
+        pytest.skip("No code .py files found")
+    chunks = rag_ingest.build_chunks(py_files[0])
+    if not chunks:
+        pytest.skip("Chunks empty (PII or private)")
+    meta = chunks[0].metadata
+    assert meta["level"], f"level should not be empty for code file: {meta['path']}"
+    assert meta["sequence_id"], f"sequence_id should not be empty: {meta['path']}"
+
+
 def test_dry_run_produces_report() -> None:
     with tempfile.TemporaryDirectory() as td:
         report = rag_ingest.ingest(Path(td), dry_run=True)
