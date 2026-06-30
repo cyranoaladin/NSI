@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 977
+- Total ressources : 978
 - Ressources pédagogiques : 53
-- Ressources techniques : 924
+- Ressources techniques : 925
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 969
+- generated: 970
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 457
+- interne: 458
 - premiere: 232
 - terminale: 288
 
@@ -19,17 +19,17 @@
 - banque: 14
 - document: 552
 - python: 95
-- script: 203
+- script: 204
 - sequence: 45
 - test: 68
 
 ## Répartition par statut
-- needs_review: 977
+- needs_review: 978
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 777
+- mixte: 778
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -887,6 +887,7 @@
   - scripts/ingest_nsi_corpus.py
   - scripts/prepare_scraped_docs_for_rag.py
   - scripts/rag_coherence_report.py
+  - scripts/rag_core.py
   - scripts/rag_diagnose_search_timeout.py
   - scripts/rag_index_plan.py
   - scripts/rag_ingest.py
@@ -1892,6 +1893,7 @@
   - scripts/ingest_nsi_corpus.py
   - scripts/prepare_scraped_docs_for_rag.py
   - scripts/rag_coherence_report.py
+  - scripts/rag_core.py
   - scripts/rag_diagnose_search_timeout.py
   - scripts/rag_index_plan.py
   - scripts/rag_ingest.py
@@ -2825,6 +2827,7 @@
 - scripts/ingest_nsi_corpus.py
 - scripts/prepare_scraped_docs_for_rag.py
 - scripts/rag_coherence_report.py
+- scripts/rag_core.py
 - scripts/rag_diagnose_search_timeout.py
 - scripts/rag_index_plan.py
 - scripts/rag_ingest.py
@@ -3802,6 +3805,7 @@
 - scripts/ingest_nsi_corpus.py
 - scripts/prepare_scraped_docs_for_rag.py
 - scripts/rag_coherence_report.py
+- scripts/rag_core.py
 - scripts/rag_diagnose_search_timeout.py
 - scripts/rag_index_plan.py
 - scripts/rag_ingest.py

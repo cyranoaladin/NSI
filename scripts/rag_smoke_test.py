@@ -56,8 +56,12 @@ def metadata_has_required_keys(metadata: dict[str, Any]) -> bool:
 
 def check_required(env: dict[str, str]) -> list[str]:
     errors = [key for key in sorted(REQUIRED_VARS) if not env.get(key)]
-    if not env.get("RAG_COLLECTION"):
+    ALLOWED_COLLECTIONS = {"nsi_corpus", "nsi_corpus_v2"}
+    col = env.get("RAG_COLLECTION", "")
+    if not col:
         errors.append("RAG_COLLECTION is required")
+    elif col not in ALLOWED_COLLECTIONS:
+        errors.append(f"RAG_COLLECTION={col} not in allowed: {sorted(ALLOWED_COLLECTIONS)}")
     if env.get("RAG_VECTOR_DIM") != "768":
         errors.append("RAG_VECTOR_DIM must be 768")
     if env.get("RAG_BACKEND") != "chroma":
@@ -118,6 +122,11 @@ def main() -> int:
         return 0
 
     env = parse_env(ENV_FILE)
+    # os.environ overrides .env.rag (allows RAG_COLLECTION=nsi_corpus_v2 etc.)
+    for key in REQUIRED_VARS | {"RAG_COLLECTION"}:
+        val = os.getenv(key)
+        if val:
+            env[key] = val
     errors = check_required(env)
     if errors:
         print("RAG_SMOKE_TEST_CONFIG_INVALID", file=sys.stderr)
