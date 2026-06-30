@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from _qa_common import ROOT, pedagogical_documents, print_result
+from scripts._qa_common import ROOT, pedagogical_documents, print_result
 
 REQUIRED_BY_DOC = {
     "cours_eleve.md": ["Objectifs", "Erreurs fréquentes", "Auto-évaluation"],

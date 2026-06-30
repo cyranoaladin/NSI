@@ -8,7 +8,7 @@ import hashlib
 
 import yaml
 
-from _qa_common import ROOT
+from scripts._qa_common import ROOT
 
 
 CATALOG = ROOT / "sources_catalog.yml"

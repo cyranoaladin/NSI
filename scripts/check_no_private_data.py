@@ -13,7 +13,7 @@ import re
 
 import yaml
 
-from _qa_common import ROOT, print_result
+from scripts._qa_common import ROOT, print_result
 
 ALLOWLIST = ROOT / "privacy_allowlist.yml"
 REPORT = ROOT / "privacy_report.md"
@@ -75,6 +75,15 @@ def student_names(allowlist: Dict[str, List[str]]) -> List[str]:
     return names
 
 
+HEX_CONTEXT_RE = re.compile(r"[0-9a-fA-F]{32,}")
+
+
+def is_hex_hash_context(text: str, start: int, end: int) -> bool:
+    """Ignore phone-like digit sequences embedded in hex hashes (SHA-256, etc.)."""
+    window = text[max(0, start - 40): min(len(text), end + 40)]
+    return bool(HEX_CONTEXT_RE.search(window))
+
+
 def is_population_context(text: str, start: int, end: int) -> bool:
     """Ignore country population values that look like Tunisian phone numbers."""
     window = text[max(0, start - 120): min(len(text), end + 120)]
@@ -132,6 +141,8 @@ def main() -> None:
                 if label.startswith("telephone") and (ISO_DATE_RE.fullmatch(value) or YEAR_RANGE_RE.fullmatch(value)):
                     continue
                 if label.startswith("telephone") and is_population_context(text, match.start(), match.end()):
+                    continue
+                if label.startswith("telephone") and is_hex_hash_context(text, match.start(), match.end()):
                     continue
                 item = f"{rel}: {label} possible -> {value}"
                 if allowed(value, allowlist) or allowed(str(rel), allowlist):

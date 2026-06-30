@@ -6,12 +6,10 @@ import tempfile
 import unittest
 from contextlib import redirect_stdout
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import build_source_archive
+import scripts.build_source_archive as build_source_archive
 
 
 class PackagingModesTest(unittest.TestCase):

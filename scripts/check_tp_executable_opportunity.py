@@ -8,8 +8,8 @@ from pathlib import Path
 import os
 import re
 
-from _qa_common import ROOT, sequence_id_from_path, strip_frontmatter
-from check_paper_tp_justification import is_paper_tp
+from scripts._qa_common import ROOT, sequence_id_from_path, strip_frontmatter
+from scripts.check_paper_tp_justification import is_paper_tp
 
 
 EXECUTABLE_TOPICS_RE = re.compile(

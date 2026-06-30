@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from _qa_common import ROOT
+from scripts._qa_common import ROOT
 
 
 REPORT = ROOT / "rag_coherence_report.md"

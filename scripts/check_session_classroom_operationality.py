@@ -7,8 +7,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import ROOT
-from check_session_referenced_files_exist import describe_session, session_blocks
+from scripts._qa_common import ROOT
+from scripts.check_session_referenced_files_exist import describe_session, session_blocks
 
 
 SESSION_FILES = [

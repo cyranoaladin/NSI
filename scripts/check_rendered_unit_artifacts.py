@@ -7,8 +7,8 @@ import argparse
 import tempfile
 from pathlib import Path
 
-from _qa_common import print_result
-from render_unit import CHARTER, render
+from scripts._qa_common import print_result
+from scripts.render_unit import CHARTER, render
 
 
 def check_unit(unit: str) -> list[str]:

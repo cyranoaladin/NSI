@@ -7,8 +7,8 @@ from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from _qa_common import ROOT, read_frontmatter
-from _course_sheets_common import (
+from scripts._qa_common import ROOT, read_frontmatter
+from scripts._course_sheets_common import (
     VALID_READINESS,
     course_sheet_links,
     link_is_registered,

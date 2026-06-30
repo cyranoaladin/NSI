@@ -3,12 +3,10 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_support_substance as substance
+import scripts.check_support_substance as substance
 
 
 GENERIC_COURSE = """

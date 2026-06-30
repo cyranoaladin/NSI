@@ -19,7 +19,7 @@ for import_path in (SCRAPER_DIR, SCRIPTS_DIR):
     if str(import_path) not in sys.path:
         sys.path.insert(0, str(import_path))
 
-from scraper_eduscol import extract_and_sort_zip  # noqa: E402
+from scraper_eduscol import extract_and_sort_zip
 
 
 def test_safe_archive_module_is_canonical() -> None:

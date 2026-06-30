@@ -3,15 +3,13 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_linked_evaluation_quality as evaluation_quality
-import check_linked_td_quality as td_quality
-import _operational_links as operational_links
-import check_operational_supports_no_indicative_debt as operational_debt
+import scripts.check_linked_evaluation_quality as evaluation_quality
+import scripts.check_linked_td_quality as td_quality
+import scripts._operational_links as operational_links
+import scripts.check_operational_supports_no_indicative_debt as operational_debt
 
 
 class LinkedSupportQualityTest(unittest.TestCase):

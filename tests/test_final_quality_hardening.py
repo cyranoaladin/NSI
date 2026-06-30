@@ -4,16 +4,14 @@ import importlib
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_audit_extracted_runtime_budget as runtime_budget
-import check_capacity_status_ladder as capacity_ladder
-import check_course_explanatory_quality as course_quality
-import check_human_review_register as human_review
-import check_tp_executable_opportunity as tp_opportunity
+import scripts.check_audit_extracted_runtime_budget as runtime_budget
+import scripts.check_capacity_status_ladder as capacity_ladder
+import scripts.check_course_explanatory_quality as course_quality
+import scripts.check_human_review_register as human_review
+import scripts.check_tp_executable_opportunity as tp_opportunity
 
 
 def write(path: Path, content: str = "x") -> None:

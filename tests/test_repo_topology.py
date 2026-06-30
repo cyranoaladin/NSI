@@ -6,8 +6,6 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT / "scripts") not in sys.path:
-    sys.path.insert(0, str(ROOT / "scripts"))
 
 
 def _git(repo: Path, *args: str) -> None:
@@ -34,7 +32,7 @@ def test_repo_topology_policy_document_names_canonical_boundaries() -> None:
 
 def test_check_repo_topology_passes_current_workspace() -> None:
     completed = subprocess.run(
-        [sys.executable, "scripts/check_repo_topology.py"],
+        [sys.executable, "-m", "scripts.check_repo_topology"],
         cwd=ROOT,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
@@ -46,7 +44,7 @@ def test_check_repo_topology_passes_current_workspace() -> None:
 
 
 def test_check_repo_topology_accepts_github_actions_checkout_name(tmp_path: Path) -> None:
-    from check_repo_topology import analyze_topology
+    from scripts.check_repo_topology import analyze_topology
 
     repo = tmp_path / "NSI"
     repo.mkdir()
@@ -59,7 +57,7 @@ def test_check_repo_topology_accepts_github_actions_checkout_name(tmp_path: Path
 
 
 def test_check_repo_topology_detects_tracked_nested_repo_and_mirrors(tmp_path: Path) -> None:
-    from check_repo_topology import analyze_topology
+    from scripts.check_repo_topology import analyze_topology
 
     parent = tmp_path / "parent"
     parent.mkdir()

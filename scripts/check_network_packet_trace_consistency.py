@@ -8,7 +8,7 @@ from pathlib import Path
 import ipaddress
 import re
 
-from _qa_common import ROOT
+from scripts._qa_common import ROOT
 
 
 TARGETS = [

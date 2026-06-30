@@ -3,12 +3,10 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_drive_mapping_release as drive_release
+import scripts.check_drive_mapping_release as drive_release
 
 
 FIELDS = (

@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 import yaml
 
-from _qa_common import PROGRAM_FILE, ROOT
+from scripts._qa_common import PROGRAM_FILE, ROOT
 
 
 CAPACITY_RE = re.compile(r"\b[PT](?:-[A-Z]+)+-\d{2}[A-Z]?\b")

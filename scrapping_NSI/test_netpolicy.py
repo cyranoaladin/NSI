@@ -8,7 +8,7 @@ from unittest.mock import MagicMock, patch
 import pytest
 import requests
 
-from netpolicy import (
+from scrapping_NSI.netpolicy import (
     DEFAULT_MIN_DELAY,
     ROBOTS_ERROR_DELAY_FACTOR,
     CappedRetry,

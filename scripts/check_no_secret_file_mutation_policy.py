@@ -6,7 +6,7 @@ from __future__ import annotations
 from pathlib import Path
 import re
 
-from _qa_common import ROOT, print_result
+from scripts._qa_common import ROOT, print_result
 
 
 SECRET_TARGETS = (".env.rag", ".env.local", ".env", "*.pem", "id_rsa")

@@ -11,8 +11,8 @@ import re
 import sys
 from pathlib import Path
 
-from _drive_paths import documents_drive_root
-from _qa_common import ROOT
+from scripts._drive_paths import documents_drive_root
+from scripts._qa_common import ROOT
 
 REPORT = ROOT / "reports" / "drive_local_inventory.csv"
 SENSITIVE_NAME = re.compile(r"(élève|eleve|notes|rendus|correction.?m[ée]lang[ée]e?|\.git|\.venv)", re.I)

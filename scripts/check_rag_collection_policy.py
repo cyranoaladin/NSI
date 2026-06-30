@@ -3,17 +3,13 @@
 
 from __future__ import annotations
 
-import sys
 from pathlib import Path
 from typing import Any
 
 import yaml
 
-SCRIPT_ROOT = Path(__file__).resolve().parents[1]
-if str(SCRIPT_ROOT) not in sys.path:
-    sys.path.insert(0, str(SCRIPT_ROOT))
 
-from scripts._qa_common import ROOT, print_result  # noqa: E402
+from scripts._qa_common import ROOT, print_result
 
 
 EXTERNAL_SOURCE_TYPES = {

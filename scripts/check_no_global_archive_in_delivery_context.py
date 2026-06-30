@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 import sys
 from pathlib import Path
 
-from check_uploaded_archive_policy import archive_entries, path_has_segment
+from scripts.check_uploaded_archive_policy import archive_entries, path_has_segment
 
 ROOT = Path(__file__).resolve().parents[1]
 FORBIDDEN_GLOBAL_NAMES = {

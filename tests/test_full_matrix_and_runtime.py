@@ -3,13 +3,11 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_audit_extracted_runtime_budget as runtime_budget
-import check_full_sequence_resource_matrix as matrix
+import scripts.check_audit_extracted_runtime_budget as runtime_budget
+import scripts.check_full_sequence_resource_matrix as matrix
 
 
 def write(path: Path, content: str = "x") -> None:

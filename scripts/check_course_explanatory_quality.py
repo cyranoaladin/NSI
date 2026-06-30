@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import ROOT, read_frontmatter, strip_frontmatter
+from scripts._qa_common import ROOT, read_frontmatter, strip_frontmatter
 
 
 COURSE_RE = re.compile(r"(^|_)cours_", re.I)

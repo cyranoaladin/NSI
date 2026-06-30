@@ -14,26 +14,23 @@ from __future__ import annotations
 
 import os
 import shutil
-import sys
 import zipfile
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
-if str(ROOT_DIR) not in sys.path:
-    sys.path.insert(0, str(ROOT_DIR))
 
-from bs4 import BeautifulSoup  # noqa: E402
-from scrapping_NSI.netpolicy import (  # noqa: E402
+from bs4 import BeautifulSoup
+from scrapping_NSI.netpolicy import (
     DEFAULT_USER_AGENT,
     DomainThrottle,
     RobotsCache,
     build_session,
     polite_get,
 )
-from scrapping_NSI.provenance import compute_sha256, guess_license, write_provenance_record  # noqa: E402
+from scrapping_NSI.provenance import compute_sha256, guess_license, write_provenance_record
 
-from scripts.archive_security import ArchiveSecurityError, safe_extract_zip  # noqa: E402
+from scripts.archive_security import ArchiveSecurityError, safe_extract_zip
 
 # URLs racines officielles de la spécialité NSI sur Eduscol STI
 EDUSCOL_NSI_URLS = [

@@ -6,7 +6,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from _qa_common import ROOT
+from scripts._qa_common import ROOT
 
 COVERAGE = ROOT / "coverage.md"
 PROOF_COLUMNS = {

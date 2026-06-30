@@ -4,12 +4,10 @@ import tarfile
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_delivered_archive_exactly_source_clean as exact_archive
+import scripts.check_delivered_archive_exactly_source_clean as exact_archive
 
 
 def write_tar(path: Path, entries: dict[str, str]) -> None:

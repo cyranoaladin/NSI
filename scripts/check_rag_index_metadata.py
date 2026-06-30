@@ -5,8 +5,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from _qa_common import print_result
-import ingest_nsi_corpus
+from scripts._qa_common import print_result
+import scripts.ingest_nsi_corpus as ingest_nsi_corpus
 
 
 REQUIRED_METADATA = {

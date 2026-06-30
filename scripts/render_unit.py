@@ -8,7 +8,7 @@ import html
 import re
 from pathlib import Path
 
-from _qa_common import ROOT, strip_frontmatter
+from scripts._qa_common import ROOT, strip_frontmatter
 
 
 CHARTER = "CHARTE_NSI_CORPUS_NEEDS_REVIEW"

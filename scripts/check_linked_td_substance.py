@@ -8,8 +8,8 @@ from pathlib import Path
 import re
 import unicodedata
 
-from _qa_common import ROOT, strip_frontmatter
-from check_linked_td_quality import target_td_files
+from scripts._qa_common import ROOT, strip_frontmatter
+from scripts.check_linked_td_quality import target_td_files
 
 GENERIC_PHRASES = [
     "résultat indicatif",

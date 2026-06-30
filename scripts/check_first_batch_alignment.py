@@ -7,8 +7,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import ROOT, load_program_entries
-from check_first_batch_document_quality import FIRST_BATCH_PREFIXES, find_kind_file
+from scripts._qa_common import ROOT, load_program_entries
+from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, find_kind_file
 
 SESSION_FILES = [ROOT / "03_progressions/seances_premiere.md", ROOT / "03_progressions/seances_terminale.md"]
 CAPACITY_RE = re.compile(r"\b[PT]-[A-Z]+(?:-[A-Z]+)*-\d{2}[A-Z]?\b")

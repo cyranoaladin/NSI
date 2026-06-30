@@ -11,7 +11,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from check_substance_anchors import (
+from scripts.check_substance_anchors import (
     Section,
     check_capacity,
     load_official_labels,

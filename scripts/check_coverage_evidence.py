@@ -6,7 +6,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Dict, List
 
-from _qa_common import ROOT, print_result
+from scripts._qa_common import ROOT, print_result
 
 COVERAGE = ROOT / "coverage.md"
 VALID_STATUS = {"absent", "partial", "needs_review", "covered"}

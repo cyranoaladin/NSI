@@ -3,12 +3,10 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_missing_register_semantic_consistency as semantic_register
+import scripts.check_missing_register_semantic_consistency as semantic_register
 
 
 HEADER = """| Fichier | Niveau | Séquence | Séance(s) | Type | Priorité | Statut | Responsable | Date cible | Source possible | Lien Drive éventuel | Dépendance | Décision | Blocage si absent | Fiche(s) concernée(s) | Impact pédagogique |

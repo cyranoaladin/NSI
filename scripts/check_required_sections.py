@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from typing import Dict, List
 
-from _qa_common import ROOT, pedagogical_documents, print_result, strip_frontmatter
+from scripts._qa_common import ROOT, pedagogical_documents, print_result, strip_frontmatter
 
 REQUIRED: Dict[str, List[str]] = {
     "cours_eleve.md": [

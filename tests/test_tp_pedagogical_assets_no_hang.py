@@ -14,8 +14,8 @@ class TpPedagogicalAssetsNoHangTest(unittest.TestCase):
         env = os.environ.copy()
         env["PYTHONDONTWRITEBYTECODE"] = "1"
         commands = [
-            [sys.executable, "scripts/check_tp_pedagogical_assets.py"],
-            [sys.executable, "-u", "scripts/check_tp_pedagogical_assets.py"],
+            [sys.executable, "-m", "scripts.check_tp_pedagogical_assets"],
+            [sys.executable, "-u", "-m", "scripts.check_tp_pedagogical_assets"],
         ]
         for command in commands:
             with self.subTest(command=" ".join(command)):

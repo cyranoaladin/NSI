@@ -8,8 +8,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import ROOT, read_frontmatter
-from _course_sheets_common import (
+from scripts._qa_common import ROOT, read_frontmatter
+from scripts._course_sheets_common import (
     REQUIRED_FRONTMATTER,
     REQUIRED_SECTIONS,
     SHEET_NAME_RE,

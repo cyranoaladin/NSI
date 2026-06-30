@@ -9,8 +9,8 @@ from typing import Any
 
 import yaml
 
-from _qa_common import ROOT, load_program_entries
-from check_coverage_gap_action_plan import REQUIRED_COLUMNS, absent_from_coverage
+from scripts._qa_common import ROOT, load_program_entries
+from scripts.check_coverage_gap_action_plan import REQUIRED_COLUMNS, absent_from_coverage
 
 
 PLAN = ROOT / "coverage_gap_action_plan.md"

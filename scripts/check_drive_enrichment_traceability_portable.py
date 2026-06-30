@@ -16,8 +16,8 @@ from pathlib import Path
 
 import yaml
 
-from _qa_common import ROOT, read_frontmatter
-from check_drive_enrichment_traceability import (
+from scripts._qa_common import ROOT, read_frontmatter
+from scripts.check_drive_enrichment_traceability import (
     AUTHORIZED_DECISIONS,
     DRIVE_MENTION,
     INVENTORY,

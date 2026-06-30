@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import sys
-from _session_checks import LEVELS, parse_sessions, parse_table_hours, fail_or_pass
+from scripts._session_checks import LEVELS, parse_sessions, parse_table_hours, fail_or_pass
 
 PERIOD_MONTHS = [
     {"septembre", "octobre"},

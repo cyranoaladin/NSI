@@ -6,8 +6,8 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from _qa_common import print_result
-from substance_report_renderer import NON_VALIDATION_BANNER, REPORT_META_TAG
+from scripts._qa_common import print_result
+from scripts.substance_report_renderer import NON_VALIDATION_BANNER, REPORT_META_TAG
 
 
 def check_reports_dir(reports_dir: Path) -> list[str]:

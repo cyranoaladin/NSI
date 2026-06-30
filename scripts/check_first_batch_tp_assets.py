@@ -8,8 +8,8 @@ from pathlib import Path
 import py_compile
 import tempfile
 
-from _qa_common import ROOT
-from check_first_batch_document_quality import FIRST_BATCH_PREFIXES
+from scripts._qa_common import ROOT
+from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES
 
 
 @dataclass

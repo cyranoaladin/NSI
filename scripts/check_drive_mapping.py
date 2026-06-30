@@ -8,7 +8,7 @@ import csv
 
 import yaml
 
-from _qa_common import ROOT, print_result
+from scripts._qa_common import ROOT, print_result
 
 
 def main() -> None:

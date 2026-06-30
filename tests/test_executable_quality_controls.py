@@ -3,21 +3,19 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_boyer_moore_trace_consistency as boyer_moore
-import check_capacity_status_ladder as capacity_ladder
-import check_course_explanatory_quality as course_quality
-import check_dynamic_programming_recurrence_consistency as dynamic_programming
-import check_graph_algorithm_trace_consistency as graph_trace
-import check_network_packet_trace_consistency as network_trace
-import check_paper_tp_justification as paper_tp
-import check_session_to_resource_alignment as session_alignment
-import check_sql_query_result_consistency as sql_consistency
-import check_tree_bst_invariant_consistency as bst_consistency
+import scripts.check_boyer_moore_trace_consistency as boyer_moore
+import scripts.check_capacity_status_ladder as capacity_ladder
+import scripts.check_course_explanatory_quality as course_quality
+import scripts.check_dynamic_programming_recurrence_consistency as dynamic_programming
+import scripts.check_graph_algorithm_trace_consistency as graph_trace
+import scripts.check_network_packet_trace_consistency as network_trace
+import scripts.check_paper_tp_justification as paper_tp
+import scripts.check_session_to_resource_alignment as session_alignment
+import scripts.check_sql_query_result_consistency as sql_consistency
+import scripts.check_tree_bst_invariant_consistency as bst_consistency
 
 
 def write(path: Path, content: str) -> None:

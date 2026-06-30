@@ -4,15 +4,10 @@
 from __future__ import annotations
 
 import re
-import sys
-from pathlib import Path
 
-SCRIPT_ROOT = Path(__file__).resolve().parents[1]
-if str(SCRIPT_ROOT) not in sys.path:
-    sys.path.insert(0, str(SCRIPT_ROOT))
 
-from scripts import check_quality_gates  # noqa: E402
-from scripts._qa_common import ROOT, print_result  # noqa: E402
+from scripts import check_quality_gates
+from scripts._qa_common import ROOT, print_result
 
 
 MAKEFILE = ROOT / "Makefile"
@@ -26,13 +21,16 @@ def target_body(text: str, target: str) -> str:
 
 def python_scripts(body: str) -> set[str]:
     scripts: set[str] = set()
-    for match in re.finditer(r"(?:^|\s)(?:PYTHONDONTWRITEBYTECODE=1\s+)?(?:RAG_ENV_FILE=[^\s]+\s+)?-?python\s+(scripts/[^\s]+\.py)", body):
+    for match in re.finditer(r"(?:^|\s)(?:[A-Z_]+=[^\s]+\s+)*-?python\s+-m\s+(scripts\.\w+)", body):
         scripts.add(match.group(1))
     return scripts
 
 
 def documented_scripts(policy_text: str) -> set[str]:
-    return set(re.findall(r"scripts/[A-Za-z0-9_./-]+\.py", policy_text))
+    found: set[str] = set()
+    for m in re.findall(r"scripts/([A-Za-z0-9_]+)\.py", policy_text):
+        found.add(f"scripts.{m}")
+    return found
 
 
 def main() -> None:
@@ -48,9 +46,9 @@ def main() -> None:
         errors.append("cible audit-core absente")
     if not metrics:
         errors.append("cible audit-metrics absente")
-    if "RAG_ENV_FILE=.env.rag.audit-core-missing python scripts/rag_smoke_test.py" not in core:
+    if "RAG_ENV_FILE=.env.rag.audit-core-missing python -m scripts.rag_smoke_test" not in core:
         errors.append("audit-core doit forcer le smoke RAG en mode clone-propre")
-    if "python scripts/rag_smoke_test.py" not in required or "RAG_ENV_FILE" in required:
+    if "python -m scripts.rag_smoke_test" not in required or "RAG_ENV_FILE" in required:
         errors.append("rag-smoke-required doit utiliser .env.rag réel")
     docs = documented_scripts(policy)
     for script in sorted(python_scripts(core)):

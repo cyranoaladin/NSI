@@ -5,12 +5,10 @@ import tempfile
 import unittest
 import zipfile
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_uploaded_archive_policy as archive_policy
+import scripts.check_uploaded_archive_policy as archive_policy
 
 
 def write_tar(path: Path, entries: dict[str, str]) -> None:

@@ -6,7 +6,7 @@ from __future__ import annotations
 from pathlib import Path
 import re
 
-from _qa_common import ROOT, load_program_entries, print_result
+from scripts._qa_common import ROOT, load_program_entries, print_result
 
 
 PLAN = ROOT / "coverage_gap_action_plan.md"

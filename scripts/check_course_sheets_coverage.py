@@ -6,8 +6,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from _qa_common import ROOT
-from _course_sheets_common import DENSE_MIN_SHEETS, frontmatter_capacities, planned_sequences, read_frontmatter, sheets_by_sequence
+from scripts._qa_common import ROOT
+from scripts._course_sheets_common import DENSE_MIN_SHEETS, frontmatter_capacities, planned_sequences, read_frontmatter, sheets_by_sequence
 
 
 @dataclass

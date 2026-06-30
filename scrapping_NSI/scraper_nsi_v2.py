@@ -26,14 +26,14 @@ from urllib.parse import urldefrag, urljoin, urlparse, unquote
 import requests
 from bs4 import BeautifulSoup
 
-from netpolicy import (
+from scrapping_NSI.netpolicy import (
     DEFAULT_USER_AGENT,
     DomainThrottle,
     RobotsCache,
     build_session,
     polite_get,
 )
-from provenance import compute_sha256, guess_license, write_provenance_record
+from scrapping_NSI.provenance import compute_sha256, guess_license, write_provenance_record
 
 
 CSV_FILE = os.getenv("NSI_SCRAPER_CSV", "urls_a_scraper.csv")

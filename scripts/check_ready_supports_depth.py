@@ -6,8 +6,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from _qa_common import ROOT
-from check_first_batch_document_quality import FIRST_BATCH_PREFIXES, REQUIRED_KINDS, find_kind_file, useful_lines
+from scripts._qa_common import ROOT
+from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, REQUIRED_KINDS, find_kind_file, useful_lines
 
 MIN_LINES = {
     "cours": 180,

@@ -16,7 +16,7 @@ def run_script(*args: str, extra_env: dict[str, str] | None = None) -> subproces
     if extra_env:
         env.update(extra_env)
     return subprocess.run(
-        [sys.executable, *args],
+        [sys.executable, "-m", *args],
         cwd=ROOT,
         env=env,
         text=True,
@@ -66,11 +66,11 @@ def test_rag_env_example_uses_internal_corpus_without_real_secret() -> None:
 
 
 def test_rag_config_and_smoke_scripts_are_safe_without_local_config() -> None:
-    config_result = run_script("scripts/check_rag_config.py")
+    config_result = run_script("scripts.check_rag_config")
     assert config_result.returncode == 0, config_result.stdout
 
     smoke_result = run_script(
-        "scripts/rag_smoke_test.py",
+        "scripts.rag_smoke_test",
         extra_env={"RAG_ENV_FILE": str(ROOT / ".env.rag.missing-for-test")},
     )
     assert smoke_result.returncode == 0, smoke_result.stdout
@@ -78,7 +78,7 @@ def test_rag_config_and_smoke_scripts_are_safe_without_local_config() -> None:
 
 
 def test_agents_and_skills_governance_lock_rag_doctrine() -> None:
-    for script in ("scripts/check_agents_governance.py", "scripts/check_skills_governance.py"):
+    for script in ("scripts.check_agents_governance", "scripts.check_skills_governance"):
         result = run_script(script)
         assert result.returncode == 0, result.stdout
 
@@ -93,7 +93,7 @@ def test_agents_and_skills_governance_lock_rag_doctrine() -> None:
 
 
 def test_coverage_gap_action_plan_covers_every_absent_capacity() -> None:
-    result = run_script("scripts/check_coverage_gap_action_plan.py")
+    result = run_script("scripts.check_coverage_gap_action_plan")
     assert result.returncode == 0, result.stdout
 
     plan = ROOT / "coverage_gap_action_plan.md"
@@ -108,30 +108,29 @@ def test_sources_catalog_and_scraping_policy_are_checked() -> None:
     for path in ("sources_catalog.yml", "scraping_strategy.md", "scraping_ingestion_plan.md"):
         assert (ROOT / path).exists(), f"{path} missing"
 
-    result = run_script("scripts/check_sources_catalog.py")
+    result = run_script("scripts.check_sources_catalog")
     assert result.returncode == 0, result.stdout
-    result = run_script("scripts/check_sources_catalog_schema.py")
+    result = run_script("scripts.check_sources_catalog_schema")
     assert result.returncode == 0, result.stdout
     assert (ROOT / "sources_catalog.schema.json").exists()
 
 
 def test_rag_index_metadata_uses_only_canonical_pedagogical_sources() -> None:
-    result = run_script("scripts/check_rag_index_metadata.py")
+    result = run_script("scripts.check_rag_index_metadata")
     assert result.returncode == 0, result.stdout
-    result = run_script("scripts/check_rag_metadata_canonical_fields.py")
+    result = run_script("scripts.check_rag_metadata_canonical_fields")
     assert result.returncode == 0, result.stdout
 
 
 def test_rag_collection_and_golden_example_policies_are_enforced() -> None:
     for script in (
-        "scripts/check_rag_collection_policy.py",
-        "scripts/check_rag_golden_examples_policy.py",
+        "scripts.check_rag_collection_policy",
+        "scripts.check_rag_golden_examples_policy",
     ):
         result = run_script(script)
         assert result.returncode == 0, result.stdout
 
-    sys.path.insert(0, str(ROOT / "scripts"))
-    import ingest_nsi_corpus
+    import scripts.ingest_nsi_corpus as ingest_nsi_corpus
 
     source_dirs = {path.relative_to(ROOT).as_posix() for path in ingest_nsi_corpus.SOURCE_DIRS}
     assert source_dirs == {
@@ -143,9 +142,9 @@ def test_rag_collection_and_golden_example_policies_are_enforced() -> None:
 
 
 def test_pedagogical_indexes_are_generated_and_checked() -> None:
-    result = run_script("scripts/generate_pedagogical_indexes.py")
+    result = run_script("scripts.generate_pedagogical_indexes")
     assert result.returncode == 0, result.stdout
-    result = run_script("scripts/check_pedagogical_indexes.py")
+    result = run_script("scripts.check_pedagogical_indexes")
     assert result.returncode == 0, result.stdout
 
     forbidden = ("AUDIT/", "dist/", ".git/", "Documents_DRIVE/", "NotesEleves.csv", "Fichier_Eleves.csv")
@@ -176,30 +175,30 @@ def test_makefile_separates_core_and_metrics_audits() -> None:
     assert "\naudit: audit-core audit-metrics" in text
     core_section = text.split("\naudit-core:", 1)[1].split("\n\n", 1)[0]
     for required in (
-        "scripts/check_git_clean.py",
-        "scripts/check_audit_folder_policy.py",
-        "scripts/check_content_tree_policy.py",
-        "scripts/check_rag_config.py",
-        "scripts/rag_smoke_test.py",
-        "scripts/check_agents_governance.py",
-        "scripts/check_skills_governance.py",
-        "scripts/check_program_coverage.py",
-        "scripts/check_substance_anchors.py",
-        "scripts/check_contract_substance_quality.py",
-        "scripts/check_differentiation_distinctness.py",
-        "scripts/check_rendered_unit_artifacts.py --unit P05",
-        "scripts/check_rendered_unit_artifacts.py --unit T10",
-        "scripts/check_no_private_data.py",
-        "scripts/check_no_committed_secrets.py",
-        "scripts/check_no_placeholders_docs.py",
-        "scripts/check_no_placeholders_code.py",
-        "scripts/run_python_tests.py",
+        "scripts.check_git_clean",
+        "scripts.check_audit_folder_policy",
+        "scripts.check_content_tree_policy",
+        "scripts.check_rag_config",
+        "scripts.rag_smoke_test",
+        "scripts.check_agents_governance",
+        "scripts.check_skills_governance",
+        "scripts.check_program_coverage",
+        "scripts.check_substance_anchors",
+        "scripts.check_contract_substance_quality",
+        "scripts.check_differentiation_distinctness",
+        "scripts.check_rendered_unit_artifacts --unit P05",
+        "scripts.check_rendered_unit_artifacts --unit T10",
+        "scripts.check_no_private_data",
+        "scripts.check_no_committed_secrets",
+        "scripts.check_no_placeholders_docs",
+        "scripts.check_no_placeholders_code",
+        "scripts.run_python_tests",
     ):
         assert required in core_section
-    assert "RAG_ENV_FILE=.env.rag.audit-core-missing python scripts/rag_smoke_test.py" in core_section
+    assert "RAG_ENV_FILE=.env.rag.audit-core-missing python -m scripts.rag_smoke_test" in core_section
     assert "\nrag-smoke-required:" in text
 
-    result = run_script("scripts/check_makefile_audit_policy.py")
+    result = run_script("scripts.check_makefile_audit_policy")
     assert result.returncode == 0, result.stdout
 
 
@@ -208,19 +207,18 @@ def test_quality_gates_run_rag_smoke_in_clone_clean_mode() -> None:
     assert "RAG_ENV_FILE" in text
     assert ".env.rag.audit-core-missing" in text
     for script in (
-        "check_rag_collection_policy.py",
-        "check_rag_golden_examples_policy.py",
-        "check_rag_metadata_canonical_fields.py",
-        "check_no_secret_file_mutation_policy.py",
-        "check_makefile_audit_policy.py",
-        "check_reports_policy.py",
+        "scripts.check_rag_collection_policy",
+        "scripts.check_rag_golden_examples_policy",
+        "scripts.check_rag_metadata_canonical_fields",
+        "scripts.check_no_secret_file_mutation_policy",
+        "scripts.check_makefile_audit_policy",
+        "scripts.check_reports_policy",
     ):
         assert script in text
 
 
 def test_secret_file_mutation_policy_rejects_direct_env_rag_edits(tmp_path: Path) -> None:
-    sys.path.insert(0, str(ROOT / "scripts"))
-    import check_no_secret_file_mutation_policy as policy
+    import scripts.check_no_secret_file_mutation_policy as policy
 
     bad = tmp_path / "docs" / "bad.md"
     good = tmp_path / "docs" / "good.md"
@@ -239,7 +237,7 @@ def test_secret_file_mutation_policy_rejects_direct_env_rag_edits(tmp_path: Path
 
 def test_rag_timeout_diagnostic_skips_without_config() -> None:
     result = run_script(
-        "scripts/rag_diagnose_search_timeout.py",
+        "scripts.rag_diagnose_search_timeout",
         extra_env={"RAG_ENV_FILE": str(ROOT / ".env.rag.missing-for-timeout-test")},
     )
     assert result.returncode == 0, result.stdout
@@ -250,7 +248,7 @@ def test_rag_timeout_diagnostic_skips_without_config() -> None:
 
 def test_reports_policy_is_documented_and_checked() -> None:
     assert (ROOT / "reports_policy.md").exists()
-    result = run_script("scripts/check_reports_policy.py")
+    result = run_script("scripts.check_reports_policy")
     assert result.returncode == 0, result.stdout
 
 
@@ -260,7 +258,7 @@ def test_coverage_gap_plan_uses_typed_actionable_rows() -> None:
     assert "TODO" not in plan
     assert "TBD" not in plan
     assert "à définir" not in plan.lower()
-    result = run_script("scripts/check_coverage_gap_action_plan.py")
+    result = run_script("scripts.check_coverage_gap_action_plan")
     assert result.returncode == 0, result.stdout
 
 
@@ -283,8 +281,7 @@ def test_rag_server_timeout_reports_are_actionable() -> None:
 
 
 def test_sources_catalog_schema_rejects_external_source_in_internal_collection(tmp_path: Path) -> None:
-    sys.path.insert(0, str(ROOT / "scripts"))
-    import check_sources_catalog_schema as schema_check
+    import scripts.check_sources_catalog_schema as schema_check
 
     catalog = tmp_path / "sources_catalog.yml"
     catalog.write_text(

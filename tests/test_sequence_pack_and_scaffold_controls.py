@@ -3,16 +3,14 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_corrected_answers_are_concrete as concrete_answers
-import check_no_generic_scaffold_overuse as scaffold
-import check_sequence_pack_consistency as pack_consistency
-import check_sequence_capacity_alignment as capacity_alignment
-import check_student_supports_no_scaffold_language as student_scaffold
+import scripts.check_corrected_answers_are_concrete as concrete_answers
+import scripts.check_no_generic_scaffold_overuse as scaffold
+import scripts.check_sequence_pack_consistency as pack_consistency
+import scripts.check_sequence_capacity_alignment as capacity_alignment
+import scripts.check_student_supports_no_scaffold_language as student_scaffold
 
 
 def write_support(path: Path, body: str) -> None:

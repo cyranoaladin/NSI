@@ -28,7 +28,7 @@ from pathlib import Path
 import yaml
 from collections.abc import Sequence
 
-from check_substance_anchors import parse_sections, load_official_labels
+from scripts.check_substance_anchors import parse_sections, load_official_labels
 
 # Documents soumis au juge, par ordre de pertinence pédagogique.
 # Pour le modèle « séquences » et le modèle « supports », on tente plusieurs noms.

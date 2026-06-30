@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import json
 
-from provenance import (
+from scrapping_NSI.provenance import (
     PROVENANCE_REQUIRED_KEYS,
     compute_sha256,
     generate_notice_sources,

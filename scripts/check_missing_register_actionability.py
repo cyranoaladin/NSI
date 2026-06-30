@@ -7,8 +7,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import ROOT, read_frontmatter
-from _course_sheets_common import course_sheet_links, parse_markdown_table, sheet_files
+from scripts._qa_common import ROOT, read_frontmatter
+from scripts._course_sheets_common import course_sheet_links, parse_markdown_table, sheet_files
 
 REGISTER = ROOT / "missing_documents_register_v2.md"
 REQUIRED_COLUMNS = [

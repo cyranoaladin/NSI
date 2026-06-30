@@ -7,14 +7,14 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List
 
-from _qa_common import (
+from scripts._qa_common import (
     ROOT,
     REQUIRED_EVIDENCE,
     VALIDATED_STATUSES,
     Evidence,
     load_program_entries,
 )
-from _supports_evidence import iter_support_evidence
+from scripts._supports_evidence import iter_support_evidence
 
 COVERAGE = ROOT / "coverage.md"
 MATRIX_PREMIERE = ROOT / "programme_matrix_premiere.md"

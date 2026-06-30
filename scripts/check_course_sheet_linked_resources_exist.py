@@ -6,8 +6,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from _qa_common import ROOT
-from _course_sheets_common import (
+from scripts._qa_common import ROOT
+from scripts._course_sheets_common import (
     THEORETICAL_LINK_STATUSES,
     course_sheet_links,
     link_is_registered,

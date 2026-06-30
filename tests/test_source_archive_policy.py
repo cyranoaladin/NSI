@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import subprocess
-import sys
 import tarfile
 from pathlib import Path
 
@@ -9,10 +8,8 @@ import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT / "scripts") not in sys.path:
-    sys.path.insert(0, str(ROOT / "scripts"))
 
-import build_source_archive  # noqa: E402
+import build_source_archive
 
 
 def _git(repo: Path, *args: str) -> None:

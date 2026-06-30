@@ -7,8 +7,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import ROOT
-from check_p05_pipeline_consistency import EXPECTED_TOKENS, PIPELINE_TOKENS, p05_files, rel
+from scripts._qa_common import ROOT
+from scripts.check_p05_pipeline_consistency import EXPECTED_TOKENS, PIPELINE_TOKENS, p05_files, rel
 
 
 @dataclass

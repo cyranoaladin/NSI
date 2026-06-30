@@ -7,7 +7,7 @@ import csv
 from collections import Counter
 from pathlib import Path
 
-from _qa_common import ROOT, print_result
+from scripts._qa_common import ROOT, print_result
 
 NON_BLOCKING_DECISIONS = {"integrated_adapted", "inspiration_only"}
 BLOCKING_DECISIONS = {"missing_local_copy", "deferred", "quarantined", "rejected_sensitive"}

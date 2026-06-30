@@ -3,13 +3,11 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_ready_supports_depth as ready_depth
-import check_ready_supports_required_sections as ready_sections
+import scripts.check_ready_supports_depth as ready_depth
+import scripts.check_ready_supports_required_sections as ready_sections
 
 
 class ReadySupportsGatesTest(unittest.TestCase):

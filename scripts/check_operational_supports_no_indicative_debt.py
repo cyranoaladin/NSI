@@ -6,8 +6,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from _qa_common import ROOT, read_frontmatter, strip_frontmatter
-from _operational_links import operational_resource_links, resolve_reference
+from scripts._qa_common import ROOT, read_frontmatter, strip_frontmatter
+from scripts._operational_links import operational_resource_links, resolve_reference
 
 MIN_LINES = {
     "td": 80,

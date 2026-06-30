@@ -89,7 +89,7 @@ class RenderSubstanceReportCliTests(unittest.TestCase):
 
     def run_cli(self, *args: str) -> subprocess.CompletedProcess[str]:
         return subprocess.run(
-            [sys.executable, str(ROOT / "scripts" / "render_substance_report.py"), *args],
+            [sys.executable, "-m", "scripts.render_substance_report", *args],
             cwd=ROOT,
             text=True,
             stdout=subprocess.PIPE,
@@ -159,7 +159,8 @@ class RenderSubstanceReportCliTests(unittest.TestCase):
         check_ok = subprocess.run(
             [
                 sys.executable,
-                str(ROOT / "scripts" / "check_substance_report_artifacts.py"),
+                "-m",
+                "scripts.check_substance_report_artifacts",
                 "--reports-dir",
                 str(out_dir),
             ],
@@ -175,7 +176,8 @@ class RenderSubstanceReportCliTests(unittest.TestCase):
         check_ko = subprocess.run(
             [
                 sys.executable,
-                str(ROOT / "scripts" / "check_substance_report_artifacts.py"),
+                "-m",
+                "scripts.check_substance_report_artifacts",
                 "--reports-dir",
                 str(out_dir),
             ],

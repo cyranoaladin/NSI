@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import ROOT
+from scripts._qa_common import ROOT
 
 
 P05_EVALUATION = ROOT / "03_progressions" / "supports" / "premiere" / "P05" / "P05_evaluation_tables_csv.md"

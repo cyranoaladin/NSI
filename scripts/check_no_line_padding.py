@@ -9,8 +9,8 @@ from difflib import SequenceMatcher
 from pathlib import Path
 import re
 
-from _qa_common import ROOT
-from check_first_batch_document_quality import FIRST_BATCH_PREFIXES
+from scripts._qa_common import ROOT
+from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES
 
 SUPPORTS_ROOT = ROOT / "03_progressions" / "supports"
 OBJECTIVE_RE = re.compile(r"^##\s+Objectif\s+(O\d+).*?(?=^##\s+Objectif\s+O\d+|^##\s+|\Z)", re.M | re.S)

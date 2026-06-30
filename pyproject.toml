@@ -1,7 +1,22 @@
+[tool.mypy]
+python_version = "3.12"
+strict = true
+explicit_package_bases = true
+mypy_path = "."
+warn_return_any = true
+warn_unused_configs = true
+# Legacy test files inside scrapping_NSI/ are not part of the main type-check
+# scope; they use test patterns (bare functions) that produce no-untyped-def
+# noise. Excluding them keeps the strict check focused on production code.
+exclude = [
+    "scrapping_NSI/test_.*\\.py$",
+]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 addopts = "-ra"
+pythonpath = ["."]
 norecursedirs = [
     ".*",
     "__pycache__",
@@ -48,3 +63,7 @@ ignore = ["E501"]
 "scripts/check_session_monthly_total.py" = ["E402"]
 "scripts/check_session_project_hours.py" = ["E402"]
 "scripts/rebuild_inventory.py" = ["E402"]
+"scripts/build_source_archive.py" = ["E402"]
+"scripts/check_archive_portability.py" = ["E402"]
+"scripts/run_audit_extracted_source.py" = ["E402"]
+"scrapping_NSI/scraper_eduscol.py" = ["E402"]

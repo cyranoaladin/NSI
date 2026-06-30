@@ -6,7 +6,7 @@ from __future__ import annotations
 from typing import List
 from collections import Counter
 
-from _qa_common import ROOT, print_result
+from scripts._qa_common import ROOT, print_result
 
 
 def main() -> None:

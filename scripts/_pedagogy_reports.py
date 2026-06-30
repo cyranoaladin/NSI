@@ -6,7 +6,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Iterable
 
-from _qa_common import ROOT, TARGET_SEQUENCES, useful_lines
+from scripts._qa_common import ROOT, TARGET_SEQUENCES, useful_lines
 
 
 def rel(path: Path) -> str:

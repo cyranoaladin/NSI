@@ -6,9 +6,9 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from _qa_common import ROOT, read_frontmatter
-from _course_sheets_common import course_sheet_links, resource_exists, sheet_files
-from check_missing_register_semantic_consistency import register_rows
+from scripts._qa_common import ROOT, read_frontmatter
+from scripts._course_sheets_common import course_sheet_links, resource_exists, sheet_files
+from scripts.check_missing_register_semantic_consistency import register_rows
 
 
 @dataclass

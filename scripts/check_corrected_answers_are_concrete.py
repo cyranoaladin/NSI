@@ -7,8 +7,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import ROOT, strip_frontmatter
-from check_linked_td_substance import correction_has_substance
+from scripts._qa_common import ROOT, strip_frontmatter
+from scripts.check_linked_td_substance import correction_has_substance
 
 
 @dataclass

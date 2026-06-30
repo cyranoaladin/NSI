@@ -21,7 +21,7 @@ from __future__ import annotations
 
 from typing import Iterable
 
-from _qa_common import ROOT, Evidence, get_status, read_frontmatter
+from scripts._qa_common import ROOT, Evidence, get_status, read_frontmatter
 
 SUPPORTS_DIR = ROOT / "03_progressions" / "supports"
 

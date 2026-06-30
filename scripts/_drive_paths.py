@@ -6,7 +6,7 @@ from __future__ import annotations
 from pathlib import Path
 import os
 
-from _qa_common import ROOT
+from scripts._qa_common import ROOT
 
 DRIVE_ENV_VAR = "NSI_DOCUMENTS_DRIVE_ROOT"
 DRIVE_DIRNAME = "Documents_DRIVE"

@@ -2,14 +2,12 @@ from __future__ import annotations
 
 import hashlib
 import json
-import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_status_promotion_guard as guard
+import scripts.check_status_promotion_guard as guard
 
 
 CAPACITY_ID = "P-TABLE-01"
@@ -125,10 +123,10 @@ def test_promoted_status_with_valid_system_a_and_confirmation_is_accepted(tmp_pa
 
 
 def test_quality_gate_and_ci_include_status_promotion_guard() -> None:
-    import check_quality_gates
+    import scripts.check_quality_gates as check_quality_gates
 
     commands = {" ".join(command) for command in check_quality_gates.CORE_CHECKS}
-    assert "scripts/check_status_promotion_guard.py" in commands
-    assert "check_status_promotion_guard.py" in (ROOT / ".github/workflows/ci.yml").read_text(
+    assert "-m scripts.check_status_promotion_guard" in commands
+    assert "check_status_promotion_guard" in (ROOT / ".github/workflows/ci.yml").read_text(
         encoding="utf-8"
     )

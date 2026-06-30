@@ -7,7 +7,7 @@ from difflib import SequenceMatcher
 from pathlib import Path
 import re
 
-from _qa_common import ROOT, strip_frontmatter, print_result
+from scripts._qa_common import ROOT, strip_frontmatter, print_result
 
 
 SUPPORTS = ROOT / "03_progressions" / "supports"

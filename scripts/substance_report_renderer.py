@@ -15,7 +15,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from check_substance_anchors import (
+from scripts.check_substance_anchors import (
     CapacityResult,
     ProofCheck,
     check_capacity,

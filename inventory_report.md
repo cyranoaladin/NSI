@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 950
+- Total ressources : 959
 - Ressources pédagogiques : 53
-- Ressources techniques : 897
+- Ressources techniques : 906
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 942
+- generated: 951
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 430
+- interne: 439
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 534
+- document: 541
 - python: 95
 - script: 201
 - sequence: 45
-- test: 61
+- test: 63
 
 ## Répartition par statut
-- needs_review: 950
+- needs_review: 959
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 750
+- mixte: 759
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -599,6 +599,7 @@
   - human_review_register.csv
   - human_review_wave_1_plan.md
   - learning_objectives_assessed_report.md
+  - manifest_tooling.csv
   - missing_capabilities.md
   - missing_documents_register.md
   - missing_documents_register_v2.md
@@ -663,6 +664,12 @@
   - reports/lot3/lot3_hardening_validation_log.md
   - reports/lot3/lot3_validation_log.md
   - reports/lot3/post_merge_audit.md
+  - reports/reconciliation/branch_topology.md
+  - reports/reconciliation/drive_integration_plan.md
+  - reports/reconciliation/mypy_debt.md
+  - reports/reconciliation/rag_pr35_status.md
+  - reports/reconciliation/rag_reindex_plan.md
+  - reports/reconciliation/reconciliation_report.md
   - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
@@ -949,7 +956,9 @@
   - tests/test_lot2_scraper_content_dedup.py
   - tests/test_lot3_archive_security.py
   - tests/test_lot3_topological_isolation.py
+  - tests/test_manifest_separation.py
   - tests/test_missing_register_actionability.py
+  - tests/test_mypy_strict_debt.py
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
   - tests/test_notional_and_disciplinary_controls.py
@@ -1603,6 +1612,7 @@
   - human_review_register.csv
   - human_review_wave_1_plan.md
   - learning_objectives_assessed_report.md
+  - manifest_tooling.csv
   - missing_capabilities.md
   - missing_documents_register.md
   - missing_documents_register_v2.md
@@ -1641,6 +1651,12 @@
   - reports/lot3/lot3_hardening_validation_log.md
   - reports/lot3/lot3_validation_log.md
   - reports/lot3/post_merge_audit.md
+  - reports/reconciliation/branch_topology.md
+  - reports/reconciliation/drive_integration_plan.md
+  - reports/reconciliation/mypy_debt.md
+  - reports/reconciliation/rag_pr35_status.md
+  - reports/reconciliation/rag_reindex_plan.md
+  - reports/reconciliation/reconciliation_report.md
   - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
@@ -1901,7 +1917,9 @@
   - tests/test_lot2_scraper_content_dedup.py
   - tests/test_lot3_archive_security.py
   - tests/test_lot3_topological_isolation.py
+  - tests/test_manifest_separation.py
   - tests/test_missing_register_actionability.py
+  - tests/test_mypy_strict_debt.py
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
   - tests/test_notional_and_disciplinary_controls.py
@@ -2487,6 +2505,7 @@
 - human_review_register.csv
 - human_review_wave_1_plan.md
 - learning_objectives_assessed_report.md
+- manifest_tooling.csv
 - missing_capabilities.md
 - missing_documents_register.md
 - missing_documents_register_v2.md
@@ -2548,6 +2567,12 @@
 - reports/lot3/lot3_hardening_validation_log.md
 - reports/lot3/lot3_validation_log.md
 - reports/lot3/post_merge_audit.md
+- reports/reconciliation/branch_topology.md
+- reports/reconciliation/drive_integration_plan.md
+- reports/reconciliation/mypy_debt.md
+- reports/reconciliation/rag_pr35_status.md
+- reports/reconciliation/rag_reindex_plan.md
+- reports/reconciliation/reconciliation_report.md
 - reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json
@@ -2828,7 +2853,9 @@
 - tests/test_lot2_scraper_content_dedup.py
 - tests/test_lot3_archive_security.py
 - tests/test_lot3_topological_isolation.py
+- tests/test_manifest_separation.py
 - tests/test_missing_register_actionability.py
+- tests/test_mypy_strict_debt.py
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
 - tests/test_notional_and_disciplinary_controls.py
@@ -3432,6 +3459,7 @@
 - human_review_register.csv
 - human_review_wave_1_plan.md
 - learning_objectives_assessed_report.md
+- manifest_tooling.csv
 - missing_capabilities.md
 - missing_documents_register.md
 - missing_documents_register_v2.md
@@ -3497,6 +3525,12 @@
 - reports/lot3/lot3_hardening_validation_log.md
 - reports/lot3/lot3_validation_log.md
 - reports/lot3/post_merge_audit.md
+- reports/reconciliation/branch_topology.md
+- reports/reconciliation/drive_integration_plan.md
+- reports/reconciliation/mypy_debt.md
+- reports/reconciliation/rag_pr35_status.md
+- reports/reconciliation/rag_reindex_plan.md
+- reports/reconciliation/reconciliation_report.md
 - reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json
@@ -3783,7 +3817,9 @@
 - tests/test_lot2_scraper_content_dedup.py
 - tests/test_lot3_archive_security.py
 - tests/test_lot3_topological_isolation.py
+- tests/test_manifest_separation.py
 - tests/test_missing_register_actionability.py
+- tests/test_mypy_strict_debt.py
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
 - tests/test_notional_and_disciplinary_controls.py

@@ -6,10 +6,10 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from _qa_common import ROOT, pedagogical_documents, read_frontmatter, strip_frontmatter, useful_lines
-from check_document_depth import MIN_LINES, count_pattern
-from check_document_style import REQUIRED_BY_DOC
-from check_required_sections import REQUIRED
+from scripts._qa_common import ROOT, pedagogical_documents, read_frontmatter, strip_frontmatter, useful_lines
+from scripts.check_document_depth import MIN_LINES, count_pattern
+from scripts.check_document_style import REQUIRED_BY_DOC
+from scripts.check_required_sections import REQUIRED
 
 VALIDATING_STATUSES = {
     "validated_pedagogy",

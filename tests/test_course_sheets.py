@@ -3,19 +3,17 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_course_sheets_alignment as alignment
-import check_course_sheets_coverage as coverage
-import check_course_sheets_quality as quality
-import check_course_sheet_linked_resources_exist as linked_resources
-import check_course_sheet_readiness as readiness
-import check_course_sheet_readiness_strict as readiness_strict
-import check_course_sheets_no_template_abuse as no_template
-import check_course_sheets_substance as substance
+import scripts.check_course_sheets_alignment as alignment
+import scripts.check_course_sheets_coverage as coverage
+import scripts.check_course_sheets_quality as quality
+import scripts.check_course_sheet_linked_resources_exist as linked_resources
+import scripts.check_course_sheet_readiness as readiness
+import scripts.check_course_sheet_readiness_strict as readiness_strict
+import scripts.check_course_sheets_no_template_abuse as no_template
+import scripts.check_course_sheets_substance as substance
 
 
 VALID_SHEET = """---

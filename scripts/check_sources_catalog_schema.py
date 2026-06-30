@@ -8,7 +8,7 @@ from typing import Any
 
 import yaml
 
-from _qa_common import ROOT, print_result
+from scripts._qa_common import ROOT, print_result
 
 
 CATALOG = ROOT / "sources_catalog.yml"

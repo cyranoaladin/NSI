@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import sys
-from _session_checks import LEVELS, CONCRETE_TOKENS, GENERIC_PHRASES, count_values, fail_or_pass, parse_sessions
+from scripts._session_checks import LEVELS, CONCRETE_TOKENS, GENERIC_PHRASES, count_values, fail_or_pass, parse_sessions
 
 
 def has_concrete_reference(text: str) -> bool:

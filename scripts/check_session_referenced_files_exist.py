@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 import re
 from pathlib import Path
 
-from _qa_common import load_pilot_scope
+from scripts._qa_common import load_pilot_scope
 
 ROOT = Path(__file__).resolve().parents[1]
 SESSION_FILES = [

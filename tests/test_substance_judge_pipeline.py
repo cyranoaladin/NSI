@@ -3,17 +3,15 @@ from __future__ import annotations
 import json
 import socket
 import subprocess
-import sys
 from pathlib import Path
 
 import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_substance_anchors
-import substance_judge
+import scripts.check_substance_anchors as check_substance_anchors
+import scripts.substance_judge as substance_judge
 
 
 CAPACITY = {
@@ -165,8 +163,8 @@ def test_network_calls_are_blocked_by_test_fixture() -> None:
 def test_makefile_contains_judge_chain() -> None:
     makefile = (ROOT / "Makefile").read_text(encoding="utf-8")
     assert "\njudge:" in makefile
-    assert "scripts/substance_judge.py" in makefile
-    assert "scripts/check_substance_anchors.py" in makefile
+    assert "scripts.substance_judge" in makefile
+    assert "scripts.check_substance_anchors" in makefile
 
 
 def test_substance_reviews_index_keeps_zero_publication_doctrine() -> None:
@@ -188,4 +186,4 @@ def test_make_judge_p05_runs_b_then_a_without_promotion() -> None:
 
     assert result.returncode == 0, result.stdout
     assert "validated_pedagogy" not in result.stdout
-    assert "check_substance_anchors.py" in result.stdout
+    assert "scripts.check_substance_anchors" in result.stdout

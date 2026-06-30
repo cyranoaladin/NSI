@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from typing import List
 
-from _qa_common import ROOT, TARGET_SEQUENCES, REQUIRED_SEQUENCE_FILES, print_result
+from scripts._qa_common import ROOT, TARGET_SEQUENCES, REQUIRED_SEQUENCE_FILES, print_result
 
 
 def main() -> None:

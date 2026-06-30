@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import FULL_SEQUENCE_CURRENT_LOT, FULL_SEQUENCE_SCOPE, ROOT
+from scripts._qa_common import FULL_SEQUENCE_CURRENT_LOT, FULL_SEQUENCE_SCOPE, ROOT
 
 
 REQUIRED_TYPES = [

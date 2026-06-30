@@ -7,8 +7,8 @@ from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from _qa_common import ROOT
-from _course_sheets_common import normalize, section_text, sheet_files, useful_lines
+from scripts._qa_common import ROOT
+from scripts._course_sheets_common import normalize, section_text, sheet_files, useful_lines
 
 FORBIDDEN_TEMPLATE_LINES = [
     "on reprend le premier exemple",
