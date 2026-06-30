@@ -1,7 +1,7 @@
 export PYTHONDONTWRITEBYTECODE=1
 DELIVERED_ARCHIVE ?= dist/source_clean.tar.gz
 
-audit: audit-core audit-metrics
+audit: audit-core audit-metrics deliver-pedagogical-archive deliver-source-zip package-audit audit-extracted-source verify-delivery-archive
 
 audit-idempotence:
 	$(MAKE) audit

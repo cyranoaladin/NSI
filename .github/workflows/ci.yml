@@ -28,20 +28,8 @@ jobs:
       - name: Tests
         run: pytest
 
-      - name: Freshness gate
-        run: |
-          python -m scripts.rebuild_inventory
-          python -m scripts.check_program_coverage
-          python -m scripts.generate_pedagogical_indexes
-          python -m scripts.rebuild_inventory
-          python -m scripts.check_no_private_data
-          git diff --exit-code manifest.csv manifest_tooling.csv inventory_report.md coverage.md coverage_sources.md privacy_report.md
-
-      - name: Audit core (cold — no dist/)
-        run: make audit-core
-
-      - name: Audit metrics
-        run: make audit-metrics
+      - name: Full audit (cold, idempotent, freshness-gated)
+        run: make audit-idempotence
 
       - name: Substance adversarial guard
         run: |
