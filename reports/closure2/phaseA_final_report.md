@@ -1,42 +1,46 @@
-# Phase A — Rapport final (passe 9)
+# Phase A — Rapport final (passe 10)
 
 ## Statut : CLOSED_CLEAN (enforcement qualifie)
 
-## Regression archive refermee (section 1)
+## Regression archive refermee
 
 Le guard `@test -f dist/source_clean.tar.gz || build` a ete supprime de
-package-audit. `build_source_archive` est toujours invoque, garantissant
-un tarball frais. La double invocation (deliver-* + package-audit) est
-acceptee (correctness > vitesse).
+package-audit (passe 9). `build_source_archive` est toujours invoque.
 
-Prouve en CI (run 28460790079) : `build_source_archive` execute, produit
-`dist/source_clean.tar.gz` et `dist/git_bundle.bundle`.
+**Decision assumee : double-build** — deliver-pedagogical-archive et
+package-audit reconstruisent chacun l'archive. Choix delibere correctness >
+vitesse (surcout ~1s). Jamais de reutilisation d'un dist/ perime.
 
-## Enforcement qualifie (section 2)
+Gate anti-regression : `test_no_stale_archive_guard` verifie que le Makefile
+ne contient pas de motif `test -f dist/source_clean.tar.gz ||` dans
+package-audit.
 
-La CI DETECTE les fichiers perimes et les regressions (freshness gate
-rouge prouve en run 28457692935). MAIS la CI ne BLOQUE PAS encore les
-merges tant que la protection de branche main (require PR + status check
-"quality" requis) n'est pas activee.
+## Enforcement qualifie
 
-Branch protection : NON PROTEGEE (`gh api .../branches/main/protection`
-→ 404). DETTE RESIDUELLE : action humaine requise par le proprietaire.
+La CI DETECTE les fichiers perimes (freshness gate rouge prouve en run
+28457692935) et les regressions. MAIS la CI ne BLOQUE PAS les merges tant
+que la protection de branche main n'est pas activee.
 
-## Items verses au registre (section 3)
-
-Inscrits dans qa_debt_register.md :
-- Doublon P08 (P08_TP_html_css_dom.md / P08_TP_http_get_post_formulaires.md)
-  → item de CONTENU, revue humaine requise
-- Protection branche main → action humaine requise
+Critere de fermeture durci (passe 10) :
+```bash
+gh api repos/cyranoaladin/NSI/branches/main/protection \
+  --jq '(.required_pull_request_reviews != null) and
+         ((.required_status_checks.contexts // []) | index("quality") != null)'
+```
+Doit renvoyer `true` (review PR requise ET status check "quality" requis).
+"objet != 404" ne suffit PAS.
 
 ## Definition de DONE Phase A
 
-| Critere | Etat | Preuve |
-|---|---|---|
-| Freshness rouge-en-CI | FAIT | Run 28457692935 fail, run 28457114772 pass |
-| Regression archive refermee | FAIT | Guard supprime, build toujours execute |
-| Protection branche | ACTION HUMAINE | gh api → 404 |
-| Enforcement qualifie | FAIT | "detecte, ne bloque pas encore" |
+| Critere | Etat |
+|---|---|
+| Freshness rouge-en-CI | FAIT (run 28457692935 fail) |
+| Regression archive refermee | FAIT (guard supprime, passe 9) |
+| Gate anti-regression archive | FAIT (test_no_stale_archive_guard) |
+| Double-build documente | FAIT (decision assumee correctness > vitesse) |
+| Critere protection durci | FAIT (commande jq exacte, pas "objet != 404") |
+| Enforcement qualifie | FAIT |
+| Protection branche | ACTION HUMAINE REQUISE |
 
 ## Invariants
 
@@ -52,7 +56,7 @@ FINAL_STATUS = NON_RELEASE_READY
 
 | Item | Nature | Action |
 |---|---|---|
-| Protection branche main OFF | Processus | Proprietaire active require PR + status check |
+| Protection branche main OFF | Processus | Proprietaire active require PR + status check quality |
 | Doublon P08 | Contenu pedagogique | Revue humaine |
 | Backlog Drive (3+7+5) | Contenu | Lots Drive ulterieurs |
 | 22 capacites absentes | Contenu | Production pedagogique |
