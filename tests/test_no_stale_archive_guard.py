@@ -1,4 +1,8 @@
-"""Gate: package-audit must never skip build_source_archive via a stale guard."""
+"""Gate: package-audit must invoke build_source_archive UNCONDITIONALLY.
+
+Fail-closed: fails if the target is missing (not silent pass).
+Positive: proves the invocation line has NO conditional guard tokens.
+"""
 from __future__ import annotations
 
 import re
@@ -6,20 +10,45 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
+# Tokens that, if present on the same line as build_source_archive,
+# indicate a conditional guard (skip-if-exists pattern).
+GUARD_TOKENS = ("test -f", "[ -f", "[ -e", "if ", "||", "&&")
+
 
 def _package_audit_body() -> str:
     text = (ROOT / "Makefile").read_text(encoding="utf-8")
-    match = re.search(r"^package-audit:.*?\n(.*?)(?=\n[A-Za-z0-9_-]+:|\Z)", text, re.S | re.M)
+    match = re.search(
+        r"^package-audit:.*?\n(.*?)(?=\n[A-Za-z0-9_-]+:|\Z)", text, re.S | re.M
+    )
     return match.group(1) if match else ""
 
 
-def test_no_stale_archive_guard() -> None:
-    """package-audit must NOT contain a conditional guard around build_source_archive."""
+def test_package_audit_target_exists() -> None:
+    """Fail-closed: the test must fail if the target is missing entirely."""
     body = _package_audit_body()
-    assert "test -f dist/source_clean.tar.gz" not in body, (
-        "package-audit contains a stale-archive guard (@test -f). "
-        "build_source_archive must always run for correctness."
+    assert body.strip(), (
+        "package-audit target is MISSING or EMPTY in the Makefile. "
+        "This gate must fail-closed on missing evidence."
     )
-    assert "test -f dist/git_bundle.bundle" not in body, (
-        "package-audit contains a stale-archive guard for git_bundle."
+
+
+def test_build_source_archive_invoked_unconditionally() -> None:
+    """Positive: build_source_archive is present and has NO guard tokens."""
+    body = _package_audit_body()
+    assert body.strip(), "package-audit target missing (fail-closed)"
+
+    build_lines = [
+        line for line in body.splitlines()
+        if "build_source_archive" in line
+    ]
+    assert build_lines, (
+        "build_source_archive is NOT invoked in package-audit. "
+        "The archive must be built fresh every time."
     )
+
+    for line in build_lines:
+        for token in GUARD_TOKENS:
+            assert token not in line, (
+                f"Conditional guard '{token}' found on build_source_archive line: "
+                f"{line.strip()!r}. The archive must be built unconditionally."
+            )
