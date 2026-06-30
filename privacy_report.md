@@ -156,6 +156,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - rag_connection.md: nom propre suspect -> Content-Type
 - reports/closure2/phaseA_final_report.md: nom propre suspect -> Backlog Drive
 - reports/closure2/phaseA_final_report.md: nom propre suspect -> Lots Drive
+- reports/closure2/rag_embedding_parity_report.md: nom propre suspect -> Embedding Parity
+- reports/closure2/rag_embedding_parity_report.md: nom propre suspect -> Honnetete Phase
 - reports/closure2/rag_prod_cutover_executed_report.md: nom propre suspect -> Prod Cutover
 - reports/closure2/rag_prod_cutover_executed_report.md: nom propre suspect -> Collections Chroma
 - reports/closure2/rag_state_of_truth.md: nom propre suspect -> Schéma Nexus
@@ -208,9 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_drive_mapping.py: nom propre suspect -> Prototype Drive
 - scripts/check_drive_mapping_release.py: nom propre suspect -> Release Drive
 - scripts/check_evaluation_bareme_alignment.py: nom propre suspect -> Evaluation Bareme Alignment Report
-- scripts/check_git_clean.py: nom propre suspect -> Check Git
-- scripts/check_learning_objectives_assessed.py: nom propre suspect -> Learning Objectives Assessed Report
-- ... 49 alertes supplémentaires non affichées
+- ... 51 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 

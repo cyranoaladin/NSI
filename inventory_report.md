@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 974
+- Total ressources : 975
 - Ressources pédagogiques : 53
-- Ressources techniques : 921
+- Ressources techniques : 922
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 966
+- generated: 967
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 454
+- interne: 455
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 550
+- document: 551
 - python: 95
 - script: 202
 - sequence: 45
 - test: 68
 
 ## Répartition par statut
-- needs_review: 974
+- needs_review: 975
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 774
+- mixte: 775
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -654,6 +654,7 @@
   - reports/closure2/corrective_report.md
   - reports/closure2/phaseA_closure_report.md
   - reports/closure2/phaseA_final_report.md
+  - reports/closure2/rag_embedding_parity_report.md
   - reports/closure2/rag_prod_cutover_executed_report.md
   - reports/closure2/rag_prod_cutover_runbook.md
   - reports/closure2/rag_state_of_truth.md
@@ -1656,6 +1657,7 @@
   - reports/closure2/corrective_report.md
   - reports/closure2/phaseA_closure_report.md
   - reports/closure2/phaseA_final_report.md
+  - reports/closure2/rag_embedding_parity_report.md
   - reports/closure2/rag_prod_cutover_executed_report.md
   - reports/closure2/rag_prod_cutover_runbook.md
   - reports/closure2/rag_state_of_truth.md
@@ -2587,6 +2589,7 @@
 - reports/closure2/corrective_report.md
 - reports/closure2/phaseA_closure_report.md
 - reports/closure2/phaseA_final_report.md
+- reports/closure2/rag_embedding_parity_report.md
 - reports/closure2/rag_prod_cutover_executed_report.md
 - reports/closure2/rag_prod_cutover_runbook.md
 - reports/closure2/rag_state_of_truth.md
@@ -3560,6 +3563,7 @@
 - reports/closure2/corrective_report.md
 - reports/closure2/phaseA_closure_report.md
 - reports/closure2/phaseA_final_report.md
+- reports/closure2/rag_embedding_parity_report.md
 - reports/closure2/rag_prod_cutover_executed_report.md
 - reports/closure2/rag_prod_cutover_runbook.md
 - reports/closure2/rag_state_of_truth.md
