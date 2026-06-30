@@ -4,7 +4,8 @@
 
 | Fichier concerné | Gate concerné | Cause | Risque | Impact | Décision | Date cible | Responsable | Critère de fermeture |
 |---|---|---|---|---|---|---|---|---|
-| Aucune dette indicative ouverte sur S01 après enrichissement Drive. | - | - | - | - | Continuer à exécuter les gates, sans promotion de statut. | - | équipe NSI | `python scripts/check_required_sections.py` et `python scripts/check_document_depth.py` restent PASS. |
+| Doublon P08 (P08_TP_html_css_dom.md / P08_TP_http_get_post_formulaires.md) | duplicates_report.md | Deux TP couvrant le même thème classés "doublon non classé" | Confusion pédagogique, couverture imprécise | Revue humaine requise pour trancher (fusion, spécialisation ou retrait) | Item de CONTENU, hors scope tooling. Ne pas modifier sans revue pédagogique. | Lot 4+ | équipe NSI | Un seul TP par thème ou justification explicite de la coexistence |
+| Protection branche main | CI | main non protégée (push direct possible) | Contournement des gates CI | La CI détecte les régressions mais ne bloque pas les merges | Activer require PR + status check "quality" requis sur main | Immédiat | propriétaire du dépôt | `gh api .../branches/main/protection` retourne un objet (pas 404) |
 
 ## Dettes fermées
 
