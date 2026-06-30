@@ -329,7 +329,7 @@ audit-extracted-source-local:
 
 package-audit:
 	python -m scripts.cleanup_python_artifacts
-	@test -f dist/source_clean.tar.gz || python -m scripts.build_source_archive
+	python -m scripts.build_source_archive
 	python -m scripts.check_packaging_mode
 	python -m scripts.check_archive_portability
 	python -m scripts.check_no_build_artifacts_in_index
