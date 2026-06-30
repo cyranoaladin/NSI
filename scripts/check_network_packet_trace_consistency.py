@@ -72,10 +72,10 @@ def network_block_errors(text: str) -> list[str]:
         lowered,
         flags=re.S,
     ):
-        expected = route_decision(dest, prefix)
+        expected_route = route_decision(dest, prefix)
         normalized = "gateway" if announced in {"passerelle", "gateway"} else "local"
-        if expected != normalized:
-            errors.append(f"route incohérente pour {dest} dans {prefix}: annoncé {announced}, attendu {expected}")
+        if expected_route != normalized:
+            errors.append(f"route incohérente pour {dest} dans {prefix}: annoncé {announced}, attendu {expected_route}")
     if re.search(r"destination\s+locale", lowered) and re.search(r"passerelle", lowered):
         if not re.search(r"sinon|si.*pas locale|préfixe|masque", lowered):
             errors.append("destination locale et passerelle mélangées sans décision par préfixe")

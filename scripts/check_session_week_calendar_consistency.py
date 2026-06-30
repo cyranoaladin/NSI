@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sys
+from pathlib import Path
 from scripts._session_checks import LEVELS, MONTH_WEEK_RANGES, parse_sessions, session_week, fail_or_pass
 
 REQUIRED_PERIOD_MARKERS = {
@@ -19,7 +20,7 @@ REQUIRED_PERIOD_MARKERS = {
 def main() -> int:
     errors: list[str] = []
     for level, config in LEVELS.items():
-        for session in parse_sessions(config["session"]):
+        for session in parse_sessions(Path(str(config["session"]))):
             sid = str(session.get("id"))
             for field in ["Semaine scolaire", "Semaine civile", "Période", "Mois"]:
                 if field not in session:

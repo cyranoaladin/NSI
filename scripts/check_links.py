@@ -11,10 +11,11 @@ LINK_RE = re.compile(r'\[[^\]]+\]\(([^)]+)\)')
 
 
 def is_internal(target: str) -> bool:
-    return (
-        target and
-        not target.startswith(('http://', 'https://', 'mailto:', 'ftp://', '#')) and
-        '.png' not in target.lower() and '.jpg' not in target.lower()
+    return bool(
+        target
+        and not target.startswith(('http://', 'https://', 'mailto:', 'ftp://', '#'))
+        and '.png' not in target.lower()
+        and '.jpg' not in target.lower()
     )
 
 

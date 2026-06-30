@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from typing import List
+from typing import Any, List
 import csv
 
 import yaml
@@ -21,7 +21,7 @@ def main() -> None:
         if not path.exists():
             errors.append(f"{path.name} absent")
 
-    data = {}
+    data: dict[str, Any] = {}
     if sources.exists():
         data = yaml.safe_load(sources.read_text(encoding="utf-8")) or {}
         if data.get("status") == "blocked":

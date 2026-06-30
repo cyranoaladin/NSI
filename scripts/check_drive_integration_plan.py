@@ -86,8 +86,8 @@ def analyze_drive_integration_plan(root: Path = ROOT) -> DriveIntegrationPlanRes
     if result.errors:
         return result
 
-    for label, path in [(INVENTORY, inventory_path), (QUARANTINE, quarantine_path)]:
-        rows, columns = read_csv_rows(path)
+    for label, csv_path in [(INVENTORY, inventory_path), (QUARANTINE, quarantine_path)]:
+        rows, columns = read_csv_rows(csv_path)
         if label == INVENTORY:
             result.inventory_rows = len(rows)
         else:
@@ -109,22 +109,22 @@ def analyze_drive_integration_plan(root: Path = ROOT) -> DriveIntegrationPlanRes
     trace_by_support = {row.get("support", ""): row for row in trace_rows if row.get("support")}
 
     for row in trace_rows:
-        support = row.get("support", "")
+        support_name = row.get("support", "")
         source = row.get("source_locale_drive", "")
         reprise = row.get("type_reprise", "")
         rgpd = row.get("statut_rgpd", "")
         if not rgpd:
-            result.errors.append(f"{support}: statut_rgpd absent dans {TRACE}")
+            result.errors.append(f"{support_name}: statut_rgpd absent dans {TRACE}")
         if source:
             drive_path = resolve_drive_path(source)
             if drive_path is None:
-                result.errors.append(f"{support}: source_locale_drive non résoluble -> {source}")
+                result.errors.append(f"{support_name}: source_locale_drive non résoluble -> {source}")
             elif not drive_path.exists():
-                result.errors.append(f"{support}: source_locale_drive absente -> {source}")
+                result.errors.append(f"{support_name}: source_locale_drive absente -> {source}")
             if reprise == "création originale":
-                result.errors.append(f"{support}: source Drive renseignée mais type_reprise création originale")
+                result.errors.append(f"{support_name}: source Drive renseignée mais type_reprise création originale")
         elif reprise != "création originale":
-            result.errors.append(f"{support}: reprise Drive déclarée sans source_locale_drive")
+            result.errors.append(f"{support_name}: reprise Drive déclarée sans source_locale_drive")
 
     for support in support_files(root):
         rel = support.relative_to(root).as_posix() if support.is_relative_to(root) else support.as_posix()

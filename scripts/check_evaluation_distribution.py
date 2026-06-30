@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sys
+from pathlib import Path
 from scripts._session_checks import LEVELS, parse_sessions, parse_table_hours, fail_or_pass
 
 PERIOD_MONTHS = [
@@ -17,8 +18,8 @@ PERIOD_MONTHS = [
 def main() -> int:
     errors: list[str] = []
     for level, config in LEVELS.items():
-        sessions = parse_sessions(config["session"])
-        monthly = parse_table_hours(config["monthly"])
+        sessions = parse_sessions(Path(str(config["session"])))
+        monthly = parse_table_hours(Path(str(config["monthly"])))
         evaluations = [s for s in sessions if s.get("Nature") == "évaluation"]
         if not any(s.get("Mois") == "septembre" and "diagnostic" in str(s.get("Objectif", "")).lower() for s in evaluations):
             errors.append(f"{level}: missing September diagnostic evaluation")

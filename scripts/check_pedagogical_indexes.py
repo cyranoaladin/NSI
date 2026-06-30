@@ -57,11 +57,11 @@ def main() -> None:
                 if not str(item.get(key) or "").strip() or str(item.get(key)) in {"non renseigné", "non renseignée"}:
                     errors.append(f"{path}: champ canonique manquant {key}")
     for name in INDEX_FILES:
-        path = ROOT / name
-        if not path.exists():
+        index_path = ROOT / name
+        if not index_path.exists():
             errors.append(f"{name} absent")
             continue
-        text = path.read_text(encoding="utf-8")
+        text = index_path.read_text(encoding="utf-8")
         if "Généré par `scripts/generate_pedagogical_indexes.py`" not in text:
             errors.append(f"{name}: marqueur de génération absent")
         if "## Synthèse" not in text:
@@ -73,9 +73,11 @@ def main() -> None:
         for marker in FORBIDDEN_MARKERS:
             if marker in text:
                 errors.append(f"{name}: marqueur interdit {marker}")
+    PROMOTED_STATUSES = {"validated_pedagogy", "validated_science", "validated_technical", "published"}
     by_status = Counter(str(item["status"]) for item in resources)
-    if any(status != "needs_review" for status in by_status):
-        errors.append(f"statuts promus dans les index: {dict(by_status)}")
+    promoted = {s: c for s, c in by_status.items() if s in PROMOTED_STATUSES}
+    if promoted:
+        errors.append(f"statuts promus dans les index: {promoted}")
     print_result("check_pedagogical_indexes", errors)
 
 

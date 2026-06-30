@@ -28,11 +28,11 @@ def check_file(path: Path) -> List[str]:
         if isinstance(node, ast.Pass):
             errors.append(f"{rel}:{node.lineno}: instruction pass interdite")
         if isinstance(node, ast.Raise):
-            exc = node.exc
-            if isinstance(exc, ast.Call):
-                name = getattr(exc.func, "id", "")
+            raised = node.exc
+            if isinstance(raised, ast.Call):
+                name = getattr(raised.func, "id", "")
             else:
-                name = getattr(exc, "id", "")
+                name = getattr(raised, "id", "")
             if name == "NotImplementedError":
                 errors.append(f"{rel}:{node.lineno}: NotImplementedError interdit")
         if isinstance(node, ast.Constant) and node.value is Ellipsis:

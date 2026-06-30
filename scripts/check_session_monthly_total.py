@@ -104,11 +104,11 @@ import sys
 def main() -> int:
     errors = []
     for level, cfg in LEVELS.items():
-        sessions = parse_sessions(cfg['session'])
-        monthly = parse_table_hours(cfg['monthly'])
-        by_month = {}
-        by_eval = {}
-        by_rem = {}
+        sessions = parse_sessions(Path(str(cfg['session'])))
+        monthly = parse_table_hours(Path(str(cfg['monthly'])))
+        by_month: dict[str, float] = {}
+        by_eval: dict[str, float] = {}
+        by_rem: dict[str, float] = {}
         for session in sessions:
             month = str(session.get('Mois', '')).lower()
             by_month[month] = by_month.get(month, 0.0) + float(session.get('hours', 0.0))
@@ -126,8 +126,9 @@ def main() -> int:
                 errors.append(f"{level}: {month} evaluation subtotal mismatch")
             if abs(by_rem.get(month, 0.0) - float(row['remediation'])) > 0.01:
                 errors.append(f"{level}: {month} remediation subtotal mismatch")
-        if abs(sum(by_month.values()) - cfg['total']) > 0.01:
-            errors.append(f"{level}: monthly total {sum(by_month.values()):g} h != annual {cfg['total']:g} h")
+        annual_total = float(str(cfg['total']))
+        if abs(sum(by_month.values()) - annual_total) > 0.01:
+            errors.append(f"{level}: monthly total {sum(by_month.values()):g} h != annual {annual_total:g} h")
     return fail_or_pass('check_session_monthly_total', errors)
 
 if __name__ == '__main__':

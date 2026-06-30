@@ -15,7 +15,7 @@ POLICY = ROOT / "qa_gate_policy.md"
 
 
 def target_body(text: str, target: str) -> str:
-    match = re.search(rf"^{re.escape(target)}:\s*(.*?)\n(?=[A-Za-z0-9_.-]+:|\Z)", text, re.S | re.M)
+    match = re.search(rf"^{re.escape(target)}:.*?\n(.*?)(?=\n[A-Za-z0-9_-]+:|\Z)", text, re.S | re.M)
     return match.group(1) if match else ""
 
 
@@ -51,9 +51,22 @@ def main() -> None:
     if "python -m scripts.rag_smoke_test" not in required or "RAG_ENV_FILE" in required:
         errors.append("rag-smoke-required doit utiliser .env.rag réel")
     docs = documented_scripts(policy)
-    for script in sorted(python_scripts(core)):
+    core_set = python_scripts(core)
+    # Forward: every gate executed in audit-core must be documented
+    for script in sorted(core_set):
         if script not in docs:
             errors.append(f"{script}: gate audit-core non documenté dans qa_gate_policy.md")
+    # Reverse: every documented blocking gate must be executed somewhere.
+    # Drive-required gates (explicitly listed in the policy) may be in
+    # audit-local only, not in audit-core (clone-clean mode).
+    audit_local = target_body(text, "audit-local")
+    audit_extracted = target_body(text, "audit-extracted-source-local")
+    all_executed = core_set | python_scripts(audit_local) | python_scripts(audit_extracted)
+    # Gates only callable with a Drive mirror — not required in audit-core
+    drive_only = {"scripts.drive_local_inventory", "scripts.drive_resource_triage"}
+    for script in sorted(docs - drive_only):
+        if script not in all_executed:
+            errors.append(f"{script}: gate documenté bloquant mais absent des cibles audit")
     if "Divergence documentée check_quality_gates.py / audit-core" not in policy:
         quality_scripts = {" ".join(command) for command in check_quality_gates.CORE_CHECKS}
         core_scripts = python_scripts(core)

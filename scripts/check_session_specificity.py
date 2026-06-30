@@ -4,6 +4,7 @@ from __future__ import annotations
 from typing import Any
 
 import sys
+from pathlib import Path
 from scripts._session_checks import LEVELS, CONCRETE_TOKENS, GENERIC_PHRASES, count_values, fail_or_pass, parse_sessions
 
 
@@ -39,7 +40,7 @@ def session_specificity_errors(level: str, session: dict[str, Any]) -> list[str]
 def main() -> int:
     errors: list[str] = []
     for level, config in LEVELS.items():
-        sessions = parse_sessions(config["session"])
+        sessions = parse_sessions(Path(str(config["session"])))
         if not sessions:
             errors.append(f"{level}: no sessions parsed")
             continue

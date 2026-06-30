@@ -49,11 +49,11 @@ pytest
 3. Lancer :
 
 ```bash
-python scripts/build_all.py
-python scripts/check_metadata.py
-python scripts/check_links.py
-python scripts/check_program_coverage.py
-python scripts/generate_index.py
+python -m scripts.build_all
+python -m scripts.check_metadata
+python -m scripts.check_links
+python -m scripts.check_program_coverage
+python -m scripts.generate_index
 ```
 
 4. Vérifier les sorties :
@@ -128,5 +128,5 @@ Le pipeline de substance est conservateur :
 Le smoke RAG est optionnel et séparé des tests pytest :
 
 ```bash
-python scripts/rag_smoke_test.py
+python -m scripts.rag_smoke_test
 ```

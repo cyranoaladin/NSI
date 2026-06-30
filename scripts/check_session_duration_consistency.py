@@ -104,9 +104,9 @@ import sys
 def main() -> int:
     errors = []
     for level, cfg in LEVELS.items():
-        sessions = parse_sessions(cfg['session'])
-        progression = parse_progression_projects(cfg['progression'], cfg['prefix'])
-        totals = {}
+        sessions = parse_sessions(Path(str(cfg['session'])))
+        progression = parse_progression_projects(Path(str(cfg['progression'])), str(cfg['prefix']))
+        totals: dict[str, float] = {}
         for session in sessions:
             sid = session['id']
             if session.get('hours', 0) > 2.5:
@@ -126,7 +126,7 @@ def main() -> int:
                 errors.append(f"{level}: {sid} still uses obsolete Date ou semaine field")
             if 'Date ou semaine' in session:
                 errors.append(f"{level}: {sid} still uses obsolete Date ou semaine field")
-            seq = session.get('sequence')
+            seq = str(session.get('sequence', ''))
             totals[seq] = totals.get(seq, 0.0) + float(session.get('hours', 0.0))
             if session.get('Nature') == 'projet':
                 for field in ['Jalon projet','Rôle dans le carnet de bord','Livrable projet','Évaluation projet']:
@@ -136,7 +136,7 @@ def main() -> int:
             if abs(totals.get(seq, 0.0) - volume) > 0.01:
                 errors.append(f"{level}: {seq} session total {totals.get(seq, 0.0):g} h != progression {volume:g} h")
         total = sum(float(s.get('hours', 0.0)) for s in sessions)
-        if abs(total - cfg['total']) > 0.01:
+        if abs(total - float(str(cfg['total']))) > 0.01:
             errors.append(f"{level}: annual session total {total:g} h != expected {cfg['total']:g} h")
     return fail_or_pass('check_session_duration_consistency', errors)
 

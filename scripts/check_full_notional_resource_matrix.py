@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Any
 import re
 import unicodedata
 
@@ -70,7 +71,7 @@ def normalize(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", value.lower()).strip("_")
 
 
-def notion_slug(sheet: Path, metadata: dict) -> str:
+def notion_slug(sheet: Path, metadata: dict[str, Any]) -> str:
     sequence = str(metadata.get("sequence_id") or sheet.name[:3])
     stem = sheet.stem
     prefix = f"{sequence}_fiche_cours_"

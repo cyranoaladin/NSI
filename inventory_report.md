@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 958
+- Total ressources : 961
 - Ressources pédagogiques : 53
-- Ressources techniques : 905
+- Ressources techniques : 908
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 950
+- generated: 953
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 438
+- interne: 441
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 540
+- document: 541
 - python: 95
 - script: 201
 - sequence: 45
-- test: 63
+- test: 65
 
 ## Répartition par statut
-- needs_review: 958
+- needs_review: 961
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 758
+- mixte: 761
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -661,6 +661,7 @@
   - reports/lot3/lot3_validation_log.md
   - reports/lot3/post_merge_audit.md
   - reports/reconciliation/branch_topology.md
+  - reports/reconciliation/closure_report.md
   - reports/reconciliation/drive_integration_plan.md
   - reports/reconciliation/mypy_debt.md
   - reports/reconciliation/process_incidents.md
@@ -935,9 +936,11 @@
   - tests/test_audit_extracted_source_no_hang.py
   - tests/test_audit_strategic_integration.py
   - tests/test_build_artifacts.py
+  - tests/test_classify_schema.py
   - tests/test_consolidation_strict.py
   - tests/test_course_sheets.py
   - tests/test_delivered_archive_exactly_source_clean.py
+  - tests/test_doc_lint.py
   - tests/test_drive_enrichment_traceability.py
   - tests/test_drive_local_pipeline.py
   - tests/test_drive_mapping_release.py
@@ -1647,6 +1650,7 @@
   - reports/lot3/lot3_validation_log.md
   - reports/lot3/post_merge_audit.md
   - reports/reconciliation/branch_topology.md
+  - reports/reconciliation/closure_report.md
   - reports/reconciliation/drive_integration_plan.md
   - reports/reconciliation/mypy_debt.md
   - reports/reconciliation/process_incidents.md
@@ -1895,9 +1899,11 @@
   - tests/test_audit_extracted_source_no_hang.py
   - tests/test_audit_strategic_integration.py
   - tests/test_build_artifacts.py
+  - tests/test_classify_schema.py
   - tests/test_consolidation_strict.py
   - tests/test_course_sheets.py
   - tests/test_delivered_archive_exactly_source_clean.py
+  - tests/test_doc_lint.py
   - tests/test_drive_enrichment_traceability.py
   - tests/test_drive_local_pipeline.py
   - tests/test_drive_mapping_release.py
@@ -2562,6 +2568,7 @@
 - reports/lot3/lot3_validation_log.md
 - reports/lot3/post_merge_audit.md
 - reports/reconciliation/branch_topology.md
+- reports/reconciliation/closure_report.md
 - reports/reconciliation/drive_integration_plan.md
 - reports/reconciliation/mypy_debt.md
 - reports/reconciliation/process_incidents.md
@@ -2830,9 +2837,11 @@
 - tests/test_audit_extracted_source_no_hang.py
 - tests/test_audit_strategic_integration.py
 - tests/test_build_artifacts.py
+- tests/test_classify_schema.py
 - tests/test_consolidation_strict.py
 - tests/test_course_sheets.py
 - tests/test_delivered_archive_exactly_source_clean.py
+- tests/test_doc_lint.py
 - tests/test_drive_enrichment_traceability.py
 - tests/test_drive_local_pipeline.py
 - tests/test_drive_mapping_release.py
@@ -3519,6 +3528,7 @@
 - reports/lot3/lot3_validation_log.md
 - reports/lot3/post_merge_audit.md
 - reports/reconciliation/branch_topology.md
+- reports/reconciliation/closure_report.md
 - reports/reconciliation/drive_integration_plan.md
 - reports/reconciliation/mypy_debt.md
 - reports/reconciliation/process_incidents.md
@@ -3793,9 +3803,11 @@
 - tests/test_audit_extracted_source_no_hang.py
 - tests/test_audit_strategic_integration.py
 - tests/test_build_artifacts.py
+- tests/test_classify_schema.py
 - tests/test_consolidation_strict.py
 - tests/test_course_sheets.py
 - tests/test_delivered_archive_exactly_source_clean.py
+- tests/test_doc_lint.py
 - tests/test_drive_enrichment_traceability.py
 - tests/test_drive_local_pipeline.py
 - tests/test_drive_mapping_release.py

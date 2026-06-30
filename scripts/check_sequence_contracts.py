@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Any
 import re
 
 import yaml
@@ -31,7 +32,7 @@ def prefix_text(root: Path, prefix: str) -> str:
     return "\n".join(path.read_text(encoding="utf-8", errors="replace") for path in sorted(root.rglob(f"{prefix}_*.md")))
 
 
-def load_contract(path: Path) -> dict[str, object]:
+def load_contract(path: Path) -> dict[str, Any]:
     data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
     return data if isinstance(data, dict) else {}
 

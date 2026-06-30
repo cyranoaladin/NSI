@@ -49,6 +49,10 @@ audit-core:
 	python -m scripts.check_differentiation_distinctness
 	python -m scripts.check_rendered_unit_artifacts --unit P05
 	python -m scripts.check_rendered_unit_artifacts --unit T10
+	python -m scripts.check_status_promotion_guard
+	python -m scripts.check_drive_enrichment_traceability_portable
+	python -m scripts.check_drive_action_plan_completeness
+	python -m scripts.check_no_coverage_from_sheets_only
 	python -m scripts.check_no_private_data
 	python -m scripts.check_no_committed_secrets
 	python -m scripts.check_no_placeholders_docs

@@ -27,6 +27,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 import yaml
 from collections.abc import Sequence
+from typing import Any
 
 from scripts.check_substance_anchors import parse_sections, load_official_labels
 
@@ -129,7 +130,7 @@ def first_section(path: Path) -> tuple[str, str]:
     return f"#{slug}", first_quote(section.body)
 
 
-def proof_from(paths: list[Path], repo: Path, keywords: Sequence[str]) -> dict:
+def proof_from(paths: list[Path], repo: Path, keywords: Sequence[str]) -> dict[str, Any]:
     for path in paths:
         lower = path.name.lower()
         if any(keyword in lower for keyword in keywords):
@@ -145,7 +146,7 @@ def proof_from(paths: list[Path], repo: Path, keywords: Sequence[str]) -> dict:
     return {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False}
 
 
-def deterministic_verdict(repo: Path, unit: str, level: str, caps: list[str], model: str) -> dict:
+def deterministic_verdict(repo: Path, unit: str, level: str, caps: list[str], model: str) -> dict[str, Any]:
     official = load_official_labels(repo)
     docs = collect_docs(find_unit_dir(repo, unit, level))
     capacities = []

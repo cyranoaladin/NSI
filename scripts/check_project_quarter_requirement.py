@@ -98,11 +98,13 @@ def check_plan(label: str, path: Path, sequences: list[str], expected_total: flo
 def main() -> int:
     errors: list[str] = []
     for label, config in PLANS.items():
+        raw_seq = config["sequences"]
+        sequences = [str(s) for s in raw_seq] if isinstance(raw_seq, list) else []
         check_plan(
             label,
-            config["path"],
-            config["sequences"],
-            config["expected_total"],
+            Path(str(config["path"])),
+            sequences,
+            float(str(config["expected_total"])),
             errors,
         )
 

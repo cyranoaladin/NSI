@@ -434,7 +434,7 @@ Un contrôle ne doit jamais être assoupli pour passer. Les seuils sont justifi�
 ### Commande cible
 
 ```bash
-python scripts/check_quality_gates.py
+python -m scripts.check_quality_gates
 ```
 
 ## 14. Skill : contrôler la qualité technique

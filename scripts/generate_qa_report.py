@@ -8,6 +8,7 @@ import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
+from typing import Any
 
 from scripts._course_sheets_common import compute_sheet_readiness, course_sheet_links, frontmatter_capacities, planned_sequences, read_frontmatter, resource_exists, sheets_by_sequence
 from scripts.check_capacity_status_ladder import analyze_capacity_status_ladder
@@ -130,13 +131,13 @@ def release_blocker_status() -> tuple[int, list[str]]:
     return 0, lines[-10:]
 
 
-def course_sheet_stats() -> dict[str, object]:
+def course_sheet_stats() -> dict[str, Any]:
     plans = planned_sequences(ROOT)
     by_sequence = sheets_by_sequence(ROOT)
     sheet_count = sum(len(paths) for paths in by_sequence.values())
     missing_sequences = [sequence for sequence in plans if not by_sequence.get(sequence)]
     missing_capacities: list[str] = []
-    readiness = Counter()
+    readiness: Counter[str] = Counter()
     existing_links = 0
     registered_links = 0
     for sequence, plan in plans.items():

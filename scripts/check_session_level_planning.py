@@ -104,9 +104,9 @@ import sys
 def main() -> int:
     errors = []
     for level, cfg in LEVELS.items():
-        sessions = parse_sessions(cfg['session'])
-        expected = {f"{cfg['prefix']}{i:02d}" for i in range(cfg['count'])}
-        by_seq = {seq: [] for seq in expected}
+        sessions = parse_sessions(Path(str(cfg['session'])))
+        expected = {f"{str(cfg['prefix'])}{i:02d}" for i in range(int(str(cfg['count'])))}
+        by_seq: dict[str, list[dict[str, Any]]] = {seq: [] for seq in expected}
         for session in sessions:
             seq = str(session.get('sequence'))
             if seq in by_seq:
@@ -126,7 +126,7 @@ def main() -> int:
                 errors.append(f"{level}: {seq} has no trace field")
             if not any('consolid' in str(item.get('Objectif','')).lower() or item.get('Nature') == 'remédiation' for item in items):
                 errors.append(f"{level}: {seq} has no consolidation device")
-        if sum(float(s.get('hours', 0.0)) for s in sessions) != cfg['total']:
+        if sum(float(s.get('hours', 0.0)) for s in sessions) != float(str(cfg['total'])):
             errors.append(f"{level}: annual total mismatch")
     return fail_or_pass('check_session_level_planning', errors)
 

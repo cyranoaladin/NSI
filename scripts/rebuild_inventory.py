@@ -204,12 +204,12 @@ def write_manifest(rows: List[Dict[str, str]]) -> None:
 
 def write_reports(rows: List[Dict[str, str]]) -> None:
     total = len(rows)
-    by_source = defaultdict(int)
-    by_audience = defaultdict(int)
-    by_level = defaultdict(int)
-    by_type = defaultdict(int)
-    by_status = defaultdict(int)
-    by_sequence = defaultdict(int)
+    by_source: dict[str, int] = defaultdict(int)
+    by_audience: dict[str, int] = defaultdict(int)
+    by_level: dict[str, int] = defaultdict(int)
+    by_type: dict[str, int] = defaultdict(int)
+    by_status: dict[str, int] = defaultdict(int)
+    by_sequence: dict[str, int] = defaultdict(int)
     missing_metadata = []
     high_quality = []
     incomplete = []
@@ -325,15 +325,15 @@ def write_reports(rows: List[Dict[str, str]]) -> None:
         '',
         '## Ressources professeur',
     ])
-    for entry in sorted((r for r in rows if r['audience'] == 'professeur'), key=lambda e: e['chemin']):
-        text.append(f'- {entry["chemin"]}')
+    for row in sorted((r for r in rows if r['audience'] == 'professeur'), key=lambda e: e['chemin']):
+        text.append(f'- {row["chemin"]}')
 
     text.extend([
         '',
         '## Ressources élève',
     ])
-    for entry in sorted((r for r in rows if r['audience'] in {'eleve', 'mixte'}), key=lambda e: e['chemin']):
-        text.append(f'- {entry["chemin"]}')
+    for row in sorted((r for r in rows if r['audience'] in {'eleve', 'mixte'}), key=lambda e: e['chemin']):
+        text.append(f'- {row["chemin"]}')
 
     text.extend([
         '',
