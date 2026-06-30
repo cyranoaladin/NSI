@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 973
+- Total ressources : 974
 - Ressources pédagogiques : 53
-- Ressources techniques : 920
+- Ressources techniques : 921
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 965
+- generated: 966
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 453
+- interne: 454
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 549
+- document: 550
 - python: 95
 - script: 202
 - sequence: 45
 - test: 68
 
 ## Répartition par statut
-- needs_review: 973
+- needs_review: 974
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 773
+- mixte: 774
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -654,6 +654,7 @@
   - reports/closure2/corrective_report.md
   - reports/closure2/phaseA_closure_report.md
   - reports/closure2/phaseA_final_report.md
+  - reports/closure2/rag_prod_cutover_executed_report.md
   - reports/closure2/rag_prod_cutover_runbook.md
   - reports/closure2/rag_state_of_truth.md
   - reports/closure2/rag_target_architecture.md
@@ -1655,6 +1656,7 @@
   - reports/closure2/corrective_report.md
   - reports/closure2/phaseA_closure_report.md
   - reports/closure2/phaseA_final_report.md
+  - reports/closure2/rag_prod_cutover_executed_report.md
   - reports/closure2/rag_prod_cutover_runbook.md
   - reports/closure2/rag_state_of_truth.md
   - reports/closure2/rag_target_architecture.md
@@ -2585,6 +2587,7 @@
 - reports/closure2/corrective_report.md
 - reports/closure2/phaseA_closure_report.md
 - reports/closure2/phaseA_final_report.md
+- reports/closure2/rag_prod_cutover_executed_report.md
 - reports/closure2/rag_prod_cutover_runbook.md
 - reports/closure2/rag_state_of_truth.md
 - reports/closure2/rag_target_architecture.md
@@ -3557,6 +3560,7 @@
 - reports/closure2/corrective_report.md
 - reports/closure2/phaseA_closure_report.md
 - reports/closure2/phaseA_final_report.md
+- reports/closure2/rag_prod_cutover_executed_report.md
 - reports/closure2/rag_prod_cutover_runbook.md
 - reports/closure2/rag_state_of_truth.md
 - reports/closure2/rag_target_architecture.md
