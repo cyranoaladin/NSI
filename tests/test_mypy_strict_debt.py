@@ -1,9 +1,10 @@
-"""Ratchet test for mypy --strict debt.
+"""Non-vacuant ratchet test for mypy --strict.
 
-Pins the exact set of known mypy errors in tests/mypy_baseline.txt.
-- A NEW error not in baseline -> test FAILS (regression).
-- Errors REMOVED from actual but still in baseline -> test FAILS
-  (update baseline to lock the improvement).
+Verifies that mypy actually ran AND succeeded (not silently skipped).
+Pins the exact set of known errors in tests/mypy_baseline.txt.
+- mypy didn't run (missing, crashed) -> FAILS.
+- A NEW error not in baseline -> FAILS (regression).
+- Errors REMOVED from actual but still in baseline -> FAILS (update baseline).
 - Baseline == actual -> PASS.
 
 To update after fixing errors:
@@ -19,13 +20,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = Path(__file__).with_name("mypy_baseline.txt")
 
+# Sentinel that mypy prints on success (any version)
+SUCCESS_SENTINEL = "no issues found"
+
 
 def _normalise(line: str) -> str:
-    """Strip the repo prefix so lines are comparable across machines."""
     root_str = str(ROOT) + "/"
-    if line.startswith(root_str):
-        return line[len(root_str):]
-    return line
+    return line[len(root_str):] if line.startswith(root_str) else line
 
 
 def test_mypy_ratchet() -> None:
@@ -38,9 +39,19 @@ def test_mypy_ratchet() -> None:
         timeout=300,
     )
 
+    # NON-VACUANT GUARD: mypy must have actually run.
+    # If mypy is missing or crashed, stdout won't contain the sentinel or errors.
+    stdout = result.stdout
+    has_sentinel = SUCCESS_SENTINEL in stdout
+    has_errors = ": error:" in stdout
+    assert has_sentinel or has_errors, (
+        f"mypy did not produce recognisable output (returncode={result.returncode}).\n"
+        f"stdout[:500]={stdout[:500]}"
+    )
+
     actual = sorted(
         _normalise(line)
-        for line in result.stdout.splitlines()
+        for line in stdout.splitlines()
         if ": error:" in line
     )
     baseline = sorted(

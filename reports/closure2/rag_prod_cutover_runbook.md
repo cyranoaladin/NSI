@@ -40,8 +40,12 @@ Critère : RAG_SMOKE_TEST_OK, métadonnées canoniques sur tous les hits.
 ## Étape 4 : Reindex complet
 
 ```bash
-python -m scripts.rag_ingest --collection nsi_corpus --reindex
+# L'ingesteur est idempotent par upsert : le relancer suffit à réindexer.
+# Supprimer le volume Chroma nsi_corpus n'est PAS nécessaire grâce à l'upsert.
+python -m scripts.rag_ingest --db <chemin_volume_chroma_prod> --collection nsi_corpus
 ```
+
+Comptes à vérifier au cutover (non prouvés ici, valeurs indicatives uniquement).
 
 ## Étape 5 : Cutover UI
 

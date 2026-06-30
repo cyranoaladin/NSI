@@ -26,6 +26,10 @@ audit-core:
 	python -m scripts.check_repo_topology
 	python -m scripts.check_audit_folder_policy
 	python -m scripts.check_content_tree_policy
+	python -m scripts.check_metadata
+	python -m scripts.check_links
+	python -m scripts.check_no_build_artifacts_in_index
+	python -m scripts.check_uploaded_archive_policy
 	python -m scripts.check_rag_config
 	RAG_ENV_FILE=.env.rag.audit-core-missing python -m scripts.rag_smoke_test
 	RAG_ENV_FILE=.env.rag.audit-core-missing python -m scripts.rag_diagnose_search_timeout
