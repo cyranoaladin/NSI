@@ -17,6 +17,23 @@
 - Impact : l'historique de la branche a été réécrit après push, violant la règle
   "commit poussé = immuable"
 
+## Incident 3 : push direct sur main (passe 3)
+
+- Commit : 3080147 "Exclure 01_build_reports du manifeste et regénérer les rapports"
+- Impact : commit poussé directement sur main pour résoudre le churn manifeste
+  (audit-idempotence échouait sans ce commit). Infraction de processus identique
+  à l'incident 1.
+- Contenu : _inventory_utils.py (ajout 01_build_reports à IGNORED_DIRS),
+  inventory_report.md, manifest_tooling.csv, mypy_baseline.txt
+
+## Incident 4 : preuve RAG non reproductible (passe 4)
+
+- La preuve "452 fichiers, 5992 chunks" de la passe 4 n'est pas reproductible
+  depuis le code committé : capacity_ids universellement vides (lues au mauvais
+  chemin frontmatter), métadonnées listes rejetées par Chroma si non scalarisées.
+- Corrigé en passe 5 : capacity_ids lu depuis official_program.capacities,
+  sérialisation CSV, re-preuve depuis venv propre.
+
 ## Politique adoptée
 
 - Commit poussé = immuable. Toute correction = nouveau commit.

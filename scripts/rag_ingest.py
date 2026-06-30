@@ -125,6 +125,22 @@ class Chunk:
 
 
 # ---------------------------------------------------------------------------
+# Retrieval contract adapter: CSV -> list for API consumers
+# ---------------------------------------------------------------------------
+
+def adapt_metadata(raw: dict[str, Any]) -> dict[str, Any]:
+    """Convert stored scalar metadata back to canonical types.
+
+    Chroma stores capacity_ids as CSV string; the adapter returns a list.
+    """
+    out = dict(raw)
+    csv_val = out.get("capacity_ids", "")
+    if isinstance(csv_val, str):
+        out["capacity_ids"] = [c for c in csv_val.split(",") if c] if csv_val else []
+    return out
+
+
+# ---------------------------------------------------------------------------
 # Ingestion report
 # ---------------------------------------------------------------------------
 
@@ -167,12 +183,19 @@ def build_chunks(path: Path) -> list[Chunk]:
 
     rel = path.relative_to(ROOT).as_posix()
     file_hash = sha256_file(path)
-    level = "premiere" if "premiere" in rel else ("terminale" if "terminale" in rel else "")
-    seq_match = re.search(r"[PT]\d{2}", rel)
-    sequence_id = seq_match.group(0) if seq_match else ""
 
-    # capacity_ids from frontmatter
-    raw_caps = meta.get("capacity_ids") or meta.get("capacities") or []
+    # Read level/theme/notion/sequence_id from frontmatter (not from path regex)
+    level = str(meta.get("level", ""))
+    theme = str(meta.get("theme", ""))
+    notion = str(meta.get("notion", ""))
+    sequence_id = str(meta.get("sequence_id", ""))
+
+    # capacity_ids: canonical location is official_program.capacities
+    official = meta.get("official_program")
+    if isinstance(official, dict):
+        raw_caps = official.get("capacities", [])
+    else:
+        raw_caps = meta.get("capacity_ids") or meta.get("capacities") or []
     if isinstance(raw_caps, str):
         capacity_ids = [c.strip() for c in raw_caps.split(",") if c.strip()]
     elif isinstance(raw_caps, list):
@@ -187,18 +210,20 @@ def build_chunks(path: Path) -> list[Chunk]:
     chunks: list[Chunk] = []
     for idx, (anchor, section_text) in enumerate(sections):
         chunk_id = f"{rel}#{anchor or 'chunk'}-{idx}"
+        # Chroma only accepts scalar metadata values — serialize lists to CSV.
+        capacity_ids_csv = ",".join(capacity_ids)
         chunks.append(Chunk(
             id=chunk_id,
             text=section_text,
             metadata={
                 "path": rel,
                 "section_anchor": anchor,
-                "capacity_ids": capacity_ids if capacity_ids else ["none"],
+                "capacity_ids": capacity_ids_csv,  # CSV string for Chroma
                 "document_type": str(meta.get("document_type", path.suffix.lstrip("."))),
                 "status": str(meta.get("status") or meta.get("statut") or "needs_review"),
                 "level": level,
-                "theme": str(meta.get("theme", "")),
-                "notion": str(meta.get("notion", "")),
+                "theme": theme,
+                "notion": notion,
                 "sequence_id": sequence_id,
                 "sha256": file_hash,
                 "collection": "nsi_corpus",

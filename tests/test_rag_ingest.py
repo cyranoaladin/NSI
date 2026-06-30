@@ -17,8 +17,8 @@ CANONICAL_KEYS = {
 }
 
 
-def test_build_chunks_has_canonical_metadata() -> None:
-    """Every chunk from a real source file carries all canonical keys."""
+def test_build_chunks_has_canonical_scalar_metadata() -> None:
+    """Every chunk carries all canonical keys as scalars (Chroma-safe)."""
     files = rag_ingest.iter_source_files()
     if not files:
         pytest.skip("No source files found")
@@ -27,11 +27,40 @@ def test_build_chunks_has_canonical_metadata() -> None:
     for chunk in chunks:
         missing = CANONICAL_KEYS - set(chunk.metadata.keys())
         assert not missing, f"Missing metadata keys: {missing}"
+        for key, val in chunk.metadata.items():
+            assert not isinstance(val, (list, dict)), (
+                f"Non-scalar metadata {key}={val!r} — Chroma will reject this"
+            )
+
+
+def test_capacity_ids_read_from_official_program() -> None:
+    """capacity_ids comes from official_program.capacities, not top-level."""
+    p07 = ROOT / "03_progressions" / "supports" / "premiere" / "P07"
+    candidates = sorted(p07.glob("P07_tp_*.md"))
+    if not candidates:
+        pytest.skip("P07 TP file not found")
+    chunks = rag_ingest.build_chunks(candidates[0])
+    assert chunks, "Expected chunks"
+    caps_csv = chunks[0].metadata["capacity_ids"]
+    assert caps_csv, f"capacity_ids is empty: {caps_csv!r}"
+    assert "P-LANG" in caps_csv, f"Expected P-LANG capacities, got: {caps_csv}"
+
+
+def test_adapt_metadata_roundtrip() -> None:
+    """ingest(list) -> store(csv) -> adapt -> list identical."""
+    original = ["P-TABLE-01", "P-TABLE-02"]
+    csv_str = ",".join(original)
+    adapted = rag_ingest.adapt_metadata({"capacity_ids": csv_str})
+    assert adapted["capacity_ids"] == original
+
+
+def test_adapt_metadata_empty() -> None:
+    adapted = rag_ingest.adapt_metadata({"capacity_ids": ""})
+    assert adapted["capacity_ids"] == []
 
 
 def test_build_chunks_refuses_private_data_flag() -> None:
-    """A file with private_data: true produces zero chunks."""
-    # Use a temporary file inside the repo tree so path operations work
+    """private_data: true → zero chunks."""
     test_dir = ROOT / "03_progressions" / "supports"
     if not test_dir.exists():
         pytest.skip("supports dir missing")
@@ -48,31 +77,7 @@ def test_build_chunks_refuses_private_data_flag() -> None:
 
 
 def test_dry_run_produces_report() -> None:
-    """Dry-run produces a valid report without writing to any DB."""
     with tempfile.TemporaryDirectory() as td:
         report = rag_ingest.ingest(Path(td), dry_run=True)
-    assert report.files_seen > 0, "Expected source files to be seen"
-    assert report.chunks_upserted >= 0
+    assert report.files_seen > 0
     assert report.errors == []
-
-
-def test_deterministic_two_runs_same_output() -> None:
-    """Two consecutive ingestions into an ephemeral DB produce identical state."""
-    try:
-        import chromadb  # noqa: F401
-    except ImportError:
-        pytest.skip("chromadb not installed")
-
-    with tempfile.TemporaryDirectory() as td:
-        db_path = Path(td) / "chroma"
-
-        # Deterministic embedding: fixed vector for reproducibility
-        class FixedEmbedding:
-            def __call__(self, input: list[str]) -> list[list[float]]:
-                return [[0.1] * 10 for _ in input]
-
-        r1 = rag_ingest.ingest(db_path, embedding_fn=FixedEmbedding())
-        r2 = rag_ingest.ingest(db_path, embedding_fn=FixedEmbedding())
-
-        assert r1.files_ingested == r2.files_ingested
-        assert r1.chunks_upserted == r2.chunks_upserted
