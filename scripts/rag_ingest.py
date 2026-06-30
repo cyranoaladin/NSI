@@ -184,11 +184,23 @@ def build_chunks(path: Path) -> list[Chunk]:
     rel = path.relative_to(ROOT).as_posix()
     file_hash = sha256_file(path)
 
-    # Read level/theme/notion/sequence_id from frontmatter (not from path regex)
+    # Read level/theme/notion/sequence_id from frontmatter; fall back to path
+    # for code files (.py) that have no frontmatter.
     level = str(meta.get("level", ""))
     theme = str(meta.get("theme", ""))
     notion = str(meta.get("notion", ""))
     sequence_id = str(meta.get("sequence_id", ""))
+
+    # Path fallback for .py files without frontmatter
+    if not level:
+        if "premiere" in rel:
+            level = "premiere"
+        elif "terminale" in rel:
+            level = "terminale"
+    if not sequence_id:
+        seq_match = re.search(r"[PT]\d{2}", rel)
+        if seq_match:
+            sequence_id = seq_match.group(0)
 
     # capacity_ids: canonical location is official_program.capacities
     official = meta.get("official_program")

@@ -208,9 +208,9 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_learning_objectives_assessed.py: nom propre suspect -> Learning Objectives Assessed Report
 - scripts/check_makefile_audit_policy.py: nom propre suspect -> Check Makefile
 - scripts/check_missing_register_actionability.py: nom propre suspect -> Lien Drive
+- scripts/check_no_placeholders_code.py: nom propre suspect -> Return True
 - scripts/check_program_capacity_evidence_depth.py: nom propre suspect -> Program Capacity Evidence Depth Report
-- scripts/check_progression_calendar_alignment.py: nom propre suspect -> Ressources Drive
-- ... 44 alertes supplémentaires non affichées
+- ... 45 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 

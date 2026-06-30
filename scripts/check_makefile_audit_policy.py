@@ -61,7 +61,8 @@ def main() -> None:
     # audit-local only, not in audit-core (clone-clean mode).
     audit_local = target_body(text, "audit-local")
     audit_extracted = target_body(text, "audit-extracted-source-local")
-    all_executed = core_set | python_scripts(audit_local) | python_scripts(audit_extracted)
+    pkg_audit = target_body(text, "package-audit")
+    all_executed = core_set | python_scripts(audit_local) | python_scripts(audit_extracted) | python_scripts(pkg_audit)
     # Gates only callable with a Drive mirror — not required in audit-core
     drive_only = {"scripts.drive_local_inventory", "scripts.drive_resource_triage"}
     for script in sorted(docs - drive_only):

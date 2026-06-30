@@ -28,8 +28,6 @@ audit-core:
 	python -m scripts.check_content_tree_policy
 	python -m scripts.check_metadata
 	python -m scripts.check_links
-	python -m scripts.check_no_build_artifacts_in_index
-	python -m scripts.check_uploaded_archive_policy
 	python -m scripts.check_rag_config
 	RAG_ENV_FILE=.env.rag.audit-core-missing python -m scripts.rag_smoke_test
 	RAG_ENV_FILE=.env.rag.audit-core-missing python -m scripts.rag_diagnose_search_timeout
@@ -328,6 +326,8 @@ package-audit:
 	python -m scripts.build_source_archive
 	python -m scripts.check_packaging_mode
 	python -m scripts.check_archive_portability
+	python -m scripts.check_no_build_artifacts_in_index
+	python -m scripts.check_uploaded_archive_policy
 	python -m scripts.check_no_sensitive_drive_in_source_clean
 	python -m scripts.check_no_global_archive_in_delivery_context
 
