@@ -5,7 +5,7 @@
 | Fichier concerné | Gate concerné | Cause | Risque | Impact | Décision | Date cible | Responsable | Critère de fermeture |
 |---|---|---|---|---|---|---|---|---|
 | Doublon P08 (P08_TP_html_css_dom.md / P08_TP_http_get_post_formulaires.md) | duplicates_report.md | Deux TP couvrant le même thème classés "doublon non classé" | Confusion pédagogique, couverture imprécise | Revue humaine requise pour trancher (fusion, spécialisation ou retrait) | Item de CONTENU, hors scope tooling. Ne pas modifier sans revue pédagogique. | Lot 4+ | équipe NSI | Un seul TP par thème ou justification explicite de la coexistence |
-| Protection branche main | CI | main non protégée (push direct possible) | Contournement des gates CI | La CI détecte les régressions mais ne bloque pas les merges | Activer require PR + status check "quality" requis sur main | Immédiat | propriétaire du dépôt | `gh api .../branches/main/protection` retourne un objet (pas 404) |
+| Protection branche main | CI | main non protégée (push direct possible) | Contournement des gates CI | La CI détecte les régressions mais ne bloque pas les merges | Activer require PR + status check "quality" requis sur main | Immédiat | propriétaire du dépôt | `gh api repos/cyranoaladin/NSI/branches/main/protection --jq '(.required_pull_request_reviews != null) and ((.required_status_checks.contexts // []) \| index("quality") != null)'` renvoie `true` |
 
 ## Dettes fermées
 

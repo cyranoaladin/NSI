@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 972
+- Total ressources : 973
 - Ressources pédagogiques : 53
-- Ressources techniques : 919
+- Ressources techniques : 920
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 964
+- generated: 965
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 452
+- interne: 453
 - premiere: 232
 - terminale: 288
 
@@ -21,15 +21,15 @@
 - python: 95
 - script: 202
 - sequence: 45
-- test: 67
+- test: 68
 
 ## Répartition par statut
-- needs_review: 972
+- needs_review: 973
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 772
+- mixte: 773
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -973,6 +973,7 @@
   - tests/test_mypy_strict_debt.py
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
+  - tests/test_no_stale_archive_guard.py
   - tests/test_notional_and_disciplinary_controls.py
   - tests/test_operational_substance_controls.py
   - tests/test_organizer_nsi_safety.py
@@ -1947,6 +1948,7 @@
   - tests/test_mypy_strict_debt.py
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
+  - tests/test_no_stale_archive_guard.py
   - tests/test_notional_and_disciplinary_controls.py
   - tests/test_operational_substance_controls.py
   - tests/test_organizer_nsi_safety.py
@@ -2896,6 +2898,7 @@
 - tests/test_mypy_strict_debt.py
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
+- tests/test_no_stale_archive_guard.py
 - tests/test_notional_and_disciplinary_controls.py
 - tests/test_operational_substance_controls.py
 - tests/test_organizer_nsi_safety.py
@@ -3873,6 +3876,7 @@
 - tests/test_mypy_strict_debt.py
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
+- tests/test_no_stale_archive_guard.py
 - tests/test_notional_and_disciplinary_controls.py
 - tests/test_operational_substance_controls.py
 - tests/test_organizer_nsi_safety.py
