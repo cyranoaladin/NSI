@@ -1,6 +1,6 @@
-# Phase A — Rapport final (passe 12, derniere)
+# Phase A — Rapport final (passe 13, derniere)
 
-## Statut : CLOSED_CLEAN (enforcement REEL — protection active)
+## Statut : CLOSED_CLEAN (enforcement REEL — protection + enforce_admins actifs)
 
 ## Gate archive fail-closed + positif + multiline
 
@@ -22,6 +22,9 @@ Section "Standard fail-closed" : 8 → 9 (sequentielle apres la 8 existante).
 
 ## Protection de branche ACTIVE (dette FERMEE)
 
+Critere de fermeture = conjonction de DEUX conditions :
+
+**(A)** Review PR + status check quality :
 ```bash
 gh api repos/cyranoaladin/NSI/branches/main/protection \
   --jq '(.required_pull_request_reviews != null) and
@@ -29,11 +32,17 @@ gh api repos/cyranoaladin/NSI/branches/main/protection \
 → true
 ```
 
-Dette protection deplacee de "ouverte" vers "fermee" dans qa_debt_register.md
-(date 2026-07-01).
+**(B)** Admins ne peuvent pas bypasser :
+```bash
+gh api repos/cyranoaladin/NSI/branches/main/protection/enforce_admins \
+  --jq '.enabled'
+→ true
+```
 
-Enforcement REEL : la CI gate les PRs ET les merges. Un push direct est
-refuse par GitHub.
+A ET B = true. Critere rempli. Dette fermee dans qa_debt_register.md (2026-07-01).
+"A seul" ne suffirait PAS (un admin pourrait bypasser sans B).
+
+Enforcement REEL : la CI gate les PRs ET les merges, y compris pour les admins.
 
 ## Decision assumee : double-build
 
@@ -50,7 +59,7 @@ Choix delibere correctness > vitesse (surcout ~1s).
 | Standard fail-closed inscrit | FAIT (AGENTS.md section 9) |
 | Double-build documente | FAIT |
 | Critere protection durci | FAIT (commande jq exacte) |
-| Protection branche ACTIVE | FAIT (jq=true, dette fermee) |
+| Protection branche ACTIVE + enforce_admins | FAIT (A=true, B=true) |
 | Enforcement REEL | FAIT |
 
 ## Invariants
