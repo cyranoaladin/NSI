@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 969
+- Total ressources : 970
 - Ressources pédagogiques : 53
-- Ressources techniques : 916
+- Ressources techniques : 917
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 961
+- generated: 962
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 449
+- interne: 450
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 546
+- document: 547
 - python: 95
 - script: 202
 - sequence: 45
 - test: 67
 
 ## Répartition par statut
-- needs_review: 969
+- needs_review: 970
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 769
+- mixte: 770
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -650,6 +650,7 @@
   - rag_server_fix_plan.md
   - rag_timeout_diagnostic.md
   - reports/closure2/corrective2_report.md
+  - reports/closure2/corrective3_report.md
   - reports/closure2/corrective_report.md
   - reports/closure2/rag_prod_cutover_runbook.md
   - reports/closure2/rag_state_of_truth.md
@@ -1647,6 +1648,7 @@
   - rag_server_fix_plan.md
   - rag_timeout_diagnostic.md
   - reports/closure2/corrective2_report.md
+  - reports/closure2/corrective3_report.md
   - reports/closure2/corrective_report.md
   - reports/closure2/rag_prod_cutover_runbook.md
   - reports/closure2/rag_state_of_truth.md
@@ -2573,6 +2575,7 @@
 - rag_server_fix_plan.md
 - rag_timeout_diagnostic.md
 - reports/closure2/corrective2_report.md
+- reports/closure2/corrective3_report.md
 - reports/closure2/corrective_report.md
 - reports/closure2/rag_prod_cutover_runbook.md
 - reports/closure2/rag_state_of_truth.md
@@ -3541,6 +3544,7 @@
 - rag_server_fix_plan.md
 - rag_timeout_diagnostic.md
 - reports/closure2/corrective2_report.md
+- reports/closure2/corrective3_report.md
 - reports/closure2/corrective_report.md
 - reports/closure2/rag_prod_cutover_runbook.md
 - reports/closure2/rag_state_of_truth.md
