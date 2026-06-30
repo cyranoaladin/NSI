@@ -1,82 +1,63 @@
 # Runbook de cutover production RAG
 
-## Statut : PLAN SEULEMENT — BLOQUE
+## Statut : PLAN SEULEMENT
 
-**ATTENTION** : NE PAS utiliser `python -m scripts.rag_ingest` pour
-l'ingestion prod. Ce script utilise l'embedder Chroma par defaut
-(all-MiniLM-L6-v2, 384d) qui est INCOMPATIBLE avec la prod
-(nomic-embed-text, 768d via ollama). Utiliser `scripts/rag_ingest_server.py`
-(Chroma REST + ollama embeddings) a la place.
+## Prerequis
 
-## Prérequis
-
-- Accès SSH au serveur (88.99.254.59, host korrigo)
-- .env.rag avec RAG_API_KEY valide
-- Timeout /search résolu (actuellement le endpoint time out)
-- Pipeline d'ingestion validé en local (Phase B3)
+- Acces SSH au serveur (88.99.254.59, host korrigo)
+- INGESTOR_API_TOKEN disponible (via docker exec compose-ingestor-1 printenv)
+- Pipeline d'ingestion valide (`scripts/rag_ingest_server.py`)
+- Backup Chroma verifie
 - Approbation du chef de projet
 
-## Étape 1 : Backup
+## Etape 1 : Backup
 
 ```bash
-ssh korrigo "docker exec chroma tar cf /backup/chroma_$(date +%Y%m%d).tar /chroma/chroma"
+ssh korrigo "docker run --rm -v compose_rag_ui_chroma_data:/data -v /root/backups:/backup \
+  busybox tar czf /backup/chroma_pre_cutover_$(date +%Y-%m-%d).tgz /data"
 ```
 
-Jamais de drop de collection. Le backup est le prérequis absolu.
+Jamais de drop de collection. Le backup est le prerequis absolu.
 
-## Étape 2 : Collection STAGING
+## Etape 2 : Ingestion dans collection NEUVE (nsi_corpus_v2)
 
-Créer une collection staging `nsi_corpus_staging` :
 ```bash
-python -m scripts.rag_ingest --collection nsi_corpus_staging --dry-run
-python -m scripts.rag_ingest --collection nsi_corpus_staging
+cd /tmp/nsi_ingest && git pull
+NSI_ROOT=/tmp/nsi_ingest TARGET_COLLECTION=nsi_corpus_v2 \
+  python3 scripts/rag_ingest_server.py
 ```
 
-Vérifier le schéma canonique sur les hits staging.
-Vérifier le filtrage level/theme/capacity_ids.
+Utilise ollama nomic-embed-text (768d). JAMAIS `python -m scripts.rag_ingest`
+(MiniLM 384d incompatible).
 
-## Étape 3 : Validation staging
+## Etape 3 : Validation staging
 
 ```bash
-RAG_COLLECTION=nsi_corpus_staging python -m scripts.rag_smoke_test
+RAG_COLLECTION=nsi_corpus_v2 python -m scripts.rag_smoke_test
 ```
 
-Critère : RAG_SMOKE_TEST_OK, métadonnées canoniques sur tous les hits.
+Critere : RAG_SMOKE_TEST_OK, metadonnees canoniques sur tous les hits.
+Comptes a verifier (live nsi_corpus=4716 chunks, v2 attendu ~5992 chunks).
 
-## Étape 4 : Reindex complet
+## Etape 4 : Cutover UI
 
-```bash
-# L'ingesteur est idempotent par upsert : le relancer suffit à réindexer.
-# Supprimer le volume Chroma nsi_corpus n'est PAS nécessaire grâce à l'upsert.
-python -m scripts.rag_ingest --db <chemin_volume_chroma_prod> --collection nsi_corpus
-```
+Basculer la collection par defaut dans rag-ui.nexusreussite.academy de
+nsi_corpus vers nsi_corpus_v2 (changement de config UI uniquement).
 
-Comptes à vérifier au cutover (non prouvés ici, valeurs indicatives uniquement).
-
-## Étape 5 : Cutover UI
-
-Mettre à jour la collection par défaut dans rag-ui.nexusreussite.academy
-de nsi_corpus (legacy) vers nsi_corpus (reindexé schéma canonique).
-
-## Étape 6 : Vérification post-cutover
+## Etape 5 : Verification post-cutover
 
 ```bash
-make rag-smoke-required   # doit PASSER
-python -m scripts.rag_diagnose_search_timeout  # aucun timeout
+RAG_COLLECTION=nsi_corpus_v2 make rag-smoke-required
+python -m scripts.rag_diagnose_search_timeout
 ```
 
 ## Rollback
 
-Si échec à toute étape :
-1. Restaurer le backup : `docker exec chroma tar xf /backup/chroma_YYYYMMDD.tar -C /`
-2. Redémarrer : `docker restart chroma ingestor`
-3. Vérifier : `curl -sS $RAG_API_BASE_URL/../health`
+1. Rebasculer config UI vers nsi_corpus (legacy)
+2. Si volume corrompu : restaurer le backup tgz
+3. Verifier : `curl -sS http://127.0.0.1:18001/health`
 
-## Fenêtre d'impact
+## Retention
 
-Pendant la réindexation (~5 min) : /search retourne 0 résultats.
-Aucun impact utilisateur final (RAG non exposé publiquement).
-
-## make rag-smoke-required
-
-Reste en échec tant que le cutover n'est pas exécuté. Prod inchangée.
+Conserver nsi_corpus (legacy) + backup pendant 14 jours minimum.
+Suppression differee apres validation en conditions reelles.

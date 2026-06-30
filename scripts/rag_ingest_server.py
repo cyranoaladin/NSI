@@ -14,19 +14,20 @@ Environment variables:
     NSI_ROOT        Path to NSI repo root (default: cwd)
 
 Usage (on server):
-    NSI_ROOT=/tmp/nsi_ingest TARGET_COLLECTION=nsi_corpus_v2 python3 rag_ingest_server.py
+    NSI_ROOT=/tmp/nsi_ingest TARGET_COLLECTION=nsi_corpus_v2 python3 scripts/rag_ingest_server.py
 """
 from __future__ import annotations
 
-import hashlib
 import json
 import os
-import re
 import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
 from typing import Any
+
+# Shared logic: frontmatter, chunking, slug, PII guard, metadata
+from scripts.rag_core import extract_metadata, iter_source_files
 
 # ---------------------------------------------------------------------------
 # Configuration from environment (never hardcoded, token never logged)
@@ -43,15 +44,10 @@ TENANT = "default_tenant"
 DB = "default_database"
 BATCH_SIZE = 20
 
-SOURCE_DIRS = [
-    NSI_ROOT / "03_progressions" / "supports",
-    NSI_ROOT / "03_progressions" / "fiches_cours",
-]
 
 # ---------------------------------------------------------------------------
 # HTTP helpers
 # ---------------------------------------------------------------------------
-
 
 def _http(method: str, url: str, data: dict[str, Any] | None = None) -> Any:
     body = json.dumps(data).encode() if data else None
@@ -66,20 +62,18 @@ def _http(method: str, url: str, data: dict[str, Any] | None = None) -> Any:
     except urllib.error.HTTPError as e:
         err = e.read().decode()[:300]
         if e.code == 409:
-            return None  # collection already exists
+            return None
         raise RuntimeError(f"HTTP {method} {url}: {e.code} {err}")
 
 
 def embed(texts: list[str]) -> list[list[float]]:
-    """Embed texts via ollama. Returns list of vectors (dim=EXPECTED_DIM)."""
     result = _http("POST", f"{OLLAMA_URL}/api/embed", {
         "model": EMBED_MODEL, "input": texts,
     })
     embeddings: list[list[float]] = result["embeddings"]
     if embeddings and len(embeddings[0]) != EXPECTED_DIM:
         raise RuntimeError(
-            f"Embedding dimension {len(embeddings[0])} != expected {EXPECTED_DIM}. "
-            f"Model {EMBED_MODEL} may have changed. STOP."
+            f"Embedding dim {len(embeddings[0])} != {EXPECTED_DIM}. STOP."
         )
     return embeddings
 
@@ -92,7 +86,6 @@ _BASE = f"{CHROMA_URL}/api/v2/tenants/{TENANT}/databases/{DB}"
 
 
 def get_or_create_collection(name: str) -> str:
-    """Return collection ID, creating if needed."""
     _http("POST", f"{_BASE}/collections", {
         "name": name, "metadata": {"hnsw:space": "cosine"},
     })
@@ -100,7 +93,7 @@ def get_or_create_collection(name: str) -> str:
     for c in cols:
         if c["name"] == name:
             return str(c["id"])
-    raise RuntimeError(f"Collection {name} not found after creation")
+    raise RuntimeError(f"Collection {name} not found")
 
 
 def collection_count(col_id: str) -> int:
@@ -117,112 +110,7 @@ def upsert(col_id: str, ids: list[str], docs: list[str],
 
 
 def delete_collection(name: str) -> None:
-    cols: list[dict[str, Any]] = _http("GET", f"{_BASE}/collections")
-    for c in cols:
-        if c["name"] == name:
-            _http("DELETE", f"{_BASE}/collections/{c['id']}")
-            return
-
-
-# ---------------------------------------------------------------------------
-# Corpus parsing (mirrors rag_ingest.py logic)
-# ---------------------------------------------------------------------------
-
-def _parse_frontmatter(text: str) -> tuple[dict[str, Any], str]:
-    if not text.startswith("---"):
-        return {}, text
-    end = text.find("\n---", 3)
-    if end < 0:
-        return {}, text
-    try:
-        import yaml
-        meta = yaml.safe_load(text[3:end]) or {}
-    except Exception:
-        meta = {}
-    return (meta if isinstance(meta, dict) else {}), text[end + 4:].strip()
-
-
-def _split_sections(body: str) -> list[tuple[str, str]]:
-    sections: list[tuple[str, str]] = []
-    anchor, lines = "", []  # type: ignore[var-annotated]
-    for line in body.split("\n"):
-        m = re.match(r"^(#{1,4})\s+(.+)", line)
-        if m:
-            if lines:
-                t = "\n".join(lines).strip()
-                if t:
-                    sections.append((anchor, t))
-            anchor = re.sub(r"[^a-z0-9]+", "-", m.group(2).strip().lower()).strip("-")
-            lines = [line]
-        else:
-            lines.append(line)
-    if lines:
-        t = "\n".join(lines).strip()
-        if t:
-            sections.append((anchor, t))
-    return sections
-
-
-def build_chunks(path: Path) -> list[dict[str, Any]]:
-    text = path.read_text(encoding="utf-8", errors="replace")
-    meta, body = _parse_frontmatter(text)
-    if meta.get("private_data") is True:
-        return []
-
-    rel = path.relative_to(NSI_ROOT).as_posix()
-    fhash = hashlib.sha256(path.read_bytes()).hexdigest()
-
-    level = str(meta.get("level", ""))
-    if not level:
-        level = "premiere" if "premiere" in rel else ("terminale" if "terminale" in rel else "")
-    theme = str(meta.get("theme", ""))
-    notion = str(meta.get("notion", ""))
-    seq_id = str(meta.get("sequence_id", ""))
-    if not seq_id:
-        sm = re.search(r"[PT]\d{2}", rel)
-        if sm:
-            seq_id = sm.group(0)
-
-    official = meta.get("official_program")
-    raw_caps: Any = (
-        official.get("capacities", []) if isinstance(official, dict)
-        else meta.get("capacity_ids") or meta.get("capacities") or []
-    )
-    if isinstance(raw_caps, str):
-        caps = [c.strip() for c in raw_caps.split(",") if c.strip()]
-    elif isinstance(raw_caps, list):
-        caps = [str(c) for c in raw_caps]
-    else:
-        caps = []
-    caps_csv = ",".join(caps)
-
-    sections = _split_sections(body) or [("", body)]
-    chunks: list[dict[str, Any]] = []
-    for idx, (anch, txt) in enumerate(sections):
-        chunks.append({
-            "id": f"{rel}#{anch or 'chunk'}-{idx}",
-            "text": txt,
-            "metadata": {
-                "path": rel, "section_anchor": anch, "capacity_ids": caps_csv,
-                "document_type": str(meta.get("document_type", path.suffix.lstrip("."))),
-                "status": str(meta.get("status") or "needs_review"),
-                "level": level, "theme": theme, "notion": notion,
-                "sequence_id": seq_id, "sha256": fhash,
-                "collection": TARGET_COLLECTION, "source_type": "nsi_corpus",
-                "private_data": "false",
-            },
-        })
-    return chunks
-
-
-def iter_source_files() -> list[Path]:
-    files: list[Path] = []
-    for d in SOURCE_DIRS:
-        if d.exists():
-            for p in sorted(d.rglob("*")):
-                if p.is_file() and p.suffix in {".md", ".py"} and "__pycache__" not in str(p):
-                    files.append(p)
-    return files
+    _http("DELETE", f"{_BASE}/collections/{name}")
 
 
 # ---------------------------------------------------------------------------
@@ -239,13 +127,17 @@ def main() -> int:
     col_id = get_or_create_collection(TARGET_COLLECTION)
     print(f"Collection ID: {col_id}")
 
-    files = iter_source_files()
+    files = iter_source_files(NSI_ROOT)
     print(f"Files found: {len(files)}")
 
     all_chunks: list[dict[str, Any]] = []
+    pii_skipped = 0
     for p in files:
-        all_chunks.extend(build_chunks(p))
-    print(f"Chunks built: {len(all_chunks)}")
+        chunks, skipped = extract_metadata(p, NSI_ROOT, TARGET_COLLECTION)
+        if skipped:
+            pii_skipped += 1
+        all_chunks.extend(chunks)
+    print(f"Chunks built: {len(all_chunks)}, PII skipped: {pii_skipped}")
 
     ingested = 0
     for i in range(0, len(all_chunks), BATCH_SIZE):
@@ -264,7 +156,7 @@ def main() -> int:
             print(f"  ingested {ingested}/{len(all_chunks)}")
 
     count = collection_count(col_id)
-    print(f"DONE: {ingested} chunks ingested into {TARGET_COLLECTION}")
+    print(f"DONE: {ingested} chunks, PII_skipped={pii_skipped}")
     print(f"Collection count: {count}")
     return 0
 
