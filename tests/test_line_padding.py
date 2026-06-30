@@ -3,12 +3,10 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_no_line_padding as padding
+import scripts.check_no_line_padding as padding
 
 
 class LinePaddingTest(unittest.TestCase):

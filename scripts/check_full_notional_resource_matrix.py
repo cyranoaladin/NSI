@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 import unicodedata
 
-from _qa_common import ROOT, read_frontmatter, strip_frontmatter
+from scripts._qa_common import ROOT, read_frontmatter, strip_frontmatter
 
 
 RESOURCE_TYPES = [

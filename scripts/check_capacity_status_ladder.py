@@ -8,9 +8,9 @@ from pathlib import Path
 import csv
 import re
 
-from _qa_common import ROOT, sequence_id_from_path
-from check_official_program_capacity_coverage_matrix import load_official_capacities
-from check_session_referenced_files_exist import describe_session, session_blocks
+from scripts._qa_common import ROOT, sequence_id_from_path
+from scripts.check_official_program_capacity_coverage_matrix import load_official_capacities
+from scripts.check_session_referenced_files_exist import describe_session, session_blocks
 
 
 CAPACITY_RE = re.compile(r"\b[PT](?:-[A-Z]+)+-\d{2}[A-Z]?\b")

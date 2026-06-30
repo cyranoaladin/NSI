@@ -3,21 +3,19 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_course_sheet_exercise_answer_count as answer_count
-import check_csv_numeric_fields_are_parseable as csv_numeric
-import check_no_duplicate_capacity_lines as duplicate_capacity
-import check_p04_key_consistency as p04_keys
-import check_p05_expected_outputs_are_explicit as p05_outputs
-import check_p05_pipeline_consistency as p05_pipeline
-import check_t18_trace_table_quality as t18_trace
-import check_paper_tp_contract as paper_tp
-import check_p05_semantic_consistency as p05_semantic
-import check_no_token_only_validation as token_only
+import scripts.check_course_sheet_exercise_answer_count as answer_count
+import scripts.check_csv_numeric_fields_are_parseable as csv_numeric
+import scripts.check_no_duplicate_capacity_lines as duplicate_capacity
+import scripts.check_p04_key_consistency as p04_keys
+import scripts.check_p05_expected_outputs_are_explicit as p05_outputs
+import scripts.check_p05_pipeline_consistency as p05_pipeline
+import scripts.check_t18_trace_table_quality as t18_trace
+import scripts.check_paper_tp_contract as paper_tp
+import scripts.check_p05_semantic_consistency as p05_semantic
+import scripts.check_no_token_only_validation as token_only
 
 
 def write(path: Path, content: str) -> None:

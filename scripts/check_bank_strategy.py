@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from typing import List
 
-from _qa_common import ROOT, print_result
+from scripts._qa_common import ROOT, print_result
 
 ALLOWED_BANK_FILES = {"index.md", ".gitkeep"}
 BANK_ROOTS = [ROOT / "premiere" / "banques", ROOT / "terminale" / "banques"]

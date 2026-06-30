@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import ROOT, read_frontmatter, sequence_id_from_path, strip_frontmatter
+from scripts._qa_common import ROOT, read_frontmatter, sequence_id_from_path, strip_frontmatter
 
 
 @dataclass

@@ -7,7 +7,7 @@ from pathlib import Path
 import tarfile
 import zipfile
 
-from _qa_common import ROOT, print_result
+from scripts._qa_common import ROOT, print_result
 
 
 AUDIT_CANDIDATES = [ROOT / "AUDIT", ROOT.parent / "AUDIT"]

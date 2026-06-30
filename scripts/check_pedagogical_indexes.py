@@ -5,8 +5,8 @@ from __future__ import annotations
 
 from collections import Counter
 
-from _qa_common import ROOT, print_result
-import generate_pedagogical_indexes
+from scripts._qa_common import ROOT, print_result
+import scripts.generate_pedagogical_indexes as generate_pedagogical_indexes
 
 
 INDEX_FILES = [

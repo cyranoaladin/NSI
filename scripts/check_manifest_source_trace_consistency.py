@@ -10,7 +10,7 @@ from pathlib import Path
 
 import yaml
 
-from _qa_common import ROOT
+from scripts._qa_common import ROOT
 
 TRACE_TO_MANIFEST = {
     "adaptation_drive": "adapted_from_drive",

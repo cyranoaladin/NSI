@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import ROOT, read_frontmatter, strip_frontmatter
+from scripts._qa_common import ROOT, read_frontmatter, strip_frontmatter
 
 
 TARGET_DOC_TYPES = {"cours", "td", "tp", "tp_papier", "evaluation"}

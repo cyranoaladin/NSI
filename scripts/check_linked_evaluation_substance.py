@@ -8,9 +8,9 @@ from pathlib import Path
 import re
 import unicodedata
 
-from _qa_common import ROOT, strip_frontmatter
-from check_linked_evaluation_quality import target_evaluation_files
-from check_linked_td_substance import correction_has_substance as td_correction_has_substance
+from scripts._qa_common import ROOT, strip_frontmatter
+from scripts.check_linked_evaluation_quality import target_evaluation_files
+from scripts.check_linked_td_substance import correction_has_substance as td_correction_has_substance
 
 VAGUE_ANSWERS = [
     "solution explicite attendue",

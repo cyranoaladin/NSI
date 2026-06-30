@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import csv
 
-from _qa_common import ROOT
+from scripts._qa_common import ROOT
 
 
 PLAN = "drive_remaining_action_plan.md"

@@ -7,7 +7,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from substance_report_renderer import SchemaError, build_report_model, load_verdict, write_report_outputs
+from scripts.substance_report_renderer import SchemaError, build_report_model, load_verdict, write_report_outputs
 
 
 def main() -> int:

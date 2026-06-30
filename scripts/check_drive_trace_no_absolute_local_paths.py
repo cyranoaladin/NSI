@@ -8,8 +8,8 @@ import re
 import sys
 from pathlib import Path
 
-from _qa_common import ROOT
-from check_drive_enrichment_traceability_portable import load_trace
+from scripts._qa_common import ROOT
+from scripts.check_drive_enrichment_traceability_portable import load_trace
 
 IGNORED_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache", "dist", "Documents_DRIVE"}
 TEXT_SUFFIXES = {".md", ".txt", ".csv", ".yml", ".yaml", ".py", ".json", ".tex"}

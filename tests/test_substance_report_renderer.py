@@ -102,7 +102,7 @@ class SubstanceReportRendererTests(unittest.TestCase):
         }
 
     def test_needs_content_report_contains_charter_marker_and_no_promotion(self) -> None:
-        import substance_report_renderer as renderer
+        import scripts.substance_report_renderer as renderer
 
         model = renderer.build_report_model(self.verdict(), self.repo)
         html = renderer.render_html(model)
@@ -113,7 +113,7 @@ class SubstanceReportRendererTests(unittest.TestCase):
         self.assertNotIn("published = 1", html)
 
     def test_scientific_flags_are_visible_in_markdown_and_html(self) -> None:
-        import substance_report_renderer as renderer
+        import scripts.substance_report_renderer as renderer
 
         model = renderer.build_report_model(
             self.verdict(flags=["human_review_required"]),
@@ -126,7 +126,7 @@ class SubstanceReportRendererTests(unittest.TestCase):
         self.assertIn("scientific-flags", html)
 
     def test_downgraded_validated_pedagogy_is_rendered_as_alert(self) -> None:
-        import substance_report_renderer as renderer
+        import scripts.substance_report_renderer as renderer
 
         model = renderer.build_report_model(
             self.verdict(
@@ -146,13 +146,13 @@ class SubstanceReportRendererTests(unittest.TestCase):
         self.assertIn("Verdict effectif: needs_content (DÉGRADÉ)", html)
 
     def test_invalid_schema_raises_without_report(self) -> None:
-        import substance_report_renderer as renderer
+        import scripts.substance_report_renderer as renderer
 
         with self.assertRaises(renderer.SchemaError):
             renderer.build_report_model({"schema_version": "1.0.0"}, self.repo)
 
     def test_html_is_standalone_without_external_script_or_stylesheet(self) -> None:
-        import substance_report_renderer as renderer
+        import scripts.substance_report_renderer as renderer
 
         html = renderer.render_html(renderer.build_report_model(self.verdict(), self.repo))
 
@@ -161,7 +161,7 @@ class SubstanceReportRendererTests(unittest.TestCase):
         self.assertIn("<style>", html)
 
     def test_renderer_does_not_modify_repository_status_files(self) -> None:
-        import substance_report_renderer as renderer
+        import scripts.substance_report_renderer as renderer
 
         before = {
             name: (self.repo / name).read_text(encoding="utf-8")

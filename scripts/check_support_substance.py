@@ -8,8 +8,8 @@ from difflib import SequenceMatcher
 from pathlib import Path
 import re
 
-from _qa_common import ROOT
-from check_first_batch_document_quality import FIRST_BATCH_PREFIXES, REQUIRED_KINDS, find_kind_file
+from scripts._qa_common import ROOT
+from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, REQUIRED_KINDS, find_kind_file
 
 GENERIC_PATTERNS = [
     "variante contrôlée",

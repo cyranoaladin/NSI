@@ -9,7 +9,7 @@ import re
 
 import yaml
 
-from _qa_common import FULL_SEQUENCE_SCOPE, ROOT
+from scripts._qa_common import FULL_SEQUENCE_SCOPE, ROOT
 
 CONTRACT_DIR = ROOT / "03_progressions" / "supports" / "contracts"
 

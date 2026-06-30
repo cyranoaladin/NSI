@@ -8,7 +8,7 @@ import sys
 import tarfile
 from pathlib import Path
 
-from _qa_common import ROOT
+from scripts._qa_common import ROOT
 
 SENSITIVE_NAMES = {"noteseleves.csv", "fichier_eleves.csv", "fichiereleves.csv", "rendus_eleves"}
 SENSITIVE_SEGMENTS = {".venv", ".git", "__pycache__"}

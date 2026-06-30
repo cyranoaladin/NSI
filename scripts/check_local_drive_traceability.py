@@ -10,9 +10,9 @@ import re
 
 import yaml
 
-from _qa_common import ROOT, read_frontmatter
-from check_first_batch_document_quality import FIRST_BATCH_PREFIXES
-from _drive_paths import resolve_drive_reference
+from scripts._qa_common import ROOT, read_frontmatter
+from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES
+from scripts._drive_paths import resolve_drive_reference
 
 TRACE_FILE = ROOT / "support_source_trace.yml"
 

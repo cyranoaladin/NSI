@@ -177,6 +177,12 @@ Les noms propres suspects sont listés pour revue humaine.
 - reports/lot3/lot3_validation_log.md: nom propre suspect -> Miss Branch
 - reports/lot3/lot3_validation_log.md: nom propre suspect -> Grep-Garde
 - reports/lot3/lot3_validation_log.md: nom propre suspect -> Statut Lot
+- reports/reconciliation/branch_topology.md: nom propre suspect -> Pull Request
+- reports/reconciliation/drive_integration_plan.md: nom propre suspect -> Backlog Drive
+- reports/reconciliation/drive_integration_plan.md: nom propre suspect -> Fichier Drive
+- reports/reconciliation/drive_integration_plan.md: nom propre suspect -> Historique Git Drive
+- reports/reconciliation/rag_pr35_status.md: nom propre suspect -> Le Lot
+- reports/reconciliation/reconciliation_report.md: nom propre suspect -> Backlog Drive
 - scientific_claims_review_report.md: nom propre suspect -> Scientific Claims Review Report
 - scripts/check_agents_governance.py: nom propre suspect -> Agent Inventaire
 - scripts/check_agents_governance.py: nom propre suspect -> Agent Programme
@@ -204,13 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_program_capacity_evidence_depth.py: nom propre suspect -> Program Capacity Evidence Depth Report
 - scripts/check_progression_calendar_alignment.py: nom propre suspect -> Ressources Drive
 - scripts/check_scientific_claims_review.py: nom propre suspect -> Scientific Claims Review Report
-- scripts/check_session_referenced_files_exist.py: nom propre suspect -> Lien Drive
-- scripts/check_td_corrige_alignment.py: nom propre suspect -> Corrige Alignment Report
-- scripts/check_teacher_docs_depth.py: nom propre suspect -> Ressources Drive
-- scripts/check_tp_test_alignment.py: nom propre suspect -> Test Alignment Report
-- scripts/generate_qa_report.py: nom propre suspect -> Plan Drive
-- scripts/generate_qa_report.py: nom propre suspect -> Lots Drive
-- ... 36 alertes supplémentaires non affichées
+- ... 42 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
@@ -414,4 +414,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 332 alertes supplémentaires non affichées
+- ... 333 alertes supplémentaires non affichées

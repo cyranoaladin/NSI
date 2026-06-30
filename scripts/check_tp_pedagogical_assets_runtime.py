@@ -7,9 +7,9 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import time
 
-from _qa_common import ROOT
-from check_first_batch_document_quality import FIRST_BATCH_PREFIXES
-from check_tp_pedagogical_assets import analyze_tp_pedagogy
+from scripts._qa_common import ROOT
+from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES
+from scripts.check_tp_pedagogical_assets import analyze_tp_pedagogy
 
 
 @dataclass

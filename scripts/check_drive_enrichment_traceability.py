@@ -13,8 +13,8 @@ from typing import Iterable
 
 import yaml
 
-from _drive_paths import documents_drive_root, resolve_drive_reference
-from _qa_common import ROOT, read_frontmatter
+from scripts._drive_paths import documents_drive_root, resolve_drive_reference
+from scripts._qa_common import ROOT, read_frontmatter
 
 INVENTORY = "drive_inventory.csv"
 TRACE = "support_source_trace.yml"

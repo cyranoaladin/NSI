@@ -17,9 +17,7 @@ BUNDLE = DIST / 'git_bundle.bundle'
 # Source de vérité unique : réutilise CACHE_DIRS de cleanup_python_artifacts
 # pour garantir que toute entrée de cache nettoyée à l'audit est aussi exclue
 # de l'archive de livraison.
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
-from scripts.cleanup_python_artifacts import CACHE_DIRS  # noqa: E402
+from scripts.cleanup_python_artifacts import CACHE_DIRS
 
 EXCLUDED_PARTS = {'.git', '.venv', 'dist', 'build', '01_build_reports'} | CACHE_DIRS
 EXCLUDED_SUFFIXES = {'.pyc', '.pyo', '.aux', '.log', '.toc', '.out', '.fls'}

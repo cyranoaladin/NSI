@@ -7,8 +7,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import ROOT, read_frontmatter, strip_frontmatter
-from _operational_links import ReferenceResolution, operational_resource_links, resolve_reference
+from scripts._qa_common import ROOT, read_frontmatter, strip_frontmatter
+from scripts._operational_links import ReferenceResolution, operational_resource_links, resolve_reference
 
 REQUIRED_FRONTMATTER = ["title", "level", "sequence_id", "document_type", "status", "official_program"]
 

@@ -1,13 +1,11 @@
 from __future__ import annotations
 
-import sys
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_no_private_data as privacy
+import scripts.check_no_private_data as privacy
 
 
 class PrivateDataDetectionTest(unittest.TestCase):
@@ -34,6 +32,24 @@ class PrivateDataDetectionTest(unittest.TestCase):
 
         self.assertTrue(matches)
         self.assertTrue(all(privacy.is_population_context(text, match.start(), match.end()) for match in matches))
+
+    def test_sha256_hash_is_not_french_phone(self) -> None:
+        text = "270881f4b45a8cd741ddad93bf7ed63adcf668455847c7ea71311f0946533745,non"
+        matches = list(privacy.FR_PHONE_RE.finditer(text))
+        self.assertTrue(matches, "regex should match the digit sequence")
+        self.assertTrue(
+            all(privacy.is_hex_hash_context(text, m.start(), m.end()) for m in matches),
+            "hex hash context should suppress the false positive",
+        )
+
+    def test_real_french_phone_still_detected(self) -> None:
+        text = "Appelez le 06 12 34 56 78 pour plus d'infos."
+        matches = list(privacy.FR_PHONE_RE.finditer(text))
+        self.assertTrue(matches, "real phone number should be detected")
+        self.assertFalse(
+            any(privacy.is_hex_hash_context(text, m.start(), m.end()) for m in matches),
+            "real phone should not be suppressed by hex hash heuristic",
+        )
 
     def test_build_reports_are_not_source_privacy_scope(self) -> None:
         self.assertIn("01_build_reports", privacy.EXCLUDED_PARTS)

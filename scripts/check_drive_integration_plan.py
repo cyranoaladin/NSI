@@ -10,8 +10,8 @@ import re
 
 import yaml
 
-from _qa_common import ROOT, read_frontmatter
-from _drive_paths import resolve_drive_reference
+from scripts._qa_common import ROOT, read_frontmatter
+from scripts._drive_paths import resolve_drive_reference
 
 INVENTORY = "drive_inventory.csv"
 QUARANTINE = "drive_quarantine_manifest.csv"

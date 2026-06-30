@@ -7,8 +7,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import ROOT, read_frontmatter, sequence_id_from_path
-from _course_sheets_common import (
+from scripts._qa_common import ROOT, read_frontmatter, sequence_id_from_path
+from scripts._course_sheets_common import (
     course_sheet_links,
     frontmatter_capacities,
     link_is_registered,

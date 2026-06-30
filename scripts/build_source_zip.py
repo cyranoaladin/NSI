@@ -7,11 +7,8 @@ from pathlib import Path
 import sys
 import zipfile
 
-SCRIPT_ROOT = Path(__file__).resolve().parents[1]
-if str(SCRIPT_ROOT) not in sys.path:
-    sys.path.insert(0, str(SCRIPT_ROOT))
 
-from scripts.build_source_archive import DIST, ROOT, excluded, iter_source_paths  # noqa: E402
+from scripts.build_source_archive import DIST, ROOT, excluded, iter_source_paths
 
 ZIP_PATH = DIST / "nsi-enseignement_source_clean.zip"
 STABLE_ZIP_DATETIME = (1980, 1, 1, 0, 0, 0)

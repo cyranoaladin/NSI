@@ -9,7 +9,7 @@ import subprocess
 from pathlib import Path
 from typing import Iterable
 
-from _qa_common import ROOT, print_result
+from scripts._qa_common import ROOT, print_result
 
 TEXT_SUFFIXES = {
     ".cfg",

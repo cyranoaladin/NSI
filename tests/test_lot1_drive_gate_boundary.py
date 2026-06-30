@@ -25,9 +25,9 @@ class Lot1DriveGateBoundaryTests(unittest.TestCase):
         ci = (ROOT / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
         audit_extracted = makefile.split("audit-extracted-source:", 1)[1].split("\n\n", 1)[0]
         drive_required = {
-            "scripts/check_local_drive_traceability.py",
-            "scripts/check_drive_integration_plan.py",
-            "scripts/check_drive_enrichment_traceability.py",
+            "scripts.check_local_drive_traceability",
+            "scripts.check_drive_integration_plan",
+            "scripts.check_drive_enrichment_traceability\n",
         }
 
         for command in drive_required:
@@ -35,7 +35,7 @@ class Lot1DriveGateBoundaryTests(unittest.TestCase):
             self.assertNotIn(command, ci)
 
     def test_drive_required_gate_fails_loudly_when_drive_root_is_empty(self) -> None:
-        import check_drive_enrichment_traceability as local_drive_gate
+        import scripts.check_drive_enrichment_traceability as local_drive_gate
 
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw) / "repo"

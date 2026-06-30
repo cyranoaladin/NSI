@@ -9,8 +9,8 @@ from typing import Sequence
 import unicodedata
 import re
 
-from _qa_common import ROOT, read_frontmatter
-from _course_sheets_common import CourseSheetLink, course_sheet_links, sheet_files
+from scripts._qa_common import ROOT, read_frontmatter
+from scripts._course_sheets_common import CourseSheetLink, course_sheet_links, sheet_files
 
 
 @dataclass(frozen=True)

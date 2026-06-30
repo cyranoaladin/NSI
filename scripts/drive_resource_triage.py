@@ -9,9 +9,9 @@ import re
 import sys
 from pathlib import Path
 
-from _drive_paths import documents_drive_root
-from _qa_common import ROOT
-from drive_local_inventory import sha256_file
+from scripts._drive_paths import documents_drive_root
+from scripts._qa_common import ROOT
+from scripts.drive_local_inventory import sha256_file
 
 INVENTORY = ROOT / "drive_inventory.csv"
 MISSING = "NA_REMOTE_NOT_DOWNLOADED"

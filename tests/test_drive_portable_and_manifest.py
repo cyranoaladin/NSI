@@ -4,15 +4,13 @@ import tarfile
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_drive_enrichment_traceability_portable as drive_portable
-import check_manifest_source_trace_consistency as manifest_consistency
-import check_drive_trace_no_absolute_local_paths as no_absolute_paths
-import check_no_sensitive_drive_in_source_clean as no_sensitive_archive
+import scripts.check_drive_enrichment_traceability_portable as drive_portable
+import scripts.check_manifest_source_trace_consistency as manifest_consistency
+import scripts.check_drive_trace_no_absolute_local_paths as no_absolute_paths
+import scripts.check_no_sensitive_drive_in_source_clean as no_sensitive_archive
 
 
 FIELDS = (

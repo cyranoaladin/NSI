@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import io
-import sys
 import tarfile
 import zipfile
 from contextlib import redirect_stdout
@@ -10,17 +9,11 @@ from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
-if str(ROOT / "scripts") not in sys.path:
-    sys.path.insert(0, str(ROOT / "scripts"))
-if str(ROOT / "scrapping_NSI") not in sys.path:
-    sys.path.insert(0, str(ROOT / "scrapping_NSI"))
 
-import check_archive_portability  # noqa: E402
-import check_audit_extracted_runtime_budget as runtime_budget  # noqa: E402
-import scrapping_NSI.organizer_nsi as organizer  # noqa: E402
-import scrapping_NSI.scraper_eduscol as eduscol  # noqa: E402
+import scripts.check_archive_portability as check_archive_portability
+import scripts.check_audit_extracted_runtime_budget as runtime_budget
+import scrapping_NSI.organizer_nsi as organizer
+import scrapping_NSI.scraper_eduscol as eduscol
 
 
 def write_zip(path: Path, files: dict[str, bytes]) -> None:

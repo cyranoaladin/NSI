@@ -3,8 +3,8 @@
 
 from __future__ import annotations
 
-from _qa_common import ROOT, print_result
-from _pedagogy_reports import contains, pilot_sequences, rel, write_report
+from scripts._qa_common import ROOT, print_result
+from scripts._pedagogy_reports import contains, pilot_sequences, rel, write_report
 
 
 def main() -> None:

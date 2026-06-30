@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import ROOT, load_pilot_scope
+from scripts._qa_common import ROOT, load_pilot_scope
 
 
 PLAN = "human_review_wave_1_plan.md"

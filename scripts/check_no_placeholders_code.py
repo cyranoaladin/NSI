@@ -9,7 +9,7 @@ import ast
 import io
 import tokenize
 
-from _qa_common import ROOT, print_result
+from scripts._qa_common import ROOT, print_result
 
 COMMENT_MARKERS = ("TO" + "DO", "FIX" + "ME", "X" + "XX", "TBD")
 

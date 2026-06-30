@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 from typing import Any
 
-from _qa_common import ROOT, load_program_entries, read_frontmatter, strip_frontmatter
+from scripts._qa_common import ROOT, load_program_entries, read_frontmatter, strip_frontmatter
 
 __all__ = ["read_frontmatter"]
 

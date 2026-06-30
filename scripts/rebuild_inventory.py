@@ -13,16 +13,17 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List
 import csv
-import sys
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = ROOT / 'manifest.csv'
+MANIFEST_TOOLING_PATH = ROOT / 'manifest_tooling.csv'
+
+TOOLING_PREFIXES = ('scripts/', 'tests/', 'reports/', 'scrapping_NSI/')
 REPORT_PATH = ROOT / 'inventory_report.md'
 DUPLICATES_PATH = ROOT / 'duplicates_report.md'
 TRACE_PATH = ROOT / 'support_source_trace.yml'
 
-sys.path.append(str(ROOT))
 from scripts._inventory_utils import (
     IGNORED_SUFFIXES,
     STATUT_ALLOWED,
@@ -173,11 +174,14 @@ def write_manifest(rows: List[Dict[str, str]]) -> None:
         'hash',
         'symlink',
     ]
-    with MANIFEST_PATH.open('w', encoding='utf-8', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator='\n')
-        writer.writeheader()
-        for row in rows:
-            writer.writerow({k: row.get(k, '') for k in fieldnames})
+    pedagogical = [r for r in rows if not r['chemin'].startswith(TOOLING_PREFIXES)]
+    tooling = [r for r in rows if r['chemin'].startswith(TOOLING_PREFIXES)]
+    for path, subset in [(MANIFEST_PATH, pedagogical), (MANIFEST_TOOLING_PATH, tooling)]:
+        with path.open('w', encoding='utf-8', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator='\n')
+            writer.writeheader()
+            for row in subset:
+                writer.writerow({k: row.get(k, '') for k in fieldnames})
 
 
 def write_reports(rows: List[Dict[str, str]]) -> None:

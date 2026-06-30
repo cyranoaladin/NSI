@@ -3,15 +3,13 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_full_sequence_resource_matrix as matrix
-import check_generated_template_residue as template_residue
-import check_question_capacity_alignment as question_capacity
-import check_support_pedagogical_depth as pedagogical_depth
+import scripts.check_full_sequence_resource_matrix as matrix
+import scripts.check_generated_template_residue as template_residue
+import scripts.check_question_capacity_alignment as question_capacity
+import scripts.check_support_pedagogical_depth as pedagogical_depth
 
 
 def write(path: Path, content: str = "x") -> None:

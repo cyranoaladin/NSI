@@ -6,7 +6,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import List
 
-from _qa_common import ROOT, iter_declared_evidence, load_program_entries, normalize_text, print_result
+from scripts._qa_common import ROOT, iter_declared_evidence, load_program_entries, normalize_text, print_result
 
 VALID_EVIDENCE_TYPES = {"cours", "trace", "td", "tp", "evaluation", "corrige", "qcm", "projet", "fiche_methode", "aides"}
 

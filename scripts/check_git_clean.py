@@ -9,7 +9,7 @@ import sys
 
 sys.dont_write_bytecode = True
 
-from _qa_common import ROOT, print_result
+from scripts._qa_common import ROOT, print_result
 
 
 def run_git(args: list[str]) -> subprocess.CompletedProcess[str]:

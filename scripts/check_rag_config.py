@@ -4,17 +4,13 @@
 from __future__ import annotations
 
 import subprocess
-import sys
 from pathlib import Path
 from typing import Any
 
 import yaml
 
-SCRIPT_ROOT = Path(__file__).resolve().parents[1]
-if str(SCRIPT_ROOT) not in sys.path:
-    sys.path.insert(0, str(SCRIPT_ROOT))
 
-from scripts._qa_common import ROOT, print_result  # noqa: E402
+from scripts._qa_common import ROOT, print_result
 
 
 ENV_EXAMPLE = ROOT / ".env.rag.example"

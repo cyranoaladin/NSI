@@ -9,17 +9,13 @@ import inspect
 import os
 import signal
 import subprocess
-import sys
 import tempfile
 import time
 from types import FunctionType
 
-SCRIPT_ROOT = Path(__file__).resolve().parents[1]
-if str(SCRIPT_ROOT) not in sys.path:
-    sys.path.insert(0, str(SCRIPT_ROOT))
 
-from scripts._qa_common import ROOT  # noqa: E402
-from scripts.archive_security import safe_extract_tar  # noqa: E402
+from scripts._qa_common import ROOT
+from scripts.archive_security import safe_extract_tar
 
 
 @dataclass

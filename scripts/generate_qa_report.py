@@ -9,18 +9,18 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-from _course_sheets_common import compute_sheet_readiness, course_sheet_links, frontmatter_capacities, planned_sequences, read_frontmatter, resource_exists, sheets_by_sequence
-from check_capacity_status_ladder import analyze_capacity_status_ladder
-from check_course_sheet_readiness_strict import analyze_course_sheet_readiness_strict
-from check_drive_action_plan_completeness import analyze_drive_action_plan
-from check_human_review_register import analyze_human_review_register
-from check_human_review_wave_plan import analyze_human_review_wave_plan
-from check_missing_register_actionability import load_register_rows
-from check_paper_tp_justification import analyze_paper_tp_justification
-from check_sequence_pedagogical_coherence import analyze_sequence_pedagogical_coherence
-from check_session_classroom_operationality import analyze_session_classroom_operationality
-from check_session_to_resource_alignment import analyze_session_to_resource_alignment
-from check_tp_executable_opportunity import analyze_tp_executable_opportunity
+from scripts._course_sheets_common import compute_sheet_readiness, course_sheet_links, frontmatter_capacities, planned_sequences, read_frontmatter, resource_exists, sheets_by_sequence
+from scripts.check_capacity_status_ladder import analyze_capacity_status_ladder
+from scripts.check_course_sheet_readiness_strict import analyze_course_sheet_readiness_strict
+from scripts.check_drive_action_plan_completeness import analyze_drive_action_plan
+from scripts.check_human_review_register import analyze_human_review_register
+from scripts.check_human_review_wave_plan import analyze_human_review_wave_plan
+from scripts.check_missing_register_actionability import load_register_rows
+from scripts.check_paper_tp_justification import analyze_paper_tp_justification
+from scripts.check_sequence_pedagogical_coherence import analyze_sequence_pedagogical_coherence
+from scripts.check_session_classroom_operationality import analyze_session_classroom_operationality
+from scripts.check_session_to_resource_alignment import analyze_session_to_resource_alignment
+from scripts.check_tp_executable_opportunity import analyze_tp_executable_opportunity
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "manifest.csv"
@@ -88,8 +88,8 @@ def command_status(command: list[str]) -> tuple[int, list[str]]:
 
 def indicative_gate_rows() -> list[tuple[str, str, str, str]]:
     rows: list[tuple[str, str, str, str]] = []
-    for script in ["scripts/check_required_sections.py", "scripts/check_document_depth.py"]:
-        code, tail = command_status([sys.executable, script])
+    for script in ["scripts.check_required_sections", "scripts.check_document_depth"]:
+        code, tail = command_status([sys.executable, "-m", script])
         if code == 0:
             continue
         detail = "; ".join(line.removeprefix("- ").strip() for line in tail if line.strip())
@@ -111,19 +111,19 @@ def release_blocker_status() -> tuple[int, list[str]]:
     blocker behind check_git_clean.
     """
     checks = [
-        "scripts/check_drive_mapping_release.py",
-        "scripts/check_no_needs_review_for_release.py",
-        "scripts/check_no_absent_coverage_for_release.py",
-        "scripts/check_no_teacher_content_in_student_export.py",
-        "scripts/check_validated_statuses.py",
+        "scripts.check_drive_mapping_release",
+        "scripts.check_no_needs_review_for_release",
+        "scripts.check_no_absent_coverage_for_release",
+        "scripts.check_no_teacher_content_in_student_export",
+        "scripts.check_validated_statuses",
     ]
     lines = [
         "Snapshot des bloqueurs release hors check_git_clean.",
         "Le vrai make release-audit est exécuté séparément.",
     ]
     for script in checks:
-        code, tail = command_status([sys.executable, script])
-        lines.append(f"python {script}")
+        code, tail = command_status([sys.executable, "-m", script])
+        lines.append(f"python -m {script}")
         lines.extend(tail)
         if code != 0:
             return code, lines[-10:]

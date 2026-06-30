@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 
-from _qa_common import ROOT, print_result
+from scripts._qa_common import ROOT, print_result
 
 
 POLICY = ROOT / "qa_gate_policy.md"

@@ -3,13 +3,11 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_no_build_artifacts_in_index as artifacts
+import scripts.check_no_build_artifacts_in_index as artifacts
 
 
 class BuildArtifactCheckTest(unittest.TestCase):

@@ -6,7 +6,7 @@ from __future__ import annotations
 from typing import Dict, List
 import re
 
-from _qa_common import ROOT, pedagogical_documents, print_result, useful_lines
+from scripts._qa_common import ROOT, pedagogical_documents, print_result, useful_lines
 
 MIN_LINES: Dict[str, int] = {
     "cours_eleve.md": 250,

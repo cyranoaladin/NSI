@@ -7,9 +7,9 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from _qa_common import ROOT
-from check_first_batch_document_quality import FIRST_BATCH_PREFIXES
-from check_session_referenced_files_exist import extract_refs, file_exists_anywhere, session_blocks
+from scripts._qa_common import ROOT
+from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES
+from scripts.check_session_referenced_files_exist import extract_refs, file_exists_anywhere, session_blocks
 
 SESSION_FILES = [
     ROOT / "03_progressions" / "seances_premiere.md",

@@ -6,7 +6,7 @@ from __future__ import annotations
 from typing import List
 import ast
 
-from _qa_common import ROOT, TARGET_SEQUENCES, print_result
+from scripts._qa_common import ROOT, TARGET_SEQUENCES, print_result
 
 
 def main() -> None:

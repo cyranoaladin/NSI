@@ -3,17 +3,15 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import check_drive_integration_plan as drive_plan
-import check_linked_evaluation_substance as evaluation_substance
-import check_linked_td_substance as td_substance
-import check_no_operational_scope_hardcoding as scope_hardcoding
-import check_operational_readiness_quality_coupling as readiness_coupling
-import check_register_no_hidden_operational_debt as hidden_debt
+import scripts.check_drive_integration_plan as drive_plan
+import scripts.check_linked_evaluation_substance as evaluation_substance
+import scripts.check_linked_td_substance as td_substance
+import scripts.check_no_operational_scope_hardcoding as scope_hardcoding
+import scripts.check_operational_readiness_quality_coupling as readiness_coupling
+import scripts.check_register_no_hidden_operational_debt as hidden_debt
 
 
 def operational_sheet(root: Path, sequence: str, td: str = "", evaluation: str = "") -> Path:

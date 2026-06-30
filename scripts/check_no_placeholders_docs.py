@@ -6,7 +6,7 @@ from __future__ import annotations
 from typing import List
 import re
 
-from _qa_common import ROOT, print_result
+from scripts._qa_common import ROOT, print_result
 
 TEXT_SUFFIXES = {".md", ".tex", ".json", ".yml", ".yaml", ".csv", ".txt"}
 PLACEHOLDER_RE = re.compile(

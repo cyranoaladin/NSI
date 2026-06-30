@@ -5,8 +5,8 @@ from __future__ import annotations
 
 from collections import defaultdict
 
-from _qa_common import ROOT, iter_declared_evidence, print_result
-from _pedagogy_reports import write_report
+from scripts._qa_common import ROOT, iter_declared_evidence, print_result
+from scripts._pedagogy_reports import write_report
 
 
 def main() -> None:

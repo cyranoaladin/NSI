@@ -17,7 +17,7 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
-from check_substance_anchors import citation_status, parse_sections
+from scripts.check_substance_anchors import citation_status, parse_sections
 
 
 ROOT = Path(__file__).resolve().parents[1]

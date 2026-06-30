@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from typing import List
 
-from _qa_common import ROOT, print_result
+from scripts._qa_common import ROOT, print_result
 
 EXPORT_DIRS = [ROOT / "exports" / "eleves", ROOT / "publication" / "eleves"]
 FORBIDDEN = ("corrige", "corrigé", "guide_prof", "professeur", "barème", "bareme")

@@ -6,12 +6,10 @@ import time
 import unittest
 import zipfile
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import build_source_zip
+import scripts.build_source_zip as build_source_zip
 
 
 class SourceZipTimestampsTest(unittest.TestCase):

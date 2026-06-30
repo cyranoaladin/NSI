@@ -11,9 +11,8 @@ import io
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
 
-import run_audit_extracted_source
+import scripts.run_audit_extracted_source as run_audit_extracted_source
 
 
 class AuditExtractedSourceNoHangTest(unittest.TestCase):
@@ -21,14 +20,14 @@ class AuditExtractedSourceNoHangTest(unittest.TestCase):
         makefile = (ROOT / "Makefile").read_text(encoding="utf-8")
         target = makefile.split("audit-extracted-source-local:", 1)[1].split("\n\n", 1)[0]
 
-        self.assertIn("timeout 90 python -u scripts/check_tp_pedagogical_assets_runtime.py", target)
-        self.assertNotIn("\n\tpython scripts/check_tp_pedagogical_assets.py", target)
+        self.assertIn("timeout 90 python -m scripts.check_tp_pedagogical_assets_runtime", target)
+        self.assertNotIn("\n\tpython -m scripts.check_tp_pedagogical_assets\n", target)
 
     def test_makefile_delegates_git_checkout_to_source_clean_wrapper(self) -> None:
         makefile = (ROOT / "Makefile").read_text(encoding="utf-8")
         target = makefile.split("audit-extracted-source:", 1)[1].split("\n\n", 1)[0]
 
-        self.assertIn("scripts/run_audit_extracted_source.py", target)
+        self.assertIn("scripts.run_audit_extracted_source", target)
         self.assertIn("audit-extracted-source-local", makefile)
 
     def test_wrapper_runs_audit_inside_extracted_source(self) -> None:
@@ -111,7 +110,7 @@ class AuditExtractedSourceNoHangTest(unittest.TestCase):
 
         try:
             completed_build = subprocess.run(
-                [sys.executable, "scripts/build_source_archive.py"],
+                [sys.executable, "-m", "scripts.build_source_archive"],
                 cwd=ROOT,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,

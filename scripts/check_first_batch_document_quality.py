@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 import re
 from pathlib import Path
 
-from _qa_common import load_pilot_scope, load_program_entries
+from scripts._qa_common import load_pilot_scope, load_program_entries
 
 ROOT = Path(__file__).resolve().parents[1]
 FIRST_BATCH_PREFIXES = load_pilot_scope().get("first_batch_prefixes", [])

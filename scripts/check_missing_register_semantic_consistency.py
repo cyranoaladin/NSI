@@ -8,8 +8,8 @@ from pathlib import Path
 import re
 import unicodedata
 
-from _qa_common import ROOT, read_frontmatter, sequence_id_from_path
-from _course_sheets_common import parse_markdown_table, sheet_files
+from scripts._qa_common import ROOT, read_frontmatter, sequence_id_from_path
+from scripts._course_sheets_common import parse_markdown_table, sheet_files
 
 REGISTER = "missing_documents_register_v2.md"
 BLOCKING_SECTION = "supports absents bloquant une fiche liée"

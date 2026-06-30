@@ -5,8 +5,8 @@ from __future__ import annotations
 
 import re
 
-from _qa_common import ROOT, print_result
-from _pedagogy_reports import pilot_sequences, rel, write_report
+from scripts._qa_common import ROOT, print_result
+from scripts._pedagogy_reports import pilot_sequences, rel, write_report
 
 
 def count_exercises(text: str) -> int:

@@ -8,7 +8,7 @@ from pathlib import Path
 import ast
 import re
 
-from _qa_common import ROOT
+from scripts._qa_common import ROOT
 
 ALLOWED_PILOT_SCOPE_FILES = {"_qa_common.py"}
 

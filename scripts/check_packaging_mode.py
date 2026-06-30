@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import tarfile
 
-from _qa_common import ROOT
+from scripts._qa_common import ROOT
 
 
 @dataclass

@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import sys
-from _session_checks import LEVELS, MONTH_WEEK_RANGES, parse_sessions, session_week, fail_or_pass
+from scripts._session_checks import LEVELS, MONTH_WEEK_RANGES, parse_sessions, session_week, fail_or_pass
 
 REQUIRED_PERIOD_MARKERS = {
     "octobre": ["15 octobre"],

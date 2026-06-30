@@ -11,10 +11,8 @@ import tarfile
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
 
-from scripts.archive_security import safe_extract_tar as safe_extract_tar_path  # noqa: E402
+from scripts.archive_security import safe_extract_tar as safe_extract_tar_path
 
 
 def safe_extract_tar(archive: tarfile.TarFile, destination: Path) -> None:

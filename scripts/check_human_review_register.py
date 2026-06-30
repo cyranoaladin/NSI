@@ -8,7 +8,7 @@ from pathlib import Path
 import csv
 import re
 
-from _qa_common import ROOT
+from scripts._qa_common import ROOT
 
 
 REGISTER = ROOT / "human_review_register.csv"
