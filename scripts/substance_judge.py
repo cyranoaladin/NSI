@@ -76,7 +76,7 @@ def load_env(path: Path | str) -> dict[str, str]:
 
 def load_programme() -> list[dict[str, str]]:
     try:
-        import yaml  # type: ignore[import-untyped]
+        import yaml
     except ImportError:
         print("ERREUR: pip install pyyaml", file=sys.stderr)
         raise SystemExit(1)

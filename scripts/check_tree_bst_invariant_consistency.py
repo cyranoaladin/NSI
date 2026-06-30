@@ -90,8 +90,9 @@ def tree_block_errors(text: str) -> list[str]:
             expected = inorder(build_bst(values))
             if infix != expected:
                 errors.append(f"parcours infixe annoncé {infix} différent de l'ABR reconstruit {expected}")
-        if re.search(r"racine\s+(\d+).*gauche\s+(\d+).*droite\s+(\d+)", text, re.I | re.S):
-            root, left, right = map(int, re.search(r"racine\s+(\d+).*gauche\s+(\d+).*droite\s+(\d+)", text, re.I | re.S).groups())
+        rlr_match = re.search(r"racine\s+(\d+).*gauche\s+(\d+).*droite\s+(\d+)", text, re.I | re.S)
+        if rlr_match:
+            root, left, right = map(int, rlr_match.groups())
             if not (left < root < right):
                 errors.append("invariant ABR gauche < racine < droite contredit")
         if "doublon" in lowered and not re.search(r"refus|compteur|droite|gauche|convention", lowered):

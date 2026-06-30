@@ -18,8 +18,8 @@ def is_internal(target: str) -> bool:
     )
 
 
-def check_file(path: Path):
-    bad = []
+def check_file(path: Path) -> list[tuple[str, int, str]]:
+    bad: list[tuple[str, int, str]] = []
     for i, line in enumerate(path.read_text(encoding='utf-8', errors='replace').splitlines(), start=1):
         for match in LINK_RE.finditer(line):
             target = match.group(1).strip()

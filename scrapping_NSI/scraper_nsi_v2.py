@@ -398,8 +398,8 @@ def fetch_html(
     )
     if blocked:
         return None, error, True
-    if error:
-        return None, error, False
+    if error or response is None:
+        return None, error or f"Pas de réponse pour {url}", False
     if response.status_code != 200:
         return None, f"Statut {response.status_code} pour {url}", False
     content_type = response.headers.get("content-type", "").lower()
@@ -455,9 +455,9 @@ def download_file(
             stats.robots_blocked += 1
             return True
 
-        if error:
+        if error or response is None:
             print(f"    [Erreur] {error}", flush=True)
-            stats.errors.append(error)
+            stats.errors.append(error or f"Pas de réponse pour {url}")
             return False
 
         if response.status_code == 200:

@@ -30,7 +30,7 @@ CHECKS = [
 ]
 
 
-def run(cmd):
+def run(cmd: list[str]) -> None:
     env = os.environ.copy()
     env["PYTHONDONTWRITEBYTECODE"] = "1"
     result = subprocess.run([PY] + cmd, cwd=ROOT, env=env)
@@ -38,7 +38,7 @@ def run(cmd):
         raise SystemExit(result.returncode)
 
 
-def main():
+def main() -> None:
     for cmd in CHECKS:
         run(cmd.split())
     print('build_all: PASS')

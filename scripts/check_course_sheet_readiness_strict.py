@@ -9,6 +9,7 @@ from pathlib import Path
 
 from scripts._qa_common import ROOT, read_frontmatter
 from scripts._course_sheets_common import (
+    CourseSheetLink,
     VALID_READINESS,
     course_sheet_links,
     link_is_registered,
@@ -28,7 +29,7 @@ class StrictReadinessResult:
     linked_missing: dict[str, list[str]] = field(default_factory=dict)
 
 
-def key_resource_missing(root: Path, links) -> list[str]:
+def key_resource_missing(root: Path, links: list[CourseSheetLink]) -> list[str]:
     missing: list[str] = []
     for link in links:
         if not link.is_resource:
@@ -40,7 +41,7 @@ def key_resource_missing(root: Path, links) -> list[str]:
     return missing
 
 
-def strict_computed_readiness(root: Path, links) -> str:
+def strict_computed_readiness(root: Path, links: list[CourseSheetLink]) -> str:
     sessions = session_ids(root)
     has_session = any(link.is_session and link.file in sessions for link in links)
     resources = [link for link in links if link.is_resource]
