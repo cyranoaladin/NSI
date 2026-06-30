@@ -6,6 +6,7 @@ import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
+from typing import Any
 
 sys.dont_write_bytecode = True
 
@@ -59,16 +60,16 @@ def parse_hours(value: str) -> float:
     return float(match.group(1).replace(',', '.'))
 
 
-def parse_sessions(path: Path) -> list[dict[str, object]]:
+def parse_sessions(path: Path) -> list[dict[str, Any]]:
     text = path.read_text(encoding='utf-8', errors='replace')
     blocks = re.split(r"(?=^### Séance )", text, flags=re.M)
-    sessions: list[dict[str, object]] = []
+    sessions: list[dict[str, Any]] = []
     for block in blocks:
         if not block.startswith('### Séance '):
             continue
         header = block.splitlines()[0].strip()
         session_id = header.replace('### Séance ', '').strip()
-        item: dict[str, object] = {'id': session_id, 'raw': block}
+        item: dict[str, Any] = {'id': session_id, 'raw': block}
         for line in block.splitlines()[1:]:
             if line.startswith('- ') and ' : ' in line:
                 key, value = line[2:].split(' : ', 1)
@@ -127,7 +128,7 @@ def parse_project_plan(path: Path, prefix: str) -> dict[str, float]:
     return data
 
 
-def session_week(session: dict[str, object]) -> int | None:
+def session_week(session: dict[str, Any]) -> int | None:
     raw = str(session.get('Semaine scolaire', ''))
     match = re.search(r"\b([0-9]+)\b", raw)
     if not match:
@@ -145,12 +146,12 @@ def fail_or_pass(name: str, errors: list[str]) -> int:
     return 0
 
 
-def by_sequence(sessions: list[dict[str, object]]) -> dict[str, list[dict[str, object]]]:
-    grouped: dict[str, list[dict[str, object]]] = defaultdict(list)
+def by_sequence(sessions: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for session in sessions:
         grouped[str(session.get('sequence', ''))].append(session)
     return grouped
 
 
-def count_values(sessions: list[dict[str, object]], field: str) -> Counter[str]:
+def count_values(sessions: list[dict[str, Any]], field: str) -> Counter[str]:
     return Counter(str(session.get(field, '')).strip() for session in sessions)

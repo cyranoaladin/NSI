@@ -578,7 +578,6 @@
   - content_tree_policy.md
   - course_internal_coherence_report.md
   - coverage_gap_action_plan.md
-  - coverage_sources.md
   - delivery_policy.md
   - differentiation_quality_report.md
   - docs/archive_security_policy.md
@@ -599,7 +598,6 @@
   - human_review_register.csv
   - human_review_wave_1_plan.md
   - learning_objectives_assessed_report.md
-  - manifest_tooling.csv
   - missing_capabilities.md
   - missing_documents_register.md
   - missing_documents_register_v2.md
@@ -636,7 +634,6 @@
   - premiere/sequences/s01_representation_donnees/trace_ecrite.md
   - premiere/sequences/s01_representation_donnees/version_amenagee.md
   - privacy_allowlist.yml
-  - privacy_report.md
   - program_capacity_evidence_depth_report.md
   - programme_matrix_premiere.md
   - programme_matrix_terminale.md
@@ -667,9 +664,11 @@
   - reports/reconciliation/branch_topology.md
   - reports/reconciliation/drive_integration_plan.md
   - reports/reconciliation/mypy_debt.md
+  - reports/reconciliation/process_incidents.md
   - reports/reconciliation/rag_pr35_status.md
   - reports/reconciliation/rag_reindex_plan.md
   - reports/reconciliation/reconciliation_report.md
+  - reports/reconciliation/reconciliation_verification_report.md
   - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
@@ -930,6 +929,7 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
   - tests/conftest.py
   - tests/fixtures/substance_judge/P05.json
+  - tests/mypy_baseline.txt
   - tests/test_archive_integration_wrappers.py
   - tests/test_archive_portability_modes.py
   - tests/test_archive_security_imports.py
@@ -1591,7 +1591,6 @@
   - content_tree_policy.md
   - course_internal_coherence_report.md
   - coverage_gap_action_plan.md
-  - coverage_sources.md
   - delivery_policy.md
   - differentiation_quality_report.md
   - docs/archive_security_policy.md
@@ -1612,7 +1611,6 @@
   - human_review_register.csv
   - human_review_wave_1_plan.md
   - learning_objectives_assessed_report.md
-  - manifest_tooling.csv
   - missing_capabilities.md
   - missing_documents_register.md
   - missing_documents_register_v2.md
@@ -1623,7 +1621,6 @@
   - premiere/sequences/s01_representation_donnees/sequence.yaml
   - premiere/sequences/s01_representation_donnees/tests/test_representation_tools.py
   - privacy_allowlist.yml
-  - privacy_report.md
   - program_capacity_evidence_depth_report.md
   - programme_matrix_premiere.md
   - programme_matrix_terminale.md
@@ -1654,9 +1651,11 @@
   - reports/reconciliation/branch_topology.md
   - reports/reconciliation/drive_integration_plan.md
   - reports/reconciliation/mypy_debt.md
+  - reports/reconciliation/process_incidents.md
   - reports/reconciliation/rag_pr35_status.md
   - reports/reconciliation/rag_reindex_plan.md
   - reports/reconciliation/reconciliation_report.md
+  - reports/reconciliation/reconciliation_verification_report.md
   - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
@@ -1891,6 +1890,7 @@
   - terminale/sequences/s01_structures_donnees_interfaces_implementations/tests/test_structures_tools.py
   - tests/conftest.py
   - tests/fixtures/substance_judge/P05.json
+  - tests/mypy_baseline.txt
   - tests/test_archive_integration_wrappers.py
   - tests/test_archive_portability_modes.py
   - tests/test_archive_security_imports.py
@@ -2484,7 +2484,6 @@
 - content_tree_policy.md
 - course_internal_coherence_report.md
 - coverage_gap_action_plan.md
-- coverage_sources.md
 - delivery_policy.md
 - differentiation_quality_report.md
 - docs/archive_security_policy.md
@@ -2505,7 +2504,6 @@
 - human_review_register.csv
 - human_review_wave_1_plan.md
 - learning_objectives_assessed_report.md
-- manifest_tooling.csv
 - missing_capabilities.md
 - missing_documents_register.md
 - missing_documents_register_v2.md
@@ -2539,7 +2537,6 @@
 - premiere/sequences/s01_representation_donnees/trace_ecrite.md
 - premiere/sequences/s01_representation_donnees/version_amenagee.md
 - privacy_allowlist.yml
-- privacy_report.md
 - program_capacity_evidence_depth_report.md
 - programme_matrix_premiere.md
 - programme_matrix_terminale.md
@@ -2570,9 +2567,11 @@
 - reports/reconciliation/branch_topology.md
 - reports/reconciliation/drive_integration_plan.md
 - reports/reconciliation/mypy_debt.md
+- reports/reconciliation/process_incidents.md
 - reports/reconciliation/rag_pr35_status.md
 - reports/reconciliation/rag_reindex_plan.md
 - reports/reconciliation/reconciliation_report.md
+- reports/reconciliation/reconciliation_verification_report.md
 - reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json
@@ -2827,6 +2826,7 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
 - tests/conftest.py
 - tests/fixtures/substance_judge/P05.json
+- tests/mypy_baseline.txt
 - tests/test_archive_integration_wrappers.py
 - tests/test_archive_portability_modes.py
 - tests/test_archive_security_imports.py
@@ -3438,7 +3438,6 @@
 - content_tree_policy.md
 - course_internal_coherence_report.md
 - coverage_gap_action_plan.md
-- coverage_sources.md
 - delivery_policy.md
 - differentiation_quality_report.md
 - docs/archive_security_policy.md
@@ -3459,7 +3458,6 @@
 - human_review_register.csv
 - human_review_wave_1_plan.md
 - learning_objectives_assessed_report.md
-- manifest_tooling.csv
 - missing_capabilities.md
 - missing_documents_register.md
 - missing_documents_register_v2.md
@@ -3497,7 +3495,6 @@
 - premiere/sequences/s01_representation_donnees/trace_ecrite.md
 - premiere/sequences/s01_representation_donnees/version_amenagee.md
 - privacy_allowlist.yml
-- privacy_report.md
 - program_capacity_evidence_depth_report.md
 - programme_matrix_premiere.md
 - programme_matrix_terminale.md
@@ -3528,9 +3525,11 @@
 - reports/reconciliation/branch_topology.md
 - reports/reconciliation/drive_integration_plan.md
 - reports/reconciliation/mypy_debt.md
+- reports/reconciliation/process_incidents.md
 - reports/reconciliation/rag_pr35_status.md
 - reports/reconciliation/rag_reindex_plan.md
 - reports/reconciliation/reconciliation_report.md
+- reports/reconciliation/reconciliation_verification_report.md
 - reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json
@@ -3791,6 +3790,7 @@
 - terminale/sequences/s01_structures_donnees_interfaces_implementations/version_amenagee.md
 - tests/conftest.py
 - tests/fixtures/substance_judge/P05.json
+- tests/mypy_baseline.txt
 - tests/test_archive_integration_wrappers.py
 - tests/test_archive_portability_modes.py
 - tests/test_archive_security_imports.py
