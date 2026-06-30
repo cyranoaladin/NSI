@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 976
+- Total ressources : 977
 - Ressources pédagogiques : 53
-- Ressources techniques : 923
+- Ressources techniques : 924
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 968
+- generated: 969
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 456
+- interne: 457
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 551
+- document: 552
 - python: 95
 - script: 203
 - sequence: 45
 - test: 68
 
 ## Répartition par statut
-- needs_review: 976
+- needs_review: 977
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 776
+- mixte: 777
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -659,6 +659,7 @@
   - reports/closure2/rag_prod_cutover_runbook.md
   - reports/closure2/rag_state_of_truth.md
   - reports/closure2/rag_target_architecture.md
+  - reports/closure2/rag_v2_versioned_report.md
   - reports/drive_enrichment_report.md
   - reports/lot0_ruff_autofix_review.md
   - reports/lot1/drive_forensic.md
@@ -1663,6 +1664,7 @@
   - reports/closure2/rag_prod_cutover_runbook.md
   - reports/closure2/rag_state_of_truth.md
   - reports/closure2/rag_target_architecture.md
+  - reports/closure2/rag_v2_versioned_report.md
   - reports/drive_enrichment_report.md
   - reports/lot0_ruff_autofix_review.md
   - reports/lot1/drive_forensic.md
@@ -2596,6 +2598,7 @@
 - reports/closure2/rag_prod_cutover_runbook.md
 - reports/closure2/rag_state_of_truth.md
 - reports/closure2/rag_target_architecture.md
+- reports/closure2/rag_v2_versioned_report.md
 - reports/drive_enrichment_report.md
 - reports/lot0_ruff_autofix_review.md
 - reports/lot1/drive_forensic.md
@@ -3571,6 +3574,7 @@
 - reports/closure2/rag_prod_cutover_runbook.md
 - reports/closure2/rag_state_of_truth.md
 - reports/closure2/rag_target_architecture.md
+- reports/closure2/rag_v2_versioned_report.md
 - reports/drive_enrichment_report.md
 - reports/lot0_ruff_autofix_review.md
 - reports/lot1/drive_forensic.md
