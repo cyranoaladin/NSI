@@ -127,6 +127,6 @@ def test_quality_gate_and_ci_include_status_promotion_guard() -> None:
 
     commands = {" ".join(command) for command in check_quality_gates.CORE_CHECKS}
     assert "-m scripts.check_status_promotion_guard" in commands
-    assert "check_status_promotion_guard.py" in (ROOT / ".github/workflows/ci.yml").read_text(
+    assert "check_status_promotion_guard" in (ROOT / ".github/workflows/ci.yml").read_text(
         encoding="utf-8"
     )

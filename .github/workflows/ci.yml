@@ -31,14 +31,14 @@ jobs:
       - name: Substance adversarial guard
         run: |
           set +e
-          python scripts/check_substance_anchors.py substance_reviews/_adversarial/poisoned.verdict.json --repo-root . > /tmp/poisoned_guard.log 2>&1
+          python -m scripts.check_substance_anchors substance_reviews/_adversarial/poisoned.verdict.json --repo-root . > /tmp/poisoned_guard.log 2>&1
           status=$?
           cat /tmp/poisoned_guard.log
           test "$status" -eq 1
           grep -q "DÉGRADÉ" /tmp/poisoned_guard.log
 
       - name: Status promotion guard
-        run: python scripts/check_status_promotion_guard.py
+        run: python -m scripts.check_status_promotion_guard
 
       - name: Secret guard
-        run: python scripts/check_no_committed_secrets.py
+        run: python -m scripts.check_no_committed_secrets
