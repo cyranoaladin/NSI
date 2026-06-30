@@ -210,7 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_drive_mapping.py: nom propre suspect -> Prototype Drive
 - scripts/check_drive_mapping_release.py: nom propre suspect -> Release Drive
 - scripts/check_evaluation_bareme_alignment.py: nom propre suspect -> Evaluation Bareme Alignment Report
-- ... 51 alertes supplémentaires non affichées
+- ... 52 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 

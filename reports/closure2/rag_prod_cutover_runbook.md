@@ -1,6 +1,12 @@
 # Runbook de cutover production RAG
 
-## Statut : PLAN SEULEMENT — exécution interdite
+## Statut : PLAN SEULEMENT — BLOQUE
+
+**ATTENTION** : NE PAS utiliser `python -m scripts.rag_ingest` pour
+l'ingestion prod. Ce script utilise l'embedder Chroma par defaut
+(all-MiniLM-L6-v2, 384d) qui est INCOMPATIBLE avec la prod
+(nomic-embed-text, 768d via ollama). Utiliser `scripts/rag_ingest_server.py`
+(Chroma REST + ollama embeddings) a la place.
 
 ## Prérequis
 
