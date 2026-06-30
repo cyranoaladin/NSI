@@ -36,6 +36,10 @@ def check_file(path: Path) -> List[str]:
             if name == "NotImplementedError":
                 errors.append(f"{rel}:{node.lineno}: NotImplementedError interdit")
         if isinstance(node, ast.Constant) and node.value is Ellipsis:
+            # Allow ellipsis inside type annotations (e.g. tuple[Any, ...])
+            line_text = text.splitlines()[node.lineno - 1] if node.lineno <= len(text.splitlines()) else ""
+            if "[" in line_text and "..." in line_text and "]" in line_text:
+                continue
             errors.append(f"{rel}:{node.lineno}: ellipsis interdit")
 
     reader = io.StringIO(text).readline
