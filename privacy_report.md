@@ -156,6 +156,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - rag_connection.md: nom propre suspect -> Content-Type
 - reports/closure2/phaseA_final_report.md: nom propre suspect -> Backlog Drive
 - reports/closure2/phaseA_final_report.md: nom propre suspect -> Lots Drive
+- reports/closure2/rag_prod_cutover_executed_report.md: nom propre suspect -> Prod Cutover
+- reports/closure2/rag_prod_cutover_executed_report.md: nom propre suspect -> Collections Chroma
 - reports/closure2/rag_state_of_truth.md: nom propre suspect -> Schéma Nexus
 - reports/closure2/rag_state_of_truth.md: nom propre suspect -> Collections Nexus
 - reports/drive_enrichment_report.md: nom propre suspect -> Ressource Drive
@@ -208,9 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_evaluation_bareme_alignment.py: nom propre suspect -> Evaluation Bareme Alignment Report
 - scripts/check_git_clean.py: nom propre suspect -> Check Git
 - scripts/check_learning_objectives_assessed.py: nom propre suspect -> Learning Objectives Assessed Report
-- scripts/check_makefile_audit_policy.py: nom propre suspect -> Check Makefile
-- scripts/check_missing_register_actionability.py: nom propre suspect -> Lien Drive
-- ... 47 alertes supplémentaires non affichées
+- ... 49 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
@@ -414,4 +414,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 332 alertes supplémentaires non affichées
+- ... 335 alertes supplémentaires non affichées
