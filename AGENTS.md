@@ -350,3 +350,18 @@ Action nécessaire :
 ```
 
 Il est interdit de masquer une lacune par une formulation vague.
+
+## 8. Standard fail-closed pour les gates et tests de policy
+
+Tout gate ou test de policy DOIT échouer (fail-closed) si son evidence est
+absente. Un test qui vérifie `X not in body` doit d'abord assert que `body`
+est non vide. Un test qui vérifie la présence d'un gate dans un étage Makefile
+doit échouer si l'étage lui-même est introuvable.
+
+Exemples :
+- `test_package_audit_target_exists` : échoue si la cible package-audit
+  est absente du Makefile (pas de pass silencieux).
+- `test_mypy_ratchet` : échoue si mypy n'a pas produit de sortie
+  reconnaissable (sentinel "no issues found" ou erreurs).
+- `check_makefile_audit_policy` : échoue si la cible audit ou audit-core
+  est absente.
