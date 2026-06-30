@@ -13,10 +13,16 @@ generate-reports:
 	python -m scripts.rebuild_inventory
 	python -m scripts.check_program_coverage
 	python -m scripts.generate_pedagogical_indexes
+	python -m scripts.check_no_private_data
 	python -m scripts.generate_qa_report
 	python -m scripts.rebuild_inventory
 
 check-generated-freshness:
+	$(MAKE) generate-reports
+	@echo "--- Freshness: git diff --exit-code on generated files ---"
+	git diff --exit-code
+
+check-legacy-freshness:
 	python -m scripts.check_build_reports_freshness
 	python -m scripts.check_qa_report_freshness
 	python -m scripts.check_manifest_source_integrity
@@ -189,7 +195,7 @@ audit-local:
 	python -m scripts.check_teacher_docs_depth
 	python -m scripts.check_validated_documents_quality_gates
 	python -m scripts.check_program_yaml_atomicity
-	$(MAKE) check-generated-freshness
+	$(MAKE) check-legacy-freshness
 	python -m scripts.check_archive_portability
 	python -m scripts.check_sequence_completeness
 	python -m scripts.check_course_internal_coherence
@@ -323,7 +329,7 @@ audit-extracted-source-local:
 
 package-audit:
 	python -m scripts.cleanup_python_artifacts
-	python -m scripts.build_source_archive
+	@test -f dist/source_clean.tar.gz || python -m scripts.build_source_archive
 	python -m scripts.check_packaging_mode
 	python -m scripts.check_archive_portability
 	python -m scripts.check_no_build_artifacts_in_index

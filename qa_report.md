@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 950
-- Ressources needs_review : 950
+- Ressources inventoriées : 575
+- Ressources needs_review : 575
 - Ressources publiables : 0
-- Source generated : 942
+- Source generated : 567
 - Source adapted_from_drive : 7
 - Source import_partiel : 1
 - Source inspiration_drive : 0
@@ -56,7 +56,7 @@ make --no-print-directory release-audit
 
 ```text
 Le vrai make release-audit est exécuté séparément.
-python scripts/check_drive_mapping_release.py
+python -m scripts.check_drive_mapping_release
 - rendus_eleves: rejected_sensitive - Dossier de rendus élèves interdit en livraison pédagogique.
 - .git: rejected_sensitive - Dossier Git Drive interdit en ressource pédagogique.
 - .venv: rejected_sensitive - Environnement virtuel interdit en ressource pédagogique.

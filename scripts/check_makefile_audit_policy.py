@@ -37,11 +37,16 @@ def main() -> None:
     errors: list[str] = []
     text = MAKEFILE.read_text(encoding="utf-8")
     policy = POLICY.read_text(encoding="utf-8")
-    # audit must chain at least audit-core and audit-metrics (may include more)
-    import re as _re
-    audit_line = _re.search(r"^audit:(.+)", text, _re.M)
-    if not audit_line or "audit-core" not in audit_line.group(1) or "audit-metrics" not in audit_line.group(1):
-        errors.append("audit doit dépendre d'au moins audit-core et audit-metrics")
+    # audit must chain at least audit-core and audit-metrics as EXACT prerequisites
+    audit_line = re.search(r"^audit:(.+)", text, re.M)
+    if audit_line:
+        prereqs = audit_line.group(1).split()
+        if "audit-core" not in prereqs:
+            errors.append("audit: audit-core manquant comme prérequis exact")
+        if "audit-metrics" not in prereqs:
+            errors.append("audit: audit-metrics manquant comme prérequis exact")
+    else:
+        errors.append("cible audit absente")
     core = target_body(text, "audit-core")
     metrics = target_body(text, "audit-metrics")
     required = target_body(text, "rag-smoke-required")

@@ -172,8 +172,9 @@ def test_makefile_separates_core_and_metrics_audits() -> None:
     text = (ROOT / "Makefile").read_text(encoding="utf-8")
     assert "\naudit-core:" in text
     assert "\naudit-metrics:" in text
-    assert "audit-core" in text.split("\naudit:", 1)[1].split("\n", 1)[0]
-    assert "audit-metrics" in text.split("\naudit:", 1)[1].split("\n", 1)[0]
+    audit_prereqs = text.split("\naudit:", 1)[1].split("\n", 1)[0].split()
+    assert "audit-core" in audit_prereqs, f"audit-core not an exact prerequisite: {audit_prereqs}"
+    assert "audit-metrics" in audit_prereqs, f"audit-metrics not an exact prerequisite: {audit_prereqs}"
     core_section = text.split("\naudit-core:", 1)[1].split("\n\n", 1)[0]
     for required in (
         "scripts.check_git_clean",

@@ -28,7 +28,10 @@ jobs:
       - name: Tests
         run: pytest
 
-      - name: Full audit (cold, idempotent, freshness-gated)
+      - name: Generated-files freshness (regen + git diff)
+        run: make check-generated-freshness
+
+      - name: Full audit (cold, idempotent)
         run: make audit-idempotence
 
       - name: Substance adversarial guard
