@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 959
+- Total ressources : 958
 - Ressources pédagogiques : 53
-- Ressources techniques : 906
+- Ressources techniques : 905
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 951
+- generated: 950
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 439
+- interne: 438
 - premiere: 232
 - terminale: 288
 
 ## Répartition par type
 - banque: 14
-- document: 541
+- document: 540
 - python: 95
 - script: 201
 - sequence: 45
 - test: 63
 
 ## Répartition par statut
-- needs_review: 959
+- needs_review: 958
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 759
+- mixte: 758
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -52,7 +52,6 @@
   - 00_programmes_officiels/programme_nsi_premiere.txt
   - 00_programmes_officiels/programme_nsi_terminale.pdf
   - 00_programmes_officiels/programme_nsi_terminale.txt
-  - 01_build_reports/P05_substance_review.json
   - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
   - 01_charte_graphique_et_pedagogique/charte_graphique.md
   - 01_charte_graphique_et_pedagogique/metadata_schema.md
@@ -1058,7 +1057,6 @@
   - 00_programmes_officiels/programme_nsi_premiere.txt
   - 00_programmes_officiels/programme_nsi_terminale.pdf
   - 00_programmes_officiels/programme_nsi_terminale.txt
-  - 01_build_reports/P05_substance_review.json
   - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
   - 01_charte_graphique_et_pedagogique/charte_graphique.md
   - 01_charte_graphique_et_pedagogique/metadata_schema.md
@@ -2016,7 +2014,6 @@
 - 00_programmes_officiels/programme_nsi_premiere.txt
 - 00_programmes_officiels/programme_nsi_terminale.pdf
 - 00_programmes_officiels/programme_nsi_terminale.txt
-- 01_build_reports/P05_substance_review.json
 - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
 - 01_charte_graphique_et_pedagogique/charte_graphique.md
 - 01_charte_graphique_et_pedagogique/metadata_schema.md
@@ -2905,7 +2902,6 @@
 - 00_programmes_officiels/programme_nsi_premiere.txt
 - 00_programmes_officiels/programme_nsi_terminale.pdf
 - 00_programmes_officiels/programme_nsi_terminale.txt
-- 01_build_reports/P05_substance_review.json
 - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
 - 01_charte_graphique_et_pedagogique/charte_graphique.md
 - 01_charte_graphique_et_pedagogique/metadata_schema.md

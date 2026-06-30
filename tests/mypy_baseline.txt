@@ -57,7 +57,7 @@ scripts/generate_qa_report.py:312: error: Argument 1 to "join" of "str" has inco
 scripts/generate_qa_report.py:313: error: "object" has no attribute "get"  [attr-defined]
 scripts/generate_qa_report.py:314: error: "object" has no attribute "get"  [attr-defined]
 scripts/generate_qa_report.py:315: error: "object" has no attribute "get"  [attr-defined]
-scripts/_inventory_utils.py:345: error: Incompatible default for parameter "frontmatter" (default has type "None", parameter has type "dict[str, Any]")  [assignment]
+scripts/_inventory_utils.py:346: error: Incompatible default for parameter "frontmatter" (default has type "None", parameter has type "dict[str, Any]")  [assignment]
 scripts/rebuild_inventory.py:207: error: Need type annotation for "by_source"  [var-annotated]
 scripts/rebuild_inventory.py:208: error: Need type annotation for "by_audience"  [var-annotated]
 scripts/rebuild_inventory.py:209: error: Need type annotation for "by_level"  [var-annotated]
