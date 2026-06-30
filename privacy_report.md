@@ -154,6 +154,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - qa_report.md: nom propre suspect -> Ressources Drive
 - qa_report.md: nom propre suspect -> Ressources Drive
 - rag_connection.md: nom propre suspect -> Content-Type
+- reports/closure2/phaseA_final_report.md: nom propre suspect -> Backlog Drive
+- reports/closure2/phaseA_final_report.md: nom propre suspect -> Lots Drive
 - reports/closure2/rag_state_of_truth.md: nom propre suspect -> Schéma Nexus
 - reports/closure2/rag_state_of_truth.md: nom propre suspect -> Collections Nexus
 - reports/drive_enrichment_report.md: nom propre suspect -> Ressource Drive
@@ -208,9 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_learning_objectives_assessed.py: nom propre suspect -> Learning Objectives Assessed Report
 - scripts/check_makefile_audit_policy.py: nom propre suspect -> Check Makefile
 - scripts/check_missing_register_actionability.py: nom propre suspect -> Lien Drive
-- scripts/check_no_placeholders_code.py: nom propre suspect -> Return True
-- scripts/check_program_capacity_evidence_depth.py: nom propre suspect -> Program Capacity Evidence Depth Report
-- ... 45 alertes supplémentaires non affichées
+- ... 47 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
