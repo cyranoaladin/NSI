@@ -181,7 +181,6 @@ Les noms propres suspects sont listés pour revue humaine.
 - reports/reconciliation/drive_integration_plan.md: nom propre suspect -> Backlog Drive
 - reports/reconciliation/drive_integration_plan.md: nom propre suspect -> Fichier Drive
 - reports/reconciliation/drive_integration_plan.md: nom propre suspect -> Historique Git Drive
-- reports/reconciliation/rag_pr35_status.md: nom propre suspect -> Le Lot
 - reports/reconciliation/reconciliation_report.md: nom propre suspect -> Backlog Drive
 - scientific_claims_review_report.md: nom propre suspect -> Scientific Claims Review Report
 - scripts/check_agents_governance.py: nom propre suspect -> Agent Inventaire
@@ -210,7 +209,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_program_capacity_evidence_depth.py: nom propre suspect -> Program Capacity Evidence Depth Report
 - scripts/check_progression_calendar_alignment.py: nom propre suspect -> Ressources Drive
 - scripts/check_scientific_claims_review.py: nom propre suspect -> Scientific Claims Review Report
-- ... 42 alertes supplémentaires non affichées
+- scripts/check_session_referenced_files_exist.py: nom propre suspect -> Lien Drive
+- ... 41 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
