@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 975
+- Total ressources : 976
 - Ressources pédagogiques : 53
-- Ressources techniques : 922
+- Ressources techniques : 923
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 967
+- generated: 968
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 455
+- interne: 456
 - premiere: 232
 - terminale: 288
 
@@ -19,17 +19,17 @@
 - banque: 14
 - document: 551
 - python: 95
-- script: 202
+- script: 203
 - sequence: 45
 - test: 68
 
 ## Répartition par statut
-- needs_review: 975
+- needs_review: 976
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 775
+- mixte: 776
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -889,6 +889,7 @@
   - scripts/rag_diagnose_search_timeout.py
   - scripts/rag_index_plan.py
   - scripts/rag_ingest.py
+  - scripts/rag_ingest_server.py
   - scripts/rag_query_example.py
   - scripts/rag_smoke_test.py
   - scripts/rebuild_inventory.py
@@ -1892,6 +1893,7 @@
   - scripts/rag_diagnose_search_timeout.py
   - scripts/rag_index_plan.py
   - scripts/rag_ingest.py
+  - scripts/rag_ingest_server.py
   - scripts/rag_query_example.py
   - scripts/rag_smoke_test.py
   - scripts/rebuild_inventory.py
@@ -2823,6 +2825,7 @@
 - scripts/rag_diagnose_search_timeout.py
 - scripts/rag_index_plan.py
 - scripts/rag_ingest.py
+- scripts/rag_ingest_server.py
 - scripts/rag_query_example.py
 - scripts/rag_smoke_test.py
 - scripts/rebuild_inventory.py
@@ -3798,6 +3801,7 @@
 - scripts/rag_diagnose_search_timeout.py
 - scripts/rag_index_plan.py
 - scripts/rag_ingest.py
+- scripts/rag_ingest_server.py
 - scripts/rag_query_example.py
 - scripts/rag_smoke_test.py
 - scripts/rebuild_inventory.py

@@ -56,8 +56,8 @@ def metadata_has_required_keys(metadata: dict[str, Any]) -> bool:
 
 def check_required(env: dict[str, str]) -> list[str]:
     errors = [key for key in sorted(REQUIRED_VARS) if not env.get(key)]
-    if env.get("RAG_COLLECTION") != "nsi_corpus":
-        errors.append("RAG_COLLECTION must be nsi_corpus")
+    if not env.get("RAG_COLLECTION"):
+        errors.append("RAG_COLLECTION is required")
     if env.get("RAG_VECTOR_DIM") != "768":
         errors.append("RAG_VECTOR_DIM must be 768")
     if env.get("RAG_BACKEND") != "chroma":
@@ -69,7 +69,7 @@ def smoke_search(env: dict[str, str]) -> list[str]:
     body = json.dumps(
         {
             "q": "Importer une table depuis un fichier CSV",
-            "collection": "nsi_corpus",
+            "collection": env.get("RAG_COLLECTION", "nsi_corpus"),
             "k": 5,
             "include_documents": True,
         }
@@ -101,7 +101,8 @@ def smoke_search(env: dict[str, str]) -> list[str]:
         metadata = hit.get("metadata")
         if not isinstance(metadata, dict) or not metadata_has_required_keys(metadata):
             return [f"hit {index}: métadonnées minimales absentes"]
-    print(f"RAG_SMOKE_TEST_OK collection=nsi_corpus hits={len(hits)}")
+    col = env.get("RAG_COLLECTION", "nsi_corpus")
+    print(f"RAG_SMOKE_TEST_OK collection={col} hits={len(hits)}")
     return []
 
 
