@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional
+from typing import Any, Dict, Iterable, List, Optional
 import csv
 import hashlib
 import re
@@ -144,7 +144,7 @@ def sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
-def parse_frontmatter(path: Path) -> Dict[str, object]:
+def parse_frontmatter(path: Path) -> Dict[str, Any]:
     """Parse le bloc YAML frontmatter (```--- ... ---```) d’un document."""
     try:
         text = path.read_text(encoding='utf-8', errors='replace')
@@ -171,7 +171,7 @@ def parse_frontmatter(path: Path) -> Dict[str, object]:
         return {str(k): v for k, v in loaded.items()}
 
     # fallback minimal manuel, tolérant
-    data: Dict[str, object] = {}
+    data: Dict[str, Any] = {}
     current_key: Optional[str] = None
     for raw in block.splitlines():
         line = raw.strip()
@@ -213,7 +213,7 @@ def detect_level(path: Path) -> str:
     return 'interne'
 
 
-def detect_sequence_id(path: Path, frontmatter: Dict[str, object]) -> str:
+def detect_sequence_id(path: Path, frontmatter: Dict[str, Any]) -> str:
     candidate = (frontmatter.get('sequence') or frontmatter.get('sequence_id') or '').strip() if frontmatter else ''
     if isinstance(candidate, list):
         candidate = candidate[0] if candidate else ''
@@ -229,7 +229,7 @@ def detect_sequence_id(path: Path, frontmatter: Dict[str, object]) -> str:
     return 'NA'
 
 
-def extract_theme_and_notion(path: Path, frontmatter: Dict[str, object]) -> tuple[str, str]:
+def extract_theme_and_notion(path: Path, frontmatter: Dict[str, Any]) -> tuple[str, str]:
     def _s(v: object) -> str:
         if isinstance(v, list):
             return ', '.join(str(x) for x in v)
@@ -264,7 +264,7 @@ def classify_resource_type(path: Path) -> str:
     return 'document'
 
 
-def resource_audience(path: Path, frontmatter: Dict[str, object]) -> str:
+def resource_audience(path: Path, frontmatter: Dict[str, Any]) -> str:
     document_type = frontmatter.get('document_type') or frontmatter.get('type')
     if isinstance(document_type, str):
         lowered = document_type.lower().replace('_', ' ').replace('-', ' ').strip()
@@ -330,7 +330,7 @@ def _drive_quarantine_paths() -> set[str]:
     return paths
 
 
-def detect_source_type(path: Path, frontmatter: Dict[str, object] | None = None) -> str:
+def detect_source_type(path: Path, frontmatter: Dict[str, Any] | None = None) -> str:
     relative = path.relative_to(ROOT).as_posix() if path.is_absolute() and ROOT in path.parents else path.as_posix()
     if isinstance(frontmatter, dict):
         origin = str(frontmatter.get('origin') or '').lower().strip()
@@ -342,7 +342,7 @@ def detect_source_type(path: Path, frontmatter: Dict[str, object] | None = None)
     return SOURCE_TYPE_GENERATED
 
 
-def evidence_category(path: Path, frontmatter: Dict[str, object] = None) -> Optional[str]:
+def evidence_category(path: Path, frontmatter: Dict[str, Any] = None) -> Optional[str]:
     n = path.name.lower()
     doc_type = (frontmatter or {}).get('document_type')
     if isinstance(doc_type, str):
@@ -410,7 +410,12 @@ def iter_files(root: Path) -> Iterable[Path]:
     for path in root.rglob('*'):
         if path.is_dir():
             continue
-        if path.name in {'manifest.csv', 'inventory_report.md', 'duplicates_report.md', 'coverage.md', 'quality_checklist.md'}:
+        if path.name in {
+            'manifest.csv', 'manifest_tooling.csv',
+            'inventory_report.md', 'duplicates_report.md',
+            'coverage.md', 'coverage_sources.md',
+            'privacy_report.md', 'quality_checklist.md',
+        }:
             continue
         if path.name.startswith('.env') and path.name != '.env.rag.example':
             continue

@@ -1,5 +1,6 @@
 
 from __future__ import annotations
+from typing import Any
 
 import re
 from pathlib import Path
@@ -17,7 +18,7 @@ def parse_hours(value: str) -> float:
         raise ValueError(f"missing hour value: {value}")
     return float(m.group(1).replace(',', '.'))
 
-def parse_sessions(path: Path) -> list[dict[str, object]]:
+def parse_sessions(path: Path) -> list[dict[str, Any]]:
     text = path.read_text(encoding='utf-8', errors='replace')
     blocks = re.split(r"(?=^### Séance )", text, flags=re.M)
     sessions = []
@@ -38,7 +39,7 @@ def parse_sessions(path: Path) -> list[dict[str, object]]:
         sessions.append(item)
     return sessions
 
-def parse_table_hours(path: Path) -> dict[str, dict[str, float | str]]:
+def parse_table_hours(path: Path) -> dict[str, dict[str, Any]]:
     rows = {}
     for line in path.read_text(encoding='utf-8', errors='replace').splitlines():
         if not line.startswith('| ') or '---' in line or 'Mois' in line:

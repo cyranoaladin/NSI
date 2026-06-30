@@ -4,13 +4,15 @@
 
 ## Dérive de schéma — OBSERVÉE ET PROUVÉE
 
-Commande de preuve (lecture seule, sans secret affiché) :
+Commande de preuve (lecture seule, sans secret affiché, confirmée passe 3, 2026-06-30 ~09h) :
 ```
 POST /search {q: "CSV", collection: "nsi_corpus", k: 2}
+→ HITS_COUNT=2
 → hit[0] metadata keys: ['anchor', 'capacities', 'chunk_index', 'collection',
    'document_type', 'level', 'notion', 'path', 'sequence_id', 'sha256',
    'source_type', 'status', 'theme']
 → anchor=True  section_anchor=False  capacities=True  capacity_ids=False
+→ hit[1] metadata keys: identiques
 ```
 
 L'index `nsi_corpus` déployé sur le serveur (88.99.254.59, host korrigo) utilise

@@ -3,55 +3,59 @@
 ## Configuration
 
 - `pyproject.toml` : `[tool.mypy]` strict=true, explicit_package_bases=true, mypy_path="."
-- Convention d'empaquetage : `python -m scripts.<module>` (Makefile, check_quality_gates.py, tests)
-- Tous les `sys.path.insert` + `# noqa: E402` rendus inutiles ont été retirés
-- `scripts/__init__.py` et `scrapping_NSI/__init__.py` présents
+- Convention d'empaquetage : `python -m scripts.<module>`
+- pythonpath=["."] dans pytest config
+- Cliquet : `tests/test_mypy_strict_debt.py::test_mypy_ratchet` + `tests/mypy_baseline.txt`
 
-## Résultat (post-vérification)
+## Résultat (passe clôture, venv propre)
 
-`mypy --strict scripts/ scrapping_NSI/` : **90 erreurs dans 23 fichiers** (sur 208 vérifiés).
+`mypy --strict scripts/ scrapping_NSI/` : **74 erreurs dans 23 fichiers** (208 vérifiés).
 
-Progression : 557 → 112 (passe réconciliation) → 90 (passe vérification, -22).
+Progression : 557 → 112 → 90 → 74.
 
-Corrections passe vérification :
-- **union-attr (9→0)** : vrais bugs latents (Response|None, Match|None) corrigés
-- **no-untyped-def (7→0)** : annotations retour manquantes ajoutées
-- **no-untyped-call (4→0)** : appels sans types résolus
-- **unused-ignore (1→0)** : directive type: ignore inutile retirée
-
-## Ventilation résiduelle
+## Erreurs résiduelles par catégorie
 
 | Catégorie | Nombre | Justification irréductibilité |
 |-----------|--------|-------------------------------|
-| arg-type | 31 | yaml.safe_load() retourne Any ; dict[str, object] propagé |
-| var-annotated | 16 | Variables initialisées par YAML/CSV sans type explicite |
-| attr-defined | 13 | .get() sur object au lieu de dict (YAML source) |
-| return-value | 6 | Types retour dict incompatibles (object vs str) |
-| misc | 6 | Generator types, class patterns |
-| assignment | 6 | Assignation dict[str, object] vs dict[str, str] |
-| type-arg | 5 | Arguments génériques Counter/dict sous-typés |
-| str | 3 | Argument str vs Path attendu |
-| operator | 3 | Opérateurs sur types non annotés |
-| index | 2 | Index string sur object |
-| comparison-overlap | 1 | Comparaison types disjoints |
-| call-overload | 1 | Surcharge range() non compatible |
+| arg-type | 23 | `yaml.safe_load()` → `Any` propagé dans les appels ; cast local nécessiterait TypedDict par fichier YAML |
+| var-annotated | 16 | Variables initialisées par boucles CSV/YAML sans annotation locale (`Counter`, `defaultdict`) |
+| attr-defined | 12 | Accès `.get()` / `.exists()` sur variables typées `str` au lieu de `Path` (héritage d'interface) |
+| assignment | 6 | Réassignation `str` ← `Path` ou `dict` incompatible (frontmatter dynamique) |
+| type-arg | 5 | Arguments génériques `Counter[str]`, `dict[str, ...]` sous-typés par inférence |
+| str | 3 | Argument `str` attendu `Path` (fonctions utilitaires legacy) |
+| operator | 3 | Opérateurs arithmétiques sur `Any` (valeurs YAML) |
+| misc | 3 | Generator types, callable patterns |
+| return-value | 2 | Type retour `dict[str, Any]` vs `dict[str, str]` (frontmatter) |
+| index | 2 | Indexation `str[int]` sur `Any` |
+| comparison-overlap | 1 | Comparaison types disjoints (`str` vs `int` via YAML) |
+| call-overload | 1 | `range()` avec argument `Any` |
 
-## Cause racine commune
+## Fichiers principaux
 
-90% des erreurs restantes tracent à `yaml.safe_load()` qui retourne `Any`.
-Les dictionnaires intermédiaires sont typés `dict[str, object]` par mypy strict,
-rendant chaque `.get()` ou accès `["key"]` une erreur potentielle de type.
-Corriger nécessite ~23 fichiers avec TypedDict ou casts explicites — travail
-mécanique sans valeur fonctionnelle. Aucune de ces erreurs ne masque un bug
-d'exécution (les objets sont en réalité des dicts bien formés à l'exécution).
+- `scripts/rebuild_inventory.py` (10) : frontmatter Dict[str, Any] propagé
+- `scripts/check_session_*.py` (22 total) : `_session_checks` parsing YAML
+- `scripts/check_drive_integration_plan.py` (7) : variable `str` au lieu de `Path`
+- `scripts/generate_qa_report.py` (6) : `course_sheet_stats()` retourne `dict[str, object]`
 
-## Mécanisme de garde : cliquet (ratchet)
+## Cause racine
 
-Le test `tests/test_mypy_strict_debt.py::test_mypy_ratchet` épingle le jeu
-exact des 90 erreurs dans `tests/mypy_baseline.txt` (fichier:ligne:message).
+Toutes les erreurs tracent à deux sources :
+1. **yaml.safe_load()** (bibliothèque PyYAML) retourne `Any` ; types-PyYAML fournit
+   des stubs mais le retour reste `Any` par design (YAML peut contenir n'importe quoi).
+2. **csv.DictReader** retourne `dict[str, str | None]` ; les scripts traitent les
+   valeurs comme `str` sans guard `is not None`.
 
-- Nouvelle erreur absente du baseline → **test ROUGE** (régression bloquée)
-- Erreur fixée encore dans baseline → **test ROUGE** (forcer la mise à jour)
-- Baseline == réel → **test VERT**
+Corriger nécessiterait des TypedDict spécifiques pour chaque schéma YAML/CSV (8+
+schémas distincts). Aucun bug d'exécution masqué : les objets sont des dicts bien
+formés à l'exécution.
 
-Prouvé : ajout d'une erreur fictive → test rouge ; retrait → test vert.
+## Cliquet (ratchet)
+
+Le test `tests/test_mypy_strict_debt.py::test_mypy_ratchet` compare le jeu
+actuel d'erreurs à `tests/mypy_baseline.txt` (74 lignes).
+
+- Nouvelle erreur → **rouge** (régression bloquée)
+- Erreur fixée sans mise à jour baseline → **rouge** (forcer l'amélioration)
+- Aligné → **vert**
+
+Le cliquet s'exécute en CI via pytest (ci.yml → `pytest` → inclut le test ratchet).

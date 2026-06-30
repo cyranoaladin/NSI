@@ -19,7 +19,17 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = ROOT / 'manifest.csv'
 MANIFEST_TOOLING_PATH = ROOT / 'manifest_tooling.csv'
 
-TOOLING_PREFIXES = ('scripts/', 'tests/', 'reports/', 'scrapping_NSI/')
+TOOLING_PREFIXES = ('scripts/', 'tests/', 'reports/', 'scrapping_NSI/', 'docs/', '.github/')
+
+# Root-level directories that contain actual pedagogical content.
+# Files outside these directories (at root) are classified as tooling/config.
+PEDAGOGICAL_DIRS = (
+    '00_programmes_officiels/',
+    '02_modeles_documents/',
+    '03_progressions/',
+    'premiere/',
+    'terminale/',
+)
 REPORT_PATH = ROOT / 'inventory_report.md'
 DUPLICATES_PATH = ROOT / 'duplicates_report.md'
 TRACE_PATH = ROOT / 'support_source_trace.yml'
@@ -174,8 +184,16 @@ def write_manifest(rows: List[Dict[str, str]]) -> None:
         'hash',
         'symlink',
     ]
-    pedagogical = [r for r in rows if not r['chemin'].startswith(TOOLING_PREFIXES)]
-    tooling = [r for r in rows if r['chemin'].startswith(TOOLING_PREFIXES)]
+    def is_tooling(chemin: str) -> bool:
+        if chemin.startswith(TOOLING_PREFIXES):
+            return True
+        # Root-level files not under pedagogical dirs are config/tooling.
+        if '/' not in chemin or not chemin.startswith(PEDAGOGICAL_DIRS):
+            return not chemin.startswith(PEDAGOGICAL_DIRS)
+        return False
+
+    pedagogical = [r for r in rows if not is_tooling(r['chemin'])]
+    tooling = [r for r in rows if is_tooling(r['chemin'])]
     for path, subset in [(MANIFEST_PATH, pedagogical), (MANIFEST_TOOLING_PATH, tooling)]:
         with path.open('w', encoding='utf-8', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator='\n')

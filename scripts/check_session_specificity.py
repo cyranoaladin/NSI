@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Reject repetitive or generic session descriptions."""
 from __future__ import annotations
+from typing import Any
 
 import sys
 from scripts._session_checks import LEVELS, CONCRETE_TOKENS, GENERIC_PHRASES, count_values, fail_or_pass, parse_sessions
@@ -10,11 +11,11 @@ def has_concrete_reference(text: str) -> bool:
     return any(token in text for token in CONCRETE_TOKENS)
 
 
-def is_theoretical_session(session: dict[str, object]) -> bool:
+def is_theoretical_session(session: dict[str, Any]) -> bool:
     return str(session.get("Statut support", "")).strip().lower() == "théorique non prêt"
 
 
-def session_specificity_errors(level: str, session: dict[str, object]) -> list[str]:
+def session_specificity_errors(level: str, session: dict[str, Any]) -> list[str]:
     if is_theoretical_session(session):
         return []
     errors: list[str] = []
