@@ -32,8 +32,9 @@ def load_catalog(path: Path) -> list[dict[str, Any]]:
 def main() -> None:
     errors: list[str] = []
     judge = (ROOT / "scripts" / "substance_judge.py").read_text(encoding="utf-8")
-    if '"collection": "nsi_corpus"' not in judge:
-        errors.append("substance_judge.py doit interroger nsi_corpus")
+    # Judge must default to nsi_corpus (KIND) via RAG_COLLECTION config, not hardcode
+    if "RAG_COLLECTION" not in judge and '"collection": "nsi_corpus"' not in judge:
+        errors.append("substance_judge.py doit interroger nsi_corpus (via RAG_COLLECTION ou défaut)")
     if '"collection": "rag_education"' in judge:
         errors.append("substance_judge.py ne doit pas interroger rag_education pour les preuves internes")
 

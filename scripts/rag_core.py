@@ -95,11 +95,17 @@ def extract_metadata(
     path: Path,
     root: Path,
     collection: str = "nsi_corpus",
+    source_type: str = "nsi_corpus",
 ) -> tuple[list[dict[str, Any]], bool]:
     """Build chunks from a source file.
 
     Returns (chunks, skipped_pii). Each chunk has 'id', 'text', 'metadata'.
+    source_type is a KIND enum {nsi_corpus, golden_example, excluded},
+    orthogonal to collection (the physical Chroma collection name).
     """
+    VALID_SOURCE_TYPES = {"nsi_corpus", "golden_example", "excluded"}
+    if source_type not in VALID_SOURCE_TYPES:
+        raise ValueError(f"source_type={source_type!r} not in {VALID_SOURCE_TYPES}")
     text = path.read_text(encoding="utf-8", errors="replace")
 
     # PII guard
@@ -151,7 +157,7 @@ def extract_metadata(
                 "status": str(meta.get("status") or "needs_review"),
                 "level": level, "theme": theme, "notion": notion,
                 "sequence_id": seq_id, "sha256": fhash,
-                "collection": collection, "source_type": collection,
+                "collection": collection, "source_type": source_type,
                 "private_data": False,
             },
         })

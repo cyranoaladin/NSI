@@ -134,7 +134,7 @@ def search_rag(
 ) -> list[dict[str, Any]]:
     hits = _http_json(
         env["RAG_API_BASE_URL"],
-        body={"q": query, "collection": "nsi_corpus", "k": k, "include_documents": True},
+        body={"q": query, "collection": env.get("RAG_COLLECTION", "nsi_corpus"), "k": k, "include_documents": True},
         headers={"Authorization": f"Bearer {env['RAG_API_KEY']}"},
     ).get("hits", [])
     if not isinstance(hits, list):
