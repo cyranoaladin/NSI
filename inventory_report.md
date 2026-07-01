@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 981
+- Total ressources : 982
 - Ressources pédagogiques : 53
-- Ressources techniques : 928
+- Ressources techniques : 929
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 973
+- generated: 974
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 461
+- interne: 462
 - premiere: 232
 - terminale: 288
 
@@ -21,15 +21,15 @@
 - python: 95
 - script: 204
 - sequence: 45
-- test: 68
+- test: 69
 
 ## Répartition par statut
-- needs_review: 981
+- needs_review: 982
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 781
+- mixte: 782
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -963,6 +963,7 @@
   - tests/test_drive_mapping_release.py
   - tests/test_drive_portable_and_manifest.py
   - tests/test_ellipsis_scoping.py
+  - tests/test_env_file_resolution.py
   - tests/test_executable_quality_controls.py
   - tests/test_final_quality_hardening.py
   - tests/test_first_batch_alignment.py
@@ -1946,6 +1947,7 @@
   - tests/test_drive_mapping_release.py
   - tests/test_drive_portable_and_manifest.py
   - tests/test_ellipsis_scoping.py
+  - tests/test_env_file_resolution.py
   - tests/test_executable_quality_controls.py
   - tests/test_final_quality_hardening.py
   - tests/test_first_batch_alignment.py
@@ -2904,6 +2906,7 @@
 - tests/test_drive_mapping_release.py
 - tests/test_drive_portable_and_manifest.py
 - tests/test_ellipsis_scoping.py
+- tests/test_env_file_resolution.py
 - tests/test_executable_quality_controls.py
 - tests/test_final_quality_hardening.py
 - tests/test_first_batch_alignment.py
@@ -3890,6 +3893,7 @@
 - tests/test_drive_mapping_release.py
 - tests/test_drive_portable_and_manifest.py
 - tests/test_ellipsis_scoping.py
+- tests/test_env_file_resolution.py
 - tests/test_executable_quality_controls.py
 - tests/test_final_quality_hardening.py
 - tests/test_first_batch_alignment.py

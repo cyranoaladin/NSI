@@ -20,8 +20,10 @@ from typing import Any
 from scripts.check_substance_anchors import citation_status, parse_sections
 
 
+from scripts.rag_core import resolve_env_file
+
 ROOT = Path(__file__).resolve().parents[1]
-ENV_FILE = ROOT / ".env.rag"
+ENV_FILE = resolve_env_file(ROOT)
 PROGRAMME = ROOT / "00_programmes_officiels" / "programme_nsi_2019.yaml"
 OUTPUT_DIR = ROOT / "01_build_reports"
 MAX_CANDIDATES_PER_ROLE = 1

@@ -31,19 +31,24 @@ POST /search {q:"CSV", collection:"nsi_corpus_v2", k:1}
   section_anchor='p05---tp---tables-csv' (Unicode)
 ```
 
-### Config canonique unique
+### Config canonique unique (par construction, pas par coincidence)
 
+Smoke et juge importent TOUS DEUX `rag_core.resolve_env_file(ROOT)` :
+`Path(os.getenv("RAG_ENV_FILE", str(ROOT / ".env.rag")))`.
+
+Il est IMPOSSIBLE qu'ils divergent : meme fonction, meme ROOT, meme override.
+
+Verification reproductible depuis N'IMPORTE quel ROOT :
 ```
-# smoke
-python3 -c "from scripts.rag_smoke_test import ENV_FILE; import os; print(os.path.realpath(ENV_FILE))"
-→ /tmp/nsi_ingest/.env.rag
+# Sans override : les deux pointent ROOT/.env.rag
+RAG_ENV_FILE unset → resolve_env_file(ROOT) = ROOT/.env.rag
 
-# juge
-python3 -c "from scripts.substance_judge import ENV_FILE; import os; print(os.path.realpath(ENV_FILE))"
-→ /tmp/nsi_ingest/.env.rag
+# Avec override : les deux suivent l'override
+RAG_ENV_FILE=/custom/path → resolve_env_file(ROOT) = /custom/path
 ```
 
-Les deux resolvent le MEME fichier physique.
+Test : `test_env_file_resolution.py` prouve l'egalite sous 3 scenarii
+(defaut, override, roots differents).
 
 ### Smoke strict + juge run-time interrogent v2
 
