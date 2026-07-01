@@ -12,9 +12,10 @@ from pathlib import Path
 from typing import Any
 
 
+from scripts.rag_core import resolve_env_file
+
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_ENV_FILE = ROOT / ".env.rag"
-ENV_FILE = Path(os.getenv("RAG_ENV_FILE", str(DEFAULT_ENV_FILE)))
+ENV_FILE = resolve_env_file(ROOT)
 REQUIRED_VARS = {
     "RAG_BACKEND",
     "RAG_API_BASE_URL",

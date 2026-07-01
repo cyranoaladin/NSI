@@ -1,15 +1,27 @@
-"""Shared RAG ingestion logic: frontmatter, chunking, slug, PII guard, metadata.
+"""Shared RAG logic: env resolution, frontmatter, chunking, slug, PII guard, metadata.
 
 Both rag_ingest.py (local Chroma) and rag_ingest_server.py (REST+ollama)
 import this module. They differ ONLY by backend.
+smoke_test and substance_judge import resolve_env_file for config resolution.
 """
 from __future__ import annotations
 
 import hashlib
+import os
 import re
 import unicodedata
 from pathlib import Path
 from typing import Any
+
+
+def resolve_env_file(repo_root: Path) -> Path:
+    """Canonical .env.rag resolution, shared by smoke test and substance judge.
+
+    Honors RAG_ENV_FILE env override, defaults to repo_root/.env.rag.
+    Both consumers MUST use this function so they cannot diverge.
+    """
+    default = repo_root / ".env.rag"
+    return Path(os.getenv("RAG_ENV_FILE", str(default)))
 
 
 def github_slug(title: str) -> str:
