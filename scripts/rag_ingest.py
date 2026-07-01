@@ -21,12 +21,17 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-from scripts.rag_core import (
+# Ensure repo root is on sys.path for direct invocation (python3 scripts/rag_ingest.py)
+_REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
+
+from scripts.rag_core import (  # noqa: E402
     extract_metadata,
     iter_source_files,
 )
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = _REPO_ROOT
 
 
 # ---------------------------------------------------------------------------
@@ -58,9 +63,9 @@ class IngestReport:
 # Pipeline
 # ---------------------------------------------------------------------------
 
-def build_chunks(path: Path) -> list[Chunk]:
+def build_chunks(path: Path, collection: str = "nsi_corpus") -> list[Chunk]:
     """Build chunks from a source file using shared rag_core logic."""
-    raw_chunks, skipped = extract_metadata(path, ROOT)
+    raw_chunks, skipped = extract_metadata(path, ROOT, collection=collection)
     if skipped:
         return []
     return [Chunk(id=c["id"], text=c["text"], metadata=c["metadata"]) for c in raw_chunks]
@@ -93,7 +98,7 @@ def ingest(
     all_chunks: list[Chunk] = []
     for path in iter_source_files(ROOT):
         report.files_seen += 1
-        chunks = build_chunks(path)
+        chunks = build_chunks(path, collection=collection_name)
         if not chunks:
             report.files_skipped_pii += 1
             continue
