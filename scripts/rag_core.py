@@ -151,7 +151,7 @@ def extract_metadata(
                 "status": str(meta.get("status") or "needs_review"),
                 "level": level, "theme": theme, "notion": notion,
                 "sequence_id": seq_id, "sha256": fhash,
-                "collection": collection, "source_type": "nsi_corpus",
+                "collection": collection, "source_type": collection,
                 "private_data": False,
             },
         })
