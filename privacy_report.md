@@ -414,4 +414,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
 - 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 338 alertes supplémentaires non affichées
+- ... 337 alertes supplémentaires non affichées
