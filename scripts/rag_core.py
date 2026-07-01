@@ -152,10 +152,22 @@ def extract_metadata(
                 "level": level, "theme": theme, "notion": notion,
                 "sequence_id": seq_id, "sha256": fhash,
                 "collection": collection, "source_type": "nsi_corpus",
-                "private_data": "false",
+                "private_data": False,
             },
         })
     return chunks, False
+
+
+def adapt_metadata(raw: dict[str, Any]) -> dict[str, Any]:
+    """Convert stored scalar metadata back to canonical types.
+
+    Chroma stores capacity_ids as CSV string; the adapter returns a list.
+    """
+    out = dict(raw)
+    csv_val = out.get("capacity_ids", "")
+    if isinstance(csv_val, str):
+        out["capacity_ids"] = [c for c in csv_val.split(",") if c] if csv_val else []
+    return out
 
 
 EXCLUSIONS = {".git", ".venv", "__pycache__", "dist", "AUDIT", "Documents_DRIVE"}

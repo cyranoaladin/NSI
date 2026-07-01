@@ -111,7 +111,11 @@ def smoke_search(env: dict[str, str]) -> list[str]:
 
 
 def main() -> int:
+    strict = os.environ.get("RAG_SMOKE_STRICT", "") == "1"
     if not ENV_FILE.exists():
+        if strict:
+            print("RAG_SMOKE_TEST_FAILED: .env.rag absent in strict mode", file=sys.stderr)
+            return 1
         errors = validate_examples()
         if errors:
             print("RAG_SMOKE_TEST_CONFIG_EXAMPLES_INVALID", file=sys.stderr)

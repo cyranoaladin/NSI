@@ -82,7 +82,7 @@ audit-metrics:
 	python -m scripts.check_session_specificity
 
 rag-smoke-required:
-	python -m scripts.rag_smoke_test
+	RAG_SMOKE_STRICT=1 python -m scripts.rag_smoke_test
 
 audit-local:
 	python -m scripts.check_git_clean
