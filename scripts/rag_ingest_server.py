@@ -26,6 +26,11 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
+# Ensure repo root is on sys.path for direct invocation (python3 scripts/rag_ingest_server.py)
+_REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
+
 # Shared logic: frontmatter, chunking, slug, PII guard, metadata
 from scripts.rag_core import extract_metadata, iter_source_files
 
