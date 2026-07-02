@@ -23,18 +23,8 @@ def _find_rag_env_file_reads(source: str) -> list[int]:
         return []
 
     reads: list[int] = []
-    for node in ast.walk(tree):
-        # Match the string literal "RAG_ENV_FILE"
-        if not isinstance(node, ast.Constant) or node.value != "RAG_ENV_FILE":
-            continue
-        # Walk up to find how it's used
-        # We need the parent — annotate parents
-        pass
 
-    # Simpler approach: find all ast.Constant("RAG_ENV_FILE") nodes and check
-    # whether they appear in a read context (call arg, subscript index) vs
-    # assignment target (store context on the subscript parent).
-    # Re-parse with parent annotation.
+    # Annotate parents for context detection
     for node in ast.walk(tree):
         for child in ast.iter_child_nodes(node):
             child._parent = node  # type: ignore[attr-defined]
