@@ -31,12 +31,11 @@ def test_barrier_a_predicate_rejects_external() -> None:
 
 
 # ---------------------------------------------------------------------------
-# Barrier B — is_internal_hit (predicate)
+# Barrier B — is_internal_hit (predicate) — fail-closed on all malformed forms
 # ---------------------------------------------------------------------------
 
 def test_barrier_b_predicate_accepts_nsi_corpus() -> None:
-    hit = {"metadata": {"source_type": "nsi_corpus"}}
-    assert judge.is_internal_hit(hit)
+    assert judge.is_internal_hit({"metadata": {"source_type": "nsi_corpus"}})
 
 
 def test_barrier_b_predicate_rejects_golden_example() -> None:
@@ -47,30 +46,53 @@ def test_barrier_b_predicate_rejects_excluded() -> None:
     assert not judge.is_internal_hit({"metadata": {"source_type": "excluded"}})
 
 
-def test_barrier_b_predicate_rejects_non_dict() -> None:
+def test_barrier_b_predicate_rejects_non_dict_hit() -> None:
     assert not judge.is_internal_hit("not a dict")  # type: ignore[arg-type]
+
+
+def test_barrier_b_predicate_rejects_metadata_none() -> None:
+    assert not judge.is_internal_hit({"metadata": None})
+
+
+def test_barrier_b_predicate_rejects_metadata_string() -> None:
+    assert not judge.is_internal_hit({"metadata": "a string"})
+
+
+def test_barrier_b_predicate_rejects_metadata_list() -> None:
+    assert not judge.is_internal_hit({"metadata": ["a", "list"]})
+
+
+def test_barrier_b_predicate_rejects_no_metadata_key() -> None:
+    assert not judge.is_internal_hit({"other_key": "value"})
+
+
+def test_barrier_b_predicate_rejects_missing_source_type() -> None:
+    assert not judge.is_internal_hit({"metadata": {"document_type": "tp"}})
 
 
 # ---------------------------------------------------------------------------
 # Barrier B via search_rag (end-to-end with monkeypatched network)
 # ---------------------------------------------------------------------------
 
-def _fake_http_json_mixed(*args: Any, **kwargs: Any) -> dict[str, Any]:
-    """Return a mix of internal + non-internal hits."""
+def _fake_http_json_with_malformed(*args: Any, **kwargs: Any) -> dict[str, Any]:
+    """Return a mix of valid, non-internal, AND malformed hits."""
     return {
         "hits": [
             {"metadata": {"source_type": "nsi_corpus", "document_type": "tp"}},
             {"metadata": {"source_type": "golden_example", "document_type": "tp"}},
             {"metadata": {"source_type": "excluded", "document_type": "cours"}},
-            "not-a-dict",
+            {"metadata": None},                     # malformed: metadata=None
+            {"metadata": "not-a-dict"},              # malformed: metadata=str
+            {"other": "no metadata key"},            # malformed: no metadata
+            "not-a-dict",                            # malformed: hit not dict
         ]
     }
 
 
-def test_search_rag_filters_non_internal_hits() -> None:
-    """search_rag must return ONLY hits passing is_internal_hit."""
+def test_search_rag_filters_non_internal_and_malformed_hits() -> None:
+    """search_rag must return ONLY valid internal hits, no crash on malformed."""
     env = {"RAG_API_BASE_URL": "http://fake", "RAG_API_KEY": "fake", "RAG_COLLECTION": "nsi_corpus_v2"}
-    with patch.object(judge, "_http_json", _fake_http_json_mixed):
+    with patch.object(judge, "_http_json", _fake_http_json_with_malformed):
         result = judge.search_rag(env, "test query")
     assert len(result) == 1
     assert result[0]["metadata"]["source_type"] == "nsi_corpus"
