@@ -38,10 +38,17 @@ def is_internal_collection(name: str) -> bool:
 
 
 def is_internal_hit(hit: dict[str, Any]) -> bool:
-    """Barrier B predicate: hit must have source_type == 'nsi_corpus' (KIND)."""
+    """Barrier B predicate: hit must have source_type == 'nsi_corpus' (KIND).
+
+    Fail-closed: any non-validable form (non-dict hit, non-dict metadata,
+    missing source_type) returns False without raising.
+    """
     if not isinstance(hit, dict):
         return False
-    return str(hit.get("metadata", {}).get("source_type", "")) == "nsi_corpus"
+    metadata = hit.get("metadata")
+    if not isinstance(metadata, dict):
+        return False
+    return str(metadata.get("source_type", "")) == "nsi_corpus"
 
 
 PROGRAMME = ROOT / "00_programmes_officiels" / "programme_nsi_2019.yaml"
