@@ -89,10 +89,30 @@ def _fake_http_json_with_malformed(*args: Any, **kwargs: Any) -> dict[str, Any]:
     }
 
 
-def test_search_rag_filters_non_internal_and_malformed_hits() -> None:
-    """search_rag must return ONLY valid internal hits, no crash on malformed."""
+def test_search_rag_without_filter_handles_malformed() -> None:
+    """search_rag WITHOUT doc_type_filter: no crash on malformed, only internal kept."""
     env = {"RAG_API_BASE_URL": "http://fake", "RAG_API_KEY": "fake", "RAG_COLLECTION": "nsi_corpus_v2"}
     with patch.object(judge, "_http_json", _fake_http_json_with_malformed):
         result = judge.search_rag(env, "test query")
     assert len(result) == 1
     assert result[0]["metadata"]["source_type"] == "nsi_corpus"
+
+
+def test_search_rag_with_doc_type_filter_handles_malformed() -> None:
+    """search_rag WITH doc_type_filter (the real judge path): no crash, filter applied."""
+    env = {"RAG_API_BASE_URL": "http://fake", "RAG_API_KEY": "fake", "RAG_COLLECTION": "nsi_corpus_v2"}
+    with patch.object(judge, "_http_json", _fake_http_json_with_malformed):
+        # Filter for "tp" — the valid internal hit has document_type="tp"
+        result = judge.search_rag(env, "test query", doc_type_filter=["tp"])
+    assert len(result) == 1
+    assert result[0]["metadata"]["source_type"] == "nsi_corpus"
+    assert result[0]["metadata"]["document_type"] == "tp"
+
+
+def test_search_rag_with_doc_type_filter_excludes_non_matching() -> None:
+    """doc_type_filter excludes even valid internal hits with wrong document_type."""
+    env = {"RAG_API_BASE_URL": "http://fake", "RAG_API_KEY": "fake", "RAG_COLLECTION": "nsi_corpus_v2"}
+    with patch.object(judge, "_http_json", _fake_http_json_with_malformed):
+        # Filter for "evaluation" — no hit has this type
+        result = judge.search_rag(env, "test query", doc_type_filter=["evaluation"])
+    assert len(result) == 0

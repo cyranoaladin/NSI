@@ -168,15 +168,15 @@ def search_rag(
     ).get("hits", [])
     if not isinstance(hits, list):
         return []
+    # Barrier B first: reject non-internal hits (guards metadata access)
+    hits = [hit for hit in hits if is_internal_hit(hit)]
+    # Now metadata is guaranteed dict on all remaining hits
     if doc_type_filter:
         hits = [
-            hit
-            for hit in hits
-            if isinstance(hit, dict)
-            and hit.get("metadata", {}).get("document_type", "") in doc_type_filter
+            hit for hit in hits
+            if hit.get("metadata", {}).get("document_type", "") in doc_type_filter
         ]
-    # Barrier B: reject hits with non-internal source_type
-    return [hit for hit in hits if is_internal_hit(hit)]
+    return hits
 
 
 def call_llm(env: dict[str, str], capacity_text: str, section_text: str, role_label: str) -> dict[str, Any]:
