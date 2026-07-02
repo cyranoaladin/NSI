@@ -183,6 +183,32 @@ def test_vert_annotated_allowlist() -> None:
     assert not any("INTERNAL_COVERAGE_COLLECTIONS" in e for e in errors), f"AnnAssign should be accepted: {errors}"
 
 
+# --- Hole 5 (3-ter): bare AnnAssign without value ---
+
+def test_rouge_bare_annassign_no_value() -> None:
+    src = VALID_JUDGE.replace(
+        'INTERNAL_COVERAGE_COLLECTIONS = {"nsi_corpus", "nsi_corpus_v2"}',
+        'INTERNAL_COVERAGE_COLLECTIONS: set[str]',  # no value = not bound
+    )
+    errors = check_judge_collection_policy(src)
+    assert any("INTERNAL_COVERAGE_COLLECTIONS" in e for e in errors), (
+        f"Bare AnnAssign should be rejected: {errors}"
+    )
+
+
+# --- Hole 6 (3-ter): call in nested scope only ---
+
+def test_rouge_call_in_nested_def_only() -> None:
+    src = VALID_JUDGE.replace(
+        "hits = [h for h in hits if is_internal_hit(h)]",
+        "def _inner():\n        return [h for h in [] if is_internal_hit(h)]\n    hits = [h for h in hits if h]",
+    )
+    errors = check_judge_collection_policy(src)
+    assert any("search_rag" in e and "is_internal_hit" in e for e in errors), (
+        f"Call only in nested def should be rejected: {errors}"
+    )
+
+
 # --- Rule negative: rag_education ---
 
 def test_rouge_rag_education_query() -> None:
