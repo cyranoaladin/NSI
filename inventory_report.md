@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 983
+- Total ressources : 984
 - Ressources pédagogiques : 53
-- Ressources techniques : 930
+- Ressources techniques : 931
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 975
+- generated: 976
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 463
+- interne: 464
 - premiere: 232
 - terminale: 288
 
@@ -21,15 +21,15 @@
 - python: 95
 - script: 204
 - sequence: 45
-- test: 70
+- test: 71
 
 ## Répartition par statut
-- needs_review: 983
+- needs_review: 984
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 783
+- mixte: 784
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -970,6 +970,7 @@
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
   - tests/test_full_matrix_and_runtime.py
+  - tests/test_judge_collection_barriers.py
   - tests/test_line_padding.py
   - tests/test_linked_support_quality.py
   - tests/test_local_drive_traceability.py
@@ -1955,6 +1956,7 @@
   - tests/test_first_batch_document_quality.py
   - tests/test_first_batch_tp_assets.py
   - tests/test_full_matrix_and_runtime.py
+  - tests/test_judge_collection_barriers.py
   - tests/test_line_padding.py
   - tests/test_linked_support_quality.py
   - tests/test_local_drive_traceability.py
@@ -2915,6 +2917,7 @@
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py
 - tests/test_full_matrix_and_runtime.py
+- tests/test_judge_collection_barriers.py
 - tests/test_line_padding.py
 - tests/test_linked_support_quality.py
 - tests/test_local_drive_traceability.py
@@ -3903,6 +3906,7 @@
 - tests/test_first_batch_document_quality.py
 - tests/test_first_batch_tp_assets.py
 - tests/test_full_matrix_and_runtime.py
+- tests/test_judge_collection_barriers.py
 - tests/test_line_padding.py
 - tests/test_linked_support_quality.py
 - tests/test_local_drive_traceability.py

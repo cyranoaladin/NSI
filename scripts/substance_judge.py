@@ -26,6 +26,10 @@ from scripts.rag_core import resolve_env_file  # noqa: E402
 
 ROOT = _REPO_ROOT
 ENV_FILE = resolve_env_file(ROOT)
+
+# Collections whose hits count as internal substance proof.
+# source_type on each hit must also be "nsi_corpus" (KIND).
+INTERNAL_COVERAGE_COLLECTIONS = {"nsi_corpus", "nsi_corpus_v2"}
 PROGRAMME = ROOT / "00_programmes_officiels" / "programme_nsi_2019.yaml"
 OUTPUT_DIR = ROOT / "01_build_reports"
 MAX_CANDIDATES_PER_ROLE = 1
@@ -150,7 +154,12 @@ def search_rag(
             if isinstance(hit, dict)
             and hit.get("metadata", {}).get("document_type", "") in doc_type_filter
         ]
-    return [hit for hit in hits if isinstance(hit, dict)]
+    # Barrier B: reject hits with non-internal source_type
+    return [
+        hit for hit in hits
+        if isinstance(hit, dict)
+        and hit.get("metadata", {}).get("source_type", "") == "nsi_corpus"
+    ]
 
 
 def call_llm(env: dict[str, str], capacity_text: str, section_text: str, role_label: str) -> dict[str, Any]:
@@ -462,6 +471,15 @@ def main() -> int:
         return 1
 
     env = load_env(ENV_FILE)
+    # Barrier A: refuse non-internal collections before any query
+    rag_col = env.get("RAG_COLLECTION", "nsi_corpus")
+    if rag_col not in INTERNAL_COVERAGE_COLLECTIONS:
+        print(
+            f"REFUS: RAG_COLLECTION={rag_col} n'est pas une collection "
+            f"de couverture interne {sorted(INTERNAL_COVERAGE_COLLECTIONS)}",
+            file=sys.stderr,
+        )
+        return 1
     print("Mode: pertinence lexicale + jugement LLM")
     review = build_review(
         env,
