@@ -136,6 +136,53 @@ def test_rouge_is_internal_hit_not_called_in_search_rag() -> None:
     assert any("search_rag" in e and "is_internal_hit" in e for e in errors), f"Should detect: {errors}"
 
 
+# --- Hole 1: multiple defaults, one bad (last-write-wins before fix) ---
+
+def test_rouge_multiple_defaults_one_bad() -> None:
+    src = VALID_JUDGE.replace(
+        '"collection": env.get("RAG_COLLECTION", "nsi_corpus")',
+        '"collection": env.get("RAG_COLLECTION", "rag_education")',
+    )
+    # Add a second read with correct default — old checker kept only last
+    src += '\nx = env.get("RAG_COLLECTION", "nsi_corpus")\n'
+    errors = check_judge_collection_policy(src)
+    assert any("rag_education" in e for e in errors), f"Should detect bad default: {errors}"
+
+
+# --- Hole 2: isinstance(metadata, str) instead of dict ---
+
+def test_rouge_isinstance_metadata_str() -> None:
+    src = VALID_JUDGE.replace(
+        "if not isinstance(metadata, dict):",
+        "if not isinstance(metadata, str):",
+    )
+    errors = check_judge_collection_policy(src)
+    assert any("isinstance" in e for e in errors), f"Should detect wrong isinstance type: {errors}"
+
+
+# --- Hole 3: name incident without real call ---
+
+def test_rouge_name_incident_no_call() -> None:
+    src = VALID_JUDGE.replace(
+        "hits = [h for h in hits if is_internal_hit(h)]",
+        "is_internal_hit_enabled = True\n    hits = [h for h in hits if h]",
+    )
+    errors = check_judge_collection_policy(src)
+    assert any("search_rag" in e and "is_internal_hit" in e for e in errors), f"Should detect no call: {errors}"
+
+
+# --- Hole 4: annotated allowlist (AnnAssign) ---
+
+def test_vert_annotated_allowlist() -> None:
+    src = VALID_JUDGE.replace(
+        'INTERNAL_COVERAGE_COLLECTIONS = {"nsi_corpus", "nsi_corpus_v2"}',
+        'INTERNAL_COVERAGE_COLLECTIONS: set[str] = {"nsi_corpus", "nsi_corpus_v2"}',
+    )
+    errors = check_judge_collection_policy(src)
+    # Should NOT flag as missing (AnnAssign is accepted now)
+    assert not any("INTERNAL_COVERAGE_COLLECTIONS" in e for e in errors), f"AnnAssign should be accepted: {errors}"
+
+
 # --- Rule negative: rag_education ---
 
 def test_rouge_rag_education_query() -> None:

@@ -57,28 +57,27 @@ def check_judge_collection_policy(source: str) -> list[str]:
                         f"dans un body — doit lire la config"
                     )
 
-    # --- Rule 2: RAG_COLLECTION read with default "nsi_corpus" ---
-    found_rag_col_read = False
-    default_value: str | None = None
+    # --- Rule 2: ALL RAG_COLLECTION reads must have default "nsi_corpus" ---
+    rag_col_reads: list[tuple[int, str | None]] = []  # (lineno, default_or_None)
     for node in ast.walk(tree):
         if not isinstance(node, ast.Call):
             continue
-        # Match env.get("RAG_COLLECTION", ...) or env.get("RAG_COLLECTION")
         func = node.func
         if isinstance(func, ast.Attribute) and func.attr == "get":
             args = node.args
             if args and isinstance(args[0], ast.Constant) and args[0].value == "RAG_COLLECTION":
-                found_rag_col_read = True
                 if len(args) >= 2 and isinstance(args[1], ast.Constant):
-                    default_value = str(args[1].value)
+                    rag_col_reads.append((args[0].lineno, str(args[1].value)))
                 else:
-                    default_value = None  # no default
-    if not found_rag_col_read:
+                    rag_col_reads.append((args[0].lineno, None))
+    if not rag_col_reads:
         errors.append("RAG_COLLECTION n'est pas lu depuis la config")
-    elif default_value is None:
-        errors.append("RAG_COLLECTION lu sans défaut — doit avoir défaut 'nsi_corpus'")
-    elif default_value != "nsi_corpus":
-        errors.append(f"RAG_COLLECTION défaut={default_value!r}, attendu 'nsi_corpus'")
+    else:
+        for lineno, default in rag_col_reads:
+            if default is None:
+                errors.append(f"L{lineno}: RAG_COLLECTION lu sans défaut")
+            elif default != "nsi_corpus":
+                errors.append(f"L{lineno}: RAG_COLLECTION défaut={default!r}, attendu 'nsi_corpus'")
 
     # --- Rule 3: Barrier A (is_internal_collection + INTERNAL_COVERAGE_COLLECTIONS) ---
     func_names = {
@@ -91,6 +90,8 @@ def check_judge_collection_policy(source: str) -> list[str]:
             for target in node.targets:
                 if isinstance(target, ast.Name):
                     assign_names.add(target.id)
+        elif isinstance(node, ast.AnnAssign) and isinstance(node.target, ast.Name):
+            assign_names.add(node.target.id)
 
     if "is_internal_collection" not in func_names:
         errors.append("is_internal_collection non définie (Barrière A absente)")
@@ -111,9 +112,11 @@ def check_judge_collection_policy(source: str) -> list[str]:
                         isinstance(child, ast.Call)
                         and isinstance(child.func, ast.Name)
                         and child.func.id == "isinstance"
-                        and len(child.args) >= 1
+                        and len(child.args) >= 2
                         and isinstance(child.args[0], ast.Name)
                         and child.args[0].id == "metadata"
+                        and isinstance(child.args[1], ast.Name)
+                        and child.args[1].id == "dict"
                     ):
                         has_metadata_isinstance = True
                         break
@@ -121,11 +124,19 @@ def check_judge_collection_policy(source: str) -> list[str]:
                     errors.append("is_internal_hit sans garde isinstance(metadata, dict)")
                 break
 
-    # Check is_internal_hit is called inside search_rag
+    # Check is_internal_hit is CALLED (ast.Call) inside search_rag — not just mentioned
     for node in ast.walk(tree):
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.name == "search_rag":
-            search_src = ast.dump(node)
-            if "is_internal_hit" not in search_src:
+            has_call = False
+            for child in ast.walk(node):
+                if (
+                    isinstance(child, ast.Call)
+                    and isinstance(child.func, ast.Name)
+                    and child.func.id == "is_internal_hit"
+                ):
+                    has_call = True
+                    break
+            if not has_call:
                 errors.append("is_internal_hit non appelée dans search_rag (Barrière B non câblée)")
             break
 
