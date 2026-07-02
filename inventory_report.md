@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 982
+- Total ressources : 983
 - Ressources pédagogiques : 53
-- Ressources techniques : 929
+- Ressources techniques : 930
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 974
+- generated: 975
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 462
+- interne: 463
 - premiere: 232
 - terminale: 288
 
@@ -21,15 +21,15 @@
 - python: 95
 - script: 204
 - sequence: 45
-- test: 69
+- test: 70
 
 ## Répartition par statut
-- needs_review: 982
+- needs_review: 983
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 782
+- mixte: 783
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -982,6 +982,7 @@
   - tests/test_mypy_strict_debt.py
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
+  - tests/test_no_inline_env_resolution.py
   - tests/test_no_stale_archive_guard.py
   - tests/test_notional_and_disciplinary_controls.py
   - tests/test_operational_substance_controls.py
@@ -1966,6 +1967,7 @@
   - tests/test_mypy_strict_debt.py
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
+  - tests/test_no_inline_env_resolution.py
   - tests/test_no_stale_archive_guard.py
   - tests/test_notional_and_disciplinary_controls.py
   - tests/test_operational_substance_controls.py
@@ -2925,6 +2927,7 @@
 - tests/test_mypy_strict_debt.py
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
+- tests/test_no_inline_env_resolution.py
 - tests/test_no_stale_archive_guard.py
 - tests/test_notional_and_disciplinary_controls.py
 - tests/test_operational_substance_controls.py
@@ -3912,6 +3915,7 @@
 - tests/test_mypy_strict_debt.py
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
+- tests/test_no_inline_env_resolution.py
 - tests/test_no_stale_archive_guard.py
 - tests/test_notional_and_disciplinary_controls.py
 - tests/test_operational_substance_controls.py
