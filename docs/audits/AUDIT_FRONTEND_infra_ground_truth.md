@@ -110,7 +110,7 @@ FAIT et le Chroma v2 est pret.
 
 - Cout : nul sur ce depot ; le travail est dans le depot RAG.
 - Risque : clarifier la gouvernance entre les deux depots.
-- Sur CE depot : rien a faire au-dela du Chroma v2 deja en place.
+- Sur CE depot : aucune action au-dela du Chroma v2 deja en place.
 
 ## Invariants (ce depot, inchanges)
 
