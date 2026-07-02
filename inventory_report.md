@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 984
+- Total ressources : 985
 - Ressources pédagogiques : 53
-- Ressources techniques : 931
+- Ressources techniques : 932
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 976
+- generated: 977
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 464
+- interne: 465
 - premiere: 232
 - terminale: 288
 
@@ -21,15 +21,15 @@
 - python: 95
 - script: 204
 - sequence: 45
-- test: 71
+- test: 72
 
 ## Répartition par statut
-- needs_review: 984
+- needs_review: 985
 
 ## Répartition audience
 - corrige: 72
 - eleve: 125
-- mixte: 784
+- mixte: 785
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -990,6 +990,7 @@
   - tests/test_organizer_nsi_safety.py
   - tests/test_p05_p04_controls.py
   - tests/test_packaging_modes.py
+  - tests/test_policy_checker_ast.py
   - tests/test_private_data_detection.py
   - tests/test_rag_governance_and_indexes.py
   - tests/test_rag_ingest.py
@@ -1976,6 +1977,7 @@
   - tests/test_organizer_nsi_safety.py
   - tests/test_p05_p04_controls.py
   - tests/test_packaging_modes.py
+  - tests/test_policy_checker_ast.py
   - tests/test_private_data_detection.py
   - tests/test_rag_governance_and_indexes.py
   - tests/test_rag_ingest.py
@@ -2937,6 +2939,7 @@
 - tests/test_organizer_nsi_safety.py
 - tests/test_p05_p04_controls.py
 - tests/test_packaging_modes.py
+- tests/test_policy_checker_ast.py
 - tests/test_private_data_detection.py
 - tests/test_rag_governance_and_indexes.py
 - tests/test_rag_ingest.py
@@ -3926,6 +3929,7 @@
 - tests/test_organizer_nsi_safety.py
 - tests/test_p05_p04_controls.py
 - tests/test_packaging_modes.py
+- tests/test_policy_checker_ast.py
 - tests/test_private_data_detection.py
 - tests/test_rag_governance_and_indexes.py
 - tests/test_rag_ingest.py
