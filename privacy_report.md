@@ -82,6 +82,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - delivery_policy.md: nom propre suspect -> Delivery Policy
 - delivery_policy.md: nom propre suspect -> Historique Git
 - differentiation_quality_report.md: nom propre suspect -> Differentiation Quality Report
+- docs/audits/AUDIT_FRONTEND_infra_ground_truth.md: nom propre suspect -> Collections Chroma
 - drive_inventory.csv: nom propre suspect -> Dossier Git Drive
 - drive_mapping.md: nom propre suspect -> Cartographie Drive
 - drive_mapping.md: nom propre suspect -> Source Drive
@@ -209,8 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_drive_enrichment_traceability_portable.py: nom propre suspect -> Portable Drive
 - scripts/check_drive_enrichment_traceability_portable.py: nom propre suspect -> Ressource Drive
 - scripts/check_drive_mapping.py: nom propre suspect -> Prototype Drive
-- scripts/check_drive_mapping_release.py: nom propre suspect -> Release Drive
-- ... 54 alertes supplémentaires non affichées
+- ... 55 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
