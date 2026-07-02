@@ -25,6 +25,29 @@ EXTERNAL_SOURCE_TYPES = {
 }
 
 
+def _walk_direct_scope(node: ast.AST) -> list[ast.AST]:
+    """Walk AST children WITHOUT descending into nested scope boundaries."""
+    result: list[ast.AST] = []
+    scope_types = (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef, ast.Lambda)
+    for child in ast.iter_child_nodes(node):
+        result.append(child)
+        if not isinstance(child, scope_types):
+            result.extend(_walk_direct_scope(child))
+    return result
+
+
+def _has_call_in_direct_scope(func_node: ast.AST, callee_name: str) -> bool:
+    """Check if callee_name is called in func_node's direct scope (not nested)."""
+    for child in _walk_direct_scope(func_node):
+        if (
+            isinstance(child, ast.Call)
+            and isinstance(child.func, ast.Name)
+            and child.func.id == callee_name
+        ):
+            return True
+    return False
+
+
 def check_judge_collection_policy(source: str) -> list[str]:
     """AST-based policy checker for substance_judge.py.
 
@@ -90,7 +113,11 @@ def check_judge_collection_policy(source: str) -> list[str]:
             for target in node.targets:
                 if isinstance(target, ast.Name):
                     assign_names.add(target.id)
-        elif isinstance(node, ast.AnnAssign) and isinstance(node.target, ast.Name):
+        elif (
+            isinstance(node, ast.AnnAssign)
+            and isinstance(node.target, ast.Name)
+            and node.value is not None  # bare annotation without value = not bound
+        ):
             assign_names.add(node.target.id)
 
     if "is_internal_collection" not in func_names:
@@ -124,18 +151,10 @@ def check_judge_collection_policy(source: str) -> list[str]:
                     errors.append("is_internal_hit sans garde isinstance(metadata, dict)")
                 break
 
-    # Check is_internal_hit is CALLED (ast.Call) inside search_rag — not just mentioned
+    # Check is_internal_hit is CALLED in search_rag's DIRECT scope (not nested defs)
     for node in ast.walk(tree):
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.name == "search_rag":
-            has_call = False
-            for child in ast.walk(node):
-                if (
-                    isinstance(child, ast.Call)
-                    and isinstance(child.func, ast.Name)
-                    and child.func.id == "is_internal_hit"
-                ):
-                    has_call = True
-                    break
+            has_call = _has_call_in_direct_scope(node, "is_internal_hit")
             if not has_call:
                 errors.append("is_internal_hit non appelée dans search_rag (Barrière B non câblée)")
             break
