@@ -6,6 +6,13 @@ from os import environ; environ[...], from os import getenv; getenv(...), etc.
 
 Distinguishes READS (forbidden outside rag_core) from WRITES/overrides (allowed,
 e.g. command_env["RAG_ENV_FILE"] = ... in check_quality_gates.py).
+AugAssign (+=) counts as a read (read-modify-write).
+
+SCOPE RULE: this detector covers plausible access forms (getenv, environ[],
+.get, from-import, AugAssign). It is NOT an exhaustive static analyser. Any
+exotic new form is caught by code review. ITEM 1 is CLOSED after this PR.
+Do NOT reopen for a parsing edge case unless a real consumer in scripts/ uses
+that form (prove by grep).
 """
 from __future__ import annotations
 
@@ -44,10 +51,15 @@ def _find_rag_env_file_reads(source: str) -> list[int]:
 
         # Case: subscript index — os.environ["RAG_ENV_FILE"] or environ["..."]
         if isinstance(parent, ast.Subscript):
-            # Distinguish read (Load) from write (Store/Del)
             if isinstance(parent.ctx, ast.Load):
                 reads.append(node.lineno)
-            # Store = assignment target (e.g. env["RAG_ENV_FILE"] = ...) -> OK
+            elif isinstance(parent.ctx, ast.Store):
+                # Store context: check if the Subscript is the target of an
+                # AugAssign (+=, etc.) — that implicitly READS the value first.
+                grandparent = getattr(parent, "_parent", None)
+                if isinstance(grandparent, ast.AugAssign):
+                    reads.append(node.lineno)
+                # Plain Assign with Store = write-only -> OK
             continue
 
         # Case: argument in args list of a call (e.g. getenv("RAG_ENV_FILE"))
@@ -94,6 +106,8 @@ _ADVERSE_CASES: list[tuple[str, str, bool]] = [
     ("os.environ.get with default", 'import os\nx = os.environ.get("RAG_ENV_FILE", "d")\n', True),
     ("from os import environ brackets", 'from os import environ\nx = environ["RAG_ENV_FILE"]\n', True),
     ("from os import getenv", 'from os import getenv\nx = getenv("RAG_ENV_FILE")\n', True),
+    # AugAssign — reads then writes, counts as READ
+    ("augassign (read-modify-write)", 'import os\nos.environ["RAG_ENV_FILE"] += ":x"\n', True),
     # WRITE (assignment) — must NOT be detected
     ("assignment (override)", 'import os\nos.environ["RAG_ENV_FILE"] = "/path"\n', False),
     ("dict assignment", 'env = {}\nenv["RAG_ENV_FILE"] = "/path"\n', False),
