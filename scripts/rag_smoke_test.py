@@ -12,9 +12,13 @@ from pathlib import Path
 from typing import Any
 
 
-from scripts.rag_core import resolve_env_file
+_REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
 
-ROOT = Path(__file__).resolve().parents[1]
+from scripts.rag_core import resolve_env_file  # noqa: E402
+
+ROOT = _REPO_ROOT
 ENV_FILE = resolve_env_file(ROOT)
 REQUIRED_VARS = {
     "RAG_BACKEND",

@@ -17,12 +17,14 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
-from scripts.check_substance_anchors import citation_status, parse_sections
+_REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
 
+from scripts.check_substance_anchors import citation_status, parse_sections  # noqa: E402
+from scripts.rag_core import resolve_env_file  # noqa: E402
 
-from scripts.rag_core import resolve_env_file
-
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = _REPO_ROOT
 ENV_FILE = resolve_env_file(ROOT)
 PROGRAMME = ROOT / "00_programmes_officiels" / "programme_nsi_2019.yaml"
 OUTPUT_DIR = ROOT / "01_build_reports"

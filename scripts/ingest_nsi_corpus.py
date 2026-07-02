@@ -20,7 +20,12 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parent.parent
-ENV_FILE = ROOT / ".env.rag"
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scripts.rag_core import resolve_env_file  # noqa: E402
+
+ENV_FILE = resolve_env_file(ROOT)
 
 # Répertoires à indexer comme corpus interne. Option stricte : seuls le canon
 # `03_progressions/supports/` et les fiches de cours peuvent entrer dans
