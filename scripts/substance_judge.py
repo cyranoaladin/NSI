@@ -30,6 +30,20 @@ ENV_FILE = resolve_env_file(ROOT)
 # Collections whose hits count as internal substance proof.
 # source_type on each hit must also be "nsi_corpus" (KIND).
 INTERNAL_COVERAGE_COLLECTIONS = {"nsi_corpus", "nsi_corpus_v2"}
+
+
+def is_internal_collection(name: str) -> bool:
+    """Barrier A predicate: collection must be in the internal allowlist."""
+    return name in INTERNAL_COVERAGE_COLLECTIONS
+
+
+def is_internal_hit(hit: dict[str, Any]) -> bool:
+    """Barrier B predicate: hit must have source_type == 'nsi_corpus' (KIND)."""
+    if not isinstance(hit, dict):
+        return False
+    return str(hit.get("metadata", {}).get("source_type", "")) == "nsi_corpus"
+
+
 PROGRAMME = ROOT / "00_programmes_officiels" / "programme_nsi_2019.yaml"
 OUTPUT_DIR = ROOT / "01_build_reports"
 MAX_CANDIDATES_PER_ROLE = 1
@@ -155,11 +169,7 @@ def search_rag(
             and hit.get("metadata", {}).get("document_type", "") in doc_type_filter
         ]
     # Barrier B: reject hits with non-internal source_type
-    return [
-        hit for hit in hits
-        if isinstance(hit, dict)
-        and hit.get("metadata", {}).get("source_type", "") == "nsi_corpus"
-    ]
+    return [hit for hit in hits if is_internal_hit(hit)]
 
 
 def call_llm(env: dict[str, str], capacity_text: str, section_text: str, role_label: str) -> dict[str, Any]:
@@ -473,7 +483,7 @@ def main() -> int:
     env = load_env(ENV_FILE)
     # Barrier A: refuse non-internal collections before any query
     rag_col = env.get("RAG_COLLECTION", "nsi_corpus")
-    if rag_col not in INTERNAL_COVERAGE_COLLECTIONS:
+    if not is_internal_collection(rag_col):
         print(
             f"REFUS: RAG_COLLECTION={rag_col} n'est pas une collection "
             f"de couverture interne {sorted(INTERNAL_COVERAGE_COLLECTIONS)}",
