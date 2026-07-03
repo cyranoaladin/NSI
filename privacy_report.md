@@ -164,6 +164,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - reports/closure2/rag_prod_cutover_runbook.md: nom propre suspect -> Backup Chroma
 - reports/closure2/rag_state_of_truth.md: nom propre suspect -> Schéma Nexus
 - reports/closure2/rag_state_of_truth.md: nom propre suspect -> Collections Nexus
+- reports/closure2/rag_v2_cutover_STATE.md: nom propre suspect -> Content-Type
+- reports/closure2/rag_v2_cutover_STATE.md: nom propre suspect -> Content-Type
 - reports/drive_enrichment_report.md: nom propre suspect -> Ressource Drive
 - reports/drive_enrichment_report.md: nom propre suspect -> Source Drive
 - reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
@@ -208,9 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_drive_enrichment_traceability.py: nom propre suspect -> Ressource Drive
 - scripts/check_drive_enrichment_traceability.py: nom propre suspect -> Ressource Drive
 - scripts/check_drive_enrichment_traceability_portable.py: nom propre suspect -> Portable Drive
-- scripts/check_drive_enrichment_traceability_portable.py: nom propre suspect -> Ressource Drive
-- scripts/check_drive_mapping.py: nom propre suspect -> Prototype Drive
-- ... 55 alertes supplémentaires non affichées
+- ... 57 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
