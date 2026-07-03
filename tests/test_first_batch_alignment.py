@@ -177,7 +177,7 @@ class FirstBatchAlignmentTest(unittest.TestCase):
                 known = mod._load_known_failures()
                 hard = [e for e in result.errors if not any(
                     e.startswith(f"{p}:") and cid in e for p, cid in known)]
-                self.assertTrue(len(hard) >= 1, f"Expected hard errors for P-FAKE-99, got none")
+                self.assertTrue(len(hard) >= 1, "Expected hard errors for P-FAKE-99, got none")
         finally:
             mod.KNOWN_FAILURES_PATH = original  # type: ignore[assignment]
 
