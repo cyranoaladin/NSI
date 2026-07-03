@@ -43,6 +43,36 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/contracts/T19_contract.yml: nom propre suspect -> Grand Oral
 - 03_progressions/supports/contracts/T19_contract.yml: nom propre suspect -> Grand Oral
 - 03_progressions/supports/contracts/T19_contract.yml: nom propre suspect -> Grand Oral
+- 03_progressions/supports/premiere/P02/P02_cours_tables_verite_booleennes.md: nom propre suspect -> De Morgan
+- 03_progressions/supports/premiere/P02/P02_td_tables_verite_booleennes.md: nom propre suspect -> De Morgan
+- 03_progressions/supports/premiere/P02/P02_tp_tables_verite_booleennes.md: nom propre suspect -> De Morgan
+- 03_progressions/supports/premiere/P02/P02_tp_tables_verite_booleennes.md: nom propre suspect -> De Morgan
+- 03_progressions/supports/premiere/P02/P02_tp_tables_verite_booleennes.md: nom propre suspect -> De Morgan
+- 03_progressions/supports/premiere/P02/P02_tp_tables_verite_booleennes.md: nom propre suspect -> De Morgan
+- 03_progressions/supports/premiere/P02/P02_tp_tables_verite_booleennes.md: nom propre suspect -> Retourne True
+- 03_progressions/supports/premiere/P02/P02_trace_tables_verite_booleennes.md: nom propre suspect -> De Morgan
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> En Latin
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> En Latin
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> En Latin
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> En Latin
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> En Latin
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> Octets Latin
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> Conversion Latin
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> Octets Latin
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> En Latin
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> Séquence Latin
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> En Latin
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> En Latin
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> Octets Latin
+- 03_progressions/supports/premiere/P03/P03_cours_conversion_encodages_texte.md: nom propre suspect -> American Standard Code
+- 03_progressions/supports/premiere/P03/P03_cours_conversion_encodages_texte.md: nom propre suspect -> Information Interchange
+- 03_progressions/supports/premiere/P03/P03_cours_conversion_encodages_texte.md: nom propre suspect -> En Latin
+- 03_progressions/supports/premiere/P03/P03_cours_conversion_encodages_texte.md: nom propre suspect -> En Latin
+- 03_progressions/supports/premiere/P03/P03_cours_conversion_encodages_texte.md: nom propre suspect -> En Latin
+- 03_progressions/supports/premiere/P03/P03_tp_conversion_encodages_texte.md: nom propre suspect -> Hello World
+- 03_progressions/supports/premiere/P03/P03_trace_conversion_encodages_texte.md: nom propre suspect -> Conversion Latin
+- 03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md: nom propre suspect -> Christopher Nolan
+- 03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md: nom propre suspect -> Christopher Nolan
 - 03_progressions/supports/premiere/P05/P05_bareme_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P05/P05_corrige_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P05/P05_cours_tables_csv.md: nom propre suspect -> Filtrage Europe
@@ -180,37 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - reports/lot1/repo_map.md: nom propre suspect -> Proposeur System
 - reports/lot1/repo_map.md: nom propre suspect -> Conclusion Phase
 - reports/lot2/lot2_validation_log.md: nom propre suspect -> Miss Branch
-- reports/lot3/lot3_hardening_validation_log.md: nom propre suspect -> Miss Branch
-- reports/lot3/lot3_hardening_validation_log.md: nom propre suspect -> Grep-Garde
-- reports/lot3/lot3_hardening_validation_log.md: nom propre suspect -> Cibles Makefile
-- reports/lot3/lot3_hardening_validation_log.md: nom propre suspect -> État Git
-- reports/lot3/lot3_validation_log.md: nom propre suspect -> Validation Zip-Slip
-- reports/lot3/lot3_validation_log.md: nom propre suspect -> Zip-Bomb
-- reports/lot3/lot3_validation_log.md: nom propre suspect -> Miss Branch
-- reports/lot3/lot3_validation_log.md: nom propre suspect -> Grep-Garde
-- reports/lot3/lot3_validation_log.md: nom propre suspect -> Statut Lot
-- reports/reconciliation/branch_topology.md: nom propre suspect -> Pull Request
-- reports/reconciliation/drive_integration_plan.md: nom propre suspect -> Backlog Drive
-- reports/reconciliation/drive_integration_plan.md: nom propre suspect -> Fichier Drive
-- reports/reconciliation/drive_integration_plan.md: nom propre suspect -> Historique Git Drive
-- reports/reconciliation/reconciliation_report.md: nom propre suspect -> Backlog Drive
-- scientific_claims_review_report.md: nom propre suspect -> Scientific Claims Review Report
-- scripts/check_agents_governance.py: nom propre suspect -> Agent Inventaire
-- scripts/check_agents_governance.py: nom propre suspect -> Agent Programme
-- scripts/check_agents_governance.py: nom propre suspect -> Agent Auteur
-- scripts/check_agents_governance.py: nom propre suspect -> Agent Scientifique
-- scripts/check_agents_governance.py: nom propre suspect -> Agent Code
-- scripts/check_agents_governance.py: nom propre suspect -> Agent Évaluation
-- scripts/check_agents_governance.py: nom propre suspect -> Agent Différenciation
-- scripts/check_agents_governance.py: nom propre suspect -> Agent Édition
-- scripts/check_agents_governance.py: nom propre suspect -> Agent Juge
-- scripts/check_course_internal_coherence.py: nom propre suspect -> Course Internal Coherence Report
-- scripts/check_differentiation_quality.py: nom propre suspect -> Differentiation Quality Report
-- scripts/check_drive_action_plan_completeness.py: nom propre suspect -> Ressources Drive
-- scripts/check_drive_enrichment_traceability.py: nom propre suspect -> Ressource Drive
-- scripts/check_drive_enrichment_traceability.py: nom propre suspect -> Ressource Drive
-- scripts/check_drive_enrichment_traceability_portable.py: nom propre suspect -> Portable Drive
-- ... 79 alertes supplémentaires non affichées
+- ... 109 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
@@ -372,13 +372,24 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P01/code/P01_corrige_professeur_conversions_bases.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P01/code/P01_starter_conversions_bases.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P01/code/P01_tests_attendus_conversions_bases.py: nom propre suspect -> Asset Python
+- 03_progressions/supports/premiere/P02/P02_tp_tables_verite_booleennes.md: nom propre suspect -> En Python
+- 03_progressions/supports/premiere/P02/P02_tp_tables_verite_booleennes.md: nom propre suspect -> Script Python
 - 03_progressions/supports/premiere/P02/code/P02_corrige_professeur_complement_booleens.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P02/code/P02_starter_complement_booleens.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P02/code/P02_tests_attendus_complement_booleens.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P03/P03_bareme_texte_reels.md: nom propre suspect -> Texte Unicode
 - 03_progressions/supports/premiere/P03/P03_bareme_texte_reels.md: nom propre suspect -> Texte Unicode
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> Code Python
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> Lorsque Python
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> Programme Python
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> Code Python
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> Code Python
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> Programme Python
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> Code Python
+- 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> Programme Python
 - 03_progressions/supports/premiere/P03/P03_corrige_texte_reels.md: nom propre suspect -> Texte Unicode
 - 03_progressions/supports/premiere/P03/P03_corrige_texte_reels.md: nom propre suspect -> Texte Unicode
+- 03_progressions/supports/premiere/P03/P03_cours_conversion_encodages_texte.md: nom propre suspect -> Unicode Transformation Format
 - 03_progressions/supports/premiere/P03/P03_cours_texte_reels.md: nom propre suspect -> Texte Unicode
 - 03_progressions/supports/premiere/P03/P03_cours_texte_reels.md: nom propre suspect -> Texte Unicode
 - 03_progressions/supports/premiere/P03/P03_cours_texte_reels.md: nom propre suspect -> Texte Unicode
@@ -388,6 +399,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P03/P03_remediation_texte_reels.md: nom propre suspect -> Texte Unicode
 - 03_progressions/supports/premiere/P03/P03_td_texte_reels.md: nom propre suspect -> Texte Unicode
 - 03_progressions/supports/premiere/P03/P03_td_texte_reels.md: nom propre suspect -> Texte Unicode
+- 03_progressions/supports/premiere/P03/P03_tp_conversion_encodages_texte.md: nom propre suspect -> Script Python
 - 03_progressions/supports/premiere/P03/P03_tp_texte_reels.md: nom propre suspect -> Texte Unicode
 - 03_progressions/supports/premiere/P03/P03_tp_texte_reels.md: nom propre suspect -> Texte Unicode
 - 03_progressions/supports/premiere/P03/P03_trace_texte_reels.md: nom propre suspect -> Texte Unicode
@@ -397,21 +409,9 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P03/code/P03_corrige_professeur_texte_reels.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P03/code/P03_starter_texte_reels.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P03/code/P03_tests_attendus_texte_reels.py: nom propre suspect -> Asset Python
+- 03_progressions/supports/premiere/P04/P04_tp_types_construits_complement.md: nom propre suspect -> Module Python
 - 03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md: nom propre suspect -> Fonctions Python
 - 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md: nom propre suspect -> Assets Python
 - 03_progressions/supports/premiere/P07/P07_tp_fonctions_tests_specifications.md: nom propre suspect -> Assets Python
 - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md: nom propre suspect -> Assets Python
-- 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md: nom propre suspect -> Assets Python
-- 03_progressions/supports/premiere/P09/P09_tp_architecture_os_droits.md: nom propre suspect -> Assets Python
-- 03_progressions/supports/premiere/P10/P10_tp_reseaux_protocoles_paquets.md: nom propre suspect -> Assets Python
-- 03_progressions/supports/premiere/P11/P11_tp_parcours_recherche_extremum_moyenne.md: nom propre suspect -> Assets Python
-- 03_progressions/supports/premiere/P12/P12_tp_tris_invariants_complexite.md: nom propre suspect -> Assets Python
-- 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- 03_progressions/supports/terminale/T00/T00_cours_diagnostic_tests.md: nom propre suspect -> Reprise Python
-- ... 337 alertes supplémentaires non affichées
+- ... 384 alertes supplémentaires non affichées

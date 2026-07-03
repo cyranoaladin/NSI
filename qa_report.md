@@ -3,19 +3,19 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 575
-- Ressources needs_review : 575
+- Ressources inventoriées : 611
+- Ressources needs_review : 611
 - Ressources publiables : 0
-- Source generated : 567
+- Source generated : 603
 - Source adapted_from_drive : 7
 - Source import_partiel : 1
 - Source inspiration_drive : 0
 - Source drive : 0
 - Lignes drive_inventory.csv : 22
 - Couverture covered : 0
-- Couverture needs_review : 91
+- Couverture needs_review : 105
 - Couverture partial : 9
-- Couverture absent : 14
+- Couverture absent : 0
 - Archive pédagogique à transmettre : dist/source_clean.tar.gz
 - Archive globale contenant .git : interdite comme livraison principale
 - L’archive principale de livraison est dist/source_clean.tar.gz. Toute archive contenant .git/ est interdite comme livraison pédagogique.
@@ -115,9 +115,9 @@ python -m scripts.check_drive_mapping_release
 - `coverage.md` indexe désormais les preuves issues de `03_progressions/supports/**`.
 - `coverage_sources.md` liste les fichiers sources par capacité.
 - Couverture covered : 0
-- Couverture needs_review : 91
+- Couverture needs_review : 105
 - Couverture partial : 9
-- Couverture absent : 14
+- Couverture absent : 0
 - Décision : les preuves documentaires issues de `supports/` rendent visibles les capacités, mais ne créent aucune validation humaine.
 
 ## Juge de substance
@@ -157,8 +157,8 @@ python -m scripts.check_drive_mapping_release
 ## TP papier / exécutables
 
 - TP papier : 7
-- TP exécutables : 33
-- Ratio papier : 17.5%
+- TP exécutables : 39
+- Ratio papier : 15.2%
 - Opportunités de conversion exécutable signalées : 7
 - Seuil strict opportunités restantes : 8
 - État seuil strict : PASS
@@ -183,8 +183,8 @@ python -m scripts.check_drive_mapping_release
 
 ## Revue humaine
 
-- Ressources majeures à relire : 487
-- Lignes dans `human_review_register.csv` : 487
+- Ressources majeures à relire : 523
+- Lignes dans `human_review_register.csv` : 523
 - Ressources prioritaires vague 1 : 20
 - Priorités vague 1 couvertes : P05, P06, P10, P12, P13, T06, T07, T08, T10, T17, T18
 - Statut initial : pending pour science, pédagogie, accessibilité et technique.

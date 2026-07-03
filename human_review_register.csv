@@ -486,3 +486,39 @@ ressource,niveau,sequence,notion,reviewer,date,science_status,pedagogy_status,ac
 03_progressions/supports/terminale/T19/T19_tp_bac_pratique_grand_oral_projet.md,terminale,,"bac pratique, écrit, Grand Oral et projet",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/terminale/T19/T19_trace_bac_pratique_grand_oral_projet.md,terminale,,"bac pratique, écrit, Grand Oral et projet",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/terminale/T19/T19_version_amenagee_bac_pratique_grand_oral_projet.md,terminale,,"bac pratique, écrit, Grand Oral et projet",,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P02/P02_corrige_tables_verite_booleennes.md,premiere,P02,tables de vérité,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P02/P02_cours_tables_verite_booleennes.md,premiere,P02,tables de vérité,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P02/P02_evaluation_tables_verite_booleennes.md,premiere,P02,tables de vérité,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P02/P02_td_tables_verite_booleennes.md,premiere,P02,tables de vérité,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P02/P02_tp_tables_verite_booleennes.md,premiere,P02,tables de vérité,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P02/P02_trace_tables_verite_booleennes.md,premiere,P02,tables de vérité,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md,premiere,P03,encodages texte,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P03/P03_cours_conversion_encodages_texte.md,premiere,P03,encodages texte,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P03/P03_evaluation_conversion_encodages_texte.md,premiere,P03,encodages texte,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P03/P03_td_conversion_encodages_texte.md,premiere,P03,encodages texte,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P03/P03_tp_conversion_encodages_texte.md,premiere,P03,encodages texte,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P03/P03_trace_conversion_encodages_texte.md,premiere,P03,encodages texte,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md,premiere,P04,types construits,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md,premiere,P04,types construits,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md,premiere,P04,types construits,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P04/P04_td_types_construits_complement.md,premiere,P04,types construits,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P04/P04_tp_types_construits_complement.md,premiere,P04,types construits,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P04/P04_trace_types_construits_complement.md,premiere,P04,types construits,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T01/T01_corrige_interface_implementation_complement.md,terminale,T01,interface et implémentation,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T01/T01_cours_interface_implementation_complement.md,terminale,T01,interface et implémentation,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T01/T01_evaluation_interface_implementation_complement.md,terminale,T01,interface et implémentation,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T01/T01_td_interface_implementation_complement.md,terminale,T01,interface et implémentation,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T01/T01_tp_interface_implementation_complement.md,terminale,T01,interface et implémentation,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T01/T01_trace_interface_implementation_complement.md,terminale,T01,interface et implémentation,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T03/T03_corrige_recherche_liste_dictionnaire.md,terminale,T03,recherche liste/dictionnaire,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T03/T03_cours_recherche_liste_dictionnaire.md,terminale,T03,recherche liste/dictionnaire,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T03/T03_evaluation_recherche_liste_dictionnaire.md,terminale,T03,recherche liste/dictionnaire,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T03/T03_td_recherche_liste_dictionnaire.md,terminale,T03,recherche liste/dictionnaire,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T03/T03_tp_recherche_liste_dictionnaire.md,terminale,T03,recherche liste/dictionnaire,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T03/T03_trace_recherche_liste_dictionnaire.md,terminale,T03,recherche liste/dictionnaire,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md,terminale,T05,arbres mesures et parcours,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md,terminale,T05,arbres mesures et parcours,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T05/T05_evaluation_arbres_mesures_parcours_complement.md,terminale,T05,arbres mesures et parcours,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T05/T05_td_arbres_mesures_parcours_complement.md,terminale,T05,arbres mesures et parcours,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T05/T05_tp_arbres_mesures_parcours_complement.md,terminale,T05,arbres mesures et parcours,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T05/T05_trace_arbres_mesures_parcours_complement.md,terminale,T05,arbres mesures et parcours,,,pending,pending,pending,pending,pending,revue humaine non réalisée

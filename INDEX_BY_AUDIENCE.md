@@ -5,13 +5,13 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 ## Synthèse
 
-- Nombre total de ressources : 496
-- Nombre par statut : {'needs_review': 496}
-- Nombre par type de document : {'bareme': 35, 'corrige': 61, 'cours': 38, 'document': 44, 'evaluation': 37, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 37, 'tp': 36, 'tp_papier': 7, 'trace': 35, 'version_amenagee': 35}
-- Ressources avec capacity_ids : 411
+- Nombre total de ressources : 532
+- Nombre par statut : {'needs_review': 532}
+- Nombre par type de document : {'bareme': 35, 'corrige': 67, 'cours': 44, 'document': 44, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
+- Ressources avec capacity_ids : 447
 - Ressources sans capacity_ids : 85
-- Ressources avec audience renseignée : 496
-- Ressources avec session renseignée : 496
+- Ressources avec audience renseignée : 532
+- Ressources avec session renseignée : 532
 
 ## eleve
 
@@ -113,29 +113,44 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P01/code/P01_starter_conversions_bases.py` — python — needs_review — eleve
 - `03_progressions/supports/premiere/P01/code/P01_tests_attendus_conversions_bases.py` — python — needs_review — eleve
 - `03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md` — cours — needs_review — eleve
+- `03_progressions/supports/premiere/P02/P02_cours_tables_verite_booleennes.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P02/P02_evaluation_complement_booleens.md` — evaluation — needs_review — eleve
+- `03_progressions/supports/premiere/P02/P02_evaluation_tables_verite_booleennes.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P02/P02_remediation_complement_booleens.md` — remediation — needs_review — eleve
 - `03_progressions/supports/premiere/P02/P02_td_complement_booleens.md` — td — needs_review — eleve
+- `03_progressions/supports/premiere/P02/P02_td_tables_verite_booleennes.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P02/P02_tp_complement_booleens.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P02/P02_tp_tables_verite_booleennes.md` — tp — needs_review — eleve
 - `03_progressions/supports/premiere/P02/P02_trace_complement_booleens.md` — trace — needs_review — eleve
+- `03_progressions/supports/premiere/P02/P02_trace_tables_verite_booleennes.md` — trace — needs_review — eleve
 - `03_progressions/supports/premiere/P02/P02_version_amenagee_complement_booleens.md` — version_amenagee — needs_review — eleve
 - `03_progressions/supports/premiere/P02/code/P02_starter_complement_booleens.py` — python — needs_review — eleve
 - `03_progressions/supports/premiere/P02/code/P02_tests_attendus_complement_booleens.py` — python — needs_review — eleve
+- `03_progressions/supports/premiere/P03/P03_cours_conversion_encodages_texte.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P03/P03_cours_texte_reels.md` — cours — needs_review — eleve
+- `03_progressions/supports/premiere/P03/P03_evaluation_conversion_encodages_texte.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P03/P03_evaluation_texte_reels.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P03/P03_remediation_texte_reels.md` — remediation — needs_review — eleve
+- `03_progressions/supports/premiere/P03/P03_td_conversion_encodages_texte.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P03/P03_td_texte_reels.md` — td — needs_review — eleve
+- `03_progressions/supports/premiere/P03/P03_tp_conversion_encodages_texte.md` — tp — needs_review — eleve
 - `03_progressions/supports/premiere/P03/P03_tp_texte_reels.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P03/P03_trace_conversion_encodages_texte.md` — trace — needs_review — eleve
 - `03_progressions/supports/premiere/P03/P03_trace_texte_reels.md` — trace — needs_review — eleve
 - `03_progressions/supports/premiere/P03/P03_version_amenagee_texte_reels.md` — version_amenagee — needs_review — eleve
 - `03_progressions/supports/premiere/P03/code/P03_starter_texte_reels.py` — python — needs_review — eleve
 - `03_progressions/supports/premiere/P03/code/P03_tests_attendus_texte_reels.py` — python — needs_review — eleve
 - `03_progressions/supports/premiere/P04/P04_cours_types_construits.md` — cours — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P04/P04_evaluation_types_construits.md` — evaluation — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P04/P04_remediation_types_construits.md` — remediation — needs_review — eleve
 - `03_progressions/supports/premiere/P04/P04_td_types_construits.md` — td — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_td_types_construits_complement.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P04/P04_tp_types_construits.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_tp_types_construits_complement.md` — tp — needs_review — eleve
 - `03_progressions/supports/premiere/P04/P04_trace_types_construits.md` — trace — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_trace_types_construits_complement.md` — trace — needs_review — eleve
 - `03_progressions/supports/premiere/P04/P04_version_amenagee_types_construits.md` — version_amenagee — needs_review — eleve
 - `03_progressions/supports/premiere/P04/code/P04_starter_types_construits.py` — python — needs_review — eleve
 - `03_progressions/supports/premiere/P04/code/P04_tests_attendus_types_construits.py` — python — needs_review — eleve
@@ -243,11 +258,16 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md` — version_amenagee — needs_review — eleve
 - `03_progressions/supports/terminale/T00/code/T00_starter_diagnostic_tests.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T00/code/T00_tests_attendus_diagnostic_tests.py` — python — needs_review — eleve
+- `03_progressions/supports/terminale/T01/T01_cours_interface_implementation_complement.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T01/T01_cours_interfaces_structures.md` — cours — needs_review — eleve
+- `03_progressions/supports/terminale/T01/T01_evaluation_interface_implementation_complement.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/terminale/T01/T01_evaluation_interfaces_structures.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/terminale/T01/T01_remediation_interfaces_structures.md` — remediation — needs_review — eleve
+- `03_progressions/supports/terminale/T01/T01_td_interface_implementation_complement.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T01/T01_td_interfaces_structures.md` — td — needs_review — eleve
+- `03_progressions/supports/terminale/T01/T01_tp_interface_implementation_complement.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T01/T01_tp_interfaces_structures.md` — tp — needs_review — eleve
+- `03_progressions/supports/terminale/T01/T01_trace_interface_implementation_complement.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T01/T01_trace_interfaces_structures.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T01/T01_version_amenagee_interfaces_structures.md` — version_amenagee — needs_review — eleve
 - `03_progressions/supports/terminale/T01/code/T01_starter_interfaces_structures.py` — python — needs_review — eleve
@@ -262,11 +282,16 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T02/code/T02_starter_classes_objets.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T02/code/T02_tests_attendus_classes_objets.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T03/T03_cours_piles_files_dictionnaires.md` — cours — needs_review — eleve
+- `03_progressions/supports/terminale/T03/T03_cours_recherche_liste_dictionnaire.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T03/T03_evaluation_piles_files_dictionnaires.md` — evaluation — needs_review — eleve
+- `03_progressions/supports/terminale/T03/T03_evaluation_recherche_liste_dictionnaire.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/terminale/T03/T03_remediation_piles_files_dictionnaires.md` — remediation — needs_review — eleve
 - `03_progressions/supports/terminale/T03/T03_td_piles_files_dictionnaires.md` — td — needs_review — eleve
+- `03_progressions/supports/terminale/T03/T03_td_recherche_liste_dictionnaire.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T03/T03_tp_piles_files_dictionnaires.md` — tp — needs_review — eleve
+- `03_progressions/supports/terminale/T03/T03_tp_recherche_liste_dictionnaire.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T03/T03_trace_piles_files_dictionnaires.md` — trace — needs_review — eleve
+- `03_progressions/supports/terminale/T03/T03_trace_recherche_liste_dictionnaire.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T03/T03_version_amenagee_piles_files_dictionnaires.md` — version_amenagee — needs_review — eleve
 - `03_progressions/supports/terminale/T03/code/T03_starter_piles_files_dictionnaires.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T03/code/T03_tests_attendus_piles_files_dictionnaires.py` — python — needs_review — eleve
@@ -280,11 +305,16 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T04/code/T04_starter_recursivite.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T04/code/T04_tests_attendus_recursivite.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T05/T05_cours_arbres_binaires.md` — cours — needs_review — eleve
+- `03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T05/T05_evaluation_arbres_binaires.md` — evaluation — needs_review — eleve
+- `03_progressions/supports/terminale/T05/T05_evaluation_arbres_mesures_parcours_complement.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/terminale/T05/T05_remediation_arbres_binaires.md` — remediation — needs_review — eleve
 - `03_progressions/supports/terminale/T05/T05_td_arbres_binaires.md` — td — needs_review — eleve
+- `03_progressions/supports/terminale/T05/T05_td_arbres_mesures_parcours_complement.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T05/T05_tp_arbres_binaires.md` — tp — needs_review — eleve
+- `03_progressions/supports/terminale/T05/T05_tp_arbres_mesures_parcours_complement.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T05/T05_trace_arbres_binaires.md` — trace — needs_review — eleve
+- `03_progressions/supports/terminale/T05/T05_trace_arbres_mesures_parcours_complement.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T05/T05_version_amenagee_arbres_binaires.md` — version_amenagee — needs_review — eleve
 - `03_progressions/supports/terminale/T05/code/T05_starter_arbres_binaires.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T05/code/T05_tests_attendus_arbres_binaires.py` — python — needs_review — eleve
@@ -426,12 +456,15 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P01/code/P01_corrige_professeur_conversions_bases.py` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P02/P02_bareme_complement_booleens.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P02/P02_corrige_complement_booleens.md` — corrige — needs_review — professeur
+- `03_progressions/supports/premiere/P02/P02_corrige_tables_verite_booleennes.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P02/code/P02_corrige_professeur_complement_booleens.py` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P03/P03_bareme_texte_reels.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P03/P03_corrige_texte_reels.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P03/code/P03_corrige_professeur_texte_reels.py` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P04/P04_bareme_types_construits.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P04/P04_corrige_types_construits.md` — corrige — needs_review — professeur
+- `03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P04/code/P04_corrige_professeur_types_construits.py` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P05/P05_bareme_tables_csv.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P05/P05_corrige_tables_csv.md` — corrige — needs_review — professeur
@@ -463,6 +496,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T00/T00_corrige_diagnostic_tests.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T00/code/T00_corrige_professeur_diagnostic_tests.py` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T01/T01_bareme_interfaces_structures.md` — bareme — needs_review — professeur
+- `03_progressions/supports/terminale/T01/T01_corrige_interface_implementation_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T01/T01_corrige_interfaces_structures.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T01/code/T01_corrige_professeur_interfaces_structures.py` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T02/T02_bareme_classes_objets.md` — bareme — needs_review — professeur
@@ -470,12 +504,14 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T02/code/T02_corrige_professeur_classes_objets.py` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T03/T03_bareme_piles_files_dictionnaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T03/T03_corrige_piles_files_dictionnaires.md` — corrige — needs_review — professeur
+- `03_progressions/supports/terminale/T03/T03_corrige_recherche_liste_dictionnaire.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T03/code/T03_corrige_professeur_piles_files_dictionnaires.py` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T04/T04_bareme_recursivite.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T04/T04_corrige_recursivite.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T04/code/T04_corrige_professeur_recursivite.py` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T05/T05_bareme_arbres_binaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T05/T05_corrige_arbres_binaires.md` — corrige — needs_review — professeur
+- `03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T05/code/T05_corrige_professeur_arbres_binaires.py` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md` — corrige — needs_review — professeur
