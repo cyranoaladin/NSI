@@ -89,6 +89,32 @@ def test_private_data_is_bool_not_string() -> None:
     assert pd is False, f"private_data should be False (bool), got {pd!r} ({type(pd).__name__})"
 
 
+def test_source_type_enum_rejects_invalid() -> None:
+    """extract_metadata raises ValueError on invalid source_type."""
+    from scripts.rag_core import extract_metadata
+    test_dir = ROOT / "03_progressions" / "supports"
+    files = sorted(test_dir.rglob("*.md"))
+    if not files:
+        pytest.skip("No source files")
+    try:
+        extract_metadata(files[0], ROOT, source_type="bogus")
+        assert False, "Should have raised ValueError"
+    except ValueError as e:
+        assert "bogus" in str(e)
+
+
+def test_source_type_enum_accepts_all_valid() -> None:
+    """All valid source_types are accepted without error."""
+    from scripts.rag_core import extract_metadata
+    test_dir = ROOT / "03_progressions" / "supports"
+    files = sorted(test_dir.rglob("*.md"))
+    if not files:
+        pytest.skip("No source files")
+    for st in ("nsi_corpus", "golden_example", "excluded"):
+        chunks, _ = extract_metadata(files[0], ROOT, source_type=st)
+        # No ValueError raised = accepted
+
+
 def test_slug_preserves_accents() -> None:
     """The slugger must preserve accented characters."""
     from scripts.rag_core import github_slug
