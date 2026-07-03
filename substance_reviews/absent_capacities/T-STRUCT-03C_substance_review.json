@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "corpus",
+  "level": "terminale",
+  "judged_at": "2026-07-03T11:39:53Z",
+  "judge_model": "qwen2.5:1.5b",
+  "author_model": "codex-authoring-agent",
+  "capacities": [
+    {
+      "capacity_id": "T-STRUCT-03C",
+      "official_label": "Distinguer la recherche d'une valeur dans une liste et dans un dictionnaire.",
+      "proof_course": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false,
+        "note": "Aucune preuve vérifiable retenue."
+      },
+      "proof_practice": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false,
+        "note": "Aucune preuve vérifiable retenue."
+      },
+      "proof_correction": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false,
+        "note": "Aucune preuve vérifiable retenue."
+      },
+      "verdict": "needs_content",
+      "justification": "Proposition System B : aucune preuve vérifiable suffisante.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

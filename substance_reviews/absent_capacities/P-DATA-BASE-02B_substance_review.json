@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "corpus",
+  "level": "premiere",
+  "judged_at": "2026-07-03T11:37:08Z",
+  "judge_model": "qwen2.5:1.5b",
+  "author_model": "codex-authoring-agent",
+  "capacities": [
+    {
+      "capacity_id": "P-DATA-BASE-02B",
+      "official_label": "Utiliser le complément à deux.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/fiches_cours/premiere/P02/P02_fiche_cours_complement_a_deux.md",
+        "anchor": "à-savoir",
+        "quote": "La fiche distingue vocabulaire, méthode, exemple corrigé et contrôle pour complément à deux.",
+        "teaches": true,
+        "note": "1 phrase"
+      },
+      "proof_practice": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false,
+        "note": "Aucune preuve vérifiable retenue."
+      },
+      "proof_correction": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false,
+        "note": "Aucune preuve vérifiable retenue."
+      },
+      "verdict": "needs_review",
+      "justification": "Proposition System B : preuves mécaniquement vérifiées, relecture humaine requise.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}
