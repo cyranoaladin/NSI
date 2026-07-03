@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "P-DATA-BASE-05A"
+    - "P-DATA-BASE-03"
 ---
 
 # P03 - Cours - Texte Unicode et nombres réels

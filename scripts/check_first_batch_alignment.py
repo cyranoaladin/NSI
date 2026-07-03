@@ -22,7 +22,15 @@ class AlignmentResult:
 
 
 def read(path: Path | None) -> str:
-    return path.read_text(encoding="utf-8", errors="replace") if path and path.exists() else ""
+    if not path or not path.exists():
+        return ""
+    text = path.read_text(encoding="utf-8", errors="replace")
+    # Strip YAML frontmatter so capacity IDs in metadata are not mistaken for content
+    if text.startswith("---"):
+        end = text.find("\n---", 3)
+        if end != -1:
+            text = text[end + 4:]
+    return text
 
 
 def numbers(pattern: str, text: str) -> set[int]:

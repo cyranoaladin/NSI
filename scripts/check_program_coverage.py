@@ -54,7 +54,7 @@ def status_and_blocker(capacity_id: str, items: List[Evidence]) -> tuple[str, st
             required_missing.append(expected)
 
     if required_missing:
-        return "partial", "preuves manquantes: " + ", ".join(required_missing)
+        return "partial", "preuves manquantes: " + ", ".join(sorted(required_missing))
 
     if any(item.status not in VALIDATED_STATUSES for item in items):
         return "needs_review", "ressources présentes mais statuts non validants"

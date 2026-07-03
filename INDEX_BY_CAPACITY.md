@@ -311,10 +311,12 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## P-DATA-BASE-02B
 
 - `03_progressions/fiches_cours/premiere/P02/P02_fiche_cours_complement_a_deux.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md` — cours — needs_review — eleve
 
 ## P-DATA-BASE-03
 
 - `03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_flottants_approximations.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/premiere/P03/P03_cours_texte_reels.md` — cours — needs_review — eleve
 
 ## P-DATA-BASE-04
 
@@ -367,6 +369,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## P-DATA-CONSTR-02D
 
 - `03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_listes.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_cours_types_construits.md` — cours — needs_review — eleve
 
 ## P-DATA-CONSTR-03A
 
@@ -379,6 +382,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## P-DATA-CONSTR-03C
 
 - `03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_dictionnaires.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_cours_types_construits.md` — cours — needs_review — eleve
 
 ## P-HIST-01
 
@@ -736,6 +740,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## T-ALGO-01C
 
 - `03_progressions/fiches_cours/terminale/T05/T05_fiche_cours_arbres_binaires_parcours.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md` — tp — needs_review — eleve
 
 ## T-ALGO-01D
 
@@ -1258,6 +1263,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## T-LANG-02B
 
 - `03_progressions/fiches_cours/terminale/T04/T04_fiche_cours_recursivite_cas_base_terminaison.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/terminale/T15/T15_TD_calculabilite_arret.md` — td — needs_review — eleve
 
 ## T-LANG-03A
 
@@ -1396,6 +1402,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## T-STRUCT-02B
 
 - `03_progressions/fiches_cours/terminale/T02/T02_fiche_cours_classes_objets_attributs_methodes.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/terminale/T02/T02_cours_classes_objets.md` — cours — needs_review — eleve
 
 ## T-STRUCT-03A
 
@@ -1414,6 +1421,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## T-STRUCT-03B
 
 - `03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_files.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/terminale/T03/T03_cours_piles_files_dictionnaires.md` — cours — needs_review — eleve
 
 ## T-STRUCT-03C
 

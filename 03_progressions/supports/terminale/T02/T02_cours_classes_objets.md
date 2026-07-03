@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "T-STRUCT-02A"
+    - "T-STRUCT-02B"
 ---
 
 # T02 - Cours - Classes et objets

@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "T-STRUCT-03A"
+    - "T-STRUCT-03B"
 ---
 
 # T03 - Cours - Piles, files et dictionnaires
