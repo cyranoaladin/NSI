@@ -4,40 +4,169 @@
 
 ### v2 = 5992 chunks, nomic-embed-text 768d, PII=0
 
+#### Comptes (endpoint Chroma REST v2)
+
+Commande (via SSH, lecture seule) :
 ```bash
-# Comptes (endpoint Chroma REST v2)
-python3 -c "..." # → nsi_corpus_v2: 5992
-# Dimension (GET embeddings)
-POST /collections/{v2_id}/get {limit:1, include:["embeddings"]} → DIM=768
-# PII : ingestion PII_skipped=0 + check_no_private_data: PASS
+ssh root@88.99.254.59 python3 - << 'EOF'
+import json, urllib.request
+base = "http://127.0.0.1:8000/api/v2/tenants/default_tenant/databases/default_database"
+cols = json.loads(urllib.request.urlopen(base + "/collections").read())
+for c in sorted(cols, key=lambda x: x["name"]):
+    cid = c["id"]
+    count = urllib.request.urlopen(base + "/collections/" + cid + "/count").read().decode()
+    print(c["name"] + ": " + count)
+EOF
 ```
+Sortie :
+```
+nsi_corpus: 4716
+nsi_corpus_v2: 5992
+rag_divers: 0
+rag_education: 7181
+rag_francais_premiere: 5948
+rag_math_correction: 67
+rag_maths_premiere: 0
+ressources_pedagogiques_terminale: 0
+```
+
+#### Dimension embeddings v2 (768d = nomic-embed-text)
+
+Commande :
+```bash
+ssh root@88.99.254.59 python3 - << 'EOF'
+import json, urllib.request
+base = "http://127.0.0.1:8000/api/v2/tenants/default_tenant/databases/default_database"
+cols = json.loads(urllib.request.urlopen(base + "/collections").read())
+v2 = [c for c in cols if c["name"] == "nsi_corpus_v2"][0]
+cid = v2["id"]
+data = json.dumps({"limit": 1, "include": ["embeddings"]}).encode()
+req = urllib.request.Request(
+    base + "/collections/" + cid + "/get",
+    data=data,
+    headers={"Content-Type": "application/json"},
+    method="POST"
+)
+resp = json.loads(urllib.request.urlopen(req).read())
+emb = resp["embeddings"][0]
+print("v2_id: " + cid)
+print("DIM: " + str(len(emb)))
+EOF
+```
+Sortie :
+```
+v2_id: 021996df-9c41-4314-a120-54186309d2d4
+DIM: 768
+```
+
+#### Modele d'embedding serveur
+
+Commande :
+```bash
+ssh root@88.99.254.59 'docker exec compose-ingestor-1 printenv EMBED_MODEL'
+```
+Sortie :
+```
+nomic-embed-text
+```
+
+#### PII = 0
+
+Commande :
+```bash
+grep -c 'private_data.*True\|PII_skipped' scripts/rag_ingest_server.py
+```
+Guard code : `_file_has_pii()` dans `rag_core.py` exclut tout fichier
+`private_data: true`. Le test `test_build_chunks_refuses_private_data_flag`
+et `test_private_data_is_bool_not_string` verifient ce contrat.
 
 ### Metadonnees canoniques (hit reel)
 
+Commande :
+```bash
+ssh root@88.99.254.59 python3 - << 'EOF'
+import json, urllib.request
+base = "http://127.0.0.1:8000/api/v2/tenants/default_tenant/databases/default_database"
+cols = json.loads(urllib.request.urlopen(base + "/collections").read())
+v2 = [c for c in cols if c["name"] == "nsi_corpus_v2"][0]
+cid = v2["id"]
+data = json.dumps({"limit": 1, "include": ["metadatas"]}).encode()
+req = urllib.request.Request(
+    base + "/collections/" + cid + "/get",
+    data=data,
+    headers={"Content-Type": "application/json"},
+    method="POST"
+)
+resp = json.loads(urllib.request.urlopen(req).read())
+meta = resp["metadatas"][0]
+for k in sorted(meta.keys()):
+    v = meta[k]
+    print(k + " = " + repr(v) + " (" + type(v).__name__ + ")")
+EOF
 ```
-POST /search {q:"CSV", collection:"nsi_corpus_v2", k:1}
-→ collection='nsi_corpus_v2', source_type='nsi_corpus',
-  private_data=False (bool), capacity_ids='P-TABLE-01,P-TABLE-02',
-  section_anchor='p05---tp---tables-csv' (Unicode)
+Sortie :
+```
+capacity_ids = 'P-LANG-01' (str)
+collection = 'nsi_corpus_v2' (str)
+document_type = 'bareme' (str)
+level = 'premiere' (str)
+notion = "affectation, type, condition, trace d'execution" (str)
+path = '03_progressions/supports/premiere/P00/P00_bareme_diagnostic_python.md' (str)
+private_data = False (bool)
+section_anchor = 'p00---bareme---diagnostic-python' (str)
+sequence_id = 'P00' (str)
+sha256 = '0b1196ca988d0530443222b03f3ccae99d923c56ac6eee572081af5f23eb454d' (str)
+source_type = 'nsi_corpus' (str)
+status = 'needs_review' (str)
+theme = "Rentree et methode" (str)
 ```
 
 ### Config canonique unique (par construction)
 
-`rag_core.resolve_env_file(ROOT)` importe par smoke ET juge.
+Commande :
+```bash
+grep -n 'resolve_env_file' scripts/rag_smoke_test.py scripts/substance_judge.py
+```
+Sortie :
+```
+scripts/rag_smoke_test.py:19:from scripts.rag_core import resolve_env_file  # noqa: E402
+scripts/rag_smoke_test.py:22:ENV_FILE = resolve_env_file(ROOT)
+scripts/substance_judge.py:25:from scripts.rag_core import resolve_env_file  # noqa: E402
+scripts/substance_judge.py:28:ENV_FILE = resolve_env_file(ROOT)
+```
 Test `test_env_file_resolution.py` : 3 scenarii (defaut/override/roots).
 Guard AST anti-inline : `test_no_inline_env_resolution.py` (11 cas).
 
 ### Smoke strict + juge run-time sur v2
 
-```
-RAG_SMOKE_STRICT=1 → RAG_SMOKE_TEST_OK collection=nsi_corpus_v2 hits=5
-search_rag(env, ...) → collection=nsi_corpus_v2, anchor=a-savoir
-RAG_COLLECTION=rag_education → REFUS (exit 1)
+Les preuves runtime sont dans les logs d'execution ; les contrats sont
+verifies par tests unitaires rejouables :
+```bash
+# Smoke : allowlist + collection resolue
+grep -n 'ALLOWED_COLLECTIONS\|resolve_env_file\|RAG_SMOKE_STRICT' scripts/rag_smoke_test.py
+# Juge : barrieres A+B
+grep -n 'is_internal_collection\|is_internal_hit\|INTERNAL_COVERAGE' scripts/substance_judge.py
+# Refus rag_education : policy checker
+python3 -m pytest tests/test_policy_checker_ast.py::test_rouge_rag_education_query -x --no-header -q
 ```
 
 ### Isolation
 
-nsi_corpus=4716 (legacy intact), Korrigo IDs identiques, tierces inchangees.
+Commande (meme commande que "Comptes" ci-dessus) :
+```bash
+ssh root@88.99.254.59 python3 - << 'EOF'
+import json, urllib.request
+base = "http://127.0.0.1:8000/api/v2/tenants/default_tenant/databases/default_database"
+cols = json.loads(urllib.request.urlopen(base + "/collections").read())
+for c in sorted(cols, key=lambda x: x["name"]):
+    cid = c["id"]
+    count = urllib.request.urlopen(base + "/collections/" + cid + "/count").read().decode()
+    print(c["name"] + ": " + count)
+EOF
+```
+Sortie : nsi_corpus=4716 (legacy intact), tierces inchangees (cf. sortie
+complete dans la section Comptes). Korrigo non concerne (pas de collection
+Korrigo dans Chroma).
 
 ## DURCISSEMENT — TOUS ITEMS CLOS
 
@@ -67,12 +196,22 @@ Guard : `rag_core.extract_metadata` leve `ValueError` si `source_type`
 n'est pas dans `{nsi_corpus, golden_example, excluded}` (lignes 118-120).
 ```bash
 grep -n 'VALID_SOURCE_TYPES\|ValueError.*source_type' scripts/rag_core.py
-→ 118: VALID_SOURCE_TYPES = {"nsi_corpus", "golden_example", "excluded"}
-  119: if source_type not in VALID_SOURCE_TYPES:
-  120: raise ValueError(...)
 ```
-Tests : `test_source_type_enum_rejects_invalid` (bogus → ValueError) +
-`test_source_type_enum_accepts_all_valid` (3 valeurs acceptees).
+Sortie :
+```
+118:    VALID_SOURCE_TYPES = {"nsi_corpus", "golden_example", "excluded"}
+119:    if source_type not in VALID_SOURCE_TYPES:
+120:        raise ValueError(f"source_type={source_type!r} not in {VALID_SOURCE_TYPES}")
+```
+Tests presents :
+```bash
+grep -n 'test_source_type_enum' tests/test_rag_ingest.py
+```
+Sortie :
+```
+92:def test_source_type_enum_rejects_invalid() -> None:
+106:def test_source_type_enum_accepts_all_valid() -> None:
+```
 
 ### ITEM 5 — adapt_metadata : CLOS (utilitaire conserve)
 
@@ -80,11 +219,19 @@ Decision : `adapt_metadata` n'est sur AUCUN chemin de production (le juge
 lit les capacites du frontmatter, pas des hits RAG).
 ```bash
 grep -rn 'adapt_metadata' scripts/ | grep -v 'def adapt_metadata'
-→ (vide) — aucun appel en production
 ```
-Conserve comme utilitaire documente avec 2 tests existants
-(`test_adapt_metadata_roundtrip` + `test_adapt_metadata_empty`).
-Utile pour de futurs consommateurs qui voudraient CSV → liste.
+Sortie : (vide) — aucun appel en production.
+
+Tests presents :
+```bash
+grep -n 'test_adapt_metadata' tests/test_rag_ingest.py
+```
+Sortie :
+```
+49:def test_adapt_metadata_roundtrip() -> None:
+58:def test_adapt_metadata_empty() -> None:
+```
+Conserve comme utilitaire documente avec 2 tests existants.
 
 ## AUDIT FE-01 — CLOS, REJOUABLE
 
