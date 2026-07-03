@@ -12,6 +12,7 @@ notion: "arbres binaires de recherche"
 private_data: false
 official_program:
   capacities:
+    - "T-ALGO-01C"
     - "T-ALGO-01E"
     - "T-ALGO-01F"
 ---

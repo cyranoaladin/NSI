@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "P-DATA-BASE-02A"
+    - "P-DATA-BASE-02B"
 ---
 
 # P02 - Cours - Complément à deux et booléens

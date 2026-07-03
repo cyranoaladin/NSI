@@ -14,8 +14,8 @@
 - Lignes drive_inventory.csv : 22
 - Couverture covered : 0
 - Couverture needs_review : 91
-- Couverture partial : 1
-- Couverture absent : 22
+- Couverture partial : 9
+- Couverture absent : 14
 - Archive pédagogique à transmettre : dist/source_clean.tar.gz
 - Archive globale contenant .git : interdite comme livraison principale
 - L’archive principale de livraison est dist/source_clean.tar.gz. Toute archive contenant .git/ est interdite comme livraison pédagogique.
@@ -116,8 +116,8 @@ python -m scripts.check_drive_mapping_release
 - `coverage_sources.md` liste les fichiers sources par capacité.
 - Couverture covered : 0
 - Couverture needs_review : 91
-- Couverture partial : 1
-- Couverture absent : 22
+- Couverture partial : 9
+- Couverture absent : 14
 - Décision : les preuves documentaires issues de `supports/` rendent visibles les capacités, mais ne créent aucune validation humaine.
 
 ## Juge de substance

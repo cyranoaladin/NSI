@@ -15,6 +15,7 @@ official_program:
     - "T-LANG-01A"
     - "T-LANG-01B"
     - "T-LANG-01C"
+    - "T-LANG-02B"
 ---
 
 # T15 - TD - calculabilité, programme comme donnée et arrêt

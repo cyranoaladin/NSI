@@ -367,14 +367,20 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## P-DATA-BASE-02B
 
 - Niveau : premiere
-- Statut coverage.md : absent
-- Preuves : aucune
+- Statut coverage.md : partial
+
+| type | fichier | statut ressource |
+| --- | --- | --- |
+| cours | 03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md | needs_review |
 
 ## P-DATA-BASE-03
 
 - Niveau : premiere
-- Statut coverage.md : absent
-- Preuves : aucune
+- Statut coverage.md : partial
+
+| type | fichier | statut ressource |
+| --- | --- | --- |
+| cours | 03_progressions/supports/premiere/P03/P03_cours_texte_reels.md | needs_review |
 
 ## P-DATA-BASE-04
 
@@ -443,8 +449,11 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## P-DATA-CONSTR-02D
 
 - Niveau : premiere
-- Statut coverage.md : absent
-- Preuves : aucune
+- Statut coverage.md : partial
+
+| type | fichier | statut ressource |
+| --- | --- | --- |
+| cours | 03_progressions/supports/premiere/P04/P04_cours_types_construits.md | needs_review |
 
 ## P-DATA-CONSTR-03A
 
@@ -461,8 +470,11 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## P-DATA-CONSTR-03C
 
 - Niveau : premiere
-- Statut coverage.md : absent
-- Preuves : aucune
+- Statut coverage.md : partial
+
+| type | fichier | statut ressource |
+| --- | --- | --- |
+| cours | 03_progressions/supports/premiere/P04/P04_cours_types_construits.md | needs_review |
 
 ## P-HIST-01
 
@@ -879,8 +891,11 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## T-ALGO-01C
 
 - Niveau : terminale
-- Statut coverage.md : absent
-- Preuves : aucune
+- Statut coverage.md : partial
+
+| type | fichier | statut ressource |
+| --- | --- | --- |
+| tp | 03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md | needs_review |
 
 ## T-ALGO-01D
 
@@ -1491,8 +1506,11 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## T-LANG-02B
 
 - Niveau : terminale
-- Statut coverage.md : absent
-- Preuves : aucune
+- Statut coverage.md : partial
+
+| type | fichier | statut ressource |
+| --- | --- | --- |
+| td | 03_progressions/supports/terminale/T15/T15_TD_calculabilite_arret.md | needs_review |
 
 ## T-LANG-03A
 
@@ -1654,8 +1672,11 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## T-STRUCT-02B
 
 - Niveau : terminale
-- Statut coverage.md : absent
-- Preuves : aucune
+- Statut coverage.md : partial
+
+| type | fichier | statut ressource |
+| --- | --- | --- |
+| cours | 03_progressions/supports/terminale/T02/T02_cours_classes_objets.md | needs_review |
 
 ## T-STRUCT-03A
 
@@ -1677,8 +1698,11 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## T-STRUCT-03B
 
 - Niveau : terminale
-- Statut coverage.md : absent
-- Preuves : aucune
+- Statut coverage.md : partial
+
+| type | fichier | statut ressource |
+| --- | --- | --- |
+| cours | 03_progressions/supports/terminale/T03/T03_cours_piles_files_dictionnaires.md | needs_review |
 
 ## T-STRUCT-03C
 
