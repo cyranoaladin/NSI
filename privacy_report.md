@@ -210,7 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - scripts/check_drive_enrichment_traceability.py: nom propre suspect -> Ressource Drive
 - scripts/check_drive_enrichment_traceability.py: nom propre suspect -> Ressource Drive
 - scripts/check_drive_enrichment_traceability_portable.py: nom propre suspect -> Portable Drive
-- ... 57 alertes supplémentaires non affichées
+- ... 79 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 

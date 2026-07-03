@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "corpus",
+  "level": "terminale",
+  "judged_at": "2026-07-03T11:39:33Z",
+  "judge_model": "qwen2.5:1.5b",
+  "author_model": "codex-authoring-agent",
+  "capacities": [
+    {
+      "capacity_id": "T-STRUCT-02B",
+      "official_label": "Accéder aux attributs et méthodes d'une classe.",
+      "proof_course": {
+        "present": true,
+        "file": "terminale/sequences/s01_structures_donnees_interfaces_implementations/cours_eleve.md",
+        "anchor": "classes-attributs-et-méthodes",
+        "quote": "Une classe Python peut regrouper données et opérations.",
+        "teaches": true,
+        "note": "Copie mot pour mot de la citation dans l'extrait."
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T02/T02_cours_classes_objets.md",
+        "anchor": "lexique-actif",
+        "quote": "attribut",
+        "teaches": true,
+        "note": "Le lexique actif mentionne 'attribut', ce qui correspond à l'enseignement de l'accès aux attributs d'une classe."
+      },
+      "proof_correction": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false,
+        "note": "Aucune preuve vérifiable retenue."
+      },
+      "verdict": "needs_review",
+      "justification": "Proposition System B : preuves mécaniquement vérifiées, relecture humaine requise.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}
