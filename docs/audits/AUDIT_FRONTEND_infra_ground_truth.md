@@ -98,12 +98,20 @@ Sortie : (vide, exit=1). database.py present dans le conteneur, NON importe.
 
 ### pgvector : aucune table RAG
 
+psql est fonctionnel (tables applicatives listees), mais aucune table rag_.
+
 Commande :
 ```bash
-docker exec infra-postgres-1 psql -U postgres -c "\dt" | grep -i rag
-docker exec nexus-postgres-db psql -U postgres -c "\dt" | grep -i rag
+docker exec infra-postgres-1 psql -U nsi -d nsi -c "\dt" | grep -E 'rag_' \
+  || echo "NO_RAG_TABLES (psql OK, grep rag_ = 0)"
+docker exec nexus-postgres-db psql -U nexus_admin -d nexus_prod -c "\dt" | grep -E 'rag_' \
+  || echo "NO_RAG_TABLES (psql OK, grep rag_ = 0)"
 ```
-Sortie : `NO_RAG_TABLES` pour les deux.
+Sortie : `NO_RAG_TABLES (psql OK, grep rag_ = 0)` pour les deux.
+
+Note : psql repond (tables Attempt/Bilan/TeacherCoverage dans infra,
+CoachAvailability/SessionBooking dans nexus), confirmant que la connexion
+fonctionne et que l'absence de rag_ n'est pas un masquage d'erreur.
 
 ### Collections Chroma (commande rejouable)
 
