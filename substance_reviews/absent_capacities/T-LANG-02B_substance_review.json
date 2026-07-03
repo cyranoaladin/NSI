@@ -20,7 +20,7 @@
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/terminale/T15/T15_TD_calculabilite_arret.md",
-        "anchor": "exercice-1",
+        "anchor": "#exercice-1",
         "quote": "donnée exacte, méthode nommée, résultat final et décision sur `programme très long mais fini`",
         "teaches": true,
         "note": "1 phrase"

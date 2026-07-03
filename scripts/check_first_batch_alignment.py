@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
-from scripts._qa_common import ROOT, load_program_entries
+from scripts._qa_common import ROOT, load_program_entries, read_frontmatter
 from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, find_kind_file
 
 SESSION_FILES = [ROOT / "03_progressions/seances_premiere.md", ROOT / "03_progressions/seances_terminale.md"]
@@ -69,7 +69,19 @@ def sequence_errors(root: Path, prefix: str, program_ids: set[str]) -> list[str]
         if f"Activité corrective {error_id}" not in texts["remediation"]:
             errors.append(f"{prefix}: {error_id} sans remédiation")
 
-    course_capacities = set(CAPACITY_RE.findall(texts["cours"]))
+    # Capacities from course BODY (frontmatter already stripped by read())
+    body_capacities = set(CAPACITY_RE.findall(texts["cours"]))
+    # Capacities declared in frontmatter (fail-closed: must also be exercised)
+    course_path = paths.get("cours")
+    fm_capacities: set[str] = set()
+    if course_path and course_path.exists():
+        fm = read_frontmatter(course_path)
+        official = fm.get("official_program")
+        raw = official.get("capacities", []) if isinstance(official, dict) else []
+        if isinstance(raw, list):
+            fm_capacities = {str(c) for c in raw if CAPACITY_RE.fullmatch(str(c))}
+    # Union: every declared or mentioned capacity must be exercised
+    course_capacities = body_capacities | fm_capacities
     for capacity in sorted(course_capacities):
         if capacity not in program_ids:
             errors.append(f"{prefix}: capacité inconnue -> {capacity}")

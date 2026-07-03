@@ -12,7 +12,7 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_dictionnaires.md",
-        "anchor": "méthodes",
+        "anchor": "#méthodes",
         "quote": "1. Capacités explicitement travaillées dans les méthodes et exercices : T-STRUCT-03C.",
         "teaches": true,
         "note": "mot pour mot du texte original"

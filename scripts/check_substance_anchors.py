@@ -356,7 +356,16 @@ def main() -> int:
 
     repo_root = args.repo_root.resolve()
     if args.verdict is None:
-        review_files = sorted(repo_root.glob("03_progressions/supports/**/_substance_review.json"))
+        # All verdict files, wherever they live — no verdict escapes the gate
+        review_globs = [
+            "03_progressions/supports/**/_substance_review.json",
+            "substance_reviews/**/*_substance_review.json",
+            "01_build_reports/*_substance_review.json",
+        ]
+        review_files: list[Path] = []
+        for pattern in review_globs:
+            review_files.extend(repo_root.glob(pattern))
+        review_files = sorted(set(review_files))
         if not review_files:
             print("ERREUR : aucun _substance_review.json trouvé", file=sys.stderr)
             return 2
@@ -407,7 +416,7 @@ def main() -> int:
             for failure in failures:
                 print(f"- {failure}")
             return 1
-        print(f"check_substance_anchors: PASS ({len(review_files)} verdicts pilotes vérifiés)")
+        print(f"check_substance_anchors: PASS ({len(review_files)} verdicts vérifiés)")
         return 0
 
     try:

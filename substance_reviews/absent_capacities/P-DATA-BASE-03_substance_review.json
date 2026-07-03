@@ -20,7 +20,7 @@
       "proof_practice": {
         "present": true,
         "file": "03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_flottants_approximations.md",
-        "anchor": "erreurs-fréquentes",
+        "anchor": "#erreurs-fréquentes",
         "quote": "Confondre le vocabulaire de flottants avec une simple récitation : corriger par un exemple calculé ou exécuté.",
         "teaches": true,
         "note": "1 phrase"
