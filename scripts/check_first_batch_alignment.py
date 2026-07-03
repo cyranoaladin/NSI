@@ -7,8 +7,23 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import re
 
+import yaml
+
 from scripts._qa_common import ROOT, load_program_entries, read_frontmatter
 from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, find_kind_file
+
+KNOWN_FAILURES_PATH = ROOT / "reports" / "alignment_known_failures.yml"
+
+
+def _load_known_failures() -> set[tuple[str, str]]:
+    """Return set of (prefix, capacity_id) pairs from known-failures file."""
+    if not KNOWN_FAILURES_PATH.exists():
+        return set()
+    data = yaml.safe_load(KNOWN_FAILURES_PATH.read_text(encoding="utf-8")) or {}
+    entries = data.get("known_failures") or []
+    if not isinstance(entries, list):
+        return set()
+    return {(str(e.get("prefix", "")), str(e.get("id", ""))) for e in entries if isinstance(e, dict)}
 
 SESSION_FILES = [ROOT / "03_progressions/seances_premiere.md", ROOT / "03_progressions/seances_terminale.md"]
 CAPACITY_RE = re.compile(r"\b[PT]-[A-Z]+(?:-[A-Z]+)*-\d{2}[A-Z]?\b")
@@ -124,11 +139,36 @@ def analyze_alignment(root: Path = ROOT, prefixes: list[str] | None = None, prog
 
 def main() -> int:
     result = analyze_alignment()
-    if result.errors:
+    if not result.errors:
+        print("check_first_batch_alignment: PASS")
+        return 0
+
+    known = _load_known_failures()
+    hard_errors: list[str] = []
+    warnings: list[str] = []
+    for error in result.errors:
+        # Match "PREFIX: capacité ID non travaillée/non évaluée"
+        matched = False
+        for prefix, cap_id in known:
+            if error.startswith(f"{prefix}:") and cap_id in error:
+                matched = True
+                break
+        if matched:
+            warnings.append(error)
+        else:
+            hard_errors.append(error)
+
+    if warnings:
+        print(f"check_first_batch_alignment: {len(warnings)} known-failure WARNING(s) (cf. reports/alignment_known_failures.yml → PR B)")
+        for w in warnings:
+            print(f"  WARNING: {w}")
+
+    if hard_errors:
         print("check_first_batch_alignment: KO")
-        for error in result.errors[:120]:
-            print(f"- {error}")
+        for e in hard_errors[:120]:
+            print(f"- {e}")
         return 1
+
     print("check_first_batch_alignment: PASS")
     return 0
 

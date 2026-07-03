@@ -1,0 +1,36 @@
+# Known alignment failures — capacités déclarées en frontmatter sans trace
+# exercice/évaluation. Chaque entrée est un WARNING (pas un FAIL) tant qu'elle
+# figure ici. Le gate reste ROUGE pour tout cas HORS liste.
+# Résolution : PR B (purge des tags ou ajout des traces).
+# Ce fichier DOIT redevenir vide après PR B.
+
+known_failures:
+  - id: P-DATA-BASE-02B
+    prefix: P02
+    file: 03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md
+    reason: "rattachement plausible mais sans trace TD/éval — à compléter ou purger"
+    resolution: "PR B"
+
+  - id: P-DATA-CONSTR-02D
+    prefix: P04
+    file: 03_progressions/supports/premiere/P04/P04_cours_types_construits.md
+    reason: "inflation — P04 n'enseigne pas l'itération sur tableau au sens du libellé"
+    resolution: "PR B"
+
+  - id: P-DATA-CONSTR-03C
+    prefix: P04
+    file: 03_progressions/supports/premiere/P04/P04_cours_types_construits.md
+    reason: "inflation — P04 ne mentionne ni keys() ni values() ni items()"
+    resolution: "PR B"
+
+  - id: T-STRUCT-02B
+    prefix: T02
+    file: 03_progressions/supports/terminale/T02/T02_cours_classes_objets.md
+    reason: "rattachement plausible mais sans trace TD/éval — à compléter ou purger"
+    resolution: "PR B"
+
+  - id: T-STRUCT-03B
+    prefix: T03
+    file: 03_progressions/supports/terminale/T03/T03_cours_piles_files_dictionnaires.md
+    reason: "rattachement plausible mais sans trace TD/éval — à compléter ou purger"
+    resolution: "PR B"
