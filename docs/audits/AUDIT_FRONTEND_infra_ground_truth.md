@@ -1,106 +1,148 @@
-# Audit infrastructure RAG — verite terrain (corrige 2026-07-02)
+# Audit infrastructure RAG — verite terrain rejouable (2026-07-03)
 
 ## Statut : BLOCKED_PREFLIGHT — decision du lead requise
 
-## Ambiguite de perimetre (tranchee par preuve corrigee)
+## Ambiguite de perimetre (tranchee par preuve rejouable)
 
-Le brief FE-01 ordonne de raccorder l'UI au "moteur v2 pgvector 16 892
-chunks e5-large 1024d, resolve_collection_v2, LOT 24". Certains de ces
-termes existent dans ce depot, d'autres non.
+Le brief FE-01 reference pgvector, e5-large 1024d, 16 892 chunks,
+resolve_collection_v2, LOT 24. Certains de ces termes existent dans
+ce depot, d'autres non.
 
-### Preuves par terme (commandes correctes, par terme separe)
+### pgvector — PRESENT (transition documentee, non deployee)
 
-**pgvector** — PRESENT dans le depot originel :
+Commande :
+```bash
+grep -rn pgvector --include='*.md' --include='*.py' --include='*.yml' . \
+  | grep -v __pycache__ | grep -v AUDIT_FRONTEND
 ```
-rg -n pgvector *.md reports/ docs/
-→ rag_connection.md:17: trajectoire Nexus : rag-pedago -> pgvector -> retrieval HMAC
-  reports/closure2/rag_state_of_truth.md:50: Transition vers pgvector documentee mais non deployee
+Sortie :
 ```
-pgvector est une TRANSITION documentee dans ce depot, pas un vocabulaire etranger.
-Elle n'a jamais ete deployee (database.py present dans le conteneur, NON cable).
+./rag_connection.md:17: trajectoire Nexus : rag-pedago -> pgvector -> retrieval HMAC
+./reports/closure2/rag_state_of_truth.md:50: Transition vers pgvector documentee mais non deployee
+```
+pgvector est une roadmap inscrite dans CE depot, jamais executee.
 
-**e5-large** — ABSENT du depot originel :
-```
-rg -n 'e5[-_.]?large' *.md scripts/ reports/ docs/
-→ (vide hors AUDIT_FRONTEND_*.md, texte de l'audit precedent)
-```
+### e5-large — ABSENT du depot originel
 
-**resolve_collection_v2** — ABSENT du depot originel :
+Commande :
+```bash
+grep -rnE 'e5[-_. ]?large' --include='*.md' --include='*.py' --include='*.yml' . \
+  | grep -v __pycache__ | grep -v AUDIT_FRONTEND
 ```
-rg -n resolve_collection_v2 scripts/ *.md reports/ docs/
-→ (vide hors AUDIT_FRONTEND_*.md)
-```
+Sortie : (vide)
 
-**16 892 / 22 518** — ABSENTS du depot originel :
+### resolve_collection_v2 — ABSENT
+
+Commande :
+```bash
+grep -rn resolve_collection_v2 --include='*.md' --include='*.py' --include='*.yml' . \
+  | grep -v __pycache__ | grep -v AUDIT_FRONTEND
 ```
-rg -n '16.?892|22.?518' *.md scripts/ reports/ docs/
-→ (vide hors AUDIT_FRONTEND_*.md)
+Sortie : (vide)
+
+### 16 892 / 22 518 — ABSENTS
+
+Commande :
+```bash
+grep -rnE '16.?892|22.?518' --include='*.md' --include='*.py' . \
+  | grep -v __pycache__ | grep -v AUDIT_FRONTEND
 ```
-Le "16 892" du brief ne correspond a AUCUN compte reel verifie :
+Sortie : (vide)
+
+Le "16 892" du brief ne correspond a aucun compte reel verifie :
 ni Chroma (4716 / 5992) ni pgvector LOT 22 (22 518). Chiffre non source.
 
-**LOT 24 / rag_nexus_nsi** — ABSENTS du depot originel :
+### LOT 24 / rag_nexus_nsi — ABSENTS
+
+Commande :
+```bash
+grep -rnE 'LOT[ ._-]?24' --include='*.md' . | grep -v AUDIT_FRONTEND
+grep -rn rag_nexus_nsi --include='*.md' --include='*.py' . | grep -v AUDIT_FRONTEND
 ```
-rg -n 'LOT[ ._-]?24' *.md scripts/ reports/ docs/
-rg -n rag_nexus_nsi *.md scripts/ reports/ docs/
-→ (vide hors AUDIT_FRONTEND_*.md)
-```
-Present dans cyranoaladin/RAG (ADR-0013, LOT 22 = 22 518 chunks pgvector).
+Sortie : (vide) pour les deux.
+
+Present dans cyranoaladin/RAG (ADR-0013, LOT 22).
 
 ### Conclusion nuancee
 
 Le brief FE-01 agrege DEUX realites :
-1. **pgvector** : transition documentee dans CE depot (rag_connection.md,
-   rag_state_of_truth.md) mais JAMAIS deployee sur le serveur.
+1. **pgvector** : transition documentee dans CE depot (2 occurrences
+   originales) mais JAMAIS deployee sur le serveur.
 2. **e5-large 1024d / LOT 22-24 / 22 518 chunks / resolve_collection_v2 /
-   rag_nexus_nsi_*** : chaine qui vit dans cyranoaladin/RAG, absente de ce depot.
+   rag_nexus_nsi_*** : chaine qui vit dans cyranoaladin/RAG, absente ici.
 
-L'ambiguite n'est pas "mauvais depot" simple : c'est un brief qui agrege
-une roadmap non executee de CE depot et une chaine operationnelle d'un AUTRE.
+## Etat reel du serveur (commandes rejouables)
 
-## Etat reel du serveur (chaque ligne = commande collee)
+### Backend = Chroma (pas pgvector)
 
-### Backend actif = Chroma (pas pgvector)
-
+Commande :
+```bash
+docker exec compose-ingestor-1 printenv CHROMA_HOST CHROMA_PORT
 ```
-docker exec compose-ingestor-1 env | grep CHROMA
-→ CHROMA_HOST=chroma, CHROMA_PORT=8000
+Sortie : `chroma` `8000`
 
-docker exec compose-ingestor-1 env | grep EMBED
-→ EMBED_MODEL=nomic-embed-text   (PAS e5-large)
-
-docker exec compose-ingestor-1 grep "import database" /app/api.py
-→ (vide) — database.py present mais NON IMPORTE par api.py
+Commande :
+```bash
+docker exec compose-ingestor-1 printenv EMBED_MODEL
 ```
+Sortie : `nomic-embed-text` (PAS e5-large)
+
+### database.py NON cable (grep large couvrant toutes les formes d'import)
+
+Commande :
+```bash
+docker exec compose-ingestor-1 grep -nE \
+  'import +database|from +database +import|RagDatabase|from +\.database' /app/api.py
+```
+Sortie : (vide, exit=1). database.py present dans le conteneur, NON importe.
 
 ### pgvector : aucune table RAG
 
+Commande :
+```bash
+docker exec infra-postgres-1 psql -U postgres -c "\dt" | grep -i rag
+docker exec nexus-postgres-db psql -U postgres -c "\dt" | grep -i rag
 ```
-docker exec infra-postgres-1 psql -U postgres -c "\dt" | grep rag
-→ NO_RAG_TABLES
+Sortie : `NO_RAG_TABLES` pour les deux.
 
-docker exec nexus-postgres-db psql -U postgres -c "\dt" | grep rag
-→ NO_RAG_TABLES
+### Collections Chroma (commande rejouable)
+
+Commande :
+```bash
+python3 -c "
+import json, urllib.request
+base='http://127.0.0.1:8000/api/v2/tenants/default_tenant/databases/default_database'
+cols=json.loads(urllib.request.urlopen(f'{base}/collections').read())
+for c in sorted(cols,key=lambda x:x['name']):
+    count=urllib.request.urlopen(f'{base}/collections/{c[\"id\"]}/count').read().decode()
+    print(f'{c[\"name\"]}: {count}')
+"
 ```
-
-### Collections Chroma reelles
-
+Sortie :
 ```
 nsi_corpus: 4716
 nsi_corpus_v2: 5992
+rag_divers: 0
 rag_education: 7181
 rag_francais_premiere: 5948
 rag_math_correction: 67
+rag_maths_premiere: 0
+ressources_pedagogiques_terminale: 0
 ```
 
 ### UI app_v2.py → Chroma
 
-```
+Commande :
+```bash
 docker inspect compose-ui-1 --format "{{.Config.Cmd}}"
-→ [streamlit run app_v2.py ...]
-
-INGEST_API_BASE=http://ingestor:8001 (Chroma backend)
 ```
+Sortie : `[streamlit run app_v2.py ...]`
+
+Commande :
+```bash
+docker exec compose-ui-1 printenv INGEST_API_BASE
+```
+Sortie : `http://ingestor:8001` (Chroma backend)
 
 ## Options et decision requise (lead/humain)
 
@@ -114,9 +156,9 @@ Valide par smoke + juge + barrieres ITEM 1-3.
 - Limite : ne fournit PAS e5-large/rerank/22 518 chunks. Pas de F-01
   (citabilite source_label/doc_id au sens du LOT 22).
 
-### Option B — Deployer l'infra pgvector (transition inscrite ici)
+### Option B — Deployer l'infra pgvector (roadmap inscrite ici)
 
-Ce n'est PAS "hors sujet" : la transition pgvector est documentee
+Ce n'est PAS hors sujet : la transition pgvector est documentee
 dans rag_connection.md et rag_state_of_truth.md de CE depot. La deployer
 serait la CONCRETISATION d'une roadmap existante.
 
@@ -128,7 +170,7 @@ serait la CONCRETISATION d'une roadmap existante.
 ### Option C — Reaiguiller FE-01 vers cyranoaladin/RAG
 
 La partie e5-large/LOT 22-24/22 518 chunks vit dans le depot RAG.
-Le raccordement UI → cette chaine devrait etre pilote depuis CE projet.
+Le raccordement UI vers cette chaine devrait etre pilote depuis CE projet.
 Sur CE depot, le Chroma v2 est pret (option A).
 
 - La partie pgvector a un pied dans ce depot (roadmap documentee).
@@ -137,10 +179,7 @@ Sur CE depot, le Chroma v2 est pret (option A).
 ## Invariants (ce depot, inchanges)
 
 ```
-covered : 0
-absent : 22
-published : 0
-validated_* : 0
+covered : 0, absent : 22, published : 0, validated_* : 0
 FINAL_STATUS = NON_RELEASE_READY
 ```
 
