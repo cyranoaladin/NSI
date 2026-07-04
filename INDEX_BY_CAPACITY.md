@@ -399,7 +399,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## P-DATA-CONSTR-02D
 
 - `03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_listes.md` — fiche_cours — needs_review — eleve
-- `03_progressions/supports/premiere/P04/P04_cours_types_construits.md` — cours — needs_review — eleve
 
 ## P-DATA-CONSTR-03A
 
@@ -424,7 +423,12 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## P-DATA-CONSTR-03C
 
 - `03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_dictionnaires.md` — fiche_cours — needs_review — eleve
-- `03_progressions/supports/premiere/P04/P04_cours_types_construits.md` — cours — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md` — corrige — needs_review — professeur
+- `03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md` — cours — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md` — evaluation — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_td_types_construits_complement.md` — td — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_tp_types_construits_complement.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_trace_types_construits_complement.md` — trace — needs_review — eleve
 
 ## P-HIST-01
 
@@ -1323,7 +1327,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## T-LANG-02B
 
 - `03_progressions/fiches_cours/terminale/T04/T04_fiche_cours_recursivite_cas_base_terminaison.md` — fiche_cours — needs_review — eleve
-- `03_progressions/supports/terminale/T15/T15_TD_calculabilite_arret.md` — td — needs_review — eleve
 
 ## T-LANG-03A
 

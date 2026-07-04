@@ -489,11 +489,8 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## P-DATA-CONSTR-02D
 
 - Niveau : premiere
-- Statut coverage.md : partial
-
-| type | fichier | statut ressource |
-| --- | --- | --- |
-| cours | 03_progressions/supports/premiere/P04/P04_cours_types_construits.md | needs_review |
+- Statut coverage.md : absent
+- Preuves : aucune
 
 ## P-DATA-CONSTR-03A
 
@@ -526,11 +523,16 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## P-DATA-CONSTR-03C
 
 - Niveau : premiere
-- Statut coverage.md : partial
+- Statut coverage.md : needs_review
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
-| cours | 03_progressions/supports/premiere/P04/P04_cours_types_construits.md | needs_review |
+| corrige | 03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md | needs_review |
+| cours | 03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md | needs_review |
+| evaluation | 03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md | needs_review |
+| td | 03_progressions/supports/premiere/P04/P04_td_types_construits_complement.md | needs_review |
+| tp | 03_progressions/supports/premiere/P04/P04_tp_types_construits_complement.md | needs_review |
+| trace | 03_progressions/supports/premiere/P04/P04_trace_types_construits_complement.md | needs_review |
 
 ## P-HIST-01
 
@@ -1586,11 +1588,8 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## T-LANG-02B
 
 - Niveau : terminale
-- Statut coverage.md : partial
-
-| type | fichier | statut ressource |
-| --- | --- | --- |
-| td | 03_progressions/supports/terminale/T15/T15_TD_calculabilite_arret.md | needs_review |
+- Statut coverage.md : absent
+- Preuves : aucune
 
 ## T-LANG-03A
 

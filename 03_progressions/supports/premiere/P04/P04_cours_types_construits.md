@@ -18,8 +18,6 @@ private_data: false
 official_program:
   capacities:
     - "P-DATA-CONSTR-02A"
-    - "P-DATA-CONSTR-02D"
-    - "P-DATA-CONSTR-03C"
 ---
 
 # P04 - Cours - Types construits

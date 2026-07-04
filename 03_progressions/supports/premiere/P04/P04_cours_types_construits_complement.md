@@ -22,6 +22,7 @@ official_program:
     - "P-DATA-CONSTR-02C"
     - "P-DATA-CONSTR-03A"
     - "P-DATA-CONSTR-03B"
+    - "P-DATA-CONSTR-03C"
 ---
 
 # P04 - Cours - Types construits complément
