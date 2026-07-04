@@ -15,15 +15,21 @@ from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, fin
 KNOWN_FAILURES_PATH = ROOT / "reports" / "alignment_known_failures.yml"
 
 
-def _load_known_failures() -> set[tuple[str, str]]:
-    """Return set of (prefix, capacity_id) pairs from known-failures file."""
+def _load_known_failures() -> dict[tuple[str, str], str]:
+    """Return dict mapping (prefix, capacity_id) to resolution string."""
     if not KNOWN_FAILURES_PATH.exists():
-        return set()
+        return {}
     data = yaml.safe_load(KNOWN_FAILURES_PATH.read_text(encoding="utf-8")) or {}
     entries = data.get("known_failures") or []
     if not isinstance(entries, list):
-        return set()
-    return {(str(e.get("prefix", "")), str(e.get("id", ""))) for e in entries if isinstance(e, dict)}
+        return {}
+    result: dict[tuple[str, str], str] = {}
+    for e in entries:
+        if not isinstance(e, dict):
+            continue
+        key = (str(e.get("prefix", "")), str(e.get("id", "")))
+        result[key] = str(e.get("resolution", ""))
+    return result
 
 SESSION_FILES = [ROOT / "03_progressions/seances_premiere.md", ROOT / "03_progressions/seances_terminale.md"]
 CAPACITY_RE = re.compile(r"\b[PT]-[A-Z]+(?:-[A-Z]+)*-\d{2}[A-Z]?\b")
@@ -145,23 +151,24 @@ def main() -> int:
 
     known = _load_known_failures()
     hard_errors: list[str] = []
-    warnings: list[str] = []
+    warnings: list[tuple[str, str]] = []
     for error in result.errors:
         # Match "PREFIX: capacité ID non travaillée/non évaluée"
-        matched = False
-        for prefix, cap_id in known:
+        matched_key: tuple[str, str] | None = None
+        for (prefix, cap_id) in known:
             if error.startswith(f"{prefix}:") and cap_id in error:
-                matched = True
+                matched_key = (prefix, cap_id)
                 break
-        if matched:
-            warnings.append(error)
+        if matched_key is not None:
+            warnings.append((error, known[matched_key]))
         else:
             hard_errors.append(error)
 
     if warnings:
-        print(f"check_first_batch_alignment: {len(warnings)} known-failure WARNING(s) (cf. reports/alignment_known_failures.yml → PR B)")
-        for w in warnings:
-            print(f"  WARNING: {w}")
+        print(f"check_first_batch_alignment: {len(warnings)} known-failure WARNING(s) (cf. reports/alignment_known_failures.yml)")
+        for w, resolution in warnings:
+            suffix = f" [resolution: {resolution}]" if resolution else ""
+            print(f"  WARNING: {w}{suffix}")
 
     if hard_errors:
         print("check_first_batch_alignment: KO")
