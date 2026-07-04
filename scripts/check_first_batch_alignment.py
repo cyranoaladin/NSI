@@ -12,6 +12,20 @@ import yaml
 from scripts._qa_common import ROOT, load_program_entries, read_frontmatter
 from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, find_kind_file
 
+SUPPORTS_DIR = ROOT / "03_progressions" / "supports"
+
+
+def discover_all_prefixes() -> list[str]:
+    """Discover all P/T sequence prefixes from the supports directory."""
+    prefixes: set[str] = set()
+    for level_dir in [SUPPORTS_DIR / "premiere", SUPPORTS_DIR / "terminale"]:
+        if not level_dir.is_dir():
+            continue
+        for child in level_dir.iterdir():
+            if child.is_dir() and re.fullmatch(r"[PT]\d{2}", child.name):
+                prefixes.add(child.name)
+    return sorted(prefixes)
+
 KNOWN_FAILURES_PATH = ROOT / "reports" / "alignment_known_failures.yml"
 
 
@@ -77,12 +91,14 @@ def sequence_errors(root: Path, prefix: str, program_ids: set[str]) -> list[str]
             errors.append(f"{prefix}: objectif {objective} absent du TD/TP/évaluation")
 
     td_exercises = numbers(r"^###\s+Exercice\s+(\d+)\b", texts["td"])
-    corrected = numbers(r"^###\s+Corrigé exercice\s+(\d+)\b", texts["corrige"])
+    # Accept both "### Corrigé exercice N" and "### Exercice N" in corrigé
+    corrected = numbers(r"^###\s+(?:Corrigé exercice|Exercice)\s+(\d+)\b", texts["corrige"])
     for exercise in sorted(td_exercises - corrected):
         errors.append(f"{prefix}: Exercice {exercise} sans corrigé")
 
     questions = numbers(r"^###\s+Question\s+(\d+)\b", texts["evaluation"])
-    scored = numbers(r"^###\s+Barème question\s+(\d+)\b", texts["bareme"])
+    # Accept both "### Barème question N" and "- Question N :" in barème
+    scored = numbers(r"(?:^###\s+Barème question|^-\s+Question)\s+(\d+)\b", texts["bareme"])
     for question in sorted(questions - scored):
         errors.append(f"{prefix}: Question {question} sans barème")
 
@@ -144,7 +160,8 @@ def analyze_alignment(root: Path = ROOT, prefixes: list[str] | None = None, prog
 
 
 def main() -> int:
-    result = analyze_alignment()
+    all_prefixes = discover_all_prefixes()
+    result = analyze_alignment(prefixes=all_prefixes)
     if not result.errors:
         print("check_first_batch_alignment: PASS")
         return 0

@@ -182,5 +182,65 @@ class FirstBatchAlignmentTest(unittest.TestCase):
             mod.KNOWN_FAILURES_PATH = original  # type: ignore[assignment]
 
 
+    # --- D1b: structural adversarial tests for heading variants ---
+
+    def _make_fixture(self, root: Path, corrige: str, bareme: str) -> Path:
+        """Create a minimal sequence fixture and return the root."""
+        d = root / "P00"
+        d.mkdir(exist_ok=True)
+        (d / "P00_cours_test.md").write_text(
+            "Objectif O1\nP-LANG-01\nErreur fréquente EF1\n", encoding="utf-8")
+        (d / "P00_trace_test.md").write_text("Objectif O1\nP-LANG-01\n", encoding="utf-8")
+        (d / "P00_td_test.md").write_text(
+            "### Exercice 1\nP-LANG-01\n### Exercice 2\nP-LANG-01\n", encoding="utf-8")
+        (d / "P00_tp_test.md").write_text("Objectif O1\nP-LANG-01\n", encoding="utf-8")
+        (d / "P00_corrige_test.md").write_text(corrige, encoding="utf-8")
+        (d / "P00_evaluation_test.md").write_text(
+            "### Question 1\nP-LANG-01\n### Question 2\nP-LANG-01\n", encoding="utf-8")
+        (d / "P00_bareme_test.md").write_text(bareme, encoding="utf-8")
+        (d / "P00_remediation_test.md").write_text("Activité corrective EF1\n", encoding="utf-8")
+        return root
+
+    def test_alt_corrige_missing_exercise_is_rouge(self) -> None:
+        """Alt heading format: corrigé with ### Exercice 1 but missing ### Exercice 2 → ROUGE."""
+        with tempfile.TemporaryDirectory() as raw:
+            root = self._make_fixture(
+                Path(raw),
+                corrige="### Exercice 1\n- Réponse : 42\n",
+                bareme="- Question 1 : 4 points\n- Question 2 : 4 points\n",
+            )
+            result = alignment.analyze_alignment(root, prefixes=["P00"], program_ids={"P-LANG-01"})
+            self.assertTrue(
+                any("Exercice 2" in e and "corrigé" in e for e in result.errors),
+                f"Expected Exercice 2 sans corrigé, got: {result.errors}",
+            )
+
+    def test_alt_bareme_missing_question_is_rouge(self) -> None:
+        """Alt heading format: barème with - Question 1 but missing - Question 2 → ROUGE."""
+        with tempfile.TemporaryDirectory() as raw:
+            root = self._make_fixture(
+                Path(raw),
+                corrige="### Exercice 1\n- Réponse\n### Exercice 2\n- Réponse\n",
+                bareme="- Question 1 : 4 points\n",
+            )
+            result = alignment.analyze_alignment(root, prefixes=["P00"], program_ids={"P-LANG-01"})
+            self.assertTrue(
+                any("Question 2" in e and "barème" in e for e in result.errors),
+                f"Expected Question 2 sans barème, got: {result.errors}",
+            )
+
+    def test_alt_format_complete_is_vert(self) -> None:
+        """Both alt heading variants present and complete → VERT."""
+        with tempfile.TemporaryDirectory() as raw:
+            root = self._make_fixture(
+                Path(raw),
+                corrige="### Exercice 1\n- Réponse\n### Exercice 2\n- Réponse\n",
+                bareme="- Question 1 : 4 points\n- Question 2 : 4 points\n",
+            )
+            result = alignment.analyze_alignment(root, prefixes=["P00"], program_ids={"P-LANG-01"})
+            structural = [e for e in result.errors if "corrigé" in e or "barème" in e]
+            self.assertEqual(structural, [], f"Expected no structural errors, got: {structural}")
+
+
 if __name__ == "__main__":
     unittest.main()
