@@ -134,6 +134,10 @@ def main() -> None:
     contract_map = load_contract_capacity_map()
     absent_ids = sorted(absent_from_coverage(ROOT / "coverage.md"))
     rows = [row_for_capacity(capacity_id, program[capacity_id], existing.get(capacity_id, {}), contract_map) for capacity_id in absent_ids]
+    # Preserve pinned verification_gap rows (partial capacities tracked across PRs)
+    for cap_id, ex_row in sorted(existing.items()):
+        if ex_row.get("type_ecart") == "verification_gap" and cap_id not in absent_ids:
+            rows.append(ex_row)
     lines = [
         "# Plan d'action des écarts de couverture",
         "",

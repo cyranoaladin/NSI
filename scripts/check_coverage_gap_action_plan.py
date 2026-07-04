@@ -26,8 +26,8 @@ REQUIRED_COLUMNS = [
     "priorité",
     "action suivante",
 ]
-DIAGNOSTICS = {"trou de contenu", "trou d'étiquetage", "trou d’étiquetage", "contenu présent mal rattaché", "différé justifié"}
-TYPES = {"content_gap", "tagging_gap", "misaligned_evidence", "deferred_with_blocker"}
+DIAGNOSTICS = {"trou de contenu", "trou d’étiquetage", "trou d’étiquetage", "contenu présent mal rattaché", "différé justifié", "vérification hors périmètre"}
+TYPES = {"content_gap", "tagging_gap", "misaligned_evidence", "deferred_with_blocker", "verification_gap"}
 PRIORITIES = {"haute", "moyenne", "basse"}
 
 
@@ -80,8 +80,9 @@ def main() -> None:
         for key in REQUIRED_COLUMNS:
             if not row.get(key) or row[key] == "-":
                 errors.append(f"{capacity_id}: colonne vide -> {key}")
-        if row.get("statut actuel") != "absent":
-            errors.append(f"{capacity_id}: statut actuel doit rester absent")
+        expected_status = "partial" if row.get("type_ecart") == "verification_gap" else "absent"
+        if row.get("statut actuel") != expected_status:
+            errors.append(f"{capacity_id}: statut actuel doit être {expected_status}")
         if row.get("type_ecart") not in TYPES:
             errors.append(f"{capacity_id}: type_ecart invalide")
         if row.get("diagnostic") not in DIAGNOSTICS:
@@ -100,7 +101,7 @@ def main() -> None:
         if any(marker in action.lower() for marker in ("todo", "tbd", "à définir")):
             errors.append(f"{capacity_id}: action suivante contient un marqueur interdit")
     for capacity_id, row in sorted(rows.items()):
-        if capacity_id not in absent_ids and row.get("statut actuel") != "résolu":
+        if capacity_id not in absent_ids and row.get("type_ecart") != "verification_gap" and row.get("statut actuel") != "résolu":
             errors.append(f"{capacity_id}: ligne présente alors que la capacité n'est plus absent")
     print_result("check_coverage_gap_action_plan", errors)
 
