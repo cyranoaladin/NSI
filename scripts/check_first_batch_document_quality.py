@@ -66,9 +66,13 @@ class FirstBatchResult:
 
 
 def find_kind_file(root: Path, prefix: str, kind: str) -> Path | None:
-    pattern = f"{prefix}_{kind}_*.md"
-    matches = sorted(root.rglob(pattern))
-    return matches[0] if matches else None
+    # Try exact case first, then uppercase variant (TD, TP)
+    for variant in [kind, kind.upper()]:
+        pattern = f"{prefix}_{variant}_*.md"
+        matches = sorted(root.rglob(pattern))
+        if matches:
+            return matches[0]
+    return None
 
 
 def useful_lines(text: str) -> list[str]:

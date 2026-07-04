@@ -357,10 +357,11 @@ def main() -> int:
     repo_root = args.repo_root.resolve()
     if args.verdict is None:
         # All verdict files, wherever they live — no verdict escapes the gate
+        # Canonical location: substance_reviews/ and in-sequence files
+        # 01_build_reports/ copies are excluded (deduplicated in PR A2)
         review_globs = [
             "03_progressions/supports/**/_substance_review.json",
             "substance_reviews/**/*_substance_review.json",
-            "01_build_reports/*_substance_review.json",
         ]
         review_files: list[Path] = []
         for pattern in review_globs:
