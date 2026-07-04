@@ -20,7 +20,7 @@
       "proof_practice": {
         "present": true,
         "file": "premiere/sequences/s01_representation_donnees/guide_professeur.md",
-        "anchor": "prolongements",
+        "anchor": "#prolongements",
         "quote": "Traitement de données en tables.",
         "teaches": true,
         "note": "1 phrase"
@@ -28,7 +28,7 @@
       "proof_correction": {
         "present": true,
         "file": "03_progressions/fiches_cours/premiere/P11/P11_fiche_cours_parcours_recherche_extremum_moyenne.md",
-        "anchor": "à-savoir",
+        "anchor": "#à-savoir",
         "quote": "parcours et recherche se travaille dans le contexte “algorithmique de collection” avec des données vérifiables.",
         "teaches": true,
         "note": "1 phrase"

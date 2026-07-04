@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1044
+- Total ressources : 1045
 - Ressources pédagogiques : 53
-- Ressources techniques : 991
+- Ressources techniques : 992
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1036
+- generated: 1037
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 488
+- interne: 489
 - premiere: 250
 - terminale: 306
 
 ## Répartition par type
 - banque: 14
-- document: 614
+- document: 615
 - python: 95
 - script: 204
 - sequence: 45
 - test: 72
 
 ## Répartition par statut
-- needs_review: 1044
+- needs_review: 1045
 
 ## Répartition audience
 - corrige: 78
 - eleve: 143
-- mixte: 820
+- mixte: 821
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -686,6 +686,7 @@
   - rag_connection.md
   - rag_server_fix_plan.md
   - rag_timeout_diagnostic.md
+  - reports/alignment_known_failures.yml
   - reports/closure2/corrective2_report.md
   - reports/closure2/corrective3_report.md
   - reports/closure2/corrective_report.md
@@ -1758,6 +1759,7 @@
   - rag_connection.md
   - rag_server_fix_plan.md
   - rag_timeout_diagnostic.md
+  - reports/alignment_known_failures.yml
   - reports/closure2/corrective2_report.md
   - reports/closure2/corrective3_report.md
   - reports/closure2/corrective_report.md
@@ -2753,6 +2755,7 @@
 - rag_connection.md
 - rag_server_fix_plan.md
 - rag_timeout_diagnostic.md
+- reports/alignment_known_failures.yml
 - reports/closure2/corrective2_report.md
 - reports/closure2/corrective3_report.md
 - reports/closure2/corrective_report.md
@@ -3796,6 +3799,7 @@
 - rag_connection.md
 - rag_server_fix_plan.md
 - rag_timeout_diagnostic.md
+- reports/alignment_known_failures.yml
 - reports/closure2/corrective2_report.md
 - reports/closure2/corrective3_report.md
 - reports/closure2/corrective_report.md

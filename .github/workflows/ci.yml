@@ -34,6 +34,9 @@ jobs:
       - name: Full audit (cold, idempotent)
         run: make audit-idempotence
 
+      - name: Substance gate (all verdicts)
+        run: python -m scripts.check_substance_anchors
+
       - name: Substance adversarial guard
         run: |
           set +e

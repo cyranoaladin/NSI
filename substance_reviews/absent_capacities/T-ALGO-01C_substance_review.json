@@ -20,7 +20,7 @@
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md",
-        "anchor": "exigences-sur-le-code",
+        "anchor": "#exigences-sur-le-code",
         "quote": "Une insertion de doublon `6` doit laisser le parcours infixe inchangé.",
         "teaches": true,
         "note": "1 phrase"
