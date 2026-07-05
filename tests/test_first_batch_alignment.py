@@ -440,6 +440,64 @@ class FirstBatchAlignmentTest(unittest.TestCase):
                 any("non travaillée" in e for e in bar_errors),
                 f"Expected P-BAR-ONLY-99 non travaillée (bareme-only), got: {result.errors}")
 
+    # --- Commit 1 PR C: exact-match known-failures guard ---
+
+    def test_known_failure_prefix_does_not_shadow_suffixed_id(self) -> None:
+        """Known-failure for P-FAKE-01 must NOT downgrade error on P-FAKE-01A (prefix collision)."""
+        import scripts.check_first_batch_alignment as mod
+        original = mod.KNOWN_FAILURES_PATH
+        try:
+            with tempfile.TemporaryDirectory() as raw:
+                root = Path(raw)
+                kf = root / "known.yml"
+                # Allowlist only P-FAKE-01 (NOT P-FAKE-01A)
+                kf.write_text(
+                    "known_failures:\n  - id: P-FAKE-01\n    prefix: P00\n    reason: test\n    resolution: PR Z\n",
+                    encoding="utf-8",
+                )
+                mod.KNOWN_FAILURES_PATH = kf
+                d = root / "P00"
+                d.mkdir()
+                # Declare BOTH P-FAKE-01 and P-FAKE-01A in frontmatter
+                (d / "P00_cours_test.md").write_text(
+                    "---\ntitle: t\nofficial_program:\n  capacities:\n    - P-FAKE-01\n    - P-FAKE-01A\n---\n"
+                    "Objectif O1\nP-LANG-01\nErreur fréquente EF1\n", encoding="utf-8")
+                for kind, content in [
+                    ("trace", "Objectif O1\nP-LANG-01\n"),
+                    ("td", "### Exercice 1\nP-LANG-01\n"),
+                    ("tp", "Objectif O1\nP-LANG-01\n"),
+                    ("corrige", "### Corrigé exercice 1\n"),
+                    ("evaluation", "### Question 1\nP-LANG-01\n"),
+                    ("bareme", "### Barème question 1\n"),
+                    ("remediation", "Activité corrective EF1\n"),
+                ]:
+                    (d / f"P00_{kind}_test.md").write_text(content, encoding="utf-8")
+
+                result = mod.analyze_alignment(root, prefixes=["P00"],
+                    program_ids={"P-LANG-01", "P-FAKE-01", "P-FAKE-01A"})
+                known = mod._load_known_failures()
+                # P-FAKE-01 errors should be WARNING (known)
+                # P-FAKE-01A errors should remain HARD (not in known list)
+                hard = []
+                for e in result.errors:
+                    matched_key = None
+                    for (prefix, cap_id) in known:
+                        import re as _re
+                        if e.startswith(f"{prefix}:") and _re.search(r"\b" + _re.escape(cap_id) + r"\b", e):
+                            matched_key = (prefix, cap_id)
+                            break
+                    if matched_key is None:
+                        hard.append(e)
+                hard_01a = [e for e in hard if "P-FAKE-01A" in e]
+                self.assertTrue(len(hard_01a) >= 1,
+                    f"P-FAKE-01A must remain hard error (not shadowed by P-FAKE-01), got hard: {hard}")
+                # Also verify P-FAKE-01 IS matched (warning, not hard)
+                hard_01_exact = [e for e in hard if "P-FAKE-01" in e and "P-FAKE-01A" not in e]
+                self.assertEqual(hard_01_exact, [],
+                    f"P-FAKE-01 should be warning (known), but found hard: {hard_01_exact}")
+        finally:
+            mod.KNOWN_FAILURES_PATH = original
+
 
 if __name__ == "__main__":
     unittest.main()
