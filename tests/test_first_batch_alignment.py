@@ -242,5 +242,83 @@ class FirstBatchAlignmentTest(unittest.TestCase):
             self.assertEqual(structural, [], f"Expected no structural errors, got: {structural}")
 
 
+    # --- E2: adversarial tests for variant file support ---
+
+    def _make_variant_fixture(self, root: Path, variant_cours_fm: str, variant_td_body: str) -> Path:
+        """Create a sequence with principal + variant files."""
+        d = root / "P00"
+        d.mkdir(exist_ok=True)
+        # Principal files (P-LANG-01 only)
+        (d / "P00_cours_main.md").write_text(
+            "Objectif O1\nP-LANG-01\nErreur fréquente EF1\n", encoding="utf-8")
+        (d / "P00_trace_main.md").write_text("Objectif O1\nP-LANG-01\n", encoding="utf-8")
+        (d / "P00_td_main.md").write_text("### Exercice 1\nP-LANG-01\n", encoding="utf-8")
+        (d / "P00_tp_main.md").write_text("Objectif O1\nP-LANG-01\n", encoding="utf-8")
+        (d / "P00_corrige_main.md").write_text("### Corrigé exercice 1\n", encoding="utf-8")
+        (d / "P00_evaluation_main.md").write_text("### Question 1\nP-LANG-01\n", encoding="utf-8")
+        (d / "P00_bareme_main.md").write_text("### Barème question 1\n", encoding="utf-8")
+        (d / "P00_remediation_main.md").write_text("Activité corrective EF1\n", encoding="utf-8")
+        # Variant course file with extra capacity in frontmatter
+        (d / "P00_cours_variant.md").write_text(
+            variant_cours_fm, encoding="utf-8")
+        # Variant TD file
+        (d / "P00_td_variant.md").write_text(variant_td_body, encoding="utf-8")
+        # Variant evaluation file
+        (d / "P00_evaluation_variant.md").write_text(variant_td_body, encoding="utf-8")
+        return root
+
+    def test_variant_only_capacity_not_in_body_is_rouge(self) -> None:
+        """(a) Capacity declared ONLY on variant file, not mentioned in any body → ROUGE."""
+        with tempfile.TemporaryDirectory() as raw:
+            root = self._make_variant_fixture(
+                Path(raw),
+                variant_cours_fm="---\ntitle: v\nofficial_program:\n  capacities:\n    - P-EXTRA-99\n---\nVariant content\n",
+                variant_td_body="### Exercice 1\nSome work without the ID\n",
+            )
+            result = alignment.analyze_alignment(root, prefixes=["P00"], program_ids={"P-LANG-01", "P-EXTRA-99"})
+            extra_errors = [e for e in result.errors if "P-EXTRA-99" in e]
+            self.assertTrue(
+                any("non travaillée" in e for e in extra_errors),
+                f"Expected P-EXTRA-99 non travaillée, got: {result.errors}",
+            )
+
+    def test_variant_capacity_in_variant_body_is_vert(self) -> None:
+        """(b) Capacity declared on variant AND mentioned in variant body → VERT."""
+        with tempfile.TemporaryDirectory() as raw:
+            root = self._make_variant_fixture(
+                Path(raw),
+                variant_cours_fm="---\ntitle: v\nofficial_program:\n  capacities:\n    - P-EXTRA-99\n---\nP-EXTRA-99 in course\n",
+                variant_td_body="### Exercice 1\nExercice sur P-EXTRA-99\n",
+            )
+            result = alignment.analyze_alignment(root, prefixes=["P00"], program_ids={"P-LANG-01", "P-EXTRA-99"})
+            extra_errors = [e for e in result.errors if "P-EXTRA-99" in e]
+            self.assertEqual(extra_errors, [], f"Expected no errors for P-EXTRA-99, got: {extra_errors}")
+
+    def test_principal_capacity_in_variant_body_is_vert(self) -> None:
+        """(c) Capacity declared on principal, mentioned in variant body → VERT."""
+        with tempfile.TemporaryDirectory() as raw:
+            d = Path(raw) / "P00"
+            d.mkdir()
+            # Principal course declares P-EXTRA-99 in frontmatter
+            (d / "P00_cours_main.md").write_text(
+                "---\ntitle: t\nofficial_program:\n  capacities:\n    - P-EXTRA-99\n---\n"
+                "Objectif O1\nP-LANG-01\nErreur fréquente EF1\n", encoding="utf-8")
+            (d / "P00_trace_main.md").write_text("Objectif O1\nP-LANG-01\n", encoding="utf-8")
+            (d / "P00_td_main.md").write_text("### Exercice 1\nP-LANG-01\n", encoding="utf-8")
+            # Variant TD mentions P-EXTRA-99
+            (d / "P00_td_variant.md").write_text("### Exercice 1\nP-EXTRA-99 exercé ici\n", encoding="utf-8")
+            (d / "P00_tp_main.md").write_text("Objectif O1\nP-LANG-01\n", encoding="utf-8")
+            (d / "P00_corrige_main.md").write_text("### Corrigé exercice 1\n", encoding="utf-8")
+            (d / "P00_evaluation_main.md").write_text("### Question 1\nP-LANG-01\n", encoding="utf-8")
+            # Variant eval mentions P-EXTRA-99
+            (d / "P00_evaluation_variant.md").write_text("### Question 1\nP-EXTRA-99 évalué ici\n", encoding="utf-8")
+            (d / "P00_bareme_main.md").write_text("### Barème question 1\n", encoding="utf-8")
+            (d / "P00_remediation_main.md").write_text("Activité corrective EF1\n", encoding="utf-8")
+
+            result = alignment.analyze_alignment(Path(raw), prefixes=["P00"], program_ids={"P-LANG-01", "P-EXTRA-99"})
+            extra_errors = [e for e in result.errors if "P-EXTRA-99" in e]
+            self.assertEqual(extra_errors, [], f"Expected no errors for P-EXTRA-99, got: {extra_errors}")
+
+
 if __name__ == "__main__":
     unittest.main()

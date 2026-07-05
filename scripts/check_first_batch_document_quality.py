@@ -75,6 +75,15 @@ def find_kind_file(root: Path, prefix: str, kind: str) -> Path | None:
     return None
 
 
+def find_all_kind_files(root: Path, prefix: str, kind: str) -> list[Path]:
+    """Return ALL files matching {prefix}_{kind}_*.md (both cases)."""
+    results: list[Path] = []
+    for variant in [kind, kind.upper()]:
+        pattern = f"{prefix}_{variant}_*.md"
+        results.extend(root.rglob(pattern))
+    return sorted(set(results))
+
+
 def useful_lines(text: str) -> list[str]:
     return [line.strip() for line in text.splitlines() if line.strip()]
 
