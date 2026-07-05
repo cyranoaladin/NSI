@@ -97,9 +97,9 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 ### Exercice 4
 - Objectif travaillé : O4.
 - Capacité officielle : T-LANG-02A, T-LANG-02B.
-- Énoncé disciplinaire : corriger terminaison pour `n` décroît vers 0.
-- Production attendue : preuve de terminaison.
-- Contrainte de contrôle : corriger l’erreur « Ne pas traiter l’entrée vide. ».
+- Énoncé disciplinaire : soit la fonction `def decompte(n): print(n); return decompte(n - 1)`. (a) Tracer les 4 premiers appels pour `decompte(3)` en indiquant la valeur de `n` à chaque appel. (b) Identifier le problème de terminaison (cas de base manquant). (c) Corriger la fonction en ajoutant un cas de base pour `n == 0`. (d) Donner le variant de terminaison (mesure entière strictement décroissante).
+- Production attendue : trace `decompte(3)→n=3, decompte(2)→n=2, decompte(1)→n=1, decompte(0)→n=0` ; variant = `n` ; fonction corrigée avec `if n == 0: return`.
+- Contrainte de contrôle : corriger l’erreur « Ne pas traiter l’entrée vide. » ; vérifier que `decompte(-1)` ne boucle pas.
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 5
 - Objectif travaillé : O1.

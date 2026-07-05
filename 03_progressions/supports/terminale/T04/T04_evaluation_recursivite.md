@@ -74,9 +74,9 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 ### Question 4
 - Objectif évalué : O4.
 - Capacité officielle : T-LANG-02A, T-LANG-02B.
-- Énoncé : corriger terminaison pour `n` décroît vers 0.
-- Réponse attendue : preuve de terminaison.
-- Critère de réussite : méthode visible, résultat correct et contrôle « appel avec même argument ».
+- Énoncé : soit `def decompte(n): print(n); return decompte(n - 1)`. Tracer les 3 premiers appels pour `decompte(2)` (valeur de `n` à chaque appel). Identifier le problème de terminaison, corriger la fonction, donner le variant.
+- Réponse attendue : trace `n=2, n=1, n=0` ; cas de base `if n == 0: return` ; variant = `n`.
+- Critère de réussite : trace d'appels correcte, cas de base identifié, variant explicité et contrôle « appel avec même argument ».
 ## Barème
 - Question 1 : 2 points méthode, 1 point résultat, 1 point justification liée à entier négatif refusé.
 - Question 2 : 2 points méthode, 1 point résultat, 1 point justification liée à liste vide.
