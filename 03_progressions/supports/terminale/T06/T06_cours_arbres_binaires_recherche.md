@@ -45,6 +45,16 @@ ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14
 - insérer une feuille.
 - parcours infixe pour clés triées.
 
+### Méthode — parcours en profondeur d'un arbre (T-ALGO-01C)
+
+Sur l'ABR `[8, 3, 10, 1, 6, 14]`, les trois ordres de parcours en profondeur donnent :
+
+- **Parcours infixe** (gauche, racine, droite) : `[1, 3, 6, 8, 10, 14]` — produit les clés dans l'ordre croissant pour un ABR.
+- **Parcours préfixe** (racine, gauche, droite) : `[8, 3, 1, 6, 10, 14]` — la racine apparaît en premier, utile pour reconstruire l'arbre.
+- **Parcours suffixe** (gauche, droite, racine) : `[1, 6, 3, 14, 10, 8]` — la racine apparaît en dernier, utile pour libérer la mémoire.
+
+Chacun est récursif : on applique le même parcours aux sous-arbres gauche et droit, puis on traite la racine à la position définie par l'ordre.
+
 ## Exemples corrigés
 ### Exemple corrigé 1
 - Donnée : `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`.
