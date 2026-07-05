@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-BDD-03B",
+      "official_label": "Construire des requêtes d'interrogation avec SELECT et FROM.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md",
+        "anchor": "#à-savoir",
+        "quote": "SELECT.\n- FROM.\n- WHERE.\n- JOIN.\n- ORDER BY.\n- INSERT.\n- UPDATE avec WHERE.\n- DELETE avec WHERE.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md",
+        "anchor": "#exercice-2",
+        "quote": "Capacité officielle : T-BDD-03B.\n- Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=beta\n- Consigne : filtrer note >= 15 ; traiter aussi `UPDATE sans WHERE` si nécessaire.\n- Réponse attendue : JOIN -> Ada 17.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md",
+        "anchor": "#exercice-2",
+        "quote": "Réponse attendue : JOIN -> Ada 17.\n- Méthode : filtrer note >= 15.\n- Cas limite : UPDATE sans WHERE.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours liste SELECT et FROM parmi les mots-clés enseignés, le TD fait pratiquer la capacité T-BDD-03B (construction de requêtes SELECT avec filtrage), et le corrigé fournit la réponse attendue pour cet exercice.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

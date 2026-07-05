@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-DATA-BASE-02A",
+      "official_label": "Evaluer le nombre de bits nécessaires à l'écriture en base 2 d'un entier, d'une somme ou d'un produit.",
+      "proof_course": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_practice": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_correction": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "verdict": "needs_content",
+      "justification": "La capacité P-DATA-BASE-02A telle que définie officiellement porte sur l'évaluation du nombre de bits nécessaires à l'écriture en base 2 d'un entier, d'une somme ou d'un produit. Or, tous les fichiers P02 traitent du décodage/encodage en complément à deux (entiers signés), des bornes d'intervalles sur n bits, et des tables de vérité booléennes. Aucun extrait n'enseigne, ne fait pratiquer ni ne corrige la capacité spécifique d'évaluer le nombre de bits nécessaires pour représenter un entier, une somme ou un produit en base 2. L'étiquette P-DATA-BASE-02A est présente dans les fichiers mais le...",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T20:38:43Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-DATA-BASE-01",
+      "official_label": "Passer de la représentation d'une base dans une autre.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P01/P01_cours_conversions_bases.md",
+        "anchor": "#exemples-corrigés-précis",
+        "quote": "Méthode : enchaîner divisions par 2 puis lire les restes de bas en haut.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P01/P01_td_conversions_bases.md",
+        "anchor": "#exemple-corrigé-1---décimal-vers-binaire",
+        "quote": "Méthode : enchaîner divisions par 2 puis lire les restes de bas en haut.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P01/P01_corrige_conversions_bases.md",
+        "anchor": "#méthode-générale-de-correction",
+        "quote": "pour décimal vers binaire, exiger la donnée `13` en base dix, la méthode « enchaîner divisions par 2 puis lire les restes de bas en haut » et le contrôle « 0 se code 0 ».",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours enseigne les méthodes de conversion (décimal↔binaire, binaire↔hexadécimal), le TD fait pratiquer avec des exemples corrigés, et le corrigé fournit les réponses attendues avec barème détaillé pour chaque conversion.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

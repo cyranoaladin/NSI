@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-IHM-04C",
+      "official_label": "Discuter les types de requêtes selon les valeurs à transmettre et leur confidentialité.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md",
+        "anchor": "#méthodes",
+        "quote": "distinguer GET, POST et HTTPS.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
+        "anchor": "#exercice-4",
+        "quote": "Capacité officielle : P-IHM-03A.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
+        "anchor": "#exercice-4",
+        "quote": "Réponse attendue : POST sans HTTPS ne chiffre pas.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "La capacité P-IHM-04C porte sur le choix du type de requête selon les valeurs à transmettre et leur confidentialité. Le cours mentionne 'distinguer GET, POST et HTTPS' et les exemples corrigés traitent de POST sans HTTPS. Cependant, les exercices et évaluations sont explicitement étiquetés P-IHM-03A pour cette thématique, et non P-IHM-04C. Le contenu aborde bien la distinction GET/POST/HTTPS et la confidentialité, mais sans étiquetage explicite P-IHM-04C. La preuve reste partielle et indirecte pour cette capacité spécifique.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

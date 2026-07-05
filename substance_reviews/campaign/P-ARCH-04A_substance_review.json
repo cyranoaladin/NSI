@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-ARCH-04A",
+      "official_label": "Identifier le rôle des capteurs et actionneurs.",
+      "proof_course": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_practice": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_correction": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "verdict": "needs_content",
+      "justification": "Les fichiers P10 portent sur les réseaux, protocoles et paquets (IP, MAC, TCP, TTL). La capacité P-ARCH-04A est mentionnée dans ces fichiers mais elle y désigne 'décrémenter TTL avant retransmission', ce qui ne correspond pas au libellé officiel 'Identifier le rôle des capteurs et actionneurs'. Aucun contenu sur les capteurs ou actionneurs n'est présent dans les extraits.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

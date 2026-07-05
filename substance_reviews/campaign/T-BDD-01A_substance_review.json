@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-BDD-01A",
+      "official_label": "Identifier les concepts définissant le modèle relationnel.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T09/T09_cours_bases_relationnelles_cles_contraintes.md",
+        "anchor": "#à-savoir",
+        "quote": "relation. attribut. tuple. clé primaire. clé étrangère. contrainte de domaine. contrainte de référence. schéma. instance. anomalie.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md",
+        "anchor": "#exercice-1",
+        "quote": "Consigne : identifier schéma et instance ; traiter aussi `clé primaire nulle` si nécessaire.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T09/T09_corrige_bases_relationnelles_cles_contraintes.md",
+        "anchor": "#exercice-1",
+        "quote": "Réponse attendue : Livre.id_livre identifie chaque livre.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours enseigne explicitement les concepts du modèle relationnel (relation, attribut, tuple, clé primaire, clé étrangère, contrainte de domaine, schéma, instance). Le TD fait pratiquer l'identification du schéma et de l'instance (T-BDD-01A). Le corrigé fournit la réponse attendue pour l'exercice 1 portant sur T-BDD-01A.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

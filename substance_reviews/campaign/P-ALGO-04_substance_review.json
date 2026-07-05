@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-ALGO-04",
+      "official_label": "Montrer la terminaison de la recherche dichotomique à l'aide d'un variant de boucle.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P13/P13_cours_dichotomie_glouton_knn.md",
+        "anchor": "#méthodes",
+        "quote": "montrer que droite-gauche diminue.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md",
+        "anchor": "#exercice-2",
+        "quote": "Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md",
+        "anchor": "#exercice-2",
+        "quote": "Méthode : montrer que droite-gauche diminue.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours présente la méthode du variant droite-gauche, le TD fait pratiquer la démonstration de terminaison, et le corrigé fournit la réponse attendue pour P-ALGO-04.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

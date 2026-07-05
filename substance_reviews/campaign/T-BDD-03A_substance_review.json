@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-BDD-03A",
+      "official_label": "Identifier les composants d'une requête.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md",
+        "anchor": "#à-savoir",
+        "quote": "Employer le vocabulaire : SELECT, FROM, WHERE, JOIN, ORDER BY, INSERT.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md",
+        "anchor": "#exercice-1",
+        "quote": "Consigne : projeter nom et classe ; traiter aussi `JOIN sans ON` si nécessaire.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md",
+        "anchor": "#exercice-1",
+        "quote": "Réponse attendue : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours liste explicitement les composants d'une requête SQL (SELECT, FROM, WHERE, JOIN, ORDER BY). Le TD fait pratiquer leur identification et usage. Le corrigé fournit les réponses attendues avec les résultats exacts.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

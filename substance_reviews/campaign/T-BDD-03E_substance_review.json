@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-BDD-03E",
+      "official_label": "Construire des requêtes d'interrogation avec ORDER BY.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md",
+        "anchor": "#à-savoir",
+        "quote": "ORDER BY. (capacité vérifiée dans le fichier)",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md",
+        "anchor": "#exercice-1",
+        "quote": "Consigne : projeter nom et classe ; traiter aussi `JOIN sans ON` si nécessaire.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md",
+        "anchor": "#exercice-1",
+        "quote": "Réponse attendue : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours mentionne ORDER BY dans la liste des mots-clés à savoir, le TD fait pratiquer des requêtes avec ORDER BY, et le corrigé fournit la réponse attendue avec ORDER BY. Cependant, la capacité T-BDD-03E n'est pas explicitement citée dans les exercices (les exercices 1-4 citent T-BDD-03A à T-BDD-03D), et ORDER BY est traité de façon incidente plutôt que comme objet principal d'apprentissage. Les preuves sont présentes mais superficielles.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

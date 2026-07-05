@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-IHM-02",
+      "official_label": "Analyser et modifier les méthodes exécutées lors d'un clic sur un bouton d'une page Web.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md",
+        "anchor": "#méthodes",
+        "quote": "repérer header main form label input.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
+        "anchor": "#exercice-3",
+        "quote": "Consigne : lire jour dans URL ; traiter aussi `formulaire sans action` si nécessaire.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
+        "anchor": "#exercice-3",
+        "quote": "Réponse attendue : GET /club?jour=mercredi transporte jour.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "La capacité P-IHM-02 porte sur l'analyse des méthodes HTTP (GET/POST) lors de l'interaction avec un formulaire Web. Le cours présente les méthodes GET et POST, le TD (exercice 3) fait pratiquer la lecture des paramètres dans l'URL avec la méthode GET, et le corrigé fournit la réponse attendue. Le contenu correspond bien à l'analyse des interactions utilisateur via formulaire Web, même si le libellé officiel mentionne un 'clic sur un bouton' — le formulaire avec submit en est l'équivalent pédagogique traité ici.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

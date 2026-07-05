@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-HIST-01B",
+      "official_label": "Identifier l'évolution des rôles relatifs des logiciels et des matériels.",
+      "proof_course": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_practice": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_correction": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "verdict": "needs_content",
+      "justification": "Les fichiers mentionnent T-HIST-01B comme étiquette administrative, mais aucun contenu ne porte réellement sur l'évolution des rôles relatifs des logiciels et des matériels. Les exercices et corrigés traitent de préparation au bac pratique, Grand Oral, gestion du temps et graphes de transport fictifs, sans aucun lien avec l'histoire de l'informatique ou l'évolution logiciels/matériels.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

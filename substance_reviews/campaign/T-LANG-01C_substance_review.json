@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-LANG-01C",
+      "official_label": "Montrer sans formalisme théorique que le problème de l'arrêt est indécidable.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T15/T15_cours_calculabilite_arret.md",
+        "anchor": "#exemple-corrigé-3",
+        "quote": "Méthode : poser un oracle hypothétique. Résultat attendu : Q boucle si arrete(Q,Q) dit True.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T15/T15_TD_calculabilite_arret.md",
+        "anchor": "#exercice-3",
+        "quote": "Consigne : poser un oracle hypothétique ; traiter aussi `entrée absente` si nécessaire. Réponse attendue : Q boucle si arrete(Q,Q) dit True.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T15/T15_corrige_calculabilite_arret.md",
+        "anchor": "#exercice-3",
+        "quote": "Réponse attendue : Q boucle si arrete(Q,Q) dit True. Méthode : poser un oracle hypothétique. Cas limite : entrée absente.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "La capacité T-LANG-01C (montrer que le problème de l'arrêt est indécidable) est couverte par le cours via l'exemple corrigé 3 (oracle hypothétique, contradiction), par le TD exercice 3 (consigne de poser un oracle hypothétique), et par le corrigé exercice 3 (réponse attendue explicite). La démonstration par contradiction (Q boucle si arrete(Q,Q) dit True) constitue bien une approche informelle de l'indécidabilité du problème de l'arrêt.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-IHM-03C",
+      "official_label": "Reconnaître quand et pourquoi la transmission est chiffrée.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md",
+        "anchor": "#à-savoir",
+        "quote": "HTTPS. (capacité vérifiée dans le fichier)",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
+        "anchor": "#exercice-4",
+        "quote": "Capacité officielle : P-IHM-03A.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
+        "anchor": "#exercice-4",
+        "quote": "Réponse attendue : POST sans HTTPS ne chiffre pas.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "La capacité P-IHM-03C porte sur la reconnaissance du chiffrement de la transmission. Le cours mentionne HTTPS et la méthode 'distinguer GET, POST et HTTPS', le TD et l'évaluation traitent la distinction GET/POST/HTTPS (P-IHM-03A), et le corrigé fournit 'POST sans HTTPS ne chiffre pas'. Cependant, P-IHM-03C spécifiquement (quand et pourquoi la transmission est chiffrée) n'est pas explicitement distinguée de P-IHM-03A dans les extraits ; le contenu sur HTTPS et le chiffrement est présent mais rattaché à P-IHM-03A. Les preuves sont partielles mais réelles pour la notion de transmission chiffrée.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-DATA-BASE-05B",
+      "official_label": "Convertir un fichier texte dans différents formats d'encodage.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P03/P03_trace_conversion_encodages_texte.md",
+        "anchor": "#méthode-de-conversion--étapes",
+        "quote": "Pour convertir un fichier texte dans différents formats d'encodage, suivre ces étapes : 1. **Identifier** l'encodage source du fichier (ASCII, Latin-1 ou UTF-8). 2. **Lire** le fichier en précisant l'encodage source avec `open(fichier, \"r\", encoding=\"encodage_source\")`. 3. **Écrire** le contenu dans un nouveau fichier avec l'encodage cible : `open(fichier, \"w\", encoding=\"encodage_cible\")`.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P03/P03_tp_conversion_encodages_texte.md",
+        "anchor": "#exercice-1--lire-un-fichier-latin-1-et-écrire-en-utf-8-o1-o2",
+        "quote": "L'objectif est de convertir un fichier texte dans différents formats d'encodage, ici de Latin-1 vers UTF-8.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md",
+        "anchor": "#question-1--identification-et-conversion-5-points",
+        "quote": "Code Python pour convertir un fichier texte dans différents formats d'encodage : with open(\"titre.txt\", \"r\", encoding=\"latin-1\") as f: contenu = f.read()",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours (trace) enseigne la méthode de conversion entre encodages avec code modèle, le TP fait pratiquer la conversion Latin-1 vers UTF-8 en Python, et le corrigé fournit la réponse attendue avec le code Python complet et la table de conversion.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

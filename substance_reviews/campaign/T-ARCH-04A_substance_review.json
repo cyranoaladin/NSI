@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-ARCH-04A",
+      "official_label": "Décrire les principes du chiffrement symétrique et asymétrique.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T13/T13_cours_chiffrement_https.md",
+        "anchor": "#à-savoir",
+        "quote": "chiffrement symétrique. chiffrement asymétrique. clé publique. clé privée. certificat. échange de clé.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T13/T13_TD_chiffrement_https.md",
+        "anchor": "#exercice-1",
+        "quote": "Consigne : protéger Ksession par asymétrique ; traiter aussi `certificat expiré` si nécessaire.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T13/T13_corrige_chiffrement_https.md",
+        "anchor": "#exercice-1",
+        "quote": "Méthode : protéger Ksession par asymétrique. Cas limite : certificat expiré.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours liste explicitement chiffrement symétrique et asymétrique, clé publique/privée et certificat. Le TD fait pratiquer la protection par chiffrement asymétrique. Le corrigé fournit les réponses attendues avec méthode et cas limite.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

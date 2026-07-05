@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-STRUCT-03B",
+      "official_label": "Choisir une structure de données adaptée à la situation à modéliser.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T03/T03_cours_recherche_liste_dictionnaire.md",
+        "anchor": "#2-recherche-dune-valeur-dans-une-liste--parcours-séquentiel",
+        "quote": "A savoir : en Python, l'operateur `in` effectue une recherche dont le cout depend de la structure sous-jacente : parcours sequentiel en O(n) pour une liste, acces par hachage en O(1) moyen pour un dictionnaire.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T03/T03_td_recherche_liste_dictionnaire.md",
+        "anchor": "#exercice-3--comparaison-de-complexité",
+        "quote": "On dispose d'un annuaire contenant `n` entrées. On hésite entre deux représentations : **Représentation A** : une liste de tuples `[(nom, tel), ...]`",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T03/T03_corrige_recherche_liste_dictionnaire.md",
+        "anchor": "#exercice-1--tracer-une-recherche-dans-une-liste",
+        "quote": "Complexité de la recherche dans une liste de taille `n` : Meilleur cas : O(1) — l'élément est en première position. Pire cas : O(n) — l'élément est en dernière position ou absent.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours enseigne la distinction entre recherche séquentielle O(n) dans une liste et accès par hachage O(1) dans un dictionnaire. Le TD fait pratiquer cette distinction via des exercices de trace et de comparaison. Le corrigé fournit les réponses attendues avec les complexités détaillées.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

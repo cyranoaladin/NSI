@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-DATA-CONSTR-03A",
+      "official_label": "Construire une entrée de dictionnaire.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md",
+        "anchor": "#3-p-data-constr-03a--construire-une-entrée-de-dictionnaire",
+        "quote": "- P-DATA-CONSTR-03A : Construire une entrée de dictionnaire",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P04/P04_td_types_construits_complement.md",
+        "anchor": "#exercice-1---fonction-renvoyant-un-p-uplet-p-data-constr-01",
+        "quote": "- P-DATA-CONSTR-03A : Construire une entrée de dictionnaire",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md",
+        "anchor": "#exercice-1---fonction-renvoyant-un-p-uplet-p-data-constr-01",
+        "quote": "- P-DATA-CONSTR-03A : Construire une entrée de dictionnaire",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "La capacité P-DATA-CONSTR-03A est déclarée dans le cours complément, le TD complément et le corrigé complément. Cependant, les extraits fournis sont tronqués et ne montrent pas le contenu effectif de la section sur la construction d'une entrée de dictionnaire dans chacun de ces fichiers. La trace écrite complément mentionne P-DATA-CONSTR-03A et le corrigé complément aussi. Les preuves sont présentes par déclaration de capacité dans les fichiers, mais le contenu détaillé est coupé. On retient present:true pour les trois rôles sur la base des déclarations explicites et des extraits partiels c...",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

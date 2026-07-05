@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-ARCH-04B",
+      "official_label": "Réaliser par programmation une IHM répondant à un cahier des charges donné.",
+      "proof_course": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_practice": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_correction": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "verdict": "needs_content",
+      "justification": "Les fichiers P10 portent exclusivement sur les réseaux (protocoles IP/TCP, adresses MAC, TTL, paquets). Aucun contenu ne traite de la réalisation par programmation d'une IHM (interface homme-machine) répondant à un cahier des charges. La capacité P-ARCH-04B est mentionnée dans les modalités de l'évaluation mais aucune question, aucun cours, aucun exercice ne porte réellement sur la conception ou la programmation d'une IHM.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

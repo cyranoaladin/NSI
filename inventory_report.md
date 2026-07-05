@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1047
+- Total ressources : 1162
 - Ressources pédagogiques : 53
-- Ressources techniques : 994
+- Ressources techniques : 1109
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1039
+- generated: 1154
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 491
+- interne: 606
 - premiere: 250
 - terminale: 306
 
 ## Répartition par type
 - banque: 14
-- document: 616
+- document: 731
 - python: 95
 - script: 205
 - sequence: 45
 - test: 72
 
 ## Répartition par statut
-- needs_review: 1047
+- needs_review: 1162
 
 ## Répartition audience
 - corrige: 78
 - eleve: 143
-- mixte: 823
+- mixte: 938
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -973,6 +973,121 @@
   - substance_reviews/absent_capacities/T-STRUCT-03B_substance_review.json
   - substance_reviews/absent_capacities/T-STRUCT-03C_substance_review.json
   - substance_reviews/absent_capacities/T-STRUCT-04B_substance_review.json
+  - substance_reviews/campaign/P-ALGO-01A_substance_review.json
+  - substance_reviews/campaign/P-ALGO-01B_substance_review.json
+  - substance_reviews/campaign/P-ALGO-02A_substance_review.json
+  - substance_reviews/campaign/P-ALGO-02B_substance_review.json
+  - substance_reviews/campaign/P-ALGO-02C_substance_review.json
+  - substance_reviews/campaign/P-ALGO-02D_substance_review.json
+  - substance_reviews/campaign/P-ALGO-03_substance_review.json
+  - substance_reviews/campaign/P-ALGO-04_substance_review.json
+  - substance_reviews/campaign/P-ALGO-05_substance_review.json
+  - substance_reviews/campaign/P-ARCH-01A_substance_review.json
+  - substance_reviews/campaign/P-ARCH-01B_substance_review.json
+  - substance_reviews/campaign/P-ARCH-02A_substance_review.json
+  - substance_reviews/campaign/P-ARCH-02B_substance_review.json
+  - substance_reviews/campaign/P-ARCH-02C_substance_review.json
+  - substance_reviews/campaign/P-ARCH-03A_substance_review.json
+  - substance_reviews/campaign/P-ARCH-03B_substance_review.json
+  - substance_reviews/campaign/P-ARCH-03C_substance_review.json
+  - substance_reviews/campaign/P-ARCH-04A_substance_review.json
+  - substance_reviews/campaign/P-ARCH-04B_substance_review.json
+  - substance_reviews/campaign/P-DATA-BASE-01_substance_review.json
+  - substance_reviews/campaign/P-DATA-BASE-02A_substance_review.json
+  - substance_reviews/campaign/P-DATA-BASE-02B_substance_review.json
+  - substance_reviews/campaign/P-DATA-BASE-03_substance_review.json
+  - substance_reviews/campaign/P-DATA-BASE-04_substance_review.json
+  - substance_reviews/campaign/P-DATA-BASE-05A_substance_review.json
+  - substance_reviews/campaign/P-DATA-BASE-05B_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-01_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-02A_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-02B_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-02C_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-02D_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-03A_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-03B_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-03C_substance_review.json
+  - substance_reviews/campaign/P-HIST-01_substance_review.json
+  - substance_reviews/campaign/P-IHM-01A_substance_review.json
+  - substance_reviews/campaign/P-IHM-01B_substance_review.json
+  - substance_reviews/campaign/P-IHM-02_substance_review.json
+  - substance_reviews/campaign/P-IHM-03A_substance_review.json
+  - substance_reviews/campaign/P-IHM-03B_substance_review.json
+  - substance_reviews/campaign/P-IHM-03C_substance_review.json
+  - substance_reviews/campaign/P-IHM-04A_substance_review.json
+  - substance_reviews/campaign/P-IHM-04B_substance_review.json
+  - substance_reviews/campaign/P-IHM-04C_substance_review.json
+  - substance_reviews/campaign/P-LANG-01_substance_review.json
+  - substance_reviews/campaign/P-LANG-02_substance_review.json
+  - substance_reviews/campaign/P-LANG-03A_substance_review.json
+  - substance_reviews/campaign/P-LANG-03B_substance_review.json
+  - substance_reviews/campaign/P-LANG-03C_substance_review.json
+  - substance_reviews/campaign/P-LANG-04_substance_review.json
+  - substance_reviews/campaign/P-LANG-05_substance_review.json
+  - substance_reviews/campaign/P-TABLE-01_substance_review.json
+  - substance_reviews/campaign/P-TABLE-02_substance_review.json
+  - substance_reviews/campaign/P-TABLE-03_substance_review.json
+  - substance_reviews/campaign/P-TABLE-04_substance_review.json
+  - substance_reviews/campaign/T-ALGO-01A_substance_review.json
+  - substance_reviews/campaign/T-ALGO-01B_substance_review.json
+  - substance_reviews/campaign/T-ALGO-01C_substance_review.json
+  - substance_reviews/campaign/T-ALGO-01D_substance_review.json
+  - substance_reviews/campaign/T-ALGO-01E_substance_review.json
+  - substance_reviews/campaign/T-ALGO-01F_substance_review.json
+  - substance_reviews/campaign/T-ALGO-02A_substance_review.json
+  - substance_reviews/campaign/T-ALGO-02B_substance_review.json
+  - substance_reviews/campaign/T-ALGO-02C_substance_review.json
+  - substance_reviews/campaign/T-ALGO-02D_substance_review.json
+  - substance_reviews/campaign/T-ALGO-03_substance_review.json
+  - substance_reviews/campaign/T-ALGO-04_substance_review.json
+  - substance_reviews/campaign/T-ALGO-05_substance_review.json
+  - substance_reviews/campaign/T-ARCH-01_substance_review.json
+  - substance_reviews/campaign/T-ARCH-02A_substance_review.json
+  - substance_reviews/campaign/T-ARCH-02B_substance_review.json
+  - substance_reviews/campaign/T-ARCH-02C_substance_review.json
+  - substance_reviews/campaign/T-ARCH-03_substance_review.json
+  - substance_reviews/campaign/T-ARCH-04A_substance_review.json
+  - substance_reviews/campaign/T-ARCH-04B_substance_review.json
+  - substance_reviews/campaign/T-BDD-01A_substance_review.json
+  - substance_reviews/campaign/T-BDD-01B_substance_review.json
+  - substance_reviews/campaign/T-BDD-01C_substance_review.json
+  - substance_reviews/campaign/T-BDD-02_substance_review.json
+  - substance_reviews/campaign/T-BDD-03A_substance_review.json
+  - substance_reviews/campaign/T-BDD-03B_substance_review.json
+  - substance_reviews/campaign/T-BDD-03C_substance_review.json
+  - substance_reviews/campaign/T-BDD-03D_substance_review.json
+  - substance_reviews/campaign/T-BDD-03E_substance_review.json
+  - substance_reviews/campaign/T-BDD-03F_substance_review.json
+  - substance_reviews/campaign/T-BDD-03G_substance_review.json
+  - substance_reviews/campaign/T-BDD-03H_substance_review.json
+  - substance_reviews/campaign/T-HIST-01A_substance_review.json
+  - substance_reviews/campaign/T-HIST-01B_substance_review.json
+  - substance_reviews/campaign/T-LANG-01A_substance_review.json
+  - substance_reviews/campaign/T-LANG-01B_substance_review.json
+  - substance_reviews/campaign/T-LANG-01C_substance_review.json
+  - substance_reviews/campaign/T-LANG-02A_substance_review.json
+  - substance_reviews/campaign/T-LANG-02B_substance_review.json
+  - substance_reviews/campaign/T-LANG-03A_substance_review.json
+  - substance_reviews/campaign/T-LANG-03B_substance_review.json
+  - substance_reviews/campaign/T-LANG-03C_substance_review.json
+  - substance_reviews/campaign/T-LANG-04A_substance_review.json
+  - substance_reviews/campaign/T-LANG-04B_substance_review.json
+  - substance_reviews/campaign/T-LANG-05_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-01A_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-01B_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-01C_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-02A_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-02B_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-03A_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-03B_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-03C_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-04A_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-04B_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-05A_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-05B_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-05C_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-05D_substance_review.json
+  - substance_reviews/campaign/_usage_log.json
   - substance_reviews_index.md
   - substance_verdict.schema.json
   - support_source_trace.yml
@@ -2048,6 +2163,121 @@
   - substance_reviews/absent_capacities/T-STRUCT-03B_substance_review.json
   - substance_reviews/absent_capacities/T-STRUCT-03C_substance_review.json
   - substance_reviews/absent_capacities/T-STRUCT-04B_substance_review.json
+  - substance_reviews/campaign/P-ALGO-01A_substance_review.json
+  - substance_reviews/campaign/P-ALGO-01B_substance_review.json
+  - substance_reviews/campaign/P-ALGO-02A_substance_review.json
+  - substance_reviews/campaign/P-ALGO-02B_substance_review.json
+  - substance_reviews/campaign/P-ALGO-02C_substance_review.json
+  - substance_reviews/campaign/P-ALGO-02D_substance_review.json
+  - substance_reviews/campaign/P-ALGO-03_substance_review.json
+  - substance_reviews/campaign/P-ALGO-04_substance_review.json
+  - substance_reviews/campaign/P-ALGO-05_substance_review.json
+  - substance_reviews/campaign/P-ARCH-01A_substance_review.json
+  - substance_reviews/campaign/P-ARCH-01B_substance_review.json
+  - substance_reviews/campaign/P-ARCH-02A_substance_review.json
+  - substance_reviews/campaign/P-ARCH-02B_substance_review.json
+  - substance_reviews/campaign/P-ARCH-02C_substance_review.json
+  - substance_reviews/campaign/P-ARCH-03A_substance_review.json
+  - substance_reviews/campaign/P-ARCH-03B_substance_review.json
+  - substance_reviews/campaign/P-ARCH-03C_substance_review.json
+  - substance_reviews/campaign/P-ARCH-04A_substance_review.json
+  - substance_reviews/campaign/P-ARCH-04B_substance_review.json
+  - substance_reviews/campaign/P-DATA-BASE-01_substance_review.json
+  - substance_reviews/campaign/P-DATA-BASE-02A_substance_review.json
+  - substance_reviews/campaign/P-DATA-BASE-02B_substance_review.json
+  - substance_reviews/campaign/P-DATA-BASE-03_substance_review.json
+  - substance_reviews/campaign/P-DATA-BASE-04_substance_review.json
+  - substance_reviews/campaign/P-DATA-BASE-05A_substance_review.json
+  - substance_reviews/campaign/P-DATA-BASE-05B_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-01_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-02A_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-02B_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-02C_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-02D_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-03A_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-03B_substance_review.json
+  - substance_reviews/campaign/P-DATA-CONSTR-03C_substance_review.json
+  - substance_reviews/campaign/P-HIST-01_substance_review.json
+  - substance_reviews/campaign/P-IHM-01A_substance_review.json
+  - substance_reviews/campaign/P-IHM-01B_substance_review.json
+  - substance_reviews/campaign/P-IHM-02_substance_review.json
+  - substance_reviews/campaign/P-IHM-03A_substance_review.json
+  - substance_reviews/campaign/P-IHM-03B_substance_review.json
+  - substance_reviews/campaign/P-IHM-03C_substance_review.json
+  - substance_reviews/campaign/P-IHM-04A_substance_review.json
+  - substance_reviews/campaign/P-IHM-04B_substance_review.json
+  - substance_reviews/campaign/P-IHM-04C_substance_review.json
+  - substance_reviews/campaign/P-LANG-01_substance_review.json
+  - substance_reviews/campaign/P-LANG-02_substance_review.json
+  - substance_reviews/campaign/P-LANG-03A_substance_review.json
+  - substance_reviews/campaign/P-LANG-03B_substance_review.json
+  - substance_reviews/campaign/P-LANG-03C_substance_review.json
+  - substance_reviews/campaign/P-LANG-04_substance_review.json
+  - substance_reviews/campaign/P-LANG-05_substance_review.json
+  - substance_reviews/campaign/P-TABLE-01_substance_review.json
+  - substance_reviews/campaign/P-TABLE-02_substance_review.json
+  - substance_reviews/campaign/P-TABLE-03_substance_review.json
+  - substance_reviews/campaign/P-TABLE-04_substance_review.json
+  - substance_reviews/campaign/T-ALGO-01A_substance_review.json
+  - substance_reviews/campaign/T-ALGO-01B_substance_review.json
+  - substance_reviews/campaign/T-ALGO-01C_substance_review.json
+  - substance_reviews/campaign/T-ALGO-01D_substance_review.json
+  - substance_reviews/campaign/T-ALGO-01E_substance_review.json
+  - substance_reviews/campaign/T-ALGO-01F_substance_review.json
+  - substance_reviews/campaign/T-ALGO-02A_substance_review.json
+  - substance_reviews/campaign/T-ALGO-02B_substance_review.json
+  - substance_reviews/campaign/T-ALGO-02C_substance_review.json
+  - substance_reviews/campaign/T-ALGO-02D_substance_review.json
+  - substance_reviews/campaign/T-ALGO-03_substance_review.json
+  - substance_reviews/campaign/T-ALGO-04_substance_review.json
+  - substance_reviews/campaign/T-ALGO-05_substance_review.json
+  - substance_reviews/campaign/T-ARCH-01_substance_review.json
+  - substance_reviews/campaign/T-ARCH-02A_substance_review.json
+  - substance_reviews/campaign/T-ARCH-02B_substance_review.json
+  - substance_reviews/campaign/T-ARCH-02C_substance_review.json
+  - substance_reviews/campaign/T-ARCH-03_substance_review.json
+  - substance_reviews/campaign/T-ARCH-04A_substance_review.json
+  - substance_reviews/campaign/T-ARCH-04B_substance_review.json
+  - substance_reviews/campaign/T-BDD-01A_substance_review.json
+  - substance_reviews/campaign/T-BDD-01B_substance_review.json
+  - substance_reviews/campaign/T-BDD-01C_substance_review.json
+  - substance_reviews/campaign/T-BDD-02_substance_review.json
+  - substance_reviews/campaign/T-BDD-03A_substance_review.json
+  - substance_reviews/campaign/T-BDD-03B_substance_review.json
+  - substance_reviews/campaign/T-BDD-03C_substance_review.json
+  - substance_reviews/campaign/T-BDD-03D_substance_review.json
+  - substance_reviews/campaign/T-BDD-03E_substance_review.json
+  - substance_reviews/campaign/T-BDD-03F_substance_review.json
+  - substance_reviews/campaign/T-BDD-03G_substance_review.json
+  - substance_reviews/campaign/T-BDD-03H_substance_review.json
+  - substance_reviews/campaign/T-HIST-01A_substance_review.json
+  - substance_reviews/campaign/T-HIST-01B_substance_review.json
+  - substance_reviews/campaign/T-LANG-01A_substance_review.json
+  - substance_reviews/campaign/T-LANG-01B_substance_review.json
+  - substance_reviews/campaign/T-LANG-01C_substance_review.json
+  - substance_reviews/campaign/T-LANG-02A_substance_review.json
+  - substance_reviews/campaign/T-LANG-02B_substance_review.json
+  - substance_reviews/campaign/T-LANG-03A_substance_review.json
+  - substance_reviews/campaign/T-LANG-03B_substance_review.json
+  - substance_reviews/campaign/T-LANG-03C_substance_review.json
+  - substance_reviews/campaign/T-LANG-04A_substance_review.json
+  - substance_reviews/campaign/T-LANG-04B_substance_review.json
+  - substance_reviews/campaign/T-LANG-05_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-01A_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-01B_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-01C_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-02A_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-02B_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-03A_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-03B_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-03C_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-04A_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-04B_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-05A_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-05B_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-05C_substance_review.json
+  - substance_reviews/campaign/T-STRUCT-05D_substance_review.json
+  - substance_reviews/campaign/_usage_log.json
   - substance_reviews_index.md
   - substance_verdict.schema.json
   - support_source_trace.yml
@@ -3045,6 +3275,121 @@
 - substance_reviews/absent_capacities/T-STRUCT-03B_substance_review.json
 - substance_reviews/absent_capacities/T-STRUCT-03C_substance_review.json
 - substance_reviews/absent_capacities/T-STRUCT-04B_substance_review.json
+- substance_reviews/campaign/P-ALGO-01A_substance_review.json
+- substance_reviews/campaign/P-ALGO-01B_substance_review.json
+- substance_reviews/campaign/P-ALGO-02A_substance_review.json
+- substance_reviews/campaign/P-ALGO-02B_substance_review.json
+- substance_reviews/campaign/P-ALGO-02C_substance_review.json
+- substance_reviews/campaign/P-ALGO-02D_substance_review.json
+- substance_reviews/campaign/P-ALGO-03_substance_review.json
+- substance_reviews/campaign/P-ALGO-04_substance_review.json
+- substance_reviews/campaign/P-ALGO-05_substance_review.json
+- substance_reviews/campaign/P-ARCH-01A_substance_review.json
+- substance_reviews/campaign/P-ARCH-01B_substance_review.json
+- substance_reviews/campaign/P-ARCH-02A_substance_review.json
+- substance_reviews/campaign/P-ARCH-02B_substance_review.json
+- substance_reviews/campaign/P-ARCH-02C_substance_review.json
+- substance_reviews/campaign/P-ARCH-03A_substance_review.json
+- substance_reviews/campaign/P-ARCH-03B_substance_review.json
+- substance_reviews/campaign/P-ARCH-03C_substance_review.json
+- substance_reviews/campaign/P-ARCH-04A_substance_review.json
+- substance_reviews/campaign/P-ARCH-04B_substance_review.json
+- substance_reviews/campaign/P-DATA-BASE-01_substance_review.json
+- substance_reviews/campaign/P-DATA-BASE-02A_substance_review.json
+- substance_reviews/campaign/P-DATA-BASE-02B_substance_review.json
+- substance_reviews/campaign/P-DATA-BASE-03_substance_review.json
+- substance_reviews/campaign/P-DATA-BASE-04_substance_review.json
+- substance_reviews/campaign/P-DATA-BASE-05A_substance_review.json
+- substance_reviews/campaign/P-DATA-BASE-05B_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-01_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-02A_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-02B_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-02C_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-02D_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-03A_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-03B_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-03C_substance_review.json
+- substance_reviews/campaign/P-HIST-01_substance_review.json
+- substance_reviews/campaign/P-IHM-01A_substance_review.json
+- substance_reviews/campaign/P-IHM-01B_substance_review.json
+- substance_reviews/campaign/P-IHM-02_substance_review.json
+- substance_reviews/campaign/P-IHM-03A_substance_review.json
+- substance_reviews/campaign/P-IHM-03B_substance_review.json
+- substance_reviews/campaign/P-IHM-03C_substance_review.json
+- substance_reviews/campaign/P-IHM-04A_substance_review.json
+- substance_reviews/campaign/P-IHM-04B_substance_review.json
+- substance_reviews/campaign/P-IHM-04C_substance_review.json
+- substance_reviews/campaign/P-LANG-01_substance_review.json
+- substance_reviews/campaign/P-LANG-02_substance_review.json
+- substance_reviews/campaign/P-LANG-03A_substance_review.json
+- substance_reviews/campaign/P-LANG-03B_substance_review.json
+- substance_reviews/campaign/P-LANG-03C_substance_review.json
+- substance_reviews/campaign/P-LANG-04_substance_review.json
+- substance_reviews/campaign/P-LANG-05_substance_review.json
+- substance_reviews/campaign/P-TABLE-01_substance_review.json
+- substance_reviews/campaign/P-TABLE-02_substance_review.json
+- substance_reviews/campaign/P-TABLE-03_substance_review.json
+- substance_reviews/campaign/P-TABLE-04_substance_review.json
+- substance_reviews/campaign/T-ALGO-01A_substance_review.json
+- substance_reviews/campaign/T-ALGO-01B_substance_review.json
+- substance_reviews/campaign/T-ALGO-01C_substance_review.json
+- substance_reviews/campaign/T-ALGO-01D_substance_review.json
+- substance_reviews/campaign/T-ALGO-01E_substance_review.json
+- substance_reviews/campaign/T-ALGO-01F_substance_review.json
+- substance_reviews/campaign/T-ALGO-02A_substance_review.json
+- substance_reviews/campaign/T-ALGO-02B_substance_review.json
+- substance_reviews/campaign/T-ALGO-02C_substance_review.json
+- substance_reviews/campaign/T-ALGO-02D_substance_review.json
+- substance_reviews/campaign/T-ALGO-03_substance_review.json
+- substance_reviews/campaign/T-ALGO-04_substance_review.json
+- substance_reviews/campaign/T-ALGO-05_substance_review.json
+- substance_reviews/campaign/T-ARCH-01_substance_review.json
+- substance_reviews/campaign/T-ARCH-02A_substance_review.json
+- substance_reviews/campaign/T-ARCH-02B_substance_review.json
+- substance_reviews/campaign/T-ARCH-02C_substance_review.json
+- substance_reviews/campaign/T-ARCH-03_substance_review.json
+- substance_reviews/campaign/T-ARCH-04A_substance_review.json
+- substance_reviews/campaign/T-ARCH-04B_substance_review.json
+- substance_reviews/campaign/T-BDD-01A_substance_review.json
+- substance_reviews/campaign/T-BDD-01B_substance_review.json
+- substance_reviews/campaign/T-BDD-01C_substance_review.json
+- substance_reviews/campaign/T-BDD-02_substance_review.json
+- substance_reviews/campaign/T-BDD-03A_substance_review.json
+- substance_reviews/campaign/T-BDD-03B_substance_review.json
+- substance_reviews/campaign/T-BDD-03C_substance_review.json
+- substance_reviews/campaign/T-BDD-03D_substance_review.json
+- substance_reviews/campaign/T-BDD-03E_substance_review.json
+- substance_reviews/campaign/T-BDD-03F_substance_review.json
+- substance_reviews/campaign/T-BDD-03G_substance_review.json
+- substance_reviews/campaign/T-BDD-03H_substance_review.json
+- substance_reviews/campaign/T-HIST-01A_substance_review.json
+- substance_reviews/campaign/T-HIST-01B_substance_review.json
+- substance_reviews/campaign/T-LANG-01A_substance_review.json
+- substance_reviews/campaign/T-LANG-01B_substance_review.json
+- substance_reviews/campaign/T-LANG-01C_substance_review.json
+- substance_reviews/campaign/T-LANG-02A_substance_review.json
+- substance_reviews/campaign/T-LANG-02B_substance_review.json
+- substance_reviews/campaign/T-LANG-03A_substance_review.json
+- substance_reviews/campaign/T-LANG-03B_substance_review.json
+- substance_reviews/campaign/T-LANG-03C_substance_review.json
+- substance_reviews/campaign/T-LANG-04A_substance_review.json
+- substance_reviews/campaign/T-LANG-04B_substance_review.json
+- substance_reviews/campaign/T-LANG-05_substance_review.json
+- substance_reviews/campaign/T-STRUCT-01A_substance_review.json
+- substance_reviews/campaign/T-STRUCT-01B_substance_review.json
+- substance_reviews/campaign/T-STRUCT-01C_substance_review.json
+- substance_reviews/campaign/T-STRUCT-02A_substance_review.json
+- substance_reviews/campaign/T-STRUCT-02B_substance_review.json
+- substance_reviews/campaign/T-STRUCT-03A_substance_review.json
+- substance_reviews/campaign/T-STRUCT-03B_substance_review.json
+- substance_reviews/campaign/T-STRUCT-03C_substance_review.json
+- substance_reviews/campaign/T-STRUCT-04A_substance_review.json
+- substance_reviews/campaign/T-STRUCT-04B_substance_review.json
+- substance_reviews/campaign/T-STRUCT-05A_substance_review.json
+- substance_reviews/campaign/T-STRUCT-05B_substance_review.json
+- substance_reviews/campaign/T-STRUCT-05C_substance_review.json
+- substance_reviews/campaign/T-STRUCT-05D_substance_review.json
+- substance_reviews/campaign/_usage_log.json
 - substance_reviews_index.md
 - substance_verdict.schema.json
 - support_source_trace.yml
@@ -4092,6 +4437,121 @@
 - substance_reviews/absent_capacities/T-STRUCT-03B_substance_review.json
 - substance_reviews/absent_capacities/T-STRUCT-03C_substance_review.json
 - substance_reviews/absent_capacities/T-STRUCT-04B_substance_review.json
+- substance_reviews/campaign/P-ALGO-01A_substance_review.json
+- substance_reviews/campaign/P-ALGO-01B_substance_review.json
+- substance_reviews/campaign/P-ALGO-02A_substance_review.json
+- substance_reviews/campaign/P-ALGO-02B_substance_review.json
+- substance_reviews/campaign/P-ALGO-02C_substance_review.json
+- substance_reviews/campaign/P-ALGO-02D_substance_review.json
+- substance_reviews/campaign/P-ALGO-03_substance_review.json
+- substance_reviews/campaign/P-ALGO-04_substance_review.json
+- substance_reviews/campaign/P-ALGO-05_substance_review.json
+- substance_reviews/campaign/P-ARCH-01A_substance_review.json
+- substance_reviews/campaign/P-ARCH-01B_substance_review.json
+- substance_reviews/campaign/P-ARCH-02A_substance_review.json
+- substance_reviews/campaign/P-ARCH-02B_substance_review.json
+- substance_reviews/campaign/P-ARCH-02C_substance_review.json
+- substance_reviews/campaign/P-ARCH-03A_substance_review.json
+- substance_reviews/campaign/P-ARCH-03B_substance_review.json
+- substance_reviews/campaign/P-ARCH-03C_substance_review.json
+- substance_reviews/campaign/P-ARCH-04A_substance_review.json
+- substance_reviews/campaign/P-ARCH-04B_substance_review.json
+- substance_reviews/campaign/P-DATA-BASE-01_substance_review.json
+- substance_reviews/campaign/P-DATA-BASE-02A_substance_review.json
+- substance_reviews/campaign/P-DATA-BASE-02B_substance_review.json
+- substance_reviews/campaign/P-DATA-BASE-03_substance_review.json
+- substance_reviews/campaign/P-DATA-BASE-04_substance_review.json
+- substance_reviews/campaign/P-DATA-BASE-05A_substance_review.json
+- substance_reviews/campaign/P-DATA-BASE-05B_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-01_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-02A_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-02B_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-02C_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-02D_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-03A_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-03B_substance_review.json
+- substance_reviews/campaign/P-DATA-CONSTR-03C_substance_review.json
+- substance_reviews/campaign/P-HIST-01_substance_review.json
+- substance_reviews/campaign/P-IHM-01A_substance_review.json
+- substance_reviews/campaign/P-IHM-01B_substance_review.json
+- substance_reviews/campaign/P-IHM-02_substance_review.json
+- substance_reviews/campaign/P-IHM-03A_substance_review.json
+- substance_reviews/campaign/P-IHM-03B_substance_review.json
+- substance_reviews/campaign/P-IHM-03C_substance_review.json
+- substance_reviews/campaign/P-IHM-04A_substance_review.json
+- substance_reviews/campaign/P-IHM-04B_substance_review.json
+- substance_reviews/campaign/P-IHM-04C_substance_review.json
+- substance_reviews/campaign/P-LANG-01_substance_review.json
+- substance_reviews/campaign/P-LANG-02_substance_review.json
+- substance_reviews/campaign/P-LANG-03A_substance_review.json
+- substance_reviews/campaign/P-LANG-03B_substance_review.json
+- substance_reviews/campaign/P-LANG-03C_substance_review.json
+- substance_reviews/campaign/P-LANG-04_substance_review.json
+- substance_reviews/campaign/P-LANG-05_substance_review.json
+- substance_reviews/campaign/P-TABLE-01_substance_review.json
+- substance_reviews/campaign/P-TABLE-02_substance_review.json
+- substance_reviews/campaign/P-TABLE-03_substance_review.json
+- substance_reviews/campaign/P-TABLE-04_substance_review.json
+- substance_reviews/campaign/T-ALGO-01A_substance_review.json
+- substance_reviews/campaign/T-ALGO-01B_substance_review.json
+- substance_reviews/campaign/T-ALGO-01C_substance_review.json
+- substance_reviews/campaign/T-ALGO-01D_substance_review.json
+- substance_reviews/campaign/T-ALGO-01E_substance_review.json
+- substance_reviews/campaign/T-ALGO-01F_substance_review.json
+- substance_reviews/campaign/T-ALGO-02A_substance_review.json
+- substance_reviews/campaign/T-ALGO-02B_substance_review.json
+- substance_reviews/campaign/T-ALGO-02C_substance_review.json
+- substance_reviews/campaign/T-ALGO-02D_substance_review.json
+- substance_reviews/campaign/T-ALGO-03_substance_review.json
+- substance_reviews/campaign/T-ALGO-04_substance_review.json
+- substance_reviews/campaign/T-ALGO-05_substance_review.json
+- substance_reviews/campaign/T-ARCH-01_substance_review.json
+- substance_reviews/campaign/T-ARCH-02A_substance_review.json
+- substance_reviews/campaign/T-ARCH-02B_substance_review.json
+- substance_reviews/campaign/T-ARCH-02C_substance_review.json
+- substance_reviews/campaign/T-ARCH-03_substance_review.json
+- substance_reviews/campaign/T-ARCH-04A_substance_review.json
+- substance_reviews/campaign/T-ARCH-04B_substance_review.json
+- substance_reviews/campaign/T-BDD-01A_substance_review.json
+- substance_reviews/campaign/T-BDD-01B_substance_review.json
+- substance_reviews/campaign/T-BDD-01C_substance_review.json
+- substance_reviews/campaign/T-BDD-02_substance_review.json
+- substance_reviews/campaign/T-BDD-03A_substance_review.json
+- substance_reviews/campaign/T-BDD-03B_substance_review.json
+- substance_reviews/campaign/T-BDD-03C_substance_review.json
+- substance_reviews/campaign/T-BDD-03D_substance_review.json
+- substance_reviews/campaign/T-BDD-03E_substance_review.json
+- substance_reviews/campaign/T-BDD-03F_substance_review.json
+- substance_reviews/campaign/T-BDD-03G_substance_review.json
+- substance_reviews/campaign/T-BDD-03H_substance_review.json
+- substance_reviews/campaign/T-HIST-01A_substance_review.json
+- substance_reviews/campaign/T-HIST-01B_substance_review.json
+- substance_reviews/campaign/T-LANG-01A_substance_review.json
+- substance_reviews/campaign/T-LANG-01B_substance_review.json
+- substance_reviews/campaign/T-LANG-01C_substance_review.json
+- substance_reviews/campaign/T-LANG-02A_substance_review.json
+- substance_reviews/campaign/T-LANG-02B_substance_review.json
+- substance_reviews/campaign/T-LANG-03A_substance_review.json
+- substance_reviews/campaign/T-LANG-03B_substance_review.json
+- substance_reviews/campaign/T-LANG-03C_substance_review.json
+- substance_reviews/campaign/T-LANG-04A_substance_review.json
+- substance_reviews/campaign/T-LANG-04B_substance_review.json
+- substance_reviews/campaign/T-LANG-05_substance_review.json
+- substance_reviews/campaign/T-STRUCT-01A_substance_review.json
+- substance_reviews/campaign/T-STRUCT-01B_substance_review.json
+- substance_reviews/campaign/T-STRUCT-01C_substance_review.json
+- substance_reviews/campaign/T-STRUCT-02A_substance_review.json
+- substance_reviews/campaign/T-STRUCT-02B_substance_review.json
+- substance_reviews/campaign/T-STRUCT-03A_substance_review.json
+- substance_reviews/campaign/T-STRUCT-03B_substance_review.json
+- substance_reviews/campaign/T-STRUCT-03C_substance_review.json
+- substance_reviews/campaign/T-STRUCT-04A_substance_review.json
+- substance_reviews/campaign/T-STRUCT-04B_substance_review.json
+- substance_reviews/campaign/T-STRUCT-05A_substance_review.json
+- substance_reviews/campaign/T-STRUCT-05B_substance_review.json
+- substance_reviews/campaign/T-STRUCT-05C_substance_review.json
+- substance_reviews/campaign/T-STRUCT-05D_substance_review.json
+- substance_reviews/campaign/_usage_log.json
 - substance_reviews_index.md
 - substance_verdict.schema.json
 - support_source_trace.yml

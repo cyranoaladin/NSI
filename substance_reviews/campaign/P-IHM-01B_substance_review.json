@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-IHM-01B",
+      "official_label": "Identifier les événements que les fonctions associées aux composants graphiques peuvent traiter.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md",
+        "anchor": "#exemples-corrigés",
+        "quote": "Méthode : cibler #nom en CSS et DOM.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
+        "anchor": "#exercice-2",
+        "quote": "Consigne : cibler #nom en CSS et DOM ; traiter aussi `paramètre jour absent` si nécessaire.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
+        "anchor": "#exercice-2",
+        "quote": "Réponse attendue : document.querySelector(\"#nom\").value lit la saisie.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours présente la méthode de ciblage DOM/CSS, le TD fait pratiquer la capacité P-IHM-01B avec la consigne de cibler #nom, et le corrigé fournit la réponse attendue. Cependant, le libellé officiel porte sur les événements associés aux composants graphiques (ex: submit, click), ce qui est partiellement couvert via 'événement submit' mentionné dans le vocabulaire du cours et du TP, mais l'accent principal est mis sur le sélecteur CSS/DOM plutôt que sur l'identification des événements. La preuve reste suffisante car l'événement submit est explicitement mentionné comme vocabulaire clé et la c...",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T20:38:43Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-HIST-01",
+      "official_label": "Situer dans le temps les principaux événements de l'histoire de l'informatique et leurs protagonistes.",
+      "proof_course": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_practice": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_correction": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "verdict": "needs_content",
+      "justification": "Tous les fichiers portent l'étiquette administrative P-HIST-01 mais le contenu réel porte exclusivement sur un projet fictif d'énergie solaire, le cadrage de projet, la démonstration orale et le traitement de données CSV. Aucun fichier n'enseigne, ne fait pratiquer ni ne corrige la capacité 'situer dans le temps les principaux événements de l'histoire de l'informatique et leurs protagonistes'. La mention 'repère historique cité avec source' apparaît de façon isolée sans aucun contenu historique informatique réel.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}
