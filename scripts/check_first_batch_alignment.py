@@ -106,19 +106,21 @@ def sequence_errors(root: Path, prefix: str, program_ids: set[str]) -> list[str]
         if f"Activité corrective {error_id}" not in texts["remediation"]:
             errors.append(f"{prefix}: {error_id} sans remédiation")
 
-    # Collect capacities from ALL course files (principal + variants)
-    all_course_files = find_all_kind_files(root, prefix, "cours")
-    body_capacities: set[str] = set(CAPACITY_RE.findall(texts["cours"]))
+    # Collect capacities from ALL files of the sequence (all kinds, principal + variants)
+    # This ensures symmetry with coverage which reads all .md files via rglob
+    all_kinds_for_collection = ["cours", "td", "tp", "evaluation", "corrige", "trace"]
+    body_capacities: set[str] = set()
     fm_capacities: set[str] = set()
-    for course_path in all_course_files:
-        body_capacities |= set(CAPACITY_RE.findall(read(course_path)))
-        fm = read_frontmatter(course_path)
-        official = fm.get("official_program")
-        raw = official.get("capacities", []) if isinstance(official, dict) else []
-        if isinstance(raw, list):
-            fm_capacities |= {str(c) for c in raw if CAPACITY_RE.fullmatch(str(c))}
+    for kind in all_kinds_for_collection:
+        for file_path in find_all_kind_files(root, prefix, kind):
+            body_capacities |= set(CAPACITY_RE.findall(read(file_path)))
+            fm = read_frontmatter(file_path)
+            official = fm.get("official_program")
+            raw = official.get("capacities", []) if isinstance(official, dict) else []
+            if isinstance(raw, list):
+                fm_capacities |= {str(c) for c in raw if CAPACITY_RE.fullmatch(str(c))}
     # Union: every declared or mentioned capacity must be exercised
-    course_capacities = body_capacities | fm_capacities
+    sequence_capacities = body_capacities | fm_capacities
     # Collect ALL worked text (principal + variant td/tp/evaluation bodies)
     all_worked_parts: list[str] = [worked_text]
     all_eval_parts: list[str] = [texts["evaluation"]]
@@ -130,7 +132,7 @@ def sequence_errors(root: Path, prefix: str, program_ids: set[str]) -> list[str]
                 all_eval_parts.append(read(variant_path))
     full_worked = "\n".join(all_worked_parts)
     full_eval = "\n".join(all_eval_parts)
-    for capacity in sorted(course_capacities):
+    for capacity in sorted(sequence_capacities):
         if capacity not in program_ids:
             errors.append(f"{prefix}: capacité inconnue -> {capacity}")
         if capacity not in full_worked:

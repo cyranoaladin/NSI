@@ -39,3 +39,9 @@ known_failures:
     file: 03_progressions/supports/terminale/T03/T03_cours_recherche_liste_dictionnaire.md
     reason: "déclaré sur variant recherche_liste_dictionnaire, ID non mentionné dans les corps TD/éval"
     resolution: "PR C — ajouter mention ID dans exercice existant"
+
+  - id: T-ALGO-01C
+    prefix: T06
+    file: 03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md
+    reason: "déclaré sur TP T06 uniquement (aucun cours), ID non mentionné dans les corps TD/TP/éval"
+    resolution: "PR C — mention dans l'exercice TP qui l'exerce + item/mention éval"

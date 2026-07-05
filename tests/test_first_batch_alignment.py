@@ -320,5 +320,102 @@ class FirstBatchAlignmentTest(unittest.TestCase):
             self.assertEqual(extra_errors, [], f"Expected no errors for P-EXTRA-99, got: {extra_errors}")
 
 
+    # --- A4-2: permanent symmetry guard on real corpus ---
+
+    def test_gate_coverage_declaration_symmetry(self) -> None:
+        """Gate and coverage must see the same set of capacity declarations.
+
+        Any asymmetry means a capacity can be counted by coverage but
+        invisible to the alignment gate (inflation vector). This test
+        runs on the REAL corpus, not fixtures.
+        """
+        from scripts._qa_common import ROOT as _ROOT, read_frontmatter as _read_fm
+        from scripts.check_first_batch_alignment import (
+            CAPACITY_RE as _CAP_RE,
+            discover_all_prefixes as _discover,
+        )
+        from scripts.check_first_batch_document_quality import find_all_kind_files as _find_all
+
+        SUPPORTS_DIR = _ROOT / "03_progressions" / "supports"
+
+        # Set A: declarations collected by the gate (all kinds, all variants)
+        gate_caps: set[str] = set()
+        for prefix in _discover():
+            for kind in ["cours", "td", "tp", "evaluation", "corrige", "trace"]:
+                for fp in _find_all(_ROOT, prefix, kind):
+                    fm = _read_fm(fp)
+                    official = fm.get("official_program")
+                    raw = official.get("capacities", []) if isinstance(official, dict) else []
+                    if isinstance(raw, list):
+                        gate_caps |= {str(c) for c in raw if _CAP_RE.fullmatch(str(c))}
+
+        # Set B: declarations seen by coverage (rglob *.md in supports/)
+        cov_caps: set[str] = set()
+        for path in sorted(SUPPORTS_DIR.rglob("*.md")):
+            if "contracts" in path.parts:
+                continue
+            fm = _read_fm(path)
+            official = fm.get("official_program")
+            raw = official.get("capacities", []) if isinstance(official, dict) else []
+            if isinstance(raw, list):
+                cov_caps |= {str(c) for c in raw if _CAP_RE.fullmatch(str(c))}
+
+        only_coverage = sorted(cov_caps - gate_caps)
+        only_gate = sorted(gate_caps - cov_caps)
+        self.assertEqual(only_coverage, [],
+            f"Capacities seen by coverage but NOT by gate (inflation vector): {only_coverage}")
+        self.assertEqual(only_gate, [],
+            f"Capacities seen by gate but NOT by coverage: {only_gate}")
+
+    # --- A4-3: adversarial tests for TP-only declaration ---
+
+    def test_tp_only_capacity_not_in_body_is_rouge(self) -> None:
+        """(a) Capacity declared ONLY on TP frontmatter, absent from all bodies → ROUGE."""
+        with tempfile.TemporaryDirectory() as raw:
+            d = Path(raw) / "P00"
+            d.mkdir()
+            (d / "P00_cours_main.md").write_text(
+                "Objectif O1\nP-LANG-01\nErreur fréquente EF1\n", encoding="utf-8")
+            (d / "P00_trace_main.md").write_text("Objectif O1\nP-LANG-01\n", encoding="utf-8")
+            (d / "P00_td_main.md").write_text("### Exercice 1\nP-LANG-01\n", encoding="utf-8")
+            # TP declares P-TP-ONLY-99 in frontmatter only
+            (d / "P00_tp_main.md").write_text(
+                "---\ntitle: t\nofficial_program:\n  capacities:\n    - P-TP-ONLY-99\n---\n"
+                "Objectif O1\nP-LANG-01\n", encoding="utf-8")
+            (d / "P00_corrige_main.md").write_text("### Corrigé exercice 1\n", encoding="utf-8")
+            (d / "P00_evaluation_main.md").write_text("### Question 1\nP-LANG-01\n", encoding="utf-8")
+            (d / "P00_bareme_main.md").write_text("### Barème question 1\n", encoding="utf-8")
+            (d / "P00_remediation_main.md").write_text("Activité corrective EF1\n", encoding="utf-8")
+
+            result = alignment.analyze_alignment(Path(raw), prefixes=["P00"],
+                program_ids={"P-LANG-01", "P-TP-ONLY-99"})
+            tp_errors = [e for e in result.errors if "P-TP-ONLY-99" in e]
+            self.assertTrue(
+                any("non travaillée" in e for e in tp_errors),
+                f"Expected P-TP-ONLY-99 non travaillée, got: {result.errors}")
+
+    def test_tp_only_capacity_in_bodies_is_vert(self) -> None:
+        """(b) Capacity declared on TP, mentioned in TP body AND eval body → VERT."""
+        with tempfile.TemporaryDirectory() as raw:
+            d = Path(raw) / "P00"
+            d.mkdir()
+            (d / "P00_cours_main.md").write_text(
+                "Objectif O1\nP-LANG-01\nErreur fréquente EF1\n", encoding="utf-8")
+            (d / "P00_trace_main.md").write_text("Objectif O1\nP-LANG-01\n", encoding="utf-8")
+            (d / "P00_td_main.md").write_text("### Exercice 1\nP-LANG-01\nP-TP-ONLY-99\n", encoding="utf-8")
+            (d / "P00_tp_main.md").write_text(
+                "---\ntitle: t\nofficial_program:\n  capacities:\n    - P-TP-ONLY-99\n---\n"
+                "Objectif O1\nP-LANG-01\nP-TP-ONLY-99 exercé ici\n", encoding="utf-8")
+            (d / "P00_corrige_main.md").write_text("### Corrigé exercice 1\n", encoding="utf-8")
+            (d / "P00_evaluation_main.md").write_text("### Question 1\nP-LANG-01\nP-TP-ONLY-99\n", encoding="utf-8")
+            (d / "P00_bareme_main.md").write_text("### Barème question 1\n", encoding="utf-8")
+            (d / "P00_remediation_main.md").write_text("Activité corrective EF1\n", encoding="utf-8")
+
+            result = alignment.analyze_alignment(Path(raw), prefixes=["P00"],
+                program_ids={"P-LANG-01", "P-TP-ONLY-99"})
+            tp_errors = [e for e in result.errors if "P-TP-ONLY-99" in e]
+            self.assertEqual(tp_errors, [], f"Expected no errors for P-TP-ONLY-99, got: {tp_errors}")
+
+
 if __name__ == "__main__":
     unittest.main()
