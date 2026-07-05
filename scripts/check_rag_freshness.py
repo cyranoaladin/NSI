@@ -24,7 +24,6 @@ import sys
 import urllib.request
 import urllib.error
 from pathlib import Path
-from typing import Any
 
 _REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(_REPO_ROOT) not in sys.path:
@@ -153,7 +152,6 @@ def main() -> int:
 
     # Compare
     repo_paths = {f["path"] for f in repo_files}
-    repo_by_path = {f["path"]: f["sha256"] for f in repo_files}
     chroma_paths = set(chroma_hashes.keys())
 
     identical = 0
@@ -181,7 +179,7 @@ def main() -> int:
             orphan_in_chroma += 1
             orphan_list.append(path)
 
-    print(f"\n=== Résultat comparaison ===")
+    print("\n=== Résultat comparaison ===")
     print(f"  Identiques : {identical}")
     print(f"  Modifiés   : {modified}")
     print(f"  Absents de Chroma : {absent_from_chroma}")

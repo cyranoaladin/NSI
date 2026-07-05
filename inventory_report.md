@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1162
+- Total ressources : 1163
 - Ressources pédagogiques : 53
-- Ressources techniques : 1109
+- Ressources techniques : 1110
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1154
+- generated: 1155
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 606
+- interne: 607
 - premiere: 250
 - terminale: 306
 
@@ -19,17 +19,17 @@
 - banque: 14
 - document: 731
 - python: 95
-- script: 205
+- script: 206
 - sequence: 45
 - test: 72
 
 ## Répartition par statut
-- needs_review: 1162
+- needs_review: 1163
 
 ## Répartition audience
 - corrige: 78
 - eleve: 143
-- mixte: 938
+- mixte: 939
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -867,6 +867,7 @@
   - scripts/check_question_capacity_alignment.py
   - scripts/check_rag_collection_policy.py
   - scripts/check_rag_config.py
+  - scripts/check_rag_freshness.py
   - scripts/check_rag_golden_examples_policy.py
   - scripts/check_rag_index_metadata.py
   - scripts/check_rag_metadata_canonical_fields.py
@@ -2057,6 +2058,7 @@
   - scripts/check_question_capacity_alignment.py
   - scripts/check_rag_collection_policy.py
   - scripts/check_rag_config.py
+  - scripts/check_rag_freshness.py
   - scripts/check_rag_golden_examples_policy.py
   - scripts/check_rag_index_metadata.py
   - scripts/check_rag_metadata_canonical_fields.py
@@ -3170,6 +3172,7 @@
 - scripts/check_question_capacity_alignment.py
 - scripts/check_rag_collection_policy.py
 - scripts/check_rag_config.py
+- scripts/check_rag_freshness.py
 - scripts/check_rag_golden_examples_policy.py
 - scripts/check_rag_index_metadata.py
 - scripts/check_rag_metadata_canonical_fields.py
@@ -4331,6 +4334,7 @@
 - scripts/check_question_capacity_alignment.py
 - scripts/check_rag_collection_policy.py
 - scripts/check_rag_config.py
+- scripts/check_rag_freshness.py
 - scripts/check_rag_golden_examples_policy.py
 - scripts/check_rag_index_metadata.py
 - scripts/check_rag_metadata_canonical_fields.py

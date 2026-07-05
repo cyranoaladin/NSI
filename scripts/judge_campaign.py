@@ -170,9 +170,6 @@ def load_programme() -> dict[str, dict[str, str]]:
         for cap in data["programmes"].get(level, []):
             cap_attendue = cap.get("capacite_attendue", [""])
             cap_id = str(cap["id"])
-            # Derive sequence from ID prefix
-            prefix = cap_id.split("-")[0]  # P or T
-            seq_num = re.search(r"\d{2}", cap.get("id", ""))
             entries[cap_id] = {
                 "id": cap_id,
                 "intitule": cap_attendue[0] if isinstance(cap_attendue, list) else str(cap_attendue),
@@ -425,7 +422,6 @@ def main() -> int:
     args.output_dir.mkdir(parents=True, exist_ok=True)
     results = []
     usage_log: list[dict[str, Any]] = []
-    prev_seq = ""
     seq_context_cache: dict[str, str] = {}
 
     for i, cap_id in enumerate(selected):
@@ -468,7 +464,7 @@ def main() -> int:
             # Cache guard: from call 2+, tier 1 MUST be read from cache
             if i >= 1 and usage["read"] < 1024:
                 print(f"  ⚠ CACHE MISS on call {i+1}: cache_read={usage['read']} < 1024")
-                print(f"    Possible cause: variable data in system block, or cache eviction")
+                print("    Possible cause: variable data in system block, or cache eviction")
 
             # Rate limiting
             if i < len(selected) - 1:
@@ -477,8 +473,6 @@ def main() -> int:
             print(f"ERROR: {exc}")
             results.append(format_verdict(cap_id, programme[cap_id], {"comment": f"API error: {exc}"}))
             usage_log.append({"cap": cap_id, "seq": seq_id, "read": 0, "write": 0, "fresh": 0, "out": 0, "cost_usd": 0, "error": str(exc)[:100]})
-
-        prev_seq = seq_id
 
     # Write verdict files
     for verdict in results:
@@ -507,7 +501,7 @@ def main() -> int:
     covered = sum(1 for v in results if v["verdict"] == "needs_review")
     print(f"  needs_review (with proofs): {covered}")
     print(f"  needs_content (no proofs): {len(results) - covered}")
-    print(f"\nToken usage totals:")
+    print("\nToken usage totals:")
     print(f"  cache_read: {total_read:,}")
     print(f"  cache_write: {total_write:,}")
     print(f"  fresh_input: {total_fresh:,}")
