@@ -323,42 +323,34 @@ class FirstBatchAlignmentTest(unittest.TestCase):
     # --- A4-2: permanent symmetry guard on real corpus ---
 
     def test_gate_coverage_declaration_symmetry(self) -> None:
-        """Gate and coverage must see the same set of capacity declarations.
+        """Gate and coverage must see the same set of declared capacity IDs.
 
-        Any asymmetry means a capacity can be counted by coverage but
-        invisible to the alignment gate (inflation vector). This test
-        runs on the REAL corpus, not fixtures.
+        Both sides use the REAL production functions — no reimplementation.
+        The gate uses iter_sequence_md_files (shared helper) for collection;
+        coverage uses iter_support_evidence. Any asymmetry = ROUGE.
         """
-        from scripts._qa_common import ROOT as _ROOT, read_frontmatter as _read_fm
         from scripts.check_first_batch_alignment import (
             CAPACITY_RE as _CAP_RE,
             discover_all_prefixes as _discover,
         )
-        from scripts.check_first_batch_document_quality import find_all_kind_files as _find_all
+        from scripts._qa_common import ROOT as _ROOT, iter_sequence_md_files, read_frontmatter as _read_fm
+        from scripts._supports_evidence import iter_support_evidence
 
-        SUPPORTS_DIR = _ROOT / "03_progressions" / "supports"
-
-        # Set A: declarations collected by the gate (all kinds, all variants)
+        # Set A: declarations collected by the gate (shared helper, no kind whitelist)
         gate_caps: set[str] = set()
         for prefix in _discover():
-            for kind in ["cours", "td", "tp", "evaluation", "corrige", "trace"]:
-                for fp in _find_all(_ROOT, prefix, kind):
-                    fm = _read_fm(fp)
-                    official = fm.get("official_program")
-                    raw = official.get("capacities", []) if isinstance(official, dict) else []
-                    if isinstance(raw, list):
-                        gate_caps |= {str(c) for c in raw if _CAP_RE.fullmatch(str(c))}
+            for fp in iter_sequence_md_files(prefix, _ROOT):
+                fm = _read_fm(fp)
+                official = fm.get("official_program")
+                raw = official.get("capacities", []) if isinstance(official, dict) else []
+                if isinstance(raw, list):
+                    gate_caps |= {str(c) for c in raw if _CAP_RE.fullmatch(str(c))}
 
-        # Set B: declarations seen by coverage (rglob *.md in supports/)
+        # Set B: declarations seen by coverage (real production iterator)
         cov_caps: set[str] = set()
-        for path in sorted(SUPPORTS_DIR.rglob("*.md")):
-            if "contracts" in path.parts:
-                continue
-            fm = _read_fm(path)
-            official = fm.get("official_program")
-            raw = official.get("capacities", []) if isinstance(official, dict) else []
-            if isinstance(raw, list):
-                cov_caps |= {str(c) for c in raw if _CAP_RE.fullmatch(str(c))}
+        for evidence in iter_support_evidence():
+            if _CAP_RE.fullmatch(evidence.capacity_id):
+                cov_caps.add(evidence.capacity_id)
 
         only_coverage = sorted(cov_caps - gate_caps)
         only_gate = sorted(gate_caps - cov_caps)
@@ -415,6 +407,38 @@ class FirstBatchAlignmentTest(unittest.TestCase):
                 program_ids={"P-LANG-01", "P-TP-ONLY-99"})
             tp_errors = [e for e in result.errors if "P-TP-ONLY-99" in e]
             self.assertEqual(tp_errors, [], f"Expected no errors for P-TP-ONLY-99, got: {tp_errors}")
+
+
+    # --- F3: bareme-only adversarial test ---
+
+    def test_bareme_only_capacity_is_collected_and_flagged(self) -> None:
+        """Capacity declared ONLY on bareme frontmatter, absent from all bodies → ROUGE.
+
+        This proves the old kind-whitelist (which excluded bareme) would have
+        missed it, while the new rglob-based collection catches it.
+        """
+        with tempfile.TemporaryDirectory() as raw:
+            d = Path(raw) / "03_progressions" / "supports" / "premiere" / "P00"
+            d.mkdir(parents=True)
+            (d / "P00_cours_main.md").write_text(
+                "Objectif O1\nP-LANG-01\nErreur fréquente EF1\n", encoding="utf-8")
+            (d / "P00_trace_main.md").write_text("Objectif O1\nP-LANG-01\n", encoding="utf-8")
+            (d / "P00_td_main.md").write_text("### Exercice 1\nP-LANG-01\n", encoding="utf-8")
+            (d / "P00_tp_main.md").write_text("Objectif O1\nP-LANG-01\n", encoding="utf-8")
+            (d / "P00_corrige_main.md").write_text("### Corrigé exercice 1\n", encoding="utf-8")
+            (d / "P00_evaluation_main.md").write_text("### Question 1\nP-LANG-01\n", encoding="utf-8")
+            # Bareme declares P-BAR-ONLY-99 — NOT in any other file
+            (d / "P00_bareme_main.md").write_text(
+                "---\ntitle: b\nofficial_program:\n  capacities:\n    - P-BAR-ONLY-99\n---\n"
+                "### Barème question 1\n", encoding="utf-8")
+            (d / "P00_remediation_main.md").write_text("Activité corrective EF1\n", encoding="utf-8")
+
+            result = alignment.analyze_alignment(Path(raw), prefixes=["P00"],
+                program_ids={"P-LANG-01", "P-BAR-ONLY-99"})
+            bar_errors = [e for e in result.errors if "P-BAR-ONLY-99" in e]
+            self.assertTrue(
+                any("non travaillée" in e for e in bar_errors),
+                f"Expected P-BAR-ONLY-99 non travaillée (bareme-only), got: {result.errors}")
 
 
 if __name__ == "__main__":
