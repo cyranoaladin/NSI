@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "T-STRUCT-03A"
+    - "T-STRUCT-03B"
 ---
 
 
@@ -31,6 +32,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - T-STRUCT-03A
+- T-STRUCT-03B
 
 ## Prérequis
 - Reconnaître une consigne liée à pile.
@@ -132,6 +134,7 @@ Un serveur journalise des tâches en attente et doit choisir entre pile, file et
 - Matériel autorisé : fiche piles, files, dictionnaires, sans corrigé distribué ni navigation externe.
 - Capacités évaluées :
 - T-STRUCT-03A
+- T-STRUCT-03B
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence T03, statut `needs_review`.

@@ -32,6 +32,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - T-LANG-02A
+- T-LANG-02B
 
 ## Prérequis
 - Reconnaître une consigne liée à appel récursif.
@@ -133,6 +134,7 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 - Matériel autorisé : fiche récursivité, sans corrigé distribué ni navigation externe.
 - Capacités évaluées :
 - T-LANG-02A
+- T-LANG-02B
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence T04, statut `needs_review`.

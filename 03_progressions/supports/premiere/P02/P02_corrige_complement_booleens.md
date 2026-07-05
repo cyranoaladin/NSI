@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "P-DATA-BASE-02A"
+    - "P-DATA-BASE-02B"
 ---
 
 
@@ -31,6 +32,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - P-DATA-BASE-02A
+- P-DATA-BASE-02B
 
 ## Prérequis
 - Reconnaître une consigne liée à entier signé.

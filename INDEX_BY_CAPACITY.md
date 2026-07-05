@@ -311,16 +311,22 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## P-DATA-BASE-02B
 
 - `03_progressions/fiches_cours/premiere/P02/P02_fiche_cours_complement_a_deux.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/premiere/P02/P02_corrige_complement_booleens.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P02/P02_evaluation_complement_booleens.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P02/P02_td_complement_booleens.md` — td — needs_review — eleve
+- `03_progressions/supports/premiere/P02/P02_tp_complement_booleens.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P02/P02_trace_complement_booleens.md` — trace — needs_review — eleve
 
 ## P-DATA-BASE-03
 
 - `03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_flottants_approximations.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/premiere/P03/P03_corrige_texte_reels.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P03/P03_cours_texte_reels.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P03/P03_evaluation_texte_reels.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P03/P03_td_texte_reels.md` — td — needs_review — eleve
+- `03_progressions/supports/premiere/P03/P03_tp_texte_reels.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P03/P03_trace_texte_reels.md` — trace — needs_review — eleve
 
 ## P-DATA-BASE-04
 
@@ -1528,9 +1534,12 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## T-STRUCT-03B
 
 - `03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_files.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/terminale/T03/T03_corrige_piles_files_dictionnaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T03/T03_cours_piles_files_dictionnaires.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T03/T03_evaluation_piles_files_dictionnaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/terminale/T03/T03_td_piles_files_dictionnaires.md` — td — needs_review — eleve
+- `03_progressions/supports/terminale/T03/T03_tp_piles_files_dictionnaires.md` — tp — needs_review — eleve
+- `03_progressions/supports/terminale/T03/T03_trace_piles_files_dictionnaires.md` — trace — needs_review — eleve
 
 ## T-STRUCT-03C
 

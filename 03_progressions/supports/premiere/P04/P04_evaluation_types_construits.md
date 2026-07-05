@@ -32,6 +32,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - P-DATA-CONSTR-02A
+- P-DATA-CONSTR-02D
 
 ## Prérequis
 - Reconnaître une consigne liée à tuple.
@@ -146,7 +147,7 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Matériel autorisé : fiche types construits, sans corrigé distribué ni navigation externe.
 - Capacités évaluées :
 - P-DATA-CONSTR-02A
-- P-DATA-CONSTR-02A
+- P-DATA-CONSTR-02D
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence P04, statut `needs_review`.

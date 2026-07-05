@@ -367,20 +367,30 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## P-DATA-BASE-02B
 
 - Niveau : premiere
-- Statut coverage.md : partial
+- Statut coverage.md : needs_review
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| corrige | 03_progressions/supports/premiere/P02/P02_corrige_complement_booleens.md | needs_review |
 | cours | 03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md | needs_review |
+| evaluation | 03_progressions/supports/premiere/P02/P02_evaluation_complement_booleens.md | needs_review |
+| td | 03_progressions/supports/premiere/P02/P02_td_complement_booleens.md | needs_review |
+| tp | 03_progressions/supports/premiere/P02/P02_tp_complement_booleens.md | needs_review |
+| trace | 03_progressions/supports/premiere/P02/P02_trace_complement_booleens.md | needs_review |
 
 ## P-DATA-BASE-03
 
 - Niveau : premiere
-- Statut coverage.md : partial
+- Statut coverage.md : needs_review
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| corrige | 03_progressions/supports/premiere/P03/P03_corrige_texte_reels.md | needs_review |
 | cours | 03_progressions/supports/premiere/P03/P03_cours_texte_reels.md | needs_review |
+| evaluation | 03_progressions/supports/premiere/P03/P03_evaluation_texte_reels.md | needs_review |
+| td | 03_progressions/supports/premiere/P03/P03_td_texte_reels.md | needs_review |
+| tp | 03_progressions/supports/premiere/P03/P03_tp_texte_reels.md | needs_review |
+| trace | 03_progressions/supports/premiere/P03/P03_trace_texte_reels.md | needs_review |
 
 ## P-DATA-BASE-04
 
@@ -1802,6 +1812,8 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | type | fichier | statut ressource |
 | --- | --- | --- |
 | cours | 03_progressions/supports/terminale/T02/T02_cours_classes_objets.md | needs_review |
+| evaluation | 03_progressions/supports/terminale/T02/T02_evaluation_classes_objets.md | needs_review |
+| td | 03_progressions/supports/terminale/T02/T02_td_classes_objets.md | needs_review |
 
 ## T-STRUCT-03A
 
@@ -1823,11 +1835,16 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## T-STRUCT-03B
 
 - Niveau : terminale
-- Statut coverage.md : partial
+- Statut coverage.md : needs_review
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| corrige | 03_progressions/supports/terminale/T03/T03_corrige_piles_files_dictionnaires.md | needs_review |
 | cours | 03_progressions/supports/terminale/T03/T03_cours_piles_files_dictionnaires.md | needs_review |
+| evaluation | 03_progressions/supports/terminale/T03/T03_evaluation_piles_files_dictionnaires.md | needs_review |
+| td | 03_progressions/supports/terminale/T03/T03_td_piles_files_dictionnaires.md | needs_review |
+| tp | 03_progressions/supports/terminale/T03/T03_tp_piles_files_dictionnaires.md | needs_review |
+| trace | 03_progressions/supports/terminale/T03/T03_trace_piles_files_dictionnaires.md | needs_review |
 
 ## T-STRUCT-03C
 

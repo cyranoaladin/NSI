@@ -3,8 +3,8 @@
 - premiere | P-HIST-01 - Situer dans le temps les principaux événements de l'histoire de l'informatique et leurs protagonistes. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-DATA-BASE-01 - Passer de la représentation d'une base dans une autre. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-DATA-BASE-02A - Evaluer le nombre de bits nécessaires à l'écriture en base 2 d'un entier, d'une somme ou d'un produit. | needs_review | ressources présentes mais statuts non validants
-- premiere | P-DATA-BASE-02B - Utiliser le complément à deux. | partial | preuves manquantes: corrige, evaluation, td ou exercices, tp ou activité pratique, trace
-- premiere | P-DATA-BASE-03 - Calculer sur quelques exemples la représentation de nombres réels simples. | partial | preuves manquantes: corrige, evaluation, td ou exercices, tp ou activité pratique, trace
+- premiere | P-DATA-BASE-02B - Utiliser le complément à deux. | needs_review | ressources présentes mais statuts non validants
+- premiere | P-DATA-BASE-03 - Calculer sur quelques exemples la représentation de nombres réels simples. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-DATA-BASE-04 - Dresser la table d'une expression booléenne. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-DATA-BASE-05A - Identifier l'intérêt des différents systèmes d'encodage. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-DATA-BASE-05B - Convertir un fichier texte dans différents formats d'encodage. | needs_review | ressources présentes mais statuts non validants
@@ -61,9 +61,9 @@
 - terminale | T-STRUCT-01B - Distinguer interface et implémentation. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-STRUCT-01C - Ecrire plusieurs implémentations d'une même structure de données. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-STRUCT-02A - Ecrire la définition d'une classe. | needs_review | ressources présentes mais statuts non validants
-- terminale | T-STRUCT-02B - Accéder aux attributs et méthodes d'une classe. | partial | preuves manquantes: corrige, evaluation, td ou exercices, tp ou activité pratique, trace
+- terminale | T-STRUCT-02B - Accéder aux attributs et méthodes d'une classe. | partial | preuves manquantes: corrige, tp ou activité pratique, trace
 - terminale | T-STRUCT-03A - Distinguer des structures par le jeu des méthodes qui les caractérisent. | needs_review | ressources présentes mais statuts non validants
-- terminale | T-STRUCT-03B - Choisir une structure de données adaptée à la situation à modéliser. | partial | preuves manquantes: corrige, evaluation, td ou exercices, tp ou activité pratique, trace
+- terminale | T-STRUCT-03B - Choisir une structure de données adaptée à la situation à modéliser. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-STRUCT-03C - Distinguer la recherche d'une valeur dans une liste et dans un dictionnaire. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-STRUCT-04A - Identifier des situations nécessitant une structure de données arborescente. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-STRUCT-04B - Evaluer quelques mesures des arbres binaires. | needs_review | ressources présentes mais statuts non validants

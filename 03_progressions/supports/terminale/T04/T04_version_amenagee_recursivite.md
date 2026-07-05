@@ -32,6 +32,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - T-LANG-02A
+- T-LANG-02B
 
 ## Prérequis
 - Reconnaître une consigne liée à appel récursif.

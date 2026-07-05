@@ -31,6 +31,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - P-DATA-BASE-05A
+- P-DATA-BASE-03
 
 ## Prérequis
 - Reconnaître une consigne liée à Unicode.

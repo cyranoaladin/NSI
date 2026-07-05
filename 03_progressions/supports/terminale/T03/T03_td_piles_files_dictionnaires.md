@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "T-STRUCT-03A"
+    - "T-STRUCT-03B"
 ---
 
 # T03 - TD - Piles, files et dictionnaires
@@ -30,6 +31,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - T-STRUCT-03A
+- T-STRUCT-03B
 
 ## Prérequis
 - Reconnaître une consigne liée à pile.
