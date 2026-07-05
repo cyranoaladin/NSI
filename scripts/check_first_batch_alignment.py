@@ -10,7 +10,7 @@ import re
 import yaml
 
 from scripts._qa_common import ROOT, load_program_entries, read_frontmatter
-from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, find_kind_file
+from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, find_all_kind_files, find_kind_file
 
 SUPPORTS_DIR = ROOT / "03_progressions" / "supports"
 
@@ -106,25 +106,36 @@ def sequence_errors(root: Path, prefix: str, program_ids: set[str]) -> list[str]
         if f"Activité corrective {error_id}" not in texts["remediation"]:
             errors.append(f"{prefix}: {error_id} sans remédiation")
 
-    # Capacities from course BODY (frontmatter already stripped by read())
-    body_capacities = set(CAPACITY_RE.findall(texts["cours"]))
-    # Capacities declared in frontmatter (fail-closed: must also be exercised)
-    course_path = paths.get("cours")
+    # Collect capacities from ALL course files (principal + variants)
+    all_course_files = find_all_kind_files(root, prefix, "cours")
+    body_capacities: set[str] = set(CAPACITY_RE.findall(texts["cours"]))
     fm_capacities: set[str] = set()
-    if course_path and course_path.exists():
+    for course_path in all_course_files:
+        body_capacities |= set(CAPACITY_RE.findall(read(course_path)))
         fm = read_frontmatter(course_path)
         official = fm.get("official_program")
         raw = official.get("capacities", []) if isinstance(official, dict) else []
         if isinstance(raw, list):
-            fm_capacities = {str(c) for c in raw if CAPACITY_RE.fullmatch(str(c))}
+            fm_capacities |= {str(c) for c in raw if CAPACITY_RE.fullmatch(str(c))}
     # Union: every declared or mentioned capacity must be exercised
     course_capacities = body_capacities | fm_capacities
+    # Collect ALL worked text (principal + variant td/tp/evaluation bodies)
+    all_worked_parts: list[str] = [worked_text]
+    all_eval_parts: list[str] = [texts["evaluation"]]
+    for kind in ["td", "tp", "evaluation"]:
+        for variant_path in find_all_kind_files(root, prefix, kind):
+            all_worked_parts.append(read(variant_path))
+        if kind == "evaluation":
+            for variant_path in find_all_kind_files(root, prefix, kind):
+                all_eval_parts.append(read(variant_path))
+    full_worked = "\n".join(all_worked_parts)
+    full_eval = "\n".join(all_eval_parts)
     for capacity in sorted(course_capacities):
         if capacity not in program_ids:
             errors.append(f"{prefix}: capacité inconnue -> {capacity}")
-        if capacity not in worked_text:
+        if capacity not in full_worked:
             errors.append(f"{prefix}: capacité {capacity} non travaillée")
-        if capacity not in texts["evaluation"]:
+        if capacity not in full_eval:
             errors.append(f"{prefix}: capacité {capacity} non évaluée")
     return errors
 
@@ -173,7 +184,7 @@ def main() -> int:
         # Match "PREFIX: capacité ID non travaillée/non évaluée"
         matched_key: tuple[str, str] | None = None
         for (prefix, cap_id) in known:
-            if error.startswith(f"{prefix}:") and cap_id in error:
+            if error.startswith(f"{prefix}:") and re.search(r"\b" + re.escape(cap_id) + r"\b", error):
                 matched_key = (prefix, cap_id)
                 break
         if matched_key is not None:
