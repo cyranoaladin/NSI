@@ -210,7 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - reports/lot1/repo_map.md: nom propre suspect -> Proposeur System
 - reports/lot1/repo_map.md: nom propre suspect -> Conclusion Phase
 - reports/lot2/lot2_validation_log.md: nom propre suspect -> Miss Branch
-- ... 111 alertes supplémentaires non affichées
+- ... 118 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
@@ -414,4 +414,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md: nom propre suspect -> Assets Python
 - 03_progressions/supports/premiere/P07/P07_tp_fonctions_tests_specifications.md: nom propre suspect -> Assets Python
 - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md: nom propre suspect -> Assets Python
-- ... 384 alertes supplémentaires non affichées
+- ... 387 alertes supplémentaires non affichées
