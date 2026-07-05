@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1046
+- Total ressources : 1047
 - Ressources pédagogiques : 53
-- Ressources techniques : 993
+- Ressources techniques : 994
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1038
+- generated: 1039
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 490
+- interne: 491
 - premiere: 250
 - terminale: 306
 
@@ -19,17 +19,17 @@
 - banque: 14
 - document: 616
 - python: 95
-- script: 204
+- script: 205
 - sequence: 45
 - test: 72
 
 ## Répartition par statut
-- needs_review: 1046
+- needs_review: 1047
 
 ## Répartition audience
 - corrige: 78
 - eleve: 143
-- mixte: 822
+- mixte: 823
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -927,6 +927,7 @@
   - scripts/generate_qa_report.py
   - scripts/ingest_drive_export.py
   - scripts/ingest_nsi_corpus.py
+  - scripts/judge_campaign.py
   - scripts/prepare_scraped_docs_for_rag.py
   - scripts/rag_coherence_report.py
   - scripts/rag_core.py
@@ -2001,6 +2002,7 @@
   - scripts/generate_qa_report.py
   - scripts/ingest_drive_export.py
   - scripts/ingest_nsi_corpus.py
+  - scripts/judge_campaign.py
   - scripts/prepare_scraped_docs_for_rag.py
   - scripts/rag_coherence_report.py
   - scripts/rag_core.py
@@ -2997,6 +2999,7 @@
 - scripts/generate_qa_report.py
 - scripts/ingest_drive_export.py
 - scripts/ingest_nsi_corpus.py
+- scripts/judge_campaign.py
 - scripts/prepare_scraped_docs_for_rag.py
 - scripts/rag_coherence_report.py
 - scripts/rag_core.py
@@ -4043,6 +4046,7 @@
 - scripts/generate_qa_report.py
 - scripts/ingest_drive_export.py
 - scripts/ingest_nsi_corpus.py
+- scripts/judge_campaign.py
 - scripts/prepare_scraped_docs_for_rag.py
 - scripts/rag_coherence_report.py
 - scripts/rag_core.py
