@@ -794,6 +794,10 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T05/T05_td_arbres_mesures_parcours_complement.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T05/T05_tp_arbres_mesures_parcours_complement.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T05/T05_trace_arbres_mesures_parcours_complement.md` — trace — needs_review — eleve
+- `03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md` — tp — needs_review — eleve
+- `03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md` — bareme — needs_review — professeur
+- `03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md` — corrige — needs_review — professeur
+- `03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md` — evaluation — needs_review — eleve
 
 ## T-ALGO-01B
 
@@ -804,12 +808,17 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T05/T05_td_arbres_mesures_parcours_complement.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T05/T05_tp_arbres_mesures_parcours_complement.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T05/T05_trace_arbres_mesures_parcours_complement.md` — trace — needs_review — eleve
+- `03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md` — tp — needs_review — eleve
+- `03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md` — bareme — needs_review — professeur
+- `03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md` — corrige — needs_review — professeur
+- `03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md` — evaluation — needs_review — eleve
 
 ## T-ALGO-01C
 
 - `03_progressions/fiches_cours/terminale/T05/T05_fiche_cours_arbres_binaires_parcours.md` — fiche_cours — needs_review — eleve
 - `03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md` — bareme — needs_review — professeur
+- `03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md` — evaluation — needs_review — eleve
 
 ## T-ALGO-01D

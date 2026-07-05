@@ -12,6 +12,9 @@ notion: "arbres binaires de recherche"
 private_data: false
 official_program:
   capacities:
+    - "T-ALGO-01A"
+    - "T-ALGO-01B"
+    - "T-ALGO-01C"
     - "T-ALGO-01E"
     - "T-ALGO-01F"
 ---
@@ -29,7 +32,7 @@ official_program:
 - Cas limite : doublon 6.
 ### Exercice 3
 - Réponse attendue : infixe -> 1,3,6,8,10,14.
-- Méthode : parcours infixe (gauche, racine, droite).
+- Méthode : parcours infixe (gauche, racine, droite) — T-ALGO-01C.
 - Cas limite : arbre dégénéré.
 ### Exercice 4
 - Réponse attendue : arbre vide -> nouvelle racine.
@@ -62,3 +65,4 @@ official_program:
 - Question 2 : insérer 7 : 8 -> 3 -> 6 -> droite.
 - Question 3 : infixe -> 1,3,6,8,10,14.
 - Question 4 : arbre vide -> nouvelle racine.
+- Question 5 : taille = 6 (T-ALGO-01A), hauteur = 2 (T-ALGO-01B).

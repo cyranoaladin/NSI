@@ -12,6 +12,9 @@ notion: "arbres binaires de recherche"
 private_data: false
 official_program:
   capacities:
+    - "T-ALGO-01A"
+    - "T-ALGO-01B"
+    - "T-ALGO-01C"
     - "T-ALGO-01E"
     - "T-ALGO-01F"
 ---
@@ -21,7 +24,7 @@ official_program:
 ## Modalités
 - Durée : 30 minutes.
 - Matériel autorisé : fiche de cours.
-- Capacités évaluées : T-ALGO-01E, T-ALGO-01F.
+- Capacités évaluées : T-ALGO-01A, T-ALGO-01B, T-ALGO-01C, T-ALGO-01E, T-ALGO-01F.
 
 ## Questions
 ### Question 1
@@ -35,8 +38,8 @@ official_program:
 - Réponse attendue : insérer 7 : 8 -> 3 -> 6 -> droite.
 - Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `doublon 6`.
 ### Question 3
-- Capacité officielle : T-ALGO-01E.
-- Énoncé : à partir de `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`, insérer une feuille.
+- Capacité officielle : T-ALGO-01C.
+- Énoncé : à partir de `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`, produire le parcours infixe.
 - Réponse attendue : infixe -> 1,3,6,8,10,14.
 - Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `arbre dégénéré`.
 ### Question 4
@@ -46,7 +49,7 @@ official_program:
 - Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `arbre vide`.
 
 ### Question 5
-- Capacité officielle : T-ALGO-01C.
+- Capacité officielle : T-ALGO-01A, T-ALGO-01B.
 - Énoncé : à partir de l'ABR construit avec `[8, 3, 10, 1, 6, 14]`, calculer la taille (nombre de nœuds) et la hauteur de l'arbre.
 - Réponse attendue : taille = 6, hauteur = 2.
 - Barème : 1 point taille correcte, 1 point hauteur correcte, 1 point méthode récursive visible, 1 point cas limite arbre vide (taille 0, hauteur -1).
@@ -60,7 +63,7 @@ official_program:
 - Critère spécifique : descendre gauche ou droite et éviter `logarithmique sans équilibre`.
 ### Corrigé question 3
 - Résultat attendu : infixe -> 1,3,6,8,10,14.
-- Critère spécifique : insérer une feuille et éviter `racine vide oubliée`.
+- Critère spécifique : parcours infixe (gauche, racine, droite) et éviter `racine vide oubliée`.
 ### Corrigé question 4
 - Résultat attendu : arbre vide -> nouvelle racine.
 - Critère spécifique : parcours infixe pour clés triées et éviter `gauche et droite inversées`.

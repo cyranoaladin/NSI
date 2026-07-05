@@ -12,6 +12,9 @@ notion: "arbres binaires de recherche"
 private_data: false
 official_program:
   capacities:
+    - "T-ALGO-01A"
+    - "T-ALGO-01B"
+    - "T-ALGO-01C"
     - "T-ALGO-01E"
     - "T-ALGO-01F"
 ---
@@ -30,9 +33,9 @@ official_program:
 ## Évaluation question par question
 - Question 1 : 4 points sur T-ALGO-01E avec résultat `chercher 6 : 8 -> 3 -> 6`.
 - Question 2 : 4 points sur T-ALGO-01F avec résultat `insérer 7 : 8 -> 3 -> 6 -> droite`.
-- Question 3 : 4 points sur T-ALGO-01E avec résultat `infixe -> 1,3,6,8,10,14`.
+- Question 3 : 4 points sur T-ALGO-01C avec résultat `infixe -> 1,3,6,8,10,14`.
 - Question 4 : 4 points sur T-ALGO-01F avec résultat `arbre vide -> nouvelle racine`.
-- Question 5 : 4 points sur T-ALGO-01C avec résultat `taille = 6, hauteur = 2`.
+- Question 5 : 4 points sur T-ALGO-01A, T-ALGO-01B avec résultat `taille = 6, hauteur = 2`.
 
 ## Critères observables
 - Trace, table, valeur ou pseudo-code présent.

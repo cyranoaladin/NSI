@@ -12,6 +12,8 @@ notion: "arbres binaires de recherche"
 private_data: false
 official_program:
   capacities:
+    - "T-ALGO-01A"
+    - "T-ALGO-01B"
     - "T-ALGO-01C"
     - "T-ALGO-01E"
     - "T-ALGO-01F"
@@ -58,7 +60,7 @@ Résultat attendu : insérer 7 : 8 -> 3 -> 6 -> droite.
 ### Corrigé question 4
 Résultat attendu : `arbre vide` traité sans ambiguïté.
 
-## Exercice complémentaire — Taille et hauteur d'un arbre (T-ALGO-01C)
+## Exercice complémentaire — Taille et hauteur d'un arbre (T-ALGO-01A, T-ALGO-01B)
 
 On reprend l'ABR construit précédemment à partir de la séquence `[8, 3, 10, 1, 6, 14]`.
 
@@ -68,7 +70,7 @@ On reprend l'ABR construit précédemment à partir de la séquence `[8, 3, 10, 
 def taille(noeud):
     if noeud is None:
         return 0
-    return 1 + taille(noeud.gauche) + taille(noeud.droit)
+    return 1 + taille(noeud["gauche"]) + taille(noeud["droite"])
 ```
 
 **6b.** Écrire une fonction `hauteur(noeud)` qui renvoie la hauteur de l'arbre (nombre de niveaux - 1, un arbre réduit à sa racine a une hauteur 0). Tester sur l'ABR donné (résultat attendu : 2).
@@ -77,10 +79,10 @@ def taille(noeud):
 def hauteur(noeud):
     if noeud is None:
         return -1
-    return 1 + max(hauteur(noeud.gauche), hauteur(noeud.droit))
+    return 1 + max(hauteur(noeud["gauche"]), hauteur(noeud["droite"]))
 ```
 
-**6c.** Insérer les valeurs `[2, 5, 7, 9, 11, 13, 15]` dans l'ABR. Recalculer la taille (résultat attendu : 13) et la hauteur (résultat attendu : 3). Comparer avec un arbre dégénéré obtenu en insérant `[1, 2, 3, 4, 5, 6]` dans un arbre vide : quelle hauteur obtient-on ? (résultat attendu : 5).
+**6c.** Insérer les valeurs `[2, 5, 7, 9, 11, 13, 15]` dans l'ABR. Recalculer la taille (résultat attendu : 13) et la hauteur (résultat attendu : 4). Comparer avec un arbre dégénéré obtenu en insérant `[1, 2, 3, 4, 5, 6]` dans un arbre vide : quelle hauteur obtient-on ? (résultat attendu : 5).
 
 ## Liens
 - TD lié : `T06_TD_arbres_binaires_recherche.md`.
@@ -110,7 +112,7 @@ Insertion de la séquence `[8, 3, 10, 1, 6, 14]` :
 5. `6 < 8` puis `6 > 3`, donc `6` devient fils droit de `3`.
 6. `14 > 8` puis `14 > 10`, donc `14` devient fils droit de `10`.
 
-Parcours infixe attendu : `[1, 3, 6, 8, 10, 14]`.
+Parcours infixe attendu (T-ALGO-01C) : `[1, 3, 6, 8, 10, 14]`.
 
 Recherche de `6` :
 1. comparer `6` à `8` : descendre à gauche ;

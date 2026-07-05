@@ -103,7 +103,7 @@
 - terminale | T-LANG-05 - Savoir répondre aux causes typiques de bugs. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-ALGO-01A - Calculer la taille d'un arbre. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-ALGO-01B - Calculer la hauteur d'un arbre. | needs_review | ressources présentes mais statuts non validants
-- terminale | T-ALGO-01C - Parcourir un arbre en ordres infixe, préfixe ou suffixe. | partial | preuves manquantes: corrige, cours, evaluation, td ou exercices, trace
+- terminale | T-ALGO-01C - Parcourir un arbre en ordres infixe, préfixe ou suffixe. | partial | preuves manquantes: cours, td ou exercices, trace
 - terminale | T-ALGO-01D - Parcourir un arbre en largeur d'abord. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-ALGO-01E - Rechercher une clé dans un arbre de recherche. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-ALGO-01F - Insérer une clé dans un arbre de recherche. | needs_review | ressources présentes mais statuts non validants

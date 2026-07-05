@@ -949,11 +949,15 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md | needs_review |
+| corrige | 03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md | needs_review |
 | cours | 03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T05/T05_evaluation_arbres_mesures_parcours_complement.md | needs_review |
+| evaluation | 03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md | needs_review |
 | td | 03_progressions/supports/terminale/T05/T05_td_arbres_mesures_parcours_complement.md | needs_review |
 | tp | 03_progressions/supports/terminale/T05/T05_tp_arbres_mesures_parcours_complement.md | needs_review |
+| tp | 03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md | needs_review |
 | trace | 03_progressions/supports/terminale/T05/T05_trace_arbres_mesures_parcours_complement.md | needs_review |
 
 ## T-ALGO-01B
@@ -963,11 +967,15 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md | needs_review |
+| corrige | 03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md | needs_review |
 | cours | 03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T05/T05_evaluation_arbres_mesures_parcours_complement.md | needs_review |
+| evaluation | 03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md | needs_review |
 | td | 03_progressions/supports/terminale/T05/T05_td_arbres_mesures_parcours_complement.md | needs_review |
 | tp | 03_progressions/supports/terminale/T05/T05_tp_arbres_mesures_parcours_complement.md | needs_review |
+| tp | 03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md | needs_review |
 | trace | 03_progressions/supports/terminale/T05/T05_trace_arbres_mesures_parcours_complement.md | needs_review |
 
 ## T-ALGO-01C
@@ -977,6 +985,9 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md | needs_review |
+| corrige | 03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md | needs_review |
+| evaluation | 03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md | needs_review |
 | tp | 03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md | needs_review |
 
 ## T-ALGO-01D
