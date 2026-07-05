@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-ARCH-01A",
+      "official_label": "Distinguer les rôles et les caractéristiques des constituants d'une machine.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P09/P09_cours_architecture_os_droits.md",
+        "anchor": "#à-savoir",
+        "quote": "Employer le vocabulaire : processeur, mémoire, stockage, processus, PID, système de fichiers.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md",
+        "anchor": "#exercice-1",
+        "quote": "Consigne : distinguer mémoire vive et stockage ; traiter aussi `fichier absent` si nécessaire.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P09/P09_corrige_architecture_os_droits.md",
+        "anchor": "#exercice-1",
+        "quote": "Méthode : distinguer mémoire vive et stockage.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours enseigne le vocabulaire des constituants (processeur, mémoire, stockage), le TD fait pratiquer la distinction mémoire vive/stockage (P-ARCH-01A), et le corrigé fournit la méthode et la réponse attendue. La correspondance avec la capacité 'distinguer les rôles et caractéristiques des constituants' est réelle, même si le contenu est centré sur les droits Unix — la distinction mémoire/stockage est explicitement travaillée.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

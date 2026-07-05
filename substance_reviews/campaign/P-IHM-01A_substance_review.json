@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-IHM-01A",
+      "official_label": "Identifier les composants graphiques permettant d'interagir avec une application Web.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md",
+        "anchor": "#exemples-corrigés",
+        "quote": "Méthode : repérer header main form label input.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
+        "anchor": "#exercice-1",
+        "quote": "Consigne : repérer header main form label input ; traiter aussi `champ nom vide` si nécessaire.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
+        "anchor": "#exercice-1",
+        "quote": "Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours enseigne la méthode d'identification des composants graphiques (form, label, input), le TD fait pratiquer la capacité P-IHM-01A avec une consigne explicite, et le corrigé fournit la réponse attendue avec la méthode et le cas limite.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-BDD-01B",
+      "official_label": "Distinguer structure et contenu d'une base de données.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T09/T09_cours_bases_relationnelles_cles_contraintes.md",
+        "anchor": "#à-savoir",
+        "quote": "relation, attribut, tuple, clé primaire, clé étrangère, contrainte de domaine.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md",
+        "anchor": "#exercice-2",
+        "quote": "Consigne : vérifier unicité id_livre ; traiter aussi `doublon id_livre=1` si nécessaire.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T09/T09_corrige_bases_relationnelles_cles_contraintes.md",
+        "anchor": "#exercice-2",
+        "quote": "Réponse attendue : Emprunt.id_livre référence Livre.id_livre.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours enseigne le vocabulaire structure/contenu (schéma, instance, relation, attribut, tuple), le TD fait pratiquer la distinction via la vérification d'unicité et la lecture du schéma, et le corrigé fournit la réponse attendue pour T-BDD-01B. La capacité 'distinguer structure et contenu' correspond bien à la distinction schéma/instance travaillée dans ces fichiers.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

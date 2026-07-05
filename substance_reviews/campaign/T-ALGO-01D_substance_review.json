@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-ALGO-01D",
+      "official_label": "Parcourir un arbre en largeur d'abord.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T05/T05_trace_arbres_mesures_parcours_complement.md",
+        "anchor": "#1-mesures-dun-arbre-binaire-t-struct-04b",
+        "quote": "T-ALGO-01D : Parcourir un arbre en largeur d'abord. « Lien avec file. »",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T05/T05_tp_arbres_mesures_parcours_complement.md",
+        "anchor": "#partie-0--classe-noeud-et-construction-de-larbre",
+        "quote": "T-ALGO-01D : Parcourir un arbre en largeur d'abord. « Lien avec file. »",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md",
+        "anchor": "#question-1--mesures-sur-papier-t-struct-04b",
+        "quote": "T-ALGO-01D : Parcourir un arbre en largeur d'abord. « Lien avec file. »",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "La capacité T-ALGO-01D (parcours en largeur d'abord) est mentionnée dans le cours/trace, le TP et le corrigé du complément sur les mesures et parcours d'arbres. Le cours trace explique le lien avec la file, le TP fait pratiquer l'implémentation avec collections.deque, et le corrigé fournit les résultats attendus (BFS = [8, 3, 10, 1, 6, 14, 4, 7, 13]).",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

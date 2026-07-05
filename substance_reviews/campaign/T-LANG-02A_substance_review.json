@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-LANG-02A",
+      "official_label": "Ecrire un programme récursif.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T04/T04_cours_recursivite.md",
+        "anchor": "#exemples-corrigés-précis",
+        "quote": "Méthode : appliquer `n * fact(n-1)` jusqu'au cas `0!`.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T04/T04_tp_recursivite.md",
+        "anchor": "#consigne-technique-détaillée",
+        "quote": "Problème à programmer : Écrire trois fonctions récursives avec cas de base, mesure décroissante et tests de terminaison.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T04/T04_corrige_recursivite.md",
+        "anchor": "#exercices-numérotés",
+        "quote": "Exercice 1 : résoudre factorielle avec `4!` ; attendu : `24`.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours enseigne l'écriture de programmes récursifs avec cas de base et appel récursif, le TP fait pratiquer l'écriture de fonctions récursives, et le corrigé fournit les réponses attendues.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

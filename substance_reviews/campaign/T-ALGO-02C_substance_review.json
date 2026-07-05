@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-ALGO-02C",
+      "official_label": "Repérer la présence d'un cycle dans un graphe.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T08/T08_cours_bfs_dfs_cycles_chemins.md",
+        "anchor": "#exemples-corrigés",
+        "quote": "Méthode : DFS explore un chemin avant retour.\n- Résultat attendu : F isolé -> aucun chemin.\n- Contrôle : capacité T-ALGO-02C et cas limite `cycle D-C-D`.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md",
+        "anchor": "#exercice-3",
+        "quote": "Consigne : DFS explore un chemin avant retour ; traiter aussi `cycle D-C-D` si nécessaire.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T08/T08_corrige_bfs_dfs_cycles_chemins.md",
+        "anchor": "#exercice-3",
+        "quote": "Réponse attendue : F isolé -> aucun chemin.\n- Méthode : DFS explores un chemin avant retour.\n- Cas limite : cycle D-C-D.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours présente la méthode DFS et le cas du cycle D-C-D (T-ALGO-02C), le TD fait pratiquer la détection de cycle via DFS, et le corrigé fournit la réponse attendue. La capacité T-ALGO-02C porte sur la détection de cycle dans un graphe, ce qui est bien couvert par ces extraits.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

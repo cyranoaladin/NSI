@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-LANG-05",
+      "official_label": "Utiliser la documentation d'une bibliothèque.",
+      "proof_course": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_practice": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_correction": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "verdict": "needs_content",
+      "justification": "La capacité P-LANG-05 (utiliser la documentation d'une bibliothèque) est mentionnée dans les listes de capacités officielles du cours et de l'évaluation, mais aucun contenu ne porte réellement sur l'utilisation de bibliothèques ou de leur documentation. Tous les exercices, exemples et corrigés portent exclusivement sur la signature de fonctions, les préconditions, postconditions et tests unitaires (prix_ttc). Il n'y a aucune trace d'enseignement, de pratique ou de correction relative à la consultation ou l'utilisation d'une documentation de bibliothèque.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

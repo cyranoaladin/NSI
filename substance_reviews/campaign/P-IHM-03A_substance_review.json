@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-IHM-03A",
+      "official_label": "Distinguer ce qui est exécuté sur le client ou sur le serveur et dans quel ordre.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md",
+        "anchor": "#exemples-corrigés",
+        "quote": "Méthode : distinguer GET, POST et HTTPS.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
+        "anchor": "#exercice-4",
+        "quote": "Capacité officielle : P-IHM-03A.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
+        "anchor": "#exercice-4",
+        "quote": "Réponse attendue : POST sans HTTPS ne chiffre pas.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours mentionne la capacité P-IHM-03A et la méthode 'distinguer GET, POST et HTTPS'. Le TD comporte un exercice 4 explicitement étiqueté P-IHM-03A. Le corrigé fournit la réponse attendue pour cet exercice. Cependant, la capacité officielle porte sur la distinction client/serveur et l'ordre d'exécution, alors que les contenus se focalisent surtout sur GET/POST/HTTPS ; le lien avec 'ce qui est exécuté côté client ou serveur' reste implicite.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

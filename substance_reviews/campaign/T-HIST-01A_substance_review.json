@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-HIST-01A",
+      "official_label": "Situer dans le temps les principaux événements de l'histoire de l'informatique et leurs protagonistes.",
+      "proof_course": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_practice": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_correction": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "verdict": "needs_content",
+      "justification": "Les fichiers mentionnent T-HIST-01A comme étiquette de capacité, mais le contenu réel porte sur la préparation au bac pratique, au Grand Oral et à un projet de graphes de transport fictifs. Aucun contenu n'enseigne, ne fait pratiquer ou ne corrige la capacité de situer dans le temps les principaux événements de l'histoire de l'informatique et leurs protagonistes. Il s'agit d'une étiquette administrative sans contenu correspondant.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

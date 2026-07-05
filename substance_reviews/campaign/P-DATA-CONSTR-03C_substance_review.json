@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-DATA-CONSTR-03C",
+      "official_label": "Utiliser les méthodes keys, values et items.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P04/P04_trace_types_construits_complement.md",
+        "anchor": "#méthode-2---construire-un-tableau-par-compréhension-p-data-constr-02b",
+        "quote": "P-DATA-CONSTR-03B : Itérer sur les éléments d'un dictionnaire",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_correction": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "verdict": "needs_review",
+      "justification": "La capacité P-DATA-CONSTR-03C (utiliser les méthodes keys, values et items) est mentionnée dans les en-têtes de plusieurs fichiers (évaluation complément, TD complément, TP complément, trace complément) mais les extraits fournis sont tronqués et ne montrent pas de contenu pédagogique réel enseignant, faisant pratiquer ou corrigeant l'usage de ces méthodes. La trace complément liste P-DATA-CONSTR-03B mais les extraits s'arrêtent avant toute section dédiée à keys/values/items. Aucune preuve suffisante n'est disponible pour course, practice ou correction.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

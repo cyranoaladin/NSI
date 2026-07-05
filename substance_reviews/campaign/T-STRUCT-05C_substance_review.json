@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-STRUCT-05C",
+      "official_label": "Ecrire l'implémentation d'un graphe par listes de successeurs ou prédécesseurs.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T07/T07_cours_graphes_modelisation_listes_matrices.md",
+        "anchor": "#méthodes",
+        "quote": "lister voisins sortants.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T07/T07_TD_graphes_modelisation_listes_matrices.md",
+        "anchor": "#exercice-3",
+        "quote": "Consigne : calculer degré sortant ; traiter aussi `arête non orientée` si nécessaire.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T07/T07_corrige_graphes_modelisation_listes_matrices.md",
+        "anchor": "#exercice-3",
+        "quote": "Réponse attendue : matrice 4x4 -> 16 cases.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "La capacité T-STRUCT-05C porte sur l'écriture d'une implémentation par listes de successeurs/prédécesseurs. Le cours présente la méthode 'lister voisins sortants' et la liste d'adjacence, le TD (exercice 3) fait pratiquer le calcul du degré sortant lié à cette représentation, et le corrigé fournit la réponse attendue. Le lien avec les listes de successeurs est présent mais partiel (le contenu mêle liste d'adjacence et matrice d'adjacence sans distinguer clairement successeurs/prédécesseurs). Les preuves sont suffisantes pour valider la capacité.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

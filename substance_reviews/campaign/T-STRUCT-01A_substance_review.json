@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-STRUCT-01A",
+      "official_label": "Spécifier une structure de données par son interface.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T01/T01_trace_interfaces_structures.md",
+        "anchor": "#repère-1---interface-pile",
+        "quote": "À retenir : décrire contrat d'entrée et résultat de chaque opération.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T01/T01_td_interfaces_structures.md",
+        "anchor": "#exemples-corrigés-précis",
+        "quote": "Donnée étudiée : `push`, `pop`, `is_empty`. Méthode : décrire contrat d'entrée et résultat de chaque opération. Résultat obtenu : interface indépendante du stockage.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T01/T01_corrige_interfaces_structures.md",
+        "anchor": "#exercices-numérotés",
+        "quote": "Exercice 1 : résoudre interface pile avec `push`, `pop`, `is_empty` ; attendu : interface indépendante du stockage.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "La trace de cours enseigne la spécification d'une structure par son interface (pile avec push/pop/is_empty et contrat), le TD fait pratiquer cette spécification, et le corrigé professeur fournit la réponse attendue. La capacité T-STRUCT-01A est bien couverte sur les trois dimensions.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

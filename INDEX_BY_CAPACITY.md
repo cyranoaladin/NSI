@@ -825,6 +825,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md` — corrige — needs_review — professeur
+- `03_progressions/supports/terminale/T06/T06_cours_arbres_binaires_recherche.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md` — evaluation — needs_review — eleve
 
 ## T-ALGO-01D

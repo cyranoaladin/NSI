@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-LANG-04A",
+      "official_label": "Distinguer sur des exemples les paradigmes impératif, fonctionnel et objet.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T14/T14_cours_modularite_api_paradigmes_bugs.md",
+        "anchor": "#à-savoir",
+        "quote": "paradigme impératif.\n- paradigme fonctionnel.\n- objet.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_correction": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours mentionne les paradigmes impératif, fonctionnel et objet dans la liste 'À savoir', ce qui constitue une trace minimale d'enseignement. Cependant, aucun exercice du TD ne demande explicitement de distinguer les trois paradigmes sur des exemples : l'exercice 3 (T-LANG-03C) porte sur le choix de paradigme selon la tâche, pas sur la distinction des trois paradigmes. Le corrigé et l'évaluation ne traitent pas non plus la distinction des trois paradigmes (impératif, fonctionnel, objet) sur des exemples concrets. La capacité T-LANG-04A est mentionnée dans le barème et l'évaluation (Questi...",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

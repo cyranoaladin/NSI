@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-LANG-03C",
+      "official_label": "Créer des modules simples et les documenter.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T14/T14_cours_modularite_api_paradigmes_bugs.md",
+        "anchor": "#à-savoir",
+        "quote": "module. (capacité vérifiée dans le fichier)",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T14/T14_TD_modularite_api_paradigmes_bugs.md",
+        "anchor": "#exercice-3",
+        "quote": "Capacité officielle : T-LANG-03C.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T14/T14_corrige_modularite_api_paradigmes_bugs.md",
+        "anchor": "#exercice-3",
+        "quote": "Réponse attendue : temperature=\"31\" refusée ou convertie.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours liste 'module' et 'paradigme fonctionnel' parmi les notions à savoir, et présente la méthode 'choisir paradigme selon tâche' associée à T-LANG-03C. Le TD (exercice 3) fait pratiquer cette capacité avec la consigne de choisir un paradigme. Le corrigé fournit la réponse attendue. Cependant, la capacité T-LANG-03C est ici associée au choix de paradigme plutôt qu'à la création et documentation de modules simples au sens strict ; le lien est partiel mais explicitement étiqueté T-LANG-03C dans tous les fichiers.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

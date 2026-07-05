@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-BDD-03F",
+      "official_label": "Construire des requêtes d'insertion avec INSERT.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md",
+        "anchor": "#à-savoir",
+        "quote": "INSERT. (capacité vérifiée dans le fichier)",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "proof_correction": {
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours mentionne INSERT dans la liste des mots-clés à savoir, mais aucun exercice du TD, TP ou évaluation ne porte spécifiquement sur la capacité T-BDD-03F (construction de requêtes INSERT). Les exercices couvrent SELECT, JOIN, UPDATE et DELETE, mais pas INSERT en tant que tâche pratique à réaliser. Le corrigé ne fournit aucune réponse attendue pour une requête INSERT. La mention dans le cours est trop succincte pour constituer un enseignement réel de la capacité.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

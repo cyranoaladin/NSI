@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-ARCH-04B",
+      "official_label": "Décrire l'échange d'une clé symétrique avec un protocole asymétrique pour sécuriser HTTPS.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T13/T13_cours_chiffrement_https.md",
+        "anchor": "#méthodes",
+        "quote": "protéger Ksession par asymétrique.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T13/T13_TD_chiffrement_https.md",
+        "anchor": "#exercice-2",
+        "quote": "Consigne : utiliser symétrique pour données ; traiter aussi `clé publique non vérifiée` si nécessaire.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T13/T13_corrige_chiffrement_https.md",
+        "anchor": "#exercice-2",
+        "quote": "Réponse attendue : Ksession chiffrée avec Kpub serveur.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours enseigne la méthode d'échange de clé symétrique via asymétrique (protéger Ksession par asymétrique, utiliser symétrique pour données). Le TD fait pratiquer la capacité T-ARCH-04B avec des exercices explicites. Le corrigé fournit la réponse attendue : Ksession chiffrée avec Kpub serveur, ce qui correspond exactement à la description de l'échange de clé symétrique via protocole asymétrique pour HTTPS.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

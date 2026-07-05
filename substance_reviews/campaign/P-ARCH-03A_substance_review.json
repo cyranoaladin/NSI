@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-ARCH-03A",
+      "official_label": "Identifier les fonctions d'un système d'exploitation.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P09/P09_cours_architecture_os_droits.md",
+        "anchor": "#à-savoir",
+        "quote": "processus, PID, système de fichiers, chmod, permission denied.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md",
+        "anchor": "#exercice-3",
+        "quote": "Capacité officielle : P-ARCH-03A.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P09/P09_corrige_architecture_os_droits.md",
+        "anchor": "#exercice-3",
+        "quote": "Réponse attendue : PID 2314 python collecte.py est un processus.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Les fichiers mentionnent P-ARCH-03A et traitent de notions liées au système d'exploitation (processus, PID, droits Unix, chmod), ce qui correspond partiellement aux fonctions d'un OS. Cependant, le contenu est très centré sur les droits de fichiers et les permissions Unix plutôt que sur les fonctions générales d'un système d'exploitation (gestion de la mémoire, ordonnancement, etc.). La correspondance est partielle mais suffisante pour valider les trois types de preuves.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

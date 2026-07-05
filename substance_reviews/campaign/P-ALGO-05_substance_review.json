@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "premiere",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "P-ALGO-05",
+      "official_label": "Résoudre un problème grâce à un algorithme glouton.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P13/P13_cours_dichotomie_glouton_knn.md",
+        "anchor": "#méthodes",
+        "quote": "prendre la plus grande pièce possible.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md",
+        "anchor": "#exercice-3",
+        "quote": "Consigne : prendre la plus grande pièce possible ; traiter aussi `égalité de vote` si nécessaire.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md",
+        "anchor": "#exercice-3",
+        "quote": "Réponse attendue : rouge, bleu, rouge -> classe rouge.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours présente la méthode gloutonne (prendre la plus grande pièce possible), le TD fait pratiquer l'algorithme glouton sur le problème du rendu de monnaie (exercice 3, capacité P-ALGO-05), et le corrigé fournit la réponse attendue. Les trois preuves sont présentes.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

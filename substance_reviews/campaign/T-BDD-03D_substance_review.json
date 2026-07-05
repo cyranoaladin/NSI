@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-BDD-03D",
+      "official_label": "Construire des requêtes d'interrogation avec JOIN.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md",
+        "anchor": "#à-savoir",
+        "quote": "JOIN. (capacité vérifiée dans le fichier)",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md",
+        "anchor": "#exercice-2",
+        "quote": "Consigne : filtrer note >= 15 ; traiter aussi `UPDATE sans WHERE` si nécessaire.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md",
+        "anchor": "#exercice-2",
+        "quote": "Réponse attendue : JOIN -> Ada 17.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours liste JOIN parmi les mots-clés à savoir et présente des exemples corrigés avec JOIN. Le TD fait pratiquer la jointure (exercice 2 : filtrer avec JOIN). Le corrigé fournit la réponse attendue pour la jointure. La capacité T-BDD-03D (construire des requêtes avec JOIN) est bien couverte par les trois types de preuves.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

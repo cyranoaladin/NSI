@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T21:17:44Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-STRUCT-01C",
+      "official_label": "Ecrire plusieurs implémentations d'une même structure de données.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T01/T01_trace_interface_implementation_complement.md",
+        "anchor": "#2-deux-implémentations-dune-pile--code-de-référence",
+        "quote": "Deux implémentations d'une pile — Code de référence",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T01/T01_tp_interface_implementation_complement.md",
+        "anchor": "#a2--implémentation-par-liste-chaînée",
+        "quote": "Créer un fichier `pile_chainee.py` contenant : La classe `Maillon` avec les attributs `valeur` et `suivant`. La classe `PileChainee` avec les mêmes méthodes que `PileListe` (même interface).",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T01/T01_corrige_interface_implementation_complement.md",
+        "anchor": "#question-2--écrire-une-implémentation-alternative-5-points",
+        "quote": "On souhaite réécrire la classe `Pile` en utilisant une **liste chaînée** au lieu d'une liste Python.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours (trace écrite) présente deux implémentations complètes d'une pile (par liste Python et par liste chaînée). Le TP fait pratiquer l'écriture de ces deux implémentations. Le corrigé de l'évaluation fournit la correction de la question portant sur l'implémentation alternative par liste chaînée.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}

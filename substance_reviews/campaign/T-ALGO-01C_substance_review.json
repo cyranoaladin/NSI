@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "unit": "campaign",
+  "level": "terminale",
+  "judged_at": "2026-07-05T20:58:14Z",
+  "judge_model": "claude-sonnet-4-6",
+  "author_model": "campaign-tooling",
+  "capacities": [
+    {
+      "capacity_id": "T-ALGO-01C",
+      "official_label": "Parcourir un arbre en ordres infixe, préfixe ou suffixe.",
+      "proof_course": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T06/T06_cours_arbres_binaires_recherche.md",
+        "anchor": "#méthode--parcours-en-profondeur-dun-arbre-t-algo-01c",
+        "quote": "Parcours infixe (gauche, racine, droite) : [1, 3, 6, 8, 10, 14] — produit les clés dans l'ordre croissant pour un ABR.",
+        "teaches": true
+      },
+      "proof_practice": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md",
+        "anchor": "#question-3",
+        "quote": "Énoncé : à partir de `ABR racine=8, gauche=3 avec 1 et 6, droite=10 avec 14`, produire le parcours infixe.",
+        "teaches": true
+      },
+      "proof_correction": {
+        "present": true,
+        "file": "03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md",
+        "anchor": "#exercice-3",
+        "quote": "Méthode : parcours infixe (gauche, racine, droite) — T-ALGO-01C.",
+        "teaches": true
+      },
+      "verdict": "needs_review",
+      "justification": "Le cours enseigne explicitement les trois ordres de parcours (infixe, préfixe, suffixe) avec la méthode T-ALGO-01C. L'évaluation fait pratiquer le parcours infixe (question 3). Le corrigé fournit la réponse attendue avec la méthode nommée.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
+    }
+  ]
+}
