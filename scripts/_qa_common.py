@@ -237,3 +237,27 @@ def print_result(name: str, errors: List[str]) -> None:
             print(f"- {item}")
         raise SystemExit(1)
     print(f"{name}: PASS")
+
+
+SUPPORTS_DIR = ROOT / "03_progressions" / "supports"
+
+
+def iter_sequence_md_files(prefix: str, root: Path = ROOT) -> List[Path]:
+    """Enumerate ALL .md files belonging to a sequence prefix.
+
+    Uses the same glob primitive as the coverage engine
+    (_supports_evidence.iter_support_evidence) so that both tools see
+    exactly the same files by construction — not by imitating each
+    other's kind lists.
+    """
+    level = "premiere" if prefix.startswith("P") else "terminale"
+    seq_dir = root / "03_progressions" / "supports" / level / prefix
+    # Fallback for test fixtures that use a flat root/{prefix}/ layout
+    if not seq_dir.is_dir():
+        seq_dir = root / prefix
+    if not seq_dir.is_dir():
+        return []
+    return sorted(
+        p for p in seq_dir.glob("*.md")
+        if "contracts" not in p.parts
+    )

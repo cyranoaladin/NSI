@@ -9,7 +9,7 @@ import re
 
 import yaml
 
-from scripts._qa_common import ROOT, load_program_entries, read_frontmatter
+from scripts._qa_common import ROOT, iter_sequence_md_files, load_program_entries, read_frontmatter
 from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, find_all_kind_files, find_kind_file
 
 SUPPORTS_DIR = ROOT / "03_progressions" / "supports"
@@ -106,19 +106,17 @@ def sequence_errors(root: Path, prefix: str, program_ids: set[str]) -> list[str]
         if f"Activité corrective {error_id}" not in texts["remediation"]:
             errors.append(f"{prefix}: {error_id} sans remédiation")
 
-    # Collect capacities from ALL files of the sequence (all kinds, principal + variants)
-    # This ensures symmetry with coverage which reads all .md files via rglob
-    all_kinds_for_collection = ["cours", "td", "tp", "evaluation", "corrige", "trace"]
+    # Collect capacities from ALL .md files of the sequence (same primitive as coverage)
+    # Uses iter_sequence_md_files — shared helper, symmetry by construction
     body_capacities: set[str] = set()
     fm_capacities: set[str] = set()
-    for kind in all_kinds_for_collection:
-        for file_path in find_all_kind_files(root, prefix, kind):
-            body_capacities |= set(CAPACITY_RE.findall(read(file_path)))
-            fm = read_frontmatter(file_path)
-            official = fm.get("official_program")
-            raw = official.get("capacities", []) if isinstance(official, dict) else []
-            if isinstance(raw, list):
-                fm_capacities |= {str(c) for c in raw if CAPACITY_RE.fullmatch(str(c))}
+    for file_path in iter_sequence_md_files(prefix, root):
+        body_capacities |= set(CAPACITY_RE.findall(read(file_path)))
+        fm = read_frontmatter(file_path)
+        official = fm.get("official_program")
+        raw = official.get("capacities", []) if isinstance(official, dict) else []
+        if isinstance(raw, list):
+            fm_capacities |= {str(c) for c in raw if CAPACITY_RE.fullmatch(str(c))}
     # Union: every declared or mentioned capacity must be exercised
     sequence_capacities = body_capacities | fm_capacities
     # Collect ALL worked text (principal + variant td/tp/evaluation bodies)
