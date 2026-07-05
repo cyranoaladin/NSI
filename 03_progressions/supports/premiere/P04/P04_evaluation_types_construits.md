@@ -62,9 +62,9 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 ### Question 2
 - Objectif évalué : O2.
 - Capacité officielle : P-DATA-CONSTR-02A, P-DATA-CONSTR-02D.
-- Énoncé : expliquer liste de relevés à partir de `[18, 20, 19]`.
-- Réponse attendue : `19`.
-- Critère de réussite : méthode visible, résultat correct et contrôle « liste vide ».
+- Énoncé : on dispose de `releves = [18, 20, 19]`. Écrire une boucle `for valeur in releves` qui calcule la moyenne des relevés. Donner la trace (élément courant et cumul à chaque tour).
+- Réponse attendue : `19` (moyenne = (18 + 20 + 19) / 3).
+- Critère de réussite : boucle `for` sur les valeurs (pas les indices), résultat correct et contrôle « liste vide ».
 ### Question 3
 - Objectif évalué : O3.
 - Capacité officielle : P-DATA-CONSTR-02A.

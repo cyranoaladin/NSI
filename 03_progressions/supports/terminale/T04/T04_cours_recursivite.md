@@ -74,6 +74,15 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 - Méthode : ajouter 1 à la longueur du reste.
 - Résultat obtenu : `2`.
 - Contrôle : le cas limite « reste vide » est vérifié séparément.
+## Méthode — analyser un appel récursif
+
+Pour analyser le fonctionnement d'un programme récursif (T-LANG-02B) :
+
+1. **Identifier le cas de base** : quelle condition arrête la récursion ?
+2. **Tracer les appels** : suivre la pile d'appels avec les valeurs d'arguments à chaque niveau. Exemple : `somme([4, 1, 3])` → `4 + somme([1, 3])` → `4 + 1 + somme([3])` → `4 + 1 + 3 + somme([])` → `4 + 1 + 3 + 0 = 8`.
+3. **Prouver la terminaison** : exhiber un variant (mesure entière positive strictement décroissante à chaque appel). Si le variant est `n`, montrer que chaque appel récursif diminue `n` d'au moins 1.
+4. **Compter les appels** : le nombre d'appels récursifs de `fact(n)` est `n`, celui de `somme(lst)` est `len(lst)`.
+
 ### Exemple corrigé 4 - terminaison
 - Donnée étudiée : `n` décroît vers 0.
 - Méthode : montrer une mesure entière strictement décroissante.

@@ -83,9 +83,9 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 ### Exercice 2
 - Objectif travaillé : O2.
 - Capacité officielle : P-DATA-CONSTR-02A, P-DATA-CONSTR-02D.
-- Énoncé disciplinaire : expliquer liste de relevés à partir de `[18, 20, 19]`.
-- Production attendue : `19`.
-- Contrainte de contrôle : rédiger la méthode avant le résultat.
+- Énoncé disciplinaire : on dispose de la liste `releves = [18, 20, 19]`. Écrire une boucle `for` qui parcourt les éléments de `releves` et calcule leur moyenne. Donner la trace d'exécution : à chaque tour de boucle, indiquer la valeur de l'élément courant et le cumul partiel.
+- Production attendue : `19` (moyenne = (18 + 20 + 19) / 3).
+- Contrainte de contrôle : utiliser `for valeur in releves` (itération sur les valeurs, pas sur les indices) ; traiter le cas `releves = []`.
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 3
 - Objectif travaillé : O3.
