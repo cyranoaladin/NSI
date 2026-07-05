@@ -489,8 +489,16 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## P-DATA-CONSTR-02D
 
 - Niveau : premiere
-- Statut coverage.md : absent
-- Preuves : aucune
+- Statut coverage.md : needs_review
+
+| type | fichier | statut ressource |
+| --- | --- | --- |
+| corrige | 03_progressions/supports/premiere/P04/P04_corrige_types_construits.md | needs_review |
+| cours | 03_progressions/supports/premiere/P04/P04_cours_types_construits.md | needs_review |
+| evaluation | 03_progressions/supports/premiere/P04/P04_evaluation_types_construits.md | needs_review |
+| td | 03_progressions/supports/premiere/P04/P04_td_types_construits.md | needs_review |
+| tp | 03_progressions/supports/premiere/P04/P04_tp_types_construits.md | needs_review |
+| trace | 03_progressions/supports/premiere/P04/P04_trace_types_construits.md | needs_review |
 
 ## P-DATA-CONSTR-03A
 
@@ -1588,8 +1596,19 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## T-LANG-02B
 
 - Niveau : terminale
-- Statut coverage.md : absent
-- Preuves : aucune
+- Statut coverage.md : needs_review
+
+| type | fichier | statut ressource |
+| --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T04/T04_bareme_recursivite.md | needs_review |
+| corrige | 03_progressions/supports/terminale/T04/T04_corrige_recursivite.md | needs_review |
+| cours | 03_progressions/supports/terminale/T04/T04_cours_recursivite.md | needs_review |
+| evaluation | 03_progressions/supports/terminale/T04/T04_evaluation_recursivite.md | needs_review |
+| remediation | 03_progressions/supports/terminale/T04/T04_remediation_recursivite.md | needs_review |
+| td | 03_progressions/supports/terminale/T04/T04_td_recursivite.md | needs_review |
+| tp | 03_progressions/supports/terminale/T04/T04_tp_recursivite.md | needs_review |
+| trace | 03_progressions/supports/terminale/T04/T04_trace_recursivite.md | needs_review |
+| version_amenagee | 03_progressions/supports/terminale/T04/T04_version_amenagee_recursivite.md | needs_review |
 
 ## T-LANG-03A
 

@@ -59,7 +59,7 @@ Une application de gestion de comptes doit garantir qu’aucune opération ne cr
 - Critère de réussite : méthode visible, résultat correct et contrôle « solde initial négatif ».
 ### Question 2
 - Objectif évalué : O2.
-- Capacité officielle : T-STRUCT-02A.
+- Capacité officielle : T-STRUCT-02A, T-STRUCT-02B.
 - Énoncé : expliquer méthode dépôt à partir de dépôt de 15.
 - Réponse attendue : solde augmenté de 15.
 - Critère de réussite : méthode visible, résultat correct et contrôle « montant nul ou négatif ».

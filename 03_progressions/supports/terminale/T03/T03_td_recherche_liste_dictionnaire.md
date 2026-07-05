@@ -24,7 +24,7 @@ official_program:
 
 ## Capacité visée
 
-> Distinguer la recherche d’une valeur dans une liste et dans un dictionnaire.
+> T-STRUCT-03C — Distinguer la recherche d’une valeur dans une liste et dans un dictionnaire.
 
 ---
 

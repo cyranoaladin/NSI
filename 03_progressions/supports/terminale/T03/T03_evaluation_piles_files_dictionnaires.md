@@ -71,7 +71,7 @@ Un serveur journalise des tâches en attente et doit choisir entre pile, file et
 - Critère de réussite : méthode visible, résultat correct et contrôle « clé absente ».
 ### Question 4
 - Objectif évalué : O4.
-- Capacité officielle : T-STRUCT-03A.
+- Capacité officielle : T-STRUCT-03A, T-STRUCT-03B.
 - Énoncé : corriger complexité pour accès par identifiant.
 - Réponse attendue : accès attendu constant.
 - Critère de réussite : méthode visible, résultat correct et contrôle « collision abstraite hors programme ».

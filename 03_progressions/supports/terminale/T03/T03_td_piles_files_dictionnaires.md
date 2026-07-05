@@ -94,7 +94,7 @@ Un serveur journalise des tâches en attente et doit choisir entre pile, file et
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 4
 - Objectif travaillé : O4.
-- Capacité officielle : T-STRUCT-03A.
+- Capacité officielle : T-STRUCT-03A, T-STRUCT-03B.
 - Énoncé disciplinaire : corriger complexité pour accès par identifiant.
 - Production attendue : accès attendu constant.
 - Contrainte de contrôle : corriger l’erreur « Confondre clé et valeur. ».

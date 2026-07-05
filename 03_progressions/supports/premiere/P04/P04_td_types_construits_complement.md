@@ -33,6 +33,7 @@ official_program:
 - P-DATA-CONSTR-02C : Utiliser des tableaux de tableaux pour représenter des matrices
 - P-DATA-CONSTR-03A : Construire une entrée de dictionnaire
 - P-DATA-CONSTR-03B : Itérer sur les éléments d’un dictionnaire
+- P-DATA-CONSTR-03C : Utiliser les méthodes keys, values et items
 
 ---
 
@@ -156,7 +157,7 @@ d[[1, 2]] = "coordonnees"
 
 ---
 
-## Exercice 5 - Itérer sur un dictionnaire (P-DATA-CONSTR-03B)
+## Exercice 5 - Itérer sur un dictionnaire (P-DATA-CONSTR-03B, P-DATA-CONSTR-03C)
 
 On donne le dictionnaire suivant :
 

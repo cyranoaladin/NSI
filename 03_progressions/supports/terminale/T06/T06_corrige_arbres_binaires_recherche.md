@@ -29,7 +29,7 @@ official_program:
 - Cas limite : doublon 6.
 ### Exercice 3
 - Réponse attendue : infixe -> 1,3,6,8,10,14.
-- Méthode : insérer une feuille.
+- Méthode : parcours infixe (gauche, racine, droite).
 - Cas limite : arbre dégénéré.
 ### Exercice 4
 - Réponse attendue : arbre vide -> nouvelle racine.

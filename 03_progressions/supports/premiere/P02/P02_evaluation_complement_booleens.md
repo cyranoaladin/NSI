@@ -65,7 +65,7 @@ Un capteur transmet un octet qui peut représenter une température signée ou u
 - Critère de réussite : méthode visible, résultat correct et contrôle « asymétrie entre minimum et maximum ».
 ### Question 3
 - Objectif évalué : O3.
-- Capacité officielle : P-DATA-BASE-02A.
+- Capacité officielle : P-DATA-BASE-02A, P-DATA-BASE-02B.
 - Énoncé : comparer encodage négatif avec `-6` sur 8 bits.
 - Réponse attendue : `11111010`.
 - Critère de réussite : méthode visible, résultat correct et contrôle « retenue finale ignorée sur la largeur fixée ».

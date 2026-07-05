@@ -71,7 +71,7 @@ Un formulaire international mélange accents, symboles monétaires et mesures d�
 - Critère de réussite : méthode visible, résultat correct et contrôle « chaîne vide ».
 ### Question 4
 - Objectif évalué : O4.
-- Capacité officielle : P-DATA-BASE-05A.
+- Capacité officielle : P-DATA-BASE-05A, P-DATA-BASE-03.
 - Énoncé : corriger flottant pour `0.1 + 0.2`.
 - Réponse attendue : valeur proche de `0.3`.
 - Critère de réussite : méthode visible, résultat correct et contrôle « arrondi binaire ».

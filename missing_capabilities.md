@@ -12,7 +12,7 @@
 - premiere | P-DATA-CONSTR-02A - Lire et modifier les éléments d'un tableau grâce à leurs index. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-DATA-CONSTR-02B - Construire un tableau par compréhension. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-DATA-CONSTR-02C - Utiliser des tableaux de tableaux pour représenter des matrices. | needs_review | ressources présentes mais statuts non validants
-- premiere | P-DATA-CONSTR-02D - Itérer sur les éléments d'un tableau. | absent | aucune ressource associée
+- premiere | P-DATA-CONSTR-02D - Itérer sur les éléments d'un tableau. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-DATA-CONSTR-03A - Construire une entrée de dictionnaire. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-DATA-CONSTR-03B - Itérer sur les éléments d'un dictionnaire. | needs_review | ressources présentes mais statuts non validants
 - premiere | P-DATA-CONSTR-03C - Utiliser les méthodes keys, values et items. | needs_review | ressources présentes mais statuts non validants
@@ -94,7 +94,7 @@
 - terminale | T-LANG-01B - Comprendre que la calculabilité ne dépend pas du langage. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-LANG-01C - Montrer sans formalisme théorique que le problème de l'arrêt est indécidable. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-LANG-02A - Ecrire un programme récursif. | needs_review | ressources présentes mais statuts non validants
-- terminale | T-LANG-02B - Analyser le fonctionnement d'un programme récursif. | absent | aucune ressource associée
+- terminale | T-LANG-02B - Analyser le fonctionnement d'un programme récursif. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-LANG-03A - Utiliser des API ou bibliothèques. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-LANG-03B - Exploiter la documentation d'API ou bibliothèques. | needs_review | ressources présentes mais statuts non validants
 - terminale | T-LANG-03C - Créer des modules simples et les documenter. | needs_review | ressources présentes mais statuts non validants

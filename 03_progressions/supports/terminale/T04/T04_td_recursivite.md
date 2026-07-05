@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "T-LANG-02A"
+    - "T-LANG-02B"
 ---
 
 # T04 - TD - Récursivité
@@ -94,7 +95,7 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 4
 - Objectif travaillé : O4.
-- Capacité officielle : T-LANG-02A.
+- Capacité officielle : T-LANG-02A, T-LANG-02B.
 - Énoncé disciplinaire : corriger terminaison pour `n` décroît vers 0.
 - Production attendue : preuve de terminaison.
 - Contrainte de contrôle : corriger l’erreur « Ne pas traiter l’entrée vide. ».

@@ -58,6 +58,30 @@ Résultat attendu : insérer 7 : 8 -> 3 -> 6 -> droite.
 ### Corrigé question 4
 Résultat attendu : `arbre vide` traité sans ambiguïté.
 
+## Exercice complémentaire — Taille et hauteur d'un arbre (T-ALGO-01C)
+
+On reprend l'ABR construit précédemment à partir de la séquence `[8, 3, 10, 1, 6, 14]`.
+
+**6a.** Écrire une fonction `taille(noeud)` qui renvoie le nombre de nœuds de l'arbre. Tester sur l'ABR donné (résultat attendu : 6).
+
+```python
+def taille(noeud):
+    if noeud is None:
+        return 0
+    return 1 + taille(noeud.gauche) + taille(noeud.droit)
+```
+
+**6b.** Écrire une fonction `hauteur(noeud)` qui renvoie la hauteur de l'arbre (nombre de niveaux - 1, un arbre réduit à sa racine a une hauteur 0). Tester sur l'ABR donné (résultat attendu : 2).
+
+```python
+def hauteur(noeud):
+    if noeud is None:
+        return -1
+    return 1 + max(hauteur(noeud.gauche), hauteur(noeud.droit))
+```
+
+**6c.** Insérer les valeurs `[2, 5, 7, 9, 11, 13, 15]` dans l'ABR. Recalculer la taille (résultat attendu : 13) et la hauteur (résultat attendu : 3). Comparer avec un arbre dégénéré obtenu en insérant `[1, 2, 3, 4, 5, 6]` dans un arbre vide : quelle hauteur obtient-on ? (résultat attendu : 5).
+
 ## Liens
 - TD lié : `T06_TD_arbres_binaires_recherche.md`.
 - Évaluation liée : `T06_evaluation_arbres_binaires_recherche.md`.

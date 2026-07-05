@@ -32,6 +32,7 @@ official_program:
 - Question 2 : 4 points sur T-ALGO-01F avec résultat `insérer 7 : 8 -> 3 -> 6 -> droite`.
 - Question 3 : 4 points sur T-ALGO-01E avec résultat `infixe -> 1,3,6,8,10,14`.
 - Question 4 : 4 points sur T-ALGO-01F avec résultat `arbre vide -> nouvelle racine`.
+- Question 5 : 4 points sur T-ALGO-01C avec résultat `taille = 6, hauteur = 2`.
 
 ## Critères observables
 - Trace, table, valeur ou pseudo-code présent.

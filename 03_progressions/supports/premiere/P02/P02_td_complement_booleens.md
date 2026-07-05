@@ -87,7 +87,7 @@ Un capteur transmet un octet qui peut représenter une température signée ou u
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 3
 - Objectif travaillé : O3.
-- Capacité officielle : P-DATA-BASE-02A.
+- Capacité officielle : P-DATA-BASE-02A, P-DATA-BASE-02B.
 - Énoncé disciplinaire : comparer encodage négatif avec `-6` sur 8 bits.
 - Production attendue : `11111010`.
 - Contrainte de contrôle : comparer avec le cas « retenue finale ignorée sur la largeur fixée ».

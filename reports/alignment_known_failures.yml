@@ -16,45 +16,4 @@
 # hors-liste. La ligne PASS du gate affiche le nombre d'entrées actives
 # (via le compteur de warnings).
 
-known_failures:
-  - id: P-DATA-BASE-02B
-    prefix: P02
-    file: 03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md
-    reason: "cours traite le complément à deux mais l'ID n'apparaît pas dans le body TD/éval"
-    resolution: "PR C — ajouter mention ID dans exercice existant"
-
-  - id: T-STRUCT-02B
-    prefix: T02
-    file: 03_progressions/supports/terminale/T02/T02_cours_classes_objets.md
-    reason: "cours traite attributs/méthodes mais l'ID n'apparaît pas dans le body TD/éval"
-    resolution: "PR C — ajouter mention ID dans exercice existant"
-
-  - id: T-STRUCT-03B
-    prefix: T03
-    file: 03_progressions/supports/terminale/T03/T03_cours_piles_files_dictionnaires.md
-    reason: "cours traite choix de structure mais l'ID n'apparaît pas dans le body TD/éval"
-    resolution: "PR C — ajouter mention ID dans exercice existant"
-
-  - id: P-DATA-CONSTR-03C
-    prefix: P04
-    file: 03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md
-    reason: "déclaré sur complement, ID non mentionné dans les corps TD/éval (les exercices exercent keys/values/items sans citer l'ID)"
-    resolution: "PR C — ajouter la mention dans les exercices complement qui l'exercent déjà (prouvé C1)"
-
-  - id: P-DATA-BASE-03
-    prefix: P03
-    file: 03_progressions/supports/premiere/P03/P03_cours_conversion_encodages_texte.md
-    reason: "déclaré sur variant conversion_encodages_texte, ID non mentionné dans les corps TD/éval"
-    resolution: "PR C — ajouter mention ID dans exercice existant"
-
-  - id: T-STRUCT-03C
-    prefix: T03
-    file: 03_progressions/supports/terminale/T03/T03_cours_recherche_liste_dictionnaire.md
-    reason: "déclaré sur variant recherche_liste_dictionnaire, ID non mentionné dans les corps TD/éval"
-    resolution: "PR C — ajouter mention ID dans exercice existant"
-
-  - id: T-ALGO-01C
-    prefix: T06
-    file: 03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md
-    reason: "déclaré sur TP T06 uniquement (aucun cours), ID non mentionné dans les corps TD/TP/éval"
-    resolution: "PR C — mention dans l'exercice TP qui l'exerce + item/mention éval"
+known_failures: []
