@@ -9,10 +9,8 @@ import re
 
 import yaml
 
-from scripts._qa_common import ROOT, iter_sequence_md_files, load_program_entries, read_frontmatter
+from scripts._qa_common import ROOT, SUPPORTS_DIR, iter_sequence_md_files, load_program_entries, read_frontmatter
 from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, find_all_kind_files, find_kind_file
-
-SUPPORTS_DIR = ROOT / "03_progressions" / "supports"
 
 
 def discover_all_prefixes() -> list[str]:
