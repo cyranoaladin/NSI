@@ -13,8 +13,8 @@
 - Source drive : 0
 - Lignes drive_inventory.csv : 22
 - Couverture covered : 0
-- Couverture needs_review : 108
-- Couverture partial : 6
+- Couverture needs_review : 111
+- Couverture partial : 3
 - Couverture absent : 0
 - Archive pédagogique à transmettre : dist/source_clean.tar.gz
 - Archive globale contenant .git : interdite comme livraison principale
@@ -115,8 +115,8 @@ python -m scripts.check_drive_mapping_release
 - `coverage.md` indexe désormais les preuves issues de `03_progressions/supports/**`.
 - `coverage_sources.md` liste les fichiers sources par capacité.
 - Couverture covered : 0
-- Couverture needs_review : 108
-- Couverture partial : 6
+- Couverture needs_review : 111
+- Couverture partial : 3
 - Couverture absent : 0
 - Décision : les preuves documentaires issues de `supports/` rendent visibles les capacités, mais ne créent aucune validation humaine.
 
