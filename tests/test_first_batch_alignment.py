@@ -499,5 +499,38 @@ class FirstBatchAlignmentTest(unittest.TestCase):
             mod.KNOWN_FAILURES_PATH = original
 
 
+    # --- PR A6: rglob collects .md in sub-directories ---
+
+    def test_rglob_collects_subdirectory_md(self) -> None:
+        """A .md file in a sub-directory of a sequence should be collected
+        by iter_sequence_md_files (rglob), ensuring symmetry with coverage."""
+        from scripts._qa_common import iter_sequence_md_files
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            d = root / "P00"
+            d.mkdir()
+            (d / "P00_cours_test.md").write_text(
+                "---\ntitle: t\n---\nBody\n", encoding="utf-8")
+            # Sub-directory with a .md
+            sub = d / "code"
+            sub.mkdir()
+            (sub / "P00_extra.md").write_text(
+                "---\ntitle: extra\n---\nSub body\n", encoding="utf-8")
+            # contracts/ should still be excluded
+            contracts = d / "contracts"
+            contracts.mkdir()
+            (contracts / "contract.md").write_text(
+                "---\ntitle: contract\n---\nExcluded\n", encoding="utf-8")
+
+            files = iter_sequence_md_files("P00", root)
+            names = [p.name for p in files]
+            self.assertIn("P00_cours_test.md", names,
+                "Top-level .md must be collected")
+            self.assertIn("P00_extra.md", names,
+                "Sub-directory .md must be collected by rglob")
+            self.assertNotIn("contract.md", names,
+                "contracts/ .md must remain excluded")
+
+
 if __name__ == "__main__":
     unittest.main()

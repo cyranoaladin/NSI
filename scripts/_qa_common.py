@@ -245,10 +245,9 @@ SUPPORTS_DIR = ROOT / "03_progressions" / "supports"
 def iter_sequence_md_files(prefix: str, root: Path = ROOT) -> List[Path]:
     """Enumerate ALL .md files belonging to a sequence prefix.
 
-    Uses the same glob primitive as the coverage engine
+    Uses rglob (recursive) — the same primitive as the coverage engine
     (_supports_evidence.iter_support_evidence) so that both tools see
-    exactly the same files by construction — not by imitating each
-    other's kind lists.
+    exactly the same files by construction, including sub-directories.
     """
     level = "premiere" if prefix.startswith("P") else "terminale"
     seq_dir = root / "03_progressions" / "supports" / level / prefix
@@ -258,6 +257,6 @@ def iter_sequence_md_files(prefix: str, root: Path = ROOT) -> List[Path]:
     if not seq_dir.is_dir():
         return []
     return sorted(
-        p for p in seq_dir.glob("*.md")
+        p for p in seq_dir.rglob("*.md")
         if "contracts" not in p.parts
     )
