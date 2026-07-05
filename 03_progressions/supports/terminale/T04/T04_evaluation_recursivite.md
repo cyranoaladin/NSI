@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "T-LANG-02A"
+    - "T-LANG-02B"
 ---
 
 
@@ -31,6 +32,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - T-LANG-02A
+- T-LANG-02B
 
 ## Prérequis
 - Reconnaître une consigne liée à appel récursif.
@@ -71,7 +73,7 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 - Critère de réussite : méthode visible, résultat correct et contrôle « reste vide ».
 ### Question 4
 - Objectif évalué : O4.
-- Capacité officielle : T-LANG-02A.
+- Capacité officielle : T-LANG-02A, T-LANG-02B.
 - Énoncé : corriger terminaison pour `n` décroît vers 0.
 - Réponse attendue : preuve de terminaison.
 - Critère de réussite : méthode visible, résultat correct et contrôle « appel avec même argument ».
@@ -132,6 +134,7 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 - Matériel autorisé : fiche récursivité, sans corrigé distribué ni navigation externe.
 - Capacités évaluées :
 - T-LANG-02A
+- T-LANG-02B
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence T04, statut `needs_review`.

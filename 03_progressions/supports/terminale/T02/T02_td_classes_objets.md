@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "T-STRUCT-02A"
+    - "T-STRUCT-02B"
 ---
 
 # T02 - TD - Classes et objets
@@ -30,6 +31,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - T-STRUCT-02A
+- T-STRUCT-02B
 
 ## Prérequis
 - Reconnaître une consigne liée à classe.
@@ -80,7 +82,7 @@ Une application de gestion de comptes doit garantir qu’aucune opération ne cr
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 2
 - Objectif travaillé : O2.
-- Capacité officielle : T-STRUCT-02A.
+- Capacité officielle : T-STRUCT-02A, T-STRUCT-02B.
 - Énoncé disciplinaire : expliquer méthode dépôt à partir de dépôt de 15.
 - Production attendue : solde augmenté de 15.
 - Contrainte de contrôle : rédiger la méthode avant le résultat.

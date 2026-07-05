@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "T-STRUCT-03A"
+    - "T-STRUCT-03B"
 ---
 
 
@@ -31,6 +32,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - T-STRUCT-03A
+- T-STRUCT-03B
 
 ## Prérequis
 - Reconnaître une consigne liée à pile.

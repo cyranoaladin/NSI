@@ -35,6 +35,7 @@ official_program:
 - P-DATA-CONSTR-02C : Utiliser des tableaux de tableaux pour représenter des matrices
 - P-DATA-CONSTR-03A : Construire une entrée de dictionnaire
 - P-DATA-CONSTR-03B : Itérer sur les éléments d’un dictionnaire
+- P-DATA-CONSTR-03C : Utiliser les méthodes keys, values et items
 
 ---
 
@@ -110,7 +111,7 @@ eleve[_____] = _____
 
 ---
 
-## Question 5 - P-DATA-CONSTR-03B (4 points)
+## Question 5 - P-DATA-CONSTR-03B, P-DATA-CONSTR-03C (4 points)
 
 On donne :
 

@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "P-DATA-CONSTR-02A"
+    - "P-DATA-CONSTR-02D"
 ---
 
 # P04 - TD - Types construits
@@ -30,6 +31,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - P-DATA-CONSTR-02A
+- P-DATA-CONSTR-02D
 
 ## Prérequis
 - Reconnaître une consigne liée à tuple.
@@ -80,7 +82,7 @@ Une station météo stocke des coordonnées fixes, des relevés horaires modifia
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 2
 - Objectif travaillé : O2.
-- Capacité officielle : P-DATA-CONSTR-02A.
+- Capacité officielle : P-DATA-CONSTR-02A, P-DATA-CONSTR-02D.
 - Énoncé disciplinaire : expliquer liste de relevés à partir de `[18, 20, 19]`.
 - Production attendue : `19`.
 - Contrainte de contrôle : rédiger la méthode avant le résultat.

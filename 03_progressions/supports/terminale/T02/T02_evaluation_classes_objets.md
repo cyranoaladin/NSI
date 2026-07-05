@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "T-STRUCT-02A"
+    - "T-STRUCT-02B"
 ---
 
 
@@ -31,6 +32,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - T-STRUCT-02A
+- T-STRUCT-02B
 
 ## Prérequis
 - Reconnaître une consigne liée à classe.
@@ -59,7 +61,7 @@ Une application de gestion de comptes doit garantir qu’aucune opération ne cr
 - Critère de réussite : méthode visible, résultat correct et contrôle « solde initial négatif ».
 ### Question 2
 - Objectif évalué : O2.
-- Capacité officielle : T-STRUCT-02A.
+- Capacité officielle : T-STRUCT-02A, T-STRUCT-02B.
 - Énoncé : expliquer méthode dépôt à partir de dépôt de 15.
 - Réponse attendue : solde augmenté de 15.
 - Critère de réussite : méthode visible, résultat correct et contrôle « montant nul ou négatif ».
@@ -132,6 +134,7 @@ Une application de gestion de comptes doit garantir qu’aucune opération ne cr
 - Matériel autorisé : fiche classes et objets, sans corrigé distribué ni navigation externe.
 - Capacités évaluées :
 - T-STRUCT-02A
+- T-STRUCT-02B
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence T02, statut `needs_review`.

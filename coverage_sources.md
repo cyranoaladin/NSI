@@ -367,20 +367,30 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## P-DATA-BASE-02B
 
 - Niveau : premiere
-- Statut coverage.md : partial
+- Statut coverage.md : needs_review
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| corrige | 03_progressions/supports/premiere/P02/P02_corrige_complement_booleens.md | needs_review |
 | cours | 03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md | needs_review |
+| evaluation | 03_progressions/supports/premiere/P02/P02_evaluation_complement_booleens.md | needs_review |
+| td | 03_progressions/supports/premiere/P02/P02_td_complement_booleens.md | needs_review |
+| tp | 03_progressions/supports/premiere/P02/P02_tp_complement_booleens.md | needs_review |
+| trace | 03_progressions/supports/premiere/P02/P02_trace_complement_booleens.md | needs_review |
 
 ## P-DATA-BASE-03
 
 - Niveau : premiere
-- Statut coverage.md : partial
+- Statut coverage.md : needs_review
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| corrige | 03_progressions/supports/premiere/P03/P03_corrige_texte_reels.md | needs_review |
 | cours | 03_progressions/supports/premiere/P03/P03_cours_texte_reels.md | needs_review |
+| evaluation | 03_progressions/supports/premiere/P03/P03_evaluation_texte_reels.md | needs_review |
+| td | 03_progressions/supports/premiere/P03/P03_td_texte_reels.md | needs_review |
+| tp | 03_progressions/supports/premiere/P03/P03_tp_texte_reels.md | needs_review |
+| trace | 03_progressions/supports/premiere/P03/P03_trace_texte_reels.md | needs_review |
 
 ## P-DATA-BASE-04
 
@@ -489,8 +499,16 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## P-DATA-CONSTR-02D
 
 - Niveau : premiere
-- Statut coverage.md : absent
-- Preuves : aucune
+- Statut coverage.md : needs_review
+
+| type | fichier | statut ressource |
+| --- | --- | --- |
+| corrige | 03_progressions/supports/premiere/P04/P04_corrige_types_construits.md | needs_review |
+| cours | 03_progressions/supports/premiere/P04/P04_cours_types_construits.md | needs_review |
+| evaluation | 03_progressions/supports/premiere/P04/P04_evaluation_types_construits.md | needs_review |
+| td | 03_progressions/supports/premiere/P04/P04_td_types_construits.md | needs_review |
+| tp | 03_progressions/supports/premiere/P04/P04_tp_types_construits.md | needs_review |
+| trace | 03_progressions/supports/premiere/P04/P04_trace_types_construits.md | needs_review |
 
 ## P-DATA-CONSTR-03A
 
@@ -941,11 +959,15 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md | needs_review |
+| corrige | 03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md | needs_review |
 | cours | 03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T05/T05_evaluation_arbres_mesures_parcours_complement.md | needs_review |
+| evaluation | 03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md | needs_review |
 | td | 03_progressions/supports/terminale/T05/T05_td_arbres_mesures_parcours_complement.md | needs_review |
 | tp | 03_progressions/supports/terminale/T05/T05_tp_arbres_mesures_parcours_complement.md | needs_review |
+| tp | 03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md | needs_review |
 | trace | 03_progressions/supports/terminale/T05/T05_trace_arbres_mesures_parcours_complement.md | needs_review |
 
 ## T-ALGO-01B
@@ -955,11 +977,15 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md | needs_review |
+| corrige | 03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md | needs_review |
 | cours | 03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T05/T05_evaluation_arbres_mesures_parcours_complement.md | needs_review |
+| evaluation | 03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md | needs_review |
 | td | 03_progressions/supports/terminale/T05/T05_td_arbres_mesures_parcours_complement.md | needs_review |
 | tp | 03_progressions/supports/terminale/T05/T05_tp_arbres_mesures_parcours_complement.md | needs_review |
+| tp | 03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md | needs_review |
 | trace | 03_progressions/supports/terminale/T05/T05_trace_arbres_mesures_parcours_complement.md | needs_review |
 
 ## T-ALGO-01C
@@ -969,6 +995,9 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md | needs_review |
+| corrige | 03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md | needs_review |
+| evaluation | 03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md | needs_review |
 | tp | 03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md | needs_review |
 
 ## T-ALGO-01D
@@ -1588,8 +1617,19 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## T-LANG-02B
 
 - Niveau : terminale
-- Statut coverage.md : absent
-- Preuves : aucune
+- Statut coverage.md : needs_review
+
+| type | fichier | statut ressource |
+| --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T04/T04_bareme_recursivite.md | needs_review |
+| corrige | 03_progressions/supports/terminale/T04/T04_corrige_recursivite.md | needs_review |
+| cours | 03_progressions/supports/terminale/T04/T04_cours_recursivite.md | needs_review |
+| evaluation | 03_progressions/supports/terminale/T04/T04_evaluation_recursivite.md | needs_review |
+| remediation | 03_progressions/supports/terminale/T04/T04_remediation_recursivite.md | needs_review |
+| td | 03_progressions/supports/terminale/T04/T04_td_recursivite.md | needs_review |
+| tp | 03_progressions/supports/terminale/T04/T04_tp_recursivite.md | needs_review |
+| trace | 03_progressions/supports/terminale/T04/T04_trace_recursivite.md | needs_review |
+| version_amenagee | 03_progressions/supports/terminale/T04/T04_version_amenagee_recursivite.md | needs_review |
 
 ## T-LANG-03A
 
@@ -1772,6 +1812,8 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | type | fichier | statut ressource |
 | --- | --- | --- |
 | cours | 03_progressions/supports/terminale/T02/T02_cours_classes_objets.md | needs_review |
+| evaluation | 03_progressions/supports/terminale/T02/T02_evaluation_classes_objets.md | needs_review |
+| td | 03_progressions/supports/terminale/T02/T02_td_classes_objets.md | needs_review |
 
 ## T-STRUCT-03A
 
@@ -1793,11 +1835,16 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 ## T-STRUCT-03B
 
 - Niveau : terminale
-- Statut coverage.md : partial
+- Statut coverage.md : needs_review
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| corrige | 03_progressions/supports/terminale/T03/T03_corrige_piles_files_dictionnaires.md | needs_review |
 | cours | 03_progressions/supports/terminale/T03/T03_cours_piles_files_dictionnaires.md | needs_review |
+| evaluation | 03_progressions/supports/terminale/T03/T03_evaluation_piles_files_dictionnaires.md | needs_review |
+| td | 03_progressions/supports/terminale/T03/T03_td_piles_files_dictionnaires.md | needs_review |
+| tp | 03_progressions/supports/terminale/T03/T03_tp_piles_files_dictionnaires.md | needs_review |
+| trace | 03_progressions/supports/terminale/T03/T03_trace_piles_files_dictionnaires.md | needs_review |
 
 ## T-STRUCT-03C
 

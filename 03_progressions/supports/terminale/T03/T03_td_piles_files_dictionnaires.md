@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "T-STRUCT-03A"
+    - "T-STRUCT-03B"
 ---
 
 # T03 - TD - Piles, files et dictionnaires
@@ -30,6 +31,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - T-STRUCT-03A
+- T-STRUCT-03B
 
 ## Prérequis
 - Reconnaître une consigne liée à pile.
@@ -94,7 +96,7 @@ Un serveur journalise des tâches en attente et doit choisir entre pile, file et
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 4
 - Objectif travaillé : O4.
-- Capacité officielle : T-STRUCT-03A.
+- Capacité officielle : T-STRUCT-03A, T-STRUCT-03B.
 - Énoncé disciplinaire : corriger complexité pour accès par identifiant.
 - Production attendue : accès attendu constant.
 - Contrainte de contrôle : corriger l’erreur « Confondre clé et valeur. ».

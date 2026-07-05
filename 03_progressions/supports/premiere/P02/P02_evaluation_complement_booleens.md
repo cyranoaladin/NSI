@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "P-DATA-BASE-02A"
+    - "P-DATA-BASE-02B"
 ---
 
 
@@ -31,6 +32,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - P-DATA-BASE-02A
+- P-DATA-BASE-02B
 
 ## Prérequis
 - Reconnaître une consigne liée à entier signé.
@@ -65,7 +67,7 @@ Un capteur transmet un octet qui peut représenter une température signée ou u
 - Critère de réussite : méthode visible, résultat correct et contrôle « asymétrie entre minimum et maximum ».
 ### Question 3
 - Objectif évalué : O3.
-- Capacité officielle : P-DATA-BASE-02A.
+- Capacité officielle : P-DATA-BASE-02A, P-DATA-BASE-02B.
 - Énoncé : comparer encodage négatif avec `-6` sur 8 bits.
 - Réponse attendue : `11111010`.
 - Critère de réussite : méthode visible, résultat correct et contrôle « retenue finale ignorée sur la largeur fixée ».
@@ -132,7 +134,7 @@ Un capteur transmet un octet qui peut représenter une température signée ou u
 - Matériel autorisé : fiche complément à deux et booléens, sans corrigé distribué ni navigation externe.
 - Capacités évaluées :
 - P-DATA-BASE-02A
-- P-DATA-BASE-02A
+- P-DATA-BASE-02B
 
 ## Fiche liée et aménagement
 - Fiche liée : fiche de cours opérationnelle de la séquence P02, statut `needs_review`.

@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "T-LANG-02A"
+    - "T-LANG-02B"
 ---
 
 # T04 - Cours - Récursivité
@@ -30,6 +31,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - T-LANG-02A
+- T-LANG-02B
 
 ## Prérequis
 - Reconnaître une consigne liée à appel récursif.

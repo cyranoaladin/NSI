@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "P-DATA-BASE-05A"
+    - "P-DATA-BASE-03"
 ---
 
 # P03 - TD - Texte Unicode et nombres réels
@@ -30,6 +31,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - P-DATA-BASE-05A
+- P-DATA-BASE-03
 
 ## Prérequis
 - Reconnaître une consigne liée à Unicode.
@@ -94,7 +96,7 @@ Un formulaire international mélange accents, symboles monétaires et mesures d�
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 ### Exercice 4
 - Objectif travaillé : O4.
-- Capacité officielle : P-DATA-BASE-05A.
+- Capacité officielle : P-DATA-BASE-05A, P-DATA-BASE-03.
 - Énoncé disciplinaire : corriger flottant pour `0.1 + 0.2`.
 - Production attendue : valeur proche de `0.3`.
 - Contrainte de contrôle : corriger l’erreur « Confondre point de code et représentation binaire. ».

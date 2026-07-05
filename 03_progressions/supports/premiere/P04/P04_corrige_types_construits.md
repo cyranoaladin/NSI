@@ -18,6 +18,7 @@ private_data: false
 official_program:
   capacities:
     - "P-DATA-CONSTR-02A"
+    - "P-DATA-CONSTR-02D"
 ---
 
 
@@ -31,6 +32,7 @@ official_program:
 
 ## Capacités officielles atomiques
 - P-DATA-CONSTR-02A
+- P-DATA-CONSTR-02D
 
 ## Prérequis
 - Reconnaître une consigne liée à tuple.
