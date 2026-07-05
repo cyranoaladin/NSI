@@ -8,6 +8,18 @@ Synchronous sequential calls with two-tier prompt caching:
 
 Execution is sorted by sequence to maximize tier-2 cache hits.
 
+V0d — Coverage derivation (ref: scripts/check_program_coverage.py L40-62):
+  The coverage engine does NOT read judge verdicts. It derives status from
+  the support files' frontmatter `status` field:
+    - "covered" requires ALL evidence types present AND ALL statuses in
+      VALIDATED_STATUSES (validated_pedagogy, validated_science, etc.)
+    - Currently all files are "needs_review" → coverage stays needs_review
+  Judge verdicts (this script) prove CONTENT exists. The status promotion
+  to validated_pedagogy (and thus covered) is a SEPARATE step requiring
+  human validation by the lead (ref: check_status_promotion_guard.py).
+  After this campaign: needs_review count may shift (content proven present)
+  but covered=0 until the lead promotes file statuses.
+
 SECRETS: ANTHROPIC_API_KEY read from environment or .env — never committed.
 
 Usage:
@@ -251,24 +263,43 @@ def call_anthropic_cached(
     body = {
         "model": MODEL,
         "max_tokens": 1500,
+        "temperature": 0,  # V0a: deterministic judge
         "system": SYSTEM_BLOCKS,
         "messages": [{"role": "user", "content": user_content}],
     }
     data = json.dumps(body).encode("utf-8")
-    req = urllib.request.Request(
-        "https://api.anthropic.com/v1/messages",
-        data=data,
-        headers={
-            "Content-Type": "application/json",
-            "x-api-key": api_key,
-            "anthropic-version": "2023-06-01",
-        },
-    )
-    try:
-        resp = urllib.request.urlopen(req, timeout=120)
-    except urllib.error.HTTPError as e:
-        error_body = e.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"API {e.code}: {error_body[:300]}") from e
+
+    # V0b: exponential backoff retries (429/529/overloaded/timeout)
+    last_err: Exception | None = None
+    for attempt in range(3):
+        if attempt > 0:
+            delay = 2 ** attempt  # 2s, 4s
+            print(f"  retry {attempt+1}/3 in {delay}s...", end=" ", flush=True)
+            time.sleep(delay)
+        req = urllib.request.Request(
+            "https://api.anthropic.com/v1/messages",
+            data=data,
+            headers={
+                "Content-Type": "application/json",
+                "x-api-key": api_key,
+                "anthropic-version": "2023-06-01",
+            },
+        )
+        try:
+            resp = urllib.request.urlopen(req, timeout=120)
+            last_err = None
+            break
+        except urllib.error.HTTPError as e:
+            error_body = e.read().decode("utf-8", errors="replace")
+            if e.code in (429, 529) or "overloaded" in error_body.lower():
+                last_err = RuntimeError(f"API {e.code}: {error_body[:200]}")
+                continue
+            raise RuntimeError(f"API {e.code}: {error_body[:300]}") from e
+        except (TimeoutError, OSError) as e:
+            last_err = e
+            continue
+    if last_err is not None:
+        raise last_err
 
     result = json.loads(resp.read())
 
@@ -337,6 +368,7 @@ def main() -> int:
     parser.add_argument("--all", action="store_true", help="Judge all capacities")
     parser.add_argument("--dry-run", action="store_true", help="List capacities without calling API")
     parser.add_argument("--count-tokens", action="store_true", help="Count system block tokens (with --dry-run)")
+    parser.add_argument("--force", action="store_true", help="Re-judge even if verdict file exists")
     parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR)
     args = parser.parse_args()
 
@@ -408,6 +440,12 @@ def main() -> int:
 
         if not seq_context:
             print(f"  [{i+1}/{len(selected)}] {cap_id}: no evidence, skipping")
+            continue
+
+        # V0c: idempotent resume — skip if verdict already exists
+        out_path = args.output_dir / f"{cap_id}_substance_review.json"
+        if out_path.exists() and not args.force:
+            print(f"  [{i+1}/{len(selected)}] {cap_id} ({seq_id}): already judged, skip (use --force to re-judge)")
             continue
 
         print(f"  [{i+1}/{len(selected)}] {cap_id} ({seq_id})...", end=" ", flush=True)
