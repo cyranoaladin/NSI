@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1045
+- Total ressources : 1046
 - Ressources pédagogiques : 53
-- Ressources techniques : 992
+- Ressources techniques : 993
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1037
+- generated: 1038
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 489
+- interne: 490
 - premiere: 250
 - terminale: 306
 
 ## Répartition par type
 - banque: 14
-- document: 615
+- document: 616
 - python: 95
 - script: 204
 - sequence: 45
 - test: 72
 
 ## Répartition par statut
-- needs_review: 1045
+- needs_review: 1046
 
 ## Répartition audience
 - corrige: 78
 - eleve: 143
-- mixte: 821
+- mixte: 822
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -617,6 +617,7 @@
   - differentiation_quality_report.md
   - docs/archive_security_policy.md
   - docs/audits/AUDIT_FRONTEND_infra_ground_truth.md
+  - docs/judge_campaign_plan.md
   - docs/local_excludes_required.md
   - docs/repo_topology.md
   - docs/source_archive_policy.md
@@ -1716,6 +1717,7 @@
   - differentiation_quality_report.md
   - docs/archive_security_policy.md
   - docs/audits/AUDIT_FRONTEND_infra_ground_truth.md
+  - docs/judge_campaign_plan.md
   - docs/local_excludes_required.md
   - docs/repo_topology.md
   - docs/source_archive_policy.md
@@ -2689,6 +2691,7 @@
 - differentiation_quality_report.md
 - docs/archive_security_policy.md
 - docs/audits/AUDIT_FRONTEND_infra_ground_truth.md
+- docs/judge_campaign_plan.md
 - docs/local_excludes_required.md
 - docs/repo_topology.md
 - docs/source_archive_policy.md
@@ -3729,6 +3732,7 @@
 - differentiation_quality_report.md
 - docs/archive_security_policy.md
 - docs/audits/AUDIT_FRONTEND_infra_ground_truth.md
+- docs/judge_campaign_plan.md
 - docs/local_excludes_required.md
 - docs/repo_topology.md
 - docs/source_archive_policy.md
