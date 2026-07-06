@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:14:41Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md",
-        "anchor": "#à-savoir",
-        "quote": "JOIN. (capacité vérifiée dans le fichier)",
+        "anchor": "#exemples-corrigés",
+        "quote": "- Méthode : joindre Eleve.id_eleve = Note.id_eleve.\n- Résultat attendu : UPDATE id_note=10 -> Ada 18.\n- Contrôle : capacité T-BDD-03C et cas limite `DELETE sans WHERE`.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md",
-        "anchor": "#exercice-2",
-        "quote": "Consigne : filtrer note >= 15 ; traiter aussi `UPDATE sans WHERE` si nécessaire.",
+        "anchor": "#exercice-4",
+        "quote": "- Capacité officielle : T-BDD-03D.\n- Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=delta\n- Consigne : vérifier modification par SELECT ; traiter aussi `JOIN sans ON` si nécessaire.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md",
-        "anchor": "#exercice-2",
-        "quote": "Réponse attendue : JOIN -> Ada 17.",
+        "anchor": "#exercice-4",
+        "quote": "- Réponse attendue : DELETE WHERE id_note=11 retire Linus.\n- Méthode : vérifier modification par SELECT.\n- Cas limite : JOIN sans ON.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours liste JOIN parmi les mots-clés à savoir et présente des exemples corrigés avec JOIN. Le TD fait pratiquer la jointure (exercice 2 : filtrer avec JOIN). Le corrigé fournit la réponse attendue pour la jointure. La capacité T-BDD-03D (construire des requêtes avec JOIN) est bien couverte par les trois types de preuves.",
+      "justification": "Le cours présente des exemples de JOIN avec condition explicite, le TD fait pratiquer la capacité T-BDD-03D (exercice 4 avec JOIN), et le corrigé fournit la réponse attendue avec méthode et cas limite. Les preuves sont cohérentes avec la capacité jugée.",
       "scientific_flags": [
         "human_review_required"
       ]

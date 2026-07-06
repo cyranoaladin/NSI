@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:15:39Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/terminale/T14/T14_cours_modularite_api_paradigmes_bugs.md",
-        "anchor": "#à-savoir",
-        "quote": "module. (capacité vérifiée dans le fichier)",
+        "anchor": "#exemples-corrigés",
+        "quote": "- Méthode : choisir paradigme selon tâche.\n- Résultat attendu : temperature=\"31\" refusée ou convertie.\n- Contrôle : capacité T-LANG-03C et cas limite `type chaîne`.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/terminale/T14/T14_TD_modularite_api_paradigmes_bugs.md",
         "anchor": "#exercice-3",
-        "quote": "Capacité officielle : T-LANG-03C.",
+        "quote": "- Capacité officielle : T-LANG-03C.\n- Données : `meteo.py expose moyenne_temperature(releves) ; releves=[{ville:Sfax,temperature:31},{ville:Tunis,temperature:29}]`. ; jeu_exercice=gamma\n- Consigne : choisir paradigme selon tâche ; traiter aussi `type chaîne` si nécessaire.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/terminale/T14/T14_corrige_modularite_api_paradigmes_bugs.md",
         "anchor": "#exercice-3",
-        "quote": "Réponse attendue : temperature=\"31\" refusée ou convertie.",
+        "quote": "- Réponse attendue : temperature=\"31\" refusée ou convertie.\n- Méthode : choisir paradigme selon tâche.\n- Cas limite : type chaîne.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours liste 'module' et 'paradigme fonctionnel' parmi les notions à savoir, et présente la méthode 'choisir paradigme selon tâche' associée à T-LANG-03C. Le TD (exercice 3) fait pratiquer cette capacité avec la consigne de choisir un paradigme. Le corrigé fournit la réponse attendue. Cependant, la capacité T-LANG-03C est ici associée au choix de paradigme plutôt qu'à la création et documentation de modules simples au sens strict ; le lien est partiel mais explicitement étiqueté T-LANG-03C dans tous les fichiers.",
+      "justification": "Le cours présente la méthode et un exemple corrigé pour T-LANG-03C. Le TD propose un exercice de production avec consigne explicite. Le corrigé fournit la réponse attendue avec cas limite. Cependant, la capacité porte sur 'créer des modules simples et les documenter', alors que les exercices traitent surtout du choix de paradigme ; le lien avec la documentation de modules reste superficiel.",
       "scientific_flags": [
         "human_review_required"
       ]

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:14:31Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,8 +12,8 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md",
-        "anchor": "#à-savoir",
-        "quote": "WHERE. (capacité vérifiée dans le fichier)",
+        "anchor": "#méthodes",
+        "quote": "- filtrer note >= 15.\n- joindre Eleve.id_eleve = Note.id_eleve.",
         "teaches": true
       },
       "proof_practice": {
@@ -27,11 +27,11 @@
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md",
         "anchor": "#exercice-3",
-        "quote": "Méthode : joindre Eleve.id_eleve = Note.id_eleve.",
+        "quote": "- Réponse attendue : UPDATE id_note=10 -> Ada 18.\n- Méthode : joindre Eleve.id_eleve = Note.id_eleve.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "La capacité T-BDD-03C porte sur la construction de requêtes d'interrogation avec WHERE. Le cours liste WHERE parmi les mots-clés enseignés et présente des méthodes de filtrage (filtrer note >= 15). Le TD exercice 3 fait pratiquer la jointure avec condition (WHERE implicite). Le corrigé fournit la réponse attendue. Cependant, le contenu est centré sur JOIN et UPDATE/DELETE plutôt que sur WHERE seul ; la correspondance est partielle mais réelle.",
+      "justification": "Le cours liste WHERE et la méthode de jointure/filtrage, le TD fait pratiquer la jointure avec WHERE, le corrigé fournit la réponse attendue pour l'exercice 3 lié à T-BDD-03C.",
       "scientific_flags": [
         "human_review_required"
       ]

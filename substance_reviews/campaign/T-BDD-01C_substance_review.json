@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:14:06Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -13,25 +13,25 @@
         "present": true,
         "file": "03_progressions/supports/terminale/T09/T09_cours_bases_relationnelles_cles_contraintes.md",
         "anchor": "#exemples-corrigés",
-        "quote": "Méthode : contrôler Emprunt.id_livre. Résultat attendu : Emprunt(11,9,Sam) viole la référence. Contrôle : capacité T-BDD-01C et cas limite `suppression référencée`.",
+        "quote": "- Méthode : contrôler Emprunt.id_livre.\n- Résultat attendu : Emprunt(11,9,Sam) viole la référence.\n- Contrôle : capacité T-BDD-01C et cas limite `suppression référencée`.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md",
         "anchor": "#exercice-3",
-        "quote": "Consigne : contrôler Emprunt.id_livre ; traiter aussi `suppression référencée` si nécessaire.",
+        "quote": "- Consigne : contrôler Emprunt.id_livre ; traiter aussi `suppression référencée` si nécessaire.\n- Réponse attendue : Emprunt(11,9,Sam) viole la référence.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/terminale/T09/T09_corrige_bases_relationnelles_cles_contraintes.md",
         "anchor": "#exercice-3",
-        "quote": "Réponse attendue : Emprunt(11,9,Sam) viole la référence. Méthode : contrôler Emprunt.id_livre. Cas limite : suppression référencée.",
+        "quote": "- Réponse attendue : Emprunt(11,9,Sam) viole la référence.\n- Méthode : contrôler Emprunt.id_livre.\n- Cas limite : suppression référencée.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours présente la méthode de détection d'anomalie de référence (Emprunt(11,9,Sam) viole la référence), le TD fait pratiquer la vérification de contrainte de clé étrangère (exercice 3, capacité T-BDD-01C), et le corrigé fournit la réponse attendue. La capacité T-BDD-01C porte sur le repérage d'anomalies (violation de contrainte de référence), ce qui correspond bien au contenu des fichiers.",
+      "justification": "Le cours expose la méthode de contrôle de clé étrangère avec l'anomalie de référence (T-BDD-01C). Le TD fait pratiquer la détection de violation sur un tuple invalide. Le corrigé fournit la réponse attendue avec le cas limite associé.",
       "scientific_flags": [
         "human_review_required"
       ]

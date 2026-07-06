@@ -308,6 +308,66 @@ def check_capacity(
     if flags:
         reasons.append(f"{len(flags)} alerte(s) scientifique(s) signalée(s)")
 
+    # 2b. citations dupliquées entre rôles
+    seen_quotes: dict[str, str] = {}
+    for pc in proofs:
+        if not pc.present:
+            continue
+        role_key = [k for k, v in ROLE_KEYS.items() if v == pc.role][0]
+        raw_quote = str(cap.get(role_key, {}).get("quote") or "")
+        if not raw_quote:
+            continue
+        nq = normalize(raw_quote)
+        if nq in seen_quotes:
+            pc.quote_ok = False
+            pc.messages.append(
+                f"citation dupliquée (identique à {seen_quotes[nq]})")
+            reasons.append(
+                f"[{pc.role}] citation dupliquée (identique à {seen_quotes[nq]})")
+        else:
+            seen_quotes[nq] = pc.role
+
+    # 2c. citation = simple étiquette du programme (template label)
+    template_label_re = re.compile(
+        r"^[A-Z0-9_.-]+\s*[-:]\s*\S.*$"
+    )
+    for pc in proofs:
+        if not pc.present or not pc.quote_ok:
+            continue
+        role_key = [k for k, v in ROLE_KEYS.items() if v == pc.role][0]
+        raw_quote = str(cap.get(role_key, {}).get("quote") or "").strip()
+        if not raw_quote:
+            continue
+        # Match pattern "<ID> : <label>" where quote is just the capacity listing
+        if template_label_re.match(raw_quote) and len(raw_quote.split()) <= 15:
+            pc.quote_ok = False
+            pc.messages.append(
+                "citation = simple étiquette du programme (template label)")
+            reasons.append(
+                f"[{pc.role}] citation = étiquette administrative, pas un extrait de contenu")
+
+    # 2d. teaches:true avec justification négative
+    negative_patterns = [
+        "ne correspond pas",
+        "aucun contenu",
+        "étiquette administrative",
+    ]
+    for pc in proofs:
+        if not pc.present or not pc.teaches:
+            continue
+        role_key = [k for k, v in ROLE_KEYS.items() if v == pc.role][0]
+        justification = str(cap.get(role_key, {}).get("justification") or "").lower()
+        if not justification:
+            continue
+        for neg in negative_patterns:
+            if neg in justification:
+                pc.teaches = False
+                pc.messages.append(
+                    f"teaches=true contradicted by justification containing '{neg}'")
+                reasons.append(
+                    f"[{pc.role}] teaches=true contradicted by negative justification")
+                break
+
     # 3. verdict effectif (le vérificateur ne promeut jamais)
     all_verified_and_teaches = all(p.verified and p.teaches for p in proofs)
     effective = declared
@@ -320,6 +380,18 @@ def check_capacity(
     downgraded = effective != declared
     return CapacityResult(cid, declared, effective, label_ok, proofs,
                           downgraded, reasons)
+
+
+# --- détection de preuves invalides (present:true mais non vérifiées) --------
+
+def has_invalid_present_proof(results: list[CapacityResult]) -> bool:
+    """Returns True if any capacity has a proof where present=True but
+    the proof is not verified (anchor_ok=false or quote_ok=false)."""
+    for r in results:
+        for p in r.proofs:
+            if p.present and not p.verified:
+                return True
+    return False
 
 
 # --- validation de schéma (optionnelle) --------------------------------------
@@ -496,9 +568,15 @@ def main() -> int:
                              encoding="utf-8")
         print(f"\nrapport machine écrit : {args.json}")
 
+    n_invalid_proofs = sum(
+        1 for r in results for p in r.proofs if p.present and not p.verified
+    )
+    if n_invalid_proofs:
+        print(f"preuves invalides   : {n_invalid_proofs}")
+
     if hard_schema_error:
         return 2
-    return 1 if n_downgraded or n_blocker else 0
+    return 1 if n_downgraded or n_blocker or n_invalid_proofs else 0
 
 
 if __name__ == "__main__":

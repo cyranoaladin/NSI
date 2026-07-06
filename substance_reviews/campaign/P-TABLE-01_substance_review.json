@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:20:49Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/premiere/P05/P05_cours_tables_csv.md",
-        "anchor": "#exemples-corrigés-précis",
-        "quote": "Méthode : lire avec csv.reader puis convertir POPULATION en int.",
+        "anchor": "#exemple-corrigé-1---lecture-csv",
+        "quote": "Méthode : lire avec csv.reader puis convertir POPULATION en int.\n- Résultat obtenu : `{\"PAYS\": \"Allemagne\", \"CAPITALE\": \"Berlin\", \"CONTINENT\": \"Europe\", \"POPULATION\": 82801531}`.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
-        "file": "03_progressions/supports/premiere/P05/P05_tp_tables_csv.md",
-        "anchor": "#consigne-technique-détaillée",
-        "quote": "Problème à programmer : Lire pays_monde.csv avec csv.reader et csv.DictReader, filtrer par CONTINENT, convertir POPULATION en int, comparer tri numérique et tri lexicographique, puis isoler une lign",
+        "file": "03_progressions/supports/premiere/P05/P05_td_tables_csv.md",
+        "anchor": "#exercice-1",
+        "quote": "Énoncé disciplinaire : résoudre la lecture de `Allemagne,Berlin,Europe,82801531`.\n- Production attendue : dictionnaire typé avec population entière.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P05/P05_corrige_tables_csv.md",
-        "anchor": "#méthode-générale-de-correction",
-        "quote": "pour lecture CSV, exiger la donnée `PAYS,CAPITALE,CONTINENT,POPULATION\nAllemagne,Berlin,Europe,82801531`, la méthode « lire avec csv.reader puis convertir POPULATION en int » et le contrôle « fichier pays_monde.csv vide ».",
+        "anchor": "#corrigé-exercice-1",
+        "quote": "Méthode : identifier `PAYS,CAPITALE,CONTINENT,POPULATION\nAllemagne,Berlin,Europe,82801531`, appliquer la méthode « lire avec csv.reader puis convertir POPULATION en int », puis écrire `{\"PAYS\": \"Allemagne\", \"CAPITALE\": \"Berlin\", \"CONTINENT\": \"Europe\", \"POPULATION\": 82801531}`.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne la méthode d'importation CSV avec csv.reader et csv.DictReader, le TP fait pratiquer la lecture du fichier CSV avec conversion des champs, et le corrigé fournit la méthode attendue et les résultats exacts pour la correction.",
+      "justification": "Le cours enseigne la lecture CSV avec csv.reader/DictReader et conversion de POPULATION, le TD fait pratiquer avec un exercice de lecture et production d'un dictionnaire typé, le corrigé fournit la méthode complète et le résultat attendu.",
       "scientific_flags": [
         "human_review_required"
       ]

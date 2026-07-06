@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:15:54Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/terminale/T14/T14_cours_modularite_api_paradigmes_bugs.md",
-        "anchor": "#à-savoir",
-        "quote": "bug de typage.\n- effet de bord.",
+        "anchor": "#erreurs-fréquentes",
+        "quote": "- import avec effet de bord.\n- API sans docstring.\n- bug corrigé sans test.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/terminale/T14/T14_TD_modularite_api_paradigmes_bugs.md",
-        "anchor": "#exercice-4",
-        "quote": "Consigne : écrire un test révélant un bug.",
+        "anchor": "#exercice-6",
+        "quote": "- Capacité officielle : T-LANG-05.\n- Données : `meteo.py expose moyenne_temperature(releves) ; releves=[{ville:Sfax,temperature:31},{ville:Tunis,temperature:29}]`. ; jeu_exercice=zeta\n- Consigne : séparer module et script principal ; traiter aussi `type chaîne` si nécessaire.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/terminale/T14/T14_corrige_modularite_api_paradigmes_bugs.md",
-        "anchor": "#exercice-4",
-        "quote": "Réponse attendue : liste vide -> ValueError.\n- Méthode : écrire un test révélant un bug.",
+        "anchor": "#exercice-6",
+        "quote": "- Réponse attendue : from meteo import moyenne_temperature.\n- Méthode : séparer module et script principal.\n- Cas limite : type chaîne.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours liste les causes typiques de bugs (bug de typage, effet de bord, import avec effet de bord, API sans docstring, bug corrigé sans test). Le TD (exercice 4) fait pratiquer l'écriture d'un test révélant un bug. Le corrigé fournit la réponse attendue pour ce cas. La capacité T-LANG-05 est bien couverte par les trois types de preuves.",
+      "justification": "Le cours liste les causes typiques de bugs (effet de bord, absence de docstring, bug sans test). L'exercice 6 du TD fait pratiquer T-LANG-05 sur un cas concret, et le corrigé fournit la réponse attendue avec le cas limite traité.",
       "scientific_flags": [
         "human_review_required"
       ]

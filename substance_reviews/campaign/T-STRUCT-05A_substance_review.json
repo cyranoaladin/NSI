@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:13:11Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -10,28 +10,28 @@
       "capacity_id": "T-STRUCT-05A",
       "official_label": "Modéliser des situations sous forme de graphes.",
       "proof_course": {
-        "present": true,
-        "file": "03_progressions/supports/terminale/T07/T07_cours_graphes_modelisation_listes_matrices.md",
-        "anchor": "#situation-problème",
-        "quote": "Identifier les données utiles de la situation : arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)].",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "proof_practice": {
-        "present": true,
-        "file": "03_progressions/supports/terminale/T07/T07_TD_graphes_modelisation_listes_matrices.md",
-        "anchor": "#exercice-1",
-        "quote": "Consigne : lister voisins sortants ; traiter aussi `sommet isolé E` si nécessaire.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "proof_correction": {
-        "present": true,
-        "file": "03_progressions/supports/terminale/T07/T07_corrige_graphes_modelisation_listes_matrices.md",
-        "anchor": "#exercice-1",
-        "quote": "Réponse attendue : A -> [B,C], B -> [D], C -> [D], D -> [B].",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
-      "verdict": "needs_review",
-      "justification": "Le cours enseigne la modélisation par graphe avec vocabulaire et exemples corrigés, le TD fait pratiquer la lecture d'un graphe orienté (liste d'adjacence), et le corrigé fournit les réponses attendues pour chaque exercice.",
+      "verdict": "needs_content",
+      "justification": "Verdict campagne Sonnet 4.6.",
       "scientific_flags": [
         "human_review_required"
       ]

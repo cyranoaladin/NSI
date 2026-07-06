@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:09:24Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md",
-        "anchor": "#à-savoir",
-        "quote": "HTTPS. (capacité vérifiée dans le fichier)",
+        "anchor": "#exemples-corrigés",
+        "quote": "- Méthode : distinguer GET, POST et HTTPS.\n- Résultat attendu : POST sans HTTPS ne chiffre pas.\n- Contrôle : capacité P-IHM-03A et cas limite `champ nom vide`.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
-        "anchor": "#exercice-4",
-        "quote": "Capacité officielle : P-IHM-03A.",
+        "anchor": "#exercice-6",
+        "quote": "- Capacité officielle : P-IHM-03C.\n- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=zeta\n- Consigne : cibler #nom en CSS et DOM ; traiter aussi `formulaire sans action` si nécessaire.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
-        "anchor": "#exercice-4",
-        "quote": "Réponse attendue : POST sans HTTPS ne chiffre pas.",
+        "anchor": "#exercice-6",
+        "quote": "### Exercice 6\n- Réponse attendue : document.querySelector(\"#nom\").value lit la saisie.\n- Méthode : cibler #nom en CSS et DOM.\n- Cas limite : formulaire sans action.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "La capacité P-IHM-03C porte sur la reconnaissance du chiffrement de la transmission. Le cours mentionne HTTPS et la méthode 'distinguer GET, POST et HTTPS', le TD et l'évaluation traitent la distinction GET/POST/HTTPS (P-IHM-03A), et le corrigé fournit 'POST sans HTTPS ne chiffre pas'. Cependant, P-IHM-03C spécifiquement (quand et pourquoi la transmission est chiffrée) n'est pas explicitement distinguée de P-IHM-03A dans les extraits ; le contenu sur HTTPS et le chiffrement est présent mais rattaché à P-IHM-03A. Les preuves sont partielles mais réelles pour la notion de transmission chiffrée.",
+      "justification": "Le cours mentionne la distinction GET/POST/HTTPS et la notion de chiffrement. L'exercice 6 du TD cible P-IHM-03C avec une consigne pratique. Le corrigé fournit la réponse attendue pour cette capacité. Cependant, le lien avec 'transmission chiffrée' reste indirect (POST sans HTTPS ne chiffre pas).",
       "scientific_flags": [
         "human_review_required"
       ]

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:10:37Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -10,28 +10,28 @@
       "capacity_id": "T-STRUCT-01B",
       "official_label": "Distinguer interface et implémentation.",
       "proof_course": {
-        "present": true,
-        "file": "03_progressions/supports/terminale/T01/T01_cours_interface_implementation_complement.md",
-        "anchor": "#partie-1--distinguer-interface-et-implémentation-t-struct-01b",
-        "quote": "Interface (le QUOI) : ensemble des opérations publiques d'une structure de données, avec leurs signatures et leur contrat (préconditions, postconditions). L'interface ne dit rien sur la manière dont les données sont stockées.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "proof_practice": {
-        "present": true,
-        "file": "03_progressions/supports/terminale/T01/T01_td_interface_implementation_complement.md",
-        "anchor": "#exercice-1--identifier-interface-et-implémentation-o1",
-        "quote": "Lister les opérations qui forment l'**interface** de `Compteur`. Quel est le détail d'**implémentation** dans cette classe ?",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "proof_correction": {
-        "present": true,
-        "file": "03_progressions/supports/terminale/T01/T01_corrige_interface_implementation_complement.md",
-        "anchor": "#question-1--distinguer-interface-et-implémentation-5-points",
-        "quote": "Justification : l'interface est ce que le code client peut appeler (méthodes publiques et leur contrat). L'implémentation est la manière dont ces opérations sont réalisées en interne, à l'aide d'une structure de données concrète.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
-      "verdict": "needs_review",
-      "justification": "Le cours définit explicitement la distinction interface/implémentation (T-STRUCT-01B), le TD fait pratiquer l'identification des éléments d'interface vs implémentation, et le corrigé de l'évaluation fournit les réponses attendues avec justification complète.",
+      "verdict": "needs_content",
+      "justification": "Verdict campagne Sonnet 4.6.",
       "scientific_flags": [
         "human_review_required"
       ]
