@@ -210,7 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - reports/lot1/repo_map.md: nom propre suspect -> Proposeur System
 - reports/lot1/repo_map.md: nom propre suspect -> Conclusion Phase
 - reports/lot2/lot2_validation_log.md: nom propre suspect -> Miss Branch
-- ... 120 alertes supplémentaires non affichées
+- ... 98 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
