@@ -501,7 +501,7 @@ def main() -> int:
             errors = validate_verdict_file(tmp_path)
 
             if not errors:
-                tmp_path.rename(final_path)  # promote
+                tmp_path.replace(final_path)  # promote (cross-platform, atomic overwrite)
             else:
                 # ONE retry with error feedback
                 print("INVALID, retrying...", end=" ", flush=True)
@@ -547,10 +547,10 @@ def main() -> int:
                         f"{'; '.join(errors2[:3])}"[:400]
                     )
                     _write_verdict_json(tmp_path, cap_id, verdict, programme)
-                    tmp_path.rename(final_path)
+                    tmp_path.replace(final_path)
                     print(f"DEGRADED {len(failed_roles)} role(s)")
                 else:
-                    tmp_path.rename(final_path)
+                    tmp_path.replace(final_path)
                     print("FIXED", end=" ")
 
             results.append(verdict)
@@ -570,13 +570,21 @@ def main() -> int:
                 time.sleep(0.5)
         except Exception as exc:
             print(f"ERROR: {exc}")
-            err_verdict = format_verdict(cap_id, programme[cap_id], {"comment": f"API error: {exc}"})
-            err_verdict["verdict"] = "needs_content"
-            for role in ["proof_course", "proof_practice", "proof_correction"]:
-                err_verdict[role] = {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False}
-            err_path = args.output_dir / f"{cap_id}_substance_review.json"
-            _write_verdict_json(err_path, cap_id, err_verdict, programme)
-            results.append(err_verdict)
+            final_path = args.output_dir / f"{cap_id}_substance_review.json"
+            # If a valid verdict already exists on disk, preserve it
+            if final_path.exists() and not validate_verdict_file(final_path):
+                print(f"  verdict existant préservé : {final_path.name}")
+                existing = json.loads(final_path.read_text(encoding="utf-8"))
+                results.append(existing.get("capacities", [{}])[0] if existing.get("capacities") else {})
+            else:
+                err_verdict = format_verdict(cap_id, programme[cap_id], {"comment": f"API error: {exc}"})
+                err_verdict["verdict"] = "needs_content"
+                for role in ["proof_course", "proof_practice", "proof_correction"]:
+                    err_verdict[role] = {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False}
+                tmp_path = final_path.with_suffix(".json.tmp")
+                _write_verdict_json(tmp_path, cap_id, err_verdict, programme)
+                tmp_path.replace(final_path)
+                results.append(err_verdict)
             usage_log.append({"cap": cap_id, "seq": seq_id, "read": 0, "write": 0,
                               "fresh": 0, "out": 0, "cost_usd": 0, "error": str(exc)[:100]})
 
