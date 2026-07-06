@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1163
+- Total ressources : 1141
 - Ressources pédagogiques : 53
-- Ressources techniques : 1110
+- Ressources techniques : 1088
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1155
+- generated: 1133
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 608
+- interne: 586
 - premiere: 249
 - terminale: 306
 
 ## Répartition par type
 - banque: 14
-- document: 730
+- document: 708
 - python: 95
 - script: 206
 - sequence: 45
 - test: 73
 
 ## Répartition par statut
-- needs_review: 1163
+- needs_review: 1141
 
 ## Répartition audience
 - corrige: 78
 - eleve: 143
-- mixte: 939
+- mixte: 917
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -951,28 +951,6 @@
   - substance_pipeline.md
   - substance_rag_pilot_report.md
   - substance_reviews/_adversarial/poisoned.verdict.json
-  - substance_reviews/absent_capacities/P-DATA-BASE-02B_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-BASE-03_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-BASE-04_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-BASE-05B_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-CONSTR-01_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-CONSTR-02B_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-CONSTR-02C_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-CONSTR-02D_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-CONSTR-03A_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-CONSTR-03B_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-CONSTR-03C_substance_review.json
-  - substance_reviews/absent_capacities/T-ALGO-01A_substance_review.json
-  - substance_reviews/absent_capacities/T-ALGO-01B_substance_review.json
-  - substance_reviews/absent_capacities/T-ALGO-01C_substance_review.json
-  - substance_reviews/absent_capacities/T-ALGO-01D_substance_review.json
-  - substance_reviews/absent_capacities/T-LANG-02B_substance_review.json
-  - substance_reviews/absent_capacities/T-STRUCT-01B_substance_review.json
-  - substance_reviews/absent_capacities/T-STRUCT-01C_substance_review.json
-  - substance_reviews/absent_capacities/T-STRUCT-02B_substance_review.json
-  - substance_reviews/absent_capacities/T-STRUCT-03B_substance_review.json
-  - substance_reviews/absent_capacities/T-STRUCT-03C_substance_review.json
-  - substance_reviews/absent_capacities/T-STRUCT-04B_substance_review.json
   - substance_reviews/campaign/P-ALGO-01A_substance_review.json
   - substance_reviews/campaign/P-ALGO-01B_substance_review.json
   - substance_reviews/campaign/P-ALGO-02A_substance_review.json
@@ -2142,28 +2120,6 @@
   - substance_pipeline.md
   - substance_rag_pilot_report.md
   - substance_reviews/_adversarial/poisoned.verdict.json
-  - substance_reviews/absent_capacities/P-DATA-BASE-02B_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-BASE-03_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-BASE-04_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-BASE-05B_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-CONSTR-01_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-CONSTR-02B_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-CONSTR-02C_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-CONSTR-02D_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-CONSTR-03A_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-CONSTR-03B_substance_review.json
-  - substance_reviews/absent_capacities/P-DATA-CONSTR-03C_substance_review.json
-  - substance_reviews/absent_capacities/T-ALGO-01A_substance_review.json
-  - substance_reviews/absent_capacities/T-ALGO-01B_substance_review.json
-  - substance_reviews/absent_capacities/T-ALGO-01C_substance_review.json
-  - substance_reviews/absent_capacities/T-ALGO-01D_substance_review.json
-  - substance_reviews/absent_capacities/T-LANG-02B_substance_review.json
-  - substance_reviews/absent_capacities/T-STRUCT-01B_substance_review.json
-  - substance_reviews/absent_capacities/T-STRUCT-01C_substance_review.json
-  - substance_reviews/absent_capacities/T-STRUCT-02B_substance_review.json
-  - substance_reviews/absent_capacities/T-STRUCT-03B_substance_review.json
-  - substance_reviews/absent_capacities/T-STRUCT-03C_substance_review.json
-  - substance_reviews/absent_capacities/T-STRUCT-04B_substance_review.json
   - substance_reviews/campaign/P-ALGO-01A_substance_review.json
   - substance_reviews/campaign/P-ALGO-01B_substance_review.json
   - substance_reviews/campaign/P-ALGO-02A_substance_review.json
@@ -3255,28 +3211,6 @@
 - substance_pipeline.md
 - substance_rag_pilot_report.md
 - substance_reviews/_adversarial/poisoned.verdict.json
-- substance_reviews/absent_capacities/P-DATA-BASE-02B_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-BASE-03_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-BASE-04_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-BASE-05B_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-CONSTR-01_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-CONSTR-02B_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-CONSTR-02C_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-CONSTR-02D_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-CONSTR-03A_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-CONSTR-03B_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-CONSTR-03C_substance_review.json
-- substance_reviews/absent_capacities/T-ALGO-01A_substance_review.json
-- substance_reviews/absent_capacities/T-ALGO-01B_substance_review.json
-- substance_reviews/absent_capacities/T-ALGO-01C_substance_review.json
-- substance_reviews/absent_capacities/T-ALGO-01D_substance_review.json
-- substance_reviews/absent_capacities/T-LANG-02B_substance_review.json
-- substance_reviews/absent_capacities/T-STRUCT-01B_substance_review.json
-- substance_reviews/absent_capacities/T-STRUCT-01C_substance_review.json
-- substance_reviews/absent_capacities/T-STRUCT-02B_substance_review.json
-- substance_reviews/absent_capacities/T-STRUCT-03B_substance_review.json
-- substance_reviews/absent_capacities/T-STRUCT-03C_substance_review.json
-- substance_reviews/absent_capacities/T-STRUCT-04B_substance_review.json
 - substance_reviews/campaign/P-ALGO-01A_substance_review.json
 - substance_reviews/campaign/P-ALGO-01B_substance_review.json
 - substance_reviews/campaign/P-ALGO-02A_substance_review.json
@@ -4418,28 +4352,6 @@
 - substance_pipeline.md
 - substance_rag_pilot_report.md
 - substance_reviews/_adversarial/poisoned.verdict.json
-- substance_reviews/absent_capacities/P-DATA-BASE-02B_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-BASE-03_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-BASE-04_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-BASE-05B_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-CONSTR-01_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-CONSTR-02B_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-CONSTR-02C_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-CONSTR-02D_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-CONSTR-03A_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-CONSTR-03B_substance_review.json
-- substance_reviews/absent_capacities/P-DATA-CONSTR-03C_substance_review.json
-- substance_reviews/absent_capacities/T-ALGO-01A_substance_review.json
-- substance_reviews/absent_capacities/T-ALGO-01B_substance_review.json
-- substance_reviews/absent_capacities/T-ALGO-01C_substance_review.json
-- substance_reviews/absent_capacities/T-ALGO-01D_substance_review.json
-- substance_reviews/absent_capacities/T-LANG-02B_substance_review.json
-- substance_reviews/absent_capacities/T-STRUCT-01B_substance_review.json
-- substance_reviews/absent_capacities/T-STRUCT-01C_substance_review.json
-- substance_reviews/absent_capacities/T-STRUCT-02B_substance_review.json
-- substance_reviews/absent_capacities/T-STRUCT-03B_substance_review.json
-- substance_reviews/absent_capacities/T-STRUCT-03C_substance_review.json
-- substance_reviews/absent_capacities/T-STRUCT-04B_substance_review.json
 - substance_reviews/campaign/P-ALGO-01A_substance_review.json
 - substance_reviews/campaign/P-ALGO-01B_substance_review.json
 - substance_reviews/campaign/P-ALGO-02A_substance_review.json
