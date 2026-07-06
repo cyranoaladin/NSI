@@ -25,7 +25,6 @@ import argparse
 import json
 import os
 import re
-import subprocess
 import sys
 import time
 import urllib.error
@@ -44,6 +43,9 @@ from scripts._qa_common import (  # noqa: E402
     ROOT,
     SUPPORTS_DIR,
     read_frontmatter,
+)
+from scripts.check_substance_anchors import (  # noqa: E402
+    validate_verdict_data,
 )
 
 PROGRAMME_FILE = ROOT / "00_programmes_officiels" / "programme_nsi_2019.yaml"
@@ -372,21 +374,21 @@ def format_verdict(cap_id: str, cap_info: dict[str, str], judge_result: dict[str
     }
 
 
+SUBSTANCE_SCHEMA = ROOT / "substance_verdict.schema.json"
+
+
 def validate_verdict_file(verdict_path: Path) -> list[str]:
-    """J2d: Run the hardened checker on a single verdict file.
-    Returns list of error messages (empty = valid)."""
-    result = subprocess.run(
-        [sys.executable, "-m", "scripts.check_substance_anchors",
-         str(verdict_path), "--repo-root", str(ROOT)],
-        cwd=ROOT, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-    )
-    if result.returncode == 0:
-        return []
-    errors = []
-    for line in result.stdout.splitlines():
-        if "INVALIDE" in line or "introuvable" in line or "absente" in line:
-            errors.append(line.strip())
-    return errors or [f"checker returned code {result.returncode}"]
+    """J2d: Validate schema + intra-file duplicates via direct import.
+
+    Returns list of error messages (empty = valid, promotable).
+    Does NOT resolve anchors against the corpus — that remains the job
+    of check_substance_anchors in single-file/batch mode (post-campaign).
+    """
+    try:
+        verdict = json.loads(verdict_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        return [f"lecture/JSON impossible : {exc}"]
+    return validate_verdict_data(verdict, SUBSTANCE_SCHEMA)
 
 
 def _write_verdict_json(path: Path, cap_id: str, verdict: dict[str, Any],

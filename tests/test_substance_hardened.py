@@ -15,7 +15,9 @@ from pathlib import Path
 from scripts.check_substance_anchors import (
     check_capacity,
     check_intra_file_duplicates,
+    validate_verdict_data,
 )
+from scripts.judge_campaign import validate_verdict_file
 
 
 def _make_capacity(cap_id: str = "P-TEST-01",
@@ -225,20 +227,54 @@ class TestSubstanceHardened(unittest.TestCase):
         self.assertIn("DOUBLON intra-fichier", result.stdout)
 
     def test_intra_file_duplicate_validate_verdict_file(self):
-        """validate_verdict_file (campaign path) returns errors for duplicate capacity_id,
-        preventing .tmp → final promotion."""
+        """validate_verdict_file (campaign path, direct import) returns errors
+        for duplicate capacity_id, preventing .tmp -> final promotion."""
         verdict_path = Path(self.tmpdir) / "dup_verdict.json"
         verdict_path.write_text(json.dumps(self._DUP_VERDICT), encoding="utf-8")
-        # validate_verdict_file calls check_substance_anchors as subprocess in single-file mode
-        result = subprocess.run(
-            [sys.executable, "-m", "scripts.check_substance_anchors",
-             str(verdict_path), "--repo-root", self.tmpdir],
-            cwd=str(Path(__file__).resolve().parents[1]),
-            text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-        )
-        # Non-zero exit = errors list non-empty = no promotion
-        self.assertNotEqual(result.returncode, 0,
-                            "validate_verdict_file path must reject duplicate capacity_id")
+        errors = validate_verdict_file(verdict_path)
+        self.assertTrue(errors, "validate_verdict_file must reject duplicate capacity_id")
+        self.assertTrue(any("DOUBLON" in e for e in errors))
+
+    # ── VERT: needs_content sans preuves est promouvable ──
+    def test_needs_content_verdict_is_promotable(self):
+        """A schema-valid needs_content verdict (file=None, present=False)
+        must pass validate_verdict_file — it is promotable."""
+        verdict = {
+            "schema_version": "1.0.0",
+            "unit": "P05_test",
+            "level": "premiere",
+            "judged_at": "2026-01-01T00:00:00Z",
+            "judge_model": "test-judge",
+            "author_model": "test-author",
+            "capacities": [
+                {
+                    "capacity_id": "P-PROMO-01",
+                    "official_label": "Capacite promotable",
+                    "proof_course": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
+                    "proof_practice": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
+                    "proof_correction": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
+                    "verdict": "needs_content",
+                    "justification": "Aucune preuve verifiable retenue par le juge de substance.",
+                    "scientific_flags": [],
+                },
+            ],
+        }
+        verdict_path = Path(self.tmpdir) / "promotable.json"
+        verdict_path.write_text(json.dumps(verdict), encoding="utf-8")
+        errors = validate_verdict_file(verdict_path)
+        self.assertEqual(errors, [],
+                         f"needs_content verdict should be promotable, got: {errors}")
+
+    # ── ROUGE: donnees corrompues = echec bruyant ──
+    def test_corrupted_data_fails_loudly(self):
+        """Corrupted/unexpected data in capacities must produce errors,
+        never be silently treated as valid."""
+        schema_path = Path(__file__).resolve().parents[1] / "substance_verdict.schema.json"
+        # capacities is a string instead of a list
+        corrupted = {"capacities": "not-a-list"}
+        errors = validate_verdict_data(corrupted, schema_path)
+        self.assertTrue(errors,
+                        "Corrupted verdict must produce errors, not pass silently")
 
 
 if __name__ == "__main__":

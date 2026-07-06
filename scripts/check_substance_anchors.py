@@ -387,8 +387,10 @@ def check_capacity(
 def check_intra_file_duplicates(verdict: dict[str, Any]) -> list[str]:
     """Vérifie qu'aucun capacity_id n'apparaît plus d'une fois dans un verdict.
 
-    Appelée par le mode single-file, le mode batch, et indirectement par
-    validate_verdict_file (judge_campaign.py) via le subprocess single-file.
+    Fonction partagée, appelée par :
+      (a) mode single-file de check_substance_anchors.py
+      (b) mode batch de check_substance_anchors.py
+      (c) validate_verdict_file() dans judge_campaign.py (import direct)
     """
     counts: dict[str, int] = {}
     for cap in verdict.get("capacities", []):
@@ -401,6 +403,20 @@ def check_intra_file_duplicates(verdict: dict[str, Any]) -> list[str]:
         f"DOUBLON intra-fichier : capacity_id {cid} apparaît {n} fois"
         for cid, n in sorted(counts.items()) if n > 1
     ]
+
+
+def validate_verdict_data(verdict: dict[str, Any], schema_path: Path) -> list[str]:
+    """Validate a verdict dict for schema conformance and intra-file duplicates.
+
+    Returns list of error messages (empty = valid, promotable).
+    Used by judge_campaign.py validate_verdict_file() as a direct import
+    (no subprocess). Does NOT resolve anchors against the corpus — that
+    remains the job of the full check_substance_anchors single-file/batch mode.
+    """
+    errors = validate_schema(verdict, schema_path)
+    hard = [e for e in errors if e.startswith("schéma @")]
+    dup_errors = check_intra_file_duplicates(verdict)
+    return hard + dup_errors
 
 
 # --- détection de preuves invalides (present:true mais non vérifiées) --------
