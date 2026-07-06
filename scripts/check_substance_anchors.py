@@ -443,14 +443,16 @@ def main() -> int:
             print("ERREUR : aucun _substance_review.json trouvé", file=sys.stderr)
             return 2
         # J6b: uniqueness guard — no two verdict files for the same capacity_id
-        cap_id_to_files: dict[str, list[Path]] = {}
+        cap_id_to_files: dict[str, set[Path]] = {}
         for rf in review_files:
             try:
                 vdata = json.loads(rf.read_text(encoding="utf-8"))
                 for cap in vdata.get("capacities", []):
+                    if not isinstance(cap, dict):
+                        continue
                     cid = str(cap.get("capacity_id", ""))
                     if cid:
-                        cap_id_to_files.setdefault(cid, []).append(rf)
+                        cap_id_to_files.setdefault(cid, set()).add(rf)
             except (json.JSONDecodeError, OSError):
                 continue  # skip unreadable verdict files
         failures: list[str] = []

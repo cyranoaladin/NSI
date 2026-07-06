@@ -1205,7 +1205,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_insert_update_delete.md` — fiche_cours — needs_review — eleve
 - `03_progressions/supports/contracts/T10_contract.yml` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md` — td — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md` — cours — needs_review — eleve

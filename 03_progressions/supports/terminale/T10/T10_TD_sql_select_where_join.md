@@ -17,7 +17,6 @@ official_program:
     - "T-BDD-03C"
     - "T-BDD-03D"
     - "T-BDD-03E"
-    - "T-BDD-03F"
     - "T-BDD-03G"
     - "T-BDD-03H"
 ---
