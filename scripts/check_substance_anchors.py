@@ -382,6 +382,27 @@ def check_capacity(
                           downgraded, reasons)
 
 
+# --- détection de doublons intra-fichier de capacity_id ----------------------
+
+def check_intra_file_duplicates(verdict: dict[str, Any]) -> list[str]:
+    """Vérifie qu'aucun capacity_id n'apparaît plus d'une fois dans un verdict.
+
+    Appelée par le mode single-file, le mode batch, et indirectement par
+    validate_verdict_file (judge_campaign.py) via le subprocess single-file.
+    """
+    counts: dict[str, int] = {}
+    for cap in verdict.get("capacities", []):
+        if not isinstance(cap, dict):
+            continue
+        cid = str(cap.get("capacity_id", ""))
+        if cid:
+            counts[cid] = counts.get(cid, 0) + 1
+    return [
+        f"DOUBLON intra-fichier : capacity_id {cid} apparaît {n} fois"
+        for cid, n in sorted(counts.items()) if n > 1
+    ]
+
+
 # --- détection de preuves invalides (present:true mais non vérifiées) --------
 
 def has_invalid_present_proof(results: list[CapacityResult]) -> bool:
@@ -444,30 +465,21 @@ def main() -> int:
             return 2
         # J6b: uniqueness guard — no two verdict files for the same capacity_id
         cap_id_to_files: dict[str, set[Path]] = {}
-        # J6-ter: also count occurrences per capacity_id per file (intra-file duplicates)
-        cap_id_counts_per_file: dict[Path, dict[str, int]] = {}
+        failures: list[str] = []
         for rf in review_files:
             try:
                 vdata = json.loads(rf.read_text(encoding="utf-8"))
-                file_counts: dict[str, int] = {}
+                # J6-ter: intra-file duplicates via shared function
+                for msg in check_intra_file_duplicates(vdata):
+                    failures.append(f"{msg} dans {rf.relative_to(repo_root)}")
                 for cap in vdata.get("capacities", []):
                     if not isinstance(cap, dict):
                         continue
                     cid = str(cap.get("capacity_id", ""))
                     if cid:
                         cap_id_to_files.setdefault(cid, set()).add(rf)
-                        file_counts[cid] = file_counts.get(cid, 0) + 1
-                cap_id_counts_per_file[rf] = file_counts
             except (json.JSONDecodeError, OSError):
                 continue  # skip unreadable verdict files
-        failures: list[str] = []
-        # Intra-file duplicates
-        for rf, counts in sorted(cap_id_counts_per_file.items()):
-            for cid, count in sorted(counts.items()):
-                if count > 1:
-                    failures.append(
-                        f"DOUBLON intra-fichier : capacity_id {cid} apparaît {count} fois "
-                        f"dans {rf.relative_to(repo_root)}")
         # Inter-file duplicates
         for cid, files in sorted(cap_id_to_files.items()):
             if len(files) > 1:
@@ -530,6 +542,13 @@ def main() -> int:
 
     schema_msgs = validate_schema(verdict, args.schema)
     hard_schema_error = any(m.startswith("schéma @") for m in schema_msgs)
+
+    # J6-ter: intra-file duplicate check (shared function, single-file path)
+    dup_msgs = check_intra_file_duplicates(verdict)
+    for msg in dup_msgs:
+        schema_msgs.append(msg)
+    if dup_msgs:
+        hard_schema_error = True
 
     official = load_official_labels(repo_root)
     section_cache: dict[Path, dict[str, Section]] = {}

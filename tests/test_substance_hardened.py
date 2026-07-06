@@ -14,6 +14,7 @@ from pathlib import Path
 
 from scripts.check_substance_anchors import (
     check_capacity,
+    check_intra_file_duplicates,
 )
 
 
@@ -151,50 +152,68 @@ class TestSubstanceHardened(unittest.TestCase):
                                 f"Valid proof should be verified: {p.role}")
 
 
-    # ── ROUGE: doublon intra-fichier ──
-    def test_intra_file_duplicate_capacity_id_rejected(self):
-        """A verdict JSON containing the same capacity_id twice must be flagged."""
-        verdict = {
-            "schema_version": "1.0.0",
-            "unit": "test-dup",
-            "level": "premiere",
-            "judged_at": "2026-01-01T00:00:00Z",
-            "judge_model": "test",
-            "author_model": "test-author",
-            "capacities": [
-                {
-                    "capacity_id": "DUP-01",
-                    "official_label": "Capacité dupliquée",
-                    "proof_course": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
-                    "proof_practice": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
-                    "proof_correction": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
-                    "verdict": "needs_content",
-                    "justification": "Test",
-                    "scientific_flags": [],
-                },
-                {
-                    "capacity_id": "DUP-01",
-                    "official_label": "Capacité dupliquée (bis)",
-                    "proof_course": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
-                    "proof_practice": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
-                    "proof_correction": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
-                    "verdict": "needs_content",
-                    "justification": "Test bis",
-                    "scientific_flags": [],
-                },
-            ],
-        }
-        # Write to a path matching the glob pattern used by the batch mode
+    # ── ROUGE: doublon intra-fichier — shared function ──
+
+    _DUP_VERDICT: dict = {
+        "schema_version": "1.0.0",
+        "unit": "test-dup",
+        "level": "premiere",
+        "judged_at": "2026-01-01T00:00:00Z",
+        "judge_model": "test",
+        "author_model": "test-author",
+        "capacities": [
+            {
+                "capacity_id": "DUP-01",
+                "official_label": "Capacité dupliquée",
+                "proof_course": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
+                "proof_practice": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
+                "proof_correction": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
+                "verdict": "needs_content",
+                "justification": "Test",
+                "scientific_flags": [],
+            },
+            {
+                "capacity_id": "DUP-01",
+                "official_label": "Capacité dupliquée (bis)",
+                "proof_course": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
+                "proof_practice": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
+                "proof_correction": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
+                "verdict": "needs_content",
+                "justification": "Test bis",
+                "scientific_flags": [],
+            },
+        ],
+    }
+
+    def test_intra_file_duplicate_shared_function(self):
+        """check_intra_file_duplicates returns errors for duplicate capacity_id."""
+        errs = check_intra_file_duplicates(self._DUP_VERDICT)
+        self.assertTrue(errs, "Should detect intra-file duplicate")
+        self.assertIn("DUP-01", errs[0])
+
+    def test_intra_file_duplicate_single_file_mode(self):
+        """Single-file mode (--verdict) rejects duplicate capacity_id (exit != 0)."""
+        verdict_path = Path(self.tmpdir) / "dup_verdict.json"
+        verdict_path.write_text(json.dumps(self._DUP_VERDICT), encoding="utf-8")
+        result = subprocess.run(
+            [sys.executable, "-m", "scripts.check_substance_anchors",
+             str(verdict_path), "--repo-root", self.tmpdir],
+            cwd=str(Path(__file__).resolve().parents[1]),
+            text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+        )
+        self.assertNotEqual(result.returncode, 0,
+                            f"Single-file mode should reject duplicate:\n{result.stdout}")
+        self.assertIn("DOUBLON intra-fichier", result.stdout)
+
+    def test_intra_file_duplicate_batch_mode(self):
+        """Batch mode (no --verdict) rejects duplicate capacity_id."""
         supports_dir = Path(self.tmpdir) / "03_progressions" / "supports" / "test"
         supports_dir.mkdir(parents=True, exist_ok=True)
         verdict_path = supports_dir / "_substance_review.json"
-        verdict_path.write_text(json.dumps(verdict), encoding="utf-8")
-        # Also create the required adversarial file to avoid unrelated failure
+        verdict_path.write_text(json.dumps(self._DUP_VERDICT), encoding="utf-8")
         adv_dir = Path(self.tmpdir) / "substance_reviews" / "_adversarial"
         adv_dir.mkdir(parents=True, exist_ok=True)
-        poison = adv_dir / "poisoned.verdict.json"
-        poison.write_text('{"bad": true}', encoding="utf-8")
-        # Run the checker in batch mode
+        (adv_dir / "poisoned.verdict.json").write_text('{"bad": true}', encoding="utf-8")
         result = subprocess.run(
             [sys.executable, "-m", "scripts.check_substance_anchors",
              "--repo-root", self.tmpdir],
@@ -202,8 +221,24 @@ class TestSubstanceHardened(unittest.TestCase):
             text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
         )
         self.assertNotEqual(result.returncode, 0,
-                            f"Intra-file duplicate should fail:\n{result.stdout}")
+                            f"Batch mode should reject duplicate:\n{result.stdout}")
         self.assertIn("DOUBLON intra-fichier", result.stdout)
+
+    def test_intra_file_duplicate_validate_verdict_file(self):
+        """validate_verdict_file (campaign path) returns errors for duplicate capacity_id,
+        preventing .tmp → final promotion."""
+        verdict_path = Path(self.tmpdir) / "dup_verdict.json"
+        verdict_path.write_text(json.dumps(self._DUP_VERDICT), encoding="utf-8")
+        # validate_verdict_file calls check_substance_anchors as subprocess in single-file mode
+        result = subprocess.run(
+            [sys.executable, "-m", "scripts.check_substance_anchors",
+             str(verdict_path), "--repo-root", self.tmpdir],
+            cwd=str(Path(__file__).resolve().parents[1]),
+            text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+        )
+        # Non-zero exit = errors list non-empty = no promotion
+        self.assertNotEqual(result.returncode, 0,
+                            "validate_verdict_file path must reject duplicate capacity_id")
 
 
 if __name__ == "__main__":
