@@ -1,22 +1,12 @@
 [
   {
-    "cap": "P-TABLE-01",
-    "seq": "P05",
-    "read": 2240,
-    "write": 36651,
-    "fresh": 77,
-    "out": 494,
-    "cost_usd": 0.145754,
+    "cap": "T-BDD-03F",
+    "seq": "T10",
+    "read": 0,
+    "write": 18500,
+    "fresh": 65,
+    "out": 552,
+    "cost_usd": 0.07785,
     "api_calls": 1
-  },
-  {
-    "cap": "P-TABLE-02",
-    "seq": "P05",
-    "read": 38891,
-    "write": 0,
-    "fresh": 85,
-    "out": 479,
-    "cost_usd": 0.019107,
-    "api_calls": 2
   }
 ]

@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 610
-- Ressources needs_review : 610
+- Ressources inventoriées : 603
+- Ressources needs_review : 603
 - Ressources publiables : 0
-- Source generated : 602
+- Source generated : 595
 - Source adapted_from_drive : 7
 - Source import_partiel : 1
 - Source inspiration_drive : 0
@@ -122,7 +122,7 @@ python -m scripts.check_drive_mapping_release
 
 ## Juge de substance
 
-- Verdicts pilotes vérifiés : 7
+- Verdicts pilotes vérifiés : 0
 - Unités pilotes : P05, P06, T06, T07, T08, T10, T17, T18.
 - Schéma : `substance_verdict.schema.json`.
 - Index : `substance_reviews_index.md`.

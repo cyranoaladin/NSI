@@ -5,13 +5,13 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 ## Synthèse
 
-- Nombre total de ressources : 531
-- Nombre par statut : {'needs_review': 531}
-- Nombre par type de document : {'bareme': 35, 'corrige': 67, 'cours': 44, 'document': 43, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
-- Ressources avec capacity_ids : 446
+- Nombre total de ressources : 524
+- Nombre par statut : {'needs_review': 524}
+- Nombre par type de document : {'bareme': 35, 'corrige': 67, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
+- Ressources avec capacity_ids : 439
 - Ressources sans capacity_ids : 85
-- Ressources avec audience renseignée : 531
-- Ressources avec session renseignée : 531
+- Ressources avec audience renseignée : 524
+- Ressources avec session renseignée : 524
 
 ## Algorithmique
 
@@ -566,7 +566,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py` — python — needs_review — eleve
 - `03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py` — python — needs_review — eleve
 - `03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv` — document — needs_review — eleve
-- `03_progressions/supports/premiere/P06/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/premiere/P06/code/P06_corrige_professeur_tables_recherche_tri_fusion.py` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P06/code/P06_starter_tables_recherche_tri_fusion.py` — python — needs_review — eleve
 - `03_progressions/supports/premiere/P06/code/P06_tests_attendus_tables_recherche_tri_fusion.py` — python — needs_review — eleve
@@ -606,22 +605,18 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T05/code/T05_corrige_professeur_arbres_binaires.py` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T05/code/T05_starter_arbres_binaires.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T05/code/T05_tests_attendus_arbres_binaires.py` — python — needs_review — eleve
-- `03_progressions/supports/terminale/T06/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T06/code/T06_corrige_professeur_arbres_binaires_recherche.py` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T06/code/T06_starter_arbres_binaires_recherche.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T06/code/T06_tests_attendus_arbres_binaires_recherche.py` — python — needs_review — eleve
-- `03_progressions/supports/terminale/T07/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T07/code/T07_corrige_professeur_graphes_modelisation_listes_matrices.py` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T07/code/T07_starter_graphes_modelisation_listes_matrices.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T07/code/T07_tests_attendus_graphes_modelisation_listes_matrices.py` — python — needs_review — eleve
-- `03_progressions/supports/terminale/T08/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T08/code/T08_corrige_professeur_bfs_dfs_cycles_chemins.py` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T08/code/T08_starter_bfs_dfs_cycles_chemins.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T08/code/T08_tests_attendus_bfs_dfs_cycles_chemins.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T09/code/T09_corrige_professeur_bases_relationnelles_cles_contraintes.py` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T09/code/T09_starter_bases_relationnelles_cles_contraintes.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T09/code/T09_tests_attendus_bases_relationnelles_cles_contraintes.py` — python — needs_review — eleve
-- `03_progressions/supports/terminale/T10/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T10/code/T10_corrige_professeur_sql_select_where_join.py` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T10/code/T10_starter_sql_select_where_join.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T10/code/T10_tests_attendus_sql_select_where_join.py` — python — needs_review — eleve
@@ -631,11 +626,9 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T16/code/T16_corrige_professeur_diviser_pour_regner_tri_fusion.py` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T16/code/T16_starter_diviser_pour_regner_tri_fusion.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T16/code/T16_tests_attendus_diviser_pour_regner_tri_fusion.py` — python — needs_review — eleve
-- `03_progressions/supports/terminale/T17/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T17/code/T17_corrige_professeur_programmation_dynamique.py` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T17/code/T17_starter_programmation_dynamique.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T17/code/T17_tests_attendus_programmation_dynamique.py` — python — needs_review — eleve
-- `03_progressions/supports/terminale/T18/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T18/code/T18_corrige_professeur_boyer_moore.py` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T18/code/T18_starter_boyer_moore.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T18/code/T18_tests_attendus_boyer_moore.py` — python — needs_review — eleve

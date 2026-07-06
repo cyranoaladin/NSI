@@ -442,7 +442,22 @@ def main() -> int:
         if not review_files:
             print("ERREUR : aucun _substance_review.json trouvé", file=sys.stderr)
             return 2
+        # J6b: uniqueness guard — no two verdict files for the same capacity_id
+        cap_id_to_files: dict[str, list[Path]] = {}
+        for rf in review_files:
+            try:
+                vdata = json.loads(rf.read_text(encoding="utf-8"))
+                for cap in vdata.get("capacities", []):
+                    cid = str(cap.get("capacity_id", ""))
+                    if cid:
+                        cap_id_to_files.setdefault(cid, []).append(rf)
+            except (json.JSONDecodeError, OSError):
+                continue  # skip unreadable verdict files
         failures: list[str] = []
+        for cid, files in sorted(cap_id_to_files.items()):
+            if len(files) > 1:
+                paths = ", ".join(str(f.relative_to(repo_root)) for f in files)
+                failures.append(f"DOUBLON capacity_id {cid} dans {len(files)} fichiers : {paths}")
         for review in review_files:
             result = subprocess.run(
                 [

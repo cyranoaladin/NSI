@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-06T06:15:01Z",
+  "judged_at": "2026-07-06T12:20:23Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -18,20 +18,20 @@
       },
       "proof_practice": {
         "present": true,
-        "file": "03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md",
+        "file": "03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md",
         "anchor": "#exercice-6",
         "quote": "- Capacité officielle : T-BDD-03F.\n- Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=zeta\n- Consigne : filtrer note >= 15 ; traiter aussi `DELETE sans WHERE` si nécessaire.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
-        "file": "03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md",
-        "anchor": "#exercice-6",
-        "quote": "- Réponse attendue : JOIN -> Ada 17.\n- Méthode : filtrer note >= 15.\n- Cas limite : DELETE sans WHERE.",
+        "file": "03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md",
+        "anchor": "#corrigé-exercice-6",
+        "quote": "- Capacité mobilisée : T-BDD-03F.\n- Résultat attendu : JOIN -> Ada 17.\n- Justification : la tâche `filtrer note >= 15` s applique à `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)` ; erreur évitée : WHERE omis dans UPDATE.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours liste INSERT parmi les commandes à savoir, l'exercice 6 du TD fait pratiquer la capacité T-BDD-03F, et le corrigé fournit la réponse attendue. Cependant, aucun exemple concret de requête INSERT n'est rédigé : la couverture reste superficielle.",
+      "justification": "Le cours mentionne INSERT dans la liste des commandes à savoir. Le TD propose un exercice tagué T-BDD-03F avec consigne et données explicites. Le corrigé intégré fournit le résultat attendu pour cette capacité. Cependant, la pratique de INSERT reste très superficielle, les exercices portant surtout sur SELECT/JOIN/UPDATE/DELETE.",
       "scientific_flags": [
         "human_review_required"
       ]

@@ -5,13 +5,13 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 ## Synthèse
 
-- Nombre total de ressources : 531
-- Nombre par statut : {'needs_review': 531}
-- Nombre par type de document : {'bareme': 35, 'corrige': 67, 'cours': 44, 'document': 43, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
-- Ressources avec capacity_ids : 446
+- Nombre total de ressources : 524
+- Nombre par statut : {'needs_review': 524}
+- Nombre par type de document : {'bareme': 35, 'corrige': 67, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
+- Ressources avec capacity_ids : 439
 - Ressources sans capacity_ids : 85
-- Ressources avec audience renseignée : 531
-- Ressources avec session renseignée : 531
+- Ressources avec audience renseignée : 524
+- Ressources avec session renseignée : 524
 
 ## P-ALGO-01A
 
@@ -772,7 +772,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md` — tp — needs_review — eleve
 - `03_progressions/supports/premiere/P06/P06_trace_tables_recherche_tri_fusion.md` — trace — needs_review — eleve
 - `03_progressions/supports/premiere/P06/P06_version_amenagee_tables_recherche_tri_fusion.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/premiere/P06/_substance_review.json` — document — needs_review — eleve
 
 ## P-TABLE-04
 
@@ -787,7 +786,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md` — tp — needs_review — eleve
 - `03_progressions/supports/premiere/P06/P06_trace_tables_recherche_tri_fusion.md` — trace — needs_review — eleve
 - `03_progressions/supports/premiere/P06/P06_version_amenagee_tables_recherche_tri_fusion.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/premiere/P06/_substance_review.json` — document — needs_review — eleve
 
 ## T-ALGO-01A
 
@@ -850,7 +848,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T06/T06_tp_arbres_binaires_recherche.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T06/T06_trace_arbres_binaires_recherche.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T06/T06_version_amenagee_arbres_binaires_recherche.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T06/_substance_review.json` — document — needs_review — eleve
 
 ## T-ALGO-01F
 
@@ -866,7 +863,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T06/T06_tp_arbres_binaires_recherche.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T06/T06_trace_arbres_binaires_recherche.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T06/T06_version_amenagee_arbres_binaires_recherche.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T06/_substance_review.json` — document — needs_review — eleve
 
 ## T-ALGO-02A
 
@@ -882,7 +878,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T08/T08_tp_bfs_dfs_cycles_chemins.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T08/T08_trace_bfs_dfs_cycles_chemins.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T08/T08_version_amenagee_bfs_dfs_cycles_chemins.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T08/_substance_review.json` — document — needs_review — eleve
 
 ## T-ALGO-02B
 
@@ -898,7 +893,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T08/T08_tp_bfs_dfs_cycles_chemins.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T08/T08_trace_bfs_dfs_cycles_chemins.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T08/T08_version_amenagee_bfs_dfs_cycles_chemins.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T08/_substance_review.json` — document — needs_review — eleve
 
 ## T-ALGO-02C
 
@@ -914,7 +908,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T08/T08_tp_bfs_dfs_cycles_chemins.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T08/T08_trace_bfs_dfs_cycles_chemins.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T08/T08_version_amenagee_bfs_dfs_cycles_chemins.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T08/_substance_review.json` — document — needs_review — eleve
 
 ## T-ALGO-02D
 
@@ -930,7 +923,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T08/T08_tp_bfs_dfs_cycles_chemins.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T08/T08_trace_bfs_dfs_cycles_chemins.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T08/T08_version_amenagee_bfs_dfs_cycles_chemins.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T08/_substance_review.json` — document — needs_review — eleve
 
 ## T-ALGO-03
 
@@ -959,7 +951,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T17/T17_tp_programmation_dynamique.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T17/T17_trace_programmation_dynamique.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T17/T17_version_amenagee_programmation_dynamique.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T17/_substance_review.json` — document — needs_review — eleve
 
 ## T-ALGO-05
 
@@ -974,7 +965,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T18/T18_tp_boyer_moore.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T18/T18_version_amenagee_boyer_moore.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T18/_substance_review.json` — document — needs_review — eleve
 
 ## T-ARCH-01
 
@@ -1145,7 +1135,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T10/_substance_review.json` — document — needs_review — eleve
 
 ## T-BDD-03B
 
@@ -1162,7 +1151,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T10/_substance_review.json` — document — needs_review — eleve
 
 ## T-BDD-03C
 
@@ -1179,7 +1167,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T10/_substance_review.json` — document — needs_review — eleve
 
 ## T-BDD-03D
 
@@ -1196,7 +1183,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T10/_substance_review.json` — document — needs_review — eleve
 
 ## T-BDD-03E
 
@@ -1213,7 +1199,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T10/_substance_review.json` — document — needs_review — eleve
 
 ## T-BDD-03F
 
@@ -1230,7 +1215,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T10/_substance_review.json` — document — needs_review — eleve
 
 ## T-BDD-03G
 
@@ -1247,7 +1231,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T10/_substance_review.json` — document — needs_review — eleve
 
 ## T-BDD-03H
 
@@ -1264,7 +1247,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T10/_substance_review.json` — document — needs_review — eleve
 
 ## T-HIST-01A
 
@@ -1588,7 +1570,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T07/T07_tp_graphes_modelisation_listes_matrices.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T07/T07_trace_graphes_modelisation_listes_matrices.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T07/T07_version_amenagee_graphes_modelisation_listes_matrices.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T07/_substance_review.json` — document — needs_review — eleve
 
 ## T-STRUCT-05B
 
@@ -1604,7 +1585,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T07/T07_tp_graphes_modelisation_listes_matrices.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T07/T07_trace_graphes_modelisation_listes_matrices.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T07/T07_version_amenagee_graphes_modelisation_listes_matrices.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T07/_substance_review.json` — document — needs_review — eleve
 
 ## T-STRUCT-05C
 
@@ -1620,7 +1600,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T07/T07_tp_graphes_modelisation_listes_matrices.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T07/T07_trace_graphes_modelisation_listes_matrices.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T07/T07_version_amenagee_graphes_modelisation_listes_matrices.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T07/_substance_review.json` — document — needs_review — eleve
 
 ## T-STRUCT-05D
 
@@ -1636,7 +1615,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T07/T07_tp_graphes_modelisation_listes_matrices.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T07/T07_trace_graphes_modelisation_listes_matrices.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T07/T07_version_amenagee_graphes_modelisation_listes_matrices.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T07/_substance_review.json` — document — needs_review — eleve
 
 ## non rattachée
 
