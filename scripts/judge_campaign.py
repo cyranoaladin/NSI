@@ -378,17 +378,16 @@ SUBSTANCE_SCHEMA = ROOT / "substance_verdict.schema.json"
 
 
 def validate_verdict_file(verdict_path: Path) -> list[str]:
-    """J2d: Validate schema + intra-file duplicates via direct import.
+    """J2d: Full pre-promotion gate via direct import.
 
-    Returns list of error messages (empty = valid, promotable).
-    Does NOT resolve anchors against the corpus — that remains the job
-    of check_substance_anchors in single-file/batch mode (post-campaign).
+    Validates schema, intra-file duplicates, AND anchor/quote resolution
+    against the corpus. Returns list of error messages (empty = valid).
     """
     try:
         verdict = json.loads(verdict_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
         return [f"lecture/JSON impossible : {exc}"]
-    return validate_verdict_data(verdict, SUBSTANCE_SCHEMA)
+    return validate_verdict_data(verdict, SUBSTANCE_SCHEMA, repo_root=ROOT)
 
 
 def _write_verdict_json(path: Path, cap_id: str, verdict: dict[str, Any],

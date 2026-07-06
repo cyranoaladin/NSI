@@ -405,21 +405,37 @@ def check_intra_file_duplicates(verdict: dict[str, Any]) -> list[str]:
     ]
 
 
-def validate_verdict_data(verdict: dict[str, Any], schema_path: Path) -> list[str]:
-    """Validate a verdict dict for schema conformance and intra-file duplicates.
+def validate_verdict_data(
+    verdict: dict[str, Any],
+    schema_path: Path,
+    repo_root: Path | None = None,
+) -> list[str]:
+    """Validate a verdict dict: schema, intra-file duplicates, and anchors.
 
     Returns list of error messages (empty = valid, promotable).
     Fail-closed: infrastructure errors (jsonschema absent, schema file missing)
     are treated as blocking — never silently dropped.
-    Used by judge_campaign.py validate_verdict_file() as a direct import
-    (no subprocess). Does NOT resolve anchors against the corpus — that
-    remains the job of the full check_substance_anchors single-file/batch mode.
+
+    When repo_root is provided, also runs per-capacity anchor/quote checks
+    (the same logic as single-file mode). This is the full pre-promotion gate
+    used by judge_campaign.py validate_verdict_file().
     """
     errors = validate_schema(verdict, schema_path)
-    # Fail-closed: keep ALL schema errors including infrastructure-level ones
-    # ("jsonschema absent", "schéma introuvable") — not just "schéma @" violations.
     dup_errors = check_intra_file_duplicates(verdict)
-    return errors + dup_errors
+    all_errors = errors + dup_errors
+    # Anchor/quote resolution against the corpus
+    if repo_root is not None:
+        official = load_official_labels(repo_root)
+        section_cache: dict[Path, dict[str, Section]] = {}
+        for cap in verdict.get("capacities", []):
+            if not isinstance(cap, dict):
+                continue
+            result = check_capacity(cap, repo_root, official, section_cache)
+            for p in result.proofs:
+                if p.present and not p.verified:
+                    for msg in p.messages:
+                        all_errors.append(f"[{p.role}] {msg}")
+    return all_errors
 
 
 # --- détection de preuves invalides (present:true mais non vérifiées) --------
