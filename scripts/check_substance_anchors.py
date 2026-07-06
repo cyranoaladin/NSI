@@ -409,14 +409,17 @@ def validate_verdict_data(verdict: dict[str, Any], schema_path: Path) -> list[st
     """Validate a verdict dict for schema conformance and intra-file duplicates.
 
     Returns list of error messages (empty = valid, promotable).
+    Fail-closed: infrastructure errors (jsonschema absent, schema file missing)
+    are treated as blocking — never silently dropped.
     Used by judge_campaign.py validate_verdict_file() as a direct import
     (no subprocess). Does NOT resolve anchors against the corpus — that
     remains the job of the full check_substance_anchors single-file/batch mode.
     """
     errors = validate_schema(verdict, schema_path)
-    hard = [e for e in errors if e.startswith("schéma @")]
+    # Fail-closed: keep ALL schema errors including infrastructure-level ones
+    # ("jsonschema absent", "schéma introuvable") — not just "schéma @" violations.
     dup_errors = check_intra_file_duplicates(verdict)
-    return hard + dup_errors
+    return errors + dup_errors
 
 
 # --- détection de preuves invalides (present:true mais non vérifiées) --------

@@ -277,5 +277,23 @@ class TestSubstanceHardened(unittest.TestCase):
                         "Corrupted verdict must produce errors, not pass silently")
 
 
+    def test_missing_schema_file_blocks_promotion(self):
+        """When the schema file does not exist, validate_verdict_data must
+        return errors (fail-closed), not silently pass."""
+        valid_verdict = {
+            "schema_version": "1.0.0",
+            "unit": "P05_test",
+            "level": "premiere",
+            "judged_at": "2026-01-01T00:00:00Z",
+            "judge_model": "test-judge",
+            "author_model": "test-author",
+            "capacities": [],
+        }
+        missing_schema = Path(self.tmpdir) / "nonexistent.schema.json"
+        errors = validate_verdict_data(valid_verdict, missing_schema)
+        self.assertTrue(errors,
+                        "Missing schema file must block promotion (fail-closed)")
+
+
 if __name__ == "__main__":
     unittest.main()
