@@ -393,7 +393,7 @@ def check_intra_file_duplicates(verdict: dict[str, Any]) -> list[str]:
       (c) validate_verdict_file() dans judge_campaign.py (import direct)
     """
     counts: dict[str, int] = {}
-    for cap in verdict.get("capacities", []):
+    for cap in verdict.get("capacities") or []:
         if not isinstance(cap, dict):
             continue
         cid = str(cap.get("capacity_id", ""))
@@ -423,18 +423,25 @@ def validate_verdict_data(
     errors = validate_schema(verdict, schema_path)
     dup_errors = check_intra_file_duplicates(verdict)
     all_errors = errors + dup_errors
-    # Anchor/quote resolution against the corpus
+    # Full per-capacity checks (anchors, quotes, degradation signals)
     if repo_root is not None:
         official = load_official_labels(repo_root)
         section_cache: dict[Path, dict[str, Section]] = {}
-        for cap in verdict.get("capacities", []):
+        capacities = verdict.get("capacities") or []
+        for cap in capacities:
             if not isinstance(cap, dict):
                 continue
             result = check_capacity(cap, repo_root, official, section_cache)
+            # Blocking signals: invalid proofs (present but not verified)
+            # and verdict degradation (validated_pedagogy unsupported)
             for p in result.proofs:
                 if p.present and not p.verified:
                     for msg in p.messages:
                         all_errors.append(f"[{p.role}] {msg}")
+            if result.downgraded:
+                all_errors.append(
+                    f"{result.capacity_id}: DÉGRADÉ {result.declared_verdict}"
+                    f" → {result.effective_verdict}")
     return all_errors
 
 
