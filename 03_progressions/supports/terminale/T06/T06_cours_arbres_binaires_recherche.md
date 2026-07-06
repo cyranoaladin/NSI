@@ -25,6 +25,7 @@ official_program:
 - Produire une trace, une table, une valeur ou un pseudo-code vérifiable.
 
 ## Capacités officielles
+- T-ALGO-01C.
 - T-ALGO-01E.
 - T-ALGO-01F.
 

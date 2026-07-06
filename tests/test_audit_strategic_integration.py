@@ -36,10 +36,7 @@ class AuditStrategicIntegrationTests(unittest.TestCase):
 
     def test_substance_anchor_checker_global_mode_and_poisoned_fixture(self):
         result = run_script("scripts.check_substance_anchors")
-        # Hardened checker (J1): returns 1 when any present:true proof has
-        # invalid anchor/quote. Currently 43 campaign verdicts pending re-judge.
-        # The poisoned fixture must still be rejected (mentioned in output).
-        self.assertIn(result.returncode, (0, 1), result.stdout)
+        self.assertEqual(result.returncode, 0, result.stdout)
         self.assertIn("test adverse", result.stdout.lower())
 
     def test_gate_policy_has_small_blocking_core(self):
@@ -53,10 +50,13 @@ class AuditStrategicIntegrationTests(unittest.TestCase):
         self.assertIn("version élève", result.stdout)
         self.assertIn("version prof", result.stdout)
 
-    def test_substance_review_files_use_needs_content_only(self):
-        reviews = sorted(ROOT.glob("03_progressions/supports/**/_substance_review.json"))
-        self.assertTrue(reviews, "aucun verdict pilote de substance")
+    def test_substance_review_files_never_self_promote(self):
+        """No verdict file may contain validated_pedagogy (promotion = lead only)."""
+        reviews = sorted(ROOT.glob("substance_reviews/**/*_substance_review.json"))
+        reviews += sorted(ROOT.glob("03_progressions/supports/**/_substance_review.json"))
+        self.assertTrue(reviews, "aucun verdict de substance")
         for review in reviews:
             payload = json.loads(review.read_text(encoding="utf-8"))
             verdicts = {cap["verdict"] for cap in payload.get("capacities", [])}
-            self.assertLessEqual(verdicts, {"needs_content", "BLOCKER"}, str(review))
+            self.assertNotIn("validated_pedagogy", verdicts,
+                             f"{review}: verdict validated_pedagogy interdit (promotion lead)")

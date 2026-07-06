@@ -71,7 +71,7 @@ official_program:
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `UPDATE sans WHERE`.
 ### Exercice 6
 - Type : lecture/analyse.
-- Capacité officielle : T-BDD-03F.
+- Capacité officielle : T-BDD-03D.
 - Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=zeta
 - Consigne : filtrer note >= 15 ; traiter aussi `DELETE sans WHERE` si nécessaire.
 - Réponse attendue : JOIN -> Ada 17.
@@ -133,7 +133,7 @@ official_program:
 - Résultat epsilon dans T10 TD sql select where join : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
 - Contrôle epsilon dans T10 TD sql select where join : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
-- Capacité mobilisée : T-BDD-03F.
+- Capacité mobilisée : T-BDD-03D.
 - Résultat attendu : JOIN -> Ada 17.
 - Justification : la tâche `filtrer note >= 15` s applique à `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)` ; erreur évitée : WHERE omis dans UPDATE.
 - Donnée utilisée zeta dans T10 TD sql select where join : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.

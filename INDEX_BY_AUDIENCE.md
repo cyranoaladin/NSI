@@ -5,13 +5,13 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 ## Synthèse
 
-- Nombre total de ressources : 531
-- Nombre par statut : {'needs_review': 531}
-- Nombre par type de document : {'bareme': 35, 'corrige': 67, 'cours': 44, 'document': 43, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
-- Ressources avec capacity_ids : 446
+- Nombre total de ressources : 524
+- Nombre par statut : {'needs_review': 524}
+- Nombre par type de document : {'bareme': 35, 'corrige': 67, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
+- Ressources avec capacity_ids : 439
 - Ressources sans capacity_ids : 85
-- Ressources avec audience renseignée : 531
-- Ressources avec session renseignée : 531
+- Ressources avec audience renseignée : 524
+- Ressources avec session renseignée : 524
 
 ## eleve
 
@@ -171,7 +171,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md` — tp — needs_review — eleve
 - `03_progressions/supports/premiere/P06/P06_trace_tables_recherche_tri_fusion.md` — trace — needs_review — eleve
 - `03_progressions/supports/premiere/P06/P06_version_amenagee_tables_recherche_tri_fusion.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/premiere/P06/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/premiere/P06/code/P06_starter_tables_recherche_tri_fusion.py` — python — needs_review — eleve
 - `03_progressions/supports/premiere/P06/code/P06_tests_attendus_tables_recherche_tri_fusion.py` — python — needs_review — eleve
 - `03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md` — td — needs_review — eleve
@@ -325,7 +324,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T06/T06_tp_arbres_binaires_recherche.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T06/T06_trace_arbres_binaires_recherche.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T06/T06_version_amenagee_arbres_binaires_recherche.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T06/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T06/code/T06_starter_arbres_binaires_recherche.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T06/code/T06_tests_attendus_arbres_binaires_recherche.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T07/T07_TD_graphes_modelisation_listes_matrices.md` — td — needs_review — eleve
@@ -336,7 +334,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T07/T07_tp_graphes_modelisation_listes_matrices.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T07/T07_trace_graphes_modelisation_listes_matrices.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T07/T07_version_amenagee_graphes_modelisation_listes_matrices.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T07/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T07/code/T07_starter_graphes_modelisation_listes_matrices.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T07/code/T07_tests_attendus_graphes_modelisation_listes_matrices.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T08/T08_TD_bfs_dfs_cycles_chemins.md` — td — needs_review — eleve
@@ -347,7 +344,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T08/T08_tp_bfs_dfs_cycles_chemins.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T08/T08_trace_bfs_dfs_cycles_chemins.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T08/T08_version_amenagee_bfs_dfs_cycles_chemins.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T08/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T08/code/T08_starter_bfs_dfs_cycles_chemins.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T08/code/T08_tests_attendus_bfs_dfs_cycles_chemins.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md` — td — needs_review — eleve
@@ -368,7 +364,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T10/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T10/code/T10_starter_sql_select_where_join.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T10/code/T10_tests_attendus_sql_select_where_join.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T11/T11_TD_processus_ordonnancement_interblocage.md` — td — needs_review — eleve
@@ -424,7 +419,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T17/T17_tp_programmation_dynamique.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T17/T17_trace_programmation_dynamique.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T17/T17_version_amenagee_programmation_dynamique.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T17/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T17/code/T17_starter_programmation_dynamique.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T17/code/T17_tests_attendus_programmation_dynamique.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T18/T18_TD_boyer_moore.md` — td — needs_review — eleve
@@ -434,7 +428,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T18/T18_tp_boyer_moore.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T18/T18_trace_boyer_moore.md` — trace — needs_review — eleve
 - `03_progressions/supports/terminale/T18/T18_version_amenagee_boyer_moore.md` — version_amenagee — needs_review — eleve
-- `03_progressions/supports/terminale/T18/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T18/code/T18_starter_boyer_moore.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T18/code/T18_tests_attendus_boyer_moore.py` — python — needs_review — eleve
 - `03_progressions/supports/terminale/T19/T19_TD_bac_pratique_grand_oral_projet.md` — td — needs_review — eleve

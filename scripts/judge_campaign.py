@@ -349,10 +349,14 @@ def format_verdict(cap_id: str, cap_info: dict[str, str], judge_result: dict[str
     present_count = sum(1 for p in proofs.values() if p.get("present"))
     verdict = "needs_review" if present_count else "needs_content"
 
-    # J2e: guard justification — ensure complete sentence, no placeholder
+    # J2e / J6c5: guard justification — descriptive string, never placeholder
     justification = str(judge_result.get("comment", ""))
     if not justification or len(justification) < 20:
-        justification = "Verdict campagne Sonnet 4.6."
+        justification = (
+            f"{present_count}/3 preuves vérifiées mécaniquement."
+            if present_count
+            else "0/3 : aucune preuve vérifiable dans les extraits."
+        )
     if len(justification) > 400:
         # Truncate at last sentence boundary
         cut = justification[:400].rfind(".")
@@ -386,7 +390,8 @@ def validate_verdict_file(verdict_path: Path) -> list[str]:
 
 
 def save_verdict(cap_id: str, verdict: dict[str, Any], programme: dict[str, dict[str, str]],
-                 output_dir: Path) -> Path:
+                 output_dir: Path, *, atomic: bool = True) -> Path:
+    """Save verdict to JSON. J6c4: write to .tmp then rename for crash-safety."""
     review = {
         "schema_version": "1.0.0",
         "unit": "campaign",
@@ -397,7 +402,12 @@ def save_verdict(cap_id: str, verdict: dict[str, Any], programme: dict[str, dict
         "capacities": [verdict],
     }
     out_path = output_dir / f"{cap_id}_substance_review.json"
-    out_path.write_text(json.dumps(review, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    if atomic:
+        tmp_path = out_path.with_suffix(".json.tmp")
+        tmp_path.write_text(json.dumps(review, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        tmp_path.rename(out_path)
+    else:
+        out_path.write_text(json.dumps(review, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return out_path
 
 
@@ -489,13 +499,21 @@ def main() -> int:
             api_calls += 1
             verdict = format_verdict(cap_id, programme[cap_id], judge_result)
 
-            # J2d: validate-before-save
-            tmp_path = save_verdict(cap_id, verdict, programme, args.output_dir)
+            # J2d / J6c4: validate-before-save using .tmp file
+            final_path = args.output_dir / f"{cap_id}_substance_review.json"
+            tmp_path = final_path.with_suffix(".json.tmp")
+            save_verdict(cap_id, verdict, programme, args.output_dir, atomic=False)
+            # Rename to .tmp for validation
+            final_path.rename(tmp_path)
             errors = validate_verdict_file(tmp_path)
 
-            if errors:
+            if not errors:
+                # Valid — promote .tmp to final
+                tmp_path.rename(final_path)
+            else:
                 # ONE retry with error feedback
                 print("INVALID, retrying...", end=" ", flush=True)
+                tmp_path.unlink(missing_ok=True)
                 feedback = (
                     "Le verdict précédent a échoué la validation mécanique :\n"
                     + "\n".join(errors[:5])
@@ -509,17 +527,41 @@ def main() -> int:
                 for k in usage:
                     usage[k] += usage2[k]
                 verdict = format_verdict(cap_id, programme[cap_id], judge_result2)
-                tmp_path = save_verdict(cap_id, verdict, programme, args.output_dir)
+                save_verdict(cap_id, verdict, programme, args.output_dir, atomic=False)
+                final_path.rename(tmp_path)
                 errors2 = validate_verdict_file(tmp_path)
                 if errors2:
-                    # Still invalid — degrade to needs_content with error noted
-                    verdict["verdict"] = "needs_content"
-                    verdict["justification"] = f"Auto-dégradé : preuve invalide après 2 tentatives. {'; '.join(errors2[:3])}"
-                    for role in ["proof_course", "proof_practice", "proof_correction"]:
+                    # J6c1: partial degradation — only zero out roles mentioned in errors
+                    tmp_path.unlink(missing_ok=True)
+                    error_text = " ".join(errors2)
+                    role_map = {
+                        "proof_course": ["proof_course", "cours"],
+                        "proof_practice": ["proof_practice", "practice", "td", "tp"],
+                        "proof_correction": ["proof_correction", "correction", "corrigé", "corrige"],
+                    }
+                    failed_roles: list[str] = []
+                    for role, keywords in role_map.items():
+                        if any(kw in error_text.lower() for kw in keywords):
+                            failed_roles.append(role)
+                    # If we can't identify specific roles, degrade all
+                    if not failed_roles:
+                        failed_roles = list(role_map.keys())
+                    for role in failed_roles:
                         verdict[role] = {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False}
+                    valid_count = sum(
+                        1 for r in ["proof_course", "proof_practice", "proof_correction"]
+                        if verdict[r].get("present")
+                    )
+                    verdict["verdict"] = "needs_review" if valid_count else "needs_content"
+                    verdict["justification"] = (
+                        f"Auto-dégradé ({len(failed_roles)} rôle(s) invalide(s)) après 2 tentatives. "
+                        f"{'; '.join(errors2[:3])}"
+                    )
                     save_verdict(cap_id, verdict, programme, args.output_dir)
-                    print("DEGRADED to needs_content")
+                    print(f"DEGRADED {len(failed_roles)} role(s), verdict={verdict['verdict']}")
                 else:
+                    # Valid after retry — promote .tmp to final
+                    tmp_path.rename(final_path)
                     print("FIXED", end=" ")
 
             results.append(verdict)
