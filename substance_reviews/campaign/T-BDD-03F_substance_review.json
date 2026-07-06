@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:15:01Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -13,25 +13,25 @@
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md",
         "anchor": "#à-savoir",
-        "quote": "INSERT. (capacité vérifiée dans le fichier)",
+        "quote": "- INSERT.\n- UPDATE avec WHERE.\n- DELETE avec WHERE.",
         "teaches": true
       },
       "proof_practice": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md",
+        "anchor": "#exercice-6",
+        "quote": "- Capacité officielle : T-BDD-03F.\n- Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=zeta\n- Consigne : filtrer note >= 15 ; traiter aussi `DELETE sans WHERE` si nécessaire.",
+        "teaches": true
       },
       "proof_correction": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md",
+        "anchor": "#exercice-6",
+        "quote": "- Réponse attendue : JOIN -> Ada 17.\n- Méthode : filtrer note >= 15.\n- Cas limite : DELETE sans WHERE.",
+        "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours mentionne INSERT dans la liste des mots-clés à savoir, mais aucun exercice du TD, TP ou évaluation ne porte spécifiquement sur la capacité T-BDD-03F (construction de requêtes INSERT). Les exercices couvrent SELECT, JOIN, UPDATE et DELETE, mais pas INSERT en tant que tâche pratique à réaliser. Le corrigé ne fournit aucune réponse attendue pour une requête INSERT. La mention dans le cours est trop succincte pour constituer un enseignement réel de la capacité.",
+      "justification": "Le cours liste INSERT parmi les commandes à savoir, l'exercice 6 du TD fait pratiquer la capacité T-BDD-03F, et le corrigé fournit la réponse attendue. Cependant, aucun exemple concret de requête INSERT n'est rédigé : la couverture reste superficielle.",
       "scientific_flags": [
         "human_review_required"
       ]

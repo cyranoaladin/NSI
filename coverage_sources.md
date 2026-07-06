@@ -997,6 +997,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | --- | --- | --- |
 | bareme | 03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md | needs_review |
+| cours | 03_progressions/supports/terminale/T06/T06_cours_arbres_binaires_recherche.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T06/T06_evaluation_arbres_binaires_recherche.md | needs_review |
 | tp | 03_progressions/supports/terminale/T06/T06_TP_arbres_binaires_recherche.md | needs_review |
 

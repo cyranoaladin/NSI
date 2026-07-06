@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:09:33Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -13,7 +13,7 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P09/P09_cours_architecture_os_droits.md",
         "anchor": "#à-savoir",
-        "quote": "Employer le vocabulaire : processeur, mémoire, stockage, processus, PID, système de fichiers.",
+        "quote": "- processeur.\n- mémoire.\n- stockage.\n- processus.\n- PID.\n- système de fichiers.\n- chmod.\n- permission denied.",
         "teaches": true
       },
       "proof_practice": {
@@ -27,11 +27,11 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P09/P09_corrige_architecture_os_droits.md",
         "anchor": "#exercice-1",
-        "quote": "Méthode : distinguer mémoire vive et stockage.",
+        "quote": "- Réponse attendue : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.\n- Méthode : distinguer mémoire vive et stockage.\n- Cas limite : fichier absent.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne le vocabulaire des constituants (processeur, mémoire, stockage), le TD fait pratiquer la distinction mémoire vive/stockage (P-ARCH-01A), et le corrigé fournit la méthode et la réponse attendue. La correspondance avec la capacité 'distinguer les rôles et caractéristiques des constituants' est réelle, même si le contenu est centré sur les droits Unix — la distinction mémoire/stockage est explicitement travaillée.",
+      "justification": "Le cours liste les constituants (processeur, mémoire, stockage, processus), le TD fait pratiquer la distinction mémoire vive/stockage, et le corrigé fournit la réponse attendue. Cependant, le contenu porte surtout sur les droits Unix ; la capacité P-ARCH-01A est citée mais peu développée sur les caractéristiques matérielles.",
       "scientific_flags": [
         "human_review_required"
       ]

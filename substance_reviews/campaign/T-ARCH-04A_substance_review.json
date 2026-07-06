@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:15:28Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -13,7 +13,7 @@
         "present": true,
         "file": "03_progressions/supports/terminale/T13/T13_cours_chiffrement_https.md",
         "anchor": "#à-savoir",
-        "quote": "chiffrement symétrique. chiffrement asymétrique. clé publique. clé privée. certificat. échange de clé.",
+        "quote": "- chiffrement symétrique.\n- chiffrement asymétrique.\n- clé publique.\n- clé privée.\n- certificat.\n- échange de clé.",
         "teaches": true
       },
       "proof_practice": {
@@ -27,11 +27,11 @@
         "present": true,
         "file": "03_progressions/supports/terminale/T13/T13_corrige_chiffrement_https.md",
         "anchor": "#exercice-1",
-        "quote": "Méthode : protéger Ksession par asymétrique. Cas limite : certificat expiré.",
+        "quote": "- Réponse attendue : message chiffré avec Ksession.\n- Méthode : protéger Ksession par asymétrique.\n- Cas limite : certificat expiré.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours liste explicitement chiffrement symétrique et asymétrique, clé publique/privée et certificat. Le TD fait pratiquer la protection par chiffrement asymétrique. Le corrigé fournit les réponses attendues avec méthode et cas limite.",
+      "justification": "Le cours liste les notions de chiffrement symétrique et asymétrique avec vocabulaire clé. Le TD fait pratiquer la protection de Ksession par chiffrement asymétrique. Le corrigé fournit la réponse attendue avec méthode et cas limite.",
       "scientific_flags": [
         "human_review_required"
       ]

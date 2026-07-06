@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:07:45Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -11,27 +11,27 @@
       "official_label": "Identifier l'intérêt des différents systèmes d'encodage.",
       "proof_course": {
         "present": true,
-        "file": "03_progressions/supports/premiere/P03/P03_trace_texte_reels.md",
-        "anchor": "#repère-2---accent-utf-8",
-        "quote": "À retenir : distinguer un caractère et deux octets.",
+        "file": "03_progressions/supports/premiere/P03/P03_cours_texte_reels.md",
+        "anchor": "#exemple-corrigé-2---accent-utf-8",
+        "quote": "- Méthode : distinguer un caractère et deux octets.\n- Résultat obtenu : `c3 a9`.\n- Contrôle : le cas limite « longueur en octets différente de la longueur en caractères » est vérifié séparément.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/premiere/P03/P03_td_texte_reels.md",
-        "anchor": "#exemples-corrigés-précis",
-        "quote": "Comparer `A`, `é` et `€` selon caractères et octets.",
+        "anchor": "#exercice-2",
+        "quote": "- Énoncé disciplinaire : expliquer accent UTF-8 à partir de `é`.\n- Production attendue : `c3 a9`.\n- Contrainte de contrôle : rédiger la méthode avant le résultat.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P03/P03_corrige_texte_reels.md",
-        "anchor": "#exercices-numérotés",
-        "quote": "Exercice 1 : résoudre ASCII simple avec `A` ; attendu : `41` en hexadécimal.",
+        "anchor": "#corrigé-exercice-2",
+        "quote": "- Méthode : expliciter chaque étape de distinguer un caractère et deux octets avant de conclure par `c3 a9`.\n- Résultat : `c3 a9`.\n- Contrôle : rédiger la méthode avant le résultat.\n- Erreur traitée : EF2 - Croire que tout caractère occupe un octet.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "La capacité P-DATA-BASE-05A porte sur l'identification de l'intérêt des différents systèmes d'encodage (ASCII, UTF-8, Latin-1). La trace écrite enseigne les différences entre encodages (caractère vs octets), le TD fait pratiquer la comparaison de A, é et € selon caractères et octets, et le corrigé fournit les réponses attendues avec méthode visible.",
+      "justification": "Le cours enseigne les différents encodages (ASCII, UTF-8, flottants) avec exemples corrigés. Le TD fait pratiquer avec des exercices structurés. Le corrigé fournit méthodes, résultats et erreurs fréquentes à éviter.",
       "scientific_flags": [
         "human_review_required"
       ]

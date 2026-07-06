@@ -22,12 +22,26 @@ def validated_capacity() -> dict[str, object]:
         "quote": QUOTE,
         "teaches": True,
     }
+    evidence_practice = {
+        "present": True,
+        "file": "preuve.md",
+        "anchor": "#preuve",
+        "quote": "Exercice : importer une table CSV et afficher les colonnes.",
+        "teaches": True,
+    }
+    evidence_correction = {
+        "present": True,
+        "file": "preuve.md",
+        "anchor": "#preuve",
+        "quote": "Corrigé : la table est importée avec csv.reader et contient 5 lignes.",
+        "teaches": True,
+    }
     return {
         "capacity_id": CAPACITY_ID,
         "official_label": "Importer une table depuis un fichier texte tabulé ou un fichier CSV.",
         "proof_course": evidence,
-        "proof_practice": evidence,
-        "proof_correction": evidence,
+        "proof_practice": evidence_practice,
+        "proof_correction": evidence_correction,
         "verdict": "validated_pedagogy",
         "justification": "Les trois preuves sont ancrées, citées et marquées enseignantes.",
         "scientific_flags": [],
@@ -35,7 +49,12 @@ def validated_capacity() -> dict[str, object]:
 
 
 def write_valid_verdict(root: Path) -> dict[str, object]:
-    (root / "preuve.md").write_text(f"# Preuve\n\n{QUOTE}\n", encoding="utf-8")
+    (root / "preuve.md").write_text(
+        f"# Preuve\n\n{QUOTE}\n\n"
+        "Exercice : importer une table CSV et afficher les colonnes.\n\n"
+        "Corrigé : la table est importée avec csv.reader et contient 5 lignes.\n",
+        encoding="utf-8",
+    )
     capacity = validated_capacity()
     verdict = {
         "schema_version": "1.0.0",

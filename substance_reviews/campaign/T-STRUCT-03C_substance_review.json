@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:11:22Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -13,25 +13,25 @@
         "present": true,
         "file": "03_progressions/supports/terminale/T03/T03_cours_recherche_liste_dictionnaire.md",
         "anchor": "#2-recherche-dune-valeur-dans-une-liste--parcours-séquentiel",
-        "quote": "A savoir : en Python, l'operateur `in` effectue une recherche dont le cout depend de la structure sous-jacente : parcours sequentiel en O(n) pour une liste, acces par hachage en O(1) moyen pour un dictionnaire.",
+        "quote": "L'opérateur `in` fait exactement ce parcours :\n\n```python\nx in liste   # parcours séquentiel, O(n)\n```",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/terminale/T03/T03_td_recherche_liste_dictionnaire.md",
-        "anchor": "#exercice-2--tracer-une-recherche-dans-un-dictionnaire",
-        "quote": "Décrire en une phrase le mécanisme utilisé par Python pour vérifier si la clé `\"cerise\"` est présente dans `stock`. Utiliser le mot « hachage » dans la réponse.",
+        "anchor": "#exercice-3--comparaison-de-complexité",
+        "quote": "Pour chaque représentation, écrire en Python l'expression qui teste si le nom `\"Dupont\"` est dans l'annuaire.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/terminale/T03/T03_corrige_recherche_liste_dictionnaire.md",
-        "anchor": "#exercice-2--tracer-une-recherche-dans-un-dictionnaire",
-        "quote": "Python calcule le **hachage** de la clé `\"cerise\"` via `hash(\"cerise\")`, ce qui donne un entier qui détermine directement l'emplacement mémoire à vérifier dans la table de hachage interne du dictionnaire. Il n'y a pas de parcours des autres clés.",
+        "anchor": "#exercice-3--comparaison-de-complexité",
+        "quote": "Représentation A : **O(n)** — il faut parcourir la liste de tuples séquentiellement pour comparer chaque nom.\n- Représentation B : **O(1)** en moyenne — le dictionnaire utilise une table de hachage qui donne un accès direct par clé.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne la distinction entre recherche séquentielle O(n) dans une liste et accès par hachage O(1) dans un dictionnaire. Le TD fait pratiquer cette distinction via des exercices de trace et de comparaison. Le corrigé fournit les réponses attendues avec les mécanismes détaillés.",
+      "justification": "Le cours enseigne la distinction via le mécanisme de parcours séquentiel vs hachage. Le TD fait pratiquer la comparaison des deux structures sur un annuaire. Le corrigé fournit les complexités justifiées pour chaque représentation.",
       "scientific_flags": [
         "human_review_required"
       ]

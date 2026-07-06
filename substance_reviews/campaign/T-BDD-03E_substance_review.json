@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:14:51Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -13,25 +13,25 @@
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md",
         "anchor": "#à-savoir",
-        "quote": "ORDER BY. (capacité vérifiée dans le fichier)",
+        "quote": "- SELECT.\n- FROM.\n- WHERE.\n- JOIN.\n- ORDER BY.\n- INSERT.\n- UPDATE avec WHERE.\n- DELETE avec WHERE.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md",
-        "anchor": "#exercice-1",
-        "quote": "Consigne : projeter nom et classe ; traiter aussi `JOIN sans ON` si nécessaire.",
+        "anchor": "#exercice-5",
+        "quote": "- Capacité officielle : T-BDD-03E.\n- Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=epsilon\n- Consigne : projeter nom et classe ; traiter aussi `UPDATE sans WHERE` si nécessaire.\n- Réponse attendue : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md",
-        "anchor": "#exercice-1",
-        "quote": "Réponse attendue : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.",
+        "anchor": "#exercice-5",
+        "quote": "- Réponse attendue : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.\n- Méthode : projeter nom et classe.\n- Cas limite : UPDATE sans WHERE.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours mentionne ORDER BY dans la liste des mots-clés à savoir, le TD fait pratiquer des requêtes avec ORDER BY, et le corrigé fournit la réponse attendue avec ORDER BY. Cependant, la capacité T-BDD-03E n'est pas explicitement citée dans les exercices (les exercices 1-4 citent T-BDD-03A à T-BDD-03D), et ORDER BY est traité de façon incidente plutôt que comme objet principal d'apprentissage. Les preuves sont présentes mais superficielles.",
+      "justification": "Le cours liste ORDER BY parmi les clauses à savoir, l'exercice 5 (T-BDD-03E) demande de produire une requête avec ORDER BY sur les données Eleve/Note, et le corrigé fournit la réponse attendue avec la méthode associée.",
       "scientific_flags": [
         "human_review_required"
       ]

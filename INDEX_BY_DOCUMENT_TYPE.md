@@ -5,13 +5,13 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 ## Synthèse
 
-- Nombre total de ressources : 532
-- Nombre par statut : {'needs_review': 532}
-- Nombre par type de document : {'bareme': 35, 'corrige': 67, 'cours': 44, 'document': 44, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
-- Ressources avec capacity_ids : 447
+- Nombre total de ressources : 531
+- Nombre par statut : {'needs_review': 531}
+- Nombre par type de document : {'bareme': 35, 'corrige': 67, 'cours': 44, 'document': 43, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
+- Ressources avec capacity_ids : 446
 - Ressources sans capacity_ids : 85
-- Ressources avec audience renseignée : 532
-- Ressources avec session renseignée : 532
+- Ressources avec audience renseignée : 531
+- Ressources avec session renseignée : 531
 
 ## bareme
 
@@ -205,7 +205,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/contracts/T17_contract.yml` — document — needs_review — eleve
 - `03_progressions/supports/contracts/T18_contract.yml` — document — needs_review — eleve
 - `03_progressions/supports/contracts/T19_contract.yml` — document — needs_review — eleve
-- `03_progressions/supports/premiere/P05/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv` — document — needs_review — eleve
 - `03_progressions/supports/premiere/P06/_substance_review.json` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T06/_substance_review.json` — document — needs_review — eleve

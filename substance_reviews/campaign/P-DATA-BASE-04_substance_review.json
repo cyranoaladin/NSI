@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:07:11Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -10,28 +10,28 @@
       "capacity_id": "P-DATA-BASE-04",
       "official_label": "Dresser la table d'une expression booléenne.",
       "proof_course": {
-        "present": true,
-        "file": "03_progressions/supports/premiere/P02/P02_trace_tables_verite_booleennes.md",
-        "anchor": "#méthode-pour-dresser-la-table-dune-expression-booléenne",
-        "quote": "Méthode pour dresser la table d'une expression booléenne",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "proof_practice": {
-        "present": true,
-        "file": "03_progressions/supports/premiere/P02/P02_td_tables_verite_booleennes.md",
-        "anchor": "#exercice-1---expressions-à-2-variables-niveau-fondamental",
-        "quote": "L'objectif est de dresser la table d'une expression booléenne pour chacune des expressions suivantes.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "proof_correction": {
-        "present": true,
-        "file": "03_progressions/supports/premiere/P02/P02_corrige_tables_verite_booleennes.md",
-        "anchor": "#corrigé-de-la-question-1---table-de-vérité-à-2-variables-5-points",
-        "quote": "Pour dresser la table d'une expression booléenne, on évalue les sous-expressions ligne par ligne.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
-      "verdict": "needs_review",
-      "justification": "La trace enseigne la méthode en 6 étapes pour dresser une table de vérité, le TD fait pratiquer avec des expressions à 2 et 3 variables, et le corrigé fournit les réponses complètes avec justifications ligne par ligne.",
+      "verdict": "needs_content",
+      "justification": "Auto-dégradé : preuve invalide après 2 tentatives. - preuve correction   : INVALIDE [absent]; · [correction] citation introuvable sous #corrigé-de-la-question-1---table-de-vérité-à-2-variables-5-points (recouvrement tokens 0%) — possible hallucination",
       "scientific_flags": [
         "human_review_required"
       ]

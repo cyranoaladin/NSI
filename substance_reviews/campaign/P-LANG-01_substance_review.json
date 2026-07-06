@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:06:40Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -10,28 +10,28 @@
       "capacity_id": "P-LANG-01",
       "official_label": "Mettre en évidence un corpus de constructions élémentaires.",
       "proof_course": {
-        "present": true,
-        "file": "03_progressions/supports/premiere/P00/P00_trace_diagnostic_python.md",
-        "anchor": "#repère-1---trace-daffectation",
-        "quote": "À retenir : dresser une table instruction, expression calculée, nouvelle valeur.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "proof_practice": {
-        "present": true,
-        "file": "03_progressions/supports/premiere/P00/P00_td_diagnostic_python.md",
-        "anchor": "#exemple-corrigé-1---trace-daffectation",
-        "quote": "Donnée étudiée : `x = 4 ; x = x + 3 ; print(x)`.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "proof_correction": {
-        "present": true,
-        "file": "03_progressions/supports/premiere/P00/P00_corrige_diagnostic_python.md",
-        "anchor": "#méthode-générale-de-correction",
-        "quote": "Point 1 : pour trace d'affectation, exiger la donnée `x = 4 ; x = x + 3 ; print(x)`, la méthode « dresser une table instruction, expression calculée, nouvelle valeur » et le contrôle « variable réaffectée deux fois ».",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
-      "verdict": "needs_review",
-      "justification": "Le cours (trace écrite) enseigne les constructions élémentaires Python (affectation, concaténation, condition, fonction), le TD les fait pratiquer avec des exemples corrigés, et le corrigé professeur fournit les réponses attendues avec méthode explicite.",
+      "verdict": "needs_content",
+      "justification": "Verdict campagne Sonnet 4.6.",
       "scientific_flags": [
         "human_review_required"
       ]

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T20:38:43Z",
+  "judged_at": "2026-07-06T06:12:18Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -10,28 +10,28 @@
       "capacity_id": "T-LANG-02B",
       "official_label": "Analyser le fonctionnement d'un programme récursif.",
       "proof_course": {
-        "present": true,
-        "file": "03_progressions/supports/terminale/T04/T04_trace_recursivite.md",
-        "anchor": "#repère-1---factorielle",
-        "quote": "À retenir : appliquer `n * fact(n-1)` jusqu'au cas `0!`.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "proof_practice": {
-        "present": true,
-        "file": "03_progressions/supports/terminale/T04/T04_tp_recursivite.md",
-        "anchor": "#consigne-technique-détaillée",
-        "quote": "Écrire trois fonctions récursives avec cas de base, mesure décroissante et tests de terminaison.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "proof_correction": {
-        "present": true,
-        "file": "03_progressions/supports/terminale/T04/T04_corrige_recursivite.md",
-        "anchor": "#exercices-numérotés",
-        "quote": "Exercice 1 : résoudre factorielle avec `4!` ; attendu : `24`.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
-      "verdict": "needs_review",
-      "justification": "La trace enseigne l'analyse du fonctionnement récursif (cas de base, appels successifs), le TP fait pratiquer l'écriture et l'analyse de fonctions récursives, et le corrigé fournit les réponses attendues. Les supports portent explicitement sur T-LANG-02B.",
+      "verdict": "needs_content",
+      "justification": "Auto-dégradé : preuve invalide après 2 tentatives. - preuve correction   : INVALIDE [absent]; · [correction] citation introuvable sous #corrigé-exercice-4 (recouvrement tokens 0%) — possible hallucination",
       "scientific_flags": [
         "human_review_required"
       ]

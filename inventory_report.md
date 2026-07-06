@@ -11,17 +11,17 @@
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 607
-- premiere: 250
+- interne: 608
+- premiere: 249
 - terminale: 306
 
 ## Répartition par type
 - banque: 14
-- document: 731
+- document: 730
 - python: 95
 - script: 206
 - sequence: 45
-- test: 72
+- test: 73
 
 ## Répartition par statut
 - needs_review: 1163
@@ -229,7 +229,6 @@
   - 03_progressions/supports/premiere/P05/P05_remediation_tables_csv.md
   - 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md
   - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md
-  - 03_progressions/supports/premiere/P05/_substance_review.json
   - 03_progressions/supports/premiere/P05/code/P05_corrige_professeur_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
@@ -1188,6 +1187,7 @@
   - tests/test_source_zip_timestamps.py
   - tests/test_status_promotion_guard.py
   - tests/test_strict_full_bank_controls.py
+  - tests/test_substance_hardened.py
   - tests/test_substance_judge_pipeline.py
   - tests/test_substance_report_renderer.py
   - tests/test_support_substance.py
@@ -1445,7 +1445,6 @@
   - 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md
   - 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md
   - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md
-  - 03_progressions/supports/premiere/P05/_substance_review.json
   - 03_progressions/supports/premiere/P05/code/P05_corrige_professeur_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
   - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
@@ -2353,6 +2352,7 @@
   - tests/test_source_zip_timestamps.py
   - tests/test_status_promotion_guard.py
   - tests/test_strict_full_bank_controls.py
+  - tests/test_substance_hardened.py
   - tests/test_substance_judge_pipeline.py
   - tests/test_substance_report_renderer.py
   - tests/test_support_substance.py
@@ -2591,7 +2591,6 @@
 - 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md
 - 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md
 - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md
-- 03_progressions/supports/premiere/P05/_substance_review.json
 - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
 - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
 - 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv
@@ -3487,6 +3486,7 @@
 - tests/test_source_zip_timestamps.py
 - tests/test_status_promotion_guard.py
 - tests/test_strict_full_bank_controls.py
+- tests/test_substance_hardened.py
 - tests/test_substance_judge_pipeline.py
 - tests/test_substance_report_renderer.py
 - tests/test_support_substance.py
@@ -3694,7 +3694,6 @@
 - 03_progressions/supports/premiere/P05/P05_tp_tables_csv.md
 - 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md
 - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md
-- 03_progressions/supports/premiere/P05/_substance_review.json
 - 03_progressions/supports/premiere/P05/code/P05_corrige_professeur_tables_csv.py
 - 03_progressions/supports/premiere/P05/code/P05_starter_tables_csv.py
 - 03_progressions/supports/premiere/P05/code/P05_tests_attendus_tables_csv.py
@@ -4655,6 +4654,7 @@
 - tests/test_source_zip_timestamps.py
 - tests/test_status_promotion_guard.py
 - tests/test_strict_full_bank_controls.py
+- tests/test_substance_hardened.py
 - tests/test_substance_judge_pipeline.py
 - tests/test_substance_report_renderer.py
 - tests/test_support_substance.py
@@ -4667,7 +4667,6 @@
 - tp_test_alignment_report.md
 
 ## Métadonnées incomplètes
-- 03_progressions/supports/premiere/P05/_substance_review.json (niveau=premiere, statut=needs_review)
 - 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv (niveau=premiere, statut=needs_review)
 - 03_progressions/supports/premiere/P06/_substance_review.json (niveau=premiere, statut=needs_review)
 - 03_progressions/supports/terminale/T06/_substance_review.json (niveau=terminale, statut=needs_review)

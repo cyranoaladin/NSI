@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:21:01Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -11,27 +11,27 @@
       "official_label": "Rechercher les lignes d'une table vérifiant des critères exprimés en logique propositionnelle.",
       "proof_course": {
         "present": true,
-        "file": "03_progressions/supports/premiere/P05/P05_trace_tables_csv.md",
-        "anchor": "#repère-2---filtrage",
-        "quote": "À retenir : conserver les lignes dont CONTINENT vaut Europe.",
+        "file": "03_progressions/supports/premiere/P05/P05_cours_tables_csv.md",
+        "anchor": "#exemple-corrigé-2---filtrage",
+        "quote": "Méthode : conserver les lignes dont CONTINENT vaut Europe.\n- Résultat obtenu : `[\"Allemagne\", \"Albanie\"]`.\n- Contrôle : le cas limite « aucun pays du continent demandé » est vérifié séparément.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/premiere/P05/P05_td_tables_csv.md",
-        "anchor": "#activité-dentrée",
-        "quote": "Filtrer les lignes où `CONTINENT == \"Europe\"`.",
+        "anchor": "#exercice-2",
+        "quote": "Énoncé disciplinaire : expliquer le filtrage Europe sur Allemagne, Albanie et Brésil.\n- Production attendue : `[\"Allemagne\", \"Albanie\"]`.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P05/P05_corrige_tables_csv.md",
-        "anchor": "#méthode-générale-de-correction",
-        "quote": "pour filtrage, exiger la donnée un extrait contenant Allemagne, Albanie et Brésil, la méthode « conserver les lignes dont CONTINENT vaut Europe » et le contrôle « aucun pays du continent demandé ».",
+        "anchor": "#corrigé-exercice-2",
+        "quote": "Méthode : expliciter chaque étape de conserver les lignes dont CONTINENT vaut Europe avant de conclure par `[\"Allemagne\", \"Albanie\"]`.\n- Résultat : `[\"Allemagne\", \"Albanie\"]`.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "La capacité P-TABLE-02 (rechercher les lignes vérifiant des critères) est bien couverte : la trace enseigne le filtrage par critère, le TD fait pratiquer le filtrage sur CONTINENT, et le corrigé fournit la méthode et le résultat attendu.",
+      "justification": "Le cours enseigne la recherche par critère (filtrage par CONTINENT), le TD fait pratiquer avec une consigne de production attendue, et le corrigé fournit la méthode et le résultat attendu. La capacité P-TABLE-02 est bien couverte sur les trois rôles.",
       "scientific_flags": [
         "human_review_required"
       ]

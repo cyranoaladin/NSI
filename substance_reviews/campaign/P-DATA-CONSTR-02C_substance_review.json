@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:08:26Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md",
-        "anchor": "#méthode-3---utiliser-des-tableaux-de-tableaux-pour-les-matrices-p-data-constr-02c",
-        "quote": "une matrice est une liste de listes.",
+        "anchor": "#3-p-data-constr-02c--utiliser-des-tableaux-de-tableaux-pour-représenter-des-matrices",
+        "quote": "Une **matrice** est représentée en Python par une **liste de listes** (tableau de tableaux). Chaque sous-liste représente une ligne. L'accès à l'élément en ligne `i`, colonne `j` se fait par `matrice[i][j]`.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/premiere/P04/P04_td_types_construits_complement.md",
-        "anchor": "#exercice-3---matrices-p-data-constr-02c",
-        "quote": "Question 2c.** Écrire sur papier une compréhension qui produit la liste des cubes des entiers de 1 à 8",
+        "anchor": "#exercice-3---matrices-comme-tableaux-de-tableaux-p-data-constr-02c",
+        "quote": "**Question 3d.** On exécute le code suivant. Expliquer pourquoi le résultat est incorrect et proposer une correction.\n\n```python\ngrille = [[0] * 3] * 3\ngrille[0][0] = 1\nprint(grille)\n```",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md",
         "anchor": "#exercice-3---matrices-p-data-constr-02c",
-        "quote": "M[0][2] = 8` (ligne 0, colonne 2)",
+        "quote": "Le code `grille = [[0] * 3] * 3` crée une liste contenant 3 fois la **même** sous-liste (même objet en mémoire). Modifier `grille[0][0]` modifie donc les trois lignes simultanément.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours complément enseigne explicitement les tableaux de tableaux pour les matrices (P-DATA-CONSTR-02C). Le TD complément propose des exercices sur les matrices avec accès par double indice. Le corrigé complément fournit les réponses attendues pour les accès M[0][2], M[1][1], M[2][0].",
+      "justification": "Le cours définit la représentation matricielle par liste de listes avec accès par double index. Le TD fait pratiquer via des questions sur accès, dimensions et l'erreur classique de multiplication. Le corrigé explique l'erreur de partage mémoire et propose la correction par compréhension.",
       "scientific_flags": [
         "human_review_required"
       ]

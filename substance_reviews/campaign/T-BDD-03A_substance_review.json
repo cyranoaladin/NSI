@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:14:14Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -13,25 +13,25 @@
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md",
         "anchor": "#à-savoir",
-        "quote": "Employer le vocabulaire : SELECT, FROM, WHERE, JOIN, ORDER BY, INSERT.",
+        "quote": "- SELECT.\n- FROM.\n- WHERE.\n- JOIN.\n- ORDER BY.\n- INSERT.\n- UPDATE avec WHERE.\n- DELETE avec WHERE.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md",
         "anchor": "#exercice-1",
-        "quote": "Consigne : projeter nom et classe ; traiter aussi `JOIN sans ON` si nécessaire.",
+        "quote": "- Consigne : projeter nom et classe ; traiter aussi `JOIN sans ON` si nécessaire.\n- Réponse attendue : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md",
         "anchor": "#exercice-1",
-        "quote": "Réponse attendue : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.",
+        "quote": "- Réponse attendue : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.\n- Méthode : projeter nom et classe.\n- Cas limite : JOIN sans ON.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours liste explicitement les composants d'une requête SQL (SELECT, FROM, WHERE, JOIN, ORDER BY). Le TD fait pratiquer leur identification et usage. Le corrigé fournit les réponses attendues avec les résultats exacts.",
+      "justification": "Le cours liste explicitement les composants SELECT, FROM, WHERE, JOIN, ORDER BY. Le TD fait pratiquer leur identification via une consigne de projection/filtrage. Le corrigé fournit la réponse attendue avec méthode et cas limite.",
       "scientific_flags": [
         "human_review_required"
       ]

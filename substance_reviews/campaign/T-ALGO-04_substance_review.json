@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-06T06:16:27Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -10,28 +10,28 @@
       "capacity_id": "T-ALGO-04",
       "official_label": "Utiliser la programmation dynamique pour écrire un algorithme.",
       "proof_course": {
-        "present": true,
-        "file": "03_progressions/supports/terminale/T17/T17_cours_programmation_dynamique.md",
-        "anchor": "#méthodes",
-        "quote": "définir dp[m] coût minimal. écrire dp[m]=1+min(dp[m-p]). initialiser dp[0]=0. remplir la table de 1 à 11.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "proof_practice": {
-        "present": true,
-        "file": "03_progressions/supports/terminale/T17/T17_TD_programmation_dynamique.md",
-        "anchor": "#exercice-2",
-        "quote": "Consigne : écrire dp[m]=1+min(dp[m-p]) ; traiter aussi `montant impossible` si nécessaire.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "proof_correction": {
-        "present": true,
-        "file": "03_progressions/supports/terminale/T17/T17_corrige_programmation_dynamique.md",
-        "anchor": "#exercice-1",
-        "quote": "Réponse attendue : dp[6]=2 avec 5+1. Méthode : définir dp[m] coût minimal.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
-      "verdict": "needs_review",
-      "justification": "Le cours enseigne la programmation dynamique (état, récurrence, mémoïsation, tabulation, méthodes dp), le TD fait pratiquer l'écriture de l'algorithme dp sur un exemple concret, et le corrigé fournit les réponses attendues avec méthode et résultats vérifiables.",
+      "verdict": "needs_content",
+      "justification": "Verdict campagne Sonnet 4.6.",
       "scientific_flags": [
         "human_review_required"
       ]
