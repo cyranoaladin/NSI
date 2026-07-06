@@ -389,9 +389,9 @@ def validate_verdict_file(verdict_path: Path) -> list[str]:
     return errors or [f"checker returned code {result.returncode}"]
 
 
-def save_verdict(cap_id: str, verdict: dict[str, Any], programme: dict[str, dict[str, str]],
-                 output_dir: Path, *, atomic: bool = True) -> Path:
-    """Save verdict to JSON. J6c4: write to .tmp then rename for crash-safety."""
+def _write_verdict_json(path: Path, cap_id: str, verdict: dict[str, Any],
+                        programme: dict[str, dict[str, str]]) -> None:
+    """Write a verdict review JSON to the given path (no rename, no validation)."""
     review = {
         "schema_version": "1.0.0",
         "unit": "campaign",
@@ -401,14 +401,8 @@ def save_verdict(cap_id: str, verdict: dict[str, Any], programme: dict[str, dict
         "author_model": "campaign-tooling",
         "capacities": [verdict],
     }
-    out_path = output_dir / f"{cap_id}_substance_review.json"
-    if atomic:
-        tmp_path = out_path.with_suffix(".json.tmp")
-        tmp_path.write_text(json.dumps(review, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        tmp_path.rename(out_path)
-    else:
-        out_path.write_text(json.dumps(review, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    return out_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(review, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 def main() -> int:
@@ -499,17 +493,15 @@ def main() -> int:
             api_calls += 1
             verdict = format_verdict(cap_id, programme[cap_id], judge_result)
 
-            # J2d / J6c4: validate-before-save using .tmp file
+            # J6-bis: write candidate to .tmp, validate, promote only on success.
+            # The existing valid verdict (if any) stays intact until replaced.
             final_path = args.output_dir / f"{cap_id}_substance_review.json"
             tmp_path = final_path.with_suffix(".json.tmp")
-            save_verdict(cap_id, verdict, programme, args.output_dir, atomic=False)
-            # Rename to .tmp for validation
-            final_path.rename(tmp_path)
+            _write_verdict_json(tmp_path, cap_id, verdict, programme)
             errors = validate_verdict_file(tmp_path)
 
             if not errors:
-                # Valid — promote .tmp to final
-                tmp_path.rename(final_path)
+                tmp_path.rename(final_path)  # promote
             else:
                 # ONE retry with error feedback
                 print("INVALID, retrying...", end=" ", flush=True)
@@ -523,15 +515,13 @@ def main() -> int:
                 retry_prompt = cap_prompt + "\n\nFEEDBACK DU VÉRIFICATEUR :\n" + feedback
                 judge_result2, usage2 = call_anthropic_cached(api_key, seq_context, retry_prompt)
                 api_calls += 1
-                # Merge usage
                 for k in usage:
                     usage[k] += usage2[k]
                 verdict = format_verdict(cap_id, programme[cap_id], judge_result2)
-                save_verdict(cap_id, verdict, programme, args.output_dir, atomic=False)
-                final_path.rename(tmp_path)
+                _write_verdict_json(tmp_path, cap_id, verdict, programme)
                 errors2 = validate_verdict_file(tmp_path)
                 if errors2:
-                    # J6c1: partial degradation — only zero out roles mentioned in errors
+                    # Partial degradation: only zero out failing roles
                     tmp_path.unlink(missing_ok=True)
                     error_text = " ".join(errors2)
                     role_map = {
@@ -543,7 +533,6 @@ def main() -> int:
                     for role, keywords in role_map.items():
                         if any(kw in error_text.lower() for kw in keywords):
                             failed_roles.append(role)
-                    # If we can't identify specific roles, degrade all
                     if not failed_roles:
                         failed_roles = list(role_map.keys())
                     for role in failed_roles:
@@ -554,13 +543,13 @@ def main() -> int:
                     )
                     verdict["verdict"] = "needs_review" if valid_count else "needs_content"
                     verdict["justification"] = (
-                        f"Auto-dégradé ({len(failed_roles)} rôle(s) invalide(s)) après 2 tentatives. "
-                        f"{'; '.join(errors2[:3])}"
+                        f"Auto-dégradé ({len(failed_roles)} rôle(s) invalide(s)). "
+                        f"{'; '.join(errors2[:3])}"[:400]
                     )
-                    save_verdict(cap_id, verdict, programme, args.output_dir)
-                    print(f"DEGRADED {len(failed_roles)} role(s), verdict={verdict['verdict']}")
+                    _write_verdict_json(tmp_path, cap_id, verdict, programme)
+                    tmp_path.rename(final_path)
+                    print(f"DEGRADED {len(failed_roles)} role(s)")
                 else:
-                    # Valid after retry — promote .tmp to final
                     tmp_path.rename(final_path)
                     print("FIXED", end=" ")
 
@@ -585,7 +574,8 @@ def main() -> int:
             err_verdict["verdict"] = "needs_content"
             for role in ["proof_course", "proof_practice", "proof_correction"]:
                 err_verdict[role] = {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False}
-            save_verdict(cap_id, err_verdict, programme, args.output_dir)
+            err_path = args.output_dir / f"{cap_id}_substance_review.json"
+            _write_verdict_json(err_path, cap_id, err_verdict, programme)
             results.append(err_verdict)
             usage_log.append({"cap": cap_id, "seq": seq_id, "read": 0, "write": 0,
                               "fresh": 0, "out": 0, "cost_usd": 0, "error": str(exc)[:100]})

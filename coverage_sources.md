@@ -1470,7 +1470,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | evaluation | 03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md | needs_review |
 | remediation | 03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md | needs_review |
 | td | 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md | needs_review |
-| td | 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md | needs_review |
 | tp | 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md | needs_review |
 | trace | 03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md | needs_review |
 | version_amenagee | 03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md | needs_review |
