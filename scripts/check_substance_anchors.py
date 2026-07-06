@@ -392,6 +392,8 @@ def check_intra_file_duplicates(verdict: dict[str, Any]) -> list[str]:
       (b) mode batch de check_substance_anchors.py
       (c) validate_verdict_file() dans judge_campaign.py (import direct)
     """
+    if not isinstance(verdict, dict):
+        return []
     counts: dict[str, int] = {}
     for cap in verdict.get("capacities") or []:
         if not isinstance(cap, dict):
@@ -420,6 +422,8 @@ def validate_verdict_data(
     (the same logic as single-file mode). This is the full pre-promotion gate
     used by judge_campaign.py validate_verdict_file().
     """
+    if not isinstance(verdict, dict):
+        return [f"verdict JSON racine n'est pas un objet (type: {type(verdict).__name__})"]
     errors = validate_schema(verdict, schema_path)
     dup_errors = check_intra_file_duplicates(verdict)
     all_errors = errors + dup_errors
