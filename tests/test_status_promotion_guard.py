@@ -31,8 +31,8 @@ def validated_capacity() -> dict[str, object]:
     }
     evidence_correction = {
         "present": True,
-        "file": "preuve.md",
-        "anchor": "#preuve",
+        "file": "preuve_corrige.md",
+        "anchor": "#corrigé-preuve",
         "quote": "Corrigé : la table est importée avec csv.reader et contient 5 lignes.",
         "teaches": True,
     }
@@ -51,7 +51,12 @@ def validated_capacity() -> dict[str, object]:
 def write_valid_verdict(root: Path) -> dict[str, object]:
     (root / "preuve.md").write_text(
         f"# Preuve\n\n{QUOTE}\n\n"
-        "Exercice : importer une table CSV et afficher les colonnes.\n\n"
+        "Exercice : importer une table CSV et afficher les colonnes.\n",
+        encoding="utf-8",
+    )
+    (root / "preuve_corrige.md").write_text(
+        "# Corrigé preuve\n\n"
+        "## Corrigé preuve\n\n"
         "Corrigé : la table est importée avec csv.reader et contient 5 lignes.\n",
         encoding="utf-8",
     )
