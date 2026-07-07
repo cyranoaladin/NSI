@@ -538,6 +538,11 @@ def main() -> int:
         for rf in review_files:
             try:
                 vdata = json.loads(rf.read_text(encoding="utf-8"))
+                # J6-quater: shared root guard
+                root_errs = _check_verdict_root(vdata)
+                if root_errs:
+                    failures.extend(f"{msg} dans {rf.relative_to(repo_root)}" for msg in root_errs)
+                    continue
                 # J6-ter: intra-file duplicates via shared function
                 for msg in check_intra_file_duplicates(vdata):
                     failures.append(f"{msg} dans {rf.relative_to(repo_root)}")
@@ -626,12 +631,7 @@ def main() -> int:
     if dup_msgs:
         hard_schema_error = True
 
-    official = load_official_labels(repo_root)
-    section_cache: dict[Path, dict[str, Section]] = {}
-    results = [check_capacity(cap, repo_root, official, section_cache)
-               for cap in verdict.get("capacities", [])]
-
-    # --- rapport lisible ---
+    # --- rapport lisible (header) ---
     unit = verdict.get("unit", "?")
     print(f"=== Vérification de substance — unité {unit} "
           f"({verdict.get('level','?')}) ===")
@@ -642,6 +642,18 @@ def main() -> int:
     for m in schema_msgs:
         print(f"  schéma: {m}")
     print()
+
+    # J6-quater: schema errors block deep checks (parity with validate_verdict_data).
+    # A capacity with proof_course:null must not reach check_capacity.
+    if hard_schema_error:
+        print("=== Bilan ===")
+        print("Arrêt : erreur de schéma bloquante détectée.")
+        return 2
+
+    official = load_official_labels(repo_root)
+    section_cache: dict[Path, dict[str, Section]] = {}
+    results = [check_capacity(cap, repo_root, official, section_cache)
+               for cap in verdict.get("capacities", [])]
 
     n_validated = n_needs = n_blocker = n_downgraded = 0
     for r in results:
