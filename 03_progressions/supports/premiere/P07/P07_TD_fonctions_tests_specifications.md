@@ -172,6 +172,18 @@ official_program:
 - Résultat theta dans P07 TD fonctions tests specifications : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
 - Contrôle theta dans P07 TD fonctions tests specifications : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
+### Corrigé exercice 9
+- Capacité mobilisée : P-LANG-02.
+- Résultat attendu : traits communs (fonction nommée, paramètres, return) ; traits Python (indentation, typage dynamique) ; type retour (Python optionnel, JS implicite, C obligatoire).
+- Justification : comparaison ligne par ligne des trois codes.
+- Cas limite : un langage fonctionnel n'utiliserait pas return explicite.
+
+### Corrigé exercice 10
+- Capacité mobilisée : P-LANG-05.
+- Résultat attendu : `math.sqrt(2)*5` ≈ 7.07 ; `math.floor(3.7)` → 3, `math.floor(-3.2)` → −4 ; floor vers −∞, ceil vers +∞.
+- Justification : import module, consultation help(), exécution et comparaison.
+- Cas limite : `math.floor(-3.0)` → −3 (entier exact).
+
 ## Erreurs fréquentes
 - test unique non suffisant.
 - précondition absente.
