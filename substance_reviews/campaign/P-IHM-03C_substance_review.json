@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-06T06:09:24Z",
+  "judged_at": "2026-07-07T18:38:22Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,8 +12,8 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md",
-        "anchor": "#exemples-corrigés",
-        "quote": "- Méthode : distinguer GET, POST et HTTPS.\n- Résultat attendu : POST sans HTTPS ne chiffre pas.\n- Contrôle : capacité P-IHM-03A et cas limite `champ nom vide`.",
+        "anchor": "#savoir-disciplinaire",
+        "quote": "Vocabulaire à maîtriser : balise, attribut, sélecteur CSS, nœud DOM, événement, méthode GET, méthode POST, paramètre URL.",
         "teaches": true
       },
       "proof_practice": {
@@ -27,11 +27,11 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
         "anchor": "#exercice-6",
-        "quote": "### Exercice 6\n- Réponse attendue : document.querySelector(\"#nom\").value lit la saisie.\n- Méthode : cibler #nom en CSS et DOM.\n- Cas limite : formulaire sans action.",
+        "quote": "- Réponse attendue : document.querySelector(\"#nom\").value lit la saisie.\n- Méthode : cibler #nom en CSS et DOM.\n- Cas limite : formulaire sans action.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours mentionne la distinction GET/POST/HTTPS et la notion de chiffrement. L'exercice 6 du TD cible P-IHM-03C avec une consigne pratique. Le corrigé fournit la réponse attendue pour cette capacité. Cependant, le lien avec 'transmission chiffrée' reste indirect (POST sans HTTPS ne chiffre pas).",
+      "justification": "Le cours liste les méthodes GET/POST et le vocabulaire HTTP sans développer explicitement la notion de chiffrement HTTPS pour P-IHM-03C. Le TD et le corrigé traitent P-IHM-03C via la distinction GET/POST/HTTPS, mais la capacité 'reconnaître quand et pourquoi la transmission est chiffrée' n'est qu'effleurée.",
       "scientific_flags": [
         "human_review_required"
       ]

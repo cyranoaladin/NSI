@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-07T18:40:48Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md",
-        "anchor": "#méthodes",
-        "quote": "distinguer GET, POST et HTTPS.",
+        "anchor": "#savoir-faire-et-méthodes-opérationnelles",
+        "quote": "construire un formulaire GET puis lire la query string.\n- associer un sélecteur CSS à l'élément modifié.\n- décrire l'événement DOM qui déclenche le traitement.",
         "teaches": true
       },
       "proof_practice": {
-        "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
-        "anchor": "#exercice-4",
-        "quote": "Capacité officielle : P-IHM-03A.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "proof_correction": {
-        "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
-        "anchor": "#exercice-4",
-        "quote": "Réponse attendue : POST sans HTTPS ne chiffre pas.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "verdict": "needs_review",
-      "justification": "La capacité P-IHM-04C porte sur le choix du type de requête selon les valeurs à transmettre et leur confidentialité. Le cours mentionne 'distinguer GET, POST et HTTPS' et les exemples corrigés traitent de POST sans HTTPS. Cependant, les exercices et évaluations sont explicitement étiquetés P-IHM-03A pour cette thématique, et non P-IHM-04C. Le contenu aborde bien la distinction GET/POST/HTTPS et la confidentialité, mais sans étiquetage explicite P-IHM-04C. La preuve reste partielle et indirecte pour cette capacité spécifique.",
+      "justification": "Le cours aborde GET/POST et la confidentialité (HTTPS) mais aucun exercice ni corrigé ne porte spécifiquement sur P-IHM-04C (discussion du choix de requête selon confidentialité). Les exercices 7 et 8 sont étiquetés P-IHM-04A et P-IHM-04B, pas P-IHM-04C.",
       "scientific_flags": [
         "human_review_required"
       ]
