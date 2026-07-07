@@ -385,6 +385,18 @@ def format_verdict(cap_id: str, cap_info: dict[str, str], judge_result: dict[str
 SUBSTANCE_SCHEMA = ROOT / "substance_verdict.schema.json"
 
 
+def should_preserve_existing_verdict(final_path: Path) -> bool:
+    """Predicate: should an existing verdict on disk be preserved on API error?
+
+    Returns True iff the file exists AND passes the full validation gate.
+    Extracted as a named function so tests can exercise the actual decision
+    logic (not a tautological reimplementation).
+    """
+    if not final_path.exists():
+        return False
+    return not validate_verdict_file(final_path)
+
+
 def validate_verdict_file(verdict_path: Path) -> list[str]:
     """J2d: Full pre-promotion gate via direct import.
 
@@ -585,8 +597,7 @@ def main() -> int:
         except Exception as exc:
             print(f"ERROR: {exc}")
             final_path = args.output_dir / f"{cap_id}_substance_review.json"
-            # If a valid verdict already exists on disk, preserve it
-            if final_path.exists() and not validate_verdict_file(final_path):
+            if should_preserve_existing_verdict(final_path):
                 print(f"  verdict existant préservé : {final_path.name}")
                 existing = json.loads(final_path.read_text(encoding="utf-8"))
                 results.append(existing.get("capacities", [{}])[0] if existing.get("capacities") else {})

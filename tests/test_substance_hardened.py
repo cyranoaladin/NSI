@@ -18,7 +18,7 @@ from scripts.check_substance_anchors import (
     check_intra_file_duplicates,
     validate_verdict_data,
 )
-from scripts.judge_campaign import validate_verdict_file
+from scripts.judge_campaign import validate_verdict_file, should_preserve_existing_verdict
 
 
 def _make_capacity(cap_id: str = "P-TEST-01",
@@ -429,25 +429,29 @@ class TestSubstanceHardened(unittest.TestCase):
     # ── K1-PREAMBULE: except handler preserves existing valid verdict ──
 
     def test_api_error_preserves_existing_valid_verdict(self):
-        """When an API exception occurs during campaign and a valid verdict
-        already exists on disk, the handler must preserve it (not overwrite
-        with an error verdict). This is the property that protects the 86."""
-        # Create a valid 3/3 verdict on disk
+        """Exercises should_preserve_existing_verdict — the actual predicate
+        used by the except handler. Non-tautological: a mutation of the
+        predicate condition would fail this test."""
         valid_verdict = self._make_full_verdict()
         final_path = Path(self.tmpdir) / "P-PRESERVE-01_substance_review.json"
         final_path.write_text(json.dumps(valid_verdict), encoding="utf-8")
 
-        # Simulate the except handler's decision logic (judge_campaign.py:574-588)
-        # If final_path exists AND validate_verdict_file returns empty (valid):
-        #   -> preserve (don't overwrite)
-        # Else: write error verdict
-        errors = validate_verdict_file(final_path)
-        preserve = final_path.exists() and not errors
+        # VERT: valid verdict on disk → preserve
+        self.assertTrue(should_preserve_existing_verdict(final_path),
+                        "Valid verdict must be preserved on API error")
 
-        self.assertTrue(preserve,
-                        f"Valid verdict must be preserved on API error, got errors: {errors}")
+        # VERT: no file → don't preserve (write error verdict)
+        missing = Path(self.tmpdir) / "MISSING_substance_review.json"
+        self.assertFalse(should_preserve_existing_verdict(missing),
+                         "Missing file must not be 'preserved'")
 
-        # Verify the file content is unchanged
+        # VERT: invalid verdict on disk → don't preserve
+        invalid_path = Path(self.tmpdir) / "INVALID_substance_review.json"
+        invalid_path.write_text(json.dumps(self._DUP_VERDICT), encoding="utf-8")
+        self.assertFalse(should_preserve_existing_verdict(invalid_path),
+                         "Invalid verdict must not be preserved")
+
+        # Verify the valid file is unchanged
         after = json.loads(final_path.read_text(encoding="utf-8"))
         self.assertEqual(after, valid_verdict,
                          "Verdict file must be byte-identical after preservation")
