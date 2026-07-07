@@ -358,6 +358,9 @@ class TestSubstanceHardened(unittest.TestCase):
                 verdict="BLOCKER",
                 justification="Incoherence bloquante detectee par le juge de substance sur cette capacite.",
             ), False),
+            "proof_course_null": (self._make_full_verdict(
+                proof_course=None,
+            ), False),
             "root_list": ([], False),
             "root_null": (None, False),
         }
@@ -368,6 +371,23 @@ class TestSubstanceHardened(unittest.TestCase):
                              f"Parity broken for {label}: CLI={cli} direct={direct}")
             self.assertEqual(cli, expected_accept,
                              f"Wrong decision for {label}: got={cli} expected={expected_accept}")
+
+    # ── B1: BLOCKER rejected by BOTH gates side by side ──
+
+    def test_blocker_declared_rejected_by_both_gates(self):
+        """A schema-valid capacity declaring verdict:BLOCKER (no invalid proof)
+        must be rejected by BOTH validate_verdict_data AND CLI single-file."""
+        blocker = self._make_full_verdict(
+            verdict="BLOCKER",
+            justification="Incoherence bloquante detectee par le juge de substance sur cette capacite.",
+        )
+        # Direct gate
+        schema_path = Path(__file__).resolve().parents[1] / "substance_verdict.schema.json"
+        direct_errors = validate_verdict_data(blocker, schema_path, repo_root=self.root)
+        self.assertTrue(direct_errors, f"Direct gate must reject BLOCKER: {direct_errors}")
+        self.assertTrue(any("BLOCKER" in e for e in direct_errors))
+        # CLI gate
+        self.assertFalse(self._cli_accepts(blocker), "CLI must reject BLOCKER")
 
     # ── FIX 5: validate_verdict_file exercises direct import path ──
     # (test_intra_file_duplicate_validate_verdict_file above already does this)
