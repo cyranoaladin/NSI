@@ -259,6 +259,25 @@ def check_proof(role: str, ev: dict[str, Any], repo_root: Path,
         pc.messages.append("present=true mais file manquant")
         return pc
     fpath = (repo_root / file_rel).resolve()
+
+    # K2-TER-2: proof_correction must cite a corrige/bareme file or anchor
+    # Convention: corpus uses both dedicated corrige files (P10) and
+    # embedded corriges in TD files with #corrigé-exercice-N anchors (P07)
+    if role == "correction" and pc.present:
+        fname_lower = fpath.name.lower()
+        anchor_lower = anchor.lower()
+        is_corrige_file = "corrige" in fname_lower or "bareme" in fname_lower
+        is_corrige_anchor = (anchor_lower.startswith("#corrigé-")
+                             or anchor_lower.startswith("#corrige-")
+                             or anchor_lower.startswith("#barème-")
+                             or anchor_lower.startswith("#bareme-"))
+        if not is_corrige_file and not is_corrige_anchor:
+            pc.file_ok = False
+            pc.messages.append(
+                f"proof_correction cite {fpath.name} (ancre {anchor}) — "
+                f"attendu : fichier corrige/bareme ou ancre #corrigé-*/#barème-*")
+            return pc
+
     if not fpath.exists():
         pc.file_ok = False
         pc.messages.append(f"fichier introuvable : {file_rel}")
