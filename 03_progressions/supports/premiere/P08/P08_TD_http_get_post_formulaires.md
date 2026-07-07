@@ -169,10 +169,10 @@ official_program:
 ### Corrigé exercice 9
 - Capacité mobilisée : P-IHM-04C.
 - Résultat attendu : (A) POST+HTTPS — mot de passe sensible, ne doit pas apparaître dans l'URL ni les logs. (B) GET — recherche non sensible, URL partageable. (C) POST — données personnelles, pas dans l'historique. (D) Risque : le token est visible dans la barre d'adresse, l'historique du navigateur et les logs serveur ; préférer un cookie HttpOnly ou un header Authorization avec HTTPS.
-- Justification : la tâche `classer 4 situations selon GET/POST/HTTPS` s'applique à des données de confidentialité variée ; erreur évitée : croire que POST seul suffit à protéger les données.
-- Donnée utilisée iota dans P08 TD http get post formulaires : cas iota de l'exercice 9 avec les quatre situations Web.
+- Justification : la tâche `classer 4 cas d'usage selon GET/POST/HTTPS` s'applique à des données de confidentialité variée ; erreur évitée : croire que POST seul suffit à protéger les données.
+- Donnée utilisée iota dans P08 TD http get post formulaires : cas iota de l'exercice 9 avec les quatre scénarios Web.
 - Méthode iota dans P08 TD http get post formulaires : classification par critère de confidentialité (visible URL, historique, logs, chiffrement réseau).
-- Résultat iota dans P08 TD http get post formulaires : tableau de classification avec justification pour chaque situation.
+- Résultat iota dans P08 TD http get post formulaires : tableau de classification avec justification pour chaque cas d'usage.
 - Contrôle iota dans P08 TD http get post formulaires : le cas limite « POST sans HTTPS ne chiffre pas » est explicitement discuté.
 
 ## Erreurs fréquentes
