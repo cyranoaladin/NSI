@@ -237,7 +237,7 @@ def build_sequence_context(seq_id: str, cap_id: str) -> str:
         body = extract_body(md_path)
         cap_tag = ", ".join(file_caps)
         # K1-BIS-C: anchor inventory — list of valid slugs for this file
-        sections = parse_sections(md_path.read_text(encoding="utf-8"))
+        sections = parse_sections(md_path.read_text(encoding="utf-8", errors="replace"))
         anchor_list = ", ".join(f"#{s}" for s in sorted(sections))
         parts.append(
             f"=== {rel} ===\n[CAPACITÉ: {cap_tag}]\n"
