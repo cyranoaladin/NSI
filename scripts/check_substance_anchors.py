@@ -439,12 +439,14 @@ def validate_verdict_data(
     if root_errors:
         return root_errors
     errors = validate_schema(verdict, schema_path)
-    # Schema errors block deep checks: a capacity with proof_course:null
-    # must not reach check_capacity which would crash on ev.get(...)
-    hard_schema = any(e.startswith("schéma @") for e in errors)
+    # Fail-closed: ANY schema error blocks deep checks. This includes:
+    # - "schéma @" validation errors (proof_course:null, etc.)
+    # - "jsonschema absent" (library not installed)
+    # - "schéma introuvable" (schema file missing)
+    # A malformed verdict must never reach check_capacity.
     dup_errors = check_intra_file_duplicates(verdict)
     all_errors = errors + dup_errors
-    if hard_schema:
+    if errors:
         return all_errors
     # Full per-capacity checks (anchors, quotes, degradation, BLOCKER)
     if repo_root is not None:
@@ -622,7 +624,8 @@ def main() -> int:
         return 2
 
     schema_msgs = validate_schema(verdict, args.schema)
-    hard_schema_error = any(m.startswith("schéma @") for m in schema_msgs)
+    # Fail-closed: ANY schema error blocks deep checks (parity with validate_verdict_data)
+    hard_schema_error = bool(schema_msgs)
 
     # J6-ter: intra-file duplicate check (shared function, single-file path)
     dup_msgs = check_intra_file_duplicates(verdict)
