@@ -446,7 +446,7 @@ def validate_verdict_data(
     # A malformed verdict must never reach check_capacity.
     dup_errors = check_intra_file_duplicates(verdict)
     all_errors = errors + dup_errors
-    if errors:
+    if all_errors:
         return all_errors
     # Full per-capacity checks (anchors, quotes, degradation, BLOCKER)
     if repo_root is not None:
