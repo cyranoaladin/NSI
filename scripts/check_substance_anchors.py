@@ -239,8 +239,12 @@ class ProofCheck:
         return self.file_ok and self.anchor_ok and self.quote_ok
 
 
+CAP_ID_RE = re.compile(r"\b[PT]-[A-Z]+-\d+[A-Z]?\b")
+
+
 def check_proof(role: str, ev: dict[str, Any], repo_root: Path,
-                section_cache: dict[Path, dict[str, Section]]) -> ProofCheck:
+                section_cache: dict[Path, dict[str, Section]],
+                cap_id: str = "") -> ProofCheck:
     pc = ProofCheck(role=role, present=bool(ev.get("present")),
                     teaches=bool(ev.get("teaches")))
     if not pc.present:
@@ -284,6 +288,30 @@ def check_proof(role: str, ev: dict[str, Any], repo_root: Path,
         pc.messages.append(
             f"citation approximative sous {anchor} "
             f"(recouvrement {overlap:.0%}) — à resserrer")
+
+    # K2-TER-1: cross-ID guard — quote must not cite a different capacity
+    # unless that ID is a co-tag of the same file (legitimate co-occurrence)
+    if cap_id and pc.quote_ok:
+        # Read co-tags from YAML frontmatter (lightweight, no _qa_common dep)
+        co_tags: set[str] = set()
+        try:
+            raw_text = fpath.read_text(encoding="utf-8", errors="replace")
+            if raw_text.startswith("---"):
+                end = raw_text.find("\n---", 3)
+                if end > 0:
+                    fm_text = raw_text[3:end]
+                    for fm_id in CAP_ID_RE.findall(fm_text):
+                        co_tags.add(fm_id)
+        except OSError:
+            pass
+        found_ids = set(CAP_ID_RE.findall(quote))
+        foreign = found_ids - {cap_id} - co_tags
+        if foreign:
+            pc.quote_ok = False
+            pc.messages.append(
+                f"citation contient l'ID d'une autre capacité : "
+                f"{', '.join(sorted(foreign))}")
+
     return pc
 
 
@@ -331,7 +359,8 @@ def check_capacity(
         reasons.append(f"{cid} absent du programme YAML (à vérifier)")
 
     # 2. preuves
-    proofs = [check_proof(ROLE_KEYS[k], cap.get(k, {}), repo_root, section_cache)
+    proofs = [check_proof(ROLE_KEYS[k], cap.get(k, {}), repo_root, section_cache,
+                          cap_id=cid)
               for k in ROLE_KEYS]
     for pc in proofs:
         for msg in pc.messages:
