@@ -570,7 +570,7 @@ Le dictionnaire donne `{'titre': 'Interstellar', 'realisateur': 'Christopher Nol
 
 Réponse détaillée avec justification.
 
-`d.keys()` renvoie `['temperature', 'humidite', 'vent', 'pression']` pour le dictionnaire météo.
+`d.keys()` renvoie `dict_keys(['temperature', 'humidite', 'vent', 'pression'])` (une vue, pas une liste) pour le dictionnaire météo.
 
 ### Corrigé exercice 6
 

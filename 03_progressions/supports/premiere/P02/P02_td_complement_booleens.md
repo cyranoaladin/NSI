@@ -213,7 +213,7 @@ On travaille avec des entiers naturels (non signés).
 
 **9b.** La valeur maximale est 1023. 2⁹ = 512 ≤ 1023 < 1024 = 2¹⁰. Il faut **10 bits**. Cela correspond à la taille standard d’un convertisseur analogique-numérique 10 bits.
 
-**9c.** Somme : 500 + 600 = 1100. 2¹⁰ = 1024 ≤ 1100 < 2048 = 2¹¹. La somme nécessite **11 bits**. Produit : 500 × 600 = 300 000. 2¹⁸ = 262 144 ≤ 300 000 < 524 288 = 2¹⁹. Le produit nécessite **19 bits**. Règle : chacun sur 10 bits, le produit tient sur au plus 10 + 10 = 20 bits (ici 19 suffisent).
+**9c.** 500 nécessite 9 bits (2⁸ = 256 ≤ 500 < 512 = 2⁹). 600 nécessite 10 bits (2⁹ = 512 ≤ 600 < 1024 = 2¹⁰). Somme : 500 + 600 = 1100, nécessite **11 bits** (2¹⁰ = 1024 ≤ 1100 < 2048 = 2¹¹). Produit : 500 × 600 = 300 000, nécessite **19 bits** (2¹⁸ = 262 144 ≤ 300 000 < 524 288 = 2¹⁹). Règle : 500 sur 9 bits, 600 sur 10 bits, produit sur au plus 9 + 10 = 19 bits (borne atteinte).
 
 **9d.** Non. La somme maximale est 255 + 255 = 510, qui nécessite 9 bits (2⁸ = 256 ≤ 510 < 512 = 2⁹). Un registre de 8 bits ne suffit pas : il y a **débordement** possible. Il faut un registre de 9 ou 16 bits pour stocker la somme.
 

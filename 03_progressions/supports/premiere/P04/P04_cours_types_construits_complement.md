@@ -417,12 +417,12 @@ print(moyenne)  # 15.333333333333334
 ```python
 notes = {"Alice": 16, "Bob": 12, "Clara": 18}
 meilleur_nom = ""
-meilleur_note = -1
+meilleure_note = -1
 for nom, note in notes.items():
-    if note > meilleur_note:
-        meilleur_note = note
+    if note > meilleure_note:
+        meilleure_note = note
         meilleur_nom = nom
-print(f"{meilleur_nom} : {meilleur_note}")  # Clara : 18
+print(f"{meilleur_nom} : {meilleure_note}")  # Clara : 18
 ```
 
 - Donnée étudiée : les couples `(nom, note)` via `items()`.
