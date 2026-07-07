@@ -101,6 +101,54 @@ ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve 
 - TP : `P09_tp_architecture_os_droits.md`.
 - Évaluation : `P09_evaluation_architecture_os_droits.md`.
 
+## Dérouler l'exécution d'instructions machine
+
+La capacité P-ARCH-01B demande de dérouler l'exécution d'une séquence d'instructions simples de type langage machine. On utilise un jeu d'instructions simplifié pour comprendre le cycle fetch-decode-execute.
+
+### Modèle simplifié
+
+Un processeur possède :
+- des **registres** (petites mémoires rapides, notés R0, R1, R2…) ;
+- une **mémoire** (tableau de cases numérotées) ;
+- un **compteur ordinal** (CO) qui indique l'adresse de la prochaine instruction.
+
+### Jeu d'instructions simplifié
+
+| Instruction | Effet |
+|------------|-------|
+| `LOAD R, adresse` | Copie le contenu de la mémoire[adresse] dans le registre R |
+| `STORE R, adresse` | Copie le contenu du registre R dans la mémoire[adresse] |
+| `ADD R1, R2` | R1 ← R1 + R2 |
+| `SUB R1, R2` | R1 ← R1 − R2 |
+| `JUMP adresse` | CO ← adresse (saut inconditionnel) |
+| `JUMPZ R, adresse` | Si R == 0 alors CO ← adresse (saut conditionnel) |
+
+### Exemple : additionner deux nombres en mémoire
+
+Mémoire initiale : `[10]` = 7, `[11]` = 3, `[12]` = 0.
+
+```
+Adresse  Instruction        Effet
+0        LOAD R0, [10]      R0 ← 7
+1        LOAD R1, [11]      R1 ← 3
+2        ADD R0, R1         R0 ← 7 + 3 = 10
+3        STORE R0, [12]     mémoire[12] ← 10
+```
+
+Trace d'exécution :
+
+| Étape | CO | Instruction | R0 | R1 | Mém[12] |
+|-------|----|-----------|----|----|----|
+| 0 | 0 | LOAD R0, [10] | 7 | — | 0 |
+| 1 | 1 | LOAD R1, [11] | 7 | 3 | 0 |
+| 2 | 2 | ADD R0, R1 | 10 | 3 | 0 |
+| 3 | 3 | STORE R0, [12] | 10 | 3 | 10 |
+
+### Cas limites
+
+- Saut conditionnel `JUMPZ R0, 0` : si R0 vaut 0, le programme boucle à l'adresse 0 (boucle infinie possible).
+- L'ordre des instructions compte : inverser LOAD et ADD donnerait un calcul sur des registres non initialisés.
+
 ## Renforcement explicatif ciblé
 
 Ce cours doit être lu comme une progression sur architecture, système et droits. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.

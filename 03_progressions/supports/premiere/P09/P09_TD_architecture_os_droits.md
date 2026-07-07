@@ -88,6 +88,14 @@ official_program:
 - Réponse attendue : sans x sur dossier, lecture du fichier impossible.
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `droit x manquant sur dossier`.
 
+### Exercice 9
+- Type : production/écriture.
+- Capacité officielle : P-ARCH-01B.
+- Données : mémoire initiale `[10]` = 12, `[11]` = 5, `[12]` = 0. Programme : `LOAD R0, [10] ; LOAD R1, [11] ; SUB R0, R1 ; STORE R0, [12]`.
+- Consigne : (9a) dérouler l'exécution instruction par instruction en construisant la trace (CO, instruction, R0, R1, mémoire[12]) ; (9b) donner la valeur finale de mémoire[12] ; (9c) que se passerait-il si on inversait les deux premières instructions ?
+- Réponse attendue : (9a) trace 4 étapes ; (9b) mémoire[12] = 7 ; (9c) R0 contiendrait 5 et R1 contiendrait 12, résultat = 5 − 12 = −7.
+- Critère de réussite : trace complète avec valeurs correctes à chaque étape, cas d'inversion traité.
+
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : P-ARCH-01A.
@@ -153,6 +161,12 @@ official_program:
 - Méthode theta dans P09 TD architecture os droits : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
 - Résultat theta dans P09 TD architecture os droits : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
 - Contrôle theta dans P09 TD architecture os droits : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+### Corrigé exercice 9
+- Capacité mobilisée : P-ARCH-01B.
+- Résultat attendu : (9a) Étape 0 : LOAD R0, [10] → R0=12. Étape 1 : LOAD R1, [11] → R1=5. Étape 2 : SUB R0, R1 → R0=12−5=7. Étape 3 : STORE R0, [12] → mémoire[12]=7. (9b) mémoire[12] = 7. (9c) Inversion : R0=5, R1=12, SUB donne 5−12=−7.
+- Justification : chaque instruction modifie un registre ou la mémoire ; le résultat dépend de l'ordre d'exécution.
+- Cas limite : si les deux valeurs sont égales (12 et 12), SUB donne 0.
 
 ## Erreurs fréquentes
 - confondre mémoire et disque.

@@ -57,6 +57,18 @@ official_program:
 - Méthode : écrire tests nominal, limite et invalide.
 - Cas limite : taux=0.
 
+### Exercice 9
+- Capacité mobilisée : P-LANG-02.
+- Réponse attendue : (9a) Traits communs : fonction nommée avec paramètres, mot-clé `return`, expression arithmétique identique. (9b) Traits Python : indentation significative (pas d'accolades), typage dynamique (pas de `float` obligatoire). (9c) Python : annotation optionnelle `-> float` ; JavaScript : implicite ; C : obligatoire dans la signature `float prix_ttc(...)`.
+- Méthode : comparer ligne par ligne les trois codes, identifier les éléments syntaxiques communs et les différences.
+- Cas limite : un langage fonctionnel (Haskell) n'utiliserait pas `return` — le trait « return explicite » est propre aux langages impératifs.
+
+### Exercice 10
+- Capacité mobilisée : P-LANG-05.
+- Réponse attendue : (10a) `import math ; math.sqrt(2) * 5` ≈ 7.0710678118654755. (10b) `math.floor(3.7)` → 3 ; `math.floor(-3.2)` → −4 (arrondi vers −∞, pas vers 0). (10c) `math.floor` arrondit vers −∞ (plancher), `math.ceil` arrondit vers +∞ (plafond) ; `math.floor(-3.2)` → −4, `math.ceil(-3.2)` → −3.
+- Méthode : importer le module, consulter `help()`, exécuter les fonctions et comparer.
+- Cas limite : `math.floor(-3.0)` → −3 (entier exact, pas d'arrondi).
+
 ## Corrigé du TP
 - Donnée : `prix_ht=80.0, taux=0.20 -> 96.0 ; prix_ht=-5.0 -> ValueError`.
 - Résultat principal : signature complète de prix_ttc.

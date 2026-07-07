@@ -55,6 +55,12 @@ official_program:
 - Méthode : calculer chmod 640 et droit x dossier.
 - Cas limite : droit x manquant sur dossier.
 
+### Exercice 9
+- Capacité mobilisée : P-ARCH-01B.
+- Réponse attendue : trace 4 étapes (LOAD R0=12, LOAD R1=5, SUB R0=7, STORE mémoire[12]=7). Inversion → R0=5, R1=12, résultat −7.
+- Méthode : dérouler instruction par instruction en mettant à jour registres et mémoire.
+- Cas limite : valeurs égales → SUB donne 0.
+
 ## Corrigé du TP
 - Donnée : `ls -l mesures.csv -> -rw-r----- 1 prof nsi 1240 mesures.csv ; utilisateur eleve hors groupe nsi`.
 - Résultat principal : -rw-r----- -> propriétaire rw, groupe r, autres aucun droit.
