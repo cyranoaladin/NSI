@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-06T06:09:05Z",
+  "judged_at": "2026-07-07T08:53:57Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -10,28 +10,28 @@
       "capacity_id": "P-DATA-CONSTR-03C",
       "official_label": "Utiliser les méthodes keys, values et items.",
       "proof_course": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md",
+        "anchor": "#6-p-data-constr-03c--utiliser-les-méthodes-keys-values-et-items",
+        "quote": "Les méthodes `keys()`, `values()` et `items()` d'un dictionnaire renvoient des objets vue (*view objects*) qui reflètent dynamiquement le contenu du dictionnaire.",
+        "teaches": true
       },
       "proof_practice": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md",
+        "anchor": "#question-5---p-data-constr-03b-p-data-constr-03c-4-points",
+        "quote": "Écrire une boucle qui affiche chaque entrée sous la forme `\"Alice a obtenu 85\"`, en utilisant `.items()`.",
+        "teaches": true
       },
       "proof_correction": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md",
+        "anchor": "#corrigé-exercice-5",
+        "quote": "`d.keys()` renvoie `['temperature', 'humidite', 'vent', 'pression']` pour le dictionnaire météo.",
+        "teaches": true
       },
-      "verdict": "needs_content",
-      "justification": "Verdict campagne Sonnet 4.6.",
+      "verdict": "needs_review",
+      "justification": "Le cours enseigne explicitement les méthodes keys/values/items avec exemples corrigés. L'évaluation fait pratiquer l'usage de .items(). Le corrigé fournit la réponse attendue pour keys(). Les trois rôles sont couverts.",
       "scientific_flags": [
         "human_review_required"
       ]

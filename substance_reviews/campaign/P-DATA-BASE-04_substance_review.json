@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-06T06:07:11Z",
+  "judged_at": "2026-07-07T08:54:49Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -31,7 +31,7 @@
         "teaches": false
       },
       "verdict": "needs_content",
-      "justification": "Auto-dégradé : preuve invalide après 2 tentatives. - preuve correction   : INVALIDE [absent]; · [correction] citation introuvable sous #corrigé-de-la-question-1---table-de-vérité-à-2-variables-5-points (recouvrement tokens 0%) — possible hallucination",
+      "justification": "0/3 : aucune preuve vérifiable dans les extraits.",
       "scientific_flags": [
         "human_review_required"
       ]

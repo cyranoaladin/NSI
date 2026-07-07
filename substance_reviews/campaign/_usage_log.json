@@ -1,12 +1,22 @@
 [
   {
-    "cap": "T-BDD-03F",
-    "seq": "T10",
-    "read": 0,
-    "write": 18500,
-    "fresh": 65,
-    "out": 552,
-    "cost_usd": 0.07785,
-    "api_calls": 1
+    "cap": "P-DATA-BASE-04",
+    "seq": "P02",
+    "read": 23116,
+    "write": 18636,
+    "fresh": 342,
+    "out": 1026,
+    "cost_usd": 0.093236,
+    "api_calls": 2
+  },
+  {
+    "cap": "P-DATA-BASE-05B",
+    "seq": "P03",
+    "read": 26194,
+    "write": 21714,
+    "fresh": 437,
+    "out": 929,
+    "cost_usd": 0.104532,
+    "api_calls": 4
   }
 ]
