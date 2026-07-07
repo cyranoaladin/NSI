@@ -109,6 +109,14 @@ Un capteur transmet un octet qui peut représenter une température signée ou u
 - Contrôle : proposer une activité corrective inspirée de « Remplir les quatre lignes de la table avant de conclure. ».
 - Erreur traitée : EF4 - Simplifier une expression booléenne avec un seul exemple.
 
+### Corrigé exercice 9 — Évaluer le nombre de bits nécessaires (P-DATA-BASE-02A)
+- **9a.** 200 nécessite **8 bits**. Méthode : 8 divisions successives par 2. Vérification : 2⁷ = 128 ≤ 200 < 256 = 2⁸.
+- **9b.** Valeur maximale 1023. 2⁹ = 512 ≤ 1023 < 1024 = 2¹⁰. Il faut **10 bits**.
+- **9c.** Somme 1100 : **11 bits** (2¹⁰ ≤ 1100 < 2¹¹). Produit 300 000 : **19 bits** (2¹⁸ ≤ 300 000 < 2¹⁹). Règle : chacun sur 10 bits, produit sur au plus 20 bits.
+- **9d.** Non : 255 + 255 = 510 nécessite 9 bits. Débordement sur 8 bits. Il faut au moins 9 bits.
+- Contrôle : la règle « somme sur k+1 bits, produit sur p+q bits » est vérifiée sur chaque réponse.
+- Erreur traitée : confondre le nombre de bits d'un entier avec sa valeur.
+
 ## Barème de correction rapide
 - Exercice 1 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « faire apparaître le contrôle « bit de poids fort à 1 » ».
 - Exercice 2 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « rédiger la méthode avant le résultat ».
