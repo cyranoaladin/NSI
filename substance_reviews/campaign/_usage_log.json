@@ -2,11 +2,21 @@
   {
     "cap": "P-DATA-BASE-04",
     "seq": "P02",
-    "read": 45456,
-    "write": 0,
-    "fresh": 342,
-    "out": 996,
-    "cost_usd": 0.029603,
+    "read": 0,
+    "write": 22728,
+    "fresh": 83,
+    "out": 583,
+    "cost_usd": 0.094224,
+    "api_calls": 1
+  },
+  {
+    "cap": "P-DATA-BASE-05B",
+    "seq": "P03",
+    "read": 2270,
+    "write": 23804,
+    "fresh": 86,
+    "out": 495,
+    "cost_usd": 0.097629,
     "api_calls": 2
   }
 ]

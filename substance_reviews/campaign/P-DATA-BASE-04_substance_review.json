@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-07T11:59:00Z",
+  "judged_at": "2026-07-07T12:36:56Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -13,25 +13,25 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P02/P02_cours_tables_verite_booleennes.md",
         "anchor": "#méthode-systématique-pour-dresser-la-table-dune-expression-booléenne",
-        "quote": "**Étape 1 : Identifier les variables.**\nRepérer toutes les variables présentes dans l'expression.",
+        "quote": "Pour dresser la table d'une expression booléenne, on applique la méthode suivante :\n\n**Étape 1 : Identifier les variables.**\nRepérer toutes les variables présentes dans l'expression.\n\n**Étape 2 : Calculer le nombre de lignes.**\nPour `n` variables, la table comporte `2^n` lignes.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/premiere/P02/P02_td_tables_verite_booleennes.md",
         "anchor": "#exercice-1---expressions-à-2-variables-niveau-fondamental",
-        "quote": "L'objectif est de dresser la table d'une expression booléenne pour chacune des expressions suivantes.",
+        "quote": "**1.a)** Dresser la table de vérité de l'expression `E1 = a ET (NON b)`.\n\nCompléter le tableau :\n\n| a | b | NON b | a ET (NON b) | Justification |",
         "teaches": true
       },
       "proof_correction": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P02/P02_corrige_tables_verite_booleennes.md",
+        "anchor": "#corrigé-de-la-question-1---table-de-vérité-à-2-variables-5-points",
+        "quote": "**b)** (3 pts) Pour dresser la table d'une expression booléenne, on évalue les sous-expressions ligne par ligne.\n\n| a | b | a OU b | NON b | E = (a OU b) ET (NON b) | Justification |",
+        "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Auto-dégradé (1 rôle(s) invalide(s)). [entraînement] citation introuvable sous #exercice-1---expressions-à-2-variables-niveau-fondamental (recouvrement tokens 0%) — possible hallucination; [correction] citation introuvable sous #corrigé-de-la-question-1---table-de-vérité-à-2-variables-5-points (recouvrement tokens 0%) — possible hallucination",
+      "justification": "Le cours enseigne la méthode systématique en 6 étapes avec exemples corrigés. Le TD fait pratiquer la construction de tables pour des expressions à 2 et 3 variables. Le corrigé fournit les tables complètes avec justifications ligne par ligne et barème.",
       "scientific_flags": [
         "human_review_required"
       ]

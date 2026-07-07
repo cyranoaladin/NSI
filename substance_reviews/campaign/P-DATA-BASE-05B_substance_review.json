@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-07T11:53:09Z",
+  "judged_at": "2026-07-07T12:37:06Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -31,7 +31,7 @@
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne la méthode de conversion avec open() et encode/decode, le TD fait pratiquer la conversion Latin-1→UTF-8 avec production de code Python, et le corrigé fournit les réponses détaillées incluant le code et les octets attendus.",
+      "justification": "Le cours enseigne la méthode de conversion Latin-1/UTF-8 avec open(), le TD fait pratiquer via des exercices de conversion avec code Python, et le corrigé fournit les réponses détaillées avec code et calcul d'octets.",
       "scientific_flags": [
         "human_review_required"
       ]
