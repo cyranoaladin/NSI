@@ -19,3 +19,4 @@ dist/
 .env.rag
 scripts/ingestion_errors.csv
 .env
+*.json.tmp

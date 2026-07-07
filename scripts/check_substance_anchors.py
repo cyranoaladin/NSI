@@ -382,6 +382,73 @@ def check_capacity(
                           downgraded, reasons)
 
 
+# --- détection de doublons intra-fichier de capacity_id ----------------------
+
+def check_intra_file_duplicates(verdict: dict[str, Any]) -> list[str]:
+    """Vérifie qu'aucun capacity_id n'apparaît plus d'une fois dans un verdict.
+
+    Fonction partagée, appelée par :
+      (a) mode single-file de check_substance_anchors.py
+      (b) mode batch de check_substance_anchors.py
+      (c) validate_verdict_file() dans judge_campaign.py (import direct)
+    """
+    if not isinstance(verdict, dict):
+        return []
+    counts: dict[str, int] = {}
+    for cap in verdict.get("capacities") or []:
+        if not isinstance(cap, dict):
+            continue
+        cid = str(cap.get("capacity_id", ""))
+        if cid:
+            counts[cid] = counts.get(cid, 0) + 1
+    return [
+        f"DOUBLON intra-fichier : capacity_id {cid} apparaît {n} fois"
+        for cid, n in sorted(counts.items()) if n > 1
+    ]
+
+
+def validate_verdict_data(
+    verdict: dict[str, Any],
+    schema_path: Path,
+    repo_root: Path | None = None,
+) -> list[str]:
+    """Validate a verdict dict: schema, intra-file duplicates, and anchors.
+
+    Returns list of error messages (empty = valid, promotable).
+    Fail-closed: infrastructure errors (jsonschema absent, schema file missing)
+    are treated as blocking — never silently dropped.
+
+    When repo_root is provided, also runs per-capacity anchor/quote checks
+    (the same logic as single-file mode). This is the full pre-promotion gate
+    used by judge_campaign.py validate_verdict_file().
+    """
+    if not isinstance(verdict, dict):
+        return [f"verdict JSON racine n'est pas un objet (type: {type(verdict).__name__})"]
+    errors = validate_schema(verdict, schema_path)
+    dup_errors = check_intra_file_duplicates(verdict)
+    all_errors = errors + dup_errors
+    # Full per-capacity checks (anchors, quotes, degradation signals)
+    if repo_root is not None:
+        official = load_official_labels(repo_root)
+        section_cache: dict[Path, dict[str, Section]] = {}
+        capacities = verdict.get("capacities") or []
+        for cap in capacities:
+            if not isinstance(cap, dict):
+                continue
+            result = check_capacity(cap, repo_root, official, section_cache)
+            # Blocking signals: invalid proofs (present but not verified)
+            # and verdict degradation (validated_pedagogy unsupported)
+            for p in result.proofs:
+                if p.present and not p.verified:
+                    for msg in p.messages:
+                        all_errors.append(f"[{p.role}] {msg}")
+            if result.downgraded:
+                all_errors.append(
+                    f"{result.capacity_id}: DÉGRADÉ {result.declared_verdict}"
+                    f" → {result.effective_verdict}")
+    return all_errors
+
+
 # --- détection de preuves invalides (present:true mais non vérifiées) --------
 
 def has_invalid_present_proof(results: list[CapacityResult]) -> bool:
@@ -444,9 +511,13 @@ def main() -> int:
             return 2
         # J6b: uniqueness guard — no two verdict files for the same capacity_id
         cap_id_to_files: dict[str, set[Path]] = {}
+        failures: list[str] = []
         for rf in review_files:
             try:
                 vdata = json.loads(rf.read_text(encoding="utf-8"))
+                # J6-ter: intra-file duplicates via shared function
+                for msg in check_intra_file_duplicates(vdata):
+                    failures.append(f"{msg} dans {rf.relative_to(repo_root)}")
                 for cap in vdata.get("capacities", []):
                     if not isinstance(cap, dict):
                         continue
@@ -455,7 +526,7 @@ def main() -> int:
                         cap_id_to_files.setdefault(cid, set()).add(rf)
             except (json.JSONDecodeError, OSError):
                 continue  # skip unreadable verdict files
-        failures: list[str] = []
+        # Inter-file duplicates
         for cid, files in sorted(cap_id_to_files.items()):
             if len(files) > 1:
                 paths = ", ".join(str(f.relative_to(repo_root)) for f in files)
@@ -517,6 +588,13 @@ def main() -> int:
 
     schema_msgs = validate_schema(verdict, args.schema)
     hard_schema_error = any(m.startswith("schéma @") for m in schema_msgs)
+
+    # J6-ter: intra-file duplicate check (shared function, single-file path)
+    dup_msgs = check_intra_file_duplicates(verdict)
+    for msg in dup_msgs:
+        schema_msgs.append(msg)
+    if dup_msgs:
+        hard_schema_error = True
 
     official = load_official_labels(repo_root)
     section_cache: dict[Path, dict[str, Section]] = {}
