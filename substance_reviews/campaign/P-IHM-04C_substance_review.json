@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-07T18:40:48Z",
+  "judged_at": "2026-07-07T21:56:00Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md",
-        "anchor": "#savoir-faire-et-méthodes-opérationnelles",
-        "quote": "construire un formulaire GET puis lire la query string.\n- associer un sélecteur CSS à l'élément modifié.\n- décrire l'événement DOM qui déclenche le traitement.",
+        "anchor": "#confidentialité-des-requêtes",
+        "quote": "### GET vs POST — visibilité des données\n\n| Aspect | GET | POST |\n|--------|-----|------|\n| Données visibles dans l'URL | Oui (`?nom=valeur&...`) | Non (corps de la requête) |\n| Historique du navigateur | Enregistrées | Non enregistrées |",
         "teaches": true
       },
       "proof_practice": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md",
+        "anchor": "#exercice-9",
+        "quote": "- Consigne : (9a) pour chaque situation, indiquer si GET ou POST est approprié et justifier ; (9b) pour chaque situation, indiquer si HTTPS est nécessaire et pourquoi ; (9c) expliquer pourquoi le token dans l'URL de la situation (D) pose un problème de confidentialité.",
+        "teaches": true
       },
       "proof_correction": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
+        "anchor": "#exercice-9",
+        "quote": "- Réponse attendue : (A) POST+HTTPS (mot de passe), (B) GET (recherche), (C) POST (contact), (D) risque token visible.\n- Méthode : classification par confidentialité (URL, historique, logs, chiffrement).\n- Cas limite : POST sans HTTPS ne chiffre pas les données sur le réseau.",
+        "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours aborde GET/POST et la confidentialité (HTTPS) mais aucun exercice ni corrigé ne porte spécifiquement sur P-IHM-04C (discussion du choix de requête selon confidentialité). Les exercices 7 et 8 sont étiquetés P-IHM-04A et P-IHM-04B, pas P-IHM-04C.",
+      "justification": "Le cours enseigne la distinction GET/POST/HTTPS avec tableau et critères de choix. Le TD exercice 9 fait pratiquer la classification de 4 situations selon confidentialité. Le corrigé fournit la réponse complète avec méthode et cas limite.",
       "scientific_flags": [
         "human_review_required"
       ]

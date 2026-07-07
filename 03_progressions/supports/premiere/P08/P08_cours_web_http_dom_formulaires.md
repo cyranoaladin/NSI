@@ -110,6 +110,42 @@ official_program:
 - TP : `P08_tp_web_http_dom_formulaires.md`.
 - Évaluation : `P08_evaluation_web_http_dom_formulaires.md`.
 
+## Confidentialité des requêtes
+
+La capacité P-IHM-04C demande de discuter les types de requêtes selon les valeurs à transmettre et leur confidentialité.
+
+### GET vs POST — visibilité des données
+
+| Aspect | GET | POST |
+|--------|-----|------|
+| Données visibles dans l'URL | Oui (`?nom=valeur&...`) | Non (corps de la requête) |
+| Historique du navigateur | Enregistrées | Non enregistrées |
+| Logs du serveur | Paramètres visibles | Paramètres non loggués par défaut |
+| Longueur maximale | Limitée (~2048 caractères) | Pas de limite pratique |
+| Mise en cache | Possible | Non |
+
+### Ni GET ni POST ne chiffrent les données
+
+Sans HTTPS, les données transmises par GET **et** par POST circulent en clair sur le réseau. POST masque les données de la barre d'adresse et de l'historique, mais ne les chiffre pas. Seul HTTPS (HTTP + TLS) chiffre l'intégralité de l'échange, y compris les paramètres GET dans l'URL.
+
+### Critère de choix
+
+- **GET** : recherche, navigation, filtres — données non sensibles, résultat partageable par URL.
+- **POST** : mot de passe, formulaire de contact, données personnelles — ne doit pas apparaître dans l'historique ni les logs.
+- **HTTPS** : obligatoire dès qu'une donnée est sensible (mot de passe, token, coordonnées).
+
+### Exemple : classer des situations
+
+1. Mot de passe de connexion → **POST + HTTPS** (sensible, ne doit pas apparaître dans l'URL ni les logs).
+2. Recherche sur un site → **GET** (non sensible, URL partageable : `?q=python+cours`).
+3. Formulaire de contact (nom, email, message) → **POST** (données personnelles, pas dans l'historique).
+4. Token d'authentification dans un lien → **risque** : le token est dans l'URL, visible dans l'historique et les logs serveur. Préférer un cookie HttpOnly ou un header Authorization avec HTTPS.
+
+### Cas limites
+
+- Un formulaire POST sans HTTPS transmet les données en clair sur le réseau (sniffable).
+- Un GET avec HTTPS chiffre les paramètres sur le réseau, mais ils restent visibles dans la barre d'adresse et l'historique local.
+
 ## Renforcement explicatif ciblé
 
 Ce cours doit être lu comme une progression sur Web, DOM et HTTP. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
