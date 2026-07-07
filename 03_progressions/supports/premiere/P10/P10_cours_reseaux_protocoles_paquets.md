@@ -73,7 +73,7 @@ src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24
 - Donnée : `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`.
 - Méthode : décrémenter TTL avant retransmission.
 - Résultat attendu : TTL=1 devient 0 et le paquet est détruit.
-- Contrôle : capacité P-ARCH-04A et cas limite `TTL devient 0`.
+- Contrôle : capacité P-ARCH-02A et cas limite `TTL devient 0`.
 
 ## Cas limites
 - TTL devient 0.
@@ -161,6 +161,10 @@ Cahier des charges : l'utilisateur saisit un prix HT et un taux de TVA, clique s
 function calculer() {
     var ht = parseFloat(document.getElementById("prixHT").value);
     var taux = parseFloat(document.getElementById("taux").value);
+    if (isNaN(ht) || isNaN(taux)) {
+        document.getElementById("resultat").textContent = "Erreur : saisir des nombres valides.";
+        return;
+    }
     var ttc = ht * (1 + taux);
     document.getElementById("resultat").textContent = "Prix TTC : " + ttc.toFixed(2) + " €";
 }
