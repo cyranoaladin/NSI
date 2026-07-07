@@ -38,10 +38,14 @@ def hit_for(path: Path) -> dict[str, object]:
 
 
 def test_citation_status_is_case_sensitive_and_whitespace_normalized() -> None:
-    assert check_substance_anchors.citation_status("Alpha Beta", "Alpha\n   Beta") == (
+    # Horizontal whitespace collapse: multiple spaces -> single space -> normalized match
+    assert check_substance_anchors.citation_status("Alpha Beta", "Alpha   Beta") == (
         "normalized",
         1.0,
     )
+    # Newlines preserved: cross-line join must NOT match (K2-BIS-1)
+    assert check_substance_anchors.citation_status("Alpha Beta", "Alpha\n   Beta")[0] == "absent"
+    # Case sensitive
     assert check_substance_anchors.citation_status("alpha beta", "Alpha Beta")[0] == "absent"
 
 
@@ -67,7 +71,8 @@ def test_judge_rejects_hallucinated_quote(monkeypatch: pytest.MonkeyPatch, tmp_p
 def test_judge_accepts_quote_with_whitespace_altered(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path
 ) -> None:
-    source = write_source(tmp_path, "Importer un CSV\n   demande de choisir un séparateur.")
+    # Horizontal whitespace variant: multiple spaces collapsed (K2-BIS-1: newlines preserved)
+    source = write_source(tmp_path, "Importer un CSV   demande de choisir un séparateur.")
     monkeypatch.setattr(substance_judge, "search_rag", lambda *args, **kwargs: [hit_for(source)])
     monkeypatch.setattr(
         substance_judge,
@@ -75,7 +80,7 @@ def test_judge_accepts_quote_with_whitespace_altered(
         lambda *args, **kwargs: {
             "taught": True,
             "citation": "Importer un CSV demande de choisir un séparateur.",
-            "justification": "citation exacte après normalisation des espaces",
+            "justification": "citation exacte après normalisation des espaces horizontaux",
         },
     )
 
