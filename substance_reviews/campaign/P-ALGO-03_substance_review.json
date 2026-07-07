@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-07T21:56:39Z",
+  "judged_at": "2026-07-07T22:07:21Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -10,28 +10,28 @@
       "capacity_id": "P-ALGO-03",
       "official_label": "Ecrire un algorithme qui prédit la classe d'un élément à partir de la classe majoritaire de ses k plus proches voisins.",
       "proof_course": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P13/P13_cours_dichotomie_glouton_knn.md",
+        "anchor": "#algorithme-des-k-plus-proches-voisins",
+        "quote": "def knn(donnees, nouveau, k):\n    \"\"\"Prédit la classe du nouveau point par vote majoritaire des k plus proches voisins.\"\"\"\n    distances = []\n    for point in donnees:\n        d = distance(nouveau, (point[0], point[1]))\n        distances.append((d, point[2]))  # (distance, classe)\n    distances.sort()  # tri par distance croissante\n    voisins = distances[:k]\n    # Vote majoritaire\n    compteur = {}\n    for _, classe in voisins:\n        compteur[classe] = compteur.get(classe, 0) + 1\n    return max(compteur, key=compteur.get)",
+        "teaches": true
       },
       "proof_practice": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md",
+        "anchor": "#exercice-9",
+        "quote": "Consigne : (9a) calculer la distance euclidienne entre le nouveau point et chaque point d'entraînement ; (9b) identifier les 3 plus proches voisins ; (9c) déterminer la classe prédite par vote majoritaire ; (9d) que se passe-t-il si k = 2 et les deux voisins sont de classes différentes ?",
+        "teaches": true
       },
       "proof_correction": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md",
+        "anchor": "#exercice-9",
+        "quote": "Réponse attendue : distances calculées, 3 plus proches = A(3,2) B(5,4) A(2,3), vote A=2 B=1, classe \"A\".\n- Méthode : distance euclidienne, tri, vote majoritaire.\n- Cas limite : k=2 avec égalité de vote → résultat indéterminé.",
+        "teaches": true
       },
-      "verdict": "needs_content",
-      "justification": "0/3 : aucune preuve vérifiable dans les extraits.",
+      "verdict": "needs_review",
+      "justification": "Le cours enseigne l'algorithme k-NN avec implémentation Python et exemples complets. Le TD (exercice 9) fait pratiquer le calcul de distances, la sélection des k voisins et le vote majoritaire. Le corrigé fournit les réponses détaillées avec traitement du cas limite d'égalité.",
       "scientific_flags": [
         "human_review_required"
       ]
