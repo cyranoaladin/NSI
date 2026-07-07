@@ -126,11 +126,6 @@ def normalize(s: str) -> str:
     return s
 
 
-def normalize_citation_spaces(s: str) -> str:
-    """Collapse whitespace for citation matching without changing case."""
-    return re.sub(r"\s+", " ", s).strip()
-
-
 def normalize_for_match(s: str) -> str:
     """Normalisation typographique canonique pour la comparaison de citations.
 
@@ -141,7 +136,8 @@ def normalize_for_match(s: str) -> str:
       - Guillemets « » " " → guillemet droit "
       - Tirets demi-cadratin/cadratin → tiret simple -
       - Espaces insécables/fines/quart → espace simple
-      - Collapse d'espaces multiples en un seul
+      - Collapse d'espaces HORIZONTAUX multiples en un seul
+      - Sauts de ligne PRÉSERVÉS (structure du document = contenu)
 
     Le strip de ** (gras Markdown) et la concaténation de lignes restent
     INTERDITS : le formatage Markdown est du contenu, pas de la typographie.
@@ -156,7 +152,11 @@ def normalize_for_match(s: str) -> str:
         "\u2013": "-", "\u2014": "-",                                # tirets
     }
     s = "".join(trans.get(ch, ch) for ch in s)
-    s = re.sub(r"\s+", " ", s).strip()
+    # Collapse horizontal whitespace only — newlines preserved
+    s = re.sub(r"[^\S\n]+", " ", s)
+    # Strip leading/trailing space per line, then strip overall
+    s = "\n".join(line.strip() for line in s.split("\n"))
+    s = s.strip()
     return s
 
 

@@ -133,6 +133,9 @@ RÈGLES DE CITATION (J2c — CRITIQUES, le vérificateur mécanique rejette les 
    Si le tag ne correspond pas, chercher dans les autres extraits. Si aucun extrait ne correspond,
    mettre present: false.
 7. Si aucune preuve solide n'existe pour un rôle → present: false honnête. JAMAIS de remplissage.
+8. proof_correction cite EXCLUSIVEMENT un fichier corrigé ou barème (nom contenant "corrige" ou
+   "bareme"), avec une ancre depuis SON inventaire [ANCRES VALIDES]. Ne JAMAIS citer un fichier
+   TD/TP/cours pour le rôle correction.
 
 RÈGLES DE VERDICT :
 - proof_course : le COURS ou la TRACE enseigne la capacité (définition, méthode, explication)

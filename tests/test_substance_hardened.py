@@ -431,7 +431,7 @@ class TestSubstanceHardened(unittest.TestCase):
 
     def test_typo_matrix_adverse(self):
         """Matrice adverse : la normalisation typographique est une equivalence,
-        pas un affaiblissement."""
+        pas un affaiblissement. Newlines preserves (K2-BIS-1)."""
         body = "L\u2019algorithme de tri \u2014 version \u00ab optimis\u00e9e \u00bb"
 
         # (a) citation != mots du source -> ROUGE
@@ -439,45 +439,45 @@ class TestSubstanceHardened(unittest.TestCase):
         self.assertEqual(status, "absent", "a) mismatch must be absent")
 
         # (b) citation identique sauf apostrophe courbe/droite -> VERT
-        quote_b = "L'algorithme de tri"  # apostrophe droite vs courbe
+        quote_b = "L'algorithme de tri"
         status, _ = citation_status(quote_b, body)
         self.assertIn(status, ("exact", "normalized"),
                       f"b) apostrophe variant must match, got {status}")
 
-        # (c) citation identique sauf guillemets/tirets typographiques -> VERT
-        quote_c = 'version " optimisee "'  # guillemets droits + espaces
-        body_c = 'version \u00ab optimisee \u00bb'  # guillemets francais + espaces
+        # (c) citation identique sauf guillemets typographiques -> VERT
+        quote_c = 'version " optimisee "'
+        body_c = 'version \u00ab optimisee \u00bb'
         status, _ = citation_status(quote_c, body_c)
         self.assertIn(status, ("exact", "normalized"),
                       f"c) guillemet variant must match, got {status}")
 
         # (d) citation avec ** retires -> ROUGE
         body_d = "**algorithme** de tri"
-        quote_d = "algorithme de tri"  # ** stripped
+        quote_d = "algorithme de tri"
         status, _ = citation_status(quote_d, body_d)
         self.assertEqual(status, "absent",
                          "d) stripped ** must NOT match (formatting = content)")
 
-        # (e) lignes concatenees -> ROUGE
+        # (e) lignes concatenees (newline removed) -> ROUGE
         body_e = "ligne un\nligne deux"
-        quote_e = "ligne un ligne deux"  # newline removed
+        quote_e = "ligne un ligne deux"  # newline replaced by space
         status, _ = citation_status(quote_e, body_e)
-        # After normalize_for_match, newlines become spaces in both sides,
-        # so "ligne un ligne deux" would match. But the original body has
-        # a newline which normalize_for_match collapses. Let's verify:
-        # Actually normalize_for_match replaces \s+ with space, so \n -> space.
-        # "ligne un\nligne deux" -> "ligne un ligne deux" after normalize.
-        # This means concatenated lines DO match after normalize. That's correct
-        # because normalize_for_match doesn't strip newlines — it normalizes them.
-        # The spec says "lignes concatenees -> ROUGE" meaning the QUOTE removed
-        # a newline that was in the body. But our normalizer treats \n as whitespace.
-        # This is the intended behavior: the normalizer is about typography, not
-        # line structure. For the ROUGE case, we need a quote that skips content.
-        body_e2 = "ligne un\n\nligne deux"  # paragraph break
-        quote_e2 = "ligne unligne deux"  # words concatenated (no space)
-        status, _ = citation_status(quote_e2, body_e2)
         self.assertEqual(status, "absent",
-                         "e) concatenated words must NOT match")
+                         "e) newline-to-space must NOT match (newlines preserved)")
+
+        # (f) citation recollée depuis 2 lignes contiguës -> ROUGE
+        body_f = "début de phrase\nfin de phrase"
+        quote_f = "début de phrase fin de phrase"  # joined across newline
+        status, _ = citation_status(quote_f, body_f)
+        self.assertEqual(status, "absent",
+                         "f) cross-line join must NOT match")
+
+        # (g) tiret cadratin du source vs tiret simple de la citation -> VERT
+        body_g = "tri \u2014 version finale"  # em dash
+        quote_g = "tri - version finale"       # simple dash
+        status, _ = citation_status(quote_g, body_g)
+        self.assertIn(status, ("exact", "normalized"),
+                      f"g) em-dash variant must match, got {status}")
 
     # ── K1-PREAMBULE: except handler preserves existing valid verdict ──
 

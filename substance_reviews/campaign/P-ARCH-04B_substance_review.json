@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-07T13:23:37Z",
+  "judged_at": "2026-07-07T14:16:40Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -24,14 +24,14 @@
         "teaches": true
       },
       "proof_correction": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P10/P10_corrige_reseaux_protocoles_paquets.md",
+        "anchor": "#exercice-10",
+        "quote": "Réponse attendue : formulaire HTML avec 2 inputs + bouton + affichage. JavaScript split(\".\") et comparaison des 3 premiers octets. Tests : même réseau (/24) et réseaux différents.",
+        "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Auto-dégradé (1 rôle(s) invalide(s)). [correction] citation introuvable sous #exercice-10 (recouvrement tokens 0%) — possible hallucination",
+      "justification": "Le cours enseigne la notion d'IHM et donne un exemple HTML/JS complet. Le TD (exercice 10) fait pratiquer la réalisation d'un formulaire HTML avec JavaScript. Le corrigé fournit la réponse attendue avec les cas testés.",
       "scientific_flags": [
         "human_review_required"
       ]

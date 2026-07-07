@@ -2,11 +2,11 @@
   {
     "cap": "P-ARCH-04B",
     "seq": "P10",
-    "read": 36498,
-    "write": 0,
+    "read": 18750,
+    "write": 18750,
     "fresh": 291,
-    "out": 1178,
-    "cost_usd": 0.029492,
+    "out": 1034,
+    "cost_usd": 0.09232,
     "api_calls": 2
   }
 ]
