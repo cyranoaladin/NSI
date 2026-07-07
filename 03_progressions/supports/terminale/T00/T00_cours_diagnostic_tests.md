@@ -177,6 +177,68 @@ Une équipe reprend une bibliothèque Python de Première et doit écrire des te
 - cas limite : terme à employer dans une justification écrite de la séquence.
 - spécification : terme à employer dans une justification écrite de la séquence.
 
+## Utiliser des API ou bibliothèques
+
+La capacité T-LANG-03A demande d'utiliser des API ou bibliothèques dans un programme. En Terminale, cela inclut l'exploration de modules standards et tiers, la lecture de leur documentation, et l'intégration dans un projet.
+
+### Qu'est-ce qu'une API ?
+
+Une **API** (Application Programming Interface) est un ensemble de fonctions, classes et protocoles exposés par une bibliothèque ou un service, permettant à un programme de l'utiliser sans connaître son implémentation interne. L'API est le **contrat d'interface** : elle spécifie les entrées attendues, les sorties produites, et les erreurs possibles.
+
+### Exemple 1 — le module `csv` (bibliothèque standard)
+
+```python
+import csv
+
+with open("notes.csv", "r", encoding="utf-8") as f:
+    lecteur = csv.DictReader(f)
+    for ligne in lecteur:
+        print(f"{ligne['nom']} : {ligne['note']}")
+```
+
+L'API de `csv.DictReader` : prend un fichier ouvert en lecture, renvoie un itérable de dictionnaires (une clé par en-tête de colonne). Pas besoin de connaître le parsing interne.
+
+### Exemple 2 — le module `json` (sérialisation)
+
+```python
+import json
+
+donnees = {"eleve": "Alice", "moyenne": 15.5}
+texte = json.dumps(donnees, ensure_ascii=False)
+print(texte)  # '{"eleve": "Alice", "moyenne": 15.5}'
+
+reconstitue = json.loads(texte)
+print(reconstitue["eleve"])  # Alice
+```
+
+L'API expose `dumps` (dict → str) et `loads` (str → dict). Le format JSON est un standard d'échange — l'API masque le parsing.
+
+### Exemple 3 — module tiers `requests` (HTTP)
+
+```python
+import requests
+
+reponse = requests.get("https://api.exemple.com/donnees")
+if reponse.status_code == 200:
+    data = reponse.json()
+    print(data)
+```
+
+L'API de `requests.get` : prend une URL, renvoie un objet `Response` avec `.status_code`, `.json()`, `.text`. L'utilisateur n'a pas besoin de gérer les sockets ni le protocole HTTP manuellement.
+
+### Bonnes pratiques
+
+1. **Lire la documentation** avant d'utiliser une fonction (`help()`, docstring, site officiel).
+2. **Respecter les types** des paramètres (l'API le spécifie).
+3. **Gérer les erreurs** (`try/except` pour les cas d'échec documentés).
+4. **Ne pas dépendre de l'implémentation** : si l'API change en interne mais garde le même contrat, le code appelant continue de fonctionner.
+
+### Cas limites
+
+- Un module non installé lève `ModuleNotFoundError` à l'import.
+- `json.loads` sur une chaîne malformée lève `json.JSONDecodeError`.
+- `requests.get` sans réseau lève `requests.ConnectionError`.
+
 ## Analyse de variantes disciplinaires
 - Variante T00-A : modifier la donnée du premier exemple de T00 - Cours - Diagnostic tests et conserver exactement la même méthode.
 - Variante T00-B : changer le cas limite et expliquer quelle étape de contrôle devient obligatoire.

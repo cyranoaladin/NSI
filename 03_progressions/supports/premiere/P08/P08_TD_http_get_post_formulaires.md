@@ -92,6 +92,14 @@ official_program:
 - Réponse attendue : POST sans HTTPS ne chiffre pas.
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `paramètre jour absent`.
 
+### Exercice 9
+- Type : lecture/analyse.
+- Capacité officielle : P-IHM-04C.
+- Données : quatre situations de transmission de données sur le Web : (A) un formulaire de connexion avec mot de passe, (B) une barre de recherche sur un site, (C) un formulaire de contact (nom, email, message), (D) un lien contenant un token d'authentification dans l'URL.
+- Consigne : (9a) pour chaque situation, indiquer si GET ou POST est approprié et justifier ; (9b) pour chaque situation, indiquer si HTTPS est nécessaire et pourquoi ; (9c) expliquer pourquoi le token dans l'URL de la situation (D) pose un problème de confidentialité.
+- Réponse attendue : (A) POST+HTTPS ; (B) GET ; (C) POST ; (D) risque — token visible dans l'historique et les logs.
+- Critère de réussite : chaque situation classée avec justification, distinction GET/POST/HTTPS explicite.
+
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : P-IHM-01A.
@@ -157,6 +165,15 @@ official_program:
 - Méthode theta dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
 - Résultat theta dans P08 TD http get post formulaires : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
 - Contrôle theta dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+### Corrigé exercice 9
+- Capacité mobilisée : P-IHM-04C.
+- Résultat attendu : (A) POST+HTTPS — mot de passe sensible, ne doit pas apparaître dans l'URL ni les logs. (B) GET — recherche non sensible, URL partageable. (C) POST — données personnelles, pas dans l'historique. (D) Risque : le token est visible dans la barre d'adresse, l'historique du navigateur et les logs serveur ; préférer un cookie HttpOnly ou un header Authorization avec HTTPS.
+- Justification : la tâche `classer 4 cas d'usage selon GET/POST/HTTPS` s'applique à des données de confidentialité variée ; erreur évitée : croire que POST seul suffit à protéger les données.
+- Donnée utilisée iota dans P08 TD http get post formulaires : cas iota de l'exercice 9 avec les quatre scénarios Web.
+- Méthode iota dans P08 TD http get post formulaires : classification par critère de confidentialité (visible URL, historique, logs, chiffrement réseau).
+- Résultat iota dans P08 TD http get post formulaires : tableau de classification avec justification pour chaque cas d'usage.
+- Contrôle iota dans P08 TD http get post formulaires : le cas limite « POST sans HTTPS ne chiffre pas » est explicitement discuté.
 
 ## Erreurs fréquentes
 - bouton hors formulaire.

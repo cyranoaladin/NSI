@@ -1,22 +1,22 @@
 [
   {
-    "cap": "P-IHM-04C",
-    "seq": "P08",
-    "read": 23526,
-    "write": 0,
-    "fresh": 90,
-    "out": 317,
-    "cost_usd": 0.012083,
+    "cap": "P-ALGO-03",
+    "seq": "P13",
+    "read": 0,
+    "write": 16914,
+    "fresh": 95,
+    "out": 689,
+    "cost_usd": 0.074048,
     "api_calls": 1
   },
   {
-    "cap": "P-ARCH-04B",
-    "seq": "P10",
-    "read": 37882,
-    "write": 0,
-    "fresh": 291,
-    "out": 1051,
-    "cost_usd": 0.028003,
-    "api_calls": 3
+    "cap": "T-LANG-03A",
+    "seq": "T00",
+    "read": 2346,
+    "write": 28629,
+    "fresh": 74,
+    "out": 553,
+    "cost_usd": 0.11658,
+    "api_calls": 2
   }
 ]

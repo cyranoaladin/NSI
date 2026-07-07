@@ -86,6 +86,14 @@ official_program:
 - Réponse attendue : cible 40 absente -> non trouvé.
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `pièce 1 absente`.
 
+### Exercice 9
+- Type : production/écriture.
+- Capacité officielle : P-ALGO-03.
+- Données : données d'entraînement = [(2, 3, "A"), (5, 4, "B"), (1, 1, "A"), (8, 7, "B"), (3, 2, "A")]. Nouveau point = (4, 3). k = 3.
+- Consigne : (9a) calculer la distance euclidienne entre le nouveau point et chaque point d'entraînement ; (9b) identifier les 3 plus proches voisins ; (9c) déterminer la classe prédite par vote majoritaire ; (9d) que se passe-t-il si k = 2 et les deux voisins sont de classes différentes ?
+- Réponse attendue : distances calculées, 3 plus proches identifiés, classe prédite = "A", cas k=2 → égalité.
+- Critère de réussite : distances correctes, tri vérifié, vote majoritaire explicite, cas d'égalité traité.
+
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : P-ALGO-03.
@@ -151,6 +159,15 @@ official_program:
 - Méthode theta dans P13 TD dichotomie glouton knn : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
 - Résultat theta dans P13 TD dichotomie glouton knn : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
 - Contrôle theta dans P13 TD dichotomie glouton knn : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+### Corrigé exercice 9
+- Capacité mobilisée : P-ALGO-03.
+- Résultat attendu : (9a) d(A(2,3))=2.00, d(B(5,4))=1.41, d(A(1,1))=3.61, d(B(8,7))=5.66, d(A(3,2))=1.41. (9b) 3 plus proches : A(3,2) d=1.41, B(5,4) d=1.41, A(2,3) d=2.00. (9c) Vote : A=2, B=1 → classe prédite = "A". (9d) k=2 : A(3,2) et B(5,4) à distance égale → égalité 1-1, résultat indéterminé.
+- Justification : la tâche `classifier par k-NN` s'applique aux données d'entraînement avec distance euclidienne et vote majoritaire ; erreur évitée : égalité k-NN non décidée.
+- Donnée utilisée iota dans P13 TD dichotomie glouton knn : cas iota de l'exercice 9 avec 5 points et k=3.
+- Méthode iota dans P13 TD dichotomie glouton knn : calcul de distance euclidienne, tri, sélection des k plus proches, vote majoritaire.
+- Résultat iota dans P13 TD dichotomie glouton knn : classe prédite "A" avec vote 2 contre 1.
+- Contrôle iota dans P13 TD dichotomie glouton knn : le cas limite « k=2 avec égalité de vote » est traité explicitement.
 
 ## Erreurs fréquentes
 - dichotomie sur liste non triée.

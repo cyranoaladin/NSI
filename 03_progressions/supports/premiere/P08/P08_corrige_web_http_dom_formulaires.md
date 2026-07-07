@@ -59,6 +59,12 @@ official_program:
 - Méthode : distinguer GET, POST et HTTPS.
 - Cas limite : paramètre jour absent.
 
+### Exercice 9
+- Capacité mobilisée : P-IHM-04C.
+- Réponse attendue : (A) POST+HTTPS (mot de passe), (B) GET (recherche), (C) POST (contact), (D) risque token visible.
+- Méthode : classification par confidentialité (URL, historique, logs, chiffrement).
+- Cas limite : POST sans HTTPS ne chiffre pas les données sur le réseau.
+
 ## Corrigé du TP
 - Donnée : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`.
 - Résultat principal : <label for=nom>Nom</label><input id=nom name=nom>.
