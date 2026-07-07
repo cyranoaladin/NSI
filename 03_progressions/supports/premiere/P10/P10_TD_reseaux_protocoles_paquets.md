@@ -173,12 +173,20 @@ official_program:
 ### Corrigé exercice 9
 - Capacité mobilisée : P-ARCH-04A.
 - Résultat attendu : (9a) Capteurs : température (mesure °C), humidité (mesure %). Actionneurs : ventilateur (action ON/OFF), arrosage (action ON/OFF). Justification : un capteur convertit une grandeur physique en valeur numérique ; un actionneur convertit une commande numérique en action physique. (9b) `tant que vrai : t ← lire_temperature() ; h ← lire_humidite() ; si t > 30 alors activer_ventilateur sinon desactiver ; si h < 40 alors activer_arrosage sinon desactiver`. (9c) Valeur 255 aberrante → filtrer par moyenne sur 3 mesures ou rejeter si hors plage [−20, 60].
-- Cas limite : si les deux seuils sont atteints simultanément (t>30 ET h<40), les deux actionneurs fonctionnent en parallèle.
+- Justification : la tâche `identifier capteurs et actionneurs dans un système embarqué` exige de distinguer mesure (capteur) et commande (actionneur) puis de proposer un pseudo-code de contrôle ; erreur évitée : confondre capteur et actionneur.
+- Donnée utilisée iota dans P10 TD reseaux protocoles paquets : serre automatisée avec capteur température, capteur humidité, ventilateur, arrosage, seuils 30°C et 40%.
+- Méthode iota dans P10 TD reseaux protocoles paquets : classification capteur/actionneur, boucle de contrôle avec seuils, filtrage des valeurs aberrantes.
+- Résultat iota dans P10 TD reseaux protocoles paquets : tableau de classification complet et pseudo-code vérifié sur les cas nominaux et aberrants.
+- Contrôle iota dans P10 TD reseaux protocoles paquets : le cas limite « deux seuils atteints simultanément » est traité explicitement.
 
 ### Corrigé exercice 10
 - Capacité mobilisée : P-ARCH-04B.
 - Résultat attendu : (10a) `<input id="ip1"> <input id="ip2"> <button onclick="verifier()">Vérifier</button> <p id="res"></p>`. (10b) `function verifier() { var a = document.getElementById("ip1").value.split("."); var b = document.getElementById("ip2").value.split("."); var meme = (a[0]==b[0] && a[1]==b[1] && a[2]==b[2]); document.getElementById("res").textContent = meme ? "Même réseau" : "Réseaux différents"; }`. (10c) 192.168.1.20 vs 192.168.1.34 → « Même réseau » ; 192.168.1.20 vs 10.0.0.5 → « Réseaux différents ».
-- Cas limite : champ vide → `split(".")` renvoie `[""]`, la comparaison échoue → afficher un message d'erreur.
+- Justification : la tâche `réaliser une IHM répondant à un cahier des charges` exige un formulaire avec entrées, traitement JavaScript et affichage du résultat ; erreur évitée : oublier la validation des entrées.
+- Donnée utilisée kappa dans P10 TD reseaux protocoles paquets : deux adresses IP à comparer sur un réseau /24.
+- Méthode kappa dans P10 TD reseaux protocoles paquets : formulaire HTML, récupération des valeurs par getElementById, découpage split("."), comparaison des 3 premiers octets.
+- Résultat kappa dans P10 TD reseaux protocoles paquets : IHM fonctionnelle avec deux tests vérifiés (même réseau et réseaux différents).
+- Contrôle kappa dans P10 TD reseaux protocoles paquets : le cas limite « champ vide » est traité avec un message d'erreur explicite.
 
 ## Erreurs fréquentes
 - confondre MAC et IP.
