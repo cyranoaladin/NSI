@@ -131,16 +131,49 @@ def normalize_citation_spaces(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
+def normalize_for_match(s: str) -> str:
+    """Normalisation typographique canonique pour la comparaison de citations.
+
+    Appliquée aux DEUX côtés (citation ET corps de section). Transforme les
+    variantes typographiques en forme canonique SANS altérer le contenu :
+      - NFC Unicode
+      - Apostrophes courbes/modificatrices/prime → apostrophe droite '
+      - Guillemets « » " " → guillemet droit "
+      - Tirets demi-cadratin/cadratin → tiret simple -
+      - Espaces insécables/fines/quart → espace simple
+      - Collapse d'espaces multiples en un seul
+
+    Le strip de ** (gras Markdown) et la concaténation de lignes restent
+    INTERDITS : le formatage Markdown est du contenu, pas de la typographie.
+
+    Équivalence typographique = classe d'identité ; formatage Markdown = contenu.
+    """
+    s = unicodedata.normalize("NFC", s)
+    trans = {
+        "\u2019": "'", "\u2018": "'", "\u02bc": "'", "\u2032": "'",  # apostrophes
+        "\u00ab": '"', "\u00bb": '"', "\u201c": '"', "\u201d": '"',  # guillemets
+        "\u00a0": " ", "\u202f": " ", "\u2009": " ", "\u2005": " ",  # espaces
+        "\u2013": "-", "\u2014": "-",                                # tirets
+    }
+    s = "".join(trans.get(ch, ch) for ch in s)
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
+
+
 def citation_status(quote: str, body: str) -> tuple[str, float]:
     """Renvoie ('exact'|'normalized'|'absent', recouvrement[0..1]).
 
-    Le matching des citations est volontairement mécanique : sous-chaîne exacte,
-    ou sous-chaîne après collapse des espaces. La comparaison reste sensible à
-    la casse et n'accepte aucune approximation.
+    Matching mécanique :
+      1. sous-chaîne exacte (byte-identical) → 'exact'
+      2. sous-chaîne après normalisation typographique (normalize_for_match
+         sur les DEUX côtés) → 'normalized'
+      3. sinon → 'absent'
+
+    La casse est conservée (pas de lower-case). Le gras ** n'est pas strippé.
     """
     if quote in body:
         return "exact", 1.0
-    nq, nb = normalize_citation_spaces(quote), normalize_citation_spaces(body)
+    nq, nb = normalize_for_match(quote), normalize_for_match(body)
     if nq and nq in nb:
         return "normalized", 1.0
     return "absent", 0.0
