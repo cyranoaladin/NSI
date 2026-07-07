@@ -45,6 +45,7 @@ from scripts._qa_common import (  # noqa: E402
     read_frontmatter,
 )
 from scripts.check_substance_anchors import (  # noqa: E402
+    parse_sections,
     validate_verdict_data,
 )
 
@@ -125,7 +126,8 @@ RÈGLES DE CITATION (J2c — CRITIQUES, le vérificateur mécanique rejette les 
    les puces (- ), les backticks (`). NE PAS reformuler, NE PAS concaténer, NE PAS inventer.
 2. "quote" DOIT contenir au moins 25 caractères de contenu réel (pas un label comme "P-ALGO-01A").
 3. Chaque rôle (cours/practice/correction) doit avoir une citation DISTINCTE — JAMAIS la même.
-4. "anchor" = slug GitHub d'un titre ## ou ### EXISTANT (#en-minuscules-avec-tirets).
+4. "anchor" DOIT être copié VERBATIM depuis la ligne [ANCRES VALIDES: ...] du fichier cité.
+   Ne JAMAIS construire un slug depuis un titre — utiliser UNIQUEMENT les ancres inventoriées.
 5. "file" = chemin EXACT copié depuis la ligne === chemin ===.
 6. Ne citer que des sections dont le TAG [CAPACITÉ: ...] correspond à la capacité jugée.
    Si le tag ne correspond pas, chercher dans les autres extraits. Si aucun extrait ne correspond,
@@ -234,7 +236,13 @@ def build_sequence_context(seq_id: str, cap_id: str) -> str:
         rel = md_path.relative_to(ROOT).as_posix()
         body = extract_body(md_path)
         cap_tag = ", ".join(file_caps)
-        parts.append(f"=== {rel} ===\n[CAPACITÉ: {cap_tag}]\n{body}")
+        # K1-BIS-C: anchor inventory — list of valid slugs for this file
+        sections = parse_sections(md_path.read_text(encoding="utf-8", errors="replace"))
+        anchor_list = ", ".join(f"#{s}" for s in sorted(sections))
+        parts.append(
+            f"=== {rel} ===\n[CAPACITÉ: {cap_tag}]\n"
+            f"[ANCRES VALIDES: {anchor_list}]\n{body}"
+        )
     return "\n\n".join(parts)
 
 
@@ -375,6 +383,18 @@ def format_verdict(cap_id: str, cap_info: dict[str, str], judge_result: dict[str
 
 
 SUBSTANCE_SCHEMA = ROOT / "substance_verdict.schema.json"
+
+
+def should_preserve_existing_verdict(final_path: Path) -> bool:
+    """Predicate: should an existing verdict on disk be preserved on API error?
+
+    Returns True iff the file exists AND passes the full validation gate.
+    Extracted as a named function so tests can exercise the actual decision
+    logic (not a tautological reimplementation).
+    """
+    if not final_path.exists():
+        return False
+    return not validate_verdict_file(final_path)
 
 
 def validate_verdict_file(verdict_path: Path) -> list[str]:
@@ -543,10 +563,15 @@ def main() -> int:
                         if verdict[r].get("present")
                     )
                     verdict["verdict"] = "needs_review" if valid_count else "needs_content"
-                    verdict["justification"] = (
-                        f"Auto-dégradé ({len(failed_roles)} rôle(s) invalide(s)). "
-                        f"{'; '.join(errors2[:3])}"[:400]
-                    )
+                    diag_parts = errors2[:3]
+                    if len(errors2) > 3:
+                        diag_parts.append(f"+{len(errors2) - 3} autres")
+                    diag = "; ".join(diag_parts)
+                    prefix = f"Auto-dégradé ({len(failed_roles)} rôle(s) invalide(s)). "
+                    max_diag = 400 - len(prefix)
+                    if len(diag) > max_diag:
+                        diag = diag[:max_diag - 3].rsplit(" ", 1)[0] + "..."
+                    verdict["justification"] = prefix + diag
                     _write_verdict_json(tmp_path, cap_id, verdict, programme)
                     tmp_path.replace(final_path)
                     print(f"DEGRADED {len(failed_roles)} role(s)")
@@ -572,8 +597,7 @@ def main() -> int:
         except Exception as exc:
             print(f"ERROR: {exc}")
             final_path = args.output_dir / f"{cap_id}_substance_review.json"
-            # If a valid verdict already exists on disk, preserve it
-            if final_path.exists() and not validate_verdict_file(final_path):
+            if should_preserve_existing_verdict(final_path):
                 print(f"  verdict existant préservé : {final_path.name}")
                 existing = json.loads(final_path.read_text(encoding="utf-8"))
                 results.append(existing.get("capacities", [{}])[0] if existing.get("capacities") else {})

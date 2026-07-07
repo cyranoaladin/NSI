@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-07T08:53:57Z",
+  "judged_at": "2026-07-07T11:52:29Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -27,11 +27,11 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md",
         "anchor": "#corrigé-exercice-5",
-        "quote": "`d.keys()` renvoie `['temperature', 'humidite', 'vent', 'pression']` pour le dictionnaire météo.",
+        "quote": "`d.keys()` renvoie `dict_keys(['temperature', 'humidite', 'vent', 'pression'])` (une vue, pas une liste) pour le dictionnaire météo.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne explicitement les méthodes keys/values/items avec exemples corrigés. L'évaluation fait pratiquer l'usage de .items(). Le corrigé fournit la réponse attendue pour keys(). Les trois rôles sont couverts.",
+      "justification": "Le cours enseigne explicitement les méthodes keys/values/items avec exemples et vue dynamique. L'évaluation fait pratiquer items(). Le corrigé fournit la réponse sur le comportement de keys() comme vue.",
       "scientific_flags": [
         "human_review_required"
       ]

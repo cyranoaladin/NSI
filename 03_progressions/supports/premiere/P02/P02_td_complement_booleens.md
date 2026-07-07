@@ -195,27 +195,18 @@ Un capteur transmet un octet qui peut représenter une température signée ou u
 - Résultat theta dans P02 td complement booleens : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
 - Contrôle theta dans P02 td complement booleens : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
-### Exercice 9 — Évaluer le nombre de bits nécessaires (P-DATA-BASE-02A)
-
-On travaille avec des entiers naturels (non signés).
-
-**Question 9a.** Combien de bits sont nécessaires pour écrire 200 en base 2 ? Justifier par la méthode des divisions successives.
-
-**Question 9b.** Un capteur renvoie des valeurs entre 0 et 1023. Combien de bits faut-il pour coder chaque mesure ? Justifier.
-
-**Question 9c.** Deux mesures valent respectivement 500 et 600. Combien de bits faut-il pour coder leur somme ? Leur produit ?
-
-**Question 9d.** On stocke un pixel en niveaux de gris sur 8 bits (valeur entre 0 et 255). Est-il possible de stocker la somme de deux pixels sur 8 bits ? Justifier.
+### Exercice 9
+- Objectif travaillé : O1, O2, O3, O4.
+- Capacité officielle : P-DATA-BASE-02A.
+- Énoncé disciplinaire : évaluer le nombre de bits nécessaires à l’écriture en base 2 d’un entier, d’une somme et d’un produit. On travaille avec des entiers naturels (non signés). (9a) Combien de bits sont nécessaires pour écrire 200 en base 2 ? Justifier par la méthode des divisions successives. (9b) Un capteur renvoie des valeurs entre 0 et 1023. Combien de bits faut-il pour coder chaque mesure ? (9c) Deux mesures valent respectivement 500 et 600. Combien de bits faut-il pour coder leur somme ? Leur produit ? (9d) On stocke un pixel en niveaux de gris sur 8 bits (0 à 255). Est-il possible de stocker la somme de deux pixels sur 8 bits ?
+- Production attendue : 8 bits (200), 10 bits (1023), 11 bits (somme), 19 bits (produit), débordement (pixel).
+- Contrainte de contrôle : vérifier chaque résultat par encadrement entre deux puissances de 2 consécutives.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
 
 ### Corrigé exercice 9
-
-**9a.** 200 ÷ 2 = 100, 100 ÷ 2 = 50, 50 ÷ 2 = 25, 25 ÷ 2 = 12 r1, 12 ÷ 2 = 6, 6 ÷ 2 = 3, 3 ÷ 2 = 1 r1, 1 ÷ 2 = 0 r1. On a effectué 8 divisions, donc 200 nécessite **8 bits**. Vérification : 2⁷ = 128 ≤ 200 < 256 = 2⁸.
-
-**9b.** La valeur maximale est 1023. 2⁹ = 512 ≤ 1023 < 1024 = 2¹⁰. Il faut **10 bits**. Cela correspond à la taille standard d’un convertisseur analogique-numérique 10 bits.
-
-**9c.** Somme : 500 + 600 = 1100. 2¹⁰ = 1024 ≤ 1100 < 2048 = 2¹¹. La somme nécessite **11 bits**. Produit : 500 × 600 = 300 000. 2¹⁸ = 262 144 ≤ 300 000 < 524 288 = 2¹⁹. Le produit nécessite **19 bits**. Règle : chacun sur 10 bits, le produit tient sur au plus 10 + 10 = 20 bits (ici 19 suffisent).
-
-**9d.** Non. La somme maximale est 255 + 255 = 510, qui nécessite 9 bits (2⁸ = 256 ≤ 510 < 512 = 2⁹). Un registre de 8 bits ne suffit pas : il y a **débordement** possible. Il faut un registre de 9 ou 16 bits pour stocker la somme.
+- Résultat : (9a) 200 nécessite 8 bits (8 divisions par 2 ; 2⁷ = 128 ≤ 200 < 256 = 2⁸). (9b) 1023 nécessite 10 bits (2⁹ = 512 ≤ 1023 < 1024 = 2¹⁰). (9c) 500 sur 9 bits, 600 sur 10 bits ; somme 1100 sur 11 bits (2¹⁰ ≤ 1100 < 2¹¹) ; produit 300 000 sur 19 bits (2¹⁸ ≤ 300 000 < 2¹⁹ ; borne p+q = 9+10 = 19 atteinte). (9d) Non : 255+255 = 510 nécessite 9 bits, débordement sur 8 bits.
+- Contrôle : chaque réponse vérifiée par encadrement 2^(k-1) ≤ n < 2^k.
+- Erreur traitée : confondre le nombre de bits d’un entier avec sa valeur, ou oublier qu’une somme peut nécessiter un bit supplémentaire.
 
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Lire un mot binaire signé comme un entier naturel.
