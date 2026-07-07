@@ -322,7 +322,7 @@ def check_proof(role: str, ev: dict[str, Any], repo_root: Path,
                     for fm_id in CAP_ID_RE.findall(fm_text):
                         co_tags.add(fm_id)
         except OSError:
-            pass
+            co_tags = set()  # file unreadable — no co-tags known, strict check
         found_ids = set(CAP_ID_RE.findall(quote))
         foreign = found_ids - {cap_id} - co_tags
         if foreign:
