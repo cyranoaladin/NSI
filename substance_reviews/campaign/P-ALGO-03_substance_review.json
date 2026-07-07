@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-07T21:56:39Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -31,7 +31,7 @@
         "teaches": false
       },
       "verdict": "needs_content",
-      "justification": "Verdict campagne Sonnet 4.6.",
+      "justification": "0/3 : aucune preuve vérifiable dans les extraits.",
       "scientific_flags": [
         "human_review_required"
       ]

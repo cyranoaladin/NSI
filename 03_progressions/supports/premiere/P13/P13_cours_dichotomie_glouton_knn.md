@@ -96,6 +96,71 @@ tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[
 - TP : `P13_tp_dichotomie_glouton_knn.md`.
 - Évaluation : `P13_evaluation_dichotomie_glouton_knn.md`.
 
+## Algorithme des k plus proches voisins
+
+La capacité P-ALGO-03 demande d'écrire un algorithme qui prédit la classe d'un élément à partir de la classe majoritaire de ses k plus proches voisins.
+
+### Principe
+
+Soit un ensemble de points étiquetés (chaque point a des coordonnées et une classe connue). Pour prédire la classe d'un nouveau point :
+
+1. Calculer la **distance** entre le nouveau point et chaque point de l'ensemble.
+2. Trier les points par distance croissante.
+3. Sélectionner les **k plus proches** voisins.
+4. La classe prédite est la **classe majoritaire** parmi ces k voisins.
+
+### Exemple complet — classification de fleurs
+
+Données d'entraînement (longueur de pétale, largeur de pétale, espèce) :
+
+| Point | Longueur | Largeur | Espèce |
+|-------|----------|---------|--------|
+| A | 1.4 | 0.2 | setosa |
+| B | 4.7 | 1.4 | versicolor |
+| C | 1.3 | 0.3 | setosa |
+| D | 4.5 | 1.5 | versicolor |
+| E | 1.5 | 0.2 | setosa |
+
+Nouveau point à classer : longueur = 1.6, largeur = 0.3, k = 3.
+
+Distances (euclidiennes simplifiées) :
+- d(A) = √((1.6−1.4)² + (0.3−0.2)²) = √(0.04 + 0.01) ≈ 0.22
+- d(B) = √((1.6−4.7)² + (0.3−1.4)²) = √(9.61 + 1.21) ≈ 3.29
+- d(C) = √((1.6−1.3)² + (0.3−0.3)²) = 0.30
+- d(D) = √((1.6−4.5)² + (0.3−1.5)²) ≈ 3.14
+- d(E) = √((1.6−1.5)² + (0.3−0.2)²) ≈ 0.14
+
+Les 3 plus proches : E (0.14), A (0.22), C (0.30) — tous setosa.
+
+**Prédiction : setosa** (vote unanime).
+
+### Implémentation Python
+
+```python
+def distance(p1, p2):
+    return ((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2) ** 0.5
+
+def knn(donnees, nouveau, k):
+    """Prédit la classe du nouveau point par vote majoritaire des k plus proches voisins."""
+    distances = []
+    for point in donnees:
+        d = distance(nouveau, (point[0], point[1]))
+        distances.append((d, point[2]))  # (distance, classe)
+    distances.sort()  # tri par distance croissante
+    voisins = distances[:k]
+    # Vote majoritaire
+    compteur = {}
+    for _, classe in voisins:
+        compteur[classe] = compteur.get(classe, 0) + 1
+    return max(compteur, key=compteur.get)
+```
+
+### Cas limites
+
+- **Égalité de vote** (k pair) : si deux classes ont le même nombre de voisins, le résultat dépend de l'ordre de tri. Solution : choisir k impair.
+- **k = 1** : le voisin le plus proche décide seul — sensible au bruit.
+- **k = n** (taille du dataset) : la classe majoritaire globale est toujours prédite — pas d'apprentissage local.
+
 ## Renforcement explicatif ciblé
 
 Ce cours doit être lu comme une progression sur dichotomie, glouton et k plus proches voisins. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.

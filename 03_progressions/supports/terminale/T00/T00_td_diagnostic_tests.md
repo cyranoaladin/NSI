@@ -127,6 +127,14 @@ Une équipe reprend une bibliothèque Python de Première et doit écrire des te
 - Production attendue : l’erreur est localisée puis réparée.
 - Contrainte de contrôle : proposer une activité corrective inspirée de « Réécrire le message d’échec comme diagnostic. ».
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
+### Exercice 9
+- Objectif travaillé : O1, O2, O3, O4.
+- Capacité officielle : T-LANG-03A.
+- Énoncé disciplinaire : utiliser le module `json` pour lire et écrire des données structurées. (9a) Écrire un programme qui crée un dictionnaire `eleve = {"nom": "Alice", "notes": [15, 12, 18]}`, le sérialise en chaîne JSON avec `json.dumps`, puis le reconstitue avec `json.loads`. Vérifier que le dictionnaire reconstitué est identique à l'original. (9b) Écrire un programme qui lit un fichier `eleves.json` contenant une liste de dictionnaires et affiche le nom de chaque élève. Gérer le cas où le fichier n'existe pas (`FileNotFoundError`). (9c) Que se passe-t-il si on appelle `json.loads` sur une chaîne malformée `"{nom: Alice}"` ? Quelle exception est levée ?
+- Production attendue : (9a) sérialisation/désérialisation vérifiée ; (9b) lecture fichier avec gestion d'erreur ; (9c) `json.JSONDecodeError`.
+- Contrainte de contrôle : chaque appel d'API utilise les paramètres documentés ; cas d'erreur géré.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
+
 ## Corrigé
 ### Corrigé exercice 1
 - Résultat : `7`.
@@ -192,6 +200,15 @@ Une équipe reprend une bibliothèque Python de Première et doit écrire des te
 - Méthode theta dans T00 td diagnostic tests : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
 - Résultat theta dans T00 td diagnostic tests : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
 - Contrôle theta dans T00 td diagnostic tests : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+### Corrigé exercice 9
+- Résultat : (9a) `json.dumps(eleve)` → `'{"nom": "Alice", "notes": [15, 12, 18]}'` ; `json.loads(texte)` → dictionnaire identique. (9b) `with open("eleves.json") as f: data = json.load(f)` avec `except FileNotFoundError`. (9c) `json.loads('"{nom: Alice}"')` lève `json.JSONDecodeError` car la chaîne n'est pas du JSON valide (clés non entre guillemets).
+- Contrôle : API documentée utilisée correctement, exception gérée.
+- Erreur traitée : EF1 - Tester seulement le cas donné en exemple (ici : tester aussi le cas d'erreur).
+- Donnée utilisée iota dans T00 td diagnostic tests : cas iota de l'exercice 9 avec le module json.
+- Méthode iota dans T00 td diagnostic tests : import json, appel dumps/loads, gestion d'erreur try/except.
+- Résultat iota dans T00 td diagnostic tests : sérialisation/désérialisation vérifiée, exception identifiée.
+- Contrôle iota dans T00 td diagnostic tests : le cas limite « chaîne JSON malformée → JSONDecodeError » est vérifié.
 
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Tester seulement le cas donné en exemple.

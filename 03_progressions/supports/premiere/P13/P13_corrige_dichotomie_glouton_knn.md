@@ -53,6 +53,12 @@ official_program:
 - Méthode : voter parmi k=3 voisins.
 - Cas limite : pièce 1 absente.
 
+### Exercice 9
+- Capacité mobilisée : P-ALGO-03.
+- Réponse attendue : distances calculées, 3 plus proches = A(3,2) B(5,4) A(2,3), vote A=2 B=1, classe "A".
+- Méthode : distance euclidienne, tri, vote majoritaire.
+- Cas limite : k=2 avec égalité de vote → résultat indéterminé.
+
 ## Corrigé du TP
 - Donnée : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`.
 - Résultat principal : milieux 18 puis 37 -> trouvé indice 4.

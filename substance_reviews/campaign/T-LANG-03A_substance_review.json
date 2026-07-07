@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-07T21:56:46Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -31,7 +31,7 @@
         "teaches": false
       },
       "verdict": "needs_content",
-      "justification": "Tous les fichiers mentionnent T-LANG-03A comme étiquette administrative, mais le contenu porte exclusivement sur l'écriture de tests unitaires (assertions, cas nominaux, cas limites, cas invalides) pour une fonction `maximum`. Il n'y a aucun enseignement, pratique ou correction relatif à l'utilisation d'API ou de bibliothèques externes, qui est le vrai contenu de la capacité T-LANG-03A.",
+      "justification": "Tous les extraits portent sur l'écriture de tests unitaires (cas nominal, limite, invalide, assertions) pour une fonction Python. Aucun contenu ne traite de l'utilisation d'API ou de bibliothèques externes, qui est le libellé officiel de T-LANG-03A.",
       "scientific_flags": [
         "human_review_required"
       ]

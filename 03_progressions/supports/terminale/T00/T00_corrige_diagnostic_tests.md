@@ -107,6 +107,12 @@ Une équipe reprend une bibliothèque Python de Première et doit écrire des te
 - Contrôle : proposer une activité corrective inspirée de « Réécrire le message d’échec comme diagnostic. ».
 - Erreur traitée : EF4 - Ne pas lire le message d’échec.
 
+### Corrigé exercice 9
+- Méthode : import json, appel dumps/loads, lecture fichier avec gestion FileNotFoundError, test chaîne malformée.
+- Résultat : sérialisation/désérialisation vérifiée, exception JSONDecodeError identifiée.
+- Contrôle : cas d'erreur (fichier absent, JSON malformé) traités explicitement.
+- Erreur traitée : utiliser une API sans gérer les exceptions documentées (FileNotFoundError, JSONDecodeError).
+
 ## Barème de correction rapide
 - Exercice 1 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « faire apparaître le contrôle « liste d’un élément » ».
 - Exercice 2 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « rédiger la méthode avant le résultat ».
