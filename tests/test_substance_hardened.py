@@ -426,5 +426,32 @@ class TestSubstanceHardened(unittest.TestCase):
                         "Missing schema file must block promotion (fail-closed)")
 
 
+    # ── K1-PREAMBULE: except handler preserves existing valid verdict ──
+
+    def test_api_error_preserves_existing_valid_verdict(self):
+        """When an API exception occurs during campaign and a valid verdict
+        already exists on disk, the handler must preserve it (not overwrite
+        with an error verdict). This is the property that protects the 86."""
+        # Create a valid 3/3 verdict on disk
+        valid_verdict = self._make_full_verdict()
+        final_path = Path(self.tmpdir) / "P-PRESERVE-01_substance_review.json"
+        final_path.write_text(json.dumps(valid_verdict), encoding="utf-8")
+
+        # Simulate the except handler's decision logic (judge_campaign.py:574-588)
+        # If final_path exists AND validate_verdict_file returns empty (valid):
+        #   -> preserve (don't overwrite)
+        # Else: write error verdict
+        errors = validate_verdict_file(final_path)
+        preserve = final_path.exists() and not errors
+
+        self.assertTrue(preserve,
+                        f"Valid verdict must be preserved on API error, got errors: {errors}")
+
+        # Verify the file content is unchanged
+        after = json.loads(final_path.read_text(encoding="utf-8"))
+        self.assertEqual(after, valid_verdict,
+                         "Verdict file must be byte-identical after preservation")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-06T06:08:04Z",
+  "judged_at": "2026-07-07T08:55:12Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -10,11 +10,11 @@
       "capacity_id": "P-DATA-BASE-05B",
       "official_label": "Convertir un fichier texte dans différents formats d'encodage.",
       "proof_course": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P03/P03_cours_conversion_encodages_texte.md",
+        "anchor": "#méthode-de-conversion-en-python",
+        "quote": "Pour convertir un fichier texte dans différents formats d'encodage en Python, on procède en deux étapes :\n\n1. **Lire** le fichier avec l'encodage source.\n2. **Écrire** le contenu dans un nouveau fichier avec l'encodage cible.",
+        "teaches": true
       },
       "proof_practice": {
         "present": false,
@@ -30,8 +30,8 @@
         "quote": null,
         "teaches": false
       },
-      "verdict": "needs_content",
-      "justification": "Auto-dégradé : preuve invalide après 2 tentatives. - preuve entraînement : INVALIDE; - preuve correction   : INVALIDE; · [entraînement] ancre absente : #exercice-4----trouver-et-corriger-lerreur-o4 (ancres existantes p.ex. : activité-dentrée, capacités-officielles-atomiques, corrigé, critères-de-réussite, différenciation, erreurs-fréquentes)",
+      "verdict": "needs_review",
+      "justification": "Auto-dégradé (2 rôle(s) invalide(s)). [entraînement] ancre absente : #exercice-2----prédire-le-résultat-dune-conversion-o2 (ancres existantes p.ex. : activité-dentrée, capacités-officielles-atomiques, corrigé, critères-de-réussite, différenciation, erreurs-fréquentes); [correction] ancre absente : #corrigé-exercice-2----prédire-le-résultat-dune-conversion (ancres existantes p.ex. : activité-dentré",
       "scientific_flags": [
         "human_review_required"
       ]

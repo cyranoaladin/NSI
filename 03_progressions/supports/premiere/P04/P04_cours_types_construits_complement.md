@@ -39,6 +39,7 @@ official_program:
 - P-DATA-CONSTR-02C : Utiliser des tableaux de tableaux pour représenter des matrices
 - P-DATA-CONSTR-03A : Construire une entrée de dictionnaire
 - P-DATA-CONSTR-03B : Itérer sur les éléments d’un dictionnaire
+- P-DATA-CONSTR-03C : Utiliser les méthodes keys, values et items
 
 ## Prérequis
 - Connaître les types de base en Python (int, float, str, bool).
@@ -371,6 +372,81 @@ def trouver_cle(d, valeur_cherchee):
 
 ---
 
+## 6. P-DATA-CONSTR-03C : Utiliser les méthodes keys, values et items
+
+### Définition
+
+Les méthodes `keys()`, `values()` et `items()` d'un dictionnaire renvoient des objets vue (*view objects*) qui reflètent dynamiquement le contenu du dictionnaire. Contrairement à une liste, une vue n'est pas une copie : elle se met à jour automatiquement si le dictionnaire est modifié en dehors d'une itération.
+
+### Formalisation
+
+| Méthode | Type renvoyé | Contenu |
+|---------|-------------|---------|
+| `d.keys()` | `dict_keys` | toutes les clés |
+| `d.values()` | `dict_values` | toutes les valeurs |
+| `d.items()` | `dict_items` | tous les couples `(clé, valeur)` |
+
+Ces objets sont itérables et supportent le test d'appartenance avec `in`, mais ne sont **pas indexables** : `d.keys()[0]` provoque une `TypeError`. Pour obtenir une liste, on écrit `list(d.keys())`.
+
+### Exemple corrigé 1 — Extraire les clés d'un dictionnaire
+
+```python
+notes = {"Alice": 16, "Bob": 12, "Clara": 18}
+cles = notes.keys()
+print(cles)          # dict_keys(['Alice', 'Bob', 'Clara'])
+print("Alice" in cles)  # True
+```
+
+- Donnée étudiée : `notes`, trois entrées.
+- Résultat obtenu : un objet `dict_keys` contenant les trois prénoms.
+
+### Exemple corrigé 2 — Calculer une moyenne avec values
+
+```python
+notes = {"Alice": 16, "Bob": 12, "Clara": 18}
+total = sum(notes.values())
+moyenne = total / len(notes)
+print(moyenne)  # 15.333333333333334
+```
+
+- Donnée étudiée : `notes.values()` renvoie `dict_values([16, 12, 18])`.
+- Résultat obtenu : la somme vaut 46, la moyenne vaut environ 15.33.
+
+### Exemple corrigé 3 — Trouver le maximum avec items
+
+```python
+notes = {"Alice": 16, "Bob": 12, "Clara": 18}
+meilleur_nom = ""
+meilleur_note = -1
+for nom, note in notes.items():
+    if note > meilleur_note:
+        meilleur_note = note
+        meilleur_nom = nom
+print(f"{meilleur_nom} : {meilleur_note}")  # Clara : 18
+```
+
+- Donnée étudiée : les couples `(nom, note)` via `items()`.
+- Résultat obtenu : Clara avec 18.
+
+### Exemple corrigé 4 — Vue dynamique
+
+```python
+d = {"x": 1, "y": 2}
+vue = d.keys()
+print(list(vue))  # ['x', 'y']
+d["z"] = 3
+print(list(vue))  # ['x', 'y', 'z']  — la vue reflète l'ajout
+```
+
+- Point clé : `vue` n'est pas une copie figée ; elle suit le dictionnaire.
+
+### Cas limites
+
+- Sur un dictionnaire vide, `d.keys()`, `d.values()` et `d.items()` renvoient des vues vides (itérables, longueur 0).
+- Modifier le dictionnaire **pendant** une itération sur une vue provoque `RuntimeError`. Solution : itérer sur `list(d.keys())` si des modifications sont nécessaires.
+
+---
+
 ## Synthèse
 
 | Capacité | Structure | Opération clé |
@@ -380,6 +456,7 @@ def trouver_cle(d, valeur_cherchee):
 | P-DATA-CONSTR-02C | Liste de listes | `matrice[i][j]` |
 | P-DATA-CONSTR-03A | Dictionnaire | `d[cle] = valeur` |
 | P-DATA-CONSTR-03B | Dictionnaire | `for k, v in d.items()` |
+| P-DATA-CONSTR-03C | Dictionnaire | `d.keys()`, `d.values()`, `d.items()` |
 
 
 ## Situation-problème

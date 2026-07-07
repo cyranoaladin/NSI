@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-06T06:07:33Z",
+  "judged_at": "2026-07-07T08:54:18Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -10,28 +10,28 @@
       "capacity_id": "P-DATA-BASE-03",
       "official_label": "Calculer sur quelques exemples la représentation de nombres réels simples.",
       "proof_course": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P03/P03_cours_texte_reels.md",
+        "anchor": "#exemple-corrigé-5--conversion-de-075-en-binaire",
+        "quote": "Méthode par multiplications successives de la partie fractionnaire :\n\n```\n0.75 × 2 = 1.5  → bit 1, reste 0.5\n0.5  × 2 = 1.0  → bit 1, reste 0.0\n```\n\nRésultat : 0.75₁₀ = 0.11₂ = 1.1₂ × 2⁻¹. La représentation est **exacte** en binaire.",
+        "teaches": true
       },
       "proof_practice": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P03/P03_td_texte_reels.md",
+        "anchor": "#exercice-9--représentation-de-nombres-réels-en-binaire-p-data-base-03",
+        "quote": "**Question 9a.** Convertir 0.75 en binaire par la méthode des multiplications successives. La représentation est-elle exacte ?\n\n**Question 9b.** Convertir 0.1 en binaire (5 premières étapes). Le développement est-il fini ? Quel est le résultat de `0.1 + 0.2` en Python ?",
+        "teaches": true
       },
       "proof_correction": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P03/P03_td_texte_reels.md",
+        "anchor": "#corrigé-exercice-9",
+        "quote": "**9b.** 0.1 × 2 = 0.2 → 0 ; 0.2 × 2 = 0.4 → 0 ; 0.4 × 2 = 0.8 → 0 ; 0.8 × 2 = 1.6 → 1, reste 0.6 ; 0.6 × 2 = 1.2 → 1, reste 0.2. Le cycle se répète à l'infini : 0.1₁₀ = 0.00011001100…₂. En Python, `0.1 + 0.2` donne `0.30000000000000004`.",
+        "teaches": true
       },
-      "verdict": "needs_content",
-      "justification": "Verdict campagne Sonnet 4.6.",
+      "verdict": "needs_review",
+      "justification": "Le cours enseigne la méthode des multiplications successives avec plusieurs exemples chiffrés (0.75, 0.1, 5.625). Le TD fait pratiquer via l'exercice 9 avec des questions de conversion. Le corrigé de l'exercice 9 fournit les réponses détaillées étape par étape.",
       "scientific_flags": [
         "human_review_required"
       ]

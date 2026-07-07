@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-07T08:53:17Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -10,28 +10,28 @@
       "capacity_id": "P-DATA-BASE-02A",
       "official_label": "Evaluer le nombre de bits nécessaires à l'écriture en base 2 d'un entier, d'une somme ou d'un produit.",
       "proof_course": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md",
+        "anchor": "#évaluer-le-nombre-de-bits-nécessaires-en-base-2",
+        "quote": "Un entier naturel `n` (n ≥ 1) s'écrit en base 2 avec exactement `⌊log₂(n)⌋ + 1` bits. En pratique, on cherche la plus petite puissance de 2 strictement supérieure à `n`.",
+        "teaches": true
       },
       "proof_practice": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P02/P02_td_complement_booleens.md",
+        "anchor": "#exercice-9--évaluer-le-nombre-de-bits-nécessaires-p-data-base-02a",
+        "quote": "**Question 9a.** Combien de bits sont nécessaires pour écrire 200 en base 2 ? Justifier par la méthode des divisions successives.",
+        "teaches": true
       },
       "proof_correction": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P02/P02_td_complement_booleens.md",
+        "anchor": "#corrigé-exercice-9",
+        "quote": "**9a.** 200 ÷ 2 = 100, 100 ÷ 2 = 50, 50 ÷ 2 = 25, 25 ÷ 2 = 12 r1, 12 ÷ 2 = 6, 6 ÷ 2 = 3, 3 ÷ 2 = 1 r1, 1 ÷ 2 = 0 r1. On a effectué 8 divisions, donc 200 nécessite **8 bits**.",
+        "teaches": true
       },
-      "verdict": "needs_content",
-      "justification": "La capacité P-DATA-BASE-02A telle que définie officiellement porte sur l'évaluation du nombre de bits nécessaires à l'écriture en base 2 d'un entier, d'une somme ou d'un produit. Or, tous les fichiers P02 traitent du décodage/encodage en complément à deux (entiers signés), des bornes d'intervalles sur n bits, et des tables de vérité booléennes. Aucun extrait n'enseigne, ne fait pratiquer ni ne corrige la capacité spécifique d'évaluer le nombre de bits nécessaires pour représenter un entier, une somme ou un produit en base 2. L'étiquette P-DATA-BASE-02A est présente dans les fichiers mais le...",
+      "verdict": "needs_review",
+      "justification": "Le cours enseigne la règle du nombre de bits (log₂ et divisions successives) avec des exemples pour entiers, sommes et produits. Le TD fait pratiquer via l'exercice 9 avec des questions sur 200, 1023, somme et produit. Le corrigé de l'exercice 9 fournit les réponses détaillées.",
       "scientific_flags": [
         "human_review_required"
       ]

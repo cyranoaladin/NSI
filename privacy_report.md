@@ -372,6 +372,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P01/code/P01_corrige_professeur_conversions_bases.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P01/code/P01_starter_conversions_bases.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P01/code/P01_tests_attendus_conversions_bases.py: nom propre suspect -> Asset Python
+- 03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md: nom propre suspect -> En Python
 - 03_progressions/supports/premiere/P02/P02_tp_tables_verite_booleennes.md: nom propre suspect -> En Python
 - 03_progressions/supports/premiere/P02/P02_tp_tables_verite_booleennes.md: nom propre suspect -> Script Python
 - 03_progressions/supports/premiere/P02/code/P02_corrige_professeur_complement_booleens.py: nom propre suspect -> Asset Python
@@ -399,6 +400,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P03/P03_remediation_texte_reels.md: nom propre suspect -> Texte Unicode
 - 03_progressions/supports/premiere/P03/P03_td_texte_reels.md: nom propre suspect -> Texte Unicode
 - 03_progressions/supports/premiere/P03/P03_td_texte_reels.md: nom propre suspect -> Texte Unicode
+- 03_progressions/supports/premiere/P03/P03_td_texte_reels.md: nom propre suspect -> En Python
 - 03_progressions/supports/premiere/P03/P03_tp_conversion_encodages_texte.md: nom propre suspect -> Script Python
 - 03_progressions/supports/premiere/P03/P03_tp_texte_reels.md: nom propre suspect -> Texte Unicode
 - 03_progressions/supports/premiere/P03/P03_tp_texte_reels.md: nom propre suspect -> Texte Unicode
@@ -412,6 +414,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P04/P04_tp_types_construits_complement.md: nom propre suspect -> Module Python
 - 03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md: nom propre suspect -> Fonctions Python
 - 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md: nom propre suspect -> Assets Python
-- 03_progressions/supports/premiere/P07/P07_tp_fonctions_tests_specifications.md: nom propre suspect -> Assets Python
-- 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md: nom propre suspect -> Assets Python
-- ... 385 alertes supplémentaires non affichées
+- ... 388 alertes supplémentaires non affichées

@@ -79,6 +79,65 @@ Un capteur transmet un octet qui peut représenter une température signée ou u
 - Méthode : dresser les quatre lignes de vérité.
 - Résultat obtenu : `a`.
 - Contrôle : le cas limite « un exemple ne prouve pas une identité » est vérifié séparément.
+## Évaluer le nombre de bits nécessaires en base 2
+
+La capacité P-DATA-BASE-02A demande d'évaluer le nombre de bits nécessaires à l'écriture en base 2 d'un entier naturel, d'une somme ou d'un produit. Les tailles courantes sont 8, 16, 32 et 64 bits.
+
+### Règle fondamentale
+
+Un entier naturel `n` (n ≥ 1) s'écrit en base 2 avec exactement `⌊log₂(n)⌋ + 1` bits. En pratique, on cherche la plus petite puissance de 2 strictement supérieure à `n`.
+
+| Entier `n` | Écriture binaire | Nombre de bits |
+|-----------|-----------------|---------------|
+| 0 | `0` | 1 |
+| 1 | `1` | 1 |
+| 7 | `111` | 3 |
+| 8 | `1000` | 4 |
+| 255 | `11111111` | 8 |
+| 256 | `100000000` | 9 |
+| 1000 | `1111101000` | 10 |
+
+### Méthode par divisions successives
+
+Pour trouver le nombre de bits de `n` sans logarithme, on divise `n` par 2 de façon répétée et on compte les divisions :
+
+```
+n = 200
+200 ÷ 2 = 100   → bit 0
+100 ÷ 2 = 50    → bit 1
+50  ÷ 2 = 25    → bit 2
+25  ÷ 2 = 12 r1 → bit 3
+12  ÷ 2 = 6     → bit 4
+6   ÷ 2 = 3     → bit 5
+3   ÷ 2 = 1 r1  → bit 6
+1   ÷ 2 = 0 r1  → bit 7
+→ 200 nécessite 8 bits
+```
+
+### Évaluer les bits d'une somme
+
+La somme de deux entiers peut nécessiter un bit de plus que le plus grand des deux. Exemples :
+
+- `120 + 100 = 220` : les deux tiennent sur 7 bits, la somme tient sur 8 bits.
+- `200 + 200 = 400` : chacun tient sur 8 bits, la somme nécessite 9 bits.
+
+Règle : si `a` et `b` tiennent sur `k` bits, leur somme tient sur au plus `k + 1` bits.
+
+### Évaluer les bits d'un produit
+
+Le produit de deux entiers peut nécessiter la somme des nombres de bits. Exemples :
+
+- `15 × 15 = 225` : chacun sur 4 bits, le produit tient sur 8 bits.
+- `255 × 255 = 65025` : chacun sur 8 bits, le produit tient sur 16 bits.
+
+Règle : si `a` tient sur `p` bits et `b` sur `q` bits, le produit `a × b` tient sur au plus `p + q` bits.
+
+### Cas limites
+
+- L'entier 0 ne nécessite qu'un bit (par convention).
+- En Python les entiers sont de taille arbitraire ; la contrainte de taille fixe (8, 16, 32, 64 bits) est celle du matériel.
+- Un débordement se produit quand le résultat dépasse la capacité du registre.
+
 ## Objectif O1 - Identifier précisément la représentation ou la structure en jeu
 - Capacité mobilisée : P-DATA-BASE-02A.
 - Point de départ : `11110110` sur 8 bits.
