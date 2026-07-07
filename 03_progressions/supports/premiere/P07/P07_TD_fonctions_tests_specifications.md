@@ -175,8 +175,8 @@ official_program:
 ### Corrigé exercice 9
 - Capacité mobilisée : P-LANG-02.
 - Résultat attendu : traits communs (fonction nommée, paramètres, return) ; traits Python (indentation, typage dynamique) ; type retour (Python optionnel, JS implicite, C obligatoire).
-- Justification : la tâche `comparer trois versions de la même fonction` s applique à `def prix_ttc / function prix_ttc / float prix_ttc` ; erreur évitée : confondre syntaxe et sémantique.
-- Donnée utilisée iota dans P07 TD fonctions tests specifications : cas iota de l exercice 9 avec les trois versions Python, JavaScript et C.
+- Justification : la tâche `comparer trois versions de la même fonction` s'applique à `def prix_ttc / function prix_ttc / float prix_ttc` ; erreur évitée : confondre syntaxe et sémantique.
+- Donnée utilisée iota dans P07 TD fonctions tests specifications : cas iota de l'exercice 9 avec les trois versions Python, JavaScript et C.
 - Méthode iota dans P07 TD fonctions tests specifications : comparaison ligne par ligne, extraction des éléments syntaxiques communs et divergents.
 - Résultat iota dans P07 TD fonctions tests specifications : tableau traits communs (3) et traits particuliers (2) avec citation du code source.
 - Contrôle iota dans P07 TD fonctions tests specifications : le cas limite « langage fonctionnel sans return explicite » est discuté.
@@ -184,8 +184,8 @@ official_program:
 ### Corrigé exercice 10
 - Capacité mobilisée : P-LANG-05.
 - Résultat attendu : `math.sqrt(2)*5` ≈ 7.07 ; `math.floor(3.7)` → 3, `math.floor(-3.2)` → −4 ; floor vers −∞, ceil vers +∞.
-- Justification : la tâche `utiliser la documentation du module math` s applique à `math.sqrt, math.floor, math.ceil` ; erreur évitée : confondre floor et troncature vers zéro.
-- Donnée utilisée kappa dans P07 TD fonctions tests specifications : cas kappa de l exercice 10 avec les fonctions sqrt, floor et ceil du module math.
+- Justification : la tâche `utiliser la documentation du module math` s'applique à `math.sqrt, math.floor, math.ceil` ; erreur évitée : confondre floor et troncature vers zéro.
+- Donnée utilisée kappa dans P07 TD fonctions tests specifications : cas kappa de l'exercice 10 avec les fonctions sqrt, floor et ceil du module math.
 - Méthode kappa dans P07 TD fonctions tests specifications : import du module, consultation de help(), exécution et comparaison des résultats.
 - Résultat kappa dans P07 TD fonctions tests specifications : diagonale calculée, résultats floor/ceil vérifiés sur positifs et négatifs.
 - Contrôle kappa dans P07 TD fonctions tests specifications : le cas limite `math.floor(-3.0) → −3` (entier exact, pas d'arrondi) est vérifié.
