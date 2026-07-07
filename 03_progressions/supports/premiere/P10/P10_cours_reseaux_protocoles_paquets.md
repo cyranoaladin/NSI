@@ -102,6 +102,83 @@ src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24
 - TP : `P10_tp_reseaux_protocoles_paquets.md`.
 - Évaluation : `P10_evaluation_reseaux_protocoles_paquets.md`.
 
+## Identifier le rôle des capteurs et actionneurs
+
+La capacité P-ARCH-04A demande d'identifier le rôle des capteurs et actionneurs dans un système informatique. Les objets connectés et systèmes embarqués illustrent cette capacité.
+
+### Capteur
+
+Un **capteur** mesure une grandeur physique (température, luminosité, pression, distance) et la convertit en signal numérique exploitable par un programme. Exemples :
+- capteur de température (thermistance) → renvoie une valeur en degrés Celsius ;
+- capteur de luminosité (photorésistance) → renvoie une valeur entre 0 (obscurité) et 1023 (lumière maximale) ;
+- capteur ultrasonique → renvoie une distance en centimètres.
+
+### Actionneur
+
+Un **actionneur** reçoit une commande numérique et produit une action physique. Exemples :
+- LED → s'allume ou s'éteint selon un signal binaire (0 ou 1) ;
+- moteur → tourne à une vitesse proportionnelle à une valeur numérique ;
+- buzzer → émet un son à une fréquence donnée.
+
+### Chaîne capteur → traitement → actionneur
+
+Un système embarqué typique suit le schéma : le capteur mesure une grandeur, le programme la traite (seuil, moyenne, comparaison), puis commande un actionneur en réponse.
+
+Exemple concret : un capteur de température renvoie 32°C ; le programme compare au seuil 30°C ; l'actionneur (ventilateur) est activé.
+
+```python
+temperature = lire_capteur_temperature()   # capteur → valeur numérique
+if temperature > 30:
+    activer_ventilateur()                   # commande → actionneur
+```
+
+### Cas limites
+
+- Un capteur peut renvoyer une valeur aberrante (bruit) : il faut filtrer (moyenne sur plusieurs mesures).
+- Un actionneur sans capteur ne réagit pas à l'environnement : le programme fonctionne en boucle ouverte.
+
+## Réaliser une IHM par programmation
+
+La capacité P-ARCH-04B demande de réaliser par programmation une interface homme-machine (IHM) répondant à un cahier des charges. L'activité est bornée et reliée aux interactions Web ou objets.
+
+### Qu'est-ce qu'une IHM ?
+
+Une **interface homme-machine** est le moyen par lequel un utilisateur interagit avec un programme : saisir des données, cliquer sur un bouton, lire un résultat affiché. En Première NSI, on utilise des formulaires HTML ou des interfaces Python simples.
+
+### Exemple : formulaire HTML pour calculer un prix TTC
+
+Cahier des charges : l'utilisateur saisit un prix HT et un taux de TVA, clique sur « Calculer », et voit le résultat.
+
+```html
+<form id="ttc">
+  <label>Prix HT : <input type="number" id="prixHT" step="0.01"></label>
+  <label>Taux TVA : <input type="number" id="taux" step="0.01" value="0.20"></label>
+  <button type="button" onclick="calculer()">Calculer</button>
+  <p id="resultat"></p>
+</form>
+
+<script>
+function calculer() {
+    var ht = parseFloat(document.getElementById("prixHT").value);
+    var taux = parseFloat(document.getElementById("taux").value);
+    var ttc = ht * (1 + taux);
+    document.getElementById("resultat").textContent = "Prix TTC : " + ttc.toFixed(2) + " €";
+}
+</script>
+```
+
+### Éléments d'un cahier des charges IHM
+
+1. **Entrées** : quels champs l'utilisateur remplit (type, format, contraintes).
+2. **Traitement** : quel calcul ou action le programme effectue.
+3. **Sorties** : quel résultat est affiché et où.
+4. **Validation** : que se passe-t-il si l'utilisateur entre une valeur invalide.
+
+### Cas limites
+
+- Champ vide : le programme doit afficher un message d'erreur, pas un résultat `NaN`.
+- Valeur négative : selon le cahier des charges, soit rejeter soit traiter.
+
 ## Renforcement explicatif ciblé
 
 Ce cours doit être lu comme une progression sur réseaux, protocoles et paquets. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.

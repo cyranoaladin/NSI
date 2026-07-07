@@ -55,6 +55,16 @@ official_program:
 - Méthode : décrémenter TTL avant retransmission.
 - Cas limite : destination locale 192.168.1.34.
 
+### Exercice 9
+- Capacité mobilisée : P-ARCH-04A.
+- Réponse attendue : capteurs (température, humidité) mesurent des grandeurs physiques ; actionneurs (ventilateur, arrosage) produisent des actions. Pseudo-code boucle avec seuils. Valeur aberrante filtrée.
+- Cas limite : deux seuils atteints simultanément → deux actionneurs actifs en parallèle.
+
+### Exercice 10
+- Capacité mobilisée : P-ARCH-04B.
+- Réponse attendue : formulaire HTML avec 2 inputs + bouton + affichage. JavaScript split(".") et comparaison des 3 premiers octets. Tests : même réseau (/24) et réseaux différents.
+- Cas limite : champ vide → afficher message d'erreur.
+
 ## Corrigé du TP
 - Donnée : `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`.
 - Résultat principal : src=192.168.1.20 dst=172.16.0.8 TCP port 443 TTL 4.

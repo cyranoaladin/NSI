@@ -90,6 +90,22 @@ official_program:
 - Réponse attendue : taux=0 -> résultat 80.0.
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `taux=0`.
 
+### Exercice 9
+- Type : lecture/analyse.
+- Capacité officielle : P-LANG-02.
+- Données : trois versions de la fonction `prix_ttc` — en Python (`def prix_ttc(prix_ht, taux): return prix_ht * (1 + taux)`), en JavaScript (`function prix_ttc(prix_ht, taux) { return prix_ht * (1 + taux); }`), en C (`float prix_ttc(float prix_ht, float taux) { return prix_ht * (1 + taux); }`).
+- Consigne : (9a) identifier trois traits communs aux trois langages ; (9b) identifier deux traits particuliers à Python par rapport aux deux autres ; (9c) pour chaque langage, préciser comment le type de retour est indiqué.
+- Réponse attendue : traits communs (fonction nommée, paramètres, return) ; traits Python (indentation significative, pas de type obligatoire) ; type retour (Python : annotation optionnelle, JS : implicite, C : obligatoire `float`).
+- Critère de réussite : au moins 3 traits communs cités, 2 traits particuliers, justification par citation du code.
+
+### Exercice 10
+- Type : production/écriture.
+- Capacité officielle : P-LANG-05.
+- Données : le module `math` de Python (fonctions `math.sqrt`, `math.floor`, `math.ceil`, `math.pi`).
+- Consigne : (10a) écrire un programme qui utilise `math.sqrt` pour calculer la diagonale d'un carré de côté 5 (formule : côté × √2) ; (10b) utiliser `help(math.floor)` pour décrire ce que fait `math.floor` puis calculer `math.floor(3.7)` et `math.floor(-3.2)` ; (10c) expliquer la différence entre `math.floor` et `math.ceil` en utilisant la documentation.
+- Réponse attendue : (10a) `math.sqrt(2) * 5` ≈ 7.07 ; (10b) `math.floor(3.7)` → 3, `math.floor(-3.2)` → −4 ; (10c) floor arrondit vers −∞, ceil vers +∞.
+- Critère de réussite : import correct, fonction appelée avec bons arguments, résultat vérifié, documentation citée.
+
 ## Corrigé
 ### Corrigé exercice 1
 - Capacité mobilisée : P-LANG-01.
@@ -155,6 +171,18 @@ official_program:
 - Méthode theta dans P07 TD fonctions tests specifications : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
 - Résultat theta dans P07 TD fonctions tests specifications : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
 - Contrôle theta dans P07 TD fonctions tests specifications : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+### Corrigé exercice 9
+- Capacité mobilisée : P-LANG-02.
+- Résultat attendu : traits communs (fonction nommée, paramètres, return) ; traits Python (indentation, typage dynamique) ; type retour (Python optionnel, JS implicite, C obligatoire).
+- Justification : comparaison ligne par ligne des trois codes.
+- Cas limite : un langage fonctionnel n'utiliserait pas return explicite.
+
+### Corrigé exercice 10
+- Capacité mobilisée : P-LANG-05.
+- Résultat attendu : `math.sqrt(2)*5` ≈ 7.07 ; `math.floor(3.7)` → 3, `math.floor(-3.2)` → −4 ; floor vers −∞, ceil vers +∞.
+- Justification : import module, consultation help(), exécution et comparaison.
+- Cas limite : `math.floor(-3.0)` → −3 (entier exact).
 
 ## Erreurs fréquentes
 - test unique non suffisant.
