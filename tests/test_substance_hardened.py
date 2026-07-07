@@ -11,6 +11,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from typing import Any
 
 from scripts.check_substance_anchors import (
     check_capacity,
@@ -158,30 +159,30 @@ class TestSubstanceHardened(unittest.TestCase):
 
     _DUP_VERDICT: dict = {
         "schema_version": "1.0.0",
-        "unit": "test-dup",
+        "unit": "P05_dup",
         "level": "premiere",
         "judged_at": "2026-01-01T00:00:00Z",
-        "judge_model": "test",
-        "author_model": "test-author",
+        "judge_model": "test_judge",
+        "author_model": "test_author",
         "capacities": [
             {
-                "capacity_id": "DUP-01",
-                "official_label": "Capacité dupliquée",
+                "capacity_id": "P-DUP-01",
+                "official_label": "Capacite dupliquee pour test de doublon intra-fichier.",
                 "proof_course": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
                 "proof_practice": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
                 "proof_correction": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
                 "verdict": "needs_content",
-                "justification": "Test",
+                "justification": "Doublon de test : premiere occurrence de la capacite dupliquee.",
                 "scientific_flags": [],
             },
             {
-                "capacity_id": "DUP-01",
-                "official_label": "Capacité dupliquée (bis)",
+                "capacity_id": "P-DUP-01",
+                "official_label": "Capacite dupliquee pour test de doublon intra-fichier (bis).",
                 "proof_course": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
                 "proof_practice": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
                 "proof_correction": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
                 "verdict": "needs_content",
-                "justification": "Test bis",
+                "justification": "Doublon de test : seconde occurrence de la capacite dupliquee.",
                 "scientific_flags": [],
             },
         ],
@@ -235,60 +236,190 @@ class TestSubstanceHardened(unittest.TestCase):
         self.assertTrue(errors, "validate_verdict_file must reject duplicate capacity_id")
         self.assertTrue(any("DOUBLON" in e for e in errors))
 
-    # ── VERT: needs_content sans preuves est promouvable ──
-    def test_needs_content_verdict_is_promotable(self):
-        """A schema-valid needs_content verdict (file=None, present=False)
-        must pass validate_verdict_file — it is promotable."""
-        verdict = {
-            "schema_version": "1.0.0",
-            "unit": "P05_test",
-            "level": "premiere",
+    # ── FIX 1: non-dict root on ALL paths ──
+
+    def test_non_dict_root_all_paths(self):
+        """Non-dict JSON roots ([], null, "str", 42) must produce a blocking
+        error on BOTH the direct gate and the CLI, with ZERO traceback."""
+        schema_path = Path(__file__).resolve().parents[1] / "substance_verdict.schema.json"
+        repo_cwd = str(Path(__file__).resolve().parents[1])
+        for bad_root in [[], None, "string", 42]:
+            label = repr(bad_root)
+            # (a) validate_verdict_data — direct gate
+            errors = validate_verdict_data(bad_root, schema_path)
+            self.assertTrue(errors, f"Direct gate must reject root={label}")
+            self.assertIn("objet", errors[0])
+            # (b) CLI single-file
+            verdict_path = Path(self.tmpdir) / "bad_root.json"
+            verdict_path.write_text(json.dumps(bad_root), encoding="utf-8")
+            result = subprocess.run(
+                [sys.executable, "-m", "scripts.check_substance_anchors",
+                 str(verdict_path), "--repo-root", self.tmpdir],
+                cwd=repo_cwd, text=True,
+                stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+            )
+            self.assertNotEqual(result.returncode, 0,
+                                f"CLI must reject root={label}: {result.stdout}")
+            self.assertNotIn("Traceback", result.stdout,
+                             f"CLI must not traceback on root={label}")
+
+    # ── FIX 2: schema before deep checks ──
+
+    def test_proof_course_null_returns_schema_error(self):
+        """proof_course:null must produce a schema error, not an exception."""
+        schema_path = Path(__file__).resolve().parents[1] / "substance_verdict.schema.json"
+        bad_verdict = {
+            "schema_version": "1.0.0", "unit": "P05_test", "level": "premiere",
             "judged_at": "2026-01-01T00:00:00Z",
-            "judge_model": "test-judge",
-            "author_model": "test-author",
-            "capacities": [
-                {
-                    "capacity_id": "P-PROMO-01",
-                    "official_label": "Capacite promotable",
-                    "proof_course": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
-                    "proof_practice": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
-                    "proof_correction": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
-                    "verdict": "needs_content",
-                    "justification": "Aucune preuve verifiable retenue par le juge de substance.",
-                    "scientific_flags": [],
-                },
-            ],
+            "judge_model": "test", "author_model": "test-author",
+            "capacities": [{
+                "capacity_id": "P-NULL-01", "official_label": "Test null proof",
+                "proof_course": None,
+                "proof_practice": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
+                "proof_correction": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
+                "verdict": "needs_content", "justification": "Test null proof_course.",
+                "scientific_flags": [],
+            }],
         }
+        errors = validate_verdict_data(bad_verdict, schema_path, repo_root=self.root)
+        self.assertTrue(errors, "proof_course:null must produce schema errors")
+        self.assertTrue(any("schéma" in e for e in errors))
+
+    # ── FIX 3: BLOCKER parity ──
+
+    def test_blocker_verdict_rejected_by_direct_gate(self):
+        """A capacity declaring verdict:BLOCKER must be rejected by the direct
+        gate, matching CLI behavior."""
+        schema_path = Path(__file__).resolve().parents[1] / "substance_verdict.schema.json"
+        blocker = {
+            "schema_version": "1.0.0", "unit": "P05_test", "level": "premiere",
+            "judged_at": "2026-01-01T00:00:00Z",
+            "judge_model": "test", "author_model": "test-author",
+            "capacities": [{
+                "capacity_id": "P-BLOCK-01", "official_label": "Blocker test",
+                "proof_course": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
+                "proof_practice": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
+                "proof_correction": {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False},
+                "verdict": "BLOCKER",
+                "justification": "Incoherence bloquante detectee par le juge de substance sur cette capacite.",
+                "scientific_flags": [],
+            }],
+        }
+        errors = validate_verdict_data(blocker, schema_path, repo_root=self.root)
+        self.assertTrue(errors, "BLOCKER verdict must be rejected by direct gate")
+        self.assertTrue(any("BLOCKER" in e for e in errors))
+
+    # ── FIX 4: gate parity — direct vs CLI ──
+
+    def _cli_accepts(self, verdict_data: Any) -> bool:
+        """Run CLI single-file and return True if exit code == 0."""
+        path = Path(self.tmpdir) / "parity_test.json"
+        path.write_text(json.dumps(verdict_data), encoding="utf-8")
+        result = subprocess.run(
+            [sys.executable, "-m", "scripts.check_substance_anchors",
+             str(path), "--repo-root", self.tmpdir],
+            cwd=str(Path(__file__).resolve().parents[1]),
+            text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+        )
+        return result.returncode == 0
+
+    def _direct_accepts(self, verdict_data: Any) -> bool:
+        """Run validate_verdict_data and return True if errors is empty."""
+        schema_path = Path(__file__).resolve().parents[1] / "substance_verdict.schema.json"
+        errors = validate_verdict_data(verdict_data, schema_path, repo_root=self.root)
+        return len(errors) == 0
+
+    def _make_full_verdict(self, **cap_overrides) -> dict:
+        """Build a minimal schema-valid verdict envelope."""
+        absent = {"present": False, "file": None, "anchor": None, "quote": None, "teaches": False}
+        cap = {
+            "capacity_id": "P-PARITY-01", "official_label": "Parity test",
+            "proof_course": dict(absent), "proof_practice": dict(absent),
+            "proof_correction": dict(absent),
+            "verdict": "needs_content",
+            "justification": "Aucune preuve verifiable retenue par le juge de substance.",
+            "scientific_flags": [],
+        }
+        cap.update(cap_overrides)
+        return {
+            "schema_version": "1.0.0", "unit": "P05_test", "level": "premiere",
+            "judged_at": "2026-01-01T00:00:00Z",
+            "judge_model": "test", "author_model": "test-author",
+            "capacities": [cap],
+        }
+
+    def test_gate_parity_direct_vs_cli(self):
+        """For a battery of verdicts, validate_verdict_data (direct gate) and
+        CLI single-file must render the SAME accept/reject decision."""
+        cases = {
+            "needs_content_valid": (self._make_full_verdict(), True),
+            "duplicate_intra": (self._DUP_VERDICT, False),
+            "blocker_declared": (self._make_full_verdict(
+                verdict="BLOCKER",
+                justification="Incoherence bloquante detectee par le juge de substance sur cette capacite.",
+            ), False),
+            "proof_course_null": (self._make_full_verdict(
+                proof_course=None,
+            ), False),
+            "root_list": ([], False),
+            "root_null": (None, False),
+        }
+        for label, (verdict_data, expected_accept) in cases.items():
+            cli = self._cli_accepts(verdict_data)
+            direct = self._direct_accepts(verdict_data)
+            self.assertEqual(cli, direct,
+                             f"Parity broken for {label}: CLI={cli} direct={direct}")
+            self.assertEqual(cli, expected_accept,
+                             f"Wrong decision for {label}: got={cli} expected={expected_accept}")
+
+    # ── B1: BLOCKER rejected by BOTH gates side by side ──
+
+    def test_blocker_declared_rejected_by_both_gates(self):
+        """A schema-valid capacity declaring verdict:BLOCKER (no invalid proof)
+        must be rejected by BOTH validate_verdict_data AND CLI single-file."""
+        blocker = self._make_full_verdict(
+            verdict="BLOCKER",
+            justification="Incoherence bloquante detectee par le juge de substance sur cette capacite.",
+        )
+        # Direct gate
+        schema_path = Path(__file__).resolve().parents[1] / "substance_verdict.schema.json"
+        direct_errors = validate_verdict_data(blocker, schema_path, repo_root=self.root)
+        self.assertTrue(direct_errors, f"Direct gate must reject BLOCKER: {direct_errors}")
+        self.assertTrue(any("BLOCKER" in e for e in direct_errors))
+        # CLI gate
+        self.assertFalse(self._cli_accepts(blocker), "CLI must reject BLOCKER")
+
+    # ── FIX 5: validate_verdict_file exercises direct import path ──
+    # (test_intra_file_duplicate_validate_verdict_file above already does this)
+
+    # ── INVARIANT: needs_content promotable through full gate ──
+
+    def test_needs_content_promotable_through_full_gate(self):
+        """A needs_content verdict with 3 roles present:False, file:None must
+        pass the COMPLETE pre-promotion gate and be promotable.
+        This is the Phase K go/no-go invariant."""
+        verdict = self._make_full_verdict()
         verdict_path = Path(self.tmpdir) / "promotable.json"
         verdict_path.write_text(json.dumps(verdict), encoding="utf-8")
         errors = validate_verdict_file(verdict_path)
         self.assertEqual(errors, [],
-                         f"needs_content verdict should be promotable, got: {errors}")
+                         f"needs_content verdict must be promotable: {errors}")
 
     # ── ROUGE: donnees corrompues = echec bruyant ──
+
     def test_corrupted_data_fails_loudly(self):
         """Corrupted/unexpected data in capacities must produce errors,
         never be silently treated as valid."""
         schema_path = Path(__file__).resolve().parents[1] / "substance_verdict.schema.json"
-        # capacities is a string instead of a list
         corrupted = {"capacities": "not-a-list"}
         errors = validate_verdict_data(corrupted, schema_path)
         self.assertTrue(errors,
                         "Corrupted verdict must produce errors, not pass silently")
 
-
     def test_missing_schema_file_blocks_promotion(self):
         """When the schema file does not exist, validate_verdict_data must
         return errors (fail-closed), not silently pass."""
-        valid_verdict = {
-            "schema_version": "1.0.0",
-            "unit": "P05_test",
-            "level": "premiere",
-            "judged_at": "2026-01-01T00:00:00Z",
-            "judge_model": "test-judge",
-            "author_model": "test-author",
-            "capacities": [],
-        }
+        valid_verdict = self._make_full_verdict()
         missing_schema = Path(self.tmpdir) / "nonexistent.schema.json"
         errors = validate_verdict_data(valid_verdict, missing_schema)
         self.assertTrue(errors,

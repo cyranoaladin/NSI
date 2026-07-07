@@ -407,27 +407,48 @@ def check_intra_file_duplicates(verdict: dict[str, Any]) -> list[str]:
     ]
 
 
+def _check_verdict_root(verdict: Any) -> list[str]:
+    """Guard: reject non-dict JSON roots gracefully.
+
+    Shared by validate_verdict_data AND the CLI single-file/batch paths
+    so that [], null, "str", 42 never reach verdict.get(...).
+    """
+    if not isinstance(verdict, dict):
+        return [f"verdict JSON racine n'est pas un objet (type: {type(verdict).__name__})"]
+    return []
+
+
 def validate_verdict_data(
-    verdict: dict[str, Any],
+    verdict: Any,
     schema_path: Path,
     repo_root: Path | None = None,
 ) -> list[str]:
-    """Validate a verdict dict: schema, intra-file duplicates, and anchors.
+    """Validate a verdict: schema, intra-file duplicates, and anchors.
 
     Returns list of error messages (empty = valid, promotable).
     Fail-closed: infrastructure errors (jsonschema absent, schema file missing)
     are treated as blocking — never silently dropped.
 
-    When repo_root is provided, also runs per-capacity anchor/quote checks
-    (the same logic as single-file mode). This is the full pre-promotion gate
-    used by judge_campaign.py validate_verdict_file().
+    Parity contract: for any input, this function returns errors iff the CLI
+    single-file mode (python -m scripts.check_substance_anchors FILE) would
+    exit with code != 0. Same accept/reject decision.
+
+    When repo_root is provided, also runs per-capacity anchor/quote checks.
     """
-    if not isinstance(verdict, dict):
-        return [f"verdict JSON racine n'est pas un objet (type: {type(verdict).__name__})"]
+    root_errors = _check_verdict_root(verdict)
+    if root_errors:
+        return root_errors
     errors = validate_schema(verdict, schema_path)
+    # Fail-closed: ANY schema error blocks deep checks. This includes:
+    # - "schéma @" validation errors (proof_course:null, etc.)
+    # - "jsonschema absent" (library not installed)
+    # - "schéma introuvable" (schema file missing)
+    # A malformed verdict must never reach check_capacity.
     dup_errors = check_intra_file_duplicates(verdict)
     all_errors = errors + dup_errors
-    # Full per-capacity checks (anchors, quotes, degradation signals)
+    if all_errors:
+        return all_errors
+    # Full per-capacity checks (anchors, quotes, degradation, BLOCKER)
     if repo_root is not None:
         official = load_official_labels(repo_root)
         section_cache: dict[Path, dict[str, Section]] = {}
@@ -436,16 +457,20 @@ def validate_verdict_data(
             if not isinstance(cap, dict):
                 continue
             result = check_capacity(cap, repo_root, official, section_cache)
-            # Blocking signals: invalid proofs (present but not verified)
-            # and verdict degradation (validated_pedagogy unsupported)
+            # Invalid proofs (present but not verified)
             for p in result.proofs:
                 if p.present and not p.verified:
                     for msg in p.messages:
                         all_errors.append(f"[{p.role}] {msg}")
+            # Degradation (validated_pedagogy unsupported)
             if result.downgraded:
                 all_errors.append(
                     f"{result.capacity_id}: DÉGRADÉ {result.declared_verdict}"
                     f" → {result.effective_verdict}")
+            # BLOCKER verdict — always rejected (parity with CLI n_blocker)
+            if result.effective_verdict == "BLOCKER":
+                all_errors.append(
+                    f"{result.capacity_id}: verdict BLOCKER")
     return all_errors
 
 
@@ -515,6 +540,11 @@ def main() -> int:
         for rf in review_files:
             try:
                 vdata = json.loads(rf.read_text(encoding="utf-8"))
+                # J6-quater: shared root guard
+                root_errs = _check_verdict_root(vdata)
+                if root_errs:
+                    failures.extend(f"{msg} dans {rf.relative_to(repo_root)}" for msg in root_errs)
+                    continue
                 # J6-ter: intra-file duplicates via shared function
                 for msg in check_intra_file_duplicates(vdata):
                     failures.append(f"{msg} dans {rf.relative_to(repo_root)}")
@@ -586,8 +616,16 @@ def main() -> int:
         print(f"ERREUR entrée : {exc}", file=sys.stderr)
         return 2
 
+    # J6-quater: shared root guard — same check as validate_verdict_data
+    root_errors = _check_verdict_root(verdict)
+    if root_errors:
+        for msg in root_errors:
+            print(f"ERREUR : {msg}", file=sys.stderr)
+        return 2
+
     schema_msgs = validate_schema(verdict, args.schema)
-    hard_schema_error = any(m.startswith("schéma @") for m in schema_msgs)
+    # Fail-closed: ANY schema error blocks deep checks (parity with validate_verdict_data)
+    hard_schema_error = bool(schema_msgs)
 
     # J6-ter: intra-file duplicate check (shared function, single-file path)
     dup_msgs = check_intra_file_duplicates(verdict)
@@ -596,12 +634,7 @@ def main() -> int:
     if dup_msgs:
         hard_schema_error = True
 
-    official = load_official_labels(repo_root)
-    section_cache: dict[Path, dict[str, Section]] = {}
-    results = [check_capacity(cap, repo_root, official, section_cache)
-               for cap in verdict.get("capacities", [])]
-
-    # --- rapport lisible ---
+    # --- rapport lisible (header) ---
     unit = verdict.get("unit", "?")
     print(f"=== Vérification de substance — unité {unit} "
           f"({verdict.get('level','?')}) ===")
@@ -612,6 +645,18 @@ def main() -> int:
     for m in schema_msgs:
         print(f"  schéma: {m}")
     print()
+
+    # J6-quater: schema errors block deep checks (parity with validate_verdict_data).
+    # A capacity with proof_course:null must not reach check_capacity.
+    if hard_schema_error:
+        print("=== Bilan ===")
+        print("Arrêt : erreur de schéma bloquante détectée.")
+        return 2
+
+    official = load_official_labels(repo_root)
+    section_cache: dict[Path, dict[str, Section]] = {}
+    results = [check_capacity(cap, repo_root, official, section_cache)
+               for cap in verdict.get("capacities", [])]
 
     n_validated = n_needs = n_blocker = n_downgraded = 0
     for r in results:
