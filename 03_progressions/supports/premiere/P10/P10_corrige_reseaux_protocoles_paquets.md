@@ -58,12 +58,14 @@ official_program:
 ### Exercice 9
 - Capacité mobilisée : P-ARCH-04A.
 - Réponse attendue : capteurs (température, humidité) mesurent des grandeurs physiques ; actionneurs (ventilateur, arrosage) produisent des actions. Pseudo-code boucle avec seuils. Valeur aberrante filtrée.
+- Méthode : classification capteur/actionneur, boucle de contrôle avec seuils, filtrage des valeurs aberrantes par moyenne ou rejet hors plage.
 - Cas limite : deux seuils atteints simultanément → deux actionneurs actifs en parallèle.
 
 ### Exercice 10
 - Capacité mobilisée : P-ARCH-04B.
-- Réponse attendue : formulaire HTML avec 2 inputs + bouton + affichage. JavaScript split(".") et comparaison des 3 premiers octets. Tests : même réseau (/24) et réseaux différents.
-- Cas limite : champ vide → afficher message d'erreur.
+- Réponse attendue : formulaire HTML avec 2 inputs + bouton + affichage. JavaScript split(".") et comparaison des 3 premiers octets avec validation des entrées. Tests : même réseau (/24) et réseaux différents.
+- Méthode : construction formulaire HTML, récupération getElementById, découpage split("."), validation longueur, comparaison octets.
+- Cas limite : champ vide → split renvoie un tableau trop court → afficher message d'erreur.
 
 ## Corrigé du TP
 - Donnée : `src=192.168.1.20, dst=172.16.0.8, TCP, port dst=443, TTL=4, LAN 192.168.1.0/24`.

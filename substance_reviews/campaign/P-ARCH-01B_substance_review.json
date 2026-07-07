@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-07T13:22:29Z",
+  "judged_at": "2026-07-07T18:39:01Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -31,7 +31,7 @@
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne le jeu d'instructions simplifié avec table de trace détaillée. L'exercice 9 du TD fait dérouler instruction par instruction une séquence SUB avec cas d'inversion. Le corrigé fournit la trace complète et le résultat de l'inversion.",
+      "justification": "Le cours enseigne le jeu d'instructions simplifié et la trace d'exécution avec exemple complet. L'exercice 9 du TD fait pratiquer le déroulement instruction par instruction. Le corrigé fournit la trace attendue et le cas d'inversion.",
       "scientific_flags": [
         "human_review_required"
       ]

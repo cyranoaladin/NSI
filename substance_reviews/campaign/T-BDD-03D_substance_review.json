@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-06T06:14:41Z",
+  "judged_at": "2026-07-07T18:39:28Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,8 +12,8 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md",
-        "anchor": "#exemples-corrigés",
-        "quote": "- Méthode : joindre Eleve.id_eleve = Note.id_eleve.\n- Résultat attendu : UPDATE id_note=10 -> Ada 18.\n- Contrôle : capacité T-BDD-03C et cas limite `DELETE sans WHERE`.",
+        "anchor": "#méthodes",
+        "quote": "- joindre Eleve.id_eleve = Note.id_eleve.",
         "teaches": true
       },
       "proof_practice": {
@@ -31,7 +31,7 @@
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours présente des exemples de JOIN avec condition explicite, le TD fait pratiquer la capacité T-BDD-03D (exercice 4 avec JOIN), et le corrigé fournit la réponse attendue avec méthode et cas limite. Les preuves sont cohérentes avec la capacité jugée.",
+      "justification": "Le cours enseigne la méthode JOIN, le TD fait pratiquer via l'exercice 4 tagué T-BDD-03D, et le corrigé fournit la réponse attendue pour cet exercice.",
       "scientific_flags": [
         "human_review_required"
       ]

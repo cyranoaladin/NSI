@@ -181,7 +181,7 @@ official_program:
 
 ### Corrigé exercice 10
 - Capacité mobilisée : P-ARCH-04B.
-- Résultat attendu : (10a) `<input id="ip1"> <input id="ip2"> <button onclick="verifier()">Vérifier</button> <p id="res"></p>`. (10b) `function verifier() { var a = document.getElementById("ip1").value.split("."); var b = document.getElementById("ip2").value.split("."); var meme = (a[0]==b[0] && a[1]==b[1] && a[2]==b[2]); document.getElementById("res").textContent = meme ? "Même réseau" : "Réseaux différents"; }`. (10c) 192.168.1.20 vs 192.168.1.34 → « Même réseau » ; 192.168.1.20 vs 10.0.0.5 → « Réseaux différents ».
+- Résultat attendu : (10a) `<input id="ip1"> <input id="ip2"> <button onclick="verifier()">Vérifier</button> <p id="res"></p>`. (10b) `function verifier() { var a = document.getElementById("ip1").value.split("."); var b = document.getElementById("ip2").value.split("."); if (a.length < 4 || b.length < 4) { document.getElementById("res").textContent = "Erreur : saisir deux adresses IP valides."; return; } var meme = (a[0]==b[0] && a[1]==b[1] && a[2]==b[2]); document.getElementById("res").textContent = meme ? "Même réseau" : "Réseaux différents"; }`. (10c) 192.168.1.20 vs 192.168.1.34 → « Même réseau » ; 192.168.1.20 vs 10.0.0.5 → « Réseaux différents ».
 - Justification : la tâche `réaliser une IHM répondant à un cahier des charges` exige un formulaire avec entrées, traitement JavaScript et affichage du résultat ; erreur évitée : oublier la validation des entrées.
 - Donnée utilisée kappa dans P10 TD reseaux protocoles paquets : deux adresses IP à comparer sur un réseau /24.
 - Méthode kappa dans P10 TD reseaux protocoles paquets : formulaire HTML, récupération des valeurs par getElementById, découpage split("."), comparaison des 3 premiers octets.
