@@ -2,21 +2,21 @@
   {
     "cap": "P-DATA-BASE-04",
     "seq": "P02",
-    "read": 23116,
-    "write": 18636,
+    "read": 24998,
+    "write": 20458,
     "fresh": 342,
-    "out": 1026,
-    "cost_usd": 0.093236,
+    "out": 996,
+    "cost_usd": 0.100183,
     "api_calls": 2
   },
   {
     "cap": "P-DATA-BASE-05B",
     "seq": "P03",
-    "read": 26194,
-    "write": 21714,
-    "fresh": 437,
-    "out": 929,
-    "cost_usd": 0.104532,
-    "api_calls": 4
+    "read": 2270,
+    "write": 23804,
+    "fresh": 86,
+    "out": 499,
+    "cost_usd": 0.097689,
+    "api_calls": 3
   }
 ]
