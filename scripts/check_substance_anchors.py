@@ -407,27 +407,46 @@ def check_intra_file_duplicates(verdict: dict[str, Any]) -> list[str]:
     ]
 
 
+def _check_verdict_root(verdict: Any) -> list[str]:
+    """Guard: reject non-dict JSON roots gracefully.
+
+    Shared by validate_verdict_data AND the CLI single-file/batch paths
+    so that [], null, "str", 42 never reach verdict.get(...).
+    """
+    if not isinstance(verdict, dict):
+        return [f"verdict JSON racine n'est pas un objet (type: {type(verdict).__name__})"]
+    return []
+
+
 def validate_verdict_data(
-    verdict: dict[str, Any],
+    verdict: Any,
     schema_path: Path,
     repo_root: Path | None = None,
 ) -> list[str]:
-    """Validate a verdict dict: schema, intra-file duplicates, and anchors.
+    """Validate a verdict: schema, intra-file duplicates, and anchors.
 
     Returns list of error messages (empty = valid, promotable).
     Fail-closed: infrastructure errors (jsonschema absent, schema file missing)
     are treated as blocking — never silently dropped.
 
-    When repo_root is provided, also runs per-capacity anchor/quote checks
-    (the same logic as single-file mode). This is the full pre-promotion gate
-    used by judge_campaign.py validate_verdict_file().
+    Parity contract: for any input, this function returns errors iff the CLI
+    single-file mode (python -m scripts.check_substance_anchors FILE) would
+    exit with code != 0. Same accept/reject decision.
+
+    When repo_root is provided, also runs per-capacity anchor/quote checks.
     """
-    if not isinstance(verdict, dict):
-        return [f"verdict JSON racine n'est pas un objet (type: {type(verdict).__name__})"]
+    root_errors = _check_verdict_root(verdict)
+    if root_errors:
+        return root_errors
     errors = validate_schema(verdict, schema_path)
+    # Schema errors block deep checks: a capacity with proof_course:null
+    # must not reach check_capacity which would crash on ev.get(...)
+    hard_schema = any(e.startswith("schéma @") for e in errors)
     dup_errors = check_intra_file_duplicates(verdict)
     all_errors = errors + dup_errors
-    # Full per-capacity checks (anchors, quotes, degradation signals)
+    if hard_schema:
+        return all_errors
+    # Full per-capacity checks (anchors, quotes, degradation, BLOCKER)
     if repo_root is not None:
         official = load_official_labels(repo_root)
         section_cache: dict[Path, dict[str, Section]] = {}
@@ -436,16 +455,20 @@ def validate_verdict_data(
             if not isinstance(cap, dict):
                 continue
             result = check_capacity(cap, repo_root, official, section_cache)
-            # Blocking signals: invalid proofs (present but not verified)
-            # and verdict degradation (validated_pedagogy unsupported)
+            # Invalid proofs (present but not verified)
             for p in result.proofs:
                 if p.present and not p.verified:
                     for msg in p.messages:
                         all_errors.append(f"[{p.role}] {msg}")
+            # Degradation (validated_pedagogy unsupported)
             if result.downgraded:
                 all_errors.append(
                     f"{result.capacity_id}: DÉGRADÉ {result.declared_verdict}"
                     f" → {result.effective_verdict}")
+            # BLOCKER verdict — always rejected (parity with CLI n_blocker)
+            if result.effective_verdict == "BLOCKER":
+                all_errors.append(
+                    f"{result.capacity_id}: verdict BLOCKER")
     return all_errors
 
 
@@ -584,6 +607,13 @@ def main() -> int:
         verdict = json.loads(args.verdict.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
         print(f"ERREUR entrée : {exc}", file=sys.stderr)
+        return 2
+
+    # J6-quater: shared root guard — same check as validate_verdict_data
+    root_errors = _check_verdict_root(verdict)
+    if root_errors:
+        for msg in root_errors:
+            print(f"ERREUR : {msg}", file=sys.stderr)
         return 2
 
     schema_msgs = validate_schema(verdict, args.schema)
