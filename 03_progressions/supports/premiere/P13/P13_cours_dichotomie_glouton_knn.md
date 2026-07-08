@@ -53,11 +53,11 @@ tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[
 - Méthode : calculer milieu puis réduire intervalle.
 - Résultat attendu : milieux 18 puis 37 -> trouvé indice 4.
 - Contrôle : capacité P-ALGO-03 et cas limite `cible absente`.
-### Exemple corrigé 2
-- Donnée : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`.
-- Méthode : montrer que droite-gauche diminue.
-- Résultat attendu : 28 -> 10+10+5+2+1.
-- Contrôle : capacité P-ALGO-04 et cas limite `pièce 1 absente`.
+### Exemple corrigé 2 - variant de dichotomie (P-ALGO-04)
+- Donnée : `tableau=[4,9,18,23,37,41], cible=37`.
+- Méthode : montrer que la quantité `droite - gauche` diminue strictement à chaque étape.
+- Résultat attendu : étape 1 → gauche=0, droite=5 (écart 5) ; étape 2 → gauche=3, droite=5 (écart 2) ; étape 3 → gauche=4, droite=5 (écart 1) → trouvé. Le variant décroît de 5 à 1, prouvant la terminaison.
+- Contrôle : capacité P-ALGO-04 et cas limite `cible absente → l'écart atteint 0 et la boucle s'arrête sans trouver`.
 ### Exemple corrigé 3 - glouton (P-ALGO-05)
 - Donnée : `pièces=[10,5,2,1], montant=28`.
 - Méthode : prendre la plus grande pièce possible à chaque étape.

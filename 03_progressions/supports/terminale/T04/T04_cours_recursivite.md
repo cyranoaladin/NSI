@@ -237,7 +237,7 @@ class ListeNombres:
 ### Cas limites
 
 - Python est **multi-paradigme** : on peut mélanger les trois styles dans un même programme.
-- La récursion (fonctionnel) peut déborder la pile en Python (pas d'optimisation tail-call).
+- La récursion (fonctionnel) a une limite de profondeur en Python : chaque appel empile un cadre d'appel, et au-delà de ~1000 appels imbriqués, Python lève `RecursionError`.
 - Un paradigme n'est pas intrinsèquement supérieur — le choix dépend du problème.
 
 ## Analyse de variantes disciplinaires

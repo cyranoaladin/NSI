@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-08T15:47:05Z",
+  "judged_at": "2026-07-08T21:31:51Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -20,18 +20,18 @@
         "present": true,
         "file": "03_progressions/supports/terminale/T04/T04_td_recursivite.md",
         "anchor": "#exercice-9",
-        "quote": "on donne trois implémentations de la somme d'une liste — impérative (boucle for), fonctionnelle (récursion sans variable mutable) et objet (méthode d'une classe ListeNombres). (9a) Identifier le paradigme de chaque version. (9b) Citer un trait distinctif de chaque paradigme visible dans le code.",
+        "quote": "on donne trois implémentations de la somme d'une liste — impérative (boucle for), fonctionnelle (récursion sans variable mutable) et objet (méthode d'une classe ListeNombres). (9a) Identifier le paradigme de chaque version.",
         "teaches": true
       },
       "proof_correction": {
-        "present": true,
-        "file": "03_progressions/supports/terminale/T04/T04_td_recursivite.md",
-        "anchor": "#corrigé-exercice-9",
-        "quote": "(9a) boucle for = impératif, récursion = fonctionnel, classe = objet. (9b) Impératif : variable `total` mutée dans la boucle. Fonctionnel : pas de variable mutable, résultat construit par retour récursif. Objet : données et méthode encapsulées dans `ListeNombres`.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "verdict": "needs_review",
-      "justification": "Le TD propose un exercice complet (ex. 9) faisant pratiquer la distinction des trois paradigmes sur des exemples de code, avec un corrigé détaillé. Aucun fichier de cours dédié n'enseigne explicitement cette capacité dans les extraits fournis.",
+      "justification": "Auto-dégradé (1 rôle(s) invalide(s)). [correction] citation introuvable sous #barème-question-5 (recouvrement tokens 0%) — possible hallucination",
       "scientific_flags": [
         "human_review_required"
       ]

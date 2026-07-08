@@ -1698,6 +1698,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T04/T04_bareme_recursivite.md | needs_review |
 | bareme | 03_progressions/supports/terminale/T14/T14_bareme_modularite_api_paradigmes_bugs.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T14/T14_corrige_modularite_api_paradigmes_bugs.md | needs_review |
 | cours | 03_progressions/supports/terminale/T14/T14_cours_modularite_api_paradigmes_bugs.md | needs_review |

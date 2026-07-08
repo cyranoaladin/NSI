@@ -120,7 +120,7 @@ La capacité P-IHM-04C demande de discuter les types de requêtes selon les vale
 |--------|-----|------|
 | Données visibles dans l'URL | Oui (`?nom=valeur&...`) | Non (corps de la requête) |
 | Historique du navigateur | Enregistrées | Non enregistrées |
-| Logs du serveur | Paramètres visibles | Paramètres non loggués par défaut |
+| Logs d'accès standard | Paramètres visibles dans l'URL | Corps non loggué par défaut (mais applications et proxies PEUVENT logguer les corps POST) |
 | Longueur maximale | Limitée (~2048 caractères) | Pas de limite pratique |
 | Mise en cache | Possible | Non |
 
@@ -152,7 +152,7 @@ La capacité P-IHM-03B demande de distinguer ce qui est mémorisé côté client
 
 ### Cookies
 
-Un **cookie** est un petit fichier texte stocké par le navigateur. Le serveur le crée via l'en-tête `Set-Cookie` ; le navigateur le renvoie automatiquement à chaque requête vers ce serveur. Usage : session de connexion, préférences, panier d'achat.
+Un **cookie** est un petit fichier texte stocké par le navigateur. Le serveur le crée via l'en-tête `Set-Cookie` ; le navigateur le renvoie automatiquement aux requêtes correspondant à son domaine et à son chemin (`Path`). Usage : session de connexion, préférences, panier d'achat.
 
 ```
 Set-Cookie: session_id=abc123; Path=/; HttpOnly; Secure
@@ -163,7 +163,7 @@ Set-Cookie: session_id=abc123; Path=/; HttpOnly; Secure
 
 ### localStorage et sessionStorage
 
-Le navigateur offre aussi `localStorage` (persistant) et `sessionStorage` (supprimé à la fermeture de l'onglet). Ces données ne sont **jamais** envoyées automatiquement au serveur — elles restent côté client.
+Le navigateur offre aussi `localStorage` (persistant) et `sessionStorage` (supprimé à la fermeture de l'onglet). Ces données ne sont **jamais** envoyées automatiquement au serveur — elles restent côté client. Le `localStorage` est cloisonné par **origine** (protocole + hôte + port) : `http://example.com` et `https://example.com` ont des espaces séparés.
 
 ```javascript
 localStorage.setItem("theme", "sombre");
