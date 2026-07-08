@@ -2,11 +2,23 @@
   {
     "cap": "P-HIST-01",
     "seq": "P14",
-    "read": 15184,
-    "write": 0,
+    "read": 0,
+    "write": 15237,
     "fresh": 92,
-    "out": 586,
-    "cost_usd": 0.013621,
-    "api_calls": 1
+    "out": 500,
+    "cost_usd": 0.064915,
+    "api_calls": 1,
+    "judged_at": "2026-07-08T10:14:39Z"
+  },
+  {
+    "cap": "T-HIST-01A",
+    "seq": "T19",
+    "read": 2346,
+    "write": 13877,
+    "fresh": 92,
+    "out": 574,
+    "cost_usd": 0.061629,
+    "api_calls": 1,
+    "judged_at": "2026-07-08T10:14:51Z"
   }
 ]

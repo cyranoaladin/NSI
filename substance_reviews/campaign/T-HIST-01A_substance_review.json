@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-08T08:54:05Z",
+  "judged_at": "2026-07-08T10:14:51Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -31,7 +31,7 @@
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours présente une frise chronologique détaillée avec protagonistes (T-HIST-01A). Le TD exercice 9 fait pratiquer la classification et le placement d'événements sur la frise. Le corrigé fournit les réponses attendues pour cet exercice.",
+      "justification": "Le cours fournit une frise chronologique détaillée avec protagonistes (T-HIST-01A). Le TD exercice 9 fait pratiquer la classification et le placement d'événements sur la frise. Le corrigé dédié valide les réponses attendues pour cet exercice.",
       "scientific_flags": [
         "human_review_required"
       ]
