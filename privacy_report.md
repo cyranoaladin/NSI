@@ -90,12 +90,12 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> John Mauchly
 - 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Presper Eckert
 - 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Jack Kilby
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Texas Instruments
 - 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Robert Noyce
 - 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Microprocesseur Intel
 - 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Ted Hoff
 - 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Federico Faggin
-- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Steve Jobs
-- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Steve Wozniak
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Chuck Peddle
 - 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> World Wide Web
 - 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Tim Berners-Lee
 - 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Tim Berners-Lee
