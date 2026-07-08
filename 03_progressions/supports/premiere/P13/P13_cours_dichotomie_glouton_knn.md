@@ -142,6 +142,8 @@ def distance(p1, p2):
 
 def knn(donnees, nouveau, k):
     """Prédit la classe du nouveau point par vote majoritaire des k plus proches voisins."""
+    if not donnees or k <= 0:
+        return None  # entrée dégénérée : pas de données ou k invalide
     distances = []
     for point in donnees:
         d = distance(nouveau, (point[0], point[1]))
@@ -157,6 +159,7 @@ def knn(donnees, nouveau, k):
 
 ### Cas limites
 
+- **Entrée vide ou k invalide** : la fonction renvoie `None` si les données sont vides ou si `k ≤ 0`. Le comportement sur entrée dégénérée est une décision de spécification — il faut le documenter explicitement.
 - **Égalité de vote** (k pair) : si deux classes ont le même nombre de voisins, le résultat dépend de l'ordre de tri. Solution : choisir k impair.
 - **k = 1** : le voisin le plus proche décide seul — sensible au bruit.
 - **k = n** (taille du dataset) : la classe majoritaire globale est toujours prédite — pas d'apprentissage local.

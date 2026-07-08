@@ -21,12 +21,12 @@ official_program:
 
 ## Objectifs
 - Travailler dichotomie, variant droite-gauche, glouton, choix local, k-NN.
-- Produire huit réponses vérifiables avec données explicites.
+- Produire neuf réponses vérifiables avec données explicites.
 
 ## Progression socle / standard / approfondissement
 - Socle : exercices 1 et 2.
 - Standard : exercices 3 à 6.
-- Approfondissement : exercices 7 et 8.
+- Approfondissement : exercices 7, 8 et 9.
 
 ## Exercices
 ### Exercice 1
@@ -89,7 +89,7 @@ official_program:
 ### Exercice 9
 - Type : production/écriture.
 - Capacité officielle : P-ALGO-03.
-- Données : données d'entraînement = [(2, 3, "A"), (5, 4, "B"), (1, 1, "A"), (8, 7, "B"), (3, 2, "A")]. Nouveau point = (4, 3). k = 3.
+- Données : données d'entraînement = [(2, 3, "A"), (5, 4, "B"), (1, 1, "A"), (8, 7, "B"), (3, 2, "A")]. Nouveau point = (4, 3). k = 3. ; jeu_exercice=iota
 - Consigne : (9a) calculer la distance euclidienne entre le nouveau point et chaque point d'entraînement ; (9b) identifier les 3 plus proches voisins ; (9c) déterminer la classe prédite par vote majoritaire ; (9d) que se passe-t-il si k = 2 et les deux voisins sont de classes différentes ?
 - Réponse attendue : distances calculées, 3 plus proches identifiés, classe prédite = "A", cas k=2 → égalité.
 - Critère de réussite : distances correctes, tri vérifié, vote majoritaire explicite, cas d'égalité traité.

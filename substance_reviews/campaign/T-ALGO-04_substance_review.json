@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-06T06:16:27Z",
+  "judged_at": "2026-07-08T07:30:08Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -10,28 +10,28 @@
       "capacity_id": "T-ALGO-04",
       "official_label": "Utiliser la programmation dynamique pour écrire un algorithme.",
       "proof_course": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/terminale/T17/T17_cours_programmation_dynamique.md",
+        "anchor": "#savoir-faire-et-méthodes-opérationnelles",
+        "quote": "- définir l'état dp[i] avant la relation.\n- remplir une table dans un ordre qui respecte les dépendances.\n- comparer récursion naïve et tabulation.",
+        "teaches": true
       },
       "proof_practice": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/terminale/T17/T17_TD_programmation_dynamique.md",
+        "anchor": "#exercice-2",
+        "quote": "- Consigne : écrire dp[m]=1+min(dp[m-p]) ; traiter aussi `montant impossible` si nécessaire.\n- Réponse attendue : dp[11]=3 avec 5+5+1.",
+        "teaches": true
       },
       "proof_correction": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/terminale/T17/T17_corrige_programmation_dynamique.md",
+        "anchor": "#exercice-1",
+        "quote": "- Réponse attendue : dp[6]=2 avec 5+1.\n- Méthode : définir dp[m] coût minimal.\n- Cas limite : montant 0.",
+        "teaches": true
       },
-      "verdict": "needs_content",
-      "justification": "Verdict campagne Sonnet 4.6.",
+      "verdict": "needs_review",
+      "justification": "Le cours enseigne la programmation dynamique (état, tabulation, récurrence), le TD fait pratiquer avec des consignes explicites sur dp[m], et le corrigé fournit les réponses attendues pour chaque exercice.",
       "scientific_flags": [
         "human_review_required"
       ]
