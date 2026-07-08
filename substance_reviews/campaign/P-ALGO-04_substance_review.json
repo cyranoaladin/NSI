@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-08T21:30:22Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_cours_dichotomie_glouton_knn.md",
-        "anchor": "#méthodes",
-        "quote": "montrer que droite-gauche diminue.",
+        "anchor": "#exemple-corrigé-2---variant-de-dichotomie-p-algo-04",
+        "quote": "Méthode : montrer que la quantité `droite - gauche` diminue strictement à chaque étape.\n- Résultat attendu : étape 1 → gauche=0, droite=5 (écart 5) ; étape 2 → gauche=3, droite=5 (écart 2) ; étape 3 → gauche=4, droite=5 (écart 1) → trouvé. Le variant décroît de 5 à 1, prouvant la terminaison.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md",
         "anchor": "#exercice-2",
-        "quote": "Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.",
+        "quote": "Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.\n- Réponse attendue : 28 -> 10+10+5+2+1.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md",
         "anchor": "#exercice-2",
-        "quote": "Méthode : montrer que droite-gauche diminue.",
+        "quote": "- Réponse attendue : 28 -> 10+10+5+2+1.\n- Méthode : montrer que droite-gauche diminue.\n- Cas limite : pièce 1 absente.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours présente la méthode du variant droite-gauche, le TD fait pratiquer la démonstration de terminaison, et le corrigé fournit la réponse attendue pour P-ALGO-04.",
+      "justification": "Le cours enseigne explicitement le variant droite-gauche avec trace chiffrée prouvant la terminaison (P-ALGO-04). Le TD fait pratiquer via l'exercice 2 avec consigne dédiée. Le corrigé fournit la réponse attendue avec méthode et cas limite.",
       "scientific_flags": [
         "human_review_required"
       ]

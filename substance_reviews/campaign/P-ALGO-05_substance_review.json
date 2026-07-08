@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-08T15:27:06Z",
+  "judged_at": "2026-07-08T21:30:35Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -13,25 +13,25 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_cours_dichotomie_glouton_knn.md",
         "anchor": "#exemple-corrigé-3---glouton-p-algo-05",
-        "quote": "### Exemple corrigé 3 - glouton (P-ALGO-05)\n- Donnée : `pièces=[10,5,2,1], montant=28`.\n- Méthode : prendre la plus grande pièce possible à chaque étape.\n- Résultat attendu : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces).\n- Contrôle : capacité P-ALGO-05 et cas limite `pièce 1 absente → glouton peut échouer`.",
+        "quote": "Méthode : prendre la plus grande pièce possible à chaque étape.\n- Résultat attendu : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces).\n- Contrôle : capacité P-ALGO-05 et cas limite `pièce 1 absente → glouton peut échouer`.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md",
         "anchor": "#exercice-2",
-        "quote": "- Capacité officielle : P-ALGO-04.\n- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=beta\n- Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.\n- Réponse attendue : 28 -> 10+10+5+2+1.",
+        "quote": "Capacité officielle : P-ALGO-04.\n- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=beta\n- Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.\n- Réponse attendue : 28 -> 10+10+5+2+1.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md",
-        "anchor": "#exercice-2",
-        "quote": "- Réponse attendue : 28 -> 10+10+5+2+1.\n- Méthode : montrer que droite-gauche diminue.\n- Cas limite : pièce 1 absente.",
+        "anchor": "#exercice-3",
+        "quote": "Réponse attendue : rouge, bleu, rouge -> classe rouge.\n- Méthode : prendre la plus grande pièce possible.\n- Cas limite : égalité de vote.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne l'algorithme glouton via l'exemple des pièces de monnaie (P-ALGO-05). Le TD fait pratiquer avec la consigne de décomposer 28 en pièces. Le corrigé fournit la réponse attendue et le cas limite.",
+      "justification": "Le cours enseigne l'algorithme glouton avec un exemple complet (pièces, montant 28). Le TD fait pratiquer la méthode glouton sur les mêmes données. Le corrigé fournit la réponse attendue avec méthode et cas limite pour la capacité P-ALGO-05.",
       "scientific_flags": [
         "human_review_required"
       ]

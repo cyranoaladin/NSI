@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-08T15:27:50Z",
+  "judged_at": "2026-07-08T21:31:13Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -13,14 +13,14 @@
         "present": true,
         "file": "03_progressions/supports/terminale/T09/T09_cours_bases_relationnelles_cles_contraintes.md",
         "anchor": "#les-quatre-services-fondamentaux",
-        "quote": "| Service | Rôle | Exemple |",
+        "quote": "| Service | Rôle | Exemple |\n|---------|------|---------|",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md",
         "anchor": "#exercice-4",
-        "quote": "Capacité officielle : T-BDD-02.\n- Données : `Livre(1,Dune), Livre(2,Fondation) ; Emprunt(10,1,Nora), Emprunt(11,9,Sam) invalide`.",
+        "quote": "Capacité officielle : T-BDD-02.\n- Données : `Livre(1,Dune), Livre(2,Fondation) ; Emprunt(10,1,Nora), Emprunt(11,9,Sam) invalide`",
         "teaches": true
       },
       "proof_correction": {
@@ -31,7 +31,7 @@
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours expose les quatre services d'un SGBD (persistance, concurrence, efficacité, sécurité) via un tableau dédié. Le TD exercice 4 fait pratiquer T-BDD-02 sur un cas concret. Le corrigé fournit la réponse attendue pour cet exercice.",
+      "justification": "Le cours expose les quatre services d'un SGBD (persistance, concurrence, efficacité, sécurité) via un tableau dédié. Le TD fait pratiquer T-BDD-02 à l'exercice 4, et le corrigé fournit la réponse attendue.",
       "scientific_flags": [
         "human_review_required"
       ]

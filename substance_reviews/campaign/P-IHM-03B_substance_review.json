@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-08T15:26:53Z",
+  "judged_at": "2026-07-08T21:30:08Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -13,14 +13,14 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md",
         "anchor": "#mémorisation-et-transmission-des-données-entre-client-et-serveur",
-        "quote": "La capacité P-IHM-03B demande de distinguer ce qui est mémorisé côté client (cookies, localStorage) de ce qui est retransmis au serveur à chaque requête.",
+        "quote": "Un **cookie** est un petit fichier texte stocké par le navigateur. Le serveur le crée via l'en-tête `Set-Cookie` ; le navigateur le renvoie automatiquement aux requêtes correspondant à son domaine et à son chemin (`Path`). Usage : session de connexion, préférences, panier d'achat.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
         "anchor": "#exercice-5",
-        "quote": "- Type : justification.\n- Capacité officielle : P-IHM-03B.\n- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=epsilon\n- Consigne : repérer header main form label input ; traiter aussi `paramètre jour absent` si nécessaire.",
+        "quote": "- Capacité officielle : P-IHM-03B.\n- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=epsilon\n- Consigne : repérer header main form label input ; traiter aussi `paramètre jour absent` si nécessaire.",
         "teaches": true
       },
       "proof_correction": {
@@ -31,7 +31,7 @@
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne explicitement la distinction client/serveur (cookies, localStorage vs retransmission). Le TD fait pratiquer via l'exercice 5 tagué P-IHM-03B. Le corrigé fournit la réponse attendue pour cet exercice. Toutefois, le contenu pratique porte davantage sur HTML/formulaires que sur la mémorisation client stricto sensu.",
+      "justification": "Le cours enseigne explicitement la distinction cookies/localStorage/sessionStorage et ce qui est retransmis au serveur. Le TD fait pratiquer la capacité P-IHM-03B à l'exercice 5, et le corrigé fournit la réponse attendue avec cas limite.",
       "scientific_flags": [
         "human_review_required"
       ]
