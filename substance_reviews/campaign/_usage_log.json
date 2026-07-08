@@ -1,62 +1,32 @@
 [
   {
-    "cap": "T-LANG-02A",
-    "seq": "T04",
-    "read": 2346,
-    "write": 27900,
-    "fresh": 66,
-    "out": 721,
-    "cost_usd": 0.116342,
+    "cap": "P-HIST-01",
+    "seq": "P14",
+    "read": 0,
+    "write": 15184,
+    "fresh": 92,
+    "out": 490,
+    "cost_usd": 0.064566,
     "api_calls": 1
   },
   {
-    "cap": "T-LANG-02B",
-    "seq": "T04",
-    "read": 30246,
-    "write": 0,
-    "fresh": 75,
-    "out": 752,
-    "cost_usd": 0.020579,
+    "cap": "T-HIST-01A",
+    "seq": "T19",
+    "read": 2346,
+    "write": 13877,
+    "fresh": 92,
+    "out": 571,
+    "cost_usd": 0.061584,
     "api_calls": 2
   },
   {
-    "cap": "T-STRUCT-05A",
-    "seq": "T07",
-    "read": 2346,
-    "write": 13665,
-    "fresh": 69,
-    "out": 473,
-    "cost_usd": 0.05925,
-    "api_calls": 3
-  },
-  {
-    "cap": "T-BDD-01B",
-    "seq": "T09",
-    "read": 2346,
-    "write": 12236,
-    "fresh": 68,
-    "out": 430,
-    "cost_usd": 0.053243,
-    "api_calls": 4
-  },
-  {
-    "cap": "T-BDD-02",
-    "seq": "T09",
-    "read": 14582,
+    "cap": "T-HIST-01B",
+    "seq": "T19",
+    "read": 16223,
     "write": 0,
-    "fresh": 73,
-    "out": 494,
-    "cost_usd": 0.012004,
-    "api_calls": 5
-  },
-  {
-    "cap": "T-ALGO-04",
-    "seq": "T17",
-    "read": 2346,
-    "write": 10503,
-    "fresh": 71,
-    "out": 436,
-    "cost_usd": 0.046843,
-    "api_calls": 6
+    "fresh": 82,
+    "out": 619,
+    "cost_usd": 0.014398,
+    "api_calls": 3
   }
 ]
