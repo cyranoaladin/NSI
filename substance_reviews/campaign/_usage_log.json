@@ -88,17 +88,6 @@
     "judged_at": "2026-07-08T15:28:18Z"
   },
   {
-    "cap": "T-LANG-04A",
-    "seq": "T14",
-    "read": 2346,
-    "write": 11470,
-    "fresh": 77,
-    "out": 498,
-    "cost_usd": 0.051417,
-    "api_calls": 8,
-    "judged_at": "2026-07-08T15:28:18Z"
-  },
-  {
     "cap": "T-ALGO-04",
     "seq": "T17",
     "read": 2346,
@@ -108,5 +97,16 @@
     "cost_usd": 0.047158,
     "api_calls": 9,
     "judged_at": "2026-07-08T15:28:18Z"
+  },
+  {
+    "cap": "T-LANG-04A",
+    "seq": "T04",
+    "read": 10446,
+    "write": 0,
+    "fresh": 77,
+    "out": 437,
+    "cost_usd": 0.00992,
+    "api_calls": 1,
+    "judged_at": "2026-07-08T15:47:05Z"
   }
 ]
