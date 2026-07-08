@@ -634,8 +634,24 @@ def main() -> int:
     print(f"  fresh_input: {total_fresh:,}  output: {total_out:,}")
     print(f"  TOTAL COST: ${total_cost:.4f}")
 
+    # K5-BIS-2: fusion-upsert — load existing, replace by cap, keep the rest
     log_path = args.output_dir / "_usage_log.json"
-    log_path.write_text(json.dumps(usage_log, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    existing_log: list[dict[str, Any]] = []
+    if log_path.exists():
+        try:
+            existing_log = json.loads(log_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            existing_log = []
+    # Build set of caps judged in this run
+    judged_caps = {entry["cap"] for entry in usage_log if "cap" in entry}
+    # Keep entries from previous runs for caps NOT judged this time
+    merged = [entry for entry in existing_log if entry.get("cap") not in judged_caps]
+    # Add timestamped entries from this run
+    run_ts = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    for entry in usage_log:
+        entry["judged_at"] = run_ts
+        merged.append(entry)
+    log_path.write_text(json.dumps(merged, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"\nUsage log: {log_path}")
 
     return 0
