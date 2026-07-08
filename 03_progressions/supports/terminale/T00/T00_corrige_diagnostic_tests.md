@@ -122,6 +122,7 @@ Une équipe reprend une bibliothèque Python de Première et doit écrire des te
 - Exercice 6 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « identifier pourquoi « Écrire un test qui reproduit le code au lieu de la spécification. » est une erreur ».
 - Exercice 7 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « inclure une étape calculable par un pair ».
 - Exercice 8 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « proposer une activité corrective inspirée de « Réécrire le message d’échec comme diagnostic. » ».
+- Exercice 9 : 1 point méthode (import + appel API), 0,5 point résultat (sérialisation/désérialisation vérifiée), 0,5 point contrôle sur « gérer FileNotFoundError et JSONDecodeError ».
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Tester seulement le cas donné en exemple.
 - Erreur fréquente EF2 - Écrire un test qui reproduit le code au lieu de la spécification.
