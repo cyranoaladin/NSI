@@ -51,6 +51,12 @@ official_program:
 - Méthode : relier au Web ou aux bases de données.
 - Cas limite : résultat vide.
 
+### Exercice 9
+- Capacité mobilisée : P-HIST-01.
+- Réponse attendue : frise ordonnée (Turing 1936, ENIAC 1946, CI 1958, 4004 1971, Web 1989), associations protagonistes, rupture von Neumann, distinction Internet/Web.
+- Méthode : classement chronologique, association événement-protagoniste, analyse rupture.
+- Cas limite : ENIAC n'est pas le premier ordinateur (Colossus 1943, Z3 1941).
+
 ## Corrigé du TP
 - Donnée : `projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 diapositives`.
 - Résultat principal : question : pays fictifs dépassant 50% solaire.

@@ -52,6 +52,18 @@ official_program:
 - Méthode : relier un choix technique à un impact historique.
 - Cas limite : démonstration non reproductible.
 
+### Exercice 9
+- Capacité mobilisée : T-HIST-01A.
+- Réponse attendue : matériel (ENIAC, CI, 4004), logiciel (GNU, Linux, Web), ARPANET/GNU/Linux placés, Church-Turing = fondation théorique.
+- Méthode : classification matériel/logiciel, placement chronologique.
+- Cas limite : Turing fonde le calcul sans construire de machine.
+
+### Exercice 10
+- Capacité mobilisée : T-HIST-01B.
+- Réponse attendue : 4 périodes (matériel dominant → logiciel → cloud/IA → nuance GPU/TPU).
+- Méthode : analyse par période avec exemple concret.
+- Cas limite : matériel spécialisé (GPU, TPU) nuance le transfert matériel→logiciel.
+
 ## Corrigé du TP
 - Donnée : `projet graphes de transport fictifs ; livrables sujet pratique, note orale, script de démonstration`.
 - Résultat principal : fonction voisins_communs(g,A,B) testée.

@@ -95,6 +95,43 @@ projet graphes de transport fictifs ; livrables sujet pratique, note orale, scri
 - TP : `T19_tp_bac_pratique_grand_oral_projet.md`.
 - Évaluation : `T19_evaluation_bac_pratique_grand_oral_projet.md`.
 
+## Principaux événements de l'histoire de l'informatique — niveau Terminale
+
+La capacité T-HIST-01A demande de situer dans le temps les principaux événements de l'histoire de l'informatique et leurs protagonistes. La capacité T-HIST-01B demande d'identifier l'évolution des rôles relatifs des logiciels et des matériels.
+
+### Frise chronologique étendue (Terminale)
+
+| Date | Événement | Acteur(s) | Rupture |
+|------|-----------|-----------|---------|
+| 1936 | Machine de Turing | Alan Turing | Fondation théorique du calcul |
+| 1945 | Architecture von Neumann | John von Neumann | Programme stocké en mémoire |
+| 1946 | ENIAC | Mauchly, Eckert | Calculateur électronique généraliste |
+| 1958 | Circuit intégré | Kilby, Noyce | Miniaturisation des composants |
+| 1969 | ARPANET (premier réseau à commutation de paquets) | DARPA | Naissance d'Internet |
+| 1971 | Microprocesseur Intel 4004 | Hoff, Faggin | Processeur sur une puce |
+| 1977 | Micro-ordinateurs (Apple II) | Jobs, Wozniak | Informatique personnelle |
+| 1983 | GNU (logiciel libre) | Richard Stallman | Le logiciel comme bien commun |
+| 1989 | World Wide Web | Tim Berners-Lee | Hypertexte universel |
+| 1991 | Linux | Linus Torvalds | Noyau libre, collaboration mondiale |
+| 2007 | iPhone (smartphone) | Apple | L'ordinateur dans la poche |
+
+### Évolution des rôles matériel et logiciel (T-HIST-01B)
+
+L'histoire de l'informatique montre un transfert progressif de complexité du matériel vers le logiciel :
+
+1. **Années 1940-1950 — le matériel est roi** : les premiers ordinateurs (ENIAC, EDVAC) sont câblés pour des tâches spécifiques. Le logiciel n'existe pas en tant que discipline ; programmer signifie reconfigurer physiquement la machine.
+
+2. **Années 1960-1970 — naissance du logiciel** : les langages de haut niveau (FORTRAN 1957, COBOL 1959, C 1972) permettent d'écrire des programmes indépendants du matériel. Les systèmes d'exploitation (Unix 1969) gèrent les ressources matérielles. Le logiciel devient un produit distinct.
+
+3. **Années 1980-1990 — le logiciel prend le pouvoir** : le matériel se standardise (IBM PC compatible) tandis que le logiciel se diversifie (MS-DOS, Windows, GNU/Linux). Le mouvement du logiciel libre (GNU 1983, Linux 1991) affirme que le logiciel est un bien immatériel distinct du matériel.
+
+4. **Années 2000-2020 — le logiciel mange le monde** : le cloud computing virtualise le matériel. Le smartphone (2007) standardise le matériel de poche ; la valeur est dans les applications. L'intelligence artificielle (deep learning 2012) repousse les limites du logiciel avec du matériel spécialisé (GPU, TPU).
+
+### Cas limites
+
+- Le logiciel libre ne signifie pas « gratuit » : libre = liberté d'usage, de modification et de redistribution.
+- Le matériel spécialisé (FPGA, ASIC, TPU) montre que le transfert matériel→logiciel n'est pas absolu : certaines tâches redeviennent matérielles pour des raisons de performance.
+
 ## Renforcement explicatif ciblé
 
 Ce cours doit être lu comme une progression sur bac pratique, grand oral et projet. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
