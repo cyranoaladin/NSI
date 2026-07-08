@@ -101,6 +101,29 @@ Livre(1,Dune), Livre(2,Fondation) ; Emprunt(10,1,Nora), Emprunt(11,9,Sam) invali
 - TP : `T09_tp_bases_relationnelles_cles_contraintes.md`.
 - Évaluation : `T09_evaluation_bases_relationnelles_cles_contraintes.md`.
 
+## Services rendus par un SGBD relationnel
+
+La capacité T-BDD-02 demande d'identifier les services rendus par un système de gestion de bases de données (SGBD) relationnel. Un SGBD n'est pas un simple fichier : il offre des services essentiels que l'application n'a pas à réimplémenter.
+
+### Les quatre services fondamentaux
+
+| Service | Rôle | Exemple |
+|---------|------|---------|
+| **Persistance** | Les données survivent à l'arrêt du programme ou de la machine | Un INSERT reste en base même après un redémarrage du serveur |
+| **Gestion des accès concurrents** | Plusieurs utilisateurs lisent et écrivent simultanément sans corruption | Deux guichetiers réservent des places en parallèle sans vendre le même siège |
+| **Efficacité des requêtes** | Le SGBD optimise l'accès aux données (index, plan d'exécution) | Une recherche par clé primaire ne parcourt pas toute la table |
+| **Sécurisation et contrôle d'accès** | Droits par utilisateur, chiffrement, journalisation | Un élève peut lire les notes mais pas les modifier |
+
+### Intégrité des données — un service transversal
+
+L'intégrité (contraintes de clé primaire, clé étrangère, unicité, domaine) est un service que le SGBD applique automatiquement : il refuse toute opération qui violerait une contrainte, protégeant la cohérence des données sans que l'application n'ait à le vérifier.
+
+### Cas limites
+
+- Un fichier CSV offre la persistance mais aucun des trois autres services.
+- SQLite offre persistance et intégrité mais gère mal la concurrence lourde.
+- Un SGBD en mémoire (Redis) sacrifie la persistance pour la vitesse.
+
 ## Renforcement explicatif ciblé
 
 Ce cours doit être lu comme une progression sur bases relationnelles. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.

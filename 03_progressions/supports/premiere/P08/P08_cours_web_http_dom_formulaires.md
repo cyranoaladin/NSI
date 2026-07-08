@@ -146,6 +146,50 @@ Sans HTTPS, les données transmises par GET **et** par POST circulent en clair s
 - Un formulaire POST sans HTTPS transmet les données en clair sur le réseau (sniffable).
 - Un GET avec HTTPS chiffre les paramètres sur le réseau, mais ils restent visibles dans la barre d'adresse et l'historique local.
 
+## Mémorisation et transmission des données entre client et serveur
+
+La capacité P-IHM-03B demande de distinguer ce qui est mémorisé côté client (cookies, localStorage) de ce qui est retransmis au serveur à chaque requête.
+
+### Cookies
+
+Un **cookie** est un petit fichier texte stocké par le navigateur. Le serveur le crée via l'en-tête `Set-Cookie` ; le navigateur le renvoie automatiquement à chaque requête vers ce serveur. Usage : session de connexion, préférences, panier d'achat.
+
+```
+Set-Cookie: session_id=abc123; Path=/; HttpOnly; Secure
+```
+
+- `HttpOnly` : le cookie n'est pas accessible par JavaScript (protection XSS).
+- `Secure` : le cookie n'est envoyé qu'en HTTPS.
+
+### localStorage et sessionStorage
+
+Le navigateur offre aussi `localStorage` (persistant) et `sessionStorage` (supprimé à la fermeture de l'onglet). Ces données ne sont **jamais** envoyées automatiquement au serveur — elles restent côté client.
+
+```javascript
+localStorage.setItem("theme", "sombre");
+var theme = localStorage.getItem("theme");  // "sombre"
+```
+
+### Comparaison
+
+| Mécanisme | Stockage | Envoyé au serveur | Taille max |
+|-----------|----------|-------------------|-----------|
+| Cookie | Client | Oui (automatiquement) | ~4 Ko |
+| localStorage | Client | Non | ~5-10 Mo |
+| sessionStorage | Client | Non | ~5-10 Mo |
+| Session serveur | Serveur | Le cookie contient l'identifiant | Illimitée |
+
+### Exécution serveur vs client
+
+- Le **serveur** exécute le code Python/PHP qui génère la page HTML, accède à la base de données, vérifie les droits. Le résultat est envoyé au client.
+- Le **client** (navigateur) exécute le JavaScript, affiche le HTML/CSS, stocke les cookies et le localStorage. Il ne peut pas accéder à la base de données directement.
+
+### Cas limites
+
+- Un cookie expiré n'est plus envoyé au serveur.
+- localStorage est partagé entre tous les onglets du même domaine.
+- Un cookie sans `Secure` peut être intercepté sur un réseau non chiffré.
+
 ## Renforcement explicatif ciblé
 
 Ce cours doit être lu comme une progression sur Web, DOM et HTTP. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.
