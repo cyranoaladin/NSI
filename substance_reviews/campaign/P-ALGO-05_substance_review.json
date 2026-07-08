@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-08T21:30:35Z",
+  "judged_at": "2026-07-08T22:15:52Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -20,18 +20,18 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md",
         "anchor": "#exercice-2",
-        "quote": "Capacité officielle : P-ALGO-04.\n- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=beta\n- Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.\n- Réponse attendue : 28 -> 10+10+5+2+1.",
+        "quote": "Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.\n- Réponse attendue : 28 -> 10+10+5+2+1.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md",
         "anchor": "#exercice-3",
-        "quote": "Réponse attendue : rouge, bleu, rouge -> classe rouge.\n- Méthode : prendre la plus grande pièce possible.\n- Cas limite : égalité de vote.",
+        "quote": "Réponse attendue : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces, algorithme glouton avec pièces=[10,5,2,1]).\n- Méthode : prendre la plus grande pièce possible à chaque étape.\n- Cas limite : pièce 1 absente → le glouton peut échouer",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne l'algorithme glouton avec un exemple complet (pièces, montant 28). Le TD fait pratiquer la méthode glouton sur les mêmes données. Le corrigé fournit la réponse attendue avec méthode et cas limite pour la capacité P-ALGO-05.",
+      "justification": "Le cours enseigne l'algorithme glouton avec exemple corrigé (P-ALGO-05), le TD fait pratiquer avec consigne explicite sur le rendu de monnaie, et le corrigé fournit la réponse détaillée avec cas limite traité.",
       "scientific_flags": [
         "human_review_required"
       ]
