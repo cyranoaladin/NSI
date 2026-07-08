@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-06T06:13:11Z",
+  "judged_at": "2026-07-08T07:29:40Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -10,28 +10,28 @@
       "capacity_id": "T-STRUCT-05A",
       "official_label": "Modéliser des situations sous forme de graphes.",
       "proof_course": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/terminale/T07/T07_cours_graphes_modelisation_listes_matrices.md",
+        "anchor": "#savoir-faire-et-méthodes-opérationnelles",
+        "quote": "- traduire une situation en sommets et arêtes.\n- passer de la liste d'adjacence à la matrice.\n- comparer le coût mémoire des deux représentations.",
+        "teaches": true
       },
       "proof_practice": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/terminale/T07/T07_TD_graphes_modelisation_listes_matrices.md",
+        "anchor": "#exercice-1",
+        "quote": "Consigne : lister voisins sortants ; traiter aussi `sommet isolé E` si nécessaire.\n- Réponse attendue : A -> [B,C], B -> [D], C -> [D], D -> [B].",
+        "teaches": true
       },
       "proof_correction": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/terminale/T07/T07_corrige_graphes_modelisation_listes_matrices.md",
+        "anchor": "#exercice-1",
+        "quote": "- Réponse attendue : A -> [B,C], B -> [D], C -> [D], D -> [B].\n- Méthode : lister voisins sortants.\n- Cas limite : sommet isolé E.",
+        "teaches": true
       },
-      "verdict": "needs_content",
-      "justification": "Verdict campagne Sonnet 4.6.",
+      "verdict": "needs_review",
+      "justification": "Le cours enseigne la modélisation par graphes (traduire une situation en sommets et arêtes), le TD fait pratiquer sur des arcs concrets avec la capacité T-STRUCT-05A, et le corrigé fournit la réponse attendue avec méthode et cas limite.",
       "scientific_flags": [
         "human_review_required"
       ]
