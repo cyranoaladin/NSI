@@ -19,6 +19,7 @@ official_program:
   capacities:
     - "T-LANG-02A"
     - "T-LANG-02B"
+    - "T-LANG-04A"
 ---
 
 # T04 - TD - Récursivité
