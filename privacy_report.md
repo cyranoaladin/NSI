@@ -153,6 +153,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - docs/promotion/dossier_revue_lead.md: nom propre suspect -> Tim Berners-Lee
 - docs/promotion/dossier_revue_lead_v2.md: nom propre suspect -> Set-Cookie
 - docs/promotion/dossier_revue_lead_v2.md: nom propre suspect -> Autorité-Test
+- docs/promotion/dossier_revue_lead_v3.md: nom propre suspect -> Set-Cookie
+- docs/promotion/dossier_revue_lead_v3.md: nom propre suspect -> Set-Cookie
 - drive_inventory.csv: nom propre suspect -> Dossier Git Drive
 - drive_mapping.md: nom propre suspect -> Cartographie Drive
 - drive_mapping.md: nom propre suspect -> Source Drive
@@ -208,9 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - pedagogical_blockers_report.md: nom propre suspect -> Pedagogical Blockers Report
 - pedagogical_blockers_report.md: nom propre suspect -> Ressources Drive
 - premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> American Standard Code
-- premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> Information Interchange
-- premiere/sequences/s01_representation_donnees/sources.md: nom propre suspect -> Ressources Drive
-- ... 144 alertes supplémentaires non affichées
+- ... 147 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
