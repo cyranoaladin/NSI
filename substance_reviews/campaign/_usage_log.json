@@ -3,20 +3,10 @@
     "cap": "P-ALGO-03",
     "seq": "P13",
     "read": 0,
-    "write": 16914,
+    "write": 17028,
     "fresh": 95,
-    "out": 689,
-    "cost_usd": 0.074048,
+    "out": 505,
+    "cost_usd": 0.071715,
     "api_calls": 1
-  },
-  {
-    "cap": "T-LANG-03A",
-    "seq": "T00",
-    "read": 2346,
-    "write": 28629,
-    "fresh": 74,
-    "out": 553,
-    "cost_usd": 0.11658,
-    "api_calls": 2
   }
 ]

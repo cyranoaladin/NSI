@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-07T22:07:21Z",
+  "judged_at": "2026-07-08T07:27:34Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -13,7 +13,7 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_cours_dichotomie_glouton_knn.md",
         "anchor": "#algorithme-des-k-plus-proches-voisins",
-        "quote": "def knn(donnees, nouveau, k):\n    \"\"\"Prédit la classe du nouveau point par vote majoritaire des k plus proches voisins.\"\"\"\n    distances = []\n    for point in donnees:\n        d = distance(nouveau, (point[0], point[1]))\n        distances.append((d, point[2]))  # (distance, classe)\n    distances.sort()  # tri par distance croissante\n    voisins = distances[:k]\n    # Vote majoritaire\n    compteur = {}\n    for _, classe in voisins:\n        compteur[classe] = compteur.get(classe, 0) + 1\n    return max(compteur, key=compteur.get)",
+        "quote": "La capacité P-ALGO-03 demande d'écrire un algorithme qui prédit la classe d'un élément à partir de la classe majoritaire de ses k plus proches voisins.",
         "teaches": true
       },
       "proof_practice": {
@@ -27,11 +27,11 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md",
         "anchor": "#exercice-9",
-        "quote": "Réponse attendue : distances calculées, 3 plus proches = A(3,2) B(5,4) A(2,3), vote A=2 B=1, classe \"A\".\n- Méthode : distance euclidienne, tri, vote majoritaire.\n- Cas limite : k=2 avec égalité de vote → résultat indéterminé.",
+        "quote": "Réponse attendue : distances calculées, 3 plus proches = A(3,2) B(5,4) A(2,3), vote A=2 B=1, classe \"A\".",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne l'algorithme k-NN avec implémentation Python et exemples complets. Le TD (exercice 9) fait pratiquer le calcul de distances, la sélection des k voisins et le vote majoritaire. Le corrigé fournit les réponses détaillées avec traitement du cas limite d'égalité.",
+      "justification": "Le cours enseigne explicitement l'algorithme k-NN avec implémentation Python et cas limites. Le TD fait pratiquer le calcul de distances, la sélection des k voisins et le vote majoritaire. Le corrigé fournit les réponses détaillées pour l'exercice 9.",
       "scientific_flags": [
         "human_review_required"
       ]
