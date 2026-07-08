@@ -32,33 +32,33 @@ official_program:
 - Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `cible absente`.
 ### Question 2
 - Capacité officielle : P-ALGO-04.
-- Énoncé : à partir de `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`, montrer que droite-gauche diminue.
-- Réponse attendue : 28 -> 10+10+5+2+1.
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `pièce 1 absente`.
+- Énoncé : à partir de `tableau=[4,9,18,23,37,41], cible=37`, montrer que le variant droite-gauche diminue à chaque étape de la dichotomie.
+- Réponse attendue : variant décroît de 5 à 1, prouvant la terminaison.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `cible absente → variant atteint 0`.
 ### Question 3
 - Capacité officielle : P-ALGO-05.
-- Énoncé : à partir de `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`, prendre la plus grande pièce possible.
-- Réponse attendue : rouge, bleu, rouge -> classe rouge.
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `égalité de vote`.
+- Énoncé : à partir de `pièces=[10,5,2,1], montant=28`, appliquer l'algorithme glouton pour rendre la monnaie.
+- Réponse attendue : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces).
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `pièce 1 absente → glouton peut échouer`.
 ### Question 4
 - Capacité officielle : P-ALGO-03.
-- Énoncé : à partir de `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`, voter parmi k=3 voisins.
-- Réponse attendue : cible 40 absente -> non trouvé.
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `cible absente`.
+- Énoncé : à partir de `voisins=[rouge:1.2, bleu:2.0, rouge:2.4], k=3`, déterminer la classe prédite par vote majoritaire.
+- Réponse attendue : rouge (2 voix) vs bleu (1 voix) → classe rouge.
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `égalité de vote avec k pair`.
 
 ## Corrigé question par question
 ### Corrigé question 1
 - Résultat attendu : milieux 18 puis 37 -> trouvé indice 4.
 - Critère spécifique : calculer milieu puis réduire intervalle et éviter `dichotomie sur liste non triée`.
 ### Corrigé question 2
-- Résultat attendu : 28 -> 10+10+5+2+1.
-- Critère spécifique : montrer que droite-gauche diminue et éviter `glouton supposé toujours optimal`.
+- Résultat attendu : variant droite-gauche décroît de 5 à 1, terminaison prouvée.
+- Critère spécifique : montrer que droite-gauche diminue et traiter le cas `cible absente → variant atteint 0`.
 ### Corrigé question 3
-- Résultat attendu : rouge, bleu, rouge -> classe rouge.
-- Critère spécifique : prendre la plus grande pièce possible et éviter `égalité k-NN non décidée`.
+- Résultat attendu : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces par algorithme glouton).
+- Critère spécifique : prendre la plus grande pièce possible et traiter le cas `pièce 1 absente`.
 ### Corrigé question 4
-- Résultat attendu : cible 40 absente -> non trouvé.
-- Critère spécifique : voter parmi k=3 voisins et éviter `dichotomie sur liste non triée`.
+- Résultat attendu : rouge (2 voix) vs bleu (1 voix) → classe rouge par vote majoritaire.
+- Critère spécifique : voter parmi k=3 voisins et traiter le cas `égalité de vote avec k pair`.
 
 ## Erreurs fréquentes et remédiation
 - dichotomie sur liste non triée.
