@@ -19,12 +19,12 @@ official_program:
 
 ## Objectifs
 - Travailler cadrage de projet, dépôt propre, jeu de données fictif, démonstration, argumentation orale.
-- Produire huit réponses vérifiables avec données explicites.
+- Produire neuf réponses vérifiables avec données explicites.
 
 ## Progression socle / standard / approfondissement
 - Socle : exercices 1 et 2.
 - Standard : exercices 3 à 6.
-- Approfondissement : exercices 7 et 8.
+- Approfondissement : exercices 7, 8 et 9.
 
 ## Exercices
 ### Exercice 1
@@ -83,6 +83,14 @@ official_program:
 - Consigne : relier au Web ou aux bases de données ; traiter aussi `résultat vide` si nécessaire.
 - Réponse attendue : repère historique cité avec source.
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `résultat vide`.
+
+### Exercice 9
+- Type : lecture/analyse.
+- Capacité officielle : P-HIST-01.
+- Données : frise chronologique de l'histoire de l'informatique : Turing 1936, von Neumann 1945, ENIAC 1946, circuit intégré 1958, microprocesseur 1971, Apple II 1977, Web 1989, ouverture Web 1991. ; jeu_exercice=iota
+- Consigne : (9a) ordonner les événements suivants du plus ancien au plus récent : microprocesseur Intel 4004, machine de Turing, invention du Web, ENIAC, circuit intégré. (9b) Associer chaque événement à son protagoniste principal. (9c) Expliquer en deux phrases pourquoi l'architecture von Neumann (1945) est considérée comme une rupture fondamentale. (9d) Distinguer Internet et le Web en une phrase.
+- Réponse attendue : (9a) Turing 1936 < ENIAC 1946 < circuit intégré 1958 < microprocesseur 1971 < Web 1989. (9b) Turing, Mauchly/Eckert, Kilby/Noyce, Hoff/Faggin, Berners-Lee. (9c) Programme stocké en mémoire avec les données — un seul ordinateur peut exécuter n'importe quel programme. (9d) Internet = réseau physique (1969), Web = service hypertexte sur ce réseau (1989).
+- Critère de réussite : ordre chronologique correct, associations exactes, rupture von Neumann justifiée, distinction Internet/Web claire.
 
 ## Corrigé
 ### Corrigé exercice 1
@@ -149,6 +157,15 @@ official_program:
 - Méthode theta dans P14 TD synthese projet oral : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
 - Résultat theta dans P14 TD synthese projet oral : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
 - Contrôle theta dans P14 TD synthese projet oral : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+### Corrigé exercice 9
+- Capacité mobilisée : P-HIST-01.
+- Résultat attendu : (9a) Turing 1936, ENIAC 1946, circuit intégré 1958, microprocesseur 1971, Web 1989. (9b) Turing — machine de Turing ; Mauchly/Eckert — ENIAC ; Kilby/Noyce — circuit intégré ; Hoff/Faggin — Intel 4004 ; Berners-Lee — Web. (9c) L'architecture von Neumann stocke le programme en mémoire avec les données, permettant à un seul ordinateur d'exécuter n'importe quel programme sans recâblage. (9d) Internet est le réseau physique (ARPANET 1969), le Web est un service hypertexte (HTTP + URL) qui fonctionne sur ce réseau (1989).
+- Justification : la tâche `ordonner et associer les événements de l'histoire de l'informatique` s'applique à la frise chronologique du cours ; erreur évitée : confondre Internet et Web.
+- Donnée utilisée iota dans P14 TD synthese projet oral : cas iota de l'exercice 9 avec la frise chronologique 1936-1991.
+- Méthode iota dans P14 TD synthese projet oral : classement chronologique, association événement-protagoniste, analyse de rupture technique.
+- Résultat iota dans P14 TD synthese projet oral : frise ordonnée, associations correctes, rupture von Neumann justifiée.
+- Contrôle iota dans P14 TD synthese projet oral : le cas limite « ENIAC n'est pas le premier ordinateur (Colossus 1943, Z3 1941) » est discuté.
 
 ## Erreurs fréquentes
 - code montré sans objectif.

@@ -20,12 +20,12 @@ official_program:
 
 ## Objectifs
 - Travailler bac pratique, bac écrit, Grand Oral, projet, démonstration.
-- Produire huit réponses vérifiables avec données explicites.
+- Produire dix réponses vérifiables avec données explicites.
 
 ## Progression socle / standard / approfondissement
 - Socle : exercices 1 et 2.
 - Standard : exercices 3 à 6.
-- Approfondissement : exercices 7 et 8.
+- Approfondissement : exercices 7, 8, 9 et 10.
 
 ## Exercices
 ### Exercice 1
@@ -84,6 +84,22 @@ official_program:
 - Consigne : relier un choix technique à un impact historique ; traiter aussi `démonstration non reproductible` si nécessaire.
 - Réponse attendue : source historique vérifiée.
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `démonstration non reproductible`.
+
+### Exercice 9
+- Type : lecture/analyse.
+- Capacité officielle : T-HIST-01A.
+- Données : frise étendue Terminale (Turing 1936, von Neumann 1945, ENIAC 1946, CI 1958, ARPANET 1969, 4004 1971, Apple II 1977, GNU 1983, Web 1989, Linux 1991, iPhone 2007). ; jeu_exercice=iota
+- Consigne : (9a) citer trois événements qui relèvent du matériel et trois qui relèvent du logiciel. (9b) placer ARPANET (1969), GNU (1983) et Linux (1991) sur la frise et justifier en une phrase l'apport de chacun. (9c) expliquer pourquoi la thèse de Church-Turing (1936) est un événement fondateur alors qu'aucun matériel n'est construit.
+- Réponse attendue : matériel (ENIAC, CI, 4004) ; logiciel (GNU, Linux, Web) ; ARPANET = premier réseau, GNU = logiciel libre, Linux = noyau collaboratif ; Turing fonde la notion de calcul avant toute machine.
+- Critère de réussite : classification matériel/logiciel correcte, trois événements placés et justifiés, argument théorique clair.
+
+### Exercice 10
+- Type : production/écriture.
+- Capacité officielle : T-HIST-01B.
+- Données : quatre périodes — (A) 1940-1960 câblage, (B) 1960-1980 langages haut niveau, (C) 1980-2000 logiciel libre et standardisation matérielle, (D) 2000-2020 cloud et IA. ; jeu_exercice=kappa
+- Consigne : (10a) pour chaque période, décrire en une phrase le rôle dominant (matériel ou logiciel). (10b) citer un exemple concret (produit, langage, système) pour chaque période. (10c) expliquer pourquoi le matériel spécialisé (GPU, TPU) nuance l'idée d'un transfert complet vers le logiciel.
+- Réponse attendue : (A) matériel dominant (ENIAC câblé), (B) naissance logiciel (C, Unix), (C) logiciel dominant (GNU/Linux, PC standardisé), (D) logiciel mange le monde (cloud), mais matériel spécialisé revient (GPU deep learning).
+- Critère de réussite : 4 périodes décrites avec exemple, nuance GPU/TPU présente.
 
 ## Corrigé
 ### Corrigé exercice 1
@@ -150,6 +166,24 @@ official_program:
 - Méthode theta dans T19 TD bac pratique grand oral projet : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
 - Résultat theta dans T19 TD bac pratique grand oral projet : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
 - Contrôle theta dans T19 TD bac pratique grand oral projet : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+### Corrigé exercice 9
+- Capacité mobilisée : T-HIST-01A.
+- Résultat attendu : matériel = ENIAC, circuit intégré, Intel 4004 ; logiciel = GNU, Linux, Web. ARPANET (1969) = premier réseau à paquets. GNU (1983) = logiciel libre comme bien commun. Linux (1991) = noyau libre, collaboration mondiale. Church-Turing (1936) : fondation théorique du calcul, prouve l'existence de problèmes non calculables avant toute machine physique.
+- Justification : la tâche `situer les événements et leurs protagonistes` s'applique à la frise étendue Terminale ; erreur évitée : confondre matériel et logiciel.
+- Donnée utilisée iota dans T19 TD bac pratique grand oral projet : cas iota de l'exercice 9 avec la frise 1936-2007.
+- Méthode iota dans T19 TD bac pratique grand oral projet : classification matériel/logiciel, placement chronologique, argumentation théorique.
+- Résultat iota dans T19 TD bac pratique grand oral projet : 6 événements classés, 3 placés et justifiés, argument Church-Turing formulé.
+- Contrôle iota dans T19 TD bac pratique grand oral projet : le cas limite « Turing fonde le calcul sans matériel » est traité.
+
+### Corrigé exercice 10
+- Capacité mobilisée : T-HIST-01B.
+- Résultat attendu : (A) matériel dominant — ENIAC câblé pour chaque tâche. (B) naissance logiciel — C (1972), Unix (1969). (C) logiciel dominant — GNU/Linux, PC IBM standardisé. (D) cloud/IA — logiciel virtualise le matériel, mais GPU/TPU = retour du matériel spécialisé.
+- Justification : la tâche `identifier l'évolution des rôles matériel/logiciel` s'applique aux quatre périodes ; erreur évitée : croire que le transfert matériel→logiciel est total.
+- Donnée utilisée kappa dans T19 TD bac pratique grand oral projet : cas kappa de l'exercice 10 avec les 4 périodes historiques.
+- Méthode kappa dans T19 TD bac pratique grand oral projet : analyse par période, exemple concret, identification du rôle dominant, nuance matériel spécialisé.
+- Résultat kappa dans T19 TD bac pratique grand oral projet : 4 périodes décrites avec exemples, nuance GPU/TPU présente.
+- Contrôle kappa dans T19 TD bac pratique grand oral projet : le cas limite « matériel spécialisé (GPU, TPU) nuance le transfert » est discuté.
 
 ## Erreurs fréquentes
 - récitation sans exemple.

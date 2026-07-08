@@ -92,6 +92,44 @@ projet énergie solaire fictive ; README, programme, solaire.csv, diaporama 4 di
 - TP : `P14_tp_synthese_projet_oral.md`.
 - Évaluation : `P14_evaluation_synthese_projet_oral.md`.
 
+## Principaux événements de l'histoire de l'informatique
+
+La capacité P-HIST-01 demande de situer dans le temps les principaux événements de l'histoire de l'informatique et leurs protagonistes.
+
+### Frise chronologique structurée
+
+| Date | Événement | Acteur(s) | Rupture technique |
+|------|-----------|-----------|-------------------|
+| 1936 | Machine de Turing (modèle théorique de calcul) | Alan Turing | Fondation théorique : tout calcul est une suite d'opérations élémentaires sur une bande |
+| 1945 | Architecture von Neumann (programme stocké en mémoire) | John von Neumann | Le programme et les données partagent la même mémoire — un seul ordinateur peut exécuter n'importe quel programme |
+| 1946 | ENIAC (premier calculateur électronique généraliste) | John Mauchly, J. Presper Eckert | Passage du mécanique (relais) à l'électronique (tubes à vide) — vitesse multipliée par 1000 |
+| 1958 | Circuit intégré | Jack Kilby, Robert Noyce | Plusieurs transistors sur une seule puce de silicium — miniaturisation et fiabilité |
+| 1971 | Microprocesseur Intel 4004 | Ted Hoff, Federico Faggin | Un processeur complet sur une seule puce — naissance de la micro-informatique |
+| 1977 | Micro-ordinateurs personnels (Apple II, TRS-80, PET) | Steve Jobs, Steve Wozniak | L'ordinateur entre dans les foyers — démocratisation de l'informatique |
+| 1989 | Invention du World Wide Web | Tim Berners-Lee (CERN) | Hypertexte + HTTP + URL : l'information est liée et accessible universellement |
+| 1991 | Ouverture publique du Web | Tim Berners-Lee | Premier navigateur et serveur Web publics — début de l'Internet grand public |
+
+### Machine de Turing (1936)
+
+Alan Turing propose un modèle abstrait de calcul : une machine lit et écrit des symboles sur une bande infinie selon des règles fixes. Ce modèle démontre qu'il existe des problèmes non calculables (problème de l'arrêt). La thèse de Church-Turing affirme que toute fonction calculable peut être calculée par une machine de Turing.
+
+### Architecture von Neumann (1945)
+
+John von Neumann décrit une architecture où le programme est stocké en mémoire avec les données. Avant cela, les calculateurs étaient câblés pour une tâche unique. L'architecture von Neumann (unité de contrôle, unité arithmétique, mémoire, entrées/sorties) reste le modèle dominant des ordinateurs actuels.
+
+### Du circuit intégré au microprocesseur (1958-1971)
+
+Le circuit intégré (Kilby 1958, Noyce 1959) regroupe plusieurs transistors sur une puce. En 1971, Intel produit le 4004 : un processeur complet (2300 transistors) sur une seule puce. La loi de Moore (1965) prédit le doublement du nombre de transistors tous les deux ans — elle s'est vérifiée pendant plus de 50 ans.
+
+### Internet et le Web (1989-1991)
+
+Tim Berners-Lee invente le Web au CERN en 1989 : il combine l'hypertexte (liens entre documents), le protocole HTTP et les URL. En 1991, le premier site Web est accessible publiquement. Le Web n'est pas Internet (réseau physique, années 1960-70) mais une application qui fonctionne sur Internet.
+
+### Cas limites
+
+- L'ENIAC (1946) n'est pas le premier ordinateur : le Colossus (1943, Bletchley Park) et le Z3 de Konrad Zuse (1941) le précèdent, mais l'ENIAC est le premier généraliste et entièrement électronique.
+- Le Web (1991) n'est pas Internet (1969, ARPANET) : Internet est le réseau, le Web est un service qui utilise ce réseau.
+
 ## Renforcement explicatif ciblé
 
 Ce cours doit être lu comme une progression sur synthèse, projet et oral. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.

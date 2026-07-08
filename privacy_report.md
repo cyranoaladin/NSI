@@ -83,6 +83,29 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P07/code/P07_tests_attendus_fonctions_tests_specifications.py: nom propre suspect -> Ada Lovelace
+- 03_progressions/supports/premiere/P14/P14_TD_synthese_projet_oral.md: nom propre suspect -> Distinguer Internet
+- 03_progressions/supports/premiere/P14/P14_TD_synthese_projet_oral.md: nom propre suspect -> Berners-Lee
+- 03_progressions/supports/premiere/P14/P14_TD_synthese_projet_oral.md: nom propre suspect -> Berners-Lee
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Alan Turing
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> John Mauchly
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Presper Eckert
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Jack Kilby
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Robert Noyce
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Microprocesseur Intel
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Ted Hoff
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Federico Faggin
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Steve Jobs
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Steve Wozniak
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> World Wide Web
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Tim Berners-Lee
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Tim Berners-Lee
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Alan Turing
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Church-Turing
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Tim Berners-Lee
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Le Web
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Bletchley Park
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Konrad Zuse
+- 03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md: nom propre suspect -> Le Web
 - AGENTS.md: nom propre suspect -> Agent Inventaire
 - AGENTS.md: nom propre suspect -> Agent Programme
 - AGENTS.md: nom propre suspect -> Agent Auteur
@@ -187,30 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - rag_connection.md: nom propre suspect -> Content-Type
 - reports/closure2/phaseA_final_report.md: nom propre suspect -> Backlog Drive
 - reports/closure2/phaseA_final_report.md: nom propre suspect -> Lots Drive
-- reports/closure2/rag_embedding_parity_report.md: nom propre suspect -> Embedding Parity
-- reports/closure2/rag_embedding_parity_report.md: nom propre suspect -> Honnetete Phase
-- reports/closure2/rag_prod_cutover_executed_report.md: nom propre suspect -> Prod Cutover
-- reports/closure2/rag_prod_cutover_executed_report.md: nom propre suspect -> Collections Chroma
-- reports/closure2/rag_prod_cutover_runbook.md: nom propre suspect -> Backup Chroma
-- reports/closure2/rag_state_of_truth.md: nom propre suspect -> Schéma Nexus
-- reports/closure2/rag_state_of_truth.md: nom propre suspect -> Collections Nexus
-- reports/closure2/rag_v2_cutover_STATE.md: nom propre suspect -> Content-Type
-- reports/closure2/rag_v2_cutover_STATE.md: nom propre suspect -> Content-Type
-- reports/drive_enrichment_report.md: nom propre suspect -> Ressource Drive
-- reports/drive_enrichment_report.md: nom propre suspect -> Source Drive
-- reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
-- reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
-- reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
-- reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
-- reports/drive_enrichment_report.md: nom propre suspect -> Lot Drive
-- reports/lot1/lot1_validation_log.md: nom propre suspect -> Alaeddine Ben Rhouma
-- reports/lot1/lot1_validation_log.md: nom propre suspect -> Mon Jun
-- reports/lot1/lot1_validation_log.md: nom propre suspect -> Sun Jun
-- reports/lot1/lot1_validation_log.md: nom propre suspect -> Grep-Garde
-- reports/lot1/repo_map.md: nom propre suspect -> Proposeur System
-- reports/lot1/repo_map.md: nom propre suspect -> Conclusion Phase
-- reports/lot2/lot2_validation_log.md: nom propre suspect -> Miss Branch
-- ... 101 alertes supplémentaires non affichées
+- ... 127 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
@@ -414,4 +414,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P04/P04_tp_types_construits_complement.md: nom propre suspect -> Module Python
 - 03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md: nom propre suspect -> Fonctions Python
 - 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md: nom propre suspect -> Assets Python
-- ... 395 alertes supplémentaires non affichées
+- ... 406 alertes supplémentaires non affichées
