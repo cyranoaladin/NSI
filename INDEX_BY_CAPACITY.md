@@ -1402,6 +1402,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/fiches_cours/terminale/T02/T02_fiche_cours_classes_objets_attributs_methodes.md` — fiche_cours — needs_review — eleve
 - `03_progressions/fiches_cours/terminale/T14/T14_fiche_cours_modularite_api_paradigmes_bugs.md` — fiche_cours — needs_review — eleve
 - `03_progressions/supports/contracts/T14_contract.yml` — document — needs_review — eleve
+- `03_progressions/supports/terminale/T04/T04_cours_recursivite.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T14/T14_TD_modularite_api_paradigmes_bugs.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T14/T14_bareme_modularite_api_paradigmes_bugs.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T14/T14_corrige_modularite_api_paradigmes_bugs.md` — corrige — needs_review — professeur

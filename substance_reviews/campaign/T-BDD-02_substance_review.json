@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-08T07:29:59Z",
+  "judged_at": "2026-07-08T15:27:50Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/terminale/T09/T09_cours_bases_relationnelles_cles_contraintes.md",
-        "anchor": "#savoir-faire-et-méthodes-opérationnelles",
-        "quote": "- identifier la clé primaire d'une relation.\n- contrôler une clé étrangère avec la table référencée.\n- détecter une anomalie de redondance.",
+        "anchor": "#les-quatre-services-fondamentaux",
+        "quote": "| Service | Rôle | Exemple |",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md",
         "anchor": "#exercice-4",
-        "quote": "Consigne : repérer id_livre=9 absent ; traiter aussi `clé primaire nulle` si nécessaire.\n- Réponse attendue : suppression d un livre emprunté refusée.",
+        "quote": "Capacité officielle : T-BDD-02.\n- Données : `Livre(1,Dune), Livre(2,Fondation) ; Emprunt(10,1,Nora), Emprunt(11,9,Sam) invalide`.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/terminale/T09/T09_corrige_bases_relationnelles_cles_contraintes.md",
         "anchor": "#exercice-4",
-        "quote": "- Réponse attendue : suppression d un livre emprunté refusée.\n- Méthode : repérer id_livre=9 absent.\n- Cas limite : clé primaire nulle.",
+        "quote": "- Réponse attendue : suppression d un livre emprunté refusée.\n- Méthode : repérer id_livre=9 absent.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne les méthodes liées aux services d'un SGBD (contrôle de clés, détection d'anomalies). Le TD fait pratiquer via l'exercice 4 (contrainte de référence, suppression refusée). Le corrigé fournit la réponse attendue pour T-BDD-02. Le lien avec les 'services rendus par un SGBD' reste indirect mais présent.",
+      "justification": "Le cours expose les quatre services d'un SGBD (persistance, concurrence, efficacité, sécurité) via un tableau dédié. Le TD exercice 4 fait pratiquer T-BDD-02 sur un cas concret. Le corrigé fournit la réponse attendue pour cet exercice.",
       "scientific_flags": [
         "human_review_required"
       ]
