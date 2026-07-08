@@ -76,6 +76,12 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 - 1 point : obtenir preuve de terminaison.
 - 1 point : contrôler le cas limite « appel avec même argument » ou expliquer pourquoi il ne s’applique pas.
 - Retrait possible : confusion avec l’erreur fréquente EF4 - Ne pas traiter l’entrée vide.
+### Barème question 5
+- 1 point : identifier correctement le paradigme impératif (boucle for, variable mutable).
+- 1 point : identifier correctement le paradigme fonctionnel (récursion, pas de variable mutable).
+- 1 point : citer un trait visible dans le code pour chaque paradigme.
+- 1 point : justification cohérente (référence au code source).
+
 ## Exercices numérotés
 - Exercice 1 : résoudre factorielle avec `4!` ; attendu : `24`.
 - Exercice 2 : expliquer somme de liste à partir de `[4, 1, 3]` ; attendu : `8`.

@@ -106,6 +106,59 @@ Chacun est récursif : on applique le même parcours aux sous-arbres gauche et d
 - TP : `T06_tp_arbres_binaires_recherche.md`.
 - Évaluation : `T06_evaluation_arbres_binaires_recherche.md`.
 
+## Parcours d'un arbre en trois ordres
+
+La capacité T-ALGO-01C demande de parcourir un arbre en ordres infixe, préfixe et suffixe (postfixe).
+
+### Définitions
+
+Pour chaque nœud, on visite son sous-arbre gauche (G), le nœud lui-même (N), et son sous-arbre droit (D) :
+
+| Ordre | Séquence | Usage typique |
+|-------|----------|---------------|
+| **Préfixe** | N, G, D | Copie de l'arbre, notation polonaise |
+| **Infixe** | G, N, D | Tri des clés d'un ABR (ordre croissant) |
+| **Suffixe (postfixe)** | G, D, N | Libération mémoire, évaluation d'expressions |
+
+### Exemple sur un ABR
+
+```
+        8
+       / \
+      3   10
+     / \    \
+    1   6   14
+```
+
+- **Préfixe** : 8, 3, 1, 6, 10, 14
+- **Infixe** : 1, 3, 6, 8, 10, 14 (clés triées)
+- **Suffixe** : 1, 6, 3, 14, 10, 8
+
+### Implémentation récursive
+
+```python
+def prefixe(noeud):
+    if noeud is None:
+        return []
+    return [noeud.valeur] + prefixe(noeud.gauche) + prefixe(noeud.droite)
+
+def infixe(noeud):
+    if noeud is None:
+        return []
+    return infixe(noeud.gauche) + [noeud.valeur] + infixe(noeud.droite)
+
+def suffixe(noeud):
+    if noeud is None:
+        return []
+    return suffixe(noeud.gauche) + suffixe(noeud.droite) + [noeud.valeur]
+```
+
+### Cas limites
+
+- Arbre vide → les trois parcours renvoient `[]`.
+- Arbre à un seul nœud → les trois parcours renvoient `[valeur]`.
+- Arbre dégénéré (chaîne) → les trois ordres sont distincts mais linéaires.
+
 ## Renforcement explicatif ciblé
 
 Ce cours doit être lu comme une progression sur arbres binaires de recherche. La notion ne se réduit pas à une liste de mots : on part d'une situation observable, on nomme les objets manipulés, puis on applique une méthode vérifiable sur un cas limité avant de généraliser.

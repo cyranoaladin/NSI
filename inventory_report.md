@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1135
+- Total ressources : 1136
 - Ressources pédagogiques : 53
-- Ressources techniques : 1082
+- Ressources techniques : 1083
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1127
+- generated: 1128
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 587
+- interne: 588
 - premiere: 248
 - terminale: 300
 
 ## Répartition par type
 - banque: 14
-- document: 702
+- document: 703
 - python: 95
 - script: 206
 - sequence: 45
 - test: 73
 
 ## Répartition par statut
-- needs_review: 1135
+- needs_review: 1136
 
 ## Répartition audience
 - corrige: 78
 - eleve: 143
-- mixte: 911
+- mixte: 912
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -612,6 +612,7 @@
   - docs/judge_campaign_plan.md
   - docs/local_excludes_required.md
   - docs/promotion/dossier_revue_lead.md
+  - docs/promotion/dossier_revue_lead_v2.md
   - docs/repo_topology.md
   - docs/source_archive_policy.md
   - drive_inventory.csv
@@ -1801,6 +1802,7 @@
   - docs/judge_campaign_plan.md
   - docs/local_excludes_required.md
   - docs/promotion/dossier_revue_lead.md
+  - docs/promotion/dossier_revue_lead_v2.md
   - docs/repo_topology.md
   - docs/source_archive_policy.md
   - drive_inventory.csv
@@ -2864,6 +2866,7 @@
 - docs/judge_campaign_plan.md
 - docs/local_excludes_required.md
 - docs/promotion/dossier_revue_lead.md
+- docs/promotion/dossier_revue_lead_v2.md
 - docs/repo_topology.md
 - docs/source_archive_policy.md
 - drive_inventory.csv
@@ -3994,6 +3997,7 @@
 - docs/judge_campaign_plan.md
 - docs/local_excludes_required.md
 - docs/promotion/dossier_revue_lead.md
+- docs/promotion/dossier_revue_lead_v2.md
 - docs/repo_topology.md
 - docs/source_archive_policy.md
 - drive_inventory.csv

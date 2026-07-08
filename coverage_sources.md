@@ -1701,8 +1701,10 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | bareme | 03_progressions/supports/terminale/T14/T14_bareme_modularite_api_paradigmes_bugs.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T14/T14_corrige_modularite_api_paradigmes_bugs.md | needs_review |
 | cours | 03_progressions/supports/terminale/T14/T14_cours_modularite_api_paradigmes_bugs.md | needs_review |
+| evaluation | 03_progressions/supports/terminale/T04/T04_evaluation_recursivite.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T14/T14_evaluation_modularite_api_paradigmes_bugs.md | needs_review |
 | remediation | 03_progressions/supports/terminale/T14/T14_remediation_modularite_api_paradigmes_bugs.md | needs_review |
+| td | 03_progressions/supports/terminale/T04/T04_td_recursivite.md | needs_review |
 | td | 03_progressions/supports/terminale/T14/T14_TD_modularite_api_paradigmes_bugs.md | needs_review |
 | tp | 03_progressions/supports/terminale/T14/T14_tp_modularite_api_paradigmes_bugs.md | needs_review |
 | trace | 03_progressions/supports/terminale/T14/T14_trace_modularite_api_paradigmes_bugs.md | needs_review |

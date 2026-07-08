@@ -109,6 +109,12 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 - Contrôle : proposer une activité corrective inspirée de « Tester d’abord la liste vide ou `n = 0`. ».
 - Erreur traitée : EF4 - Ne pas traiter l’entrée vide.
 
+### Corrigé exercice 9
+- Méthode : identifier le paradigme de chaque implémentation par ses traits distinctifs.
+- Résultat : impératif (boucle for, variable mutable), fonctionnel (récursion), objet (classe).
+- Contrôle : la version récursive risque RecursionError pour n=10000 (pas d'optimisation tail-call en Python).
+- Erreur traitée : confondre récursion et itération comme paradigmes interchangeables.
+
 ## Barème de correction rapide
 - Exercice 1 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « faire apparaître le contrôle « entier négatif refusé » ».
 - Exercice 2 : 1 point méthode, 0,5 point résultat, 0,5 point contrôle sur « rédiger la méthode avant le résultat ».

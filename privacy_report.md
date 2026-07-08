@@ -83,6 +83,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P07/code/P07_tests_attendus_fonctions_tests_specifications.py: nom propre suspect -> Ada Lovelace
+- 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md: nom propre suspect -> Set-Cookie
+- 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md: nom propre suspect -> Set-Cookie
 - 03_progressions/supports/premiere/P14/P14_TD_synthese_projet_oral.md: nom propre suspect -> Distinguer Internet
 - 03_progressions/supports/premiere/P14/P14_TD_synthese_projet_oral.md: nom propre suspect -> Berners-Lee
 - 03_progressions/supports/premiere/P14/P14_TD_synthese_projet_oral.md: nom propre suspect -> Berners-Lee
@@ -149,6 +151,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - docs/promotion/dossier_revue_lead.md: nom propre suspect -> Federico Faggin
 - docs/promotion/dossier_revue_lead.md: nom propre suspect -> World Wide Web
 - docs/promotion/dossier_revue_lead.md: nom propre suspect -> Tim Berners-Lee
+- docs/promotion/dossier_revue_lead_v2.md: nom propre suspect -> Set-Cookie
+- docs/promotion/dossier_revue_lead_v2.md: nom propre suspect -> Autorité-Test
 - drive_inventory.csv: nom propre suspect -> Dossier Git Drive
 - drive_mapping.md: nom propre suspect -> Cartographie Drive
 - drive_mapping.md: nom propre suspect -> Source Drive
@@ -206,11 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> American Standard Code
 - premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> Information Interchange
 - premiere/sequences/s01_representation_donnees/sources.md: nom propre suspect -> Ressources Drive
-- program_capacity_evidence_depth_report.md: nom propre suspect -> Program Capacity Evidence Depth Report
-- programme_matrix_premiere.md: nom propre suspect -> Formulaire Web
-- progression_audit.md: nom propre suspect -> Calendrier Tunisie
-- progression_audit.md: nom propre suspect -> Ressources Drive
-- ... 140 alertes supplémentaires non affichées
+- ... 144 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 

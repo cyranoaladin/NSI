@@ -188,6 +188,58 @@ Pour analyser le fonctionnement d'un programme récursif (T-LANG-02B) :
 - terminaison : terme à employer dans une justification écrite de la séquence.
 - pile d’appels : terme à employer dans une justification écrite de la séquence.
 
+## Paradigmes de programmation — impératif, fonctionnel, objet
+
+La capacité T-LANG-04A demande de distinguer sur des exemples les paradigmes impératif, fonctionnel et objet.
+
+### Le même problème en trois paradigmes
+
+Problème : calculer la somme des éléments d'une liste.
+
+**Impératif** (Python, boucle avec état mutable) :
+```python
+def somme_imperatif(lst):
+    total = 0
+    for x in lst:
+        total += x
+    return total
+```
+
+**Fonctionnel** (Python, récursion sans état mutable) :
+```python
+def somme_fonctionnel(lst):
+    if not lst:
+        return 0
+    return lst[0] + somme_fonctionnel(lst[1:])
+```
+
+**Objet** (Python, encapsulation dans une classe) :
+```python
+class ListeNombres:
+    def __init__(self, valeurs):
+        self.valeurs = valeurs
+
+    def somme(self):
+        total = 0
+        for x in self.valeurs:
+            total += x
+        return total
+```
+
+### Traits distinctifs
+
+| Paradigme | Unité de base | État | Contrôle de flux |
+|-----------|--------------|------|-----------------|
+| Impératif | Instruction | Mutable (variables modifiées) | Boucles, conditions |
+| Fonctionnel | Fonction | Immutable (pas d'effet de bord) | Récursion, composition |
+| Objet | Objet (données + méthodes) | Encapsulé (attributs privés) | Messages entre objets |
+
+### Cas limites
+
+- Python est **multi-paradigme** : on peut mélanger les trois styles dans un même programme.
+- La récursion (fonctionnel) peut déborder la pile en Python (pas d'optimisation tail-call).
+- Un paradigme n'est pas intrinsèquement supérieur — le choix dépend du problème.
+
 ## Analyse de variantes disciplinaires
 - Variante T04-A : modifier la donnée du premier exemple de T04 - Cours - Récursivité et conserver exactement la même méthode.
 - Variante T04-B : changer le cas limite et expliquer quelle étape de contrôle devient obligatoire.

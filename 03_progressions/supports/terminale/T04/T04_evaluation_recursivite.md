@@ -19,6 +19,7 @@ official_program:
   capacities:
     - "T-LANG-02A"
     - "T-LANG-02B"
+    - "T-LANG-04A"
 ---
 
 
@@ -77,11 +78,19 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 - Énoncé : soit `def decompte(n): print(n); return decompte(n - 1)`. Tracer les 3 premiers appels pour `decompte(2)` (valeur de `n` à chaque appel). Identifier le problème de terminaison, corriger la fonction, donner le variant.
 - Réponse attendue : trace `n=2, n=1, n=0` ; cas de base `if n <= 0: return` ; variant = `n`.
 - Critère de réussite : trace d'appels correcte, cas de base identifié, variant explicité et contrôle « appel avec même argument ».
+### Question 5
+- Objectif évalué : O1, O2.
+- Capacité officielle : T-LANG-04A.
+- Énoncé : on donne deux fonctions Python calculant la somme d'une liste — l'une avec une boucle `for`, l'autre avec la récursion. Identifier le paradigme de chaque version (impératif ou fonctionnel). Citer un trait visible dans le code qui justifie chaque classification.
+- Réponse attendue : boucle = impératif (variable mutable `total`), récursion = fonctionnel (pas de variable mutable).
+- Critère de réussite : paradigmes correctement identifiés, traits justifiés par référence au code.
+
 ## Barème
 - Question 1 : 2 points méthode, 1 point résultat, 1 point justification liée à entier négatif refusé.
 - Question 2 : 2 points méthode, 1 point résultat, 1 point justification liée à liste vide.
 - Question 3 : 2 points méthode, 1 point résultat, 1 point justification liée à reste vide.
 - Question 4 : 2 points méthode, 1 point résultat, 1 point justification liée à appel avec même argument.
+- Question 5 : 2 points identification paradigmes, 2 points justification par traits du code.
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Oublier le cas de base.
 - Erreur fréquente EF2 - Faire un appel récursif qui ne rapproche pas du cas de base.
@@ -128,6 +137,11 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 - Résultat attendu : preuve de terminaison.
 - Méthode exigée : reprendre la démarche du cours puis vérifier le cas limite de la question 4.
 - Critère de validation : méthode visible, résultat correct et contrôle « appel avec même argument ».
+
+### Corrigé question 5
+- Résultat attendu : boucle for = impératif (variable mutable `total`), récursion = fonctionnel (pas de variable mutable, résultat par retour).
+- Méthode exigée : identifier le paradigme par un trait visible dans le code source.
+- Critère de validation : les deux paradigmes nommés, chaque trait justifié par citation du code.
 
 ## Modalités de passation
 - Durée : 25 minutes.

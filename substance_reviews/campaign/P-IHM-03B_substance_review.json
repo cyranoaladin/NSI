@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-06T06:09:13Z",
+  "judged_at": "2026-07-08T15:26:53Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md",
-        "anchor": "#à-savoir",
-        "quote": "- paramètre URL.\n- formulaire.\n- HTTPS.",
+        "anchor": "#mémorisation-et-transmission-des-données-entre-client-et-serveur",
+        "quote": "La capacité P-IHM-03B demande de distinguer ce qui est mémorisé côté client (cookies, localStorage) de ce qui est retransmis au serveur à chaque requête.",
         "teaches": true
       },
       "proof_practice": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
+        "anchor": "#exercice-5",
+        "quote": "- Type : justification.\n- Capacité officielle : P-IHM-03B.\n- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=epsilon\n- Consigne : repérer header main form label input ; traiter aussi `paramètre jour absent` si nécessaire.",
+        "teaches": true
       },
       "proof_correction": {
-        "present": false,
-        "file": null,
-        "anchor": null,
-        "quote": null,
-        "teaches": false
+        "present": true,
+        "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
+        "anchor": "#exercice-5",
+        "quote": "- Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.\n- Méthode : repérer header main form label input.\n- Cas limite : paramètre jour absent.",
+        "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Aucun extrait ne traite explicitement de ce qui est mémorisé côté client (cookies, localStorage, sessionStorage) et retransmis au serveur. Les exercices 5 portant le tag P-IHM-03B portent sur la structure HTML/CSS, pas sur la distinction client/serveur côté mémorisation.",
+      "justification": "Le cours enseigne explicitement la distinction client/serveur (cookies, localStorage vs retransmission). Le TD fait pratiquer via l'exercice 5 tagué P-IHM-03B. Le corrigé fournit la réponse attendue pour cet exercice. Toutefois, le contenu pratique porte davantage sur HTML/formulaires que sur la mémorisation client stricto sensu.",
       "scientific_flags": [
         "human_review_required"
       ]

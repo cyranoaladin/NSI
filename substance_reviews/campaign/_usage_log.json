@@ -20,5 +20,93 @@
     "cost_usd": 0.061629,
     "api_calls": 1,
     "judged_at": "2026-07-08T10:14:51Z"
+  },
+  {
+    "cap": "P-IHM-03B",
+    "seq": "P08",
+    "read": 0,
+    "write": 25664,
+    "fresh": 90,
+    "out": 533,
+    "cost_usd": 0.104505,
+    "api_calls": 1,
+    "judged_at": "2026-07-08T15:28:18Z"
+  },
+  {
+    "cap": "P-ALGO-05",
+    "seq": "P13",
+    "read": 2346,
+    "write": 14700,
+    "fresh": 74,
+    "out": 667,
+    "cost_usd": 0.066056,
+    "api_calls": 2,
+    "judged_at": "2026-07-08T15:28:18Z"
+  },
+  {
+    "cap": "T-ALGO-01C",
+    "seq": "T06",
+    "read": 2346,
+    "write": 9059,
+    "fresh": 83,
+    "out": 609,
+    "cost_usd": 0.044059,
+    "api_calls": 3,
+    "judged_at": "2026-07-08T15:28:18Z"
+  },
+  {
+    "cap": "T-STRUCT-05A",
+    "seq": "T07",
+    "read": 2346,
+    "write": 13665,
+    "fresh": 69,
+    "out": 521,
+    "cost_usd": 0.05997,
+    "api_calls": 4,
+    "judged_at": "2026-07-08T15:28:18Z"
+  },
+  {
+    "cap": "T-BDD-02",
+    "seq": "T09",
+    "read": 17457,
+    "write": 12765,
+    "fresh": 436,
+    "out": 1128,
+    "cost_usd": 0.071334,
+    "api_calls": 6,
+    "judged_at": "2026-07-08T15:28:18Z"
+  },
+  {
+    "cap": "T-BDD-01B",
+    "seq": "T09",
+    "read": 15111,
+    "write": 0,
+    "fresh": 68,
+    "out": 465,
+    "cost_usd": 0.011712,
+    "api_calls": 7,
+    "judged_at": "2026-07-08T15:28:18Z"
+  },
+  {
+    "cap": "T-ALGO-04",
+    "seq": "T17",
+    "read": 2346,
+    "write": 10503,
+    "fresh": 71,
+    "out": 457,
+    "cost_usd": 0.047158,
+    "api_calls": 9,
+    "judged_at": "2026-07-08T15:28:18Z"
+  },
+  {
+    "cap": "T-LANG-04A",
+    "seq": "T04",
+    "read": 10446,
+    "write": 0,
+    "fresh": 77,
+    "out": 437,
+    "cost_usd": 0.00992,
+    "api_calls": 1,
+    "judged_at": "2026-07-08T15:47:05Z"
   }
 ]

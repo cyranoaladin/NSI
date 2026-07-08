@@ -58,16 +58,16 @@ tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[
 - Méthode : montrer que droite-gauche diminue.
 - Résultat attendu : 28 -> 10+10+5+2+1.
 - Contrôle : capacité P-ALGO-04 et cas limite `pièce 1 absente`.
-### Exemple corrigé 3
-- Donnée : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`.
-- Méthode : prendre la plus grande pièce possible.
-- Résultat attendu : rouge, bleu, rouge -> classe rouge.
-- Contrôle : capacité P-ALGO-05 et cas limite `égalité de vote`.
-### Exemple corrigé 4
-- Donnée : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`.
-- Méthode : voter parmi k=3 voisins.
-- Résultat attendu : cible 40 absente -> non trouvé.
-- Contrôle : capacité P-ALGO-03 et cas limite `cible absente`.
+### Exemple corrigé 3 - glouton (P-ALGO-05)
+- Donnée : `pièces=[10,5,2,1], montant=28`.
+- Méthode : prendre la plus grande pièce possible à chaque étape.
+- Résultat attendu : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces).
+- Contrôle : capacité P-ALGO-05 et cas limite `pièce 1 absente → glouton peut échouer`.
+### Exemple corrigé 4 - k-NN (P-ALGO-03)
+- Donnée : `voisins=[rouge:1.2, bleu:2.0, rouge:2.4], k=3`.
+- Méthode : voter parmi les k=3 plus proches voisins.
+- Résultat attendu : rouge (2 voix) vs bleu (1 voix) → classe rouge.
+- Contrôle : capacité P-ALGO-03 et cas limite `égalité de vote avec k pair`.
 
 ## Cas limites
 - cible absente.
