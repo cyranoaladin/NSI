@@ -1,15 +1,192 @@
-# Dossier de revue lead v3 — Post-REM2
+# Dossier de revue lead v3 — Post-REM3 (regenere)
 
 ## Resume executif
 
-- **Coverage** : 113/1/0 (source unique : verdicts)
-- **Partial** : T-LANG-04A (1/3 — juge instable sur section paradigmes dans fichier recursivite)
-- **Echantillon v3** : 12 verdicts (6 re-corriges + 6 frais seed 91)
+- **Coverage** : 113/1/0 (source unique : verdicts au moment de la generation)
+- **Partial** : T-LANG-04A (1/3)
+- **Echantillon** : 13 verdicts (7 corriges + 6 frais seed 91)
 
 ---
 
-## 1. T-BDD-02 (CORRIGE REM2) — Identifier les services rendus par un SGBD relationnel.
+## 1. P-ALGO-03 (CORRIGE) — Ecrire un algorithme qui prédit la classe d'un élément à partir de la classe majoritaire de ses k plus proches voisins.
+- **Proofs** : 3/3
 
+### course
+- **Fichier** : `03_progressions/supports/premiere/P13/P13_cours_dichotomie_glouton_knn.md`
+- **Ancre** : `#algorithme-des-k-plus-proches-voisins`
+- **Citation** : La classe prédite est la **classe majoritaire** parmi ces k voisins....
+
+**Extrait** :
+```
+## Algorithme des k plus proches voisins
+
+La capacité P-ALGO-03 demande d'écrire un algorithme qui prédit la classe d'un élément à partir de l
+
+### Principe
+
+Soit un ensemble de points étiquetés (chaque point a des coordonnées et une classe connue). Pour pré
+
+1. Calculer la **distance** entre le nouveau point et chaque point de l'ensemble.
+2. Trier les points par distance croissante.
+3. Sélectionner les **k plus proches** voisins.
+4. La classe prédite est la **classe majoritaire** parmi ces k voisins.
+```
+
+### practice
+- **Fichier** : `03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md`
+- **Ancre** : `#exercice-9`
+- **Citation** : calculer la distance euclidienne entre le nouveau point et chaque point d'entraînement ; (9b) identifier les 3 plus proches voisins ; (9c) déterminer ...
+
+**Extrait** :
+```
+### Exercice 9
+- Type : production/écriture.
+- Capacité officielle : P-ALGO-03.
+- Données : données d'entraînement = [(2, 3, "A"), (5, 4, "B"), (1, 1, "A"), (8, 7, "B"), (3, 2, "A"
+- Consigne : (9a) calculer la distance euclidienne entre le nouveau point et chaque point d'entraîne
+- Réponse attendue : distances calculées, 3 plus proches identifiés, classe prédite = "A", cas k=2 →
+- Critère de réussite : distances correctes, tri vérifié, vote majoritaire explicite, cas d'égalité 
+
+```
+
+### correction
+- **Fichier** : `03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md`
+- **Ancre** : `#exercice-9`
+- **Citation** : 3 plus proches = A(3,2) B(5,4) A(2,3), vote A=2 B=1, classe "A"....
+
+**Extrait** :
+```
+### Exercice 9
+- Capacité mobilisée : P-ALGO-03.
+- Réponse attendue : distances calculées, 3 plus proches = A(3,2) B(5,4) A(2,3), vote A=2 B=1, class
+- Méthode : distance euclidienne, tri, vote majoritaire.
+- Cas limite : k=2 avec égalité de vote → résultat indéterminé.
+
+```
+
+### Grille
+- [ ] Q1 Ancre correcte
+- [ ] Q2 Enseigne au niveau du libelle
+- [ ] Q3 Meme verdict
+- Observation : ___
+---
+
+## 2. P-ALGO-04 (CORRIGE) — Montrer la terminaison de la recherche dichotomique à l'aide d'un variant de boucle.
+- **Proofs** : 3/3
+
+### course
+- **Fichier** : `03_progressions/supports/premiere/P13/P13_cours_dichotomie_glouton_knn.md`
+- **Ancre** : `#exemple-corrigé-2---variant-de-dichotomie-p-algo-04`
+- **Citation** : Méthode : montrer que la quantité `droite - gauche` diminue strictement à chaque étape.
+- Résultat attendu : étape 1 → gauche=0, droite=5 (écart 5) ; ...
+
+**Extrait** :
+```
+### Exemple corrigé 2 - variant de dichotomie (P-ALGO-04)
+- Donnée : `tableau=[4,9,18,23,37,41], cible=37`.
+- Méthode : montrer que la quantité `droite - gauche` diminue strictement à chaque étape.
+- Résultat attendu : étape 1 → gauche=0, droite=5 (écart 5) ; étape 2 → gauche=3, droite=5 (écart 2)
+- Contrôle : capacité P-ALGO-04 et cas limite `cible absente → l'écart atteint 0 et la boucle s'arrê
+```
+
+### practice
+- **Fichier** : `03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md`
+- **Ancre** : `#exercice-2`
+- **Citation** : Capacité officielle : P-ALGO-04.
+- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, roug...
+
+**Extrait** :
+```
+### Exercice 2
+- Type : production/écriture.
+- Capacité officielle : P-ALGO-04.
+- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.
+- Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.
+- Réponse attendue : 28 -> 10+10+5+2+1.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `pièce 1 absen
+```
+
+### correction
+- **Fichier** : `03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md`
+- **Ancre** : `#exercice-2`
+- **Citation** : Capacité mobilisée : P-ALGO-04.
+- Réponse attendue : le variant droite-gauche décroît de 5 à 1 sur tableau=[4,9,18,23,37,41], cible=37, prouvant la te...
+
+**Extrait** :
+```
+### Exercice 2
+- Capacité mobilisée : P-ALGO-04.
+- Réponse attendue : le variant droite-gauche décroît de 5 à 1 sur tableau=[4,9,18,23,37,41], cible=
+- Méthode : montrer que droite-gauche diminue strictement à chaque étape.
+- Cas limite : cible absente → l'écart atteint 0 et la boucle s'arrête sans trouver.
+```
+
+### Grille
+- [ ] Q1 Ancre correcte
+- [ ] Q2 Enseigne au niveau du libelle
+- [ ] Q3 Meme verdict
+- Observation : ___
+---
+
+## 3. P-ALGO-05 (CORRIGE) — Résoudre un problème grâce à un algorithme glouton.
+- **Proofs** : 3/3
+
+### course
+- **Fichier** : `03_progressions/supports/premiere/P13/P13_cours_dichotomie_glouton_knn.md`
+- **Ancre** : `#exemple-corrigé-3---glouton-p-algo-05`
+- **Citation** : Méthode : prendre la plus grande pièce possible à chaque étape.
+- Résultat attendu : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces).
+- Contrôle : capacité P-ALGO...
+
+**Extrait** :
+```
+### Exemple corrigé 3 - glouton (P-ALGO-05)
+- Donnée : `pièces=[10,5,2,1], montant=28`.
+- Méthode : prendre la plus grande pièce possible à chaque étape.
+- Résultat attendu : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces).
+- Contrôle : capacité P-ALGO-05 et cas limite `pièce 1 absente → glouton peut échouer`.
+```
+
+### practice
+- **Fichier** : `03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md`
+- **Ancre** : `#exercice-2`
+- **Citation** : Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.
+- Réponse attendue : 28 -> 10+10+5+2+1....
+
+**Extrait** :
+```
+### Exercice 2
+- Type : production/écriture.
+- Capacité officielle : P-ALGO-04.
+- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.
+- Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.
+- Réponse attendue : 28 -> 10+10+5+2+1.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `pièce 1 absen
+```
+
+### correction
+- **Fichier** : `03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md`
+- **Ancre** : `#exercice-3`
+- **Citation** : Réponse attendue : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces, algorithme glouton avec pièces=[10,5,2,1]).
+- Méthode : prendre la plus grande pièce possible à...
+
+**Extrait** :
+```
+### Exercice 3
+- Capacité mobilisée : P-ALGO-05.
+- Réponse attendue : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces, algorithme glouton avec pièces=[10,5,2,1]).
+- Méthode : prendre la plus grande pièce possible à chaque étape.
+- Cas limite : pièce 1 absente → le glouton peut échouer (ex. montant=3 avec pièces=[5,2]).
+```
+
+### Grille
+- [ ] Q1 Ancre correcte
+- [ ] Q2 Enseigne au niveau du libelle
+- [ ] Q3 Meme verdict
+- Observation : ___
+---
+
+## 4. T-BDD-02 (CORRIGE) — Identifier les services rendus par un SGBD relationnel.
 - **Proofs** : 3/3
 
 ### course
@@ -67,11 +244,9 @@
 - [ ] Q2 Enseigne au niveau du libelle
 - [ ] Q3 Meme verdict
 - Observation : ___
-
 ---
 
-## 2. T-BDD-01B (CORRIGE REM2) — Distinguer structure et contenu d'une base de données.
-
+## 5. T-BDD-01B (CORRIGE) — Distinguer structure et contenu d'une base de données.
 - **Proofs** : 3/3
 
 ### course
@@ -124,11 +299,9 @@
 - [ ] Q2 Enseigne au niveau du libelle
 - [ ] Q3 Meme verdict
 - Observation : ___
-
 ---
 
-## 3. P-IHM-03B (CORRIGE REM2) — Distinguer ce qui est mémorisé dans le client et retransmis au serveur.
-
+## 6. P-IHM-03B (CORRIGE) — Distinguer ce qui est mémorisé dans le client et retransmis au serveur.
 - **Proofs** : 3/3
 
 ### course
@@ -189,11 +362,9 @@ Set-Cookie: session_id=abc123; Path=/; HttpOnly; Secure
 - [ ] Q2 Enseigne au niveau du libelle
 - [ ] Q3 Meme verdict
 - Observation : ___
-
 ---
 
-## 4. T-LANG-04A (CORRIGE REM2) — Distinguer sur des exemples les paradigmes impératif, fonctionnel et objet.
-
+## 7. T-LANG-04A (CORRIGE) — Distinguer sur des exemples les paradigmes impératif, fonctionnel et objet.
 - **Proofs** : 1/3
 
 ### course : absent
@@ -222,130 +393,9 @@ Set-Cookie: session_id=abc123; Path=/; HttpOnly; Secure
 - [ ] Q2 Enseigne au niveau du libelle
 - [ ] Q3 Meme verdict
 - Observation : ___
-
 ---
 
-## 5. P-ALGO-04 (CORRIGE REM2) — Montrer la terminaison de la recherche dichotomique à l'aide d'un variant de boucle.
-
-- **Proofs** : 3/3
-
-### course
-- **Fichier** : `03_progressions/supports/premiere/P13/P13_cours_dichotomie_glouton_knn.md`
-- **Ancre** : `#exemple-corrigé-2---variant-de-dichotomie-p-algo-04`
-- **Citation** : Méthode : montrer que la quantité `droite - gauche` diminue strictement à chaque étape.
-- Résultat attendu : étape 1 → gauche=0, droite=5 (écart 5) ; ...
-
-**Extrait** :
-```
-### Exemple corrigé 2 - variant de dichotomie (P-ALGO-04)
-- Donnée : `tableau=[4,9,18,23,37,41], cible=37`.
-- Méthode : montrer que la quantité `droite - gauche` diminue strictement à chaque étape.
-- Résultat attendu : étape 1 → gauche=0, droite=5 (écart 5) ; étape 2 → gauche=3, droite=5 (écart 2)
-- Contrôle : capacité P-ALGO-04 et cas limite `cible absente → l'écart atteint 0 et la boucle s'arrê
-```
-
-### practice
-- **Fichier** : `03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md`
-- **Ancre** : `#exercice-2`
-- **Citation** : Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.
-- Réponse attendue : 28 -> 10+10+5+2+1....
-
-**Extrait** :
-```
-### Exercice 2
-- Type : production/écriture.
-- Capacité officielle : P-ALGO-04.
-- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.
-- Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.
-- Réponse attendue : 28 -> 10+10+5+2+1.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `pièce 1 absen
-```
-
-### correction
-- **Fichier** : `03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md`
-- **Ancre** : `#exercice-2`
-- **Citation** : - Réponse attendue : 28 -> 10+10+5+2+1.
-- Méthode : montrer que droite-gauche diminue.
-- Cas limite : pièce 1 absente....
-
-**Extrait** :
-```
-### Exercice 2
-- Réponse attendue : 28 -> 10+10+5+2+1.
-- Méthode : montrer que droite-gauche diminue.
-- Cas limite : pièce 1 absente.
-```
-
-### Grille
-- [ ] Q1 Ancre correcte
-- [ ] Q2 Enseigne au niveau du libelle
-- [ ] Q3 Meme verdict
-- Observation : ___
-
----
-
-## 6. P-ALGO-05 (CORRIGE REM2) — Résoudre un problème grâce à un algorithme glouton.
-
-- **Proofs** : 3/3
-
-### course
-- **Fichier** : `03_progressions/supports/premiere/P13/P13_cours_dichotomie_glouton_knn.md`
-- **Ancre** : `#exemple-corrigé-3---glouton-p-algo-05`
-- **Citation** : Méthode : prendre la plus grande pièce possible à chaque étape.
-- Résultat attendu : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces).
-- Contrôle : capacité P-ALGO...
-
-**Extrait** :
-```
-### Exemple corrigé 3 - glouton (P-ALGO-05)
-- Donnée : `pièces=[10,5,2,1], montant=28`.
-- Méthode : prendre la plus grande pièce possible à chaque étape.
-- Résultat attendu : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces).
-- Contrôle : capacité P-ALGO-05 et cas limite `pièce 1 absente → glouton peut échouer`.
-```
-
-### practice
-- **Fichier** : `03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md`
-- **Ancre** : `#exercice-2`
-- **Citation** : Capacité officielle : P-ALGO-04.
-- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, roug...
-
-**Extrait** :
-```
-### Exercice 2
-- Type : production/écriture.
-- Capacité officielle : P-ALGO-04.
-- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.
-- Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.
-- Réponse attendue : 28 -> 10+10+5+2+1.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `pièce 1 absen
-```
-
-### correction
-- **Fichier** : `03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md`
-- **Ancre** : `#exercice-3`
-- **Citation** : Réponse attendue : rouge, bleu, rouge -> classe rouge.
-- Méthode : prendre la plus grande pièce possible.
-- Cas limite : égalité de vote....
-
-**Extrait** :
-```
-### Exercice 3
-- Réponse attendue : rouge, bleu, rouge -> classe rouge.
-- Méthode : prendre la plus grande pièce possible.
-- Cas limite : égalité de vote.
-```
-
-### Grille
-- [ ] Q1 Ancre correcte
-- [ ] Q2 Enseigne au niveau du libelle
-- [ ] Q3 Meme verdict
-- Observation : ___
-
----
-
-## 7. P-ARCH-03B (FRAIS) — Utiliser les commandes de base en ligne de commande.
-
+## 8. P-ARCH-03B (FRAIS) — Utiliser les commandes de base en ligne de commande.
 - **Proofs** : 3/3
 
 ### course
@@ -397,11 +447,9 @@ Set-Cookie: session_id=abc123; Path=/; HttpOnly; Secure
 - [ ] Q2 Enseigne au niveau du libelle
 - [ ] Q3 Meme verdict
 - Observation : ___
-
 ---
 
-## 8. T-LANG-05 (FRAIS) — Savoir répondre aux causes typiques de bugs.
-
+## 9. T-LANG-05 (FRAIS) — Savoir répondre aux causes typiques de bugs.
 - **Proofs** : 3/3
 
 ### course
@@ -457,11 +505,9 @@ Set-Cookie: session_id=abc123; Path=/; HttpOnly; Secure
 - [ ] Q2 Enseigne au niveau du libelle
 - [ ] Q3 Meme verdict
 - Observation : ___
-
 ---
 
-## 9. P-DATA-CONSTR-03A (FRAIS) — Construire une entrée de dictionnaire.
-
+## 10. P-DATA-CONSTR-03A (FRAIS) — Construire une entrée de dictionnaire.
 - **Proofs** : 3/3
 
 ### course
@@ -535,11 +581,9 @@ photo["taille"] = (6000, 4000)
 - [ ] Q2 Enseigne au niveau du libelle
 - [ ] Q3 Meme verdict
 - Observation : ___
-
 ---
 
-## 10. T-STRUCT-05C (FRAIS) — Ecrire l'implémentation d'un graphe par listes de successeurs ou prédécesseurs.
-
+## 11. T-STRUCT-05C (FRAIS) — Ecrire l'implémentation d'un graphe par listes de successeurs ou prédécesseurs.
 - **Proofs** : 3/3
 
 ### course
@@ -591,11 +635,9 @@ photo["taille"] = (6000, 4000)
 - [ ] Q2 Enseigne au niveau du libelle
 - [ ] Q3 Meme verdict
 - Observation : ___
-
 ---
 
-## 11. T-STRUCT-05B (FRAIS) — Ecrire l'implémentation d'un graphe par matrice d'adjacence.
-
+## 12. T-STRUCT-05B (FRAIS) — Ecrire l'implémentation d'un graphe par matrice d'adjacence.
 - **Proofs** : 3/3
 
 ### course
@@ -657,11 +699,9 @@ photo["taille"] = (6000, 4000)
 - [ ] Q2 Enseigne au niveau du libelle
 - [ ] Q3 Meme verdict
 - Observation : ___
-
 ---
 
-## 12. P-DATA-CONSTR-02B (FRAIS) — Construire un tableau par compréhension.
-
+## 13. P-DATA-CONSTR-02B (FRAIS) — Construire un tableau par compréhension.
 - **Proofs** : 3/3
 
 ### course
@@ -739,5 +779,4 @@ cubes = [x ** 3 for x in range(1, 9)]
 - [ ] Q2 Enseigne au niveau du libelle
 - [ ] Q3 Meme verdict
 - Observation : ___
-
 ---
