@@ -130,6 +130,14 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 - Production attendue : l’erreur est localisée puis réparée.
 - Contrainte de contrôle : proposer une activité corrective inspirée de « Tester d’abord la liste vide ou `n = 0`. ».
 - Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
+### Exercice 9
+- Objectif travaillé : O1, O2.
+- Capacité officielle : T-LANG-04A.
+- Énoncé disciplinaire : on donne trois implémentations de la somme d'une liste — impérative (boucle for), fonctionnelle (récursion sans variable mutable) et objet (méthode d'une classe ListeNombres). (9a) Identifier le paradigme de chaque version. (9b) Citer un trait distinctif de chaque paradigme visible dans le code. (9c) Laquelle risque de déborder la pile pour une liste de 10 000 éléments, et pourquoi ?
+- Production attendue : impératif/fonctionnel/objet identifiés, traits (état mutable / récursion / encapsulation), récursion = pile.
+- Contrainte de contrôle : chaque réponse justifiée par une référence au code.
+- Critère local : la réponse contient une donnée, une méthode, un résultat et une vérification.
+
 ## Corrigé
 ### Corrigé exercice 1
 - Résultat : `24`.
@@ -195,6 +203,11 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 - Méthode theta dans T04 td recursivite : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
 - Résultat theta dans T04 td recursivite : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
 - Contrôle theta dans T04 td recursivite : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+### Corrigé exercice 9
+- Résultat : (9a) boucle for = impératif, récursion = fonctionnel, classe = objet. (9b) Impératif : variable `total` mutée dans la boucle. Fonctionnel : pas de variable mutable, résultat construit par retour récursif. Objet : données et méthode encapsulées dans `ListeNombres`. (9c) La version récursive (fonctionnelle) risque `RecursionError` car Python n'optimise pas la récursion terminale.
+- Contrôle : chaque paradigme justifié par citation du code source.
+- Erreur traitée : confondre récursion (paradigme fonctionnel) et itération (paradigme impératif).
 
 ## Erreurs fréquentes
 - Erreur fréquente EF1 - Oublier le cas de base.
