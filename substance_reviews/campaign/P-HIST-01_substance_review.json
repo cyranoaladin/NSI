@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-08T08:53:53Z",
+  "judged_at": "2026-07-08T09:11:13Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -13,25 +13,25 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P14/P14_cours_synthese_projet_oral.md",
         "anchor": "#frise-chronologique-structurée",
-        "quote": "| 1936 | Machine de Turing (modèle théorique de calcul) | Alan Turing | Fondation théorique : tout calcul est une suite d'opérations élémentaires sur une bande |",
+        "quote": "| 1936 | Machine de Turing (modèle théorique de calcul) | Alan Turing | Fondation théorique : tout calcul est une suite d'opérations élémentaires sur une bande |\n| 1945 | Architecture von Neumann (programme stocké en mémoire) | John von Neumann | Le programme et les données partagent la même mémoire — un seul ordinateur peut exécuter n'importe quel programme |",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/premiere/P14/P14_TD_synthese_projet_oral.md",
         "anchor": "#exercice-9",
-        "quote": "Consigne : (9a) ordonner les événements suivants du plus ancien au plus récent : microprocesseur Intel 4004, machine de Turing, invention du Web, ENIAC, circuit intégré. (9b) Associer chaque événement à son protagoniste principal.",
+        "quote": "Consigne : (9a) ordonner les événements suivants du plus ancien au plus récent : microprocesseur Intel 4004, machine de Turing, invention du Web, ENIAC, circuit intégré. (9b) Associer chaque événement à son protagoniste principal. (9c) Expliquer en deux phrases pourquoi l'architecture von Neumann (1945) est considérée comme une rupture fondamentale. (9d) Distinguer Internet et le Web en une phrase.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P14/P14_corrige_synthese_projet_oral.md",
         "anchor": "#exercice-9",
-        "quote": "Réponse attendue : frise ordonnée (Turing 1936, ENIAC 1946, CI 1958, 4004 1971, Web 1989), associations protagonistes, rupture von Neumann, distinction Internet/Web.",
+        "quote": "Réponse attendue : frise ordonnée (Turing 1936, ENIAC 1946, CI 1958, i4004 1971, Web 1989), associations protagonistes, rupture von Neumann, distinction Internet/Web.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours fournit une frise chronologique structurée avec protagonistes (Turing, von Neumann, Kilby, Berners-Lee…). L'exercice 9 du TD fait pratiquer l'ordonnancement et l'association événement-protagoniste. Le corrigé de l'exercice 9 fournit les réponses attendues.",
+      "justification": "Le cours fournit une frise chronologique détaillée avec protagonistes (P-HIST-01). L'exercice 9 du TD fait pratiquer l'ordonnancement et l'association événement-protagoniste. Le corrigé fournit les réponses attendues pour cet exercice.",
       "scientific_flags": [
         "human_review_required"
       ]

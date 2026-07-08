@@ -2,31 +2,11 @@
   {
     "cap": "P-HIST-01",
     "seq": "P14",
-    "read": 0,
-    "write": 15184,
-    "fresh": 92,
-    "out": 490,
-    "cost_usd": 0.064566,
-    "api_calls": 1
-  },
-  {
-    "cap": "T-HIST-01A",
-    "seq": "T19",
-    "read": 2346,
-    "write": 13877,
-    "fresh": 92,
-    "out": 571,
-    "cost_usd": 0.061584,
-    "api_calls": 2
-  },
-  {
-    "cap": "T-HIST-01B",
-    "seq": "T19",
-    "read": 16223,
+    "read": 15184,
     "write": 0,
-    "fresh": 82,
-    "out": 619,
-    "cost_usd": 0.014398,
-    "api_calls": 3
+    "fresh": 92,
+    "out": 586,
+    "cost_usd": 0.013621,
+    "api_calls": 1
   }
 ]

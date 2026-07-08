@@ -53,7 +53,7 @@ official_program:
 
 ### Exercice 9
 - Capacité mobilisée : P-HIST-01.
-- Réponse attendue : frise ordonnée (Turing 1936, ENIAC 1946, CI 1958, 4004 1971, Web 1989), associations protagonistes, rupture von Neumann, distinction Internet/Web.
+- Réponse attendue : frise ordonnée (Turing 1936, ENIAC 1946, CI 1958, i4004 1971, Web 1989), associations protagonistes, rupture von Neumann, distinction Internet/Web.
 - Méthode : classement chronologique, association événement-protagoniste, analyse rupture.
 - Cas limite : ENIAC n'est pas le premier ordinateur (Colossus 1943, Z3 1941).
 

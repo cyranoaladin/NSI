@@ -6,8 +6,7 @@ Les noms propres suspects sont listés pour revue humaine.
 
 ## Alertes bloquantes
 
-- 03_progressions/supports/premiere/P14/P14_corrige_synthese_projet_oral.md: telephone_tn possible -> 4004 1971
-- substance_reviews/campaign/P-HIST-01_substance_review.json: telephone_tn possible -> 4004 1971
+- Aucune alerte.
 
 ## Alertes de revue
 
