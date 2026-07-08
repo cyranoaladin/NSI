@@ -103,9 +103,9 @@ La capacité P-HIST-01 demande de situer dans le temps les principaux événemen
 | 1936 | Machine de Turing (modèle théorique de calcul) | Alan Turing | Fondation théorique : tout calcul est une suite d'opérations élémentaires sur une bande |
 | 1945 | Architecture von Neumann (programme stocké en mémoire) | John von Neumann | Le programme et les données partagent la même mémoire — un seul ordinateur peut exécuter n'importe quel programme |
 | 1946 | ENIAC (premier calculateur électronique généraliste) | John Mauchly, J. Presper Eckert | Passage du mécanique (relais) à l'électronique (tubes à vide) — vitesse multipliée par 1000 |
-| 1958 | Circuit intégré | Jack Kilby, Robert Noyce | Plusieurs transistors sur une seule puce de silicium — miniaturisation et fiabilité |
+| 1958-59 | Circuit intégré (Kilby 1958, Noyce 1959) | Jack Kilby (Texas Instruments), Robert Noyce (Fairchild) | Plusieurs transistors sur une seule puce de silicium — miniaturisation et fiabilité |
 | 1971 | Microprocesseur Intel 4004 | Ted Hoff, Federico Faggin | Un processeur complet sur une seule puce — naissance de la micro-informatique |
-| 1977 | Micro-ordinateurs personnels (Apple II, TRS-80, PET) | Steve Jobs, Steve Wozniak | L'ordinateur entre dans les foyers — démocratisation de l'informatique |
+| 1977 | Micro-ordinateurs personnels : Apple II (Jobs, Wozniak), TRS-80 (Tandy), Commodore PET (Peddle) | Jobs/Wozniak, Leininger/French, Chuck Peddle | Trois machines la même année — l'ordinateur entre dans les foyers |
 | 1989 | Invention du World Wide Web | Tim Berners-Lee (CERN) | Hypertexte + HTTP + URL : l'information est liée et accessible universellement |
 | 1991 | Ouverture publique du Web | Tim Berners-Lee | Premier navigateur et serveur Web publics — début de l'Internet grand public |
 
