@@ -136,6 +136,19 @@ Les noms propres suspects sont listés pour revue humaine.
 - delivery_policy.md: nom propre suspect -> Historique Git
 - differentiation_quality_report.md: nom propre suspect -> Differentiation Quality Report
 - docs/audits/AUDIT_FRONTEND_infra_ground_truth.md: nom propre suspect -> Collections Chroma
+- docs/promotion/dossier_revue_lead.md: nom propre suspect -> Berners-Lee
+- docs/promotion/dossier_revue_lead.md: nom propre suspect -> Alan Turing
+- docs/promotion/dossier_revue_lead.md: nom propre suspect -> Alan Turing
+- docs/promotion/dossier_revue_lead.md: nom propre suspect -> John Mauchly
+- docs/promotion/dossier_revue_lead.md: nom propre suspect -> Presper Eckert
+- docs/promotion/dossier_revue_lead.md: nom propre suspect -> Jack Kilby
+- docs/promotion/dossier_revue_lead.md: nom propre suspect -> Texas Instruments
+- docs/promotion/dossier_revue_lead.md: nom propre suspect -> Robert Noyce
+- docs/promotion/dossier_revue_lead.md: nom propre suspect -> Microprocesseur Intel
+- docs/promotion/dossier_revue_lead.md: nom propre suspect -> Ted Hoff
+- docs/promotion/dossier_revue_lead.md: nom propre suspect -> Federico Faggin
+- docs/promotion/dossier_revue_lead.md: nom propre suspect -> World Wide Web
+- docs/promotion/dossier_revue_lead.md: nom propre suspect -> Tim Berners-Lee
 - drive_inventory.csv: nom propre suspect -> Dossier Git Drive
 - drive_mapping.md: nom propre suspect -> Cartographie Drive
 - drive_mapping.md: nom propre suspect -> Source Drive
@@ -197,20 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - programme_matrix_premiere.md: nom propre suspect -> Formulaire Web
 - progression_audit.md: nom propre suspect -> Calendrier Tunisie
 - progression_audit.md: nom propre suspect -> Ressources Drive
-- qa_debt_register.md: nom propre suspect -> Portabilité Drive
-- qa_gate_policy.md: nom propre suspect -> Informational Metrics
-- qa_gate_policy.md: nom propre suspect -> Cibles Makefile
-- qa_gate_policy.md: nom propre suspect -> Gates Drive
-- qa_report.md: nom propre suspect -> Plan Drive
-- qa_report.md: nom propre suspect -> Lots Drive
-- qa_report.md: nom propre suspect -> Dossier Git Drive
-- qa_report.md: nom propre suspect -> Ressources Drive
-- qa_report.md: nom propre suspect -> Ressources Drive
-- qa_report.md: nom propre suspect -> Ressources Drive
-- rag_connection.md: nom propre suspect -> Content-Type
-- reports/closure2/phaseA_final_report.md: nom propre suspect -> Backlog Drive
-- reports/closure2/phaseA_final_report.md: nom propre suspect -> Lots Drive
-- ... 127 alertes supplémentaires non affichées
+- ... 140 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
