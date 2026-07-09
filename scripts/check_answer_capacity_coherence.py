@@ -3,7 +3,7 @@
 
 Scanne toutes les sequences via leurs contrats et verifie dans CHAQUE
 support (TD, corrige, tp, trace, version_amenagee, evaluation, bareme,
-remediation) :
+remediation, cours) :
 1. reponse↔methode : la reponse attendue est coherente avec la methode
 2. methode↔capacite : la methode de la consigne correspond a la capacite
 3. les reponses positionnelles (version_amenagee) suivent l'ordre capacite
@@ -11,7 +11,7 @@ remediation) :
 Parseurs etendus :
 - TD/corrige : "Capacite officielle" / "Capacite mobilisee" + consigne/methode
 - cours : "Controle : capacite P-ALGO-xx"
-- trace : "Capacite : P-ALGO-xx"
+- trace : "Capacite P-ALGO-xx (...) : <reponse>" (multi-motif)
 - evaluation/bareme : "### Question N" + "Capacite officielle" ou "P-ALGO-xx"
 - remediation : "Relier ... P-ALGO-xx"
 
@@ -20,7 +20,7 @@ Mapping autorite (programme_nsi_2019.yaml) :
   P-ALGO-04 = recherche dichotomique (recherche + variant)
   P-ALGO-05 = algorithmes gloutons
 
-Fail-closed : un fichier attendu absent fait echouer le guard.
+Fail-closed PAR TYPE : chaque suffixe attendu doit exister.
 
 Usage :
     python -m scripts.check_answer_capacity_coherence
@@ -91,12 +91,15 @@ FORBIDDEN: list[tuple[re.Pattern[str], re.Pattern[str], str]] = [
     (METHOD_KNN, ANSWER_VARIANT, "reponse variant sous consigne k-NN"),
 ]
 
-# cas-limite mismatches
+# cas-limite mismatches (cubic #1 P2: ajout CASLIMITE_DICHOTOMIE)
+CASLIMITE_DICHOTOMIE = re.compile(r"cible absente", re.I)
 CASLIMITE_GLOUTON = re.compile(r"pièce 1 absente|glouton.*échouer", re.I)
 CASLIMITE_KNN = re.compile(r"égalité de vote|k pair", re.I)
 CASLIMITE_FORBIDDEN: list[tuple[re.Pattern[str], re.Pattern[str], str]] = [
     (METHOD_GLOUTON, CASLIMITE_KNN, "cas-limite k-NN sous consigne glouton"),
+    (METHOD_GLOUTON, CASLIMITE_DICHOTOMIE, "cas-limite dichotomie sous consigne glouton"),
     (METHOD_KNN, CASLIMITE_GLOUTON, "cas-limite glouton sous consigne k-NN"),
+    (METHOD_KNN, CASLIMITE_DICHOTOMIE, "cas-limite dichotomie sous consigne k-NN"),
     (METHOD_DICHOTOMIE, CASLIMITE_GLOUTON, "cas-limite glouton sous consigne dichotomie"),
     (METHOD_DICHOTOMIE, CASLIMITE_KNN, "cas-limite k-NN sous consigne dichotomie"),
     (METHOD_VARIANT, CASLIMITE_GLOUTON, "cas-limite glouton sous consigne variant"),
@@ -110,8 +113,11 @@ CAPACITY_METHODS: dict[str, list[str]] = {
     "P-ALGO-05": ["glouton"],
 }
 
+# cubic #2 P1: P-ALGO-04 doit couvrir dichotomie ET variant
 CAPACITY_ANSWER_FINGERPRINTS: dict[str, re.Pattern[str]] = {
-    "P-ALGO-04": ANSWER_DICHOTOMIE,
+    "P-ALGO-04": re.compile(
+        f"{ANSWER_DICHOTOMIE.pattern}|{ANSWER_VARIANT.pattern}", re.I
+    ),
     "P-ALGO-03": ANSWER_KNN,
     "P-ALGO-05": ANSWER_GLOUTON,
 }
@@ -129,7 +135,6 @@ SECTION_HEADER_RE = re.compile(r"^#{2,3}\s+", re.M)
 EXAMPLE_HEADER_RE = re.compile(
     r"^###\s+Exemple corrigé\s+(\d+)", re.M
 )
-CAP_RE = re.compile(r"P-ALGO-0[345]")
 
 
 def _split_at_headers(
@@ -162,7 +167,6 @@ def detect_method(text: str) -> str | None:
 
 
 def _extract_cap(text: str) -> str | None:
-    """Extract a P-ALGO capacity from text via several patterns."""
     for pat in [
         r"Capacité officielle\s*:\s*(P-ALGO-0[345])",
         r"Capacité mobilisée\s*:\s*(P-ALGO-0[345])",
@@ -178,7 +182,6 @@ def _extract_cap(text: str) -> str | None:
 
 
 def _extract_method_text(text: str) -> str:
-    """Extract method-bearing text from a block."""
     for pat in [
         r"Consigne\s*:\s*(.+?)(?:\n|$)",
         r"Méthode\s*:\s*(.+?)(?:\n|$)",
@@ -194,8 +197,9 @@ def _extract_method_text(text: str) -> str:
 
 def _extract_answer(text: str) -> str | None:
     m = re.search(
-        r"(?:Réponse attendue|Résultat attendu|Résultat final|Résultat de référence)"
-        r"\s*:\s*(.+?)(?:\n|$)", text
+        r"(?:Réponse attendue|Résultat attendu|Résultat final"
+        r"|Résultat de référence|résultat)"
+        r"\s*[:=]\s*(.+?)(?:\n|$)", text, re.I
     )
     return m.group(1) if m else None
 
@@ -260,46 +264,79 @@ def check_cours(text: str, filename: str) -> list[str]:
 
 
 # ---------------------------------------------------------------------------
-# Trace: "Capacité : P-ALGO-xx" lines
+# Trace: multi-line and single-line capacity criteria
 # ---------------------------------------------------------------------------
 def check_trace(text: str, filename: str) -> list[str]:
+    """Parse trace criteria — handles both single-line and multi-line formats.
+
+    Single-line: "- Capacité P-ALGO-04 (dichotomie) : milieux 18 …"
+    Multi-line:  "- Capacité : P-ALGO-03." followed by "- Résultat final : 28→…"
+    """
     errors: list[str] = []
-    for line in text.splitlines():
-        m = re.match(r"^-\s+Capacité\s+(?::?\s*)?(P-ALGO-0[345])\b(.*)$", line)
+    lines = text.splitlines()
+
+    # Single-line format: "- Capacité P-ALGO-xx (…) : <answer>"
+    for line in lines:
+        m = re.match(
+            r"^-\s+Capacité\s+(P-ALGO-0[345])\s*\([^)]*\)\s*:\s*(.+)$", line
+        )
+        if m:
+            cap_id, answer = m.group(1), m.group(2)
+            _check_answer_vs_cap(cap_id, answer, filename, "Critère", errors)
+
+    # Multi-line format: "- Capacité : P-ALGO-xx." then "- Résultat final : …"
+    for i, line in enumerate(lines):
+        m = re.match(r"^-\s+Capacité\s*:\s*(P-ALGO-0[345])\b", line)
         if not m:
-            m2 = re.match(r"^-\s+Capacité\s*:\s*(P-ALGO-0[345])\b(.*)$", line)
-            if not m2:
-                continue
-            m = m2
-        cap_id = m.group(1)
-        rest = m.group(2)
-        allowed = CAPACITY_METHODS.get(cap_id, [])
-        if not allowed:
             continue
-        method = detect_method(rest)
-        answer = _extract_answer(rest) or rest
-        # Check answer fingerprint vs capacity
-        for other_cap, fp in CAPACITY_ANSWER_FINGERPRINTS.items():
-            if other_cap != cap_id and fp.search(answer):
-                errors.append(
-                    f"{filename} Critère {cap_id}: reponse {other_cap} "
-                    f"sous capacite {cap_id}"
-                )
-        if method and method not in allowed:
-            errors.append(
-                f"{filename} Critère {cap_id}: methode '{method}' "
-                f"incompatible avec {cap_id}"
-            )
+        cap_id = m.group(1)
+        # Look at next line(s) for a result
+        for j in range(i + 1, min(i + 3, len(lines))):
+            ans = _extract_answer(lines[j])
+            if ans:
+                _check_answer_vs_cap(cap_id, ans, filename, "Critère", errors)
+                break
+
     return errors
 
 
+def _check_answer_vs_cap(
+    cap_id: str, answer: str, filename: str, label: str,
+    errors: list[str],
+) -> None:
+    """Flag if an answer fingerprint belongs to a DIFFERENT capacity."""
+    for other_cap, fp in CAPACITY_ANSWER_FINGERPRINTS.items():
+        if other_cap != cap_id and fp.search(answer):
+            errors.append(
+                f"{filename} {label} {cap_id}: reponse {other_cap} "
+                f"sous capacite {cap_id}"
+            )
+
+
 # ---------------------------------------------------------------------------
-# Evaluation / Bareme: "### Question N" blocks
+# Evaluation / Bareme: "### Question N" blocks + inline barème lines
 # ---------------------------------------------------------------------------
 def check_questions(text: str, filename: str) -> list[str]:
     errors: list[str] = []
+    # Structured question blocks
     for block in _split_at_headers(text, QUESTION_HEADER_RE):
         errors.extend(check_cap_block(block["text"], block["title"], filename))
+
+    # Inline barème lines: "- Question N : … sur P-ALGO-xx avec résultat `…`"
+    for line in text.splitlines():
+        m = re.match(
+            r"^-\s+Question\s+(\d+)\s*:\s*.*?"
+            r"(?:sur|P-ALGO)\s*(P-ALGO-0[345])\b.*?"
+            r"(?:résultat|avec)\s*[`«]?(.+?)[`»]?\s*$",
+            line, re.I,
+        )
+        if not m:
+            continue
+        q_num, cap_id, answer = m.group(1), m.group(2), m.group(3)
+        _check_answer_vs_cap(
+            cap_id, answer, filename, f"Barème Q{q_num}", errors
+        )
+
     return errors
 
 
@@ -315,7 +352,6 @@ def check_remediation(text: str, filename: str) -> list[str]:
         cap_id = m.group(1)
         method = detect_method(line)
         if method is None:
-            # Check context: the activities above mention a method
             continue
         allowed = CAPACITY_METHODS.get(cap_id, [])
         if allowed and method not in allowed:
@@ -323,6 +359,53 @@ def check_remediation(text: str, filename: str) -> list[str]:
                 f"{filename}: 'Relier' methode '{method}' → {cap_id} "
                 f"(attendu: {'/'.join(allowed)})"
             )
+    return errors
+
+
+# ---------------------------------------------------------------------------
+# TP: "### Corrigé question N" blocks
+# ---------------------------------------------------------------------------
+TP_QUESTION_HEADER_RE = re.compile(
+    r"^###\s+Corrigé question\s+(\d+)\s*$", re.M
+)
+
+
+def check_tp(text: str, filename: str) -> list[str]:
+    """Check TP corrigé questions for answer↔method cross-contamination.
+
+    Cross-references "Travail demandé" items (which carry the method)
+    with "Corrigé question N" blocks (which carry the answer).
+    """
+    errors: list[str] = []
+
+    # Extract work items from "Travail demandé"
+    work_methods: dict[int, str | None] = {}
+    travail_match = re.search(r"##\s+Travail demandé\s*\n((?:\d+\.\s+.+\n?)+)", text)
+    if travail_match:
+        for item_m in re.finditer(r"(\d+)\.\s+(.+)", travail_match.group(1)):
+            idx = int(item_m.group(1))
+            work_methods[idx] = detect_method(item_m.group(2))
+
+    # Extract raw work item text for method regex matching
+    work_texts: dict[int, str] = {}
+    if travail_match:
+        for item_m in re.finditer(r"(\d+)\.\s+(.+)", travail_match.group(1)):
+            work_texts[int(item_m.group(1))] = item_m.group(2)
+
+    # Check each corrigé question
+    for block in _split_at_headers(text, TP_QUESTION_HEADER_RE):
+        q_num = int(block["num"])
+        answer = _extract_answer(block["text"])
+        if not answer:
+            continue
+        method = work_methods.get(q_num)
+        method_text_raw = work_texts.get(q_num, "")
+        if method is None:
+            continue
+        # Check answer↔method using the raw work item text
+        for method_re, forbidden_re, desc in FORBIDDEN:
+            if method_re.search(method_text_raw) and forbidden_re.search(answer):
+                errors.append(f"{filename} {block['title']}: {desc}")
     return errors
 
 
@@ -383,23 +466,21 @@ def check_file(
     for block in _split_at_headers(text, EXERCISE_HEADER_RE):
         errors.extend(check_cap_block(block["text"], block["title"], filename))
 
-    # Cours examples
     if "cours" in fn_lower:
         errors.extend(check_cours(text, filename))
 
-    # Trace criteria
     if "trace" in fn_lower:
         errors.extend(check_trace(text, filename))
 
-    # Evaluation / Bareme questions
     if "evaluation" in fn_lower or "bareme" in fn_lower:
         errors.extend(check_questions(text, filename))
 
-    # Remediation
     if "remediation" in fn_lower:
         errors.extend(check_remediation(text, filename))
 
-    # Version amenagee positional
+    if "_tp_" in fn_lower or fn_lower.startswith("p13_tp"):
+        errors.extend(check_tp(text, filename))
+
     if "version_amenagee" in fn_lower and capacities:
         errors.extend(check_positional_answers(text, filename, capacities))
 
@@ -433,6 +514,36 @@ def find_support_files(seq_id: str, level: str) -> list[Path]:
     return sorted(seq_dir.glob(f"{seq_id}_*.md"))
 
 
+def _check_expected_files(
+    seq_id: str, level: str, files: list[Path],
+) -> list[str]:
+    """cubic #3 P2: fail-closed par type — chaque suffixe attendu doit exister."""
+    errors: list[str] = []
+    found_suffixes: set[str] = set()
+    seq_prefix = seq_id.lower() + "_"
+    for f in files:
+        name = f.stem.lower()  # e.g. p13_td_dichotomie_glouton_knn
+        if not name.startswith(seq_prefix):
+            continue
+        rest = name[len(seq_prefix):]  # e.g. td_dichotomie_glouton_knn
+        # Match compound suffixes first (version_amenagee, tp_papier)
+        for suffix in EXPECTED_SUFFIXES:
+            if rest.startswith(suffix.lower()):
+                found_suffixes.add(suffix.lower())
+                break
+        else:
+            # Fallback: first segment
+            first = rest.split("_", 1)[0]
+            found_suffixes.add(first)
+    for suffix in EXPECTED_SUFFIXES:
+        if suffix.lower() not in found_suffixes:
+            errors.append(
+                f"{seq_id}: support '{suffix}' absent "
+                f"({SUPPORTS_DIR / level / seq_id})"
+            )
+    return errors
+
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -453,6 +564,8 @@ def main() -> None:
                     f"{SUPPORTS_DIR / level / seq_id}"
                 )
                 continue
+            # cubic #3: fail-closed par type
+            all_errors.extend(_check_expected_files(seq_id, level, files))
             for filepath in files:
                 all_errors.extend(check_file(filepath, capacities))
 
