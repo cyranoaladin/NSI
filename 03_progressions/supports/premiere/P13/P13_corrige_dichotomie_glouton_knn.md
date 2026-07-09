@@ -21,6 +21,7 @@ official_program:
 
 ## Corrigé du TD
 ### Exercice 1
+- Capacité mobilisée : P-ALGO-04.
 - Réponse attendue : milieux 18 puis 37 -> trouvé indice 4.
 - Méthode : calculer milieu puis réduire intervalle.
 - Cas limite : cible absente.
@@ -56,9 +57,9 @@ official_program:
 - Cas limite : tous les voisins de la même classe → vote unanime.
 ### Exercice 8
 - Capacité mobilisée : P-ALGO-04.
-- Réponse attendue : correction d'un code de dichotomie avec variant erroné.
-- Méthode : identifier l'erreur dans le variant et proposer la correction.
-- Cas limite : cible absente avec variant mal défini → boucle infinie.
+- Réponse attendue : le variant droite-gauche décroît (5→2→1) → terminaison prouvée.
+- Méthode : montrer que le variant droite-gauche décroît à chaque étape sur tableau=[4,9,18,23,37,41], cible=23.
+- Cas limite : cible absente → l'écart atteint 0 et la boucle s'arrête sans trouver.
 
 ### Exercice 9
 - Capacité mobilisée : P-ALGO-03.

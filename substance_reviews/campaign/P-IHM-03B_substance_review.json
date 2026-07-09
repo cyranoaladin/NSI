@@ -17,18 +17,18 @@
         "teaches": true
       },
       "proof_practice": {
-        "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
-        "anchor": "#exercice-5",
-        "quote": "- Capacité officielle : P-IHM-03B.\n- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=epsilon\n- Consigne : repérer header main form label input ; traiter aussi `paramètre jour absent` si nécessaire.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "proof_correction": {
-        "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
-        "anchor": "#exercice-5",
-        "quote": "- Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.\n- Méthode : repérer header main form label input.\n- Cas limite : paramètre jour absent.",
-        "teaches": true
+        "present": false,
+        "file": null,
+        "anchor": null,
+        "quote": null,
+        "teaches": false
       },
       "verdict": "needs_review",
       "justification": "Le cours enseigne explicitement la distinction cookies/localStorage/sessionStorage et ce qui est retransmis au serveur. Le TD fait pratiquer la capacité P-IHM-03B à l'exercice 5, et le corrigé fournit la réponse attendue avec cas limite.",

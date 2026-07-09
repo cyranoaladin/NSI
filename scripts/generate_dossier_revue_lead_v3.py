@@ -125,22 +125,35 @@ def render_slot(slot_name: str, proof: dict[str, Any]) -> list[str]:
     lines.append(f"### {slot_name}")
     lines.append(f"- **Fichier** : `{proof['file']}`")
     lines.append(f"- **Ancre** : `{proof['anchor']}`")
-    quote_preview = proof.get("quote", "")[:120]
-    if len(proof.get("quote", "")) > 120:
-        quote_preview += "..."
-    lines.append(f"- **Citation** : {quote_preview}")
+    raw_quote = proof.get("quote", "")
+    quote_oneline = raw_quote.replace("\n", " ")[:120]
+    if len(raw_quote) > 120:
+        quote_oneline += "..."
+    lines.append(f"- **Citation** : {quote_oneline}")
 
     # Extract from source file
-    src = ROOT / proof["file"]
-    if src.exists():
-        md = src.read_text(encoding="utf-8", errors="replace")
-        section = extract_section(md, proof["anchor"])
-        if section:
-            lines.append("")
-            lines.append("**Extrait** :")
-            lines.append("```")
-            lines.append(truncate_extract(section))
-            lines.append("```")
+    src_file = proof.get("file", "")
+    if not src_file:
+        lines.append("")
+        lines.append("**Extrait** : (fichier absent)")
+        return lines
+    src = ROOT / src_file
+    if not src.exists():
+        lines.append("")
+        lines.append(f"**ERREUR** : fichier introuvable `{src_file}`")
+        return lines
+    md = src.read_text(encoding="utf-8", errors="replace")
+    anchor = proof.get("anchor", "")
+    section = extract_section(md, anchor)
+    if section is None:
+        lines.append("")
+        lines.append(f"**ERREUR** : ancre non résolue `{anchor}` dans `{src_file}`")
+    else:
+        lines.append("")
+        lines.append("**Extrait** :")
+        lines.append("````")
+        lines.append(truncate_extract(section))
+        lines.append("````")
     return lines
 
 

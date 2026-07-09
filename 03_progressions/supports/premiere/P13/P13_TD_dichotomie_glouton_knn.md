@@ -31,7 +31,7 @@ official_program:
 ## Exercices
 ### Exercice 1
 - Type : lecture/analyse.
-- Capacité officielle : P-ALGO-03.
+- Capacité officielle : P-ALGO-04.
 - Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=alpha
 - Consigne : calculer milieu puis réduire intervalle ; traiter aussi `cible absente` si nécessaire.
 - Réponse attendue : milieux 18 puis 37 -> trouvé indice 4.
@@ -81,9 +81,9 @@ official_program:
 ### Exercice 8
 - Type : justification.
 - Capacité officielle : P-ALGO-04.
-- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=theta
-- Consigne : identifier le variant erroné et corriger ; traiter aussi `cible absente` si nécessaire.
-- Réponse attendue : le variant droite-gauche décroît → terminaison.
+- Données : `tableau=[4,9,18,23,37,41], cible=23`. ; jeu_exercice=theta
+- Consigne : montrer que le variant droite-gauche décroît à chaque étape sur ces données ; conclure sur la terminaison ; traiter aussi `cible absente` si nécessaire.
+- Réponse attendue : le variant droite-gauche décroît (5→2→1) → terminaison prouvée.
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `cible absente`.
 
 ### Exercice 9
@@ -96,7 +96,7 @@ official_program:
 
 ## Corrigé
 ### Corrigé exercice 1
-- Capacité mobilisée : P-ALGO-03.
+- Capacité mobilisée : P-ALGO-04.
 - Résultat attendu : milieux 18 puis 37 -> trouvé indice 4.
 - Justification : la tâche `calculer milieu puis réduire intervalle` s applique à `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]` ; erreur évitée : dichotomie sur liste non triée.
 - Donnée utilisée alpha dans P13 TD dichotomie glouton knn : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
@@ -153,8 +153,8 @@ official_program:
 - Contrôle eta dans P13 TD dichotomie glouton knn : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
 - Capacité mobilisée : P-ALGO-04.
-- Résultat attendu : le variant droite-gauche décroît → terminaison.
-- Justification : la tâche `identifier le variant erroné et corriger` s applique à `tableau=[4,9,18,23,37,41], cible=37` ; erreur évitée : variant non identifié ou non décroissant.
+- Résultat attendu : le variant droite-gauche décroît (5→2→1) → terminaison prouvée.
+- Justification : la tâche `montrer que le variant droite-gauche décroît` s applique à `tableau=[4,9,18,23,37,41], cible=23` ; erreur évitée : variant non identifié ou non décroissant.
 - Donnée utilisée theta dans P13 TD dichotomie glouton knn : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
 - Méthode theta dans P13 TD dichotomie glouton knn : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
 - Résultat theta dans P13 TD dichotomie glouton knn : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
