@@ -13,7 +13,7 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_cours_dichotomie_glouton_knn.md",
         "anchor": "#exemple-corrigé-2---variant-de-dichotomie-p-algo-04",
-        "quote": "Méthode : montrer que la quantité `droite - gauche` diminue strictement à chaque étape.\n- Résultat attendu : étape 1 → gauche=0, droite=5 (écart 5) ; étape 2 → gauche=3, droite=5 (écart 2) ; étape 3 → gauche=4, droite=5 (écart 1) → trouvé. Le variant décroît de 5 à 1, prouvant la terminaison.",
+        "quote": "Méthode : montrer que le variant V = droite − gauche + 1 (nombre de candidats) décroît strictement à chaque étape.\n- Résultat attendu : étape 1 → gauche=0, droite=5, V=6 ; étape 2 → gauche=3, droite=5, V=3 → trouvé. Le variant décroît de 6 à 3, prouvant la terminaison.",
         "teaches": true
       },
       "proof_practice": {
@@ -27,7 +27,7 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md",
         "anchor": "#exercice-2",
-        "quote": "Capacité mobilisée : P-ALGO-04.\n- Réponse attendue : le variant droite-gauche décroît de 5 à 1 sur tableau=[4,9,18,23,37,41], cible=37, prouvant la terminaison.\n- Méthode : montrer que droite-gauche diminue strictement à chaque étape.\n- Cas limite : cible absente → l'écart atteint 0 et la boucle s'arrête sans trouver.",
+        "quote": "Capacité mobilisée : P-ALGO-04.\n- Réponse attendue : le variant V = droite − gauche + 1 décroît de 6 à 3 sur tableau=[4,9,18,23,37,41], cible=37 → terminaison (cible trouvée).\n- Méthode : montrer que V décroît strictement à chaque étape.\n- Cas limite : cible absente (ex. 38) → V décroît 6→3→1→0, la boucle s'arrête sans trouver.",
         "teaches": true
       },
       "verdict": "needs_review",

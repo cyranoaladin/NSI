@@ -29,8 +29,8 @@ official_program:
 - 2 points cas limite `cible absente`.
 
 ## Évaluation question par question
-- Question 1 : 4 points sur P-ALGO-03 avec résultat `milieux 18 puis 37 -> trouvé indice 4`.
-- Question 2 : 4 points sur P-ALGO-04 avec résultat `variant droite-gauche décroît, terminaison prouvée`.
+- Question 1 : 4 points sur P-ALGO-04 avec résultat `milieux 18 puis 37 -> trouvé indice 4`.
+- Question 2 : 4 points sur P-ALGO-04 avec résultat `variant V décroît de 6 à 3 → terminaison`.
 - Question 3 : 4 points sur P-ALGO-05 avec résultat `28 = 10+10+5+2+1 (5 pièces, glouton)`.
 - Question 4 : 4 points sur P-ALGO-03 avec résultat `rouge (2 voix) vs bleu (1 voix) → classe rouge`.
 

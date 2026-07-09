@@ -44,7 +44,7 @@ Résultat attendu : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], m
 ### Corrigé question 2
 Résultat attendu : milieux 18 puis 37 -> trouvé indice 4.
 ### Corrigé question 3
-Résultat attendu : 28 -> 10+10+5+2+1.
+Résultat attendu : le variant V = droite − gauche + 1 décroît de 6 à 3 sur tableau=[4,9,18,23,37,41], cible=37 → terminaison (cible trouvée).
 ### Corrigé question 4
 Résultat attendu : `cible absente` traité sans ambiguïté.
 

@@ -193,10 +193,11 @@ def render_entry(idx: int, cap_id: str, tag: str) -> list[str]:
     return lines
 
 
-def count_verdicts() -> tuple[int, int, int]:
+def count_verdicts() -> tuple[int, int, int, list[str]]:
     full = 0
     partial = 0
     absent = 0
+    partial_ids: list[str] = []
     for p in sorted(REVIEWS_DIR.glob("*_substance_review.json")):
         if p.name.startswith("_"):
             continue
@@ -211,24 +212,26 @@ def count_verdicts() -> tuple[int, int, int]:
                 full += 1
             elif n > 0:
                 partial += 1
+                partial_ids.append(f"{cap['capacity_id']} ({n}/3)")
             else:
                 absent += 1
-    return full, partial, absent
+    return full, partial, absent, partial_ids
 
 
 def main() -> None:
-    full, partial, absent = count_verdicts()
+    full, partial, absent, partial_ids = count_verdicts()
     n_corriges = len(SAMPLE_CORRIGES)
     n_frais = len(SAMPLE_FRAIS)
     total = n_corriges + n_frais
 
+    partial_str = ", ".join(partial_ids) if partial_ids else "aucun"
     out: list[str] = [
         "# Dossier de revue lead v3 — Post-REM3 (regenere)",
         "",
         "## Resume executif",
         "",
         f"- **Coverage** : {full}/{partial}/{absent} (source unique : verdicts au moment de la generation)",
-        "- **Partial** : T-LANG-04A (1/3)",
+        f"- **Partial** : {partial_str}",
         f"- **Echantillon** : {total} verdicts ({n_corriges} corriges + {n_frais} frais seed 91)",
         "",
         "---",

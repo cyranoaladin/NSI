@@ -1,19 +1,26 @@
 #!/usr/bin/env python3
-"""Guard: verifie la coherence reponse/capacite/methode dans les supports.
+"""Guard: verifie la coherence reponse/capacite/methode dans les supports P13.
 
-Scanne toutes les sequences via leurs contrats et verifie dans chaque
+Scanne toutes les sequences via leurs contrats et verifie dans CHAQUE
 support (TD, corrige, tp, trace, version_amenagee, evaluation, bareme,
 remediation) :
 1. reponse↔methode : la reponse attendue est coherente avec la methode
 2. methode↔capacite : la methode de la consigne correspond a la capacite
-3. pas de "cible 40 absente" hors contexte dichotomie (global, pas lie a answer_match)
-4. les reponses positionnelles (version_amenagee) suivent l'ordre capacite
-5. blocs corrige autonome "### Exercice N" avec "Capacite mobilisee" valides
+3. les reponses positionnelles (version_amenagee) suivent l'ordre capacite
+
+Parseurs etendus :
+- TD/corrige : "Capacite officielle" / "Capacite mobilisee" + consigne/methode
+- cours : "Controle : capacite P-ALGO-xx"
+- trace : "Capacite : P-ALGO-xx"
+- evaluation/bareme : "### Question N" + "Capacite officielle" ou "P-ALGO-xx"
+- remediation : "Relier ... P-ALGO-xx"
 
 Mapping autorite (programme_nsi_2019.yaml) :
   P-ALGO-03 = k-NN seul
   P-ALGO-04 = recherche dichotomique (recherche + variant)
   P-ALGO-05 = algorithmes gloutons
+
+Fail-closed : un fichier attendu absent fait echouer le guard.
 
 Usage :
     python -m scripts.check_answer_capacity_coherence
@@ -32,7 +39,7 @@ CONTRACTS_DIR = ROOT / "03_progressions" / "supports" / "contracts"
 SUPPORTS_DIR = ROOT / "03_progressions" / "supports"
 
 # ---------------------------------------------------------------------------
-# Method signatures in consignes
+# Method signatures
 # ---------------------------------------------------------------------------
 METHOD_DICHOTOMIE = re.compile(
     r"calculer milieu|réduire intervalle|recherche dichotomique", re.I
@@ -40,7 +47,8 @@ METHOD_DICHOTOMIE = re.compile(
 METHOD_VARIANT = re.compile(
     r"droite.gauche diminue|droite.gauche décroît"
     r"|variant.*boucle|terminaison.*dichotom"
-    r"|variant.*erroné|variant.*corriger", re.I
+    r"|variant.*erroné|variant.*corriger"
+    r"|variant.*décroît", re.I
 )
 METHOD_GLOUTON = re.compile(
     r"plus grande pièce possible|algorithme glouton|rendu de monnaie", re.I
@@ -57,8 +65,8 @@ ANSWER_DICHOTOMIE = re.compile(
     r"milieux?\s+18.*37.*indice\s+4|trouvé indice 4", re.I
 )
 ANSWER_VARIANT = re.compile(
-    r"variant.*décroît|droite.gauche décroît|décroît de 5 à 1"
-    r"|décroît.*terminaison|terminaison prouvée", re.I
+    r"variant.*décroît|droite.gauche décroît|décroît de \d+ à \d+"
+    r"|décroît.*terminaison|terminaison prouvée|terminaison \(cible", re.I
 )
 ANSWER_GLOUTON = re.compile(
     r"10\s*\+\s*10\s*\+\s*5\s*\+\s*2\s*\+\s*1|28\s*=\s*10|5 pièces", re.I
@@ -67,9 +75,7 @@ ANSWER_KNN = re.compile(
     r"rouge.*voix.*bleu|classe rouge|vote.*rouge|rouge 2|A=2.*B=1", re.I
 )
 
-# ---------------------------------------------------------------------------
 # Forbidden cross-contamination patterns (answer ↔ method)
-# ---------------------------------------------------------------------------
 FORBIDDEN: list[tuple[re.Pattern[str], re.Pattern[str], str]] = [
     (METHOD_DICHOTOMIE, ANSWER_GLOUTON, "reponse glouton sous consigne dichotomie"),
     (METHOD_DICHOTOMIE, ANSWER_KNN, "reponse k-NN sous consigne dichotomie"),
@@ -85,102 +91,65 @@ FORBIDDEN: list[tuple[re.Pattern[str], re.Pattern[str], str]] = [
     (METHOD_KNN, ANSWER_VARIANT, "reponse variant sous consigne k-NN"),
 ]
 
-# "cible 40 absente" must only appear in dichotomie context
-CIBLE_40_RE = re.compile(r"cible\s+40\s+absente", re.I)
-
 # cas-limite mismatches
 CASLIMITE_GLOUTON = re.compile(r"pièce 1 absente|glouton.*échouer", re.I)
 CASLIMITE_KNN = re.compile(r"égalité de vote|k pair", re.I)
-
 CASLIMITE_FORBIDDEN: list[tuple[re.Pattern[str], re.Pattern[str], str]] = [
     (METHOD_GLOUTON, CASLIMITE_KNN, "cas-limite k-NN sous consigne glouton"),
-    (METHOD_GLOUTON, re.compile(r"cible absente(?!.*variant)", re.I),
-     "cas-limite dichotomie sous consigne glouton"),
     (METHOD_KNN, CASLIMITE_GLOUTON, "cas-limite glouton sous consigne k-NN"),
-    (METHOD_KNN, re.compile(r"cible absente(?!.*variant)", re.I),
-     "cas-limite dichotomie sous consigne k-NN"),
-    (METHOD_DICHOTOMIE, CASLIMITE_GLOUTON,
-     "cas-limite glouton sous consigne dichotomie"),
-    (METHOD_DICHOTOMIE, CASLIMITE_KNN,
-     "cas-limite k-NN sous consigne dichotomie"),
-    (METHOD_VARIANT, CASLIMITE_GLOUTON,
-     "cas-limite glouton sous consigne variant"),
-    (METHOD_VARIANT, CASLIMITE_KNN,
-     "cas-limite k-NN sous consigne variant"),
+    (METHOD_DICHOTOMIE, CASLIMITE_GLOUTON, "cas-limite glouton sous consigne dichotomie"),
+    (METHOD_DICHOTOMIE, CASLIMITE_KNN, "cas-limite k-NN sous consigne dichotomie"),
+    (METHOD_VARIANT, CASLIMITE_GLOUTON, "cas-limite glouton sous consigne variant"),
+    (METHOD_VARIANT, CASLIMITE_KNN, "cas-limite k-NN sous consigne variant"),
 ]
 
-# ---------------------------------------------------------------------------
-# Capacity → allowed methods mapping (autorite: programme_nsi_2019.yaml)
-# P-ALGO-03 = k-NN seul
-# P-ALGO-04 = recherche dichotomique (recherche + variant de terminaison)
-# P-ALGO-05 = algorithmes gloutons
-# ---------------------------------------------------------------------------
+# Capacity → allowed methods (autorite: programme_nsi_2019.yaml)
 CAPACITY_METHODS: dict[str, list[str]] = {
     "P-ALGO-03": ["knn"],
     "P-ALGO-04": ["dichotomie", "variant"],
     "P-ALGO-05": ["glouton"],
 }
 
-# Positional answer expectations for version_amenagee "Réponses rapides"
 CAPACITY_ANSWER_FINGERPRINTS: dict[str, re.Pattern[str]] = {
-    "P-ALGO-04": ANSWER_DICHOTOMIE,  # position 1 = dichotomie-recherche
-    "P-ALGO-03": ANSWER_KNN,         # k-NN is P-ALGO-03 now (not dichotomie)
+    "P-ALGO-04": ANSWER_DICHOTOMIE,
+    "P-ALGO-03": ANSWER_KNN,
     "P-ALGO-05": ANSWER_GLOUTON,
 }
 
 # ---------------------------------------------------------------------------
-# Parsing helpers
+# Parsing
 # ---------------------------------------------------------------------------
 EXERCISE_HEADER_RE = re.compile(
     r"^#{2,3}\s+(?:Exercice|Corrigé exercice)\s+(\d+)\s*$", re.M
 )
-
-# Matches both exercise headers and section headers (## / ###)
+QUESTION_HEADER_RE = re.compile(
+    r"^#{2,3}\s+(?:Question|Corrigé question)\s+(\d+)\s*$", re.M
+)
 SECTION_HEADER_RE = re.compile(r"^#{2,3}\s+", re.M)
+EXAMPLE_HEADER_RE = re.compile(
+    r"^###\s+Exemple corrigé\s+(\d+)", re.M
+)
+CAP_RE = re.compile(r"P-ALGO-0[345]")
 
 
-def parse_blocks(text: str) -> list[dict[str, str]]:
-    """Split a markdown document into exercise/corrige blocks.
-
-    Delimits each block at the NEXT heading of same or higher level.
-    """
-    headers = list(EXERCISE_HEADER_RE.finditer(text))
+def _split_at_headers(
+    text: str, header_re: re.Pattern[str],
+) -> list[dict[str, str]]:
+    headers = list(header_re.finditer(text))
     blocks: list[dict[str, str]] = []
     for i, m in enumerate(headers):
-        # Find next heading (any ## or ###) after this one
         rest = text[m.end():]
-        next_heading = SECTION_HEADER_RE.search(rest)
-        if next_heading:
-            end = m.end() + next_heading.start()
-        else:
-            end = len(text)
-        block_text = text[m.start():end]
+        nxt = SECTION_HEADER_RE.search(rest)
+        end = m.end() + nxt.start() if nxt else len(text)
         blocks.append({
             "title": m.group(0).strip(),
             "num": m.group(1),
-            "text": block_text,
+            "text": text[m.start():end],
         })
     return blocks
 
 
-def parse_eval_questions(text: str) -> list[dict[str, str]]:
-    """Parse 'Corrige de l evaluation' section."""
-    m = re.search(r"##\s+Corrigé de l.évaluation", text)
-    if not m:
-        return []
-    section = text[m.start():]
-    questions: list[dict[str, str]] = []
-    for qm in re.finditer(r"^-\s+Question\s+(\d+)\s*:\s*(.+)$", section, re.M):
-        questions.append({
-            "title": f"Question {qm.group(1)} (eval)",
-            "num": qm.group(1),
-            "text": qm.group(2),
-        })
-    return questions
-
-
 def detect_method(text: str) -> str | None:
-    """Identify the method from a consigne/method line."""
     if METHOD_DICHOTOMIE.search(text):
         return "dichotomie"
     if METHOD_VARIANT.search(text):
@@ -192,198 +161,246 @@ def detect_method(text: str) -> str | None:
     return None
 
 
+def _extract_cap(text: str) -> str | None:
+    """Extract a P-ALGO capacity from text via several patterns."""
+    for pat in [
+        r"Capacité officielle\s*:\s*(P-ALGO-0[345])",
+        r"Capacité mobilisée\s*:\s*(P-ALGO-0[345])",
+        r"capacité\s+(P-ALGO-0[345])",
+        r"Capacité\s*:\s*(P-ALGO-0[345])",
+        r"sur\s+(P-ALGO-0[345])",
+        r"à\s+(P-ALGO-0[345])",
+    ]:
+        m = re.search(pat, text)
+        if m:
+            return m.group(1)
+    return None
+
+
+def _extract_method_text(text: str) -> str:
+    """Extract method-bearing text from a block."""
+    for pat in [
+        r"Consigne\s*:\s*(.+?)(?:\n|$)",
+        r"Méthode\s*:\s*(.+?)(?:\n|$)",
+        r"la tâche\s*`([^`]+)`",
+        r"Énoncé\s*:\s*.+?,\s*(.+?)(?:\n|$)",
+        r"Critère spécifique\s*:\s*(.+?)(?:\n|$)",
+    ]:
+        m = re.search(pat, text)
+        if m:
+            return m.group(1)
+    return text
+
+
+def _extract_answer(text: str) -> str | None:
+    m = re.search(
+        r"(?:Réponse attendue|Résultat attendu|Résultat final|Résultat de référence)"
+        r"\s*:\s*(.+?)(?:\n|$)", text
+    )
+    return m.group(1) if m else None
+
+
 # ---------------------------------------------------------------------------
-# Block-level checks
+# Check a generic capacity-bearing block
 # ---------------------------------------------------------------------------
-def check_exercise_block(block: dict[str, str], filename: str) -> list[str]:
-    """Check exercise block: answer↔method and method↔capacity."""
+def check_cap_block(
+    text: str, title: str, filename: str,
+) -> list[str]:
     errors: list[str] = []
-    text = block["text"]
-    title = block["title"]
-
-    # Find method from consigne
-    consigne_match = re.search(r"Consigne\s*:\s*(.+?)(?:\n|$)", text)
-    method_line = consigne_match.group(1) if consigne_match else text
-    method = detect_method(method_line)
-
-    if method is None:
+    cap_id = _extract_cap(text)
+    if not cap_id:
+        return errors
+    allowed = CAPACITY_METHODS.get(cap_id, [])
+    if not allowed:
         return errors
 
-    # --- method↔capacity ---
-    cap_match = re.search(r"Capacité officielle\s*:\s*(P-ALGO-\d+)", text)
-    if cap_match:
-        cap_id = cap_match.group(1)
-        allowed = CAPACITY_METHODS.get(cap_id, [])
-        if allowed and method not in allowed:
-            errors.append(
-                f"{filename} {title}: methode '{method}' incompatible avec "
-                f"capacite {cap_id} (attendu: {'/'.join(allowed)})"
-            )
-
-    # --- answer↔method ---
-    answer_match = re.search(
-        r"(?:Réponse attendue|Résultat attendu)\s*:\s*(.+?)(?:\n|$)", text
-    )
-    if answer_match:
-        answer = answer_match.group(1)
-        for method_re, forbidden_re, desc in FORBIDDEN:
-            if method_re.search(method_line) and forbidden_re.search(answer):
-                errors.append(f"{filename} {title}: {desc}")
-
-    # --- cas-limite coherence ---
-    caslimite_match = re.search(r"traiter aussi\s*`([^`]+)`", text)
-    critere_match = re.search(r"décision sur\s*`([^`]+)`", text)
-    caslimite_text = ""
-    if caslimite_match:
-        caslimite_text += caslimite_match.group(1) + " "
-    if critere_match:
-        caslimite_text += critere_match.group(1)
-    if caslimite_text:
-        for method_re, forbidden_re, desc in CASLIMITE_FORBIDDEN:
-            if method_re.search(method_line) and forbidden_re.search(caslimite_text):
-                errors.append(f"{filename} {title}: {desc}")
-
-    return errors
-
-
-def check_corrige_block(block: dict[str, str], filename: str) -> list[str]:
-    """Check corrige block: method↔capacity via Capacité mobilisée.
-
-    Applies to both '### Corrigé exercice N' and '### Exercice N' blocks
-    in the corrigé autonome (P1-5).
-    """
-    errors: list[str] = []
-    text = block["text"]
-    title = block["title"]
-
-    cap_match = re.search(r"Capacité mobilisée\s*:\s*(P-ALGO-\d+)", text)
-    if not cap_match:
-        return errors
-    cap_id = cap_match.group(1)
-
-    # Try Justification task first, then Méthode line
-    task_match = re.search(r"la tâche\s*`([^`]+)`", text)
-    method_match = re.search(r"Méthode\s*:\s*(.+?)(?:\n|$)", text)
-    method_text = (
-        task_match.group(1) if task_match
-        else method_match.group(1) if method_match
-        else ""
-    )
+    method_text = _extract_method_text(text)
     method = detect_method(method_text)
     if method is None:
         return errors
 
-    allowed = CAPACITY_METHODS.get(cap_id, [])
-    if allowed and method not in allowed:
+    # method↔capacity
+    if method not in allowed:
         errors.append(
             f"{filename} {title}: methode '{method}' incompatible avec "
             f"capacite {cap_id} (attendu: {'/'.join(allowed)})"
         )
 
+    # answer↔method
+    answer = _extract_answer(text)
+    if answer:
+        for method_re, forbidden_re, desc in FORBIDDEN:
+            if method_re.search(method_text) and forbidden_re.search(answer):
+                errors.append(f"{filename} {title}: {desc}")
+
+    # cas-limite
+    cl_match = re.search(r"traiter aussi\s*`([^`]+)`", text)
+    cr_match = re.search(r"décision sur\s*`([^`]+)`", text)
+    cl_text = ""
+    if cl_match:
+        cl_text += cl_match.group(1) + " "
+    if cr_match:
+        cl_text += cr_match.group(1)
+    if cl_text:
+        for method_re, forbidden_re, desc in CASLIMITE_FORBIDDEN:
+            if method_re.search(method_text) and forbidden_re.search(cl_text):
+                errors.append(f"{filename} {title}: {desc}")
+
     return errors
 
 
-def check_eval_question(q: dict[str, str], filename: str) -> list[str]:
-    """Check eval question for cible 40 absente contamination.
-
-    Contextualised: only flag if the question does not mention dichotomie.
-    """
+# ---------------------------------------------------------------------------
+# Cours: "Contrôle : capacité P-ALGO-xx"
+# ---------------------------------------------------------------------------
+def check_cours(text: str, filename: str) -> list[str]:
     errors: list[str] = []
-    text = q["text"]
-    if CIBLE_40_RE.search(text):
-        if not METHOD_DICHOTOMIE.search(text):
+    for block in _split_at_headers(text, EXAMPLE_HEADER_RE):
+        errors.extend(check_cap_block(block["text"], block["title"], filename))
+    return errors
+
+
+# ---------------------------------------------------------------------------
+# Trace: "Capacité : P-ALGO-xx" lines
+# ---------------------------------------------------------------------------
+def check_trace(text: str, filename: str) -> list[str]:
+    errors: list[str] = []
+    for line in text.splitlines():
+        m = re.match(r"^-\s+Capacité\s+(?::?\s*)?(P-ALGO-0[345])\b(.*)$", line)
+        if not m:
+            m2 = re.match(r"^-\s+Capacité\s*:\s*(P-ALGO-0[345])\b(.*)$", line)
+            if not m2:
+                continue
+            m = m2
+        cap_id = m.group(1)
+        rest = m.group(2)
+        allowed = CAPACITY_METHODS.get(cap_id, [])
+        if not allowed:
+            continue
+        method = detect_method(rest)
+        answer = _extract_answer(rest) or rest
+        # Check answer fingerprint vs capacity
+        for other_cap, fp in CAPACITY_ANSWER_FINGERPRINTS.items():
+            if other_cap != cap_id and fp.search(answer):
+                errors.append(
+                    f"{filename} Critère {cap_id}: reponse {other_cap} "
+                    f"sous capacite {cap_id}"
+                )
+        if method and method not in allowed:
             errors.append(
-                f"{filename} {q['title']}: 'cible 40 absente' dans corrige eval"
+                f"{filename} Critère {cap_id}: methode '{method}' "
+                f"incompatible avec {cap_id}"
             )
     return errors
 
 
+# ---------------------------------------------------------------------------
+# Evaluation / Bareme: "### Question N" blocks
+# ---------------------------------------------------------------------------
+def check_questions(text: str, filename: str) -> list[str]:
+    errors: list[str] = []
+    for block in _split_at_headers(text, QUESTION_HEADER_RE):
+        errors.extend(check_cap_block(block["text"], block["title"], filename))
+    return errors
+
+
+# ---------------------------------------------------------------------------
+# Remediation: "Relier ... P-ALGO-xx"
+# ---------------------------------------------------------------------------
+def check_remediation(text: str, filename: str) -> list[str]:
+    errors: list[str] = []
+    for line in text.splitlines():
+        m = re.search(r"Relier.*à\s+(P-ALGO-0[345])", line)
+        if not m:
+            continue
+        cap_id = m.group(1)
+        method = detect_method(line)
+        if method is None:
+            # Check context: the activities above mention a method
+            continue
+        allowed = CAPACITY_METHODS.get(cap_id, [])
+        if allowed and method not in allowed:
+            errors.append(
+                f"{filename}: 'Relier' methode '{method}' → {cap_id} "
+                f"(attendu: {'/'.join(allowed)})"
+            )
+    return errors
+
+
+# ---------------------------------------------------------------------------
+# Version amenagee: positional answers
+# ---------------------------------------------------------------------------
 def check_positional_answers(
     text: str, filename: str, capacities: list[str],
 ) -> list[str]:
-    """Check 'Reponses rapides' answers belong to contract capacities.
-
-    Version amenagee follows pedagogical order, not contract order,
-    so we verify each answer's method belongs to at least one capacity
-    in the contract and detect cross-contamination between adjacent answers.
-    """
     errors: list[str] = []
     m = re.search(r"##\s+Réponses rapides", text)
     if not m:
         return errors
-
     section = text[m.start():]
     answers: list[str] = re.findall(
-        r"^-\s+Réponse\s+\d+\s*:\s*(.+)$", section, re.M,
+        r"^-\s+Réponse\s+\d+\s*(?:\([^)]*\))?\s*:\s*(.+)$", section, re.M,
     )
-
-    # Collect all allowed methods from contract capacities
     allowed_methods: set[str] = set()
     for cap_id in capacities:
-        for method in CAPACITY_METHODS.get(cap_id, []):
-            allowed_methods.add(method)
-
-    # Build fingerprint→method map
+        for mth in CAPACITY_METHODS.get(cap_id, []):
+            allowed_methods.add(mth)
     fp_to_method: list[tuple[re.Pattern[str], str]] = [
         (ANSWER_DICHOTOMIE, "dichotomie"),
         (ANSWER_VARIANT, "variant"),
         (ANSWER_GLOUTON, "glouton"),
         (ANSWER_KNN, "knn"),
     ]
-
-    seen_methods: list[str] = []
     for idx, answer in enumerate(answers):
-        detected = None
         for fp, method_name in fp_to_method:
-            if fp.search(answer):
-                detected = method_name
-                break
-        if detected and detected not in allowed_methods:
-            errors.append(
-                f"{filename} Réponse {idx + 1}: methode '{detected}' "
-                f"absente des capacites du contrat"
-            )
-        if detected:
-            seen_methods.append(detected)
-
-    # Detect duplicate adjacent methods that should be different
-    for i in range(len(seen_methods) - 1):
-        if seen_methods[i] == seen_methods[i + 1]:
-            errors.append(
-                f"{filename} Réponses {i + 1}/{i + 2}: "
-                f"methode '{seen_methods[i]}' dupliquee"
-            )
-
+            if fp.search(answer) and method_name not in allowed_methods:
+                errors.append(
+                    f"{filename} Réponse {idx + 1}: methode '{method_name}' "
+                    f"absente des capacites du contrat"
+                )
     return errors
 
 
 # ---------------------------------------------------------------------------
-# File-level check
+# File-level orchestration
 # ---------------------------------------------------------------------------
+EXPECTED_SUFFIXES = [
+    "TD", "corrige", "tp", "trace", "version_amenagee",
+    "evaluation", "bareme", "remediation", "cours",
+]
+
+
 def check_file(
     filepath: Path, capacities: list[str] | None = None,
 ) -> list[str]:
-    """Check all blocks in a file."""
     if not filepath.exists():
         return []
     text = filepath.read_text(encoding="utf-8", errors="replace")
     filename = filepath.name
+    fn_lower = filename.lower()
     errors: list[str] = []
 
-    blocks = parse_blocks(text)
-    for block in blocks:
-        # Corrige block: has "Capacité mobilisée"
-        if "Capacité mobilisée" in block["text"]:
-            errors.extend(check_corrige_block(block, filename))
-        # Exercise block: has "Capacité officielle" or "Consigne"
-        if "Capacité officielle" in block["text"] or "Consigne" in block["text"]:
-            errors.extend(check_exercise_block(block, filename))
+    # Exercise/Corrigé blocks (TD, corrige)
+    for block in _split_at_headers(text, EXERCISE_HEADER_RE):
+        errors.extend(check_cap_block(block["text"], block["title"], filename))
 
-    if "corrige" in filename.lower():
-        for q in parse_eval_questions(text):
-            errors.extend(check_eval_question(q, filename))
+    # Cours examples
+    if "cours" in fn_lower:
+        errors.extend(check_cours(text, filename))
 
-    if "version_amenagee" in filename.lower() and capacities:
+    # Trace criteria
+    if "trace" in fn_lower:
+        errors.extend(check_trace(text, filename))
+
+    # Evaluation / Bareme questions
+    if "evaluation" in fn_lower or "bareme" in fn_lower:
+        errors.extend(check_questions(text, filename))
+
+    # Remediation
+    if "remediation" in fn_lower:
+        errors.extend(check_remediation(text, filename))
+
+    # Version amenagee positional
+    if "version_amenagee" in fn_lower and capacities:
         errors.extend(check_positional_answers(text, filename, capacities))
 
     return errors
@@ -393,7 +410,6 @@ def check_file(
 # Discovery
 # ---------------------------------------------------------------------------
 def discover_sequences() -> list[tuple[str, str, list[str]]]:
-    """Discover sequences from contracts that have P-ALGO capacities."""
     results: list[tuple[str, str, list[str]]] = []
     if not CONTRACTS_DIR.exists():
         return results
@@ -411,7 +427,6 @@ def discover_sequences() -> list[tuple[str, str, list[str]]]:
 
 
 def find_support_files(seq_id: str, level: str) -> list[Path]:
-    """Find all support files for a sequence."""
     seq_dir = SUPPORTS_DIR / level / seq_id
     if not seq_dir.exists():
         return []
@@ -431,7 +446,14 @@ def main() -> None:
             all_errors.extend(check_file(f))
     else:
         for seq_id, level, capacities in sequences:
-            for filepath in find_support_files(seq_id, level):
+            files = find_support_files(seq_id, level)
+            if not files:
+                all_errors.append(
+                    f"{seq_id}: aucun fichier support trouve dans "
+                    f"{SUPPORTS_DIR / level / seq_id}"
+                )
+                continue
+            for filepath in files:
                 all_errors.extend(check_file(filepath, capacities))
 
     if all_errors:

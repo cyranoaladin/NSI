@@ -24,13 +24,23 @@ official_program:
 - Mots utiles : dichotomie, variant droite-gauche, glouton, choix local, k-NN.
 - Méthode guidée : calculer milieu puis réduire intervalle puis montrer que droite-gauche diminue.
 
-## Exercice guidé
-1. Recopier la donnée utile.
-2. Choisir la capacité : P-ALGO-03 ou P-ALGO-04.
-3. Compléter le résultat : milieux 18 puis 37 -> trouvé indice 4.
-4. Cocher le cas limite : cible absente.
+## Bloc 1 — Dichotomie et variant (P-ALGO-04)
+1. Recopier la donnée utile : `tableau=[4,9,18,23,37,41], cible=37`.
+2. Calculer milieu puis réduire intervalle → milieux 18 puis 37 → trouvé indice 4.
+3. Montrer que le variant V = droite − gauche + 1 décroît de 6 à 3 → terminaison.
+4. Cas limite : cible absente (ex. 38) → V décroît 6→3→1→0.
+
+## Bloc 2 — Glouton (P-ALGO-05)
+1. Recopier la donnée utile : `pièces=[10,5,2,1], montant=28`.
+2. Prendre la plus grande pièce possible → 28 = 10+10+5+2+1 (5 pièces).
+3. Cas limite : pièce 1 absente → le glouton peut échouer.
+
+## Bloc 3 — k-NN (P-ALGO-03)
+1. Recopier la donnée utile : `voisins=[rouge:1.2, bleu:2.0, rouge:2.4], k=3`.
+2. Voter parmi les 3 plus proches → rouge 2 voix vs bleu 1 → classe rouge.
+3. Cas limite : k pair → égalité de vote possible.
 
 ## Réponses rapides
-- Réponse 1 : milieux 18 puis 37 -> trouvé indice 4.
-- Réponse 2 : le variant droite-gauche décroît de 5 à 1 → terminaison.
-- Réponse 3 : 28 = 10+10+5+2+1 (5 pièces).
+- Réponse 1 (P-ALGO-04) : milieux 18 puis 37 -> trouvé indice 4 ; variant V décroît de 6 à 3.
+- Réponse 2 (P-ALGO-05) : 28 = 10+10+5+2+1 (5 pièces).
+- Réponse 3 (P-ALGO-03) : rouge 2 voix vs bleu 1 → classe rouge.

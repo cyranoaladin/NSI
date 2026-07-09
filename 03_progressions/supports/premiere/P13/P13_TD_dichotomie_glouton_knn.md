@@ -41,7 +41,7 @@ official_program:
 - Capacité officielle : P-ALGO-04.
 - Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=beta
 - Consigne : montrer que droite-gauche diminue ; traiter aussi `cible absente` si nécessaire.
-- Réponse attendue : le variant droite-gauche décroît de 5 à 1 → terminaison.
+- Réponse attendue : le variant V = droite − gauche + 1 décroît de 6 à 3 → terminaison (cible trouvée).
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `cible absente`.
 ### Exercice 3
 - Type : production/écriture.
@@ -62,7 +62,7 @@ official_program:
 - Capacité officielle : P-ALGO-04.
 - Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=epsilon
 - Consigne : montrer que le variant droite-gauche diminue ; traiter aussi `cible absente` si nécessaire.
-- Réponse attendue : le variant droite-gauche décroît de 5 à 1 → terminaison.
+- Réponse attendue : le variant V = droite − gauche + 1 décroît de 6 à 3 → terminaison (cible trouvée).
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `cible absente`.
 ### Exercice 6
 - Type : lecture/analyse.
@@ -83,7 +83,7 @@ official_program:
 - Capacité officielle : P-ALGO-04.
 - Données : `tableau=[4,9,18,23,37,41], cible=23`. ; jeu_exercice=theta
 - Consigne : montrer que le variant droite-gauche décroît à chaque étape sur ces données ; conclure sur la terminaison ; traiter aussi `cible absente` si nécessaire.
-- Réponse attendue : le variant droite-gauche décroît (5→2→1) → terminaison prouvée.
+- Réponse attendue : le variant V = droite − gauche + 1 décroît de 6 à 3 puis 1 → terminaison prouvée (cible trouvée).
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `cible absente`.
 
 ### Exercice 9
@@ -105,7 +105,7 @@ official_program:
 - Contrôle alpha dans P13 TD dichotomie glouton knn : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 2
 - Capacité mobilisée : P-ALGO-04.
-- Résultat attendu : le variant droite-gauche décroît de 5 à 1 → terminaison.
+- Résultat attendu : le variant V = droite − gauche + 1 décroît de 6 à 3 → terminaison (cible trouvée).
 - Justification : la tâche `montrer que droite-gauche diminue` s applique à `tableau=[4,9,18,23,37,41], cible=37` ; erreur évitée : variant non identifié ou non décroissant.
 - Donnée utilisée beta dans P13 TD dichotomie glouton knn : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
 - Méthode beta dans P13 TD dichotomie glouton knn : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
@@ -129,7 +129,7 @@ official_program:
 - Contrôle delta dans P13 TD dichotomie glouton knn : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
 - Capacité mobilisée : P-ALGO-04.
-- Résultat attendu : le variant droite-gauche décroît de 5 à 1 → terminaison.
+- Résultat attendu : le variant V = droite − gauche + 1 décroît de 6 à 3 → terminaison (cible trouvée).
 - Justification : la tâche `montrer que le variant droite-gauche diminue` s applique à `tableau=[4,9,18,23,37,41], cible=37` ; erreur évitée : variant non identifié ou non décroissant.
 - Donnée utilisée epsilon dans P13 TD dichotomie glouton knn : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
 - Méthode epsilon dans P13 TD dichotomie glouton knn : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
@@ -153,7 +153,7 @@ official_program:
 - Contrôle eta dans P13 TD dichotomie glouton knn : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 8
 - Capacité mobilisée : P-ALGO-04.
-- Résultat attendu : le variant droite-gauche décroît (5→2→1) → terminaison prouvée.
+- Résultat attendu : le variant V = droite − gauche + 1 décroît de 6 à 3 puis 1 → terminaison prouvée (cible trouvée).
 - Justification : la tâche `montrer que le variant droite-gauche décroît` s applique à `tableau=[4,9,18,23,37,41], cible=23` ; erreur évitée : variant non identifié ou non décroissant.
 - Donnée utilisée theta dans P13 TD dichotomie glouton knn : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
 - Méthode theta dans P13 TD dichotomie glouton knn : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.

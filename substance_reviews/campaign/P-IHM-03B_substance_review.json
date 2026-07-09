@@ -31,7 +31,7 @@
         "teaches": false
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne explicitement la distinction cookies/localStorage/sessionStorage et ce qui est retransmis au serveur. Le TD fait pratiquer la capacité P-IHM-03B à l'exercice 5, et le corrigé fournit la réponse attendue avec cas limite.",
+      "justification": "Le cours enseigne explicitement la distinction cookies/localStorage/sessionStorage et ce qui est retransmis au serveur (proof_course présent). Aucun exercice du TD P08 ne pratique spécifiquement cette capacité : l'exercice 5 porte sur la structure HTML, pas sur les mécanismes de mémorisation client/serveur (proof_practice et proof_correction absents).",
       "scientific_flags": [
         "human_review_required"
       ]

@@ -3,7 +3,7 @@
 ## Resume executif
 
 - **Coverage** : 112/2/0 (source unique : verdicts au moment de la generation)
-- **Partial** : T-LANG-04A (1/3)
+- **Partial** : P-IHM-03B (1/3), T-LANG-04A (1/3)
 - **Echantillon** : 13 verdicts (7 corriges + 6 frais seed 91)
 
 ---
@@ -71,15 +71,15 @@ Soit un ensemble de points étiquetés (chaque point a des coordonnées et une c
 ### course
 - **Fichier** : `03_progressions/supports/premiere/P13/P13_cours_dichotomie_glouton_knn.md`
 - **Ancre** : `#exemple-corrigé-2---variant-de-dichotomie-p-algo-04`
-- **Citation** : Méthode : montrer que la quantité `droite - gauche` diminue strictement à chaque étape. - Résultat attendu : étape 1 → g...
+- **Citation** : Méthode : montrer que le variant V = droite − gauche + 1 (nombre de candidats) décroît strictement à chaque étape. - Rés...
 
 **Extrait** :
 ````
 ### Exemple corrigé 2 - variant de dichotomie (P-ALGO-04)
 - Donnée : `tableau=[4,9,18,23,37,41], cible=37`.
-- Méthode : montrer que la quantité `droite - gauche` diminue strictement à chaque étape.
-- Résultat attendu : étape 1 → gauche=0, droite=5 (écart 5) ; étape 2 → gauche=3, droite=5 (écart 2)
-- Contrôle : capacité P-ALGO-04 et cas limite `cible absente → l'écart atteint 0 et la boucle s'arrê
+- Méthode : montrer que le variant V = droite − gauche + 1 (nombre de candidats) décroît strictement
+- Résultat attendu : étape 1 → gauche=0, droite=5, V=6 ; étape 2 → gauche=3, droite=5, V=3 → trouvé.
+- Contrôle : capacité P-ALGO-04 et cas limite `cible absente (ex. 38) → V décroît 6→3→1→0, la boucle
 ````
 
 ### practice
@@ -94,22 +94,22 @@ Soit un ensemble de points étiquetés (chaque point a des coordonnées et une c
 - Capacité officielle : P-ALGO-04.
 - Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.
 - Consigne : montrer que droite-gauche diminue ; traiter aussi `cible absente` si nécessaire.
-- Réponse attendue : le variant droite-gauche décroît de 5 à 1 → terminaison.
+- Réponse attendue : le variant V = droite − gauche + 1 décroît de 6 à 3 → terminaison (cible trouvé
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `cible absente
 ````
 
 ### correction
 - **Fichier** : `03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md`
 - **Ancre** : `#exercice-2`
-- **Citation** : Capacité mobilisée : P-ALGO-04. - Réponse attendue : le variant droite-gauche décroît de 5 à 1 sur tableau=[4,9,18,23,37...
+- **Citation** : Capacité mobilisée : P-ALGO-04. - Réponse attendue : le variant V = droite − gauche + 1 décroît de 6 à 3 sur tableau=[4,...
 
 **Extrait** :
 ````
 ### Exercice 2
 - Capacité mobilisée : P-ALGO-04.
-- Réponse attendue : le variant droite-gauche décroît de 5 à 1 sur tableau=[4,9,18,23,37,41], cible=
-- Méthode : montrer que droite-gauche diminue strictement à chaque étape.
-- Cas limite : cible absente → l'écart atteint 0 et la boucle s'arrête sans trouver.
+- Réponse attendue : le variant V = droite − gauche + 1 décroît de 6 à 3 sur tableau=[4,9,18,23,37,4
+- Méthode : montrer que V décroît strictement à chaque étape.
+- Cas limite : cible absente (ex. 38) → V décroît 6→3→1→0, la boucle s'arrête sans trouver.
 ````
 
 ### Grille

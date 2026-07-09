@@ -28,7 +28,7 @@ official_program:
 1. Annoter `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`.
 2. Refaire la tâche `calculer milieu puis réduire intervalle` et comparer avec `milieux 18 puis 37 -> trouvé indice 4`.
 3. Traiter le cas limite `cible absente`.
-4. Relier la réponse à P-ALGO-03.
+4. Relier la réponse à P-ALGO-04.
 
 ## Critères de sortie
 - Donnée exacte.

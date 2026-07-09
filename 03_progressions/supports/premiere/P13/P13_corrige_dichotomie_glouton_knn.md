@@ -27,9 +27,9 @@ official_program:
 - Cas limite : cible absente.
 ### Exercice 2
 - Capacité mobilisée : P-ALGO-04.
-- Réponse attendue : le variant droite-gauche décroît de 5 à 1 sur tableau=[4,9,18,23,37,41], cible=37, prouvant la terminaison.
-- Méthode : montrer que droite-gauche diminue strictement à chaque étape.
-- Cas limite : cible absente → l'écart atteint 0 et la boucle s'arrête sans trouver.
+- Réponse attendue : le variant V = droite − gauche + 1 décroît de 6 à 3 sur tableau=[4,9,18,23,37,41], cible=37 → terminaison (cible trouvée).
+- Méthode : montrer que V décroît strictement à chaque étape.
+- Cas limite : cible absente (ex. 38) → V décroît 6→3→1→0, la boucle s'arrête sans trouver.
 ### Exercice 3
 - Capacité mobilisée : P-ALGO-05.
 - Réponse attendue : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces, algorithme glouton avec pièces=[10,5,2,1]).
@@ -42,24 +42,24 @@ official_program:
 - Cas limite : k pair → égalité de vote possible.
 ### Exercice 5
 - Capacité mobilisée : P-ALGO-04.
-- Réponse attendue : variant vérifié sur un nouveau tableau.
-- Méthode : calculer milieu puis réduire intervalle, montrer que droite-gauche diminue.
-- Cas limite : tableau d'un seul élément.
+- Réponse attendue : le variant V = droite − gauche + 1 décroît de 6 à 3 sur tableau=[4,9,18,23,37,41], cible=37 → terminaison (cible trouvée).
+- Méthode : montrer que V décroît strictement à chaque étape.
+- Cas limite : cible absente (ex. 38) → V décroît 6→3→1→0, la boucle s'arrête sans trouver.
 ### Exercice 6
 - Capacité mobilisée : P-ALGO-05.
-- Réponse attendue : le glouton est appliqué sur un nouveau montant.
+- Réponse attendue : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces, algorithme glouton avec pièces=[10,5,2,1]).
 - Méthode : prendre la plus grande pièce possible à chaque étape.
-- Cas limite : glouton non optimal (ex. pièces=[6,4,1] montant=8 → glouton donne 6+1+1=3 pièces, optimal 4+4=2 pièces).
+- Cas limite : pièce 1 absente → le glouton peut échouer (ex. montant=3 avec pièces=[5,2]).
 ### Exercice 7
 - Capacité mobilisée : P-ALGO-03.
-- Réponse attendue : k-NN sur un nouveau jeu de données.
-- Méthode : calculer distances, trier, voter.
-- Cas limite : tous les voisins de la même classe → vote unanime.
+- Réponse attendue : voisins=[rouge:1.2, bleu:2.0, rouge:2.4], k=3 → vote rouge=2, bleu=1 → classe rouge.
+- Méthode : trier par distance, voter parmi les k plus proches.
+- Cas limite : k pair → égalité de vote possible.
 ### Exercice 8
 - Capacité mobilisée : P-ALGO-04.
-- Réponse attendue : le variant droite-gauche décroît (5→2→1) → terminaison prouvée.
-- Méthode : montrer que le variant droite-gauche décroît à chaque étape sur tableau=[4,9,18,23,37,41], cible=23.
-- Cas limite : cible absente → l'écart atteint 0 et la boucle s'arrête sans trouver.
+- Réponse attendue : le variant V = droite − gauche + 1 décroît de 6 à 3 puis 1 sur tableau=[4,9,18,23,37,41], cible=23 → terminaison prouvée (cible trouvée).
+- Méthode : montrer que V décroît strictement à chaque étape.
+- Cas limite : cible absente (ex. 38) → V décroît 6→3→1→0, la boucle s'arrête sans trouver.
 
 ### Exercice 9
 - Capacité mobilisée : P-ALGO-03.
@@ -74,6 +74,6 @@ official_program:
 
 ## Corrigé de l évaluation
 - Question 1 : milieux 18 puis 37 -> trouvé indice 4.
-- Question 2 : le variant droite-gauche décroît de 5 à 1, prouvant la terminaison.
+- Question 2 : le variant V = droite − gauche + 1 décroît de 6 à 3 → terminaison (cible trouvée).
 - Question 3 : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces).
 - Question 4 : rouge (2 voix) vs bleu (1) → classe rouge.

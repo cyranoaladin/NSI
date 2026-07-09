@@ -37,6 +37,6 @@ official_program:
 - égalité k-NN non décidée.
 
 ## Critères de réussite observables
-- Capacité : P-ALGO-03.
-- Résultat final : 28 -> 10+10+5+2+1.
-- Cas limite : cible absente.
+- Capacité P-ALGO-04 (dichotomie) : milieux 18 puis 37 → trouvé indice 4. Cas limite : cible absente.
+- Capacité P-ALGO-05 (glouton) : 28 = 10+10+5+2+1 (5 pièces). Cas limite : pièce 1 absente.
+- Capacité P-ALGO-03 (k-NN) : rouge 2 voix vs bleu 1 → classe rouge. Cas limite : égalité de vote.
