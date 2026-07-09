@@ -32,5 +32,5 @@ official_program:
 
 ## Réponses rapides
 - Réponse 1 : milieux 18 puis 37 -> trouvé indice 4.
-- Réponse 2 : 28 -> 10+10+5+2+1.
-- Réponse 3 : rouge, bleu, rouge -> classe rouge.
+- Réponse 2 : le variant droite-gauche décroît de 5 à 1 → terminaison.
+- Réponse 3 : 28 = 10+10+5+2+1 (5 pièces).

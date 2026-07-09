@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
-"""Guard: verifie la coherence reponse/capacite/methode dans les exercices P13.
+"""Guard: verifie la coherence reponse/capacite/methode dans les supports.
 
-Deux niveaux de controle :
-1. reponse↔methode : la reponse attendue est coherente avec la methode de la consigne
-2. methode↔capacite : la methode de la consigne correspond a la capacite officielle
-
-Motifs interdits (reponse incompatible avec la methode de la consigne) :
-- variant/droite-gauche sous une consigne glouton ou k-NN
-- glouton/pieces sous une consigne dichotomie ou variant
-- k-NN/rouge/bleu/vote sous une consigne dichotomie ou glouton
-- cible 40 absente hors contexte dichotomie
+Scanne toutes les sequences via leurs contrats et verifie dans chaque
+support (TD, corrige, tp, trace, version_amenagee, evaluation, bareme,
+remediation) :
+1. reponse↔methode : la reponse attendue est coherente avec la methode
+2. methode↔capacite : la methode de la consigne correspond a la capacite
+3. pas de "cible 40 absente" hors contexte dichotomie
+4. les reponses positionnelles (version_amenagee) suivent l'ordre capacite
 
 Usage :
     python -m scripts.check_answer_capacity_coherence
@@ -21,20 +19,26 @@ import re
 import sys
 from pathlib import Path
 
+import yaml
+
 ROOT = Path(__file__).resolve().parents[1]
+CONTRACTS_DIR = ROOT / "03_progressions" / "supports" / "contracts"
+SUPPORTS_DIR = ROOT / "03_progressions" / "supports"
 
 # Method signatures in consignes
 METHOD_DICHOTOMIE = re.compile(
     r"calculer milieu|réduire intervalle|recherche dichotomique", re.I
 )
 METHOD_VARIANT = re.compile(
-    r"droite.gauche diminue|variant.*boucle|terminaison.*dichotom|variant.*erroné|variant.*corriger", re.I
+    r"droite.gauche diminue|variant.*boucle|terminaison.*dichotom"
+    r"|variant.*erroné|variant.*corriger", re.I
 )
 METHOD_GLOUTON = re.compile(
     r"plus grande pièce possible|algorithme glouton|rendu de monnaie", re.I
 )
 METHOD_KNN = re.compile(
-    r"voter parmi.*voisins|k.NN|k plus proches|vote majoritaire|classifier par k", re.I
+    r"voter parmi.*voisins|k.NN|k plus proches|vote majoritaire"
+    r"|classifier par k", re.I
 )
 
 # Answer fingerprints
@@ -52,8 +56,7 @@ ANSWER_KNN = re.compile(
 )
 
 # Forbidden cross-contamination patterns
-FORBIDDEN = [
-    # (method_regex, forbidden_answer_regex, description)
+FORBIDDEN: list[tuple[re.Pattern[str], re.Pattern[str], str]] = [
     (METHOD_DICHOTOMIE, ANSWER_GLOUTON, "reponse glouton sous consigne dichotomie"),
     (METHOD_DICHOTOMIE, ANSWER_KNN, "reponse k-NN sous consigne dichotomie"),
     (METHOD_DICHOTOMIE, ANSWER_VARIANT, "reponse variant sous consigne dichotomie"),
@@ -71,15 +74,17 @@ FORBIDDEN = [
 # "cible 40 absente" must only appear in dichotomie context
 CIBLE_40_RE = re.compile(r"cible\s+40\s+absente", re.I)
 
-# cas-limite mismatches: each method has its own cas-limite
+# cas-limite mismatches
 CASLIMITE_GLOUTON = re.compile(r"pièce 1 absente|glouton.*échouer", re.I)
 CASLIMITE_KNN = re.compile(r"égalité de vote|k pair", re.I)
 
-CASLIMITE_FORBIDDEN = [
+CASLIMITE_FORBIDDEN: list[tuple[re.Pattern[str], re.Pattern[str], str]] = [
     (METHOD_GLOUTON, CASLIMITE_KNN, "cas-limite k-NN sous consigne glouton"),
-    (METHOD_GLOUTON, re.compile(r"cible absente(?!.*variant)", re.I), "cas-limite dichotomie sous consigne glouton"),
+    (METHOD_GLOUTON, re.compile(r"cible absente(?!.*variant)", re.I),
+     "cas-limite dichotomie sous consigne glouton"),
     (METHOD_KNN, CASLIMITE_GLOUTON, "cas-limite glouton sous consigne k-NN"),
-    (METHOD_KNN, re.compile(r"cible absente(?!.*variant)", re.I), "cas-limite dichotomie sous consigne k-NN"),
+    (METHOD_KNN, re.compile(r"cible absente(?!.*variant)", re.I),
+     "cas-limite dichotomie sous consigne k-NN"),
     (METHOD_DICHOTOMIE, CASLIMITE_GLOUTON, "cas-limite glouton sous consigne dichotomie"),
     (METHOD_DICHOTOMIE, CASLIMITE_KNN, "cas-limite k-NN sous consigne dichotomie"),
     (METHOD_VARIANT, CASLIMITE_GLOUTON, "cas-limite glouton sous consigne variant"),
@@ -87,13 +92,18 @@ CASLIMITE_FORBIDDEN = [
 ]
 
 # Capacity → allowed methods mapping
-# P-ALGO-03 covers both dichotomie-recherche AND k-NN
-# P-ALGO-04 covers variant de boucle (terminaison dichotomie)
-# P-ALGO-05 covers glouton
 CAPACITY_METHODS: dict[str, list[str]] = {
     "P-ALGO-03": ["dichotomie", "knn"],
     "P-ALGO-04": ["variant"],
     "P-ALGO-05": ["glouton"],
+}
+
+# Positional answer expectations for version_amenagee "Réponses rapides"
+# keyed by the ordered capacities from the contract
+CAPACITY_ANSWER_FINGERPRINTS: dict[str, re.Pattern[str]] = {
+    "P-ALGO-03": ANSWER_DICHOTOMIE,  # in position 1, dichotomie is the default for P-ALGO-03
+    "P-ALGO-04": ANSWER_VARIANT,
+    "P-ALGO-05": ANSWER_GLOUTON,
 }
 
 EXERCISE_HEADER_RE = re.compile(
@@ -178,12 +188,10 @@ def check_block(block: dict[str, str], filename: str) -> list[str]:
         return errors
     answer = answer_match.group(1)
 
-    # Check forbidden answer patterns
     for method_re, forbidden_re, desc in FORBIDDEN:
         if method_re.search(method_line) and forbidden_re.search(answer):
             errors.append(f"{filename} {title}: {desc}")
 
-    # Check cible 40 absente outside dichotomie
     if method != "dichotomie" and CIBLE_40_RE.search(text):
         errors.append(
             f"{filename} {title}: 'cible 40 absente' hors contexte dichotomie"
@@ -207,27 +215,20 @@ def check_block(block: dict[str, str], filename: str) -> list[str]:
 
 
 def check_corrige_block(block: dict[str, str], filename: str) -> list[str]:
-    """Check a corrige block for method↔capacity coherence.
-
-    In corrige blocks, the method appears in the Justification line
-    (e.g. 'la tâche `<method>`') and the capacity in 'Capacité mobilisée'.
-    """
+    """Check a corrige block for method↔capacity coherence."""
     errors: list[str] = []
     text = block["text"]
     title = block["title"]
 
-    # Extract capacity
     cap_match = re.search(r"Capacité mobilisée\s*:\s*(P-ALGO-\d+)", text)
     if not cap_match:
         return errors
     cap_id = cap_match.group(1)
 
-    # Extract method from Justification task
     task_match = re.search(r"la tâche\s*`([^`]+)`", text)
     if not task_match:
         return errors
-    task_text = task_match.group(1)
-    method = detect_method(task_text)
+    method = detect_method(task_match.group(1))
     if method is None:
         return errors
 
@@ -251,7 +252,43 @@ def check_eval_question(q: dict[str, str], filename: str) -> list[str]:
     return errors
 
 
-def check_file(filepath: Path) -> list[str]:
+def check_positional_answers(
+    text: str, filename: str, capacities: list[str],
+) -> list[str]:
+    """Check 'Reponses rapides' positional answers match ordered capacities."""
+    errors: list[str] = []
+    m = re.search(r"##\s+Réponses rapides", text)
+    if not m:
+        return errors
+
+    section = text[m.start():]
+    answers: list[str] = re.findall(
+        r"^-\s+Réponse\s+\d+\s*:\s*(.+)$", section, re.M,
+    )
+
+    for idx, answer in enumerate(answers):
+        if idx >= len(capacities):
+            break
+        cap_id = capacities[idx]
+        expected_fp = CAPACITY_ANSWER_FINGERPRINTS.get(cap_id)
+        if expected_fp is None:
+            continue
+        if not expected_fp.search(answer):
+            # Check if another capacity's fingerprint matches (cross-contamination)
+            for other_cap, other_fp in CAPACITY_ANSWER_FINGERPRINTS.items():
+                if other_cap != cap_id and other_fp.search(answer):
+                    errors.append(
+                        f"{filename} Réponse {idx + 1}: reponse "
+                        f"{other_cap} en position {cap_id}"
+                    )
+                    break
+
+    return errors
+
+
+def check_file(
+    filepath: Path, capacities: list[str] | None = None,
+) -> list[str]:
     """Check all blocks in a file."""
     if not filepath.exists():
         return []
@@ -265,30 +302,70 @@ def check_file(filepath: Path) -> list[str]:
             errors.extend(check_corrige_block(block, filename))
         errors.extend(check_block(block, filename))
 
-    # Check eval section in corrige
     if "corrige" in filename.lower():
         for q in parse_eval_questions(text):
             errors.extend(check_eval_question(q, filename))
 
+    if "version_amenagee" in filename.lower() and capacities:
+        errors.extend(check_positional_answers(text, filename, capacities))
+
+    # Global cible 40 absente outside exercise blocks
+    if CIBLE_40_RE.search(text):
+        errors.append(
+            f"{filename}: contient 'cible 40 absente'"
+        )
+
     return errors
 
 
-def main() -> None:
-    p13_dir = (
-        ROOT
-        / "03_progressions"
-        / "supports"
-        / "premiere"
-        / "P13"
-    )
-    files = [
-        p13_dir / "P13_TD_dichotomie_glouton_knn.md",
-        p13_dir / "P13_corrige_dichotomie_glouton_knn.md",
-    ]
+def discover_sequences() -> list[tuple[str, str, list[str]]]:
+    """Discover sequences from contracts that have P-ALGO capacities.
 
+    Returns list of (seq_id, level, capacities).
+    """
+    results: list[tuple[str, str, list[str]]] = []
+    if not CONTRACTS_DIR.exists():
+        return results
+    for contract_path in sorted(CONTRACTS_DIR.glob("*_contract.yml")):
+        data = yaml.safe_load(contract_path.read_text(encoding="utf-8"))
+        if not data:
+            continue
+        caps = data.get("capacites_officielles", [])
+        algo_caps = [c for c in caps if c in CAPACITY_METHODS]
+        if algo_caps:
+            seq_id = data.get("sequence", "")
+            level = data.get("level", "")
+            results.append((seq_id, level, caps))
+    return results
+
+
+SUPPORT_TYPES = [
+    "TD", "corrige", "tp", "trace", "version_amenagee",
+    "evaluation", "bareme", "remediation",
+]
+
+
+def find_support_files(seq_id: str, level: str) -> list[Path]:
+    """Find all support files for a sequence."""
+    seq_dir = SUPPORTS_DIR / level / seq_id
+    if not seq_dir.exists():
+        return []
+    return sorted(seq_dir.glob(f"{seq_id}_*.md"))
+
+
+def main() -> None:
     all_errors: list[str] = []
-    for f in files:
-        all_errors.extend(check_file(f))
+
+    sequences = discover_sequences()
+    if not sequences:
+        # Fallback: direct P13 scan
+        p13_dir = SUPPORTS_DIR / "premiere" / "P13"
+        for f in sorted(p13_dir.glob("P13_*.md")):
+            all_errors.extend(check_file(f))
+    else:
+        for seq_id, level, capacities in sequences:
+            for filepath in find_support_files(seq_id, level):
+                all_errors.extend(check_file(filepath, capacities))
 
     if all_errors:
         print(f"FAIL  check_answer_capacity_coherence: {len(all_errors)} erreur(s)")
