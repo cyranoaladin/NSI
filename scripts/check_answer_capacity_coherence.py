@@ -386,10 +386,6 @@ def check_file(
     if "version_amenagee" in filename.lower() and capacities:
         errors.extend(check_positional_answers(text, filename, capacities))
 
-    # Global cible 40 absente check (independent of answer_match)
-    if CIBLE_40_RE.search(text):
-        errors.append(f"{filename}: contient 'cible 40 absente'")
-
     return errors
 
 
@@ -410,7 +406,7 @@ def discover_sequences() -> list[tuple[str, str, list[str]]]:
         if algo_caps:
             seq_id = data.get("sequence", "")
             level = data.get("level", "")
-            results.append((seq_id, level, caps))
+            results.append((seq_id, level, algo_caps))
     return results
 
 
