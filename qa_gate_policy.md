@@ -43,6 +43,7 @@ mais ils ne doivent pas remplacer le jugement de substance.
 | scripts/check_pedagogical_indexes.py | blocking_structure | index pédagogiques générés |
 | scripts/check_makefile_audit_policy.py | blocking_structure | cohérence Makefile / politique QA |
 | scripts/check_reports_policy.py | blocking_structure | rapports `reports/lot*/` hors corpus et sous seuil |
+| scripts/check_answer_capacity_coherence.py | blocking_substance | cohérence réponse/capacité dans les exercices P13 |
 | scripts/check_substance_anchors.py | blocking_substance | garde-fou mécanique du juge de substance |
 | scripts/check_status_promotion_guard.py | blocking_substance | interdit toute promotion sans verdict A et confirmation humaine |
 | scripts/check_contract_substance_quality.py | blocking_substance | contrats de séquence |

@@ -20,7 +20,7 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md",
         "anchor": "#exercice-2",
-        "quote": "Capacité officielle : P-ALGO-04.\n- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=beta\n- Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.",
+        "quote": "Capacité officielle : P-ALGO-04.\n- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=beta\n- Consigne : montrer que droite-gauche diminue ; traiter aussi `cible absente` si nécessaire.",
         "teaches": true
       },
       "proof_correction": {

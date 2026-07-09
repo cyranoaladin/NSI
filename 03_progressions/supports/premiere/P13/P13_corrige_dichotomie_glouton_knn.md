@@ -73,6 +73,6 @@ official_program:
 
 ## Corrigé de l évaluation
 - Question 1 : milieux 18 puis 37 -> trouvé indice 4.
-- Question 2 : 28 -> 10+10+5+2+1.
-- Question 3 : rouge, bleu, rouge -> classe rouge.
-- Question 4 : cible 40 absente -> non trouvé.
+- Question 2 : le variant droite-gauche décroît de 5 à 1, prouvant la terminaison.
+- Question 3 : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces).
+- Question 4 : rouge (2 voix) vs bleu (1) → classe rouge.

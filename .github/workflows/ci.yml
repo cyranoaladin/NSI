@@ -46,6 +46,9 @@ jobs:
           test "$status" -eq 1
           grep -q "DÉGRADÉ" /tmp/poisoned_guard.log
 
+      - name: Answer/capacity coherence guard
+        run: python -m scripts.check_answer_capacity_coherence
+
       - name: Status promotion guard
         run: python -m scripts.check_status_promotion_guard
 

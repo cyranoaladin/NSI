@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1137
+- Total ressources : 1139
 - Ressources pédagogiques : 53
-- Ressources techniques : 1084
+- Ressources techniques : 1086
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1129
+- generated: 1131
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 589
+- interne: 591
 - premiere: 248
 - terminale: 300
 
@@ -19,17 +19,17 @@
 - banque: 14
 - document: 704
 - python: 95
-- script: 206
+- script: 208
 - sequence: 45
 - test: 73
 
 ## Répartition par statut
-- needs_review: 1137
+- needs_review: 1139
 
 ## Répartition audience
 - corrige: 78
 - eleve: 143
-- mixte: 913
+- mixte: 915
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -750,6 +750,7 @@
   - scripts/build_source_archive.py
   - scripts/build_source_zip.py
   - scripts/check_agents_governance.py
+  - scripts/check_answer_capacity_coherence.py
   - scripts/check_archive_portability.py
   - scripts/check_audit_extracted_runtime_budget.py
   - scripts/check_audit_folder_policy.py
@@ -918,6 +919,7 @@
   - scripts/drive_local_inventory.py
   - scripts/drive_resource_triage.py
   - scripts/generate_coverage_gap_action_plan.py
+  - scripts/generate_dossier_revue_lead_v3.py
   - scripts/generate_index.py
   - scripts/generate_pedagogical_indexes.py
   - scripts/generate_qa_report.py
@@ -1915,6 +1917,7 @@
   - scripts/build_source_archive.py
   - scripts/build_source_zip.py
   - scripts/check_agents_governance.py
+  - scripts/check_answer_capacity_coherence.py
   - scripts/check_archive_portability.py
   - scripts/check_audit_extracted_runtime_budget.py
   - scripts/check_audit_folder_policy.py
@@ -2083,6 +2086,7 @@
   - scripts/drive_local_inventory.py
   - scripts/drive_resource_triage.py
   - scripts/generate_coverage_gap_action_plan.py
+  - scripts/generate_dossier_revue_lead_v3.py
   - scripts/generate_index.py
   - scripts/generate_pedagogical_indexes.py
   - scripts/generate_qa_report.py
@@ -3003,6 +3007,7 @@
 - scripts/build_source_archive.py
 - scripts/build_source_zip.py
 - scripts/check_agents_governance.py
+- scripts/check_answer_capacity_coherence.py
 - scripts/check_archive_portability.py
 - scripts/check_audit_extracted_runtime_budget.py
 - scripts/check_audit_folder_policy.py
@@ -3170,6 +3175,7 @@
 - scripts/drive_local_inventory.py
 - scripts/drive_resource_triage.py
 - scripts/generate_coverage_gap_action_plan.py
+- scripts/generate_dossier_revue_lead_v3.py
 - scripts/generate_index.py
 - scripts/generate_pedagogical_indexes.py
 - scripts/generate_qa_report.py
@@ -4139,6 +4145,7 @@
 - scripts/build_source_archive.py
 - scripts/build_source_zip.py
 - scripts/check_agents_governance.py
+- scripts/check_answer_capacity_coherence.py
 - scripts/check_archive_portability.py
 - scripts/check_audit_extracted_runtime_budget.py
 - scripts/check_audit_folder_policy.py
@@ -4307,6 +4314,7 @@
 - scripts/drive_local_inventory.py
 - scripts/drive_resource_triage.py
 - scripts/generate_coverage_gap_action_plan.py
+- scripts/generate_dossier_revue_lead_v3.py
 - scripts/generate_index.py
 - scripts/generate_pedagogical_indexes.py
 - scripts/generate_qa_report.py

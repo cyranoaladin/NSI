@@ -57,6 +57,7 @@ audit-core:
 	python -m scripts.check_differentiation_distinctness
 	python -m scripts.check_rendered_unit_artifacts --unit P05
 	python -m scripts.check_rendered_unit_artifacts --unit T10
+	python -m scripts.check_answer_capacity_coherence
 	python -m scripts.check_status_promotion_guard
 	python -m scripts.check_drive_enrichment_traceability_portable
 	python -m scripts.check_drive_action_plan_completeness
@@ -146,6 +147,7 @@ audit-local:
 	python -m scripts.check_question_capacity_alignment
 	python -m scripts.check_support_pedagogical_depth
 	python -m scripts.check_substance_anchors
+	python -m scripts.check_answer_capacity_coherence
 	python -m scripts.check_contract_substance_quality
 	python -m scripts.check_differentiation_distinctness
 	python -m scripts.check_rendered_unit_artifacts --unit P05
@@ -278,6 +280,7 @@ audit-extracted-source-local:
 	python -m scripts.check_question_capacity_alignment
 	timeout 30 python -m scripts.check_support_pedagogical_depth
 	timeout 30 python -m scripts.check_substance_anchors
+	python -m scripts.check_answer_capacity_coherence
 	timeout 30 python -m scripts.check_contract_substance_quality
 	timeout 30 python -m scripts.check_differentiation_distinctness
 	timeout 30 python -m scripts.check_rendered_unit_artifacts --unit P05
