@@ -20,7 +20,7 @@ def main() -> None:
     for path in sorted(ROOT.rglob("*")):
         if path.is_dir() or path.suffix not in TEXT_SUFFIXES:
             continue
-        if ".git" in path.parts or ".venv" in path.parts or "__pycache__" in path.parts:
+        if {".git", ".venv", "__pycache__", "scrapping_NSI", "Documents_DRIVE", "nsi-enseignement"} & set(path.parts):
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         if PLACEHOLDER_RE.search(text):
