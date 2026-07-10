@@ -1,0 +1,32 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{nsi-preamble}
+\newcommand{\exo}[5]{\subsection*{Exercice #1 — #2 (#3)}\begin{itemize}[nosep]\item \textbf{Consigne} : #4\item \textbf{Réponse attendue} : #5\end{itemize}}
+\begin{document}
+\nsiheader{TD — Dichotomie, glouton et k-NN}{Première}{P13}{1}{P-ALGO-03, P-ALGO-04, P-ALGO-05}{BO 2019}{needs\_review}
+
+\section*{Progression}
+Socle : ex.~1 et 2. \quad Standard : ex.~3 à 6. \quad Approfondissement : ex.~7 à 9.
+
+\section*{Donnée commune}
+\texttt{tableau=[4,9,18,23,37,41], cible=37} ; \texttt{pièces=[10,5,2,1], montant=28} ; \texttt{voisins=[rouge:1.2, bleu:2.0, rouge:2.4]}.
+
+\section*{Exercices}
+\exo{1}{lecture/analyse}{P-ALGO-04}{calculer milieu puis réduire l'intervalle ; traiter \texttt{cible absente}.}{milieux $18$ puis $37$ $\rightarrow$ indice $4$.}
+\exo{2}{terminaison}{P-ALGO-04}{montrer que le variant décroît ; traiter \texttt{cible absente}.}{$V = \text{droite} - \text{gauche} + 1$ décroît de $6$ à $3$ $\rightarrow$ terminaison.}
+\exo{3}{glouton}{P-ALGO-05}{prendre la plus grande pièce possible ; traiter \texttt{pièce 1 absente}.}{$28 = 10+10+5+2+1$ (5 pièces).}
+\exo{4}{cas limite}{P-ALGO-03}{voter parmi $k=3$ voisins ; traiter \texttt{égalité de vote}.}{rouge~2 voix vs bleu~1 $\rightarrow$ classe rouge.}
+\exo{5}{justification}{P-ALGO-04}{montrer que le variant droite-gauche diminue.}{$V$ décroît de $6$ à $3$ $\rightarrow$ terminaison.}
+\exo{6}{lecture/analyse}{P-ALGO-05}{prendre la plus grande pièce possible.}{$28 = 10+10+5+2+1$ (5 pièces).}
+\exo{7}{production}{P-ALGO-03}{voter parmi les $k$ plus proches voisins.}{rouge~2 voix vs bleu~1 $\rightarrow$ classe rouge.}
+\exo{8}{justification}{P-ALGO-04}{sur \texttt{cible=23}, montrer que le variant décroît et conclure sur la terminaison.}{$V$ décroît $6 \rightarrow 3 \rightarrow 1$ $\rightarrow$ terminaison prouvée.}
+
+\subsection*{Exercice 9 — production (P-ALGO-03)}
+Données d'entraînement : $[(2,3,A),(5,4,B),(1,1,A),(8,7,B),(3,2,A)]$ ; nouveau point $(4,3)$ ; $k=3$.
+\begin{enumerate}[nosep,label=(9\alph*)]
+  \item calculer la distance euclidienne du nouveau point à chaque point d'entraînement ;
+  \item identifier les 3 plus proches voisins ;
+  \item déterminer la classe prédite par vote majoritaire ;
+  \item que se passe-t-il si $k=2$ et que les deux voisins sont de classes différentes ?
+\end{enumerate}
+Réponse attendue : distances calculées, 3 plus proches identifiés, classe prédite $=A$, cas $k=2$ $\rightarrow$ égalité.
+\end{document}

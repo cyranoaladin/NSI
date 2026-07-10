@@ -12,13 +12,19 @@ WRAPPER = ROOT / "scripts" / "archive_security.py"
 CANONICAL_IMPL = ROOT / "scrapping_NSI" / "safe_archive.py"
 
 
+_DATA_DIRS = {"ressources_nsi_extraites", "ressources_nsi_extraites_v2",
+               "ressources_nsi_centralisees", "sqlite_data", ".venv"}
+
+
 def _production_python_files() -> list[Path]:
     files: list[Path] = []
     for directory in PRODUCTION_DIRS:
         files.extend(
             path
             for path in directory.rglob("*.py")
-            if path.is_file() and not path.name.startswith("test_")
+            if path.is_file()
+            and not path.name.startswith("test_")
+            and not (_DATA_DIRS & set(path.parts))
         )
     return sorted(files)
 

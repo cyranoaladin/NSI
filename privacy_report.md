@@ -11,8 +11,6 @@ Les noms propres suspects sont listés pour revue humaine.
 ## Alertes de revue
 
 - 01_charte_graphique_et_pedagogique/charte_graphique.md: nom propre suspect -> Fira Code
-- 02_modeles_documents/modele_corrige.tex: nom propre suspect -> Modèle Corrigé
-- 02_modeles_documents/modele_evaluation.tex: nom propre suspect -> Modèle Évaluation
 - 02_modeles_documents/modele_guide_prof.md: nom propre suspect -> Modèle Guide
 - 03_progressions/progression_premiere.md: nom propre suspect -> Septembre-Octobre
 - 03_progressions/progression_premiere.md: nom propre suspect -> Octobre-Novembre
@@ -129,7 +127,6 @@ Les noms propres suspects sont listés pour revue humaine.
 - INDEX_BY_SESSION.md: nom propre suspect -> Index By Session
 - INDEX_BY_THEME.md: nom propre suspect -> Index By Theme
 - INDEX_BY_THEME.md: nom propre suspect -> Grand Oral
-- METHODE_PRODUCTION_REELLE.md: nom propre suspect -> Claude Code
 - SKILLS.md: nom propre suspect -> Content-Type
 - calendar_2026_2027_tunisia.md: nom propre suspect -> Grand Oral
 - course_internal_coherence_report.md: nom propre suspect -> Course Internal Coherence Report
@@ -137,7 +134,12 @@ Les noms propres suspects sont listés pour revue humaine.
 - delivery_policy.md: nom propre suspect -> Delivery Policy
 - delivery_policy.md: nom propre suspect -> Historique Git
 - differentiation_quality_report.md: nom propre suspect -> Differentiation Quality Report
+- docs/GUIDE_DEPLOIEMENT.md: nom propre suspect -> Claude Code
+- docs/GUIDE_DEPLOIEMENT.md: nom propre suspect -> Claude Code
+- docs/GUIDE_DEPLOIEMENT.md: nom propre suspect -> Contenu Markdown
+- docs/GUIDE_DEPLOIEMENT.md: nom propre suspect -> Claude Code
 - docs/audits/AUDIT_FRONTEND_infra_ground_truth.md: nom propre suspect -> Collections Chroma
+- docs/latex_systems_decision.md: nom propre suspect -> Fira Code
 - docs/promotion/dossier_revue_lead.md: nom propre suspect -> Berners-Lee
 - docs/promotion/dossier_revue_lead.md: nom propre suspect -> Alan Turing
 - docs/promotion/dossier_revue_lead.md: nom propre suspect -> Alan Turing
@@ -207,10 +209,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - missing_documents_register_v2.md: nom propre suspect -> Lien Drive
 - missing_documents_register_v2.md: nom propre suspect -> Lien Drive
 - missing_documents_register_v2.md: nom propre suspect -> Lien Drive
-- pedagogical_blockers_report.md: nom propre suspect -> Pedagogical Blockers Report
-- pedagogical_blockers_report.md: nom propre suspect -> Ressources Drive
 - premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> American Standard Code
-- ... 147 alertes supplémentaires non affichées
+- ... 150 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
@@ -414,4 +414,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P04/P04_tp_types_construits_complement.md: nom propre suspect -> Module Python
 - 03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md: nom propre suspect -> Fonctions Python
 - 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md: nom propre suspect -> Assets Python
-- ... 406 alertes supplémentaires non affichées
+- ... 372 alertes supplémentaires non affichées

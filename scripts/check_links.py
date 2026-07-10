@@ -33,8 +33,9 @@ def check_file(path: Path) -> list[tuple[str, int, str]]:
 
 def main() -> None:
     issues = []
+    skip_dirs = {'.git', '.venv', 'scrapping_NSI', 'Documents_DRIVE', 'nsi-enseignement'}
     for path in sorted(ROOT.rglob('*.md')):
-        if '.git' in path.parts:
+        if skip_dirs & set(path.parts):
             continue
         issues.extend(check_file(path))
 

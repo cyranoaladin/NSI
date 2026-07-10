@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1137
+- Total ressources : 1154
 - Ressources pédagogiques : 53
-- Ressources techniques : 1084
+- Ressources techniques : 1101
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1129
+- generated: 1146
 - import_partiel: 1
 
 ## Répartition par niveau
 - interne: 589
-- premiere: 248
+- premiere: 265
 - terminale: 300
 
 ## Répartition par type
 - banque: 14
-- document: 704
-- python: 95
+- document: 732
+- python: 84
 - script: 206
 - sequence: 45
 - test: 73
 
 ## Répartition par statut
-- needs_review: 1137
+- needs_review: 1154
 
 ## Répartition audience
-- corrige: 78
+- corrige: 80
 - eleve: 143
-- mixte: 913
+- mixte: 928
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -55,14 +55,18 @@
   - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
   - 01_charte_graphique_et_pedagogique/charte_graphique.md
   - 01_charte_graphique_et_pedagogique/metadata_schema.md
+  - 02_modeles_documents/modele_aides.tex
   - 02_modeles_documents/modele_corrige.tex
   - 02_modeles_documents/modele_cours.tex
   - 02_modeles_documents/modele_evaluation.tex
+  - 02_modeles_documents/modele_fiche_methode.tex
   - 02_modeles_documents/modele_guide_prof.md
   - 02_modeles_documents/modele_qcm.json
   - 02_modeles_documents/modele_sequence.yaml
   - 02_modeles_documents/modele_td.tex
   - 02_modeles_documents/modele_tp.tex
+  - 02_modeles_documents/modele_trace.tex
+  - 02_modeles_documents/nsi-preamble.sty
   - 03_progressions/fiches_cours/premiere/P00/P00_fiche_cours_methode_nsi.md
   - 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_bits_bases_2_10_16.md
   - 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_conversions.md
@@ -597,7 +601,6 @@
   - INDEX_BY_SEQUENCE.md
   - INDEX_BY_SESSION.md
   - INDEX_BY_THEME.md
-  - METHODE_PRODUCTION_REELLE.md
   - README.md
   - bank_strategy.md
   - calendar_2026_2027_tunisia.md
@@ -607,13 +610,19 @@
   - coverage_gap_action_plan.md
   - delivery_policy.md
   - differentiation_quality_report.md
+  - docs/GUIDE_DEPLOIEMENT.md
+  - docs/LISEZMOI.txt
   - docs/archive_security_policy.md
   - docs/audits/AUDIT_FRONTEND_infra_ground_truth.md
+  - docs/finalisation_report.md
   - docs/judge_campaign_plan.md
+  - docs/kit_production_NSI.md
+  - docs/latex_systems_decision.md
   - docs/local_excludes_required.md
   - docs/promotion/dossier_revue_lead.md
   - docs/promotion/dossier_revue_lead_v2.md
   - docs/promotion/dossier_revue_lead_v3.md
+  - docs/reorg_report.md
   - docs/repo_topology.md
   - docs/source_archive_policy.md
   - drive_inventory.csv
@@ -623,18 +632,31 @@
   - drive_remaining_action_plan.md
   - drive_sources.yml
   - evaluation_bareme_alignment_report.md
-  - human_review_checklist_accessibility.md
-  - human_review_checklist_pedagogy.md
-  - human_review_checklist_science.md
-  - human_review_protocol.md
   - human_review_register.csv
   - human_review_wave_1_plan.md
+  - latex/README.md
+  - latex/build.sh
+  - latex/packs/premiere/P13/P13_aides.pdf
+  - latex/packs/premiere/P13/P13_aides.tex
+  - latex/packs/premiere/P13/P13_corrige.pdf
+  - latex/packs/premiere/P13/P13_corrige.tex
+  - latex/packs/premiere/P13/P13_cours.pdf
+  - latex/packs/premiere/P13/P13_cours.tex
+  - latex/packs/premiere/P13/P13_evaluation.pdf
+  - latex/packs/premiere/P13/P13_evaluation.tex
+  - latex/packs/premiere/P13/P13_fiche_methode.pdf
+  - latex/packs/premiere/P13/P13_fiche_methode.tex
+  - latex/packs/premiere/P13/P13_td.pdf
+  - latex/packs/premiere/P13/P13_td.tex
+  - latex/packs/premiere/P13/P13_tp.pdf
+  - latex/packs/premiere/P13/P13_tp.tex
+  - latex/packs/premiere/P13/P13_trace.pdf
+  - latex/packs/premiere/P13/P13_trace.tex
+  - latex/packs/premiere/P13/build.sh
   - learning_objectives_assessed_report.md
   - missing_capabilities.md
-  - missing_documents_register.md
   - missing_documents_register_v2.md
   - missing_sequence_resources_register.md
-  - pedagogical_blockers_report.md
   - pilot_scope.yml
   - premiere/banques/evaluations/index.md
   - premiere/banques/exercices/index.md
@@ -669,7 +691,6 @@
   - program_capacity_evidence_depth_report.md
   - programme_matrix_premiere.md
   - programme_matrix_terminale.md
-  - programme_yaml_audit.md
   - progression_audit.md
   - project_plan_premiere.md
   - project_plan_terminale.md
@@ -682,7 +703,9 @@
   - rag_connection.md
   - rag_server_fix_plan.md
   - rag_timeout_diagnostic.md
+  - reports/METHODE_PRODUCTION_REELLE.md
   - reports/alignment_known_failures.yml
+  - reports/audit_03_07_26.md
   - reports/closure2/corrective2_report.md
   - reports/closure2/corrective3_report.md
   - reports/closure2/corrective_report.md
@@ -698,6 +721,10 @@
   - reports/closure2/rag_v2_rebuilt_report.md
   - reports/closure2/rag_v2_versioned_report.md
   - reports/drive_enrichment_report.md
+  - reports/human_review_checklist_accessibility.md
+  - reports/human_review_checklist_pedagogy.md
+  - reports/human_review_checklist_science.md
+  - reports/human_review_protocol.md
   - reports/lot0_ruff_autofix_review.md
   - reports/lot1/drive_forensic.md
   - reports/lot1/lot1_validation_log.md
@@ -708,6 +735,9 @@
   - reports/lot3/lot3_hardening_validation_log.md
   - reports/lot3/lot3_validation_log.md
   - reports/lot3/post_merge_audit.md
+  - reports/missing_documents_register.md
+  - reports/pedagogical_blockers_report.md
+  - reports/programme_yaml_audit.md
   - reports/reconciliation/branch_topology.md
   - reports/reconciliation/closure_report.md
   - reports/reconciliation/drive_integration_plan.md
@@ -723,19 +753,6 @@
   - scientific_claims_review_report.md
   - scraping_ingestion_plan.md
   - scraping_strategy.md
-  - scrapping_NSI/__init__.py
-  - scrapping_NSI/netpolicy.py
-  - scrapping_NSI/organizer_nsi.py
-  - scrapping_NSI/provenance.py
-  - scrapping_NSI/pyproject.toml
-  - scrapping_NSI/ruff.toml
-  - scrapping_NSI/safe_archive.py
-  - scrapping_NSI/scraper_eduscol.py
-  - scrapping_NSI/scraper_nsi_v2.py
-  - scrapping_NSI/test_netpolicy.py
-  - scrapping_NSI/test_provenance.py
-  - scrapping_NSI/test_scraper_eduscol.py
-  - scrapping_NSI/test_scraper_nsi_v2.py
   - scripts/__init__.py
   - scripts/_course_sheets_common.py
   - scripts/_drive_paths.py
@@ -1239,14 +1256,18 @@
   - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
   - 01_charte_graphique_et_pedagogique/charte_graphique.md
   - 01_charte_graphique_et_pedagogique/metadata_schema.md
+  - 02_modeles_documents/modele_aides.tex
   - 02_modeles_documents/modele_corrige.tex
   - 02_modeles_documents/modele_cours.tex
   - 02_modeles_documents/modele_evaluation.tex
+  - 02_modeles_documents/modele_fiche_methode.tex
   - 02_modeles_documents/modele_guide_prof.md
   - 02_modeles_documents/modele_qcm.json
   - 02_modeles_documents/modele_sequence.yaml
   - 02_modeles_documents/modele_td.tex
   - 02_modeles_documents/modele_tp.tex
+  - 02_modeles_documents/modele_trace.tex
+  - 02_modeles_documents/nsi-preamble.sty
   - 03_progressions/fiches_cours/premiere/P00/P00_fiche_cours_methode_nsi.md
   - 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_bits_bases_2_10_16.md
   - 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_conversions.md
@@ -1788,7 +1809,6 @@
   - INDEX_BY_SEQUENCE.md
   - INDEX_BY_SESSION.md
   - INDEX_BY_THEME.md
-  - METHODE_PRODUCTION_REELLE.md
   - README.md
   - bank_strategy.md
   - calendar_2026_2027_tunisia.md
@@ -1798,13 +1818,19 @@
   - coverage_gap_action_plan.md
   - delivery_policy.md
   - differentiation_quality_report.md
+  - docs/GUIDE_DEPLOIEMENT.md
+  - docs/LISEZMOI.txt
   - docs/archive_security_policy.md
   - docs/audits/AUDIT_FRONTEND_infra_ground_truth.md
+  - docs/finalisation_report.md
   - docs/judge_campaign_plan.md
+  - docs/kit_production_NSI.md
+  - docs/latex_systems_decision.md
   - docs/local_excludes_required.md
   - docs/promotion/dossier_revue_lead.md
   - docs/promotion/dossier_revue_lead_v2.md
   - docs/promotion/dossier_revue_lead_v3.md
+  - docs/reorg_report.md
   - docs/repo_topology.md
   - docs/source_archive_policy.md
   - drive_inventory.csv
@@ -1814,18 +1840,31 @@
   - drive_remaining_action_plan.md
   - drive_sources.yml
   - evaluation_bareme_alignment_report.md
-  - human_review_checklist_accessibility.md
-  - human_review_checklist_pedagogy.md
-  - human_review_checklist_science.md
-  - human_review_protocol.md
   - human_review_register.csv
   - human_review_wave_1_plan.md
+  - latex/README.md
+  - latex/build.sh
+  - latex/packs/premiere/P13/P13_aides.pdf
+  - latex/packs/premiere/P13/P13_aides.tex
+  - latex/packs/premiere/P13/P13_corrige.pdf
+  - latex/packs/premiere/P13/P13_corrige.tex
+  - latex/packs/premiere/P13/P13_cours.pdf
+  - latex/packs/premiere/P13/P13_cours.tex
+  - latex/packs/premiere/P13/P13_evaluation.pdf
+  - latex/packs/premiere/P13/P13_evaluation.tex
+  - latex/packs/premiere/P13/P13_fiche_methode.pdf
+  - latex/packs/premiere/P13/P13_fiche_methode.tex
+  - latex/packs/premiere/P13/P13_td.pdf
+  - latex/packs/premiere/P13/P13_td.tex
+  - latex/packs/premiere/P13/P13_tp.pdf
+  - latex/packs/premiere/P13/P13_tp.tex
+  - latex/packs/premiere/P13/P13_trace.pdf
+  - latex/packs/premiere/P13/P13_trace.tex
+  - latex/packs/premiere/P13/build.sh
   - learning_objectives_assessed_report.md
   - missing_capabilities.md
-  - missing_documents_register.md
   - missing_documents_register_v2.md
   - missing_sequence_resources_register.md
-  - pedagogical_blockers_report.md
   - pilot_scope.yml
   - premiere/sequences/s01_representation_donnees/python/representation_tools.py
   - premiere/sequences/s01_representation_donnees/sequence.yaml
@@ -1834,7 +1873,6 @@
   - program_capacity_evidence_depth_report.md
   - programme_matrix_premiere.md
   - programme_matrix_terminale.md
-  - programme_yaml_audit.md
   - progression_audit.md
   - project_plan_premiere.md
   - project_plan_terminale.md
@@ -1847,7 +1885,9 @@
   - rag_connection.md
   - rag_server_fix_plan.md
   - rag_timeout_diagnostic.md
+  - reports/METHODE_PRODUCTION_REELLE.md
   - reports/alignment_known_failures.yml
+  - reports/audit_03_07_26.md
   - reports/closure2/corrective2_report.md
   - reports/closure2/corrective3_report.md
   - reports/closure2/corrective_report.md
@@ -1863,6 +1903,10 @@
   - reports/closure2/rag_v2_rebuilt_report.md
   - reports/closure2/rag_v2_versioned_report.md
   - reports/drive_enrichment_report.md
+  - reports/human_review_checklist_accessibility.md
+  - reports/human_review_checklist_pedagogy.md
+  - reports/human_review_checklist_science.md
+  - reports/human_review_protocol.md
   - reports/lot0_ruff_autofix_review.md
   - reports/lot1/drive_forensic.md
   - reports/lot1/lot1_validation_log.md
@@ -1873,6 +1917,9 @@
   - reports/lot3/lot3_hardening_validation_log.md
   - reports/lot3/lot3_validation_log.md
   - reports/lot3/post_merge_audit.md
+  - reports/missing_documents_register.md
+  - reports/pedagogical_blockers_report.md
+  - reports/programme_yaml_audit.md
   - reports/reconciliation/branch_topology.md
   - reports/reconciliation/closure_report.md
   - reports/reconciliation/drive_integration_plan.md
@@ -1888,19 +1935,6 @@
   - scientific_claims_review_report.md
   - scraping_ingestion_plan.md
   - scraping_strategy.md
-  - scrapping_NSI/__init__.py
-  - scrapping_NSI/netpolicy.py
-  - scrapping_NSI/organizer_nsi.py
-  - scrapping_NSI/provenance.py
-  - scrapping_NSI/pyproject.toml
-  - scrapping_NSI/ruff.toml
-  - scrapping_NSI/safe_archive.py
-  - scrapping_NSI/scraper_eduscol.py
-  - scrapping_NSI/scraper_nsi_v2.py
-  - scrapping_NSI/test_netpolicy.py
-  - scrapping_NSI/test_provenance.py
-  - scrapping_NSI/test_scraper_eduscol.py
-  - scrapping_NSI/test_scraper_nsi_v2.py
   - scripts/__init__.py
   - scripts/_course_sheets_common.py
   - scripts/_drive_paths.py
@@ -2375,12 +2409,16 @@
 - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
 - 01_charte_graphique_et_pedagogique/charte_graphique.md
 - 01_charte_graphique_et_pedagogique/metadata_schema.md
+- 02_modeles_documents/modele_aides.tex
 - 02_modeles_documents/modele_cours.tex
 - 02_modeles_documents/modele_evaluation.tex
+- 02_modeles_documents/modele_fiche_methode.tex
 - 02_modeles_documents/modele_qcm.json
 - 02_modeles_documents/modele_sequence.yaml
 - 02_modeles_documents/modele_td.tex
 - 02_modeles_documents/modele_tp.tex
+- 02_modeles_documents/modele_trace.tex
+- 02_modeles_documents/nsi-preamble.sty
 - 03_progressions/fiches_cours/premiere/P00/P00_fiche_cours_methode_nsi.md
 - 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_bits_bases_2_10_16.md
 - 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_conversions.md
@@ -2853,7 +2891,6 @@
 - INDEX_BY_SEQUENCE.md
 - INDEX_BY_SESSION.md
 - INDEX_BY_THEME.md
-- METHODE_PRODUCTION_REELLE.md
 - README.md
 - bank_strategy.md
 - calendar_2026_2027_tunisia.md
@@ -2863,13 +2900,19 @@
 - coverage_gap_action_plan.md
 - delivery_policy.md
 - differentiation_quality_report.md
+- docs/GUIDE_DEPLOIEMENT.md
+- docs/LISEZMOI.txt
 - docs/archive_security_policy.md
 - docs/audits/AUDIT_FRONTEND_infra_ground_truth.md
+- docs/finalisation_report.md
 - docs/judge_campaign_plan.md
+- docs/kit_production_NSI.md
+- docs/latex_systems_decision.md
 - docs/local_excludes_required.md
 - docs/promotion/dossier_revue_lead.md
 - docs/promotion/dossier_revue_lead_v2.md
 - docs/promotion/dossier_revue_lead_v3.md
+- docs/reorg_report.md
 - docs/repo_topology.md
 - docs/source_archive_policy.md
 - drive_inventory.csv
@@ -2879,18 +2922,29 @@
 - drive_remaining_action_plan.md
 - drive_sources.yml
 - evaluation_bareme_alignment_report.md
-- human_review_checklist_accessibility.md
-- human_review_checklist_pedagogy.md
-- human_review_checklist_science.md
-- human_review_protocol.md
 - human_review_register.csv
 - human_review_wave_1_plan.md
+- latex/README.md
+- latex/build.sh
+- latex/packs/premiere/P13/P13_aides.pdf
+- latex/packs/premiere/P13/P13_aides.tex
+- latex/packs/premiere/P13/P13_cours.pdf
+- latex/packs/premiere/P13/P13_cours.tex
+- latex/packs/premiere/P13/P13_evaluation.pdf
+- latex/packs/premiere/P13/P13_evaluation.tex
+- latex/packs/premiere/P13/P13_fiche_methode.pdf
+- latex/packs/premiere/P13/P13_fiche_methode.tex
+- latex/packs/premiere/P13/P13_td.pdf
+- latex/packs/premiere/P13/P13_td.tex
+- latex/packs/premiere/P13/P13_tp.pdf
+- latex/packs/premiere/P13/P13_tp.tex
+- latex/packs/premiere/P13/P13_trace.pdf
+- latex/packs/premiere/P13/P13_trace.tex
+- latex/packs/premiere/P13/build.sh
 - learning_objectives_assessed_report.md
 - missing_capabilities.md
-- missing_documents_register.md
 - missing_documents_register_v2.md
 - missing_sequence_resources_register.md
-- pedagogical_blockers_report.md
 - pilot_scope.yml
 - premiere/banques/evaluations/index.md
 - premiere/banques/exercices/index.md
@@ -2922,7 +2976,6 @@
 - program_capacity_evidence_depth_report.md
 - programme_matrix_premiere.md
 - programme_matrix_terminale.md
-- programme_yaml_audit.md
 - progression_audit.md
 - project_plan_premiere.md
 - project_plan_terminale.md
@@ -2935,7 +2988,9 @@
 - rag_connection.md
 - rag_server_fix_plan.md
 - rag_timeout_diagnostic.md
+- reports/METHODE_PRODUCTION_REELLE.md
 - reports/alignment_known_failures.yml
+- reports/audit_03_07_26.md
 - reports/closure2/corrective2_report.md
 - reports/closure2/corrective3_report.md
 - reports/closure2/corrective_report.md
@@ -2951,6 +3006,10 @@
 - reports/closure2/rag_v2_rebuilt_report.md
 - reports/closure2/rag_v2_versioned_report.md
 - reports/drive_enrichment_report.md
+- reports/human_review_checklist_accessibility.md
+- reports/human_review_checklist_pedagogy.md
+- reports/human_review_checklist_science.md
+- reports/human_review_protocol.md
 - reports/lot0_ruff_autofix_review.md
 - reports/lot1/drive_forensic.md
 - reports/lot1/lot1_validation_log.md
@@ -2961,6 +3020,9 @@
 - reports/lot3/lot3_hardening_validation_log.md
 - reports/lot3/lot3_validation_log.md
 - reports/lot3/post_merge_audit.md
+- reports/missing_documents_register.md
+- reports/pedagogical_blockers_report.md
+- reports/programme_yaml_audit.md
 - reports/reconciliation/branch_topology.md
 - reports/reconciliation/closure_report.md
 - reports/reconciliation/drive_integration_plan.md
@@ -2976,19 +3038,6 @@
 - scientific_claims_review_report.md
 - scraping_ingestion_plan.md
 - scraping_strategy.md
-- scrapping_NSI/__init__.py
-- scrapping_NSI/netpolicy.py
-- scrapping_NSI/organizer_nsi.py
-- scrapping_NSI/provenance.py
-- scrapping_NSI/pyproject.toml
-- scrapping_NSI/ruff.toml
-- scrapping_NSI/safe_archive.py
-- scrapping_NSI/scraper_eduscol.py
-- scrapping_NSI/scraper_nsi_v2.py
-- scrapping_NSI/test_netpolicy.py
-- scrapping_NSI/test_provenance.py
-- scrapping_NSI/test_scraper_eduscol.py
-- scrapping_NSI/test_scraper_nsi_v2.py
 - scripts/__init__.py
 - scripts/_course_sheets_common.py
 - scripts/_drive_paths.py
@@ -3436,14 +3485,18 @@
 - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
 - 01_charte_graphique_et_pedagogique/charte_graphique.md
 - 01_charte_graphique_et_pedagogique/metadata_schema.md
+- 02_modeles_documents/modele_aides.tex
 - 02_modeles_documents/modele_corrige.tex
 - 02_modeles_documents/modele_cours.tex
 - 02_modeles_documents/modele_evaluation.tex
+- 02_modeles_documents/modele_fiche_methode.tex
 - 02_modeles_documents/modele_guide_prof.md
 - 02_modeles_documents/modele_qcm.json
 - 02_modeles_documents/modele_sequence.yaml
 - 02_modeles_documents/modele_td.tex
 - 02_modeles_documents/modele_tp.tex
+- 02_modeles_documents/modele_trace.tex
+- 02_modeles_documents/nsi-preamble.sty
 - 03_progressions/fiches_cours/premiere/P00/P00_fiche_cours_methode_nsi.md
 - 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_bits_bases_2_10_16.md
 - 03_progressions/fiches_cours/premiere/P01/P01_fiche_cours_conversions.md
@@ -3985,7 +4038,6 @@
 - INDEX_BY_SEQUENCE.md
 - INDEX_BY_SESSION.md
 - INDEX_BY_THEME.md
-- METHODE_PRODUCTION_REELLE.md
 - README.md
 - bank_strategy.md
 - calendar_2026_2027_tunisia.md
@@ -3995,13 +4047,19 @@
 - coverage_gap_action_plan.md
 - delivery_policy.md
 - differentiation_quality_report.md
+- docs/GUIDE_DEPLOIEMENT.md
+- docs/LISEZMOI.txt
 - docs/archive_security_policy.md
 - docs/audits/AUDIT_FRONTEND_infra_ground_truth.md
+- docs/finalisation_report.md
 - docs/judge_campaign_plan.md
+- docs/kit_production_NSI.md
+- docs/latex_systems_decision.md
 - docs/local_excludes_required.md
 - docs/promotion/dossier_revue_lead.md
 - docs/promotion/dossier_revue_lead_v2.md
 - docs/promotion/dossier_revue_lead_v3.md
+- docs/reorg_report.md
 - docs/repo_topology.md
 - docs/source_archive_policy.md
 - drive_inventory.csv
@@ -4011,18 +4069,31 @@
 - drive_remaining_action_plan.md
 - drive_sources.yml
 - evaluation_bareme_alignment_report.md
-- human_review_checklist_accessibility.md
-- human_review_checklist_pedagogy.md
-- human_review_checklist_science.md
-- human_review_protocol.md
 - human_review_register.csv
 - human_review_wave_1_plan.md
+- latex/README.md
+- latex/build.sh
+- latex/packs/premiere/P13/P13_aides.pdf
+- latex/packs/premiere/P13/P13_aides.tex
+- latex/packs/premiere/P13/P13_corrige.pdf
+- latex/packs/premiere/P13/P13_corrige.tex
+- latex/packs/premiere/P13/P13_cours.pdf
+- latex/packs/premiere/P13/P13_cours.tex
+- latex/packs/premiere/P13/P13_evaluation.pdf
+- latex/packs/premiere/P13/P13_evaluation.tex
+- latex/packs/premiere/P13/P13_fiche_methode.pdf
+- latex/packs/premiere/P13/P13_fiche_methode.tex
+- latex/packs/premiere/P13/P13_td.pdf
+- latex/packs/premiere/P13/P13_td.tex
+- latex/packs/premiere/P13/P13_tp.pdf
+- latex/packs/premiere/P13/P13_tp.tex
+- latex/packs/premiere/P13/P13_trace.pdf
+- latex/packs/premiere/P13/P13_trace.tex
+- latex/packs/premiere/P13/build.sh
 - learning_objectives_assessed_report.md
 - missing_capabilities.md
-- missing_documents_register.md
 - missing_documents_register_v2.md
 - missing_sequence_resources_register.md
-- pedagogical_blockers_report.md
 - pilot_scope.yml
 - premiere/banques/evaluations/index.md
 - premiere/banques/exercices/index.md
@@ -4058,7 +4129,6 @@
 - program_capacity_evidence_depth_report.md
 - programme_matrix_premiere.md
 - programme_matrix_terminale.md
-- programme_yaml_audit.md
 - progression_audit.md
 - project_plan_premiere.md
 - project_plan_terminale.md
@@ -4071,7 +4141,9 @@
 - rag_connection.md
 - rag_server_fix_plan.md
 - rag_timeout_diagnostic.md
+- reports/METHODE_PRODUCTION_REELLE.md
 - reports/alignment_known_failures.yml
+- reports/audit_03_07_26.md
 - reports/closure2/corrective2_report.md
 - reports/closure2/corrective3_report.md
 - reports/closure2/corrective_report.md
@@ -4087,6 +4159,10 @@
 - reports/closure2/rag_v2_rebuilt_report.md
 - reports/closure2/rag_v2_versioned_report.md
 - reports/drive_enrichment_report.md
+- reports/human_review_checklist_accessibility.md
+- reports/human_review_checklist_pedagogy.md
+- reports/human_review_checklist_science.md
+- reports/human_review_protocol.md
 - reports/lot0_ruff_autofix_review.md
 - reports/lot1/drive_forensic.md
 - reports/lot1/lot1_validation_log.md
@@ -4097,6 +4173,9 @@
 - reports/lot3/lot3_hardening_validation_log.md
 - reports/lot3/lot3_validation_log.md
 - reports/lot3/post_merge_audit.md
+- reports/missing_documents_register.md
+- reports/pedagogical_blockers_report.md
+- reports/programme_yaml_audit.md
 - reports/reconciliation/branch_topology.md
 - reports/reconciliation/closure_report.md
 - reports/reconciliation/drive_integration_plan.md
@@ -4112,19 +4191,6 @@
 - scientific_claims_review_report.md
 - scraping_ingestion_plan.md
 - scraping_strategy.md
-- scrapping_NSI/__init__.py
-- scrapping_NSI/netpolicy.py
-- scrapping_NSI/organizer_nsi.py
-- scrapping_NSI/provenance.py
-- scrapping_NSI/pyproject.toml
-- scrapping_NSI/ruff.toml
-- scrapping_NSI/safe_archive.py
-- scrapping_NSI/scraper_eduscol.py
-- scrapping_NSI/scraper_nsi_v2.py
-- scrapping_NSI/test_netpolicy.py
-- scrapping_NSI/test_provenance.py
-- scrapping_NSI/test_scraper_eduscol.py
-- scrapping_NSI/test_scraper_nsi_v2.py
 - scripts/__init__.py
 - scripts/_course_sheets_common.py
 - scripts/_drive_paths.py
@@ -4564,6 +4630,23 @@
 
 ## Métadonnées incomplètes
 - 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_aides.pdf (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_aides.tex (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_corrige.pdf (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_corrige.tex (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_cours.pdf (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_cours.tex (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_evaluation.pdf (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_evaluation.tex (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_fiche_methode.pdf (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_fiche_methode.tex (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_td.pdf (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_td.tex (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_tp.pdf (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_tp.tex (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_trace.pdf (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_trace.tex (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/build.sh (niveau=premiere, statut=needs_review)
 
 ## Doublons (même hash SHA256)
 - Groupe (2):
