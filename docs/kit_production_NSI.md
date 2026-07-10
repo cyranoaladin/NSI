@@ -29,10 +29,11 @@ séquence choisie
 [Gate machine]  check_answer_capacity_coherence  → doit être VERT
    │
    ▼
-[Agent LaTeX]  → .tex via le design system LaTeX existant (Nexus / LaboMaths)
-   │
+[Agent LaTeX]  → .tex via le kit pdflatex (02_modeles_documents/ + nsi-preamble.sty)
+   │              Les .tex sont GÉNÉRÉS depuis le corpus .md (source unique = Markdown),
+   │              jamais édités à la main — artefacts de build comme les PDF.
    ▼
-[Compile]  latexmk/xelatex  → PDF
+[Compile]  pdflatex (build.sh)  → PDF
    │
    ▼
 [Gate humaine]  Revue ChatGPT (cahier des charges §2)  → PASS / corrections

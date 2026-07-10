@@ -1,6 +1,6 @@
 # Décision : deux systèmes LaTeX coexistent — converger ou garder ?
 
-Date : 2026-07-10. Statut : **en attente d'arbitrage humain**.
+Date : 2026-07-10. Statut : **DÉCIDÉ — Option A (kit pdflatex canonique)**.
 
 ## Les deux systèmes
 
@@ -58,11 +58,10 @@ Date : 2026-07-10. Statut : **en attente d'arbitrage humain**.
 - Documenter les périmètres respectifs.
 - Risque : dérive de charte entre les deux systèmes.
 
-## Question pour arbitrage
+## Décision (2026-07-10)
 
-**Quelle option retenir ?** Le choix dépend de la priorité :
-- Si la source unique Markdown est critique → Option B.
-- Si la simplicité et l'autonomie LaTeX priment → Option A.
-- Si le statu quo est acceptable à court terme → Option C.
+**Option A retenue** — kit pdflatex canonique pour toutes les nouvelles séquences.
+`render_sequence.py` conservé comme LEGACY pour le pilote s01 uniquement.
 
-STOP — en attente de décision.
+Les `.tex` des packs sont GÉNÉRÉS depuis le corpus `.md` (source unique = Markdown),
+jamais édités à la main — ce sont des artefacts de build, comme les PDF.

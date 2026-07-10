@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Render a sequence directory into two chartered PDFs (student + teacher).
+"""LEGACY — conservé pour le pilote s01 ; le kit pdflatex est canonique
+pour les nouvelles séquences (voir docs/latex_systems_decision.md).
+
+Render a sequence directory into two chartered PDFs (student + teacher).
 
 Usage:
     python scripts/render_sequence.py premiere/sequences/s01_representation_donnees
