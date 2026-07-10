@@ -67,8 +67,9 @@ Les étapes 2 et 3 sont **faites** (contenu + 8 PDF produits). Il reste :
 # Un seul document :
 pdflatex -interaction=nonstopmode -halt-on-error P13_cours.tex
 
-# Gates machine (depuis la racine du dépôt) :
+# Gates machine (depuis la racine du dépôt) — les 4 contrôles :
 ruff check .
 pytest
+make audit-idempotence          # metadata, links, privacy, freshness, substance, secrets
 python -m scripts.check_substance_anchors
 ```

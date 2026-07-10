@@ -18,14 +18,17 @@ Un document qui ne franchit pas les trois portes ne devient pas un PDF publié.
 ## 0bis. Règle d'architecture (source unique)
 
 Le `.md` certifié dans `03_progressions/supports/` est la **SOURCE UNIQUE**. Les `.tex`
-dans `latex/packs/` sont **GÉNÉRÉS** depuis ce corpus (via les templates de
-`02_modeles_documents/`), jamais rédigés en parallèle. Ce sont des artefacts régénérables,
-au même titre que les PDF.
+dans `latex/packs/` sont des projections manuelles de ce corpus via les templates de
+`02_modeles_documents/`. À terme, un script de projection `md→tex` déterministe les
+régénérera automatiquement.
 
-**Politique de versionnage** : les `.tex` et `.pdf` sont trackés dans git comme artefacts
-régénérables. Un check de fraîcheur (`make check-generated-freshness`) garantit que les
-fichiers générés commités reflètent l'état courant du corpus. Si un `.tex` diverge du `.md`
-source, le check échoue et bloque le merge.
+**État actuel (2026-07-10)** : le gate `check-generated-freshness` couvre les rapports et
+l'inventaire (manifest.csv, qa_report.md, etc.). Il ne couvre **PAS encore** la fraîcheur
+md↔tex des packs LaTeX — ce gate sera implémenté à l'étape « industrialisation LaTeX »
+(post-flip RELEASE_READY). En attendant, la cohérence md↔tex est vérifiée manuellement
+(diff de cohérence collé ci-dessous pour P13).
+
+> **Dette inscrite** : gate de fraîcheur md↔tex — déclencheur = étape industrialisation LaTeX.
 
 ---
 

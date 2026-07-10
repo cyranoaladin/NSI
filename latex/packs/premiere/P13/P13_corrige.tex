@@ -39,10 +39,28 @@ Les $k=3$ plus proches sont $B, A, A$ $\rightarrow$ vote $A=2$, $B=1$ $\rightarr
 \end{itemize}
 
 \section*{Corrigé de l'évaluation}
-\begin{enumerate}[nosep,label=Q\arabic*.]
-  \item milieux $18$ puis $37$ $\rightarrow$ indice $4$.
-  \item $V = \text{droite} - \text{gauche} + 1$ décroît de $6$ à $3$ $\rightarrow$ terminaison.
-  \item $28 = 10+10+5+2+1$ (5 pièces).
-  \item rouge (2 voix) vs bleu (1) $\rightarrow$ classe rouge.
-\end{enumerate}
+
+\subsection*{Q1 — recherche dichotomique (P-ALGO-04, 4 pts)}
+\textbf{Méthode} : calculer milieu puis réduire intervalle.\\
+\textbf{Trace} : milieu $= 2 \rightarrow$ tab[2]$=18 < 37$, gauche$=3$. Milieu $= 4 \rightarrow$ tab[4]$=37$. Trouvé.\\
+\textbf{Résultat} : milieux $18$ puis $37$ $\rightarrow$ cible trouvée à l'indice $4$.\\
+\textbf{Cas limite} : cible absente $\rightarrow$ la boucle s'arrête quand gauche $>$ droite.
+
+\subsection*{Q2 — terminaison par variant (P-ALGO-04, 4 pts)}
+\textbf{Méthode} : montrer que $V = \text{droite} - \text{gauche} + 1$ décroît strictement.\\
+\textbf{Trace} : $V = 6 \rightarrow 3$ $\rightarrow$ cible trouvée (terminaison prouvée).\\
+\textbf{Cas limite} : \texttt{cible=38} absente $\rightarrow$ $V$ décroît $6 \rightarrow 3 \rightarrow 1 \rightarrow 0$, arrêt sans trouver.
+
+\subsection*{Q3 — algorithme glouton (P-ALGO-05, 4 pts)}
+\textbf{Méthode} : prendre la plus grande pièce $\leq$ montant restant à chaque étape.\\
+\textbf{Trace} : $28 - 10 = 18$, $18 - 10 = 8$, $8 - 5 = 3$, $3 - 2 = 1$, $1 - 1 = 0$.\\
+\textbf{Résultat} : $28 = 10 + 10 + 5 + 2 + 1$ (5 pièces).\\
+\textbf{Cas limite} : pièce $1$ absente $\rightarrow$ le glouton peut échouer (ex.\ montant~$3$ avec \texttt{[5,2]}).
+
+\subsection*{Q4 — k plus proches voisins (P-ALGO-03, 4 pts)}
+\textbf{Méthode} : trier par distance, voter parmi les $k$ plus proches.\\
+\textbf{Trace} : distances rouge:$1{,}2$, bleu:$2{,}0$, rouge:$2{,}4$ ; tri $\rightarrow$ rouge, bleu, rouge.\\
+\textbf{Résultat} : rouge~2 voix, bleu~1 voix $\rightarrow$ classe prédite \textbf{rouge}.\\
+\textbf{Cas limite} : $k$ pair $\rightarrow$ égalité de vote possible.
+
 \end{document}
