@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
 """Guard: verifie la coherence reponse/capacite/methode dans les supports P13.
 
+Deux invariants verifies sur TOUS les chemins (via _check_method_vs_cap
+et _check_answer_vs_cap) :
+  A. methode↔capacite : la methode detectee est autorisee par la capacite
+  B. reponse↔capacite : l'empreinte de la reponse ne trahit pas une autre capacite
+
 Scanne toutes les sequences via leurs contrats et verifie dans CHAQUE
 support (TD, corrige, tp, trace, version_amenagee, evaluation, bareme,
-remediation, cours) :
-1. reponse↔methode : la reponse attendue est coherente avec la methode
-2. methode↔capacite : la methode de la consigne correspond a la capacite
-3. les reponses positionnelles (version_amenagee) suivent l'ordre capacite
+remediation, cours).
 
-Parseurs etendus :
-- TD/corrige : "Capacite officielle" / "Capacite mobilisee" + consigne/methode
-- cours : "Controle : capacite P-ALGO-xx"
-- trace : "Capacite P-ALGO-xx (...) : <reponse>" (multi-motif)
-- evaluation/bareme : "### Question N" + "Capacite officielle" ou "P-ALGO-xx"
+Parseurs :
+- TD/corrige : "Capacite officielle"/"Capacite mobilisee" + consigne/methode
+- cours : exemples corriges avec "Controle : capacite P-ALGO-xx"
+- trace : "Capacite P-ALGO-xx (label) : <reponse>" — label ET reponse valides
+- evaluation/bareme : "### Question N" + lignes inline
+- TP : cross-ref "Travail demande" ↔ "Corrige question N"
 - remediation : "Relier ... P-ALGO-xx"
 
 Mapping autorite (programme_nsi_2019.yaml) :
@@ -21,6 +24,7 @@ Mapping autorite (programme_nsi_2019.yaml) :
   P-ALGO-05 = algorithmes gloutons
 
 Fail-closed PAR TYPE : chaque suffixe attendu doit exister.
+Perimetre GELE — plus aucune extension.
 
 Usage :
     python -m scripts.check_answer_capacity_coherence
@@ -205,6 +209,22 @@ def _extract_answer(text: str) -> str | None:
 
 
 # ---------------------------------------------------------------------------
+# Shared helper: method↔capacity check (used by cap_block AND trace)
+# ---------------------------------------------------------------------------
+def _check_method_vs_cap(
+    cap_id: str, method: str, filename: str, label: str,
+    errors: list[str],
+) -> None:
+    """Emit an error if *method* is not allowed for *cap_id*."""
+    allowed = CAPACITY_METHODS.get(cap_id, [])
+    if allowed and method not in allowed:
+        errors.append(
+            f"{filename} {label}: methode '{method}' incompatible avec "
+            f"capacite {cap_id} (attendu: {'/'.join(allowed)})"
+        )
+
+
+# ---------------------------------------------------------------------------
 # Check a generic capacity-bearing block
 # ---------------------------------------------------------------------------
 def check_cap_block(
@@ -223,12 +243,8 @@ def check_cap_block(
     if method is None:
         return errors
 
-    # method↔capacity
-    if method not in allowed:
-        errors.append(
-            f"{filename} {title}: methode '{method}' incompatible avec "
-            f"capacite {cap_id} (attendu: {'/'.join(allowed)})"
-        )
+    # method↔capacity (via shared helper)
+    _check_method_vs_cap(cap_id, method, filename, title, errors)
 
     # answer↔method
     answer = _extract_answer(text)
@@ -275,14 +291,28 @@ def check_trace(text: str, filename: str) -> list[str]:
     errors: list[str] = []
     lines = text.splitlines()
 
-    # Single-line format: "- Capacité P-ALGO-xx (…) : <answer>"
+    # Map short labels to canonical method names
+    label_to_method: dict[str, str] = {
+        "dichotomie": "dichotomie", "variant": "variant",
+        "glouton": "glouton", "k-nn": "knn", "knn": "knn",
+    }
+
+    # Single-line format: "- Capacité P-ALGO-xx (label) : <answer>"
     for line in lines:
         m = re.match(
-            r"^-\s+Capacité\s+(P-ALGO-0[345])\s*\([^)]*\)\s*:\s*(.+)$", line
+            r"^-\s+Capacité\s+(P-ALGO-0[345])\s*\(([^)]*)\)\s*:\s*(.+)$", line
         )
         if m:
-            cap_id, answer = m.group(1), m.group(2)
+            cap_id, method_label, answer = m.group(1), m.group(2), m.group(3)
             _check_answer_vs_cap(cap_id, answer, filename, "Critère", errors)
+            # Validate method label via direct lookup then regex fallback
+            method = label_to_method.get(method_label.strip().lower())
+            if method is None:
+                method = detect_method(method_label)
+            if method:
+                _check_method_vs_cap(
+                    cap_id, method, filename, f"Critère {cap_id}", errors
+                )
 
     # Multi-line format: "- Capacité : P-ALGO-xx." then "- Résultat final : …"
     for i, line in enumerate(lines):
