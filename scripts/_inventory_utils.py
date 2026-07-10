@@ -31,6 +31,9 @@ IGNORED_DIRS = {
     'dist',
     '01_build_reports',
     'AUDIT',
+    'scrapping_NSI',
+    'Documents_DRIVE',
+    'nsi-enseignement',
 }
 
 IGNORED_SUFFIXES = {
