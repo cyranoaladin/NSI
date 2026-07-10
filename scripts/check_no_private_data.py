@@ -30,6 +30,8 @@ EXCLUDED_PARTS = {
     "Documents_DRIVE",
     "nsi-enseignement",
     "latex",
+    "dist",
+    "drive_quarantine",
 }
 
 EMAIL_RE = re.compile(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}")
@@ -101,15 +103,34 @@ def is_population_context(text: str, start: int, end: int) -> bool:
 
 
 def iter_text_files() -> Iterable[Path]:
-    for path in sorted(ROOT.rglob("*")):
-        if path.is_dir():
-            continue
-        if path == REPORT:
-            continue
-        if any(part in EXCLUDED_PARTS for part in path.parts):
-            continue
-        if path.suffix in TEXT_SUFFIXES or path.name in {"manifest.csv"}:
-            yield path
+    """Enumerate tracked text files via git ls-files for CI reproducibility."""
+    import subprocess
+    result = subprocess.run(
+        ["git", "ls-files", "-z"],
+        cwd=str(ROOT), capture_output=True, text=True,
+    )
+    if result.returncode == 0 and result.stdout:
+        for rel in result.stdout.split("\0"):
+            if not rel:
+                continue
+            path = ROOT / rel
+            if path == REPORT:
+                continue
+            if any(part in EXCLUDED_PARTS for part in path.parts):
+                continue
+            if path.suffix in TEXT_SUFFIXES or path.name in {"manifest.csv"}:
+                yield path
+    else:
+        # Fallback for non-git environments
+        for path in sorted(ROOT.rglob("*")):
+            if path.is_dir():
+                continue
+            if path == REPORT:
+                continue
+            if any(part in EXCLUDED_PARTS for part in path.parts):
+                continue
+            if path.suffix in TEXT_SUFFIXES or path.name in {"manifest.csv"}:
+                yield path
 
 
 def add_report(lines: List[str], title: str, items: List[str]) -> None:
