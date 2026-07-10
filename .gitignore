@@ -16,7 +16,15 @@ __pycache__/
 01_build_reports/
 build/
 dist/
+.env
 .env.rag
 scripts/ingestion_errors.csv
-.env
 *.json.tmp
+Cahier des charges*
+
+# Data lourds non suivis (voir docs/reorg_report.md)
+scrapping_NSI/ressources_nsi_extraites/
+scrapping_NSI/ressources_nsi_extraites_v2/
+scrapping_NSI/ressources_nsi_centralisees/
+scrapping_NSI/sqlite_data/
+Documents_DRIVE/

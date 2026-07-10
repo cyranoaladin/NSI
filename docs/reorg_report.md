@@ -17,8 +17,21 @@ Date : 2026-07-10. Branche : `chore/reorg-latex-kit`.
 submodule ni un worktree git — c'est un dossier git indépendant. Le contenu est un doublon
 quasi-total de la racine ; seules les branches diffèrent.
 
-**Proposition** : supprimer `nsi-enseignement/` après avoir vérifié qu'aucune branche locale
-n'est unique (toutes sont poussées sur origin). Le dépôt parent EST `nsi-enseignement`.
+**Vérification commits non poussés** (2026-07-10) :
+```
+$ git -C nsi-enseignement log --oneline --branches --not --remotes
+(aucun résultat — toutes les branches locales sont poussées sur origin)
+```
+
+8 branches locales, toutes trackent leur remote et sont à jour :
+`main`, `remediation/p13-coherence`, `remediation/pr-a2-scope`, `remediation/pr-a3-variants`,
+`remediation/pr-a4-symmetry`, `remediation/pr-a5-enum`, `remediation/pr-b-purge`,
+`substance/9-partial-to-needs-review`.
+
+Contient aussi un `.venv/` de 117 Mo (3 255 fichiers) inutile.
+
+**Proposition** : supprimer `nsi-enseignement/` (aucun commit local non poussé, doublon
+complet). **En attente de feu vert explicite.**
 
 ---
 
