@@ -54,7 +54,7 @@ L'agent LaTeX du pipeline doit appliquer cette règle systématiquement.
 ## Place dans le pipeline (voir kit_production_NSI.md)
 
 1. Génération du contenu (Markdown) ancré sur contrat + programme + RAG.
-2. **Gate machine** : `check_answer_capacity_coherence` vert.
+2. **Gate machine** : CI verte (ruff + pytest + audit + substance_anchors).
 3. Mise en forme via ces templates → PDF (`build.sh`).
 4. **Gate humaine** : revue ChatGPT.
 5. Publication.

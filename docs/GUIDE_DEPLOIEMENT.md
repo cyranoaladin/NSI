@@ -26,7 +26,7 @@ Le `nsi-preamble.sty` doit se trouver dans le même dossier que les `.tex` à co
 
 | Acteur | Reçoit | Produit |
 |---|---|---|
-| Agent (Codex / Claude Code) | **§3** du kit (génération) | Contenu Markdown + guard vert |
+| Agent (Codex / Claude Code) | **§3** du kit (génération) | Contenu Markdown + CI verte |
 | Agent (Codex / Claude Code) | **§4** du kit (LaTeX) | Les `.tex` + PDF (ou `./build.sh`) |
 | ChatGPT | **§2** du kit (cahier relecteur) **+ les PDF** | Verdict *publier / corriger* |
 | Toi | les verdicts | décision de merge / publication |
@@ -37,7 +37,7 @@ Le `nsi-preamble.sty` doit se trouver dans le même dossier que les `.tex` à co
 
 ### Nouvelle séquence `<SEQ>`
 1. (une fois) Déposer `latex/` + commit.
-2. Donner le **§3** à l'agent (renseigner `<SEQ>`) → contenu + `check_answer_capacity_coherence` **vert**.
+2. Donner le **§3** à l'agent (renseigner `<SEQ>`) → contenu + CI **verte**.
 3. Donner le **§4** à l'agent, ou lancer `./build.sh` → les PDF.
 4. Donner le **§2 + les PDF** à ChatGPT → décisions.
 5. Corriger (reboucler 2–4) si besoin, puis publier.
@@ -53,7 +53,7 @@ Les étapes 2 et 3 sont **faites** (contenu + 8 PDF produits). Il reste :
 ## 4. Portes de qualité (ne jamais publier sans les trois)
 
 1. **Ancrage** — le contenu vient du contrat + programme + RAG (jamais inventé).
-2. **Gate machine** — `python -m scripts.check_answer_capacity_coherence` est **vert**.
+2. **Gate machine** — CI verte (ruff + pytest + audit + substance_anchors).
 3. **Gate humaine** — ChatGPT (§2) rend *publier*.
 
 ---
@@ -67,6 +67,8 @@ Les étapes 2 et 3 sont **faites** (contenu + 8 PDF produits). Il reste :
 # Un seul document :
 pdflatex -interaction=nonstopmode -halt-on-error P13_cours.tex
 
-# Lancer la gate machine (depuis la racine du dépôt) :
-python -m scripts.check_answer_capacity_coherence
+# Gates machine (depuis la racine du dépôt) :
+ruff check .
+pytest
+python -m scripts.check_substance_anchors
 ```

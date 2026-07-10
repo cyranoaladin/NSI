@@ -1,6 +1,6 @@
 # Kit de production NSI — Revue ChatGPT + génération LaTeX/PDF
 
-> **État de départ.** Corpus `cyranoaladin/NSI` assaini (PR #91 close). La séquence **P13** (dichotomie / glouton / k-NN) est vérifiée, conforme au programme officiel, et protégée par le guard `check_answer_capacity_coherence` (deux axes, falsifiable, gelé). C'est le **pilote** naturel : propre, contrat-backé, complet — il valide le pipeline de bout en bout avant passage à l'échelle.
+> **État de départ.** Corpus `cyranoaladin/NSI`, séquence pilote **P13** (dichotomie / glouton / k-NN). La PR #91 (remediation/p13-coherence) corrige le contenu P13 et ajoute un guard dédié — elle reste ouverte en attente de merge. Le pipeline de production s'appuie sur les gates CI existants (voir ci-dessous).
 
 ---
 
@@ -8,7 +8,7 @@
 
 Chaque document produit passe **trois portes** avant publication :
 1. **Ancrage** — tout contenu vient du corpus, du contrat de séquence et du programme officiel. Interdiction d'inventer données, résultats ou capacités.
-2. **Gate machine** — `python -m scripts.check_answer_capacity_coherence` doit être **vert** sur tout contenu généré ou étendu (le guard qu'on vient de durcir sert de garde-fou de production).
+2. **Gate machine** — la CI (`.github/workflows/ci.yml`) doit être **verte** : ruff, pytest, freshness, audit-idempotence, check_substance_anchors, check_status_promotion_guard, check_no_committed_secrets.
 3. **Gate humaine** — revue ChatGPT selon le cahier des charges §2 (recalcul à la main, conformité pédagogique, rendu).
 
 Un document qui ne franchit pas les trois portes ne devient pas un PDF publié.
@@ -26,7 +26,7 @@ séquence choisie
 [Agent de génération]  → produit / met en forme le contenu par type de document
    │                      (cours, TD, corrigé, TP, évaluation, barème, fiche)
    ▼
-[Gate machine]  check_answer_capacity_coherence  → doit être VERT
+[Gate machine]  CI verte (ruff + pytest + audit + substance_anchors)  → doit être VERT
    │
    ▼
 [Agent LaTeX]  → .tex via le kit pdflatex (02_modeles_documents/ + nsi-preamble.sty)
@@ -90,8 +90,8 @@ RÈGLES :
 
 DOCUMENTS À PRODUIRE (par type) : cours, TD, corrigé du TD, TP, évaluation, corrigé + barème, fiche de révision.
 
-GATE OBLIGATOIRE avant de rendre : `python -m scripts.check_answer_capacity_coherence` doit être VERT sur
-le contenu produit. Si rouge, corriger jusqu'au vert. Fournir la sortie du guard comme preuve.
+GATE OBLIGATOIRE avant de rendre : la CI (ruff + pytest + audit + substance_anchors) doit être **VERTE**.
+Si rouge, corriger jusqu'au vert. Fournir la sortie de la CI comme preuve.
 
 SORTIE : fichiers Markdown mis à jour + confirmation guard vert. NE PAS compiler le LaTeX ici (étape séparée).
 
@@ -137,7 +137,7 @@ Une fois le pilote publié, le même enchaînement (§3 → gate → §4 → §2
 
 ## 6. Ordre de lancement (pour démarrer aujourd'hui)
 
-1. **Merger PR #91** et, si tu le souhaites, promouvoir les statuts P13 en `reviewed`.
+1. **Merger PR #91** puis soumettre le dossier v3 (`docs/promotion/`) à la revue lead pour promotion `needs_review → validated_pedagogy` (cf. AGENTS.md §6 — revue lead signée, pas de promotion automatique).
 2. Lancer l'**agent de génération** (§3) sur `<SEQ>=P13, <NIVEAU>=premiere` → contenu + guard vert.
 3. Lancer l'**agent LaTeX** (§4) → 7 PDF.
 4. Confier les 7 PDF + sources à **ChatGPT** (§2) → décisions de publication.
