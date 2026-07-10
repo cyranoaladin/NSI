@@ -411,7 +411,17 @@ def has_private_data(text: str) -> List[str]:
 
 
 def iter_files(root: Path) -> Iterable[Path]:
-    for path in root.rglob('*'):
+    """Enumerate files via git ls-files for CI reproducibility, rglob fallback."""
+    import subprocess
+    result = subprocess.run(
+        ["git", "ls-files", "-z"],
+        cwd=str(root), capture_output=True, text=True,
+    )
+    if result.returncode == 0 and result.stdout:
+        candidates = sorted(root / rel for rel in result.stdout.split("\0") if rel)
+    else:
+        candidates = sorted(root.rglob('*'))
+    for path in candidates:
         if path.is_dir():
             continue
         if path.name in {

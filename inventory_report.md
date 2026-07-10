@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1156
+- Total ressources : 1154
 - Ressources pédagogiques : 53
-- Ressources techniques : 1103
+- Ressources techniques : 1101
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1148
+- generated: 1146
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 591
+- interne: 589
 - premiere: 265
 - terminale: 300
 
 ## Répartition par type
 - banque: 14
-- document: 734
+- document: 732
 - python: 84
 - script: 206
 - sequence: 45
 - test: 73
 
 ## Répartition par statut
-- needs_review: 1156
+- needs_review: 1154
 
 ## Répartition audience
 - corrige: 80
 - eleve: 143
-- mixte: 930
+- mixte: 928
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -590,8 +590,6 @@
   - 03_progressions/supports/terminale/T19/T19_tp_bac_pratique_grand_oral_projet.md
   - 03_progressions/supports/terminale/T19/T19_trace_bac_pratique_grand_oral_projet.md
   - 03_progressions/supports/terminale/T19/T19_version_amenagee_bac_pratique_grand_oral_projet.md
-  - Cahier des charges et plan d’action — Corpus NSI Première - Terminale.md
-  - Cahier des charges et plan d’action — Corpus NSI Première - Terminale.pdf
   - INDEX.md
   - INDEX_BY_AUDIENCE.md
   - INDEX_BY_CAPACITY.md
@@ -1800,8 +1798,6 @@
   - 03_progressions/supports/terminale/T19/T19_tp_bac_pratique_grand_oral_projet.md
   - 03_progressions/supports/terminale/T19/T19_trace_bac_pratique_grand_oral_projet.md
   - 03_progressions/supports/terminale/T19/T19_version_amenagee_bac_pratique_grand_oral_projet.md
-  - Cahier des charges et plan d’action — Corpus NSI Première - Terminale.md
-  - Cahier des charges et plan d’action — Corpus NSI Première - Terminale.pdf
   - INDEX.md
   - INDEX_BY_AUDIENCE.md
   - INDEX_BY_CAPACITY.md
@@ -2884,8 +2880,6 @@
 - 03_progressions/supports/terminale/T19/T19_tp_bac_pratique_grand_oral_projet.md
 - 03_progressions/supports/terminale/T19/T19_trace_bac_pratique_grand_oral_projet.md
 - 03_progressions/supports/terminale/T19/T19_version_amenagee_bac_pratique_grand_oral_projet.md
-- Cahier des charges et plan d’action — Corpus NSI Première - Terminale.md
-- Cahier des charges et plan d’action — Corpus NSI Première - Terminale.pdf
 - INDEX.md
 - INDEX_BY_AUDIENCE.md
 - INDEX_BY_CAPACITY.md
@@ -4033,8 +4027,6 @@
 - 03_progressions/supports/terminale/T19/T19_tp_bac_pratique_grand_oral_projet.md
 - 03_progressions/supports/terminale/T19/T19_trace_bac_pratique_grand_oral_projet.md
 - 03_progressions/supports/terminale/T19/T19_version_amenagee_bac_pratique_grand_oral_projet.md
-- Cahier des charges et plan d’action — Corpus NSI Première - Terminale.md
-- Cahier des charges et plan d’action — Corpus NSI Première - Terminale.pdf
 - INDEX.md
 - INDEX_BY_AUDIENCE.md
 - INDEX_BY_CAPACITY.md

@@ -10,6 +10,8 @@ warn_unused_configs = true
 # noise. Excluding them keeps the strict check focused on production code.
 exclude = [
     "scrapping_NSI/test_.*\\.py$",
+    "scrapping_NSI/ressources_nsi_.*",
+    "scrapping_NSI/sqlite_data",
 ]
 
 [[tool.mypy.overrides]]
