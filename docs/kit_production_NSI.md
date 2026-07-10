@@ -15,24 +15,38 @@ Un document qui ne franchit pas les trois portes ne devient pas un PDF publié.
 
 ---
 
-## 0bis. Règle d'architecture (source unique)
+## 0bis. Règle d'architecture (source unique + CANON-FIRST)
 
 Le `.md` certifié dans `03_progressions/supports/` est la **SOURCE UNIQUE**. Les `.tex`
 dans `latex/packs/` sont des projections manuelles de ce corpus via les templates de
 `02_modeles_documents/`. À terme, un script de projection `md→tex` déterministe les
 régénérera automatiquement.
 
-**État actuel (2026-07-10)** : le gate `check-generated-freshness` couvre les rapports et
+**CANON-FIRST** : toute correction de contenu commence par le `.md` canonique, puis se
+propage à la projection `.tex` — JAMAIS l'inverse. Une correction qui n'existe que dans
+`latex/` est une divergence, pas une correction.
+
+**État actuel (2026-07-11)** : le gate `check-generated-freshness` couvre les rapports et
 l'inventaire (manifest.csv, qa_report.md, etc.). Il ne couvre **PAS encore** la fraîcheur
 md↔tex des packs LaTeX — ce gate sera implémenté à l'étape « industrialisation LaTeX »
-(post-flip RELEASE_READY). En attendant, la cohérence md↔tex est vérifiée manuellement
-(diff de cohérence collé ci-dessous pour P13).
+(post-flip RELEASE_READY). En attendant, la cohérence md↔tex est vérifiée manuellement.
 
 > **Dette inscrite** : gate de fraîcheur md↔tex — déclencheur = étape industrialisation LaTeX.
 
+**Diff de cohérence md↔tex P13** (3 exercices, après corrections F4) :
+
+| Ex | Champ | Canon (.md) | Projection (.tex) | ✓ |
+|----|-------|-------------|-------------------|---|
+| 1 (P-ALGO-04) | Résultat | milieux 18 puis 37 → indice 4 | valeurs lues aux milieux : 18 puis 37 → indice 4 | ✓ |
+| 3 (P-ALGO-05) | Résultat | 28 = 10+10+5+2+1 (5 pièces) | $28 = 10+10+5+2+1$ (5 pièces) | ✓ |
+| 3 (P-ALGO-05) | Cas limite | montant=28 avec [10,5,2] → reste 1 | montant 28 avec [10,5,2] → reste 1 | ✓ |
+| 4 (P-ALGO-03) | Résultat | rouge (2 voix) vs bleu (1) → classe rouge | rouge 2, bleu 1 → classe rouge | ✓ |
+
 ---
 
-## 1. Architecture du pipeline
+## 1. Architecture du pipeline (ÉTAT CIBLE — générateur md→tex, post-flip)
+
+> État actuel : la projection md→tex est manuelle, sous règle CANON-FIRST.
 
 ```
 séquence choisie
