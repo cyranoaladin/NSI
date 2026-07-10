@@ -29,6 +29,7 @@ EXCLUDED_PARTS = {
     "scrapping_NSI",
     "Documents_DRIVE",
     "nsi-enseignement",
+    "latex",
 }
 
 EMAIL_RE = re.compile(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}")
