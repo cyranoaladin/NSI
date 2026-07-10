@@ -165,16 +165,6 @@ Les noms propres suspects sont listés pour revue humaine.
 - drive_mapping.md: nom propre suspect -> Lot Drive
 - drive_mapping.md: nom propre suspect -> Lot Drive
 - drive_mapping.md: nom propre suspect -> Lot Drive
-- drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
-- drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
-- drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
-- drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
-- drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
-- drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
-- drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
-- drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
-- drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
-- drive_quarantine_manifest.csv: nom propre suspect -> Accès Drive
 - drive_remaining_action_plan.md: nom propre suspect -> Dossier Git Drive
 - drive_sources.yml: nom propre suspect -> Ressources Drive
 - evaluation_bareme_alignment_report.md: nom propre suspect -> Evaluation Bareme Alignment Report
@@ -210,7 +200,17 @@ Les noms propres suspects sont listés pour revue humaine.
 - missing_documents_register_v2.md: nom propre suspect -> Lien Drive
 - missing_documents_register_v2.md: nom propre suspect -> Lien Drive
 - premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> American Standard Code
-- ... 150 alertes supplémentaires non affichées
+- premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> Information Interchange
+- premiere/sequences/s01_representation_donnees/sources.md: nom propre suspect -> Ressources Drive
+- program_capacity_evidence_depth_report.md: nom propre suspect -> Program Capacity Evidence Depth Report
+- programme_matrix_premiere.md: nom propre suspect -> Formulaire Web
+- progression_audit.md: nom propre suspect -> Calendrier Tunisie
+- progression_audit.md: nom propre suspect -> Ressources Drive
+- qa_debt_register.md: nom propre suspect -> Portabilité Drive
+- qa_gate_policy.md: nom propre suspect -> Informational Metrics
+- qa_gate_policy.md: nom propre suspect -> Cibles Makefile
+- qa_gate_policy.md: nom propre suspect -> Gates Drive
+- ... 140 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
@@ -414,4 +414,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P04/P04_tp_types_construits_complement.md: nom propre suspect -> Module Python
 - 03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md: nom propre suspect -> Fonctions Python
 - 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md: nom propre suspect -> Assets Python
-- ... 372 alertes supplémentaires non affichées
+- ... 384 alertes supplémentaires non affichées

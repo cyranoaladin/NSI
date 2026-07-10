@@ -29,9 +29,9 @@ EXCLUDED_PARTS = {
     "scrapping_NSI",
     "Documents_DRIVE",
     "nsi-enseignement",
-    "latex",
-    "dist",
-    "drive_quarantine",
+    # latex/ and drive_quarantine/ ARE scanned (contain authored content).
+    # Faux positifs latex : allowlistés dans privacy_allowlist.yml.
+    "dist",  # build artifacts, not authored content
 }
 
 EMAIL_RE = re.compile(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}")
