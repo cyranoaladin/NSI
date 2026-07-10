@@ -1,16 +1,23 @@
 #!/usr/bin/env bash
-# Compile tous les .tex du dossier en PDF (pdflatex, halt-on-error), puis nettoie.
+# Compile TOUS les packs : parcourt latex/packs/<niveau>/<SEQ>/ et lance chaque build.sh local.
 set -uo pipefail
-shopt -s nullglob
+cd "$(dirname "$0")"
 fail=0
-for tex in *.tex; do
-  printf '→ %-32s ' "$tex"
-  if pdflatex -interaction=nonstopmode -halt-on-error "$tex" >/dev/null 2>&1; then
-    echo "✓ ${tex%.tex}.pdf"
+found=0
+for d in packs/*/*/; do
+  [ -x "$d/build.sh" ] || continue
+  found=1
+  echo "=== $d ==="
+  if (cd "$d" && ./build.sh); then
+    echo "=== $d OK ==="
   else
-    echo "✗ ÉCHEC — relancer : pdflatex $tex"
+    echo "=== $d ÉCHEC ==="
     fail=1
   fi
+  echo
 done
-rm -f ./*.aux ./*.log ./*.out ./*.toc
+if [ "$found" -eq 0 ]; then
+  echo "Aucun pack trouvé dans packs/*/*/"
+  exit 1
+fi
 exit $fail
