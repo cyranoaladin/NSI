@@ -68,7 +68,7 @@ I01-project-plan-terminale,project_plan_terminale.md,project_plan_terminale.md,d
 I01-pyproject,pyproject.toml,pyproject.toml,document,interne,,,NA,needs_review,basse,non,oui,,generated,mixte,non,non,autre,bf7f0fab3133b491eb83ac1fe21c3573dd766c5c3376ff92db788e1bfd9fd937,non
 I01-qa-debt-register,qa_debt_register.md,qa_debt_register.md,document,interne,,,NA,needs_review,basse,oui,oui,,generated,mixte,non,non,autre,fee34cbf6edf03c86ac4e621ebb45c10c40b16d54d949a141d8197592effe504,non
 I01-qa-gate-policy,qa_gate_policy.md,qa_gate_policy.md,document,interne,,,NA,needs_review,basse,oui,oui,,generated,mixte,non,non,autre,3b3ae1c7687e4ece631d9bfa7420660ed722238f7c962d393e0661a4f46ebda5,non
-I01-qa-report,qa_report.md,qa_report.md,document,interne,,,NA,needs_review,basse,oui,oui,,generated,mixte,non,non,autre,3f008df91562a7c321f16e7490bba6e5e47e1fd7a870e511f466489fd3122a7e,non
+I01-qa-report,qa_report.md,qa_report.md,document,interne,,,NA,needs_review,basse,oui,oui,,generated,mixte,non,non,autre,e645403ea5f15b83a5690c27c92929b83dfb2f5479d643cde205a8281a397037,non
 I01-rag-coherence-report,rag_coherence_report.md,rag_coherence_report.md,document,interne,,,NA,needs_review,basse,oui,oui,,generated,mixte,non,non,autre,3920853db04dc9a55db9515c7c4402f4a6eb47a7bbdfebeabc8d619b7b646c4f,non
 I01-rag-config.example,rag_config.example.yml,rag_config.example.yml,document,interne,,,NA,needs_review,basse,non,oui,,generated,mixte,non,non,autre,d7ba3f529bdd5f1ec989a26bc52e8b273cbd9a576864013352ac9ec67afed3ea,non
 I01-rag-connection,rag_connection.md,rag_connection.md,document,interne,,,NA,needs_review,basse,oui,oui,,generated,mixte,non,non,autre,acb3356620f67391292a6c9f01ea2befbadf9bae69d1c6ba6e4245ccae983b66,non
