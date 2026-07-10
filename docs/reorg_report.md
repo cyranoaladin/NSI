@@ -30,8 +30,8 @@ $ git -C nsi-enseignement log --oneline --branches --not --remotes
 
 Contient aussi un `.venv/` de 117 Mo (3 255 fichiers) inutile.
 
-**Proposition** : supprimer `nsi-enseignement/` (aucun commit local non poussé, doublon
-complet). **En attente de feu vert explicite.**
+**Action effectuée (2026-07-10)** : `nsi-enseignement/` supprimé (`rm -rf`).
+Aucun commit local non poussé (vérifié), doublon complet, jamais tracké par le dépôt parent.
 
 ---
 
