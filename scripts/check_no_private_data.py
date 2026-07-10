@@ -26,6 +26,9 @@ EXCLUDED_PARTS = {
     ".mypy_cache",
     ".ruff_cache",
     "01_build_reports",
+    "scrapping_NSI",
+    "Documents_DRIVE",
+    "nsi-enseignement",
 }
 
 EMAIL_RE = re.compile(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}")
