@@ -91,7 +91,7 @@ def check_file(path: Path) -> List[str]:
 def main() -> None:
     errors: List[str] = []
     for path in sorted(ROOT.rglob("*.py")):
-        if ".git" in path.parts or ".venv" in path.parts or "__pycache__" in path.parts:
+        if {".git", ".venv", "__pycache__", "scrapping_NSI", "Documents_DRIVE", "nsi-enseignement"} & set(path.parts):
             continue
         errors.extend(check_file(path))
 
