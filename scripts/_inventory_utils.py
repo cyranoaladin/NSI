@@ -50,6 +50,7 @@ IGNORED_SUFFIXES = {
     '.fls',
     '.tmp',
     '.DS_Store',
+    '.pdf',  # non-reproducible binary artifacts (pdflatex timestamps)
 }
 
 STATUT_ALLOWED = {

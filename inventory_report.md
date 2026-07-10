@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1154
+- Total ressources : 1144
 - Ressources pédagogiques : 53
-- Ressources techniques : 1101
+- Ressources techniques : 1091
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1146
+- generated: 1136
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 589
-- premiere: 265
+- interne: 587
+- premiere: 257
 - terminale: 300
 
 ## Répartition par type
 - banque: 14
-- document: 732
+- document: 722
 - python: 84
 - script: 206
 - sequence: 45
 - test: 73
 
 ## Répartition par statut
-- needs_review: 1154
+- needs_review: 1144
 
 ## Répartition audience
-- corrige: 80
+- corrige: 79
 - eleve: 143
-- mixte: 928
+- mixte: 919
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -48,9 +48,7 @@
   - .pre-commit-config.yaml
   - 00_programmes_officiels/README.md
   - 00_programmes_officiels/programme_nsi_2019.yaml
-  - 00_programmes_officiels/programme_nsi_premiere.pdf
   - 00_programmes_officiels/programme_nsi_premiere.txt
-  - 00_programmes_officiels/programme_nsi_terminale.pdf
   - 00_programmes_officiels/programme_nsi_terminale.txt
   - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
   - 01_charte_graphique_et_pedagogique/charte_graphique.md
@@ -636,21 +634,13 @@
   - human_review_wave_1_plan.md
   - latex/README.md
   - latex/build.sh
-  - latex/packs/premiere/P13/P13_aides.pdf
   - latex/packs/premiere/P13/P13_aides.tex
-  - latex/packs/premiere/P13/P13_corrige.pdf
   - latex/packs/premiere/P13/P13_corrige.tex
-  - latex/packs/premiere/P13/P13_cours.pdf
   - latex/packs/premiere/P13/P13_cours.tex
-  - latex/packs/premiere/P13/P13_evaluation.pdf
   - latex/packs/premiere/P13/P13_evaluation.tex
-  - latex/packs/premiere/P13/P13_fiche_methode.pdf
   - latex/packs/premiere/P13/P13_fiche_methode.tex
-  - latex/packs/premiere/P13/P13_td.pdf
   - latex/packs/premiere/P13/P13_td.tex
-  - latex/packs/premiere/P13/P13_tp.pdf
   - latex/packs/premiere/P13/P13_tp.tex
-  - latex/packs/premiere/P13/P13_trace.pdf
   - latex/packs/premiere/P13/P13_trace.tex
   - latex/packs/premiere/P13/build.sh
   - learning_objectives_assessed_report.md
@@ -1249,9 +1239,7 @@
   - .pre-commit-config.yaml
   - 00_programmes_officiels/README.md
   - 00_programmes_officiels/programme_nsi_2019.yaml
-  - 00_programmes_officiels/programme_nsi_premiere.pdf
   - 00_programmes_officiels/programme_nsi_premiere.txt
-  - 00_programmes_officiels/programme_nsi_terminale.pdf
   - 00_programmes_officiels/programme_nsi_terminale.txt
   - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
   - 01_charte_graphique_et_pedagogique/charte_graphique.md
@@ -1844,21 +1832,13 @@
   - human_review_wave_1_plan.md
   - latex/README.md
   - latex/build.sh
-  - latex/packs/premiere/P13/P13_aides.pdf
   - latex/packs/premiere/P13/P13_aides.tex
-  - latex/packs/premiere/P13/P13_corrige.pdf
   - latex/packs/premiere/P13/P13_corrige.tex
-  - latex/packs/premiere/P13/P13_cours.pdf
   - latex/packs/premiere/P13/P13_cours.tex
-  - latex/packs/premiere/P13/P13_evaluation.pdf
   - latex/packs/premiere/P13/P13_evaluation.tex
-  - latex/packs/premiere/P13/P13_fiche_methode.pdf
   - latex/packs/premiere/P13/P13_fiche_methode.tex
-  - latex/packs/premiere/P13/P13_td.pdf
   - latex/packs/premiere/P13/P13_td.tex
-  - latex/packs/premiere/P13/P13_tp.pdf
   - latex/packs/premiere/P13/P13_tp.tex
-  - latex/packs/premiere/P13/P13_trace.pdf
   - latex/packs/premiere/P13/P13_trace.tex
   - latex/packs/premiere/P13/build.sh
   - learning_objectives_assessed_report.md
@@ -2402,9 +2382,7 @@
 - .pre-commit-config.yaml
 - 00_programmes_officiels/README.md
 - 00_programmes_officiels/programme_nsi_2019.yaml
-- 00_programmes_officiels/programme_nsi_premiere.pdf
 - 00_programmes_officiels/programme_nsi_premiere.txt
-- 00_programmes_officiels/programme_nsi_terminale.pdf
 - 00_programmes_officiels/programme_nsi_terminale.txt
 - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
 - 01_charte_graphique_et_pedagogique/charte_graphique.md
@@ -2926,19 +2904,12 @@
 - human_review_wave_1_plan.md
 - latex/README.md
 - latex/build.sh
-- latex/packs/premiere/P13/P13_aides.pdf
 - latex/packs/premiere/P13/P13_aides.tex
-- latex/packs/premiere/P13/P13_cours.pdf
 - latex/packs/premiere/P13/P13_cours.tex
-- latex/packs/premiere/P13/P13_evaluation.pdf
 - latex/packs/premiere/P13/P13_evaluation.tex
-- latex/packs/premiere/P13/P13_fiche_methode.pdf
 - latex/packs/premiere/P13/P13_fiche_methode.tex
-- latex/packs/premiere/P13/P13_td.pdf
 - latex/packs/premiere/P13/P13_td.tex
-- latex/packs/premiere/P13/P13_tp.pdf
 - latex/packs/premiere/P13/P13_tp.tex
-- latex/packs/premiere/P13/P13_trace.pdf
 - latex/packs/premiere/P13/P13_trace.tex
 - latex/packs/premiere/P13/build.sh
 - learning_objectives_assessed_report.md
@@ -3478,9 +3449,7 @@
 - .pre-commit-config.yaml
 - 00_programmes_officiels/README.md
 - 00_programmes_officiels/programme_nsi_2019.yaml
-- 00_programmes_officiels/programme_nsi_premiere.pdf
 - 00_programmes_officiels/programme_nsi_premiere.txt
-- 00_programmes_officiels/programme_nsi_terminale.pdf
 - 00_programmes_officiels/programme_nsi_terminale.txt
 - 01_charte_graphique_et_pedagogique/charte_documentaire_sequences.md
 - 01_charte_graphique_et_pedagogique/charte_graphique.md
@@ -4073,21 +4042,13 @@
 - human_review_wave_1_plan.md
 - latex/README.md
 - latex/build.sh
-- latex/packs/premiere/P13/P13_aides.pdf
 - latex/packs/premiere/P13/P13_aides.tex
-- latex/packs/premiere/P13/P13_corrige.pdf
 - latex/packs/premiere/P13/P13_corrige.tex
-- latex/packs/premiere/P13/P13_cours.pdf
 - latex/packs/premiere/P13/P13_cours.tex
-- latex/packs/premiere/P13/P13_evaluation.pdf
 - latex/packs/premiere/P13/P13_evaluation.tex
-- latex/packs/premiere/P13/P13_fiche_methode.pdf
 - latex/packs/premiere/P13/P13_fiche_methode.tex
-- latex/packs/premiere/P13/P13_td.pdf
 - latex/packs/premiere/P13/P13_td.tex
-- latex/packs/premiere/P13/P13_tp.pdf
 - latex/packs/premiere/P13/P13_tp.tex
-- latex/packs/premiere/P13/P13_trace.pdf
 - latex/packs/premiere/P13/P13_trace.tex
 - latex/packs/premiere/P13/build.sh
 - learning_objectives_assessed_report.md
@@ -4630,21 +4591,13 @@
 
 ## Métadonnées incomplètes
 - 03_progressions/supports/premiere/P05/data/pays_monde_extrait.csv (niveau=premiere, statut=needs_review)
-- latex/packs/premiere/P13/P13_aides.pdf (niveau=premiere, statut=needs_review)
 - latex/packs/premiere/P13/P13_aides.tex (niveau=premiere, statut=needs_review)
-- latex/packs/premiere/P13/P13_corrige.pdf (niveau=premiere, statut=needs_review)
 - latex/packs/premiere/P13/P13_corrige.tex (niveau=premiere, statut=needs_review)
-- latex/packs/premiere/P13/P13_cours.pdf (niveau=premiere, statut=needs_review)
 - latex/packs/premiere/P13/P13_cours.tex (niveau=premiere, statut=needs_review)
-- latex/packs/premiere/P13/P13_evaluation.pdf (niveau=premiere, statut=needs_review)
 - latex/packs/premiere/P13/P13_evaluation.tex (niveau=premiere, statut=needs_review)
-- latex/packs/premiere/P13/P13_fiche_methode.pdf (niveau=premiere, statut=needs_review)
 - latex/packs/premiere/P13/P13_fiche_methode.tex (niveau=premiere, statut=needs_review)
-- latex/packs/premiere/P13/P13_td.pdf (niveau=premiere, statut=needs_review)
 - latex/packs/premiere/P13/P13_td.tex (niveau=premiere, statut=needs_review)
-- latex/packs/premiere/P13/P13_tp.pdf (niveau=premiere, statut=needs_review)
 - latex/packs/premiere/P13/P13_tp.tex (niveau=premiere, statut=needs_review)
-- latex/packs/premiere/P13/P13_trace.pdf (niveau=premiere, statut=needs_review)
 - latex/packs/premiere/P13/P13_trace.tex (niveau=premiere, statut=needs_review)
 - latex/packs/premiere/P13/build.sh (niveau=premiere, statut=needs_review)
 

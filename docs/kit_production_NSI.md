@@ -15,6 +15,20 @@ Un document qui ne franchit pas les trois portes ne devient pas un PDF publié.
 
 ---
 
+## 0bis. Règle d'architecture (source unique)
+
+Le `.md` certifié dans `03_progressions/supports/` est la **SOURCE UNIQUE**. Les `.tex`
+dans `latex/packs/` sont **GÉNÉRÉS** depuis ce corpus (via les templates de
+`02_modeles_documents/`), jamais rédigés en parallèle. Ce sont des artefacts régénérables,
+au même titre que les PDF.
+
+**Politique de versionnage** : les `.tex` et `.pdf` sont trackés dans git comme artefacts
+régénérables. Un check de fraîcheur (`make check-generated-freshness`) garantit que les
+fichiers générés commités reflètent l'état courant du corpus. Si un `.tex` diverge du `.md`
+source, le check échoue et bloque le merge.
+
+---
+
 ## 1. Architecture du pipeline
 
 ```
