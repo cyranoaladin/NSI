@@ -26,15 +26,13 @@
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/terminale/T07/T07_corrige_graphes_modelisation_listes_matrices.md",
-        "anchor": "#exercice-3",
-        "quote": "- Réponse attendue : matrice 4x4 -> 16 cases.\n- Méthode : calculer degré sortant.\n- Cas limite : arête non orientée.",
+        "anchor": "#exercice-3bis",
+        "quote": "Réponse attendue : `{A: [B, C], B: [D], C: [D], D: [B]}`.\n- Méthode : pour chaque arc (u, v) dans arcs, ajouter v à la liste graphe[u] ; initialiser chaque sommet avec une liste vide avant parcours.\n- Cas limite : sommet isolé (pas d'arc sortant) → sa clé existe dans le dictionnaire avec une liste vide.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne la méthode de liste d'adjacence, l'exercice 3bis du TD fait explicitement écrire l'implémentation par dictionnaire Python (liste de successeurs). Le corrigé du TD fournit la réponse pour T-STRUCT-05C, bien que l'exercice 3bis soit mieux documenté dans le TD lui-même.",
-      "scientific_flags": [
-        "human_review_required"
-      ]
+      "justification": "Le cours enseigne la méthode de liste d'adjacence, l'exercice 3bis du TD fait explicitement écrire l'implémentation par dictionnaire Python (liste de successeurs). Le corrigé exercice 3bis fournit désormais la réponse exacte `{A: [B, C], B: [D], C: [D], D: [B]}` avec méthode et cas limite (sommet isolé → liste vide). Cohérence cours-TD-corrigé vérifiée.",
+      "scientific_flags": []
     }
   ]
 }

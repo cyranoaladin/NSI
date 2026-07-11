@@ -27,14 +27,12 @@
         "present": true,
         "file": "03_progressions/supports/terminale/T14/T14_corrige_modularite_api_paradigmes_bugs.md",
         "anchor": "#exercice-6",
-        "quote": "- Réponse attendue : from meteo import moyenne_temperature.\n- Méthode : séparer module et script principal.\n- Cas limite : type chaîne.",
+        "quote": "Réponse attendue : cause : effet de bord à l'import — le module exécute du code (print, calcul, mutation de variable globale) dès qu'il est importé ; correction : protéger le code exécutable par `if __name__ == \"__main__\":` afin qu'il ne s'exécute que lorsque le fichier est lancé directement, pas lors d'un import.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne la mise au point (écrire un test, isoler un bug), le TD exercice 6 fait pratiquer l'identification et la correction d'un bug (effet de bord à l'import), et le corrigé fournit la réponse attendue pour cet exercice ciblant T-LANG-05.",
-      "scientific_flags": [
-        "human_review_required"
-      ]
+      "justification": "Le cours enseigne la mise au point (écrire un test, isoler un bug). Le TD exercice 6 fait pratiquer l'identification de l'effet de bord à l'import et la correction par `if __name__ == \"__main__\":`. Le corrigé exercice 6 fournit désormais la réponse complète : cause (effet de bord à l'import), correction (garde __name__), et cas limite (variable globale mutée). Cohérence cours-TD-corrigé vérifiée.",
+      "scientific_flags": []
     }
   ]
 }

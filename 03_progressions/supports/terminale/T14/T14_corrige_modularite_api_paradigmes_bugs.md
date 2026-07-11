@@ -44,9 +44,10 @@ official_program:
 - Méthode : définir fonction publique documentée.
 - Cas limite : clé temperature absente.
 ### Exercice 6
-- Réponse attendue : from meteo import moyenne_temperature.
-- Méthode : séparer module et script principal.
-- Cas limite : type chaîne.
+- Capacité mobilisée : T-LANG-05.
+- Réponse attendue : cause : effet de bord à l'import — le module exécute du code (print, calcul, mutation de variable globale) dès qu'il est importé ; correction : protéger le code exécutable par `if __name__ == "__main__":` afin qu'il ne s'exécute que lorsque le fichier est lancé directement, pas lors d'un import.
+- Méthode : identifier l'instruction provoquant l'effet de bord (appel de fonction ou affectation au niveau module), puis la déplacer dans le bloc `if __name__ == "__main__":`.
+- Cas limite : variable globale mutée à l'import — si un autre module importe celui-ci, la mutation se produit une seule fois (au premier import, grâce au cache `sys.modules`), mais l'état global reste pollué pour tous les importateurs.
 ### Exercice 7
 - Réponse attendue : temperature="31" refusée ou convertie.
 - Méthode : choisir paradigme selon tâche.
