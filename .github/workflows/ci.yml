@@ -51,3 +51,6 @@ jobs:
 
       - name: Secret guard
         run: python -m scripts.check_no_committed_secrets
+
+      - name: Verdict provenance guard
+        run: python -m scripts.check_verdict_provenance --base ${{ github.event.pull_request.base.sha || 'HEAD~1' }}
