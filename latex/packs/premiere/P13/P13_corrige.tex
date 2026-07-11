@@ -7,7 +7,7 @@
 \section*{Corrigé du TD}
 \cor{1}{P-ALGO-04}{milieux $18$ puis $37$ $\rightarrow$ indice $4$.}{cible absente.}
 \cor{2}{P-ALGO-04}{$V = \text{droite} - \text{gauche} + 1$ décroît de $6$ à $3$ $\rightarrow$ terminaison.}{\texttt{cible=38} $\rightarrow$ $V$ décroît $6\rightarrow 3\rightarrow 1\rightarrow 0$, arrêt sans trouver.}
-\cor{3}{P-ALGO-05}{$28 = 10+10+5+2+1$ (5 pièces).}{pièce 1 absente $\rightarrow$ le glouton peut échouer (montant~$3$ avec \texttt{[5,2]}).}
+\cor{3}{P-ALGO-05}{$28 = 10+10+5+2+1$ (5 pièces).}{sans pièce~$1$ : montant~$28$ avec \texttt{[10,5,2]} $\rightarrow$ reste~$1$ (échec), alors que $28=10{+}10{+}2{+}2{+}2{+}2$ est représentable.}
 \cor{4}{P-ALGO-03}{$k=3$ $\rightarrow$ rouge~2, bleu~1 $\rightarrow$ classe rouge.}{$k$ pair $\rightarrow$ égalité de vote possible.}
 \cor{5}{P-ALGO-04}{$V$ décroît de $6$ à $3$ $\rightarrow$ terminaison.}{cible absente.}
 \cor{6}{P-ALGO-05}{$28 = 10+10+5+2+1$ (5 pièces).}{pièce 1 absente $\rightarrow$ échec possible.}
@@ -42,8 +42,8 @@ Les $k=3$ plus proches sont $B, A, A$ $\rightarrow$ vote $A=2$, $B=1$ $\rightarr
 
 \subsection*{Q1 — recherche dichotomique (P-ALGO-04, 4 pts)}
 \textbf{Méthode} : calculer milieu puis réduire intervalle.\\
-\textbf{Trace} : milieu $= 2 \rightarrow$ tab[2]$=18 < 37$, gauche$=3$. Milieu $= 4 \rightarrow$ tab[4]$=37$. Trouvé.\\
-\textbf{Résultat} : milieux $18$ puis $37$ $\rightarrow$ cible trouvée à l'indice $4$.\\
+\textbf{Trace} : valeurs lues aux milieux : $18$ puis $37$ $\rightarrow$ cible trouvée.\\
+\textbf{Résultat} : cible trouvée à l'indice $4$.\\
 \textbf{Cas limite} : cible absente $\rightarrow$ la boucle s'arrête quand gauche $>$ droite.
 
 \subsection*{Q2 — terminaison par variant (P-ALGO-04, 4 pts)}
@@ -55,7 +55,7 @@ Les $k=3$ plus proches sont $B, A, A$ $\rightarrow$ vote $A=2$, $B=1$ $\rightarr
 \textbf{Méthode} : prendre la plus grande pièce $\leq$ montant restant à chaque étape.\\
 \textbf{Trace} : $28 - 10 = 18$, $18 - 10 = 8$, $8 - 5 = 3$, $3 - 2 = 1$, $1 - 1 = 0$.\\
 \textbf{Résultat} : $28 = 10 + 10 + 5 + 2 + 1$ (5 pièces).\\
-\textbf{Cas limite} : pièce $1$ absente $\rightarrow$ le glouton peut échouer (ex.\ montant~$3$ avec \texttt{[5,2]}).
+\textbf{Cas limite} : sans la pièce $1$, montant~$28$ avec \texttt{[10,5,2]} $\rightarrow$ le glouton se bloque (reste~$1$) alors que $28 = 10{+}10{+}2{+}2{+}2{+}2$ est représentable.
 
 \subsection*{Q4 — k plus proches voisins (P-ALGO-03, 4 pts)}
 \textbf{Méthode} : trier par distance, voter parmi les $k$ plus proches.\\
