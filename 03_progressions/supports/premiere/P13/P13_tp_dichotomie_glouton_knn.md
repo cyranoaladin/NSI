@@ -28,7 +28,7 @@ TP papier : ce support n attend aucune ressource Python ; le livrable est une tr
 ## Travail demandé
 1. Préparer la donnée et nommer les champs utiles.
 2. Réaliser : calculer milieu puis réduire intervalle.
-3. Réaliser : montrer que droite-gauche diminue.
+3. Réaliser : montrer que V = droite − gauche + 1 décroît strictement.
 4. Tester le cas limite `cible absente`.
 5. Produire le livrable : milieux 18 puis 37 -> trouvé indice 4.
 

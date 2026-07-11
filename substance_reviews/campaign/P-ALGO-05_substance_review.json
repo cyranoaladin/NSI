@@ -20,7 +20,7 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md",
         "anchor": "#exercice-2",
-        "quote": "Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.\n- Réponse attendue : 28 -> 10+10+5+2+1.",
+        "quote": "Consigne : montrer que V = droite − gauche + 1 décroît strictement ; traiter aussi `pièce 1 absente` si nécessaire.\n- Réponse attendue : 28 -> 10+10+5+2+1.",
         "teaches": true
       },
       "proof_correction": {

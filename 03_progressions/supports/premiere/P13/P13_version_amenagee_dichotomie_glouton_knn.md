@@ -21,8 +21,8 @@ official_program:
 
 ## Aides intégrées
 - Donnée fournie : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`.
-- Mots utiles : dichotomie, variant droite-gauche, glouton, choix local, k-NN.
-- Méthode guidée : calculer milieu puis réduire intervalle puis montrer que droite-gauche diminue.
+- Mots utiles : dichotomie, variant V = droite − gauche + 1, glouton, choix local, k-NN.
+- Méthode guidée : calculer milieu puis réduire intervalle puis montrer que V = droite − gauche + 1 décroît strictement.
 
 ## Exercice guidé
 1. Recopier la donnée utile.
