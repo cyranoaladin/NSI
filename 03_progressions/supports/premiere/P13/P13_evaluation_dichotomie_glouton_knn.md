@@ -32,9 +32,9 @@ official_program:
 - Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `cible absente`.
 ### Question 2
 - Capacité officielle : P-ALGO-04.
-- Énoncé : à partir de `tableau=[4,9,18,23,37,41], cible=37`, montrer que le variant droite-gauche diminue à chaque étape de la dichotomie.
-- Réponse attendue : variant décroît de 5 à 1, prouvant la terminaison.
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `cible absente → variant atteint 0`.
+- Énoncé : à partir de `tableau=[4,9,18,23,37,41], cible=37`, montrer que le variant V = droite − gauche + 1 diminue à chaque étape de la dichotomie.
+- Réponse attendue : V décroît de 6 à 3 → terminaison (cible trouvée).
+- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `cible absente (ex. 38) → V décroît 6→3→1→0`.
 ### Question 3
 - Capacité officielle : P-ALGO-05.
 - Énoncé : à partir de `pièces=[10,5,2,1], montant=28`, appliquer l'algorithme glouton pour rendre la monnaie.
@@ -51,8 +51,8 @@ official_program:
 - Résultat attendu : milieux 18 puis 37 -> trouvé indice 4.
 - Critère spécifique : calculer milieu puis réduire intervalle et éviter `dichotomie sur liste non triée`.
 ### Corrigé question 2
-- Résultat attendu : variant droite-gauche décroît de 5 à 1, terminaison prouvée.
-- Critère spécifique : montrer que droite-gauche diminue et traiter le cas `cible absente → variant atteint 0`.
+- Résultat attendu : V = droite − gauche + 1 décroît de 6 à 3 → terminaison (cible trouvée).
+- Critère spécifique : montrer que V décroît et traiter le cas `cible absente (ex. 38) → V décroît 6→3→1→0`.
 ### Corrigé question 3
 - Résultat attendu : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces par algorithme glouton).
 - Critère spécifique : prendre la plus grande pièce possible et traiter le cas `pièce 1 absente`.

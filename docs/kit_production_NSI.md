@@ -33,12 +33,12 @@ md↔tex des packs LaTeX — ce gate sera implémenté à l'étape « industrial
 
 > **Dette inscrite** : gate de fraîcheur md↔tex — déclencheur = étape industrialisation LaTeX.
 
-**Diff de cohérence md↔tex P13** (3 exercices, après corrections F4) :
+**Diff de cohérence md↔tex P13** (4 champs, après corrections F5) :
 
 | Ex | Champ | Canon (.md) | Projection (.tex) | ✓ |
 |----|-------|-------------|-------------------|---|
 | 1 (P-ALGO-04) | Résultat | milieux 18 puis 37 → indice 4 | valeurs lues aux milieux : 18 puis 37 → indice 4 | ✓ |
-| 3 (P-ALGO-05) | Résultat | 28 = 10+10+5+2+1 (5 pièces) | $28 = 10+10+5+2+1$ (5 pièces) | ✓ |
+| 2 (P-ALGO-04) | Variant | V décroît de 6 à 3 → terminaison | V = 6 → 3 → terminaison | ✓ |
 | 3 (P-ALGO-05) | Cas limite | montant=28 avec [10,5,2] → reste 1 | montant 28 avec [10,5,2] → reste 1 | ✓ |
 | 4 (P-ALGO-03) | Résultat | rouge (2 voix) vs bleu (1) → classe rouge | rouge 2, bleu 1 → classe rouge | ✓ |
 

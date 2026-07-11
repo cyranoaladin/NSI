@@ -53,7 +53,7 @@ Les étapes 2 et 3 sont **faites** (contenu + 8 PDF produits). Il reste :
 ## 4. Portes de qualité (ne jamais publier sans les trois)
 
 1. **Ancrage** — le contenu vient du contrat + programme + RAG (jamais inventé).
-2. **Gate machine** — CI verte (ruff + pytest + audit + substance_anchors).
+2. **Gate machine** — CI verte (ruff, pytest, check-generated-freshness, audit-idempotence, substance_anchors).
 3. **Gate humaine** — ChatGPT (§2) rend *publier*.
 
 ---

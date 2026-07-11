@@ -26,9 +26,9 @@ official_program:
 - Cas limite : cible absente.
 ### Exercice 2
 - Capacité mobilisée : P-ALGO-04.
-- Réponse attendue : le variant droite-gauche décroît de 5 à 1 sur tableau=[4,9,18,23,37,41], cible=37, prouvant la terminaison.
-- Méthode : montrer que droite-gauche diminue strictement à chaque étape.
-- Cas limite : cible absente → l'écart atteint 0 et la boucle s'arrête sans trouver.
+- Réponse attendue : V = droite − gauche + 1 décroît de 6 à 3 sur tableau=[4,9,18,23,37,41], cible=37 → terminaison (cible trouvée).
+- Méthode : montrer que V décroît strictement à chaque étape.
+- Cas limite : cible absente (ex. 38) → V décroît 6→3→1→0, la boucle s arrête sans trouver.
 ### Exercice 3
 - Capacité mobilisée : P-ALGO-05.
 - Réponse attendue : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces, algorithme glouton avec pièces=[10,5,2,1]).
