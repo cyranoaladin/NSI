@@ -112,7 +112,7 @@ official_program:
 - Méthode : prendre la plus grande pièce possible à chaque étape.
 - Résultat : 28 = 10+10+5+2+1 (5 pièces).
 - Contrôle : capacité P-ALGO-05 vérifiée ; erreur traitée : glouton supposé toujours optimal.
-- Cas limite : pièce 1 absente → montant=3 avec pièces=[10,5,2] → reste 1, glouton bloqué.
+- Cas limite : pièce 1 absente → montant=28 avec pièces=[10,5,2] → glouton bloqué à reste=1, alors que 28=10+10+2+2+2+2 est représentable.
 ### Corrigé exercice 4
 - Donnée : voisins rouge:1.2, bleu:2.0, rouge:2.4 avec k=3.
 - Méthode : trier par distance, voter parmi les k plus proches.
@@ -130,7 +130,7 @@ official_program:
 - Méthode : prendre la plus grande pièce possible à chaque étape.
 - Résultat : 13 = 10+2+1 (3 pièces).
 - Contrôle : capacité P-ALGO-05 vérifiée ; erreur traitée : glouton supposé toujours optimal.
-- Cas limite : pièce 1 absente → montant=3 avec pièces=[10,5,2] → reste 1 → glouton bloqué.
+- Cas limite : pièce 1 absente → montant=28 avec pièces=[10,5,2] → glouton bloqué à reste=1, alors que 28=10+10+2+2+2+2 est représentable.
 ### Corrigé exercice 7
 - Donnée : points (2,3,A) (5,4,B) (1,1,A) (8,7,B) (3,2,A) avec nouveau (4,3) et k=3.
 - Méthode : distance euclidienne, tri, vote majoritaire.
@@ -142,7 +142,6 @@ official_program:
 - Méthode : montrer que V = droite − gauche + 1 décroît strictement à chaque étape.
 - Résultat : V décroît de 6 à 3 puis 1 puis 0 → cible absente, boucle terminée.
 - Contrôle : capacité P-ALGO-04 vérifiée ; erreur traitée : boucle infinie si variant mal défini.
-- Cas limite : V atteint 0, gauche > droite, arrêt sans trouver.
 - Cas limite : V atteint 0, gauche > droite, arrêt sans trouver.
 
 ### Corrigé exercice 9
