@@ -196,7 +196,7 @@ La capacité P-IHM-03B demande de distinguer ce qui est mémorisé côté client
 ### correction
 - **Fichier** : `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md`
 - **Ancre** : `#exercice-5`
-- **Citation** : Réponse attendue : cookie → stocké côté client ET retransmis automatiquement au serveur selon Domain/Path ; localStorage → stocké côté client uniquement, jamais retransmis au serveur...
+- **Citation** (juge 2026-07-11T19:19:20Z) : Réponse attendue : cookie → stocké côté client ET retransmis automatiquement au serveur selon Domain/Path ; localStorage → stocké côté client uniquement, jamais retransmis au serveur
 
 **Extrait** :
 ```
@@ -242,7 +242,7 @@ La capacité P-IHM-03B demande de distinguer ce qui est mémorisé côté client
 ### correction
 - **Fichier** : `03_progressions/supports/terminale/T14/T14_corrige_modularite_api_paradigmes_bugs.md`
 - **Ancre** : `#exercice-6`
-- **Citation** : Réponse attendue : cause : effet de bord à l'import — le module exécute du code (print, calcul, mutation de variable globale) dès qu'il est importé ; correction : protéger le code exécutable par `if __name__ == "__main__":`...
+- **Citation** (juge 2026-07-11T19:19:45Z) : Réponse attendue : cause : effet de bord à l'import — le module exécute du code (print, calcul, mutation de variable globale) dès qu'il est importé ; correction : protéger le code exécutable par `if __name__ == "__main__":` afin qu'il ne s'exécute que lorsque le fichier est lancé directement, pas lors d'un import.
 
 **Extrait** :
 ```
@@ -289,7 +289,7 @@ La capacité P-IHM-03B demande de distinguer ce qui est mémorisé côté client
 ### correction
 - **Fichier** : `03_progressions/supports/terminale/T07/T07_corrige_graphes_modelisation_listes_matrices.md`
 - **Ancre** : `#exercice-3bis`
-- **Citation** : Réponse attendue : `{A: [B, C], B: [D], C: [D], D: [B]}`. Méthode : pour chaque arc (u, v) dans arcs, ajouter v à la liste graphe[u]...
+- **Citation** (juge 2026-07-11T19:19:33Z) : Méthode : pour chaque arc (u, v) dans arcs, ajouter v à la liste graphe[u] ; initialiser chaque sommet avec une liste vide avant parcours.
 
 **Extrait** :
 ```

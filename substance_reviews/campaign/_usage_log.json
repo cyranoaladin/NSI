@@ -88,17 +88,6 @@
     "judged_at": "2026-07-08T21:31:51Z"
   },
   {
-    "cap": "P-IHM-03B",
-    "seq": "P08",
-    "read": 0,
-    "write": 25746,
-    "fresh": 90,
-    "out": 507,
-    "cost_usd": 0.104423,
-    "api_calls": 1,
-    "judged_at": "2026-07-11T14:36:19Z"
-  },
-  {
     "cap": "P-ALGO-03",
     "seq": "P13",
     "read": 2346,
@@ -132,25 +121,36 @@
     "judged_at": "2026-07-11T14:36:19Z"
   },
   {
+    "cap": "P-IHM-03B",
+    "seq": "P08",
+    "read": 0,
+    "write": 25898,
+    "fresh": 90,
+    "out": 450,
+    "cost_usd": 0.104137,
+    "api_calls": 1,
+    "judged_at": "2026-07-11T19:19:45Z"
+  },
+  {
     "cap": "T-STRUCT-05C",
     "seq": "T07",
     "read": 2346,
-    "write": 13971,
+    "write": 14118,
     "fresh": 89,
-    "out": 494,
-    "cost_usd": 0.060772,
-    "api_calls": 5,
-    "judged_at": "2026-07-11T14:36:19Z"
+    "out": 475,
+    "cost_usd": 0.061038,
+    "api_calls": 2,
+    "judged_at": "2026-07-11T19:19:45Z"
   },
   {
     "cap": "T-LANG-05",
     "seq": "T14",
     "read": 2346,
-    "write": 11574,
+    "write": 11765,
     "fresh": 76,
-    "out": 434,
-    "cost_usd": 0.050844,
-    "api_calls": 6,
-    "judged_at": "2026-07-11T14:36:19Z"
+    "out": 492,
+    "cost_usd": 0.052431,
+    "api_calls": 3,
+    "judged_at": "2026-07-11T19:19:45Z"
   }
 ]

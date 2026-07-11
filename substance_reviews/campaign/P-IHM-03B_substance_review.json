@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-11T14:35:27Z",
+  "judged_at": "2026-07-11T19:19:20Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -27,12 +27,14 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
         "anchor": "#exercice-5",
-        "quote": "Réponse attendue : cookie → stocké côté client ET retransmis automatiquement au serveur selon Domain/Path ; localStorage → stocké côté client uniquement, jamais retransmis au serveur ; donnée de formulaire → transmise au serveur à la soumission uniquement ; session → stockée côté serveur (seul l'identifiant de session transite dans le cookie).",
+        "quote": "Réponse attendue : cookie → stocké côté client ET retransmis automatiquement au serveur selon Domain/Path ; localStorage → stocké côté client uniquement, jamais retransmis au serveur",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne explicitement la distinction cookie/localStorage/sessionStorage avec tableau comparatif (Domain/Path, origine). Le TD exercice 5 fait pratiquer la classification client/serveur. Le corrigé exercice 5 corrige désormais exactement cet exercice avec la sémantique cookie (retransmis selon Domain/Path), localStorage (jamais retransmis), donnée de formulaire (soumission), session (côté serveur). Cohérence cours-TD-corrigé vérifiée.",
-      "scientific_flags": []
+      "justification": "Le cours enseigne la distinction cookie/localStorage/sessionStorage avec tableau comparatif. Le TD fait pratiquer la classification client/serveur. Le corrigé fournit la réponse détaillée avec les nuances Domain/Path.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
     }
   ]
 }
