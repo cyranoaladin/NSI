@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
-"""Gate: verdict files modified in a commit must have fresh judged_at metadata.
+"""Gate: verdict files with content changes must have monotonically fresh judged_at.
 
-Rule: any *_substance_review.json diff must be accompanied by a judged_at
-timestamp produced by the pipeline (judge_campaign). A manual edit that changes
-quote/justification/anchor without re-running the judge is a provenance
-violation.
+Rule (monotone): for any *_substance_review.json modified between base and HEAD,
+if a content field changed (quote, justification, anchor, verdict, proofs, scientific_flags),
+then judged_at MUST have changed AND be strictly more recent than the base version.
+No time-window heuristic — pure monotonicity.
 
-Detection method: for each changed verdict file, compare its judged_at to the
-commit timestamp. If judged_at is older than the commit by more than
-STALENESS_SECONDS, the verdict was edited manually.
+Fail-closed: if the base ref is unavailable or git diff fails, exit 2 with an
+explicit message ("base ref indisponible : guard NON exécuté"). Never PASS empty.
 
 Usage:
     python -m scripts.check_verdict_provenance [--base BASE_REF]
 
 Exit codes:
-    0: all changed verdicts have fresh provenance
-    1: stale provenance detected (manual edit without re-judgment)
+    0: all changed verdicts have valid monotone provenance (or no verdicts changed)
+    1: provenance violation detected
+    2: guard could not execute (base unavailable, git error)
 """
 
 from __future__ import annotations
@@ -25,79 +25,171 @@ import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-STALENESS_SECONDS = 300  # 5 minutes tolerance between judge run and commit
+
+# Fields whose modification requires a fresh judged_at
+CONTENT_FIELDS_TOP = {"capacities"}
+CONTENT_FIELDS_CAP = {"verdict", "justification", "scientific_flags"}
+CONTENT_FIELDS_PROOF = {"anchor", "quote", "teaches", "file", "present"}
 
 
-def get_changed_verdict_files(base_ref: str = "HEAD~1") -> list[Path]:
-    """Return verdict files changed between base_ref and HEAD."""
+def _resolve_base(base_ref: str) -> str | None:
+    """Verify that base_ref is resolvable by git."""
+    result = subprocess.run(
+        ["git", "rev-parse", "--verify", base_ref],
+        capture_output=True, text=True, cwd=ROOT,
+    )
+    if result.returncode != 0:
+        return None
+    return result.stdout.strip()
+
+
+def get_changed_verdict_files(base_ref: str) -> list[str] | None:
+    """Return relative paths of verdict files changed between base_ref and HEAD.
+
+    Returns None if git diff fails (fail-closed).
+    """
     result = subprocess.run(
         ["git", "diff", "--name-only", base_ref, "HEAD"],
         capture_output=True, text=True, cwd=ROOT,
     )
+    if result.returncode != 0:
+        return None
     changed = []
     for line in result.stdout.strip().splitlines():
         if line.endswith("_substance_review.json"):
-            path = ROOT / line
-            if path.exists():
-                changed.append(path)
+            changed.append(line)
     return changed
 
 
-def get_commit_timestamp() -> datetime:
-    """Return the timestamp of HEAD commit."""
+def get_base_version(base_ref: str, rel_path: str) -> dict[str, Any] | None:
+    """Read the verdict file content at the base ref."""
     result = subprocess.run(
-        ["git", "log", "-1", "--format=%aI"],
+        ["git", "show", f"{base_ref}:{rel_path}"],
         capture_output=True, text=True, cwd=ROOT,
     )
-    return datetime.fromisoformat(result.stdout.strip())
+    if result.returncode != 0:
+        return None  # file didn't exist at base (new file)
+    try:
+        data: dict[str, Any] = json.loads(result.stdout)
+        return data
+    except json.JSONDecodeError:
+        return None
 
 
-def check_provenance(base_ref: str = "HEAD~1") -> list[str]:
-    """Check all changed verdict files for fresh provenance."""
+def _content_changed(base_data: dict[str, Any], head_data: dict[str, Any]) -> bool:
+    """Return True if any content field differs between base and head."""
+    base_caps = base_data.get("capacities", [])
+    head_caps = head_data.get("capacities", [])
+
+    if len(base_caps) != len(head_caps):
+        return True
+
+    for bc, hc in zip(base_caps, head_caps):
+        for field in CONTENT_FIELDS_CAP:
+            if bc.get(field) != hc.get(field):
+                return True
+        for proof_key in ("proof_course", "proof_practice", "proof_correction"):
+            bp = bc.get(proof_key, {})
+            hp = hc.get(proof_key, {})
+            for field in CONTENT_FIELDS_PROOF:
+                if bp.get(field) != hp.get(field):
+                    return True
+    return False
+
+
+def _parse_dt(s: str | None) -> datetime | None:
+    if not s:
+        return None
+    try:
+        dt = datetime.fromisoformat(s)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt
+    except ValueError:
+        return None
+
+
+def check_provenance(base_ref: str = "HEAD~1") -> tuple[list[str], list[str], bool]:
+    """Check monotone provenance for all changed verdict files.
+
+    Returns (errors, inspected_files, guard_executed).
+    If guard_executed is False, errors contains the reason.
+    """
+    # Fail-closed: verify base is resolvable
+    resolved = _resolve_base(base_ref)
+    if resolved is None:
+        return (
+            [f"base ref indisponible ({base_ref!r}) : guard NON exécuté"],
+            [],
+            False,
+        )
+
+    changed = get_changed_verdict_files(resolved)
+    if changed is None:
+        return (
+            ["git diff failed : guard NON exécuté"],
+            [],
+            False,
+        )
+
     errors: list[str] = []
-    changed = get_changed_verdict_files(base_ref)
-    if not changed:
-        return errors
+    inspected: list[str] = []
 
-    commit_ts = get_commit_timestamp()
+    for rel_path in changed:
+        head_path = ROOT / rel_path
+        if not head_path.exists():
+            continue  # deleted file, skip
 
-    for path in changed:
+        inspected.append(rel_path)
+
         try:
-            data = json.loads(path.read_text(encoding="utf-8"))
+            head_data = json.loads(head_path.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, OSError) as e:
-            errors.append(f"{path.name}: unreadable ({e})")
+            errors.append(f"{rel_path}: unreadable ({e})")
             continue
 
-        judged_at_str = data.get("judged_at")
-        if not judged_at_str:
+        head_judged_at = _parse_dt(head_data.get("judged_at"))
+        if head_judged_at is None:
             errors.append(
-                f"{path.name}: missing judged_at — verdict must be produced by judge_campaign"
+                f"{rel_path}: missing or invalid judged_at — "
+                "verdict must be produced by judge_campaign"
             )
             continue
 
-        try:
-            judged_at = datetime.fromisoformat(judged_at_str)
-        except ValueError:
-            errors.append(f"{path.name}: invalid judged_at format")
+        # Get base version
+        base_data = get_base_version(resolved, rel_path)
+        if base_data is None:
+            # New file — just needs valid judged_at (already checked)
             continue
 
-        # Ensure both are offset-aware for comparison
-        if judged_at.tzinfo is None:
-            judged_at = judged_at.replace(tzinfo=timezone.utc)
-        if commit_ts.tzinfo is None:
-            commit_ts = commit_ts.replace(tzinfo=timezone.utc)
+        # Check if content actually changed
+        if not _content_changed(base_data, head_data):
+            continue  # metadata-only change, no provenance concern
 
-        delta = (commit_ts - judged_at).total_seconds()
-        if delta > STALENESS_SECONDS:
+        # Content changed → judged_at must be strictly monotone
+        base_judged_at = _parse_dt(base_data.get("judged_at"))
+
+        if base_judged_at is None:
+            # Base had no judged_at, head has one — OK (upgrade)
+            continue
+
+        if head_judged_at == base_judged_at:
             errors.append(
-                f"{path.name}: judged_at ({judged_at_str}) is {int(delta)}s older than commit — "
-                f"verdict was edited manually without re-running judge_campaign. "
-                f"Rule: all verdict edits must go through the pipeline."
+                f"{rel_path}: content fields changed but judged_at unchanged "
+                f"({head_judged_at.isoformat()}) — verdict was edited manually "
+                "without re-running judge_campaign."
+            )
+        elif head_judged_at < base_judged_at:
+            errors.append(
+                f"{rel_path}: judged_at regressed "
+                f"(base={base_judged_at.isoformat()}, head={head_judged_at.isoformat()}) — "
+                "monotonicity violation."
             )
 
-    return errors
+    return errors, inspected, True
 
 
 def main() -> None:
@@ -106,7 +198,19 @@ def main() -> None:
     parser.add_argument("--base", default="HEAD~1", help="Base ref for diff")
     args = parser.parse_args()
 
-    errors = check_provenance(args.base)
+    errors, inspected, executed = check_provenance(args.base)
+
+    if not executed:
+        print("check_verdict_provenance: FAIL (guard non exécuté)")
+        for e in errors:
+            print(f"  ✗ {e}")
+        sys.exit(2)
+
+    if inspected:
+        print(f"check_verdict_provenance: inspected {len(inspected)} verdict file(s):")
+        for f in inspected:
+            print(f"    {f}")
+
     if errors:
         print("check_verdict_provenance: FAIL")
         for e in errors:
