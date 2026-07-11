@@ -55,17 +55,6 @@
     "judged_at": "2026-07-08T15:28:18Z"
   },
   {
-    "cap": "P-IHM-03B",
-    "seq": "P08",
-    "read": 0,
-    "write": 25738,
-    "fresh": 90,
-    "out": 533,
-    "cost_usd": 0.104783,
-    "api_calls": 1,
-    "judged_at": "2026-07-08T21:31:22Z"
-  },
-  {
     "cap": "T-BDD-02",
     "seq": "T09",
     "read": 17457,
@@ -99,36 +88,69 @@
     "judged_at": "2026-07-08T21:31:51Z"
   },
   {
+    "cap": "P-IHM-03B",
+    "seq": "P08",
+    "read": 0,
+    "write": 25746,
+    "fresh": 90,
+    "out": 507,
+    "cost_usd": 0.104423,
+    "api_calls": 1,
+    "judged_at": "2026-07-11T14:36:19Z"
+  },
+  {
     "cap": "P-ALGO-03",
     "seq": "P13",
-    "read": 17533,
-    "write": 17533,
-    "fresh": 494,
-    "out": 1126,
-    "cost_usd": 0.089381,
+    "read": 2346,
+    "write": 13316,
+    "fresh": 95,
+    "out": 500,
+    "cost_usd": 0.058424,
     "api_calls": 2,
-    "judged_at": "2026-07-08T22:15:52Z"
+    "judged_at": "2026-07-11T14:36:19Z"
   },
   {
     "cap": "P-ALGO-04",
     "seq": "P13",
-    "read": 0,
-    "write": 17971,
+    "read": 15662,
+    "write": 0,
     "fresh": 90,
-    "out": 528,
-    "cost_usd": 0.075581,
-    "api_calls": 1,
-    "judged_at": "2026-07-11T12:49:44Z"
+    "out": 553,
+    "cost_usd": 0.013264,
+    "api_calls": 3,
+    "judged_at": "2026-07-11T14:36:19Z"
   },
   {
     "cap": "P-ALGO-05",
     "seq": "P13",
-    "read": 17971,
+    "read": 15662,
     "write": 0,
     "fresh": 74,
-    "out": 554,
-    "cost_usd": 0.013923,
-    "api_calls": 2,
-    "judged_at": "2026-07-11T12:49:44Z"
+    "out": 532,
+    "cost_usd": 0.012901,
+    "api_calls": 4,
+    "judged_at": "2026-07-11T14:36:19Z"
+  },
+  {
+    "cap": "T-STRUCT-05C",
+    "seq": "T07",
+    "read": 2346,
+    "write": 13971,
+    "fresh": 89,
+    "out": 494,
+    "cost_usd": 0.060772,
+    "api_calls": 5,
+    "judged_at": "2026-07-11T14:36:19Z"
+  },
+  {
+    "cap": "T-LANG-05",
+    "seq": "T14",
+    "read": 2346,
+    "write": 11574,
+    "fresh": 76,
+    "out": 434,
+    "cost_usd": 0.050844,
+    "api_calls": 6,
+    "judged_at": "2026-07-11T14:36:19Z"
   }
 ]

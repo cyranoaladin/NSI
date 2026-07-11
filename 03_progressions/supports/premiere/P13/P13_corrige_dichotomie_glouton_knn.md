@@ -21,44 +21,45 @@ official_program:
 
 ## Corrigé du TD
 ### Exercice 1
-- Réponse attendue : milieux 18 puis 37 -> trouvé indice 4.
-- Méthode : calculer milieu puis réduire intervalle.
+- Capacité mobilisée : P-ALGO-04.
+- Réponse attendue : milieux 18 puis 37 → trouvé indice 4.
+- Méthode : dichotomie.
 - Cas limite : cible absente.
 ### Exercice 2
 - Capacité mobilisée : P-ALGO-04.
-- Réponse attendue : V = droite − gauche + 1 décroît de 6 à 3 sur tableau=[4,9,18,23,37,41], cible=37 → terminaison (cible trouvée).
-- Méthode : montrer que V décroît strictement à chaque étape.
-- Cas limite : cible absente (ex. 38) → V décroît 6→3→1→0, la boucle s'arrête sans trouver.
+- Réponse attendue : V décroît de 6 à 3 → terminaison.
+- Méthode : variant.
+- Cas limite : cible absente → V=0.
 ### Exercice 3
 - Capacité mobilisée : P-ALGO-05.
-- Réponse attendue : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces, algorithme glouton avec pièces=[10,5,2,1]).
-- Méthode : prendre la plus grande pièce possible à chaque étape.
-- Cas limite : pièce 1 absente → le glouton peut échouer (ex. montant=28 avec pièces=[10,5,2] : le glouton se bloque à reste=1, alors que 28=10+10+2+2+2+2 est représentable).
+- Réponse attendue : 28=10+10+5+2+1 (5 pièces).
+- Méthode : glouton.
+- Cas limite : pièce 1 absente.
 ### Exercice 4
 - Capacité mobilisée : P-ALGO-03.
-- Réponse attendue : voisins=[rouge:1.2, bleu:2.0, rouge:2.4], k=3 → vote rouge=2, bleu=1 → classe rouge.
-- Méthode : trier par distance, voter parmi les k plus proches.
-- Cas limite : k pair → égalité de vote possible.
+- Réponse attendue : rouge 2 vs bleu 1 → classe rouge.
+- Méthode : k-NN vote.
+- Cas limite : k pair → égalité.
 ### Exercice 5
 - Capacité mobilisée : P-ALGO-04.
-- Réponse attendue : variant vérifié sur un nouveau tableau.
-- Méthode : calculer milieu puis réduire intervalle, montrer que V = droite − gauche + 1 décroît strictement.
-- Cas limite : tableau d'un seul élément.
+- Réponse attendue : V décroît 6→3→1 → cible=23 trouvée indice 3.
+- Méthode : variant.
+- Cas limite : cible absente → V=0.
 ### Exercice 6
 - Capacité mobilisée : P-ALGO-05.
-- Réponse attendue : le glouton est appliqué sur un nouveau montant.
-- Méthode : prendre la plus grande pièce possible à chaque étape.
-- Cas limite : glouton non optimal (ex. pièces=[6,4,1] montant=8 → glouton donne 6+1+1=3 pièces, optimal 4+4=2 pièces).
+- Réponse attendue : 13=10+2+1 (3 pièces).
+- Méthode : glouton.
+- Cas limite : pièce 1 absente → blocage.
 ### Exercice 7
 - Capacité mobilisée : P-ALGO-03.
-- Réponse attendue : k-NN sur un nouveau jeu de données.
-- Méthode : calculer distances, trier, voter.
-- Cas limite : tous les voisins de la même classe → vote unanime.
+- Réponse attendue : A(3,2) B(5,4) A(2,3) → vote A=2 B=1 → classe A.
+- Méthode : distance euclidienne + vote.
+- Cas limite : k=2 → égalité.
 ### Exercice 8
 - Capacité mobilisée : P-ALGO-04.
-- Réponse attendue : correction d'un code de dichotomie avec variant erroné.
-- Méthode : identifier l'erreur dans le variant et proposer la correction.
-- Cas limite : cible absente avec variant mal défini → boucle infinie.
+- Réponse attendue : V décroît 6→3→1→0 → cible=38 absente.
+- Méthode : variant.
+- Cas limite : V atteint 0.
 
 ### Exercice 9
 - Capacité mobilisée : P-ALGO-03.

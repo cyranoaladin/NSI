@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-06T06:15:54Z",
+  "judged_at": "2026-07-11T14:36:19Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,15 +12,15 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/terminale/T14/T14_cours_modularite_api_paradigmes_bugs.md",
-        "anchor": "#erreurs-fréquentes",
-        "quote": "- import avec effet de bord.\n- API sans docstring.\n- bug corrigé sans test.",
+        "anchor": "#savoir-faire-et-méthodes-opérationnelles",
+        "quote": "- écrire un test qui reproduit un bug.\n- isoler une dépendance dans un module.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/terminale/T14/T14_TD_modularite_api_paradigmes_bugs.md",
         "anchor": "#exercice-6",
-        "quote": "- Capacité officielle : T-LANG-05.\n- Données : `meteo.py expose moyenne_temperature(releves) ; releves=[{ville:Sfax,temperature:31},{ville:Tunis,temperature:29}]`. ; jeu_exercice=zeta\n- Consigne : séparer module et script principal ; traiter aussi `type chaîne` si nécessaire.",
+        "quote": "Consigne : identifier la cause du bug (effet de bord à l'import) puis corriger en séparant module et script principal ; traiter aussi `variable globale mutée` si nécessaire.",
         "teaches": true
       },
       "proof_correction": {
@@ -31,7 +31,7 @@
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours liste les causes typiques de bugs (effet de bord, absence de docstring, bug sans test). L'exercice 6 du TD fait pratiquer T-LANG-05 sur un cas concret, et le corrigé fournit la réponse attendue avec le cas limite traité.",
+      "justification": "Le cours enseigne la mise au point (écrire un test, isoler un bug), le TD exercice 6 fait pratiquer l'identification et la correction d'un bug (effet de bord à l'import), et le corrigé fournit la réponse attendue pour cet exercice ciblant T-LANG-05.",
       "scientific_flags": [
         "human_review_required"
       ]

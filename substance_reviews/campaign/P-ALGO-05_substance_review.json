@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-11T12:49:44Z",
+  "judged_at": "2026-07-11T14:36:00Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -20,18 +20,18 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md",
         "anchor": "#exercice-3",
-        "quote": "Consigne : prendre la plus grande pièce possible ; traiter aussi `égalité de vote` si nécessaire.\n- Réponse attendue : rouge, bleu, rouge -> classe rouge.",
+        "quote": "Consigne : appliquer l'algorithme glouton pour rendre la monnaie ; traiter aussi `pièce 1 absente` si nécessaire.\n- Réponse attendue : 28 = 10+10+5+2+1 (5 pièces).",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md",
         "anchor": "#exercice-3",
-        "quote": "Réponse attendue : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces, algorithme glouton avec pièces=[10,5,2,1]).\n- Méthode : prendre la plus grande pièce possible à chaque étape.\n- Cas limite : pièce 1 absente → le glouton peut échouer",
+        "quote": "Réponse attendue : 28=10+10+5+2+1 (5 pièces).\n- Méthode : glouton.\n- Cas limite : pièce 1 absente.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne l'algorithme glouton avec exemple corrigé (P-ALGO-05), le TD fait pratiquer via l'exercice 3 (consigne explicite), et le corrigé fournit la réponse détaillée avec cas limite.",
+      "justification": "Le cours enseigne la méthode gloutonne avec exemple corrigé, le TD fait pratiquer sur deux exercices (ex. 3 et 6) avec consignes explicites, et le corrigé fournit les réponses attendues avec cas limites traités.",
       "scientific_flags": [
         "human_review_required"
       ]

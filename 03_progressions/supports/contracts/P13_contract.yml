@@ -19,7 +19,6 @@ exemples_obligatoires:
 - milieux 18 puis 37 -> trouvé indice 4
 - 28 -> 10+10+5+2+1
 - rouge, bleu, rouge -> classe rouge
-- cible 40 absente -> non trouvé
 cas_limites:
 - cible absente
 - pièce 1 absente

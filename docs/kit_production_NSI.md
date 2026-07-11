@@ -33,6 +33,17 @@ md↔tex des packs LaTeX — ce gate sera implémenté à l'étape « industrial
 
 > **Dette inscrite** : gate de fraîcheur md↔tex — déclencheur = étape industrialisation LaTeX.
 
+> **Post-mortem PR #91 (2026-07-11)** : la PR « REM4 : éradiquer la contamination
+> par rotation +1 dans P13 » a été fermée sans merge le 2026-07-10 au motif
+> « remplacé par le pack ». Or le pack .tex est une PROJECTION du canon .md
+> (règle CANON-FIRST ci-dessus) — pas un substitut. La fermeture a jeté le fix
+> de rotation des exercices 2-8, entraînant un cycle de correction F5/F5C/W.
+>
+> **RÈGLE** : une PR de remédiation de CONTENU (fichiers .md canon) ne se ferme
+> jamais sans preuve `git diff main -- <fichiers_canon>` montrant que main
+> subsume déjà le diff. À défaut, la PR reste ouverte ou son diff est cherry-
+> picked avant fermeture.
+
 **Diff de cohérence md↔tex P13** (4 champs, après corrections F5) :
 
 | Ex | Champ | Canon (.md) | Projection (.tex) | ✓ |

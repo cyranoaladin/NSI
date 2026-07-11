@@ -21,7 +21,7 @@ official_program:
 
 ## Objectifs
 - Travailler dichotomie, variant V = droite − gauche + 1, glouton, choix local, k-NN.
-- Produire neuf réponses vérifiables avec données explicites.
+- Produire neuf réponses vérifiables avec données explicites et variées.
 
 ## Progression socle / standard / approfondissement
 - Socle : exercices 1 et 2.
@@ -31,60 +31,60 @@ official_program:
 ## Exercices
 ### Exercice 1
 - Type : lecture/analyse.
-- Capacité officielle : P-ALGO-03.
-- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=alpha
-- Consigne : calculer milieu puis réduire intervalle ; traiter aussi `cible absente` si nécessaire.
-- Réponse attendue : milieux 18 puis 37 -> trouvé indice 4.
+- Capacité officielle : P-ALGO-04.
+- Données : `tableau=[4,9,18,23,37,41], cible=37`.
+- Consigne : calculer milieu puis réduire l'intervalle ; traiter aussi `cible absente` si nécessaire.
+- Réponse attendue : milieux 18 puis 37 → trouvé indice 4.
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `cible absente`.
 ### Exercice 2
 - Type : production/écriture.
 - Capacité officielle : P-ALGO-04.
-- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=beta
-- Consigne : montrer que V = droite − gauche + 1 décroît strictement ; traiter aussi `pièce 1 absente` si nécessaire.
-- Réponse attendue : 28 -> 10+10+5+2+1.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `pièce 1 absente`.
+- Données : `tableau=[4,9,18,23,37,41], cible=37`.
+- Consigne : montrer que le variant V = droite − gauche + 1 décroît strictement à chaque étape ; traiter aussi `cible absente` si nécessaire.
+- Réponse attendue : V décroît de 6 à 3 → terminaison (cible trouvée à l'indice 4).
+- Critère de réussite : donnée exacte, variant identifié, trace V décroissant, cas `cible absente` décidé.
 ### Exercice 3
 - Type : production/écriture.
 - Capacité officielle : P-ALGO-05.
-- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=gamma
-- Consigne : prendre la plus grande pièce possible ; traiter aussi `égalité de vote` si nécessaire.
-- Réponse attendue : rouge, bleu, rouge -> classe rouge.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `égalité de vote`.
+- Données : `pièces=[10,5,2,1], montant=28`.
+- Consigne : appliquer l'algorithme glouton pour rendre la monnaie ; traiter aussi `pièce 1 absente` si nécessaire.
+- Réponse attendue : 28 = 10+10+5+2+1 (5 pièces).
+- Critère de réussite : donnée exacte, méthode glouton appliquée, résultat final et décision sur `pièce 1 absente`.
 ### Exercice 4
 - Type : cas limite.
 - Capacité officielle : P-ALGO-03.
-- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=delta
-- Consigne : voter parmi k=3 voisins ; traiter aussi `cible absente` si nécessaire.
-- Réponse attendue : cible 40 absente -> non trouvé.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `cible absente`.
+- Données : `voisins=[rouge:1.2, bleu:2.0, rouge:2.4], k=3`.
+- Consigne : déterminer la classe prédite par vote majoritaire parmi les k plus proches voisins ; traiter aussi `égalité de vote` si nécessaire.
+- Réponse attendue : rouge (2 voix) vs bleu (1 voix) → classe rouge.
+- Critère de réussite : donnée exacte, distances triées, vote explicite et décision sur `égalité de vote`.
 ### Exercice 5
 - Type : justification.
 - Capacité officielle : P-ALGO-04.
-- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=epsilon
-- Consigne : calculer milieu puis réduire intervalle ; traiter aussi `pièce 1 absente` si nécessaire.
-- Réponse attendue : milieux 18 puis 37 -> trouvé indice 4.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `pièce 1 absente`.
+- Données : `tableau=[4,9,18,23,37,41], cible=23`.
+- Consigne : montrer que le variant V = droite − gauche + 1 décroît strictement à chaque étape ; conclure sur la terminaison.
+- Réponse attendue : V décroît de 6 à 3 puis 1 → terminaison (cible trouvée à l'indice 3).
+- Critère de réussite : donnée exacte, variant identifié, trace V=6→3→1, conclusion explicite.
 ### Exercice 6
 - Type : lecture/analyse.
 - Capacité officielle : P-ALGO-05.
-- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=zeta
-- Consigne : montrer que V = droite − gauche + 1 décroît strictement ; traiter aussi `égalité de vote` si nécessaire.
-- Réponse attendue : 28 -> 10+10+5+2+1.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `égalité de vote`.
+- Données : `pièces=[10,5,2,1], montant=13`.
+- Consigne : appliquer l'algorithme glouton ; traiter aussi `pièce 1 absente` si nécessaire.
+- Réponse attendue : 13 = 10+2+1 (3 pièces).
+- Critère de réussite : donnée exacte, méthode glouton appliquée, résultat final et décision sur `pièce 1 absente`.
 ### Exercice 7
 - Type : production/écriture.
 - Capacité officielle : P-ALGO-03.
-- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=eta
-- Consigne : prendre la plus grande pièce possible ; traiter aussi `cible absente` si nécessaire.
-- Réponse attendue : rouge, bleu, rouge -> classe rouge.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `cible absente`.
+- Données : `points=[(2,3,A),(5,4,B),(1,1,A),(8,7,B),(3,2,A)], nouveau=(4,3), k=3`.
+- Consigne : calculer les distances, identifier les 3 plus proches voisins et voter ; traiter aussi `égalité de vote (k=2)` si nécessaire.
+- Réponse attendue : 3 plus proches = A(3,2) B(5,4) A(2,3) → vote A=2, B=1 → classe A.
+- Critère de réussite : distances correctes, tri vérifié, vote majoritaire explicite, cas `k=2` traité.
 ### Exercice 8
 - Type : justification.
 - Capacité officielle : P-ALGO-04.
-- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=theta
-- Consigne : voter parmi k=3 voisins ; traiter aussi `pièce 1 absente` si nécessaire.
-- Réponse attendue : cible 40 absente -> non trouvé.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `pièce 1 absente`.
+- Données : `tableau=[4,9,18,23,37,41], cible=38` (absente).
+- Consigne : montrer que le variant V = droite − gauche + 1 décroît à chaque étape ; conclure sur la terminaison sans trouver la cible.
+- Réponse attendue : V décroît de 6 à 3 puis 1 puis 0 → la boucle s'arrête, cible absente.
+- Critère de réussite : donnée exacte, variant identifié, trace V=6→3→1→0, conclusion explicite.
 
 ### Exercice 9
 - Type : production/écriture.
@@ -96,69 +96,45 @@ official_program:
 
 ## Corrigé
 ### Corrigé exercice 1
-- Capacité mobilisée : P-ALGO-03.
-- Résultat attendu : milieux 18 puis 37 -> trouvé indice 4.
-- Justification : la tâche `calculer milieu puis réduire intervalle` s applique à `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]` ; erreur évitée : dichotomie sur liste non triée.
-- Donnée utilisée alpha dans P13 TD dichotomie glouton knn : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
-- Méthode alpha dans P13 TD dichotomie glouton knn : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat alpha dans P13 TD dichotomie glouton knn : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
-- Contrôle alpha dans P13 TD dichotomie glouton knn : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+- Capacité mobilisée : P-ALGO-04.
+- Résultat attendu : milieux 18 puis 37 → trouvé indice 4.
+- Méthode : calculer milieu puis réduire l'intervalle.
+- Cas limite : cible absente → la boucle s'arrête quand gauche > droite.
 ### Corrigé exercice 2
 - Capacité mobilisée : P-ALGO-04.
-- Résultat attendu : 28 -> 10+10+5+2+1.
-- Justification : la tâche `montrer que V = droite − gauche + 1 décroît strictement` s applique à `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]` ; erreur évitée : glouton supposé toujours optimal.
-- Donnée utilisée beta dans P13 TD dichotomie glouton knn : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
-- Méthode beta dans P13 TD dichotomie glouton knn : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat beta dans P13 TD dichotomie glouton knn : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
-- Contrôle beta dans P13 TD dichotomie glouton knn : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+- Résultat attendu : V = droite − gauche + 1 décroît de 6 à 3 → terminaison (cible trouvée).
+- Méthode : montrer que V décroît strictement à chaque étape.
+- Cas limite : cible absente (ex. 38) → V décroît 6→3→1→0, la boucle s'arrête sans trouver.
 ### Corrigé exercice 3
 - Capacité mobilisée : P-ALGO-05.
-- Résultat attendu : rouge, bleu, rouge -> classe rouge.
-- Justification : la tâche `prendre la plus grande pièce possible` s applique à `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]` ; erreur évitée : égalité k-NN non décidée.
-- Donnée utilisée gamma dans P13 TD dichotomie glouton knn : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
-- Méthode gamma dans P13 TD dichotomie glouton knn : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat gamma dans P13 TD dichotomie glouton knn : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
-- Contrôle gamma dans P13 TD dichotomie glouton knn : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+- Résultat attendu : 28 = 10+10+5+2+1 (5 pièces).
+- Méthode : prendre la plus grande pièce possible à chaque étape.
+- Cas limite : pièce 1 absente → le glouton peut échouer (ex. montant=3 avec pièces=[10,5,2] → reste 1).
 ### Corrigé exercice 4
 - Capacité mobilisée : P-ALGO-03.
-- Résultat attendu : cible 40 absente -> non trouvé.
-- Justification : la tâche `voter parmi k=3 voisins` s applique à `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]` ; erreur évitée : dichotomie sur liste non triée.
-- Donnée utilisée delta dans P13 TD dichotomie glouton knn : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
-- Méthode delta dans P13 TD dichotomie glouton knn : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat delta dans P13 TD dichotomie glouton knn : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
-- Contrôle delta dans P13 TD dichotomie glouton knn : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+- Résultat attendu : rouge (2 voix) vs bleu (1 voix) → classe rouge.
+- Méthode : trier par distance, voter parmi les k plus proches.
+- Cas limite : k pair → égalité de vote possible.
 ### Corrigé exercice 5
 - Capacité mobilisée : P-ALGO-04.
-- Résultat attendu : milieux 18 puis 37 -> trouvé indice 4.
-- Justification : la tâche `calculer milieu puis réduire intervalle` s applique à `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]` ; erreur évitée : glouton supposé toujours optimal.
-- Donnée utilisée epsilon dans P13 TD dichotomie glouton knn : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
-- Méthode epsilon dans P13 TD dichotomie glouton knn : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat epsilon dans P13 TD dichotomie glouton knn : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
-- Contrôle epsilon dans P13 TD dichotomie glouton knn : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+- Résultat attendu : V = droite − gauche + 1 décroît de 6 à 3 puis 1 → terminaison (cible=23 trouvée à l'indice 3).
+- Méthode : montrer que V décroît strictement à chaque étape.
+- Cas limite : cible absente → V atteint 0.
 ### Corrigé exercice 6
 - Capacité mobilisée : P-ALGO-05.
-- Résultat attendu : 28 -> 10+10+5+2+1.
-- Justification : la tâche `montrer que V = droite − gauche + 1 décroît strictement` s applique à `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]` ; erreur évitée : égalité k-NN non décidée.
-- Donnée utilisée zeta dans P13 TD dichotomie glouton knn : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
-- Méthode zeta dans P13 TD dichotomie glouton knn : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat zeta dans P13 TD dichotomie glouton knn : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
-- Contrôle zeta dans P13 TD dichotomie glouton knn : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+- Résultat attendu : 13 = 10+2+1 (3 pièces).
+- Méthode : prendre la plus grande pièce possible à chaque étape.
+- Cas limite : pièce 1 absente → montant=3 avec pièces=[10,5,2] → reste 1 → glouton bloqué.
 ### Corrigé exercice 7
 - Capacité mobilisée : P-ALGO-03.
-- Résultat attendu : rouge, bleu, rouge -> classe rouge.
-- Justification : la tâche `prendre la plus grande pièce possible` s applique à `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]` ; erreur évitée : dichotomie sur liste non triée.
-- Donnée utilisée eta dans P13 TD dichotomie glouton knn : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
-- Méthode eta dans P13 TD dichotomie glouton knn : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat eta dans P13 TD dichotomie glouton knn : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
-- Contrôle eta dans P13 TD dichotomie glouton knn : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+- Résultat attendu : 3 plus proches = A(3,2) B(5,4) A(2,3) → vote A=2, B=1 → classe A.
+- Méthode : distance euclidienne, tri, vote majoritaire.
+- Cas limite : k=2 → A(3,2) et B(5,4) à distance égale → égalité, résultat indéterminé.
 ### Corrigé exercice 8
 - Capacité mobilisée : P-ALGO-04.
-- Résultat attendu : cible 40 absente -> non trouvé.
-- Justification : la tâche `voter parmi k=3 voisins` s applique à `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]` ; erreur évitée : glouton supposé toujours optimal.
-- Donnée utilisée theta dans P13 TD dichotomie glouton knn : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
-- Méthode theta dans P13 TD dichotomie glouton knn : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat theta dans P13 TD dichotomie glouton knn : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
-- Contrôle theta dans P13 TD dichotomie glouton knn : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+- Résultat attendu : V = droite − gauche + 1 décroît de 6 à 3 puis 1 puis 0 → cible=38 absente, boucle terminée.
+- Méthode : montrer que V décroît strictement à chaque étape.
+- Cas limite : V atteint 0, gauche > droite, arrêt sans trouver.
 
 ### Corrigé exercice 9
 - Capacité mobilisée : P-ALGO-03.
