@@ -31,7 +31,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 # Fields whose modification requires a fresh judged_at
 CONTENT_FIELDS_TOP = {"capacities"}
-CONTENT_FIELDS_CAP = {"verdict", "justification", "scientific_flags"}
+CONTENT_FIELDS_CAP = {"capacity_id", "official_label", "verdict", "justification", "scientific_flags"}
 CONTENT_FIELDS_PROOF = {"anchor", "quote", "teaches", "file", "present"}
 
 
@@ -64,8 +64,21 @@ def get_changed_verdict_files(base_ref: str) -> list[str] | None:
     return changed
 
 
-def get_base_version(base_ref: str, rel_path: str) -> dict[str, Any] | None:
-    """Read the verdict file content at the base ref."""
+class _BaseCorrupt:
+    """Sentinel: base file exists but is not valid JSON."""
+
+    def __init__(self, detail: str) -> None:
+        self.detail = detail
+
+
+def get_base_version(base_ref: str, rel_path: str) -> dict[str, Any] | None | _BaseCorrupt:
+    """Read the verdict file content at the base ref.
+
+    Returns:
+        dict  — valid base data
+        None  — file did not exist at base (genuinely new file)
+        _BaseCorrupt — file existed but could not be parsed (fail-closed)
+    """
     result = subprocess.run(
         ["git", "show", f"{base_ref}:{rel_path}"],
         capture_output=True, text=True, cwd=ROOT,
@@ -75,8 +88,8 @@ def get_base_version(base_ref: str, rel_path: str) -> dict[str, Any] | None:
     try:
         data: dict[str, Any] = json.loads(result.stdout)
         return data
-    except json.JSONDecodeError:
-        return None
+    except json.JSONDecodeError as e:
+        return _BaseCorrupt(f"JSON invalide dans la base ({e})")
 
 
 def _content_changed(base_data: dict[str, Any], head_data: dict[str, Any]) -> bool:
@@ -160,10 +173,17 @@ def check_provenance(base_ref: str = "HEAD~1") -> tuple[list[str], list[str], bo
             continue
 
         # Get base version
-        base_data = get_base_version(resolved, rel_path)
-        if base_data is None:
+        base_result = get_base_version(resolved, rel_path)
+        if base_result is None:
             # New file — just needs valid judged_at (already checked)
             continue
+        if isinstance(base_result, _BaseCorrupt):
+            errors.append(
+                f"{rel_path}: base illisible ({base_result.detail}) — "
+                "comparaison impossible, re-jugement requis."
+            )
+            continue
+        base_data = base_result
 
         # Check if content actually changed
         if not _content_changed(base_data, head_data):
