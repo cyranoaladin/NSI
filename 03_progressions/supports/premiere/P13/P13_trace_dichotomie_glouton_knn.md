@@ -21,9 +21,9 @@ official_program:
 
 ## Trace courte
 - Donnée : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`.
-- Vocabulaire : dichotomie, variant droite-gauche, glouton, choix local, k-NN.
+- Vocabulaire : dichotomie, variant V = droite − gauche + 1, glouton, choix local, k-NN.
 - Étape 1 : calculer milieu puis réduire intervalle.
-- Étape 2 : montrer que droite-gauche diminue.
+- Étape 2 : montrer que V = droite − gauche + 1 décroît strictement.
 - Résultat de référence : milieux 18 puis 37 -> trouvé indice 4.
 
 ## Cas limites à mémoriser

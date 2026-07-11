@@ -28,7 +28,7 @@ official_program:
 - Capacité mobilisée : P-ALGO-04.
 - Réponse attendue : V = droite − gauche + 1 décroît de 6 à 3 sur tableau=[4,9,18,23,37,41], cible=37 → terminaison (cible trouvée).
 - Méthode : montrer que V décroît strictement à chaque étape.
-- Cas limite : cible absente (ex. 38) → V décroît 6→3→1→0, la boucle s arrête sans trouver.
+- Cas limite : cible absente (ex. 38) → V décroît 6→3→1→0, la boucle s'arrête sans trouver.
 ### Exercice 3
 - Capacité mobilisée : P-ALGO-05.
 - Réponse attendue : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces, algorithme glouton avec pièces=[10,5,2,1]).
@@ -42,7 +42,7 @@ official_program:
 ### Exercice 5
 - Capacité mobilisée : P-ALGO-04.
 - Réponse attendue : variant vérifié sur un nouveau tableau.
-- Méthode : calculer milieu puis réduire intervalle, montrer que droite-gauche diminue.
+- Méthode : calculer milieu puis réduire intervalle, montrer que V = droite − gauche + 1 décroît strictement.
 - Cas limite : tableau d'un seul élément.
 ### Exercice 6
 - Capacité mobilisée : P-ALGO-05.
@@ -71,8 +71,8 @@ official_program:
 - Donnée glouton : `pièces=[10,5,2,1], montant=28` → 10+10+5+2+1 (5 pièces).
 - Donnée k-NN : `voisins=[rouge:1.2, bleu:2.0, rouge:2.4], k=3` → classe rouge.
 
-## Corrigé de l évaluation
-- Question 1 (P-ALGO-04 dichotomie) : valeurs lues aux milieux : 18 puis 37 → cible trouvée à l indice 4. Cas limite : cible absente → la boucle s arrête quand gauche > droite.
+## Corrigé de l'évaluation
+- Question 1 (P-ALGO-04 dichotomie) : valeurs lues aux milieux : 18 puis 37 → cible trouvée à l'indice 4. Cas limite : cible absente → la boucle s'arrête quand gauche > droite.
 - Question 2 (P-ALGO-04 variant) : V = droite − gauche + 1 décroît de 6 à 3 → terminaison (cible trouvée). Cas limite : cible=38 absente → V décroît 6→3→1→0, arrêt sans trouver.
 - Question 3 (P-ALGO-05 glouton) : 28 = 10 + 10 + 5 + 2 + 1 (5 pièces). Cas limite : sans la pièce 1, montant 28 avec [10,5,2] → le glouton se bloque (reste 1) alors que 28 = 10+10+2+2+2+2 est représentable.
 - Question 4 (P-ALGO-03 k-NN) : rouge (2 voix) vs bleu (1 voix) → classe rouge. Cas limite : k pair → égalité de vote possible.

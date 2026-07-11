@@ -5,7 +5,7 @@ notion: dichotomie, glouton et k-NN
 status: needs_review
 notions_exigibles:
 - dichotomie
-- variant droite-gauche
+- variant V = droite − gauche + 1
 - glouton
 - choix local
 - k-NN
@@ -46,7 +46,7 @@ criteres_validation_humaine:
 - décision de publication séparée
 must_include:
 - dichotomie
-- variant droite-gauche
+- variant V = droite − gauche + 1
 - glouton
 - choix local
 - milieux 18 puis 37 -> trouvé indice 4

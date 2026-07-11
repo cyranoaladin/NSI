@@ -20,7 +20,7 @@ official_program:
 # P13 - TD - dichotomie, glouton et k-NN
 
 ## Objectifs
-- Travailler dichotomie, variant droite-gauche, glouton, choix local, k-NN.
+- Travailler dichotomie, variant V = droite − gauche + 1, glouton, choix local, k-NN.
 - Produire neuf réponses vérifiables avec données explicites.
 
 ## Progression socle / standard / approfondissement
@@ -40,7 +40,7 @@ official_program:
 - Type : production/écriture.
 - Capacité officielle : P-ALGO-04.
 - Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=beta
-- Consigne : montrer que droite-gauche diminue ; traiter aussi `pièce 1 absente` si nécessaire.
+- Consigne : montrer que V = droite − gauche + 1 décroît strictement ; traiter aussi `pièce 1 absente` si nécessaire.
 - Réponse attendue : 28 -> 10+10+5+2+1.
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `pièce 1 absente`.
 ### Exercice 3
@@ -68,7 +68,7 @@ official_program:
 - Type : lecture/analyse.
 - Capacité officielle : P-ALGO-05.
 - Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=zeta
-- Consigne : montrer que droite-gauche diminue ; traiter aussi `égalité de vote` si nécessaire.
+- Consigne : montrer que V = droite − gauche + 1 décroît strictement ; traiter aussi `égalité de vote` si nécessaire.
 - Réponse attendue : 28 -> 10+10+5+2+1.
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `égalité de vote`.
 ### Exercice 7
@@ -106,7 +106,7 @@ official_program:
 ### Corrigé exercice 2
 - Capacité mobilisée : P-ALGO-04.
 - Résultat attendu : 28 -> 10+10+5+2+1.
-- Justification : la tâche `montrer que droite-gauche diminue` s applique à `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]` ; erreur évitée : glouton supposé toujours optimal.
+- Justification : la tâche `montrer que V = droite − gauche + 1 décroît strictement` s applique à `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]` ; erreur évitée : glouton supposé toujours optimal.
 - Donnée utilisée beta dans P13 TD dichotomie glouton knn : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
 - Méthode beta dans P13 TD dichotomie glouton knn : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
 - Résultat beta dans P13 TD dichotomie glouton knn : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
@@ -138,7 +138,7 @@ official_program:
 ### Corrigé exercice 6
 - Capacité mobilisée : P-ALGO-05.
 - Résultat attendu : 28 -> 10+10+5+2+1.
-- Justification : la tâche `montrer que droite-gauche diminue` s applique à `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]` ; erreur évitée : égalité k-NN non décidée.
+- Justification : la tâche `montrer que V = droite − gauche + 1 décroît strictement` s applique à `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]` ; erreur évitée : égalité k-NN non décidée.
 - Donnée utilisée zeta dans P13 TD dichotomie glouton knn : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
 - Méthode zeta dans P13 TD dichotomie glouton knn : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
 - Résultat zeta dans P13 TD dichotomie glouton knn : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.

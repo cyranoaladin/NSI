@@ -21,7 +21,7 @@ official_program:
 
 ## Objectifs spécifiques
 - Identifier les données utiles de la situation : tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4].
-- Employer le vocabulaire : dichotomie, variant droite-gauche, glouton, choix local, k-NN, distance.
+- Employer le vocabulaire : dichotomie, variant V = droite − gauche + 1, glouton, choix local, k-NN, distance.
 - Produire une trace, une table, une valeur ou un pseudo-code vérifiable.
 
 ## Capacités officielles
@@ -34,7 +34,7 @@ tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[
 
 ## À savoir
 - dichotomie.
-- variant droite-gauche.
+- variant V = droite − gauche + 1 (nombre de candidats).
 - glouton.
 - choix local.
 - k-NN.
@@ -43,7 +43,7 @@ tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[
 
 ## Méthodes
 - calculer milieu puis réduire intervalle.
-- montrer que droite-gauche diminue.
+- montrer que V = droite − gauche + 1 décroît strictement.
 - prendre la plus grande pièce possible.
 - voter parmi k=3 voisins.
 
@@ -57,7 +57,7 @@ tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[
 - Donnée : `tableau=[4,9,18,23,37,41], cible=37`.
 - Méthode : montrer que le variant V = droite − gauche + 1 (nombre de candidats) décroît strictement à chaque étape.
 - Résultat attendu : étape 1 → g=0, d=5, V=6 ; étape 2 → g=3, d=5, V=3 → trouvé. V décroît de 6 à 3, prouvant la terminaison.
-- Contrôle : capacité P-ALGO-04 et cas limite `cible absente (ex. 38) → V décroît 6→3→1→0, la boucle s arrête sans trouver`.
+- Contrôle : capacité P-ALGO-04 et cas limite `cible absente (ex. 38) → V décroît 6→3→1→0, la boucle s'arrête sans trouver`.
 ### Exemple corrigé 3 - glouton (P-ALGO-05)
 - Donnée : `pièces=[10,5,2,1], montant=28`.
 - Méthode : prendre la plus grande pièce possible à chaque étape.
@@ -82,7 +82,7 @@ tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[
 ## Exercices intégrés
 1. Identifier les données utiles dans `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`.
 2. Appliquer : calculer milieu puis réduire intervalle.
-3. Appliquer : montrer que droite-gauche diminue.
+3. Appliquer : montrer que V = droite − gauche + 1 décroît strictement.
 4. Décider le cas limite `cible absente`.
 
 ## Critères de réussite observables
