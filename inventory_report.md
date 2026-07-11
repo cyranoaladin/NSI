@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1145
+- Total ressources : 1147
 - Ressources pédagogiques : 53
-- Ressources techniques : 1092
+- Ressources techniques : 1094
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1137
+- generated: 1139
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 588
+- interne: 590
 - premiere: 257
 - terminale: 300
 
@@ -19,17 +19,17 @@
 - banque: 14
 - document: 723
 - python: 84
-- script: 206
+- script: 207
 - sequence: 45
-- test: 73
+- test: 74
 
 ## Répartition par statut
-- needs_review: 1145
+- needs_review: 1147
 
 ## Répartition audience
 - corrige: 79
 - eleve: 143
-- mixte: 920
+- mixte: 922
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -921,6 +921,7 @@
   - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_documents_quality_gates.py
   - scripts/check_validated_statuses.py
+  - scripts/check_verdict_provenance.py
   - scripts/classify_scraped_resource.py
   - scripts/cleanup_python_artifacts.py
   - scripts/drive_local_inventory.py
@@ -1178,6 +1179,7 @@
   - tests/test_tp_pedagogical_assets_runtime.py
   - tests/test_tp_text_asset_alignment.py
   - tests/test_uploaded_archive_policy.py
+  - tests/test_verdict_provenance.py
   - tp_executable_opportunity_register.md
   - tp_test_alignment_report.md
 - Ressources pédagogiques :
@@ -2094,6 +2096,7 @@
   - scripts/check_uploaded_archive_policy.py
   - scripts/check_validated_documents_quality_gates.py
   - scripts/check_validated_statuses.py
+  - scripts/check_verdict_provenance.py
   - scripts/classify_scraped_resource.py
   - scripts/cleanup_python_artifacts.py
   - scripts/drive_local_inventory.py
@@ -2325,6 +2328,7 @@
   - tests/test_tp_pedagogical_assets_runtime.py
   - tests/test_tp_text_asset_alignment.py
   - tests/test_uploaded_archive_policy.py
+  - tests/test_verdict_provenance.py
   - tp_executable_opportunity_register.md
   - tp_test_alignment_report.md
 - Ressources copiées dans banques :
@@ -3188,6 +3192,7 @@
 - scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_documents_quality_gates.py
 - scripts/check_validated_statuses.py
+- scripts/check_verdict_provenance.py
 - scripts/classify_scraped_resource.py
 - scripts/cleanup_python_artifacts.py
 - scripts/drive_local_inventory.py
@@ -3440,6 +3445,7 @@
 - tests/test_tp_pedagogical_assets_runtime.py
 - tests/test_tp_text_asset_alignment.py
 - tests/test_uploaded_archive_policy.py
+- tests/test_verdict_provenance.py
 - tp_executable_opportunity_register.md
 - tp_test_alignment_report.md
 
@@ -4333,6 +4339,7 @@
 - scripts/check_uploaded_archive_policy.py
 - scripts/check_validated_documents_quality_gates.py
 - scripts/check_validated_statuses.py
+- scripts/check_verdict_provenance.py
 - scripts/classify_scraped_resource.py
 - scripts/cleanup_python_artifacts.py
 - scripts/drive_local_inventory.py
@@ -4590,6 +4597,7 @@
 - tests/test_tp_pedagogical_assets_runtime.py
 - tests/test_tp_text_asset_alignment.py
 - tests/test_uploaded_archive_policy.py
+- tests/test_verdict_provenance.py
 - tp_executable_opportunity_register.md
 - tp_test_alignment_report.md
 
