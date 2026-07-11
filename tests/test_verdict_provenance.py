@@ -8,10 +8,15 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from scripts.check_verdict_provenance import check_provenance, _content_changed
+from scripts.check_verdict_provenance import check_provenance, _content_changed, _BaseCorrupt
 
 
-def _make_verdict(judged_at: str, quote: str = "some quote") -> dict:
+def _make_verdict(
+    judged_at: str,
+    quote: str = "some quote",
+    capacity_id: str = "P-TEST-01",
+    official_label: str = "Test",
+) -> dict:
     return {
         "schema_version": "1.0.0",
         "unit": "campaign",
@@ -20,8 +25,8 @@ def _make_verdict(judged_at: str, quote: str = "some quote") -> dict:
         "judge_model": "claude-sonnet-4-6",
         "author_model": "campaign-tooling",
         "capacities": [{
-            "capacity_id": "P-TEST-01",
-            "official_label": "Test",
+            "capacity_id": capacity_id,
+            "official_label": official_label,
             "proof_course": {"present": True, "file": "f.md", "anchor": "#a", "quote": quote, "teaches": True},
             "proof_practice": {"present": False},
             "proof_correction": {"present": False},
@@ -153,6 +158,103 @@ class ContentChangedTest(unittest.TestCase):
         base = _make_verdict("2026-01-01T00:00:00Z")
         head = _make_verdict("2026-07-11T00:00:00Z")
         self.assertFalse(_content_changed(base, head))
+
+    def test_capacity_id_change_is_content(self) -> None:
+        """capacity_id modified → content changed (reassignment)."""
+        base = _make_verdict("2026-01-01T00:00:00Z", capacity_id="P-OLD-01")
+        head = _make_verdict("2026-01-01T00:00:00Z", capacity_id="P-NEW-01")
+        self.assertTrue(_content_changed(base, head))
+
+    def test_official_label_change_is_content(self) -> None:
+        """official_label modified alone → content changed."""
+        base = _make_verdict("2026-01-01T00:00:00Z", official_label="Old label")
+        head = _make_verdict("2026-01-01T00:00:00Z", official_label="New label")
+        self.assertTrue(_content_changed(base, head))
+
+
+class IdentityFieldsTest(unittest.TestCase):
+    """Refinement 1: capacity_id/official_label are content fields."""
+
+    def _run(self, base_data: dict | None, head_data: dict, head_path: Path) -> tuple[list[str], list[str], bool]:
+        rel = head_path.name
+        head_path.write_text(json.dumps(head_data), encoding="utf-8")
+        with patch("scripts.check_verdict_provenance._resolve_base", return_value="abc123"):
+            with patch("scripts.check_verdict_provenance.get_changed_verdict_files", return_value=[rel]):
+                with patch("scripts.check_verdict_provenance.get_base_version", return_value=base_data):
+                    with patch("scripts.check_verdict_provenance.ROOT", head_path.parent):
+                        return check_provenance()
+
+    def test_capacity_id_modified_judged_at_unchanged_rouge(self) -> None:
+        """Reassignment without re-judgment → ROUGE."""
+        ts = "2026-07-11T14:35:27Z"
+        base = _make_verdict(ts, capacity_id="P-OLD-01")
+        head = _make_verdict(ts, capacity_id="P-NEW-01")
+
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / "P-NEW-01_substance_review.json"
+            errors, _, executed = self._run(base, head, p)
+
+        self.assertTrue(executed)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("judged_at unchanged", errors[0])
+
+    def test_official_label_modified_judged_at_unchanged_rouge(self) -> None:
+        """Label change without re-judgment → ROUGE."""
+        ts = "2026-07-11T14:35:27Z"
+        base = _make_verdict(ts, official_label="Old")
+        head = _make_verdict(ts, official_label="New")
+
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / "P-TEST-01_substance_review.json"
+            errors, _, executed = self._run(base, head, p)
+
+        self.assertTrue(executed)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("judged_at unchanged", errors[0])
+
+
+class BaseCorruptTest(unittest.TestCase):
+    """Refinement 2: base illisible ≠ fichier nouveau."""
+
+    def test_corrupt_base_json_rouge(self) -> None:
+        """Base file exists but is not valid JSON → ROUGE (fail-closed)."""
+        head = _make_verdict("2026-07-11T19:19:20Z")
+
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / "P-TEST-01_substance_review.json"
+            p.write_text(json.dumps(head), encoding="utf-8")
+            rel = p.name
+
+            corrupt = _BaseCorrupt("JSON invalide dans la base")
+
+            with patch("scripts.check_verdict_provenance._resolve_base", return_value="abc123"):
+                with patch("scripts.check_verdict_provenance.get_changed_verdict_files", return_value=[rel]):
+                    with patch("scripts.check_verdict_provenance.get_base_version", return_value=corrupt):
+                        with patch("scripts.check_verdict_provenance.ROOT", Path(d)):
+                            errors, inspected, executed = check_provenance()
+
+        self.assertTrue(executed)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("base illisible", errors[0])
+        self.assertIn("comparaison impossible", errors[0])
+
+    def test_genuinely_new_file_vert(self) -> None:
+        """File did not exist at base (None) → VERT (skip)."""
+        head = _make_verdict("2026-07-11T19:19:20Z")
+
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / "P-TEST-01_substance_review.json"
+            p.write_text(json.dumps(head), encoding="utf-8")
+            rel = p.name
+
+            with patch("scripts.check_verdict_provenance._resolve_base", return_value="abc123"):
+                with patch("scripts.check_verdict_provenance.get_changed_verdict_files", return_value=[rel]):
+                    with patch("scripts.check_verdict_provenance.get_base_version", return_value=None):
+                        with patch("scripts.check_verdict_provenance.ROOT", Path(d)):
+                            errors, inspected, executed = check_provenance()
+
+        self.assertTrue(executed)
+        self.assertEqual(errors, [])
 
 
 if __name__ == "__main__":
