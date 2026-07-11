@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-08T22:15:41Z",
+  "judged_at": "2026-07-11T12:49:31Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -20,18 +20,18 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md",
         "anchor": "#exercice-2",
-        "quote": "Capacité officielle : P-ALGO-04.\n- Données : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`. ; jeu_exercice=beta\n- Consigne : montrer que V = droite − gauche + 1 décroît strictement ; traiter aussi `pièce 1 absente` si nécessaire.",
+        "quote": "Consigne : montrer que V = droite − gauche + 1 décroît strictement ; traiter aussi `pièce 1 absente` si nécessaire.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md",
         "anchor": "#exercice-2",
-        "quote": "Capacité mobilisée : P-ALGO-04.\n- Réponse attendue : V = droite − gauche + 1 décroît de 6 à 3 sur tableau=[4,9,18,23,37,41], cible=37 → terminaison (cible trouvée).\n- Méthode : montrer que V décroît strictement à chaque étape.\n- Cas limite : cible absente (ex. 38) → V décroît 6→3→1→0, la boucle s'arrête sans trouver.",
+        "quote": "Réponse attendue : V = droite − gauche + 1 décroît de 6 à 3 sur tableau=[4,9,18,23,37,41], cible=37 → terminaison (cible trouvée).",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne la notion de variant de boucle avec un exemple complet sur la dichotomie (P-ALGO-04). Le TD fait pratiquer la démonstration de terminaison. Le corrigé fournit la réponse attendue avec le variant décroissant et le cas limite traité.",
+      "justification": "Le cours enseigne le variant V avec un exemple corrigé détaillé (P-ALGO-04). Le TD fait pratiquer la démonstration de terminaison. Le corrigé fournit la réponse attendue avec la décroissance du variant et le cas limite cible absente.",
       "scientific_flags": [
         "human_review_required"
       ]

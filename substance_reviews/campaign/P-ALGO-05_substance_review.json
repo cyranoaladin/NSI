@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-08T22:15:52Z",
+  "judged_at": "2026-07-11T12:49:44Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -19,8 +19,8 @@
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md",
-        "anchor": "#exercice-2",
-        "quote": "Consigne : montrer que V = droite − gauche + 1 décroît strictement ; traiter aussi `pièce 1 absente` si nécessaire.\n- Réponse attendue : 28 -> 10+10+5+2+1.",
+        "anchor": "#exercice-3",
+        "quote": "Consigne : prendre la plus grande pièce possible ; traiter aussi `égalité de vote` si nécessaire.\n- Réponse attendue : rouge, bleu, rouge -> classe rouge.",
         "teaches": true
       },
       "proof_correction": {
@@ -31,7 +31,7 @@
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne l'algorithme glouton avec exemple corrigé (P-ALGO-05), le TD fait pratiquer avec consigne explicite sur le rendu de monnaie, et le corrigé fournit la réponse détaillée avec cas limite traité.",
+      "justification": "Le cours enseigne l'algorithme glouton avec exemple corrigé (P-ALGO-05), le TD fait pratiquer via l'exercice 3 (consigne explicite), et le corrigé fournit la réponse détaillée avec cas limite.",
       "scientific_flags": [
         "human_review_required"
       ]
