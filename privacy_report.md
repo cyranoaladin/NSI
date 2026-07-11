@@ -157,6 +157,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - docs/promotion/dossier_revue_lead_v2.md: nom propre suspect -> Autorité-Test
 - docs/promotion/dossier_revue_lead_v3.md: nom propre suspect -> Set-Cookie
 - docs/promotion/dossier_revue_lead_v3.md: nom propre suspect -> Set-Cookie
+- docs/promotion/dossier_revue_lead_v4.md: nom propre suspect -> Set-Cookie
 - drive_inventory.csv: nom propre suspect -> Dossier Git Drive
 - drive_mapping.md: nom propre suspect -> Cartographie Drive
 - drive_mapping.md: nom propre suspect -> Source Drive
@@ -209,8 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - qa_debt_register.md: nom propre suspect -> Portabilité Drive
 - qa_gate_policy.md: nom propre suspect -> Informational Metrics
 - qa_gate_policy.md: nom propre suspect -> Cibles Makefile
-- qa_gate_policy.md: nom propre suspect -> Gates Drive
-- ... 140 alertes supplémentaires non affichées
+- ... 141 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
