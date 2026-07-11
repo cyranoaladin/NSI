@@ -52,7 +52,7 @@ tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[
 - Donnée : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`.
 - Méthode : calculer milieu puis réduire intervalle.
 - Résultat attendu : milieux 18 puis 37 -> trouvé indice 4.
-- Contrôle : capacité P-ALGO-03 et cas limite `cible absente`.
+- Contrôle : capacité P-ALGO-04 et cas limite `cible absente`.
 ### Exemple corrigé 2 - variant de dichotomie (P-ALGO-04)
 - Donnée : `tableau=[4,9,18,23,37,41], cible=37`.
 - Méthode : montrer que le variant V = droite − gauche + 1 (nombre de candidats) décroît strictement à chaque étape.
@@ -184,8 +184,9 @@ Ce cours doit être lu comme une progression sur dichotomie, glouton et k plus p
 - Un élève peut ignorer une égalité de distance ; la correction consiste à vérifier le résultat avec une donnée différente.
 
 ### Cas limites à contrôler
-- Cas minimal : une donnée vide, un seul élément, une route absente ou une structure sans enfant selon la notion.
-- Cas ambigu : doublon, égalité, absence de correspondance ou choix local non optimal.
+- Cible absente : la dichotomie s'arrête quand gauche > droite (V atteint 0).
+- Pièce 1 absente : le glouton peut échouer si le reste n'est pas représentable.
+- Égalité de vote : k pair dans k-NN → résultat indéterminé, choisir k impair.
 
 ### Synthèse savoir / savoir-faire / méthode
 - Savoir : définir précisément les objets de dichotomie, glouton et k plus proches voisins.

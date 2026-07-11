@@ -26,7 +26,7 @@ official_program:
 
 ## Questions
 ### Question 1
-- Capacité officielle : P-ALGO-03.
+- Capacité officielle : P-ALGO-04.
 - Énoncé : à partir de `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], montant=28 ; voisins=[rouge:1.2, bleu:2.0, rouge:2.4]`, calculer milieu puis réduire intervalle.
 - Réponse attendue : milieux 18 puis 37 -> trouvé indice 4.
 - Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `cible absente`.

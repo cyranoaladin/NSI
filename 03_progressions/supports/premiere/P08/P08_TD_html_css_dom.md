@@ -67,9 +67,9 @@ official_program:
 - Type : justification.
 - Capacité officielle : P-IHM-03B.
 - Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=epsilon
-- Consigne : repérer header main form label input ; traiter aussi `paramètre jour absent` si nécessaire.
-- Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `paramètre jour absent`.
+- Consigne : classer chaque mécanisme (cookie, localStorage, sessionStorage) selon qu'il est retransmis au serveur à chaque requête ou mémorisé uniquement côté client.
+- Réponse attendue : cookie → retransmis au serveur ; localStorage/sessionStorage → côté client uniquement.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et distinction client/serveur correcte.
 ### Exercice 6
 - Type : lecture/analyse.
 - Capacité officielle : P-IHM-03C.
@@ -127,8 +127,8 @@ official_program:
 - Contrôle delta dans P08 TD html css dom : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
 - Capacité mobilisée : P-IHM-03B.
-- Résultat attendu : <label for=nom>Nom</label><input id=nom name=nom>.
-- Justification : la tâche `repérer header main form label input` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : sélecteur trop large.
+- Résultat attendu : cookie → retransmis au serveur ; localStorage/sessionStorage → côté client uniquement.
+- Justification : la tâche `classer chaque mécanisme (cookie, localStorage, sessionStorage)` s applique au contexte web ; erreur évitée : confondre cookie et localStorage sur la retransmission automatique.
 - Donnée utilisée epsilon dans P08 TD html css dom : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
 - Méthode epsilon dans P08 TD html css dom : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
 - Résultat epsilon dans P08 TD html css dom : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.

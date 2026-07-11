@@ -15,10 +15,10 @@ Socle : ex.~1 et 2. \quad Standard : ex.~3 à 6. \quad Approfondissement : ex.~7
 \exo{2}{terminaison}{P-ALGO-04}{montrer que le variant décroît ; traiter \texttt{cible absente}.}{$V = \text{droite} - \text{gauche} + 1$ décroît de $6$ à $3$ $\rightarrow$ terminaison.}
 \exo{3}{glouton}{P-ALGO-05}{prendre la plus grande pièce possible ; traiter \texttt{pièce 1 absente}.}{$28 = 10+10+5+2+1$ (5 pièces).}
 \exo{4}{cas limite}{P-ALGO-03}{voter parmi $k=3$ voisins ; traiter \texttt{égalité de vote}.}{rouge~2 voix vs bleu~1 $\rightarrow$ classe rouge.}
-\exo{5}{justification}{P-ALGO-04}{montrer que le variant $V = \text{droite} - \text{gauche} + 1$ décroît strictement.}{$V$ décroît de $6$ à $3$ $\rightarrow$ terminaison.}
-\exo{6}{lecture/analyse}{P-ALGO-05}{prendre la plus grande pièce possible.}{$28 = 10+10+5+2+1$ (5 pièces).}
-\exo{7}{production}{P-ALGO-03}{voter parmi les $k$ plus proches voisins.}{rouge~2 voix vs bleu~1 $\rightarrow$ classe rouge.}
-\exo{8}{justification}{P-ALGO-04}{sur \texttt{cible=23}, montrer que le variant décroît et conclure sur la terminaison.}{$V$ décroît $6 \rightarrow 3 \rightarrow 1$ $\rightarrow$ terminaison prouvée.}
+\exo{5}{justification}{P-ALGO-04}{sur \texttt{cible=23}, montrer que $V = \text{droite} - \text{gauche} + 1$ décroît ; conclure sur la terminaison.}{$V$ décroît $6 \rightarrow 3 \rightarrow 1$ $\rightarrow$ cible trouvée indice~$3$.}
+\exo{6}{lecture/analyse}{P-ALGO-05}{sur \texttt{montant=13}, appliquer le glouton ; traiter \texttt{pièce 1 absente}.}{$13 = 10+2+1$ (3 pièces).}
+\exo{7}{production}{P-ALGO-03}{sur des données d'entraînement, calculer distances, trier, voter $k=3$ ; traiter \texttt{k=2}.}{$A(3{,}2)\;B(5{,}4)\;A(2{,}3)$ $\rightarrow$ vote $A{=}2$, $B{=}1$ $\rightarrow$ classe~$A$.}
+\exo{8}{justification}{P-ALGO-04}{sur \texttt{cible=38} (absente), montrer que le variant décroît jusqu'à $0$.}{$V$ décroît $6 \rightarrow 3 \rightarrow 1 \rightarrow 0$ $\rightarrow$ boucle terminée, cible absente.}
 
 \subsection*{Exercice 9 — production (P-ALGO-03)}
 Données d'entraînement : $[(2,3,A),(5,4,B),(1,1,A),(8,7,B),(3,2,A)]$ ; nouveau point $(4,3)$ ; $k=3$.

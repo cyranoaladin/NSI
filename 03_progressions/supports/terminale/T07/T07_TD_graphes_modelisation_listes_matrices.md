@@ -51,6 +51,13 @@ official_program:
 - Consigne : calculer degré sortant ; traiter aussi `arête non orientée` si nécessaire.
 - Réponse attendue : matrice 4x4 -> 16 cases.
 - Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `arête non orientée`.
+### Exercice 3bis
+- Type : production/écriture.
+- Capacité officielle : T-STRUCT-05C.
+- Données : `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`.
+- Consigne : écrire l'implémentation du graphe par liste de successeurs (dictionnaire Python) ; afficher les successeurs de chaque sommet.
+- Réponse attendue : `{A: [B, C], B: [D], C: [D], D: [B]}`.
+- Critère de réussite : dictionnaire correct, chaque sommet présent, liste de successeurs vérifiable.
 ### Exercice 4
 - Type : cas limite.
 - Capacité officielle : T-STRUCT-05D.
@@ -112,6 +119,11 @@ official_program:
 - Méthode gamma dans T07 TD graphes modelisation listes matrices : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
 - Résultat gamma dans T07 TD graphes modelisation listes matrices : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
 - Contrôle gamma dans T07 TD graphes modelisation listes matrices : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+### Corrigé exercice 3bis
+- Capacité mobilisée : T-STRUCT-05C.
+- Résultat attendu : `{A: [B, C], B: [D], C: [D], D: [B]}`.
+- Méthode : pour chaque arc (u,v), ajouter v à la liste des successeurs de u.
+- Cas limite : sommet sans successeur → liste vide (ici tous les sommets ont au moins un arc sortant).
 ### Corrigé exercice 4
 - Capacité mobilisée : T-STRUCT-05D.
 - Résultat attendu : sommet E isolé -> liste vide.

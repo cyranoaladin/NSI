@@ -71,9 +71,9 @@ official_program:
 - Type : lecture/analyse.
 - Capacité officielle : T-LANG-05.
 - Données : `meteo.py expose moyenne_temperature(releves) ; releves=[{ville:Sfax,temperature:31},{ville:Tunis,temperature:29}]`. ; jeu_exercice=zeta
-- Consigne : séparer module et script principal ; traiter aussi `type chaîne` si nécessaire.
-- Réponse attendue : from meteo import moyenne_temperature.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `type chaîne`.
+- Consigne : identifier la cause du bug (effet de bord à l'import) puis corriger en séparant module et script principal ; traiter aussi `variable globale mutée` si nécessaire.
+- Réponse attendue : cause : effet de bord (exécution à l'import) ; correction : from meteo import moyenne_temperature avec garde `if __name__ == "__main__"`.
+- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `variable globale mutée`.
 ### Exercice 7
 - Type : production/écriture.
 - Capacité officielle : T-LANG-03A.
@@ -132,8 +132,8 @@ official_program:
 - Contrôle epsilon dans T14 TD modularite api paradigmes bugs : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 6
 - Capacité mobilisée : T-LANG-05.
-- Résultat attendu : from meteo import moyenne_temperature.
-- Justification : la tâche `séparer module et script principal` s applique à `meteo.py expose moyenne_temperature(releves) ; releves=[{ville:Sfax,temperature:31},{ville:Tunis,temperature:29}]` ; erreur évitée : bug corrigé sans test.
+- Résultat attendu : cause : effet de bord (exécution à l'import) ; correction : from meteo import moyenne_temperature avec garde `if __name__ == "__main__"`.
+- Justification : la tâche `identifier la cause du bug (effet de bord à l'import) puis corriger en séparant module et script principal` s applique à `meteo.py expose moyenne_temperature(releves) ; releves=[{ville:Sfax,temperature:31},{ville:Tunis,temperature:29}]` ; erreur évitée : variable globale mutée silencieusement.
 - Donnée utilisée zeta dans T14 TD modularite api paradigmes bugs : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
 - Méthode zeta dans T14 TD modularite api paradigmes bugs : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
 - Résultat zeta dans T14 TD modularite api paradigmes bugs : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.

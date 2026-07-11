@@ -9,10 +9,10 @@
 \cor{2}{P-ALGO-04}{$V = \text{droite} - \text{gauche} + 1$ décroît de $6$ à $3$ $\rightarrow$ terminaison.}{\texttt{cible=38} $\rightarrow$ $V$ décroît $6\rightarrow 3\rightarrow 1\rightarrow 0$, arrêt sans trouver.}
 \cor{3}{P-ALGO-05}{$28 = 10+10+5+2+1$ (5 pièces).}{sans pièce~$1$ : montant~$28$ avec \texttt{[10,5,2]} $\rightarrow$ reste~$1$ (échec), alors que $28=10{+}10{+}2{+}2{+}2{+}2$ est représentable.}
 \cor{4}{P-ALGO-03}{$k=3$ $\rightarrow$ rouge~2, bleu~1 $\rightarrow$ classe rouge.}{$k$ pair $\rightarrow$ égalité de vote possible.}
-\cor{5}{P-ALGO-04}{$V$ décroît de $6$ à $3$ $\rightarrow$ terminaison.}{cible absente.}
-\cor{6}{P-ALGO-05}{$28 = 10+10+5+2+1$ (5 pièces).}{pièce 1 absente $\rightarrow$ échec possible.}
-\cor{7}{P-ALGO-03}{$k=3$ $\rightarrow$ rouge~2, bleu~1 $\rightarrow$ classe rouge.}{$k$ pair $\rightarrow$ égalité.}
-\cor{8}{P-ALGO-04}{sur \texttt{cible=23}, $V$ décroît $6\rightarrow 3\rightarrow 1$ $\rightarrow$ terminaison prouvée.}{\texttt{cible=38} $\rightarrow$ $V$ atteint $0$, arrêt sans trouver.}
+\cor{5}{P-ALGO-04}{sur \texttt{cible=23}, $V$ décroît $6\rightarrow 3\rightarrow 1$ $\rightarrow$ cible trouvée indice~$3$.}{cible absente $\rightarrow$ $V$ atteint~$0$.}
+\cor{6}{P-ALGO-05}{$13 = 10+2+1$ (3 pièces).}{pièce 1 absente : montant~$3$ avec \texttt{[10,5,2]} $\rightarrow$ reste~$1$ (échec).}
+\cor{7}{P-ALGO-03}{$A(3{,}2)\;B(5{,}4)\;A(2{,}3)$ $\rightarrow$ vote $A{=}2$, $B{=}1$ $\rightarrow$ classe~$A$.}{$k=2$ $\rightarrow$ égalité, résultat indéterminé.}
+\cor{8}{P-ALGO-04}{sur \texttt{cible=38} (absente), $V$ décroît $6\rightarrow 3\rightarrow 1\rightarrow 0$ $\rightarrow$ arrêt sans trouver.}{$V$ atteint~$0$, gauche $>$ droite.}
 \cor{9}{P-ALGO-03}{3 plus proches $= A(3,2), B(5,4), A(2,3)$ ; vote $A=2, B=1$ $\rightarrow$ classe $A$.}{$k=2$ avec égalité $\rightarrow$ résultat indéterminé.}
 
 \noindent Détail des distances au nouveau point $(4,3)$ :
