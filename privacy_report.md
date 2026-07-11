@@ -210,7 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - progression_audit.md: nom propre suspect -> Calendrier Tunisie
 - progression_audit.md: nom propre suspect -> Ressources Drive
 - qa_debt_register.md: nom propre suspect -> Portabilité Drive
-- ... 143 alertes supplémentaires non affichées
+- ... 145 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
