@@ -33,6 +33,11 @@ official_program:
 - Réponse attendue : matrice 4x4 -> 16 cases.
 - Méthode : calculer degré sortant.
 - Cas limite : arête non orientée.
+### Exercice 3bis
+- Capacité mobilisée : T-STRUCT-05C.
+- Réponse attendue : `{A: [B, C], B: [D], C: [D], D: [B]}`.
+- Méthode : pour chaque arc (u, v) dans arcs, ajouter v à la liste graphe[u] ; initialiser chaque sommet avec une liste vide avant parcours.
+- Cas limite : sommet isolé (pas d'arc sortant) → sa clé existe dans le dictionnaire avec une liste vide.
 ### Exercice 4
 - Réponse attendue : sommet E isolé -> liste vide.
 - Méthode : choisir liste pour graphe peu dense.

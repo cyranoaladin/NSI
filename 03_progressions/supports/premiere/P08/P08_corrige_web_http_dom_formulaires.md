@@ -43,9 +43,10 @@ official_program:
 - Méthode : distinguer GET, POST et HTTPS.
 - Cas limite : champ nom vide.
 ### Exercice 5
-- Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.
-- Méthode : repérer header main form label input.
-- Cas limite : paramètre jour absent.
+- Capacité mobilisée : P-IHM-03B.
+- Réponse attendue : cookie → stocké côté client ET retransmis automatiquement au serveur selon Domain/Path ; localStorage → stocké côté client uniquement, jamais retransmis au serveur ; donnée de formulaire → transmise au serveur à la soumission uniquement ; session → stockée côté serveur (seul l'identifiant de session transite dans le cookie).
+- Méthode : classer chaque mécanisme selon le lieu de stockage (client/serveur) et la retransmission automatique (oui/non, selon Domain et Path pour le cookie).
+- Cas limite : en navigation privée le cookie et le localStorage sont effacés à la fermeture ; un cookie expiré (Max-Age écoulé) n'est plus retransmis.
 ### Exercice 6
 - Réponse attendue : document.querySelector("#nom").value lit la saisie.
 - Méthode : cibler #nom en CSS et DOM.

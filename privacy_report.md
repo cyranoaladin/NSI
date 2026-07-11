@@ -81,6 +81,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P05/P05_trace_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P07/code/P07_tests_attendus_fonctions_tests_specifications.py: nom propre suspect -> Ada Lovelace
+- 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md: nom propre suspect -> Max-Age
 - 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md: nom propre suspect -> Set-Cookie
 - 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md: nom propre suspect -> Set-Cookie
 - 03_progressions/supports/premiere/P14/P14_TD_synthese_projet_oral.md: nom propre suspect -> Distinguer Internet
@@ -158,6 +159,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - docs/promotion/dossier_revue_lead_v3.md: nom propre suspect -> Set-Cookie
 - docs/promotion/dossier_revue_lead_v3.md: nom propre suspect -> Set-Cookie
 - docs/promotion/dossier_revue_lead_v4.md: nom propre suspect -> Set-Cookie
+- docs/promotion/dossier_revue_lead_v4.md: nom propre suspect -> Max-Age
 - drive_inventory.csv: nom propre suspect -> Dossier Git Drive
 - drive_mapping.md: nom propre suspect -> Cartographie Drive
 - drive_mapping.md: nom propre suspect -> Source Drive
@@ -208,9 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - progression_audit.md: nom propre suspect -> Calendrier Tunisie
 - progression_audit.md: nom propre suspect -> Ressources Drive
 - qa_debt_register.md: nom propre suspect -> Portabilité Drive
-- qa_gate_policy.md: nom propre suspect -> Informational Metrics
-- qa_gate_policy.md: nom propre suspect -> Cibles Makefile
-- ... 141 alertes supplémentaires non affichées
+- ... 143 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 

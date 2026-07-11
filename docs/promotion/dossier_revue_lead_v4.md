@@ -196,17 +196,15 @@ La capacité P-IHM-03B demande de distinguer ce qui est mémorisé côté client
 ### correction
 - **Fichier** : `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md`
 - **Ancre** : `#exercice-5`
-- **Citation** : Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.
-- Méthode : repérer header main form label input.
-...
+- **Citation** : Réponse attendue : cookie → stocké côté client ET retransmis automatiquement au serveur selon Domain/Path ; localStorage → stocké côté client uniquement, jamais retransmis au serveur...
 
 **Extrait** :
 ```
 ### Exercice 5
-- Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.
-- Méthode : repérer header main form label input.
-- Cas limite : paramètre jour absent.
-### Exercice 6
+- Capacité mobilisée : P-IHM-03B.
+- Réponse attendue : cookie → stocké côté client ET retransmis automatiquement au serveur selon Domain/Path ; localStorage → stocké côté client uniquement, jamais retransmis au serveur ; donnée de formulaire → transmise au serveur à la soumission uniquement ; session → stockée côté serveur (seul l'identifiant de session transite dans le cookie).
+- Méthode : classer chaque mécanisme selon le lieu de stockage (client/serveur) et la retransmission automatique (oui/non, selon Domain et Path pour le cookie).
+- Cas limite : en navigation privée le cookie et le localStorage sont effacés à la fermeture ; un cookie expiré (Max-Age écoulé) n'est plus retransmis.
 ```
 
 
@@ -244,17 +242,15 @@ La capacité P-IHM-03B demande de distinguer ce qui est mémorisé côté client
 ### correction
 - **Fichier** : `03_progressions/supports/terminale/T14/T14_corrige_modularite_api_paradigmes_bugs.md`
 - **Ancre** : `#exercice-6`
-- **Citation** : - Réponse attendue : from meteo import moyenne_temperature.
-- Méthode : séparer module et script principal.
-- Cas limite...
+- **Citation** : Réponse attendue : cause : effet de bord à l'import — le module exécute du code (print, calcul, mutation de variable globale) dès qu'il est importé ; correction : protéger le code exécutable par `if __name__ == "__main__":`...
 
 **Extrait** :
 ```
 ### Exercice 6
-- Réponse attendue : from meteo import moyenne_temperature.
-- Méthode : séparer module et script principal.
-- Cas limite : type chaîne.
-### Exercice 7
+- Capacité mobilisée : T-LANG-05.
+- Réponse attendue : cause : effet de bord à l'import — le module exécute du code (print, calcul, mutation de variable globale) dès qu'il est importé ; correction : protéger le code exécutable par `if __name__ == "__main__":` afin qu'il ne s'exécute que lorsque le fichier est lancé directement, pas lors d'un import.
+- Méthode : identifier l'instruction provoquant l'effet de bord (appel de fonction ou affectation au niveau module), puis la déplacer dans le bloc `if __name__ == "__main__":`.
+- Cas limite : variable globale mutée à l'import — si un autre module importe celui-ci, la mutation se produit une seule fois (au premier import, grâce au cache `sys.modules`), mais l'état global reste pollué pour tous les importateurs.
 ```
 
 
@@ -292,18 +288,16 @@ La capacité P-IHM-03B demande de distinguer ce qui est mémorisé côté client
 
 ### correction
 - **Fichier** : `03_progressions/supports/terminale/T07/T07_corrige_graphes_modelisation_listes_matrices.md`
-- **Ancre** : `#exercice-3`
-- **Citation** : - Réponse attendue : matrice 4x4 -> 16 cases.
-- Méthode : calculer degré sortant.
-- Cas limite : arête non orientée....
+- **Ancre** : `#exercice-3bis`
+- **Citation** : Réponse attendue : `{A: [B, C], B: [D], C: [D], D: [B]}`. Méthode : pour chaque arc (u, v) dans arcs, ajouter v à la liste graphe[u]...
 
 **Extrait** :
 ```
-### Exercice 3
-- Réponse attendue : matrice 4x4 -> 16 cases.
-- Méthode : calculer degré sortant.
-- Cas limite : arête non orientée.
-### Exercice 4
+### Exercice 3bis
+- Capacité mobilisée : T-STRUCT-05C.
+- Réponse attendue : `{A: [B, C], B: [D], C: [D], D: [B]}`.
+- Méthode : pour chaque arc (u, v) dans arcs, ajouter v à la liste graphe[u] ; initialiser chaque sommet avec une liste vide avant parcours.
+- Cas limite : sommet isolé (pas d'arc sortant) → sa clé existe dans le dictionnaire avec une liste vide.
 ```
 
 

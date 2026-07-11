@@ -29,6 +29,7 @@ Ces lignes sont des dettes de production ou de mutualisation. Elles ne doivent p
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | supports_projets_semestre2.md | mixte | projets | séances projet hors lot prêt | livrable projet | moyenne | absent | equipe NSI | 2027-03-15 | Documents_DRIVE/NSI_Tle/projet_biblio | NA | supports disciplinaires | importer | non | progression annuelle | Dette générale : limite le réemploi des projets du semestre 2, sans bloquer une fiche opérationnelle. |
 | banque_remediation_semestre2.md | mixte | remédiation | séances de consolidation hors lot prêt | remediation | moyenne | absent | equipe NSI | 2027-03-30 | Documents_DRIVE | NA | retours évaluations | créer | non | progression annuelle | Dette générale : remédiations mutualisées encore absentes, sans bloquer une fiche opérationnelle. |
+| check_first_batch_alignment.py (gate regex) | mixte | toutes | NA | gate | basse | dette | equipe NSI | prochaine PR gates | scripts/check_first_batch_alignment.py:93 | NA | regex exercice_sans_corrigé | créer | non | T07 exercice 3bis | Dette gate : la regex `(\d+)\b` (L93) ignore les suffixes non numériques (3bis, 4ter). Un exercice 3bis sans corrigé 3bis passe le gate silencieusement. Correction : remplacer par `(\d+\w*)` et comparer les identifiants complets. Test adverse : exercice 3bis dans TD sans corrigé 3bis → doit être ROUGE. |
 
 
 ## Archives / abandon
