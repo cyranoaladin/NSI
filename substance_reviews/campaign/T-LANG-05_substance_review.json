@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-11T14:36:19Z",
+  "judged_at": "2026-07-11T19:19:45Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -31,8 +31,10 @@
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne la mise au point (écrire un test, isoler un bug). Le TD exercice 6 fait pratiquer l'identification de l'effet de bord à l'import et la correction par `if __name__ == \"__main__\":`. Le corrigé exercice 6 fournit désormais la réponse complète : cause (effet de bord à l'import), correction (garde __name__), et cas limite (variable globale mutée). Cohérence cours-TD-corrigé vérifiée.",
-      "scientific_flags": []
+      "justification": "Le cours enseigne les méthodes de mise au point (écrire un test, isoler une dépendance). Le TD exercice 6 fait pratiquer l'identification et la correction d'un bug d'effet de bord à l'import. Le corrigé fournit la réponse détaillée avec la cause et la correction.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
     }
   ]
 }

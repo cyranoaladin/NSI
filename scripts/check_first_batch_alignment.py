@@ -70,6 +70,11 @@ def numbers(pattern: str, text: str) -> set[int]:
     return {int(item) for item in re.findall(pattern, text, flags=re.M)}
 
 
+def exercise_ids(pattern: str, text: str) -> set[str]:
+    """Extract exercise identifiers including alphanumeric suffixes (e.g. '3bis')."""
+    return set(re.findall(pattern, text, flags=re.M))
+
+
 def ids(regex: re.Pattern[str], text: str) -> set[str]:
     return set(regex.findall(text))
 
@@ -88,9 +93,9 @@ def sequence_errors(root: Path, prefix: str, program_ids: set[str]) -> list[str]
         if objective not in worked_text:
             errors.append(f"{prefix}: objectif {objective} absent du TD/TP/évaluation")
 
-    td_exercises = numbers(r"^###\s+Exercice\s+(\d+)\b", texts["td"])
+    td_exercises = exercise_ids(r"^###\s+Exercice\s+(\d+\w*)\b", texts["td"])
     # Accept both "### Corrigé exercice N" and "### Exercice N" in corrigé
-    corrected = numbers(r"^###\s+(?:Corrigé exercice|Exercice)\s+(\d+)\b", texts["corrige"])
+    corrected = exercise_ids(r"^###\s+(?:Corrigé exercice|Exercice)\s+(\d+\w*)\b", texts["corrige"])
     for exercise in sorted(td_exercises - corrected):
         errors.append(f"{prefix}: Exercice {exercise} sans corrigé")
 

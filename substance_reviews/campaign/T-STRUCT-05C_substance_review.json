@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-11T14:36:10Z",
+  "judged_at": "2026-07-11T19:19:33Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -27,12 +27,14 @@
         "present": true,
         "file": "03_progressions/supports/terminale/T07/T07_corrige_graphes_modelisation_listes_matrices.md",
         "anchor": "#exercice-3bis",
-        "quote": "Réponse attendue : `{A: [B, C], B: [D], C: [D], D: [B]}`.\n- Méthode : pour chaque arc (u, v) dans arcs, ajouter v à la liste graphe[u] ; initialiser chaque sommet avec une liste vide avant parcours.\n- Cas limite : sommet isolé (pas d'arc sortant) → sa clé existe dans le dictionnaire avec une liste vide.",
+        "quote": "Méthode : pour chaque arc (u, v) dans arcs, ajouter v à la liste graphe[u] ; initialiser chaque sommet avec une liste vide avant parcours.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne la méthode de liste d'adjacence, l'exercice 3bis du TD fait explicitement écrire l'implémentation par dictionnaire Python (liste de successeurs). Le corrigé exercice 3bis fournit désormais la réponse exacte `{A: [B, C], B: [D], C: [D], D: [B]}` avec méthode et cas limite (sommet isolé → liste vide). Cohérence cours-TD-corrigé vérifiée.",
-      "scientific_flags": []
+      "justification": "Le cours présente la méthode de construction de la liste d'adjacence, l'exercice 3bis du TD demande explicitement d'écrire l'implémentation par dictionnaire Python, et le corrigé fournit la méthode détaillée avec gestion des sommets isolés.",
+      "scientific_flags": [
+        "human_review_required"
+      ]
     }
   ]
 }
