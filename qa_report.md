@@ -184,7 +184,7 @@ python -m scripts.check_drive_mapping_release
 ## Revue humaine
 
 - Ressources majeures à relire : 524
-- Lignes dans `human_review_register.csv` : 523
+- Lignes dans `human_review_register.csv` : 524
 - Ressources prioritaires vague 1 : 20
 - Priorités vague 1 couvertes : P05, P06, P10, P12, P13, T06, T07, T08, T10, T17, T18
 - Statut initial : pending pour science, pédagogie, accessibilité et technique.
