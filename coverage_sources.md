@@ -950,6 +950,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md | needs_review |
 | bareme | 03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md | needs_review |
@@ -968,6 +969,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md | needs_review |
 | bareme | 03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md | needs_review |
@@ -999,6 +1001,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md | needs_review |
 | cours | 03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T05/T05_evaluation_arbres_mesures_parcours_complement.md | needs_review |
@@ -1878,6 +1881,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md | needs_review |
 | cours | 03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T05/T05_evaluation_arbres_mesures_parcours_complement.md | needs_review |
