@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1147
+- Total ressources : 1148
 - Ressources pédagogiques : 53
-- Ressources techniques : 1094
+- Ressources techniques : 1095
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1139
+- generated: 1140
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 590
+- interne: 591
 - premiere: 257
 - terminale: 300
 
@@ -19,17 +19,17 @@
 - banque: 14
 - document: 723
 - python: 84
-- script: 207
+- script: 208
 - sequence: 45
 - test: 74
 
 ## Répartition par statut
-- needs_review: 1147
+- needs_review: 1148
 
 ## Répartition audience
 - corrige: 79
 - eleve: 143
-- mixte: 922
+- mixte: 923
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -765,6 +765,7 @@
   - scripts/check_boyer_moore_trace_consistency.py
   - scripts/check_build_reports_freshness.py
   - scripts/check_capacity_status_ladder.py
+  - scripts/check_closed_error_classes.py
   - scripts/check_content_tree_policy.py
   - scripts/check_contract_substance_quality.py
   - scripts/check_corrected_answers_are_concrete.py
@@ -1940,6 +1941,7 @@
   - scripts/check_boyer_moore_trace_consistency.py
   - scripts/check_build_reports_freshness.py
   - scripts/check_capacity_status_ladder.py
+  - scripts/check_closed_error_classes.py
   - scripts/check_content_tree_policy.py
   - scripts/check_contract_substance_quality.py
   - scripts/check_corrected_answers_are_concrete.py
@@ -3037,6 +3039,7 @@
 - scripts/check_boyer_moore_trace_consistency.py
 - scripts/check_build_reports_freshness.py
 - scripts/check_capacity_status_ladder.py
+- scripts/check_closed_error_classes.py
 - scripts/check_content_tree_policy.py
 - scripts/check_contract_substance_quality.py
 - scripts/check_corrected_answers_are_concrete.py
@@ -4183,6 +4186,7 @@
 - scripts/check_boyer_moore_trace_consistency.py
 - scripts/check_build_reports_freshness.py
 - scripts/check_capacity_status_ladder.py
+- scripts/check_closed_error_classes.py
 - scripts/check_content_tree_policy.py
 - scripts/check_contract_substance_quality.py
 - scripts/check_corrected_answers_are_concrete.py
