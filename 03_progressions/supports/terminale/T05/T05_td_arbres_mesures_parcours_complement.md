@@ -207,35 +207,115 @@ Exercice de remédiation : tracer l'exécution de taille() sur un arbre de 3 noe
 
 Séance dédiée.
 
-### Exercice 1
+### Exercice 1 — Mesures d'un arbre sur papier
 
-Exercice complémentaire de consolidation.
+**Donnée** : Soit l'arbre binaire B1 suivant :
+```
+        50
+       /  \
+      30    70
+     / \      \
+    20  40     80
+       /      /
+      35    75
+```
+**Consigne** : (a) Déterminer la taille de B1. (b) Déterminer la hauteur de B1 en précisant le plus long chemin depuis la racine. (c) Lister toutes les feuilles de B1. (d) Indiquer le nombre de noeuds internes (noeuds qui ne sont pas des feuilles). Vérifier que taille = feuilles + noeuds internes.
+**Livrable** : La taille, la hauteur avec le chemin le plus long, la liste des feuilles et le nombre de noeuds internes.
+**Corrigé** : Le corrigé détaillé se trouve dans le fichier corrigé complément, exercice 1.
 
-### Exercice 2
+### Exercice 2 — Taille récursive
 
-Exercice complémentaire de consolidation.
+**Donnée** : Soit l'arbre binaire B2 suivant :
+```
+      10
+     /  \
+    5    15
+   /    /  \
+  3    12   20
+```
+**Consigne** : (a) Rappeler la formule récursive de la taille : `taille(noeud) = 1 + taille(gauche) + taille(droite)` avec `taille(None) = 0`. (b) Dérouler l'exécution de `taille(10)` sur B2 en dessinant l'arbre des appels récursifs. Pour chaque appel, indiquer la valeur renvoyée. (c) Vérifier que le résultat final correspond au nombre de noeuds comptés visuellement. (d) Quel est le variant de l'algorithme ? Justifier la terminaison.
+**Livrable** : L'arbre des appels récursifs avec les valeurs de retour et la justification de terminaison.
+**Corrigé** : Voir la correction complète dans le corrigé complément (exercice 2).
 
-### Exercice 3
+### Exercice 3 — Hauteur récursive
 
-Exercice complémentaire de consolidation.
+**Donnée** : Soit l'arbre binaire B3, un arbre « peigne gauche » :
+```
+    100
+   /
+  80
+ /
+60
+ \
+  65
+```
+**Consigne** : (a) Rappeler la formule récursive de la hauteur : `hauteur(noeud) = 1 + max(hauteur(gauche), hauteur(droite))` avec `hauteur(None) = -1`. (b) Dérouler l'exécution de `hauteur(100)` sur B3 en détaillant chaque appel récursif et les comparaisons `max`. (c) Vérifier le résultat en comptant les arêtes du plus long chemin. (d) Comparer la hauteur de B3 avec celle d'un arbre complet de même nombre de noeuds. Quel type d'arbre a la hauteur minimale pour un nombre de noeuds donné ?
+**Livrable** : Le déroulement complet des appels, le résultat vérifié et la comparaison.
+**Corrigé** : Corrigé avec justification : fichier corrigé complément, exercice 3.
 
-### Exercice 4
+### Exercice 4 — Parcours BFS avec file
 
-Exercice complémentaire de consolidation.
+**Donnée** : Soit l'arbre binaire B4 suivant :
+```
+       A
+      / \
+     B   C
+    / \   \
+   D   E   F
+  /
+ G
+```
+**Consigne** : (a) Dérouler le parcours en largeur (BFS) de B4 en complétant un tableau avec les colonnes : étape, contenu de la file avant défilement, noeud traité, noeuds ajoutés, résultat partiel. (b) Donner le résultat final du parcours BFS. (c) Expliquer pourquoi la propriété FIFO de la file garantit un traitement niveau par niveau. (d) Écrire le pseudo-code du BFS utilisant `from collections import deque`.
+**Livrable** : Le tableau de trace complet, le résultat BFS, l'explication et le pseudo-code.
+**Corrigé** : Solution détaillée : exercice 4 du corrigé complément associé.
 
-### Exercice 5
+### Exercice 5 — Nombre de feuilles
 
-Exercice complémentaire de consolidation.
+**Donnée** : On reprend l'arbre B2 de l'exercice 2 :
+```
+      10
+     /  \
+    5    15
+   /    /  \
+  3    12   20
+```
+**Consigne** : (a) Écrire la formule récursive du nombre de feuilles : si le noeud est une feuille (pas d'enfants), renvoyer 1 ; sinon renvoyer `feuilles(gauche) + feuilles(droite)`. Quel est le cas de base pour un arbre vide ? (b) Dérouler l'exécution de `nb_feuilles(10)` sur B2. (c) Vérifier le résultat visuellement. (d) Écrire la fonction Python correspondante et la tester.
+**Livrable** : La formule récursive, le déroulement, la vérification et le code Python.
+**Corrigé** : Consulter le corrigé complément pour la solution de l'exercice 5.
 
-### Exercice 6
+### Exercice 6 — Cas arbre vide
 
-Exercice complémentaire de consolidation.
+**Donnée** : On considère les fonctions `taille(noeud)`, `hauteur(noeud)` et `bfs(noeud)` programmées dans les exercices précédents.
+**Consigne** : (a) Appeler chaque fonction sur un arbre vide (`None`). Indiquer la valeur attendue : `taille(None) = 0`, `hauteur(None) = -1`, `bfs(None) = []`. (b) Vérifier que chaque fonction gère correctement ce cas de base sans erreur. (c) Appeler chaque fonction sur un arbre réduit à un seul noeud de valeur 42. Vérifier : `taille = 1`, `hauteur = 0`, `bfs = [42]`. (d) Expliquer pourquoi le cas de base de l'arbre vide est indispensable pour la terminaison de la récursion.
+**Livrable** : Les résultats des appels, les vérifications et l'explication sur la terminaison.
+**Corrigé** : La réponse attendue et sa justification sont dans le corrigé complément, exercice 6.
 
-### Exercice 7
+### Exercice 7 — BFS par niveau
 
-Exercice complémentaire de consolidation.
+**Donnée** : On reprend l'arbre B4 de l'exercice 4 :
+```
+       A
+      / \
+     B   C
+    / \   \
+   D   E   F
+  /
+ G
+```
+**Consigne** : (a) Modifier l'algorithme BFS classique pour produire une liste de listes, où chaque sous-liste contient les noeuds d'un même niveau. Le résultat attendu est `[["A"], ["B", "C"], ["D", "E", "F"], ["G"]]`. (b) Indication : utiliser une boucle imbriquée qui traite tous les noeuds du niveau courant avant de passer au niveau suivant (en mémorisant la taille de la file au début de chaque niveau). (c) Dérouler l'algorithme sur B4 en montrant l'état de la file et de la liste de résultats à chaque étape. (d) Quel est l'intérêt de ce parcours par niveau dans un arbre de décision ?
+**Livrable** : Le pseudo-code ou code Python, le déroulement et l'explication de l'intérêt.
+**Corrigé** : Exercice 7 : solution dans le corrigé complément (avec trace d'exécution).
 
-### Exercice 8
+### Exercice 8 — Comparaison pile vs file dans les parcours
 
-Exercice complémentaire de consolidation.
+**Donnée** : On reprend l'arbre B4. On dispose de deux variantes d'un même algorithme de parcours : l'une utilise une file (FIFO), l'autre utilise une pile (LIFO). Le reste du code est identique.
+**Consigne** : (a) Dérouler le parcours avec une file (BFS) sur B4. Noter l'ordre de visite. (b) Dérouler le parcours avec une pile (en ajoutant d'abord le fils droit puis le fils gauche) sur B4. Noter l'ordre de visite. (c) Identifier le type de parcours obtenu avec la pile (préfixe / DFS). (d) Expliquer en quoi la structure de données (file vs pile) détermine l'ordre de parcours. (e) Dans quel cas pratique préfère-t-on le BFS au DFS, et inversement ? Donner un exemple pour chaque.
+**Livrable** : Les deux traces de parcours, l'identification des types, l'explication et les exemples d'usage.
+**Corrigé** : Pour la correction : voir exercice 8 dans le document corrigé complément.
 
+
+### Question de synthèse — Choisir la mesure adaptée
+
+**Donnée** : Un développeur modélise un arbre binaire représentant un organigramme d'entreprise. La racine est le PDG, chaque noeud interne est un manager et chaque feuille est un employé sans subordonnés.
+**Consigne** : (a) Quelle mesure (taille, hauteur, nombre de feuilles) répond à la question « combien de personnes travaillent dans l'entreprise » ? (b) Quelle mesure répond à « combien de niveaux hiérarchiques séparent le PDG du plus bas employé » ? (c) Proposer une requête concrète de l'entreprise à laquelle le parcours en largeur (BFS) apporterait une réponse utile.
+**Livrable** : Les trois réponses justifiées avec le nom de la mesure ou du parcours utilisé.

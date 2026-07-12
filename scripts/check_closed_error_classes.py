@@ -89,32 +89,94 @@ def check_greedy_montant_3(files: list[Path]) -> list[str]:
     return hits
 
 
+_STOPWORDS = frozenset(
+    # Déterminants, pronoms, prépositions, auxiliaires
+    "le la les un une des de du en et ou par pour sur dans avec sans "
+    "au aux ce cette ces que qui quoi dont où est sont être avoir fait "
+    "il elle on nous vous ils elles ne pas plus se sa son ses leur "
+    "tout tous toute toutes même si bien aussi très peu trop assez "
+    # Vocabulaire d'évaluation et de consigne
+    "point points pt pts question exercice réponse attendue donnée "
+    "consigne écrire donner indiquer justifier expliquer résultat "
+    "méthode cas limite contrôle capacité officielle barème "
+    "correct critère critères réussite observable justification "
+    "corrigé livrable vérifiable visible attendu confondu "
+    "objectif énoncé production type identifier résoudre corriger "
+    "comparer partir préciser décrire calculer tracer construire "
+    "choisir remplir chercher distinguer dessiner nommer associer "
+    # Vocabulaire de format évaluation
+    "lang data struct arch algo hist each deux trois quatre cinq "
+    "six sept huit premier deuxième troisième ligne lignes colonne "
+    "fichier code programme fonction variable valeur liste tableau "
+    "élève base nombre texte mot char champ entrée sortie retour".split()
+)
+
+
+def _extract_domain_terms(text: str) -> set[str]:
+    """Extract significant domain terms (3+ chars, not stopwords)."""
+    words = re.findall(r"[a-zA-ZÀ-ÿ]{3,}", text.lower())
+    return {w for w in words if w not in _STOPWORDS}
+
+
 def check_rotation_consigne_reponse(files: list[Path]) -> list[str]:
-    """Detect answer-in-wrong-slot rotations by keyword patterns."""
+    """Detect answer-in-wrong-slot rotations across ALL evaluations.
+
+    Two-pass detection:
+    1. T09-specific: schéma/instance question → clé primaire-only answer.
+    2. Cross-question swap: for each eval, check if question i's answer
+       matches question j's consigne better than question i's own consigne.
+       This detects the actual pathology: answers swapped between questions.
+    """
     hits: list[str] = []
-    # T09: Q1 asks schema/instance but answer says "clé primaire"
+
     for f in files:
-        if "T09" not in f.name or "evaluation" not in f.name:
+        if "evaluation" not in f.name:
             continue
         text = _read(f)
-        # Check if a Question asking about schéma/instance has answer about
-        # clé primaire WITHOUT also mentioning schéma or instance in the answer.
-        # The rotation pattern is: Q asks schéma/instance but A talks ONLY about
-        # clé primaire, never actually answering the schéma/instance question.
+
+        # ── Pass 1: T09 specific ──
+        if "T09" in f.name:
+            blocks_t09 = re.split(r"^#{2,3}\s+Question\s+\d+", text, flags=re.M)
+            for block in blocks_t09[1:]:
+                if not re.search(r"schéma|instance", block[:200], re.I):
+                    continue
+                ans = re.search(r"Réponse attendue\s*:\s*(.+?)(?:\n-|\Z)", block, re.I | re.S)
+                if not ans:
+                    continue
+                a = ans.group(1)
+                if re.search(r"clé primaire", a, re.I) and not re.search(r"schéma|instance", a, re.I):
+                    hits.append(f"{f.relative_to(ROOT)}: rotation T09 (schéma/instance → clé primaire)")
+                    break
+
+        # ── Pass 2: cross-question swap detection ──
         blocks = re.split(r"^#{2,3}\s+Question\s+\d+", text, flags=re.M)
-        for block in blocks[1:]:  # skip pre-question text
-            if not re.search(r"schéma|instance", block[:200], re.I):
+        qa_pairs: list[tuple[int, set[str], set[str]]] = []
+        for idx, block in enumerate(blocks[1:], 1):
+            parts = re.split(r"Réponse attendue\s*:", block, maxsplit=1, flags=re.I)
+            if len(parts) < 2:
                 continue
-            answer_match = re.search(r"Réponse attendue\s*:\s*(.+?)(?:\n-|\Z)", block, re.I | re.S)
-            if not answer_match:
-                continue
-            answer_text = answer_match.group(1)
-            has_cle_primaire = bool(re.search(r"clé primaire", answer_text, re.I))
-            has_schema_instance = bool(re.search(r"schéma|instance", answer_text, re.I))
-            if has_cle_primaire and not has_schema_instance:
-                rel = f.relative_to(ROOT)
-                hits.append(f"{rel}: rotation Q/R détectée (schéma/instance → clé primaire)")
-                break
+            c_terms = _extract_domain_terms(parts[0][:300])
+            a_terms = _extract_domain_terms(parts[1][:500])
+            if len(c_terms) >= 3 and len(a_terms) >= 3:
+                qa_pairs.append((idx, c_terms, a_terms))
+
+        # For each answer, check if it fits another question's consigne
+        # better than its own (Jaccard similarity)
+        for qi, c_i, a_i in qa_pairs:
+            own_sim = len(c_i & a_i) / len(c_i | a_i) if (c_i | a_i) else 0
+            for qj, c_j, _a_j in qa_pairs:
+                if qi == qj:
+                    continue
+                cross_sim = len(c_j & a_i) / len(c_j | a_i) if (c_j | a_i) else 0
+                # Flag if answer fits another question 3x better AND own fit is very low
+                if cross_sim > 0.25 and own_sim < 0.05 and cross_sim > 3 * max(own_sim, 0.01):
+                    rel = f.relative_to(ROOT)
+                    hits.append(
+                        f"{rel}:Q{qi}: réponse probable de Q{qj} "
+                        f"(sim_propre={own_sim:.2f}, sim_croisée={cross_sim:.2f})"
+                    )
+                    break  # one hit per question suffices
+
     return hits
 
 

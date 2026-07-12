@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1161
+- Total ressources : 1162
 - Ressources pédagogiques : 53
-- Ressources techniques : 1108
+- Ressources techniques : 1109
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1153
+- generated: 1154
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 596
+- interne: 597
 - premiere: 262
 - terminale: 303
 
 ## Répartition par type
 - banque: 14
-- document: 734
+- document: 735
 - python: 84
 - script: 210
 - sequence: 45
 - test: 74
 
 ## Répartition par statut
-- needs_review: 1161
+- needs_review: 1162
 
 ## Répartition audience
 - corrige: 80
 - eleve: 143
-- mixte: 935
+- mixte: 936
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -618,6 +618,7 @@
   - docs/LISEZMOI.txt
   - docs/archive_security_policy.md
   - docs/audits/AUDIT_FRONTEND_infra_ground_truth.md
+  - docs/enrichment_roadmap.md
   - docs/finalisation_report.md
   - docs/judge_campaign_plan.md
   - docs/kit_production_NSI.md
@@ -1833,6 +1834,7 @@
   - docs/LISEZMOI.txt
   - docs/archive_security_policy.md
   - docs/audits/AUDIT_FRONTEND_infra_ground_truth.md
+  - docs/enrichment_roadmap.md
   - docs/finalisation_report.md
   - docs/judge_campaign_plan.md
   - docs/kit_production_NSI.md
@@ -2922,6 +2924,7 @@
 - docs/LISEZMOI.txt
 - docs/archive_security_policy.md
 - docs/audits/AUDIT_FRONTEND_infra_ground_truth.md
+- docs/enrichment_roadmap.md
 - docs/finalisation_report.md
 - docs/judge_campaign_plan.md
 - docs/kit_production_NSI.md
@@ -4076,6 +4079,7 @@
 - docs/LISEZMOI.txt
 - docs/archive_security_policy.md
 - docs/audits/AUDIT_FRONTEND_infra_ground_truth.md
+- docs/enrichment_roadmap.md
 - docs/finalisation_report.md
 - docs/judge_campaign_plan.md
 - docs/kit_production_NSI.md

@@ -183,35 +183,59 @@ Table de vérité correcte avec toutes les combinaisons. Identification des taut
 
 Séance dédiée.
 
-### Exercice 1
+### Exercice 1 — Table ET à 2 variables
 
-Exercice complémentaire de consolidation.
+**Donnée** : Soit l'expression booléenne `E = a ET b`.
+**Consigne** : Dresser la table de vérité complète de `E` en listant les 4 combinaisons possibles de `a` et `b`. Pour chaque ligne, justifier le résultat en rappelant la règle : « ET ne vaut 1 que si les deux opérandes valent 1 ». Identifier les lignes où `E` vaut 1 et celles où `E` vaut 0.
+**Livrable** : La table de vérité à 4 lignes avec colonnes `a`, `b`, `a ET b` et `Justification`.
+**Corrigé** : Le corrigé détaillé se trouve dans le fichier corrigé complément, exercice 1.
 
-### Exercice 2
+### Exercice 2 — Table OU à 2 variables
 
-Exercice complémentaire de consolidation.
+**Donnée** : L'expression suivante est `E = a OU b`.
+**Consigne** : Dresser la table de vérité complète de `E` pour les 4 combinaisons de `a` et `b`. Pour chaque ligne, justifier le résultat en rappelant la règle : « OU vaut 0 uniquement si les deux opérandes valent 0 ». Comparer avec la table de ET de l'exercice 1 : pour quelles combinaisons les résultats diffèrent-ils ?
+**Livrable** : La table de vérité à 4 lignes avec colonnes `a`, `b`, `a OU b` et `Justification`, plus la comparaison.
+**Corrigé** : Voir la correction complète dans le corrigé complément (exercice 2).
 
-### Exercice 3
+### Exercice 3 — Table NON + ET à 2 variables
 
-Exercice complémentaire de consolidation.
+**Donnée** : On étudie l'expression `E = (NON a) ET b`.
+**Consigne** : Dresser la table de vérité de `E` en faisant apparaître la colonne intermédiaire `NON a`. Pour chaque ligne, détailler le calcul en deux étapes : d'abord évaluer `NON a`, puis appliquer `ET` avec `b`. Indiquer pour quelles valeurs de `(a, b)` cette expression vaut 1.
+**Livrable** : La table de vérité à 4 lignes avec colonnes `a`, `b`, `NON a`, `(NON a) ET b` et `Justification`.
+**Corrigé** : Corrigé avec justification : fichier corrigé complément, exercice 3.
 
-### Exercice 4
+### Exercice 4 — Table à 3 variables
 
-Exercice complémentaire de consolidation.
+**Donnée** : L'expression booléenne à analyser est `E = (a OU b) ET c`.
+**Consigne** : Déterminer le nombre de lignes de la table (justifier avec la formule 2^n). Dresser la table de vérité complète en faisant apparaître la colonne intermédiaire `a OU b`. Pour les 8 combinaisons, évaluer d'abord `a OU b`, puis appliquer `ET c`. Lister toutes les combinaisons pour lesquelles `E` vaut 1.
+**Livrable** : La table de vérité à 8 lignes avec colonnes `a`, `b`, `c`, `a OU b`, `(a OU b) ET c` et `Justification`.
+**Corrigé** : Solution détaillée : exercice 4 du corrigé complément associé.
 
-### Exercice 5
+### Exercice 5 — XOR par combinaison d'opérateurs
 
-Exercice complémentaire de consolidation.
+**Donnée** : L'opérateur XOR (ou exclusif) peut s'exprimer comme `a XOR b = (a OU b) ET NON(a ET b)`.
+**Consigne** : Dresser la table de vérité de `a XOR b` en faisant apparaître toutes les colonnes intermédiaires : `a OU b`, `a ET b`, `NON(a ET b)` et le résultat final. Vérifier que le XOR vaut 1 exactement lorsque les deux variables ont des valeurs différentes. Proposer une seconde décomposition équivalente utilisant `(a ET NON b) OU (NON a ET b)` et vérifier par table de vérité.
+**Livrable** : Les deux tables de vérité complètes et la vérification d'équivalence.
+**Corrigé** : Consulter le corrigé complément pour la solution de l'exercice 5.
 
-### Exercice 6
+### Exercice 6 — Vérification par substitution
 
-Exercice complémentaire de consolidation.
+**Donnée** : Soit l'expression booléenne `E = (a ET b) OU (NON a ET NON b)`. On affirme que `E` est équivalente à `NON(a XOR b)`.
+**Consigne** : (a) Dresser la table de vérité de `E` avec les colonnes intermédiaires `a ET b`, `NON a`, `NON b`, `NON a ET NON b`. (b) Dresser la table de vérité de `a XOR b` puis de `NON(a XOR b)`. (c) Vérifier par substitution directe pour le cas `a = 1, b = 0` que les deux expressions donnent le même résultat. (d) Conclure sur l'équivalence.
+**Livrable** : Les deux tables de vérité, la vérification par substitution et la conclusion.
+**Corrigé** : La réponse attendue et sa justification sont dans le corrigé complément, exercice 6.
 
-### Exercice 7
+### Exercice 7 — Simplification booléenne
 
-Exercice complémentaire de consolidation.
+**Donnée** : L'expression suivante est `E = (a OU b) ET (a OU NON b)`.
+**Consigne** : (a) Dresser la table de vérité de `E` avec les colonnes intermédiaires `NON b`, `a OU b`, `a OU NON b`. (b) Comparer la colonne de `E` avec la colonne de `a`. Quelle simplification en déduit-on ? (c) Justifier algébriquement en factorisant : `E = a OU (b ET NON b)`. Expliquer pourquoi `b ET NON b = 0` et donc `E = a OU 0 = a`. (d) Appliquer la même méthode pour simplifier `F = (a ET b) OU (a ET NON b)`.
+**Livrable** : La table de vérité, la simplification identifiée, la preuve algébrique et la simplification de `F`.
+**Corrigé** : Exercice 7 : solution dans le corrigé complément (avec trace d'exécution).
 
-### Exercice 8
+### Exercice 8 — Tautologie et contradiction
 
-Exercice complémentaire de consolidation.
+**Donnée** : On considère les deux expressions `T = a OU NON a` et `C = a ET NON a`.
+**Consigne** : (a) Dresser la table de vérité de `T` et de `C`. (b) Constater que `T` vaut toujours 1 : c'est une tautologie. Constater que `C` vaut toujours 0 : c'est une contradiction. (c) Dresser la table de vérité de `E = (a ET b) OU NON(a ET b)`. Est-ce une tautologie, une contradiction ou ni l'un ni l'autre ? Justifier. (d) Dresser la table de vérité de `F = (a ET NON a) OU (b ET NON b)`. Conclure.
+**Livrable** : Les quatre tables de vérité et la classification de chaque expression (tautologie, contradiction ou contingente).
+**Corrigé** : Pour la correction : voir exercice 8 dans le document corrigé complément.
 
