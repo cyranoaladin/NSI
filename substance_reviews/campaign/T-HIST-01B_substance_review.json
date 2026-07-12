@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-08T08:54:17Z",
+  "judged_at": "2026-07-12T07:32:30Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -13,7 +13,7 @@
         "present": true,
         "file": "03_progressions/supports/terminale/T19/T19_cours_bac_pratique_grand_oral_projet.md",
         "anchor": "#évolution-des-rôles-matériel-et-logiciel-t-hist-01b",
-        "quote": "L'histoire de l'informatique montre un transfert progressif de complexité du matériel vers le logiciel :\n\n1. **Années 1940-1950 — le matériel est roi** : les premiers ordinateurs (ENIAC, EDVAC) sont câblés pour des tâches spécifiques. Le logiciel n'existe pas en tant que discipline ; programmer signifie reconfigurer physiquement la machine.",
+        "quote": "L'histoire de l'informatique montre un transfert progressif de complexité du matériel vers le logiciel :\n\n1. **Années 1940-1950 — le matériel est roi** : l'ENIAC (1946) est câblé pour des tâches spécifiques",
         "teaches": true
       },
       "proof_practice": {
@@ -31,7 +31,7 @@
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours expose explicitement l'évolution des rôles matériel/logiciel en 4 périodes historiques. L'exercice 10 du TD fait pratiquer cette analyse par période avec exemples concrets. Le corrigé fournit les réponses attendues incluant la nuance GPU/TPU.",
+      "justification": "Le cours expose explicitement l'évolution des rôles matériel/logiciel en 4 périodes historiques. L'exercice 10 du TD fait pratiquer cette capacité avec consignes précises. Le corrigé fournit les réponses attendues par période avec la nuance GPU/TPU.",
       "scientific_flags": [
         "human_review_required"
       ]

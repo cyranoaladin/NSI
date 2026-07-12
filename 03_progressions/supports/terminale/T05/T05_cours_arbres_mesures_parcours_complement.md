@@ -36,7 +36,7 @@ official_program:
 
 - T-STRUCT-04B : Évaluer quelques mesures des arbres binaires (taille, hauteur, feuilles). « Taille, hauteur et feuilles. »
 - T-ALGO-01A : Calculer la taille d’un arbre. « Structure récursive adaptée. »
-- T-ALGO-01B : Calculer la hauteur d’un arbre. « Cas arbre vide à préciser. »
+- T-ALGO-01B : Calculer la hauteur d’un arbre. « Cas arbre vide : hauteur conventionnelle -1 (ou 0 selon la convention). »
 - T-ALGO-01D : Parcourir un arbre en largeur d'abord. « Lien avec file. »
 
 ## Prérequis
