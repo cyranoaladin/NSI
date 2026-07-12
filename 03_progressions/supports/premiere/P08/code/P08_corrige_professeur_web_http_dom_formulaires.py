@@ -34,16 +34,23 @@ def action_formulaire(method: str, champs: dict[str, str]) -> str:
 
 
 def valeur_champ(html: str, id_champ: str) -> str:
-    """Cible un champ par son id et retourne sa valeur (P-IHM-02)."""
-    pattern = rf'<[^>]*\bid=["\']?{re.escape(id_champ)}["\']?[^>]*\bvalue=["\']([^"\']*)["\']'
-    match = re.search(pattern, html, re.I)
-    if not match:
-        # Try reversed order: value before id
-        pattern2 = rf'<[^>]*\bvalue=["\']([^"\']*)["\'][^>]*\bid=["\']?{re.escape(id_champ)}["\']?'
-        match = re.search(pattern2, html, re.I)
-    if not match:
-        raise ValueError(f"champ id={id_champ!r} absent ou sans valeur")
-    return match.group(1)
+    """Cible un champ par son id et retourne sa valeur (P-IHM-02).
+
+    Frontière exacte : quotes obligatoires autour de l'id, donc id="nom"
+    ne matche pas id="nom2".
+    """
+    esc = re.escape(id_champ)
+    # id="X" ... value="V"  (quotes obligatoires, frontière exacte)
+    pat1 = rf'<[^>]*\bid=["\']({esc})["\'][^>]*\bvalue=["\']([^"\']*)["\']'
+    match = re.search(pat1, html, re.I)
+    if match:
+        return match.group(2)
+    # value="V" ... id="X"  (ordre inversé)
+    pat2 = rf'<[^>]*\bvalue=["\']([^"\']*)["\'][^>]*\bid=["\']({esc})["\']'
+    match = re.search(pat2, html, re.I)
+    if match:
+        return match.group(1)
+    raise ValueError(f"champ id={id_champ!r} absent ou sans valeur")
 
 
 def classer_mecanisme(nom: str) -> str:

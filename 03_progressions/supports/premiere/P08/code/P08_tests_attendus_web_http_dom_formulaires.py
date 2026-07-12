@@ -41,6 +41,12 @@ def test_valeur_champ_cible_par_id() -> None:
     assert MODULE.valeur_champ(html_form, "age") == "36"
 
 
+def test_valeur_champ_frontiere_id_exacte() -> None:
+    html_adverse = '<form><input id="nom2" value="Bob"><input id="nom" value="Ada"></form>'
+    assert MODULE.valeur_champ(html_adverse, "nom") == "Ada"
+    assert MODULE.valeur_champ(html_adverse, "nom2") == "Bob"
+
+
 def test_valeur_champ_absent_leve_erreur() -> None:
     html_form = '<form><input id="nom" value="Ada"></form>'
     try:
@@ -81,6 +87,7 @@ if __name__ == "__main__":
     test_limites_classe_absente_et_get_vide()
     test_entrees_invalides()
     test_valeur_champ_cible_par_id()
+    test_valeur_champ_frontiere_id_exacte()
     test_valeur_champ_absent_leve_erreur()
     test_classer_mecanisme_cookie_memorise_et_retransmis()
     test_classer_mecanisme_localstorage_memorise_seulement()
