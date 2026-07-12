@@ -5,13 +5,13 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 ## Synthèse
 
-- Nombre total de ressources : 525
-- Nombre par statut : {'needs_review': 525}
-- Nombre par type de document : {'bareme': 36, 'corrige': 67, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
-- Ressources avec capacity_ids : 440
+- Nombre total de ressources : 530
+- Nombre par statut : {'needs_review': 530}
+- Nombre par type de document : {'bareme': 41, 'corrige': 67, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
+- Ressources avec capacity_ids : 445
 - Ressources sans capacity_ids : 85
-- Ressources avec audience renseignée : 525
-- Ressources avec session renseignée : 525
+- Ressources avec audience renseignée : 530
+- Ressources avec session renseignée : 530
 
 ## P-ALGO-01A
 
@@ -331,6 +331,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## P-DATA-BASE-04
 
 - `03_progressions/fiches_cours/premiere/P02/P02_fiche_cours_booleens_tables_verite.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/premiere/P02/P02_bareme_tables_verite_booleennes.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P02/P02_corrige_tables_verite_booleennes.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P02/P02_cours_tables_verite_booleennes.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P02/P02_evaluation_tables_verite_booleennes.md` — evaluation — needs_review — eleve
@@ -355,6 +356,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## P-DATA-BASE-05B
 
 - `03_progressions/fiches_cours/premiere/P03/P03_fiche_cours_texte_unicode.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/premiere/P03/P03_bareme_conversion_encodages_texte.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P03/P03_cours_conversion_encodages_texte.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P03/P03_evaluation_conversion_encodages_texte.md` — evaluation — needs_review — eleve
@@ -365,6 +367,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## P-DATA-CONSTR-01
 
 - `03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_tuples.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md` — evaluation — needs_review — eleve
@@ -389,6 +392,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## P-DATA-CONSTR-02B
 
 - `03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_listes.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md` — evaluation — needs_review — eleve
@@ -399,6 +403,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## P-DATA-CONSTR-02C
 
 - `03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_listes.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md` — evaluation — needs_review — eleve
@@ -419,6 +424,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## P-DATA-CONSTR-03A
 
 - `03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_dictionnaires.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md` — evaluation — needs_review — eleve
@@ -429,6 +435,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## P-DATA-CONSTR-03B
 
 - `03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_dictionnaires.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md` — evaluation — needs_review — eleve
@@ -439,6 +446,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## P-DATA-CONSTR-03C
 
 - `03_progressions/fiches_cours/premiere/P04/P04_fiche_cours_dictionnaires.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md` — evaluation — needs_review — eleve
@@ -1458,6 +1466,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## T-STRUCT-01B
 
 - `03_progressions/fiches_cours/terminale/T01/T01_fiche_cours_interface_implementation_tad.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/terminale/T01/T01_bareme_interface_implementation_complement.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T01/T01_corrige_interface_implementation_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T01/T01_cours_interface_implementation_complement.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T01/T01_evaluation_interface_implementation_complement.md` — evaluation — needs_review — eleve
@@ -1468,6 +1477,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## T-STRUCT-01C
 
 - `03_progressions/fiches_cours/terminale/T01/T01_fiche_cours_interface_implementation_tad.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/terminale/T01/T01_bareme_interface_implementation_complement.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T01/T01_corrige_interface_implementation_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T01/T01_cours_interface_implementation_complement.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T01/T01_evaluation_interface_implementation_complement.md` — evaluation — needs_review — eleve
@@ -1523,6 +1533,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## T-STRUCT-03C
 
 - `03_progressions/fiches_cours/terminale/T03/T03_fiche_cours_dictionnaires.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/terminale/T03/T03_bareme_recherche_liste_dictionnaire.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T03/T03_corrige_recherche_liste_dictionnaire.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T03/T03_cours_recherche_liste_dictionnaire.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T03/T03_evaluation_recherche_liste_dictionnaire.md` — evaluation — needs_review — eleve

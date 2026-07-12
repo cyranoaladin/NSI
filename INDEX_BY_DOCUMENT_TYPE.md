@@ -5,21 +5,24 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 ## Synthèse
 
-- Nombre total de ressources : 525
-- Nombre par statut : {'needs_review': 525}
-- Nombre par type de document : {'bareme': 36, 'corrige': 67, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
-- Ressources avec capacity_ids : 440
+- Nombre total de ressources : 530
+- Nombre par statut : {'needs_review': 530}
+- Nombre par type de document : {'bareme': 41, 'corrige': 67, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
+- Ressources avec capacity_ids : 445
 - Ressources sans capacity_ids : 85
-- Ressources avec audience renseignée : 525
-- Ressources avec session renseignée : 525
+- Ressources avec audience renseignée : 530
+- Ressources avec session renseignée : 530
 
 ## bareme
 
 - `03_progressions/supports/premiere/P00/P00_bareme_diagnostic_python.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P01/P01_bareme_conversions_bases.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P02/P02_bareme_complement_booleens.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P02/P02_bareme_tables_verite_booleennes.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P03/P03_bareme_conversion_encodages_texte.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P03/P03_bareme_texte_reels.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P04/P04_bareme_types_construits.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P05/P05_bareme_tables_csv.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P06/P06_bareme_tables_recherche_tri_fusion.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P07/P07_bareme_fonctions_tests_specifications.md` — bareme — needs_review — professeur
@@ -31,9 +34,11 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P13/P13_bareme_dichotomie_glouton_knn.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P14/P14_bareme_synthese_projet_oral.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T00/T00_bareme_diagnostic_tests.md` — bareme — needs_review — professeur
+- `03_progressions/supports/terminale/T01/T01_bareme_interface_implementation_complement.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T01/T01_bareme_interfaces_structures.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T02/T02_bareme_classes_objets.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T03/T03_bareme_piles_files_dictionnaires.md` — bareme — needs_review — professeur
+- `03_progressions/supports/terminale/T03/T03_bareme_recherche_liste_dictionnaire.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T04/T04_bareme_recursivite.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T05/T05_bareme_arbres_binaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md` — bareme — needs_review — professeur

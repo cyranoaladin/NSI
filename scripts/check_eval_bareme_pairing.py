@@ -4,6 +4,10 @@
 Scans 03_progressions/supports/ for evaluation_*.md files and verifies
 that a corresponding bareme_*.md file exists with the same suffix.
 
+Convention: when an evaluation variant has a different slug from the barème,
+the gate accepts the pairing if both files declare the same
+official_program.capacities in their frontmatter.
+
 Exit 0 if all pairs exist, exit 1 with details of unpaired evaluations.
 """
 
@@ -13,19 +17,54 @@ import re
 import sys
 from pathlib import Path
 
+import yaml
+
 ROOT = Path(__file__).resolve().parents[1]
 SUPPORTS = ROOT / "03_progressions" / "supports"
 
 
+def _extract_capacities(path: Path) -> list[str] | None:
+    """Extract official_program.capacities from YAML frontmatter.
+
+    Returns a sorted list of capacity identifiers, or None if frontmatter
+    cannot be parsed or does not contain capacities.
+    """
+    try:
+        text = path.read_text(encoding="utf-8")
+    except OSError:
+        return None
+    # Frontmatter is delimited by leading '---'
+    if not text.startswith("---"):
+        return None
+    end = text.find("---", 3)
+    if end == -1:
+        return None
+    try:
+        fm = yaml.safe_load(text[3:end])
+    except yaml.YAMLError:
+        return None
+    if not isinstance(fm, dict):
+        return None
+    caps = (fm.get("official_program") or {}).get("capacities")
+    if not isinstance(caps, list) or not caps:
+        return None
+    return sorted(str(c) for c in caps)
+
+
+def _find_bareme_by_capacities(eval_path: Path, prefix: str) -> bool:
+    """Fallback: find a barème in the same directory sharing the same capacities."""
+    eval_caps = _extract_capacities(eval_path)
+    if eval_caps is None:
+        return False
+    for candidate in eval_path.parent.glob(f"{prefix}_[Bb]areme_*.md"):
+        cand_caps = _extract_capacities(candidate)
+        if cand_caps is not None and cand_caps == eval_caps:
+            return True
+    return False
+
+
 def main() -> int:
-    evals = sorted(SUPPORTS.rglob("*_evaluation_*.md")) + sorted(SUPPORTS.rglob("*_evaluation_*.md"))
-    # Deduplicate
-    seen: set[Path] = set()
-    unique_evals: list[Path] = []
-    for e in evals:
-        if e not in seen:
-            seen.add(e)
-            unique_evals.append(e)
+    unique_evals = sorted(set(SUPPORTS.rglob("*_evaluation_*.md")))
 
     unpaired: list[str] = []
     for eval_path in unique_evals:
@@ -41,6 +80,10 @@ def main() -> int:
             # Also try case variants
             bareme_alt = eval_path.parent / f"{prefix}_Bareme_{slug}.md"
             if not bareme_alt.exists():
+                # Fallback: accept pairing if a barème in the same dir
+                # declares the same official_program.capacities
+                if _find_bareme_by_capacities(eval_path, prefix):
+                    continue
                 rel = eval_path.relative_to(ROOT)
                 unpaired.append(f"  {rel} → barème manquant: {bareme_name}")
 

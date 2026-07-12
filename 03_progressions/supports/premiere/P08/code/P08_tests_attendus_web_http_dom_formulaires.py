@@ -35,8 +35,56 @@ def test_entrees_invalides() -> None:
     raise AssertionError("ValueError attendue pour méthode interdite")
 
 
+def test_valeur_champ_cible_par_id() -> None:
+    html_form = '<form><input id="nom" name="nom" value="Ada"><input id="age" value="36"></form>'
+    assert MODULE.valeur_champ(html_form, "nom") == "Ada"
+    assert MODULE.valeur_champ(html_form, "age") == "36"
+
+
+def test_valeur_champ_absent_leve_erreur() -> None:
+    html_form = '<form><input id="nom" value="Ada"></form>'
+    try:
+        MODULE.valeur_champ(html_form, "inexistant")
+        assert False, "ValueError attendue"
+    except ValueError:
+        return
+    raise AssertionError("ValueError attendue pour champ absent")
+
+
+def test_classer_mecanisme_cookie_memorise_et_retransmis() -> None:
+    assert MODULE.classer_mecanisme("cookie") == "mémorisé et retransmis"
+
+
+def test_classer_mecanisme_localstorage_memorise_seulement() -> None:
+    assert MODULE.classer_mecanisme("localStorage") == "mémorisé"
+
+
+def test_classer_mecanisme_formulaire_retransmis() -> None:
+    assert MODULE.classer_mecanisme("donnée de formulaire") == "retransmis"
+
+
+def test_classer_mecanisme_session_memorise_et_retransmis() -> None:
+    assert MODULE.classer_mecanisme("session") == "mémorisé et retransmis"
+
+
+def test_classer_mecanisme_inconnu_leve_erreur() -> None:
+    try:
+        MODULE.classer_mecanisme("websocket")
+        assert False, "ValueError attendue"
+    except ValueError:
+        return
+    raise AssertionError("ValueError attendue pour mécanisme inconnu")
+
+
 if __name__ == "__main__":
     test_nominal_html_dom_get_post()
     test_limites_classe_absente_et_get_vide()
     test_entrees_invalides()
+    test_valeur_champ_cible_par_id()
+    test_valeur_champ_absent_leve_erreur()
+    test_classer_mecanisme_cookie_memorise_et_retransmis()
+    test_classer_mecanisme_localstorage_memorise_seulement()
+    test_classer_mecanisme_formulaire_retransmis()
+    test_classer_mecanisme_session_memorise_et_retransmis()
+    test_classer_mecanisme_inconnu_leve_erreur()
     print("tests attendus OK")

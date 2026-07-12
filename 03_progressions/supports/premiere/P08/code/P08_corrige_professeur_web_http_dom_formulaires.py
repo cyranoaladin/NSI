@@ -31,3 +31,33 @@ def action_formulaire(method: str, champs: dict[str, str]) -> str:
     if methode == "GET":
         return "paramètres dans l'URL"
     return "paramètres dans le corps de la requête"
+
+
+def valeur_champ(html: str, id_champ: str) -> str:
+    """Cible un champ par son id et retourne sa valeur (P-IHM-02)."""
+    pattern = rf'<[^>]*\bid=["\']?{re.escape(id_champ)}["\']?[^>]*\bvalue=["\']([^"\']*)["\']'
+    match = re.search(pattern, html, re.I)
+    if not match:
+        # Try reversed order: value before id
+        pattern2 = rf'<[^>]*\bvalue=["\']([^"\']*)["\'][^>]*\bid=["\']?{re.escape(id_champ)}["\']?'
+        match = re.search(pattern2, html, re.I)
+    if not match:
+        raise ValueError(f"champ id={id_champ!r} absent ou sans valeur")
+    return match.group(1)
+
+
+def classer_mecanisme(nom: str) -> str:
+    """Classe un mécanisme web (P-IHM-03B).
+
+    Sémantique conforme au cours : Domain/Path pour cookies, origine pour localStorage.
+    """
+    nom_lower = nom.lower().strip()
+    classification = {
+        "cookie": "mémorisé et retransmis",
+        "localstorage": "mémorisé",
+        "donnée de formulaire": "retransmis",
+        "session": "mémorisé et retransmis",
+    }
+    if nom_lower not in classification:
+        raise ValueError(f"mécanisme inconnu: {nom!r}")
+    return classification[nom_lower]
