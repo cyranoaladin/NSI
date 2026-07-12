@@ -93,15 +93,25 @@ def sequence_errors(root: Path, prefix: str, program_ids: set[str]) -> list[str]
         if objective not in worked_text:
             errors.append(f"{prefix}: objectif {objective} absent du TD/TP/évaluation")
 
-    td_exercises = exercise_ids(r"^###\s+Exercice\s+(\d+\w*)\b", texts["td"])
-    # Accept both "### Corrigé exercice N" and "### Exercice N" in corrigé
-    corrected = exercise_ids(r"^###\s+(?:Corrigé exercice|Exercice)\s+(\d+\w*)\b", texts["corrige"])
+    # Check ALL TD files against ALL corrigé files
+    all_tds = find_all_kind_files(root, prefix, "td")
+    all_corriges = find_all_kind_files(root, prefix, "corrige")
+    all_td_text = "\n".join(read(p) for p in all_tds)
+    all_corrige_text = "\n".join(read(p) for p in all_corriges)
+
+    td_exercises = exercise_ids(r"^###\s+Exercice\s+(\d+\w*)\b", all_td_text)
+    corrected = exercise_ids(r"^###\s+(?:Corrigé exercice|Exercice)\s+(\d+\w*)\b", all_corrige_text)
     for exercise in sorted(td_exercises - corrected):
         errors.append(f"{prefix}: Exercice {exercise} sans corrigé")
 
-    questions = numbers(r"^###\s+Question\s+(\d+)\b", texts["evaluation"])
-    # Accept both "### Barème question N" and "- Question N :" in barème
-    scored = numbers(r"(?:^###\s+Barème question|^-\s+Question)\s+(\d+)\b", texts["bareme"])
+    # Check ALL evaluation files against ALL barème files
+    all_evals = find_all_kind_files(root, prefix, "evaluation")
+    all_baremes = find_all_kind_files(root, prefix, "bareme")
+    all_eval_text = "\n".join(read(p) for p in all_evals)
+    all_bareme_text = "\n".join(read(p) for p in all_baremes)
+
+    questions = numbers(r"^#{2,3}\s+Question\s+(\d+)\b", all_eval_text)
+    scored = numbers(r"(?:^#{2,3}\s+Barème question|^-\s+Question)\s+(\d+)\b", all_bareme_text)
     for question in sorted(questions - scored):
         errors.append(f"{prefix}: Question {question} sans barème")
 

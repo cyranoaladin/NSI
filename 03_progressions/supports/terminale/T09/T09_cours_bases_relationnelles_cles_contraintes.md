@@ -122,7 +122,7 @@ L'intégrité (contraintes de clé primaire, clé étrangère, unicité, domaine
 
 - Un fichier CSV offre la persistance mais aucun des trois autres services.
 - SQLite offre persistance et intégrité mais gère mal la concurrence lourde.
-- Un SGBD en mémoire (Redis) sacrifie la persistance pour la vitesse.
+- Redis est un magasin clé-valeur en mémoire (non relationnel) ; il offre la vitesse mais sa persistance est optionnelle et configurable (snapshots RDB, journalisation AOF).
 
 ## Renforcement explicatif ciblé
 

@@ -93,7 +93,7 @@ def extract_exercise_numbers(text: str) -> set[int]:
 
 
 def extract_question_numbers(text: str) -> set[int]:
-    return {int(value) for value in re.findall(r"^###\s+Question\s+(\d+)\b", text, flags=re.M)}
+    return {int(value) for value in re.findall(r"^#{2,3}\s+Question\s+(\d+)\b", text, flags=re.M)}
 
 
 def analyze_file(path: Path, prefix: str, kind: str, program_ids: set[str] | None = None) -> list[str]:
@@ -152,12 +152,13 @@ def analyze_first_batch(root: Path = ROOT) -> FirstBatchResult:
     program_ids = set(load_program_entries()) if root == ROOT else set()
     for prefix in FIRST_BATCH_PREFIXES:
         for kind in REQUIRED_KINDS:
-            path = find_kind_file(root, prefix, kind)
-            if path is None:
+            paths = find_all_kind_files(root, prefix, kind)
+            if not paths:
                 result.errors.append(f"{prefix}: support {kind} absent")
                 continue
-            result.checked_files += 1
-            result.errors.extend(analyze_file(path, prefix, kind, program_ids or None))
+            for path in paths:
+                result.checked_files += 1
+                result.errors.extend(analyze_file(path, prefix, kind, program_ids or None))
     return result
 
 

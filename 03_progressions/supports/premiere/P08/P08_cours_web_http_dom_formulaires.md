@@ -121,8 +121,8 @@ La capacité P-IHM-04C demande de discuter les types de requêtes selon les vale
 | Données visibles dans l'URL | Oui (`?nom=valeur&...`) | Non (corps de la requête) |
 | Historique du navigateur | Enregistrées | Non enregistrées |
 | Logs d'accès standard | Paramètres visibles dans l'URL | Corps non loggué par défaut (mais applications et proxies PEUVENT logguer les corps POST) |
-| Longueur maximale | Limitée (~2048 caractères) | Pas de limite pratique |
-| Mise en cache | Possible | Non |
+| Longueur maximale | Limitée (ordre de grandeur : quelques milliers de caractères selon le navigateur et le serveur) | Pas de limite pratique imposée par HTTP (dépend du serveur) |
+| Mise en cache | Possible | Rare, mais possible avec des directives explicites (`Cache-Control`, `Expires`) |
 
 ### Ni GET ni POST ne chiffrent les données
 
