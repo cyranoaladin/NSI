@@ -5,6 +5,7 @@
 | Fichier concerné | Gate concerné | Cause | Risque | Impact | Décision | Date cible | Responsable | Critère de fermeture |
 |---|---|---|---|---|---|---|---|---|
 | Doublon P08 (P08_TP_html_css_dom.md / P08_TP_http_get_post_formulaires.md) | duplicates_report.md | Deux TP couvrant le même thème classés "doublon non classé" | Confusion pédagogique, couverture imprécise | Revue humaine requise pour trancher (fusion, spécialisation ou retrait) | Item de CONTENU, hors scope tooling. Ne pas modifier sans revue pédagogique. | Lot 4+ | équipe NSI | Un seul TP par thème ou justification explicite de la coexistence |
+| Provenance par signature de contenu (hash pipeline au save) | check_verdict_provenance | La garde monotone compare judged_at (timestamp) — elle ne prouve pas que le contenu vient du pipeline, seulement que le timestamp a avancé. Un hash du contenu généré par le pipeline permettrait une vérification cryptographique. | Édition manuelle indétectable si judged_at est rafraîchi artificiellement. | Déclencheur : 4e occurrence d'édition manuelle ou passe outillage post-flip. | Ajouter un champ `pipeline_content_hash` (SHA-256 du verdict sérialisé) dans le JSON, vérifié par la garde provenance. | Lot 5+ | équipe NSI | check_verdict_provenance vérifie le hash en plus du timestamp ; un verdict avec hash absent ou incorrect est rejeté. |
 
 ## Dettes fermées
 
