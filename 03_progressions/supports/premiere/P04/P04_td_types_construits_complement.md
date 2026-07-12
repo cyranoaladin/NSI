@@ -247,37 +247,76 @@ Exercice de remédiation : écrire une fonction min_max qui renvoie le minimum e
 
 Séance dédiée.
 
-### Exercice 1
+### Exercice 1 — Retour de tuple
 
-Exercice complémentaire de consolidation.
+**Donnée** : On dispose d'une liste de températures relevées sur une journée, par exemple `temps = [12.5, 14.0, 18.3, 21.7, 19.2, 15.8]`.
+**Consigne** : Écrire une fonction `resume_temperatures(temps)` qui renvoie un tuple `(moyenne, amplitude)` où `moyenne` est la moyenne des températures et `amplitude` est l'écart entre la température maximale et minimale. Utiliser la déstructuration `moy, amp = resume_temperatures(temps)` pour vérifier le résultat.
+**Livrable** : Le code de la fonction, un appel avec déstructuration et l'affichage des deux valeurs.
+**Corrigé** : Le corrigé détaillé se trouve dans le fichier corrigé complément, exercice 1.
 
-### Exercice 2
+### Exercice 2 — Compréhension de liste
 
-Exercice complémentaire de consolidation.
+**Donnée** : On dispose d'une liste de mots `mots = ["Python", "est", "un", "langage", "puissant", "et", "élégant"]`.
+**Consigne** : En une seule compréhension de liste, construire une nouvelle liste contenant uniquement les mots dont la longueur est strictement supérieure à 3, convertis en majuscules. Puis, en une seconde compréhension, construire la liste des longueurs de tous les mots originaux.
+**Livrable** : Les deux compréhensions de liste et leur résultat affiché.
+**Corrigé** : Voir la correction complète dans le corrigé complément (exercice 2).
 
-### Exercice 3
+### Exercice 3 — Matrice 2D
 
-Exercice complémentaire de consolidation.
+**Donnée** : On modélise une grille de jeu de morpion par une matrice 3×3 initialisée à `" "` (espace). Après quelques coups, la grille est : `grille = [["X", "O", "X"], [" ", "X", "O"], ["O", " ", "X"]]`.
+**Consigne** : Écrire une fonction `compter_symbole(grille, symbole)` qui parcourt la matrice et renvoie le nombre d'occurrences du symbole donné. Puis écrire une fonction `diagonale_principale(grille)` qui renvoie la liste des éléments sur la diagonale principale (indices `[0][0]`, `[1][1]`, `[2][2]`).
+**Livrable** : Le code des deux fonctions, les appels de test et les résultats attendus.
+**Corrigé** : Corrigé avec justification : fichier corrigé complément, exercice 3.
 
-### Exercice 4
+### Exercice 4 — Construction d'un dictionnaire
 
-Exercice complémentaire de consolidation.
+**Donnée** : On dispose de deux listes parallèles : `pays = ["France", "Allemagne", "Espagne", "Italie"]` et `capitales = ["Paris", "Berlin", "Madrid", "Rome"]`.
+**Consigne** : Construire un dictionnaire `atlas` associant chaque pays à sa capitale en utilisant `zip()`. Puis ajouter manuellement l'entrée `"Portugal": "Lisbonne"`. Enfin, construire un dictionnaire inversé `atlas_inv` associant chaque capitale à son pays, en utilisant une compréhension de dictionnaire.
+**Livrable** : Le dictionnaire `atlas`, l'ajout, le dictionnaire `atlas_inv` et l'affichage des deux.
+**Corrigé** : Solution détaillée : exercice 4 du corrigé complément associé.
 
-### Exercice 5
+### Exercice 5 — Parcours avec keys(), values() et items()
 
-Exercice complémentaire de consolidation.
+**Donnée** : On dispose du dictionnaire `stock = {"pommes": 45, "bananes": 12, "cerises": 0, "dattes": 30, "figues": 7}`.
+**Consigne** : (a) Afficher toutes les clés du dictionnaire en utilisant `.keys()`. (b) Calculer le stock total en sommant les valeurs obtenues via `.values()`. (c) En utilisant `.items()`, afficher uniquement les fruits dont le stock est strictement positif sous la forme `"fruit : quantité unités"`. (d) Construire une liste `rupture` contenant les noms des fruits dont le stock vaut 0.
+**Livrable** : Le code de chaque parcours et les résultats affichés.
+**Corrigé** : Consulter le corrigé complément pour la solution de l'exercice 5.
 
-### Exercice 6
+### Exercice 6 — Débogage type mutable
 
-Exercice complémentaire de consolidation.
+**Donnée** : Le code suivant contient un bug lié à la mutabilité des listes :
+```python
+def creer_grille(n, valeur=[]):
+    grille = []
+    for i in range(n):
+        grille.append(valeur)
+    return grille
 
-### Exercice 7
+g = creer_grille(3)
+g[0].append("X")
+print(g)  # Résultat surprenant !
+```
+**Consigne** : (a) Exécuter mentalement le code et prédire le résultat de `print(g)`. (b) Expliquer pourquoi toutes les lignes sont modifiées simultanément. (c) Corriger le code pour que chaque ligne soit une liste indépendante. Tester la version corrigée.
+**Livrable** : La prédiction, l'explication du bug (aliasing de référence) et le code corrigé.
+**Corrigé** : La réponse attendue et sa justification sont dans le corrigé complément, exercice 6.
 
-Exercice complémentaire de consolidation.
+### Exercice 7 — Cas limites : liste vide et clé absente
 
-### Exercice 8
+**Donnée** : On dispose de la fonction suivante et du dictionnaire `notes = {"Alice": 15, "Bob": 12}` :
+```python
+def moyenne_liste(lst):
+    return sum(lst) / len(lst)
+```
+**Consigne** : (a) Appeler `moyenne_liste([])` et constater l'erreur. Modifier la fonction pour qu'elle renvoie `None` si la liste est vide. (b) Accéder à `notes["Charlie"]` et constater l'erreur. Réécrire l'accès en utilisant `.get("Charlie", "inconnu")`. (c) Écrire un test avec `if cle in dico` avant d'accéder à la valeur. Expliquer la différence entre les trois approches.
+**Livrable** : La fonction corrigée, les trois méthodes d'accès sécurisé et une phrase comparative.
+**Corrigé** : Exercice 7 : solution dans le corrigé complément (avec trace d'exécution).
 
-Exercice complémentaire de consolidation.
+### Exercice 8 — Transfert liste vers dictionnaire et inversement
+
+**Donnée** : On dispose d'une liste d'élèves avec leurs notes : `resultats = [("Alice", 15), ("Bob", 12), ("Charlie", 18), ("Alice", 14), ("Bob", 16)]`. Certains élèves apparaissent plusieurs fois.
+**Consigne** : (a) Construire un dictionnaire `notes_par_eleve` où chaque clé est un nom d'élève et la valeur est la liste de toutes ses notes. (b) À partir de ce dictionnaire, construire une liste de tuples `(nom, moyenne)` triée par moyenne décroissante. (c) Vérifier que le nombre total de notes dans le dictionnaire correspond bien à la longueur de la liste initiale.
+**Livrable** : Le dictionnaire construit, la liste triée et la vérification du total.
+**Corrigé** : Pour la correction : voir exercice 8 dans le document corrigé complément.
 
 
 Cas limite : liste vide passée en argument. Cas limite : clé absente du dictionnaire.

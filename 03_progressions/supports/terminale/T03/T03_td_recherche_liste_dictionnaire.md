@@ -156,37 +156,67 @@ Exercice de remédiation : chronométrer manuellement 100 recherches dans une li
 
 Séance dédiée.
 
-### Exercice 1
+### Exercice 1 — Recherche séquentielle dans une liste
 
-Exercice complémentaire de consolidation.
+**Donnée** : On dispose de la liste `villes = ["Lyon", "Marseille", "Toulouse", "Nice", "Nantes", "Strasbourg", "Montpellier", "Bordeaux"]`. On recherche `"Nantes"`.
+**Consigne** : Écrire une fonction `recherche_sequentielle(lst, cible)` qui parcourt la liste élément par élément et renvoie l'indice de `cible` si elle est trouvée, ou `-1` sinon. Tracer l'exécution sur la recherche de `"Nantes"` en complétant un tableau (étape, élément comparé, trouvé ?). Compter le nombre de comparaisons effectuées. Indiquer le nombre de comparaisons dans le pire cas (élément absent).
+**Livrable** : Le code de la fonction, le tableau de trace et le décompte des comparaisons.
+**Corrigé** : Le corrigé détaillé se trouve dans le fichier corrigé complément, exercice 1.
 
-### Exercice 2
+### Exercice 2 — Recherche par clé dans un dictionnaire
 
-Exercice complémentaire de consolidation.
+**Donnée** : Le dictionnaire suivant est `population = {"Lyon": 516092, "Marseille": 870018, "Toulouse": 486828, "Nice": 340017, "Nantes": 314138}`.
+**Consigne** : (a) Écrire l'expression Python qui teste si `"Toulouse"` est une clé de `population`. (b) Accéder à la population de Toulouse. (c) Expliquer en une phrase pourquoi cette opération ne nécessite pas de parcourir toutes les clés (utiliser le mot « table de hachage »). (d) Tester si la valeur `314138` est une clé du dictionnaire. Expliquer le résultat.
+**Livrable** : Les expressions Python, les résultats et l'explication du mécanisme de hachage.
+**Corrigé** : Voir la correction complète dans le corrigé complément (exercice 2).
 
-### Exercice 3
+### Exercice 3 — Complexité O(n) vs O(1)
 
-Exercice complémentaire de consolidation.
+**Donnée** : On considère une liste de `n` éléments et un dictionnaire de `n` clés contenant les mêmes données.
+**Consigne** : (a) Rappeler la complexité de `element in liste` et de `cle in dico`. Justifier chaque réponse. (b) Pour `n = 1 000 000`, estimer le nombre d'opérations dans le pire cas pour chaque structure. (c) Si chaque opération prend 1 microseconde, calculer le temps total pour 10 000 recherches dans la liste puis dans le dictionnaire. (d) Compléter un tableau comparatif avec les colonnes `n`, `temps liste (pire cas)`, `temps dico`.
+**Livrable** : Le tableau comparatif rempli pour `n = 100`, `n = 10 000` et `n = 1 000 000`, avec les temps estimés.
+**Corrigé** : Corrigé avec justification : fichier corrigé complément, exercice 3.
 
-### Exercice 4
+### Exercice 4 — Construction d'un dictionnaire depuis une liste
 
-Exercice complémentaire de consolidation.
+**Donnée** : On dispose d'une liste de tuples représentant des produits et leurs prix : `produits = [("pain", 1.20), ("lait", 0.95), ("beurre", 2.50), ("farine", 1.10), ("oeufs", 3.20)]`.
+**Consigne** : (a) Construire un dictionnaire `catalogue` à partir de cette liste en utilisant une boucle `for`. (b) Refaire la construction en une seule ligne avec `dict()` et la liste de tuples. (c) Ajouter le produit `("sucre", 1.80)` au dictionnaire. (d) Écrire une recherche de prix : comparer le code et la complexité entre chercher un prix dans la liste de tuples (parcours séquentiel) et dans le dictionnaire (accès par clé).
+**Livrable** : Les deux méthodes de construction, l'ajout, et la comparaison de recherche avec complexité.
+**Corrigé** : Solution détaillée : exercice 4 du corrigé complément associé.
 
-### Exercice 5
+### Exercice 5 — Mesure de temps avec timeit
 
-Exercice complémentaire de consolidation.
+**Donnée** : On dispose du code suivant pour créer une liste et un dictionnaire de `n` éléments :
+```python
+import timeit
+n = 100_000
+liste = list(range(n))
+dico = {i: True for i in range(n)}
+```
+**Consigne** : (a) Utiliser `timeit.timeit` pour mesurer le temps de `n - 1 in liste` (recherche du dernier élément, pire cas). (b) Mesurer le temps de `n - 1 in dico`. (c) Répéter pour `n = 1000`, `n = 10 000` et `n = 100 000`. (d) Consigner les résultats dans un tableau et calculer le ratio `temps_liste / temps_dico` pour chaque valeur de `n`. Conclure sur l'évolution du ratio quand `n` augmente.
+**Livrable** : Le code de benchmark, le tableau de mesures et la conclusion sur la scalabilité.
+**Corrigé** : Consulter le corrigé complément pour la solution de l'exercice 5.
 
-### Exercice 6
+### Exercice 6 — Recherche par valeur dans un dictionnaire O(n)
 
-Exercice complémentaire de consolidation.
+**Donnée** : Soit le dictionnaire `notes = {"Alice": 15, "Bob": 12, "Charlie": 18, "Diana": 15, "Eve": 9}`.
+**Consigne** : (a) Écrire une fonction `trouver_par_valeur(dico, valeur)` qui renvoie la liste de toutes les clés associées à une valeur donnée. (b) Appeler cette fonction pour trouver tous les élèves ayant la note 15. (c) Expliquer pourquoi cette recherche est en O(n) et non en O(1), contrairement à la recherche par clé. (d) Proposer une structure de données inversée (dictionnaire `note -> [noms]`) qui permettrait une recherche par note en O(1). La construire.
+**Livrable** : La fonction, l'appel de test, l'explication de complexité et le dictionnaire inversé.
+**Corrigé** : La réponse attendue et sa justification sont dans le corrigé complément, exercice 6.
 
-### Exercice 7
+### Exercice 7 — Cas clé absente et méthode get()
 
-Exercice complémentaire de consolidation.
+**Donnée** : On travaille avec le dictionnaire `config = {"host": "localhost", "port": 8080, "debug": True}`.
+**Consigne** : (a) Tenter d'accéder à `config["timeout"]` et noter l'erreur obtenue (`KeyError`). (b) Utiliser `config.get("timeout", 30)` pour obtenir une valeur par défaut. Expliquer la différence. (c) Écrire une fonction `acces_securise(dico, cle, defaut=None)` qui utilise `if cle in dico` pour renvoyer la valeur ou le défaut. (d) Comparer les trois approches (accès direct, `get()`, test `in`) en termes de lisibilité et de robustesse. Indiquer laquelle est préférable en production et pourquoi.
+**Livrable** : Le code des trois approches, les résultats et la comparaison argumentée.
+**Corrigé** : Exercice 7 : solution dans le corrigé complément (avec trace d'exécution).
 
-### Exercice 8
+### Exercice 8 — Comparaison de scalabilité à n = 10^6
 
-Exercice complémentaire de consolidation.
+**Donnée** : On souhaite comparer les performances de recherche dans une liste et un dictionnaire pour de très grandes tailles de données (`n = 10^6`).
+**Consigne** : (a) Générer une liste de `n = 1 000 000` entiers et un dictionnaire de `n` clés entières. (b) Mesurer le temps de 1 000 recherches d'éléments présents (choisis aléatoirement) dans la liste puis dans le dictionnaire. (c) Mesurer le temps de 1 000 recherches d'éléments absents (`n + i` pour `i` de 0 à 999). (d) Présenter les résultats dans un tableau avec les colonnes : structure, type de recherche (présent/absent), temps total, temps moyen par recherche. (e) Conclure : à partir de quelle taille de données le dictionnaire devient-il indispensable ?
+**Livrable** : Le code complet de benchmark, le tableau de résultats et la conclusion argumentée.
+**Corrigé** : Pour la correction : voir exercice 8 dans le document corrigé complément.
 
 
 Cas limite : recherche dans une liste vide. Cas limite : clé absente du dictionnaire.
