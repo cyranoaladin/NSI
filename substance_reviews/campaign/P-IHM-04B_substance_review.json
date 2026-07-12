@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-12T10:39:42Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md",
-        "anchor": "#méthodes",
-        "quote": "distinguer GET, POST et HTTPS.",
+        "anchor": "#get-vs-post--visibilité-des-données",
+        "quote": "| Données visibles dans l'URL | Oui (`?nom=valeur&...`) | Non (corps de la requête) |",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md",
-        "anchor": "#déroulé-en-classe",
-        "quote": "Comparer GET et POST : les paramètres GET sont dans l'URL, les paramètres POST sont dans le corps.",
+        "file": "03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md",
+        "anchor": "#exercice-8",
+        "quote": "Capacité officielle : P-IHM-04B.\n- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=theta\n- Consigne : distinguer GET, POST et HTTPS ; traiter aussi `paramètre jour absent` si nécessaire.\n- Réponse attendue : POST sans HTTPS ne chiffre pas.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
-        "anchor": "#exercice-4",
-        "quote": "Réponse attendue : POST sans HTTPS ne chiffre pas.",
+        "anchor": "#exercice-8",
+        "quote": "- Réponse attendue : POST sans HTTPS ne chiffre pas.\n- Méthode : distinguer GET, POST et HTTPS.\n- Cas limite : paramètre jour absent.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours mentionne la distinction GET/POST, le TP fait pratiquer la comparaison des deux méthodes avec localisation des paramètres, et le corrigé fournit la réponse attendue sur POST sans HTTPS. La capacité P-IHM-04B est couverte par les trois types de preuves.",
+      "justification": "Le cours enseigne la distinction GET/POST via un tableau comparatif (visibilité URL, historique, logs). Le TD fait pratiquer avec l'exercice 8 tagué P-IHM-04B. Le corrigé fournit la réponse attendue pour cet exercice.",
       "scientific_flags": [
         "human_review_required"
       ]

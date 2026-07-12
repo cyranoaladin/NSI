@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-08T21:31:13Z",
+  "judged_at": "2026-07-12T10:40:34Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -20,18 +20,18 @@
         "present": true,
         "file": "03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md",
         "anchor": "#exercice-4",
-        "quote": "Capacité officielle : T-BDD-02.\n- Données : `Livre(1,Dune), Livre(2,Fondation) ; Emprunt(10,1,Nora), Emprunt(11,9,Sam) invalide`",
+        "quote": "Consigne : repérer id_livre=9 absent ; traiter aussi `clé primaire nulle` si nécessaire.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/terminale/T09/T09_corrige_bases_relationnelles_cles_contraintes.md",
         "anchor": "#exercice-4",
-        "quote": "- Réponse attendue : suppression d un livre emprunté refusée.\n- Méthode : repérer id_livre=9 absent.",
+        "quote": "Réponse attendue : suppression d un livre emprunté refusée.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours expose les quatre services d'un SGBD (persistance, concurrence, efficacité, sécurisation) via un tableau dédié. L'évaluation Q4 demande désormais explicitement d'expliquer pourquoi le SGBD refuse l'insertion (service d'intégrité). Le TD fait pratiquer T-BDD-02 à l'exercice 4. Verdict needs_review : la pratique ne couvre que l'intégrité référentielle, pas les quatre services. Validation humaine requise.",
+      "justification": "Le cours expose les quatre services d'un SGBD (persistance, concurrence, efficacité, sécurisation) avec exemples. Le TD (ex. 4 et 8) fait pratiquer T-BDD-02 sur un cas concret. Le corrigé fournit la réponse attendue pour ces exercices.",
       "scientific_flags": [
         "human_review_required"
       ]
