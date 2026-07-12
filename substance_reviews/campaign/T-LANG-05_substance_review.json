@@ -12,8 +12,8 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/terminale/T14/T14_cours_modularite_api_paradigmes_bugs.md",
-        "anchor": "#savoir-faire-et-méthodes-opérationnelles",
-        "quote": "- écrire un test qui reproduit un bug.\n- isoler une dépendance dans un module.",
+        "anchor": "#exemple-corrigé-6",
+        "quote": "- Méthode : répondre aux causes typiques de bugs (T-LANG-05).\n- Résultat attendu : cause typique = division par zéro si `releves` est vide ; réponse = lever `ValueError` avec message explicite ; test = `assert moyenne_temperature([])` lève `ValueError`.",
         "teaches": true
       },
       "proof_practice": {
@@ -31,7 +31,7 @@
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne les méthodes de mise au point (écrire un test, isoler une dépendance). Le TD exercice 6 fait pratiquer l'identification et la correction d'un bug d'effet de bord à l'import. Le corrigé fournit la réponse détaillée avec la cause et la correction.",
+      "justification": "Le cours enseigne explicitement les causes typiques de bugs (division par zéro, effet de bord) et les réponses (lever ValueError, protéger par if __name__). Le TD exercice 6 fait pratiquer l'identification et la correction d'un bug d'effet de bord à l'import. Le corrigé fournit la réponse détaillée avec la cause et la correction. Verdict needs_review : preuve de cours renforcée, validation humaine requise.",
       "scientific_flags": [
         "human_review_required"
       ]

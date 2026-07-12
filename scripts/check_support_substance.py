@@ -9,7 +9,7 @@ from pathlib import Path
 import re
 
 from scripts._qa_common import ROOT
-from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, REQUIRED_KINDS, find_kind_file
+from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, REQUIRED_KINDS, find_all_kind_files
 
 GENERIC_PATTERNS = [
     "variante contrôlée",
@@ -209,12 +209,13 @@ def analyze_substance(root: Path = ROOT, prefixes: list[str] | None = None) -> S
     result = SubstanceResult()
     for prefix in prefixes:
         for kind in REQUIRED_KINDS:
-            path = find_kind_file(root, prefix, kind)
-            if path is None:
+            paths = find_all_kind_files(root, prefix, kind)
+            if not paths:
                 result.errors.append(f"{prefix}: support {kind} absent")
                 continue
-            result.checked_files += 1
-            result.errors.extend(analyze_support(path, kind))
+            for path in paths:
+                result.checked_files += 1
+                result.errors.extend(analyze_support(path, kind))
     return result
 
 

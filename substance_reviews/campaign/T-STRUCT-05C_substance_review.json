@@ -12,8 +12,8 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/terminale/T07/T07_cours_graphes_modelisation_listes_matrices.md",
-        "anchor": "#savoir-faire-et-méthodes-opérationnelles",
-        "quote": "- traduire une situation en sommets et arêtes.\n- passer de la liste d'adjacence à la matrice.\n- comparer le coût mémoire des deux représentations.",
+        "anchor": "#exemple-corrigé-3",
+        "quote": "- Méthode : écrire l'implémentation par listes de successeurs (T-STRUCT-05C).\n- Résultat attendu : `graphe = {\"A\": [\"B\",\"C\"], \"B\": [\"D\"], \"C\": [\"D\"], \"D\": [\"B\"], \"E\": []}`. On crée un dictionnaire où chaque sommet pointe vers la liste de ses successeurs.",
         "teaches": true
       },
       "proof_practice": {
@@ -31,7 +31,7 @@
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours présente la méthode de construction de la liste d'adjacence, l'exercice 3bis du TD demande explicitement d'écrire l'implémentation par dictionnaire Python, et le corrigé fournit la méthode détaillée avec gestion des sommets isolés.",
+      "justification": "Le cours enseigne désormais explicitement l'implémentation par dictionnaire Python (exemple corrigé 3, T-STRUCT-05C). Le TD exercice 3bis demande d'écrire l'implémentation et le corrigé fournit la méthode détaillée. Verdict needs_review : preuves cours+pratique+correction alignées, validation humaine requise.",
       "scientific_flags": [
         "human_review_required"
       ]

@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from scripts._qa_common import ROOT
-from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, REQUIRED_KINDS, find_kind_file
+from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, REQUIRED_KINDS, find_all_kind_files
 
 REQUIRED_BY_KIND = {
     "cours": ["Objectifs spécifiques", "Capacités officielles", "Situation-problème", "Activité d’entrée", "Exemple", "Exercices", "Corrigés", "Erreurs fréquentes", "Remédiation", "Différenciation"],
@@ -32,14 +32,15 @@ def analyze_ready_sections(root: Path = ROOT, prefixes: list[str] | None = None)
     result = ReadySectionsResult()
     for prefix in prefixes:
         for kind in REQUIRED_KINDS:
-            path = find_kind_file(root, prefix, kind)
-            if path is None:
+            paths = find_all_kind_files(root, prefix, kind)
+            if not paths:
                 result.errors.append(f"{prefix}: support {kind} absent")
                 continue
-            text = path.read_text(encoding="utf-8", errors="replace").lower()
-            for section in REQUIRED_BY_KIND.get(kind, []):
-                if section.lower() not in text:
-                    result.errors.append(f"{path}: section manquante -> {section}")
+            for path in paths:
+                text = path.read_text(encoding="utf-8", errors="replace").lower()
+                for section in REQUIRED_BY_KIND.get(kind, []):
+                    if section.lower() not in text:
+                        result.errors.append(f"{path}: section manquante -> {section}")
     return result
 
 

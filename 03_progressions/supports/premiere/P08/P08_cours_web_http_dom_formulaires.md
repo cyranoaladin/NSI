@@ -106,9 +106,9 @@ official_program:
 
 ## Lien avec la progression
 - Séance : P08-S1 à P08-S4.
-- TD : `P08_TD_web_http_dom_formulaires.md`.
-- TP : `P08_tp_web_http_dom_formulaires.md`.
-- Évaluation : `P08_evaluation_web_http_dom_formulaires.md`.
+- TD : `P08_TD_html_css_dom.md` et `P08_TD_http_get_post_formulaires.md`.
+- TP : `P08_TP_html_css_dom.md` et `P08_TP_http_get_post_formulaires.md`.
+- Évaluation : `P08_evaluation_html_css_dom.md` et `P08_evaluation_http_get_post_formulaires.md`.
 
 ## Confidentialité des requêtes
 

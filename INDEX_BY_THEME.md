@@ -111,12 +111,14 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/fiches_cours/terminale/T07/T07_fiche_cours_graphes_modelisation_listes_matrices.md` — fiche_cours — needs_review — eleve
 - `03_progressions/fiches_cours/terminale/T08/T08_fiche_cours_bfs_dfs_cycles_chemins.md` — fiche_cours — needs_review — eleve
 
+## HTML, CSS et DOM
+
+- `03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md` — tp — needs_review — eleve
+
 ## HTML, CSS, DOM, HTTP et formulaires
 
 - `03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md` — td — needs_review — eleve
-- `03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md` — tp — needs_review — eleve
-- `03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md` — tp — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
@@ -125,6 +127,10 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md` — trace — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md` — version_amenagee — needs_review — eleve
+
+## HTTP, GET, POST et formulaires
+
+- `03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md` — tp — needs_review — eleve
 
 ## IHM Web
 

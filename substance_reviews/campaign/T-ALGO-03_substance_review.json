@@ -31,7 +31,7 @@
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne la méthode diviser pour régner (division, récursion, fusion, coût n log n), le TD fait pratiquer avec des exercices concrets sur le tri fusion, et le corrigé fournit les réponses attendues pour chaque exercice.",
+      "justification": "Le cours enseigne les trois phases (division, récursion, fusion) et le coût n log n. Le TD exercice 2 fait écrire le tri récursif et l'exercice 3 la fusion — ensemble ils constituent un algorithme complet. Cependant, le proof_practice ancré sur l'exercice 1 ne montre que la division. Verdict needs_review honnête : la chaîne cours+TD+corrigé couvre la capacité mais la preuve mécanique est partielle. Validation humaine requise.",
       "scientific_flags": [
         "human_review_required"
       ]

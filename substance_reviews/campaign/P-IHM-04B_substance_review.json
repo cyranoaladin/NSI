@@ -20,7 +20,7 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md",
         "anchor": "#déroulé-en-classe",
-        "quote": "Comparer `GET` et `POST` : les paramètres GET sont dans l'URL, les paramètres POST sont dans le corps.",
+        "quote": "Comparer GET et POST : les paramètres GET sont dans l'URL, les paramètres POST sont dans le corps.",
         "teaches": true
       },
       "proof_correction": {

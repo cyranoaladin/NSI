@@ -31,7 +31,7 @@
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne la recherche d'occurrence avec la méthode 'parcourir avec indice' et des exemples corrigés liés à P-ALGO-01A. Le TD fait pratiquer la recherche de la première occurrence d'une valeur dans une liste. Le corrigé fournit les réponses attendues pour chaque exercice.",
+      "justification": "Le cours enseigne la recherche d'occurrence par parcours avec indice. Le TD exercice 1 fait trouver la première occurrence (indice 1). Cependant, la capacité demande 'écrire un algorithme' et le TD demande surtout de trouver le résultat manuellement, pas d'écrire le pseudo-code/Python. Verdict needs_review honnête : preuve de cours correcte, pratique partielle (résultat sans écriture algorithmique complète). Validation humaine requise.",
       "scientific_flags": [
         "human_review_required"
       ]

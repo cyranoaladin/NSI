@@ -27,7 +27,7 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md",
         "anchor": "#exercice-9",
-        "quote": "Réponse attendue : distances calculées, 3 plus proches = A(3,2) B(5,4) A(2,3), vote A=2 B=1, classe \"A\".",
+        "quote": "Réponse attendue : k=3 → 3 plus proches = A1, B1, A2 → vote A=2, B=1 → classe \"A\".",
         "teaches": true
       },
       "verdict": "needs_review",

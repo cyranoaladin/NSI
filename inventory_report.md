@@ -4618,6 +4618,4 @@
 - latex/packs/premiere/P13/build.sh (niveau=premiere, statut=needs_review)
 
 ## Doublons (même hash SHA256)
-- Groupe (2):
-  - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
-  - 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md
+- Aucun doublon détecté.

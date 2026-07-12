@@ -20,7 +20,7 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md",
         "anchor": "#travail-demandé",
-        "quote": "Réaliser : repérer header main form label input.",
+        "quote": "Réaliser : écrire `titre_page(html)` qui extrait le contenu de `<title>` (P-IHM-01A).",
         "teaches": true
       },
       "proof_correction": {

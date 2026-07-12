@@ -12,8 +12,8 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/terminale/T14/T14_cours_modularite_api_paradigmes_bugs.md",
-        "anchor": "#exemples-corrigés",
-        "quote": "- Méthode : choisir paradigme selon tâche.\n- Résultat attendu : temperature=\"31\" refusée ou convertie.\n- Contrôle : capacité T-LANG-03C et cas limite `type chaîne`.",
+        "anchor": "#exemple-corrigé-3",
+        "quote": "- Méthode : créer un module simple et le documenter (T-LANG-03C).\n- Résultat attendu : créer le fichier `meteo.py` contenant `def moyenne_temperature(releves):` avec docstring, puis l'importer depuis `main.py` avec `from meteo import moyenne_temperature`.",
         "teaches": true
       },
       "proof_practice": {
@@ -31,7 +31,7 @@
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours présente la méthode et un exemple corrigé pour T-LANG-03C. Le TD propose un exercice de production avec consigne explicite. Le corrigé fournit la réponse attendue avec cas limite. Cependant, la capacité porte sur 'créer des modules simples et les documenter', alors que les exercices traitent surtout du choix de paradigme ; le lien avec la documentation de modules reste superficiel.",
+      "justification": "Le cours enseigne désormais explicitement la création d'un module avec docstring et son import (exemple corrigé 3, T-LANG-03C). Le TD exercice 3 doit être mis à jour pour refléter ce contenu. Verdict needs_review : preuve de cours alignée, pratique et correction à vérifier par revue humaine.",
       "scientific_flags": [
         "human_review_required"
       ]
