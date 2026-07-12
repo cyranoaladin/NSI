@@ -47,7 +47,8 @@ def test_valeur_champ_absent_leve_erreur() -> None:
         MODULE.valeur_champ(html_form, "inexistant")
         assert False, "ValueError attendue"
     except ValueError:
-        pass
+        return
+    raise AssertionError("ValueError attendue pour champ absent")
 
 
 def test_classer_mecanisme_cookie_memorise_et_retransmis() -> None:
@@ -71,7 +72,8 @@ def test_classer_mecanisme_inconnu_leve_erreur() -> None:
         MODULE.classer_mecanisme("websocket")
         assert False, "ValueError attendue"
     except ValueError:
-        pass
+        return
+    raise AssertionError("ValueError attendue pour mécanisme inconnu")
 
 
 if __name__ == "__main__":

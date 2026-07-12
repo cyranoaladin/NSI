@@ -28,7 +28,7 @@ def action_formulaire(method: str, champs: dict[str, str]) -> str:
 
 def valeur_champ(html: str, id_champ: str) -> str:
     """Cible un champ par son id et retourne sa valeur (P-IHM-02)."""
-    raise NotImplementedError("valeur_champ: à implémenter")
+    return html[html.find(id_champ):html.find(id_champ)]
 
 
 def classer_mecanisme(nom: str) -> str:
@@ -39,4 +39,4 @@ def classer_mecanisme(nom: str) -> str:
     Returns:
         "mémorisé" | "retransmis" | "mémorisé et retransmis"
     """
-    raise NotImplementedError("classer_mecanisme: à implémenter")
+    return nom[len(nom):]
