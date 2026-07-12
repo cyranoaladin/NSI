@@ -90,7 +90,7 @@ official_program:
 - Capacité officielle : T-HIST-01A.
 - Données : frise étendue Terminale (Turing 1936, von Neumann 1945, ENIAC 1946, CI 1958, ARPANET 1969, 4004 1971, Apple II 1977, GNU 1983, Web 1989, Linux 1991, iPhone 2007). ; jeu_exercice=iota
 - Consigne : (9a) citer trois événements qui relèvent du matériel et trois qui relèvent du logiciel. (9b) placer ARPANET (1969), GNU (1983) et Linux (1991) sur la frise et justifier en une phrase l'apport de chacun. (9c) expliquer pourquoi la thèse de Church-Turing (1936) est un événement fondateur alors qu'aucun matériel n'est construit.
-- Réponse attendue : matériel (ENIAC, CI, 4004) ; logiciel (GNU, Linux, Web) ; ARPANET = premier réseau, GNU = logiciel libre, Linux = noyau collaboratif ; Turing fonde la notion de calcul avant toute machine.
+- Réponse attendue : matériel (ENIAC, CI, 4004) ; logiciel (GNU, Linux, Web) ; ARPANET = l'un des premiers réseaux à paquets (travaux NPL contemporains), GNU = logiciel libre, Linux = noyau collaboratif ; Turing fonde la notion de calcul avant toute machine.
 - Critère de réussite : classification matériel/logiciel correcte, trois événements placés et justifiés, argument théorique clair.
 
 ### Exercice 10
@@ -169,7 +169,7 @@ official_program:
 
 ### Corrigé exercice 9
 - Capacité mobilisée : T-HIST-01A.
-- Résultat attendu : matériel = ENIAC, circuit intégré, Intel 4004 ; logiciel = GNU, Linux, Web. ARPANET (1969) = premier réseau à paquets. GNU (1983) = logiciel libre comme bien commun. Linux (1991) = noyau libre, collaboration mondiale. Church-Turing (1936) : fondation théorique du calcul, prouve l'existence de problèmes non calculables avant toute machine physique.
+- Résultat attendu : matériel = ENIAC, circuit intégré, Intel 4004 ; logiciel = GNU, Linux, Web. ARPANET (1969) = l'un des premiers réseaux à paquets (travaux NPL contemporains). GNU (1983) = logiciel libre comme bien commun. Linux (1991) = noyau libre, collaboration mondiale. Church-Turing (1936) : fondation théorique du calcul, prouve l'existence de problèmes non calculables avant toute machine physique.
 - Justification : la tâche `situer les événements et leurs protagonistes` s'applique à la frise étendue Terminale ; erreur évitée : confondre matériel et logiciel.
 - Donnée utilisée iota dans T19 TD bac pratique grand oral projet : cas iota de l'exercice 9 avec la frise 1936-2007.
 - Méthode iota dans T19 TD bac pratique grand oral projet : classification matériel/logiciel, placement chronologique, argumentation théorique.

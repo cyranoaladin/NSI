@@ -107,7 +107,7 @@ La capacité T-HIST-01A demande de situer dans le temps les principaux événeme
 | 1945 | Architecture von Neumann | John von Neumann | Programme stocké en mémoire |
 | 1946 | ENIAC | Mauchly, Eckert | Calculateur électronique généraliste |
 | 1958 | Circuit intégré | Kilby, Noyce | Miniaturisation des composants |
-| 1969 | ARPANET (premier réseau à commutation de paquets) | DARPA | Naissance d'Internet |
+| 1969 | ARPANET (l'un des premiers réseaux à commutation de paquets — travaux NPL contemporains) | DARPA | Naissance d'Internet |
 | 1971 | Microprocesseur Intel 4004 | Hoff, Faggin | Processeur sur une puce |
 | 1977 | Micro-ordinateurs (Apple II) | Jobs, Wozniak | Informatique personnelle |
 | 1983 | GNU (logiciel libre) | Richard Stallman | Le logiciel comme bien commun |
@@ -119,7 +119,7 @@ La capacité T-HIST-01A demande de situer dans le temps les principaux événeme
 
 L'histoire de l'informatique montre un transfert progressif de complexité du matériel vers le logiciel :
 
-1. **Années 1940-1950 — le matériel est roi** : les premiers ordinateurs (ENIAC, EDVAC) sont câblés pour des tâches spécifiques. Le logiciel n'existe pas en tant que discipline ; programmer signifie reconfigurer physiquement la machine.
+1. **Années 1940-1950 — le matériel est roi** : l'ENIAC (1946) est câblé pour des tâches spécifiques ; l'EDVAC (1949) introduit le concept de programme enregistré en mémoire (rapport von Neumann, 1945). Le logiciel n'existe pas encore en tant que discipline.
 
 2. **Années 1960-1970 — naissance du logiciel** : les langages de haut niveau (FORTRAN 1957, COBOL 1959, C 1972) permettent d'écrire des programmes indépendants du matériel. Les systèmes d'exploitation (Unix 1969) gèrent les ressources matérielles. Le logiciel devient un produit distinct.
 
