@@ -9,7 +9,7 @@ from pathlib import Path
 import re
 
 from scripts._qa_common import ROOT
-from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, REQUIRED_KINDS, find_all_kind_files
+from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, REQUIRED_KINDS, find_kind_file
 
 GENERIC_PATTERNS = [
     "variante contrôlée",
@@ -22,7 +22,7 @@ GENERIC_PATTERNS = [
 OBJECTIVE_RE = re.compile(r"^##\s+Objectif\s+(O\d+).*?(?=^##\s+Objectif\s+O\d+|^##\s+|\Z)", re.M | re.S)
 EXERCISE_RE = re.compile(r"^###\s+Exercice\s+(\d+).*?(?=^###\s+Exercice\s+\d+|^##\s+|\Z)", re.M | re.S)
 CORRECTION_RE = re.compile(r"^###\s+Corrigé exercice\s+(\d+).*?(?=^###\s+Corrigé exercice\s+\d+|^##\s+|\Z)", re.M | re.S)
-QUESTION_RE = re.compile(r"^#{2,3}\s+Question\s+(\d+).*?(?=^#{2,3}\s+Question\s+\d+|^##\s+|\Z)", re.M | re.S)
+QUESTION_RE = re.compile(r"^###\s+Question\s+(\d+).*?(?=^###\s+Question\s+\d+|^##\s+|\Z)", re.M | re.S)
 BAREME_RE = re.compile(r"^###\s+Barème question\s+(\d+).*?(?=^###\s+Barème question\s+\d+|^##\s+|\Z)", re.M | re.S)
 ACTIVITY_RE = re.compile(r"Activité corrective\s+(EF\d+)\s*:\s*(.+)")
 EXAMPLE_BLOCK_RE = re.compile(r"^###\s+Exemple corrigé\s+\d+.*?(?=^###\s+Exemple corrigé\s+\d+|^##\s+|\Z)", re.M | re.S)
@@ -209,13 +209,12 @@ def analyze_substance(root: Path = ROOT, prefixes: list[str] | None = None) -> S
     result = SubstanceResult()
     for prefix in prefixes:
         for kind in REQUIRED_KINDS:
-            paths = find_all_kind_files(root, prefix, kind)
-            if not paths:
+            path = find_kind_file(root, prefix, kind)
+            if path is None:
                 result.errors.append(f"{prefix}: support {kind} absent")
                 continue
-            for path in paths:
-                result.checked_files += 1
-                result.errors.extend(analyze_support(path, kind))
+            result.checked_files += 1
+            result.errors.extend(analyze_support(path, kind))
     return result
 
 

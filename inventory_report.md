@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1152
+- Total ressources : 1154
 - Ressources pédagogiques : 53
-- Ressources techniques : 1099
+- Ressources techniques : 1101
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1144
+- generated: 1146
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 593
+- interne: 595
 - premiere: 259
 - terminale: 300
 
 ## Répartition par type
 - banque: 14
-- document: 726
+- document: 728
 - python: 84
 - script: 209
 - sequence: 45
 - test: 74
 
 ## Répartition par statut
-- needs_review: 1152
+- needs_review: 1154
 
 ## Répartition audience
 - corrige: 80
 - eleve: 143
-- mixte: 926
+- mixte: 928
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -621,8 +621,10 @@
   - docs/promotion/dossier_revue_lead_v2.md
   - docs/promotion/dossier_revue_lead_v3.md
   - docs/promotion/dossier_revue_lead_v4.md
+  - docs/promotion/dossier_revue_lead_v5.md
   - docs/reorg_report.md
   - docs/repo_topology.md
+  - docs/rvw_responses.md
   - docs/source_archive_policy.md
   - drive_inventory.csv
   - drive_mapping.md
@@ -1827,8 +1829,10 @@
   - docs/promotion/dossier_revue_lead_v2.md
   - docs/promotion/dossier_revue_lead_v3.md
   - docs/promotion/dossier_revue_lead_v4.md
+  - docs/promotion/dossier_revue_lead_v5.md
   - docs/reorg_report.md
   - docs/repo_topology.md
+  - docs/rvw_responses.md
   - docs/source_archive_policy.md
   - drive_inventory.csv
   - drive_mapping.md
@@ -2907,8 +2911,10 @@
 - docs/promotion/dossier_revue_lead_v2.md
 - docs/promotion/dossier_revue_lead_v3.md
 - docs/promotion/dossier_revue_lead_v4.md
+- docs/promotion/dossier_revue_lead_v5.md
 - docs/reorg_report.md
 - docs/repo_topology.md
+- docs/rvw_responses.md
 - docs/source_archive_policy.md
 - drive_inventory.csv
 - drive_mapping.md
@@ -4052,8 +4058,10 @@
 - docs/promotion/dossier_revue_lead_v2.md
 - docs/promotion/dossier_revue_lead_v3.md
 - docs/promotion/dossier_revue_lead_v4.md
+- docs/promotion/dossier_revue_lead_v5.md
 - docs/reorg_report.md
 - docs/repo_topology.md
+- docs/rvw_responses.md
 - docs/source_archive_policy.md
 - drive_inventory.csv
 - drive_mapping.md

@@ -207,5 +207,16 @@
     "cost_usd": 0.047284,
     "api_calls": 10,
     "judged_at": "2026-07-12T10:41:03Z"
+  },
+  {
+    "cap": "T-HIST-01B",
+    "seq": "T19",
+    "read": 0,
+    "write": 16280,
+    "fresh": 82,
+    "out": 589,
+    "cost_usd": 0.070131,
+    "api_calls": 1,
+    "judged_at": "2026-07-12T10:47:12Z"
   }
 ]

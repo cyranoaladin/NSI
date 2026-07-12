@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from scripts._qa_common import ROOT
-from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, REQUIRED_KINDS, find_all_kind_files, useful_lines
+from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES, REQUIRED_KINDS, find_kind_file, useful_lines
 
 MIN_LINES = {
     "cours": 180,
@@ -32,15 +32,14 @@ def analyze_ready_depth(root: Path = ROOT, prefixes: list[str] | None = None) ->
     result = ReadyDepthResult()
     for prefix in prefixes:
         for kind in REQUIRED_KINDS:
-            paths = find_all_kind_files(root, prefix, kind)
-            if not paths:
+            path = find_kind_file(root, prefix, kind)
+            if path is None:
                 result.errors.append(f"{prefix}: support {kind} absent")
                 continue
-            for path in paths:
-                lines = useful_lines(path.read_text(encoding="utf-8", errors="replace"))
-                minimum = MIN_LINES.get(kind, 60)
-                if len(lines) < minimum:
-                    result.errors.append(f"{path}: profondeur insuffisante ({len(lines)} lignes utiles, minimum {minimum})")
+            lines = useful_lines(path.read_text(encoding="utf-8", errors="replace"))
+            minimum = MIN_LINES.get(kind, 60)
+            if len(lines) < minimum:
+                result.errors.append(f"{path}: profondeur insuffisante ({len(lines)} lignes utiles, minimum {minimum})")
     return result
 
 
