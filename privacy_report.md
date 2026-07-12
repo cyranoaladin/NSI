@@ -82,6 +82,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P07/code/P07_tests_attendus_fonctions_tests_specifications.py: nom propre suspect -> Ada Lovelace
 - 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md: nom propre suspect -> Max-Age
+- 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md: nom propre suspect -> Cache-Control
 - 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md: nom propre suspect -> Set-Cookie
 - 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md: nom propre suspect -> Set-Cookie
 - 03_progressions/supports/premiere/P14/P14_TD_synthese_projet_oral.md: nom propre suspect -> Distinguer Internet
@@ -209,8 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - programme_matrix_premiere.md: nom propre suspect -> Formulaire Web
 - progression_audit.md: nom propre suspect -> Calendrier Tunisie
 - progression_audit.md: nom propre suspect -> Ressources Drive
-- qa_debt_register.md: nom propre suspect -> Portabilité Drive
-- ... 145 alertes supplémentaires non affichées
+- ... 146 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
