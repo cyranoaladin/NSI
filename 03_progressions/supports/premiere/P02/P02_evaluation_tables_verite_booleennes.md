@@ -143,8 +143,8 @@ Exercice de remédiation : construire pas à pas la table de vérité de A OU (N
 | Question | Points |
 |---|---|
 | Question 1 | 5 |
-| Question 2 | 5 |
-| Question 3 | 5 |
+| Question 2 | 6 |
+| Question 3 | 4 |
 | **Total** | **15** |
 
 ## Critères de réussite

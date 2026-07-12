@@ -179,10 +179,12 @@ Exercice de remédiation : écrire une fonction min_max qui renvoie le minimum e
 
 | Question | Points |
 |---|---|
-| Question 1 | 5 |
-| Question 2 | 5 |
-| Question 3 | 5 |
-| **Total** | **15** |
+| Question 1 | 4 |
+| Question 2 | 4 |
+| Question 3 | 4 |
+| Question 4 | 4 |
+| Question 5 | 4 |
+| **Total** | **20** |
 
 ## Critères de réussite
 

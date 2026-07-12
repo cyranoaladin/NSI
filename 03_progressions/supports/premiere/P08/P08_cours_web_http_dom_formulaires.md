@@ -187,7 +187,7 @@ var theme = localStorage.getItem("theme");  // "sombre"
 ### Cas limites
 
 - Un cookie expiré n'est plus envoyé au serveur.
-- localStorage est partagé entre tous les onglets du même domaine.
+- localStorage est partagé entre tous les onglets de la même origine (schéma + hôte + port).
 - Un cookie sans `Secure` peut être intercepté sur un réseau non chiffré.
 
 ## Renforcement explicatif ciblé

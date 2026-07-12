@@ -113,7 +113,7 @@ Un algorithme de parcours doit traiter une structure définie en se ramenant à 
 ### Corrigé exercice 9
 - Méthode : identifier le paradigme de chaque implémentation par ses traits distinctifs.
 - Résultat : impératif (boucle for, variable mutable), fonctionnel (récursion), objet (classe).
-- Contrôle : la version récursive risque RecursionError pour n=10000 (pas d'optimisation tail-call en Python).
+- Contrôle : la version récursive risque RecursionError pour n=10000 car l'addition `lst[0] + …` reste en attente sur la pile à chaque appel (appel non terminal — Python ne pratique pas l'élimination d'appel terminal).
 - Erreur traitée : confondre récursion et itération comme paradigmes interchangeables.
 
 ## Barème de correction rapide
