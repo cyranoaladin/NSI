@@ -523,3 +523,8 @@ ressource,niveau,sequence,notion,reviewer,date,science_status,pedagogy_status,ac
 03_progressions/supports/terminale/T05/T05_tp_arbres_mesures_parcours_complement.md,terminale,T05,arbres mesures et parcours,,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/terminale/T05/T05_trace_arbres_mesures_parcours_complement.md,terminale,T05,arbres mesures et parcours,,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md,terminale,,"arbre binaire, taille, hauteur, feuilles, parcours en largeur, file",,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P02/P02_bareme_tables_verite_booleennes.md,premiere,,expression booléenne table de vérité opérateurs logiques,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P03/P03_bareme_conversion_encodages_texte.md,premiere,,encodage UTF-8 Latin-1 ASCII conversion,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md,premiere,,p-uplet compréhension matrice dictionnaire itération,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T01/T01_bareme_interface_implementation_complement.md,terminale,,interface implémentation pile file liste chaînée,,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/terminale/T03/T03_bareme_recherche_liste_dictionnaire.md,terminale,,recherche liste dictionnaire index clé complexité,,,pending,pending,pending,pending,pending,revue humaine non réalisée

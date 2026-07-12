@@ -52,6 +52,7 @@ mais ils ne doivent pas remplacer le jugement de substance.
 | scripts/check_drive_action_plan_completeness.py | blocking_privacy | plan Drive restant |
 | scripts/check_no_coverage_from_sheets_only.py | blocking_structure | pas de fausse couverture |
 | scripts/check_closed_error_classes.py | blocking_substance | classes d'erreur fermées (TCO non terminal, localStorage domaine, glouton trivial, rotation Q/R) |
+| scripts/check_eval_bareme_pairing.py | blocking_substance | appariement évaluation↔barème par slug ou capacités frontmatter |
 | scripts/run_python_tests.py | blocking_tests | tests Python |
 
 ## Informational Metrics

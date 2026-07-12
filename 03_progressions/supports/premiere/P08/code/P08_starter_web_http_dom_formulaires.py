@@ -24,3 +24,19 @@ def parametres_get(url: str) -> dict[str, str]:
 
 def action_formulaire(method: str, champs: dict[str, str]) -> str:
     return f"{method}:{len(champs)}"
+
+
+def valeur_champ(html: str, id_champ: str) -> str:
+    """Cible un champ par son id et retourne sa valeur (P-IHM-02)."""
+    raise NotImplementedError("valeur_champ: à implémenter")
+
+
+def classer_mecanisme(nom: str) -> str:
+    """Classe un mécanisme web (P-IHM-03B).
+
+    Args:
+        nom: "cookie", "localStorage", "donnée de formulaire", "session"
+    Returns:
+        "mémorisé" | "retransmis" | "mémorisé et retransmis"
+    """
+    raise NotImplementedError("classer_mecanisme: à implémenter")

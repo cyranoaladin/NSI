@@ -57,5 +57,8 @@ jobs:
       - name: Closed error classes guard
         run: python -m scripts.check_closed_error_classes
 
+      - name: Eval-barème pairing guard
+        run: python -m scripts.check_eval_bareme_pairing
+
       - name: Verdict provenance guard
         run: python -m scripts.check_verdict_provenance --base ${{ github.event.pull_request.base.sha || 'HEAD~1' }}

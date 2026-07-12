@@ -41,6 +41,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/contracts/T19_contract.yml: nom propre suspect -> Grand Oral
 - 03_progressions/supports/contracts/T19_contract.yml: nom propre suspect -> Grand Oral
 - 03_progressions/supports/contracts/T19_contract.yml: nom propre suspect -> Grand Oral
+- 03_progressions/supports/premiere/P02/P02_bareme_tables_verite_booleennes.md: nom propre suspect -> De Morgan
+- 03_progressions/supports/premiere/P02/P02_bareme_tables_verite_booleennes.md: nom propre suspect -> De Morgan
 - 03_progressions/supports/premiere/P02/P02_cours_tables_verite_booleennes.md: nom propre suspect -> De Morgan
 - 03_progressions/supports/premiere/P02/P02_td_tables_verite_booleennes.md: nom propre suspect -> De Morgan
 - 03_progressions/supports/premiere/P02/P02_tp_tables_verite_booleennes.md: nom propre suspect -> De Morgan
@@ -49,6 +51,8 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P02/P02_tp_tables_verite_booleennes.md: nom propre suspect -> De Morgan
 - 03_progressions/supports/premiere/P02/P02_tp_tables_verite_booleennes.md: nom propre suspect -> Retourne True
 - 03_progressions/supports/premiere/P02/P02_trace_tables_verite_booleennes.md: nom propre suspect -> De Morgan
+- 03_progressions/supports/premiere/P03/P03_bareme_conversion_encodages_texte.md: nom propre suspect -> En Latin
+- 03_progressions/supports/premiere/P03/P03_bareme_conversion_encodages_texte.md: nom propre suspect -> Explication Latin
 - 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> En Latin
 - 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> En Latin
 - 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> En Latin
@@ -206,11 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - missing_documents_register_v2.md: nom propre suspect -> Lien Drive
 - premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> American Standard Code
 - premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> Information Interchange
-- premiere/sequences/s01_representation_donnees/sources.md: nom propre suspect -> Ressources Drive
-- program_capacity_evidence_depth_report.md: nom propre suspect -> Program Capacity Evidence Depth Report
-- programme_matrix_premiere.md: nom propre suspect -> Formulaire Web
-- progression_audit.md: nom propre suspect -> Calendrier Tunisie
-- ... 147 alertes supplémentaires non affichées
+- ... 151 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
@@ -378,6 +378,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P02/code/P02_corrige_professeur_complement_booleens.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P02/code/P02_starter_complement_booleens.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P02/code/P02_tests_attendus_complement_booleens.py: nom propre suspect -> Asset Python
+- 03_progressions/supports/premiere/P03/P03_bareme_conversion_encodages_texte.md: nom propre suspect -> Code Python
 - 03_progressions/supports/premiere/P03/P03_bareme_texte_reels.md: nom propre suspect -> Texte Unicode
 - 03_progressions/supports/premiere/P03/P03_bareme_texte_reels.md: nom propre suspect -> Texte Unicode
 - 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md: nom propre suspect -> Code Python
@@ -413,5 +414,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P03/code/P03_tests_attendus_texte_reels.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P04/P04_tp_types_construits_complement.md: nom propre suspect -> Module Python
 - 03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md: nom propre suspect -> Fonctions Python
-- 03_progressions/supports/premiere/P07/P07_TP_fonctions_tests_specifications.md: nom propre suspect -> Assets Python
-- ... 385 alertes supplémentaires non affichées
+- ... 388 alertes supplémentaires non affichées

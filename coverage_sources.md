@@ -399,6 +399,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P02/P02_bareme_tables_verite_booleennes.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P02/P02_corrige_tables_verite_booleennes.md | needs_review |
 | cours | 03_progressions/supports/premiere/P02/P02_cours_tables_verite_booleennes.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P02/P02_evaluation_tables_verite_booleennes.md | needs_review |
@@ -430,6 +431,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P03/P03_bareme_conversion_encodages_texte.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md | needs_review |
 | cours | 03_progressions/supports/premiere/P03/P03_cours_conversion_encodages_texte.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P03/P03_evaluation_conversion_encodages_texte.md | needs_review |
@@ -444,6 +446,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md | needs_review |
 | cours | 03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md | needs_review |
@@ -475,6 +478,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md | needs_review |
 | cours | 03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md | needs_review |
@@ -489,6 +493,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md | needs_review |
 | cours | 03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md | needs_review |
@@ -517,6 +522,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md | needs_review |
 | cours | 03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md | needs_review |
@@ -531,6 +537,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md | needs_review |
 | cours | 03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md | needs_review |
@@ -545,6 +552,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md | needs_review |
 | cours | 03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P04/P04_evaluation_types_construits_complement.md | needs_review |
@@ -1763,6 +1771,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T01/T01_bareme_interface_implementation_complement.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T01/T01_corrige_interface_implementation_complement.md | needs_review |
 | cours | 03_progressions/supports/terminale/T01/T01_cours_interface_implementation_complement.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T01/T01_evaluation_interface_implementation_complement.md | needs_review |
@@ -1777,6 +1786,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T01/T01_bareme_interface_implementation_complement.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T01/T01_corrige_interface_implementation_complement.md | needs_review |
 | cours | 03_progressions/supports/terminale/T01/T01_cours_interface_implementation_complement.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T01/T01_evaluation_interface_implementation_complement.md | needs_review |
@@ -1850,6 +1860,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T03/T03_bareme_recherche_liste_dictionnaire.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T03/T03_corrige_recherche_liste_dictionnaire.md | needs_review |
 | cours | 03_progressions/supports/terminale/T03/T03_cours_recherche_liste_dictionnaire.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T03/T03_evaluation_recherche_liste_dictionnaire.md | needs_review |

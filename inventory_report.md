@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1156
+- Total ressources : 1161
 - Ressources pédagogiques : 53
-- Ressources techniques : 1103
+- Ressources techniques : 1108
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1148
+- generated: 1153
 - import_partiel: 1
 
 ## Répartition par niveau
 - interne: 596
-- premiere: 259
-- terminale: 301
+- premiere: 262
+- terminale: 303
 
 ## Répartition par type
 - banque: 14
-- document: 729
+- document: 734
 - python: 84
 - script: 210
 - sequence: 45
 - test: 74
 
 ## Répartition par statut
-- needs_review: 1156
+- needs_review: 1161
 
 ## Répartition audience
 - corrige: 80
 - eleve: 143
-- mixte: 930
+- mixte: 935
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -171,6 +171,7 @@
   - 03_progressions/supports/premiere/P01/code/P01_starter_conversions_bases.py
   - 03_progressions/supports/premiere/P01/code/P01_tests_attendus_conversions_bases.py
   - 03_progressions/supports/premiere/P02/P02_bareme_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_bareme_tables_verite_booleennes.md
   - 03_progressions/supports/premiere/P02/P02_corrige_complement_booleens.md
   - 03_progressions/supports/premiere/P02/P02_corrige_tables_verite_booleennes.md
   - 03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md
@@ -188,6 +189,7 @@
   - 03_progressions/supports/premiere/P02/code/P02_corrige_professeur_complement_booleens.py
   - 03_progressions/supports/premiere/P02/code/P02_starter_complement_booleens.py
   - 03_progressions/supports/premiere/P02/code/P02_tests_attendus_complement_booleens.py
+  - 03_progressions/supports/premiere/P03/P03_bareme_conversion_encodages_texte.md
   - 03_progressions/supports/premiere/P03/P03_bareme_texte_reels.md
   - 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md
   - 03_progressions/supports/premiere/P03/P03_corrige_texte_reels.md
@@ -207,6 +209,7 @@
   - 03_progressions/supports/premiere/P03/code/P03_starter_texte_reels.py
   - 03_progressions/supports/premiere/P03/code/P03_tests_attendus_texte_reels.py
   - 03_progressions/supports/premiere/P04/P04_bareme_types_construits.md
+  - 03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md
   - 03_progressions/supports/premiere/P04/P04_corrige_types_construits.md
   - 03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md
   - 03_progressions/supports/premiere/P04/P04_cours_types_construits.md
@@ -352,6 +355,7 @@
   - 03_progressions/supports/terminale/T00/code/T00_corrige_professeur_diagnostic_tests.py
   - 03_progressions/supports/terminale/T00/code/T00_starter_diagnostic_tests.py
   - 03_progressions/supports/terminale/T00/code/T00_tests_attendus_diagnostic_tests.py
+  - 03_progressions/supports/terminale/T01/T01_bareme_interface_implementation_complement.md
   - 03_progressions/supports/terminale/T01/T01_bareme_interfaces_structures.md
   - 03_progressions/supports/terminale/T01/T01_corrige_interface_implementation_complement.md
   - 03_progressions/supports/terminale/T01/T01_corrige_interfaces_structures.md
@@ -383,6 +387,7 @@
   - 03_progressions/supports/terminale/T02/code/T02_starter_classes_objets.py
   - 03_progressions/supports/terminale/T02/code/T02_tests_attendus_classes_objets.py
   - 03_progressions/supports/terminale/T03/T03_bareme_piles_files_dictionnaires.md
+  - 03_progressions/supports/terminale/T03/T03_bareme_recherche_liste_dictionnaire.md
   - 03_progressions/supports/terminale/T03/T03_corrige_piles_files_dictionnaires.md
   - 03_progressions/supports/terminale/T03/T03_corrige_recherche_liste_dictionnaire.md
   - 03_progressions/supports/terminale/T03/T03_cours_piles_files_dictionnaires.md
@@ -1378,6 +1383,7 @@
   - 03_progressions/supports/premiere/P01/code/P01_starter_conversions_bases.py
   - 03_progressions/supports/premiere/P01/code/P01_tests_attendus_conversions_bases.py
   - 03_progressions/supports/premiere/P02/P02_bareme_complement_booleens.md
+  - 03_progressions/supports/premiere/P02/P02_bareme_tables_verite_booleennes.md
   - 03_progressions/supports/premiere/P02/P02_corrige_complement_booleens.md
   - 03_progressions/supports/premiere/P02/P02_corrige_tables_verite_booleennes.md
   - 03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md
@@ -1395,6 +1401,7 @@
   - 03_progressions/supports/premiere/P02/code/P02_corrige_professeur_complement_booleens.py
   - 03_progressions/supports/premiere/P02/code/P02_starter_complement_booleens.py
   - 03_progressions/supports/premiere/P02/code/P02_tests_attendus_complement_booleens.py
+  - 03_progressions/supports/premiere/P03/P03_bareme_conversion_encodages_texte.md
   - 03_progressions/supports/premiere/P03/P03_bareme_texte_reels.md
   - 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md
   - 03_progressions/supports/premiere/P03/P03_corrige_texte_reels.md
@@ -1414,6 +1421,7 @@
   - 03_progressions/supports/premiere/P03/code/P03_starter_texte_reels.py
   - 03_progressions/supports/premiere/P03/code/P03_tests_attendus_texte_reels.py
   - 03_progressions/supports/premiere/P04/P04_bareme_types_construits.md
+  - 03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md
   - 03_progressions/supports/premiere/P04/P04_corrige_types_construits.md
   - 03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md
   - 03_progressions/supports/premiere/P04/P04_cours_types_construits.md
@@ -1562,6 +1570,7 @@
   - 03_progressions/supports/terminale/T00/code/T00_corrige_professeur_diagnostic_tests.py
   - 03_progressions/supports/terminale/T00/code/T00_starter_diagnostic_tests.py
   - 03_progressions/supports/terminale/T00/code/T00_tests_attendus_diagnostic_tests.py
+  - 03_progressions/supports/terminale/T01/T01_bareme_interface_implementation_complement.md
   - 03_progressions/supports/terminale/T01/T01_bareme_interfaces_structures.md
   - 03_progressions/supports/terminale/T01/T01_corrige_interface_implementation_complement.md
   - 03_progressions/supports/terminale/T01/T01_corrige_interfaces_structures.md
@@ -1593,6 +1602,7 @@
   - 03_progressions/supports/terminale/T02/code/T02_starter_classes_objets.py
   - 03_progressions/supports/terminale/T02/code/T02_tests_attendus_classes_objets.py
   - 03_progressions/supports/terminale/T03/T03_bareme_piles_files_dictionnaires.md
+  - 03_progressions/supports/terminale/T03/T03_bareme_recherche_liste_dictionnaire.md
   - 03_progressions/supports/terminale/T03/T03_corrige_piles_files_dictionnaires.md
   - 03_progressions/supports/terminale/T03/T03_corrige_recherche_liste_dictionnaire.md
   - 03_progressions/supports/terminale/T03/T03_cours_piles_files_dictionnaires.md
@@ -2354,9 +2364,9 @@
 ## Séquences détectées
 - P00: 10
 - P01: 11
-- P02: 17
-- P03: 17
-- P04: 18
+- P02: 18
+- P03: 18
+- P04: 19
 - P05: 10
 - P06: 10
 - P07: 11
@@ -2370,9 +2380,9 @@
 - S01 representation des donnees: 1
 - S01 structures de donnees interfaces implementations: 1
 - T00: 10
-- T01: 16
+- T01: 17
 - T02: 10
-- T03: 18
+- T03: 19
 - T04: 10
 - T05: 17
 - T06: 11
@@ -2527,6 +2537,7 @@
 - 03_progressions/supports/premiere/P01/code/P01_starter_conversions_bases.py
 - 03_progressions/supports/premiere/P01/code/P01_tests_attendus_conversions_bases.py
 - 03_progressions/supports/premiere/P02/P02_bareme_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_bareme_tables_verite_booleennes.md
 - 03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md
 - 03_progressions/supports/premiere/P02/P02_cours_tables_verite_booleennes.md
 - 03_progressions/supports/premiere/P02/P02_evaluation_complement_booleens.md
@@ -2541,6 +2552,7 @@
 - 03_progressions/supports/premiere/P02/P02_version_amenagee_complement_booleens.md
 - 03_progressions/supports/premiere/P02/code/P02_starter_complement_booleens.py
 - 03_progressions/supports/premiere/P02/code/P02_tests_attendus_complement_booleens.py
+- 03_progressions/supports/premiere/P03/P03_bareme_conversion_encodages_texte.md
 - 03_progressions/supports/premiere/P03/P03_bareme_texte_reels.md
 - 03_progressions/supports/premiere/P03/P03_cours_conversion_encodages_texte.md
 - 03_progressions/supports/premiere/P03/P03_cours_texte_reels.md
@@ -2557,6 +2569,7 @@
 - 03_progressions/supports/premiere/P03/code/P03_starter_texte_reels.py
 - 03_progressions/supports/premiere/P03/code/P03_tests_attendus_texte_reels.py
 - 03_progressions/supports/premiere/P04/P04_bareme_types_construits.md
+- 03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md
 - 03_progressions/supports/premiere/P04/P04_cours_types_construits.md
 - 03_progressions/supports/premiere/P04/P04_cours_types_construits_complement.md
 - 03_progressions/supports/premiere/P04/P04_evaluation_types_construits.md
@@ -2682,6 +2695,7 @@
 - 03_progressions/supports/terminale/T00/T00_version_amenagee_diagnostic_tests.md
 - 03_progressions/supports/terminale/T00/code/T00_starter_diagnostic_tests.py
 - 03_progressions/supports/terminale/T00/code/T00_tests_attendus_diagnostic_tests.py
+- 03_progressions/supports/terminale/T01/T01_bareme_interface_implementation_complement.md
 - 03_progressions/supports/terminale/T01/T01_bareme_interfaces_structures.md
 - 03_progressions/supports/terminale/T01/T01_cours_interface_implementation_complement.md
 - 03_progressions/supports/terminale/T01/T01_cours_interfaces_structures.md
@@ -2708,6 +2722,7 @@
 - 03_progressions/supports/terminale/T02/code/T02_starter_classes_objets.py
 - 03_progressions/supports/terminale/T02/code/T02_tests_attendus_classes_objets.py
 - 03_progressions/supports/terminale/T03/T03_bareme_piles_files_dictionnaires.md
+- 03_progressions/supports/terminale/T03/T03_bareme_recherche_liste_dictionnaire.md
 - 03_progressions/supports/terminale/T03/T03_cours_piles_files_dictionnaires.md
 - 03_progressions/supports/terminale/T03/T03_cours_recherche_liste_dictionnaire.md
 - 03_progressions/supports/terminale/T03/T03_evaluation_piles_files_dictionnaires.md
@@ -3611,6 +3626,7 @@
 - 03_progressions/supports/premiere/P01/code/P01_starter_conversions_bases.py
 - 03_progressions/supports/premiere/P01/code/P01_tests_attendus_conversions_bases.py
 - 03_progressions/supports/premiere/P02/P02_bareme_complement_booleens.md
+- 03_progressions/supports/premiere/P02/P02_bareme_tables_verite_booleennes.md
 - 03_progressions/supports/premiere/P02/P02_corrige_complement_booleens.md
 - 03_progressions/supports/premiere/P02/P02_corrige_tables_verite_booleennes.md
 - 03_progressions/supports/premiere/P02/P02_cours_complement_booleens.md
@@ -3628,6 +3644,7 @@
 - 03_progressions/supports/premiere/P02/code/P02_corrige_professeur_complement_booleens.py
 - 03_progressions/supports/premiere/P02/code/P02_starter_complement_booleens.py
 - 03_progressions/supports/premiere/P02/code/P02_tests_attendus_complement_booleens.py
+- 03_progressions/supports/premiere/P03/P03_bareme_conversion_encodages_texte.md
 - 03_progressions/supports/premiere/P03/P03_bareme_texte_reels.md
 - 03_progressions/supports/premiere/P03/P03_corrige_conversion_encodages_texte.md
 - 03_progressions/supports/premiere/P03/P03_corrige_texte_reels.md
@@ -3647,6 +3664,7 @@
 - 03_progressions/supports/premiere/P03/code/P03_starter_texte_reels.py
 - 03_progressions/supports/premiere/P03/code/P03_tests_attendus_texte_reels.py
 - 03_progressions/supports/premiere/P04/P04_bareme_types_construits.md
+- 03_progressions/supports/premiere/P04/P04_bareme_types_construits_complement.md
 - 03_progressions/supports/premiere/P04/P04_corrige_types_construits.md
 - 03_progressions/supports/premiere/P04/P04_corrige_types_construits_complement.md
 - 03_progressions/supports/premiere/P04/P04_cours_types_construits.md
@@ -3795,6 +3813,7 @@
 - 03_progressions/supports/terminale/T00/code/T00_corrige_professeur_diagnostic_tests.py
 - 03_progressions/supports/terminale/T00/code/T00_starter_diagnostic_tests.py
 - 03_progressions/supports/terminale/T00/code/T00_tests_attendus_diagnostic_tests.py
+- 03_progressions/supports/terminale/T01/T01_bareme_interface_implementation_complement.md
 - 03_progressions/supports/terminale/T01/T01_bareme_interfaces_structures.md
 - 03_progressions/supports/terminale/T01/T01_corrige_interface_implementation_complement.md
 - 03_progressions/supports/terminale/T01/T01_corrige_interfaces_structures.md
@@ -3826,6 +3845,7 @@
 - 03_progressions/supports/terminale/T02/code/T02_starter_classes_objets.py
 - 03_progressions/supports/terminale/T02/code/T02_tests_attendus_classes_objets.py
 - 03_progressions/supports/terminale/T03/T03_bareme_piles_files_dictionnaires.md
+- 03_progressions/supports/terminale/T03/T03_bareme_recherche_liste_dictionnaire.md
 - 03_progressions/supports/terminale/T03/T03_corrige_piles_files_dictionnaires.md
 - 03_progressions/supports/terminale/T03/T03_corrige_recherche_liste_dictionnaire.md
 - 03_progressions/supports/terminale/T03/T03_cours_piles_files_dictionnaires.md
