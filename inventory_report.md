@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1154
+- Total ressources : 1156
 - Ressources pédagogiques : 53
-- Ressources techniques : 1101
+- Ressources techniques : 1103
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1146
+- generated: 1148
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 595
+- interne: 596
 - premiere: 259
-- terminale: 300
+- terminale: 301
 
 ## Répartition par type
 - banque: 14
-- document: 728
+- document: 729
 - python: 84
-- script: 209
+- script: 210
 - sequence: 45
 - test: 74
 
 ## Répartition par statut
-- needs_review: 1154
+- needs_review: 1156
 
 ## Répartition audience
 - corrige: 80
 - eleve: 143
-- mixte: 928
+- mixte: 930
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -413,6 +413,7 @@
   - 03_progressions/supports/terminale/T04/code/T04_starter_recursivite.py
   - 03_progressions/supports/terminale/T04/code/T04_tests_attendus_recursivite.py
   - 03_progressions/supports/terminale/T05/T05_bareme_arbres_binaires.md
+  - 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md
   - 03_progressions/supports/terminale/T05/T05_corrige_arbres_binaires.md
   - 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md
   - 03_progressions/supports/terminale/T05/T05_cours_arbres_binaires.md
@@ -804,6 +805,7 @@
   - scripts/check_drive_trace_no_absolute_local_paths.py
   - scripts/check_dynamic_programming_recurrence_consistency.py
   - scripts/check_eleve_no_corrige.py
+  - scripts/check_eval_bareme_pairing.py
   - scripts/check_evaluation_bareme_alignment.py
   - scripts/check_evaluation_distribution.py
   - scripts/check_first_batch_alignment.py
@@ -1621,6 +1623,7 @@
   - 03_progressions/supports/terminale/T04/code/T04_starter_recursivite.py
   - 03_progressions/supports/terminale/T04/code/T04_tests_attendus_recursivite.py
   - 03_progressions/supports/terminale/T05/T05_bareme_arbres_binaires.md
+  - 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md
   - 03_progressions/supports/terminale/T05/T05_corrige_arbres_binaires.md
   - 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md
   - 03_progressions/supports/terminale/T05/T05_cours_arbres_binaires.md
@@ -1986,6 +1989,7 @@
   - scripts/check_drive_trace_no_absolute_local_paths.py
   - scripts/check_dynamic_programming_recurrence_consistency.py
   - scripts/check_eleve_no_corrige.py
+  - scripts/check_eval_bareme_pairing.py
   - scripts/check_evaluation_bareme_alignment.py
   - scripts/check_evaluation_distribution.py
   - scripts/check_first_batch_alignment.py
@@ -2370,7 +2374,7 @@
 - T02: 10
 - T03: 18
 - T04: 10
-- T05: 16
+- T05: 17
 - T06: 11
 - T07: 11
 - T08: 11
@@ -2729,6 +2733,7 @@
 - 03_progressions/supports/terminale/T04/code/T04_starter_recursivite.py
 - 03_progressions/supports/terminale/T04/code/T04_tests_attendus_recursivite.py
 - 03_progressions/supports/terminale/T05/T05_bareme_arbres_binaires.md
+- 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md
 - 03_progressions/supports/terminale/T05/T05_cours_arbres_binaires.md
 - 03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md
 - 03_progressions/supports/terminale/T05/T05_evaluation_arbres_binaires.md
@@ -3089,6 +3094,7 @@
 - scripts/check_drive_quarantine_privacy.py
 - scripts/check_drive_trace_no_absolute_local_paths.py
 - scripts/check_dynamic_programming_recurrence_consistency.py
+- scripts/check_eval_bareme_pairing.py
 - scripts/check_evaluation_bareme_alignment.py
 - scripts/check_evaluation_distribution.py
 - scripts/check_first_batch_alignment.py
@@ -3850,6 +3856,7 @@
 - 03_progressions/supports/terminale/T04/code/T04_starter_recursivite.py
 - 03_progressions/supports/terminale/T04/code/T04_tests_attendus_recursivite.py
 - 03_progressions/supports/terminale/T05/T05_bareme_arbres_binaires.md
+- 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md
 - 03_progressions/supports/terminale/T05/T05_corrige_arbres_binaires.md
 - 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md
 - 03_progressions/supports/terminale/T05/T05_cours_arbres_binaires.md
@@ -4242,6 +4249,7 @@
 - scripts/check_drive_trace_no_absolute_local_paths.py
 - scripts/check_dynamic_programming_recurrence_consistency.py
 - scripts/check_eleve_no_corrige.py
+- scripts/check_eval_bareme_pairing.py
 - scripts/check_evaluation_bareme_alignment.py
 - scripts/check_evaluation_distribution.py
 - scripts/check_first_batch_alignment.py

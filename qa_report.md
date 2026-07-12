@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 605
-- Ressources needs_review : 605
+- Ressources inventoriées : 606
+- Ressources needs_review : 606
 - Ressources publiables : 0
-- Source generated : 597
+- Source generated : 598
 - Source adapted_from_drive : 7
 - Source import_partiel : 1
 - Source inspiration_drive : 0
@@ -183,7 +183,7 @@ python -m scripts.check_drive_mapping_release
 
 ## Revue humaine
 
-- Ressources majeures à relire : 523
+- Ressources majeures à relire : 524
 - Lignes dans `human_review_register.csv` : 523
 - Ressources prioritaires vague 1 : 20
 - Priorités vague 1 couvertes : P05, P06, P10, P12, P13, T06, T07, T08, T10, T17, T18

@@ -20,6 +20,37 @@ official_program:
 
 # T05 - Barème - Mesures et parcours d'arbres complément
 
+## Objectifs
+
+- Vérifier la maîtrise des mesures sur un arbre binaire (taille, hauteur, feuilles).
+- Évaluer le traçage récursif de taille() et hauteur().
+- Contrôler la compréhension du parcours en largeur avec file FIFO.
+
+## Capacités officielles
+
+- T-STRUCT-04B : Évaluer quelques mesures des arbres binaires (taille, hauteur, feuilles).
+- T-ALGO-01A : Calculer la taille d'un arbre.
+- T-ALGO-01B : Calculer la hauteur d'un arbre.
+- T-ALGO-01D : Parcourir un arbre en largeur d'abord.
+
+## Prérequis
+
+- Connaître la définition d'un arbre binaire (noeud, fils gauche, fils droit).
+- Maîtriser la récursion (cas de base, appel récursif, variant).
+- Savoir utiliser une file (FIFO) pour un parcours en largeur.
+
+## Situation-problème
+
+Un biologiste modélise un arbre phylogénétique et doit calculer le nombre d'espèces (taille), la profondeur maximale (hauteur) et lister les espèces terminales (feuilles). Le barème guide l'évaluation de ces compétences.
+
+## Activité d’entrée
+
+Dessiner un arbre binaire de 7 noeuds, compter ses feuilles et mesurer sa hauteur à la main.
+
+## Exemple
+
+Arbre B de 9 noeuds : taille = 9, hauteur = 3, feuilles = {10, 35, 45, 80}, BFS = [50, 30, 70, 20, 40, 80, 10, 35, 45].
+
 ## Barème question par question
 
 ### Barème question 1 — Mesures sur papier (T-STRUCT-04B) — 5 points
@@ -52,6 +83,28 @@ official_program:
 - Oublier les feuilles dans le dénombrement.
 - Utiliser une pile au lieu d'une file pour le BFS.
 - Convention de hauteur arbre vide mal appliquée.
+
+## Exercices
+
+Les exercices évalués sont les questions 1 à 4 de l'évaluation complément T05.
+
+## Corrigé
+
+Les réponses détaillées se trouvent dans T05_corrige_arbres_mesures_parcours_complement.md.
+
+## Remédiation
+
+En cas de score inférieur à 10/20, reprendre le traçage de taille() sur un arbre de 3 noeuds avant de passer à un arbre plus grand.
+
+## Différenciation
+
+- Socle : questions 1 (mesures sur papier) et 4c (BFS arbre vide).
+- Standard : questions 2 et 3 (traçage récursif complet).
+- Expert : question 3b (comparaison des conventions de hauteur).
+
+## Séance(s) correspondante(s)
+
+Séance dédiée aux mesures et parcours d'arbres (complément).
 
 ## Cas limites travaillés
 - Arbre réduit à un seul noeud.

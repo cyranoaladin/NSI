@@ -5,13 +5,13 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 ## Synthèse
 
-- Nombre total de ressources : 524
-- Nombre par statut : {'needs_review': 524}
-- Nombre par type de document : {'bareme': 35, 'corrige': 67, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
-- Ressources avec capacity_ids : 439
+- Nombre total de ressources : 525
+- Nombre par statut : {'needs_review': 525}
+- Nombre par type de document : {'bareme': 36, 'corrige': 67, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
+- Ressources avec capacity_ids : 440
 - Ressources sans capacity_ids : 85
-- Ressources avec audience renseignée : 524
-- Ressources avec session renseignée : 524
+- Ressources avec audience renseignée : 525
+- Ressources avec session renseignée : 525
 
 ## P-ALGO-01A
 
@@ -781,6 +781,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## T-ALGO-01A
 
 - `03_progressions/fiches_cours/terminale/T05/T05_fiche_cours_arbres_binaires_parcours.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T05/T05_evaluation_arbres_mesures_parcours_complement.md` — evaluation — needs_review — eleve
@@ -795,6 +796,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## T-ALGO-01B
 
 - `03_progressions/fiches_cours/terminale/T05/T05_fiche_cours_arbres_binaires_parcours.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T05/T05_evaluation_arbres_mesures_parcours_complement.md` — evaluation — needs_review — eleve
@@ -818,6 +820,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## T-ALGO-01D
 
 - `03_progressions/fiches_cours/terminale/T05/T05_fiche_cours_arbres_binaires_parcours.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T05/T05_evaluation_arbres_mesures_parcours_complement.md` — evaluation — needs_review — eleve
@@ -1544,6 +1547,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## T-STRUCT-04B
 
 - `03_progressions/fiches_cours/terminale/T05/T05_fiche_cours_arbres_binaires_parcours.md` — fiche_cours — needs_review — eleve
+- `03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T05/T05_evaluation_arbres_mesures_parcours_complement.md` — evaluation — needs_review — eleve
