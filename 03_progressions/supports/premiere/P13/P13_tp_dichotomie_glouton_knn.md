@@ -44,7 +44,7 @@ Résultat attendu : `tableau=[4,9,18,23,37,41], cible=37 ; pièces=[10,5,2,1], m
 ### Corrigé question 2
 Résultat attendu : milieux 18 puis 37 -> trouvé indice 4.
 ### Corrigé question 3
-Résultat attendu : 28 -> 10+10+5+2+1.
+Résultat attendu : V = droite − gauche + 1 décroît strictement à chaque itération : V passe de 6 à 3 (milieu=18, cible>18, on réduit à droite) puis de 3 à 1 (milieu=37, cible trouvée). La décroissance stricte de V garantit la terminaison.
 ### Corrigé question 4
 Résultat attendu : `cible absente` traité sans ambiguïté.
 

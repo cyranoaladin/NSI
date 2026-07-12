@@ -65,6 +65,7 @@ audit-core:
 	python -m scripts.check_no_committed_secrets
 	python -m scripts.check_no_placeholders_docs
 	python -m scripts.check_no_placeholders_code
+	python -m scripts.check_closed_error_classes
 	python -m scripts.run_python_tests
 
 audit-metrics:

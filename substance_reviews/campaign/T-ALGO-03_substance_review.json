@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-12T10:41:03Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/terminale/T16/T16_cours_diviser_pour_regner_tri_fusion.md",
-        "anchor": "#méthodes",
-        "quote": "couper en deux sous-listes.\n- trier récursivement.\n- fusionner deux listes triées.\n- compter niveaux et comparaisons.",
+        "anchor": "#savoir-faire-et-méthodes-opérationnelles",
+        "quote": "- identifier le cas de base.\n- fusionner deux listes déjà triées.\n- compter les niveaux de récursion.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/terminale/T16/T16_TD_diviser_pour_regner_tri_fusion.md",
         "anchor": "#exercice-1",
-        "quote": "Consigne : couper en deux sous-listes ; traiter aussi `liste vide` si nécessaire.",
+        "quote": "Consigne : couper en deux sous-listes ; traiter aussi `liste vide` si nécessaire.\n- Réponse attendue : division -> [38,12,27] et [12,5,44].",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/terminale/T16/T16_corrige_diviser_pour_regner_tri_fusion.md",
         "anchor": "#exercice-1",
-        "quote": "Réponse attendue : division -> [38,12,27] et [12,5,44].\n- Méthode : couper en deux sous-listes.\n- Cas limite : liste vide.",
+        "quote": "- Réponse attendue : division -> [38,12,27] et [12,5,44].\n- Méthode : couper en deux sous-listes.\n- Cas limite : liste vide.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne la méthode diviser pour régner (division, récursion, fusion, coût n log n), le TD fait pratiquer avec des exercices concrets sur le tri fusion, et le corrigé fournit les réponses attendues pour chaque exercice.",
+      "justification": "Le cours enseigne la méthode diviser pour régner avec vocabulaire et exemples corrigés. Le TD fait pratiquer sur 8 exercices avec données explicites. Le corrigé fournit les réponses attendues pour chaque exercice.",
       "scientific_flags": [
         "human_review_required"
       ]

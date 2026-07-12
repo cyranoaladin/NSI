@@ -1,5 +1,5 @@
 ---
-title: "P08 - tp - HTML, CSS, DOM, HTTP et formulaires"
+title: "P08 - tp - HTML, CSS et DOM"
 level: "premiere"
 sequence_id: "P08"
 document_type: "tp"
@@ -7,101 +7,101 @@ status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "HTML, CSS, DOM, HTTP et formulaires"
-notion: "HTML, CSS, DOM, HTTP et formulaires"
+theme: "HTML, CSS et DOM"
+notion: "HTML, CSS et DOM"
 private_data: false
 official_program:
   capacities:
     - "P-IHM-01A"
     - "P-IHM-01B"
     - "P-IHM-02"
-    - "P-IHM-03A"
-    - "P-IHM-03B"
-    - "P-IHM-03C"
-    - "P-IHM-04A"
-    - "P-IHM-04B"
-    - "P-IHM-04C"
 ---
 
-# P08 - TP - HTML, CSS, DOM, HTTP et formulaires
+# P08 - TP - HTML, CSS et DOM
 
 ## Statut du TP
-TP exécutable : le livrable élève est un fichier Python d'analyse HTML/URL complété et vérifié par tests.
+TP exécutable : le livrable élève est un fichier Python d'analyse HTML complété et vérifié par tests.
 
 ## Objectifs opérationnels
-- Objectif 1 : extraire un titre HTML et signaler un document sans balise `title`.
-- Objectif 2 : repérer les textes associés à une classe CSS sans confondre balise, attribut et contenu.
-- Objectif 3 : analyser une URL GET et transformer la chaîne de requête en dictionnaire.
-- Objectif 4 : distinguer l'emplacement des paramètres selon la méthode HTTP `GET` ou `POST`.
+- Objectif 1 : extraire un titre HTML et signaler un document sans balise `title` (P-IHM-01A).
+- Objectif 2 : repérer les textes associés à une classe CSS sans confondre balise, attribut et contenu (P-IHM-01B).
+- Objectif 3 : manipuler le DOM en ciblant un élément par son identifiant (P-IHM-02).
 
 ## Donnée fournie
-`<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`
+```html
+<html><head><title>Mini site NSI</title></head>
+<body><header><h1>Accueil</h1></header>
+<main><p class="alerte">Erreur</p><p>Bienvenue</p>
+<form method=post action=/reservation><label for=nom>Nom</label><input id=nom name=nom></form>
+</main></body></html>
+```
 
 ## Travail demandé
-1. Préparer la donnée et nommer les champs utiles.
-2. Réaliser : repérer header main form label input.
-3. Réaliser : cibler #nom en CSS et DOM.
-4. Tester le cas limite `champ nom vide`.
-5. Produire le livrable : <label for=nom>Nom</label><input id=nom name=nom>.
+1. Préparer la donnée : identifier les balises, attributs et contenus textuels.
+2. Réaliser : écrire `titre_page(html)` qui extrait le contenu de `<title>` (P-IHM-01A).
+3. Réaliser : écrire `textes_classe(html, classe)` qui retourne les textes des éléments portant la classe CSS donnée (P-IHM-01B).
+4. Réaliser : écrire `valeur_champ(html, id_champ)` qui cible un élément par `id` et retourne sa valeur (P-IHM-02).
+5. Tester le cas limite `document sans title`.
+6. Produire le livrable : les trois fonctions passent tous les tests.
 
 ## Déroulé en classe
-1. Ouvrir le starter et repérer les fonctions d'analyse HTML et d'analyse HTTP.
+1. Ouvrir le starter et repérer les trois fonctions à compléter.
 2. Lire l'extrait HTML en distinguant balise, attribut et contenu textuel.
 3. Extraire le contenu de `<title>` avant de chercher les classes CSS.
 4. Pour `textes_classe`, chercher uniquement les éléments qui portent la classe demandée.
 5. Vérifier sur l'exemple que la classe `alerte` donne la liste `["Erreur"]`.
-6. Lire l'URL `/club?jour=mercredi` comme une ressource suivie d'une chaîne de requête.
-7. Transformer `jour=mercredi` en dictionnaire `{"jour": "mercredi"}`.
-8. Comparer `GET` et `POST` : les paramètres GET sont dans l'URL, les paramètres POST sont dans le corps.
-9. Lancer les tests sur le starter pour identifier les fonctions encore incomplètes.
-10. Relancer les tests après chaque fonction corrigée pour localiser les erreurs.
+6. Pour `valeur_champ`, cibler l'élément par `id` puis lire son attribut `value` ou son contenu.
+7. Lancer les tests sur le starter pour identifier les fonctions encore incomplètes.
+8. Relancer les tests après chaque fonction corrigée pour localiser les erreurs.
 
 ## Tests attendus à interpréter
 - Test HTML : `titre_page(HTML)` doit renvoyer `"Mini site NSI"`.
 - Test DOM : `textes_classe(HTML, "alerte")` doit renvoyer `["Erreur"]`.
-- Test GET : `parametres_get("https://nsi.test/recherche?q=tri&page=2")` doit renvoyer `{"q": "tri", "page": "2"}`.
-- Test POST : `action_formulaire("POST", {"nom": "Ada"})` doit renvoyer `"paramètres dans le corps de la requête"`.
+- Test DOM id : `valeur_champ(HTML, "nom")` doit renvoyer le contenu du champ `nom`.
 - Test invalide : un document HTML sans `<title>` doit lever `ValueError`.
 
 ## Remédiation immédiate
 - Si le titre contient des balises, reprendre la suppression du balisage avant le nettoyage des espaces.
 - Si la classe absente renvoie une valeur, vérifier que le sélecteur ne récupère pas tous les paragraphes.
-- Si `GET` et `POST` sont inversés, revenir au schéma URL / corps de requête.
+- Si l'identifiant cible le mauvais élément, vérifier que le sélecteur utilise `id` et non `class`.
 
 ## Barème associé
-- 2 points : donnée préparée.
-- 3 points : méthode principale.
-- 3 points : résultat `<label for=nom>Nom</label><input id=nom name=nom>`.
-- 2 points : cas limite `champ nom vide`.
+- 2 points : donnée préparée (balises, attributs, contenus identifiés).
+- 3 points : `titre_page` correcte avec gestion de l'absence.
+- 3 points : `textes_classe` correcte avec sélection par classe CSS.
+- 2 points : `valeur_champ` correcte et cas limite `document sans title` traité.
 
 ## Corrigé question par question
 ### Corrigé question 1
-Résultat attendu : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`.
+Résultat attendu : balises identifiées (`html`, `head`, `title`, `body`, `header`, `h1`, `main`, `p`, `form`, `label`, `input`) ; attributs (`class`, `method`, `action`, `for`, `id`, `name`) ; contenus (`Mini site NSI`, `Accueil`, `Erreur`, `Bienvenue`, `Nom`).
 ### Corrigé question 2
-Résultat attendu : `<label for="nom">Nom</label><input id="nom" name="nom">` relie le libellé au champ.
+Résultat attendu : `titre_page(HTML)` renvoie `"Mini site NSI"`.
 ### Corrigé question 3
-Résultat attendu : `document.querySelector("#nom").value` renvoie par exemple `"Nora"` après saisie.
+Résultat attendu : `textes_classe(HTML, "alerte")` renvoie `["Erreur"]`.
 ### Corrigé question 4
-Résultat attendu : `champ nom vide` traité sans ambiguïté.
+Résultat attendu : `valeur_champ(HTML, "nom")` cible `<input id=nom>` via le DOM.
+### Corrigé question 5
+Résultat attendu : `titre_page("<html><body></body></html>")` lève `ValueError`.
 
 ## Liens
-- TD lié : `P08_TD_web_http_dom_formulaires.md`.
-- Évaluation liée : `P08_evaluation_web_http_dom_formulaires.md`.
+- TD lié : `P08_TD_html_css_dom.md`.
+- TP complémentaire : `P08_TP_http_get_post_formulaires.md` (HTTP, GET/POST, formulaires).
+- Évaluation liée : `P08_evaluation_html_css_dom.md`.
 
 ## Cas limites travaillés
-- champ nom vide.
-- paramètre jour absent.
-- formulaire sans action.
+- document sans `<title>`.
+- classe CSS absente du document.
+- identifiant inconnu dans le DOM.
 
 ## Erreurs fréquentes
-- bouton hors formulaire.
-- sélecteur trop large.
-- POST confondu avec chiffrement.
+- attribut confondu avec contenu textuel.
+- sélecteur trop large (tous les `<p>` au lieu de ceux portant la classe).
+- balise `<title>` confondue avec `<h1>`.
 
 ## Critères de réussite observables
-- La donnée de départ est recopiée exactement.
-- La trace ou le pseudo-code conduit à `<label for=nom>Nom</label><input id=nom name=nom>`.
-- Au moins un cas limite de la section précédente est décidé.
+- Les trois fonctions passent tous les tests du starter.
+- Le cas limite `document sans title` est traité par une exception.
+- L'élève distingue balise, attribut et contenu sur l'exemple fourni.
 
 
 

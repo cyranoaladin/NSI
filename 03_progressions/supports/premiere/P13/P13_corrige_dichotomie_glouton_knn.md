@@ -63,9 +63,12 @@ official_program:
 
 ### Exercice 9
 - Capacité mobilisée : P-ALGO-03.
-- Réponse attendue : distances calculées, 3 plus proches = A(3,2) B(5,4) A(2,3), vote A=2 B=1, classe "A".
+- Données : point cible X(4,3), voisins A1(3,2), B1(5,4), A2(2,3), B2(6,1), A3(1,5).
+- Distances euclidiennes : d(X,A1) = sqrt((4-3)²+(3-2)²) = sqrt(2) ≈ 1.41 ; d(X,B1) = sqrt((4-5)²+(3-4)²) = sqrt(2) ≈ 1.41 ; d(X,A2) = sqrt((4-2)²+(3-3)²) = 2.00 ; d(X,B2) = sqrt((4-6)²+(3-1)²) = sqrt(8) ≈ 2.83 ; d(X,A3) = sqrt((4-1)²+(3-5)²) = sqrt(13) ≈ 3.61.
+- Tri par distance croissante : A1(1.41), B1(1.41), A2(2.00), B2(2.83), A3(3.61).
+- Réponse attendue : k=3 → 3 plus proches = A1, B1, A2 → vote A=2, B=1 → classe "A".
 - Méthode : distance euclidienne, tri, vote majoritaire.
-- Cas limite : k=2 avec égalité de vote → résultat indéterminé.
+- Cas limite : k=2 avec A1 et B1 à distance égale → égalité de vote A=1, B=1 → résultat indéterminé, convention nécessaire (ex. classe du plus proche ou tirage).
 
 ## Corrigé du TP
 - Donnée dichotomie : `tableau=[4,9,18,23,37,41], cible=37` → trouvé indice 4.

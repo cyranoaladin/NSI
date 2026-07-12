@@ -62,14 +62,14 @@ arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]
 - Contrôle : capacité T-STRUCT-05B et cas limite `boucle A->A`.
 ### Exemple corrigé 3
 - Donnée : `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`.
-- Méthode : calculer degré sortant.
-- Résultat attendu : matrice 4x4 -> 16 cases.
-- Contrôle : capacité T-STRUCT-05C et cas limite `arête non orientée`.
+- Méthode : écrire l'implémentation par listes de successeurs (T-STRUCT-05C).
+- Résultat attendu : `graphe = {"A": ["B","C"], "B": ["D"], "C": ["D"], "D": ["B"], "E": []}`. On crée un dictionnaire où chaque sommet pointe vers la liste de ses successeurs. L'exercice 3bis du TD sert de point de départ.
+- Contrôle : capacité T-STRUCT-05C et cas limite `sommet isolé E → liste vide`.
 ### Exemple corrigé 4
 - Donnée : `arcs=[(A,B),(A,C),(B,D),(C,D),(D,B)]`.
-- Méthode : choisir liste pour graphe peu dense.
-- Résultat attendu : sommet E isolé -> liste vide.
-- Contrôle : capacité T-STRUCT-05D et cas limite `sommet isolé E`.
+- Méthode : passer d'une représentation à une autre (T-STRUCT-05D).
+- Résultat attendu : convertir la liste de successeurs en matrice d'adjacence 5×5 (A,B,C,D,E). Ligne A : colonnes B et C valent 1. Ligne D : colonne B vaut 1. Ligne E : toutes les colonnes valent 0. Inversement, depuis la matrice, reconstruire les listes de successeurs.
+- Contrôle : capacité T-STRUCT-05D et cas limite `sommet isolé E → ligne de zéros dans la matrice et liste vide dans le dictionnaire`.
 
 ## Cas limites
 - sommet isolé E.

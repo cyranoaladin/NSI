@@ -5,13 +5,13 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 ## Synthèse
 
-- Nombre total de ressources : 524
-- Nombre par statut : {'needs_review': 524}
-- Nombre par type de document : {'bareme': 35, 'corrige': 67, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
-- Ressources avec capacity_ids : 439
+- Nombre total de ressources : 525
+- Nombre par statut : {'needs_review': 525}
+- Nombre par type de document : {'bareme': 36, 'corrige': 67, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
+- Ressources avec capacity_ids : 440
 - Ressources sans capacity_ids : 85
-- Ressources avec audience renseignée : 524
-- Ressources avec session renseignée : 524
+- Ressources avec audience renseignée : 525
+- Ressources avec session renseignée : 525
 
 ## Algorithmique
 
@@ -32,6 +32,7 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 ## Arbres et algorithmes
 
 - `03_progressions/supports/terminale/T05/T05_bareme_arbres_binaires.md` — bareme — needs_review — professeur
+- `03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T05/T05_corrige_arbres_binaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T05/T05_cours_arbres_binaires.md` — cours — needs_review — eleve
@@ -111,12 +112,14 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/fiches_cours/terminale/T07/T07_fiche_cours_graphes_modelisation_listes_matrices.md` — fiche_cours — needs_review — eleve
 - `03_progressions/fiches_cours/terminale/T08/T08_fiche_cours_bfs_dfs_cycles_chemins.md` — fiche_cours — needs_review — eleve
 
+## HTML, CSS et DOM
+
+- `03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md` — tp — needs_review — eleve
+
 ## HTML, CSS, DOM, HTTP et formulaires
 
 - `03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md` — td — needs_review — eleve
-- `03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md` — tp — needs_review — eleve
-- `03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md` — tp — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
@@ -125,6 +128,10 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md` — trace — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md` — version_amenagee — needs_review — eleve
+
+## HTTP, GET, POST et formulaires
+
+- `03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md` — tp — needs_review — eleve
 
 ## IHM Web
 

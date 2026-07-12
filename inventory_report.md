@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1148
+- Total ressources : 1156
 - Ressources pédagogiques : 53
-- Ressources techniques : 1095
+- Ressources techniques : 1103
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1140
+- generated: 1148
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 591
-- premiere: 257
-- terminale: 300
+- interne: 596
+- premiere: 259
+- terminale: 301
 
 ## Répartition par type
 - banque: 14
-- document: 723
+- document: 729
 - python: 84
-- script: 208
+- script: 210
 - sequence: 45
 - test: 74
 
 ## Répartition par statut
-- needs_review: 1148
+- needs_review: 1156
 
 ## Répartition audience
-- corrige: 79
+- corrige: 80
 - eleve: 143
-- mixte: 923
+- mixte: 930
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -413,6 +413,7 @@
   - 03_progressions/supports/terminale/T04/code/T04_starter_recursivite.py
   - 03_progressions/supports/terminale/T04/code/T04_tests_attendus_recursivite.py
   - 03_progressions/supports/terminale/T05/T05_bareme_arbres_binaires.md
+  - 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md
   - 03_progressions/supports/terminale/T05/T05_corrige_arbres_binaires.md
   - 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md
   - 03_progressions/supports/terminale/T05/T05_cours_arbres_binaires.md
@@ -621,8 +622,10 @@
   - docs/promotion/dossier_revue_lead_v2.md
   - docs/promotion/dossier_revue_lead_v3.md
   - docs/promotion/dossier_revue_lead_v4.md
+  - docs/promotion/dossier_revue_lead_v5.md
   - docs/reorg_report.md
   - docs/repo_topology.md
+  - docs/rvw_responses.md
   - docs/source_archive_policy.md
   - drive_inventory.csv
   - drive_mapping.md
@@ -641,7 +644,9 @@
   - latex/packs/premiere/P13/P13_evaluation.tex
   - latex/packs/premiere/P13/P13_fiche_methode.tex
   - latex/packs/premiere/P13/P13_td.tex
+  - latex/packs/premiere/P13/P13_td_eleve.tex
   - latex/packs/premiere/P13/P13_tp.tex
+  - latex/packs/premiere/P13/P13_tp_eleve.tex
   - latex/packs/premiere/P13/P13_trace.tex
   - latex/packs/premiere/P13/build.sh
   - learning_objectives_assessed_report.md
@@ -712,6 +717,7 @@
   - reports/closure2/rag_v2_rebuilt_report.md
   - reports/closure2/rag_v2_versioned_report.md
   - reports/drive_enrichment_report.md
+  - reports/final_recipe_review_nsi.md
   - reports/human_review_checklist_accessibility.md
   - reports/human_review_checklist_pedagogy.md
   - reports/human_review_checklist_science.md
@@ -798,6 +804,8 @@
   - scripts/check_drive_quarantine_privacy.py
   - scripts/check_drive_trace_no_absolute_local_paths.py
   - scripts/check_dynamic_programming_recurrence_consistency.py
+  - scripts/check_eleve_no_corrige.py
+  - scripts/check_eval_bareme_pairing.py
   - scripts/check_evaluation_bareme_alignment.py
   - scripts/check_evaluation_distribution.py
   - scripts/check_first_batch_alignment.py
@@ -1615,6 +1623,7 @@
   - 03_progressions/supports/terminale/T04/code/T04_starter_recursivite.py
   - 03_progressions/supports/terminale/T04/code/T04_tests_attendus_recursivite.py
   - 03_progressions/supports/terminale/T05/T05_bareme_arbres_binaires.md
+  - 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md
   - 03_progressions/supports/terminale/T05/T05_corrige_arbres_binaires.md
   - 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md
   - 03_progressions/supports/terminale/T05/T05_cours_arbres_binaires.md
@@ -1823,8 +1832,10 @@
   - docs/promotion/dossier_revue_lead_v2.md
   - docs/promotion/dossier_revue_lead_v3.md
   - docs/promotion/dossier_revue_lead_v4.md
+  - docs/promotion/dossier_revue_lead_v5.md
   - docs/reorg_report.md
   - docs/repo_topology.md
+  - docs/rvw_responses.md
   - docs/source_archive_policy.md
   - drive_inventory.csv
   - drive_mapping.md
@@ -1843,7 +1854,9 @@
   - latex/packs/premiere/P13/P13_evaluation.tex
   - latex/packs/premiere/P13/P13_fiche_methode.tex
   - latex/packs/premiere/P13/P13_td.tex
+  - latex/packs/premiere/P13/P13_td_eleve.tex
   - latex/packs/premiere/P13/P13_tp.tex
+  - latex/packs/premiere/P13/P13_tp_eleve.tex
   - latex/packs/premiere/P13/P13_trace.tex
   - latex/packs/premiere/P13/build.sh
   - learning_objectives_assessed_report.md
@@ -1888,6 +1901,7 @@
   - reports/closure2/rag_v2_rebuilt_report.md
   - reports/closure2/rag_v2_versioned_report.md
   - reports/drive_enrichment_report.md
+  - reports/final_recipe_review_nsi.md
   - reports/human_review_checklist_accessibility.md
   - reports/human_review_checklist_pedagogy.md
   - reports/human_review_checklist_science.md
@@ -1974,6 +1988,8 @@
   - scripts/check_drive_quarantine_privacy.py
   - scripts/check_drive_trace_no_absolute_local_paths.py
   - scripts/check_dynamic_programming_recurrence_consistency.py
+  - scripts/check_eleve_no_corrige.py
+  - scripts/check_eval_bareme_pairing.py
   - scripts/check_evaluation_bareme_alignment.py
   - scripts/check_evaluation_distribution.py
   - scripts/check_first_batch_alignment.py
@@ -2358,7 +2374,7 @@
 - T02: 10
 - T03: 18
 - T04: 10
-- T05: 16
+- T05: 17
 - T06: 11
 - T07: 11
 - T08: 11
@@ -2717,6 +2733,7 @@
 - 03_progressions/supports/terminale/T04/code/T04_starter_recursivite.py
 - 03_progressions/supports/terminale/T04/code/T04_tests_attendus_recursivite.py
 - 03_progressions/supports/terminale/T05/T05_bareme_arbres_binaires.md
+- 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md
 - 03_progressions/supports/terminale/T05/T05_cours_arbres_binaires.md
 - 03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md
 - 03_progressions/supports/terminale/T05/T05_evaluation_arbres_binaires.md
@@ -2899,8 +2916,10 @@
 - docs/promotion/dossier_revue_lead_v2.md
 - docs/promotion/dossier_revue_lead_v3.md
 - docs/promotion/dossier_revue_lead_v4.md
+- docs/promotion/dossier_revue_lead_v5.md
 - docs/reorg_report.md
 - docs/repo_topology.md
+- docs/rvw_responses.md
 - docs/source_archive_policy.md
 - drive_inventory.csv
 - drive_mapping.md
@@ -2918,7 +2937,9 @@
 - latex/packs/premiere/P13/P13_evaluation.tex
 - latex/packs/premiere/P13/P13_fiche_methode.tex
 - latex/packs/premiere/P13/P13_td.tex
+- latex/packs/premiere/P13/P13_td_eleve.tex
 - latex/packs/premiere/P13/P13_tp.tex
+- latex/packs/premiere/P13/P13_tp_eleve.tex
 - latex/packs/premiere/P13/P13_trace.tex
 - latex/packs/premiere/P13/build.sh
 - learning_objectives_assessed_report.md
@@ -2986,6 +3007,7 @@
 - reports/closure2/rag_v2_rebuilt_report.md
 - reports/closure2/rag_v2_versioned_report.md
 - reports/drive_enrichment_report.md
+- reports/final_recipe_review_nsi.md
 - reports/human_review_checklist_accessibility.md
 - reports/human_review_checklist_pedagogy.md
 - reports/human_review_checklist_science.md
@@ -3072,6 +3094,7 @@
 - scripts/check_drive_quarantine_privacy.py
 - scripts/check_drive_trace_no_absolute_local_paths.py
 - scripts/check_dynamic_programming_recurrence_consistency.py
+- scripts/check_eval_bareme_pairing.py
 - scripts/check_evaluation_bareme_alignment.py
 - scripts/check_evaluation_distribution.py
 - scripts/check_first_batch_alignment.py
@@ -3833,6 +3856,7 @@
 - 03_progressions/supports/terminale/T04/code/T04_starter_recursivite.py
 - 03_progressions/supports/terminale/T04/code/T04_tests_attendus_recursivite.py
 - 03_progressions/supports/terminale/T05/T05_bareme_arbres_binaires.md
+- 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md
 - 03_progressions/supports/terminale/T05/T05_corrige_arbres_binaires.md
 - 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md
 - 03_progressions/supports/terminale/T05/T05_cours_arbres_binaires.md
@@ -4041,8 +4065,10 @@
 - docs/promotion/dossier_revue_lead_v2.md
 - docs/promotion/dossier_revue_lead_v3.md
 - docs/promotion/dossier_revue_lead_v4.md
+- docs/promotion/dossier_revue_lead_v5.md
 - docs/reorg_report.md
 - docs/repo_topology.md
+- docs/rvw_responses.md
 - docs/source_archive_policy.md
 - drive_inventory.csv
 - drive_mapping.md
@@ -4061,7 +4087,9 @@
 - latex/packs/premiere/P13/P13_evaluation.tex
 - latex/packs/premiere/P13/P13_fiche_methode.tex
 - latex/packs/premiere/P13/P13_td.tex
+- latex/packs/premiere/P13/P13_td_eleve.tex
 - latex/packs/premiere/P13/P13_tp.tex
+- latex/packs/premiere/P13/P13_tp_eleve.tex
 - latex/packs/premiere/P13/P13_trace.tex
 - latex/packs/premiere/P13/build.sh
 - learning_objectives_assessed_report.md
@@ -4133,6 +4161,7 @@
 - reports/closure2/rag_v2_rebuilt_report.md
 - reports/closure2/rag_v2_versioned_report.md
 - reports/drive_enrichment_report.md
+- reports/final_recipe_review_nsi.md
 - reports/human_review_checklist_accessibility.md
 - reports/human_review_checklist_pedagogy.md
 - reports/human_review_checklist_science.md
@@ -4219,6 +4248,8 @@
 - scripts/check_drive_quarantine_privacy.py
 - scripts/check_drive_trace_no_absolute_local_paths.py
 - scripts/check_dynamic_programming_recurrence_consistency.py
+- scripts/check_eleve_no_corrige.py
+- scripts/check_eval_bareme_pairing.py
 - scripts/check_evaluation_bareme_alignment.py
 - scripts/check_evaluation_distribution.py
 - scripts/check_first_batch_alignment.py
@@ -4613,11 +4644,11 @@
 - latex/packs/premiere/P13/P13_evaluation.tex (niveau=premiere, statut=needs_review)
 - latex/packs/premiere/P13/P13_fiche_methode.tex (niveau=premiere, statut=needs_review)
 - latex/packs/premiere/P13/P13_td.tex (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_td_eleve.tex (niveau=premiere, statut=needs_review)
 - latex/packs/premiere/P13/P13_tp.tex (niveau=premiere, statut=needs_review)
+- latex/packs/premiere/P13/P13_tp_eleve.tex (niveau=premiere, statut=needs_review)
 - latex/packs/premiere/P13/P13_trace.tex (niveau=premiere, statut=needs_review)
 - latex/packs/premiere/P13/build.sh (niveau=premiere, statut=needs_review)
 
 ## Doublons (même hash SHA256)
-- Groupe (2):
-  - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
-  - 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md
+- Aucun doublon détecté.

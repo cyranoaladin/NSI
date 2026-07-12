@@ -585,7 +585,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
 | tp | 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md | needs_review |
-| tp | 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md | needs_review |
 | trace | 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md | needs_review |
 | version_amenagee | 03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md | needs_review |
 
@@ -605,7 +604,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
 | tp | 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md | needs_review |
-| tp | 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md | needs_review |
 | trace | 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md | needs_review |
 | version_amenagee | 03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md | needs_review |
 
@@ -625,7 +623,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
 | tp | 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md | needs_review |
-| tp | 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md | needs_review |
 | trace | 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md | needs_review |
 | version_amenagee | 03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md | needs_review |
 
@@ -644,7 +641,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
-| tp | 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md | needs_review |
 | tp | 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md | needs_review |
 | trace | 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md | needs_review |
 | version_amenagee | 03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md | needs_review |
@@ -664,7 +660,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
-| tp | 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md | needs_review |
 | tp | 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md | needs_review |
 | trace | 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md | needs_review |
 | version_amenagee | 03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md | needs_review |
@@ -684,7 +679,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
-| tp | 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md | needs_review |
 | tp | 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md | needs_review |
 | trace | 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md | needs_review |
 | version_amenagee | 03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md | needs_review |
@@ -704,7 +698,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
-| tp | 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md | needs_review |
 | tp | 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md | needs_review |
 | trace | 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md | needs_review |
 | version_amenagee | 03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md | needs_review |
@@ -724,7 +717,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
-| tp | 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md | needs_review |
 | tp | 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md | needs_review |
 | trace | 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md | needs_review |
 | version_amenagee | 03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md | needs_review |
@@ -744,7 +736,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
-| tp | 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md | needs_review |
 | tp | 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md | needs_review |
 | trace | 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md | needs_review |
 | version_amenagee | 03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md | needs_review |
@@ -959,6 +950,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md | needs_review |
 | bareme | 03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md | needs_review |
@@ -977,6 +969,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md | needs_review |
 | bareme | 03_progressions/supports/terminale/T06/T06_bareme_arbres_binaires_recherche.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T06/T06_corrige_arbres_binaires_recherche.md | needs_review |
@@ -1008,6 +1001,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md | needs_review |
 | cours | 03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T05/T05_evaluation_arbres_mesures_parcours_complement.md | needs_review |
@@ -1887,6 +1881,7 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/terminale/T05/T05_bareme_arbres_mesures_parcours_complement.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T05/T05_corrige_arbres_mesures_parcours_complement.md | needs_review |
 | cours | 03_progressions/supports/terminale/T05/T05_cours_arbres_mesures_parcours_complement.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T05/T05_evaluation_arbres_mesures_parcours_complement.md | needs_review |

@@ -66,17 +66,17 @@ official_program:
 ### Exercice 5
 - Type : justification.
 - Capacité officielle : P-IHM-03B.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=epsilon
-- Consigne : repérer header main form label input ; traiter aussi `paramètre jour absent` si nécessaire.
-- Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `paramètre jour absent`.
+- Données : un formulaire POST envoie `nom=Ali` au serveur ; le serveur répond avec `Set-Cookie: session_id=abc123; Path=/; HttpOnly`. L'utilisateur revient sur la page et le navigateur a aussi un `localStorage.setItem("theme", "sombre")`. ; jeu_exercice=epsilon
+- Consigne : (5a) parmi `session_id`, `nom=Ali` (corps POST) et `theme=sombre` (localStorage), indiquer lesquels sont retransmis automatiquement au serveur à la prochaine requête ; (5b) expliquer pourquoi `localStorage` n'est pas retransmis ; traiter aussi le cas `cookie expiré` si nécessaire.
+- Réponse attendue : seul le cookie `session_id` est retransmis automatiquement (en-tête Cookie) ; le corps POST n'est pas renvoyé ; le localStorage reste côté client et n'est jamais envoyé au serveur. Cas limite : un cookie expiré n'est plus retransmis.
+- Critère de réussite : distinction mémorisé client / retransmis serveur explicite, chaque mécanisme classé.
 ### Exercice 6
 - Type : lecture/analyse.
 - Capacité officielle : P-IHM-03C.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=zeta
-- Consigne : cibler #nom en CSS et DOM ; traiter aussi `formulaire sans action` si nécessaire.
-- Réponse attendue : document.querySelector("#nom").value lit la saisie.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `formulaire sans action`.
+- Données : deux scénarios : (A) formulaire de connexion avec mot de passe envoyé en POST sur `http://example.com/login` ; (B) le même formulaire envoyé en POST sur `https://example.com/login`. ; jeu_exercice=zeta
+- Consigne : (6a) pour chaque scénario, dire si les données sont chiffrées sur le réseau et justifier ; (6b) expliquer pourquoi POST seul ne suffit pas à protéger les données ; traiter aussi le cas `GET avec HTTPS` si nécessaire.
+- Réponse attendue : (A) données en clair sur le réseau (HTTP sans TLS), interceptables ; (B) données chiffrées par TLS (HTTPS). POST masque les données de l'URL mais ne les chiffre pas. Cas limite : GET avec HTTPS chiffre les paramètres sur le réseau mais ils restent dans l'historique local.
+- Critère de réussite : distinction HTTP/HTTPS explicite, POST≠chiffrement clairement justifié.
 ### Exercice 7
 - Type : production/écriture.
 - Capacité officielle : P-IHM-04A.
@@ -135,20 +135,20 @@ official_program:
 - Contrôle delta dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 ### Corrigé exercice 5
 - Capacité mobilisée : P-IHM-03B.
-- Résultat attendu : <label for=nom>Nom</label><input id=nom name=nom>.
-- Justification : la tâche `repérer header main form label input` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : sélecteur trop large.
-- Donnée utilisée epsilon dans P08 TD http get post formulaires : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
-- Méthode epsilon dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat epsilon dans P08 TD http get post formulaires : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
-- Contrôle epsilon dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+- Résultat attendu : (5a) seul `session_id` (cookie) est retransmis automatiquement au serveur via l'en-tête `Cookie` ; le corps POST `nom=Ali` n'est pas renvoyé ; `theme=sombre` (localStorage) reste côté client. (5b) localStorage est un stockage local du navigateur, jamais inclus dans les requêtes HTTP. Cas limite : un cookie expiré n'est plus retransmis.
+- Justification : la tâche « distinguer ce qui est mémorisé côté client et retransmis au serveur » s'applique aux trois mécanismes (cookie, POST body, localStorage) ; erreur évitée : croire que localStorage est envoyé au serveur.
+- Donnée utilisée epsilon dans P08 TD http get post formulaires : cookie `session_id`, corps POST `nom=Ali`, localStorage `theme=sombre`.
+- Méthode epsilon dans P08 TD http get post formulaires : classer chaque donnée selon son mécanisme de stockage et de transmission.
+- Résultat epsilon dans P08 TD http get post formulaires : tableau de classification mémorisé/retransmis pour chaque mécanisme.
+- Contrôle epsilon dans P08 TD http get post formulaires : le cas limite « cookie expiré » est décidé explicitement.
 ### Corrigé exercice 6
 - Capacité mobilisée : P-IHM-03C.
-- Résultat attendu : document.querySelector("#nom").value lit la saisie.
-- Justification : la tâche `cibler #nom en CSS et DOM` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : POST confondu avec chiffrement.
-- Donnée utilisée zeta dans P08 TD http get post formulaires : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
-- Méthode zeta dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat zeta dans P08 TD http get post formulaires : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
-- Contrôle zeta dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+- Résultat attendu : (6a) scénario A : données POST en clair sur le réseau (HTTP, pas de TLS) ; scénario B : données POST chiffrées (HTTPS = HTTP + TLS). (6b) POST masque les données de l'URL et de l'historique, mais ne les chiffre pas sur le réseau. Cas limite : GET avec HTTPS chiffre les paramètres en transit, mais ils restent dans l'historique et les logs locaux.
+- Justification : la tâche « reconnaître quand et pourquoi la transmission est chiffrée » s'applique à la comparaison HTTP/HTTPS ; erreur évitée : POST confondu avec chiffrement.
+- Donnée utilisée zeta dans P08 TD http get post formulaires : deux scénarios HTTP vs HTTPS avec formulaire de connexion.
+- Méthode zeta dans P08 TD http get post formulaires : comparer le niveau de protection réseau (TLS ou non) indépendamment de la méthode HTTP.
+- Résultat zeta dans P08 TD http get post formulaires : distinction explicite HTTP/HTTPS avec justification de la nécessité du chiffrement.
+- Contrôle zeta dans P08 TD http get post formulaires : le cas limite « GET avec HTTPS » est décidé explicitement.
 ### Corrigé exercice 7
 - Capacité mobilisée : P-IHM-04A.
 - Résultat attendu : GET /club?jour=mercredi transporte jour.

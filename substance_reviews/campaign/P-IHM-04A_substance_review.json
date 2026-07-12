@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-12T10:39:32Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md",
-        "anchor": "#exemples-corrigés",
-        "quote": "Donnée : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`.",
+        "anchor": "#exemple-corrigé-4",
+        "quote": "- Donnée : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`.\n- Méthode : distinguer GET, POST et HTTPS.\n- Résultat attendu : POST sans HTTPS ne chiffre pas.\n- Contrôle : capacité P-IHM-03A et cas limite `champ nom vide`.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md",
-        "anchor": "#travail-demandé",
-        "quote": "Réaliser : repérer header main form label input.",
+        "file": "03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md",
+        "anchor": "#exercice-7",
+        "quote": "- Type : production/écriture.\n- Capacité officielle : P-IHM-04A.\n- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=eta\n- Consigne : lire jour dans URL ; traiter aussi `champ nom vide` si nécessaire.\n- Réponse attendue : GET /club?jour=mercredi transporte jour.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
-        "anchor": "#corrigé-du-tp",
-        "quote": "Résultat principal : <label for=nom>Nom</label><input id=nom name=nom>.",
+        "anchor": "#exercice-7",
+        "quote": "- Réponse attendue : GET /club?jour=mercredi transporte jour.\n- Méthode : lire jour dans URL.\n- Cas limite : champ nom vide.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "La capacité P-IHM-04A porte sur l'analyse du fonctionnement d'un formulaire simple. Le cours présente des exemples corrigés avec un formulaire HTML concret, le TP fait pratiquer l'analyse de la structure HTML (balises form, input, label), et le corrigé fournit les résultats attendus. Cependant, les fichiers étiquettent explicitement les exercices jusqu'à P-IHM-03A dans les questions numérotées, et P-IHM-04A n'est mentionné que dans la liste des capacités évaluées sans exercice dédié identifiable. Le contenu sur l'analyse du formulaire (repérer form, label, input, méthode POST/GET) correspon...",
+      "justification": "Le cours présente la méthode d'analyse d'un formulaire avec GET/POST, le TD fait pratiquer l'exercice 7 tagué P-IHM-04A avec consigne explicite, et le corrigé fournit la réponse attendue pour cet exercice.",
       "scientific_flags": [
         "human_review_required"
       ]

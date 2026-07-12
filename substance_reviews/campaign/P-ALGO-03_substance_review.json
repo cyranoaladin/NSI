@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-11T14:35:38Z",
+  "judged_at": "2026-07-12T10:40:01Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -19,19 +19,19 @@
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md",
-        "anchor": "#exercice-9",
-        "quote": "(9a) calculer la distance euclidienne entre le nouveau point et chaque point d'entraînement ; (9b) identifier les 3 plus proches voisins ; (9c) déterminer la classe prédite par vote majoritaire ; (9d) que se passe-t-il si k = 2 et les deux voisins sont de classes différentes ?",
+        "anchor": "#exercice-7",
+        "quote": "Consigne : calculer les distances, identifier les 3 plus proches voisins et voter ; traiter aussi `égalité de vote (k=2)` si nécessaire.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P13/P13_corrige_dichotomie_glouton_knn.md",
         "anchor": "#exercice-9",
-        "quote": "Réponse attendue : distances calculées, 3 plus proches = A(3,2) B(5,4) A(2,3), vote A=2 B=1, classe \"A\".",
+        "quote": "Réponse attendue : k=3 → 3 plus proches = A1, B1, A2 → vote A=2, B=1 → classe \"A\".",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne l'algorithme k-NN avec implémentation Python et exemples. Le TD fait pratiquer le calcul de distances, la sélection des k voisins et le vote majoritaire. Le corrigé fournit les réponses détaillées incluant le cas limite d'égalité.",
+      "justification": "Le cours enseigne explicitement l'algorithme k-NN avec implémentation Python et exemples. Le TD fait pratiquer le calcul de distances et le vote majoritaire (exercices 4, 7, 9). Le corrigé fournit les réponses détaillées avec distances, tri et vote.",
       "scientific_flags": [
         "human_review_required"
       ]
