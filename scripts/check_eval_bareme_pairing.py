@@ -4,9 +4,10 @@
 Scans 03_progressions/supports/ for evaluation_*.md files and verifies
 that a corresponding bareme_*.md file exists with the same suffix.
 
-Convention: when an evaluation variant has a different slug from the barème,
-the gate accepts the pairing if both files declare the same
-official_program.capacities in their frontmatter.
+Pairing rules (fail-closed, no inference):
+1. Exact slug match: Pxx_evaluation_SLUG.md ↔ Pxx_bareme_SLUG.md
+2. Frontmatter declaration: evaluation has ``bareme: <filename>``
+3. Explicit convention map below (each entry justified from RM5-1 triage)
 
 Exit 0 if all pairs exist, exit 1 with details of unpaired evaluations.
 """
@@ -22,18 +23,30 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 SUPPORTS = ROOT / "03_progressions" / "supports"
 
+# Explicit slug-mismatch conventions (RM5-1 triage, each justified).
+# Key: evaluation filename, Value: (barème filename, justification).
+EXPLICIT_PAIRINGS: dict[str, tuple[str, str]] = {
+    "P08_evaluation_html_css_dom.md": (
+        "P08_bareme_web_http_dom_formulaires.md",
+        "même 9 capacités P-IHM-01A..04C, slug historique divergent",
+    ),
+    "P08_evaluation_http_get_post_formulaires.md": (
+        "P08_bareme_web_http_dom_formulaires.md",
+        "même 9 capacités P-IHM-01A..04C, variante TP du même thème",
+    ),
+    "T10_evaluation_sql_insert_update_delete.md": (
+        "T10_bareme_sql_select_where_join.md",
+        "même 8 capacités T-BDD-03A..03H, slug ne reflète pas le scope complet",
+    ),
+}
 
-def _extract_capacities(path: Path) -> list[str] | None:
-    """Extract official_program.capacities from YAML frontmatter.
 
-    Returns a sorted list of capacity identifiers, or None if frontmatter
-    cannot be parsed or does not contain capacities.
-    """
+def _extract_bareme_field(path: Path) -> str | None:
+    """Extract ``bareme:`` field from YAML frontmatter, if present."""
     try:
         text = path.read_text(encoding="utf-8")
     except OSError:
         return None
-    # Frontmatter is delimited by leading '---'
     if not text.startswith("---"):
         return None
     end = text.find("---", 3)
@@ -45,22 +58,8 @@ def _extract_capacities(path: Path) -> list[str] | None:
         return None
     if not isinstance(fm, dict):
         return None
-    caps = (fm.get("official_program") or {}).get("capacities")
-    if not isinstance(caps, list) or not caps:
-        return None
-    return sorted(str(c) for c in caps)
-
-
-def _find_bareme_by_capacities(eval_path: Path, prefix: str) -> bool:
-    """Fallback: find a barème in the same directory sharing the same capacities."""
-    eval_caps = _extract_capacities(eval_path)
-    if eval_caps is None:
-        return False
-    for candidate in eval_path.parent.glob(f"{prefix}_[Bb]areme_*.md"):
-        cand_caps = _extract_capacities(candidate)
-        if cand_caps is not None and cand_caps == eval_caps:
-            return True
-    return False
+    bareme = fm.get("bareme")
+    return str(bareme) if bareme else None
 
 
 def main() -> int:
@@ -74,18 +73,30 @@ def main() -> int:
         if not m:
             continue
         prefix, slug = m.group(1), m.group(2)
+
+        # Rule 1: exact slug match
         bareme_name = f"{prefix}_bareme_{slug}.md"
         bareme_path = eval_path.parent / bareme_name
-        if not bareme_path.exists():
-            # Also try case variants
-            bareme_alt = eval_path.parent / f"{prefix}_Bareme_{slug}.md"
-            if not bareme_alt.exists():
-                # Fallback: accept pairing if a barème in the same dir
-                # declares the same official_program.capacities
-                if _find_bareme_by_capacities(eval_path, prefix):
-                    continue
-                rel = eval_path.relative_to(ROOT)
-                unpaired.append(f"  {rel} → barème manquant: {bareme_name}")
+        if bareme_path.exists():
+            continue
+        # Case variant
+        bareme_alt = eval_path.parent / f"{prefix}_Bareme_{slug}.md"
+        if bareme_alt.exists():
+            continue
+
+        # Rule 2: frontmatter ``bareme:`` declaration
+        declared = _extract_bareme_field(eval_path)
+        if declared and (eval_path.parent / declared).exists():
+            continue
+
+        # Rule 3: explicit convention map
+        if name in EXPLICIT_PAIRINGS:
+            conv_bareme, _justification = EXPLICIT_PAIRINGS[name]
+            if (eval_path.parent / conv_bareme).exists():
+                continue
+
+        rel = eval_path.relative_to(ROOT)
+        unpaired.append(f"  {rel} → barème manquant: {bareme_name}")
 
     if unpaired:
         print(f"check_eval_bareme_pairing: FAIL ({len(unpaired)} évaluation(s) sans barème)")
