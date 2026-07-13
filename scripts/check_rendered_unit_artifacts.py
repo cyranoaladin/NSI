@@ -20,6 +20,9 @@ INLINE_TEACHER_CONTENT = re.compile(
     r"bar[èe]me\s+correcteur|[ée]l[ée]ments?\s+de\s+correction)\b",
     re.I,
 )
+NUMBERED_ANSWER_KEY = re.compile(
+    r"\br[ée]ponse\s+\d+\s*:", re.I,
+)
 
 
 def plain_html(fragment: str) -> str:
@@ -50,6 +53,8 @@ def student_leak_errors(student: str) -> list[str]:
             errors.append(f"ressource professeur visible ({location(student, source.start())})")
     for match in INLINE_TEACHER_CONTENT.finditer(plain_html(student)):
         errors.append(f"contenu de correction visible : {match.group(0)}")
+    for match in NUMBERED_ANSWER_KEY.finditer(plain_html(student)):
+        errors.append(f"réponse numérotée visible : {match.group(0)}")
     return errors
 
 

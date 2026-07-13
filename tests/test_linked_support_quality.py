@@ -43,6 +43,16 @@ class LinkedSupportQualityTest(unittest.TestCase):
             "Production supplémentaire [approfondissement]",
             "Analyse supplémentaire [approfondissement]",
         ]
+        task_consignes = [
+            "Lire le document fourni et annoter les structures repérées dans le texte source.",
+            "Construire la table de trace complète en suivant l'exécution pas à pas sur les données.",
+            "Écrire la requête SQL qui produit le résultat demandé à partir de la table donnée.",
+            "Justifier pourquoi le résultat obtenu est correct en citant les propriétés utilisées.",
+            "Trouver et corriger l'erreur dans le programme proposé puis vérifier le résultat.",
+            "Adapter la solution précédente à un nouveau contexte avec des contraintes différentes.",
+            "Produire un algorithme complet répondant à la consigne et vérifier son exécution.",
+            "Analyser les résultats obtenus et comparer les performances des deux approches proposées.",
+        ]
         lines = [
             "---",
             "title: P99 TD",
@@ -60,11 +70,11 @@ class LinkedSupportQualityTest(unittest.TestCase):
         for number in range(exercises):
             lines.extend([
                 f"### Exercice {number + 1} — {task_titles[number]}",
-                "Production attendue et contrôle du résultat.",
+                task_consignes[number],
             ])
         lines.append("## Corrigé")
         for number in range(corrections):
-            lines.extend([f"### Corrigé exercice {number + 1}", "Réponse justifiée."])
+            lines.extend([f"### Corrigé exercice {number + 1}", "Réponse justifiée avec trace et vérification du résultat attendu."])
         if rich:
             lines.extend([
                 "## Cas limite et erreurs fréquentes",
@@ -202,6 +212,64 @@ class LinkedSupportQualityTest(unittest.TestCase):
             encoding="utf-8",
         )
 
+    def write_td_adversarial(
+        self,
+        root: Path,
+        *,
+        exercises: int,
+        corrections: int,
+        rich: bool,
+        shallow_content: bool = False,
+        duplicate_consignes: bool = False,
+        shallow_corrections: bool = False,
+    ) -> Path:
+        td = root / "P99_TD_demo.md"
+        task_titles = [
+            "Lire et annoter [socle]",
+            "Construire une table de trace [socle]",
+            "Écrire une requête [standard]",
+            "Justifier un résultat [standard]",
+            "Déboguer une erreur [standard]",
+            "Transfert vers un nouveau cas [approfondissement]",
+        ]
+        lines = [
+            "---",
+            "title: P99 TD",
+            "level: terminale",
+            "sequence_id: P99",
+            "document_type: td",
+            "status: needs_review",
+            "official_program:",
+            "  capacities:",
+            "    - T-ALGO-04",
+            "---",
+            "# TD",
+            "## Exercices",
+        ]
+        for number in range(exercises):
+            title = task_titles[0] if duplicate_consignes else task_titles[number % len(task_titles)]
+            lines.append(f"### Exercice {number + 1} — {title}")
+            if shallow_content:
+                lines.append("Titre seul.")
+            else:
+                lines.append("Production attendue et contrôle du résultat obtenu par exécution directe du programme.")
+        lines.append("## Corrigé")
+        for number in range(corrections):
+            lines.append(f"### Corrigé exercice {number + 1}")
+            if shallow_corrections:
+                lines.append("OK.")
+            else:
+                lines.append("Réponse justifiée avec trace et vérification du résultat complet.")
+        if rich:
+            lines.extend([
+                "## Cas limite et erreurs fréquentes",
+                "Cas limite : résultat vide.",
+                "## Aides graduées",
+                "Aide pour la différenciation.",
+            ])
+        td.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        return td
+
     def test_contract_compliant_six_task_td_is_accepted(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
@@ -250,6 +318,54 @@ class LinkedSupportQualityTest(unittest.TestCase):
             result = td_quality.analyze_linked_td_quality(root, [td])
 
             self.assertEqual(result.errors, [])
+
+    def test_six_task_td_with_decorative_keywords_but_shallow_content_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            self.write_contract(root, "P99")
+            td = self.write_td_adversarial(root, exercises=6, corrections=6, rich=True, shallow_content=True)
+
+            result = td_quality.analyze_linked_td_quality(root, [td])
+
+            self.assertTrue(any("6 tâches" in error for error in result.errors))
+
+    def test_six_task_td_with_duplicate_consignes_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            self.write_contract(root, "P99")
+            td = self.write_td_adversarial(root, exercises=6, corrections=6, rich=True, duplicate_consignes=True)
+
+            result = td_quality.analyze_linked_td_quality(root, [td])
+
+            self.assertTrue(len(result.errors) > 0)
+
+    def test_six_task_td_with_shallow_corrections_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            self.write_contract(root, "P99")
+            td = self.write_td_adversarial(root, exercises=6, corrections=6, rich=True, shallow_corrections=True)
+
+            result = td_quality.analyze_linked_td_quality(root, [td])
+
+            self.assertTrue(any("6 tâches" in error for error in result.errors))
+
+    def test_six_task_td_without_contract_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            td = self.write_td(root, exercises=6, corrections=6, rich=True)
+
+            result = td_quality.analyze_linked_td_quality(root, [td])
+
+            self.assertTrue(len(result.errors) > 0)
+
+    def test_eight_task_td_with_shallow_content_still_fails_quality_checks(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            td = self.write_td_adversarial(root, exercises=8, corrections=8, rich=False, shallow_content=True)
+
+            result = td_quality.analyze_linked_td_quality(root, [td])
+
+            self.assertTrue(len(result.errors) > 0)
 
     def test_operational_debt_accepts_short_rich_td_with_singular_objective_and_aids(self) -> None:
         with tempfile.TemporaryDirectory() as raw:

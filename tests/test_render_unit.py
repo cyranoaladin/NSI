@@ -99,6 +99,48 @@ Choisir la colonne affichée avant d'écrire la requête.
         self.assertIn("Repères enseignant", teacher)
         self.assertIn("six notes deviendraient 16", teacher)
 
+    def test_reponses_rapides_section_is_stripped_from_student(self) -> None:
+        markdown = """# Version aménagée
+
+## Aides intégrées
+- Mots utiles : HTML, CSS, DOM.
+
+## Réponses rapides
+- Réponse 1 : <label for=nom>Nom</label>.
+- Réponse 2 : document.querySelector("#nom").value.
+
+## Exercice guidé
+1. Recopier la donnée utile.
+"""
+
+        rendered = strip_teacher_sections(markdown)
+
+        self.assertNotIn("Réponses rapides", rendered)
+        self.assertNotIn("Réponse 1", rendered)
+        self.assertNotIn("querySelector", rendered)
+        self.assertIn("Aides intégrées", rendered)
+        self.assertIn("Exercice guidé", rendered)
+
+    def test_numbered_answer_key_detected_in_student_gate(self) -> None:
+        errors = student_leak_errors(
+            "<p>Réponse 1 : SELECT id FROM Eleve;</p>"
+        )
+
+        self.assertTrue(any("réponse numérotée" in error for error in errors))
+
+    def test_legitimate_student_reponse_is_not_flagged(self) -> None:
+        errors = student_leak_errors(
+            "<p>Écrire votre réponse dans le fichier starter.</p>"
+        )
+
+        self.assertEqual(errors, [])
+
+    def test_real_p08_render_passes_student_teacher_gate(self) -> None:
+        self.assertEqual(check_unit("P08"), [])
+
+    def test_real_t13_render_passes_student_teacher_gate(self) -> None:
+        self.assertEqual(check_unit("T13"), [])
+
     def test_real_t10_render_passes_student_teacher_gate(self) -> None:
         self.assertEqual(check_unit("T10"), [])
 

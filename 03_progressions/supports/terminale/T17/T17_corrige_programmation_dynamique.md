@@ -147,4 +147,4 @@ La sentinelle numérique `montant+1` signifie « aucun calcul n'a trouvé de sol
 - Une table correcte avec une formule imprécise conserve les points de calcul, pas ceux de modélisation.
 - Une erreur sur une case ne doit pas annuler les cases ultérieures correctement recalculées à partir d'une table explicitement rectifiée.
 - Un algorithme glouton, même juste sur l'exemple, ne répond pas à la consigne dynamique.
-- `None`, `-1` ou une exception documentée sont acceptables pour l'impossible si la sentinelle interne n'est pas présentée comme solution.
+- Le montant impossible doit être signalé par `None` (conformément au TP, aux tests attendus et au barème) ; la sentinelle interne ne doit jamais être présentée comme un nombre de pièces.

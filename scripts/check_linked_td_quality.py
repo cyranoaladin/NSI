@@ -110,6 +110,40 @@ def has_distinct_task_families(blocks: list[str]) -> bool:
     return assign(0, set())
 
 
+MIN_EXERCISE_CONTENT_CHARS = 40
+MIN_CORRECTION_CONTENT_CHARS = 20
+CORRECTION_HEADER = re.compile(r"^###\s+Corrig[ée]\s+exercice\s+\d+\b.*$", re.M | re.I)
+
+
+def _block_content_length(block: str) -> int:
+    """Return character count of content lines below the heading."""
+    lines = block.strip().splitlines()
+    return sum(len(line.strip()) for line in lines[1:] if line.strip())
+
+
+def _correction_blocks(body: str) -> list[str]:
+    matches = list(CORRECTION_HEADER.finditer(body))
+    blocks: list[str] = []
+    for index, match in enumerate(matches):
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(body)
+        blocks.append(body[match.start():end])
+    return blocks
+
+
+def _blocks_are_near_duplicates(blocks: list[str]) -> bool:
+    """Reject exercises whose consignes are nearly identical."""
+    consignes: list[str] = []
+    for block in blocks:
+        lines = block.strip().splitlines()
+        content = " ".join(line.strip().lower() for line in lines[1:] if line.strip())
+        consignes.append(re.sub(r"\d+", "N", content))
+    for i in range(len(consignes)):
+        for j in range(i + 1, len(consignes)):
+            if consignes[i] == consignes[j] and len(consignes[i]) > 10:
+                return True
+    return False
+
+
 def has_six_task_contract_compliant_td(
     root: Path,
     sequence_id: str,
@@ -125,6 +159,15 @@ def has_six_task_contract_compliant_td(
         return False
     blocks = exercise_blocks(body)
     if len(blocks) != exercises or not has_distinct_task_families(blocks):
+        return False
+    if any(_block_content_length(block) < MIN_EXERCISE_CONTENT_CHARS for block in blocks):
+        return False
+    if _blocks_are_near_duplicates(blocks):
+        return False
+    corr_blocks = _correction_blocks(body)
+    if len(corr_blocks) < corrections:
+        return False
+    if any(_block_content_length(block) < MIN_CORRECTION_CONTENT_CHARS for block in corr_blocks):
         return False
     lower = body.lower()
     return (
