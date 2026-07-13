@@ -102,9 +102,9 @@ ORDER BY colonne ASC ou DESC;
 
 ### Preuve de cours T-BDD-03E — trier un résultat avec `ORDER BY`
 
-`ORDER BY` sert à trier les lignes du résultat final sans modifier les tables `Eleve` et `Note` : `ASC` signifie ordre croissant et `DESC` signifie ordre décroissant ; par exemple, la requête complète `SELECT Eleve.nom, Note.note FROM Eleve JOIN Note ON Eleve.id_eleve = Note.id_eleve WHERE Note.matiere = 'NSI' ORDER BY Note.note DESC, Eleve.nom ASC;` renvoie exactement, dans cet ordre, `Ada — 17`, `Grace — 15`, `Linus — 13`, `Alan — 9`, car les notes sont triées de la plus grande à la plus petite et, en cas d'égalité, le second critère `Eleve.nom ASC` départage alphabétiquement.
+`ORDER BY` / `ASC` / `DESC` trie le résultat sans modifier la table : la requête complète `SELECT nom FROM Eleve ORDER BY nom ASC;` renvoie exactement `Ada`, `Alan`, `Grace`, `Linus` ; avec `DESC`, l'ordre serait inversé.
 
-La même requête, mise en forme clause par clause, permet de voir comment ce résultat est construit et comment deux notes égales seraient départagées par ordre alphabétique du nom :
+Un second exemple, mis en forme clause par clause, montre comment un tri s'applique après une jointure et comment deux notes égales seraient départagées par ordre alphabétique du nom :
 
 ```sql
 SELECT Eleve.nom, Note.note
