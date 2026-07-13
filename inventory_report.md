@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1171
+- Total ressources : 1172
 - Ressources pédagogiques : 53
-- Ressources techniques : 1118
+- Ressources techniques : 1119
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1163
+- generated: 1164
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 602
+- interne: 603
 - premiere: 266
 - terminale: 303
 
@@ -21,15 +21,15 @@
 - python: 84
 - script: 210
 - sequence: 45
-- test: 76
+- test: 77
 
 ## Répartition par statut
-- needs_review: 1171
+- needs_review: 1172
 
 ## Répartition audience
 - corrige: 82
 - eleve: 143
-- mixte: 943
+- mixte: 944
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -1167,6 +1167,7 @@
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
   - tests/test_no_inline_env_resolution.py
+  - tests/test_no_placeholders_code.py
   - tests/test_no_stale_archive_guard.py
   - tests/test_notional_and_disciplinary_controls.py
   - tests/test_operational_substance_controls.py
@@ -2340,6 +2341,7 @@
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
   - tests/test_no_inline_env_resolution.py
+  - tests/test_no_placeholders_code.py
   - tests/test_no_stale_archive_guard.py
   - tests/test_notional_and_disciplinary_controls.py
   - tests/test_operational_substance_controls.py
@@ -3478,6 +3480,7 @@
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
 - tests/test_no_inline_env_resolution.py
+- tests/test_no_placeholders_code.py
 - tests/test_no_stale_archive_guard.py
 - tests/test_notional_and_disciplinary_controls.py
 - tests/test_operational_substance_controls.py
@@ -4654,6 +4657,7 @@
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
 - tests/test_no_inline_env_resolution.py
+- tests/test_no_placeholders_code.py
 - tests/test_no_stale_archive_guard.py
 - tests/test_notional_and_disciplinary_controls.py
 - tests/test_operational_substance_controls.py
