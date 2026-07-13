@@ -94,6 +94,19 @@ La condition `p <= m` évite un indice négatif. Ignorer un prédécesseur infin
 
 ## 4. Construire une table complète
 
+### Méthode autonome — tabuler le rendu minimal
+
+Pour calculer la solution jusqu'à un montant cible `M`, on construit une table de tabulation `dp` :
+
+1. **État** : `dp[m]` est le nombre minimal de pièces nécessaires pour obtenir exactement le montant `m`.
+2. **Cas de base** : `dp[0] = 0`, car obtenir zéro ne demande aucune pièce.
+3. **Impossible** : pour `m > 0`, on initialise `dp[m] = +∞` ; après le calcul, une valeur encore infinie signifie qu'aucune combinaison ne permet d'obtenir `m` et peut être traduite par `None` dans le résultat du programme.
+4. **Récurrence** : pour chaque pièce `p <= m` telle que `dp[m-p]` est possible, on compare le candidat `1 + dp[m-p]`, puis on conserve
+   `dp[m] = 1 + min(dp[m-p])` parmi ces prédécesseurs atteignables.
+5. **Ordre de calcul** : on remplit la table pour `m = 0, 1, 2, ..., M`, parce que le calcul de `dp[m]` ne consulte que des montants `m-p` strictement plus petits et donc déjà calculés.
+
+La table suivante applique ces cinq étapes aux pièces `[1, 3, 4]` et donne explicitement chaque état de `dp[0]` à `dp[6]`.
+
 ### Exemple corrigé 1 — pièces `[1, 3, 4]`, montant 6
 
 Initialisation :
@@ -115,6 +128,8 @@ On calcule les montants dans l'ordre croissant.
 | 6 | `dp[5] + 1 = 3`, `dp[3] + 1 = 2`, `dp[2] + 1 = 3` | 2 | 2 | 3 |
 
 Table finale : `[0, 1, 2, 1, 1, 2, 2]`.
+
+La dernière ligne donne `dp[6] = 2` grâce au candidat `dp[3] + 1 = 2` : comme `dp[3] = 1` avec une pièce de 3, la solution est `3 + 3`. Le choix glouton aurait pris `4 + 1 + 1`, soit trois pièces. **La programmation dynamique ne choisit pas localement la plus grande pièce ; elle conserve les meilleurs résultats des sous-problèmes déjà calculés.**
 
 ### Reconstruction
 

@@ -100,6 +100,33 @@ WHERE condition_de_filtrage
 ORDER BY colonne ASC ou DESC;
 ```
 
+### Méthode autonome — ordonner le résultat avec `ORDER BY`
+
+`ORDER BY` ordonne les lignes du résultat final : `ASC` demande l'ordre croissant et `DESC` l'ordre décroissant. Cette clause ne modifie aucune ligne des tables ; elle change seulement l'ordre d'affichage du résultat de la requête. Elle ne filtre pas non plus les lignes : ce rôle appartient à `WHERE`.
+
+Avec les tables `Eleve` et `Note` données plus haut, on veut afficher toutes les notes de NSI, de la meilleure à la moins bonne, puis départager deux notes égales par ordre alphabétique du nom :
+
+```sql
+SELECT Eleve.nom, Note.note
+FROM Eleve
+JOIN Note ON Eleve.id_eleve = Note.id_eleve
+WHERE Note.matiere = 'NSI'
+ORDER BY Note.note DESC, Eleve.nom ASC;
+```
+
+Résultat exact :
+
+| nom | note |
+|---|---:|
+| Ada | 17 |
+| Grace | 15 |
+| Linus | 13 |
+| Alan | 9 |
+
+Le premier critère, `Note.note DESC`, place les notes de la plus grande à la plus petite. Si deux élèves avaient la même note, le second critère, `Eleve.nom ASC`, les classerait par nom croissant. Après cette requête, les quatre lignes de NSI de la table `Note` sont inchangées : seul leur ordre dans ce résultat est fixé.
+
+**Erreurs fréquentes.** Oublier `DESC` produit ici le classement inverse ; croire que `ORDER BY` filtre des lignes confond le tri avec `WHERE` ; croire qu'il réécrit la table confond une requête de lecture avec `UPDATE`.
+
 Toutes les clauses ne sont pas obligatoires. En revanche, si une jointure est utilisée, sa condition `ON` doit dire quelles colonnes représentent la même information.
 
 ### Exemple corrigé 1 — projection et tri
