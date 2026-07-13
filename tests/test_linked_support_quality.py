@@ -72,9 +72,19 @@ class LinkedSupportQualityTest(unittest.TestCase):
                 f"### Exercice {number + 1} — {task_titles[number]}",
                 task_consignes[number],
             ])
+        correction_texts = [
+            "La structure repérée est header-main-form et le libellé est associé au champ par l'attribut for.",
+            "La table de trace montre trois états successifs et la valeur finale est cohérente avec l'entrée.",
+            "La requête SELECT ... WHERE ... produit exactement les lignes attendues sans doublon.",
+            "Le résultat est correct parce que la propriété utilisée garantit l'unicité du résultat.",
+            "L'erreur se situe à la ligne du test de condition et la correction rétablit le bon comportement.",
+            "La solution précédente s'adapte en remplaçant la condition par le nouveau critère donné.",
+            "L'algorithme produit le résultat attendu et la trace d'exécution le confirme pas à pas.",
+            "Les deux approches donnent le même résultat mais diffèrent en complexité temporelle.",
+        ]
         lines.append("## Corrigé")
         for number in range(corrections):
-            lines.extend([f"### Corrigé exercice {number + 1}", "Réponse justifiée avec trace et vérification du résultat attendu."])
+            lines.extend([f"### Corrigé exercice {number + 1}", correction_texts[number % len(correction_texts)]])
         if rich:
             lines.extend([
                 "## Cas limite et erreurs fréquentes",
@@ -365,7 +375,25 @@ class LinkedSupportQualityTest(unittest.TestCase):
 
             result = td_quality.analyze_linked_td_quality(root, [td])
 
-            self.assertTrue(len(result.errors) > 0)
+            self.assertTrue(any("trop pauvre" in error for error in result.errors))
+
+    def test_eight_task_td_with_near_duplicate_consignes_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            td = self.write_td_adversarial(root, exercises=8, corrections=8, rich=True, duplicate_consignes=True)
+
+            result = td_quality.analyze_linked_td_quality(root, [td])
+
+            self.assertTrue(any("quasi identiques" in error for error in result.errors))
+
+    def test_eight_task_td_with_generic_repeated_corrections_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            td = self.write_td_adversarial(root, exercises=8, corrections=8, rich=True, shallow_corrections=True)
+
+            result = td_quality.analyze_linked_td_quality(root, [td])
+
+            self.assertTrue(any("corrigé" in error and "pauvre" in error for error in result.errors))
 
     def test_operational_debt_accepts_short_rich_td_with_singular_objective_and_aids(self) -> None:
         with tempfile.TemporaryDirectory() as raw:

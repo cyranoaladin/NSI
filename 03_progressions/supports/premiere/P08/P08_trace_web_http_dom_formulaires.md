@@ -30,7 +30,7 @@ official_program:
 - Vocabulaire : HTML structurel, sélecteur CSS, DOM, événement submit, GET.
 - Étape 1 : repérer header main form label input.
 - Étape 2 : cibler #nom en CSS et DOM.
-- Résultat de référence : <label for=nom>Nom</label><input id=nom name=nom>.
+- Résultat de référence : à déterminer (quelle balise HTML associe un libellé à un champ ?).
 
 ## Cas limites à mémoriser
 - champ nom vide.
@@ -44,5 +44,9 @@ official_program:
 
 ## Critères de réussite observables
 - Capacité : P-IHM-01A.
-- Résultat final : document.querySelector("#nom").value lit la saisie.
+- Résultat final : vérifier que la saisie du champ est accessible via le DOM.
 - Cas limite : champ nom vide.
+
+## Repères enseignant — résultats attendus
+- Résultat de référence : <label for=nom>Nom</label><input id=nom name=nom>.
+- Résultat final : document.querySelector("#nom").value lit la saisie.

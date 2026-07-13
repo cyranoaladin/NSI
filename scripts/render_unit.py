@@ -25,6 +25,8 @@ TEACHER_SECTION_PATTERNS = (
     re.compile(r"\br[ée]ponses?\s+attendues?\b", re.I),
     re.compile(r"\b[ée]l[ée]ments?\s+de\s+correction\b", re.I),
     re.compile(r"\br[ée]ponses?\s+rapides?\b", re.I),
+    re.compile(r"\br[ée]ponses?\s+de\s+r[ée]f[ée]rence\b", re.I),
+    re.compile(r"\br[ée]sultats?\s+attendus?\b", re.I),
 )
 INLINE_TEACHER_RESOURCE = re.compile(
     r"\b(?:corrig[ée]\s+(?:professeur|distribu[ée])|corrige_professeur|"

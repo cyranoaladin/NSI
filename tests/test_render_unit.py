@@ -135,6 +135,52 @@ Choisir la colonne affichée avant d'écrire la requête.
 
         self.assertEqual(errors, [])
 
+    def test_resultat_de_reference_section_is_stripped_from_student(self) -> None:
+        markdown = """# Trace
+
+## Étapes
+- Étape 1 : repérer les données.
+
+## Résultats attendus
+- Résultat : SELECT id FROM Eleve;
+
+## Exercice
+1. Compléter.
+"""
+        rendered = strip_teacher_sections(markdown)
+        self.assertNotIn("Résultats attendus", rendered)
+        self.assertNotIn("SELECT id FROM Eleve", rendered)
+        self.assertIn("Étapes", rendered)
+        self.assertIn("Exercice", rendered)
+
+    def test_real_p08_student_has_no_direct_answers(self) -> None:
+        student = build_html("P08", teacher=False)
+        teacher = build_html("P08", teacher=True)
+
+        self.assertNotIn("Réponses rapides", student)
+        self.assertNotIn("Réponse 1", student)
+        self.assertNotIn("Résultats attendus", student)
+        self.assertIn("Exercice guidé", student)
+        self.assertIn("Aides intégrées", student)
+        self.assertIn("________________", student)
+        self.assertIn("Repères enseignant", teacher)
+
+    def test_real_t13_student_has_no_direct_answers(self) -> None:
+        student = build_html("T13", teacher=False)
+        teacher = build_html("T13", teacher=True)
+
+        self.assertNotIn("Réponses rapides", student)
+        self.assertNotIn("Réponse 1", student)
+        self.assertIn("Exercice guidé", student)
+        self.assertIn("________________", student)
+        self.assertIn("Repères enseignant", teacher)
+
+    def test_p08_version_amenagee_remains_substantive(self) -> None:
+        student = build_html("P08", teacher=False)
+        self.assertIn("Exercice guidé", student)
+        self.assertIn("Aides intégrées", student)
+        self.assertIn("Cas limites", student)
+
     def test_real_p08_render_passes_student_teacher_gate(self) -> None:
         self.assertEqual(check_unit("P08"), [])
 

@@ -137,10 +137,13 @@ def _blocks_are_near_duplicates(blocks: list[str]) -> bool:
         lines = block.strip().splitlines()
         content = " ".join(line.strip().lower() for line in lines[1:] if line.strip())
         consignes.append(re.sub(r"\d+", "N", content))
-    for i in range(len(consignes)):
-        for j in range(i + 1, len(consignes)):
-            if consignes[i] == consignes[j] and len(consignes[i]) > 10:
-                return True
+    unique = set()
+    for text in consignes:
+        if not text or len(text) <= 10:
+            continue
+        if text in unique:
+            return True
+        unique.add(text)
     return False
 
 
@@ -211,6 +214,21 @@ def analyze_one_td(path: Path, root: Path = ROOT) -> list[str]:
             errors.append(f"{rel}: minimum 8 exercices requis, trouvé {exercises}")
     if corrections < exercises:
         errors.append(f"{rel}: corrigé manquant pour au moins un exercice ({corrections}/{exercises})")
+
+    blocks = exercise_blocks(body)
+    if blocks:
+        shallow = [i + 1 for i, b in enumerate(blocks) if _block_content_length(b) < MIN_EXERCISE_CONTENT_CHARS]
+        if shallow:
+            errors.append(f"{rel}: exercice(s) trop pauvre(s) -> {shallow}")
+        if _blocks_are_near_duplicates(blocks):
+            errors.append(f"{rel}: exercices quasi identiques détectés")
+    corr_blocks = _correction_blocks(body)
+    if corr_blocks:
+        shallow_corr = [i + 1 for i, b in enumerate(corr_blocks) if _block_content_length(b) < MIN_CORRECTION_CONTENT_CHARS]
+        if shallow_corr:
+            errors.append(f"{rel}: corrigé(s) trop pauvre(s) -> {shallow_corr}")
+        if _blocks_are_near_duplicates(corr_blocks):
+            errors.append(f"{rel}: corrigés quasi identiques détectés")
 
     lower = body.lower()
     lecture_count = len(

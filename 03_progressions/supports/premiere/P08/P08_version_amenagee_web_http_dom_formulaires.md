@@ -33,10 +33,12 @@ official_program:
 ## Exercice guidé
 1. Recopier la donnée utile.
 2. Choisir la capacité : P-IHM-01A ou P-IHM-01B.
-3. Compléter le résultat : <label for=nom>Nom</label><input id=nom name=nom>.
+3. Compléter le résultat : `________________` (utiliser les balises HTML adaptées pour associer un libellé au champ).
 4. Cocher le cas limite : champ nom vide.
+5. Vérification : le sélecteur CSS `#nom` cible-t-il un élément unique ?
+6. Expliquer en une phrase comment le navigateur transmet `jour` au serveur dans l'URL fournie.
 
-## Réponses rapides
+## Repères enseignant — réponses de référence
 - Réponse 1 : <label for=nom>Nom</label><input id=nom name=nom>.
 - Réponse 2 : document.querySelector("#nom").value lit la saisie.
 - Réponse 3 : GET /club?jour=mercredi transporte jour.

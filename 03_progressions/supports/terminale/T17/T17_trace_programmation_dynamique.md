@@ -65,7 +65,7 @@ Avec un montant `M` et `k` pièces : temps `O(Mk)`, mémoire `O(M)`.
 | état « `dp` contient les résultats » | préciser indice, sens, exactitude et grandeur optimisée |
 | table initialisée à zéro | réserver zéro au cas de base, utiliser l'infini ailleurs |
 | lire `dp[m-p]` avant calcul | dessiner les dépendances et remplir par montants croissants |
-| renvoyer l'infini comme réponse | convertir l'état final impossible en `None` ou décision explicite |
+| renvoyer l'infini comme réponse | convertir l'état final impossible en `None` |
 | confondre minimum et pièces choisies | mémoriser une seconde table `choix` |
 
 ## Cas limites

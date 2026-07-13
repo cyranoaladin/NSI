@@ -23,7 +23,7 @@ official_program:
 - Vocabulaire : chiffrement symétrique, chiffrement asymétrique, clé publique, clé privée, certificat.
 - Étape 1 : protéger Ksession par asymétrique.
 - Étape 2 : utiliser symétrique pour données.
-- Résultat de référence : message chiffré avec Ksession.
+- Résultat de référence : à déterminer (quel type de chiffrement protège les données échangées ?).
 
 ## Cas limites à mémoriser
 - certificat expiré.
@@ -37,5 +37,9 @@ official_program:
 
 ## Critères de réussite observables
 - Capacité : T-ARCH-04A.
-- Résultat final : Ksession chiffrée avec Kpub serveur.
+- Résultat final : vérifier que la clé de session est protégée avant transmission.
 - Cas limite : certificat expiré.
+
+## Repères enseignant — résultats attendus
+- Résultat de référence : message chiffré avec Ksession.
+- Résultat final : Ksession chiffrée avec Kpub serveur.
