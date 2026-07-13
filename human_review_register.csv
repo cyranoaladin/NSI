@@ -179,7 +179,11 @@ ressource,niveau,sequence,notion,reviewer,date,science_status,pedagogy_status,ac
 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md,premiere,,"HTML, CSS, DOM, HTTP et formulaires",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md,premiere,,"HTML, CSS, DOM, HTTP et formulaires",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md,premiere,,"HTML, CSS, DOM, HTTP et formulaires",,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md,premiere,,"HTML, CSS et DOM",,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md,premiere,,"HTTP, GET, POST et formulaires",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md,premiere,,"HTML, CSS, DOM, HTTP et formulaires",,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P08/P08_corrige_html_css_dom.md,premiere,,"HTML, CSS et DOM",,,pending,pending,pending,pending,pending,revue humaine non réalisée
+03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md,premiere,,"HTTP, GET, POST et formulaires",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md,premiere,,"HTML, CSS, DOM, HTTP et formulaires",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md,premiere,,"HTML, CSS, DOM, HTTP et formulaires",,,pending,pending,pending,pending,pending,revue humaine non réalisée
 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md,premiere,,"HTML, CSS, DOM, HTTP et formulaires",,,pending,pending,pending,pending,pending,revue humaine non réalisée

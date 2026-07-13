@@ -5,13 +5,13 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 ## Synthèse
 
-- Nombre total de ressources : 530
-- Nombre par statut : {'needs_review': 530}
-- Nombre par type de document : {'bareme': 41, 'corrige': 67, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
-- Ressources avec capacity_ids : 445
+- Nombre total de ressources : 534
+- Nombre par statut : {'needs_review': 534}
+- Nombre par type de document : {'bareme': 43, 'corrige': 69, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
+- Ressources avec capacity_ids : 449
 - Ressources sans capacity_ids : 85
-- Ressources avec audience renseignée : 530
-- Ressources avec session renseignée : 530
+- Ressources avec audience renseignée : 534
+- Ressources avec session renseignée : 534
 
 ## P-ALGO-01A
 
@@ -476,11 +476,12 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_corrige_html_css_dom.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md` — evaluation — needs_review — eleve
-- `03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md` — trace — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md` — version_amenagee — needs_review — eleve
@@ -492,11 +493,12 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_corrige_html_css_dom.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md` — evaluation — needs_review — eleve
-- `03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md` — trace — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md` — version_amenagee — needs_review — eleve
@@ -508,11 +510,12 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_corrige_html_css_dom.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md` — evaluation — needs_review — eleve
-- `03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md` — trace — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_version_amenagee_web_http_dom_formulaires.md` — version_amenagee — needs_review — eleve
@@ -525,10 +528,11 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
-- `03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md` — trace — needs_review — eleve
@@ -541,10 +545,11 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
-- `03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md` — trace — needs_review — eleve
@@ -557,10 +562,11 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
-- `03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md` — trace — needs_review — eleve
@@ -573,10 +579,11 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
-- `03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md` — trace — needs_review — eleve
@@ -589,10 +596,11 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
-- `03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md` — trace — needs_review — eleve
@@ -605,10 +613,11 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
-- `03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md` — trace — needs_review — eleve
@@ -1142,12 +1151,10 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 - `03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_select_where_join.md` — fiche_cours — needs_review — eleve
 - `03_progressions/supports/contracts/T10_contract.yml` — document — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md` — cours — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md` — remediation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
@@ -1158,12 +1165,10 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 - `03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_select_where_join.md` — fiche_cours — needs_review — eleve
 - `03_progressions/supports/contracts/T10_contract.yml` — document — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md` — cours — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md` — remediation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
@@ -1174,12 +1179,10 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 - `03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_select_where_join.md` — fiche_cours — needs_review — eleve
 - `03_progressions/supports/contracts/T10_contract.yml` — document — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md` — cours — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md` — remediation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
@@ -1190,17 +1193,13 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 - `03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_select_where_join.md` — fiche_cours — needs_review — eleve
 - `03_progressions/supports/contracts/T10_contract.yml` — document — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md` — cours — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md` — evaluation — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md` — remediation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md` — trace — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md` — version_amenagee — needs_review — eleve
 
 ## T-BDD-03F
 
@@ -1211,7 +1210,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md` — evaluation — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md` — remediation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md` — trace — needs_review — eleve
@@ -1222,12 +1220,10 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_insert_update_delete.md` — fiche_cours — needs_review — eleve
 - `03_progressions/supports/contracts/T10_contract.yml` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md` — td — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md` — evaluation — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md` — remediation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md` — trace — needs_review — eleve
@@ -1238,12 +1234,10 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/fiches_cours/terminale/T10/T10_fiche_cours_sql_insert_update_delete.md` — fiche_cours — needs_review — eleve
 - `03_progressions/supports/contracts/T10_contract.yml` — document — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md` — td — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md` — td — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md` — bareme — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md` — evaluation — needs_review — eleve
-- `03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md` — remediation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md` — trace — needs_review — eleve

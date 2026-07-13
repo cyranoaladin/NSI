@@ -5,13 +5,13 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 ## Synthèse
 
-- Nombre total de ressources : 530
-- Nombre par statut : {'needs_review': 530}
-- Nombre par type de document : {'bareme': 41, 'corrige': 67, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
-- Ressources avec capacity_ids : 445
+- Nombre total de ressources : 534
+- Nombre par statut : {'needs_review': 534}
+- Nombre par type de document : {'bareme': 43, 'corrige': 69, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
+- Ressources avec capacity_ids : 449
 - Ressources sans capacity_ids : 85
-- Ressources avec audience renseignée : 530
-- Ressources avec session renseignée : 530
+- Ressources avec audience renseignée : 534
+- Ressources avec session renseignée : 534
 
 ## P00-S1..P00-S7
 
@@ -177,7 +177,11 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md` — td — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md` — tp — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md` — tp — needs_review — eleve
+- `03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_corrige_html_css_dom.md` — corrige — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md` — evaluation — needs_review — eleve

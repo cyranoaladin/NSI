@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1162
+- Total ressources : 1169
 - Ressources pédagogiques : 53
-- Ressources techniques : 1109
+- Ressources techniques : 1116
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1154
+- generated: 1161
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 597
-- premiere: 262
+- interne: 600
+- premiere: 266
 - terminale: 303
 
 ## Répartition par type
 - banque: 14
-- document: 735
+- document: 741
 - python: 84
 - script: 210
 - sequence: 45
-- test: 74
+- test: 75
 
 ## Répartition par statut
-- needs_review: 1162
+- needs_review: 1169
 
 ## Répartition audience
-- corrige: 80
+- corrige: 82
 - eleve: 143
-- mixte: 936
+- mixte: 941
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -266,7 +266,11 @@
   - 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
   - 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md
+  - 03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md
+  - 03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md
+  - 03_progressions/supports/premiere/P08/P08_corrige_html_css_dom.md
+  - 03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md
@@ -723,6 +727,8 @@
   - reports/closure2/rag_v2_rebuilt_report.md
   - reports/closure2/rag_v2_versioned_report.md
   - reports/drive_enrichment_report.md
+  - reports/excellence_editorial_review_nsi.md
+  - reports/excellence_remediation_progress.md
   - reports/final_recipe_review_nsi.md
   - reports/human_review_checklist_accessibility.md
   - reports/human_review_checklist_pedagogy.md
@@ -1139,6 +1145,7 @@
   - tests/test_drive_portable_and_manifest.py
   - tests/test_ellipsis_scoping.py
   - tests/test_env_file_resolution.py
+  - tests/test_excellence_remediation_regressions.py
   - tests/test_executable_quality_controls.py
   - tests/test_final_quality_hardening.py
   - tests/test_first_batch_alignment.py
@@ -1482,7 +1489,11 @@
   - 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
   - 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md
+  - 03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md
+  - 03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md
+  - 03_progressions/supports/premiere/P08/P08_corrige_html_css_dom.md
+  - 03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md
@@ -1913,6 +1924,8 @@
   - reports/closure2/rag_v2_rebuilt_report.md
   - reports/closure2/rag_v2_versioned_report.md
   - reports/drive_enrichment_report.md
+  - reports/excellence_editorial_review_nsi.md
+  - reports/excellence_remediation_progress.md
   - reports/final_recipe_review_nsi.md
   - reports/human_review_checklist_accessibility.md
   - reports/human_review_checklist_pedagogy.md
@@ -2303,6 +2316,7 @@
   - tests/test_drive_portable_and_manifest.py
   - tests/test_ellipsis_scoping.py
   - tests/test_env_file_resolution.py
+  - tests/test_excellence_remediation_regressions.py
   - tests/test_executable_quality_controls.py
   - tests/test_final_quality_hardening.py
   - tests/test_first_batch_alignment.py
@@ -2372,7 +2386,7 @@
 - P05: 10
 - P06: 10
 - P07: 11
-- P08: 14
+- P08: 18
 - P09: 10
 - P10: 10
 - P11: 10
@@ -2622,6 +2636,8 @@
 - 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
 - 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md
+- 03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md
+- 03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md
@@ -3025,6 +3041,8 @@
 - reports/closure2/rag_v2_rebuilt_report.md
 - reports/closure2/rag_v2_versioned_report.md
 - reports/drive_enrichment_report.md
+- reports/excellence_editorial_review_nsi.md
+- reports/excellence_remediation_progress.md
 - reports/final_recipe_review_nsi.md
 - reports/human_review_checklist_accessibility.md
 - reports/human_review_checklist_pedagogy.md
@@ -3434,6 +3452,7 @@
 - tests/test_drive_portable_and_manifest.py
 - tests/test_ellipsis_scoping.py
 - tests/test_env_file_resolution.py
+- tests/test_excellence_remediation_regressions.py
 - tests/test_executable_quality_controls.py
 - tests/test_final_quality_hardening.py
 - tests/test_first_batch_alignment.py
@@ -3727,7 +3746,11 @@
 - 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
 - 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md
+- 03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md
+- 03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md
+- 03_progressions/supports/premiere/P08/P08_corrige_html_css_dom.md
+- 03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md
@@ -4185,6 +4208,8 @@
 - reports/closure2/rag_v2_rebuilt_report.md
 - reports/closure2/rag_v2_versioned_report.md
 - reports/drive_enrichment_report.md
+- reports/excellence_editorial_review_nsi.md
+- reports/excellence_remediation_progress.md
 - reports/final_recipe_review_nsi.md
 - reports/human_review_checklist_accessibility.md
 - reports/human_review_checklist_pedagogy.md
@@ -4601,6 +4626,7 @@
 - tests/test_drive_portable_and_manifest.py
 - tests/test_ellipsis_scoping.py
 - tests/test_env_file_resolution.py
+- tests/test_excellence_remediation_regressions.py
 - tests/test_executable_quality_controls.py
 - tests/test_final_quality_hardening.py
 - tests/test_first_batch_alignment.py

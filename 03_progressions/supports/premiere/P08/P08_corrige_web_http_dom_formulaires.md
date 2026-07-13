@@ -4,7 +4,7 @@ level: "premiere"
 sequence_id: "P08"
 document_type: "corrige"
 status: "needs_review"
-version: "0.6.0"
+version: "0.7.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
 theme: "HTML, CSS, DOM, HTTP et formulaires"
@@ -71,8 +71,11 @@ official_program:
 - Résultat principal : <label for=nom>Nom</label><input id=nom name=nom>.
 - Résultat secondaire : document.querySelector("#nom").value lit la saisie.
 
-## Corrigé de l évaluation
-- Question 1 : <label for=nom>Nom</label><input id=nom name=nom>.
-- Question 2 : document.querySelector("#nom").value lit la saisie.
-- Question 3 : GET /club?jour=mercredi transporte jour.
-- Question 4 : POST sans HTTPS ne chiffre pas.
+## Corrigés des deux évaluations
+
+Les deux sujets ne partagent plus un corrigé générique :
+
+- HTML, CSS et DOM : `P08_corrige_html_css_dom.md` ;
+- HTTP, formulaires et confidentialité : `P08_corrige_http_get_post_formulaires.md`.
+
+Cette séparation est disciplinaire : le premier corrigé suit l'arbre HTML, les sélecteurs et les états du gestionnaire d'événement ; le second suit les paramètres HTTP, l'ordre client-serveur, les lieux de stockage et les critères de confidentialité.

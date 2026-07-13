@@ -1,95 +1,125 @@
 ---
-title: "T10 - evaluation - SQL SELECT, JOIN, INSERT, UPDATE et DELETE"
+title: "T10 - Évaluation - INSERT, UPDATE et DELETE"
 level: "terminale"
 sequence_id: "T10"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.6.0"
+version: "0.7.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "SQL SELECT, JOIN, INSERT, UPDATE et DELETE"
-notion: "SQL SELECT, JOIN, INSERT, UPDATE et DELETE"
+theme: "Bases de données"
+notion: "Requêtes SQL de modification"
+bareme: "T10_bareme_sql_select_where_join.md"
+corrige: "T10_corrige_sql_select_where_join.md"
 private_data: false
 official_program:
   capacities:
     - "T-BDD-03A"
-    - "T-BDD-03B"
-    - "T-BDD-03C"
-    - "T-BDD-03D"
-    - "T-BDD-03E"
     - "T-BDD-03F"
     - "T-BDD-03G"
     - "T-BDD-03H"
 ---
 
-# T10 - Évaluation - SQL SELECT, JOIN, INSERT, UPDATE et DELETE
+# T10 - Évaluation - INSERT, UPDATE et DELETE
 
-## Modalités
-- Durée : 30 minutes.
-- Matériel autorisé : fiche de cours.
-- Capacités évaluées : T-BDD-03A, T-BDD-03B, T-BDD-03C, T-BDD-03D, T-BDD-03E, T-BDD-03F, T-BDD-03G, T-BDD-03H.
+## Cadre
 
-## Questions
-### Question 1
-- Capacité officielle : T-BDD-03A.
-- Énoncé : à partir de `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`, projeter nom et classe.
-- Réponse attendue : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `JOIN sans ON`.
-### Question 2
-- Capacité officielle : T-BDD-03B.
-- Énoncé : à partir de `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`, filtrer note >= 15.
-- Réponse attendue : JOIN -> Ada 17.
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `UPDATE sans WHERE`.
-### Question 3
-- Capacité officielle : T-BDD-03C.
-- Énoncé : à partir de `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`, joindre Eleve.id_eleve = Note.id_eleve.
-- Réponse attendue : UPDATE id_note=10 -> Ada 18.
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `DELETE sans WHERE`.
-### Question 4
-- Capacité officielle : T-BDD-03D.
-- Énoncé : à partir de `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`, vérifier modification par SELECT.
-- Réponse attendue : DELETE WHERE id_note=11 retire Linus.
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `JOIN sans ON`.
+- Durée : 40 minutes.
+- Total : 20 points.
+- Documents et exécution sur machine : non autorisés.
+- Les questions 2 à 5 sont indépendantes : chacune repart de la base initiale.
+- Pour `UPDATE` et `DELETE`, le `SELECT` de contrôle fait partie de la réponse attendue.
 
-## Corrigé question par question
-### Corrigé question 1
-- Résultat attendu : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.
-- Critère spécifique : projeter nom et classe et éviter `condition de jointure oubliée`.
-### Corrigé question 2
-- Résultat attendu : JOIN -> Ada 17.
-- Critère spécifique : filtrer note >= 15 et éviter `WHERE confondu avec ORDER BY`.
-### Corrigé question 3
-- Résultat attendu : UPDATE id_note=10 -> Ada 18.
-- Critère spécifique : joindre Eleve.id_eleve = Note.id_eleve et éviter `WHERE omis dans UPDATE`.
-### Corrigé question 4
-- Résultat attendu : DELETE WHERE id_note=11 retire Linus.
-- Critère spécifique : vérifier modification par SELECT et éviter `condition de jointure oubliée`.
+Capacités évaluées : `T-BDD-03A`, `T-BDD-03F`, `T-BDD-03G`, `T-BDD-03H`.
 
-## Erreurs fréquentes et remédiation
-- condition de jointure oubliée.
-- WHERE confondu avec ORDER BY.
-- WHERE omis dans UPDATE.
+## Base initiale fournie
 
-## Cas limites travaillés
-- JOIN sans ON.
-- UPDATE sans WHERE.
-- DELETE sans WHERE.
+### `Eleve`
 
-## Critères de réussite observables
-- La donnée de départ est recopiée exactement.
-- La trace ou le pseudo-code conduit à `SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus`.
-- Au moins un cas limite de la section précédente est décidé.
+| id_eleve | nom | classe |
+|---:|---|---|
+| 1 | Ada | T1 |
+| 2 | Linus | T2 |
+| 3 | Grace | T1 |
+| 4 | Alan | T2 |
 
+### `Note`
 
+| id_note | id_eleve | matiere | note |
+|---:|---:|---|---:|
+| 10 | 1 | NSI | 17 |
+| 11 | 2 | NSI | 13 |
+| 12 | 3 | NSI | 15 |
+| 13 | 1 | MATHS | 14 |
+| 14 | 4 | NSI | 9 |
+| 15 | 3 | MATHS | 18 |
 
-## Barème question par question
-- question 1: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
-- question 2: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
-- question 3: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
-- question 4: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+## Question 1 — Choisir sans confondre (3 points)
 
-## Fiche liée
-- Fiche liée : fiche de cours T10 sur `sql_insert_update_delete`.
+Associer chaque intention à `SELECT`, `INSERT`, `UPDATE` ou `DELETE`, puis indiquer si la base est modifiée.
+
+1. Afficher les notes de NSI.
+2. Enregistrer une nouvelle note.
+3. Corriger une valeur déjà enregistrée.
+4. Retirer une ligne d'essai.
+
+## Question 2 — Insérer (4 points)
+
+Alan obtient 12 en mathématiques. Cette note reçoit l'identifiant 16.
+
+1. Écrire l'instruction complète qui ajoute `Note(16, 4, 'MATHS', 12)`.
+2. Écrire un `SELECT` ciblé qui vérifie l'insertion.
+3. Donner la ligne exacte renvoyée par ce contrôle.
+
+## Question 3 — Mettre à jour sans déborder (5 points)
+
+La note de NSI d'Alan, identifiée par `id_note = 14`, doit passer de 9 à 10.
+
+1. Écrire le `SELECT` de contrôle avant modification et son résultat.
+2. Écrire l'`UPDATE` ciblé.
+3. Donner le résultat du même contrôle après modification.
+4. Expliquer l'effet de la même instruction sans clause `WHERE`.
+
+## Question 4 — Supprimer sans déborder (5 points)
+
+La note de mathématiques d'Ada, identifiée par `id_note = 13`, doit être supprimée.
+
+1. Écrire le `SELECT` de contrôle avant suppression et son résultat.
+2. Écrire le `DELETE` ciblé.
+3. Donner le résultat du même contrôle après suppression.
+4. Indiquer combien de lignes restent dans `Note`.
+
+## Question 5 — Déboguer une opération dangereuse (3 points)
+
+L'intention est de remplacer uniquement la note 11 par 16, mais la requête proposée est :
+
+```sql
+UPDATE Note SET note = 16;
+```
+
+1. Décrire précisément son effet sur la base initiale.
+2. Écrire la requête corrigée.
+3. Donner le `SELECT` à exécuter avant la correction pour vérifier la cible.
+
+## Repères enseignant — à masquer dans la projection élève
+
+| Question | Requête ou décision attendue | Résultat exact | Piège principal | Critère de barème décisif |
+|---|---|---|---|---|
+| 1 | `SELECT` non modifiant ; les trois autres selon leur verbe | quatre associations correctes | employer `UPDATE` pour afficher | opération cohérente avec l'intention |
+| 2 | `INSERT INTO Note(id_note, id_eleve, matiere, note) VALUES (16, 4, 'MATHS', 12);` | `(16, 4, MATHS, 12)` | ordre colonnes/valeurs ou clé déjà utilisée | ligne insérée et contrôle ciblé |
+| 3 | `UPDATE Note SET note = 10 WHERE id_note = 14;` | avant `(14, 9)`, après `(14, 10)` | omission de `WHERE` | cible unique et états avant/après |
+| 4 | `DELETE FROM Note WHERE id_note = 13;` | avant la ligne 13, après aucune ligne ; 5 lignes restantes | supprimer toutes les notes de maths | cible unique et résultat vide après |
+| 5 | six notes deviendraient 16 ; ajouter `WHERE id_note = 11` | contrôle avant : `(11, 13)` | dire seulement « c'est dangereux » | effet quantifié et correction complète |
+
+## Cas limites et erreurs fréquentes — repères enseignant
+
+- **Cas limite 1 — identifiant absent.** Un `UPDATE ... WHERE id_note = 99` ne modifie aucune ligne ; une réponse correcte doit distinguer cette absence d'une erreur de syntaxe.
+- **Cas limite 2 — suppression déjà effectuée.** Rejouer le contrôle de la note 13 après `DELETE` donne un résultat vide ; exécuter de nouveau la suppression touche zéro ligne.
+- **Erreur fréquente 1 — oublier `WHERE`.** La requête reste syntaxiquement valide mais change les six notes. Antidote : imposer le `SELECT` préalable avec la même condition.
+- **Erreur fréquente 2 — réutiliser une clé primaire.** Une insertion avec `id_note = 10` doit être refusée. Antidote : contrôler l'absence de l'identifiant avant `INSERT` et interpréter l'exception d'intégrité.
+
+Le résultat attendu pour chaque modification comprend l'état avant, la requête complète et l'état après ; le corrigé ne valide pas une requête isolée sans preuve de portée.
 
 ## Aménagement
-- Version aménagée : `T10_version_amenagee_sql_insert_update_delete.md` ; consignes découpées et barème conservé.
+
+La version aménagée commune `T10_version_amenagee_sql_select_where_join.md` propose une grille de choix d'opération et des clauses à compléter, sans afficher la requête finale.

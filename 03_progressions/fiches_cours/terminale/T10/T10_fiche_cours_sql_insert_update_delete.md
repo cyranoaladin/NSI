@@ -34,11 +34,11 @@ private_data: false
 
 ## Exemples corrigés
 ### Exemple corrigé 1 - INSERT avec table avant/après
-Avant : `Eleve` contient id 1 et 2. Requête : `INSERT INTO Eleve(id_eleve, nom, classe) VALUES (3, "Nadia", "T1");`. Après : une ligne id 3 existe.
+Avant : `Eleve` contient les identifiants 1 à 4. Requête : `INSERT INTO Eleve(id_eleve, nom, classe) VALUES (5, "Nadia", "T1");`. Après : une ligne id 5 existe.
 ### Exemple corrigé 2 - UPDATE ciblé
-Avant : `Note(4, 2, "maths", 12)`. Requête : `UPDATE Note SET note = 15 WHERE id_note = 4;`. Après : la note 4 vaut 15.
+Avant : `Note(14, 4, "NSI", 9)`. Requête : `UPDATE Note SET note = 10 WHERE id_note = 14;`. Après : la note 14 vaut 10.
 ### Exemple corrigé 3 - DELETE ciblé
-Vérification : `SELECT * FROM Note WHERE id_note = 8;`. Suppression : `DELETE FROM Note WHERE id_note = 8;`. Après : la requête de vérification ne renvoie plus de ligne.
+Vérification : `SELECT * FROM Note WHERE id_note = 13;`. Suppression : `DELETE FROM Note WHERE id_note = 13;`. Après : la requête de vérification ne renvoie plus de ligne.
 ### Exemple corrigé 4 - Risque UPDATE sans WHERE
 `UPDATE Note SET note = 20;` modifie toutes les notes : c’est une erreur de portée.
 ### Exemple corrigé 5 - Risque DELETE trop large
@@ -56,19 +56,19 @@ Vérification : `SELECT * FROM Note WHERE id_note = 8;`. Suppression : `DELETE F
 
 ## Mini-exercices
 ### Mini-exercice 1
-T-BDD-03F : ajouter l’élève id 4 nommé Sami en T2.
+T-BDD-03F : ajouter l’élève id 5 nommé Sami en T2.
 ### Mini-exercice 2
-T-BDD-03G : modifier seulement la note id 6 à 14.
+T-BDD-03G : modifier seulement la note id 14 à 10.
 ### Mini-exercice 3
-T-BDD-03H : supprimer seulement la note id 9.
+T-BDD-03H : supprimer seulement la note id 13.
 ### Mini-exercice 4
-Écrire le `SELECT` de contrôle avant un `UPDATE` sur id_note 6.
+Écrire le `SELECT` de contrôle avant un `UPDATE` sur id_note 14.
 
 ## Réponses rapides
-1. `INSERT INTO Eleve(id_eleve, nom, classe) VALUES (4, "Sami", "T2");`.
-2. `UPDATE Note SET note = 14 WHERE id_note = 6;`.
-3. `DELETE FROM Note WHERE id_note = 9;`.
-4. `SELECT * FROM Note WHERE id_note = 6;` vérifie la cible avant modification.
+1. `INSERT INTO Eleve(id_eleve, nom, classe) VALUES (5, "Sami", "T2");`.
+2. `UPDATE Note SET note = 10 WHERE id_note = 14;`.
+3. `DELETE FROM Note WHERE id_note = 13;`.
+4. `SELECT * FROM Note WHERE id_note = 14;` vérifie la cible avant modification.
 
 ## À retenir
 - T10 : requêtes de modification se révise avec une définition, une méthode et un exemple corrigé.

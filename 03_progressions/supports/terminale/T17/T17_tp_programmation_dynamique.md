@@ -1,74 +1,113 @@
 ---
-title: "T17 - tp - programmation dynamique"
+title: "T17 - TP - Programmer un rendu de monnaie optimal"
 level: "terminale"
 sequence_id: "T17"
 document_type: "tp"
 status: "needs_review"
-version: "0.6.0"
+version: "0.7.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "programmation dynamique"
-notion: "programmation dynamique"
+theme: "Algorithmique"
+notion: "Tabulation et reconstruction d'une solution optimale"
 private_data: false
 official_program:
   capacities:
     - "T-ALGO-04"
 ---
 
-# T17 - TP - programmation dynamique
+# T17 - TP - Programmer un rendu de monnaie optimal
 
-## Statut du TP
-TP exécutable : utiliser les fichiers du dossier `code/` (T17_starter_programmation_dynamique.py, T17_tests_attendus_programmation_dynamique.py, T17_corrige_professeur_programmation_dynamique.py).
+## Cadre
 
-## Donnée fournie
-`pieces=[1,5,7], montant=11, dp[0]=0`
+- Durée : 75 minutes.
+- Travail : binôme.
+- Objectif : construire une table de minima, mémoriser les choix et reconstruire une solution.
+- Fichiers fournis : `code/T17_starter_programmation_dynamique.py` et `code/T17_tests_attendus_programmation_dynamique.py`.
+- Fichiers à rendre : starter complété renommé `T17_nom1_nom2.py` et compte rendu `T17_nom1_nom2.md`.
 
-## Travail demandé
-1. Préparer la donnée et nommer les champs utiles.
-2. Réaliser : définir dp[m] coût minimal.
-3. Réaliser : écrire dp[m]=1+min(dp[m-p]).
-4. Tester le cas limite `montant 0`.
-5. Produire le livrable : dp[6]=2 avec 5+1.
+## Signatures imposées
 
-## Barème associé
-- 2 points : donnée préparée.
-- 3 points : méthode principale.
-- 3 points : résultat `dp[6]=2 avec 5+1`.
-- 2 points : cas limite `montant 0`.
+```python
+def construire_table(montant, pieces) -> tuple[list[int], list[int | None]]:
+    ...
 
-## Corrigé question par question
-### Corrigé question 1
-Résultat attendu : `pieces=[1,5,7], montant=11, dp[0]=0`.
-### Corrigé question 2
-Résultat attendu : dp[6]=2 avec 5+1.
-### Corrigé question 3
-Résultat attendu : dp[11]=3 avec 5+5+1.
-### Corrigé question 4
-Résultat attendu : `montant 0` traité sans ambiguïté.
+def rendu_monnaie_dp(montant, pieces) -> tuple[int, list[int]] | None:
+    ...
+```
 
-## Liens
-- TD lié : `T17_TD_programmation_dynamique.md`.
-- Évaluation liée : `T17_evaluation_programmation_dynamique.md`.
+La première fonction renvoie la table des minima et une table `choix`. La seconde renvoie le minimum avec une décomposition, ou `None` si le montant est impossible.
 
-## Cas limites travaillés
-- montant 0.
-- montant impossible.
-- pièce plus grande que m.
+## Mise en route — 10 minutes
 
-## Erreurs fréquentes
-- état ambigu.
-- initialisation oubliée.
-- choix de pièce confondu avec valeur optimale.
+Exécuter depuis `code/` :
 
-## Critères de réussite observables
-- La donnée de départ est recopiée exactement.
-- La trace ou le pseudo-code conduit à `dp[6]=2 avec 5+1`.
-- Au moins un cas limite de la section précédente est décidé.
+```bash
+python T17_tests_attendus_programmation_dynamique.py
+```
 
+Le starter doit échouer sur `NotImplementedError`. Noter le premier cas testé et la sortie attendue.
 
+## Étape 1 — Construire la table — 25 minutes
 
-## Assets Python
-- Starter élève : `code/T17_starter_programmation_dynamique.py`.
-- Tests attendus : `code/T17_tests_attendus_programmation_dynamique.py`.
-- Corrigé professeur : `code/T17_corrige_professeur_programmation_dynamique.py`.
-- Le starter doit échouer aux tests complets ; le corrigé professeur doit passer.
+1. Appeler la validation fournie.
+2. Initialiser `dp[0]` à 0 et les autres cases à `montant + 1`.
+3. Initialiser `choix` avec `None`.
+4. Parcourir les montants croissants puis les pièces.
+5. Mettre à jour les deux tables seulement si le candidat est strictement meilleur.
+
+Avant exécution, prévoir la table pour `(8, [1,4,5])`. Le test vérifie aussi les choix aux montants 4, 5 et 8.
+
+## Étape 2 — Reconstruire — 20 minutes
+
+Si l'état final est impossible, renvoyer `None`. Sinon, partir du montant, lire la dernière pièce, l'ajouter à la solution et la soustraire au reste jusqu'à zéro.
+
+Dans le compte rendu, tracer :
+
+- `8 → 4 → 0` pour `[1,4,5]` ;
+- `6 → 3 → 0` pour `[1,3,4]`.
+
+Expliquer pourquoi ces traces réfutent les décompositions gloutonnes `5+1+1+1` et `4+1+1`.
+
+## Étape 3 — Cas limites et invalides — 15 minutes
+
+Vérifier :
+
+- montant nul : `(0, [])` ;
+- montant 7 impossible avec `[4,6]` : `None` ;
+- montant négatif, liste vide pour un montant positif, pièce nulle ou négative : `ValueError`.
+
+## Validation finale — 5 minutes
+
+```bash
+TP_MODULE=T17_nom1_nom2 python T17_tests_attendus_programmation_dynamique.py
+```
+
+Le livrable est recevable si tous les tests passent et si le compte rendu contient état, initialisation, récurrence, deux reconstructions, cas impossible et complexités `O(Mk)` / `O(M)`.
+
+## Exemples corrigés de validation — repères enseignant
+
+### Exemple corrigé 1 — optimum non glouton
+
+Pour `rendu_monnaie_dp(6, [1, 3, 4])`, la table des minima est `[0, 1, 2, 1, 1, 2, 2]`. La reconstruction suit `6 → 3 → 0` et produit deux pièces `[3, 3]`. Le résultat glouton `[4, 1, 1]` comporte trois pièces et doit donc être rejeté.
+
+### Exemple corrigé 2 — état impossible
+
+Pour `rendu_monnaie_dp(7, [4, 6])`, les prédécesseurs possibles de 7 sont 3 et 1, tous deux inatteignables. La fonction renvoie `None` et ne tente pas de lire une pièce dans `choix[7]`.
+
+## Erreurs fréquentes et critères de réussite
+
+- **Erreur fréquente 1 — mettre à jour `dp[m]` sans `choix[m]`.** La valeur minimale passe les premiers tests, mais la reconstruction échoue. Antidote : effectuer les deux affectations dans la même condition `candidat < dp[m]`.
+- **Erreur fréquente 2 — accepter une pièce nulle.** La dépendance `m - 0 = m` ne progresse pas et invalide l'ordre de calcul. Antidote : valider toutes les pièces avant de construire la table.
+- **Critère de réussite observable 1.** Les valeurs de `dp`, les choix mémorisés et la décomposition reconstruite sont cohérents sur les deux exemples corrigés.
+- **Critère de réussite observable 2.** Les cas montant nul, impossible et données invalides produisent exactement les résultats ou exceptions annoncés.
+
+## Prolongement
+
+Ajouter un paramètre qui départage deux solutions minimales en préférant la plus grande dernière pièce. Écrire un test où plusieurs décompositions ont le même nombre de pièces et expliquer ce qui change dans la condition de mise à jour.
+
+## Repères enseignant
+
+- Corrigé : `code/T17_corrige_professeur_programmation_dynamique.py`.
+- Commande de validation : `TP_MODULE=T17_corrige_professeur_programmation_dynamique python T17_tests_attendus_programmation_dynamique.py`.
+- Le starter doit rester en échec avant travail.
+- Une solution gloutonne qui passe seulement un cas nominal ne valide pas `T-ALGO-04`.
