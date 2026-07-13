@@ -100,9 +100,9 @@ WHERE condition_de_filtrage
 ORDER BY colonne ASC ou DESC;
 ```
 
-### Exemple corrigé — trier un résultat avec `ORDER BY`
+### Preuve de cours T-BDD-03E — trier un résultat avec `ORDER BY`
 
-**Bloc autonome.** `ORDER BY` trie les lignes du résultat final : `ASC` demande l'ordre croissant et `DESC` l'ordre décroissant, sans jamais modifier les lignes stockées dans les tables. Sur les données `Eleve` et `Note` fournies plus haut, la requête complète `SELECT Eleve.nom, Note.note FROM Eleve JOIN Note ON Eleve.id_eleve = Note.id_eleve WHERE Note.matiere = 'NSI' ORDER BY Note.note DESC, Eleve.nom ASC;` renvoie exactement, dans cet ordre : `(Ada, 17)`, `(Grace, 15)`, `(Linus, 13)`, `(Alan, 9)`.
+`ORDER BY` sert à trier les lignes du résultat final sans modifier les tables `Eleve` et `Note` : `ASC` signifie ordre croissant et `DESC` signifie ordre décroissant ; par exemple, la requête complète `SELECT Eleve.nom, Note.note FROM Eleve JOIN Note ON Eleve.id_eleve = Note.id_eleve WHERE Note.matiere = 'NSI' ORDER BY Note.note DESC, Eleve.nom ASC;` renvoie exactement, dans cet ordre, `Ada — 17`, `Grace — 15`, `Linus — 13`, `Alan — 9`, car les notes sont triées de la plus grande à la plus petite et, en cas d'égalité, le second critère `Eleve.nom ASC` départage alphabétiquement.
 
 La même requête, mise en forme clause par clause, permet de voir comment ce résultat est construit et comment deux notes égales seraient départagées par ordre alphabétique du nom :
 
