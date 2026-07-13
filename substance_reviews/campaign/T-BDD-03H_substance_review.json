@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-13T00:42:17Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md",
-        "anchor": "#à-savoir",
-        "quote": "DELETE avec WHERE.",
+        "anchor": "#6-supprimer-des-lignes-avec-delete--where",
+        "quote": "`DELETE FROM` supprime les lignes qui satisfont `WHERE`. Il ne supprime pas seulement la valeur d'une cellule.\n\n**Exemple.** La note d'identifiant 14 est un essai à retirer.\n\n```sql\nSELECT * FROM Note WHERE id_note = 14;\nDELETE FROM Note WHERE id_note = 14;\nSELECT * FROM Note WHERE id_note = 14;\n```",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md",
-        "anchor": "#exercice-3",
-        "quote": "Réponse attendue : UPDATE id_note=10 -> Ada 18.",
+        "anchor": "#exercice-4--supprimer-une-ligne-ciblée-standard-9-min",
+        "quote": "La note 14 est une donnée d'essai à supprimer.\n\n1. Écrire le `SELECT` qui annonce exactement la ligne supprimée.\n2. Écrire le `DELETE` ciblé.\n3. Écrire le contrôle après suppression et prévoir son résultat.\n4. Indiquer combien de lignes restent dans `Note`.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md",
-        "anchor": "#exercice-4",
-        "quote": "Réponse attendue : DELETE WHERE id_note=11 retire Linus.",
+        "anchor": "#exercice-4--supprimer-une-ligne-ciblée",
+        "quote": "```sql\nSELECT * FROM Note WHERE id_note = 14;\nDELETE FROM Note WHERE id_note = 14;\nSELECT * FROM Note WHERE id_note = 14;\n```\n\nAvant : `(14, 4, 'NSI', 9)`. Après : aucune ligne. Il reste cinq lignes dans `Note`.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours mentionne DELETE avec WHERE dans la liste des commandes à savoir. Les TD contiennent des exercices avec DELETE. Le corrigé fournit la réponse attendue pour DELETE. Cependant, T-BDD-03H n'est pas explicitement référencée dans les extraits (les capacités listées vont de T-BDD-03A à T-BDD-03H dans les modalités d'évaluation, mais les exercices corrigés ne couvrent que jusqu'à T-BDD-03D explicitement). Le contenu sur DELETE est présent mais reste superficiel et non spécifiquement ancré sur T-BDD-03H.",
+      "justification": "Le cours enseigne DELETE avec WHERE et le protocole de contrôle avant/après. Le TD fait pratiquer la suppression ciblée avec livrable attendu. Le corrigé fournit les requêtes exactes et les états avant/après.",
       "scientific_flags": [
         "human_review_required"
       ]
