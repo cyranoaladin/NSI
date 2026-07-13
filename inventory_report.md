@@ -1,17 +1,17 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1170
+- Total ressources : 1171
 - Ressources pédagogiques : 53
-- Ressources techniques : 1117
+- Ressources techniques : 1118
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1162
+- generated: 1163
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 601
+- interne: 602
 - premiere: 266
 - terminale: 303
 
@@ -21,15 +21,15 @@
 - python: 84
 - script: 210
 - sequence: 45
-- test: 75
+- test: 76
 
 ## Répartition par statut
-- needs_review: 1170
+- needs_review: 1171
 
 ## Répartition audience
 - corrige: 82
 - eleve: 143
-- mixte: 942
+- mixte: 943
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -1181,6 +1181,7 @@
   - tests/test_ready_supports_gates.py
   - tests/test_register_semantic_consistency.py
   - tests/test_render_substance_report_cli.py
+  - tests/test_render_unit.py
   - tests/test_repo_topology.py
   - tests/test_run_python_tests.py
   - tests/test_secret_guard.py
@@ -2353,6 +2354,7 @@
   - tests/test_ready_supports_gates.py
   - tests/test_register_semantic_consistency.py
   - tests/test_render_substance_report_cli.py
+  - tests/test_render_unit.py
   - tests/test_repo_topology.py
   - tests/test_run_python_tests.py
   - tests/test_secret_guard.py
@@ -3490,6 +3492,7 @@
 - tests/test_ready_supports_gates.py
 - tests/test_register_semantic_consistency.py
 - tests/test_render_substance_report_cli.py
+- tests/test_render_unit.py
 - tests/test_repo_topology.py
 - tests/test_run_python_tests.py
 - tests/test_secret_guard.py
@@ -4665,6 +4668,7 @@
 - tests/test_ready_supports_gates.py
 - tests/test_register_semantic_consistency.py
 - tests/test_render_substance_report_cli.py
+- tests/test_render_unit.py
 - tests/test_repo_topology.py
 - tests/test_run_python_tests.py
 - tests/test_secret_guard.py

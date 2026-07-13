@@ -414,4 +414,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P03/code/P03_tests_attendus_texte_reels.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P04/P04_tp_types_construits_complement.md: nom propre suspect -> Module Python
 - 03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md: nom propre suspect -> Fonctions Python
-- ... 393 alertes supplémentaires non affichées
+- ... 394 alertes supplémentaires non affichées

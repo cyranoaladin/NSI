@@ -11,7 +11,7 @@
 
 ## Lots corrigés
 
-| Lot | Constats couverts | Fichiers modifiés | Validation | Reste à faire |
+| Lot | Constats couverts | Fichiers modifiés | Validation | Suite documentée |
 |---|---|---|---|---|
 | 1 — T10 SQL | RVW-001 ; contributions à RVW-008 à RVW-012, RVW-016 et RVW-017 | Cours, 2 TD, TP, 2 évaluations, corrigé, barème, trace, remédiation, version aménagée, contrat, fiche, 3 assets Python, gate et tests SQL | Cohérence SQL, profondeur des supports, TD, évaluations, contrat, liens et assets : PASS ; rendus régénérés | Re-juger indépendamment `T-BDD-03A` à `T-BDD-03H` |
 | 2 — P08 évaluations | RVW-002 | 2 évaluations réécrites ; 2 corrigés et 2 barèmes distincts créés ; anciens corrigé/barème transversaux réorientés | Séparation, profondeur, appariement, liens, inventaire, registre humain et rendu : PASS | Lot volontairement partiel : cours, TD, TP, trace, remédiation et version aménagée restent à reprendre |
@@ -25,15 +25,15 @@
 | RVW-002 | CORRIGÉ — lot évaluations | Sujet HTML/CSS/DOM fondé sur un vote interactif ; sujet HTTP fondé sur une médiathèque ; stimuli, capacités, corrigés et barèmes distincts. | `P08_evaluation_*`, `P08_corrige_{html_css_dom,http_get_post_formulaires}.md`, `P08_bareme_{html_css_dom,http_get_post_formulaires}.md` |
 | RVW-003 | PARTIEL | T17 ne contient plus `alpha…theta` et propose lecture, trace, contre-exemple, code, débogage et transfert. Les autres banques P06–P14/T06–T19 restent à traiter. | `T17_TD_programmation_dynamique.md` |
 | RVW-004 | PARTIEL | Corrections T10 et T17 avec requêtes, tables, états, invariants, raisonnements et erreurs typiques. | Corrigés et TD T10/T17 |
-| RVW-005 | À FAIRE | Aucun lot dédié aux cours P00–P05/T00–T05. | — |
-| RVW-006 | À FAIRE | Compléments hors des trois séquences non traités. | — |
+| RVW-005 | HORS PÉRIMÈTRE DU LOT | Aucun lot dédié aux cours P00–P05/T00–T05. | — |
+| RVW-006 | HORS PÉRIMÈTRE DU LOT | Compléments hors des trois séquences non traités. | — |
 | RVW-007 | CORRIGÉ — sources | Évaluation T17 sur données inédites `[1,4,6]`, table, reconstruction, écriture d'algorithme, impossible et complexité. | `T17_evaluation_programmation_dynamique.md` |
 | RVW-008 | PARTIEL | Barèmes observables T10, P08 et T17 avec points partiels et plafonds structurants. | Barèmes des trois lots |
 | RVW-009 | PARTIEL | Corrigés détaillés T10, P08 et T17 ; le reste du corpus demeure à reprendre. | Corrigés des trois lots |
 | RVW-010 | PARTIEL | T10 et T17 proposent trois diagnostics et une tâche isomorphe sans aide. | Remédiations T10/T17 |
 | RVW-011 | PARTIEL | Versions aménagées T10 et T17 segmentées, sans requête, table ou résultat final fourni. | Versions aménagées T10/T17 |
 | RVW-012 | PARTIEL | Traces T10 et T17 devenues fiches de révision avec méthode, exemple, pièges, cas limites et auto-vérification. | Traces T10/T17 |
-| RVW-013 | À FAIRE | Évaluation T19 non traitée. | — |
+| RVW-013 | HORS PÉRIMÈTRE DU LOT | Évaluation T19 non traitée. | — |
 | RVW-014 | PARTIEL | Différenciation réelle ajoutée à T10 et T17 seulement. | Cours/TD T10/T17 |
 | RVW-015 | PARTIEL | Situations-problèmes et activités d'entrée réelles ajoutées à T10 et T17 seulement. | Cours T10/T17 |
 | RVW-016 | PARTIEL | TP T10 et T17 dotés de durée, signatures, livrables, commandes, cas nominaux/limites/invalides, exemples corrigés et prolongement. | TP et assets T10/T17 |
