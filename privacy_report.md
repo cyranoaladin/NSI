@@ -86,6 +86,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P05/P05_version_amenagee_tables_csv.md: nom propre suspect -> Filtrage Europe
 - 03_progressions/supports/premiere/P07/code/P07_tests_attendus_fonctions_tests_specifications.py: nom propre suspect -> Ada Lovelace
 - 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md: nom propre suspect -> Set-Cookie
+- 03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md: nom propre suspect -> Max-Age
 - 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md: nom propre suspect -> Max-Age
 - 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md: nom propre suspect -> Cache-Control
 - 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md: nom propre suspect -> Set-Cookie
@@ -209,8 +210,7 @@ Les noms propres suspects sont listés pour revue humaine.
 - missing_documents_register_v2.md: nom propre suspect -> Lien Drive
 - missing_documents_register_v2.md: nom propre suspect -> Lien Drive
 - premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> American Standard Code
-- premiere/sequences/s01_representation_donnees/cours_eleve.md: nom propre suspect -> Information Interchange
-- ... 151 alertes supplémentaires non affichées
+- ... 154 alertes supplémentaires non affichées
 
 ## Éléments couverts par allowlist explicite
 
@@ -414,4 +414,4 @@ Les noms propres suspects sont listés pour revue humaine.
 - 03_progressions/supports/premiere/P03/code/P03_tests_attendus_texte_reels.py: nom propre suspect -> Asset Python
 - 03_progressions/supports/premiere/P04/P04_tp_types_construits_complement.md: nom propre suspect -> Module Python
 - 03_progressions/supports/premiere/P06/P06_tp_tables_recherche_tri_fusion.md: nom propre suspect -> Fonctions Python
-- ... 388 alertes supplémentaires non affichées
+- ... 393 alertes supplémentaires non affichées
