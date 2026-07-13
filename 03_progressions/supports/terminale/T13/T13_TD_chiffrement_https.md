@@ -168,6 +168,5 @@ official_program:
 
 ## Critères de réussite observables
 - La donnée de départ est recopiée exactement.
-- La trace ou le pseudo-code conduit à `message chiffré avec Ksession`.
+- La trace ou le pseudo-code identifie la clé qui protège les données applicatives.
 - Au moins un cas limite de la section précédente est décidé.
-

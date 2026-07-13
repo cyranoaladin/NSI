@@ -4,6 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 import re
+import hashlib
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -14,6 +15,26 @@ import scripts.check_operational_supports_no_indicative_debt as operational_debt
 
 
 class LinkedSupportQualityTest(unittest.TestCase):
+    def write_debt_register(self, root: Path, td: Path, *, sha256: str | None = None) -> None:
+        relative = td.relative_to(root).as_posix()
+        digest = sha256 if sha256 is not None else hashlib.sha256(td.read_bytes()).hexdigest()
+        register = root / "reports" / "td_quality_debt_register.yml"
+        register.parent.mkdir(parents=True, exist_ok=True)
+        register.write_text(
+            "schema: td_quality_debt_register_v1\n"
+            "purpose: dette historique non certifiante\n"
+            "entries:\n"
+            f"  - path: {relative}\n"
+            "    level: terminale\n"
+            "    sequence: P99\n"
+            "    debt_types:\n"
+            "      - corrections_quasi_identiques\n"
+            "    classification: mixte\n"
+            f"    sha256: {digest}\n"
+            "    note: dette historique à normaliser dans un lot dédié.\n",
+            encoding="utf-8",
+        )
+
     def write_contract(self, root: Path, sequence: str, *, requires_eight: bool = False) -> None:
         contract = root / "03_progressions" / "supports" / "contracts" / f"{sequence}_contract.yml"
         contract.parent.mkdir(parents=True, exist_ok=True)
@@ -232,6 +253,8 @@ class LinkedSupportQualityTest(unittest.TestCase):
         shallow_content: bool = False,
         duplicate_consignes: bool = False,
         shallow_corrections: bool = False,
+        near_duplicate_consignes: bool = False,
+        generic_varied_corrections: bool = False,
     ) -> Path:
         td = root / "P99_TD_demo.md"
         task_titles = [
@@ -261,6 +284,12 @@ class LinkedSupportQualityTest(unittest.TestCase):
             lines.append(f"### Exercice {number + 1} — {title}")
             if shallow_content:
                 lines.append("Titre seul.")
+            elif near_duplicate_consignes:
+                case = chr(ord("A") + number)
+                lines.append(
+                    "Analyser la trace de la requête pour le cas "
+                    f"{case} et justifier chaque étape avec les données fournies."
+                )
             else:
                 lines.append("Production attendue et contrôle du résultat obtenu par exécution directe du programme.")
         lines.append("## Corrigé")
@@ -268,6 +297,12 @@ class LinkedSupportQualityTest(unittest.TestCase):
             lines.append(f"### Corrigé exercice {number + 1}")
             if shallow_corrections:
                 lines.append("OK.")
+            elif generic_varied_corrections:
+                case = chr(ord("A") + number)
+                lines.append(
+                    "Réponse justifiée avec trace et vérification du résultat complet "
+                    f"pour le cas {case}."
+                )
             else:
                 lines.append("Réponse justifiée avec trace et vérification du résultat complet.")
         if rich:
@@ -394,6 +429,106 @@ class LinkedSupportQualityTest(unittest.TestCase):
             result = td_quality.analyze_linked_td_quality(root, [td])
 
             self.assertTrue(any("corrigé" in error and "pauvre" in error for error in result.errors))
+
+    def test_registered_historical_td_with_exact_hash_is_reported_as_debt(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            td = self.write_td_adversarial(
+                root, exercises=8, corrections=8, rich=True, generic_varied_corrections=True
+            )
+            self.write_debt_register(root, td)
+
+            result = td_quality.analyze_linked_td_quality(root, [td])
+
+            self.assertEqual(result.errors, [])
+            self.assertEqual(result.registered_debt, [td.relative_to(root).as_posix()])
+
+    def test_registered_historical_td_with_changed_hash_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            td = self.write_td_adversarial(
+                root, exercises=8, corrections=8, rich=True, generic_varied_corrections=True
+            )
+            self.write_debt_register(root, td)
+            td.write_text(td.read_text(encoding="utf-8") + "\nModification non normalisée.\n", encoding="utf-8")
+
+            result = td_quality.analyze_linked_td_quality(root, [td])
+
+            self.assertTrue(any("empreinte différente" in error for error in result.errors))
+            self.assertEqual(result.registered_debt, [])
+
+    def test_missing_registered_td_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            register = root / "reports" / "td_quality_debt_register.yml"
+            register.parent.mkdir(parents=True, exist_ok=True)
+            register.write_text(
+                "schema: td_quality_debt_register_v1\nentries:\n"
+                "  - path: missing/P99_TD_demo.md\n"
+                "    sha256: deadbeef\n",
+                encoding="utf-8",
+            )
+
+            result = td_quality.analyze_linked_td_quality(root, [])
+
+            self.assertTrue(any("absente du disque" in error for error in result.errors))
+
+    def test_current_t10_t17_td_are_accepted_without_registered_debt(self) -> None:
+        files = [
+            ROOT / "03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md",
+            ROOT / "03_progressions/supports/terminale/T17/T17_TD_programmation_dynamique.md",
+        ]
+
+        result = td_quality.analyze_linked_td_quality(ROOT, files)
+
+        self.assertEqual(result.errors, [])
+        self.assertEqual(result.registered_debt, [])
+
+    def test_eight_task_td_with_long_near_duplicate_consignes_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            td = self.write_td_adversarial(
+                root,
+                exercises=8,
+                corrections=8,
+                rich=True,
+                near_duplicate_consignes=True,
+            )
+
+            result = td_quality.analyze_linked_td_quality(root, [td])
+
+            self.assertTrue(any("quasi identiques" in error for error in result.errors))
+
+    def test_eight_task_td_with_generic_corrections_varied_by_case_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            td = self.write_td_adversarial(
+                root,
+                exercises=8,
+                corrections=8,
+                rich=True,
+                generic_varied_corrections=True,
+            )
+
+            result = td_quality.analyze_linked_td_quality(root, [td])
+
+            self.assertTrue(any("corrigés quasi identiques" in error for error in result.errors))
+
+    def test_compact_td_with_generic_corrections_varied_by_case_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            self.write_contract(root, "P99")
+            td = self.write_td_adversarial(
+                root,
+                exercises=6,
+                corrections=6,
+                rich=True,
+                generic_varied_corrections=True,
+            )
+
+            result = td_quality.analyze_linked_td_quality(root, [td])
+
+            self.assertTrue(any("corrigés quasi identiques" in error for error in result.errors))
 
     def test_operational_debt_accepts_short_rich_td_with_singular_objective_and_aids(self) -> None:
         with tempfile.TemporaryDirectory() as raw:

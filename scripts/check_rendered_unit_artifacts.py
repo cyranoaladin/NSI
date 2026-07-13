@@ -23,6 +23,11 @@ INLINE_TEACHER_CONTENT = re.compile(
 NUMBERED_ANSWER_KEY = re.compile(
     r"\br[ée]ponse\s+\d+\s*:", re.I,
 )
+DIRECT_FINAL_ANSWER = re.compile(
+    r"(?im)^\s*(?:[-*]\s*)?(?:r[ée]sultat\s+(?:final|de\s+r[ée]f[ée]rence)|"
+    r"r[ée]ponse\s+attendue|livrable\s+pr[ée]rempli)\s*:\s*"
+    r"(?!(?:à\s+(?:d[ée]terminer|compl[ée]ter)|v[ée]rifier|[ée]crire|produire|justifier)\b).+",
+)
 
 
 def plain_html(fragment: str) -> str:
@@ -55,6 +60,8 @@ def student_leak_errors(student: str) -> list[str]:
         errors.append(f"contenu de correction visible : {match.group(0)}")
     for match in NUMBERED_ANSWER_KEY.finditer(plain_html(student)):
         errors.append(f"réponse numérotée visible : {match.group(0)}")
+    for match in DIRECT_FINAL_ANSWER.finditer(plain_html(student)):
+        errors.append(f"résultat final prérempli visible : {match.group(0)[:120]}")
     return errors
 
 

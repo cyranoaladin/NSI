@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1172
+- Total ressources : 1174
 - Ressources pédagogiques : 53
-- Ressources techniques : 1119
+- Ressources techniques : 1121
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1164
+- generated: 1166
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 603
+- interne: 605
 - premiere: 266
 - terminale: 303
 
 ## Répartition par type
 - banque: 14
-- document: 742
+- document: 744
 - python: 84
 - script: 210
 - sequence: 45
 - test: 77
 
 ## Répartition par statut
-- needs_review: 1172
+- needs_review: 1174
 
 ## Répartition audience
 - corrige: 82
 - eleve: 143
-- mixte: 944
+- mixte: 946
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -757,6 +757,8 @@
   - reports/reconciliation/reconciliation_report.md
   - reports/reconciliation/reconciliation_verification_report.md
   - reports/recovery_t10_p08_t17_from_blobs.md
+  - reports/td_quality_debt_register.yml
+  - reports/td_quality_debt_report.md
   - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
@@ -1957,6 +1959,8 @@
   - reports/reconciliation/reconciliation_report.md
   - reports/reconciliation/reconciliation_verification_report.md
   - reports/recovery_t10_p08_t17_from_blobs.md
+  - reports/td_quality_debt_register.yml
+  - reports/td_quality_debt_report.md
   - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
@@ -3077,6 +3081,8 @@
 - reports/reconciliation/reconciliation_report.md
 - reports/reconciliation/reconciliation_verification_report.md
 - reports/recovery_t10_p08_t17_from_blobs.md
+- reports/td_quality_debt_register.yml
+- reports/td_quality_debt_report.md
 - reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json
@@ -4247,6 +4253,8 @@
 - reports/reconciliation/reconciliation_report.md
 - reports/reconciliation/reconciliation_verification_report.md
 - reports/recovery_t10_p08_t17_from_blobs.md
+- reports/td_quality_debt_register.yml
+- reports/td_quality_debt_report.md
 - reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json

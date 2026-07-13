@@ -34,6 +34,11 @@ INLINE_TEACHER_RESOURCE = re.compile(
     r"[ée]l[ée]ments?\s+de\s+correction)\b",
     re.I,
 )
+DIRECT_STUDENT_ANSWER = re.compile(
+    r"(?im)^\s*(?:[-*]\s*)?(?:r[ée]sultat\s+(?:final|de\s+r[ée]f[ée]rence)|"
+    r"r[ée]ponse\s+attendue|livrable\s+pr[ée]rempli)\s*:\s*"
+    r"(?!(?:à\s+(?:d[ée]terminer|compl[ée]ter)|v[ée]rifier|[ée]crire|produire|justifier)\b).+",
+)
 
 
 def level_for(unit: str) -> str:
@@ -114,6 +119,8 @@ def strip_teacher_sections(markdown: str) -> str:
                 continue
         if not skip:
             if INLINE_TEACHER_RESOURCE.search(line):
+                continue
+            if DIRECT_STUDENT_ANSWER.match(line):
                 continue
             kept.append(line)
     return "\n".join(kept)

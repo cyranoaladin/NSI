@@ -175,7 +175,7 @@ Pour un montant `M` et `k` valeurs de pièces, les deux boucles examinent au plu
 
 ### Exemple corrigé 2 — détecter un montant impossible
 
-Avec les pièces `[4, 6]`, le montant 7 est impossible. Les états 1, 2, 3, 5 et 7 restent infinis. L'algorithme doit renvoyer une information explicite (`None`, par exemple), jamais « 8 pièces » sous prétexte que l'infini avait été codé par `montant + 1`.
+Avec les pièces `[4, 6]`, le montant 7 est impossible. Les états 1, 2, 3, 5 et 7 restent infinis. La fonction renvoie `None` lorsque le montant est impossible, jamais « 8 pièces » sous prétexte que l'infini avait été codé par `montant + 1`.
 
 | `m` | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|

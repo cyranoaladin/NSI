@@ -135,6 +135,20 @@ Choisir la colonne affichée avant d'écrire la requête.
 
         self.assertEqual(errors, [])
 
+    def test_student_gate_rejects_contextual_final_answer_without_banning_api_terms(self) -> None:
+        errors = student_leak_errors(
+            "<p>Résultat final : document.querySelector(\"#nom\").value lit la saisie.</p>"
+        )
+
+        self.assertTrue(any("résultat final" in error for error in errors))
+
+    def test_student_gate_rejects_pre_filled_cryptography_deliverable(self) -> None:
+        errors = student_leak_errors(
+            "<p>Livrable prérempli : message chiffré avec Ksession.</p>"
+        )
+
+        self.assertTrue(any("livrable prérempli" in error.lower() for error in errors))
+
     def test_resultat_de_reference_section_is_stripped_from_student(self) -> None:
         markdown = """# Trace
 
