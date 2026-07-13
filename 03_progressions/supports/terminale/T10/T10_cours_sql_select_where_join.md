@@ -100,11 +100,11 @@ WHERE condition_de_filtrage
 ORDER BY colonne ASC ou DESC;
 ```
 
-### Méthode autonome — ordonner le résultat avec `ORDER BY`
+### Exemple corrigé — trier un résultat avec `ORDER BY`
 
-`ORDER BY` ordonne les lignes du résultat final : `ASC` demande l'ordre croissant et `DESC` l'ordre décroissant. Cette clause ne modifie aucune ligne des tables ; elle change seulement l'ordre d'affichage du résultat de la requête. Elle ne filtre pas non plus les lignes : ce rôle appartient à `WHERE`.
+**Bloc autonome.** `ORDER BY` trie les lignes du résultat final : `ASC` demande l'ordre croissant et `DESC` l'ordre décroissant, sans jamais modifier les lignes stockées dans les tables. Sur les données `Eleve` et `Note` fournies plus haut, la requête complète `SELECT Eleve.nom, Note.note FROM Eleve JOIN Note ON Eleve.id_eleve = Note.id_eleve WHERE Note.matiere = 'NSI' ORDER BY Note.note DESC, Eleve.nom ASC;` renvoie exactement, dans cet ordre : `(Ada, 17)`, `(Grace, 15)`, `(Linus, 13)`, `(Alan, 9)`.
 
-Avec les tables `Eleve` et `Note` données plus haut, on veut afficher toutes les notes de NSI, de la meilleure à la moins bonne, puis départager deux notes égales par ordre alphabétique du nom :
+La même requête, mise en forme clause par clause, permet de voir comment ce résultat est construit et comment deux notes égales seraient départagées par ordre alphabétique du nom :
 
 ```sql
 SELECT Eleve.nom, Note.note
