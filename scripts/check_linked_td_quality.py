@@ -76,11 +76,13 @@ def contract_requires_eight_exercises(data: dict[str, object]) -> bool:
         if section in excluded_sections:
             continue
         if section in {"nombre_exercices", "minimum_exercices", "exercices_minimum"}:
+            numeric_requirement: int | None
             try:
-                if isinstance(value, (int, float, str)) and int(value) >= 8:
-                    return True
+                numeric_requirement = int(value) if isinstance(value, (int, float, str)) else None
             except (TypeError, ValueError):
-                pass
+                numeric_requirement = None
+            if numeric_requirement is not None and numeric_requirement >= 8:
+                return True
         text = "\n".join(str(item) for item in value) if isinstance(value, list) else str(value)
         if re.search(r"\b(?:au moins|minimum(?: de)?|au minimum)\s+(?:8|huit)\s+exercices?\b", text, re.I):
             return True

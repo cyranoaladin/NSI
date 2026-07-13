@@ -36,12 +36,12 @@ def test_insert_parametre_et_cle_unique() -> None:
         "MATHS",
         12,
     )
+    duplicate_key_rejected = False
     try:
         MODULE.ajouter_note(conn, 16, 4, "NSI", 11)
     except sqlite3.IntegrityError:
-        pass
-    else:
-        raise AssertionError("une clé primaire dupliquée doit être refusée")
+        duplicate_key_rejected = True
+    assert duplicate_key_rejected, "une clé primaire dupliquée doit être refusée"
 
 
 def test_update_et_delete_cibles() -> None:
