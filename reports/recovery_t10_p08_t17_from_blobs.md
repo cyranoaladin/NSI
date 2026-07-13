@@ -4,8 +4,8 @@
 
 - Base de départ : `origin/main` à `b34c8934a65619de48423b4dc54e9d0f19dc55ab`.
 - Branche de récupération : `recovery/t10-p08-t17-from-blobs`.
-- Rapport forensique utilisé : `/tmp/forensic_recovery_t10_p08_t17.md`.
-- Archive forensique : `/home/alaeddine/Documents/NSI-unreachable-objects-20260713.tar.gz` (19 445 786 octets).
+- Rapport forensique utilisé : copie temporaire du rapport `forensic_recovery_t10_p08_t17.md`.
+- Archive forensique hors dépôt : `NSI-unreachable-objects-20260713.tar.gz` (19 445 786 octets).
 - Nombre de fichiers restaurés depuis blobs : 44.
 - Nombre d’artefacts régénérés : 18.
 

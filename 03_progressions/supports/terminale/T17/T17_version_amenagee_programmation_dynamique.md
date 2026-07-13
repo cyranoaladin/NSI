@@ -74,6 +74,20 @@ pour m allant de _____ à montant :
 
 Avec `[4,6]` et le montant 7, entourer les montants atteignables parmi 0 à 7. Écrire une phrase expliquant ce que la case finale doit provoquer dans la fonction.
 
+### Espace de réponse guidé — table et récurrence
+
+Utiliser cette grille pour préparer le calcul, sans recopier de valeurs finales.
+
+| montant `m` | valeur précédente utilisée `m-p` | pièce choisie `p` | `dp[m]` à compléter |
+|---:|---:|---:|---:|
+| 4 |  |  |  |
+| 6 |  |  |  |
+| 8 |  |  |  |
+
+- Montant impossible : [ ] oui  [ ] non ; montant concerné : `________________`.
+- Récurrence : `dp[m] = ________________________________________________________________`.
+- Le calcul suit l'ordre croissant parce que `________________________________________________`.
+
 ## Aides à dévoilement progressif
 
 1. **Aide légère** : une pièce choisie en dernier laisse le montant `m-p`.

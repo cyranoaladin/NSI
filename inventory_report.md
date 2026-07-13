@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1169
+- Total ressources : 1170
 - Ressources pédagogiques : 53
-- Ressources techniques : 1116
+- Ressources techniques : 1117
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1161
+- generated: 1162
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 600
+- interne: 601
 - premiere: 266
 - terminale: 303
 
 ## Répartition par type
 - banque: 14
-- document: 741
+- document: 742
 - python: 84
 - script: 210
 - sequence: 45
 - test: 75
 
 ## Répartition par statut
-- needs_review: 1169
+- needs_review: 1170
 
 ## Répartition audience
 - corrige: 82
 - eleve: 143
-- mixte: 941
+- mixte: 942
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -756,6 +756,7 @@
   - reports/reconciliation/rag_reindex_plan.md
   - reports/reconciliation/reconciliation_report.md
   - reports/reconciliation/reconciliation_verification_report.md
+  - reports/recovery_t10_p08_t17_from_blobs.md
   - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
@@ -1953,6 +1954,7 @@
   - reports/reconciliation/rag_reindex_plan.md
   - reports/reconciliation/reconciliation_report.md
   - reports/reconciliation/reconciliation_verification_report.md
+  - reports/recovery_t10_p08_t17_from_blobs.md
   - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
@@ -3070,6 +3072,7 @@
 - reports/reconciliation/rag_reindex_plan.md
 - reports/reconciliation/reconciliation_report.md
 - reports/reconciliation/reconciliation_verification_report.md
+- reports/recovery_t10_p08_t17_from_blobs.md
 - reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json
@@ -4237,6 +4240,7 @@
 - reports/reconciliation/rag_reindex_plan.md
 - reports/reconciliation/reconciliation_report.md
 - reports/reconciliation/reconciliation_verification_report.md
+- reports/recovery_t10_p08_t17_from_blobs.md
 - reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json

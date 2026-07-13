@@ -1198,8 +1198,10 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md` — corrige — needs_review — professeur
 - `03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md` — cours — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md` — evaluation — needs_review — eleve
+- `03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md` — remediation — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md` — tp — needs_review — eleve
 - `03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md` — trace — needs_review — eleve
+- `03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md` — version_amenagee — needs_review — eleve
 
 ## T-BDD-03F
 

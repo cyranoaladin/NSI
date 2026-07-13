@@ -111,6 +111,17 @@ Cocher :
 - [ ] la première et la dernière ligne prévues correspondent au tri choisi ;
 - [ ] le tri ne modifie ni `Eleve` ni `Note`.
 
+### Espace de réponse guidé — tri du résultat (`T-BDD-03E`)
+
+Avant de rédiger la requête finale, utiliser cet espace pour préparer seulement les choix liés au tri.
+
+- Requête à écrire : `SELECT ________________________________________________________________`
+- Entourer la clause qui trie : `WHERE` / `ORDER BY`.
+- Colonne de tri : `________________`.
+- Sens choisi : [ ] `ASC`  [ ] `DESC`.
+- Premier résultat prévu : `________________` ; dernier résultat prévu : `________________`.
+- Compléter : « `ORDER BY` trie le résultat mais ne modifie pas `________________`. »
+
 ## Tâche 2 — Choisir entre lecture et modification
 
 Pour chaque demande, cocher une seule opération.
