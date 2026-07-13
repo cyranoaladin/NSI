@@ -152,7 +152,7 @@ def rendu_minimal(montant, pieces):
                     choix[m] = p
 
     if dp[montant] == infini:
-        return None, []
+        return None
 
     solution = []
     reste = montant
@@ -189,7 +189,7 @@ Pour `montant = 0`, la table contient seulement `[0]`, aucune boucle de reconstr
 
 ### Cas limite 2 — montant positif sans solution
 
-Pour `pieces = [4, 6]` et `montant = 7`, l'algorithme renvoie `(None, [])`. Il ne doit ni entrer dans la reconstruction avec `choix[7] = None`, ni confondre la sentinelle `montant + 1` avec un nombre réel de pièces.
+Pour `pieces = [4, 6]` et `montant = 7`, l'algorithme renvoie `None`. Il ne doit ni entrer dans la reconstruction avec `choix[7] = None`, ni confondre la sentinelle `montant + 1` avec un nombre réel de pièces.
 
 ## 7. Transfert vers une grille
 

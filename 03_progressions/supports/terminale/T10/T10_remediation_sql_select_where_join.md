@@ -16,6 +16,7 @@ official_program:
     - "T-BDD-03B"
     - "T-BDD-03C"
     - "T-BDD-03D"
+    - "T-BDD-03E"
     - "T-BDD-03F"
     - "T-BDD-03G"
     - "T-BDD-03H"
@@ -34,6 +35,8 @@ Durée : 25 à 35 minutes. Commencer par le diagnostic, suivre seulement le parc
 | « Afficher la note 14 » modifie-t-il la base ? | non | A — choisir l'opération |
 | `UPDATE Note SET note = 10;` touche-t-il une seule ligne ? | non, toutes les lignes | B — contrôler la portée |
 | Une note se relie-t-elle à un élève par `Note.id_eleve` ? | oui | C — construire la jointure |
+| `WHERE` classe-t-il les lignes de A à Z ? | non, il les filtre | D — trier le résultat |
+| `ORDER BY nom ASC` modifie-t-il `Eleve` ? | non, il ordonne seulement le résultat | D — trier le résultat |
 
 ## Parcours A — Confusion `SELECT` / `UPDATE`
 
@@ -104,6 +107,40 @@ Puis annoncer le nom et la note obtenus.
 
 La note 12 pointe vers Grace par la valeur commune `id_eleve = 3`; le résultat corrigé est Grace 15. `id_note` identifie une note, pas un élève.
 
+## Parcours D — Confusion `WHERE` / `ORDER BY` (`T-BDD-03E`)
+
+### Autre représentation : filtrer, puis trier le résultat
+
+Comparer les deux requêtes suivantes :
+
+```sql
+SELECT nom
+FROM Eleve
+WHERE classe = 'T2';
+```
+
+```sql
+SELECT nom
+FROM Eleve
+WHERE classe = 'T2'
+ORDER BY nom ASC;
+```
+
+Dans les deux cas, `WHERE` conserve les deux élèves de T2 : Alan et Linus. Seule la seconde requête impose l'ordre alphabétique `Alan`, puis `Linus`. `ORDER BY` ne retire aucune ligne et ne modifie pas la table `Eleve` : il ordonne uniquement le résultat affiché.
+
+### Tâche de réparation
+
+On veut afficher les notes de NSI de la plus grande à la plus petite. Écrire la requête complète qui affiche `id_note` et `note`, puis :
+
+1. choisir la colonne de tri ;
+2. choisir entre `ASC` et `DESC` ;
+3. prévoir le premier et le dernier tuple du résultat ;
+4. expliquer pourquoi remplacer `ORDER BY` par `WHERE` ne répondrait pas à la consigne.
+
+### Vérification différée
+
+La requête attendue se termine par `ORDER BY note DESC`. Le premier tuple est `(10, 17)` et le dernier `(14, 9)`. `ASC` produirait l'ordre inverse ; ni `ASC` ni `DESC` ne changent les valeurs stockées dans `Note`.
+
 ## Tâche de sortie isomorphe — sans aide
 
 Sur la base de référence, répondre aux trois demandes suivantes sans consulter les parcours :
@@ -111,10 +148,13 @@ Sur la base de référence, répondre aux trois demandes suivantes sans consulte
 1. Afficher le nom et la note correspondant à `id_note = 11` en reliant les deux tables.
 2. Corriger cette note à 16 avec un contrôle avant et après.
 3. Écrire la requête qui supprimerait uniquement la note 15, puis expliquer l'effet de la même requête sans `WHERE`.
+4. Afficher les noms des élèves de T2 dans l'ordre alphabétique, annoncer le premier et le dernier nom, puis expliquer pourquoi ce tri ne modifie pas `Eleve`.
 
 ## Critères de sortie de remédiation
 
 - L'opération correspond au verbe de l'intention.
 - La jointure est justifiée par le sens des deux colonnes `id_eleve`.
 - Tout `UPDATE` ou `DELETE` est précédé d'un `SELECT` portant le même filtre.
+- `WHERE` filtre les lignes et `ORDER BY` les trie avec une colonne et un sens (`ASC` ou `DESC`) justifiés.
+- Le résultat trié est distingué de l'ordre et des valeurs stockés dans les tables.
 - L'élève prévoit l'état avant et l'état après sans réponse fournie.
