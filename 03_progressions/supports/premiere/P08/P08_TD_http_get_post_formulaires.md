@@ -12,9 +12,6 @@ notion: "HTML, CSS, DOM, HTTP et formulaires"
 private_data: false
 official_program:
   capacities:
-    - "P-IHM-01A"
-    - "P-IHM-01B"
-    - "P-IHM-02"
     - "P-IHM-03A"
     - "P-IHM-03B"
     - "P-IHM-03C"
@@ -105,8 +102,8 @@ https://mediatheque.example/catalogue?q=python&niveau=debutant
 </form>
 ```
 
-- Consigne : indiquez la route visée et écrivez le corps de la requête sous la forme `nom=valeur&nom=valeur`. Précisez si le mot de passe apparaît dans l'URL. Expliquez ce que fait `type="password"` et ce qu'il ne fait pas.
-- Critère de réussite : la route est `/connexion` ; le corps est `pseudo=lecteur7&mot_de_passe=R3seau!` ; le mot de passe n'est pas dans l'URL ; `type="password"` masque l'affichage mais ne chiffre pas.
+- Consigne : (3a) indiquez la route visée et écrivez le corps de la requête sous la forme `nom=valeur&nom=valeur`. Précisez si le mot de passe apparaît dans l'URL. Expliquez ce que fait `type="password"` et ce qu'il ne fait pas. (3b) Décrivez l'ordre des actions entre le client et le serveur : qui construit la requête, qui l'envoie, qui lit le corps, qui vérifie les informations, qui renvoie la réponse. Expliquez pourquoi la vérification du mot de passe doit être faite par le serveur et non par le JavaScript du navigateur.
+- Critère de réussite : la route est `/connexion` ; le corps est `pseudo=lecteur7&mot_de_passe=R3seau!` ; le mot de passe n'est pas dans l'URL ; `type="password"` masque l'affichage mais ne chiffre pas ; l'ordre client → serveur → réponse est correct ; la vérification serveur est justifiée.
 
 #### Repères enseignant — continuité de preuve
 
@@ -248,9 +245,9 @@ Un élève soumet le formulaire et constate que l'URL produite est `/reservation
 ### Corrigé exercice 3
 
 - Donnée utilisée : formulaire POST avec `name="pseudo"` et `name="mot_de_passe"`, action `/connexion`.
-- Méthode : en POST, les paramètres sont placés dans le corps de la requête, pas dans l'URL.
-- Résultat : route = `/connexion` ; corps = `pseudo=lecteur7&mot_de_passe=R3seau!` ; le mot de passe n'apparaît pas dans l'URL. `type="password"` masque les caractères à l'écran mais n'agit pas sur le réseau.
-- Contrôle : sans HTTPS, le corps POST circule en clair ; POST masque de l'URL mais ne chiffre pas.
+- Méthode : (3a) en POST, les paramètres sont placés dans le corps de la requête, pas dans l'URL. (3b) Ordre : le navigateur (client) sérialise les champs et envoie la requête POST vers `/connexion` ; le serveur lit le corps, vérifie les informations reçues, puis renvoie une réponse HTTP ; le navigateur affiche la réponse.
+- Résultat : route = `/connexion` ; corps = `pseudo=lecteur7&mot_de_passe=R3seau!` ; le mot de passe n'apparaît pas dans l'URL. `type="password"` masque les caractères à l'écran mais n'agit pas sur le réseau. La vérification du mot de passe doit être faite par le serveur car un contrôle JavaScript côté client peut être contourné.
+- Contrôle : sans HTTPS, le corps POST circule en clair ; POST masque de l'URL mais ne chiffre pas ; la vérification côté serveur est indispensable.
 
 ### Corrigé exercice 4
 

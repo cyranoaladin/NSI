@@ -25,7 +25,10 @@ official_program:
 
 # P08 - Corrigé - HTML, CSS, DOM, HTTP et formulaires
 
-## Corrigé du TD
+## Corrigé du TD HTML/CSS/DOM
+
+Les exercices 1 à 6 ci-dessous correspondent au TD `P08_TD_html_css_dom.md`. Ne pas les utiliser pour corriger le TD HTTP/formulaires.
+
 ### Exercice 1
 - Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.
 - Méthode : repérer header main form label input.
@@ -51,6 +54,11 @@ official_program:
 - Réponse attendue : document.querySelector("#nom").value lit la saisie.
 - Méthode : cibler #nom en CSS et DOM.
 - Cas limite : formulaire sans action.
+
+## Corrigé du TD HTTP/formulaires
+
+Les exercices 7 et 8 ci-dessous correspondent au TD `P08_TD_http_get_post_formulaires.md`. Le corrigé détaillé des 8 exercices HTTP se trouve dans les repères enseignant intégrés au TD et dans `P08_corrige_http_get_post_formulaires.md`.
+
 ### Exercice 7
 - Capacité mobilisée : P-IHM-04A.
 - Donnée : formulaire avec `<input id="nom">` sans attribut `name` et sans attribut `method`.
