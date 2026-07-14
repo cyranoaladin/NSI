@@ -15,6 +15,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import unicodedata
 
 from scripts._qa_common import ROOT
 from scripts.check_first_batch_document_quality import FIRST_BATCH_PREFIXES
@@ -77,6 +78,101 @@ def call_arguments(text: str) -> set[str]:
     return set(re.findall(r"\w+\(([^()\n]+)\)", text))
 
 
+BOUNDARY_NAME_MARKERS = {
+    "frontiere",
+    "vide",
+    "impossible",
+    "invalide",
+    "absent",
+    "inexistant",
+    "nul",
+    "negatif",
+    "superieur",
+    "strictement",
+    "repete",
+    "seconde",
+    "suppression",
+    "aucun resultat",
+    "resultat vide",
+    "boundary",
+    "empty",
+    "invalid",
+    "missing",
+    "negative",
+    "zero",
+}
+
+
+def normalized_test_name(name: str) -> str:
+    """Normalise un nom de test pour comparer les familles de cas limites."""
+    decomposed = unicodedata.normalize("NFD", name.lower())
+    without_accents = "".join(char for char in decomposed if unicodedata.category(char) != "Mn")
+    return without_accents.replace("_", " ")
+
+
+def has_boundary_name(test: ast.FunctionDef | ast.AsyncFunctionDef) -> bool:
+    name = normalized_test_name(test.name)
+    return any(marker in name for marker in BOUNDARY_NAME_MARKERS)
+
+
+def is_boundary_comparison(node: ast.Compare) -> bool:
+    """Reconnaît les résultats bornes usuels : None, liste vide ou zéro."""
+    values = [node.left, *node.comparators]
+    for value in values:
+        if isinstance(value, ast.Constant) and value.value in (None, 0):
+            return True
+        if isinstance(value, ast.List) and not value.elts:
+            return True
+    return False
+
+
+def is_pytest_raises(call: ast.Call) -> bool:
+    return (
+        isinstance(call.func, ast.Attribute)
+        and call.func.attr == "raises"
+        and isinstance(call.func.value, ast.Name)
+        and call.func.value.id == "pytest"
+    )
+
+
+def has_assertion_or_expected_exception(test: ast.FunctionDef | ast.AsyncFunctionDef) -> bool:
+    return any(
+        isinstance(node, ast.Assert)
+        or isinstance(node, ast.Try)
+        or (isinstance(node, ast.Call) and is_pytest_raises(node))
+        for node in ast.walk(test)
+    )
+
+
+def has_boundary_case(text: str) -> bool:
+    """Exige un scénario exécutable, pas une simple mention dans un commentaire.
+
+    Une fonction ``test_*`` est reconnue si elle porte un nom de famille limite
+    et contient une assertion ou une exception attendue, ou si une assertion
+    compare directement le résultat à ``None``, ``[]`` ou ``0``.
+    """
+    try:
+        tree = ast.parse(text)
+    except SyntaxError:
+        return False
+
+    for node in ast.walk(tree):
+        if not isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) or not node.name.startswith("test_"):
+            continue
+        if not has_assertion_or_expected_exception(node):
+            continue
+        if has_boundary_name(node):
+            return True
+        if any(
+            isinstance(candidate, ast.Assert)
+            and isinstance(candidate.test, ast.Compare)
+            and is_boundary_comparison(candidate.test)
+            for candidate in ast.walk(node)
+        ):
+            return True
+    return False
+
+
 def tests_are_substantive(text: str) -> list[str]:
     errors: list[str] = []
     tests = test_function_names(text)
@@ -85,7 +181,7 @@ def tests_are_substantive(text: str) -> list[str]:
     lowered = text.lower()
     if "none" not in lowered and "valueerror" not in lowered and "invalid" not in lowered:
         errors.append("tests insuffisants: entrée invalide absente")
-    if "limite" not in lowered and "edge" not in lowered and "cas_" not in lowered:
+    if not has_boundary_case(text):
         errors.append("tests insuffisants: cas limite absent")
     if len(call_arguments(text)) < 3:
         errors.append("tests insuffisants: moins de 3 entrées distinctes")

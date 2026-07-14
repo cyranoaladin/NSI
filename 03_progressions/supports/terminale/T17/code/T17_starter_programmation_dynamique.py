@@ -1,35 +1,28 @@
-"""Starter TP T17 programmation dynamique. Statut pédagogique: needs_review."""
+"""Starter élève du TP T17. Statut pédagogique : needs_review."""
 from __future__ import annotations
 
 
-def fibonacci_dp(n: int) -> list[int]:
-    if n < 0:
-        raise ValueError("n invalide")
-    valeurs: list[int] = []
-    indice = 0
-    while indice <= n:
-        valeurs.append(indice)
-        indice += 1
-    return valeurs
+def _verifier_entrees(montant: int, pieces: list[int]) -> None:
+    """Validation fournie : ne pas modifier."""
+    if montant < 0:
+        raise ValueError("montant négatif")
+    if montant > 0 and not pieces:
+        raise ValueError("aucune pièce")
+    if any(piece <= 0 for piece in pieces):
+        raise ValueError("les valeurs de pièces doivent être positives")
 
 
-def rendu_monnaie_dp(montant: int, pieces: list[int]) -> int:
-    if montant < 0 or not pieces:
-        raise ValueError("données invalides")
-    pieces_desc = sorted(pieces, reverse=True)
-    choix: list[int] = []
-    reste = montant
-    for valeur in pieces_desc:
-        quotient, reste = divmod(reste, valeur)
-        choix.extend([valeur] * quotient)
-    return len(choix)
+def construire_table(
+    montant: int, pieces: list[int]
+) -> tuple[list[int], list[int | None]]:
+    """À compléter : tabulation des minima et des dernières pièces."""
+    _verifier_entrees(montant, pieces)
+    raise NotImplementedError
 
 
-def chemin_table(table: list[int]) -> int:
-    if not table:
-        raise ValueError("table absente")
-    premier = table[0]
-    for valeur in table[1:]:
-        if valeur < premier:
-            premier = valeur
-    return premier
+def rendu_monnaie_dp(
+    montant: int, pieces: list[int]
+) -> tuple[int, list[int]] | None:
+    """À compléter : décider l'impossible puis reconstruire une solution."""
+    _verifier_entrees(montant, pieces)
+    raise NotImplementedError

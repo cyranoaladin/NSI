@@ -26,10 +26,12 @@ official_program:
 ## Exercice guidé
 1. Recopier la donnée utile.
 2. Choisir la capacité : T-ARCH-04A ou T-ARCH-04B.
-3. Compléter le résultat : message chiffré avec Ksession.
+3. Compléter le résultat : `________________` (préciser le type de chiffrement et la clé utilisée pour protéger le message).
 4. Cocher le cas limite : certificat expiré.
+5. Justifier pourquoi Ksession n'est pas envoyée en clair sur le réseau.
+6. Identifier le rôle de l'autorité de certification dans l'échange.
 
-## Réponses rapides
+## Repères enseignant — réponses de référence
 - Réponse 1 : message chiffré avec Ksession.
 - Réponse 2 : Ksession chiffrée avec Kpub serveur.
 - Réponse 3 : Autorité-Test signe serveur.example.

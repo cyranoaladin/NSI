@@ -1,179 +1,253 @@
 ---
-title: "T10 - td - SQL SELECT, JOIN, INSERT, UPDATE et DELETE"
+title: "T10 - TD - INSERT, UPDATE et DELETE"
 level: "terminale"
 sequence_id: "T10"
 document_type: "td"
 status: "needs_review"
-version: "0.6.0"
+version: "0.7.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "SQL SELECT, JOIN, INSERT, UPDATE et DELETE"
-notion: "SQL SELECT, JOIN, INSERT, UPDATE et DELETE"
+theme: "Bases de données"
+notion: "Requêtes SQL de modification"
 private_data: false
 official_program:
   capacities:
     - "T-BDD-03A"
-    - "T-BDD-03B"
-    - "T-BDD-03C"
-    - "T-BDD-03D"
-    - "T-BDD-03E"
     - "T-BDD-03F"
     - "T-BDD-03G"
     - "T-BDD-03H"
 ---
 
-# T10 - TD - SQL SELECT, JOIN, INSERT, UPDATE et DELETE
+# T10 - TD - INSERT, UPDATE et DELETE
 
-## Objectifs
-- Travailler SELECT, FROM, WHERE, JOIN, ORDER BY.
-- Produire huit réponses vérifiables avec données explicites.
+## Objectif et règle de travail
 
-## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2.
-- Standard : exercices 3 à 6.
-- Approfondissement : exercices 7 et 8.
+Choisir et sécuriser une opération de modification. Durée indicative : 55 minutes. Sauf indication contraire, chaque exercice repart de la base initiale ci-dessous : les modifications d'un exercice ne se cumulent pas avec le suivant.
+
+Pour `UPDATE` et `DELETE`, le livrable doit toujours contenir : le `SELECT` de contrôle avant, la requête de modification, le `SELECT` de contrôle après et les lignes exactes obtenues.
+
+## Base initiale
+
+### `Eleve`
+
+| id_eleve | nom | classe |
+|---:|---|---|
+| 1 | Ada | T1 |
+| 2 | Linus | T2 |
+| 3 | Grace | T1 |
+| 4 | Alan | T2 |
+
+### `Note`
+
+| id_note | id_eleve | matiere | note |
+|---:|---:|---|---:|
+| 10 | 1 | NSI | 17 |
+| 11 | 2 | NSI | 13 |
+| 12 | 3 | NSI | 15 |
+| 13 | 1 | MATHS | 14 |
+| 14 | 4 | NSI | 9 |
+| 15 | 3 | MATHS | 18 |
 
 ## Exercices
-### Exercice 1
-- Type : lecture/analyse.
-- Capacité officielle : T-BDD-03A.
-- Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=alpha
-- Consigne : projeter nom et classe ; traiter aussi `JOIN sans ON` si nécessaire.
-- Réponse attendue : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `JOIN sans ON`.
-### Exercice 2
-- Type : production/écriture.
-- Capacité officielle : T-BDD-03B.
-- Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=beta
-- Consigne : filtrer note >= 15 ; traiter aussi `UPDATE sans WHERE` si nécessaire.
-- Réponse attendue : JOIN -> Ada 17.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `UPDATE sans WHERE`.
-### Exercice 3
-- Type : production/écriture.
-- Capacité officielle : T-BDD-03C.
-- Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=gamma
-- Consigne : joindre Eleve.id_eleve = Note.id_eleve ; traiter aussi `DELETE sans WHERE` si nécessaire.
-- Réponse attendue : UPDATE id_note=10 -> Ada 18.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `DELETE sans WHERE`.
-### Exercice 4
-- Type : cas limite.
-- Capacité officielle : T-BDD-03D.
-- Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=delta
-- Consigne : vérifier modification par SELECT ; traiter aussi `JOIN sans ON` si nécessaire.
-- Réponse attendue : DELETE WHERE id_note=11 retire Linus.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `JOIN sans ON`.
-### Exercice 5
-- Type : justification.
-- Capacité officielle : T-BDD-03E.
-- Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=epsilon
-- Consigne : projeter nom et classe ; traiter aussi `UPDATE sans WHERE` si nécessaire.
-- Réponse attendue : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `UPDATE sans WHERE`.
-### Exercice 6
-- Type : lecture/analyse.
-- Capacité officielle : T-BDD-03F.
-- Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=zeta
-- Consigne : filtrer note >= 15 ; traiter aussi `DELETE sans WHERE` si nécessaire.
-- Réponse attendue : JOIN -> Ada 17.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `DELETE sans WHERE`.
-### Exercice 7
-- Type : production/écriture.
-- Capacité officielle : T-BDD-03G.
-- Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=eta
-- Consigne : joindre Eleve.id_eleve = Note.id_eleve ; traiter aussi `JOIN sans ON` si nécessaire.
-- Réponse attendue : UPDATE id_note=10 -> Ada 18.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `JOIN sans ON`.
-### Exercice 8
-- Type : justification.
-- Capacité officielle : T-BDD-03H.
-- Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=theta
-- Consigne : vérifier modification par SELECT ; traiter aussi `UPDATE sans WHERE` si nécessaire.
-- Réponse attendue : DELETE WHERE id_note=11 retire Linus.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `UPDATE sans WHERE`.
 
-## Corrigé
+### Exercice 1 — Choisir l'opération [socle, 6 min]
+
+Capacité : `T-BDD-03A`.
+
+Pour chaque intention, choisir parmi `SELECT`, `INSERT`, `UPDATE`, `DELETE` et justifier en une phrase.
+
+1. Afficher les notes de Grace.
+2. Enregistrer une nouvelle note de mathématiques pour Linus.
+3. Corriger la valeur de la note 11.
+4. Retirer la ligne 14, créée pendant un essai.
+5. Afficher seulement les notes de NSI au moins égales à 15.
+
+**Livrable.** Tableau `intention / opération / la base est-elle modifiée ? / justification`.
+
+### Exercice 2 — Insérer une ligne [socle, 8 min]
+
+Capacité : `T-BDD-03F`.
+
+Linus obtient 16 en mathématiques. La nouvelle note doit avoir l'identifiant 16.
+
+1. Écrire l'instruction `INSERT` en nommant les quatre colonnes.
+2. Écrire le `SELECT` qui vérifie uniquement la ligne 16.
+3. Donner le résultat exact de ce contrôle.
+4. Expliquer pourquoi remplacer l'identifiant 16 par 10 provoquerait une erreur.
+
+**Livrable.** `INSERT`, requête de contrôle, ligne obtenue et explication sur la clé primaire.
+
+### Exercice 3 — Corriger une seule note [standard, 10 min]
+
+Capacité : `T-BDD-03G`.
+
+La note d'identifiant 11 vaut 16 et non 13.
+
+1. Écrire le `SELECT` de contrôle avant modification.
+2. Écrire un `UPDATE` qui ne modifie que cette ligne.
+3. Réutiliser le contrôle après modification et donner les résultats avant/après.
+4. Justifier pourquoi `WHERE id_eleve = 2` serait moins précis dans une base où Linus peut avoir plusieurs notes.
+
+**Livrable.** Trois requêtes, deux états et justification du choix de la clé.
+
+### Exercice 4 — Supprimer une ligne ciblée [standard, 9 min]
+
+Capacité : `T-BDD-03H`.
+
+La note 14 est une donnée d'essai à supprimer.
+
+1. Écrire le `SELECT` qui annonce exactement la ligne supprimée.
+2. Écrire le `DELETE` ciblé.
+3. Écrire le contrôle après suppression et prévoir son résultat.
+4. Indiquer combien de lignes restent dans `Note`.
+
+**Livrable.** Contrôle avant, suppression, contrôle après, résultat vide et nombre de lignes restantes.
+
+### Exercice 5 — Analyser deux requêtes dangereuses [standard, 10 min]
+
+Capacités : `T-BDD-03G`, `T-BDD-03H`.
+
+```sql
+UPDATE Note SET note = 12;
+DELETE FROM Note WHERE matiere = 'NSI';
+```
+
+1. Pour chaque requête, annoncer précisément les lignes touchées sur la base initiale.
+2. La première intention était de corriger uniquement la note 14 à 12 : écrire la requête sûre.
+3. La seconde intention était de supprimer uniquement la note de NSI de Linus : écrire une condition qui cible une seule ligne.
+4. Écrire pour chaque correction le `SELECT` préalable qui aurait révélé l'erreur de portée.
+
+**Livrable.** Diagnostic quantifié, deux requêtes corrigées et deux contrôles préalables.
+
+### Exercice 6 — Transfert : traiter une campagne de corrections [approfondissement, 12 min]
+
+Capacités : `T-BDD-03F` à `T-BDD-03H`.
+
+Les trois opérations suivantes doivent être appliquées dans cet ordre sur une même copie de la base :
+
+1. ajouter `Note(16, 4, 'MATHS', 12)` ;
+2. corriger la note 14 de 9 à 10 ;
+3. supprimer la note 13.
+
+Écrire les trois instructions. Après chacune, écrire un `SELECT` ciblé qui prouve l'effet obtenu. Enfin, prévoir le contenu de :
+
+```sql
+SELECT id_note, id_eleve, matiere, note
+FROM Note
+ORDER BY id_note ASC;
+```
+
+**Livrable.** Trois modifications, trois contrôles et la table finale ordonnée contenant six lignes.
+
+## Corrigé intégré enseignant
+
 ### Corrigé exercice 1
-- Capacité mobilisée : T-BDD-03A.
-- Résultat attendu : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.
-- Justification : la tâche `projeter nom et classe` s applique à `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)` ; erreur évitée : condition de jointure oubliée.
-- Donnée utilisée alpha dans T10 TD sql insert update delete : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
-- Méthode alpha dans T10 TD sql insert update delete : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat alpha dans T10 TD sql insert update delete : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
-- Contrôle alpha dans T10 TD sql insert update delete : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
-### Corrigé exercice 2
-- Capacité mobilisée : T-BDD-03B.
-- Résultat attendu : JOIN -> Ada 17.
-- Justification : la tâche `filtrer note >= 15` s applique à `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)` ; erreur évitée : WHERE confondu avec ORDER BY.
-- Donnée utilisée beta dans T10 TD sql insert update delete : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
-- Méthode beta dans T10 TD sql insert update delete : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat beta dans T10 TD sql insert update delete : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
-- Contrôle beta dans T10 TD sql insert update delete : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
-### Corrigé exercice 3
-- Capacité mobilisée : T-BDD-03C.
-- Résultat attendu : UPDATE id_note=10 -> Ada 18.
-- Justification : la tâche `joindre Eleve.id_eleve = Note.id_eleve` s applique à `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)` ; erreur évitée : WHERE omis dans UPDATE.
-- Donnée utilisée gamma dans T10 TD sql insert update delete : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
-- Méthode gamma dans T10 TD sql insert update delete : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat gamma dans T10 TD sql insert update delete : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
-- Contrôle gamma dans T10 TD sql insert update delete : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
-### Corrigé exercice 4
-- Capacité mobilisée : T-BDD-03D.
-- Résultat attendu : DELETE WHERE id_note=11 retire Linus.
-- Justification : la tâche `vérifier modification par SELECT` s applique à `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)` ; erreur évitée : condition de jointure oubliée.
-- Donnée utilisée delta dans T10 TD sql insert update delete : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
-- Méthode delta dans T10 TD sql insert update delete : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat delta dans T10 TD sql insert update delete : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
-- Contrôle delta dans T10 TD sql insert update delete : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
-### Corrigé exercice 5
-- Capacité mobilisée : T-BDD-03E.
-- Résultat attendu : SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus.
-- Justification : la tâche `projeter nom et classe` s applique à `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)` ; erreur évitée : WHERE confondu avec ORDER BY.
-- Donnée utilisée epsilon dans T10 TD sql insert update delete : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
-- Méthode epsilon dans T10 TD sql insert update delete : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat epsilon dans T10 TD sql insert update delete : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
-- Contrôle epsilon dans T10 TD sql insert update delete : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
-### Corrigé exercice 6
-- Capacité mobilisée : T-BDD-03F.
-- Résultat attendu : JOIN -> Ada 17.
-- Justification : la tâche `filtrer note >= 15` s applique à `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)` ; erreur évitée : WHERE omis dans UPDATE.
-- Donnée utilisée zeta dans T10 TD sql insert update delete : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
-- Méthode zeta dans T10 TD sql insert update delete : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat zeta dans T10 TD sql insert update delete : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
-- Contrôle zeta dans T10 TD sql insert update delete : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
-### Corrigé exercice 7
-- Capacité mobilisée : T-BDD-03G.
-- Résultat attendu : UPDATE id_note=10 -> Ada 18.
-- Justification : la tâche `joindre Eleve.id_eleve = Note.id_eleve` s applique à `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)` ; erreur évitée : condition de jointure oubliée.
-- Donnée utilisée eta dans T10 TD sql insert update delete : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
-- Méthode eta dans T10 TD sql insert update delete : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat eta dans T10 TD sql insert update delete : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
-- Contrôle eta dans T10 TD sql insert update delete : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
-### Corrigé exercice 8
-- Capacité mobilisée : T-BDD-03H.
-- Résultat attendu : DELETE WHERE id_note=11 retire Linus.
-- Justification : la tâche `vérifier modification par SELECT` s applique à `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)` ; erreur évitée : WHERE confondu avec ORDER BY.
-- Donnée utilisée theta dans T10 TD sql insert update delete : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
-- Méthode theta dans T10 TD sql insert update delete : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat theta dans T10 TD sql insert update delete : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
-- Contrôle theta dans T10 TD sql insert update delete : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
 
-## Erreurs fréquentes
-- condition de jointure oubliée.
-- WHERE confondu avec ORDER BY.
-- WHERE omis dans UPDATE.
+| Intention | Opération | Base modifiée ? | Justification observable |
+|---|---|---|---|
+| afficher les notes de Grace | `SELECT` | non | on lit des lignes existantes. |
+| enregistrer la note de Linus | `INSERT` | oui | une nouvelle ligne est ajoutée. |
+| corriger la note 11 | `UPDATE` | oui | une valeur d'une ligne existante change. |
+| retirer la ligne 14 | `DELETE` | oui | une ligne existante disparaît. |
+| afficher les notes de NSI au moins égales à 15 | `SELECT ... WHERE` | non | la condition filtre une lecture. |
+
+Le contrôle consiste à repérer le verbe d'action puis à demander si l'état de la table doit changer. Le résultat attendu distingue ainsi les deux lectures des trois modifications ; choisir `UPDATE` pour « afficher » confondrait observation et transformation.
+
+### Corrigé exercice 2
+
+```sql
+INSERT INTO Note(id_note, id_eleve, matiere, note) VALUES (16, 2, 'MATHS', 16);
+SELECT * FROM Note WHERE id_note = 16;
+```
+
+Le contrôle renvoie `(16, 2, MATHS, 16)`. Réutiliser 10 viole l'unicité de la clé primaire `id_note`.
+
+La liste des colonnes et la liste des valeurs ont le même ordre : 16 devient l'identifiant de note, 2 relie la ligne à Linus, `MATHS` est la matière et 16 la note. Le `SELECT` final isole l'identifiant 16 ; obtenir exactement une ligne prouve que l'insertion a porté sur la donnée voulue.
+
+### Corrigé exercice 3
+
+```sql
+SELECT id_note, note FROM Note WHERE id_note = 11;
+UPDATE Note SET note = 16 WHERE id_note = 11;
+SELECT id_note, note FROM Note WHERE id_note = 11;
+```
+
+Avant : `(11, 13)` ; après : `(11, 16)`. La clé `id_note` cible une ligne, contrairement à un simple `id_eleve` potentiellement partagé.
+
+La méthode réutilise exactement le même filtre avant et après la modification. Le premier résultat établit l'état initial ; `UPDATE ... WHERE id_note = 11` ne change que la colonne `note` de cette ligne ; le second résultat vérifie à la fois la nouvelle valeur et la conservation de l'identifiant.
+
+### Corrigé exercice 4
+
+```sql
+SELECT * FROM Note WHERE id_note = 14;
+DELETE FROM Note WHERE id_note = 14;
+SELECT * FROM Note WHERE id_note = 14;
+```
+
+Le premier contrôle renvoie la ligne 14, le second aucun résultat. Il reste cinq lignes dans `Note`.
+
+La condition `WHERE id_note = 14` est d'abord testée par le `SELECT` : une seule ligne est annoncée. Après `DELETE`, la même condition doit produire un résultat vide ; si elle renvoyait encore une ligne, la suppression n'aurait pas atteint la cible.
+
+### Corrigé exercice 5
+
+Le premier `UPDATE` touche les six lignes de `Note`, alors que l'intention n'en vise qu'une. Le `DELETE` touche les quatre notes de NSI, d'identifiants 10, 11, 12 et 14, alors que seule la note de Linus doit disparaître.
+
+```sql
+SELECT * FROM Note WHERE id_note = 14;
+UPDATE Note SET note = 12 WHERE id_note = 14;
+SELECT * FROM Note WHERE id_note = 14;
+
+SELECT * FROM Note WHERE id_note = 11;
+DELETE FROM Note WHERE id_note = 11;
+SELECT * FROM Note WHERE id_note = 11;
+```
+
+Pour la correction de la note 14, les contrôles renvoient d'abord `(14, 4, NSI, 9)`, puis `(14, 4, NSI, 12)`. Pour la suppression, le contrôle renvoie d'abord `(11, 2, NSI, 13)`, puis un résultat vide. L'erreur traitée est l'absence de condition assez sélective : le `SELECT` préalable quantifie sa portée avant toute modification.
+
+### Corrigé exercice 6
+
+```sql
+INSERT INTO Note(id_note, id_eleve, matiere, note) VALUES (16, 4, 'MATHS', 12);
+SELECT * FROM Note WHERE id_note = 16;
+UPDATE Note SET note = 10 WHERE id_note = 14;
+SELECT * FROM Note WHERE id_note = 14;
+DELETE FROM Note WHERE id_note = 13;
+SELECT * FROM Note WHERE id_note = 13;
+```
+
+Les contrôles ciblés renvoient successivement `(16, 4, MATHS, 12)`, `(14, 4, NSI, 10)`, puis aucun résultat pour 13. La table finale ordonnée est :
+
+| id_note | id_eleve | matiere | note |
+|---:|---:|---|---:|
+| 10 | 1 | NSI | 17 |
+| 11 | 2 | NSI | 13 |
+| 12 | 3 | NSI | 15 |
+| 14 | 4 | NSI | 10 |
+| 15 | 3 | MATHS | 18 |
+| 16 | 4 | MATHS | 12 |
+
+Le raisonnement conserve l'état produit par chaque instruction : l'insertion crée 16, la mise à jour change seulement 14 et la suppression retire seulement 13. Réinitialiser la base entre les étapes ferait perdre cette composition des effets.
 
 ## Différenciation
-- Socle : données annotées.
-- Standard : méthode complète.
-- Expert : transfert avec `UPDATE sans WHERE`.
 
-## Cas limites travaillés
-- JOIN sans ON.
-- UPDATE sans WHERE.
-- DELETE sans WHERE.
+### Aides graduées
 
-## Critères de réussite observables
-- La donnée de départ est recopiée exactement.
-- La trace ou le pseudo-code conduit à `SELECT nom FROM Eleve ORDER BY nom -> Ada, Linus`.
-- Au moins un cas limite de la section précédente est décidé.
+- Aide 1 : entourer le verbe de l'intention : afficher, ajouter, corriger ou supprimer.
+- Aide 2 : pour `UPDATE` et `DELETE`, écrire d'abord la phrase « je veux toucher la ligne dont ... ».
+- Aide 3 : transformer cette phrase en `WHERE`, puis l'essayer dans un `SELECT`.
 
+### Prolongement pour les élèves rapides
+
+Expliquer, sans syntaxe supplémentaire exigible, comment une transaction permettrait d'annuler la campagne de l'exercice 6 si le contrôle final était incorrect. Ce prolongement est explicitement hors exigible syntaxique.
+
+## Erreurs fréquentes à diagnostiquer
+
+- **Erreur fréquente 1 — vérifier après mais pas avant.** Une modification déjà trop large ne peut pas être rendue sûre par un simple constat final. Antidote : exécuter le `SELECT` avec le même `WHERE` avant `UPDATE` ou `DELETE` et annoncer le nombre de lignes visées.
+- **Erreur fréquente 2 — confondre identifiant d'élève et identifiant de note.** Un élève peut posséder plusieurs notes, tandis que `id_note` cible une seule ligne. Antidote : choisir la clé qui correspond exactement à l'unicité demandée par l'intention.
+
+## Critères de réussite
+
+- `INSERT` aligne colonnes et valeurs et utilise une clé primaire libre.
+- Chaque `UPDATE` et chaque `DELETE` contient un `WHERE` qui cible les lignes annoncées.
+- Les contrôles avant et après utilisent la même condition que la modification.
+- Le résultat final est calculé à partir de l'état précédent, sans réinitialiser la base dans l'exercice 6.

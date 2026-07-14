@@ -584,11 +584,12 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md | needs_review |
 | bareme | 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md | needs_review |
+| corrige | 03_progressions/supports/premiere/P08/P08_corrige_html_css_dom.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md | needs_review |
 | cours | 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md | needs_review |
-| evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md | needs_review |
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
@@ -603,11 +604,12 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md | needs_review |
 | bareme | 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md | needs_review |
+| corrige | 03_progressions/supports/premiere/P08/P08_corrige_html_css_dom.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md | needs_review |
 | cours | 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md | needs_review |
-| evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md | needs_review |
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
@@ -622,11 +624,12 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md | needs_review |
 | bareme | 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md | needs_review |
+| corrige | 03_progressions/supports/premiere/P08/P08_corrige_html_css_dom.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md | needs_review |
 | cours | 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md | needs_review |
-| evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md | needs_review |
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
@@ -641,10 +644,11 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md | needs_review |
 | bareme | 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md | needs_review |
+| corrige | 03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md | needs_review |
 | cours | 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md | needs_review |
-| evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md | needs_review |
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
@@ -660,10 +664,11 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md | needs_review |
 | bareme | 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md | needs_review |
+| corrige | 03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md | needs_review |
 | cours | 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md | needs_review |
-| evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md | needs_review |
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
@@ -679,10 +684,11 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md | needs_review |
 | bareme | 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md | needs_review |
+| corrige | 03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md | needs_review |
 | cours | 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md | needs_review |
-| evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md | needs_review |
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
@@ -698,10 +704,11 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md | needs_review |
 | bareme | 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md | needs_review |
+| corrige | 03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md | needs_review |
 | cours | 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md | needs_review |
-| evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md | needs_review |
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
@@ -717,10 +724,11 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md | needs_review |
 | bareme | 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md | needs_review |
+| corrige | 03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md | needs_review |
 | cours | 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md | needs_review |
-| evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md | needs_review |
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
@@ -736,10 +744,11 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 
 | type | fichier | statut ressource |
 | --- | --- | --- |
+| bareme | 03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md | needs_review |
 | bareme | 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md | needs_review |
+| corrige | 03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md | needs_review |
 | corrige | 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md | needs_review |
 | cours | 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md | needs_review |
-| evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md | needs_review |
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
@@ -1392,10 +1401,8 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | bareme | 03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md | needs_review |
 | cours | 03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md | needs_review |
-| evaluation | 03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md | needs_review |
 | remediation | 03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md | needs_review |
-| td | 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md | needs_review |
 | td | 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md | needs_review |
 | tp | 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md | needs_review |
 | trace | 03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md | needs_review |
@@ -1411,10 +1418,8 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | bareme | 03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md | needs_review |
 | cours | 03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md | needs_review |
-| evaluation | 03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md | needs_review |
 | remediation | 03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md | needs_review |
-| td | 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md | needs_review |
 | td | 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md | needs_review |
 | tp | 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md | needs_review |
 | trace | 03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md | needs_review |
@@ -1430,10 +1435,8 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | bareme | 03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md | needs_review |
 | cours | 03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md | needs_review |
-| evaluation | 03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md | needs_review |
 | remediation | 03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md | needs_review |
-| td | 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md | needs_review |
 | td | 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md | needs_review |
 | tp | 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md | needs_review |
 | trace | 03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md | needs_review |
@@ -1449,10 +1452,8 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | bareme | 03_progressions/supports/terminale/T10/T10_bareme_sql_select_where_join.md | needs_review |
 | corrige | 03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md | needs_review |
 | cours | 03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md | needs_review |
-| evaluation | 03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md | needs_review |
 | remediation | 03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md | needs_review |
-| td | 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md | needs_review |
 | td | 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md | needs_review |
 | tp | 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md | needs_review |
 | trace | 03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md | needs_review |
@@ -1469,7 +1470,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | corrige | 03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md | needs_review |
 | cours | 03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md | needs_review |
-| evaluation | 03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md | needs_review |
 | remediation | 03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md | needs_review |
 | td | 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md | needs_review |
 | tp | 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md | needs_review |
@@ -1487,10 +1487,8 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | corrige | 03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md | needs_review |
 | cours | 03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md | needs_review |
-| evaluation | 03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md | needs_review |
 | remediation | 03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md | needs_review |
 | td | 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md | needs_review |
-| td | 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md | needs_review |
 | tp | 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md | needs_review |
 | trace | 03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md | needs_review |
 | version_amenagee | 03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md | needs_review |
@@ -1506,10 +1504,8 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | corrige | 03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md | needs_review |
 | cours | 03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md | needs_review |
 | evaluation | 03_progressions/supports/terminale/T10/T10_evaluation_sql_insert_update_delete.md | needs_review |
-| evaluation | 03_progressions/supports/terminale/T10/T10_evaluation_sql_select_where_join.md | needs_review |
 | remediation | 03_progressions/supports/terminale/T10/T10_remediation_sql_select_where_join.md | needs_review |
 | td | 03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md | needs_review |
-| td | 03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md | needs_review |
 | tp | 03_progressions/supports/terminale/T10/T10_tp_sql_select_where_join.md | needs_review |
 | trace | 03_progressions/supports/terminale/T10/T10_trace_sql_select_where_join.md | needs_review |
 | version_amenagee | 03_progressions/supports/terminale/T10/T10_version_amenagee_sql_select_where_join.md | needs_review |

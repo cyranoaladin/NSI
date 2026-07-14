@@ -1,88 +1,90 @@
 ---
-title: "T17 - evaluation - programmation dynamique"
+title: "T17 - Évaluation - Programmation dynamique"
 level: "terminale"
 sequence_id: "T17"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.6.0"
+version: "0.7.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "programmation dynamique"
-notion: "programmation dynamique"
+theme: "Algorithmique"
+notion: "Rendu de monnaie par programmation dynamique"
+bareme: "T17_bareme_programmation_dynamique.md"
+corrige: "T17_corrige_programmation_dynamique.md"
 private_data: false
 official_program:
   capacities:
     - "T-ALGO-04"
 ---
 
-# T17 - Évaluation - programmation dynamique
+# T17 - Évaluation - Programmation dynamique
 
-## Modalités
-- Durée : 30 minutes.
-- Matériel autorisé : fiche de cours.
-- Capacités évaluées : T-ALGO-04.
+## Cadre
 
-## Questions
-### Question 1
-- Capacité officielle : T-ALGO-04.
-- Énoncé : à partir de `pieces=[1,5,7], montant=11, dp[0]=0`, définir dp[m] coût minimal.
-- Réponse attendue : dp[6]=2 avec 5+1.
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `montant 0`.
-### Question 2
-- Capacité officielle : T-ALGO-04.
-- Énoncé : à partir de `pieces=[1,5,7], montant=11, dp[0]=0`, écrire dp[m]=1+min(dp[m-p]).
-- Réponse attendue : dp[11]=3 avec 5+5+1.
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `montant impossible`.
-### Question 3
-- Capacité officielle : T-ALGO-04.
-- Énoncé : à partir de `pieces=[1,5,7], montant=11, dp[0]=0`, initialiser dp[0]=0.
-- Réponse attendue : tabulation stocke chaque dp[m].
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `pièce plus grande que m`.
-### Question 4
-- Capacité officielle : T-ALGO-04.
-- Énoncé : à partir de `pieces=[1,5,7], montant=11, dp[0]=0`, remplir la table de 1 à 11.
-- Réponse attendue : sans pièce 1 certains montants impossibles.
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `montant 0`.
+- Durée : 45 minutes.
+- Total : 20 points.
+- Matériel : aucun.
+- Capacité évaluée : `T-ALGO-04` — utiliser la programmation dynamique pour écrire un algorithme.
 
-## Corrigé question par question
-### Corrigé question 1
-- Résultat attendu : dp[6]=2 avec 5+1.
-- Critère spécifique : définir dp[m] coût minimal et éviter `état ambigu`.
-### Corrigé question 2
-- Résultat attendu : dp[11]=3 avec 5+5+1.
-- Critère spécifique : écrire dp[m]=1+min(dp[m-p]) et éviter `initialisation oubliée`.
-### Corrigé question 3
-- Résultat attendu : tabulation stocke chaque dp[m].
-- Critère spécifique : initialiser dp[0]=0 et éviter `choix de pièce confondu avec valeur optimale`.
-### Corrigé question 4
-- Résultat attendu : sans pièce 1 certains montants impossibles.
-- Critère spécifique : remplir la table de 1 à 11 et éviter `état ambigu`.
+Toutes les questions portent sur un jeu inédit :
 
-## Erreurs fréquentes et remédiation
-- état ambigu.
-- initialisation oubliée.
-- choix de pièce confondu avec valeur optimale.
+```python
+pieces = [1, 4, 6]
+montant = 8
+```
 
-## Cas limites travaillés
-- montant 0.
-- montant impossible.
-- pièce plus grande que m.
+On cherche le nombre minimal de pièces permettant d'obtenir exactement le montant.
 
-## Critères de réussite observables
-- La donnée de départ est recopiée exactement.
-- La trace ou le pseudo-code conduit à `dp[6]=2 avec 5+1`.
-- Au moins un cas limite de la section précédente est décidé.
+## Question 1 — Modéliser les sous-problèmes (4 points)
 
+1. Définir précisément l'état `dp[m]`.
+2. Donner l'initialisation de `dp[0]` et des autres cases avant calcul.
+3. Écrire la relation de récurrence en précisant quelles pièces sont admissibles.
+4. Justifier l'ordre croissant des montants.
 
+## Question 2 — Calculer et reconstruire (6 points)
 
-## Barème question par question
-- question 1: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
-- question 2: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
-- question 3: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
-- question 4: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+1. Compléter la table suivante de `m = 0` à `m = 8`.
 
-## Fiche liée
-- Fiche liée : fiche de cours T17 sur `programmation_dynamique`.
+| `m` | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| `dp[m]` |  |  |  |  |  |  |  |  |  |
+
+2. Pour `m = 8`, écrire les trois candidats correspondant aux pièces 1, 4 et 6.
+3. Donner une décomposition optimale de 8 et expliquer comment une table `choix` permet de la reconstruire.
+
+## Question 3 — Écrire l'algorithme (6 points)
+
+Écrire l'algorithme itératif `minimum_pieces(montant, pieces)` qui renvoie le minimum ou `None` lorsque le montant est impossible. La réponse doit faire apparaître : initialisation, deux boucles, garde sur la pièce, mise à jour du minimum et décision finale.
+
+## Question 4 — Cas impossible et coût (4 points)
+
+On remplace les données par `pieces = [4, 6]` et `montant = 7`.
+
+1. Donner la table de 0 à 7 en utilisant `∞` pour un montant impossible.
+2. Expliquer pourquoi renvoyer la valeur numérique utilisée pour coder l'infini serait faux.
+3. Pour un montant `M` et `k` pièces, donner les complexités en temps et en mémoire de la tabulation.
+
+## Repères enseignant — à masquer dans la projection élève
+
+| Question | Preuve attendue | Résultat exact | Erreur structurante | Critère décisif |
+|---|---|---|---|---|
+| 1 | état, base, infini, récurrence, ordre | dépendances `m-p < m` | formule sans signification de `dp` | modèle cohérent avant calcul |
+| 2 | table et candidats pour 8 | `[0,1,2,3,1,2,1,2,2]`, solution `[4,4]` | remplir par choix glouton | calcul des états et reconstruction |
+| 3 | algorithme complet | `None` si état final infini | initialiser toutes les cases à 0 | algorithme exécutable sur les deux cas |
+| 4 | table avec impossibles, `O(Mk)`, `O(M)` | `[0,∞,∞,∞,1,∞,1,∞]` | confondre sentinelle et solution | cas impossible explicitement décidé |
+
+## Critères, cas limites et erreurs fréquentes — repères enseignant
+
+- **Critère de réussite observable 1.** La phrase définissant `dp[m]` précise l'indice, la valeur optimisée et le sens de l'impossible.
+- **Critère de réussite observable 2.** Chaque mise à jour de la table peut être reliée à un candidat `dp[m-p] + 1` déjà calculé.
+- **Cas limite 1 — montant nul.** L'algorithme doit renvoyer zéro et une décomposition vide sans entrer dans la boucle de reconstruction.
+- **Cas limite 2 — montant impossible.** Avec `[4, 6]` et 7, la sentinelle finale est convertie en `None` ; elle n'est jamais annoncée comme un minimum numérique.
+- **Erreur fréquente 1 — initialiser tout à zéro.** Les états inconnus deviennent de faux optima. Antidote : zéro seulement pour `dp[0]`, sentinelle ailleurs.
+- **Erreur fréquente 2 — appliquer le glouton.** Choisir d'abord la plus grande pièce ne calcule pas les trois candidats demandés pour 8. Antidote : écrire la ligne des prédécesseurs avant le minimum.
+
+Le résultat attendu de la question 2 est la table complète `[0,1,2,3,1,2,1,2,2]` accompagnée d'une reconstruction ; le corrigé vérifie les deux productions séparément.
 
 ## Aménagement
-- Version aménagée : `T17_version_amenagee_programmation_dynamique.md` ; consignes découpées et barème conservé.
+
+La version `T17_version_amenagee_programmation_dynamique.md` segmente la construction de la table sans fournir ses valeurs finales.

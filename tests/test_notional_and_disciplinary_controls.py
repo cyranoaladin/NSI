@@ -51,10 +51,28 @@ class NotionalAndDisciplinaryControlsTest(unittest.TestCase):
             "Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; "
             "Note(10,1,NSI,17), Note(11,2,NSI,13)`.\n"
             "Consigne : filtrer note >= 15.\n"
-            "Réponse attendue : JOIN -> Ada 17.\n"
+            "Réponse attendue : SELECT -> Ada 17.\n"
         )
 
         self.assertTrue(sql_consistency.sql_block_is_consistent(body))
+
+    def test_sql_rejects_answer_labeled_with_another_operation(self) -> None:
+        bad_filter = (
+            "Consigne : filtrer les lignes pour lesquelles note >= 15.\n"
+            "Réponse attendue : JOIN -> Ada 17.\n"
+        )
+        bad_join = (
+            "Consigne : joindre Eleve et Note sur leur clé commune.\n"
+            "Réponse attendue : UPDATE id_note=10 -> Ada 18.\n"
+        )
+        bad_update = (
+            "Consigne : mettre à jour la note 10 puis vérifier la modification.\n"
+            "Réponse attendue : DELETE WHERE id_note=11 retire Linus.\n"
+        )
+
+        self.assertFalse(sql_consistency.sql_block_is_consistent(bad_filter))
+        self.assertFalse(sql_consistency.sql_block_is_consistent(bad_join))
+        self.assertFalse(sql_consistency.sql_block_is_consistent(bad_update))
 
     def test_sql_update_and_delete_are_targeted(self) -> None:
         update = "UPDATE Note SET note = 18 WHERE id_note = 10; résultat : Ada 18."
@@ -64,6 +82,17 @@ class NotionalAndDisciplinaryControlsTest(unittest.TestCase):
         self.assertTrue(sql_consistency.sql_block_is_consistent(delete))
         self.assertFalse(sql_consistency.sql_block_is_consistent("UPDATE Note SET note = 18;"))
         self.assertFalse(sql_consistency.sql_block_is_consistent("DELETE FROM Note;"))
+
+    def test_sql_accepts_an_explicitly_analyzed_missing_where_counterexample(self) -> None:
+        counterexample = (
+            "Requête dangereuse à analyser :\n"
+            "```sql\n"
+            "UPDATE Note SET note = 10;\n"
+            "```\n"
+            "Sans WHERE, cette erreur modifie toutes les lignes.\n"
+        )
+
+        self.assertTrue(sql_consistency.sql_block_is_consistent(counterexample))
 
     def test_notional_matrix_rejects_two_notions_sharing_generic_support(self) -> None:
         with tempfile.TemporaryDirectory() as raw:

@@ -13,6 +13,32 @@ from scripts._qa_common import ROOT, strip_frontmatter
 
 CHARTER = "CHARTE_NSI_CORPUS_NEEDS_REVIEW"
 TEACHER_TOKENS = ("corrige", "corrigé", "bareme", "barème", "professeur")
+TEACHER_SECTION_PATTERNS = (
+    re.compile(r"\brep[èe]res?\s+(?:enseignant|professeur)\b", re.I),
+    re.compile(r"\bpour\s+l[’']?(?:enseignant|professeur)\b", re.I),
+    re.compile(r"\bnotes?\s+(?:enseignant|professeur)\b", re.I),
+    re.compile(r"\bindications?\s+(?:enseignant|professeur)\b", re.I),
+    re.compile(r"\b[àa]\s+masquer\s+dans\s+la\s+projection\s+[ée]l[èe]ve\b", re.I),
+    re.compile(r"\bcorrection\b|\bcorrig[ée]s?\b", re.I),
+    re.compile(r"\bbar[èe]me\s+correcteur\b", re.I),
+    re.compile(r"\bsolutions?\b", re.I),
+    re.compile(r"\br[ée]ponses?\s+attendues?\b", re.I),
+    re.compile(r"\b[ée]l[ée]ments?\s+de\s+correction\b", re.I),
+    re.compile(r"\br[ée]ponses?\s+rapides?\b", re.I),
+    re.compile(r"\br[ée]ponses?\s+de\s+r[ée]f[ée]rence\b", re.I),
+    re.compile(r"\br[ée]sultats?\s+attendus?\b", re.I),
+)
+INLINE_TEACHER_RESOURCE = re.compile(
+    r"\b(?:corrig[ée]\s+(?:professeur|distribu[ée])|corrige_professeur|"
+    r"bar[èe]me\s+correcteur|r[ée]ponses?\s+attendues?|"
+    r"[ée]l[ée]ments?\s+de\s+correction)\b",
+    re.I,
+)
+DIRECT_STUDENT_ANSWER = re.compile(
+    r"(?im)^\s*(?:[-*]\s*)?(?:r[ée]sultat\s+(?:final|de\s+r[ée]f[ée]rence)|"
+    r"r[ée]ponse\s+attendue|livrable\s+pr[ée]rempli)\s*:\s*"
+    r"(?!(?:à\s+(?:d[ée]terminer|compl[ée]ter)|v[ée]rifier|[ée]crire|produire|justifier)\b).+",
+)
 
 
 def level_for(unit: str) -> str:
@@ -67,6 +93,15 @@ def md_to_html(text: str) -> str:
     return "\n".join(lines)
 
 
+def is_teacher_section_title(title: str) -> bool:
+    """Identify an explicitly teacher-only Markdown heading.
+
+    This deliberately evaluates headings only: a student scenario may legitimately
+    say that a teacher wants a result, without exposing a correction resource.
+    """
+    return any(pattern.search(title) for pattern in TEACHER_SECTION_PATTERNS)
+
+
 def strip_teacher_sections(markdown: str) -> str:
     lines = strip_frontmatter(markdown).splitlines()
     kept: list[str] = []
@@ -75,24 +110,17 @@ def strip_teacher_sections(markdown: str) -> str:
     for line in lines:
         if line.startswith("#"):
             level = len(line) - len(line.lstrip("#"))
-            title = line.lower()
+            title = line.lstrip("#").strip()
             if skip and level <= skip_level:
                 skip = False
-            if "corrig" in title or "barème" in title or "bareme" in title:
+            if is_teacher_section_title(title):
                 skip = True
                 skip_level = level
                 continue
         if not skip:
-            lower = line.lower()
-            if any(token in lower for token in [
-                "corrigé professeur",
-                "corrige professeur",
-                "corrigé distribué",
-                "corrige distribué",
-                "corrige_professeur",
-                "barème",
-                "bareme",
-            ]):
+            if INLINE_TEACHER_RESOURCE.search(line):
+                continue
+            if DIRECT_STUDENT_ANSWER.match(line):
                 continue
             kept.append(line)
     return "\n".join(kept)

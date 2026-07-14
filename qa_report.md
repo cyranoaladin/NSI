@@ -3,10 +3,10 @@
 ## Résumé
 
 - Statut global : NON PUBLIABLE
-- Ressources inventoriées : 611
-- Ressources needs_review : 611
+- Ressources inventoriées : 615
+- Ressources needs_review : 615
 - Ressources publiables : 0
-- Source generated : 603
+- Source generated : 607
 - Source adapted_from_drive : 7
 - Source import_partiel : 1
 - Source inspiration_drive : 0
@@ -183,8 +183,8 @@ python -m scripts.check_drive_mapping_release
 
 ## Revue humaine
 
-- Ressources majeures à relire : 529
-- Lignes dans `human_review_register.csv` : 529
+- Ressources majeures à relire : 533
+- Lignes dans `human_review_register.csv` : 533
 - Ressources prioritaires vague 1 : 20
 - Priorités vague 1 couvertes : P05, P06, P10, P12, P13, T06, T07, T08, T10, T17, T18
 - Statut initial : pending pour science, pédagogie, accessibilité et technique.

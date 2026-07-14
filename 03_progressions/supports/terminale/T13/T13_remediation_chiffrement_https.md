@@ -25,7 +25,7 @@ official_program:
 
 ## Activités correctives
 1. Annoter `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test`.
-2. Refaire la tâche `protéger Ksession par asymétrique` et comparer avec `message chiffré avec Ksession`.
+2. Refaire la tâche `protéger Ksession par asymétrique` et expliciter, dans une phrase, le rôle de chaque chiffrement.
 3. Traiter le cas limite `certificat expiré`.
 4. Relier la réponse à T-ARCH-04A.
 

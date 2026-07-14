@@ -1,96 +1,128 @@
 ---
-title: "P08 - evaluation - HTML, CSS, DOM, HTTP et formulaires"
+title: "P08 - Évaluation - HTML, CSS et DOM"
 level: "premiere"
 sequence_id: "P08"
 document_type: "evaluation"
 status: "needs_review"
-version: "0.6.0"
+version: "0.7.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "HTML, CSS, DOM, HTTP et formulaires"
-notion: "HTML, CSS, DOM, HTTP et formulaires"
+theme: "Interactions dans une page Web"
+notion: "Structure HTML, sélecteurs CSS, événements et modification du DOM"
+bareme: "P08_bareme_html_css_dom.md"
+corrige: "P08_corrige_html_css_dom.md"
 private_data: false
 official_program:
   capacities:
     - "P-IHM-01A"
     - "P-IHM-01B"
     - "P-IHM-02"
-    - "P-IHM-03A"
-    - "P-IHM-03B"
-    - "P-IHM-03C"
-    - "P-IHM-04A"
-    - "P-IHM-04B"
-    - "P-IHM-04C"
 ---
 
-# P08 - Évaluation - HTML, CSS, DOM, HTTP et formulaires
+# P08 - Évaluation - HTML, CSS et DOM
 
-## Modalités
-- Durée : 30 minutes.
-- Matériel autorisé : fiche de cours.
-- Capacités évaluées : P-IHM-01A, P-IHM-01B, P-IHM-02, P-IHM-03A, P-IHM-03B, P-IHM-03C, P-IHM-04A, P-IHM-04B, P-IHM-04C.
+## Cadre
 
-## Questions
-### Question 1
-- Capacité officielle : P-IHM-01A.
-- Énoncé : à partir de `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`, repérer header main form label input.
-- Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `champ nom vide`.
-### Question 2
-- Capacité officielle : P-IHM-01B.
-- Énoncé : à partir de `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`, cibler #nom en CSS et DOM.
-- Réponse attendue : document.querySelector("#nom").value lit la saisie.
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `paramètre jour absent`.
-### Question 3
-- Capacité officielle : P-IHM-02.
-- Énoncé : à partir de `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`, lire jour dans URL.
-- Réponse attendue : GET /club?jour=mercredi transporte jour.
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `formulaire sans action`.
-### Question 4
-- Capacité officielle : P-IHM-03A.
-- Énoncé : à partir de `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`, distinguer GET, POST et HTTPS.
-- Réponse attendue : POST sans HTTPS ne chiffre pas.
-- Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `champ nom vide`.
+- Durée : 40 minutes.
+- Total : 20 points.
+- Documents : non autorisés.
+- Capacités évaluées : `P-IHM-01A`, `P-IHM-01B`, `P-IHM-02`.
+- Le code fourni est complet : aucune connaissance d'une page extérieure n'est nécessaire.
 
-## Corrigé question par question
-### Corrigé question 1
-- Résultat attendu : <label for=nom>Nom</label><input id=nom name=nom>.
-- Critère spécifique : repérer header main form label input et éviter `bouton hors formulaire`.
-### Corrigé question 2
-- Résultat attendu : document.querySelector("#nom").value lit la saisie.
-- Critère spécifique : cibler #nom en CSS et DOM et éviter `sélecteur trop large`.
-### Corrigé question 3
-- Résultat attendu : GET /club?jour=mercredi transporte jour.
-- Critère spécifique : lire jour dans URL et éviter `POST confondu avec chiffrement`.
-### Corrigé question 4
-- Résultat attendu : POST sans HTTPS ne chiffre pas.
-- Critère spécifique : distinguer GET, POST et HTTPS et éviter `bouton hors formulaire`.
+## Contexte — vote pour l'exposition du lycée
 
-## Erreurs fréquentes et remédiation
-- bouton hors formulaire.
-- sélecteur trop large.
-- POST confondu avec chiffrement.
+La page suivante permet de choisir un projet. Le serveur n'est pas étudié dans cette évaluation : on analyse uniquement la page exécutée dans le navigateur.
 
-## Cas limites travaillés
-- champ nom vide.
-- paramètre jour absent.
-- formulaire sans action.
+```html
+<header>
+  <h1>Exposition scientifique</h1>
+</header>
+<main>
+  <form id="vote">
+    <label for="projet">Projet préféré</label>
+    <select id="projet" name="projet">
+      <option value="">-- choisir --</option>
+      <option value="robot">Robot trieur</option>
+      <option value="serre">Serre connectée</option>
+    </select>
+    <button id="valider" type="submit">Voter</button>
+  </form>
+  <p id="message" class="info" aria-live="polite"></p>
+</main>
 
-## Critères de réussite observables
-- La donnée de départ est recopiée exactement.
-- La trace ou le pseudo-code conduit à `<label for=nom>Nom</label><input id=nom name=nom>`.
-- Au moins un cas limite de la section précédente est décidé.
+<script>
+const bouton = document.querySelector("#valider");
+const choix = document.querySelector("#projet");
+const message = document.querySelector("#message");
 
+bouton.addEventListener("click", traiterVote);
 
+function traiterVote(event) {
+  event.preventDefault();
+  if (choix.value === "") {
+    message.textContent = "Choisissez un projet.";
+    return;
+  }
+  message.textContent = "Vote enregistré : " + choix.value;
+}
+</script>
+```
 
-## Barème question par question
-- question 1: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
-- question 2: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
-- question 3: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
-- question 4: 1 point donnée exacte, 1 point méthode liée à la capacité, 1 point résultat vérifiable, 1 point justification du cas limite.
+## Question 1 — Structure HTML et composants (4 points)
 
-## Fiche liée
-- Fiche liée : fiche de cours P08 sur `html_css_dom`.
+1. Représenter l'arbre HTML limité à `header`, `main`, `form`, `label`, `select`, `button` et `p`.
+2. Expliquer le rôle de `header`, `main`, `form`, `label` et `button` dans cette page.
+3. Justifier l'association entre le `label` et la liste `select` à l'aide de leurs attributs.
+
+**Production attendue.** Un arbre parent-enfant et trois phrases fondées sur les balises ou attributs du code.
+
+## Question 2 — Sélecteurs CSS (4 points)
+
+1. Écrire le sélecteur CSS qui cible uniquement le paragraphe de message par son identifiant.
+2. Écrire un sélecteur qui cible le bouton situé dans le formulaire `vote`.
+3. Écrire une règle CSS qui affiche le message en bleu foncé et en gras.
+4. Expliquer pourquoi le sélecteur `p` serait plus large que le sélecteur demandé en 1.
+
+## Question 3 — Objets DOM et événement (4 points)
+
+1. Associer les variables `bouton`, `choix` et `message` aux trois éléments HTML correspondants.
+2. Nommer l'événement écouté et la fonction exécutée lorsqu'il se produit.
+3. Expliquer le rôle de `event.preventDefault()` dans le cas d'un bouton `type="submit"`.
+
+## Question 4 — Tracer le comportement (4 points)
+
+Pour chaque scénario, écrire dans l'ordre : valeur de `choix.value`, condition évaluée, affectation réalisée, texte finalement visible.
+
+1. L'utilisateur ne choisit aucun projet puis clique sur « Voter ».
+2. L'utilisateur choisit « Serre connectée » puis clique sur « Voter ».
+
+## Question 5 — Modifier le gestionnaire (4 points)
+
+On veut empêcher un second vote après un choix valide, tout en laissant le bouton actif lorsque le choix est vide.
+
+1. Indiquer à quel endroit précis de `traiterVote` ajouter l'instruction.
+2. Écrire l'instruction DOM qui désactive le bouton.
+3. Expliquer pourquoi placer cette instruction avant le `if` ne respecte pas le besoin.
+
+## Repères enseignant — à masquer dans la projection élève
+
+| Question | Réponse attendue centrale | Raisonnement observable | Piège à éviter | Critère décisif |
+|---|---|---|---|---|
+| 1 | `header` et `main` sont frères ; `form` contient `label`, `select`, `button` ; `p` est frère de `form` | `for="projet"` désigne `id="projet"` | placer `p` dans le formulaire ou confondre `id` et `name` | arbre et association label/champ justifiés |
+| 2 | `#message`, `#vote button`, puis règle sur `#message` ou `.info` | comparer l'ensemble des éléments ciblés | proposer `message` sans `#` | sélecteurs effectivement applicables au code |
+| 3 | clic → `traiterVote`; `preventDefault` bloque la soumission/rechargement par défaut | suivre liaison DOM puis événement | croire que `querySelector` modifie déjà la page | événement, fonction et effet par défaut distingués |
+| 4 | vide → message d'erreur ; `serre` → « Vote enregistré : serre » | suivre branche puis `return` | afficher le libellé « Serre connectée » au lieu de la valeur `serre` | deux traces complètes et ordonnées |
+| 5 | ajouter `bouton.disabled = true;` après la branche vide, avant ou après le message valide | l'instruction n'est atteinte que pour un choix valide | désactiver avant le test | placement relié à la condition |
+
+## Critères de réussite et erreurs fréquentes — repères enseignant
+
+- **Critère de réussite observable 1.** L'arbre produit permet de retrouver sans ambiguïté les relations parent, enfant et frère du fragment fourni.
+- **Critère de réussite observable 2.** La trace du clic nomme l'événement, la branche exécutée, le contenu final de `#message` et l'état final du bouton.
+- **Erreur fréquente 1 — confondre valeur et libellé d'une option.** `select.value` renvoie ici `serre`, pas « Serre connectée ». Antidote : lire séparément l'attribut `value` et le texte visible.
+- **Erreur fréquente 2 — désactiver avant la validation.** Le bouton deviendrait inactif même quand le choix est vide. Antidote : placer l'instruction après le `return` de la branche d'erreur.
+
+Le résultat attendu pour la question 4 comporte deux traces distinctes et ordonnées ; une phrase donnant seulement le message final ne constitue pas une correction vérifiable.
 
 ## Aménagement
-- Version aménagée : `P08_version_amenagee_html_css_dom.md` ; consignes découpées et barème conservé.
+
+La version commune `P08_version_amenagee_web_http_dom_formulaires.md` doit être utilisée en ne dévoilant que les aides HTML/CSS/DOM correspondant à ce sujet.

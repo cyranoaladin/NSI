@@ -1,35 +1,35 @@
 # Inventaire ressources NSI
 
-- Total ressources : 1162
+- Total ressources : 1174
 - Ressources pédagogiques : 53
-- Ressources techniques : 1109
+- Ressources techniques : 1121
 - Ressources copiées dans banques : 0
 
 ## Répartition par source
 - adapted_from_drive: 7
-- generated: 1154
+- generated: 1166
 - import_partiel: 1
 
 ## Répartition par niveau
-- interne: 597
-- premiere: 262
+- interne: 605
+- premiere: 266
 - terminale: 303
 
 ## Répartition par type
 - banque: 14
-- document: 735
+- document: 744
 - python: 84
 - script: 210
 - sequence: 45
-- test: 74
+- test: 77
 
 ## Répartition par statut
-- needs_review: 1162
+- needs_review: 1174
 
 ## Répartition audience
-- corrige: 80
+- corrige: 82
 - eleve: 143
-- mixte: 936
+- mixte: 946
 - professeur: 3
 
 ## Catégories (distinguer exigences)
@@ -266,7 +266,11 @@
   - 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
   - 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md
+  - 03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md
+  - 03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md
+  - 03_progressions/supports/premiere/P08/P08_corrige_html_css_dom.md
+  - 03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md
@@ -723,6 +727,8 @@
   - reports/closure2/rag_v2_rebuilt_report.md
   - reports/closure2/rag_v2_versioned_report.md
   - reports/drive_enrichment_report.md
+  - reports/excellence_editorial_review_nsi.md
+  - reports/excellence_remediation_progress.md
   - reports/final_recipe_review_nsi.md
   - reports/human_review_checklist_accessibility.md
   - reports/human_review_checklist_pedagogy.md
@@ -750,6 +756,9 @@
   - reports/reconciliation/rag_reindex_plan.md
   - reports/reconciliation/reconciliation_report.md
   - reports/reconciliation/reconciliation_verification_report.md
+  - reports/recovery_t10_p08_t17_from_blobs.md
+  - reports/td_quality_debt_register.yml
+  - reports/td_quality_debt_report.md
   - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
@@ -1139,6 +1148,7 @@
   - tests/test_drive_portable_and_manifest.py
   - tests/test_ellipsis_scoping.py
   - tests/test_env_file_resolution.py
+  - tests/test_excellence_remediation_regressions.py
   - tests/test_executable_quality_controls.py
   - tests/test_final_quality_hardening.py
   - tests/test_first_batch_alignment.py
@@ -1159,6 +1169,7 @@
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
   - tests/test_no_inline_env_resolution.py
+  - tests/test_no_placeholders_code.py
   - tests/test_no_stale_archive_guard.py
   - tests/test_notional_and_disciplinary_controls.py
   - tests/test_operational_substance_controls.py
@@ -1173,6 +1184,7 @@
   - tests/test_ready_supports_gates.py
   - tests/test_register_semantic_consistency.py
   - tests/test_render_substance_report_cli.py
+  - tests/test_render_unit.py
   - tests/test_repo_topology.py
   - tests/test_run_python_tests.py
   - tests/test_secret_guard.py
@@ -1482,7 +1494,11 @@
   - 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
   - 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md
+  - 03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md
+  - 03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md
+  - 03_progressions/supports/premiere/P08/P08_corrige_html_css_dom.md
+  - 03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md
   - 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md
@@ -1913,6 +1929,8 @@
   - reports/closure2/rag_v2_rebuilt_report.md
   - reports/closure2/rag_v2_versioned_report.md
   - reports/drive_enrichment_report.md
+  - reports/excellence_editorial_review_nsi.md
+  - reports/excellence_remediation_progress.md
   - reports/final_recipe_review_nsi.md
   - reports/human_review_checklist_accessibility.md
   - reports/human_review_checklist_pedagogy.md
@@ -1940,6 +1958,9 @@
   - reports/reconciliation/rag_reindex_plan.md
   - reports/reconciliation/reconciliation_report.md
   - reports/reconciliation/reconciliation_verification_report.md
+  - reports/recovery_t10_p08_t17_from_blobs.md
+  - reports/td_quality_debt_register.yml
+  - reports/td_quality_debt_report.md
   - reports_policy.md
   - requirements.txt
   - reviewer_confirmation.schema.json
@@ -2303,6 +2324,7 @@
   - tests/test_drive_portable_and_manifest.py
   - tests/test_ellipsis_scoping.py
   - tests/test_env_file_resolution.py
+  - tests/test_excellence_remediation_regressions.py
   - tests/test_executable_quality_controls.py
   - tests/test_final_quality_hardening.py
   - tests/test_first_batch_alignment.py
@@ -2323,6 +2345,7 @@
   - tests/test_no_coverage_from_sheets_only.py
   - tests/test_no_global_archive_in_delivery_context.py
   - tests/test_no_inline_env_resolution.py
+  - tests/test_no_placeholders_code.py
   - tests/test_no_stale_archive_guard.py
   - tests/test_notional_and_disciplinary_controls.py
   - tests/test_operational_substance_controls.py
@@ -2337,6 +2360,7 @@
   - tests/test_ready_supports_gates.py
   - tests/test_register_semantic_consistency.py
   - tests/test_render_substance_report_cli.py
+  - tests/test_render_unit.py
   - tests/test_repo_topology.py
   - tests/test_run_python_tests.py
   - tests/test_secret_guard.py
@@ -2372,7 +2396,7 @@
 - P05: 10
 - P06: 10
 - P07: 11
-- P08: 14
+- P08: 18
 - P09: 10
 - P10: 10
 - P11: 10
@@ -2622,6 +2646,8 @@
 - 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
 - 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md
+- 03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md
+- 03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md
@@ -3025,6 +3051,8 @@
 - reports/closure2/rag_v2_rebuilt_report.md
 - reports/closure2/rag_v2_versioned_report.md
 - reports/drive_enrichment_report.md
+- reports/excellence_editorial_review_nsi.md
+- reports/excellence_remediation_progress.md
 - reports/final_recipe_review_nsi.md
 - reports/human_review_checklist_accessibility.md
 - reports/human_review_checklist_pedagogy.md
@@ -3052,6 +3080,9 @@
 - reports/reconciliation/rag_reindex_plan.md
 - reports/reconciliation/reconciliation_report.md
 - reports/reconciliation/reconciliation_verification_report.md
+- reports/recovery_t10_p08_t17_from_blobs.md
+- reports/td_quality_debt_register.yml
+- reports/td_quality_debt_report.md
 - reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json
@@ -3434,6 +3465,7 @@
 - tests/test_drive_portable_and_manifest.py
 - tests/test_ellipsis_scoping.py
 - tests/test_env_file_resolution.py
+- tests/test_excellence_remediation_regressions.py
 - tests/test_executable_quality_controls.py
 - tests/test_final_quality_hardening.py
 - tests/test_first_batch_alignment.py
@@ -3454,6 +3486,7 @@
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
 - tests/test_no_inline_env_resolution.py
+- tests/test_no_placeholders_code.py
 - tests/test_no_stale_archive_guard.py
 - tests/test_notional_and_disciplinary_controls.py
 - tests/test_operational_substance_controls.py
@@ -3468,6 +3501,7 @@
 - tests/test_ready_supports_gates.py
 - tests/test_register_semantic_consistency.py
 - tests/test_render_substance_report_cli.py
+- tests/test_render_unit.py
 - tests/test_repo_topology.py
 - tests/test_run_python_tests.py
 - tests/test_secret_guard.py
@@ -3727,7 +3761,11 @@
 - 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_TP_html_css_dom.md
 - 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md
+- 03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md
+- 03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md
+- 03_progressions/supports/premiere/P08/P08_corrige_html_css_dom.md
+- 03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md
 - 03_progressions/supports/premiere/P08/P08_evaluation_html_css_dom.md
@@ -4185,6 +4223,8 @@
 - reports/closure2/rag_v2_rebuilt_report.md
 - reports/closure2/rag_v2_versioned_report.md
 - reports/drive_enrichment_report.md
+- reports/excellence_editorial_review_nsi.md
+- reports/excellence_remediation_progress.md
 - reports/final_recipe_review_nsi.md
 - reports/human_review_checklist_accessibility.md
 - reports/human_review_checklist_pedagogy.md
@@ -4212,6 +4252,9 @@
 - reports/reconciliation/rag_reindex_plan.md
 - reports/reconciliation/reconciliation_report.md
 - reports/reconciliation/reconciliation_verification_report.md
+- reports/recovery_t10_p08_t17_from_blobs.md
+- reports/td_quality_debt_register.yml
+- reports/td_quality_debt_report.md
 - reports_policy.md
 - requirements.txt
 - reviewer_confirmation.schema.json
@@ -4601,6 +4644,7 @@
 - tests/test_drive_portable_and_manifest.py
 - tests/test_ellipsis_scoping.py
 - tests/test_env_file_resolution.py
+- tests/test_excellence_remediation_regressions.py
 - tests/test_executable_quality_controls.py
 - tests/test_final_quality_hardening.py
 - tests/test_first_batch_alignment.py
@@ -4621,6 +4665,7 @@
 - tests/test_no_coverage_from_sheets_only.py
 - tests/test_no_global_archive_in_delivery_context.py
 - tests/test_no_inline_env_resolution.py
+- tests/test_no_placeholders_code.py
 - tests/test_no_stale_archive_guard.py
 - tests/test_notional_and_disciplinary_controls.py
 - tests/test_operational_substance_controls.py
@@ -4635,6 +4680,7 @@
 - tests/test_ready_supports_gates.py
 - tests/test_register_semantic_consistency.py
 - tests/test_render_substance_report_cli.py
+- tests/test_render_unit.py
 - tests/test_repo_topology.py
 - tests/test_run_python_tests.py
 - tests/test_secret_guard.py

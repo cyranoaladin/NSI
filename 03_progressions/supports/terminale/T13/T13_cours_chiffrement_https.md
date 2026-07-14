@@ -86,7 +86,7 @@ Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test
 
 ## Critères de réussite observables
 - Une capacité parmi T-ARCH-04A, T-ARCH-04B est citée et utilisée.
-- Le résultat attendu est explicite : message chiffré avec Ksession.
+- Le résultat formulé explicite la protection des données applicatives sans confondre les rôles des clés.
 - Le cas limite `clé publique non vérifiée` est tranché.
 
 ## Lien avec la progression

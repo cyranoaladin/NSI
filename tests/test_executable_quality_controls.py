@@ -30,7 +30,10 @@ class ExecutableQualityControlsTest(unittest.TestCase):
             "JOIN Note ON Eleve.id_eleve = Note.id_eleve "
             "WHERE note >= 15 ORDER BY Note.note DESC"
         )
-        self.assertEqual(sql_consistency.execute_sql_query(query), [("Ada", 17)])
+        self.assertEqual(
+            sql_consistency.execute_sql_query(query),
+            [("Grace", 18), ("Ada", 17), ("Grace", 15)],
+        )
 
         bad_block = (
             f"Requête : `{query}`\n"
@@ -46,8 +49,25 @@ class ExecutableQualityControlsTest(unittest.TestCase):
         update = "UPDATE Note SET note = 18 WHERE id_note = 10"
         delete = "DELETE FROM Note WHERE id_note = 11"
 
-        self.assertEqual(sql_consistency.execute_sql_update_summary(update), {"Ada": 18, "Linus": 13})
-        self.assertEqual(sql_consistency.execute_sql_delete_summary(delete), {"Ada": 17})
+        self.assertEqual(
+            sql_consistency.execute_sql_update_summary(update),
+            {10: 18, 11: 13, 12: 15, 13: 14, 14: 9, 15: 18},
+        )
+        self.assertEqual(
+            sql_consistency.execute_sql_delete_summary(delete),
+            {10: 17, 12: 15, 13: 14, 14: 9, 15: 18},
+        )
+
+    def test_sql_insert_simulation_returns_inserted_row(self) -> None:
+        insert = (
+            "INSERT INTO Note(id_note, id_eleve, matiere, note) "
+            "VALUES (16, 4, 'MATHS', 12)"
+        )
+
+        self.assertEqual(
+            sql_consistency.execute_sql_inserted_row(insert, 16),
+            (16, 4, "MATHS", 12),
+        )
 
     def test_graph_bfs_predecessors_and_path_are_executable(self) -> None:
         graph = graph_trace.parse_undirected_edges("Graphe non orienté : A-B, B-C, A-D.")

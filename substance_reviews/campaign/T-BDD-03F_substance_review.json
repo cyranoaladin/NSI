@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-06T12:20:23Z",
+  "judged_at": "2026-07-13T00:41:50Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md",
-        "anchor": "#à-savoir",
-        "quote": "- INSERT.\n- UPDATE avec WHERE.\n- DELETE avec WHERE.",
+        "anchor": "#4-ajouter-une-ligne-avec-insert",
+        "quote": "`INSERT` ajoute une nouvelle ligne. Les colonnes et les valeurs doivent être dans le même ordre.\n\n```sql\nINSERT INTO Note(id_note, id_eleve, matiere, note)\nVALUES (16, 2, 'MATHS', 16);\n```",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md",
-        "anchor": "#exercice-6",
-        "quote": "- Capacité officielle : T-BDD-03F.\n- Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=zeta\n- Consigne : filtrer note >= 15 ; traiter aussi `DELETE sans WHERE` si nécessaire.",
+        "anchor": "#exercice-2--insérer-une-ligne-socle-8-min",
+        "quote": "Linus obtient 16 en mathématiques. La nouvelle note doit avoir l'identifiant 16.\n\n1. Écrire l'instruction `INSERT` en nommant les quatre colonnes.\n2. Écrire le `SELECT` qui vérifie uniquement la ligne 16.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
-        "file": "03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md",
-        "anchor": "#corrigé-exercice-6",
-        "quote": "- Capacité mobilisée : T-BDD-03F.\n- Résultat attendu : JOIN -> Ada 17.\n- Justification : la tâche `filtrer note >= 15` s applique à `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)` ; erreur évitée : WHERE omis dans UPDATE.",
+        "file": "03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md",
+        "anchor": "#exercice-2--insérer",
+        "quote": "```sql\nINSERT INTO Note(id_note, id_eleve, matiere, note)\nVALUES (16, 2, 'MATHS', 16);\n\nSELECT id_note, id_eleve, matiere, note\nFROM Note\nWHERE id_note = 16;\n```\n\nRésultat du contrôle : `(16, 2, 'MATHS', 16)`.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours mentionne INSERT dans la liste des commandes à savoir. Le TD propose un exercice tagué T-BDD-03F avec consigne et données explicites. Le corrigé intégré fournit le résultat attendu pour cette capacité. Cependant, la pratique de INSERT reste très superficielle, les exercices portant surtout sur SELECT/JOIN/UPDATE/DELETE.",
+      "justification": "Le cours enseigne la syntaxe INSERT avec exemple, le TD fait pratiquer la rédaction d'un INSERT en nommant les colonnes, et le corrigé fournit la requête complète avec le résultat attendu.",
       "scientific_flags": [
         "human_review_required"
       ]

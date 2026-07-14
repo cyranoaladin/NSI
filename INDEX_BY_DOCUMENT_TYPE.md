@@ -5,13 +5,13 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 
 ## Synthèse
 
-- Nombre total de ressources : 530
-- Nombre par statut : {'needs_review': 530}
-- Nombre par type de document : {'bareme': 41, 'corrige': 67, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
-- Ressources avec capacity_ids : 445
+- Nombre total de ressources : 534
+- Nombre par statut : {'needs_review': 534}
+- Nombre par type de document : {'bareme': 43, 'corrige': 69, 'cours': 44, 'document': 36, 'evaluation': 43, 'fiche_cours': 44, 'python': 52, 'remediation': 35, 'td': 43, 'tp': 42, 'tp_papier': 7, 'trace': 41, 'version_amenagee': 35}
+- Ressources avec capacity_ids : 449
 - Ressources sans capacity_ids : 85
-- Ressources avec audience renseignée : 530
-- Ressources avec session renseignée : 530
+- Ressources avec audience renseignée : 534
+- Ressources avec session renseignée : 534
 
 ## bareme
 
@@ -26,6 +26,8 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P05/P05_bareme_tables_csv.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P06/P06_bareme_tables_recherche_tri_fusion.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P07/P07_bareme_fonctions_tests_specifications.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_bareme_html_css_dom.md` — bareme — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P09/P09_bareme_architecture_os_droits.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P10/P10_bareme_reseaux_protocoles_paquets.md` — bareme — needs_review — professeur
@@ -78,6 +80,8 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P06/code/P06_corrige_professeur_tables_recherche_tri_fusion.py` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P07/P07_corrige_fonctions_tests_specifications.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P07/code/P07_corrige_professeur_fonctions_tests_specifications.py` — corrige — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_corrige_html_css_dom.md` — corrige — needs_review — professeur
+- `03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P09/P09_corrige_architecture_os_droits.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P09/code/P09_corrige_professeur_architecture_os_droits.py` — corrige — needs_review — professeur

@@ -1,54 +1,92 @@
 sequence: T17
 level: terminale
-theme: programmation dynamique
-notion: programmation dynamique
+theme: Algorithmique
+notion: Programmation dynamique
 status: needs_review
-notions_exigibles:
-- état
-- récurrence
-- initialisation
-- mémoïsation
-- tabulation
-- sous-problèmes
-- complexité mémoire
+
 capacites_officielles:
-- T-ALGO-04
+  - T-ALGO-04
+
+notions_exigibles:
+  - état représentant un sous-problème
+  - cas de base et sentinelle d'impossibilité
+  - relation de récurrence
+  - ordre de tabulation respectant les dépendances
+  - reconstruction par table de choix
+  - comparaison avec un choix glouton
+  - complexités en temps et en mémoire
+
 exemples_obligatoires:
-- dp[6]=2 avec 5+1
-- dp[11]=3 avec 5+5+1
-- tabulation stocke chaque dp[m]
-- sans pièce 1 certains montants impossibles
+  - contre-exemple glouton sur un rendu de monnaie
+  - table complète avec candidats et minimum
+  - montant nul et montant impossible
+  - reconstruction d'une décomposition optimale
+  - transfert sur une grille de coût minimal
+
 cas_limites:
-- montant 0
-- montant impossible
-- pièce plus grande que m
+  - montant 0
+  - montant impossible
+  - pièce plus grande que le montant courant
+  - liste vide pour un montant positif
+  - valeur de pièce nulle ou négative
+
 erreurs_frequentes:
-- état ambigu
-- initialisation oubliée
-- choix de pièce confondu avec valeur optimale
+  - état ambigu
+  - initialisation de toutes les cases à zéro
+  - lecture d'un état non calculé
+  - choix glouton confondu avec optimum global
+  - sentinelle numérique renvoyée comme solution
+  - valeur optimale confondue avec reconstruction
+
 types_exercices_attendus:
-- lecture de donnée
-- production de méthode
-- cas limite
-- justification
-- transfert
-tp_attendu: TP papier justifié avec trace, barème et corrigé question par question
+  - lecture d'une table
+  - trace complète de tabulation
+  - production d'un contre-exemple
+  - écriture d'algorithme
+  - débogage d'initialisation
+  - transfert vers un état bidimensionnel
+
+tp_attendu:
+  duree: 75_minutes
+  fonctions:
+    - construire_table
+    - rendu_monnaie_dp
+  livrables:
+    - fichier Python complété
+    - compte rendu avec traces et complexités
+  tests:
+    - cas nominal où le glouton échoue
+    - montant nul
+    - montant impossible
+    - entrées invalides
+
 interdits_pedagogiques:
-- réponse sans donnée exploitable
-- résultat non vérifiable
-- capacité citée sans exercice associé
+  - résultat final sans table ni trace
+  - pseudo-code générique sans état ni récurrence
+  - huit exercices différant seulement par une étiquette
+  - version aménagée donnant la table finale
+  - barème abstrait sans critère algorithmique
+
 criteres_validation_humaine:
-- relecture pédagogique indépendante
-- vérification scientifique
-- alignement BO 2019
-- décision de publication séparée
+  - état interprétable indépendamment du code
+  - relation justifiée par une dernière décision
+  - ordre de calcul cohérent avec les dépendances
+  - concordance table, code, tests et reconstruction
+  - alignement avec le programme NSI 2019
+  - décision de publication séparée
+
 must_include:
-- état
-- récurrence
-- initialisation
-- mémoïsation
-- dp[6]=2 avec 5+1
-- montant 0
+  - état
+  - initialisation
+  - récurrence
+  - tabulation
+  - reconstruction
+  - cas impossible
+  - complexité
+
 must_not:
-- réponse sans donnée exploitable
-- résultat non vérifiable
+  - jeu_exercice=alpha
+  - cas_alpha
+  - if cas_alpha
+  - réponse sans donnée exploitable
+  - résultat non vérifiable

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "terminale",
-  "judged_at": "2026-07-06T06:15:10Z",
+  "judged_at": "2026-07-13T00:42:04Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_cours_sql_select_where_join.md",
-        "anchor": "#à-savoir",
-        "quote": "- UPDATE avec WHERE.\n- DELETE avec WHERE.",
+        "anchor": "#5-modifier-des-lignes-avec-update--where",
+        "quote": "### Méthode de modification sûre\n\n1. Écrire un `SELECT` avec le futur `WHERE` pour voir les lignes ciblées.\n2. Vérifier que le nombre et l'identité des lignes correspondent à l'intention.\n3. Remplacer `SELECT ... FROM` par `UPDATE ... SET`, en conservant exactement le même `WHERE`.\n4. Exécuter un nouveau `SELECT` pour contrôler le résultat.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
-        "file": "03_progressions/supports/terminale/T10/T10_TD_sql_select_where_join.md",
-        "anchor": "#exercice-7",
-        "quote": "- Capacité officielle : T-BDD-03G.\n- Données : `Eleve(1,Ada,T1), Eleve(2,Linus,T2) ; Note(10,1,NSI,17), Note(11,2,NSI,13)`. ; jeu_exercice=eta\n- Consigne : joindre Eleve.id_eleve = Note.id_eleve ; traiter aussi `JOIN sans ON` si nécessaire.\n- Réponse attendue : UPDATE id_note=10 -> Ada 18.",
+        "file": "03_progressions/supports/terminale/T10/T10_TD_sql_insert_update_delete.md",
+        "anchor": "#exercice-3--corriger-une-seule-note-standard-10-min",
+        "quote": "La note d'identifiant 11 vaut 16 et non 13.\n\n1. Écrire le `SELECT` de contrôle avant modification.\n2. Écrire un `UPDATE` qui ne modifie que cette ligne.\n3. Réutiliser le contrôle après modification et donner les résultats avant/après.\n4. Justifier pourquoi `WHERE id_eleve = 2` serait moins précis dans une base où Linus peut avoir plusieurs notes.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/terminale/T10/T10_corrige_sql_select_where_join.md",
-        "anchor": "#exercice-7",
-        "quote": "- Réponse attendue : UPDATE id_note=10 -> Ada 18.\n- Méthode : joindre Eleve.id_eleve = Note.id_eleve.\n- Cas limite : JOIN sans ON.",
+        "anchor": "#exercice-3--mettre-à-jour-une-seule-note",
+        "quote": "```sql\nSELECT id_note, note FROM Note WHERE id_note = 11;\nUPDATE Note SET note = 16 WHERE id_note = 11;\nSELECT id_note, note FROM Note WHERE id_note = 11;\n```\n\nAvant : `(11, 13)`. Après : `(11, 16)`. Les autres lignes restent inchangées.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours liste UPDATE avec WHERE parmi les commandes à savoir. L'exercice 7 du TD fait pratiquer la construction d'une requête UPDATE (T-BDD-03G) avec données explicites. Le corrigé fournit la réponse attendue UPDATE id_note=10 -> Ada 18.",
+      "justification": "Le cours enseigne la méthode sûre d'UPDATE avec SELECT de contrôle avant/après. Le TD fait pratiquer la construction d'un UPDATE ciblé avec justification du choix de clé. Le corrigé fournit les requêtes complètes et les états avant/après.",
       "scientific_flags": [
         "human_review_required"
       ]

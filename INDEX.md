@@ -16,6 +16,7 @@
   - `premiere/sequences/s01_representation_donnees/projet_associe.md`
   - `premiere/sequences/s01_representation_donnees/python/representation_tools.py`
   - `premiere/sequences/s01_representation_donnees/qcm.json`
+  - `premiere/sequences/s01_representation_donnees/revue_substance.md`
   - `premiere/sequences/s01_representation_donnees/sequence.yaml`
   - `premiere/sequences/s01_representation_donnees/sources.md`
   - `premiere/sequences/s01_representation_donnees/td.md`
