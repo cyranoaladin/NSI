@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-14T23:26:31Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -19,8 +19,8 @@
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
-        "anchor": "#exercice-2",
-        "quote": "Consigne : cibler #nom en CSS et DOM ; traiter aussi `paramètre jour absent` si nécessaire.",
+        "anchor": "#exercice-5--réagir-à-un-événement",
+        "quote": "Critère de réussite : `click` est identifié comme le signal reçu et `saluer` comme la fonction appelée ; le texte ne change pas au chargement seul.",
         "teaches": true
       },
       "proof_correction": {

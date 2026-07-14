@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-14T23:26:31Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -19,8 +19,8 @@
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
-        "anchor": "#exercice-3",
-        "quote": "Consigne : lire jour dans URL ; traiter aussi `formulaire sans action` si nécessaire.",
+        "anchor": "#exercice-3--modifier-une-page-par-le-dom",
+        "quote": "Consigne : écris deux instructions JavaScript : la première sélectionne le paragraphe dans une variable `etat`, la seconde remplace uniquement son texte par « Inscription confirmée ».",
         "teaches": true
       },
       "proof_correction": {

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-11T19:19:20Z",
+  "judged_at": "2026-07-14T23:26:31Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -18,9 +18,9 @@
       },
       "proof_practice": {
         "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
+        "file": "03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md",
         "anchor": "#exercice-5",
-        "quote": "Consigne : classer chaque mécanisme (cookie, localStorage, sessionStorage) selon qu'il est retransmis au serveur à chaque requête ou mémorisé uniquement côté client.",
+        "quote": "Consigne : (5a) parmi `session_id`, `nom=Ali` (corps POST) et `theme=sombre` (localStorage), indiquez lesquels sont retransmis automatiquement au serveur à la prochaine requête ; (5b) expliquez pourquoi `localStorage` n'est pas retransmis ; traitez aussi le cas `cookie expiré` si nécessaire.",
         "teaches": true
       },
       "proof_correction": {

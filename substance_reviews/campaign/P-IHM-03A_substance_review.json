@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-14T23:26:31Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -18,9 +18,9 @@
       },
       "proof_practice": {
         "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
-        "anchor": "#exercice-4",
-        "quote": "Capacité officielle : P-IHM-03A.",
+        "file": "03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md",
+        "anchor": "#exercice-3",
+        "quote": "Expliquez pourquoi la vérification du mot de passe doit être faite par le serveur et non par le JavaScript du navigateur.",
         "teaches": true
       },
       "proof_correction": {

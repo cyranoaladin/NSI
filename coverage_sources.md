@@ -648,7 +648,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | cours | 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md | needs_review |
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
-| td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
 | tp | 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md | needs_review |
 | trace | 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md | needs_review |
@@ -668,7 +667,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | cours | 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md | needs_review |
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
-| td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
 | tp | 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md | needs_review |
 | trace | 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md | needs_review |
@@ -688,7 +686,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | cours | 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md | needs_review |
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
-| td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
 | tp | 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md | needs_review |
 | trace | 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md | needs_review |
@@ -708,7 +705,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | cours | 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md | needs_review |
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
-| td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
 | tp | 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md | needs_review |
 | trace | 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md | needs_review |
@@ -728,7 +724,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | cours | 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md | needs_review |
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
-| td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
 | tp | 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md | needs_review |
 | trace | 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md | needs_review |
@@ -748,7 +743,6 @@ Aucune preuve listée ici ne valide pédagogiquement une capacité : les ressour
 | cours | 03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md | needs_review |
 | evaluation | 03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md | needs_review |
 | remediation | 03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md | needs_review |
-| td | 03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md | needs_review |
 | td | 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md | needs_review |
 | tp | 03_progressions/supports/premiere/P08/P08_TP_http_get_post_formulaires.md | needs_review |
 | trace | 03_progressions/supports/premiere/P08/P08_trace_web_http_dom_formulaires.md | needs_review |

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-07T18:38:22Z",
+  "judged_at": "2026-07-14T23:26:31Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -18,9 +18,9 @@
       },
       "proof_practice": {
         "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
+        "file": "03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md",
         "anchor": "#exercice-6",
-        "quote": "- Capacité officielle : P-IHM-03C.\n- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=zeta\n- Consigne : cibler #nom en CSS et DOM ; traiter aussi `formulaire sans action` si nécessaire.",
+        "quote": "Consigne : (6a) pour chaque scénario, dites si les données sont chiffrées sur le réseau et justifiez ; (6b) expliquez pourquoi POST seul ne suffit pas à protéger les données ; traitez aussi le cas `GET avec HTTPS` si nécessaire.",
         "teaches": true
       },
       "proof_correction": {
