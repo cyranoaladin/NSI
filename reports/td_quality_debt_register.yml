@@ -241,17 +241,6 @@ entries:
     note: >
       Dette connue, non certifiante, à normaliser dans un lot dédié. Toute
       modification invalide l’empreinte et impose une revue explicite.
-  - path: 03_progressions/supports/terminale/T13/T13_TD_chiffrement_https.md
-    level: terminale
-    sequence: T13
-    debt_types:
-      - exercices_quasi_identiques
-      - corrections_quasi_identiques
-    classification: vraie_dette
-    sha256: 54d8c026af399eae6cf110375073a77bc2df9754eab9f32a69214d6b3f4bd6a5
-    note: >
-      Dette connue, non certifiante, à normaliser dans un lot dédié. Toute
-      modification invalide l’empreinte et impose une revue explicite.
   - path: 03_progressions/supports/terminale/T14/T14_TD_modularite_api_paradigmes_bugs.md
     level: terminale
     sequence: T14
