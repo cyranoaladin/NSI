@@ -4,7 +4,7 @@ level: "terminale"
 sequence_id: "T13"
 document_type: "bareme"
 status: "needs_review"
-version: "0.6.0"
+version: "0.7.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
 theme: "chiffrement et HTTPS"
@@ -22,17 +22,17 @@ official_program:
 - 8 exercices : 1 point donnée, 1 point méthode, 1 point résultat, 1 point cas limite.
 
 ## TP
-- 2 points donnée `Ksession, clé publique serveur Kpub, certificat signé par Autorité-Test`.
-- 3 points tâche `protéger Ksession par asymétrique`.
-- 3 points résultat `message chiffré avec Ksession`.
-- 2 points cas limite `certificat expiré`.
+- 2 points : trois objectifs de sécurité nommés et reliés à des menaces.
+- 3 points : justification de la combinaison asymétrique et symétrique.
+- 3 points : vérification du certificat (domaine, validité, signature, chaîne de confiance).
+- 2 points : cas limite `certificat expiré` décidé avec justification.
 
 ## Évaluation question par question
-- Question 1 : 4 points sur T-ARCH-04A avec résultat `message chiffré avec Ksession`.
-- Question 2 : 4 points sur T-ARCH-04B avec résultat `Ksession chiffrée avec Kpub serveur`.
-- Question 3 : 4 points sur T-ARCH-04A avec résultat `Autorité-Test signe serveur.example`.
-- Question 4 : 4 points sur T-ARCH-04B avec résultat `HTTP sans TLS ne protège pas`.
+- Question 1 : 4 points sur T-ARCH-04A avec résultat `trois objectifs de sécurité nommés et justifiés`.
+- Question 2 : 4 points sur T-ARCH-04B avec résultat `Ksession chiffrée avec Kpub pour l'échange, données chiffrées avec Ksession pour la rapidité`.
+- Question 3 : 4 points sur T-ARCH-04A avec résultat `vérification du certificat sur domaine, validité, signature et chaîne de confiance`.
+- Question 4 : 4 points sur T-ARCH-04B avec résultat `hachage / intégrité, chiffrement asymétrique / confidentialité, signature / authentification`.
 
 ## Critères observables
-- Trace, table, valeur ou pseudo-code présent.
+- Trace, table, valeur ou justification présente.
 - Cas limite et erreur fréquente explicités.

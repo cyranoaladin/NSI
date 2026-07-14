@@ -2,9 +2,9 @@
 
 ## Synthèse
 
-- 29 TD historiques restent enregistrés.
+- 28 TD historiques restent enregistrés.
 - 14 TD de Première.
-- 15 TD de Terminale.
+- 14 TD de Terminale.
 - Le diagnostic initial a relevé 42 alertes : 29 sur corrigés quasi identiques et 13 sur exercices quasi identiques.
 - Conclusion : situation mixte, avec dette réelle et faux positifs.
 
@@ -13,7 +13,7 @@ Le registre est non certifiant et non promotionnel.
 La normalisation doit être traitée dans un lot dédié.
 Toute modification d’un TD enregistré invalide son empreinte et impose une revue.
 
-P12 est sorti du registre après normalisation dans LOT TD-NORMALISATION-01. Ce retrait n’emporte aucune promotion de statut et laisse les 29 autres dettes à traiter dans des lots dédiés.
+P12 est sorti du registre après normalisation dans LOT TD-NORMALISATION-01. T13 est sorti du registre après normalisation dans LOT TD-NORMALISATION-02. Ces retraits n’emportent aucune promotion de statut et laissent les 28 autres dettes à traiter dans des lots dédiés.
 
 ## TD enregistrés
 
@@ -42,7 +42,6 @@ P12 est sorti du registre après normalisation dans LOT TD-NORMALISATION-01. Ce 
 | terminale | T09 | `03_progressions/supports/terminale/T09/T09_TD_bases_relationnelles_cles_contraintes.md` | mixte | corrections_quasi_identiques | revue |
 | terminale | T11 | `03_progressions/supports/terminale/T11/T11_TD_processus_ordonnancement_interblocage.md` | mixte | exercices_quasi_identiques, corrections_quasi_identiques | revue |
 | terminale | T12 | `03_progressions/supports/terminale/T12/T12_TD_routage_rip_ospf.md` | mixte | exercices_quasi_identiques, corrections_quasi_identiques | revue |
-| terminale | T13 | `03_progressions/supports/terminale/T13/T13_TD_chiffrement_https.md` | vraie_dette | exercices_quasi_identiques, corrections_quasi_identiques | haute |
 | terminale | T14 | `03_progressions/supports/terminale/T14/T14_TD_modularite_api_paradigmes_bugs.md` | mixte | exercices_quasi_identiques, corrections_quasi_identiques | revue |
 | terminale | T15 | `03_progressions/supports/terminale/T15/T15_TD_calculabilite_arret.md` | mixte | corrections_quasi_identiques | revue |
 | terminale | T16 | `03_progressions/supports/terminale/T16/T16_TD_diviser_pour_regner_tri_fusion.md` | mixte | exercices_quasi_identiques, corrections_quasi_identiques | revue |
