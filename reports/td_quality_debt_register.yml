@@ -128,17 +128,6 @@ entries:
     note: >
       Dette connue, non certifiante, à normaliser dans un lot dédié. Toute
       modification invalide l’empreinte et impose une revue explicite.
-  - path: 03_progressions/supports/premiere/P12/P12_TD_tris_invariants_complexite.md
-    level: premiere
-    sequence: P12
-    debt_types:
-      - exercices_quasi_identiques
-      - corrections_quasi_identiques
-    classification: vraie_dette
-    sha256: acf379c93552277df293d97ab37f87f8267600f4674f380e7b92bc6b22bb84e4
-    note: >
-      Dette connue, non certifiante, à normaliser dans un lot dédié. Toute
-      modification invalide l’empreinte et impose une revue explicite.
   - path: 03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md
     level: premiere
     sequence: P13

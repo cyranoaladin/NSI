@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 import scripts.check_linked_evaluation_quality as evaluation_quality
 import scripts.check_linked_td_quality as td_quality
+import scripts.check_linked_td_substance as td_substance
 import scripts._operational_links as operational_links
 import scripts.check_operational_supports_no_indicative_debt as operational_debt
 
@@ -483,6 +484,20 @@ class LinkedSupportQualityTest(unittest.TestCase):
 
         self.assertEqual(result.errors, [])
         self.assertEqual(result.registered_debt, [])
+
+    def test_normalized_p12_td_has_no_intrinsic_quality_alert(self) -> None:
+        td = ROOT / "03_progressions/supports/premiere/P12/P12_TD_tris_invariants_complexite.md"
+
+        errors = td_quality.analyze_one_td(td, ROOT)
+
+        self.assertEqual(errors, [])
+
+    def test_normalized_p12_td_has_substantive_corrections(self) -> None:
+        td = ROOT / "03_progressions/supports/premiere/P12/P12_TD_tris_invariants_complexite.md"
+
+        errors = td_substance.analyze_one_td(td, ROOT)
+
+        self.assertEqual(errors, [])
 
     def test_eight_task_td_with_long_near_duplicate_consignes_is_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as raw:

@@ -29,22 +29,22 @@ official_program:
 ### Question 1
 - Capacité officielle : P-ALGO-02A.
 - Énoncé : à partir de `temps=[42,17,23,17,9]`, insérer la clé dans la partie gauche triée.
-- Réponse attendue : insertion après i=1 -> [17,42,23,17,9].
+- Production attendue : une trace qui indique la clé, les décalages et l'état après le premier passage.
 - Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `liste vide`.
 ### Question 2
 - Capacité officielle : P-ALGO-02B.
 - Énoncé : à partir de `temps=[42,17,23,17,9]`, chercher le minimum du suffixe.
-- Réponse attendue : sélection place 9 en tête.
+- Production attendue : un tableau qui localise le minimum du suffixe et l'échange éventuel.
 - Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `liste déjà triée`.
 ### Question 3
 - Capacité officielle : P-ALGO-02C.
 - Énoncé : à partir de `temps=[42,17,23,17,9]`, écrire invariant gauche triée.
-- Réponse attendue : invariant : indices < i triés.
+- Production attendue : une phrase d'invariant avec son initialisation et sa conservation.
 - Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `doublons 17`.
 ### Question 4
 - Capacité officielle : P-ALGO-02D.
 - Énoncé : à partir de `temps=[42,17,23,17,9]`, compter comparaisons intuitives.
-- Réponse attendue : pire cas quadratique.
+- Production attendue : une comparaison qualitative des cas déjà trié, moyen et inverse.
 - Barème : 1 point donnée, 1 point méthode, 1 point résultat, 1 point justification sur `liste vide`.
 
 ## Corrigé question par question
@@ -73,7 +73,7 @@ official_program:
 
 ## Critères de réussite observables
 - La donnée de départ est recopiée exactement.
-- La trace ou le pseudo-code conduit à `insertion après i=1 -> [17,42,23,17,9]`.
+- La trace ou le pseudo-code rend vérifiable le placement de la première clé.
 - Au moins un cas limite de la section précédente est décidé.
 
 

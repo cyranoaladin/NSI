@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-14T09:28:41Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -27,7 +27,7 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P12/P12_corrige_tris_invariants_complexite.md",
         "anchor": "#exercice-2",
-        "quote": "Réponse attendue : sélection place 9 en tête.",
+        "quote": "Réponse attendue : le premier minimum est `8`, le deuxième est `14` et, après deux tours, `stocks` vaut `[8, 14, 26, 31, 19]`.",
         "teaches": true
       },
       "verdict": "needs_review",

@@ -27,11 +27,11 @@ official_program:
 
 ## Activités correctives
 1. Annoter `temps=[42,17,23,17,9]`.
-2. Refaire la tâche `insérer la clé dans la partie gauche triée` et comparer avec `insertion après i=1 -> [17,42,23,17,9]`.
+2. Refaire la tâche `insérer la clé dans la partie gauche triée`, puis comparer les états intermédiaires avec un camarade ou la trace distribuée par l'enseignant.
 3. Traiter le cas limite `liste vide`.
 4. Relier la réponse à P-ALGO-02A.
 
 ## Critères de sortie
 - Donnée exacte.
-- Résultat final explicite.
+- Résultat final justifié par une trace explicite.
 - Cas limite décidé.
