@@ -49,27 +49,27 @@ temps=[42,17,23,17,9]
 - écrire invariant gauche triée.
 - compter comparaisons intuitives.
 
-## Exemples corrigés
-### Exemple corrigé 1
+## Exemples guidés
+
+### Exemple 1 — insertion
 - Donnée : `temps=[42,17,23,17,9]`.
-- Méthode : insérer la clé dans la partie gauche triée.
-- Résultat attendu : insertion après i=1 -> [17,42,23,17,9].
-- Contrôle : capacité P-ALGO-02A et cas limite `liste vide`.
-### Exemple corrigé 2
-- Donnée : `temps=[42,17,23,17,9]`.
-- Méthode : chercher le minimum du suffixe.
-- Résultat attendu : sélection place 9 en tête.
-- Contrôle : capacité P-ALGO-02B et cas limite `liste déjà triée`.
-### Exemple corrigé 3
-- Donnée : `temps=[42,17,23,17,9]`.
-- Méthode : écrire invariant gauche triée.
-- Résultat attendu : invariant : indices < i triés.
-- Contrôle : capacité P-ALGO-02C et cas limite `doublons 17`.
-### Exemple corrigé 4
-- Donnée : `temps=[42,17,23,17,9]`.
-- Méthode : compter comparaisons intuitives.
-- Résultat attendu : pire cas quadratique.
-- Contrôle : capacité P-ALGO-02D et cas limite `liste vide`.
+- Consigne : tracez le premier passage en séparant le préfixe déjà trié du reste ; nommez la clé et le décalage éventuel.
+- Vérification : votre trace conserve les mêmes valeurs et traite aussi le cas `liste vide`.
+
+### Exemple 2 — sélection
+- Donnée : `cotes=[31,8,26,14,19]`.
+- Consigne : repérez le minimum du suffixe, notez son indice, puis décidez si un échange est nécessaire.
+- Vérification : expliquez pourquoi cette recherche examine le suffixe entier, y compris lorsque celui-ci paraît déjà rangé.
+
+### Exemple 3 — invariant
+- Donnée : une boucle dont l'indice de tour est `i`.
+- Consigne : formulez ce qui est garanti avant le tour, puis ce qui doit rester vrai après le placement de la clé.
+- Vérification : testez votre phrase sur des doublons 17 portant des étiquettes différentes.
+
+### Exemple 4 — coût
+- Donnée : une liste déjà triée et une liste inverse de même taille.
+- Consigne : comparez qualitativement les comparaisons et les décalages de l'insertion à ceux de la sélection.
+- Vérification : indiquez pourquoi un petit nombre d'échanges ne suffit pas à annoncer un coût linéaire.
 
 ## Cas limites
 - liste vide.
@@ -89,7 +89,7 @@ temps=[42,17,23,17,9]
 
 ## Critères de réussite observables
 - Une capacité parmi P-ALGO-02A, P-ALGO-02B, P-ALGO-02C, P-ALGO-02D est citée et utilisée.
-- Le résultat attendu est explicite : insertion après i=1 -> [17,42,23,17,9].
+- La trace explicite une clé, une action et un état intermédiaire vérifiable.
 - Le cas limite `liste déjà triée` est tranché.
 
 ## Lien avec la progression
@@ -97,6 +97,26 @@ temps=[42,17,23,17,9]
 - TD : `P12_TD_tris_invariants_complexite.md`.
 - TP : `P12_tp_tris_invariants_complexite.md`.
 - Évaluation : `P12_evaluation_tris_invariants_complexite.md`.
+
+## Repères enseignant — exemples corrigés
+
+### Exemple 1
+- Résultat de la première insertion : `insertion après i=1 -> [17,42,23,17,9]`.
+- La clé `17` décale `42` : le préfixe à gauche de `i` est alors trié.
+
+### Exemple 2
+- La première sélection place `8` au début de `[31,8,26,14,19]` ; le minimum est choisi dans le suffixe entier.
+
+### Exemple corrigé 3
+- Méthode : écrire invariant gauche triée.
+- Résultat attendu : invariant : indices < i triés.
+- Repère : l'invariant d'insertion indique que les indices strictement inférieurs à `i` sont triés avant le tour.
+
+### Exemple corrigé 4
+- Méthode : compter comparaisons intuitives.
+- Résultat attendu : pire cas quadratique.
+- Contrôle : capacité P-ALGO-02D et cas limite `liste vide`.
+- Repère : le meilleur cas de l'insertion est linéaire, tandis que la sélection garde un nombre quadratique de comparaisons.
 
 ## Renforcement explicatif ciblé
 

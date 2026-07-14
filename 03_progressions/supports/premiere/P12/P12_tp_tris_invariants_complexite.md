@@ -31,9 +31,9 @@ TP exécutable : utiliser les fichiers du dossier `code/` (P12_starter_tris_inva
 2. Réaliser : insérer la clé dans la partie gauche triée.
 3. Réaliser : chercher le minimum du suffixe.
 4. Tester le cas limite `liste vide`.
-5. Produire le livrable : insertion après i=1 -> [17,42,23,17,9].
+5. Produire un livrable comprenant la trace du premier passage d'insertion, une trace de sélection et un essai sur `liste vide`.
 
-## Barème associé
+## Repères enseignant — barème associé
 - 2 points : donnée préparée.
 - 3 points : méthode principale.
 - 3 points : résultat `insertion après i=1 -> [17,42,23,17,9]`.
@@ -65,7 +65,7 @@ Résultat attendu : `liste vide` traité sans ambiguïté.
 
 ## Critères de réussite observables
 - La donnée de départ est recopiée exactement.
-- La trace ou le pseudo-code conduit à `insertion après i=1 -> [17,42,23,17,9]`.
+- La trace ou le pseudo-code rend vérifiable le placement de la première clé.
 - Au moins un cas limite de la section précédente est décidé.
 
 

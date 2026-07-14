@@ -25,7 +25,7 @@ official_program:
 - Vocabulaire : tri par insertion, tri par sélection, invariant, variant, coût quadratique.
 - Étape 1 : insérer la clé dans la partie gauche triée.
 - Étape 2 : chercher le minimum du suffixe.
-- Résultat de référence : insertion après i=1 -> [17,42,23,17,9].
+- À compléter : écrire l'état après la première insertion et entourer les valeurs décalées.
 
 ## Cas limites à mémoriser
 - liste vide.
@@ -39,5 +39,9 @@ official_program:
 
 ## Critères de réussite observables
 - Capacité : P-ALGO-02A.
-- Résultat final : sélection place 9 en tête.
+- Vérification : citer le minimum retenu au premier tour de sélection et justifier son choix.
+
+## Repères enseignant — trace de référence
+- Première insertion : `insertion après i=1 -> [17,42,23,17,9]`.
+- Premier tour de sélection sur la liste du cours : le minimum est placé en tête après exploration du suffixe.
 - Cas limite : liste vide.

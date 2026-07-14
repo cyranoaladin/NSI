@@ -2,18 +2,18 @@
 
 ## Synthèse
 
-- 30 TD historiques enregistrés.
-- 15 TD de Première.
+- 29 TD historiques restent enregistrés.
+- 14 TD de Première.
 - 15 TD de Terminale.
-- 42 alertes diagnostiquées.
-- 29 alertes sur corrigés quasi identiques.
-- 13 alertes sur exercices quasi identiques.
+- Le diagnostic initial a relevé 42 alertes : 29 sur corrigés quasi identiques et 13 sur exercices quasi identiques.
 - Conclusion : situation mixte, avec dette réelle et faux positifs.
 
 Ce rapport ne déclare aucun TD conforme.
 Le registre est non certifiant et non promotionnel.
 La normalisation doit être traitée dans un lot dédié.
 Toute modification d’un TD enregistré invalide son empreinte et impose une revue.
+
+P12 est sorti du registre après normalisation dans LOT TD-NORMALISATION-01. Ce retrait n’emporte aucune promotion de statut et laisse les 29 autres dettes à traiter dans des lots dédiés.
 
 ## TD enregistrés
 
@@ -31,7 +31,6 @@ Toute modification d’un TD enregistré invalide son empreinte et impose une re
 | premiere | P09 | `03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md` | mixte | corrections_quasi_identiques | revue |
 | premiere | P10 | `03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md` | mixte | exercices_quasi_identiques, corrections_quasi_identiques | revue |
 | premiere | P11 | `03_progressions/supports/premiere/P11/P11_TD_parcours_recherche_extremum_moyenne.md` | mixte | exercices_quasi_identiques, corrections_quasi_identiques | revue |
-| premiere | P12 | `03_progressions/supports/premiere/P12/P12_TD_tris_invariants_complexite.md` | vraie_dette | exercices_quasi_identiques, corrections_quasi_identiques | haute |
 | premiere | P13 | `03_progressions/supports/premiere/P13/P13_TD_dichotomie_glouton_knn.md` | mixte | corrections_quasi_identiques | revue |
 | premiere | P14 | `03_progressions/supports/premiere/P14/P14_TD_synthese_projet_oral.md` | mixte | corrections_quasi_identiques | revue |
 | terminale | T01 | `03_progressions/supports/terminale/T01/T01_td_interfaces_structures.md` | mixte | corrections_quasi_identiques | revue |
