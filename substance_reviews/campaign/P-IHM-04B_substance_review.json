@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-12T10:39:42Z",
+  "judged_at": "2026-07-14T12:09:31Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -20,18 +20,18 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md",
         "anchor": "#exercice-8",
-        "quote": "Capacité officielle : P-IHM-04B.\n- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=theta\n- Consigne : distinguer GET, POST et HTTPS ; traiter aussi `paramètre jour absent` si nécessaire.\n- Réponse attendue : POST sans HTTPS ne chiffre pas.",
+        "quote": "Consigne : pour chaque affirmation, expliquez pourquoi elle est fausse ou trompeuse. Proposez une reformulation correcte en utilisant le vocabulaire précis du cours (URL, corps de requête, chiffrement, TLS, attribut `name`, validation serveur).",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
         "anchor": "#exercice-8",
-        "quote": "- Réponse attendue : POST sans HTTPS ne chiffre pas.\n- Méthode : distinguer GET, POST et HTTPS.\n- Cas limite : paramètre jour absent.",
+        "quote": "- Réponse attendue : F1 — POST masque de l'URL mais ne chiffre pas, seul HTTPS chiffre ; F2 — HTTPS ne transforme pas GET en POST, il chiffre via TLS ; F3 — un champ sans `name` n'est pas transmis ; F4 — la validation côté serveur est indispensable, le JavaScript peut être contourné.\n- Méthode : identifier la confusion précise et reformuler avec le vocabulaire technique.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne la distinction GET/POST via un tableau comparatif (visibilité URL, historique, logs). Le TD fait pratiquer avec l'exercice 8 tagué P-IHM-04B. Le corrigé fournit la réponse attendue pour cet exercice.",
+      "justification": "Le cours enseigne la distinction GET/POST via un tableau comparatif (visibilité URL, historique, logs). Le TD fait pratiquer avec un exercice de débogage de raisonnements faux sur POST, HTTPS, name et validation. Le corrigé fournit les reformulations précises.",
       "scientific_flags": [
         "human_review_required"
       ]

@@ -52,19 +52,17 @@ official_program:
 - Méthode : cibler #nom en CSS et DOM.
 - Cas limite : formulaire sans action.
 ### Exercice 7
-- Réponse attendue : GET /club?jour=mercredi transporte jour.
-- Méthode : lire jour dans URL.
-- Cas limite : champ nom vide.
+- Capacité mobilisée : P-IHM-04A.
+- Donnée : formulaire avec `<input id="nom">` sans attribut `name` et sans attribut `method`.
+- Réponse attendue : erreur 1 — `name` manquant, le champ nom n'est pas transmis ; correction : `<label for=nom>Nom</label><input id=nom name=nom>`. Erreur 2 — `method` absent, GET par défaut ; ajouter `method="post"` si POST souhaité.
+- Méthode : identifier chaque erreur HTML et son impact sur la requête.
+- Cas limite : champ nom vide après correction, le paramètre est transmis avec une valeur vide.
 ### Exercice 8
-- Réponse attendue : POST sans HTTPS ne chiffre pas.
-- Méthode : distinguer GET, POST et HTTPS.
-- Cas limite : paramètre jour absent.
-
-### Exercice 9
-- Capacité mobilisée : P-IHM-04C.
-- Réponse attendue : (A) POST+HTTPS (mot de passe), (B) GET (recherche), (C) POST (contact), (D) risque token visible.
-- Méthode : classification par confidentialité (URL, historique, logs, chiffrement).
-- Cas limite : POST sans HTTPS ne chiffre pas les données sur le réseau.
+- Capacité mobilisée : P-IHM-04B.
+- Donnée : quatre affirmations fausses d'élèves sur POST, HTTPS, `name` et validation serveur.
+- Réponse attendue : F1 — POST masque de l'URL mais ne chiffre pas, seul HTTPS chiffre ; F2 — HTTPS ne transforme pas GET en POST, il chiffre via TLS ; F3 — un champ sans `name` n'est pas transmis ; F4 — la validation côté serveur est indispensable, le JavaScript peut être contourné.
+- Méthode : identifier la confusion précise et reformuler avec le vocabulaire technique.
+- Cas limite : paramètre jour absent si le champ n'a pas d'attribut `name`.
 
 ## Corrigé du TP
 - Donnée : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`.

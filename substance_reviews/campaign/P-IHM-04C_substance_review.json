@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-07T21:56:00Z",
+  "judged_at": "2026-07-14T12:09:31Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -19,19 +19,19 @@
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md",
-        "anchor": "#exercice-9",
-        "quote": "- Consigne : (9a) pour chaque situation, indiquer si GET ou POST est approprié et justifier ; (9b) pour chaque situation, indiquer si HTTPS est nécessaire et pourquoi ; (9c) expliquer pourquoi le token dans l'URL de la situation (D) pose un problème de confidentialité.",
+        "anchor": "#exercice-4",
+        "quote": "Consigne : pour chaque cas, indiquez si GET ou POST est approprié et justifiez par un critère observable (visibilité dans l'URL, historique, corps de requête). Pour chaque cas, indiquez si HTTPS est nécessaire et pourquoi. Expliquez pourquoi le token dans l'URL du cas D pose un problème de confidentialité.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
-        "anchor": "#exercice-9",
-        "quote": "- Réponse attendue : (A) POST+HTTPS (mot de passe), (B) GET (recherche), (C) POST (contact), (D) risque token visible.\n- Méthode : classification par confidentialité (URL, historique, logs, chiffrement).\n- Cas limite : POST sans HTTPS ne chiffre pas les données sur le réseau.",
+        "file": "03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md",
+        "anchor": "#question-5--choix-et-confidentialité",
+        "quote": "1. Recherche `algorithmique` : **GET** ; la valeur n'est pas secrète et l'URL du résultat peut être partagée. HTTPS reste souhaitable pour l'intégrité et la confidentialité générale du trafic, même si la valeur n'est pas sensible.\n2. Mot de passe : **POST + HTTPS** ; le mot de passe reste hors de l'URL et l'échange est chiffré.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne la distinction GET/POST/HTTPS avec tableau et critères de choix. Le TD exercice 9 fait pratiquer la classification de 4 situations selon confidentialité. Le corrigé fournit la réponse complète avec méthode et cas limite.",
+      "justification": "Le cours enseigne la distinction GET/POST/HTTPS avec tableau et critères de choix. Le TD exercice 4 fait pratiquer la classification de 4 cas d'usage selon confidentialité. Le corrigé HTTP fournit la réponse complète avec méthode et justification.",
       "scientific_flags": [
         "human_review_required"
       ]

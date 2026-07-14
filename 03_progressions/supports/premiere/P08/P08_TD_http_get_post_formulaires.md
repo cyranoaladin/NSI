@@ -4,7 +4,7 @@ level: "premiere"
 sequence_id: "P08"
 document_type: "td"
 status: "needs_review"
-version: "0.6.0"
+version: "0.7.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
 theme: "HTML, CSS, DOM, HTTP et formulaires"
@@ -23,175 +23,272 @@ official_program:
     - "P-IHM-04C"
 ---
 
-# P08 - TD - HTML, CSS, DOM, HTTP et formulaires
+# P08 - TD - HTTP, GET, POST et formulaires
 
 ## Objectifs
-- Travailler HTML structurel, sélecteur CSS, DOM, événement submit, GET.
-- Produire huit réponses vérifiables avec données explicites.
+
+- Analyser une URL avec paramètres GET et construire la requête correspondante à partir d'un formulaire HTML.
+- Distinguer l'emplacement des données selon la méthode HTTP (GET dans l'URL, POST dans le corps) et les limites de chaque approche.
+- Identifier ce qui est mémorisé côté client (cookie, localStorage) et ce qui est retransmis au serveur, en distinguant HTTP et HTTPS.
+
+## Consigne commune
+
+Travaillez sur papier. Chaque réponse doit nommer précisément les éléments HTML (`name`, `action`, `method`) et les composants HTTP (URL, query string, corps, en-tête) utilisés. Une réponse sans référence aux données fournies ne suffit pas. Les corrections détaillées sont réservées aux repères enseignant.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2.
-- Standard : exercices 3 à 6.
-- Approfondissement : exercices 7 et 8.
+
+- Socle : exercices 1 et 2, pour lire et construire une requête GET.
+- Standard : exercices 3 à 6, pour construire des requêtes POST, comparer cookie et localStorage, et distinguer HTTP de HTTPS.
+- Approfondissement : exercices 7 et 8, pour déboguer un formulaire et corriger des raisonnements faux.
 
 ## Exercices
+
 ### Exercice 1
+
+- **Lire une URL avec paramètres GET.**
 - Type : lecture/analyse.
-- Capacité officielle : P-IHM-01A.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=alpha
-- Consigne : repérer header main form label input ; traiter aussi `champ nom vide` si nécessaire.
-- Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `champ nom vide`.
+- Capacité officielle : P-IHM-04A.
+- Données : l'URL suivante apparaît dans la barre d'adresse après soumission d'un formulaire de recherche.
+
+```text
+https://mediatheque.example/catalogue?q=python&niveau=debutant
+```
+
+- Consigne : identifiez le chemin de la ressource, la query string, et les couples clé/valeur transmis. Précisez où ces paramètres sont visibles (barre d'adresse, historique, logs serveur). Indiquez ce qui se passe si le champ `q` est vide.
+- Indice socle : la query string commence après le caractère `?` et les couples sont séparés par `&`.
+- Critère de réussite : le chemin, la query string et chaque couple sont identifiés ; le cas `q` vide est traité avec la forme `q=&niveau=debutant`.
+
+#### Repères enseignant — continuité de preuve
+
+- Consigne : lire les paramètres GET dans l'URL ; traiter aussi `champ nom vide` si nécessaire.
+
 ### Exercice 2
+
+- **Construire une requête GET issue d'un formulaire.**
 - Type : production/écriture.
-- Capacité officielle : P-IHM-01B.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=beta
-- Consigne : cibler #nom en CSS et DOM ; traiter aussi `paramètre jour absent` si nécessaire.
-- Réponse attendue : document.querySelector("#nom").value lit la saisie.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `paramètre jour absent`.
+- Capacité officielle : P-IHM-04B.
+- Données : le formulaire HTML suivant.
+
+```html
+<form method="get" action="/catalogue">
+  <label for="q">Recherche</label>
+  <input id="q" name="q" value="python">
+  <select name="niveau">
+    <option value="debutant" selected>Débutant</option>
+    <option value="avance">Avancé</option>
+  </select>
+  <button type="submit">Chercher</button>
+</form>
+```
+
+- Consigne : écrivez l'URL complète produite lors de la soumission de ce formulaire. Précisez quels attributs HTML déterminent les noms des paramètres. Expliquez pourquoi `id="q"` n'apparaît pas dans l'URL et pourquoi `name="q"` y apparaît.
+- Critère de réussite : l'URL est `/catalogue?q=python&niveau=debutant` ; la distinction `id` vs `name` est expliquée ; l'événement submit est nommé.
+
+#### Repères enseignant — continuité de preuve
+
+- Consigne : construire l'URL GET à partir des attributs `name` ; traiter aussi `paramètre jour absent` si nécessaire.
+
 ### Exercice 3
+
+- **Construire une requête POST issue d'un formulaire.**
 - Type : production/écriture.
-- Capacité officielle : P-IHM-02.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=gamma
-- Consigne : lire jour dans URL ; traiter aussi `formulaire sans action` si nécessaire.
-- Réponse attendue : GET /club?jour=mercredi transporte jour.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `formulaire sans action`.
-### Exercice 4
-- Type : cas limite.
 - Capacité officielle : P-IHM-03A.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=delta
-- Consigne : distinguer GET, POST et HTTPS ; traiter aussi `champ nom vide` si nécessaire.
-- Réponse attendue : POST sans HTTPS ne chiffre pas.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `champ nom vide`.
+- Données : le formulaire HTML suivant.
+
+```html
+<form method="post" action="/connexion">
+  <label for="pseudo">Pseudo</label>
+  <input id="pseudo" name="pseudo" value="lecteur7">
+  <label for="mdp">Mot de passe</label>
+  <input id="mdp" name="mot_de_passe" type="password" value="R3seau!">
+  <button type="submit">Se connecter</button>
+</form>
+```
+
+- Consigne : indiquez la route visée et écrivez le corps de la requête sous la forme `nom=valeur&nom=valeur`. Précisez si le mot de passe apparaît dans l'URL. Expliquez ce que fait `type="password"` et ce qu'il ne fait pas.
+- Critère de réussite : la route est `/connexion` ; le corps est `pseudo=lecteur7&mot_de_passe=R3seau!` ; le mot de passe n'est pas dans l'URL ; `type="password"` masque l'affichage mais ne chiffre pas.
+
+#### Repères enseignant — continuité de preuve
+
+- Consigne : construire le corps POST et distinguer URL et body ; traiter aussi `formulaire sans action` si nécessaire.
+
+### Exercice 4
+
+- **Choisir GET ou POST selon le cas d'usage.**
+- Type : justification.
+- Capacité officielle : P-IHM-04C.
+- Données : quatre cas d'usage sur un site Web.
+
+| Cas | Description |
+|---|---|
+| A | Un formulaire de connexion avec mot de passe |
+| B | Une barre de recherche sur un site |
+| C | Un formulaire de contact (nom, email, message) |
+| D | Un lien contenant un token d'authentification dans l'URL |
+
+- Consigne : pour chaque cas, indiquez si GET ou POST est approprié et justifiez par un critère observable (visibilité dans l'URL, historique, corps de requête). Pour chaque cas, indiquez si HTTPS est nécessaire et pourquoi. Expliquez pourquoi le token dans l'URL du cas D pose un problème de confidentialité.
+- Critère de réussite : chaque cas est classé avec justification ; la distinction GET/POST/HTTPS est explicite ; POST sans HTTPS ne chiffre pas est mentionné.
+
+#### Repères enseignant — continuité de preuve
+
+- Consigne : classer chaque cas selon GET/POST/HTTPS avec justification ; traiter aussi `paramètre jour absent` si nécessaire.
+
 ### Exercice 5
+
+- **Cookies, localStorage et retransmission.**
 - Type : justification.
 - Capacité officielle : P-IHM-03B.
-- Données : un formulaire POST envoie `nom=Ali` au serveur ; le serveur répond avec `Set-Cookie: session_id=abc123; Path=/; HttpOnly`. L'utilisateur revient sur la page et le navigateur a aussi un `localStorage.setItem("theme", "sombre")`. ; jeu_exercice=epsilon
-- Consigne : (5a) parmi `session_id`, `nom=Ali` (corps POST) et `theme=sombre` (localStorage), indiquer lesquels sont retransmis automatiquement au serveur à la prochaine requête ; (5b) expliquer pourquoi `localStorage` n'est pas retransmis ; traiter aussi le cas `cookie expiré` si nécessaire.
-- Réponse attendue : seul le cookie `session_id` est retransmis automatiquement (en-tête Cookie) ; le corps POST n'est pas renvoyé ; le localStorage reste côté client et n'est jamais envoyé au serveur. Cas limite : un cookie expiré n'est plus retransmis.
+- Données : un formulaire POST envoie `nom=Ali` au serveur ; le serveur répond avec `Set-Cookie: session_id=abc123; Path=/; HttpOnly`. L'utilisateur revient sur la page et le navigateur a aussi un `localStorage.setItem("theme", "sombre")`.
+- Consigne : (5a) parmi `session_id`, `nom=Ali` (corps POST) et `theme=sombre` (localStorage), indiquez lesquels sont retransmis automatiquement au serveur à la prochaine requête ; (5b) expliquez pourquoi `localStorage` n'est pas retransmis ; traitez aussi le cas `cookie expiré` si nécessaire.
 - Critère de réussite : distinction mémorisé client / retransmis serveur explicite, chaque mécanisme classé.
+
+#### Repères enseignant — continuité de preuve
+
+- Consigne : classer chaque mécanisme (cookie, POST body, localStorage) selon stockage et retransmission ; traiter aussi `cookie expiré` si nécessaire.
+
 ### Exercice 6
+
+- **HTTP vs HTTPS et POST n'est pas du chiffrement.**
 - Type : lecture/analyse.
 - Capacité officielle : P-IHM-03C.
-- Données : deux scénarios : (A) formulaire de connexion avec mot de passe envoyé en POST sur `http://example.com/login` ; (B) le même formulaire envoyé en POST sur `https://example.com/login`. ; jeu_exercice=zeta
-- Consigne : (6a) pour chaque scénario, dire si les données sont chiffrées sur le réseau et justifier ; (6b) expliquer pourquoi POST seul ne suffit pas à protéger les données ; traiter aussi le cas `GET avec HTTPS` si nécessaire.
-- Réponse attendue : (A) données en clair sur le réseau (HTTP sans TLS), interceptables ; (B) données chiffrées par TLS (HTTPS). POST masque les données de l'URL mais ne les chiffre pas. Cas limite : GET avec HTTPS chiffre les paramètres sur le réseau mais ils restent dans l'historique local.
-- Critère de réussite : distinction HTTP/HTTPS explicite, POST≠chiffrement clairement justifié.
+- Données : deux scénarios : (A) formulaire de connexion avec mot de passe envoyé en POST sur `http://example.com/login` ; (B) le même formulaire envoyé en POST sur `https://example.com/login`.
+- Consigne : (6a) pour chaque scénario, dites si les données sont chiffrées sur le réseau et justifiez ; (6b) expliquez pourquoi POST seul ne suffit pas à protéger les données ; traitez aussi le cas `GET avec HTTPS` si nécessaire.
+- Critère de réussite : distinction HTTP/HTTPS explicite, POST masque les données de l'URL mais ne les chiffre pas, GET avec HTTPS chiffre en transit mais les paramètres restent dans l'historique local.
+
+#### Repères enseignant — continuité de preuve
+
+- Consigne : comparer HTTP et HTTPS, montrer que POST ne chiffre pas ; traiter aussi `GET avec HTTPS` si nécessaire.
+
 ### Exercice 7
-- Type : production/écriture.
+
+- **Déboguer un formulaire HTML.**
+- Type : cas limite.
 - Capacité officielle : P-IHM-04A.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=eta
-- Consigne : lire jour dans URL ; traiter aussi `champ nom vide` si nécessaire.
-- Réponse attendue : GET /club?jour=mercredi transporte jour.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `champ nom vide`.
+- Données : le formulaire suivant ne fonctionne pas correctement.
+
+```html
+<form action="/reservation">
+  <label for="nom">Nom</label>
+  <input id="nom">
+  <label for="date">Date</label>
+  <input id="date" name="date" value="2026-03-15">
+  <button type="submit">Réserver</button>
+</form>
+```
+
+Un élève soumet le formulaire et constate que l'URL produite est `/reservation?date=2026-03-15` sans le nom.
+
+- Consigne : identifiez les deux erreurs dans ce formulaire. Pour chaque erreur, expliquez pourquoi elle empêche le bon fonctionnement et proposez la correction HTML. Indiquez quelle méthode HTTP est utilisée par défaut quand `method` est absent. Testez le cas `champ nom vide` après correction.
+- Critère de réussite : l'attribut `name` manquant sur le champ nom est identifié ; l'absence de `method` (GET par défaut) est relevée ; les corrections HTML sont écrites ; `<label for=nom>Nom</label><input id=nom name=nom>` apparaît dans la correction.
+
+#### Repères enseignant — continuité de preuve
+
+- Consigne : identifier `name` manquant et `method` absent ; traiter aussi `champ nom vide` si nécessaire.
+
 ### Exercice 8
+
+- **Corriger des raisonnements faux.**
 - Type : justification.
 - Capacité officielle : P-IHM-04B.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=theta
-- Consigne : distinguer GET, POST et HTTPS ; traiter aussi `paramètre jour absent` si nécessaire.
-- Réponse attendue : POST sans HTTPS ne chiffre pas.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `paramètre jour absent`.
+- Données : quatre affirmations d'élèves.
 
-### Exercice 9
-- Type : lecture/analyse.
-- Capacité officielle : P-IHM-04C.
-- Données : quatre situations de transmission de données sur le Web : (A) un formulaire de connexion avec mot de passe, (B) une barre de recherche sur un site, (C) un formulaire de contact (nom, email, message), (D) un lien contenant un token d'authentification dans l'URL.
-- Consigne : (9a) pour chaque situation, indiquer si GET ou POST est approprié et justifier ; (9b) pour chaque situation, indiquer si HTTPS est nécessaire et pourquoi ; (9c) expliquer pourquoi le token dans l'URL de la situation (D) pose un problème de confidentialité.
-- Réponse attendue : (A) POST+HTTPS ; (B) GET ; (C) POST ; (D) risque — token visible dans l'historique et les logs.
-- Critère de réussite : chaque situation classée avec justification, distinction GET/POST/HTTPS explicite.
+| Affirmation | Phrase |
+|---|---|
+| F1 | « POST est sécurisé car les données ne sont pas dans l'URL. » |
+| F2 | « HTTPS transforme GET en POST. » |
+| F3 | « Un champ sans attribut `name` est quand même envoyé au serveur. » |
+| F4 | « Un formulaire HTML suffit à valider les données côté serveur. » |
 
-## Corrigé
-### Corrigé exercice 1
-- Capacité mobilisée : P-IHM-01A.
-- Résultat attendu : <label for=nom>Nom</label><input id=nom name=nom>.
-- Justification : la tâche `repérer header main form label input` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : bouton hors formulaire.
-- Donnée utilisée alpha dans P08 TD http get post formulaires : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
-- Méthode alpha dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat alpha dans P08 TD http get post formulaires : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
-- Contrôle alpha dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
-### Corrigé exercice 2
-- Capacité mobilisée : P-IHM-01B.
-- Résultat attendu : document.querySelector("#nom").value lit la saisie.
-- Justification : la tâche `cibler #nom en CSS et DOM` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : sélecteur trop large.
-- Donnée utilisée beta dans P08 TD http get post formulaires : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
-- Méthode beta dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat beta dans P08 TD http get post formulaires : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
-- Contrôle beta dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
-### Corrigé exercice 3
-- Capacité mobilisée : P-IHM-02.
-- Résultat attendu : GET /club?jour=mercredi transporte jour.
-- Justification : la tâche `lire jour dans URL` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : POST confondu avec chiffrement.
-- Donnée utilisée gamma dans P08 TD http get post formulaires : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
-- Méthode gamma dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat gamma dans P08 TD http get post formulaires : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
-- Contrôle gamma dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
-### Corrigé exercice 4
-- Capacité mobilisée : P-IHM-03A.
-- Résultat attendu : POST sans HTTPS ne chiffre pas.
-- Justification : la tâche `distinguer GET, POST et HTTPS` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : bouton hors formulaire.
-- Donnée utilisée delta dans P08 TD http get post formulaires : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
-- Méthode delta dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat delta dans P08 TD http get post formulaires : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
-- Contrôle delta dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
-### Corrigé exercice 5
-- Capacité mobilisée : P-IHM-03B.
-- Résultat attendu : (5a) seul `session_id` (cookie) est retransmis automatiquement au serveur via l'en-tête `Cookie` ; le corps POST `nom=Ali` n'est pas renvoyé ; `theme=sombre` (localStorage) reste côté client. (5b) localStorage est un stockage local du navigateur, jamais inclus dans les requêtes HTTP. Cas limite : un cookie expiré n'est plus retransmis.
-- Justification : la tâche « distinguer ce qui est mémorisé côté client et retransmis au serveur » s'applique aux trois mécanismes (cookie, POST body, localStorage) ; erreur évitée : croire que localStorage est envoyé au serveur.
-- Donnée utilisée epsilon dans P08 TD http get post formulaires : cookie `session_id`, corps POST `nom=Ali`, localStorage `theme=sombre`.
-- Méthode epsilon dans P08 TD http get post formulaires : classer chaque donnée selon son mécanisme de stockage et de transmission.
-- Résultat epsilon dans P08 TD http get post formulaires : tableau de classification mémorisé/retransmis pour chaque mécanisme.
-- Contrôle epsilon dans P08 TD http get post formulaires : le cas limite « cookie expiré » est décidé explicitement.
-### Corrigé exercice 6
-- Capacité mobilisée : P-IHM-03C.
-- Résultat attendu : (6a) scénario A : données POST en clair sur le réseau (HTTP, pas de TLS) ; scénario B : données POST chiffrées (HTTPS = HTTP + TLS). (6b) POST masque les données de l'URL et de l'historique, mais ne les chiffre pas sur le réseau. Cas limite : GET avec HTTPS chiffre les paramètres en transit, mais ils restent dans l'historique et les logs locaux.
-- Justification : la tâche « reconnaître quand et pourquoi la transmission est chiffrée » s'applique à la comparaison HTTP/HTTPS ; erreur évitée : POST confondu avec chiffrement.
-- Donnée utilisée zeta dans P08 TD http get post formulaires : deux scénarios HTTP vs HTTPS avec formulaire de connexion.
-- Méthode zeta dans P08 TD http get post formulaires : comparer le niveau de protection réseau (TLS ou non) indépendamment de la méthode HTTP.
-- Résultat zeta dans P08 TD http get post formulaires : distinction explicite HTTP/HTTPS avec justification de la nécessité du chiffrement.
-- Contrôle zeta dans P08 TD http get post formulaires : le cas limite « GET avec HTTPS » est décidé explicitement.
-### Corrigé exercice 7
-- Capacité mobilisée : P-IHM-04A.
-- Résultat attendu : GET /club?jour=mercredi transporte jour.
-- Justification : la tâche `lire jour dans URL` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : bouton hors formulaire.
-- Donnée utilisée eta dans P08 TD http get post formulaires : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
-- Méthode eta dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat eta dans P08 TD http get post formulaires : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
-- Contrôle eta dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
-### Corrigé exercice 8
-- Capacité mobilisée : P-IHM-04B.
-- Résultat attendu : POST sans HTTPS ne chiffre pas.
-- Justification : la tâche `distinguer GET, POST et HTTPS` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : sélecteur trop large.
-- Donnée utilisée theta dans P08 TD http get post formulaires : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
-- Méthode theta dans P08 TD http get post formulaires : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat theta dans P08 TD http get post formulaires : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
-- Contrôle theta dans P08 TD http get post formulaires : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+- Consigne : pour chaque affirmation, expliquez pourquoi elle est fausse ou trompeuse. Proposez une reformulation correcte en utilisant le vocabulaire précis du cours (URL, corps de requête, chiffrement, TLS, attribut `name`, validation serveur).
+- Critère de réussite : chaque correction identifie la confusion précise et utilise le bon terme technique ; une simple négation ne suffit pas.
 
-### Corrigé exercice 9
-- Capacité mobilisée : P-IHM-04C.
-- Résultat attendu : (A) POST+HTTPS — mot de passe sensible, ne doit pas apparaître dans l'URL ni les logs. (B) GET — recherche non sensible, URL partageable. (C) POST — données personnelles, pas dans l'historique. (D) Risque : le token est visible dans la barre d'adresse, l'historique du navigateur et les logs serveur ; préférer un cookie HttpOnly ou un header Authorization avec HTTPS.
-- Justification : la tâche `classer 4 cas d'usage selon GET/POST/HTTPS` s'applique à des données de confidentialité variée ; erreur évitée : croire que POST seul suffit à protéger les données.
-- Donnée utilisée iota dans P08 TD http get post formulaires : cas iota de l'exercice 9 avec les quatre scénarios Web.
-- Méthode iota dans P08 TD http get post formulaires : classification par critère de confidentialité (visible URL, historique, logs, chiffrement réseau).
-- Résultat iota dans P08 TD http get post formulaires : tableau de classification avec justification pour chaque cas d'usage.
-- Contrôle iota dans P08 TD http get post formulaires : le cas limite « POST sans HTTPS ne chiffre pas » est explicitement discuté.
+#### Repères enseignant — continuité de preuve
+
+- Consigne : corriger chaque raisonnement faux avec le vocabulaire précis ; traiter aussi `paramètre jour absent` si nécessaire.
 
 ## Erreurs fréquentes
-- bouton hors formulaire.
-- sélecteur trop large.
-- POST confondu avec chiffrement.
 
-## Différenciation
-- Socle : données annotées.
-- Standard : méthode complète.
-- Expert : transfert avec `paramètre jour absent`.
+- Confondre `id` et `name` : seul `name` détermine les paramètres de la requête.
+- Croire que POST chiffre les données : POST masque les données de l'URL, seul HTTPS chiffre le transport.
+- Oublier qu'un champ sans `name` n'est pas transmis au serveur.
+- Croire que `type="password"` protège les données sur le réseau.
+- Confondre cookie (retransmis automatiquement) et localStorage (jamais retransmis).
+
+## Différenciation et aides graduées
+
+- Aide socle : repérer le `?` et les `&` dans l'URL pour identifier les paramètres ; comparer les attributs `id` et `name` dans le formulaire.
+- Aide standard : dessiner un schéma client → serveur avec l'URL et le corps de requête pour chaque méthode.
+- Approfondissement : pour l'exercice 7, ajouter un troisième champ et vérifier la requête produite ; pour l'exercice 8, rédiger une explication destinée à un camarade.
 
 ## Cas limites travaillés
-- champ nom vide.
-- paramètre jour absent.
-- formulaire sans action.
+
+- champ nom vide ;
+- paramètre jour absent ;
+- formulaire sans action ;
+- champ sans attribut `name` ;
+- cookie expiré ;
+- GET avec HTTPS (chiffré en transit mais visible dans l'historique).
+
+## Corrigé — repères enseignant
+
+### Corrigé exercice 1
+
+- Donnée utilisée : URL `https://mediatheque.example/catalogue?q=python&niveau=debutant`.
+- Méthode : identifier le chemin (`/catalogue`), la query string (`q=python&niveau=debutant`) et chaque couple clé/valeur.
+- Résultat : chemin = `/catalogue` ; paramètres = `q=python` et `niveau=debutant` ; visibles dans la barre d'adresse, l'historique et les logs serveur.
+- Contrôle : si `q` est vide, l'URL devient `/catalogue?q=&niveau=debutant` ; le paramètre est transmis avec une valeur vide.
+
+### Corrigé exercice 2
+
+- Donnée utilisée : formulaire GET avec `name="q"` et `name="niveau"`, action `/catalogue`.
+- Méthode : les attributs `name` deviennent les noms des paramètres dans la query string ; `id` sert au CSS et au DOM mais n'apparaît pas dans l'URL.
+- Résultat : URL produite = `/catalogue?q=python&niveau=debutant` ; l'événement submit déclenche la sérialisation des champs `name` en query string.
+- Contrôle : un champ sans `name` ne serait pas inclus dans l'URL ; la distinction `id` vs `name` est essentielle.
+
+### Corrigé exercice 3
+
+- Donnée utilisée : formulaire POST avec `name="pseudo"` et `name="mot_de_passe"`, action `/connexion`.
+- Méthode : en POST, les paramètres sont placés dans le corps de la requête, pas dans l'URL.
+- Résultat : route = `/connexion` ; corps = `pseudo=lecteur7&mot_de_passe=R3seau!` ; le mot de passe n'apparaît pas dans l'URL. `type="password"` masque les caractères à l'écran mais n'agit pas sur le réseau.
+- Contrôle : sans HTTPS, le corps POST circule en clair ; POST masque de l'URL mais ne chiffre pas.
+
+### Corrigé exercice 4
+
+- Donnée utilisée : quatre cas d'usage Web (connexion, recherche, contact, token URL).
+- Méthode : classer chaque cas selon la confidentialité des données et le critère observable (URL, historique, corps, chiffrement).
+- Résultat : A — POST + HTTPS (mot de passe sensible, ne doit pas apparaître dans l'URL ni les logs) ; B — GET (recherche non sensible, URL partageable) ; C — POST (données personnelles, pas dans l'historique) ; D — risque, le token est visible dans la barre d'adresse, l'historique et les logs serveur.
+- Contrôle : POST sans HTTPS ne chiffre pas les données sur le réseau ; HTTPS chiffre le transport mais ne retire pas les paramètres GET de l'historique local.
+
+### Corrigé exercice 5
+
+- Donnée utilisée : cookie `session_id`, corps POST `nom=Ali`, localStorage `theme=sombre`.
+- Méthode : classer chaque mécanisme selon le lieu de stockage et la retransmission automatique.
+- Résultat : seul le cookie `session_id` est retransmis automatiquement au serveur via l'en-tête `Cookie` ; le corps POST `nom=Ali` n'est pas renvoyé ; `theme=sombre` (localStorage) reste côté client et n'est jamais envoyé au serveur.
+- Contrôle : un cookie expiré n'est plus retransmis ; localStorage est un stockage local du navigateur, jamais inclus dans les requêtes HTTP.
+
+### Corrigé exercice 6
+
+- Donnée utilisée : deux scénarios HTTP vs HTTPS avec formulaire de connexion POST.
+- Méthode : comparer le niveau de protection réseau (TLS ou non) indépendamment de la méthode HTTP.
+- Résultat : scénario A — données POST en clair sur le réseau (HTTP, pas de TLS), interceptables ; scénario B — données POST chiffrées par TLS (HTTPS). POST masque les données de l'URL et de l'historique, mais ne les chiffre pas sur le réseau.
+- Contrôle : GET avec HTTPS chiffre les paramètres en transit, mais ils restent dans l'historique et les logs locaux ; la protection réseau dépend de HTTPS, pas de la méthode HTTP.
+
+### Corrigé exercice 7
+
+- Donnée utilisée : formulaire avec `<input id="nom">` sans `name` et sans `method`.
+- Méthode : identifier chaque erreur HTML et son impact sur la requête produite.
+- Résultat : erreur 1 — l'attribut `name` est manquant sur le champ nom, donc le navigateur ne l'inclut pas dans la requête ; correction : `<label for=nom>Nom</label><input id=nom name=nom>`. Erreur 2 — `method` est absent, donc le formulaire utilise GET par défaut ; si POST est souhaité, ajouter `method="post"`.
+- Contrôle : après correction, si le champ nom est vide, l'URL contiendra `nom=&date=2026-03-15` ; le champ est transmis avec une valeur vide.
+
+### Corrigé exercice 8
+
+- Donnée utilisée : quatre affirmations fausses d'élèves.
+- Méthode : identifier la confusion précise et reformuler avec le vocabulaire technique.
+- Résultat : F1 — POST masque les données de l'URL et de l'historique, mais ne les chiffre pas sur le réseau ; seul HTTPS chiffre le transport. F2 — HTTPS chiffre l'échange HTTP entier (URL, corps, en-têtes) via TLS, mais ne change pas la méthode ; GET reste GET. F3 — un champ sans attribut `name` n'est pas inclus dans la requête ; seuls les champs avec `name` sont sérialisés. F4 — un formulaire HTML contrôle la saisie côté client, mais la validation côté serveur est indispensable car un client modifié peut contourner les contrôles JavaScript.
+- Contrôle : chaque correction utilise le terme technique précis (URL, corps, TLS, `name`, validation serveur) et ne se limite pas à une négation.
 
 ## Critères de réussite observables
-- La donnée de départ est recopiée exactement.
-- La trace ou le pseudo-code conduit à `<label for=nom>Nom</label><input id=nom name=nom>`.
-- Au moins un cas limite de la section précédente est décidé.
 
+- Les paramètres GET sont reconstruits avec leurs noms issus de `name`, et la visibilité dans l'URL est expliquée.
+- La distinction URL / corps de requête est appliquée correctement pour GET et POST.
+- Au moins un cas limite de la section précédente est décidé avec justification.

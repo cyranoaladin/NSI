@@ -2,8 +2,8 @@
 
 ## Synthèse
 
-- 28 TD historiques restent enregistrés.
-- 14 TD de Première.
+- 27 TD historiques restent enregistrés.
+- 13 TD de Première.
 - 14 TD de Terminale.
 - Le diagnostic initial a relevé 42 alertes : 29 sur corrigés quasi identiques et 13 sur exercices quasi identiques.
 - Conclusion : situation mixte, avec dette réelle et faux positifs.
@@ -13,7 +13,7 @@ Le registre est non certifiant et non promotionnel.
 La normalisation doit être traitée dans un lot dédié.
 Toute modification d’un TD enregistré invalide son empreinte et impose une revue.
 
-P12 est sorti du registre après normalisation dans LOT TD-NORMALISATION-01. T13 est sorti du registre après normalisation dans LOT TD-NORMALISATION-02. Ces retraits n’emportent aucune promotion de statut et laissent les 28 autres dettes à traiter dans des lots dédiés.
+P12 est sorti du registre après normalisation dans LOT TD-NORMALISATION-01. T13 est sorti du registre après normalisation dans LOT TD-NORMALISATION-02. P08 HTTP/formulaires est sorti du registre après normalisation dans LOT TD-NORMALISATION-03. Ces retraits n’emportent aucune promotion de statut et laissent les 27 autres dettes à traiter dans des lots dédiés.
 
 ## TD enregistrés
 
@@ -27,7 +27,6 @@ P12 est sorti du registre après normalisation dans LOT TD-NORMALISATION-01. T13
 | premiere | P06 | `03_progressions/supports/premiere/P06/P06_TD_tables_recherche_tri_fusion.md` | mixte | exercices_quasi_identiques, corrections_quasi_identiques | revue |
 | premiere | P07 | `03_progressions/supports/premiere/P07/P07_TD_fonctions_tests_specifications.md` | mixte | exercices_quasi_identiques, corrections_quasi_identiques | revue |
 | premiere | P08 | `03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md` | vraie_dette | corrections_quasi_identiques | haute |
-| premiere | P08 | `03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md` | mixte | corrections_quasi_identiques | haute |
 | premiere | P09 | `03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md` | mixte | corrections_quasi_identiques | revue |
 | premiere | P10 | `03_progressions/supports/premiere/P10/P10_TD_reseaux_protocoles_paquets.md` | mixte | exercices_quasi_identiques, corrections_quasi_identiques | revue |
 | premiere | P11 | `03_progressions/supports/premiere/P11/P11_TD_parcours_recherche_extremum_moyenne.md` | mixte | exercices_quasi_identiques, corrections_quasi_identiques | revue |
