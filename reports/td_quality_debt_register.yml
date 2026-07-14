@@ -86,16 +86,6 @@ entries:
     note: >
       Dette connue, non certifiante, à normaliser dans un lot dédié. Toute
       modification invalide l’empreinte et impose une revue explicite.
-  - path: 03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md
-    level: premiere
-    sequence: P08
-    debt_types:
-      - corrections_quasi_identiques
-    classification: mixte
-    sha256: 69d8f02edd3ce263423d06fadaa0ab1b06fcf6bbadd25954f27501407d67bbd4
-    note: >
-      Dette connue, non certifiante, à normaliser dans un lot dédié. Toute
-      modification invalide l’empreinte et impose une revue explicite.
   - path: 03_progressions/supports/premiere/P09/P09_TD_architecture_os_droits.md
     level: premiere
     sequence: P09

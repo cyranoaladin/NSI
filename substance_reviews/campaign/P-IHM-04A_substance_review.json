@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-12T10:39:32Z",
+  "judged_at": "2026-07-14T12:09:31Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -20,18 +20,18 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md",
         "anchor": "#exercice-7",
-        "quote": "- Type : production/écriture.\n- Capacité officielle : P-IHM-04A.\n- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=eta\n- Consigne : lire jour dans URL ; traiter aussi `champ nom vide` si nécessaire.\n- Réponse attendue : GET /club?jour=mercredi transporte jour.",
+        "quote": "Consigne : identifiez les deux erreurs dans ce formulaire. Pour chaque erreur, expliquez pourquoi elle empêche le bon fonctionnement et proposez la correction HTML. Indiquez quelle méthode HTTP est utilisée par défaut quand `method` est absent. Testez le cas `champ nom vide` après correction.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
         "anchor": "#exercice-7",
-        "quote": "- Réponse attendue : GET /club?jour=mercredi transporte jour.\n- Méthode : lire jour dans URL.\n- Cas limite : champ nom vide.",
+        "quote": "- Réponse attendue : erreur 1 — `name` manquant, le champ nom n'est pas transmis ; correction : `<label for=nom>Nom</label><input id=nom name=nom>`. Erreur 2 — `method` absent, GET par défaut ; ajouter `method=\"post\"` si POST souhaité.\n- Méthode : identifier chaque erreur HTML et son impact sur la requête.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours présente la méthode d'analyse d'un formulaire avec GET/POST, le TD fait pratiquer l'exercice 7 tagué P-IHM-04A avec consigne explicite, et le corrigé fournit la réponse attendue pour cet exercice.",
+      "justification": "Le cours présente la méthode d'analyse d'un formulaire avec GET/POST, le TD fait pratiquer le débogage d'un formulaire HTML avec attributs manquants (name, method), et le corrigé fournit les corrections précises.",
       "scientific_flags": [
         "human_review_required"
       ]
