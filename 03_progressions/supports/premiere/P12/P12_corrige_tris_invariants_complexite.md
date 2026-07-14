@@ -29,8 +29,8 @@ official_program:
 
 ### Exercice 2
 
-- Réponse attendue : sélection place 9 en tête.
-- Sur `stocks`, le minimum `8` est échangé avec `31`, puis `14` est échangé avec `31`. Après les deux tours, la liste est `[8, 14, 26, 31, 19]` : chaque tour recherche le minimum de tout le suffixe.
+- Réponse attendue : le premier minimum est `8`, le deuxième est `14` et, après deux tours, `stocks` vaut `[8, 14, 26, 31, 19]`.
+- Au premier tour, `8` est échangé avec `31`, puis `14` est échangé avec `31`. Chaque tour recherche le minimum du suffixe non trié : le préfixe devient trié et contient les plus petites valeurs déjà sélectionnées.
 
 ### Exercice 3
 
@@ -39,10 +39,9 @@ official_program:
 
 ### Exercice 4
 
-- Réponse attendue : pire cas quadratique.
-- Méthode : compter comparaisons intuitives.
-- Cas limite : liste vide.
-- Le préfixe contient les plus petites valeurs déjà choisies, dans l'ordre. Sur `notes`, placer `5` puis `7` donne d'abord `[5, 12, 16, 9, 7]`, puis `[5, 7, 16, 9, 12]`, ce qui conserve la propriété annoncée.
+- Invariant : après `k` tours, le préfixe contient les `k` plus petites valeurs, triées, et le suffixe contient les valeurs restantes.
+- Initialisation : pour `k = 0`, le préfixe vide satisfait cette propriété. Conservation : rechercher le minimum du suffixe puis l'échanger avec sa première position étend le préfixe sans perdre de valeur. Terminaison : après le dernier tour, le préfixe est toute la liste triée.
+- Sur `notes`, placer `5` puis `7` donne d'abord `[5, 12, 16, 9, 7]`, puis `[5, 7, 16, 9, 12]` : à chaque étape, le préfixe contient bien les plus petites valeurs sélectionnées.
 
 ### Exercice 5 — stabilité
 

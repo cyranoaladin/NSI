@@ -27,7 +27,7 @@
         "present": true,
         "file": "03_progressions/supports/premiere/P12/P12_corrige_tris_invariants_complexite.md",
         "anchor": "#exercice-4",
-        "quote": "Réponse attendue : pire cas quadratique.\n- Méthode : compter comparaisons intuitives.\n- Cas limite : liste vide.",
+        "quote": "Invariant : après `k` tours, le préfixe contient les `k` plus petites valeurs, triées, et le suffixe contient les valeurs restantes.",
         "teaches": true
       },
       "verdict": "needs_review",
