@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-14T12:09:31Z",
+  "judged_at": "2026-07-15T07:43:02Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -25,9 +25,9 @@
       },
       "proof_correction": {
         "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
-        "anchor": "#exercice-7",
-        "quote": "- Réponse attendue : erreur 1 — `name` manquant, le champ nom n'est pas transmis ; correction : `<label for=nom>Nom</label><input id=nom name=nom>`. Erreur 2 — `method` absent, GET par défaut ; ajouter `method=\"post\"` si POST souhaité.\n- Méthode : identifier chaque erreur HTML et son impact sur la requête.",
+        "file": "03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md",
+        "anchor": "#corrigé-exercice-7",
+        "quote": "- Résultat : erreur 1 — l'attribut `name` est manquant sur le champ nom, donc le navigateur ne l'inclut pas dans la requête ; correction : `<label for=nom>Nom</label><input id=nom name=nom>`. Erreur 2 — `method` est absent, donc le formulaire utilise GET par défaut ; si POST est souhaité, ajouter `method=\"post\"`.",
         "teaches": true
       },
       "verdict": "needs_review",

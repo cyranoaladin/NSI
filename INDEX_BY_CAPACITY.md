@@ -527,7 +527,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md` — corrige — needs_review — professeur
-- `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
@@ -543,7 +542,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md` — corrige — needs_review — professeur
-- `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
@@ -559,7 +557,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md` — corrige — needs_review — professeur
-- `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
@@ -575,7 +572,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md` — corrige — needs_review — professeur
-- `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
@@ -591,7 +587,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md` — corrige — needs_review — professeur
-- `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve
@@ -607,7 +602,6 @@ Ce fichier ne valide aucune ressource : les statuts restent ceux du manifeste.
 - `03_progressions/supports/premiere/P08/P08_bareme_http_get_post_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_bareme_web_http_dom_formulaires.md` — bareme — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md` — corrige — needs_review — professeur
-- `03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md` — corrige — needs_review — professeur
 - `03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md` — cours — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_evaluation_http_get_post_formulaires.md` — evaluation — needs_review — eleve
 - `03_progressions/supports/premiere/P08/P08_remediation_web_http_dom_formulaires.md` — remediation — needs_review — eleve

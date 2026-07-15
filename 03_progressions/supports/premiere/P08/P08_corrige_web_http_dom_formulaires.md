@@ -15,12 +15,6 @@ official_program:
     - "P-IHM-01A"
     - "P-IHM-01B"
     - "P-IHM-02"
-    - "P-IHM-03A"
-    - "P-IHM-03B"
-    - "P-IHM-03C"
-    - "P-IHM-04A"
-    - "P-IHM-04B"
-    - "P-IHM-04C"
 ---
 
 # P08 - Corrigé - HTML, CSS, DOM, HTTP et formulaires
@@ -72,21 +66,24 @@ Ils ne corrigent ni les formulaires HTTP ni les requêtes GET/POST.
 
 ## Corrigé du TD HTTP/formulaires
 
-Le corrigé complet et autonome du TD `P08_TD_http_get_post_formulaires.md` est
-`P08_corrige_http_get_post_formulaires.md`. Les réponses HTTP ne sont pas
-dupliquées dans cette section afin de ne pas les confondre avec le TD HTML/CSS/DOM.
+Le corrigé complet du TD `P08_TD_http_get_post_formulaires.md` est intégré dans sa
+section `## Corrigé — repères enseignant`, qui répond à ses huit exercices. Le fichier
+`P08_corrige_http_get_post_formulaires.md` est réservé au corrigé de l'évaluation HTTP.
+Les deux repères ci-dessous maintiennent la continuité de lecture de ce document partagé,
+mais ne constituent pas une preuve de couverture HTTP : la correction canonique du TD
+reste celle intégrée au TD lui-même.
 
 ### Exercice 7
 
-- Réponse attendue : erreur 1 — `name` manquant, le champ nom n'est pas transmis ; correction : `<label for=nom>Nom</label><input id=nom name=nom>`. Erreur 2 — `method` absent, GET par défaut ; ajouter `method="post"` si POST souhaité.
-- Méthode : identifier chaque erreur HTML et son impact sur la requête.
-- Cas limite : champ nom vide après correction, le paramètre est transmis avec une valeur vide.
+- Résultat : l'attribut `name` est manquant sur le champ nom, donc le navigateur ne l'inclut pas dans la requête ; la correction est `<label for=nom>Nom</label><input id=nom name=nom>`. L'attribut `method` est absent, donc le formulaire utilise GET par défaut ; si POST est souhaité, ajouter `method="post"`.
+- Méthode : relier chaque attribut absent à son effet sur la requête produite.
+- Cas limite : après correction, un nom vide est transmis sous la forme `nom=&date=2026-03-15`.
 
 ### Exercice 8
 
-- Réponse attendue : F1 — POST masque de l'URL mais ne chiffre pas, seul HTTPS chiffre ; F2 — HTTPS ne transforme pas GET en POST, il chiffre via TLS ; F3 — un champ sans `name` n'est pas transmis ; F4 — la validation côté serveur est indispensable, le JavaScript peut être contourné.
-- Méthode : identifier la confusion précise et reformuler avec le vocabulaire technique.
-- Cas limite : paramètre jour absent si le champ n'a pas d'attribut `name`.
+- Résultat : POST masque les données de l'URL et de l'historique, mais ne les chiffre pas sur le réseau ; HTTPS chiffre l'échange sans changer la méthode GET ou POST. Un champ sans `name` n'est pas sérialisé, et la validation côté serveur reste indispensable.
+- Méthode : identifier la confusion précise puis la reformuler avec les termes URL, corps, TLS, `name` et validation serveur.
+- Cas limite : sans attribut `name`, un paramètre est absent de la requête, même si un `id` est présent.
 
 ## Corrigé du TP
 

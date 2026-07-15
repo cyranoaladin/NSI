@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-14T12:09:31Z",
+  "judged_at": "2026-07-15T07:43:02Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -25,9 +25,9 @@
       },
       "proof_correction": {
         "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
-        "anchor": "#exercice-8",
-        "quote": "- Réponse attendue : F1 — POST masque de l'URL mais ne chiffre pas, seul HTTPS chiffre ; F2 — HTTPS ne transforme pas GET en POST, il chiffre via TLS ; F3 — un champ sans `name` n'est pas transmis ; F4 — la validation côté serveur est indispensable, le JavaScript peut être contourné.\n- Méthode : identifier la confusion précise et reformuler avec le vocabulaire technique.",
+        "file": "03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md",
+        "anchor": "#corrigé-exercice-8",
+        "quote": "- Résultat : F1 — POST masque les données de l'URL et de l'historique, mais ne les chiffre pas sur le réseau ; seul HTTPS chiffre le transport. F2 — HTTPS chiffre l'échange HTTP entier (URL, corps, en-têtes) via TLS, mais ne change pas la méthode ; GET reste GET. F3 — un champ sans attribut `name` n'est pas inclus dans la requête ; seuls les champs avec `name` sont sérialisés. F4 — un formulaire HTML contrôle la saisie côté client, mais la validation côté serveur est indispensable car un client modifié peut contourner les contrôles JavaScript.",
         "teaches": true
       },
       "verdict": "needs_review",
