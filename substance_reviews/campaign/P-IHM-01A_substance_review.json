@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-14T23:53:15Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -19,19 +19,19 @@
       "proof_practice": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
-        "anchor": "#exercice-1",
-        "quote": "Consigne : repérer header main form label input ; traiter aussi `champ nom vide` si nécessaire.",
+        "anchor": "#exercice-1--lire-une-structure-html",
+        "quote": "Consigne : recopie dans un tableau les balises, les attributs et les textes visibles.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
         "anchor": "#exercice-1",
-        "quote": "Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.",
+        "quote": "Résultat : `main`, `h1`, `p` et `button` sont des balises ; `class=\"intro\"` et `id=\"inscrire\"` sont des attributs ; les intitulés du club et du bouton sont du texte.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne la méthode d'identification des composants graphiques (form, label, input), le TD fait pratiquer la capacité P-IHM-01A avec une consigne explicite, et le corrigé fournit la réponse attendue avec la méthode et le cas limite.",
+      "justification": "Le cours nomme les composants HTML, le TD fait identifier balises et attributs sur un bouton concret, et le corrigé distingue explicitement balise, attribut, identifiant et classe. Le verdict reste needs_review dans l'attente d'une revue humaine indépendante.",
       "scientific_flags": [
         "human_review_required"
       ]

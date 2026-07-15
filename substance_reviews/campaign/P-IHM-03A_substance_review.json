@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-05T21:17:44Z",
+  "judged_at": "2026-07-14T23:53:15Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -12,26 +12,26 @@
       "proof_course": {
         "present": true,
         "file": "03_progressions/supports/premiere/P08/P08_cours_web_http_dom_formulaires.md",
-        "anchor": "#exemples-corrigés",
-        "quote": "Méthode : distinguer GET, POST et HTTPS.",
+        "anchor": "#exécution-serveur-vs-client",
+        "quote": "- Le **serveur** exécute le code Python/PHP qui génère la page HTML, accède à la base de données, vérifie les droits. Le résultat est envoyé au client.",
         "teaches": true
       },
       "proof_practice": {
         "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
-        "anchor": "#exercice-4",
-        "quote": "Capacité officielle : P-IHM-03A.",
+        "file": "03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md",
+        "anchor": "#exercice-3",
+        "quote": "Expliquez pourquoi la vérification du mot de passe doit être faite par le serveur et non par le JavaScript du navigateur.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
-        "anchor": "#exercice-4",
-        "quote": "Réponse attendue : POST sans HTTPS ne chiffre pas.",
+        "file": "03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md",
+        "anchor": "#question-3--ordre-client-serveur",
+        "quote": "Le navigateur ne doit pas accéder directement à la base des comptes : les contrôles d'autorisation et les données sensibles appartiennent au serveur. Un contrôle réalisé seulement en JavaScript pourrait être contourné par un client modifié.",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours mentionne la capacité P-IHM-03A et la méthode 'distinguer GET, POST et HTTPS'. Le TD comporte un exercice 4 explicitement étiqueté P-IHM-03A. Le corrigé fournit la réponse attendue pour cet exercice. Cependant, la capacité officielle porte sur la distinction client/serveur et l'ordre d'exécution, alors que les contenus se focalisent surtout sur GET/POST/HTTPS ; le lien avec 'ce qui est exécuté côté client ou serveur' reste implicite.",
+      "justification": "Le cours distingue explicitement les responsabilités du serveur et du client. Le TD demande l'ordre client → serveur → réponse, et le corrigé explique pourquoi les contrôles sensibles appartiennent au serveur. Le verdict reste needs_review dans l'attente d'une revue humaine indépendante.",
       "scientific_flags": [
         "human_review_required"
       ]

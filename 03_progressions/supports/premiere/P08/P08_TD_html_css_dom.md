@@ -1,5 +1,5 @@
 ---
-title: "P08 - td - HTML, CSS, DOM, HTTP et formulaires"
+title: "P08 - TD - HTML, CSS et DOM"
 level: "premiere"
 sequence_id: "P08"
 document_type: "td"
@@ -7,174 +7,253 @@ status: "needs_review"
 version: "0.6.0"
 source: "BO 2019"
 source_creation: "generated_from_program"
-theme: "HTML, CSS, DOM, HTTP et formulaires"
-notion: "HTML, CSS, DOM, HTTP et formulaires"
+theme: "HTML, CSS et DOM"
+notion: "Structure HTML, sélecteurs CSS, DOM et événements"
 private_data: false
 official_program:
   capacities:
     - "P-IHM-01A"
     - "P-IHM-01B"
     - "P-IHM-02"
-    - "P-IHM-03A"
-    - "P-IHM-03B"
-    - "P-IHM-03C"
-    - "P-IHM-04A"
-    - "P-IHM-04B"
-    - "P-IHM-04C"
 ---
 
-# P08 - TD - HTML, CSS, DOM, HTTP et formulaires
+# P08 - TD - HTML, CSS et DOM
 
 ## Objectifs
-- Travailler HTML structurel, sélecteur CSS, DOM, événement submit, GET.
-- Produire huit réponses vérifiables avec données explicites.
+
+- Lire une page en distinguant structure HTML, attributs et contenu affiché.
+- Expliquer à quel élément s'applique un sélecteur CSS.
+- Sélectionner un nœud du DOM, le modifier et relier un événement à son gestionnaire.
+- Déboguer un script court sans confondre la recherche d'un élément avec la modification de cet élément.
+
+## Prérequis
+
+- Une balise ouvre et structure un élément ; un attribut précise une propriété de cet élément.
+- En CSS, `#` introduit un identifiant et `.` une classe.
+- JavaScript peut lire ou modifier le DOM après le chargement de la page.
 
 ## Progression socle / standard / approfondissement
-- Socle : exercices 1 et 2.
-- Standard : exercices 3 à 6.
-- Approfondissement : exercices 7 et 8.
+
+- **Socle** : exercices 1 et 2, pour lire le code HTML et les sélecteurs CSS.
+- **Standard** : exercices 3 à 6, pour manipuler le DOM et suivre un événement.
+- **Approfondissement** : exercices 7 et 8, pour justifier un choix technique et rectifier un raisonnement.
 
 ## Exercices
-### Exercice 1
+
+### Exercice 1 — Lire une structure HTML
+
 - Type : lecture/analyse.
 - Capacité officielle : P-IHM-01A.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=alpha
-- Consigne : repérer header main form label input ; traiter aussi `champ nom vide` si nécessaire.
-- Réponse attendue : <label for=nom>Nom</label><input id=nom name=nom>.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `champ nom vide`.
-### Exercice 2
-- Type : production/écriture.
-- Capacité officielle : P-IHM-01B.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=beta
-- Consigne : cibler #nom en CSS et DOM ; traiter aussi `paramètre jour absent` si nécessaire.
-- Réponse attendue : document.querySelector("#nom").value lit la saisie.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `paramètre jour absent`.
-### Exercice 3
+- Données : fragment « structure du club sciences » :
+
+```html
+<main>
+  <h1>Club sciences</h1>
+  <p class="intro">Choisis un atelier.</p>
+  <button id="inscrire">S'inscrire</button>
+</main>
+```
+
+- Consigne : recopie dans un tableau les balises, les attributs et les textes visibles. Puis indique quel élément est enfant de `main`, quel attribut est un `id` et quel attribut est une `class`.
+- Critère de réussite : le tableau sépare bien `button`, `id="inscrire"` et le texte « S'inscrire » ; il ne transforme pas une classe en identifiant.
+
+### Exercice 2 — Relier HTML et CSS
+
+- Type : lecture/analyse.
+- Capacité officielle : P-IHM-01A.
+- Données : fragment « alerte et classe importante » :
+
+```html
+<p id="alerte" class="important">Inscription fermée</p>
+<p class="important">Apporter une blouse</p>
+```
+
+```css
+p { color: black; }
+.important { font-weight: bold; }
+#alerte { color: red; }
+```
+
+- Consigne : pour chacun des deux paragraphes, liste les règles CSS qui le ciblent puis décris son apparence finale. Justifie pourquoi `#alerte` ne cible pas le second paragraphe.
+- Critère de réussite : la réponse distingue le sélecteur de balise `p`, la classe `.important` et l'identifiant `#alerte`.
+
+### Exercice 3 — Modifier une page par le DOM
+
 - Type : production/écriture.
 - Capacité officielle : P-IHM-02.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=gamma
-- Consigne : lire jour dans URL ; traiter aussi `formulaire sans action` si nécessaire.
-- Réponse attendue : GET /club?jour=mercredi transporte jour.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `formulaire sans action`.
-### Exercice 4
-- Type : cas limite.
-- Capacité officielle : P-IHM-03A.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=delta
-- Consigne : distinguer GET, POST et HTTPS ; traiter aussi `champ nom vide` si nécessaire.
-- Réponse attendue : POST sans HTTPS ne chiffre pas.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `champ nom vide`.
-### Exercice 5
-- Type : justification.
-- Capacité officielle : P-IHM-03B.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=epsilon
-- Consigne : classer chaque mécanisme (cookie, localStorage, sessionStorage) selon qu'il est retransmis au serveur à chaque requête ou mémorisé uniquement côté client.
-- Réponse attendue : cookie → retransmis au serveur ; localStorage/sessionStorage → côté client uniquement.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et distinction client/serveur correcte.
-### Exercice 6
-- Type : lecture/analyse.
-- Capacité officielle : P-IHM-03C.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=zeta
-- Consigne : cibler #nom en CSS et DOM ; traiter aussi `formulaire sans action` si nécessaire.
-- Réponse attendue : document.querySelector("#nom").value lit la saisie.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `formulaire sans action`.
-### Exercice 7
-- Type : production/écriture.
-- Capacité officielle : P-IHM-04A.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=eta
-- Consigne : lire jour dans URL ; traiter aussi `champ nom vide` si nécessaire.
-- Réponse attendue : GET /club?jour=mercredi transporte jour.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `champ nom vide`.
-### Exercice 8
-- Type : justification.
-- Capacité officielle : P-IHM-04B.
-- Données : `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi`. ; jeu_exercice=theta
-- Consigne : distinguer GET, POST et HTTPS ; traiter aussi `paramètre jour absent` si nécessaire.
-- Réponse attendue : POST sans HTTPS ne chiffre pas.
-- Critère de réussite : donnée exacte, méthode nommée, résultat final et décision sur `paramètre jour absent`.
+- Données : fragment « état de l'inscription » :
 
-## Corrigé
+```html
+<p id="etat">En attente</p>
+```
+
+- Consigne : écris deux instructions JavaScript : la première sélectionne le paragraphe dans une variable `etat`, la seconde remplace uniquement son texte par « Inscription confirmée ». Explique en une phrase ce que fait chaque instruction.
+- Cas limite : prévois ce que tu vérifierais si aucun élément ne portait l'identifiant `etat`.
+- Critère de réussite : la sélection et l'affectation à `textContent` sont deux opérations distinctes.
+
+### Exercice 4 — Choisir un sélecteur avec `querySelector`
+
+- Type : production/écriture.
+- Capacité officielle : P-IHM-02.
+- Données : fragment « deux scores à distinguer » :
+
+```html
+<section id="resultats">
+  <p class="score">Équipe A : 3</p>
+  <p class="score">Équipe B : 2</p>
+</section>
+```
+
+- Consigne : complète les trois appels suivants en utilisant `querySelector` : sélectionner la section, sélectionner le premier paragraphe de score, sélectionner le paragraphe dont le texte commence par « Équipe B » sans utiliser son texte comme sélecteur. Pour le troisième appel, ajoute l'attribut minimal à l'HTML puis donne le sélecteur correspondant.
+- Justification : compare `#resultats`, `.score` et `p`. Indique lequel ne doit pas servir seul pour désigner précisément l'équipe B.
+- Critère de réussite : les préfixes `#` et `.` sont employés selon l'attribut ciblé ; l'élève sait que `querySelector` renvoie le premier élément correspondant.
+
+### Exercice 5 — Réagir à un événement
+
+- Type : trace/table.
+- Capacité officielle : P-IHM-01B.
+- Données : fragment « bouton bonjour et message » :
+
+```html
+<button id="bonjour">Dire bonjour</button>
+<p id="message"></p>
+<script>
+const bouton = document.getElementById("bonjour");
+const message = document.querySelector("#message");
+
+function saluer() {
+  message.textContent = "Bonjour !";
+}
+
+bouton.addEventListener("click", saluer);
+</script>
+```
+
+- Consigne : complète la chronologie suivante : chargement de la page → … → clic de l'utilisateur → … → …. Nomme séparément l'événement et le gestionnaire d'événement.
+- Critère de réussite : `click` est identifié comme le signal reçu et `saluer` comme la fonction appelée ; le texte ne change pas au chargement seul.
+
+### Exercice 6 — Déboguer un script DOM
+
+- Type : débogage.
+- Capacité officielle : P-IHM-02.
+- Données : fragment « compteur avec identifiant erroné » :
+
+```html
+<button id="compter">Ajouter</button>
+<p id="total">0</p>
+<script>
+const total = document.getElementById("totale");
+document.getElementById("compter").addEventListener("click", () => {
+  total.textContent = "1";
+});
+</script>
+```
+
+- Consigne : le navigateur signale une erreur parce que `total` vaut `null`. Localise l'erreur, corrige-la et explique pourquoi la ligne qui modifie `textContent` ne peut pas fonctionner avant cette correction. Propose ensuite une seconde cause possible de `null` liée au moment où le script s'exécute.
+- Critère de réussite : la correction remplace l'identifiant erroné et mentionne qu'un script placé avant l'élément doit attendre le chargement ou être déplacé.
+
+### Exercice 7 — Distinguer HTML, CSS et JavaScript
+
+- Type : justification.
+- Capacité officielle : P-IHM-01A.
+- Données : la page doit afficher un titre, rendre ce titre bleu et afficher « Bienvenue » après le clic sur un bouton.
+
+- Consigne : classe chacune des modifications suivantes dans **HTML (structure)**, **CSS (style)** ou **JavaScript (comportement)**, puis justifie chaque choix :
+  1. ajouter `<h2 id="titre">Ateliers</h2>` ;
+  2. écrire `#titre { color: blue; }` ;
+  3. ajouter un écouteur `click` qui affecte `message.textContent`.
+- Transfert : explique pourquoi dire « CSS modifie le DOM » est imprécis dans cette situation.
+- Critère de réussite : le rôle de chaque langage est relié à une action visible différente, sans confondre une règle de style et une instruction JavaScript.
+
+### Exercice 8 — Corriger des raisonnements faux
+
+- Type : transfert.
+- Capacité officielle : P-IHM-01B.
+- Données : quatre affirmations d'un camarade.
+
+1. « `id` et `class` sont interchangeables. »
+2. « `querySelector` renvoie toujours plusieurs éléments. »
+3. « Un gestionnaire ajouté avec `addEventListener` est exécuté dès le chargement. »
+4. « Pour modifier un texte, il suffit d'écrire un sélecteur CSS. »
+
+- Consigne : pour chaque affirmation, écris **vrai** ou **faux**, puis donne un contre-exemple ou une correction technique précise. Pour la troisième affirmation, distingue le moment où l'écouteur est installé et le moment où le clic se produit.
+- Critère de réussite : chaque rectification contient un fragment concret tel que `#titre`, `.important`, `document.querySelector("#titre")` ou `element.textContent = "..."`.
+
+## Corrigé — indications de raisonnement
+
+Les indications ci-dessous servent à vérifier une démarche ; le corrigé complet de l'évaluation est séparé dans `P08_corrige_html_css_dom.md`.
+
 ### Corrigé exercice 1
-- Capacité mobilisée : P-IHM-01A.
-- Résultat attendu : <label for=nom>Nom</label><input id=nom name=nom>.
-- Justification : la tâche `repérer header main form label input` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : bouton hors formulaire.
-- Donnée utilisée alpha dans P08 TD html css dom : cas alpha de l exercice 1 avec les valeurs indiquées dans l énoncé.
-- Méthode alpha dans P08 TD html css dom : trace courte, pseudo-code local `if cas_alpha: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat alpha dans P08 TD html css dom : sortie vérifiable de l exercice 1, reliée à la capacité officielle du bloc.
-- Contrôle alpha dans P08 TD html css dom : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+- Donnée utilisée : dans le fragment, `main`, `h1`, `p` et `button` sont des balises ; `class="intro"` et `id="inscrire"` sont des attributs ; « Club sciences », « Choisis un atelier. » et « S'inscrire » sont des textes.
+- Méthode : lire l'imbrication avant de nommer les attributs. Les trois éléments `h1`, `p` et `button` sont enfants de `main`.
+- Résultat : `id="inscrire"` identifie le bouton ; `class="intro"` regroupe éventuellement plusieurs éléments. Aucun de ces mots n'est une balise.
+- Vérification : remplacer `class` par `id` changerait la nature de l'attribut, pas le texte affiché.
+
 ### Corrigé exercice 2
-- Capacité mobilisée : P-IHM-01B.
-- Résultat attendu : document.querySelector("#nom").value lit la saisie.
-- Justification : la tâche `cibler #nom en CSS et DOM` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : sélecteur trop large.
-- Donnée utilisée beta dans P08 TD html css dom : cas beta de l exercice 2 avec les valeurs indiquées dans l énoncé.
-- Méthode beta dans P08 TD html css dom : trace courte, pseudo-code local `if cas_beta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat beta dans P08 TD html css dom : sortie vérifiable de l exercice 2, reliée à la capacité officielle du bloc.
-- Contrôle beta dans P08 TD html css dom : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+- Donnée utilisée : les deux paragraphes correspondent à `p` et `.important` ; seul « Inscription fermée » possède `id="alerte"`.
+- Méthode : tester chaque sélecteur contre les attributs de chaque élément, sans confondre `#` et `.`.
+- Résultat : le premier paragraphe est noir par `p`, gras par `.important` et rouge par `#alerte` ; le second est noir et gras, mais pas rouge.
+- Vérification : écrire `.alerte` chercherait une classe nommée `alerte`, absente ici.
+
 ### Corrigé exercice 3
-- Capacité mobilisée : P-IHM-02.
-- Résultat attendu : GET /club?jour=mercredi transporte jour.
-- Justification : la tâche `lire jour dans URL` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : POST confondu avec chiffrement.
-- Donnée utilisée gamma dans P08 TD html css dom : cas gamma de l exercice 3 avec les valeurs indiquées dans l énoncé.
-- Méthode gamma dans P08 TD html css dom : trace courte, pseudo-code local `if cas_gamma: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat gamma dans P08 TD html css dom : sortie vérifiable de l exercice 3, reliée à la capacité officielle du bloc.
-- Contrôle gamma dans P08 TD html css dom : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+- Donnée utilisée : l'élément possède `id="etat"` et son texte initial est « En attente ».
+- Méthode : sélectionner d'abord le nœud, puis modifier une propriété de ce nœud.
+- Résultat : `const etat = document.getElementById("etat");` puis `etat.textContent = "Inscription confirmée";` produisent le texte demandé.
+- Vérification : si `etat` vaut `null`, il faut vérifier l'orthographe de l'identifiant avant toute affectation à `textContent`.
+
 ### Corrigé exercice 4
-- Capacité mobilisée : P-IHM-03A.
-- Résultat attendu : POST sans HTTPS ne chiffre pas.
-- Justification : la tâche `distinguer GET, POST et HTTPS` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : bouton hors formulaire.
-- Donnée utilisée delta dans P08 TD html css dom : cas delta de l exercice 4 avec les valeurs indiquées dans l énoncé.
-- Méthode delta dans P08 TD html css dom : trace courte, pseudo-code local `if cas_delta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat delta dans P08 TD html css dom : sortie vérifiable de l exercice 4, reliée à la capacité officielle du bloc.
-- Contrôle delta dans P08 TD html css dom : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+- Donnée utilisée : `#resultats` désigne une section unique ; `.score` correspond aux deux paragraphes.
+- Méthode : `document.querySelector("#resultats")` sélectionne la section et `document.querySelector(".score")` le premier score. Pour désigner l'équipe B, on peut ajouter `id="equipe-b"` au second paragraphe puis appeler `document.querySelector("#equipe-b")`.
+- Résultat : `p` seul est trop large et `.score` ne distingue pas les deux équipes ; `querySelector` ne renvoie pas une liste, mais le premier élément trouvé.
+- Vérification : un sélecteur `#equipe-b` sans identifiant correspondant renverrait `null`.
+
 ### Corrigé exercice 5
-- Capacité mobilisée : P-IHM-03B.
-- Résultat attendu : cookie → retransmis au serveur ; localStorage/sessionStorage → côté client uniquement.
-- Justification : la tâche `classer chaque mécanisme (cookie, localStorage, sessionStorage)` s applique au contexte web ; erreur évitée : confondre cookie et localStorage sur la retransmission automatique.
-- Donnée utilisée epsilon dans P08 TD html css dom : cas epsilon de l exercice 5 avec les valeurs indiquées dans l énoncé.
-- Méthode epsilon dans P08 TD html css dom : trace courte, pseudo-code local `if cas_epsilon: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat epsilon dans P08 TD html css dom : sortie vérifiable de l exercice 5, reliée à la capacité officielle du bloc.
-- Contrôle epsilon dans P08 TD html css dom : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+- Donnée utilisée : le bouton porte `id="bonjour"`, l'écouteur est `addEventListener("click", saluer)` et le paragraphe est `#message`.
+- Méthode : séparer installation de l'écouteur et exécution du gestionnaire.
+- Résultat : chargement → les constantes sont créées et l'écouteur est installé → clic utilisateur → appel de `saluer` → `message.textContent` devient « Bonjour ! ».
+- Vérification : sans clic, la fonction `saluer` n'est pas appelée et le paragraphe reste vide.
+
 ### Corrigé exercice 6
-- Capacité mobilisée : P-IHM-03C.
-- Résultat attendu : document.querySelector("#nom").value lit la saisie.
-- Justification : la tâche `cibler #nom en CSS et DOM` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : POST confondu avec chiffrement.
-- Donnée utilisée zeta dans P08 TD html css dom : cas zeta de l exercice 6 avec les valeurs indiquées dans l énoncé.
-- Méthode zeta dans P08 TD html css dom : trace courte, pseudo-code local `if cas_zeta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat zeta dans P08 TD html css dom : sortie vérifiable de l exercice 6, reliée à la capacité officielle du bloc.
-- Contrôle zeta dans P08 TD html css dom : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+- Donnée utilisée : le HTML contient `id="total"`, mais JavaScript demande `"totale"`.
+- Méthode : comparer caractère par caractère l'identifiant HTML et l'argument de `getElementById` ; contrôler ensuite que l'élément existe avant le clic.
+- Résultat : `const total = document.getElementById("total");` évite `null`, donc `total.textContent = "1";` s'exécute au clic. Un script placé dans `head` avant le paragraphe peut aussi obtenir `null` ; on le place après le HTML ou on attend `DOMContentLoaded`.
+- Vérification : un clic après correction affiche `1` dans le paragraphe `#total`.
+
 ### Corrigé exercice 7
-- Capacité mobilisée : P-IHM-04A.
-- Résultat attendu : GET /club?jour=mercredi transporte jour.
-- Justification : la tâche `lire jour dans URL` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : bouton hors formulaire.
-- Donnée utilisée eta dans P08 TD html css dom : cas eta de l exercice 7 avec les valeurs indiquées dans l énoncé.
-- Méthode eta dans P08 TD html css dom : trace courte, pseudo-code local `if cas_eta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat eta dans P08 TD html css dom : sortie vérifiable de l exercice 7, reliée à la capacité officielle du bloc.
-- Contrôle eta dans P08 TD html css dom : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+- Donnée utilisée : `<h2 id="titre">Ateliers</h2>` décrit un élément de page, `#titre { color: blue; }` règle son apparence et l'écouteur traite une action.
+- Méthode : demander si l'instruction crée une structure, définit un style ou réagit à une action utilisateur.
+- Résultat : 1 est HTML, 2 est CSS, 3 est JavaScript. CSS déclare une présentation ; JavaScript modifie le DOM en affectant par exemple `message.textContent`.
+- Vérification : changer `color` ne crée pas de nouveau nœud et ne déclenche aucun clic.
+
 ### Corrigé exercice 8
-- Capacité mobilisée : P-IHM-04B.
-- Résultat attendu : POST sans HTTPS ne chiffre pas.
-- Justification : la tâche `distinguer GET, POST et HTTPS` s applique à `<form method=post action=/reservation><input id=nom name=nom></form>, URL /club?jour=mercredi` ; erreur évitée : sélecteur trop large.
-- Donnée utilisée theta dans P08 TD html css dom : cas theta de l exercice 8 avec les valeurs indiquées dans l énoncé.
-- Méthode theta dans P08 TD html css dom : trace courte, pseudo-code local `if cas_theta: décider else: calculer`, invariant nommé et complexité `O(n)`.
-- Résultat theta dans P08 TD html css dom : sortie vérifiable de l exercice 8, reliée à la capacité officielle du bloc.
-- Contrôle theta dans P08 TD html css dom : le cas limite annoncé est décidé explicitement et une réponse sans trace est refusée.
+
+- Donnée utilisée : les affirmations portent sur les préfixes CSS, le retour de `querySelector`, l'événement `click` et `textContent`.
+- Méthode : rectifier chaque phrase par un exemple minimal, plutôt que par une définition isolée.
+- Résultat : 1 faux : un `id` vise un élément identifié, tandis que `.important` peut viser plusieurs éléments ; 2 faux : `document.querySelector("#titre")` renvoie le premier élément correspondant ; 3 faux : l'écouteur est installé au chargement mais `saluer` attend le clic ; 4 faux : `#titre` cible pour le style, alors que `element.textContent = "Bonjour"` modifie le contenu.
+- Vérification : `querySelectorAll(".important")` est l'API qui renvoie tous les éléments correspondants, sous forme de liste de nœuds.
 
 ## Erreurs fréquentes
-- bouton hors formulaire.
-- sélecteur trop large.
-- POST confondu avec chiffrement.
+
+- Confondre l'attribut `id` avec une classe : `#inscrire` et `.intro` ne désignent pas la même chose.
+- Croire que sélectionner avec `querySelector` transforme déjà la page : il faut ensuite modifier une propriété telle que `textContent`.
+- Nommer `click` comme une fonction : c'est l'événement ; `saluer` est le gestionnaire.
+- Oublier qu'un mauvais identifiant ou un script exécuté trop tôt peut produire `null`.
 
 ## Différenciation
-- Socle : données annotées.
-- Standard : méthode complète.
-- Expert : transfert avec `paramètre jour absent`.
 
-## Cas limites travaillés
-- champ nom vide.
-- paramètre jour absent.
-- formulaire sans action.
+- **Socle** : surligner d'une couleur les balises, d'une autre les attributs et entourer les textes avant de répondre aux exercices 1 et 2.
+- **Standard** : écrire les instructions DOM des exercices 3 à 6 puis les faire relire en identifiant séparément sélecteur, nœud et propriété modifiée.
+- **Approfondissement** : dans l'exercice 8, remplacer `querySelector` par `querySelectorAll` et expliquer la conséquence sur la suite du programme.
 
 ## Critères de réussite observables
-- La donnée de départ est recopiée exactement.
-- La trace ou le pseudo-code conduit à `<label for=nom>Nom</label><input id=nom name=nom>`.
-- Au moins un cas limite de la section précédente est décidé.
 
+- Une réponse nomme précisément le langage et l'objet manipulé : balise HTML, règle CSS, élément DOM, événement ou gestionnaire.
+- Une modification du DOM distingue l'étape de sélection de l'étape d'affectation.
+- Une explication d'événement donne l'ordre : installation de l'écouteur, action utilisateur, appel de fonction, effet sur le DOM.

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "unit": "campaign",
   "level": "premiere",
-  "judged_at": "2026-07-11T19:19:20Z",
+  "judged_at": "2026-07-14T23:53:15Z",
   "judge_model": "claude-sonnet-4-6",
   "author_model": "campaign-tooling",
   "capacities": [
@@ -18,20 +18,20 @@
       },
       "proof_practice": {
         "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_TD_html_css_dom.md",
+        "file": "03_progressions/supports/premiere/P08/P08_TD_http_get_post_formulaires.md",
         "anchor": "#exercice-5",
-        "quote": "Consigne : classer chaque mécanisme (cookie, localStorage, sessionStorage) selon qu'il est retransmis au serveur à chaque requête ou mémorisé uniquement côté client.",
+        "quote": "Consigne : (5a) parmi `session_id`, `nom=Ali` (corps POST) et `theme=sombre` (localStorage), indiquez lesquels sont retransmis automatiquement au serveur à la prochaine requête ; (5b) expliquez pourquoi `localStorage` n'est pas retransmis ; traitez aussi le cas `cookie expiré` si nécessaire.",
         "teaches": true
       },
       "proof_correction": {
         "present": true,
-        "file": "03_progressions/supports/premiere/P08/P08_corrige_web_http_dom_formulaires.md",
-        "anchor": "#exercice-5",
-        "quote": "Réponse attendue : cookie → stocké côté client ET retransmis automatiquement au serveur selon Domain/Path ; localStorage → stocké côté client uniquement, jamais retransmis au serveur",
+        "file": "03_progressions/supports/premiere/P08/P08_corrige_http_get_post_formulaires.md",
+        "anchor": "#question-4--stockage-et-retransmission",
+        "quote": "| `theme` dans `localStorage` | navigateur, côté client | persiste après fermeture jusqu'à suppression | non |",
         "teaches": true
       },
       "verdict": "needs_review",
-      "justification": "Le cours enseigne la distinction cookie/localStorage/sessionStorage avec tableau comparatif. Le TD fait pratiquer la classification client/serveur. Le corrigé fournit la réponse détaillée avec les nuances Domain/Path.",
+      "justification": "Le cours explique la retransmission automatique des cookies et l'absence de retransmission du localStorage. Le TD fait classer les mécanismes, et le corrigé fournit une table de stockage et de retransmission. Le verdict reste needs_review dans l'attente d'une revue humaine indépendante.",
       "scientific_flags": [
         "human_review_required"
       ]
